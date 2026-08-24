@@ -1,0 +1,1123 @@
+<!doctype html>
+<html lang="ja"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>トップダウン学習 深掘り質問プロンプト50 — Kawaru Gifts</title>
+<meta name="description" content="Gabriel Petersson氏の「問題から入り、AIに聞き倒しながら知識を補っていく」学習法(トップダウン学習)をもとにした、AIで何かを学ぶときの質問テンプレート50本です。">
+<link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHgAAABPCAIAAACveZaQAAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAeKADAAQAAAABAAAATwAAAAAb4zF4AAAQkklEQVR4Ae1cCZAU1Rmenmt3lt0d2GVnFlhwWQSPRQklAgZFEVHCIYtERSspNQY0lcSKEmOqrFSMlcuUJjFVGkotY2JMeURAlEM8kBhQlIiCKFoCuxx7zV6zx+zO9PRMvtdv5k1P3z3TsyyVtO7M6//95/f+9/fr1z1wgpDgOAc58JkUG4oPjuOSjiTn4JJJwiGyEwoVIXRRkrCJDDIFoIOSktXmyZKF0rQ5uTbRKvNUZEwrT3siFxGNMvdoQ/qp5GcOo0H9ZxR2mqJk45bqJYgwH8Ho4BKJBPke8Ud2OCPFXZZk+g4h05wGHDR99ZmMeknS5X1I08MWhXl7RBTI0lapk7qKeW4AtKEipWolxRYlUrW2K5Qqp22WGqyh5NGhMCnqKuqJAdA6unLuYk7krGEYBNkEYg1LRmVSuPwYAF2ISSpzQhpAIcxJ9Wu1TY69STZVKwZAm5mk+ZiX+WTGnEzEllOMvZkx1kkRfTeMS0dBzes7N8y9hR3j4bkYDjNkI9AcRhGlw8apb1uMdvlklx6twMzrN6jRWgbyoKd803cx52ooc8wuPTK17NSkflqjTTIz5Xk2UuaG2WqeTucvnpXR0izDZdDMlTB/D5gVqXVLapkGS1LDyYx19Bmz1zGcuJixhbTQmpSqXVkZbcbAsPEMQ57mPIcAghbKWl0jF+jCLmzFfNEBS5lPeQ68W6mxEBTV2cQM6fcyNq2GkEjG+Ti5pmgc6PB68400z4HP17xGaHKyfu7o98p10Z14EndKbv+nRxpPhlwuZ2rTPSNAGcgAzJkxbVxwdKZHrYWcZTppv5KiJmeKNkxAm/JFm0kWMHsWQ5F9+MnNO/ccLCryEjZygaeKRJTxwXHRaOzRn3/n5hXzmaCqKRnK4FFSVAXNEM8MoHUCBnbd4YEhnhcfrKVDTuW6iJXDERmK9g0Mpfvs+cZoZoyYUHlmAC0LRBpk6nmkkEy4ycNPF+ck8ZOkTv1ROBRVRabS8qkllKE9F6ClcVp2UCEgKwtmlGcFmXQEx46pqiz3FRfFeaGnL5KyQHDGQ1sOf2IjSyjFk8eXGT+ZegwzgE6JyAJmTMqGvS7LyoJSuY5jpCBz3JrVC6+Yc57H6/3X3kOb39wnzmngS5YhVJvt6QxMlH4qgWIU+Il1dEpEFjBjQpysbXtjIBLt7Yv09g/i/2gsrqpfyzHKjBjmz6m/9YaF06dNPNLUircnRDrICZrKtIRYxdqWmCl09NO4dOjHqQqNSeJQNL5px95w34DL6eIF4dwpE66ad6FJWSkbEP3ks8Z7fvXM/kPHish6OYmVdTGpJHG8jYI8Sme2VMigbSlhtXRR6OhnpnRocZun68xxpRKkWEd3+GePPN8T7ne6nFiBXTN/5qJLZ6TehVEKaFE47vMvj9//8D/2HzxaVOTB/ATKY/yjZl1w9s69h5DXoNiCmpZ9k3RSOmyZJrBnNSK8u5NICC4sFLBacDr5OE+cltzgGVYtjNaRxpYH/vDCnn2fi7nswOrDV+y97foFt994pcALIsYEZ7U3qIi1YTvIXsdpHPDMGANUeiLxRn/kgHLTqY4H//TSjnc/LvJ6EQjGrcjjXr183j23r0DpEIs0VWc/ziwJWENnzOCq5qaSGXkd1aa6JJiSlKOnGez1dMD1U21dv3l8w+Y3PvACZc4BWN0u18rFc+//wTd9Pi+uhaQ2E62kRLvMqYVJk4xpd6FbGoa6z7g0a14Mzcira7VCFX0EaGJ0kqKho4NkAOdoDfX8/slXX3jt3x6PB3LIZZfbtezKWQ/86IYx/lKIV1aUzpo+hSZ1LBafOL5KR6e0yxg2KbfYhvcyKUaBrxRJ44shY1Xoz5sgTR6glZrfMp8VVjhHqKv38Wdff+blnW6nCy+KAk2nk7t63oW/uGd1VYUf6QPF50yesP7Xa3lxtQfVBGj760fKN6XHSopmRrP4CpraItQAAJtBaYOskSZIv5H7XT39Tz3/1p+f3e5EVXcS9JxJ7vLZ9Q+uu2lCsAIogx9/bpezblK1VJZ2SSks76REe9sMPWOg7TWsro3uuJkoHU2nQr9dv+mfW/ZgfYxdUVIxXM5vNVy+bs2149MoUxMi3rqDppjv6r5ZoWqNHKpC5s6QKhRTzIpuO3hJjTZhuKW9+9G/bN247X3kJtI5mUhgXbhq8SV33bpEhrIdTuWiQ2tgkdfyVQdlNYzbkMGymxkf1SFHXX7sb9uf3/wu7iGRy+QO2+FYtnDW3bcvP6smoCwLlh0wIaAatSpRqUwONOVglUUpYJJBS1CVbmiupzfyxHNv/HXDO9EYjywGv5BMLrpsxrq1DVMnjyvcVY56y0Ze1U9VojJMdaCVfIWi0CDgLNmTIIfSb+zZP/3im0+9+GZkcAiPq8AjxAVc/X5yR0P91InI5cxkEDXY/qGl30wuM57TDTQLIt1gnlG8Bof4Zze+s/7vr/f2DeB+BFzYdJ49c+p931s5s75Ovny1HWNdhcqcULIzHgDNZoaSrcAU4kUKYIKvwpEYH0dRfuyZbR09/W6XGyWCjwsz6iffd+equTOnwTkmXmBHLahXCUOUBtDpXLKgzUbW9AqaoEyRJv5gHQJMX972/h+ffq011O1xu0AEBVup99258oq59TjFLt3JgaG4uPePU1sOEytMFTvSDFEfe/FXWVI2FS0FJBHLeEQiIgx46YgjJTgO+/d4VvLIU6+ebOlwA2WSy/HamuC9a1dcPX8GRGJCYl8ovOFo24GOPhurdG713jhVk+SZYRYbos46LyDMbLGAJKAbAimkcUu9bdf+h5/YdKSpxesht1SCINRUV9z93aXXLpqNDdUBXtjb3r3zVFdzJBrm4/4i99n+UXA8N5gKGWJGt/xiyFDWqjUZ0bxb6XmKb2qWfAKst/cc/N36TYePNHvFipGIC6MCFStWX3P9knm4sQbPwa7eLU0d7YMxr8uJ6rHleEdrJJquPHm7VQgFOj/oVK81djuRHs5U/YD63fsOP/T4xoNfNBGUcZMtCGWBiulLLi372jld5NfUZO8J9yqxhIAmCjweGxzu6d9xsrM3Fie9I+nIeGP4G5ZCu80mEFl0cM4PD3z10PqN+z494nEBZQdQLvGXnb/467Wz6o9FottPdHQNxcA3o7J8/rgK7CWJBZ5UjA/aenY1d0bpSBTaadP6ER3DWl46TCuxi1GEWnyU1d4Zxhbz7v8cpijjelha6pt+zSUTLzqfXDgSyY9CvW81d0VQSTyuhRMqZ1aVOfDIG8nCOeLJxM7mrg/ae3DHONLymiJ12oGmQ8653e7G5o633zvoxkaGk2zLlfjw6G/hquWXOd1OFAtUBT6Z2N3S/V5rdzyRqCj2fmNSYIrfJ27tA2sOV0ik/KGuPgTG8siudMhZD5uyANqqV1b59ZzM6AKOPNbECVQGrORG+Yp+ue6mH6+59sbzai6uKhfI8ygHqslgQnilKbTjRCfqRU1p8benTZjmL4lDCL1OrmMo9tyXLR93hKFEz+rp6FPP6PQ1StUjNkiqvYRoNkqiCX+UHZ/kf1SMYq/np99ftXLxJSW+olKXc9mkQH3FKJ4MAcE6mhDeau78MBSGcLCkaGVddbXPQ7DmODxuCfP8psb2Y72REVVA4AyAVgEuzyWHikaCv+IgwOJPTFfRDVQM3ATee0fDTcsvLRtVDAGoqvJ5V9QGakYV0ZeQgPVAPL65qf3Lnn4w1JaVXFdXXe514UaR6muJxDY0tnUOxQqNNcyZPDD/1DPapHz+bOQWQ4QaX2Ih5u66bcktqxb4y0qYcng5qbTkusnBMq+LbEITCVQJfmNjqH0wiithfUXZsrMCHjzWEruwWf1VT2RTY9tgHEtA82gwg2Yboi9mmU8z0MRNMRGBJmbX2psXrVm9CO8ZydzH4vncMaUNtSKa4gQA1k19kQ3H2vtjcY+Tuzjgv6pmLL0zxMMXjNrHHf3bT4Romsu0aZ3qFkwtIQM6G2kAXcAxN/ACtolx4JPEFvM5deN/eMvSqkq/qhReKrgoMHrRhCoMCQQgh6Xdgc6+LSdCeNRd4nYtGF85O1COYi0WIS6WFHa19Lzb2k1tqOqUEfMsmDJtqdN02qdqdCEGU92wnArECNp4lauivLS6ajSBXe0ACsVObkFNxdzq0ViEkIlA1taJPa3du1q6cF7udS+dFDzX7yP7eQ780zrcIB/fejz0SWcvSys1xXo06MnhkILJBi9VOth5DnrzFaHRIEmpL7pVtcztWjopcN5oLOnopY8biiew2vtIXIQESrwNddXjfF7WG47xrzS2H+8fNIm1DFk25jK6fshKMGE9q3RYUqdvzFwvMUiNkrJKw9LIaKoQLFiErJwcJGgic3E15xy9PL/5eOhomLzrX1vmW1kXLPe4EglyoYfy5v6hDUdbu6P2LEJygwjFDs6wYZO0zOGUNxett6IahrluRoMVMpMImtVAk97IgNg6EMWSLjQYwy1ifUX58rOCeEkVnFTrFz0Drza2D5lYhGSwyI6N0Vkju9/4jE5XY74CcbAZTQIwnS1gJEu62iDu17Hgw30KRuer8ODGY20RXiCLkKD/qvGVFBSSSth1ag+/cbKD7IQUKBIjtZaBllZ6I+XG/Ug6wgScLKYKFiFzAv6FE8ZCDlgDPieXPNDVt/VEO3ZCsAi5smYs1nwCKoioHlX7neau99ssLEKMvc/mkA2hDCjLQCsrfbY5ciazoWSQUyyiDHG4UexyLqypJGhitPBfkuzh7W4N72rpBoPf68ZdzFR/Kc1ilPJ+Xtja1PFZVz+bRnI38juXBZEFVIGeGWbZ0PderMhwkQBFb/tk/uqK+z3u5bWBaeUl5DkAee2KLOl2HA/RRQh2QlZNqQ7ixyzYq8KixunoiOLuvOWk6UWIrnHNTllqEz5x499KZJrKc+lAweT5BF4+ipEjjt07q1owPEEf3VcqjiYSPNbVjiTQfPlY29HwALRhJ6ShLlDi9mCLFfcyWK03hodeOtbWE+ULlNcwqgqo/W+TkoWaui05jKPLShZfMaO7ZwAb0HyUnzcbG/wkteV8uueo8rXlvoa6ILaqUT0wQ7BDjcnRFYvXkSKWvKCi/LrJwr523LaQUo7c9nAOPD0YjV8W5XRAiXkXGRrYYoeUecGcXNMWCvdF6HYEwMFvqrANrc2r1wP4Bsndd+bwujjyUwDxwCpwKPX7wxSDz41CYu2whK9Stfi+/OkDWunQmUUxiz4uhlan6rABYXnpMmyeSQyZLQVka5IULpsPhhFr6BtQ9SDnDFDVpu9AwXuV73VIodFqG7rFMGINfRGzeaGvJd1LtVmC25DZkCFtXOMbC6wErhL5qtHQbp0MR+wFXeqCJeWWmKVWtNrkccTIOQqHMmJUVa4VvSpzjkCJNjQXOdK6kaMBc2JaoZqTzpdLCqhOyHk5KdrQBFq1vCrtKSlWQ5eGClmdaJnm/I0yVdKGasiUQeakVMpkWxNoVXmlPSVFVVCHKENNJ1odJcPbJXPZlHFrQKuqzMWsRFEOQ5WDiMRg/s1c7NsAdC5m8w/2TNNgDWit5NWi54yGmUqds/LhF0Q4xkBLY2bJK0OW0U3GIBNXShlWai0NWnTRhEqnCknhjRkeqZCSH+H8/9+PlkJk3EbaGSaBUgv2vo0zOiNGn+9lzv8XW5ZRFkHDJvB/AQFxZ5IQHzayAAAAAElFTkSuQmCC">
+<link rel="stylesheet" href="../../assets/site.css">
+</head><body>
+<header class="kh"><div class="top">
+  <a class="back" href="../../">← 一覧へ</a>
+  <img src="data:image/png;base64,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" alt="">
+  <h1>トップダウン学習 深掘り質問プロンプト50</h1>
+  <span class="badge">50個</span>
+  <button class="btn sm" style="margin-left:auto" data-save="pfull" data-name="topdown-learning-50.md">⬇ 全件ダウンロード</button>
+</div></header>
+
+<div class="kwrap">
+  <section class="epctx epctx-top">
+  <div class="ep-thumb epctx-thumb"><img src="https://i.ytimg.com/vi/fIkn5HYuats/hqdefault.jpg" alt=""></div>
+  <div>
+    <p class="epctx-label">この動画のプレゼントです</p>
+    <p class="epctx-title">OpenAIを卒業したEnergy登場</p>
+    <p class="epctx-date">2026-08-17</p>
+    <a class="watch" href="https://www.youtube.com/watch?v=fIkn5HYuats" target="_blank" rel="noopener">▶ 動画を見る</a>
+  </div>
+</section>
+
+  <section class="kintro">
+    <h2>トップダウン学習 深掘り質問プロンプト50</h2>
+    <p><span class="nb">Gabriel Petersson氏の</span><span class="nb">「問題から入り、</span><span class="nb">AIに聞き倒しながら知識を</span><span class="nb">補っていく」</span><span class="nb">学習法(トップダウン学習)をもとに</span><span class="nb">した、</span><span class="nb">AIで何かを学ぶときの</span><span class="nb">質問テンプレート50本です。</span></p>
+    <div class="kmeta"><span>プロンプト集</span><span>収録 50個</span><span>No.89 OpenAIを卒業したEnergy登場</span><span>2026-08-09 配布</span></div>
+    <div class="pnote"><span class="nb">下のカードから、</span><span class="nb">1件ずつコピー、</span><span class="nb">または個別にダウンロードできます。</span><span class="nb">まとめて欲しいときは、</span><span class="nb">上の</span><span class="nb">「全件ダウンロード」を</span><span class="nb">お使いください。</span></div>
+  </section>
+
+  <h2 class="cat">技術・プログラミングを学ぶとき</h2>
+<div class="icard">
+  <div class="ih"><span class="num">001</span><span class="ititle">動くコードから理解する</span></div>
+  
+  <pre class="prompt" id="b1">まず動くコードを書かせてから、中身を理解する
+
+前提: 新しいプログラミング言語やフレームワークを、教科書からではなく実物から学びたい。
+指示: 「〇〇(作りたいもの)を動くコードで書いて。その後、各行が何をしているか、初心者にも分かるように説明して」と聞く。
+使い方: 動いたコードを実際に少し変更してみて、想定通りに動くか確認しながら理解を深める。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b1">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b1" data-name="topdown-learning-50-001.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">002</span><span class="ititle">なぜそう書くのかを聞く</span></div>
+  
+  <pre class="prompt" id="b2">慣習的な書き方の理由を掘り下げる
+
+前提: サンプルコードに出てきた書き方の意味が分からないまま使っている。
+指示: 「このコードの〇〇の部分は、なぜこう書く必要があるの？他の書き方ではダメな理由も含めて教えて」と聞く。
+使い方: 「他の書き方ではダメな理由」まで聞くことで、表面的な暗記で終わらせない。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b2">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b2" data-name="topdown-learning-50-002.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">003</span><span class="ititle">エラーの原因を推理させる</span></div>
+  
+  <pre class="prompt" id="b3">エラーメッセージから原因を一緒に特定する
+
+前提: エラーが出たが、メッセージの意味が分からず対処できない。
+指示: 「このエラーメッセージが出た。考えられる原因を可能性が高い順に3つ挙げて、それぞれの確認方法も教えて」と聞く。
+使い方: 一番可能性が高いものから順に自分で確認し、原因特定のプロセス自体を学ぶ。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b3">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b3" data-name="topdown-learning-50-003.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">004</span><span class="ititle">設計思想の背景を聞く</span></div>
+  
+  <pre class="prompt" id="b4">そのツール・言語がなぜその設計になっているか理解する
+
+前提: フレームワークの独特なルールに納得できず、丸暗記になっている。
+指示: 「〇〇というフレームワークが、この設計を選んでいる理由は何？解決したかった問題は何？」と聞く。
+使い方: 設計の背景を理解すると、応用が利くようになり暗記量が減る。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b4">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b4" data-name="topdown-learning-50-004.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">005</span><span class="ititle">小さな課題で反復練習する</span></div>
+  
+  <pre class="prompt" id="b5">理解した概念を別の小さい課題で試す
+
+前提: 概念は理解した気がするが、本当に身についたか不安。
+指示: 「今学んだ〇〇の概念を使う、別の小さい練習課題を1つ出して。ヒントは出さずに」と聞く。
+使い方: まず自分だけで解いてみて、詰まった箇所だけ後から質問する。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b5">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b5" data-name="topdown-learning-50-005.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">006</span><span class="ititle">12歳に説明させる</span></div>
+  
+  <pre class="prompt" id="b6">難しい概念を身近な例えに変換してもらう
+
+前提: 専門用語だらけの説明で、直感的に理解できていない。
+指示: 「〇〇の仕組みを、12歳の子どもに説明するときのように、身近な例えを使って説明して」と聞く。
+使い方: 例え話の中で腑に落ちない部分があれば、その部分だけさらに深掘りする。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b6">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b6" data-name="topdown-learning-50-006.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">007</span><span class="ititle">複数の選択肢を比較させる</span></div>
+  
+  <pre class="prompt" id="b7">確信が持てないときに選択肢と根拠を並べてもらう
+
+前提: 実装方法が複数考えられ、どれを選ぶべきか判断できない。
+指示: 「〇〇を実現する方法を3つ挙げて、それぞれのメリット・デメリットと、どんな場面で選ぶべきかを教えて」と聞く。
+使い方: 自分のケースに一番近い条件を伝え、最終判断の根拠を明確にする。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b7">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b7" data-name="topdown-learning-50-007.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">008</span><span class="ititle">中間状態を全部見せてもらう</span></div>
+  
+  <pre class="prompt" id="b8">処理の途中経過を省略せずに確認する
+
+前提: 最終結果だけ見せられても、途中で何が起きているか分からない。
+指示: 「このコードの実行中、変数の値がどう変化していくか、各ステップの中間状態を省略せず全部示して」と聞く。
+使い方: 想定していた値と実際の値がズレる箇所を見つけたら、そこを重点的に質問する。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b8">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b8" data-name="topdown-learning-50-008.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">009</span><span class="ititle">既存コードを読み解く</span></div>
+  
+  <pre class="prompt" id="b9">他人のコードを読むときに要点を掴む
+
+前提: 既存のコードベースを引き継いだが、全体像がつかめない。
+指示: 「このコード全体を渡すので、主要な処理の流れと、特に注意すべき箇所を教えて」と聞く。
+使い方: 全体像を把握してから、変更したい箇所だけを深掘りして質問する。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b9">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b9" data-name="topdown-learning-50-009.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">010</span><span class="ititle">改善アイデアを10個出させる</span></div>
+  
+  <pre class="prompt" id="b10">詰まったときにブレインストーミングの相手にする
+
+前提: 実装の質を上げたいが、自分だけではアイデアが尽きた。
+指示: 「このコードを渡すので、改善できそうなポイントを10個、優先度つきで挙げて」と聞く。
+使い方: 全部を採用せず、自分の目的に合うものだけを選んで実装する。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b10">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b10" data-name="topdown-learning-50-010.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<h2 class="cat">新しいツール・ソフトを学ぶとき</h2>
+<div class="icard">
+  <div class="ih"><span class="num">011</span><span class="ititle">最初の一歩だけ教えてもらう</span></div>
+  
+  <pre class="prompt" id="b11">全機能ではなく今すぐ必要な操作だけ聞く
+
+前提: 新しいツールの機能が多すぎて、どこから触ればいいか分からない。
+指示: 「〇〇というツールで、まず今日中に達成したいのは△△。そのために最低限必要な操作だけ、手順で教えて」と聞く。
+使い方: 全機能マニュアルを読む前に、まず1つのゴールだけ達成して感覚を掴む。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b11">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b11" data-name="topdown-learning-50-011.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">012</span><span class="ititle">つまずきポイントを先回りしてもらう</span></div>
+  
+  <pre class="prompt" id="b12">初心者が引っかかりやすい罠を事前に聞く
+
+前提: 新しいツールの操作で、思わぬところでつまずきたくない。
+指示: 「〇〇を初めて使う人が、よくつまずくポイントを3つ教えて。それぞれの対処法も」と聞く。
+使い方: 実際に触りながら、該当箇所に来たら注意深く進める。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b12">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b12" data-name="topdown-learning-50-012.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">013</span><span class="ititle">他ツールとの対応表を作る</span></div>
+  
+  <pre class="prompt" id="b13">使い慣れたツールと新ツールの機能を対応づける
+
+前提: 別のツールから乗り換えるので、操作の対応関係を知りたい。
+指示: 「〇〇(使い慣れたツール)でいつも使っている機能△△は、□□(新ツール)ではどれに当たる？対応表を作って」と聞く。
+使い方: 対応表を見ながら実際に操作し、違いがあれば個別に質問する。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b13">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b13" data-name="topdown-learning-50-013.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">014</span><span class="ititle">設定の意味を確認する</span></div>
+  
+  <pre class="prompt" id="b14">初期設定の各項目が何をするか理解する
+
+前提: 初期設定画面の項目の意味が分からず、とりあえずデフォルトのままにしている。
+指示: 「この設定画面のスクリーンショット(または項目名)を渡すので、それぞれの項目が何をする設定か教えて」と聞く。
+使い方: 自分の使い方に関係ない設定は後回しにし、影響の大きい設定から確認する。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b14">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b14" data-name="topdown-learning-50-014.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">015</span><span class="ititle">トラブル時の切り分け方を聞く</span></div>
+  
+  <pre class="prompt" id="b15">不具合が起きたときの確認手順を教えてもらう
+
+前提: ツールが思った通りに動かないが、何が原因か切り分けられない。
+指示: 「〇〇が期待通りに動かない。考えられる原因と、それぞれ確認する手順を教えて」と聞く。
+使い方: 確認手順を上から順に試し、原因が絞れた時点で改めて質問する。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b15">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b15" data-name="topdown-learning-50-015.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">016</span><span class="ititle">ショートカット・効率化の提案</span></div>
+  
+  <pre class="prompt" id="b16">作業を速くする使い方を聞く
+
+前提: 基本操作はできるが、毎回同じ作業に時間がかかっている。
+指示: 「〇〇で普段やっている△△という作業を、もっと速くする方法・ショートカットはある？」と聞く。
+使い方: 提案された方法を実際に試し、自分の作業に定着するまで繰り返す。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b16">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b16" data-name="topdown-learning-50-016.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">017</span><span class="ititle">公式ドキュメントの要点抽出</span></div>
+  
+  <pre class="prompt" id="b17">長いマニュアルから必要な部分だけ知る
+
+前提: 公式ドキュメントが長すぎて、全部読む時間がない。
+指示: 「このドキュメントの中で、△△を実現するために必要な部分だけ要約して」と聞く。
+使い方: 要約で足りない部分だけ、該当箇所を自分で読みに行く。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b17">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b17" data-name="topdown-learning-50-017.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">018</span><span class="ititle">失敗しても戻せる範囲を確認する</span></div>
+  
+  <pre class="prompt" id="b18">新しい操作を試す前にリスクを把握する
+
+前提: 新しい設定変更が、後で元に戻せるか不安で試せずにいる。
+指示: 「この操作(設定変更)は、後から元に戻せる？戻せない場合、事前にバックアップすべきものはある？」と聞く。
+使い方: 戻せることを確認してから、安心して色々な操作を試す。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b18">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b18" data-name="topdown-learning-50-018.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">019</span><span class="ititle">連携・自動化の可能性を聞く</span></div>
+  
+  <pre class="prompt" id="b19">他のツールと組み合わせられないか探る
+
+前提: このツール単体ではなく、他のツールと連携させて効率化したい。
+指示: 「〇〇というツールは、△△(普段使っている他のツール)と連携できる？できるなら方法も教えて」と聞く。
+使い方: 連携できる場合は、まず一番使用頻度の高い作業から自動化を試す。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b19">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b19" data-name="topdown-learning-50-019.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">020</span><span class="ititle">チームへの説明資料化</span></div>
+  
+  <pre class="prompt" id="b20">覚えたことをチームに共有する形にする
+
+前提: 自分だけでなく、チームメンバーにも使い方を伝える必要がある。
+指示: 「今日学んだ〇〇の使い方を、チームメンバー向けの簡単な手順書にまとめて」と聞く。
+使い方: 自分がつまずいた点を優先して手順書に反映し、他の人が同じ罠を避けられるようにする。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b20">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b20" data-name="topdown-learning-50-020.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<h2 class="cat">ビジネス・仕事のスキルを学ぶとき</h2>
+<div class="icard">
+  <div class="ih"><span class="num">021</span><span class="ititle">実際の案件を題材に練習する</span></div>
+  
+  <pre class="prompt" id="b21">架空の例ではなく手元の実案件で学ぶ
+
+前提: 一般論の解説では、自分の仕事にどう活かせるかイメージできない。
+指示: 「〇〇のスキルについて、今抱えているこの案件(内容を渡す)を題材に、具体的にどう使えるか教えて」と聞く。
+使い方: 教わった考え方をそのまま実案件に適用し、うまくいかない部分を再度質問する。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b21">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b21" data-name="topdown-learning-50-021.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">022</span><span class="ititle">反対意見をぶつけてもらう</span></div>
+  
+  <pre class="prompt" id="b22">自分の考えの弱点を突いてもらう
+
+前提: 自分の企画・判断に自信があるが、抜けがないか不安。
+指示: 「この企画(内容を渡す)に対して、最も鋭い反対意見・懸念点を挙げて。遠慮しなくていい」と聞く。
+使い方: 出てきた懸念点に対して、事前に反論・対策を用意しておく。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b22">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b22" data-name="topdown-learning-50-022.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">023</span><span class="ititle">業界の暗黙知を言語化してもらう</span></div>
+  
+  <pre class="prompt" id="b23">経験者しか知らない前提知識を教わる
+
+前提: 業界特有の言い回しや暗黙のルールについていけない。
+指示: 「〇〇業界で、経験者は当たり前に知っているが新人は知らないことを、思いつく限り教えて」と聞く。
+使い方: 挙げてもらった項目の中で、特に今の業務に関係あるものから深掘りする。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b23">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b23" data-name="topdown-learning-50-023.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">024</span><span class="ititle">交渉・商談のシミュレーション</span></div>
+  
+  <pre class="prompt" id="b24">本番前に想定問答を作る
+
+前提: 重要な商談・交渉の前に、相手の反応を想定しておきたい。
+指示: 「この商談(状況を渡す)で、相手から出そうな質問・反論を5つ想定して、それぞれの返し方も考えて」と聞く。
+使い方: 想定問答を声に出して練習し、自然に言えるまで繰り返す。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b24">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b24" data-name="topdown-learning-50-024.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">025</span><span class="ititle">フィードバックの深掘り</span></div>
+  
+  <pre class="prompt" id="b25">もらった指摘の本当の意図を理解する
+
+前提: 上司からのフィードバックが抽象的で、何を直せばいいか分からない。
+指示: 「〇〇というフィードバックをもらった。これが指している具体的な行動・成果物の例を教えて」と聞く。
+使い方: 具体例をもとに、次回の成果物にどう反映するか自分なりの行動計画を立てる。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b25">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b25" data-name="topdown-learning-50-025.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">026</span><span class="ititle">数字の意味を読み解く</span></div>
+  
+  <pre class="prompt" id="b26">データや指標の意味を業務文脈で理解する
+
+前提: レポートの数字を見ても、良いのか悪いのか判断がつかない。
+指示: 「この数字(データを渡す)は、〇〇業界・△△の規模の会社としては、良い水準？何と比較すべき？」と聞く。
+使い方: 比較対象を明確にしたうえで、改めて自分の状況に当てはめて評価する。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b26">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b26" data-name="topdown-learning-50-026.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">027</span><span class="ititle">失敗パターンを先に知る</span></div>
+  
+  <pre class="prompt" id="b27">同じ失敗を繰り返さないよう先回りする
+
+前提: 新しい業務に取り組む前に、よくある失敗を知っておきたい。
+指示: 「〇〇という業務で、初めての人がよくやる失敗を教えて。それぞれの回避方法も」と聞く。
+使い方: 挙げてもらった失敗パターンをチェックリスト化し、業務中に確認する。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b27">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b27" data-name="topdown-learning-50-027.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">028</span><span class="ititle">自分の説明を添削してもらう</span></div>
+  
+  <pre class="prompt" id="b28">自分で書いた説明・提案の分かりやすさを検証する
+
+前提: 自分の説明が相手に伝わっているか自信がない。
+指示: 「この説明文(自分の文章を渡す)を、初めて聞く人の立場でチェックして。分かりにくい箇所を指摘して」と聞く。
+使い方: 指摘された箇所を修正し、もう一度チェックしてもらって精度を上げる。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b28">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b28" data-name="topdown-learning-50-028.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">029</span><span class="ititle">複数の立場から考えさせる</span></div>
+  
+  <pre class="prompt" id="b29">異なる利害関係者の視点を洗い出す
+
+前提: 自分の視点だけで判断すると、見落としがありそう。
+指示: 「この施策(内容を渡す)について、経営者・現場担当者・顧客、それぞれの立場でどう見えるか教えて」と聞く。
+使い方: 各立場からの懸念点を、施策の説明資料に反映させる。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b29">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b29" data-name="topdown-learning-50-029.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">030</span><span class="ititle">学んだことを人に教える練習</span></div>
+  
+  <pre class="prompt" id="b30">理解度を確認するために説明の練習をする
+
+前提: 本当に理解したか、誰かに説明できるレベルか確かめたい。
+指示: 「今学んだ〇〇を、この分野を全く知らない同僚に説明する想定で、簡潔な説明文を作って。それを自分で声に出して説明してみる」と聞く。
+使い方: 実際に声に出して説明し、詰まった箇所を重点的に復習する。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b30">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b30" data-name="topdown-learning-50-030.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<h2 class="cat">資格・専門知識を学ぶとき</h2>
+<div class="icard">
+  <div class="ih"><span class="num">031</span><span class="ititle">過去問から逆算して学ぶ</span></div>
+  
+  <pre class="prompt" id="b31">出題傾向から必要な知識を絞り込む
+
+前提: 試験範囲が広すぎて、どこから手をつければいいか分からない。
+指示: 「この過去問(問題を渡す)を分析して、頻出する分野と、優先して学ぶべき順番を教えて」と聞く。
+使い方: 優先順位の高い分野から着手し、後回しでよい分野は最後に回す。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b31">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b31" data-name="topdown-learning-50-031.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">032</span><span class="ititle">間違えた問題の背景知識を深掘り</span></div>
+  
+  <pre class="prompt" id="b32">誤答の理由を根本から理解する
+
+前提: 問題を間違えたが、なぜ間違えたのか分からないまま次に進んでいる。
+指示: 「この問題(問題と自分の解答を渡す)を間違えた。正解に至るための考え方と、自分の解答のどこがズレていたか教えて」と聞く。
+使い方: 同じ間違え方をしていないか、類似問題で確認する。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b32">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b32" data-name="topdown-learning-50-032.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">033</span><span class="ititle">公式・定義の直感的理解</span></div>
+  
+  <pre class="prompt" id="b33">丸暗記になっている公式の意味を理解する
+
+前提: 公式は覚えているが、なぜその形になるのか分からない。
+指示: 「この公式(公式を渡す)が、なぜこの形になるのか、直感的な理由を教えて。図や例えも使って」と聞く。
+使い方: 直感的理解ができたら、公式を見ずに自力で導出できるか試す。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b33">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b33" data-name="topdown-learning-50-033.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">034</span><span class="ititle">暗記カード形式に変換</span></div>
+  
+  <pre class="prompt" id="b34">覚えるべき知識を反復学習しやすい形にする
+
+前提: 覚えるべき用語・定義が多く、整理できていない。
+指示: 「このテキスト範囲(範囲を渡す)から、覚えるべき用語と定義を、一問一答形式のカードにして」と聞く。
+使い方: 作ったカードを繰り返し使い、間違えたものだけ後で復習する。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b34">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b34" data-name="topdown-learning-50-034.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">035</span><span class="ititle">類似概念の違いを比較</span></div>
+  
+  <pre class="prompt" id="b35">混同しやすい用語を並べて整理する
+
+前提: 似たような専門用語が多く、違いがあやふやになっている。
+指示: 「〇〇と△△は何が違うの？共通点と相違点を表にして」と聞く。
+使い方: 表を見ながら、それぞれが使われる具体的な場面を1つずつ挙げてもらう。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b35">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b35" data-name="topdown-learning-50-035.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">036</span><span class="ititle">実務での使われ方を確認</span></div>
+  
+  <pre class="prompt" id="b36">知識が実際の場面でどう使われるか理解する
+
+前提: 試験範囲の知識が、実務でどう役立つのかイメージできない。
+指示: 「〇〇という知識は、実際の仕事のどんな場面で使われる？具体例を教えて」と聞く。
+使い方: 実務例と結びつけて覚えることで、記憶の定着を図る。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b36">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b36" data-name="topdown-learning-50-036.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">037</span><span class="ititle">弱点分野の診断</span></div>
+  
+  <pre class="prompt" id="b37">自分がどこを苦手にしているか把握する
+
+前提: 何となく苦手意識はあるが、具体的にどこが弱いか分からない。
+指示: 「この分野(範囲を渡す)について、いくつか質問するので答えを見て、私の理解が弱い箇所を診断して」と聞く。
+使い方: 弱点と診断された分野を優先的に復習時間に充てる。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b37">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b37" data-name="topdown-learning-50-037.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">038</span><span class="ititle">学習スケジュールの逆算</span></div>
+  
+  <pre class="prompt" id="b38">試験日から逆算して学習計画を立てる
+
+前提: 試験までの残り期間で、何をどのペースで進めればいいか分からない。
+指示: 「試験日は〇月〇日。残りの学習範囲は△△。逆算して週単位の学習計画を立てて」と聞く。
+使い方: 計画通りに進んでいるか週次で確認し、遅れていれば計画を調整する。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b38">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b38" data-name="topdown-learning-50-038.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">039</span><span class="ititle">記述式問題の添削</span></div>
+  
+  <pre class="prompt" id="b39">自分で書いた解答を採点基準に照らして添削してもらう
+
+前提: 記述式の問題で、何が加点・減点されるか分からない。
+指示: 「この問題(問題を渡す)に対する私の解答(解答を渡す)を、模範解答の観点で添削して」と聞く。
+使い方: 指摘された不足点を意識して、別の問題でも同じ観点を盛り込む練習をする。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b39">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b39" data-name="topdown-learning-50-039.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">040</span><span class="ititle">最新の改定・変更点の確認</span></div>
+  
+  <pre class="prompt" id="b40">制度や基準の最新の変更点を把握する
+
+前提: 資格・制度が改定されていて、古い情報のまま学習していないか不安。
+指示: 「〇〇という資格・制度について、直近で変更された点があれば教えて」と聞く。
+使い方: 変更点が見つかった場合は、必ず公式発表元で最終確認する。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b40">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b40" data-name="topdown-learning-50-040.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<h2 class="cat">学び方そのものを深める(メタ学習)</h2>
+<div class="icard">
+  <div class="ih"><span class="num">041</span><span class="ititle">分からないことを言語化する練習</span></div>
+  
+  <pre class="prompt" id="b41">漠然とした「分からない」を具体化する
+
+前提: 「何となく分からない」状態で、何を質問すべきか自体が分からない。
+指示: 「〇〇について勉強しているが、うまく言葉にできないモヤモヤがある(状況を説明)。考えられる疑問点を、私の代わりに5つ言語化して」と聞く。
+使い方: 挙げてもらった疑問点の中から、一番自分の感覚に近いものを選んで深掘りする。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b41">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b41" data-name="topdown-learning-50-041.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">042</span><span class="ititle">理解の「カチッ」を意識する</span></div>
+  
+  <pre class="prompt" id="b42">腑に落ちた瞬間を自覚する練習をする
+
+前提: 分かった気になって次に進み、後で理解不足に気づくことが多い。
+指示: 「〇〇について説明するので、私が『分かった』と言ったら、本当に理解できているか確認する質問を1つ返して」と聞く。
+使い方: 確認質問に答えられなければ、分かった気になっていただけと判断し戻って学び直す。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b42">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b42" data-name="topdown-learning-50-042.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">043</span><span class="ititle">知識のギャップを可視化</span></div>
+  
+  <pre class="prompt" id="b43">自分が知らないことの地図を作る
+
+前提: 学ぶべき範囲の全体像が見えず、穴だらけのまま進んでいる。
+指示: 「〇〇という分野の全体像を、知っておくべきトピックの一覧として見せて。その中で私が知らなそうな部分を推測して」と聞く。
+使い方: 挙げてもらった一覧をチェックリストにし、埋まっていないところから着手する。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b43">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b43" data-name="topdown-learning-50-043.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">044</span><span class="ititle">再帰的に深掘りする質問の型</span></div>
+  
+  <pre class="prompt" id="b44">1つの答えからさらに疑問を広げる練習
+
+前提: 1回質問して満足してしまい、理解が浅いまま終わっている。
+指示: 「〇〇について説明して。説明の中で、私がさらに突っ込んで聞くべき箇所があれば教えて」と聞く。
+使い方: 提示された「さらに聞くべき箇所」を実際に質問し、理解が浅い部分を潰していく。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b44">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b44" data-name="topdown-learning-50-044.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">045</span><span class="ititle">学んだ内容を説明し返す</span></div>
+  
+  <pre class="prompt" id="b45">インプットした内容をアウトプットして定着させる
+
+前提: 読んだり聞いたりしただけで、身についた実感がない。
+指示: 「今説明してもらった〇〇について、私なりの理解を説明するので、正しいか、抜けはないか判定して」と聞く。
+使い方: 指摘された抜けを補って、もう一度自分の言葉で説明し直す。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b45">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b45" data-name="topdown-learning-50-045.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">046</span><span class="ititle">最短ルートを逆算する</span></div>
+  
+  <pre class="prompt" id="b46">目標から必要な学習だけを絞り込む
+
+前提: 手当たり次第に勉強していて、目標に対して遠回りしている気がする。
+指示: 「最終的に〇〇ができるようになりたい。今の自分のレベル(状況を渡す)から、最短で到達するために、本当に必要な学習だけを教えて」と聞く。
+使い方: 提示された最短ルート以外の学習は、後回しにする勇気を持つ。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b46">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b46" data-name="topdown-learning-50-046.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">047</span><span class="ititle">プレッシャーのある状況を作る</span></div>
+  
+  <pre class="prompt" id="b47">現実の締切・課題を学習のきっかけにする
+
+前提: プレッシャーがないと本気で学習に取り組めない。
+指示: 「〇〇を学ぶために、現実の締切がある小さな課題(納品物・発表など)を1つ提案して」と聞く。
+使い方: 提案された課題に実際の期限を設定し、逃げられない状況を作る。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b47">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b47" data-name="topdown-learning-50-047.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">048</span><span class="ititle">助言を取捨選択する基準を作る</span></div>
+  
+  <pre class="prompt" id="b48">もらった助言を鵜呑みにせず判断する
+
+前提: 色々な人からアドバイスをもらうが、誰の意見を信じるべきか迷う。
+指示: 「〇〇について、こういうアドバイスをもらった(内容を渡す)。このアドバイスをくれた人の立場・インセンティブを踏まえると、どう解釈すべき？」と聞く。
+使い方: 自分の状況と重ならない助言は、参考程度に留めて鵜呑みにしない。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b48">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b48" data-name="topdown-learning-50-048.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">049</span><span class="ititle">小さな実績を可視化する</span></div>
+  
+  <pre class="prompt" id="b49">自信をつけるために成長の跡を記録する
+
+前提: 学習を続けているが、成長している実感が持てない。
+指示: 「1ヶ月前の自分と今の自分を比べて、〇〇についてできるようになったことを、私とのやり取りから振り返って教えて」と聞く。
+使い方: 振り返りで見つかった成長を記録しておき、モチベーションが落ちたときに読み返す。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b49">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b49" data-name="topdown-learning-50-049.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">050</span><span class="ititle">次に学ぶべきことを提案してもらう</span></div>
+  
+  <pre class="prompt" id="b50">現在地から次のステップを明確にする
+
+前提: ひとつの学習が終わったが、次に何を学ぶべきか分からない。
+指示: 「〇〇を学び終えた。今の私のレベルから見て、次に学ぶと効果が高いことを3つ提案して、理由も教えて」と聞く。
+使い方: 提案の中から自分の目標に一番近いものを選び、次の学習テーマにする。
+
+
+以上、50個です。内訳: 技術・プログラミングを学ぶとき10件、新しいツール・ソフトを学ぶとき10件、ビジネス・仕事のスキルを学ぶとき10件、資格・専門知識を学ぶとき10件、学び方そのものを深める(メタ学習)10件。
+
+```
+
+**ポイント**: 1つの質問で終わらせず、返ってきた答えにさらに疑問を重ねることで「トップダウン学習」の効果が最大化します。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b50">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b50" data-name="topdown-learning-50-050.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+
+  <section class="epctx">
+  <p class="epctx-label">この動画のほかのプレゼント</p>
+  <div class="ep-kits"><a class="kchip" href="../agent-prompts-100/"><span class="kt">AIエージェント丸投げ指示文100選</span><span class="badge">100個</span><span class="go">開く →</span></a></div>
+</section>
+
+  <footer><a href="../../">← AIエージェント / Kawaru プレゼント図書館にもどる</a></footer>
+</div>
+
+<pre id="pfull" class="hidden"># 🎁 トップダウン学習 深掘り質問プロンプト50
+
+Gabriel Petersson氏の「問題から入り、AIに聞き倒しながら知識を補っていく」学習法(トップダウン学習)をもとにした、AIで何かを学ぶときの質問テンプレート50本です。
+
+**受け取り方**: 下のコードブロック右上のコピーボタンでコピーするか、このファイルをそのままダウンロードしてください。
+
+**使い方**: 学びたいテーマの「〇〇」の部分を書き換えて、ChatGPTやClaudeなど普段使っているAIに聞いてみてください。
+
+```text
+# トップダウン学習 深掘り質問プロンプト50
+
+## 技術・プログラミングを学ぶとき
+
+### 1. 動くコードから理解する
+まず動くコードを書かせてから、中身を理解する
+
+前提: 新しいプログラミング言語やフレームワークを、教科書からではなく実物から学びたい。
+指示: 「〇〇(作りたいもの)を動くコードで書いて。その後、各行が何をしているか、初心者にも分かるように説明して」と聞く。
+使い方: 動いたコードを実際に少し変更してみて、想定通りに動くか確認しながら理解を深める。
+
+### 2. なぜそう書くのかを聞く
+慣習的な書き方の理由を掘り下げる
+
+前提: サンプルコードに出てきた書き方の意味が分からないまま使っている。
+指示: 「このコードの〇〇の部分は、なぜこう書く必要があるの？他の書き方ではダメな理由も含めて教えて」と聞く。
+使い方: 「他の書き方ではダメな理由」まで聞くことで、表面的な暗記で終わらせない。
+
+### 3. エラーの原因を推理させる
+エラーメッセージから原因を一緒に特定する
+
+前提: エラーが出たが、メッセージの意味が分からず対処できない。
+指示: 「このエラーメッセージが出た。考えられる原因を可能性が高い順に3つ挙げて、それぞれの確認方法も教えて」と聞く。
+使い方: 一番可能性が高いものから順に自分で確認し、原因特定のプロセス自体を学ぶ。
+
+### 4. 設計思想の背景を聞く
+そのツール・言語がなぜその設計になっているか理解する
+
+前提: フレームワークの独特なルールに納得できず、丸暗記になっている。
+指示: 「〇〇というフレームワークが、この設計を選んでいる理由は何？解決したかった問題は何？」と聞く。
+使い方: 設計の背景を理解すると、応用が利くようになり暗記量が減る。
+
+### 5. 小さな課題で反復練習する
+理解した概念を別の小さい課題で試す
+
+前提: 概念は理解した気がするが、本当に身についたか不安。
+指示: 「今学んだ〇〇の概念を使う、別の小さい練習課題を1つ出して。ヒントは出さずに」と聞く。
+使い方: まず自分だけで解いてみて、詰まった箇所だけ後から質問する。
+
+### 6. 12歳に説明させる
+難しい概念を身近な例えに変換してもらう
+
+前提: 専門用語だらけの説明で、直感的に理解できていない。
+指示: 「〇〇の仕組みを、12歳の子どもに説明するときのように、身近な例えを使って説明して」と聞く。
+使い方: 例え話の中で腑に落ちない部分があれば、その部分だけさらに深掘りする。
+
+### 7. 複数の選択肢を比較させる
+確信が持てないときに選択肢と根拠を並べてもらう
+
+前提: 実装方法が複数考えられ、どれを選ぶべきか判断できない。
+指示: 「〇〇を実現する方法を3つ挙げて、それぞれのメリット・デメリットと、どんな場面で選ぶべきかを教えて」と聞く。
+使い方: 自分のケースに一番近い条件を伝え、最終判断の根拠を明確にする。
+
+### 8. 中間状態を全部見せてもらう
+処理の途中経過を省略せずに確認する
+
+前提: 最終結果だけ見せられても、途中で何が起きているか分からない。
+指示: 「このコードの実行中、変数の値がどう変化していくか、各ステップの中間状態を省略せず全部示して」と聞く。
+使い方: 想定していた値と実際の値がズレる箇所を見つけたら、そこを重点的に質問する。
+
+### 9. 既存コードを読み解く
+他人のコードを読むときに要点を掴む
+
+前提: 既存のコードベースを引き継いだが、全体像がつかめない。
+指示: 「このコード全体を渡すので、主要な処理の流れと、特に注意すべき箇所を教えて」と聞く。
+使い方: 全体像を把握してから、変更したい箇所だけを深掘りして質問する。
+
+### 10. 改善アイデアを10個出させる
+詰まったときにブレインストーミングの相手にする
+
+前提: 実装の質を上げたいが、自分だけではアイデアが尽きた。
+指示: 「このコードを渡すので、改善できそうなポイントを10個、優先度つきで挙げて」と聞く。
+使い方: 全部を採用せず、自分の目的に合うものだけを選んで実装する。
+
+## 新しいツール・ソフトを学ぶとき
+
+### 11. 最初の一歩だけ教えてもらう
+全機能ではなく今すぐ必要な操作だけ聞く
+
+前提: 新しいツールの機能が多すぎて、どこから触ればいいか分からない。
+指示: 「〇〇というツールで、まず今日中に達成したいのは△△。そのために最低限必要な操作だけ、手順で教えて」と聞く。
+使い方: 全機能マニュアルを読む前に、まず1つのゴールだけ達成して感覚を掴む。
+
+### 12. つまずきポイントを先回りしてもらう
+初心者が引っかかりやすい罠を事前に聞く
+
+前提: 新しいツールの操作で、思わぬところでつまずきたくない。
+指示: 「〇〇を初めて使う人が、よくつまずくポイントを3つ教えて。それぞれの対処法も」と聞く。
+使い方: 実際に触りながら、該当箇所に来たら注意深く進める。
+
+### 13. 他ツールとの対応表を作る
+使い慣れたツールと新ツールの機能を対応づける
+
+前提: 別のツールから乗り換えるので、操作の対応関係を知りたい。
+指示: 「〇〇(使い慣れたツール)でいつも使っている機能△△は、□□(新ツール)ではどれに当たる？対応表を作って」と聞く。
+使い方: 対応表を見ながら実際に操作し、違いがあれば個別に質問する。
+
+### 14. 設定の意味を確認する
+初期設定の各項目が何をするか理解する
+
+前提: 初期設定画面の項目の意味が分からず、とりあえずデフォルトのままにしている。
+指示: 「この設定画面のスクリーンショット(または項目名)を渡すので、それぞれの項目が何をする設定か教えて」と聞く。
+使い方: 自分の使い方に関係ない設定は後回しにし、影響の大きい設定から確認する。
+
+### 15. トラブル時の切り分け方を聞く
+不具合が起きたときの確認手順を教えてもらう
+
+前提: ツールが思った通りに動かないが、何が原因か切り分けられない。
+指示: 「〇〇が期待通りに動かない。考えられる原因と、それぞれ確認する手順を教えて」と聞く。
+使い方: 確認手順を上から順に試し、原因が絞れた時点で改めて質問する。
+
+### 16. ショートカット・効率化の提案
+作業を速くする使い方を聞く
+
+前提: 基本操作はできるが、毎回同じ作業に時間がかかっている。
+指示: 「〇〇で普段やっている△△という作業を、もっと速くする方法・ショートカットはある？」と聞く。
+使い方: 提案された方法を実際に試し、自分の作業に定着するまで繰り返す。
+
+### 17. 公式ドキュメントの要点抽出
+長いマニュアルから必要な部分だけ知る
+
+前提: 公式ドキュメントが長すぎて、全部読む時間がない。
+指示: 「このドキュメントの中で、△△を実現するために必要な部分だけ要約して」と聞く。
+使い方: 要約で足りない部分だけ、該当箇所を自分で読みに行く。
+
+### 18. 失敗しても戻せる範囲を確認する
+新しい操作を試す前にリスクを把握する
+
+前提: 新しい設定変更が、後で元に戻せるか不安で試せずにいる。
+指示: 「この操作(設定変更)は、後から元に戻せる？戻せない場合、事前にバックアップすべきものはある？」と聞く。
+使い方: 戻せることを確認してから、安心して色々な操作を試す。
+
+### 19. 連携・自動化の可能性を聞く
+他のツールと組み合わせられないか探る
+
+前提: このツール単体ではなく、他のツールと連携させて効率化したい。
+指示: 「〇〇というツールは、△△(普段使っている他のツール)と連携できる？できるなら方法も教えて」と聞く。
+使い方: 連携できる場合は、まず一番使用頻度の高い作業から自動化を試す。
+
+### 20. チームへの説明資料化
+覚えたことをチームに共有する形にする
+
+前提: 自分だけでなく、チームメンバーにも使い方を伝える必要がある。
+指示: 「今日学んだ〇〇の使い方を、チームメンバー向けの簡単な手順書にまとめて」と聞く。
+使い方: 自分がつまずいた点を優先して手順書に反映し、他の人が同じ罠を避けられるようにする。
+
+## ビジネス・仕事のスキルを学ぶとき
+
+### 21. 実際の案件を題材に練習する
+架空の例ではなく手元の実案件で学ぶ
+
+前提: 一般論の解説では、自分の仕事にどう活かせるかイメージできない。
+指示: 「〇〇のスキルについて、今抱えているこの案件(内容を渡す)を題材に、具体的にどう使えるか教えて」と聞く。
+使い方: 教わった考え方をそのまま実案件に適用し、うまくいかない部分を再度質問する。
+
+### 22. 反対意見をぶつけてもらう
+自分の考えの弱点を突いてもらう
+
+前提: 自分の企画・判断に自信があるが、抜けがないか不安。
+指示: 「この企画(内容を渡す)に対して、最も鋭い反対意見・懸念点を挙げて。遠慮しなくていい」と聞く。
+使い方: 出てきた懸念点に対して、事前に反論・対策を用意しておく。
+
+### 23. 業界の暗黙知を言語化してもらう
+経験者しか知らない前提知識を教わる
+
+前提: 業界特有の言い回しや暗黙のルールについていけない。
+指示: 「〇〇業界で、経験者は当たり前に知っているが新人は知らないことを、思いつく限り教えて」と聞く。
+使い方: 挙げてもらった項目の中で、特に今の業務に関係あるものから深掘りする。
+
+### 24. 交渉・商談のシミュレーション
+本番前に想定問答を作る
+
+前提: 重要な商談・交渉の前に、相手の反応を想定しておきたい。
+指示: 「この商談(状況を渡す)で、相手から出そうな質問・反論を5つ想定して、それぞれの返し方も考えて」と聞く。
+使い方: 想定問答を声に出して練習し、自然に言えるまで繰り返す。
+
+### 25. フィードバックの深掘り
+もらった指摘の本当の意図を理解する
+
+前提: 上司からのフィードバックが抽象的で、何を直せばいいか分からない。
+指示: 「〇〇というフィードバックをもらった。これが指している具体的な行動・成果物の例を教えて」と聞く。
+使い方: 具体例をもとに、次回の成果物にどう反映するか自分なりの行動計画を立てる。
+
+### 26. 数字の意味を読み解く
+データや指標の意味を業務文脈で理解する
+
+前提: レポートの数字を見ても、良いのか悪いのか判断がつかない。
+指示: 「この数字(データを渡す)は、〇〇業界・△△の規模の会社としては、良い水準？何と比較すべき？」と聞く。
+使い方: 比較対象を明確にしたうえで、改めて自分の状況に当てはめて評価する。
+
+### 27. 失敗パターンを先に知る
+同じ失敗を繰り返さないよう先回りする
+
+前提: 新しい業務に取り組む前に、よくある失敗を知っておきたい。
+指示: 「〇〇という業務で、初めての人がよくやる失敗を教えて。それぞれの回避方法も」と聞く。
+使い方: 挙げてもらった失敗パターンをチェックリスト化し、業務中に確認する。
+
+### 28. 自分の説明を添削してもらう
+自分で書いた説明・提案の分かりやすさを検証する
+
+前提: 自分の説明が相手に伝わっているか自信がない。
+指示: 「この説明文(自分の文章を渡す)を、初めて聞く人の立場でチェックして。分かりにくい箇所を指摘して」と聞く。
+使い方: 指摘された箇所を修正し、もう一度チェックしてもらって精度を上げる。
+
+### 29. 複数の立場から考えさせる
+異なる利害関係者の視点を洗い出す
+
+前提: 自分の視点だけで判断すると、見落としがありそう。
+指示: 「この施策(内容を渡す)について、経営者・現場担当者・顧客、それぞれの立場でどう見えるか教えて」と聞く。
+使い方: 各立場からの懸念点を、施策の説明資料に反映させる。
+
+### 30. 学んだことを人に教える練習
+理解度を確認するために説明の練習をする
+
+前提: 本当に理解したか、誰かに説明できるレベルか確かめたい。
+指示: 「今学んだ〇〇を、この分野を全く知らない同僚に説明する想定で、簡潔な説明文を作って。それを自分で声に出して説明してみる」と聞く。
+使い方: 実際に声に出して説明し、詰まった箇所を重点的に復習する。
+
+## 資格・専門知識を学ぶとき
+
+### 31. 過去問から逆算して学ぶ
+出題傾向から必要な知識を絞り込む
+
+前提: 試験範囲が広すぎて、どこから手をつければいいか分からない。
+指示: 「この過去問(問題を渡す)を分析して、頻出する分野と、優先して学ぶべき順番を教えて」と聞く。
+使い方: 優先順位の高い分野から着手し、後回しでよい分野は最後に回す。
+
+### 32. 間違えた問題の背景知識を深掘り
+誤答の理由を根本から理解する
+
+前提: 問題を間違えたが、なぜ間違えたのか分からないまま次に進んでいる。
+指示: 「この問題(問題と自分の解答を渡す)を間違えた。正解に至るための考え方と、自分の解答のどこがズレていたか教えて」と聞く。
+使い方: 同じ間違え方をしていないか、類似問題で確認する。
+
+### 33. 公式・定義の直感的理解
+丸暗記になっている公式の意味を理解する
+
+前提: 公式は覚えているが、なぜその形になるのか分からない。
+指示: 「この公式(公式を渡す)が、なぜこの形になるのか、直感的な理由を教えて。図や例えも使って」と聞く。
+使い方: 直感的理解ができたら、公式を見ずに自力で導出できるか試す。
+
+### 34. 暗記カード形式に変換
+覚えるべき知識を反復学習しやすい形にする
+
+前提: 覚えるべき用語・定義が多く、整理できていない。
+指示: 「このテキスト範囲(範囲を渡す)から、覚えるべき用語と定義を、一問一答形式のカードにして」と聞く。
+使い方: 作ったカードを繰り返し使い、間違えたものだけ後で復習する。
+
+### 35. 類似概念の違いを比較
+混同しやすい用語を並べて整理する
+
+前提: 似たような専門用語が多く、違いがあやふやになっている。
+指示: 「〇〇と△△は何が違うの？共通点と相違点を表にして」と聞く。
+使い方: 表を見ながら、それぞれが使われる具体的な場面を1つずつ挙げてもらう。
+
+### 36. 実務での使われ方を確認
+知識が実際の場面でどう使われるか理解する
+
+前提: 試験範囲の知識が、実務でどう役立つのかイメージできない。
+指示: 「〇〇という知識は、実際の仕事のどんな場面で使われる？具体例を教えて」と聞く。
+使い方: 実務例と結びつけて覚えることで、記憶の定着を図る。
+
+### 37. 弱点分野の診断
+自分がどこを苦手にしているか把握する
+
+前提: 何となく苦手意識はあるが、具体的にどこが弱いか分からない。
+指示: 「この分野(範囲を渡す)について、いくつか質問するので答えを見て、私の理解が弱い箇所を診断して」と聞く。
+使い方: 弱点と診断された分野を優先的に復習時間に充てる。
+
+### 38. 学習スケジュールの逆算
+試験日から逆算して学習計画を立てる
+
+前提: 試験までの残り期間で、何をどのペースで進めればいいか分からない。
+指示: 「試験日は〇月〇日。残りの学習範囲は△△。逆算して週単位の学習計画を立てて」と聞く。
+使い方: 計画通りに進んでいるか週次で確認し、遅れていれば計画を調整する。
+
+### 39. 記述式問題の添削
+自分で書いた解答を採点基準に照らして添削してもらう
+
+前提: 記述式の問題で、何が加点・減点されるか分からない。
+指示: 「この問題(問題を渡す)に対する私の解答(解答を渡す)を、模範解答の観点で添削して」と聞く。
+使い方: 指摘された不足点を意識して、別の問題でも同じ観点を盛り込む練習をする。
+
+### 40. 最新の改定・変更点の確認
+制度や基準の最新の変更点を把握する
+
+前提: 資格・制度が改定されていて、古い情報のまま学習していないか不安。
+指示: 「〇〇という資格・制度について、直近で変更された点があれば教えて」と聞く。
+使い方: 変更点が見つかった場合は、必ず公式発表元で最終確認する。
+
+## 学び方そのものを深める(メタ学習)
+
+### 41. 分からないことを言語化する練習
+漠然とした「分からない」を具体化する
+
+前提: 「何となく分からない」状態で、何を質問すべきか自体が分からない。
+指示: 「〇〇について勉強しているが、うまく言葉にできないモヤモヤがある(状況を説明)。考えられる疑問点を、私の代わりに5つ言語化して」と聞く。
+使い方: 挙げてもらった疑問点の中から、一番自分の感覚に近いものを選んで深掘りする。
+
+### 42. 理解の「カチッ」を意識する
+腑に落ちた瞬間を自覚する練習をする
+
+前提: 分かった気になって次に進み、後で理解不足に気づくことが多い。
+指示: 「〇〇について説明するので、私が『分かった』と言ったら、本当に理解できているか確認する質問を1つ返して」と聞く。
+使い方: 確認質問に答えられなければ、分かった気になっていただけと判断し戻って学び直す。
+
+### 43. 知識のギャップを可視化
+自分が知らないことの地図を作る
+
+前提: 学ぶべき範囲の全体像が見えず、穴だらけのまま進んでいる。
+指示: 「〇〇という分野の全体像を、知っておくべきトピックの一覧として見せて。その中で私が知らなそうな部分を推測して」と聞く。
+使い方: 挙げてもらった一覧をチェックリストにし、埋まっていないところから着手する。
+
+### 44. 再帰的に深掘りする質問の型
+1つの答えからさらに疑問を広げる練習
+
+前提: 1回質問して満足してしまい、理解が浅いまま終わっている。
+指示: 「〇〇について説明して。説明の中で、私がさらに突っ込んで聞くべき箇所があれば教えて」と聞く。
+使い方: 提示された「さらに聞くべき箇所」を実際に質問し、理解が浅い部分を潰していく。
+
+### 45. 学んだ内容を説明し返す
+インプットした内容をアウトプットして定着させる
+
+前提: 読んだり聞いたりしただけで、身についた実感がない。
+指示: 「今説明してもらった〇〇について、私なりの理解を説明するので、正しいか、抜けはないか判定して」と聞く。
+使い方: 指摘された抜けを補って、もう一度自分の言葉で説明し直す。
+
+### 46. 最短ルートを逆算する
+目標から必要な学習だけを絞り込む
+
+前提: 手当たり次第に勉強していて、目標に対して遠回りしている気がする。
+指示: 「最終的に〇〇ができるようになりたい。今の自分のレベル(状況を渡す)から、最短で到達するために、本当に必要な学習だけを教えて」と聞く。
+使い方: 提示された最短ルート以外の学習は、後回しにする勇気を持つ。
+
+### 47. プレッシャーのある状況を作る
+現実の締切・課題を学習のきっかけにする
+
+前提: プレッシャーがないと本気で学習に取り組めない。
+指示: 「〇〇を学ぶために、現実の締切がある小さな課題(納品物・発表など)を1つ提案して」と聞く。
+使い方: 提案された課題に実際の期限を設定し、逃げられない状況を作る。
+
+### 48. 助言を取捨選択する基準を作る
+もらった助言を鵜呑みにせず判断する
+
+前提: 色々な人からアドバイスをもらうが、誰の意見を信じるべきか迷う。
+指示: 「〇〇について、こういうアドバイスをもらった(内容を渡す)。このアドバイスをくれた人の立場・インセンティブを踏まえると、どう解釈すべき？」と聞く。
+使い方: 自分の状況と重ならない助言は、参考程度に留めて鵜呑みにしない。
+
+### 49. 小さな実績を可視化する
+自信をつけるために成長の跡を記録する
+
+前提: 学習を続けているが、成長している実感が持てない。
+指示: 「1ヶ月前の自分と今の自分を比べて、〇〇についてできるようになったことを、私とのやり取りから振り返って教えて」と聞く。
+使い方: 振り返りで見つかった成長を記録しておき、モチベーションが落ちたときに読み返す。
+
+### 50. 次に学ぶべきことを提案してもらう
+現在地から次のステップを明確にする
+
+前提: ひとつの学習が終わったが、次に何を学ぶべきか分からない。
+指示: 「〇〇を学び終えた。今の私のレベルから見て、次に学ぶと効果が高いことを3つ提案して、理由も教えて」と聞く。
+使い方: 提案の中から自分の目標に一番近いものを選び、次の学習テーマにする。
+
+
+以上、50個です。内訳: 技術・プログラミングを学ぶとき10件、新しいツール・ソフトを学ぶとき10件、ビジネス・仕事のスキルを学ぶとき10件、資格・専門知識を学ぶとき10件、学び方そのものを深める(メタ学習)10件。
+
+```
+
+**ポイント**: 1つの質問で終わらせず、返ってきた答えにさらに疑問を重ねることで「トップダウン学習」の効果が最大化します。
+</pre>
+<script>
+function flash(btn, label){
+  const old = btn.textContent, cls = btn.className;
+  btn.textContent = label; btn.classList.add('ok');
+  setTimeout(() => { btn.textContent = old; btn.className = cls; }, 1600);
+}
+function textOf(id){ return document.getElementById(id).textContent; }
+
+async function copyText(btn, id){
+  const t = textOf(id);
+  try {
+    await navigator.clipboard.writeText(t);
+  } catch (e) {
+    const ta = document.createElement('textarea');
+    ta.value = t; ta.style.position='fixed'; ta.style.opacity='0';
+    document.body.appendChild(ta); ta.select();
+    document.execCommand('copy'); ta.remove();
+  }
+  flash(btn, '✓ コピーしました');
+}
+
+function saveText(btn, id, name){
+  const blob = new Blob([textOf(id)], {type:'text/plain;charset=utf-8'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = name;
+  document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+  if (btn) flash(btn, '✓ 保存しました');
+}
+
+document.addEventListener('click', e => {
+  const b = e.target.closest('[data-copy]');
+  if (b) { copyText(b, b.dataset.copy); return; }
+  const d = e.target.closest('[data-save]');
+  if (d) { saveText(d, d.dataset.save, d.dataset.name); }
+});
+</script>
+</body></html>

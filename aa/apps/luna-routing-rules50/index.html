@@ -1,0 +1,1064 @@
+<!doctype html>
+<html lang="ja"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Luna前提 モデル振り分けルール50本 — Kawaru Gifts</title>
+<meta name="description" content="AGENTS.md・CLAUDE.md などのプロジェクト設定ファイルに貼り付けておくと、AI側が「この仕事はLuna、これはTerra、ここはSol」と自分で振り分け、推論設定まで判断してくれるようになるルール文の集まりです。人が毎回選ぶのをやめて、設定に判断を持たせるための50本です。">
+<link rel="icon" href="data:image/png;base64,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">
+<link rel="stylesheet" href="../../assets/site.css">
+</head><body>
+<header class="kh"><div class="top">
+  <a class="back" href="../../">← 一覧へ</a>
+  <img src="data:image/png;base64,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" alt="">
+  <h1>Luna前提 モデル振り分けルール50本</h1>
+  <span class="badge">50個</span>
+  <button class="btn sm" style="margin-left:auto" data-save="pfull" data-name="luna-routing-rules50.md">⬇ 全件ダウンロード</button>
+</div></header>
+
+<div class="kwrap">
+  <section class="epctx epctx-top">
+  <div class="ep-thumb epctx-thumb"><img src="https://i.ytimg.com/vi/S2GfN8h4PZA/hqdefault.jpg" alt=""></div>
+  <div>
+    <p class="epctx-label">この動画のプレゼントです</p>
+    <p class="epctx-title">GPT-5.6 Luna過小評価されすぎ</p>
+    <p class="epctx-date">2026-08-09</p>
+    <a class="watch" href="https://www.youtube.com/watch?v=S2GfN8h4PZA" target="_blank" rel="noopener">▶ 動画を見る</a>
+  </div>
+</section>
+
+  <section class="kintro">
+    <h2>Luna前提 モデル振り分けルール50本</h2>
+    <p>AGENTS.md・<span class="nb">CLAUDE.md などの</span><span class="nb">プロジェクト設定ファイルに</span><span class="nb">貼り付けておくと、</span><span class="nb">AI側が</span><span class="nb">「この仕事はLuna、</span><span class="nb">これはTerra、</span><span class="nb">ここはSol」と自分で振り分け、</span><span class="nb">推論設定まで</span><span class="nb">判断してくれるようになるルール文の</span><span class="nb">集まりです。</span><span class="nb">人が毎回選ぶのをやめて、</span><span class="nb">設定に判断を持たせるための50本で</span><span class="nb">す。</span></p>
+    <div class="kmeta"><span>プロンプト集</span><span>収録 50個</span><span>No.82 GPT-5.6 Luna過小評価されすぎ</span><span>2026-08-02 配布</span></div>
+    <div class="pnote"><span class="nb">下のカードから、</span><span class="nb">1件ずつコピー、</span><span class="nb">または個別にダウンロードできます。</span><span class="nb">まとめて欲しいときは、</span><span class="nb">上の</span><span class="nb">「全件ダウンロード」を</span><span class="nb">お使いください。</span></div>
+  </section>
+
+  <h2 class="cat">仕事の振り分け（どの階層に出すか）</h2>
+<div class="icard">
+  <div class="ih"><span class="num">001</span><span class="ititle">仕様が固まっている実装は最安の階層に回す</span></div>
+  
+  <pre class="prompt" id="b1">前提: 受け入れ条件・入出力・テスト観点が文章で確定している実装タスク。
+指示: この条件を満たすタスクは既定でLunaに割り当て、上位モデルへ上げないこと。上げる場合は「どの条件が確定していなかったか」を先に1行で述べてから上げること。
+出力形式: 着手前に「担当: Luna / 理由: 仕様確定済み」の1行を出してから作業を始めて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b1">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b1" data-name="luna-routing-rules50-001.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">002</span><span class="ititle">要件が曖昧なうちは最上位で設計だけ済ませる</span></div>
+  
+  <pre class="prompt" id="b2">前提: やりたいことは決まっているが、入出力・優先順位・例外の扱いが未確定なタスク。
+指示: この段階ではSolを使い、実装には入らず「決めるべき論点」と「推奨する決め方」の洗い出しまでで止めること。論点が全部埋まった時点でLunaに引き継ぐこと。
+出力形式: 未確定の論点を表（論点／選択肢／推奨／理由）で出し、最後に「実装引き継ぎ可否: 可/不可」を明記して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b2">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b2" data-name="luna-routing-rules50-002.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">003</span><span class="ititle">調べ物は範囲の広さで階層を分ける</span></div>
+  
+  <pre class="prompt" id="b3">前提: 情報を集めて整理する調査タスク。
+指示: 参照先が5件以下・出典が特定済みならLuna、10件以上を横断して比較・取捨選択が必要ならSolを使うこと。中間はTerraで始め、判断に迷いが出た時点で上げること。
+出力形式: 調査開始時に「担当／想定参照件数／打ち切り条件」を3行で宣言してから進めて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b3">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b3" data-name="luna-routing-rules50-003.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">004</span><span class="ititle">定型の書き換え・変換は必ず最安の階層で行う</span></div>
+  
+  <pre class="prompt" id="b4">前提: 形式変換・命名の統一・定型文の量産など、判断より作業量が支配的なタスク。
+指示: この種のタスクは件数が多くてもLunaのまま処理し、上位モデルに切り替えないこと。品質が落ちる場合は階層ではなく推論設定を先に上げること。
+出力形式: 処理件数・スキップ件数・スキップ理由の内訳を最後に必ず出して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b4">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b4" data-name="luna-routing-rules50-004.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">005</span><span class="ititle">人に見せる前提の文章は下書きと仕上げで階層を分ける</span></div>
+  
+  <pre class="prompt" id="b5">前提: 社外向け資料・提案書など、最終的に人が読む文章。
+指示: 構成案と下書きはLunaで作り、語調の統一と事実確認の最終パスだけTerra以上で行うこと。最初から上位モデルで書き始めないこと。
+出力形式: 下書き時は「下書き（Luna）」、仕上げ時は「仕上げ（Terra以上）」と冒頭に明記して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b5">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b5" data-name="luna-routing-rules50-005.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">006</span><span class="ititle">失敗したときの影響が大きい変更は階層を上げる</span></div>
+  
+  <pre class="prompt" id="b6">前提: 課金・認証・データ削除・外部への送信など、間違えた場合の巻き戻しが難しい変更。
+指示: この領域に触れるタスクは安さを理由にLunaへ回さず、Solで計画を立ててから実装すること。実装自体をLunaに渡す場合も、変更対象ファイルを事前に列挙して固定すること。
+出力形式: 着手前に「影響範囲／巻き戻し手順／確認者」の3点を提示して承認を待って。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b6">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b6" data-name="luna-routing-rules50-006.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">007</span><span class="ititle">同じ内容を大量に処理するときは最安の階層を既定にする</span></div>
+  
+  <pre class="prompt" id="b7">前提: 分類・要約・抽出などを数百件以上まとめて処理する場面。
+指示: 全件をLunaで処理し、判定が割れた件だけを抜き出して上位モデルに回すこと。最初から全件を上位モデルで処理しないこと。
+出力形式: 「Luna処理件数／要再判定件数／再判定の理由内訳」を最後にまとめて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b7">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b7" data-name="luna-routing-rules50-007.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">008</span><span class="ititle">既存コードを読んで説明する作業は最安の階層に固定する</span></div>
+  
+  <pre class="prompt" id="b8">前提: 引き継いだコードの処理内容・依存関係を把握したい場面。
+指示: 読解と説明はLunaで行うこと。ただし読む範囲が10ファイルを超える場合は、先に対象を絞り込む指示を求めてから進めること。
+出力形式: 「入口となる関数／処理の流れ（5行以内）／注意が必要な箇所」の3点構成で説明して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b8">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b8" data-name="luna-routing-rules50-008.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">009</span><span class="ititle">判断を伴わない調整作業に上位モデルを使わない</span></div>
+  
+  <pre class="prompt" id="b9">前提: 設定値の書き換え、定数の統一、依存関係の更新など、正解が一意に決まる作業。
+指示: この種のタスクで上位モデルを選ばないこと。仮に指示側で上位モデルが指定されていても、正解が一意だと判断できる場合はその旨を伝えて確認すること。
+出力形式: 「一意に決まる作業のため最安構成で実行します」と一言添えてから着手して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b9">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b9" data-name="luna-routing-rules50-009.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">010</span><span class="ititle">迷ったら安い方から始めて、上げた理由を残す</span></div>
+  
+  <pre class="prompt" id="b10">前提: どの階層が適切か判断がつかないタスク。
+指示: 例外なくLunaから始めること。結果が不十分な場合のみ階層を上げ、そのとき「何が足りなかったか」を必ず1行で残すこと。理由なしに階層を上げないこと。
+出力形式: 階層を上げたときは「昇格: Luna→〇〇 ／ 理由: 〇〇」の形式で記録して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b10">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b10" data-name="luna-routing-rules50-010.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<h2 class="cat">推論設定（effort）の使い方</h2>
+<div class="icard">
+  <div class="ih"><span class="num">011</span><span class="ititle">安いからといって最低設定のまま評価しない</span></div>
+  
+  <pre class="prompt" id="b11">前提: Lunaを使って結果が物足りなかった場面。
+指示: 階層を上げる前に、必ず推論設定をHigh、それでも足りなければMaxまで引き上げて再実行すること。設定を上げずに「Lunaでは無理」と結論づけないこと。
+出力形式: 再実行のたびに「設定: Low→High」のように変更履歴を1行で残して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b11">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b11" data-name="luna-routing-rules50-011.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">012</span><span class="ititle">定型作業では推論設定を上げない</span></div>
+  
+  <pre class="prompt" id="b12">前提: 形式変換・単純な抽出など、正解が一意に決まる作業。
+指示: 推論設定は最低のまま実行すること。設定を上げると同じ結果に対してトークン消費だけが増えるため、品質が変わらない領域では上げないこと。
+出力形式: 「設定: 最低（定型作業のため）」と明記してから実行して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b12">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b12" data-name="luna-routing-rules50-012.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">013</span><span class="ititle">設定を上げる前に指示文の不足を疑う</span></div>
+  
+  <pre class="prompt" id="b13">前提: 出力が期待とずれたが、指示文に前提や出力形式が書かれていない場面。
+指示: 推論設定を上げる前に、まず不足している前提条件を質問すること。指示の不足が原因の場合、設定を上げてもずれは直らない。
+出力形式: 「不足している情報: 〇〇」を先に提示し、補われてから再実行して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b13">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b13" data-name="luna-routing-rules50-013.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">014</span><span class="ititle">段階を飛ばさずに1つずつ上げる</span></div>
+  
+  <pre class="prompt" id="b14">前提: 結果が不十分で推論設定を引き上げる場面。
+指示: 最低からいきなり最大へ飛ばさず、1段階ずつ上げて都度結果を確認すること。どの段階で十分になったかを記録し、次回以降の既定値にすること。
+出力形式: 「必要だった設定: 〇〇（この種類のタスクの既定値にする）」と最後に残して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b14">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b14" data-name="luna-routing-rules50-014.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">015</span><span class="ititle">長い処理では設定を上げる範囲を限定する</span></div>
+  
+  <pre class="prompt" id="b15">前提: 複数の工程からなる長いタスク。
+指示: 全工程で高い設定を使わず、判断が要る工程だけ設定を上げ、作業工程は最低設定に戻すこと。工程ごとに設定を切り替えること。
+出力形式: 工程一覧に「工程名／使用設定／理由」を添えて最初に提示して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b15">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b15" data-name="luna-routing-rules50-015.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">016</span><span class="ititle">上げた設定を戻し忘れない</span></div>
+  
+  <pre class="prompt" id="b16">前提: 難所を越えるために一度高い設定へ切り替え、そのまま作業を続けている場面。
+指示: そのタスクが終わった時点で既定の設定へ戻すこと。高い設定のまま次の定型作業に入ると、同じ結果に対してトークン消費と待ち時間だけが増える。切り替えた設定は、切り替えた本人ではなく次のタスクの開始時に必ず確認すること。
+出力形式: タスク完了時に「使用した設定／既定に戻したか」の2点を1行で報告して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b16">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b16" data-name="luna-routing-rules50-016.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">017</span><span class="ititle">設定を上げても直らないものを見極める</span></div>
+  
+  <pre class="prompt" id="b17">前提: 推論設定を最大まで上げても結果が改善しない場面。
+指示: それ以上設定を上げず、原因が「情報不足」「文脈が長すぎる」「そもそも上位モデル向き」のどれかを切り分けて報告すること。惰性で再実行を繰り返さないこと。
+出力形式: 「原因の切り分け結果／推奨する次の一手」の2点で報告して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b17">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b17" data-name="luna-routing-rules50-017.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">018</span><span class="ititle">設定ごとの所要時間も記録する</span></div>
+  
+  <pre class="prompt" id="b18">前提: 設定を変えて同じタスクを複数回実行し、どの設定を既定にするか決めたい場面。
+指示: 品質だけでなく所要時間も記録すること。推論設定を上げると出力の質と一緒に待ち時間も伸びるため、品質が同等なら速い方を既定に選ぶこと。品質差が「わずかにある」程度なら、その差が実務で意味を持つかどうかまで書き添えること。
+出力形式: 「設定／品質の所感／所要時間／既定にすべきか」の4列の表で比較結果を出して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b18">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b18" data-name="luna-routing-rules50-018.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">019</span><span class="ititle">急ぎの仕事では設定より階層を先に見直す</span></div>
+  
+  <pre class="prompt" id="b19">前提: 締め切りが迫っていて待ち時間を減らしたい場面。
+指示: 推論設定を上げると待ち時間も伸びるため、急ぎの場面では設定ではなくタスクの分割を先に検討すること。分割できない場合のみ設定を上げること。
+出力形式: 「分割案／分割できない場合の代案」を先に提示して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b19">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b19" data-name="luna-routing-rules50-019.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">020</span><span class="ititle">既定の設定をプロジェクトごとに決めておく</span></div>
+  
+  <pre class="prompt" id="b20">前提: 同じ種類のタスクを繰り返すプロジェクト。
+指示: 過去に十分だった設定をこのファイルへ追記し、次回以降はそこから始めること。毎回ゼロから試し直すと、同じ検証に何度も費用と時間を払うことになる。既定値が実態に合わなくなったと感じたら、上書きではなく履歴を残す形で更新すること。
+出力形式: 追記する際は「タスク種別: 既定設定」の1行形式で書き足して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b20">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b20" data-name="luna-routing-rules50-020.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<h2 class="cat">コストの見張り方</h2>
+<div class="icard">
+  <div class="ih"><span class="num">021</span><span class="ititle">処理を始める前に想定コストを申告する</span></div>
+  
+  <pre class="prompt" id="b21">前提: 大量件数の処理やファイル横断の作業に着手する場面。
+指示: 着手前に、対象件数と1件あたりの想定トークン量から概算コストを見積もって提示すること。見積りなしに全件処理を始めないこと。
+出力形式: 「対象件数／1件あたり想定／概算合計／打ち切り基準」の4点を提示して承認を待って。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b21">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b21" data-name="luna-routing-rules50-021.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">022</span><span class="ititle">想定を超えたら止めて報告する</span></div>
+  
+  <pre class="prompt" id="b22">前提: 処理の途中で想定していた量を超えそうな場面。
+指示: 事前に申告した概算を超えた時点で処理を止め、残件数と追加見込みを報告すること。黙って続行しないこと。
+出力形式: 「処理済み／残り／追加見込み／続行の可否を確認したい旨」を報告して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b22">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b22" data-name="luna-routing-rules50-022.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">023</span><span class="ititle">同じ内容を繰り返し送らない</span></div>
+  
+  <pre class="prompt" id="b23">前提: 同じ前提文・同じ資料を何度も送る処理。
+指示: 共通部分は先頭にまとめて一度だけ置き、変化する部分だけを差し替える形に組み直すこと。毎回全文を貼り直さないこと。
+出力形式: 組み直した構成を「共通部分／可変部分」に分けて最初に提示して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b23">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b23" data-name="luna-routing-rules50-023.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">024</span><span class="ititle">試すときは全件ではなく抜き取りで始める</span></div>
+  
+  <pre class="prompt" id="b24">前提: 新しい処理方法を試したい場面。
+指示: いきなり全件で試さず、代表的な5〜10件で結果を確認してから全件に広げること。失敗したときの無駄を最小化すること。
+出力形式: 抜き取り結果を「成功／要修正／判断保留」に分けて報告してから全件の可否を尋ねて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b24">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b24" data-name="luna-routing-rules50-024.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">025</span><span class="ititle">失敗した処理を無条件で再実行しない</span></div>
+  
+  <pre class="prompt" id="b25">前提: 処理が途中で失敗・中断した場面。
+指示: 最初からやり直す前に、どこまで完了しているかを確認し、未処理分だけを再実行すること。全件やり直しを既定にしないこと。
+出力形式: 「完了済み範囲／再実行対象／再実行の概算コスト」を提示して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b25">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b25" data-name="luna-routing-rules50-025.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">026</span><span class="ititle">出力の長さに上限を持たせる</span></div>
+  
+  <pre class="prompt" id="b26">前提: 長文の生成を伴うタスク。
+指示: 求められていない限り、出力は必要な長さで止めること。補足・言い換え・末尾のまとめといった重複部分は、読み手の理解を増やさないままトークンだけを消費する。長さが必要な場合は、なぜ必要かを一言添えること。
+出力形式: 長くなる場合は先に「想定文字数」を申告し、了承を得てから書き始めて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b26">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b26" data-name="luna-routing-rules50-026.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">027</span><span class="ititle">上位モデルを使った箇所を記録する</span></div>
+  
+  <pre class="prompt" id="b27">前提: 1つの作業の中で複数の階層を使い分けた場面。
+指示: どの工程で上位モデルを使ったかを記録し、次回同じ作業をするときに下げられないか検討できるようにすること。
+出力形式: 作業完了時に「工程／使用階層／下げられる可能性の有無」の表を出して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b27">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b27" data-name="luna-routing-rules50-027.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">028</span><span class="ititle">料金体系の変更を前提に数字を固定しない</span></div>
+  
+  <pre class="prompt" id="b28">前提: コスト試算や比較を資料に書き残す場面。
+指示: 単価は変わる前提で、必ず「いつ時点の単価か」を併記すること。単価を本文に埋め込まず、先頭にまとめて置き、後から差し替えられる形にすること。
+出力形式: 冒頭に「単価の基準日」を明記し、以降は参照する形で書いて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b28">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b28" data-name="luna-routing-rules50-028.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">029</span><span class="ititle">安さを理由に不要な処理を増やさない</span></div>
+  
+  <pre class="prompt" id="b29">前提: 単価が下がったことで処理量を増やそうとしている場面。
+指示: 単価が下がっても、必要のない処理を追加しないこと。増やす場合は「その処理で何が判断できるようになるか」を先に書くこと。
+出力形式: 追加する処理ごとに「目的／なくても困らないか」の2点を添えて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b29">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b29" data-name="luna-routing-rules50-029.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">030</span><span class="ititle">月末ではなく着手時にコストを見る</span></div>
+  
+  <pre class="prompt" id="b30">前提: 継続的に動かす処理を新しく組む場面。
+指示: 実行1回あたりのコストと想定実行回数から月額を見積もり、着手時点で提示すること。動かし始めてから請求で気づく形にしないこと。
+出力形式: 「1回あたり／想定回数／月額見込み／許容ラインを超えた場合の縮小案」を提示して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b30">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b30" data-name="luna-routing-rules50-030.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<h2 class="cat">安い階層に任せたときの検算</h2>
+<div class="icard">
+  <div class="ih"><span class="num">031</span><span class="ititle">結果をそのまま採用せず、条件との一致を確認する</span></div>
+  
+  <pre class="prompt" id="b31">前提: Lunaに任せた作業が完了した直後。
+指示: 出力を採用する前に、最初に提示した受け入れ条件を1つずつ照合し、満たしていない項目を明示すること。「できました」だけで終わらせないこと。
+出力形式: 受け入れ条件ごとに「満たす／満たさない／未確認」を表で示して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b31">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b31" data-name="luna-routing-rules50-031.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">032</span><span class="ititle">変更していない箇所が壊れていないか確認する</span></div>
+  
+  <pre class="prompt" id="b32">前提: 既存のコードや文書に手を入れた後。
+指示: 依頼された箇所以外に変更が入っていないかを差分で確認し、意図しない変更があれば戻すこと。差分確認を省略しないこと。
+出力形式: 「依頼範囲の変更／範囲外の変更（あれば理由）」に分けて差分を示して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b32">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b32" data-name="luna-routing-rules50-032.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">033</span><span class="ititle">数字と固有名詞だけは別に見直す</span></div>
+  
+  <pre class="prompt" id="b33">前提: 数値・日付・製品名・人名を含む出力。
+指示: 本文の確認とは別に、数字と固有名詞だけを抜き出して元資料と突き合わせること。文章として自然に読めることを根拠にしないこと。
+出力形式: 「該当箇所／出力値／元資料の値／一致の可否」の表で報告して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b33">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b33" data-name="luna-routing-rules50-033.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">034</span><span class="ititle">出典が無い記述に印を付ける</span></div>
+  
+  <pre class="prompt" id="b34">前提: 調査や要約の成果物。
+指示: 元資料に根拠が見つからない記述には印を付け、推測であることを明示すること。根拠の有無を曖昧にしたまま断定形で書かないこと。
+出力形式: 推測部分の行頭に「（未確認）」と付けて、末尾に未確認項目の一覧を置いて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b34">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b34" data-name="luna-routing-rules50-034.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">035</span><span class="ititle">同じタスクを2回実行して結果を比べる</span></div>
+  
+  <pre class="prompt" id="b35">前提: 判断を含む処理を安い階層に任せた場面で、結果の安定性を確認したいとき。
+指示: 同じ入力で2回実行し、結果が大きく食い違う場合は上位モデルで判定すること。1回の結果だけで確定しないこと。
+出力形式: 「1回目／2回目／差異の有無／判定」を並べて示して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b35">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b35" data-name="luna-routing-rules50-035.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">036</span><span class="ititle">上位モデルには全件ではなく判定だけを頼む</span></div>
+  
+  <pre class="prompt" id="b36">前提: 安い階層の出力に不安が残る場面。
+指示: 作業をやり直させるのではなく、出力の妥当性判定だけを上位モデルに依頼すること。判定で問題が出た箇所だけを作り直すこと。
+出力形式: 判定依頼時は「対象／判定してほしい観点／合否の基準」を添えて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b36">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b36" data-name="luna-routing-rules50-036.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">037</span><span class="ititle">テストが通ることを品質の代わりにしない</span></div>
+  
+  <pre class="prompt" id="b37">前提: 自動テストが通った状態の実装。
+指示: テストの通過を根拠に完了としないこと。テストが観点を網羅していない可能性を確認し、不足があれば観点を追加すること。
+出力形式: 「カバーできている観点／カバーできていない観点」を分けて報告して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b37">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b37" data-name="luna-routing-rules50-037.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">038</span><span class="ititle">長い出力ほど冒頭と末尾を疑う</span></div>
+  
+  <pre class="prompt" id="b38">前提: 長文の生成物。
+指示: 長い出力では、書き進めるうちに冒頭で置いた前提と末尾の結論がずれることがある。両端を突き合わせて矛盾がないかを確認し、中間の読みやすさだけで判断しないこと。ずれていた場合はどちらが正しいかまで示すこと。
+出力形式: 「冒頭の前提／末尾の結論／整合の可否」を3行で示して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b38">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b38" data-name="luna-routing-rules50-038.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">039</span><span class="ititle">判断が割れた事例を残して次に生かす</span></div>
+  
+  <pre class="prompt" id="b39">前提: 安い階層と上位モデルで結論が食い違った場面。
+指示: その事例を記録し、同じ種類のタスクを次回どちらに任せるかの判断材料にすること。その場の結論だけで終わらせないこと。
+出力形式: 「タスク種別／食い違いの内容／今後の割り当て方針」を1件1行で追記して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b39">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b39" data-name="luna-routing-rules50-039.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">040</span><span class="ititle">人が確認する箇所をあらかじめ決めておく</span></div>
+  
+  <pre class="prompt" id="b40">前提: 安い階層に任せる範囲を広げようとしている場面。
+指示: どこまでを自動で通し、どこから人が見るかの線引きを先に決めること。全部任せてから問題が出た箇所を探す進め方をしないこと。
+出力形式: 「自動で通す範囲／人が確認する範囲／その理由」を最初に提示して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b40">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b40" data-name="luna-routing-rules50-040.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<h2 class="cat">長い資料・大量データの扱い</h2>
+<div class="icard">
+  <div class="ih"><span class="num">041</span><span class="ititle">長い資料は丸ごと渡さず、先に絞り込む</span></div>
+  
+  <pre class="prompt" id="b41">前提: 数十ページ以上の資料や長い会話履歴を扱うタスク。
+指示: 全文を一度に渡さず、目次や見出しから必要な箇所を特定してから該当部分だけを渡すこと。安い階層は長い文脈の扱いが弱いため、渡す量で補うこと。
+出力形式: 「必要な箇所／不要と判断した箇所／その理由」を先に提示して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b41">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b41" data-name="luna-routing-rules50-041.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">042</span><span class="ititle">長い処理は区切って、区切りごとに結論を残す</span></div>
+  
+  <pre class="prompt" id="b42">前提: 1回では終わらない長い作業。
+指示: 工程ごとに区切り、各区切りの終わりに結論を短くまとめて残すこと。前の文脈を丸ごと持ち回らなくても次へ進める形にしておくと、長い文脈が苦手な安い階層でも最後まで通せる。区切りをまたぐ情報は結論に必ず含めること。
+出力形式: 各区切りの末尾に「ここまでの結論（3行以内）」を置いて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b42">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b42" data-name="luna-routing-rules50-042.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">043</span><span class="ititle">参照した箇所を必ず引用位置つきで示す</span></div>
+  
+  <pre class="prompt" id="b43">前提: 長い資料から情報を取り出すタスク。
+指示: どのページ・どの見出しから取ったかを必ず併記すること。資料が長いほど別の箇所と取り違える危険が上がるため、位置の記録を省略しないこと。位置が特定できなかった記述は、その旨を明示して推測扱いにすること。
+出力形式: 「記述／参照位置」の2列で示して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b43">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b43" data-name="luna-routing-rules50-043.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">044</span><span class="ititle">履歴が長くなったら要約して作り直す</span></div>
+  
+  <pre class="prompt" id="b44">前提: やり取りが長く続き、文脈が膨らんでいる場面。
+指示: 履歴が長くなったと判断した時点で、決定事項と未決事項だけを短くまとめ直し、それを新しい出発点にすること。長い履歴を引きずったまま続けないこと。
+出力形式: 「決定事項／未決事項／次の一手」の3点でまとめ直して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b44">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b44" data-name="luna-routing-rules50-044.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">045</span><span class="ititle">大量データは全件ではなく構造を先に見る</span></div>
+  
+  <pre class="prompt" id="b45">前提: 行数の多いデータを扱うタスク。
+指示: 全件を読み込ませる前に、列の意味・件数・欠損や表記ゆれの有無といった構造を先に確認すること。構造を把握しないまま全件処理へ入ると、間違った前提のまま費用だけが積み上がる。想定と違う点が見つかった時点で止めること。
+出力形式: 「列一覧／件数／欠損や表記ゆれの有無」を先に報告して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b45">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b45" data-name="luna-routing-rules50-045.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">046</span><span class="ititle">横断が必要な判断は上位モデルに寄せる</span></div>
+  
+  <pre class="prompt" id="b46">前提: 資料全体を見比べないと結論が出ないタスク。
+指示: 部分ごとの処理は安い階層で行い、全体を見比べる最終判断だけ上位モデルに渡すこと。全体判断を安い階層に任せないこと。
+出力形式: 「部分処理の結果一覧／全体判断で見てほしい観点」を整理して渡して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b46">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b46" data-name="luna-routing-rules50-046.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">047</span><span class="ititle">同じ資料を何度も読み直させない</span></div>
+  
+  <pre class="prompt" id="b47">前提: 同じ資料を参照する処理が複数回ある場面。
+指示: 一度読んだ内容は要点として書き出し、以降はその要点を使い回すこと。毎回原文を読み直させると、同じ情報に何度も費用を払うことになる。要点で足りない場面が出たときだけ、必要な箇所に限って原文へ戻ること。
+出力形式: 初回に「この資料の要点」を作り、以降はそれを参照する形で進めて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b47">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b47" data-name="luna-routing-rules50-047.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">048</span><span class="ititle">抜けを検出する仕掛けを最初に入れる</span></div>
+  
+  <pre class="prompt" id="b48">前提: 大量の項目を処理するタスク。
+指示: 処理前に対象の総数を確定し、処理後に件数が一致するかを必ず突き合わせること。大量処理では途中の取りこぼしが最も気づきにくい失敗であり、件数確認を省略すると成功したように見えたまま先へ進んでしまう。
+出力形式: 「処理前の件数／処理後の件数／差分と理由」を最後に報告して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b48">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b48" data-name="luna-routing-rules50-048.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">049</span><span class="ititle">長い出力を求める前に構成だけ先に作る</span></div>
+  
+  <pre class="prompt" id="b49">前提: 長い文書を作成するタスク。
+指示: いきなり本文を書き始めず、見出しレベルの構成を先に確定させること。構成が固まらないまま長文を書くと、書き直しのたびに同じ分量を作り直すことになる。合意が取れてから、節ごとに分けて書き進めること。
+出力形式: 構成案を提示し、承認を得てから節ごとに執筆して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b49">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b49" data-name="luna-routing-rules50-049.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">050</span><span class="ititle">扱える量を超えたら分割を提案する</span></div>
+  
+  <pre class="prompt" id="b50">前提: 与えられた資料やデータが明らかに大きい場面。
+指示: 無理に一度で処理しようとせず、どう分割すれば扱えるかを提案すること。途中で情報が落ちたまま処理を続けないこと。
+出力形式: 「分割の単位／分割数／分割後の統合方法」を提案して承認を待って。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b50">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b50" data-name="luna-routing-rules50-050.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+
+  <section class="epctx">
+  <p class="epctx-label">この動画のほかのプレゼント</p>
+  <div class="ep-kits"><a class="kchip" href="../cost-simulation-sheet/"><span class="kt">コスト削減シミュレーションシート</span><span class="badge">10項目</span><span class="go">開く →</span></a><a class="kchip" href="../luna-prompts100/"><span class="kt">Luna格上げ運用プロンプト100選</span><span class="badge">100個</span><span class="go">開く →</span></a></div>
+</section>
+
+  <footer><a href="../../">← AIエージェント / Kawaru プレゼント図書館にもどる</a></footer>
+</div>
+
+<pre id="pfull" class="hidden"># 🎁 Luna前提 モデル振り分けルール50本
+
+AGENTS.md・CLAUDE.md などのプロジェクト設定ファイルに貼り付けておくと、AI側が「この仕事はLuna、これはTerra、ここはSol」と自分で振り分け、推論設定まで判断してくれるようになるルール文の集まりです。人が毎回選ぶのをやめて、設定に判断を持たせるための50本です。
+
+**受け取り方**: 各項目のコードブロック右上のコピーボタンでコピーするか、このファイルをそのままダウンロードしてください。
+
+**使い方**: プロジェクト直下の AGENTS.md（Codex）や CLAUDE.md（Claude Code）に、必要な項目だけを選んで貼り付けてください。全部入れる必要はありません。〇〇の部分はご自身の環境に合わせて書き換えてください。
+
+
+## 仕事の振り分け（どの階層に出すか）
+
+### 1. 仕様が固まっている実装は最安の階層に回す
+
+```text
+前提: 受け入れ条件・入出力・テスト観点が文章で確定している実装タスク。
+指示: この条件を満たすタスクは既定でLunaに割り当て、上位モデルへ上げないこと。上げる場合は「どの条件が確定していなかったか」を先に1行で述べてから上げること。
+出力形式: 着手前に「担当: Luna / 理由: 仕様確定済み」の1行を出してから作業を始めて。
+```
+
+### 2. 要件が曖昧なうちは最上位で設計だけ済ませる
+
+```text
+前提: やりたいことは決まっているが、入出力・優先順位・例外の扱いが未確定なタスク。
+指示: この段階ではSolを使い、実装には入らず「決めるべき論点」と「推奨する決め方」の洗い出しまでで止めること。論点が全部埋まった時点でLunaに引き継ぐこと。
+出力形式: 未確定の論点を表（論点／選択肢／推奨／理由）で出し、最後に「実装引き継ぎ可否: 可/不可」を明記して。
+```
+
+### 3. 調べ物は範囲の広さで階層を分ける
+
+```text
+前提: 情報を集めて整理する調査タスク。
+指示: 参照先が5件以下・出典が特定済みならLuna、10件以上を横断して比較・取捨選択が必要ならSolを使うこと。中間はTerraで始め、判断に迷いが出た時点で上げること。
+出力形式: 調査開始時に「担当／想定参照件数／打ち切り条件」を3行で宣言してから進めて。
+```
+
+### 4. 定型の書き換え・変換は必ず最安の階層で行う
+
+```text
+前提: 形式変換・命名の統一・定型文の量産など、判断より作業量が支配的なタスク。
+指示: この種のタスクは件数が多くてもLunaのまま処理し、上位モデルに切り替えないこと。品質が落ちる場合は階層ではなく推論設定を先に上げること。
+出力形式: 処理件数・スキップ件数・スキップ理由の内訳を最後に必ず出して。
+```
+
+### 5. 人に見せる前提の文章は下書きと仕上げで階層を分ける
+
+```text
+前提: 社外向け資料・提案書など、最終的に人が読む文章。
+指示: 構成案と下書きはLunaで作り、語調の統一と事実確認の最終パスだけTerra以上で行うこと。最初から上位モデルで書き始めないこと。
+出力形式: 下書き時は「下書き（Luna）」、仕上げ時は「仕上げ（Terra以上）」と冒頭に明記して。
+```
+
+### 6. 失敗したときの影響が大きい変更は階層を上げる
+
+```text
+前提: 課金・認証・データ削除・外部への送信など、間違えた場合の巻き戻しが難しい変更。
+指示: この領域に触れるタスクは安さを理由にLunaへ回さず、Solで計画を立ててから実装すること。実装自体をLunaに渡す場合も、変更対象ファイルを事前に列挙して固定すること。
+出力形式: 着手前に「影響範囲／巻き戻し手順／確認者」の3点を提示して承認を待って。
+```
+
+### 7. 同じ内容を大量に処理するときは最安の階層を既定にする
+
+```text
+前提: 分類・要約・抽出などを数百件以上まとめて処理する場面。
+指示: 全件をLunaで処理し、判定が割れた件だけを抜き出して上位モデルに回すこと。最初から全件を上位モデルで処理しないこと。
+出力形式: 「Luna処理件数／要再判定件数／再判定の理由内訳」を最後にまとめて。
+```
+
+### 8. 既存コードを読んで説明する作業は最安の階層に固定する
+
+```text
+前提: 引き継いだコードの処理内容・依存関係を把握したい場面。
+指示: 読解と説明はLunaで行うこと。ただし読む範囲が10ファイルを超える場合は、先に対象を絞り込む指示を求めてから進めること。
+出力形式: 「入口となる関数／処理の流れ（5行以内）／注意が必要な箇所」の3点構成で説明して。
+```
+
+### 9. 判断を伴わない調整作業に上位モデルを使わない
+
+```text
+前提: 設定値の書き換え、定数の統一、依存関係の更新など、正解が一意に決まる作業。
+指示: この種のタスクで上位モデルを選ばないこと。仮に指示側で上位モデルが指定されていても、正解が一意だと判断できる場合はその旨を伝えて確認すること。
+出力形式: 「一意に決まる作業のため最安構成で実行します」と一言添えてから着手して。
+```
+
+### 10. 迷ったら安い方から始めて、上げた理由を残す
+
+```text
+前提: どの階層が適切か判断がつかないタスク。
+指示: 例外なくLunaから始めること。結果が不十分な場合のみ階層を上げ、そのとき「何が足りなかったか」を必ず1行で残すこと。理由なしに階層を上げないこと。
+出力形式: 階層を上げたときは「昇格: Luna→〇〇 ／ 理由: 〇〇」の形式で記録して。
+```
+
+
+## 推論設定（effort）の使い方
+
+### 11. 安いからといって最低設定のまま評価しない
+
+```text
+前提: Lunaを使って結果が物足りなかった場面。
+指示: 階層を上げる前に、必ず推論設定をHigh、それでも足りなければMaxまで引き上げて再実行すること。設定を上げずに「Lunaでは無理」と結論づけないこと。
+出力形式: 再実行のたびに「設定: Low→High」のように変更履歴を1行で残して。
+```
+
+### 12. 定型作業では推論設定を上げない
+
+```text
+前提: 形式変換・単純な抽出など、正解が一意に決まる作業。
+指示: 推論設定は最低のまま実行すること。設定を上げると同じ結果に対してトークン消費だけが増えるため、品質が変わらない領域では上げないこと。
+出力形式: 「設定: 最低（定型作業のため）」と明記してから実行して。
+```
+
+### 13. 設定を上げる前に指示文の不足を疑う
+
+```text
+前提: 出力が期待とずれたが、指示文に前提や出力形式が書かれていない場面。
+指示: 推論設定を上げる前に、まず不足している前提条件を質問すること。指示の不足が原因の場合、設定を上げてもずれは直らない。
+出力形式: 「不足している情報: 〇〇」を先に提示し、補われてから再実行して。
+```
+
+### 14. 段階を飛ばさずに1つずつ上げる
+
+```text
+前提: 結果が不十分で推論設定を引き上げる場面。
+指示: 最低からいきなり最大へ飛ばさず、1段階ずつ上げて都度結果を確認すること。どの段階で十分になったかを記録し、次回以降の既定値にすること。
+出力形式: 「必要だった設定: 〇〇（この種類のタスクの既定値にする）」と最後に残して。
+```
+
+### 15. 長い処理では設定を上げる範囲を限定する
+
+```text
+前提: 複数の工程からなる長いタスク。
+指示: 全工程で高い設定を使わず、判断が要る工程だけ設定を上げ、作業工程は最低設定に戻すこと。工程ごとに設定を切り替えること。
+出力形式: 工程一覧に「工程名／使用設定／理由」を添えて最初に提示して。
+```
+
+### 16. 上げた設定を戻し忘れない
+
+```text
+前提: 難所を越えるために一度高い設定へ切り替え、そのまま作業を続けている場面。
+指示: そのタスクが終わった時点で既定の設定へ戻すこと。高い設定のまま次の定型作業に入ると、同じ結果に対してトークン消費と待ち時間だけが増える。切り替えた設定は、切り替えた本人ではなく次のタスクの開始時に必ず確認すること。
+出力形式: タスク完了時に「使用した設定／既定に戻したか」の2点を1行で報告して。
+```
+
+### 17. 設定を上げても直らないものを見極める
+
+```text
+前提: 推論設定を最大まで上げても結果が改善しない場面。
+指示: それ以上設定を上げず、原因が「情報不足」「文脈が長すぎる」「そもそも上位モデル向き」のどれかを切り分けて報告すること。惰性で再実行を繰り返さないこと。
+出力形式: 「原因の切り分け結果／推奨する次の一手」の2点で報告して。
+```
+
+### 18. 設定ごとの所要時間も記録する
+
+```text
+前提: 設定を変えて同じタスクを複数回実行し、どの設定を既定にするか決めたい場面。
+指示: 品質だけでなく所要時間も記録すること。推論設定を上げると出力の質と一緒に待ち時間も伸びるため、品質が同等なら速い方を既定に選ぶこと。品質差が「わずかにある」程度なら、その差が実務で意味を持つかどうかまで書き添えること。
+出力形式: 「設定／品質の所感／所要時間／既定にすべきか」の4列の表で比較結果を出して。
+```
+
+### 19. 急ぎの仕事では設定より階層を先に見直す
+
+```text
+前提: 締め切りが迫っていて待ち時間を減らしたい場面。
+指示: 推論設定を上げると待ち時間も伸びるため、急ぎの場面では設定ではなくタスクの分割を先に検討すること。分割できない場合のみ設定を上げること。
+出力形式: 「分割案／分割できない場合の代案」を先に提示して。
+```
+
+### 20. 既定の設定をプロジェクトごとに決めておく
+
+```text
+前提: 同じ種類のタスクを繰り返すプロジェクト。
+指示: 過去に十分だった設定をこのファイルへ追記し、次回以降はそこから始めること。毎回ゼロから試し直すと、同じ検証に何度も費用と時間を払うことになる。既定値が実態に合わなくなったと感じたら、上書きではなく履歴を残す形で更新すること。
+出力形式: 追記する際は「タスク種別: 既定設定」の1行形式で書き足して。
+```
+
+
+## コストの見張り方
+
+### 21. 処理を始める前に想定コストを申告する
+
+```text
+前提: 大量件数の処理やファイル横断の作業に着手する場面。
+指示: 着手前に、対象件数と1件あたりの想定トークン量から概算コストを見積もって提示すること。見積りなしに全件処理を始めないこと。
+出力形式: 「対象件数／1件あたり想定／概算合計／打ち切り基準」の4点を提示して承認を待って。
+```
+
+### 22. 想定を超えたら止めて報告する
+
+```text
+前提: 処理の途中で想定していた量を超えそうな場面。
+指示: 事前に申告した概算を超えた時点で処理を止め、残件数と追加見込みを報告すること。黙って続行しないこと。
+出力形式: 「処理済み／残り／追加見込み／続行の可否を確認したい旨」を報告して。
+```
+
+### 23. 同じ内容を繰り返し送らない
+
+```text
+前提: 同じ前提文・同じ資料を何度も送る処理。
+指示: 共通部分は先頭にまとめて一度だけ置き、変化する部分だけを差し替える形に組み直すこと。毎回全文を貼り直さないこと。
+出力形式: 組み直した構成を「共通部分／可変部分」に分けて最初に提示して。
+```
+
+### 24. 試すときは全件ではなく抜き取りで始める
+
+```text
+前提: 新しい処理方法を試したい場面。
+指示: いきなり全件で試さず、代表的な5〜10件で結果を確認してから全件に広げること。失敗したときの無駄を最小化すること。
+出力形式: 抜き取り結果を「成功／要修正／判断保留」に分けて報告してから全件の可否を尋ねて。
+```
+
+### 25. 失敗した処理を無条件で再実行しない
+
+```text
+前提: 処理が途中で失敗・中断した場面。
+指示: 最初からやり直す前に、どこまで完了しているかを確認し、未処理分だけを再実行すること。全件やり直しを既定にしないこと。
+出力形式: 「完了済み範囲／再実行対象／再実行の概算コスト」を提示して。
+```
+
+### 26. 出力の長さに上限を持たせる
+
+```text
+前提: 長文の生成を伴うタスク。
+指示: 求められていない限り、出力は必要な長さで止めること。補足・言い換え・末尾のまとめといった重複部分は、読み手の理解を増やさないままトークンだけを消費する。長さが必要な場合は、なぜ必要かを一言添えること。
+出力形式: 長くなる場合は先に「想定文字数」を申告し、了承を得てから書き始めて。
+```
+
+### 27. 上位モデルを使った箇所を記録する
+
+```text
+前提: 1つの作業の中で複数の階層を使い分けた場面。
+指示: どの工程で上位モデルを使ったかを記録し、次回同じ作業をするときに下げられないか検討できるようにすること。
+出力形式: 作業完了時に「工程／使用階層／下げられる可能性の有無」の表を出して。
+```
+
+### 28. 料金体系の変更を前提に数字を固定しない
+
+```text
+前提: コスト試算や比較を資料に書き残す場面。
+指示: 単価は変わる前提で、必ず「いつ時点の単価か」を併記すること。単価を本文に埋め込まず、先頭にまとめて置き、後から差し替えられる形にすること。
+出力形式: 冒頭に「単価の基準日」を明記し、以降は参照する形で書いて。
+```
+
+### 29. 安さを理由に不要な処理を増やさない
+
+```text
+前提: 単価が下がったことで処理量を増やそうとしている場面。
+指示: 単価が下がっても、必要のない処理を追加しないこと。増やす場合は「その処理で何が判断できるようになるか」を先に書くこと。
+出力形式: 追加する処理ごとに「目的／なくても困らないか」の2点を添えて。
+```
+
+### 30. 月末ではなく着手時にコストを見る
+
+```text
+前提: 継続的に動かす処理を新しく組む場面。
+指示: 実行1回あたりのコストと想定実行回数から月額を見積もり、着手時点で提示すること。動かし始めてから請求で気づく形にしないこと。
+出力形式: 「1回あたり／想定回数／月額見込み／許容ラインを超えた場合の縮小案」を提示して。
+```
+
+
+## 安い階層に任せたときの検算
+
+### 31. 結果をそのまま採用せず、条件との一致を確認する
+
+```text
+前提: Lunaに任せた作業が完了した直後。
+指示: 出力を採用する前に、最初に提示した受け入れ条件を1つずつ照合し、満たしていない項目を明示すること。「できました」だけで終わらせないこと。
+出力形式: 受け入れ条件ごとに「満たす／満たさない／未確認」を表で示して。
+```
+
+### 32. 変更していない箇所が壊れていないか確認する
+
+```text
+前提: 既存のコードや文書に手を入れた後。
+指示: 依頼された箇所以外に変更が入っていないかを差分で確認し、意図しない変更があれば戻すこと。差分確認を省略しないこと。
+出力形式: 「依頼範囲の変更／範囲外の変更（あれば理由）」に分けて差分を示して。
+```
+
+### 33. 数字と固有名詞だけは別に見直す
+
+```text
+前提: 数値・日付・製品名・人名を含む出力。
+指示: 本文の確認とは別に、数字と固有名詞だけを抜き出して元資料と突き合わせること。文章として自然に読めることを根拠にしないこと。
+出力形式: 「該当箇所／出力値／元資料の値／一致の可否」の表で報告して。
+```
+
+### 34. 出典が無い記述に印を付ける
+
+```text
+前提: 調査や要約の成果物。
+指示: 元資料に根拠が見つからない記述には印を付け、推測であることを明示すること。根拠の有無を曖昧にしたまま断定形で書かないこと。
+出力形式: 推測部分の行頭に「（未確認）」と付けて、末尾に未確認項目の一覧を置いて。
+```
+
+### 35. 同じタスクを2回実行して結果を比べる
+
+```text
+前提: 判断を含む処理を安い階層に任せた場面で、結果の安定性を確認したいとき。
+指示: 同じ入力で2回実行し、結果が大きく食い違う場合は上位モデルで判定すること。1回の結果だけで確定しないこと。
+出力形式: 「1回目／2回目／差異の有無／判定」を並べて示して。
+```
+
+### 36. 上位モデルには全件ではなく判定だけを頼む
+
+```text
+前提: 安い階層の出力に不安が残る場面。
+指示: 作業をやり直させるのではなく、出力の妥当性判定だけを上位モデルに依頼すること。判定で問題が出た箇所だけを作り直すこと。
+出力形式: 判定依頼時は「対象／判定してほしい観点／合否の基準」を添えて。
+```
+
+### 37. テストが通ることを品質の代わりにしない
+
+```text
+前提: 自動テストが通った状態の実装。
+指示: テストの通過を根拠に完了としないこと。テストが観点を網羅していない可能性を確認し、不足があれば観点を追加すること。
+出力形式: 「カバーできている観点／カバーできていない観点」を分けて報告して。
+```
+
+### 38. 長い出力ほど冒頭と末尾を疑う
+
+```text
+前提: 長文の生成物。
+指示: 長い出力では、書き進めるうちに冒頭で置いた前提と末尾の結論がずれることがある。両端を突き合わせて矛盾がないかを確認し、中間の読みやすさだけで判断しないこと。ずれていた場合はどちらが正しいかまで示すこと。
+出力形式: 「冒頭の前提／末尾の結論／整合の可否」を3行で示して。
+```
+
+### 39. 判断が割れた事例を残して次に生かす
+
+```text
+前提: 安い階層と上位モデルで結論が食い違った場面。
+指示: その事例を記録し、同じ種類のタスクを次回どちらに任せるかの判断材料にすること。その場の結論だけで終わらせないこと。
+出力形式: 「タスク種別／食い違いの内容／今後の割り当て方針」を1件1行で追記して。
+```
+
+### 40. 人が確認する箇所をあらかじめ決めておく
+
+```text
+前提: 安い階層に任せる範囲を広げようとしている場面。
+指示: どこまでを自動で通し、どこから人が見るかの線引きを先に決めること。全部任せてから問題が出た箇所を探す進め方をしないこと。
+出力形式: 「自動で通す範囲／人が確認する範囲／その理由」を最初に提示して。
+```
+
+
+## 長い資料・大量データの扱い
+
+### 41. 長い資料は丸ごと渡さず、先に絞り込む
+
+```text
+前提: 数十ページ以上の資料や長い会話履歴を扱うタスク。
+指示: 全文を一度に渡さず、目次や見出しから必要な箇所を特定してから該当部分だけを渡すこと。安い階層は長い文脈の扱いが弱いため、渡す量で補うこと。
+出力形式: 「必要な箇所／不要と判断した箇所／その理由」を先に提示して。
+```
+
+### 42. 長い処理は区切って、区切りごとに結論を残す
+
+```text
+前提: 1回では終わらない長い作業。
+指示: 工程ごとに区切り、各区切りの終わりに結論を短くまとめて残すこと。前の文脈を丸ごと持ち回らなくても次へ進める形にしておくと、長い文脈が苦手な安い階層でも最後まで通せる。区切りをまたぐ情報は結論に必ず含めること。
+出力形式: 各区切りの末尾に「ここまでの結論（3行以内）」を置いて。
+```
+
+### 43. 参照した箇所を必ず引用位置つきで示す
+
+```text
+前提: 長い資料から情報を取り出すタスク。
+指示: どのページ・どの見出しから取ったかを必ず併記すること。資料が長いほど別の箇所と取り違える危険が上がるため、位置の記録を省略しないこと。位置が特定できなかった記述は、その旨を明示して推測扱いにすること。
+出力形式: 「記述／参照位置」の2列で示して。
+```
+
+### 44. 履歴が長くなったら要約して作り直す
+
+```text
+前提: やり取りが長く続き、文脈が膨らんでいる場面。
+指示: 履歴が長くなったと判断した時点で、決定事項と未決事項だけを短くまとめ直し、それを新しい出発点にすること。長い履歴を引きずったまま続けないこと。
+出力形式: 「決定事項／未決事項／次の一手」の3点でまとめ直して。
+```
+
+### 45. 大量データは全件ではなく構造を先に見る
+
+```text
+前提: 行数の多いデータを扱うタスク。
+指示: 全件を読み込ませる前に、列の意味・件数・欠損や表記ゆれの有無といった構造を先に確認すること。構造を把握しないまま全件処理へ入ると、間違った前提のまま費用だけが積み上がる。想定と違う点が見つかった時点で止めること。
+出力形式: 「列一覧／件数／欠損や表記ゆれの有無」を先に報告して。
+```
+
+### 46. 横断が必要な判断は上位モデルに寄せる
+
+```text
+前提: 資料全体を見比べないと結論が出ないタスク。
+指示: 部分ごとの処理は安い階層で行い、全体を見比べる最終判断だけ上位モデルに渡すこと。全体判断を安い階層に任せないこと。
+出力形式: 「部分処理の結果一覧／全体判断で見てほしい観点」を整理して渡して。
+```
+
+### 47. 同じ資料を何度も読み直させない
+
+```text
+前提: 同じ資料を参照する処理が複数回ある場面。
+指示: 一度読んだ内容は要点として書き出し、以降はその要点を使い回すこと。毎回原文を読み直させると、同じ情報に何度も費用を払うことになる。要点で足りない場面が出たときだけ、必要な箇所に限って原文へ戻ること。
+出力形式: 初回に「この資料の要点」を作り、以降はそれを参照する形で進めて。
+```
+
+### 48. 抜けを検出する仕掛けを最初に入れる
+
+```text
+前提: 大量の項目を処理するタスク。
+指示: 処理前に対象の総数を確定し、処理後に件数が一致するかを必ず突き合わせること。大量処理では途中の取りこぼしが最も気づきにくい失敗であり、件数確認を省略すると成功したように見えたまま先へ進んでしまう。
+出力形式: 「処理前の件数／処理後の件数／差分と理由」を最後に報告して。
+```
+
+### 49. 長い出力を求める前に構成だけ先に作る
+
+```text
+前提: 長い文書を作成するタスク。
+指示: いきなり本文を書き始めず、見出しレベルの構成を先に確定させること。構成が固まらないまま長文を書くと、書き直しのたびに同じ分量を作り直すことになる。合意が取れてから、節ごとに分けて書き進めること。
+出力形式: 構成案を提示し、承認を得てから節ごとに執筆して。
+```
+
+### 50. 扱える量を超えたら分割を提案する
+
+```text
+前提: 与えられた資料やデータが明らかに大きい場面。
+指示: 無理に一度で処理しようとせず、どう分割すれば扱えるかを提案すること。途中で情報が落ちたまま処理を続けないこと。
+出力形式: 「分割の単位／分割数／分割後の統合方法」を提案して承認を待って。
+```
+
+
+以上、50個です。内訳は仕事の振り分け（どの階層に出すか） 10本／推論設定（effort）の使い方 10本／コストの見張り方 10本／安い階層に任せたときの検算 10本／長い資料・大量データの扱い 10本 の合計50本です。
+</pre>
+<script>
+function flash(btn, label){
+  const old = btn.textContent, cls = btn.className;
+  btn.textContent = label; btn.classList.add('ok');
+  setTimeout(() => { btn.textContent = old; btn.className = cls; }, 1600);
+}
+function textOf(id){ return document.getElementById(id).textContent; }
+
+async function copyText(btn, id){
+  const t = textOf(id);
+  try {
+    await navigator.clipboard.writeText(t);
+  } catch (e) {
+    const ta = document.createElement('textarea');
+    ta.value = t; ta.style.position='fixed'; ta.style.opacity='0';
+    document.body.appendChild(ta); ta.select();
+    document.execCommand('copy'); ta.remove();
+  }
+  flash(btn, '✓ コピーしました');
+}
+
+function saveText(btn, id, name){
+  const blob = new Blob([textOf(id)], {type:'text/plain;charset=utf-8'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = name;
+  document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+  if (btn) flash(btn, '✓ 保存しました');
+}
+
+document.addEventListener('click', e => {
+  const b = e.target.closest('[data-copy]');
+  if (b) { copyText(b, b.dataset.copy); return; }
+  const d = e.target.closest('[data-save]');
+  if (d) { saveText(d, d.dataset.save, d.dataset.name); }
+});
+</script>
+</body></html>

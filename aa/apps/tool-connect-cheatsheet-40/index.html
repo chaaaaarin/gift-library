@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="ja"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AIツール別 接続コマンド逆引き表＋トラブル脱出40 — Kawaru Gifts</title>
+<meta name="description" content="Claude Code・Codex CLI・Cursorのどれで詰まっても、この1枚で切り分けられるようにまとめました。">
+<link rel="icon" href="data:image/png;base64,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">
+<link rel="stylesheet" href="../../assets/site.css">
+</head><body>
+<header class="kh"><div class="top">
+  <a class="back" href="../../">← 一覧へ</a>
+  <img src="data:image/png;base64,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" alt="">
+  <h1>AIツール別 接続コマンド逆引き表＋トラブル脱出40</h1>
+  <span class="badge">43項目</span>
+  <button class="btn sm" style="margin-left:auto" data-save="pfull" data-name="tool-connect-cheatsheet-40.md">⬇ 全件ダウンロード</button>
+</div></header>
+
+<div class="kwrap">
+  <section class="epctx epctx-top">
+  <div class="ep-thumb epctx-thumb"><img src="https://i.ytimg.com/vi/--xRGK2HGAA/hqdefault.jpg" alt=""></div>
+  <div>
+    <p class="epctx-label">この動画のプレゼントです</p>
+    <p class="epctx-title">SkillsじゃなくてMCPの時代</p>
+    <p class="epctx-date">2026-08-19</p>
+    <a class="watch" href="https://www.youtube.com/watch?v=--xRGK2HGAA" target="_blank" rel="noopener">▶ 動画を見る</a>
+  </div>
+</section>
+
+  <section class="kintro">
+    <h2>AIツール別 接続コマンド逆引き表＋トラブル脱出40</h2>
+    <p>Claude Code・Codex CLI・<span class="nb">Cursorのどれで詰まっても、</span><span class="nb">この1枚で切り分けられるようにまと</span><span class="nb">めました。</span></p>
+    <div class="kmeta"><span>設定・スニペット</span><span>収録 43項目</span><span>No.91 SkillsじゃなくてMCPの時代</span><span>2026-08-12 配布</span></div>
+    <div class="pnote"><span class="nb">下のカードから、</span><span class="nb">1件ずつコピー、</span><span class="nb">または個別にダウンロードできます。</span><span class="nb">まとめて欲しいときは、</span><span class="nb">上の</span><span class="nb">「全件ダウンロード」を</span><span class="nb">お使いください。</span></div>
+  </section>
+
+  <div class="icard">
+  <div class="ih"><span class="num">001</span><span class="ititle">ステップ0：接続コマンド早見表</span></div>
+  
+  <pre class="prompt" id="b1">□ Claude Codeに繋ぐ
+→ YES: claude mcp add --transport http &lt;name&gt; &lt;url&gt; --header &quot;Authorization: Bearer &lt;鍵&gt;&quot;
+□ Codex CLIに繋ぐ
+→ YES: codex mcp add &lt;name&gt; -- &lt;command&gt;（~/.codex/config.toml に保存される）
+□ Cursorに繋ぐ
+→ YES: .cursor/mcp.json（プロジェクト共有）または ~/.cursor/mcp.json（個人用）に手動追記
+指示例: 3ツールぶんの接続コマンドを、このMCPサーバーのURLに差し替えて並べて出力してください</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b1">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b1" data-name="tool-connect-cheatsheet-40-001.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">002</span><span class="ititle">ステップ1：Claude Codeで繋がらない</span></div>
+  
+  <pre class="prompt" id="b2">□ claude mcp add を実行してもエラーが出る
+→ YES: --transport http の後のURLが https:// から始まっているか確認する
+□ 接続はできたがツールが呼ばれない
+→ YES: スコープがLocalになっていないか確認し、Project（.mcp.json）に切り替える
+□ チームメンバーには繋がるのに自分だけ繋がらない
+→ YES: --header のBearerトークンが自分専用のものに置き換わっているか確認する
+□ ツール検索が原因で応答が遅い
+→ YES: Tool searchは既定オンのため、初回呼び出し時だけ遅くなる仕様と理解して問題ないか切り分ける
+□ プロジェクトを移動したら急に繋がらなくなった
+→ YES: Projectスコープは .mcp.json をそのプロジェクト内に置く前提のため、移動先にファイルがコピーされているか確認する
+□ 同じ名前でサーバーを登録し直したのに反映されない
+→ YES: 一度 claude mcp remove で削除してから再度 add し直す
+指示例: このエラーメッセージの原因として考えられるものを、認証・URL形式・スコープ設定の3観点で切り分けてください</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b2">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b2" data-name="tool-connect-cheatsheet-40-002.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">003</span><span class="ititle">ステップ2：Codex CLIで繋がらない</span></div>
+  
+  <pre class="prompt" id="b3">□ codex mcp add は成功したのに /mcp で表示されない
+→ YES: プロジェクトのtrust_levelが&quot;trusted&quot;になっているか ~/.codex/config.toml を確認する
+□ untrustedなプロジェクトで動かしたい
+→ YES: プロジェクト単位ではなく ~/.codex/config.toml（グローバル）側にサーバーを登録し直す
+□ ログイン後もモデル選択肢に反映されない
+→ YES: Codexアプリを一度完全に終了し、再起動する
+□ config.tomlを直接編集したら構文エラーになった
+→ YES: TOML形式のインデント・クォート漏れがないか1行ずつ確認する
+□ 複数のMCPサーバーを登録したら起動が遅くなった
+→ YES: 使っていないサーバーの設定を一時的にコメントアウトして起動時間を比較する
+□ VS Code版Codexと挙動が違う
+→ YES: config.tomlはCLIとVS Codeで共有される前提のため、拡張機能側の再読み込みを試す
+指示例: このconfig.tomlの内容がTOML形式として正しいか確認し、誤りがあれば修正案を出してください</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b3">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b3" data-name="tool-connect-cheatsheet-40-003.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">004</span><span class="ititle">ステップ3：Cursorで繋がらない</span></div>
+  
+  <pre class="prompt" id="b4">□ .cursor/mcp.json を編集したのにツールが増えない
+→ YES: Cursor Settings → Tools &amp; MCP で該当サーバーが有効化されているか確認する
+□ プロジェクト設定と個人設定で同名サーバーが競合している
+→ YES: プロジェクト側の .cursor/mcp.json が優先される仕様のため、意図した方だけ残す
+□ ツール数が多すぎて一部が使えないと警告される
+→ YES: Cursorは合計40ツール前後が上限の目安のため、不要なMCPサーバーを一時的に無効化する
+□ チームに配った .cursor/mcp.json が反映されない
+→ YES: リポジトリにコミットされているか、pullし直しているかを確認する
+□ 個人用とプロジェクト用で設定が二重管理になって混乱する
+→ YES: 個人共通で使うものは~/.cursor/mcp.json、プロジェクト固有のものだけ.cursor/mcp.jsonに置くと決めておく
+□ URLを直接貼るタイプの登録UIが見当たらない
+→ YES: Cursor Settings → Tools &amp; MCP から「Add MCP Server」でJSON貼り付け欄を開く
+指示例: 現在有効なMCPサーバーの一覧と、それぞれが提供しているツール数を数えてください</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b4">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b4" data-name="tool-connect-cheatsheet-40-004.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">005</span><span class="ititle">ステップ4：認証・鍵まわりの共通トラブル</span></div>
+  
+  <pre class="prompt" id="b5">□ Bearerトークンをコピペしたのに認証エラーになる
+→ YES: 前後に余分な空白・改行が混入していないか確認して貼り直す
+□ 個人ごとのトークンをどう発行すればいいか分からない
+→ YES: サーバー側の管理画面（または発行スクリプト）でメンバー名ごとに1本ずつ発行する運用にする
+□ 退職・異動したメンバーのアクセスを止めたい
+→ YES: そのメンバーのトークンだけをサーバー側で無効化する（他のメンバーには影響しない）
+□ トークンの有効期限が分からず不安
+→ YES: サーバー実装側でトークンの有効期限・最終利用日時を確認できる画面を用意する
+□ 複数ツールで同じトークンを使い回してよいか迷う
+→ YES: 1人1トークンに統一する（ツールごとに分けるとログの集計が煩雑になるため）
+□ トークンが漏れた疑いがある
+→ YES: 該当トークンを即座に無効化し、そのメンバー用に新しいトークンを再発行する
+指示例: このMCPサーバーで、メンバーごとのアクセストークンを発行・無効化する仕組みの設計案を出してください</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b5">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b5" data-name="tool-connect-cheatsheet-40-005.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">006</span><span class="ititle">ステップ5：GitHubリポジトリ配信元（方法2）のトラブル</span></div>
+  
+  <pre class="prompt" id="b6">□ SKILL.mdを置いたのにMCPサーバー化されない
+→ YES: リポジトリが公開（Public）設定になっているか確認する
+□ mainにpushしたのに古い内容のまま
+→ YES: サービス側のキャッシュ反映まで数分かかる場合があるため、少し時間を置いて再接続する
+□ 複数のSKILL.mdをどう配置すればいいか分からない
+→ YES: 1スキル1ディレクトリの構成にし、リポジトリのREADMEに一覧を書いておく
+□ 社外秘の内容を誤って公開リポジトリに置いてしまった
+→ YES: 該当ファイルを削除するだけでなくリポジトリを非公開化し、方法3（自前サーバー）へ移行する
+□ どのバージョンのSKILL.mdが読み込まれているか分からない
+→ YES: リポジトリのコミット履歴と、サーバー側が最後に取得した時刻を突き合わせる
+□ フォークした人のリポジトリが古いまま放置されている
+→ YES: 自分は元リポジトリのURLだけを配布し、フォーク先を配布対象にしないよう案内する
+指示例: このSKILL.mdのディレクトリ構成が、公開リポジトリ配信の想定構成として問題ないか確認してください</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b6">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b6" data-name="tool-connect-cheatsheet-40-006.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">007</span><span class="ititle">ステップ6：複数ツールを併用しているときの切り分け</span></div>
+  
+  <pre class="prompt" id="b7">□ Claude Codeでは動くのにCodexでは動かない
+→ YES: サーバー自体の問題ではなくクライアント側の登録設定（config.toml／mcp.json）を先に疑う
+□ ツールによって呼び出し結果が微妙に違う
+→ YES: SKILL.mdの説明文にツール固有の前提（ファイルパス表記等）が残っていないか確認する
+□ どのツールから繋いでも同じ結果になるか確認したい
+→ YES: 同じ入力を3ツールに投げて出力を並べて比較する
+□ ツールごとに使えるMCP機能（Resources/Prompts等）の対応度が違う
+→ YES: 各ツールの公式ドキュメントで対応コンポーネント一覧を確認し、共通で使える機能だけを前提に設計する
+□ ツールを乗り換えたら過去のやり取り（利用ログ）が引き継がれるか不安
+→ YES: ログはMCPサーバー側に蓄積される設計のため、クライアントを変えても同じサーバーなら履歴は残る
+□ 併用中の2ツールで応答速度に差がある
+→ YES: どちらもTool searchが有効になっているか、片方だけ古いバージョンのままになっていないか確認する
+指示例: Claude Code・Codex・Cursorの3ツールに同じ依頼を投げ、出力の違いを表にまとめてください</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b7">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b7" data-name="tool-connect-cheatsheet-40-007.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">008</span><span class="ititle">ステップ7：それでも解決しないとき</span></div>
+  
+  <pre class="prompt" id="b8">□ ここまでのステップを全部試しても直らない
+→ YES: サーバー側のログ（誰がいつ何を呼んだか）を確認し、エラーが起きた時刻の記録を探す
+□ サーバー自体が落ちている可能性がある
+→ YES: 方法1（つなぐだけの3分）で使った公開サーバーに同じ手順で繋いでみて、クライアント側の問題かサーバー側の問題かを切り分ける
+□ 自分では再現できないのに他のメンバーだけエラーになる
+→ YES: そのメンバーのネットワーク環境（社内プロキシ等）がHTTP接続をブロックしていないか確認する
+□ 直しても直しても同じ場所で詰まる
+→ YES: 一度サーバーを作り直す（方法3を最初からやり直す）方が早いか判断する
+指示例: このログの中から、直近で失敗しているリクエストを時刻順に抽出してください</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b8">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b8" data-name="tool-connect-cheatsheet-40-008.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+
+  <section class="epctx">
+  <p class="epctx-label">この動画のほかのプレゼント</p>
+  <div class="ep-kits"><a class="kchip" href="../mcp-migration-prompts-100/"><span class="kt">ツール横断 MCP移行プロンプト100選</span><span class="badge">100個</span><span class="go">開く →</span></a><a class="kchip" href="../skill-to-mcp-checklist-30/"><span class="kt">Skill→MCP 乗り換え判定シート＋移行チェックリスト30</span><span class="badge">38項目</span><span class="go">開く →</span></a></div>
+</section>
+
+  <footer><a href="../../">← AIエージェント / Kawaru プレゼント図書館にもどる</a></footer>
+</div>
+
+<pre id="pfull" class="hidden"># 🎁 AIツール別 接続コマンド逆引き表＋トラブル脱出40
+
+Claude Code・Codex CLI・Cursorのどれで詰まっても、この1枚で切り分けられるようにまとめました。
+
+**受け取り方**: 下のコードブロック右上のコピーボタンでコピーするか、このファイルをそのままダウンロードしてください。
+
+**使い方**: 接続でつまずいたら、該当するステップを上から確認してください。
+
+```text
+【AIツール別 接続コマンド逆引き表＋トラブル脱出40】
+
+■ ステップ0：接続コマンド早見表
+□ Claude Codeに繋ぐ
+→ YES: claude mcp add --transport http &lt;name&gt; &lt;url&gt; --header &quot;Authorization: Bearer &lt;鍵&gt;&quot;
+□ Codex CLIに繋ぐ
+→ YES: codex mcp add &lt;name&gt; -- &lt;command&gt;（~/.codex/config.toml に保存される）
+□ Cursorに繋ぐ
+→ YES: .cursor/mcp.json（プロジェクト共有）または ~/.cursor/mcp.json（個人用）に手動追記
+指示例: 3ツールぶんの接続コマンドを、このMCPサーバーのURLに差し替えて並べて出力してください
+
+■ ステップ1：Claude Codeで繋がらない
+□ claude mcp add を実行してもエラーが出る
+→ YES: --transport http の後のURLが https:// から始まっているか確認する
+□ 接続はできたがツールが呼ばれない
+→ YES: スコープがLocalになっていないか確認し、Project（.mcp.json）に切り替える
+□ チームメンバーには繋がるのに自分だけ繋がらない
+→ YES: --header のBearerトークンが自分専用のものに置き換わっているか確認する
+□ ツール検索が原因で応答が遅い
+→ YES: Tool searchは既定オンのため、初回呼び出し時だけ遅くなる仕様と理解して問題ないか切り分ける
+□ プロジェクトを移動したら急に繋がらなくなった
+→ YES: Projectスコープは .mcp.json をそのプロジェクト内に置く前提のため、移動先にファイルがコピーされているか確認する
+□ 同じ名前でサーバーを登録し直したのに反映されない
+→ YES: 一度 claude mcp remove で削除してから再度 add し直す
+指示例: このエラーメッセージの原因として考えられるものを、認証・URL形式・スコープ設定の3観点で切り分けてください
+
+■ ステップ2：Codex CLIで繋がらない
+□ codex mcp add は成功したのに /mcp で表示されない
+→ YES: プロジェクトのtrust_levelが&quot;trusted&quot;になっているか ~/.codex/config.toml を確認する
+□ untrustedなプロジェクトで動かしたい
+→ YES: プロジェクト単位ではなく ~/.codex/config.toml（グローバル）側にサーバーを登録し直す
+□ ログイン後もモデル選択肢に反映されない
+→ YES: Codexアプリを一度完全に終了し、再起動する
+□ config.tomlを直接編集したら構文エラーになった
+→ YES: TOML形式のインデント・クォート漏れがないか1行ずつ確認する
+□ 複数のMCPサーバーを登録したら起動が遅くなった
+→ YES: 使っていないサーバーの設定を一時的にコメントアウトして起動時間を比較する
+□ VS Code版Codexと挙動が違う
+→ YES: config.tomlはCLIとVS Codeで共有される前提のため、拡張機能側の再読み込みを試す
+指示例: このconfig.tomlの内容がTOML形式として正しいか確認し、誤りがあれば修正案を出してください
+
+■ ステップ3：Cursorで繋がらない
+□ .cursor/mcp.json を編集したのにツールが増えない
+→ YES: Cursor Settings → Tools &amp; MCP で該当サーバーが有効化されているか確認する
+□ プロジェクト設定と個人設定で同名サーバーが競合している
+→ YES: プロジェクト側の .cursor/mcp.json が優先される仕様のため、意図した方だけ残す
+□ ツール数が多すぎて一部が使えないと警告される
+→ YES: Cursorは合計40ツール前後が上限の目安のため、不要なMCPサーバーを一時的に無効化する
+□ チームに配った .cursor/mcp.json が反映されない
+→ YES: リポジトリにコミットされているか、pullし直しているかを確認する
+□ 個人用とプロジェクト用で設定が二重管理になって混乱する
+→ YES: 個人共通で使うものは~/.cursor/mcp.json、プロジェクト固有のものだけ.cursor/mcp.jsonに置くと決めておく
+□ URLを直接貼るタイプの登録UIが見当たらない
+→ YES: Cursor Settings → Tools &amp; MCP から「Add MCP Server」でJSON貼り付け欄を開く
+指示例: 現在有効なMCPサーバーの一覧と、それぞれが提供しているツール数を数えてください
+
+■ ステップ4：認証・鍵まわりの共通トラブル
+□ Bearerトークンをコピペしたのに認証エラーになる
+→ YES: 前後に余分な空白・改行が混入していないか確認して貼り直す
+□ 個人ごとのトークンをどう発行すればいいか分からない
+→ YES: サーバー側の管理画面（または発行スクリプト）でメンバー名ごとに1本ずつ発行する運用にする
+□ 退職・異動したメンバーのアクセスを止めたい
+→ YES: そのメンバーのトークンだけをサーバー側で無効化する（他のメンバーには影響しない）
+□ トークンの有効期限が分からず不安
+→ YES: サーバー実装側でトークンの有効期限・最終利用日時を確認できる画面を用意する
+□ 複数ツールで同じトークンを使い回してよいか迷う
+→ YES: 1人1トークンに統一する（ツールごとに分けるとログの集計が煩雑になるため）
+□ トークンが漏れた疑いがある
+→ YES: 該当トークンを即座に無効化し、そのメンバー用に新しいトークンを再発行する
+指示例: このMCPサーバーで、メンバーごとのアクセストークンを発行・無効化する仕組みの設計案を出してください
+
+■ ステップ5：GitHubリポジトリ配信元（方法2）のトラブル
+□ SKILL.mdを置いたのにMCPサーバー化されない
+→ YES: リポジトリが公開（Public）設定になっているか確認する
+□ mainにpushしたのに古い内容のまま
+→ YES: サービス側のキャッシュ反映まで数分かかる場合があるため、少し時間を置いて再接続する
+□ 複数のSKILL.mdをどう配置すればいいか分からない
+→ YES: 1スキル1ディレクトリの構成にし、リポジトリのREADMEに一覧を書いておく
+□ 社外秘の内容を誤って公開リポジトリに置いてしまった
+→ YES: 該当ファイルを削除するだけでなくリポジトリを非公開化し、方法3（自前サーバー）へ移行する
+□ どのバージョンのSKILL.mdが読み込まれているか分からない
+→ YES: リポジトリのコミット履歴と、サーバー側が最後に取得した時刻を突き合わせる
+□ フォークした人のリポジトリが古いまま放置されている
+→ YES: 自分は元リポジトリのURLだけを配布し、フォーク先を配布対象にしないよう案内する
+指示例: このSKILL.mdのディレクトリ構成が、公開リポジトリ配信の想定構成として問題ないか確認してください
+
+■ ステップ6：複数ツールを併用しているときの切り分け
+□ Claude Codeでは動くのにCodexでは動かない
+→ YES: サーバー自体の問題ではなくクライアント側の登録設定（config.toml／mcp.json）を先に疑う
+□ ツールによって呼び出し結果が微妙に違う
+→ YES: SKILL.mdの説明文にツール固有の前提（ファイルパス表記等）が残っていないか確認する
+□ どのツールから繋いでも同じ結果になるか確認したい
+→ YES: 同じ入力を3ツールに投げて出力を並べて比較する
+□ ツールごとに使えるMCP機能（Resources/Prompts等）の対応度が違う
+→ YES: 各ツールの公式ドキュメントで対応コンポーネント一覧を確認し、共通で使える機能だけを前提に設計する
+□ ツールを乗り換えたら過去のやり取り（利用ログ）が引き継がれるか不安
+→ YES: ログはMCPサーバー側に蓄積される設計のため、クライアントを変えても同じサーバーなら履歴は残る
+□ 併用中の2ツールで応答速度に差がある
+→ YES: どちらもTool searchが有効になっているか、片方だけ古いバージョンのままになっていないか確認する
+指示例: Claude Code・Codex・Cursorの3ツールに同じ依頼を投げ、出力の違いを表にまとめてください
+
+■ ステップ7：それでも解決しないとき
+□ ここまでのステップを全部試しても直らない
+→ YES: サーバー側のログ（誰がいつ何を呼んだか）を確認し、エラーが起きた時刻の記録を探す
+□ サーバー自体が落ちている可能性がある
+→ YES: 方法1（つなぐだけの3分）で使った公開サーバーに同じ手順で繋いでみて、クライアント側の問題かサーバー側の問題かを切り分ける
+□ 自分では再現できないのに他のメンバーだけエラーになる
+→ YES: そのメンバーのネットワーク環境（社内プロキシ等）がHTTP接続をブロックしていないか確認する
+□ 直しても直しても同じ場所で詰まる
+→ YES: 一度サーバーを作り直す（方法3を最初からやり直す）方が早いか判断する
+指示例: このログの中から、直近で失敗しているリクエストを時刻順に抽出してください
+```
+
+**ポイント**: 迷ったら「ステップ0の早見表どおりに繋ぎ直す」を先に試すと、多くのつまずきは設定ミスだと分かります。
+</pre>
+<script>
+function flash(btn, label){
+  const old = btn.textContent, cls = btn.className;
+  btn.textContent = label; btn.classList.add('ok');
+  setTimeout(() => { btn.textContent = old; btn.className = cls; }, 1600);
+}
+function textOf(id){ return document.getElementById(id).textContent; }
+
+async function copyText(btn, id){
+  const t = textOf(id);
+  try {
+    await navigator.clipboard.writeText(t);
+  } catch (e) {
+    const ta = document.createElement('textarea');
+    ta.value = t; ta.style.position='fixed'; ta.style.opacity='0';
+    document.body.appendChild(ta); ta.select();
+    document.execCommand('copy'); ta.remove();
+  }
+  flash(btn, '✓ コピーしました');
+}
+
+function saveText(btn, id, name){
+  const blob = new Blob([textOf(id)], {type:'text/plain;charset=utf-8'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = name;
+  document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+  if (btn) flash(btn, '✓ 保存しました');
+}
+
+document.addEventListener('click', e => {
+  const b = e.target.closest('[data-copy]');
+  if (b) { copyText(b, b.dataset.copy); return; }
+  const d = e.target.closest('[data-save]');
+  if (d) { saveText(d, d.dataset.save, d.dataset.name); }
+});
+</script>
+</body></html>

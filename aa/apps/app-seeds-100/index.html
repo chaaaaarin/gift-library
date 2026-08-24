@@ -1,0 +1,2028 @@
+<!doctype html>
+<html lang="ja"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>自作アプリの種 100本（採寸プロンプトつき） — Kawaru Gifts</title>
+<meta name="description" content="「これ自作できる」題材を職種別に100本。1行の“痛み”と、そのまま話せる採寸プロンプト（前提・指示・出力形式）が付いています。">
+<link rel="icon" href="data:image/png;base64,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">
+<link rel="stylesheet" href="../../assets/site.css">
+</head><body>
+<header class="kh"><div class="top">
+  <a class="back" href="../../">← 一覧へ</a>
+  <img src="data:image/png;base64,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" alt="">
+  <h1>自作アプリの種 100本（採寸プロンプトつき）</h1>
+  <span class="badge">100個</span>
+  <button class="btn sm" style="margin-left:auto" data-save="pfull" data-name="app-seeds-100.md">⬇ 全件ダウンロード</button>
+</div></header>
+
+<div class="kwrap">
+  <section class="epctx epctx-top">
+  <div class="ep-thumb epctx-thumb"><img src="https://i.ytimg.com/vi/vzxpwZ1ihUc/hqdefault.jpg" alt=""></div>
+  <div>
+    <p class="epctx-label">この動画のプレゼントです</p>
+    <p class="epctx-title">Codexでアプリ開発</p>
+    <p class="epctx-date">2026-08-06</p>
+    <a class="watch" href="https://www.youtube.com/watch?v=vzxpwZ1ihUc" target="_blank" rel="noopener">▶ 動画を見る</a>
+  </div>
+</section>
+
+  <section class="kintro">
+    <h2>自作アプリの種 100本（採寸プロンプトつき）</h2>
+    <p><span class="nb">「これ自作できる」</span><span class="nb">題材を職種別に100本。</span><span class="nb">1行の“痛み”と、</span><span class="nb">そのまま話せる採寸プロンプト</span><span class="nb">（前提・</span><span class="nb">指示・</span><span class="nb">出力形式）が付いています。</span></p>
+    <div class="kmeta"><span>プロンプト集</span><span>収録 100個</span><span>No.79 Codexでアプリ開発</span><span>2026-07-30 配布</span></div>
+    <div class="pnote"><span class="nb">下のカードから、</span><span class="nb">1件ずつコピー、</span><span class="nb">または個別にダウンロードできます。</span><span class="nb">まとめて欲しいときは、</span><span class="nb">上の</span><span class="nb">「全件ダウンロード」を</span><span class="nb">お使いください。</span></div>
+  </section>
+
+  <h2 class="cat">動画編集・クリエイター</h2>
+<div class="icard">
+  <div class="ih"><span class="num">001</span><span class="ititle">素材サイト横断検索</span></div>
+  
+  <pre class="prompt" id="b1">素材サイト横断検索
+痛み: 効果音やBGMを探すたびに複数サイトを開き直し、同じ検索語を打ち直している。
+前提: 動画編集をしていて、効果音とBGMを毎回3〜5つのフリー素材サイトで探し回っている。1本の動画で10回以上この往復が起きる。
+指示: 自分がよく使う素材サイトの掲載ページ情報だけを横断して検索できるWebアプリを作りたい。素材ファイル自体は持たず、掲載ページへのリンクだけを扱う。各サイトの利用規約は先に読ませ、禁止されている扱い方（音源の直リンク・再生ページの自作など）は設計から外す。
+出力形式: 最初の完成は「キーワードを入れると候補が一覧に出て、クリックすると元の掲載ページが開く」だけでいい。お気に入り登録・履歴・タグ編集は作らない。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b1">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b1" data-name="app-seeds-100-001.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">002</span><span class="ititle">サムネ案の比較ボード</span></div>
+  
+  <pre class="prompt" id="b2">サムネ案の比較ボード
+痛み: サムネイル案を並べて比較するのに毎回スライドを作り直している。
+前提: YouTubeのサムネイル案を3〜5枚作り、どれがいいかを人に見せて意見をもらう場面が毎週ある。今はスライドに貼って共有している。
+指示: 画像を並べて表示し、それぞれに「良い点・直す点」を書き込めるWebアプリを作りたい。画像は自分の端末から選ぶだけで、サーバーに保存しなくてよい。
+出力形式: 最初の完成は「画像を複数選ぶと横並びに表示され、各画像の下にメモを書ける」だけ。共有リンク・ログイン・保存機能は後回しにする。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b2">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b2" data-name="app-seeds-100-002.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">003</span><span class="ititle">テロップ表記ゆれチェッカー</span></div>
+  
+  <pre class="prompt" id="b3">テロップ表記ゆれチェッカー
+痛み: 同じ動画内で「AI」「Ai」「エーアイ」が混ざり、あとで直すのに時間がかかる。
+前提: 字幕・テロップの原稿を書いたあと、固有名詞や記号の表記ゆれを目で探して直している。1本あたり20分ほどかかっている。
+指示: テキストを貼ると、あらかじめ登録した表記ルール（NG表記→OK表記の対応表）に反する箇所を全部並べて見せてくれるツールを作りたい。ルールは自分で足せるようにする。
+出力形式: 最初の完成は「テキストを貼る → 違反箇所と行番号の一覧が出る」だけ。自動置換や履歴管理は作らない。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b3">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b3" data-name="app-seeds-100-003.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">004</span><span class="ititle">案件の進行ボード</span></div>
+  
+  <pre class="prompt" id="b4">案件の進行ボード
+痛み: 案件ごとの進行状況が頭の中とチャットに散らばっている。
+前提: 動画編集を複数本並行して受けており、初稿提出・修正待ち・納品済みの区別がチャットを遡らないと分からない。
+指示: 案件名と締切、いまの状態（作業中／確認待ち／修正中／納品済み）だけを管理できるボードを作りたい。データは自分の端末の中だけに保存する。
+出力形式: 最初の完成は「案件を追加して、状態を4つのどれかに切り替えられる」だけ。通知・共有・グラフは後回し。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b4">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b4" data-name="app-seeds-100-004.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">005</span><span class="ititle">撮って出しの尺計算メモ</span></div>
+  
+  <pre class="prompt" id="b5">撮って出しの尺計算メモ
+痛み: 尺の配分を毎回電卓とメモ帳で計算している。
+前提: 動画の構成を組むとき、章ごとの目標尺を足し引きして全体の長さに収める作業を毎回手計算している。
+指示: 章の名前と目標秒数を入れると合計と残り時間を自動計算し、目標尺を超えたら色で知らせてくれるツールを作りたい。
+出力形式: 最初の完成は「行を追加して秒数を入れると合計が出る」だけ。テンプレート保存や書き出しは作らない。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b5">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b5" data-name="app-seeds-100-005.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">006</span><span class="ititle">納品ファイル名の一括生成</span></div>
+  
+  <pre class="prompt" id="b6">納品ファイル名の一括生成
+痛み: 納品ファイル名の規則をクライアントごとに覚えていられない。
+前提: クライアントごとに納品ファイル名の規則（日付の形式・案件コード・版数の付け方）が違い、毎回過去の納品物を見に行って確認している。
+指示: クライアントを選んで日付と案件名と版数を入れると、その規則どおりのファイル名を組み立ててコピーできるツールを作りたい。規則は自分で追加・編集できるようにする。
+出力形式: 最初の完成は「クライアントを選ぶ → 項目を入れる → 完成した名前をコピーできる」だけ。実ファイルのリネーム機能は作らない。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b6">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b6" data-name="app-seeds-100-006.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">007</span><span class="ititle">BGM使用履歴の記録</span></div>
+  
+  <pre class="prompt" id="b7">BGM使用履歴の記録
+痛み: どの動画でどのBGMを使ったか分からず、同じ曲を続けて使ってしまう。
+前提: 複数のチャンネルの動画を編集しており、同じBGMを直近で使ったかどうかを思い出せない。クレジット表記が必要な曲の管理も曖昧になっている。
+指示: 動画タイトル・使用した曲名・提供元・クレジット表記が必要かどうかを記録し、曲名で検索できる一覧を作りたい。
+出力形式: 最初の完成は「記録を1件追加できる／曲名で検索できる」だけ。集計や自動取り込みは作らない。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b7">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b7" data-name="app-seeds-100-007.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">008</span><span class="ititle">修正依頼の書き起こしメモ</span></div>
+  
+  <pre class="prompt" id="b8">修正依頼の書き起こしメモ
+痛み: 口頭やボイスメモの修正依頼を、作業前に文字に落とすのが面倒。
+前提: クライアントから音声や長文チャットで修正依頼が来て、そのまま作業に入ると抜けが出る。毎回自分で箇条書きに整理している。
+指示: 長い文章を貼ると「何を・どこを・どう直すか」の3項目に分けた箇条書きに整理してくれるツールを作りたい。整理後は作業のチェックリストとして印を付けられるようにする。
+出力形式: 最初の完成は「文章を貼る → 箇条書きに整理される → 各項目にチェックが付けられる」だけ。音声の取り込みは後回し。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b8">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b8" data-name="app-seeds-100-008.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">009</span><span class="ititle">参考動画の切り抜きメモ</span></div>
+  
+  <pre class="prompt" id="b9">参考動画の切り抜きメモ
+痛み: 参考にしたい演出の場所を覚えておけない。
+前提: 参考にしたい動画の「この演出のこの秒数」をメモしたいが、ブックマークだと後から見つけられない。
+指示: 動画のURLと秒数と一言メモを登録すると、その秒数から再生できるリンクを作って一覧にしてくれるツールを作りたい。タグで絞り込めるようにする。
+出力形式: 最初の完成は「URL・秒数・メモを登録 → 一覧から該当秒数のリンクを開ける」だけ。タグ機能は次の段階に回す。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b9">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b9" data-name="app-seeds-100-009.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">010</span><span class="ititle">編集前チェックリスト</span></div>
+  
+  <pre class="prompt" id="b10">編集前チェックリスト
+痛み: 編集を始める前の確認事項を毎回思い出せない。
+前提: 編集前に確認すべきこと（納品形式・尺・テロップ規則・NGワード・BGMの可否）がクライアントごとに違い、毎回抜けが出る。
+指示: クライアントを選ぶと、そのクライアント専用の確認事項リストが出てきて、順番に印を付けられるツールを作りたい。リストは自分で編集できるようにする。
+出力形式: 最初の完成は「クライアントを選ぶ → チェックリストが出る → 印を付けられる」だけ。履歴の保存は後回し。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b10">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b10" data-name="app-seeds-100-010.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<h2 class="cat">営業・商談</h2>
+<div class="icard">
+  <div class="ih"><span class="num">011</span><span class="ititle">商談メモから議事録</span></div>
+  
+  <pre class="prompt" id="b11">商談メモから議事録
+痛み: 商談後の議事録づくりに毎回30分かかっている。
+前提: 商談中は箇条書きの走り書きしか取れず、あとで社内共有用の議事録に整える作業に毎回30分かかっている。
+指示: 走り書きを貼ると「決まったこと／持ち帰り／次回までの宿題／期限」の4項目に整理してくれるツールを作りたい。宿題には担当者名を付けられるようにする。
+出力形式: 最初の完成は「メモを貼る → 4項目に整理された文章が出る → コピーできる」だけ。保存や共有は後回し。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b11">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b11" data-name="app-seeds-100-011.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">012</span><span class="ititle">提案書の使い回し検索</span></div>
+  
+  <pre class="prompt" id="b12">提案書の使い回し検索
+痛み: 過去の提案書のどこに何を書いたか探せない。
+前提: 過去の提案書が大量にあり、似た業種の案件で使える部分を探すのに毎回フォルダを漁っている。
+指示: 提案書の要点（業種・課題・提案内容・金額帯・結果）を1件ずつ登録しておき、業種や課題で検索できる台帳を作りたい。実ファイルへのリンクも持たせる。
+出力形式: 最初の完成は「1件登録できる／業種で絞り込める」だけ。ファイル本体の解析や自動登録は作らない。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b12">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b12" data-name="app-seeds-100-012.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">013</span><span class="ititle">見積の概算計算</span></div>
+  
+  <pre class="prompt" id="b13">見積の概算計算
+痛み: 見積の概算を出すたびに表計算ファイルを探している。
+前提: 商談中に概算を出す必要があるが、料金体系が複雑で表計算ファイルを開かないと計算できず、その場で答えられない。
+指示: 項目と数量を選ぶだけで概算金額を計算し、内訳つきで表示するツールを作りたい。単価は自分で更新できるようにする。
+出力形式: 最初の完成は「項目を選んで数量を入れる → 合計と内訳が出る」だけ。PDF書き出しや保存は後回し。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b13">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b13" data-name="app-seeds-100-013.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">014</span><span class="ititle">追客リマインダー</span></div>
+  
+  <pre class="prompt" id="b14">追客リマインダー
+痛み: 追いかけるべき見込み客を忘れる。
+前提: 商談後の追客タイミング（3日後・2週間後・1か月後）を管理できず、機会を逃していると感じている。
+指示: 見込み客名と最終接触日を登録すると、次に連絡すべき日を自動計算して「今日連絡すべき人」の一覧を出すツールを作りたい。
+出力形式: 最初の完成は「登録 → 今日連絡すべき人が一覧で出る」だけ。メール送信や通知は作らない。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b14">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b14" data-name="app-seeds-100-014.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">015</span><span class="ititle">よくある質問の返答集</span></div>
+  
+  <pre class="prompt" id="b15">よくある質問の返答集
+痛み: 同じ質問に毎回文章を書き直している。
+前提: 問い合わせで来る質問の8割は同じ内容だが、そのたびに文章を書き直しており、担当者ごとに回答の質もばらついている。
+指示: 質問をキーワードで検索すると、確認済みの回答文が出てきてそのままコピーできるツールを作りたい。回答文は自分で追加・修正できるようにする。
+出力形式: 最初の完成は「キーワード検索 → 回答文が出る → コピーできる」だけ。承認フローや権限は作らない。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b15">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b15" data-name="app-seeds-100-015.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">016</span><span class="ititle">競合比較の一枚表</span></div>
+  
+  <pre class="prompt" id="b16">競合比較の一枚表
+痛み: 競合との比較を聞かれるたびに口頭で答えている。
+前提: 商談で必ず競合との違いを聞かれるが、比較材料が個人の頭の中にあり、担当者によって説明がぶれる。
+指示: 自社と競合数社を項目ごとに比較した表を作り、商談中に画面で見せられるようにしたい。項目と内容は自分で更新できるようにする。
+出力形式: 最初の完成は「比較表を画面で表示できる／項目を編集できる」だけ。印刷用レイアウトは後回し。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b16">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b16" data-name="app-seeds-100-016.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">017</span><span class="ititle">訪問ルートのメモ</span></div>
+  
+  <pre class="prompt" id="b17">訪問ルートのメモ
+痛み: 1日に複数訪問する日の順番決めが手間。
+前提: 1日に3〜5件訪問する日があり、順番と移動時間の見積もりを毎回手で組んでいる。
+指示: 訪問先の名前と希望時間帯を入れると、無理のない順番の案を出してくれるツールを作りたい。地図連携はせず、時間帯の整合だけを見る。
+出力形式: 最初の完成は「訪問先を入れる → 時間帯が矛盾しない順番の案が出る」だけ。移動時間の自動計算は後回し。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b17">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b17" data-name="app-seeds-100-017.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">018</span><span class="ititle">失注理由の記録と集計</span></div>
+  
+  <pre class="prompt" id="b18">失注理由の記録と集計
+痛み: 失注の理由が個人の記憶にしか残らない。
+前提: 失注した案件の理由を振り返る機会がなく、同じ理由で落ち続けていても気づけない。
+指示: 失注案件の理由を選択式（価格／時期／機能／競合／担当者不在）＋一言メモで記録し、理由ごとの件数を数えられるツールを作りたい。
+出力形式: 最初の完成は「1件記録できる／理由ごとの件数が出る」だけ。グラフや期間比較は次の段階に回す。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b18">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b18" data-name="app-seeds-100-018.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">019</span><span class="ititle">お礼メールの下書き生成</span></div>
+  
+  <pre class="prompt" id="b19">お礼メールの下書き生成
+痛み: お礼メールの文面を毎回考えている。
+前提: 商談後のお礼メールを毎回ゼロから書いており、時間が空くと送らないまま流れてしまう。
+指示: 相手の名前・話した内容・次のステップを入れると、そのままの丁寧さで送れるお礼メールの下書きを作るツールを作りたい。定型の言い回しは自分で登録できるようにする。
+出力形式: 最初の完成は「3項目を入れる → 下書きが出る → コピーできる」だけ。メール送信機能は作らない。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b19">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b19" data-name="app-seeds-100-019.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">020</span><span class="ititle">商談前の相手情報まとめ</span></div>
+  
+  <pre class="prompt" id="b20">商談前の相手情報まとめ
+痛み: 商談前の下調べに時間がかかる。
+前提: 商談前に相手企業の公開情報を調べるのに毎回20〜30分かかり、準備が薄いまま臨むこともある。
+指示: 会社名を入れると、自分で決めた確認項目（事業内容・規模・直近の発表・想定される課題）を埋める枠が出て、そこにメモを溜められるツールを作りたい。
+出力形式: 最初の完成は「会社名を入れる → 確認項目の枠が出る → メモを保存できる」だけ。自動収集は作らない。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b20">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b20" data-name="app-seeds-100-020.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<h2 class="cat">事務・総務</h2>
+<div class="icard">
+  <div class="ih"><span class="num">021</span><span class="ititle">備品の貸出台帳</span></div>
+  
+  <pre class="prompt" id="b21">備品の貸出台帳
+痛み: 誰が何を借りているか分からなくなる。
+前提: 社内の備品（ノートパソコン・カメラ・プロジェクター）の貸出をノートで管理しており、返却漏れが起きている。
+指示: 備品名・借りた人・貸出日・返却予定日を記録し、返却予定を過ぎたものを目立たせる台帳を作りたい。
+出力形式: 最初の完成は「貸出を1件登録できる／期限超過が色で分かる」だけ。QRコードや通知は作らない。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b21">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b21" data-name="app-seeds-100-021.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">022</span><span class="ititle">郵便物の受け渡し記録</span></div>
+  
+  <pre class="prompt" id="b22">郵便物の受け渡し記録
+痛み: 誰宛の郵便を誰に渡したか記録がない。
+前提: 郵便物や宅配を受け取って社内の担当者に渡す作業をしているが、記録がないため「届いていない」と言われたときに確認できない。
+指示: 受け取った日時・差出人・宛先の担当者・渡した日時を1件ずつ記録し、担当者名で検索できるツールを作りたい。
+出力形式: 最初の完成は「受け取り記録を1件登録できる／担当者名で検索できる」だけ。写真の添付は後回し。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b22">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b22" data-name="app-seeds-100-022.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">023</span><span class="ititle">会議室の空き確認</span></div>
+  
+  <pre class="prompt" id="b23">会議室の空き確認
+痛み: 会議室の空き状況が壁の紙でしか分からない。
+前提: 会議室の予約を紙の表で管理しており、自席から空き状況が分からないため何度も見に行っている。
+指示: 日付と部屋を選ぶと時間帯ごとの空き状況が見え、そのまま予約を書き込める表を作りたい。データは1つの場所に保存する。
+出力形式: 最初の完成は「日付を選ぶ → 時間帯の表が出る → 空き枠に名前を書き込める」だけ。承認や通知は作らない。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b23">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b23" data-name="app-seeds-100-023.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">024</span><span class="ititle">社内問い合わせの振り分けメモ</span></div>
+  
+  <pre class="prompt" id="b24">社内問い合わせの振り分けメモ
+痛み: 同じ問い合わせを毎回別の人が答えている。
+前提: 総務への問い合わせが口頭・チャット・メールに分散し、誰がどこまで対応したか分からなくなる。
+指示: 問い合わせ内容・依頼者・状態（受付／対応中／完了）を記録し、未完了のものだけを絞り込める一覧を作りたい。
+出力形式: 最初の完成は「1件登録できる／未完了だけを絞り込める」だけ。担当者の自動割り当ては作らない。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b24">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b24" data-name="app-seeds-100-024.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">025</span><span class="ititle">入退社手続きの進行表</span></div>
+  
+  <pre class="prompt" id="b25">入退社手続きの進行表
+痛み: 入社手続きの抜けが毎回発生する。
+前提: 入社・退社のたびに必要な手続きが多く（アカウント発行・備品・保険・座席）、抜けが出ると本人に迷惑がかかる。
+指示: 入社日を入れると必要な手続きの一覧が自動で並び、済んだものに印を付けられる進行表を作りたい。手続きの項目は自分で編集できるようにする。
+出力形式: 最初の完成は「入社日を入れる → 手続き一覧が出る → 印を付けられる」だけ。担当者への通知は後回し。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b25">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b25" data-name="app-seeds-100-025.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">026</span><span class="ititle">押印申請の記録</span></div>
+  
+  <pre class="prompt" id="b26">押印申請の記録
+痛み: 押印の申請と履行が紙でしか残らない。
+前提: 押印の申請を紙で受け、押した記録も紙のため、あとから「いつ誰の依頼で押したか」を探すのに時間がかかる。
+指示: 申請者・書類名・押印日・保管場所を記録して検索できる台帳を作りたい。書類名の一部でも検索できるようにする。
+出力形式: 最初の完成は「1件記録できる／書類名で部分検索できる」だけ。承認フローは作らない。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b26">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b26" data-name="app-seeds-100-026.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">027</span><span class="ititle">社内マニュアルの検索窓</span></div>
+  
+  <pre class="prompt" id="b27">社内マニュアルの検索窓
+痛み: マニュアルがどこにあるか分からず毎回聞かれる。
+前提: 社内マニュアルが複数のフォルダとチャットに散らばっており、「あれどこ？」の質問が毎日来る。
+指示: マニュアル名・置き場所のリンク・要約1行を登録した一覧を作り、キーワードで探せるようにしたい。
+出力形式: 最初の完成は「1件登録できる／キーワードで探せる」だけ。ファイル本体の中身検索は作らない。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b27">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b27" data-name="app-seeds-100-027.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">028</span><span class="ititle">経費の立替記録</span></div>
+  
+  <pre class="prompt" id="b28">経費の立替記録
+痛み: 立替経費の申請漏れが出る。
+前提: 小口の立替経費を後回しにして忘れ、月末に領収書だけが残って何の費用か分からなくなる。
+指示: 日付・金額・目的・支払先を1件ずつ記録し、未申請のものだけを合計できるツールを作りたい。
+出力形式: 最初の完成は「1件記録できる／未申請の合計が出る」だけ。領収書の写真取り込みは後回し。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b28">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b28" data-name="app-seeds-100-028.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">029</span><span class="ititle">受付の来客記録</span></div>
+  
+  <pre class="prompt" id="b29">受付の来客記録
+痛み: 来客の記録が紙のノートだけ。
+前提: 来客の記録を紙のノートで取っており、あとから「いつ誰が来たか」を調べるのに時間がかかる。
+指示: 来訪日時・会社名・氏名・訪問先の担当者を記録し、日付と会社名で検索できるツールを作りたい。個人情報を扱うので保存先は自分の管理下に限る。
+出力形式: 最初の完成は「1件記録できる／日付で絞り込める」だけ。入館証の発行は作らない。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b29">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b29" data-name="app-seeds-100-029.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">030</span><span class="ititle">定期タスクの棚卸し表</span></div>
+  
+  <pre class="prompt" id="b30">定期タスクの棚卸し表
+痛み: 毎月やる作業の抜けに気づけない。
+前提: 月次・週次でやる決まった作業が20件ほどあり、忙しい月に抜けが出ても後になって気づく。
+指示: 作業名と頻度（毎日／毎週／毎月）を登録すると、今月やるべき作業の一覧が出て、済んだ印を付けられるツールを作りたい。
+出力形式: 最初の完成は「登録 → 今月やるべき一覧が出る → 印を付けられる」だけ。翌月への自動繰越は次の段階に回す。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b30">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b30" data-name="app-seeds-100-030.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<h2 class="cat">マーケティング・SNS</h2>
+<div class="icard">
+  <div class="ih"><span class="num">031</span><span class="ititle">投稿ネタの在庫管理</span></div>
+  
+  <pre class="prompt" id="b31">投稿ネタの在庫管理
+痛み: 投稿ネタを思いついても書き留める場所がなく忘れる。
+前提: SNS投稿のネタを思いついた瞬間に書き留める場所が定まらず、メモ帳とチャットに散って結局使わない。
+指示: ネタを1行で登録し、状態（未着手／下書き／投稿済み）と媒体（X／Instagram／ブログ）で絞り込める在庫表を作りたい。
+出力形式: 最初の完成は「1件登録できる／未着手だけを絞り込める」だけ。予約投稿や画像添付は作らない。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b31">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b31" data-name="app-seeds-100-031.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">032</span><span class="ititle">投稿の反応記録</span></div>
+  
+  <pre class="prompt" id="b32">投稿の反応記録
+痛み: どの投稿が伸びたか感覚でしか覚えていない。
+前提: 投稿の反応を記録していないため、伸びた理由も伸びなかった理由も感覚でしか語れない。
+指示: 投稿日・媒体・投稿の型（質問／実績／解説／告知）・反応数を記録し、型ごとの平均を比べられるツールを作りたい。
+出力形式: 最初の完成は「1件記録できる／型ごとの平均が出る」だけ。自動取得やグラフは後回し。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b32">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b32" data-name="app-seeds-100-032.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">033</span><span class="ititle">広告文の言い換え候補</span></div>
+  
+  <pre class="prompt" id="b33">広告文の言い換え候補
+痛み: 広告文のバリエーションを作るのに時間がかかる。
+前提: 広告文のA/Bテスト用に文言のバリエーションを作る必要があるが、毎回頭を捻っており数が揃わない。
+指示: 元の文章を貼ると、あらかじめ登録した切り口（数字入り／問いかけ／逆張り／得の明示）ごとに言い換え候補を出すツールを作りたい。表現の禁止事項も登録して避けさせる。
+出力形式: 最初の完成は「文章を貼る → 切り口ごとの候補が出る」だけ。効果測定との連携は作らない。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b33">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b33" data-name="app-seeds-100-033.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">034</span><span class="ititle">競合の投稿ウォッチ表</span></div>
+  
+  <pre class="prompt" id="b34">競合の投稿ウォッチ表
+痛み: 競合の動きを見に行くのが後回しになる。
+前提: 競合アカウントの投稿傾向を定期的に見たいが、開くのが手間で結局後回しになる。
+指示: 見に行くべきアカウントのURLと確認頻度を登録し、「今日見るべきアカウント」の一覧を出してくれるツールを作りたい。気づいたことをメモとして残せるようにする。
+出力形式: 最初の完成は「登録 → 今日見るべき一覧が出る → メモを残せる」だけ。自動収集はしない。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b34">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b34" data-name="app-seeds-100-034.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">035</span><span class="ititle">キャンペーンの進行表</span></div>
+  
+  <pre class="prompt" id="b35">キャンペーンの進行表
+痛み: キャンペーン準備の抜けが出る。
+前提: キャンペーンごとに準備すること（LP・告知文・画像・特典・計測）が多く、毎回抜けが出る。
+指示: キャンペーン名と開始日を入れると、標準の準備項目が並んで印を付けられる進行表を作りたい。項目は自分で編集できるようにする。
+出力形式: 最初の完成は「開始日を入れる → 準備項目が並ぶ → 印を付けられる」だけ。担当割り当ては後回し。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b35">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b35" data-name="app-seeds-100-035.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">036</span><span class="ititle">問い合わせ経路の記録</span></div>
+  
+  <pre class="prompt" id="b36">問い合わせ経路の記録
+痛み: どこ経由の問い合わせか分からない。
+前提: 問い合わせがどの投稿・どの媒体から来たか記録しておらず、力を入れるべき場所が判断できない。
+指示: 問い合わせ日・経路（媒体名や投稿名）・内容の種類を記録し、経路ごとの件数を数えられるツールを作りたい。
+出力形式: 最初の完成は「1件記録できる／経路ごとの件数が出る」だけ。自動計測との連携は作らない。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b36">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b36" data-name="app-seeds-100-036.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">037</span><span class="ititle">メール件名の在庫</span></div>
+  
+  <pre class="prompt" id="b37">メール件名の在庫
+痛み: メールの件名を毎回悩む。
+前提: メール配信の件名を毎回ゼロから考えており、過去に反応が良かった件名も記録していない。
+指示: 件名と配信日と開封率を記録し、開封率の高い順に並べ替えられる在庫表を作りたい。件名の型（数字入り／期限あり／問いかけ）でも絞り込めるようにする。
+出力形式: 最初の完成は「1件記録できる／開封率順に並べられる」だけ。配信システムとの連携は作らない。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b37">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b37" data-name="app-seeds-100-037.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">038</span><span class="ititle">画像素材の使用履歴</span></div>
+  
+  <pre class="prompt" id="b38">画像素材の使用履歴
+痛み: 同じ画像を続けて使ってしまう。
+前提: 投稿画像の素材を使い回しており、同じ画像が短期間に何度も出ていることに気づけない。
+指示: 画像のファイル名と使用した投稿・日付を記録し、直近で使った画像を一覧できるツールを作りたい。
+出力形式: 最初の完成は「1件記録できる／直近で使ったものが分かる」だけ。画像本体の管理は作らない。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b38">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b38" data-name="app-seeds-100-038.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">039</span><span class="ititle">お客様の声の台帳</span></div>
+  
+  <pre class="prompt" id="b39">お客様の声の台帳
+痛み: 感想が各所に散って探せない。
+前提: お客様からの感想がメール・チャット・レビューに散らばり、掲載許諾の有無も分からないまま探し直している。
+指示: 感想の本文・出どころ・掲載許諾の有無・使った実績を記録し、許諾済みだけを絞り込める台帳を作りたい。
+出力形式: 最初の完成は「1件登録できる／許諾済みだけを絞り込める」だけ。自動収集はしない。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b39">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b39" data-name="app-seeds-100-039.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">040</span><span class="ititle">表記ルールの共有窓</span></div>
+  
+  <pre class="prompt" id="b40">表記ルールの共有窓
+痛み: 表記ルールが人によってばらつく。
+前提: チームで文章を書くとき、サービス名や記号の表記が人によってばらつき、公開後に直している。
+指示: NG表記とOK表記の対応表を登録し、書いた文章を貼ると違反箇所を指摘してくれるツールを作りたい。ルールは誰でも追加できるようにする。
+出力形式: 最初の完成は「文章を貼る → 違反箇所が並ぶ」だけ。自動置換は作らない。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b40">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b40" data-name="app-seeds-100-040.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<h2 class="cat">人事・採用</h2>
+<div class="icard">
+  <div class="ih"><span class="num">041</span><span class="ititle">応募者の進行ボード</span></div>
+  
+  <pre class="prompt" id="b41">応募者の進行ボード
+痛み: 応募者の状況がメールを遡らないと分からない。
+前提: 採用の応募者ごとの選考状況をメールで管理しており、いま何人がどの段階にいるか即答できない。
+指示: 応募者名・応募経路・状態（書類／一次／二次／内定／見送り）を管理し、状態ごとの人数が見えるボードを作りたい。個人情報を扱うので保存先は自分の管理下に限る。
+出力形式: 最初の完成は「1件登録できる／状態ごとの人数が出る」だけ。日程調整や通知は作らない。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b41">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b41" data-name="app-seeds-100-041.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">042</span><span class="ititle">面接質問の使い回し集</span></div>
+  
+  <pre class="prompt" id="b42">面接質問の使い回し集
+痛み: 面接で聞くことを毎回考えている。
+前提: 面接で聞くべき質問を毎回その場で考えており、面接官によって深さがばらつく。
+指示: 職種と見極めたい点（主体性／再現性／協働）で絞り込める質問集を作りたい。質問には「良い回答の例」を添えられるようにする。
+出力形式: 最初の完成は「職種で絞り込む → 質問一覧が出る」だけ。評価の集計は後回し。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b42">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b42" data-name="app-seeds-100-042.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">043</span><span class="ititle">面接評価の記録</span></div>
+  
+  <pre class="prompt" id="b43">面接評価の記録
+痛み: 評価の基準が面接官ごとに違う。
+前提: 面接の評価がメモ書きのままで、面接官ごとの基準の違いが可視化されない。
+指示: 応募者ごとに評価項目（4〜6項目）を点数と一言で記録し、面接官ごとの平均を並べられるツールを作りたい。
+出力形式: 最初の完成は「1件記録できる／応募者ごとの点数一覧が出る」だけ。集計グラフは次の段階に回す。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b43">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b43" data-name="app-seeds-100-043.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">044</span><span class="ititle">求人票の使い回し台帳</span></div>
+  
+  <pre class="prompt" id="b44">求人票の使い回し台帳
+痛み: 求人票を毎回ゼロから書いている。
+前提: 職種ごとの求人票を毎回書き起こしており、過去の良い表現が残っていない。
+指示: 職種・業務内容・必須条件・歓迎条件・待遇の項目ごとに文章の断片を登録し、組み合わせて求人票の下書きを作れるツールを作りたい。
+出力形式: 最初の完成は「項目ごとに断片を選ぶ → 下書きが組み上がる」だけ。媒体への投稿連携は作らない。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b44">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b44" data-name="app-seeds-100-044.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">045</span><span class="ititle">研修の受講記録</span></div>
+  
+  <pre class="prompt" id="b45">研修の受講記録
+痛み: 誰がどの研修を受けたか分からない。
+前提: 社内研修の受講記録が紙とファイルに分散し、未受講者の抽出に時間がかかる。
+指示: 研修名・受講者・受講日を記録し、研修ごとの未受講者を一覧できるツールを作りたい。
+出力形式: 最初の完成は「1件記録できる／研修ごとの受講済み一覧が出る」だけ。案内メールの送信は作らない。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b45">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b45" data-name="app-seeds-100-045.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">046</span><span class="ititle">1on1の話題メモ</span></div>
+  
+  <pre class="prompt" id="b46">1on1の話題メモ
+痛み: 1on1で前回の話を思い出せない。
+前提: メンバーとの1on1で前回の話題や約束を思い出せず、同じ話を繰り返してしまう。
+指示: メンバーごとに日付・話した内容・次回までの約束を記録し、次回の冒頭で前回分を表示するツールを作りたい。
+出力形式: 最初の完成は「1件記録できる／メンバーごとに前回分が表示される」だけ。目標管理との連携は作らない。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b46">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b46" data-name="app-seeds-100-046.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">047</span><span class="ititle">入社後の立ち上がり表</span></div>
+  
+  <pre class="prompt" id="b47">入社後の立ち上がり表
+痛み: 新入社員の立ち上がりが人によってばらつく。
+前提: 新しく入った人が最初の1か月で何をすべきかが担当者の記憶に頼っており、抜けが出る。
+指示: 入社日を入れると、1日目・1週目・1か月目にやることが並ぶ表を作りたい。項目は職種ごとに切り替えられるようにする。
+出力形式: 最初の完成は「入社日と職種を選ぶ → やることが並ぶ → 印を付けられる」だけ。担当者への通知は後回し。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b47">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b47" data-name="app-seeds-100-047.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">048</span><span class="ititle">スキル棚卸し表</span></div>
+  
+  <pre class="prompt" id="b48">スキル棚卸し表
+痛み: 誰が何をできるのか把握できていない。
+前提: チーム内の得意分野を把握しておらず、仕事の割り振りが偏っている。
+指示: メンバーごとにスキル項目を3段階（できる／できそう／未経験）で記録し、スキルごとにできる人を一覧できるツールを作りたい。
+出力形式: 最初の完成は「1人分を登録できる／スキルごとに人を絞り込める」だけ。評価連動は作らない。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b48">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b48" data-name="app-seeds-100-048.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">049</span><span class="ititle">退職面談の記録</span></div>
+  
+  <pre class="prompt" id="b49">退職面談の記録
+痛み: 退職理由が個人の記憶にしか残らない。
+前提: 退職時の面談内容が担当者の記憶に留まり、組織の課題として蓄積されない。
+指示: 退職者の在籍期間・部署・理由の分類・自由記述を記録し、理由ごとの件数を数えられるツールを作りたい。個人が特定されない形で集計できるようにする。
+出力形式: 最初の完成は「1件記録できる／理由ごとの件数が出る」だけ。個人名の表示は集計側に出さない。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b49">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b49" data-name="app-seeds-100-049.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">050</span><span class="ititle">採用媒体の費用対効果表</span></div>
+  
+  <pre class="prompt" id="b50">採用媒体の費用対効果表
+痛み: どの媒体が効いているか分からない。
+前提: 複数の採用媒体を併用しているが、媒体ごとの応募数と採用数を並べて見たことがない。
+指示: 媒体名・期間・費用・応募数・採用数を記録し、1人採用あたりの費用を計算するツールを作りたい。
+出力形式: 最初の完成は「1件記録できる／1人あたり費用が計算される」だけ。グラフは次の段階に回す。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b50">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b50" data-name="app-seeds-100-050.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<h2 class="cat">経理・請求</h2>
+<div class="icard">
+  <div class="ih"><span class="num">051</span><span class="ititle">請求書の抜け漏れチェック</span></div>
+  
+  <pre class="prompt" id="b51">請求書の抜け漏れチェック
+痛み: 月末に請求し忘れた案件が出る。
+前提: 複数の取引先に月次で請求しており、案件が増えると請求し忘れが出る。気づくのは翌月の入金確認のとき。
+指示: 取引先・案件名・請求予定月・請求済みかどうかを記録し、当月の未請求だけを一覧できるツールを作りたい。
+出力形式: 最初の完成は「1件登録できる／当月の未請求だけ出る」だけ。請求書の作成機能は作らない。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b51">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b51" data-name="app-seeds-100-051.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">052</span><span class="ititle">入金確認の照合メモ</span></div>
+  
+  <pre class="prompt" id="b52">入金確認の照合メモ
+痛み: 入金と請求の突き合わせに時間がかかる。
+前提: 入金明細と請求一覧を目で突き合わせており、金額が一致しない件を探すのに毎月1時間以上かかる。
+指示: 請求金額の一覧と入金金額の一覧をそれぞれ貼ると、金額が一致しない件だけを並べてくれるツールを作りたい。
+出力形式: 最初の完成は「2つの一覧を貼る → 不一致の件が並ぶ」だけ。銀行との連携は作らない。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b52">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b52" data-name="app-seeds-100-052.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">053</span><span class="ititle">経費の科目振り分けメモ</span></div>
+  
+  <pre class="prompt" id="b53">経費の科目振り分けメモ
+痛み: 勘定科目の判断を毎回迷う。
+前提: 経費を登録するときの勘定科目の判断を毎回迷い、過去の登録を探して真似している。
+指示: 支払先や品目のキーワードから、過去に使った勘定科目の候補を出してくれるツールを作りたい。対応表は自分で育てられるようにする。
+出力形式: 最初の完成は「キーワードを入れる → 過去に使った科目の候補が出る」だけ。会計ソフト連携は作らない。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b53">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b53" data-name="app-seeds-100-053.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">054</span><span class="ititle">交通費の集計メモ</span></div>
+  
+  <pre class="prompt" id="b54">交通費の集計メモ
+痛み: 交通費の集計が毎月の苦行になっている。
+前提: 交通費を月末にまとめて入力しており、経路と金額を思い出す作業に時間がかかる。
+指示: よく使う経路を登録しておき、日付を選んで経路をタップするだけで交通費を積み上げられるツールを作りたい。月合計も出す。
+出力形式: 最初の完成は「経路を登録できる／日付ごとに積み上げて合計が出る」だけ。申請システム連携は作らない。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b54">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b54" data-name="app-seeds-100-054.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">055</span><span class="ititle">支払期日カレンダー</span></div>
+  
+  <pre class="prompt" id="b55">支払期日カレンダー
+痛み: 支払期日の把握が属人的。
+前提: 取引先ごとの支払サイトが違い、いつ何を支払うかの把握が個人の記憶に頼っている。
+指示: 取引先ごとの支払条件を登録すると、当月に支払うべき一覧と金額の合計を出すツールを作りたい。
+出力形式: 最初の完成は「条件を登録できる／当月の支払一覧と合計が出る」だけ。振込データ生成は作らない。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b55">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b55" data-name="app-seeds-100-055.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">056</span><span class="ititle">見積と実績の差分表</span></div>
+  
+  <pre class="prompt" id="b56">見積と実績の差分表
+痛み: 見積と実績のずれを振り返っていない。
+前提: 案件ごとの見積工数と実績工数を記録しておらず、毎回同じように見積を外している。
+指示: 案件名・見積工数・実績工数を記録し、ずれの大きい案件順に並べられるツールを作りたい。
+出力形式: 最初の完成は「1件記録できる／ずれの大きい順に並ぶ」だけ。原因の分類は次の段階に回す。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b56">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b56" data-name="app-seeds-100-056.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">057</span><span class="ititle">領収書の保管場所メモ</span></div>
+  
+  <pre class="prompt" id="b57">領収書の保管場所メモ
+痛み: 領収書がどこにあるか分からない。
+前提: 紙とデータの領収書が混在し、保管場所が分からず探し直すことがある。
+指示: 日付・支払先・金額・保管場所（ファイル名や箱番号）を記録し、支払先で検索できる台帳を作りたい。
+出力形式: 最初の完成は「1件記録できる／支払先で検索できる」だけ。画像の取り込みは後回し。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b57">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b57" data-name="app-seeds-100-057.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">058</span><span class="ititle">定期契約の棚卸し</span></div>
+  
+  <pre class="prompt" id="b58">定期契約の棚卸し
+痛み: 使っていないサブスクに払い続けている。
+前提: 業務で使うサブスクが増え、使っていないものにも払い続けている可能性がある。
+指示: サービス名・月額・契約日・最終利用日・契約者を記録し、直近3か月使っていないものを目立たせるツールを作りたい。
+出力形式: 最初の完成は「1件登録できる／最終利用日が古いものが色で分かる」だけ。解約手続きの管理は作らない。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b58">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b58" data-name="app-seeds-100-058.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">059</span><span class="ititle">インボイス番号の確認台帳</span></div>
+  
+  <pre class="prompt" id="b59">インボイス番号の確認台帳
+痛み: 取引先の登録番号を毎回探している。
+前提: 取引先ごとの適格請求書発行事業者の登録番号を、毎回過去の請求書から探している。
+指示: 取引先名・登録番号・確認した日を記録し、取引先名で検索できる台帳を作りたい。
+出力形式: 最初の完成は「1件記録できる／取引先名で検索できる」だけ。外部照会の自動化は作らない。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b59">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b59" data-name="app-seeds-100-059.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">060</span><span class="ititle">月次締めの手順表</span></div>
+  
+  <pre class="prompt" id="b60">月次締めの手順表
+痛み: 月次締めの手順が担当者しか知らない。
+前提: 月次締めの作業手順が担当者の頭の中にあり、休むと止まってしまう。
+指示: 締め作業の手順を順番に並べ、当月分の進行に印を付けられる表を作りたい。手順は自分で編集できるようにする。
+出力形式: 最初の完成は「手順が並ぶ／印を付けられる」だけ。前月分の履歴保存は次の段階に回す。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b60">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b60" data-name="app-seeds-100-060.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<h2 class="cat">教育・研修・スクール運営</h2>
+<div class="icard">
+  <div class="ih"><span class="num">061</span><span class="ititle">受講生の進捗ボード</span></div>
+  
+  <pre class="prompt" id="b61">受講生の進捗ボード
+痛み: 受講生の進み具合が個別のやり取りにしか残らない。
+前提: 受講生ごとの進み具合がチャットのやり取りにしか残らず、止まっている人に気づくのが遅れる。
+指示: 受講生名・現在の課題番号・最終提出日を記録し、最終提出から日が経っている人を目立たせるボードを作りたい。
+出力形式: 最初の完成は「1件登録できる／滞留している人が色で分かる」だけ。自動催促は作らない。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b61">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b61" data-name="app-seeds-100-061.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">062</span><span class="ititle">課題フィードバックの型集</span></div>
+  
+  <pre class="prompt" id="b62">課題フィードバックの型集
+痛み: フィードバックの文面を毎回考えている。
+前提: 課題へのフィードバックを毎回ゼロから書いており、講師によって粒度がばらつく。
+指示: よくある指摘（命名／構成／読みやすさ／出典）ごとに、褒める部分と直す部分をセットにした定型文を登録し、選んで組み合わせられるツールを作りたい。
+出力形式: 最初の完成は「指摘を選ぶ → 定型文が組み上がる → コピーできる」だけ。提出物との紐付けは後回し。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b62">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b62" data-name="app-seeds-100-062.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">063</span><span class="ititle">小テストの自動採点</span></div>
+  
+  <pre class="prompt" id="b63">小テストの自動採点
+痛み: 小テストの採点を手作業でやっている。
+前提: 受講後の小テストを紙や表計算で集めて手採点しており、返却までに時間がかかる。
+指示: 問題と正解を登録しておき、回答を貼ると正誤と点数を出してくれるツールを作りたい。間違いの多い問題も並べる。
+出力形式: 最初の完成は「回答を貼る → 点数と正誤が出る」だけ。受講生ごとの履歴は次の段階に回す。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b63">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b63" data-name="app-seeds-100-063.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">064</span><span class="ititle">講座台本の版管理メモ</span></div>
+  
+  <pre class="prompt" id="b64">講座台本の版管理メモ
+痛み: 講座台本の最新版がどれか分からない。
+前提: 講座の台本を更新するたびにファイルが増え、最新版がどれか分からなくなる。
+指示: 台本名・版数・更新日・変更点の一言を記録し、台本ごとの最新版が一目で分かる台帳を作りたい。
+出力形式: 最初の完成は「1件記録できる／台本ごとの最新版が分かる」だけ。ファイル本体の管理は作らない。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b64">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b64" data-name="app-seeds-100-064.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">065</span><span class="ititle">質問と回答の蓄積</span></div>
+  
+  <pre class="prompt" id="b65">質問と回答の蓄積
+痛み: 同じ質問に毎回答えている。
+前提: 受講生からの質問の多くが繰り返しで、そのたびに回答を書き直している。
+指示: 質問と回答を登録し、キーワードで検索できる蓄積庫を作りたい。よく検索される質問が上に来るようにする。
+出力形式: 最初の完成は「1件登録できる／キーワードで検索できる」だけ。検索回数の集計は次の段階に回す。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b65">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b65" data-name="app-seeds-100-065.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">066</span><span class="ititle">出席と振替の管理</span></div>
+  
+  <pre class="prompt" id="b66">出席と振替の管理
+痛み: 欠席と振替の管理が煩雑。
+前提: 欠席連絡と振替受講の管理を個別のやり取りで行っており、振替の残数が分からなくなる。
+指示: 受講生ごとの出席・欠席・振替の予定を記録し、振替の残数を自動計算するツールを作りたい。
+出力形式: 最初の完成は「1件記録できる／振替残数が出る」だけ。予約システムは作らない。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b66">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b66" data-name="app-seeds-100-066.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">067</span><span class="ititle">教材の使用実績表</span></div>
+  
+  <pre class="prompt" id="b67">教材の使用実績表
+痛み: どの教材がどの回で使われたか分からない。
+前提: 教材の再利用時に「どの回でどこまで使ったか」が分からず、内容が重複する。
+指示: 教材名・使用した回・カバーした範囲を記録し、教材ごとの使用履歴を見られるツールを作りたい。
+出力形式: 最初の完成は「1件記録できる／教材ごとの履歴が出る」だけ。教材本体の管理は作らない。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b67">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b67" data-name="app-seeds-100-067.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">068</span><span class="ititle">修了判定のチェック表</span></div>
+  
+  <pre class="prompt" id="b68">修了判定のチェック表
+痛み: 修了要件の判定を目で確認している。
+前提: 修了要件（提出物の数・出席率・最終課題）の判定を毎回目で確認しており、間違いが起きうる。
+指示: 受講生ごとの実績を入れると、修了要件を満たしているかを判定して不足項目を並べるツールを作りたい。要件は自分で編集できるようにする。
+出力形式: 最初の完成は「実績を入れる → 判定と不足項目が出る」だけ。証明書の発行は作らない。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b68">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b68" data-name="app-seeds-100-068.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">069</span><span class="ititle">講師のシフト表</span></div>
+  
+  <pre class="prompt" id="b69">講師のシフト表
+痛み: 講師の担当調整を毎回チャットでやっている。
+前提: 講師の担当回をチャットで調整しており、確定した内容がどこにあるか分からなくなる。
+指示: 日付・コマ・担当講師を登録し、講師ごとの担当数と空きコマを一覧できる表を作りたい。
+出力形式: 最初の完成は「1件登録できる／講師ごとの担当数が出る」だけ。希望の自動反映は作らない。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b69">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b69" data-name="app-seeds-100-069.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">070</span><span class="ititle">アンケートの読み込みメモ</span></div>
+  
+  <pre class="prompt" id="b70">アンケートの読み込みメモ
+痛み: アンケートの自由記述を読み切れない。
+前提: 講座後アンケートの自由記述が大量にあり、読み切れずに活かせていない。
+指示: 自由記述をまとめて貼ると、内容を数種類の観点（良かった点／分かりにくかった点／要望）に振り分けて並べるツールを作りたい。
+出力形式: 最初の完成は「貼る → 観点ごとに振り分けられて並ぶ」だけ。点数との相関分析は作らない。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b70">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b70" data-name="app-seeds-100-070.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<h2 class="cat">店舗・接客・予約</h2>
+<div class="icard">
+  <div class="ih"><span class="num">071</span><span class="ititle">予約の空き確認メモ</span></div>
+  
+  <pre class="prompt" id="b71">予約の空き確認メモ
+痛み: 電話予約の空き確認に時間がかかる。
+前提: 電話で予約を受けるとき、紙の台帳をめくって空きを探しており、待たせてしまう。
+指示: 日付を選ぶと時間帯ごとの予約状況が見え、その場で書き込める台帳を作りたい。予約はスタッフだけが操作する前提でよい。
+出力形式: 最初の完成は「日付を選ぶ → 時間帯の空きが見える → 書き込める」だけ。ネット予約の受付は作らない。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b71">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b71" data-name="app-seeds-100-071.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">072</span><span class="ititle">常連さんのメモ</span></div>
+  
+  <pre class="prompt" id="b72">常連さんのメモ
+痛み: 常連さんの好みを個人の記憶に頼っている。
+前提: 常連さんの好みや前回の話題を覚えているスタッフしか対応できず、担当が変わると質が落ちる。
+指示: お客様の名前・前回来店日・好み・前回の話題を記録し、名前で検索できるメモ帳を作りたい。個人情報を扱うので保存先は自分の管理下に限る。
+出力形式: 最初の完成は「1件記録できる／名前で検索できる」だけ。来店履歴の自動集計は後回し。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b72">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b72" data-name="app-seeds-100-072.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">073</span><span class="ititle">在庫の発注点メモ</span></div>
+  
+  <pre class="prompt" id="b73">在庫の発注点メモ
+痛み: 在庫が切れてから気づく。
+前提: 消耗品や食材の在庫を目で見て管理しており、切れてから気づいて慌てて発注している。
+指示: 品目ごとの発注点（この数を下回ったら発注）を登録し、現在数を入れると発注すべき品目が並ぶツールを作りたい。
+出力形式: 最初の完成は「現在数を入れる → 発注すべき品目が並ぶ」だけ。発注書の作成は作らない。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b73">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b73" data-name="app-seeds-100-073.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">074</span><span class="ititle">シフト希望のまとめ</span></div>
+  
+  <pre class="prompt" id="b74">シフト希望のまとめ
+痛み: シフト希望の集約が手作業。
+前提: スタッフのシフト希望をチャットで集め、表に手で写しており、転記ミスが起きる。
+指示: スタッフが希望を入れると、日付ごとの人数が自動集計され、人数が足りない日を目立たせるツールを作りたい。
+出力形式: 最初の完成は「希望を入れる → 日付ごとの人数が出る → 不足日が色で分かる」だけ。確定シフトの自動生成は作らない。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b74">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b74" data-name="app-seeds-100-074.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">075</span><span class="ititle">クレーム対応の記録</span></div>
+  
+  <pre class="prompt" id="b75">クレーム対応の記録
+痛み: クレームの内容と対応が残らない。
+前提: クレームの内容と対応をその場の口頭で済ませており、再発の傾向が見えない。
+指示: 発生日・内容の分類・対応内容・再発防止策を記録し、分類ごとの件数を数えられるツールを作りたい。
+出力形式: 最初の完成は「1件記録できる／分類ごとの件数が出る」だけ。エスカレーション機能は作らない。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b75">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b75" data-name="app-seeds-100-075.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">076</span><span class="ititle">日報の入力を短くする</span></div>
+  
+  <pre class="prompt" id="b76">日報の入力を短くする
+痛み: 日報を書くのが面倒で形骸化している。
+前提: 日報を自由記述で書かせているため、書く側の負担が大きく内容も揃わない。
+指示: 決まった項目（客数・売上・特記事項・在庫の気づき）だけを選択と数値で入力できる日報ツールを作りたい。自由記述は1行に限る。
+出力形式: 最初の完成は「入力して保存できる／過去分を日付で見られる」だけ。集計グラフは次の段階に回す。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b76">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b76" data-name="app-seeds-100-076.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">077</span><span class="ititle">メニューの原価計算</span></div>
+  
+  <pre class="prompt" id="b77">メニューの原価計算
+痛み: 原価計算を表計算で毎回作り直している。
+前提: メニューの原価を表計算で計算しているが、食材の単価が変わるたびに作り直している。
+指示: 食材の単価を登録しておき、メニューごとの使用量を入れると原価と原価率を計算するツールを作りたい。単価の更新が全メニューに反映されるようにする。
+出力形式: 最初の完成は「食材登録／メニューの原価と原価率が出る」だけ。仕入との連携は作らない。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b77">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b77" data-name="app-seeds-100-077.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">078</span><span class="ititle">会計後の忘れ物メモ</span></div>
+  
+  <pre class="prompt" id="b78">会計後の忘れ物メモ
+痛み: 忘れ物の管理が曖昧。
+前提: 店内の忘れ物を紙で管理しており、問い合わせがあったときに探すのに時間がかかる。
+指示: 発見日・場所・物の特徴・保管場所を記録し、特徴のキーワードで検索できるツールを作りたい。
+出力形式: 最初の完成は「1件記録できる／キーワードで検索できる」だけ。写真の添付は後回し。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b78">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b78" data-name="app-seeds-100-078.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">079</span><span class="ititle">キャンペーンの効果メモ</span></div>
+  
+  <pre class="prompt" id="b79">キャンペーンの効果メモ
+痛み: 販促の効果を感覚で判断している。
+前提: 販促（割引・ポイント・SNS投稿）の効果を感覚で判断しており、続けるべきか分からない。
+指示: 施策名・期間・費用・期間中の客数と売上を記録し、施策前後の変化を並べて見られるツールを作りたい。
+出力形式: 最初の完成は「1件記録できる／期間前後の数値が並ぶ」だけ。統計的な検定は作らない。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b79">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b79" data-name="app-seeds-100-079.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">080</span><span class="ititle">スタッフ引き継ぎメモ</span></div>
+  
+  <pre class="prompt" id="b80">スタッフ引き継ぎメモ
+痛み: シフト交代時の引き継ぎが口頭だけ。
+前提: シフト交代時の引き継ぎが口頭のみで、伝わらないまま次の時間帯に問題が持ち越される。
+指示: 引き継ぎ事項を「対応済み／未対応」の状態付きで記録し、未対応だけを次のシフトに表示するツールを作りたい。
+出力形式: 最初の完成は「1件記録できる／未対応だけ表示される」だけ。通知は作らない。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b80">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b80" data-name="app-seeds-100-080.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<h2 class="cat">企画・リサーチ</h2>
+<div class="icard">
+  <div class="ih"><span class="num">081</span><span class="ititle">参考事例の切り抜き帳</span></div>
+  
+  <pre class="prompt" id="b81">参考事例の切り抜き帳
+痛み: 参考にしたい事例を保存しても見返さない。
+前提: 参考になる事例やページをブックマークするだけで、あとから見返せず活かせていない。
+指示: URL・一言メモ・使えそうな場面のタグを登録し、タグで絞り込める切り抜き帳を作りたい。
+出力形式: 最初の完成は「1件登録できる／タグで絞り込める」だけ。ページ内容の自動取得は作らない。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b81">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b81" data-name="app-seeds-100-081.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">082</span><span class="ititle">競合の機能比較表</span></div>
+  
+  <pre class="prompt" id="b82">競合の機能比較表
+痛み: 競合の機能比較を毎回作り直している。
+前提: 競合サービスの機能比較を企画のたびに作り直しており、前回作った表が見つからない。
+指示: サービスと機能項目の組み合わせで対応状況を記録し、企画ごとに必要な項目だけを抜き出して表示できるツールを作りたい。
+出力形式: 最初の完成は「対応状況を登録できる／項目を選んで表を表示できる」だけ。自動調査は作らない。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b82">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b82" data-name="app-seeds-100-082.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">083</span><span class="ititle">アンケート結果の読み込み</span></div>
+  
+  <pre class="prompt" id="b83">アンケート結果の読み込み
+痛み: 自由記述の集計に丸1日かかる。
+前提: アンケートの自由記述が数百件あり、読んで分類する作業に丸1日かかっている。
+指示: 自由記述をまとめて貼ると、自分が指定した分類（要望／不満／称賛／解約理由）に振り分けて、分類ごとの件数と代表的な文を並べるツールを作りたい。
+出力形式: 最初の完成は「貼る → 分類ごとに件数と代表文が出る」だけ。感情の点数化は作らない。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b83">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b83" data-name="app-seeds-100-083.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">084</span><span class="ititle">企画の判定シート</span></div>
+  
+  <pre class="prompt" id="b84">企画の判定シート
+痛み: 企画の良し悪しを感覚で判断している。
+前提: 企画の可否を会議の空気で決めており、判断基準が人によって違う。
+指示: 自分たちの判断基準（需要／独自性／実現コスト／収益／リスク）を項目化し、点数を入れると合計と弱点を示すシートを作りたい。基準の重みも設定できるようにする。
+出力形式: 最初の完成は「点数を入れる → 合計と最低点の項目が出る」だけ。過去企画との比較は次の段階に回す。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b84">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b84" data-name="app-seeds-100-084.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">085</span><span class="ititle">用語集の共有</span></div>
+  
+  <pre class="prompt" id="b85">用語集の共有
+痛み: 社内用語が新メンバーに伝わらない。
+前提: 社内・業界の略語が多く、新しく入った人が会話を理解できない。
+指示: 用語・読み・意味・使う場面を登録し、キーワードで検索できる用語集を作りたい。誰でも追加できるようにする。
+出力形式: 最初の完成は「1件登録できる／検索できる」だけ。承認フローは作らない。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b85">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b85" data-name="app-seeds-100-085.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">086</span><span class="ititle">リサーチの出典管理</span></div>
+  
+  <pre class="prompt" id="b86">リサーチの出典管理
+痛み: 調べた情報の出典が後から分からなくなる。
+前提: 調べた数字をメモに書き写すうちに出典が分からなくなり、資料化のときに探し直している。
+指示: 数字・出典URL・取得日・確度（公式／報道／推測）を1件ずつ記録し、確度で絞り込める台帳を作りたい。
+出力形式: 最初の完成は「1件記録できる／確度で絞り込める」だけ。自動の出典検証は作らない。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b86">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b86" data-name="app-seeds-100-086.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">087</span><span class="ititle">会議のアジェンダ生成</span></div>
+  
+  <pre class="prompt" id="b87">会議のアジェンダ生成
+痛み: 会議のアジェンダを毎回ゼロから書いている。
+前提: 定例会議のアジェンダを毎回ゼロから書いており、前回の宿題が引き継がれない。
+指示: 前回の議事録を貼ると、未完了の宿題を引き継いだ今回のアジェンダの下書きを作るツールを作りたい。所要時間の目安も入れる。
+出力形式: 最初の完成は「前回分を貼る → 今回のアジェンダ案が出る」だけ。カレンダー連携は作らない。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b87">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b87" data-name="app-seeds-100-087.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">088</span><span class="ititle">仮説と検証の記録</span></div>
+  
+  <pre class="prompt" id="b88">仮説と検証の記録
+痛み: 検証した仮説が記録に残らない。
+前提: 試した施策とその結果が記録に残らず、同じ検証を繰り返している。
+指示: 仮説・検証方法・期間・結果・次の一手を記録し、結果（当たり／外れ／判断保留）で絞り込める台帳を作りたい。
+出力形式: 最初の完成は「1件記録できる／結果で絞り込める」だけ。統計処理は作らない。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b88">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b88" data-name="app-seeds-100-088.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">089</span><span class="ititle">社内向け説明の言い換え</span></div>
+  
+  <pre class="prompt" id="b89">社内向け説明の言い換え
+痛み: 専門用語だらけの説明が伝わらない。
+前提: 技術寄りの内容を非専門の社内メンバーに説明する必要があるが、毎回言い換えに時間がかかる。
+指示: 専門用語を含む文章を貼ると、登録した言い換え辞書に沿って平易な表現に置き換えた案を出すツールを作りたい。置き換えた箇所が分かるように印を付ける。
+出力形式: 最初の完成は「文章を貼る → 言い換え案と置換箇所が出る」だけ。辞書の自動学習は作らない。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b89">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b89" data-name="app-seeds-100-089.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">090</span><span class="ititle">読んだ資料の要点メモ</span></div>
+  
+  <pre class="prompt" id="b90">読んだ資料の要点メモ
+痛み: 読んだ資料の要点を残していない。
+前提: 報告書や記事を読んでも要点をメモに残さず、必要になったときにまた読み直している。
+指示: 資料名・URL・要点3つ・自分の仕事への影響を記録し、キーワードで検索できるメモ帳を作りたい。
+出力形式: 最初の完成は「1件記録できる／キーワードで検索できる」だけ。自動要約は次の段階に回す。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b90">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b90" data-name="app-seeds-100-090.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<h2 class="cat">個人の暮らし・副業</h2>
+<div class="icard">
+  <div class="ih"><span class="num">091</span><span class="ititle">献立の使い回し表</span></div>
+  
+  <pre class="prompt" id="b91">献立の使い回し表
+痛み: 献立を考えるのに毎日悩む。
+前提: 毎日の献立を考えるのに時間がかかり、結果的に同じものが続く。
+指示: 作れる料理を登録しておき、直近で作った料理を除いた候補を数件出してくれるツールを作りたい。主材料でも絞り込めるようにする。
+出力形式: 最初の完成は「料理を登録できる／直近を除いた候補が出る」だけ。買い物リストの生成は次の段階に回す。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b91">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b91" data-name="app-seeds-100-091.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">092</span><span class="ititle">読書メモの蓄積</span></div>
+  
+  <pre class="prompt" id="b92">読書メモの蓄積
+痛み: 読んだ本の内容を思い出せない。
+前提: 本を読んでも内容を書き留めておらず、人に説明できない。
+指示: 書名・読了日・要点3つ・自分の行動に落とす1つを記録し、書名や要点で検索できるメモ帳を作りたい。
+出力形式: 最初の完成は「1件記録できる／検索できる」だけ。読書時間の集計は作らない。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b92">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b92" data-name="app-seeds-100-092.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">093</span><span class="ititle">習慣の記録</span></div>
+  
+  <pre class="prompt" id="b93">習慣の記録
+痛み: 続けたい習慣が続かない。
+前提: 続けたい習慣（運動・語学・投稿）が三日坊主になり、続いた日数も分からない。
+指示: 習慣を登録し、日ごとに実施の印を付けると連続日数と月の達成率が出るツールを作りたい。
+出力形式: 最初の完成は「印を付けられる／連続日数が出る」だけ。通知やご褒美機能は作らない。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b93">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b93" data-name="app-seeds-100-093.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">094</span><span class="ititle">副業の稼働記録</span></div>
+  
+  <pre class="prompt" id="b94">副業の稼働記録
+痛み: 副業の時間単価が分からない。
+前提: 副業の作業時間を記録しておらず、案件ごとの時間単価が分からないまま受け続けている。
+指示: 案件名・作業日・作業時間・報酬を記録し、案件ごとの時間単価を計算するツールを作りたい。
+出力形式: 最初の完成は「1件記録できる／案件ごとの時間単価が出る」だけ。請求書作成は作らない。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b94">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b94" data-name="app-seeds-100-094.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">095</span><span class="ititle">サブスクの棚卸し</span></div>
+  
+  <pre class="prompt" id="b95">サブスクの棚卸し
+痛み: 個人契約のサブスクを把握していない。
+前提: 個人で契約しているサブスクが増え、月にいくら払っているか把握していない。
+指示: サービス名・月額・更新日・最終利用日を登録し、月合計と直近使っていないものを表示するツールを作りたい。
+出力形式: 最初の完成は「1件登録できる／月合計と未使用が分かる」だけ。解約リンク集は次の段階に回す。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b95">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b95" data-name="app-seeds-100-095.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">096</span><span class="ititle">旅行の持ち物リスト</span></div>
+  
+  <pre class="prompt" id="b96">旅行の持ち物リスト
+痛み: 毎回持ち物を忘れる。
+前提: 旅行のたびに持ち物リストを作り直しており、毎回同じものを忘れる。
+指示: 旅行の種類（国内／海外／出張／キャンプ）を選ぶと基本の持ち物が並び、印を付けられるリストを作りたい。項目は自分で追加できるようにする。
+出力形式: 最初の完成は「種類を選ぶ → 持ち物が並ぶ → 印を付けられる」だけ。共有機能は作らない。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b96">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b96" data-name="app-seeds-100-096.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">097</span><span class="ititle">家計の固定費表</span></div>
+  
+  <pre class="prompt" id="b97">家計の固定費表
+痛み: 固定費の内訳を把握していない。
+前提: 家計の固定費が何にいくらかかっているか把握しておらず、見直しの入口が分からない。
+指示: 項目・金額・支払日・見直し余地の有無を登録し、金額の大きい順に並べて合計を出すツールを作りたい。
+出力形式: 最初の完成は「1件登録できる／金額順に並んで合計が出る」だけ。銀行連携は作らない。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b97">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b97" data-name="app-seeds-100-097.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">098</span><span class="ititle">写真の整理メモ</span></div>
+  
+  <pre class="prompt" id="b98">写真の整理メモ
+痛み: 撮った写真の整理が追いつかない。
+前提: 撮った写真が大量にあり、あとで探せる状態になっていない。
+指示: 日付・場所・一言メモ・写真フォルダへのリンクを記録し、日付や場所で検索できる索引を作りたい。写真本体は移動させない。
+出力形式: 最初の完成は「1件記録できる／日付で絞り込める」だけ。画像の自動分類は作らない。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b98">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b98" data-name="app-seeds-100-098.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">099</span><span class="ititle">学習の進捗表</span></div>
+  
+  <pre class="prompt" id="b99">学習の進捗表
+痛み: 学習教材の進み具合が分からない。
+前提: 複数の教材を並行して進めており、どれがどこまで進んだか分からない。
+指示: 教材名・全体量・現在位置・最終学習日を記録し、進捗率と放置日数を表示するツールを作りたい。
+出力形式: 最初の完成は「1件登録できる／進捗率と放置日数が出る」だけ。学習時間の計測は作らない。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b99">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b99" data-name="app-seeds-100-099.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">100</span><span class="ititle">欲しいものの検討メモ</span></div>
+  
+  <pre class="prompt" id="b100">欲しいものの検討メモ
+痛み: 衝動買いと検討忘れを繰り返す。
+前提: 欲しいものをその場の勢いで買ったり、逆に検討したまま忘れたりしている。
+指示: 品名・価格・欲しい理由・検討開始日を登録し、登録から2週間経ったものを「判断待ち」として表示するツールを作りたい。
+出力形式: 最初の完成は「1件登録できる／2週間経過分が表示される」だけ。価格の自動追跡は作らない。
+
+以上、100個です。内訳は 動画編集・クリエイター 10件／営業・商談 10件／事務・総務 10件／マーケティング・SNS 10件／人事・採用 10件／経理・請求 10件／教育・研修・スクール運営 10件／店舗・接客・予約 10件／企画・リサーチ 10件／個人の暮らし・副業 10件 の合計100件。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b100">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b100" data-name="app-seeds-100-100.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+
+  <section class="epctx">
+  <p class="epctx-label">この動画のほかのプレゼント</p>
+  <div class="ep-kits"><a class="kchip" href="../mvp-and-rescue-50/"><span class="kt">仮縫い判定シート＋沼脱出プロンプト50</span><span class="badge">14項目</span><span class="go">開く →</span></a><a class="kchip" href="../release-checklist/"><span class="kt">公開前チェックリスト（無料公開の落とし穴つき）</span><span class="badge">17項目</span><span class="go">開く →</span></a></div>
+</section>
+
+  <footer><a href="../../">← AIエージェント / Kawaru プレゼント図書館にもどる</a></footer>
+</div>
+
+<pre id="pfull" class="hidden"># 🎁 自作アプリの種 100本（採寸プロンプトつき）
+
+「これ自作できる」題材を職種別に100本。1行の“痛み”と、そのまま話せる採寸プロンプト（前提・指示・出力形式）が付いています。
+
+**受け取り方**: 下のコードブロック右上のコピーボタンでコピーするか、このファイルをそのままダウンロードしてください。
+
+**使い方**: 自分の状況に近い項目を探し、プロンプトの `◯◯` を自分の言葉に置き換えて、Codexに音声入力で話しかけてください。返ってきた計画は必ず1機能に削ってから作らせます。
+
+```text
+■ 動画編集・クリエイター
+
+1. 素材サイト横断検索
+痛み: 効果音やBGMを探すたびに複数サイトを開き直し、同じ検索語を打ち直している。
+前提: 動画編集をしていて、効果音とBGMを毎回3〜5つのフリー素材サイトで探し回っている。1本の動画で10回以上この往復が起きる。
+指示: 自分がよく使う素材サイトの掲載ページ情報だけを横断して検索できるWebアプリを作りたい。素材ファイル自体は持たず、掲載ページへのリンクだけを扱う。各サイトの利用規約は先に読ませ、禁止されている扱い方（音源の直リンク・再生ページの自作など）は設計から外す。
+出力形式: 最初の完成は「キーワードを入れると候補が一覧に出て、クリックすると元の掲載ページが開く」だけでいい。お気に入り登録・履歴・タグ編集は作らない。
+
+2. サムネ案の比較ボード
+痛み: サムネイル案を並べて比較するのに毎回スライドを作り直している。
+前提: YouTubeのサムネイル案を3〜5枚作り、どれがいいかを人に見せて意見をもらう場面が毎週ある。今はスライドに貼って共有している。
+指示: 画像を並べて表示し、それぞれに「良い点・直す点」を書き込めるWebアプリを作りたい。画像は自分の端末から選ぶだけで、サーバーに保存しなくてよい。
+出力形式: 最初の完成は「画像を複数選ぶと横並びに表示され、各画像の下にメモを書ける」だけ。共有リンク・ログイン・保存機能は後回しにする。
+
+3. テロップ表記ゆれチェッカー
+痛み: 同じ動画内で「AI」「Ai」「エーアイ」が混ざり、あとで直すのに時間がかかる。
+前提: 字幕・テロップの原稿を書いたあと、固有名詞や記号の表記ゆれを目で探して直している。1本あたり20分ほどかかっている。
+指示: テキストを貼ると、あらかじめ登録した表記ルール（NG表記→OK表記の対応表）に反する箇所を全部並べて見せてくれるツールを作りたい。ルールは自分で足せるようにする。
+出力形式: 最初の完成は「テキストを貼る → 違反箇所と行番号の一覧が出る」だけ。自動置換や履歴管理は作らない。
+
+4. 案件の進行ボード
+痛み: 案件ごとの進行状況が頭の中とチャットに散らばっている。
+前提: 動画編集を複数本並行して受けており、初稿提出・修正待ち・納品済みの区別がチャットを遡らないと分からない。
+指示: 案件名と締切、いまの状態（作業中／確認待ち／修正中／納品済み）だけを管理できるボードを作りたい。データは自分の端末の中だけに保存する。
+出力形式: 最初の完成は「案件を追加して、状態を4つのどれかに切り替えられる」だけ。通知・共有・グラフは後回し。
+
+5. 撮って出しの尺計算メモ
+痛み: 尺の配分を毎回電卓とメモ帳で計算している。
+前提: 動画の構成を組むとき、章ごとの目標尺を足し引きして全体の長さに収める作業を毎回手計算している。
+指示: 章の名前と目標秒数を入れると合計と残り時間を自動計算し、目標尺を超えたら色で知らせてくれるツールを作りたい。
+出力形式: 最初の完成は「行を追加して秒数を入れると合計が出る」だけ。テンプレート保存や書き出しは作らない。
+
+6. 納品ファイル名の一括生成
+痛み: 納品ファイル名の規則をクライアントごとに覚えていられない。
+前提: クライアントごとに納品ファイル名の規則（日付の形式・案件コード・版数の付け方）が違い、毎回過去の納品物を見に行って確認している。
+指示: クライアントを選んで日付と案件名と版数を入れると、その規則どおりのファイル名を組み立ててコピーできるツールを作りたい。規則は自分で追加・編集できるようにする。
+出力形式: 最初の完成は「クライアントを選ぶ → 項目を入れる → 完成した名前をコピーできる」だけ。実ファイルのリネーム機能は作らない。
+
+7. BGM使用履歴の記録
+痛み: どの動画でどのBGMを使ったか分からず、同じ曲を続けて使ってしまう。
+前提: 複数のチャンネルの動画を編集しており、同じBGMを直近で使ったかどうかを思い出せない。クレジット表記が必要な曲の管理も曖昧になっている。
+指示: 動画タイトル・使用した曲名・提供元・クレジット表記が必要かどうかを記録し、曲名で検索できる一覧を作りたい。
+出力形式: 最初の完成は「記録を1件追加できる／曲名で検索できる」だけ。集計や自動取り込みは作らない。
+
+8. 修正依頼の書き起こしメモ
+痛み: 口頭やボイスメモの修正依頼を、作業前に文字に落とすのが面倒。
+前提: クライアントから音声や長文チャットで修正依頼が来て、そのまま作業に入ると抜けが出る。毎回自分で箇条書きに整理している。
+指示: 長い文章を貼ると「何を・どこを・どう直すか」の3項目に分けた箇条書きに整理してくれるツールを作りたい。整理後は作業のチェックリストとして印を付けられるようにする。
+出力形式: 最初の完成は「文章を貼る → 箇条書きに整理される → 各項目にチェックが付けられる」だけ。音声の取り込みは後回し。
+
+9. 参考動画の切り抜きメモ
+痛み: 参考にしたい演出の場所を覚えておけない。
+前提: 参考にしたい動画の「この演出のこの秒数」をメモしたいが、ブックマークだと後から見つけられない。
+指示: 動画のURLと秒数と一言メモを登録すると、その秒数から再生できるリンクを作って一覧にしてくれるツールを作りたい。タグで絞り込めるようにする。
+出力形式: 最初の完成は「URL・秒数・メモを登録 → 一覧から該当秒数のリンクを開ける」だけ。タグ機能は次の段階に回す。
+
+10. 編集前チェックリスト
+痛み: 編集を始める前の確認事項を毎回思い出せない。
+前提: 編集前に確認すべきこと（納品形式・尺・テロップ規則・NGワード・BGMの可否）がクライアントごとに違い、毎回抜けが出る。
+指示: クライアントを選ぶと、そのクライアント専用の確認事項リストが出てきて、順番に印を付けられるツールを作りたい。リストは自分で編集できるようにする。
+出力形式: 最初の完成は「クライアントを選ぶ → チェックリストが出る → 印を付けられる」だけ。履歴の保存は後回し。
+
+■ 営業・商談
+
+11. 商談メモから議事録
+痛み: 商談後の議事録づくりに毎回30分かかっている。
+前提: 商談中は箇条書きの走り書きしか取れず、あとで社内共有用の議事録に整える作業に毎回30分かかっている。
+指示: 走り書きを貼ると「決まったこと／持ち帰り／次回までの宿題／期限」の4項目に整理してくれるツールを作りたい。宿題には担当者名を付けられるようにする。
+出力形式: 最初の完成は「メモを貼る → 4項目に整理された文章が出る → コピーできる」だけ。保存や共有は後回し。
+
+12. 提案書の使い回し検索
+痛み: 過去の提案書のどこに何を書いたか探せない。
+前提: 過去の提案書が大量にあり、似た業種の案件で使える部分を探すのに毎回フォルダを漁っている。
+指示: 提案書の要点（業種・課題・提案内容・金額帯・結果）を1件ずつ登録しておき、業種や課題で検索できる台帳を作りたい。実ファイルへのリンクも持たせる。
+出力形式: 最初の完成は「1件登録できる／業種で絞り込める」だけ。ファイル本体の解析や自動登録は作らない。
+
+13. 見積の概算計算
+痛み: 見積の概算を出すたびに表計算ファイルを探している。
+前提: 商談中に概算を出す必要があるが、料金体系が複雑で表計算ファイルを開かないと計算できず、その場で答えられない。
+指示: 項目と数量を選ぶだけで概算金額を計算し、内訳つきで表示するツールを作りたい。単価は自分で更新できるようにする。
+出力形式: 最初の完成は「項目を選んで数量を入れる → 合計と内訳が出る」だけ。PDF書き出しや保存は後回し。
+
+14. 追客リマインダー
+痛み: 追いかけるべき見込み客を忘れる。
+前提: 商談後の追客タイミング（3日後・2週間後・1か月後）を管理できず、機会を逃していると感じている。
+指示: 見込み客名と最終接触日を登録すると、次に連絡すべき日を自動計算して「今日連絡すべき人」の一覧を出すツールを作りたい。
+出力形式: 最初の完成は「登録 → 今日連絡すべき人が一覧で出る」だけ。メール送信や通知は作らない。
+
+15. よくある質問の返答集
+痛み: 同じ質問に毎回文章を書き直している。
+前提: 問い合わせで来る質問の8割は同じ内容だが、そのたびに文章を書き直しており、担当者ごとに回答の質もばらついている。
+指示: 質問をキーワードで検索すると、確認済みの回答文が出てきてそのままコピーできるツールを作りたい。回答文は自分で追加・修正できるようにする。
+出力形式: 最初の完成は「キーワード検索 → 回答文が出る → コピーできる」だけ。承認フローや権限は作らない。
+
+16. 競合比較の一枚表
+痛み: 競合との比較を聞かれるたびに口頭で答えている。
+前提: 商談で必ず競合との違いを聞かれるが、比較材料が個人の頭の中にあり、担当者によって説明がぶれる。
+指示: 自社と競合数社を項目ごとに比較した表を作り、商談中に画面で見せられるようにしたい。項目と内容は自分で更新できるようにする。
+出力形式: 最初の完成は「比較表を画面で表示できる／項目を編集できる」だけ。印刷用レイアウトは後回し。
+
+17. 訪問ルートのメモ
+痛み: 1日に複数訪問する日の順番決めが手間。
+前提: 1日に3〜5件訪問する日があり、順番と移動時間の見積もりを毎回手で組んでいる。
+指示: 訪問先の名前と希望時間帯を入れると、無理のない順番の案を出してくれるツールを作りたい。地図連携はせず、時間帯の整合だけを見る。
+出力形式: 最初の完成は「訪問先を入れる → 時間帯が矛盾しない順番の案が出る」だけ。移動時間の自動計算は後回し。
+
+18. 失注理由の記録と集計
+痛み: 失注の理由が個人の記憶にしか残らない。
+前提: 失注した案件の理由を振り返る機会がなく、同じ理由で落ち続けていても気づけない。
+指示: 失注案件の理由を選択式（価格／時期／機能／競合／担当者不在）＋一言メモで記録し、理由ごとの件数を数えられるツールを作りたい。
+出力形式: 最初の完成は「1件記録できる／理由ごとの件数が出る」だけ。グラフや期間比較は次の段階に回す。
+
+19. お礼メールの下書き生成
+痛み: お礼メールの文面を毎回考えている。
+前提: 商談後のお礼メールを毎回ゼロから書いており、時間が空くと送らないまま流れてしまう。
+指示: 相手の名前・話した内容・次のステップを入れると、そのままの丁寧さで送れるお礼メールの下書きを作るツールを作りたい。定型の言い回しは自分で登録できるようにする。
+出力形式: 最初の完成は「3項目を入れる → 下書きが出る → コピーできる」だけ。メール送信機能は作らない。
+
+20. 商談前の相手情報まとめ
+痛み: 商談前の下調べに時間がかかる。
+前提: 商談前に相手企業の公開情報を調べるのに毎回20〜30分かかり、準備が薄いまま臨むこともある。
+指示: 会社名を入れると、自分で決めた確認項目（事業内容・規模・直近の発表・想定される課題）を埋める枠が出て、そこにメモを溜められるツールを作りたい。
+出力形式: 最初の完成は「会社名を入れる → 確認項目の枠が出る → メモを保存できる」だけ。自動収集は作らない。
+
+■ 事務・総務
+
+21. 備品の貸出台帳
+痛み: 誰が何を借りているか分からなくなる。
+前提: 社内の備品（ノートパソコン・カメラ・プロジェクター）の貸出をノートで管理しており、返却漏れが起きている。
+指示: 備品名・借りた人・貸出日・返却予定日を記録し、返却予定を過ぎたものを目立たせる台帳を作りたい。
+出力形式: 最初の完成は「貸出を1件登録できる／期限超過が色で分かる」だけ。QRコードや通知は作らない。
+
+22. 郵便物の受け渡し記録
+痛み: 誰宛の郵便を誰に渡したか記録がない。
+前提: 郵便物や宅配を受け取って社内の担当者に渡す作業をしているが、記録がないため「届いていない」と言われたときに確認できない。
+指示: 受け取った日時・差出人・宛先の担当者・渡した日時を1件ずつ記録し、担当者名で検索できるツールを作りたい。
+出力形式: 最初の完成は「受け取り記録を1件登録できる／担当者名で検索できる」だけ。写真の添付は後回し。
+
+23. 会議室の空き確認
+痛み: 会議室の空き状況が壁の紙でしか分からない。
+前提: 会議室の予約を紙の表で管理しており、自席から空き状況が分からないため何度も見に行っている。
+指示: 日付と部屋を選ぶと時間帯ごとの空き状況が見え、そのまま予約を書き込める表を作りたい。データは1つの場所に保存する。
+出力形式: 最初の完成は「日付を選ぶ → 時間帯の表が出る → 空き枠に名前を書き込める」だけ。承認や通知は作らない。
+
+24. 社内問い合わせの振り分けメモ
+痛み: 同じ問い合わせを毎回別の人が答えている。
+前提: 総務への問い合わせが口頭・チャット・メールに分散し、誰がどこまで対応したか分からなくなる。
+指示: 問い合わせ内容・依頼者・状態（受付／対応中／完了）を記録し、未完了のものだけを絞り込める一覧を作りたい。
+出力形式: 最初の完成は「1件登録できる／未完了だけを絞り込める」だけ。担当者の自動割り当ては作らない。
+
+25. 入退社手続きの進行表
+痛み: 入社手続きの抜けが毎回発生する。
+前提: 入社・退社のたびに必要な手続きが多く（アカウント発行・備品・保険・座席）、抜けが出ると本人に迷惑がかかる。
+指示: 入社日を入れると必要な手続きの一覧が自動で並び、済んだものに印を付けられる進行表を作りたい。手続きの項目は自分で編集できるようにする。
+出力形式: 最初の完成は「入社日を入れる → 手続き一覧が出る → 印を付けられる」だけ。担当者への通知は後回し。
+
+26. 押印申請の記録
+痛み: 押印の申請と履行が紙でしか残らない。
+前提: 押印の申請を紙で受け、押した記録も紙のため、あとから「いつ誰の依頼で押したか」を探すのに時間がかかる。
+指示: 申請者・書類名・押印日・保管場所を記録して検索できる台帳を作りたい。書類名の一部でも検索できるようにする。
+出力形式: 最初の完成は「1件記録できる／書類名で部分検索できる」だけ。承認フローは作らない。
+
+27. 社内マニュアルの検索窓
+痛み: マニュアルがどこにあるか分からず毎回聞かれる。
+前提: 社内マニュアルが複数のフォルダとチャットに散らばっており、「あれどこ？」の質問が毎日来る。
+指示: マニュアル名・置き場所のリンク・要約1行を登録した一覧を作り、キーワードで探せるようにしたい。
+出力形式: 最初の完成は「1件登録できる／キーワードで探せる」だけ。ファイル本体の中身検索は作らない。
+
+28. 経費の立替記録
+痛み: 立替経費の申請漏れが出る。
+前提: 小口の立替経費を後回しにして忘れ、月末に領収書だけが残って何の費用か分からなくなる。
+指示: 日付・金額・目的・支払先を1件ずつ記録し、未申請のものだけを合計できるツールを作りたい。
+出力形式: 最初の完成は「1件記録できる／未申請の合計が出る」だけ。領収書の写真取り込みは後回し。
+
+29. 受付の来客記録
+痛み: 来客の記録が紙のノートだけ。
+前提: 来客の記録を紙のノートで取っており、あとから「いつ誰が来たか」を調べるのに時間がかかる。
+指示: 来訪日時・会社名・氏名・訪問先の担当者を記録し、日付と会社名で検索できるツールを作りたい。個人情報を扱うので保存先は自分の管理下に限る。
+出力形式: 最初の完成は「1件記録できる／日付で絞り込める」だけ。入館証の発行は作らない。
+
+30. 定期タスクの棚卸し表
+痛み: 毎月やる作業の抜けに気づけない。
+前提: 月次・週次でやる決まった作業が20件ほどあり、忙しい月に抜けが出ても後になって気づく。
+指示: 作業名と頻度（毎日／毎週／毎月）を登録すると、今月やるべき作業の一覧が出て、済んだ印を付けられるツールを作りたい。
+出力形式: 最初の完成は「登録 → 今月やるべき一覧が出る → 印を付けられる」だけ。翌月への自動繰越は次の段階に回す。
+
+■ マーケティング・SNS
+
+31. 投稿ネタの在庫管理
+痛み: 投稿ネタを思いついても書き留める場所がなく忘れる。
+前提: SNS投稿のネタを思いついた瞬間に書き留める場所が定まらず、メモ帳とチャットに散って結局使わない。
+指示: ネタを1行で登録し、状態（未着手／下書き／投稿済み）と媒体（X／Instagram／ブログ）で絞り込める在庫表を作りたい。
+出力形式: 最初の完成は「1件登録できる／未着手だけを絞り込める」だけ。予約投稿や画像添付は作らない。
+
+32. 投稿の反応記録
+痛み: どの投稿が伸びたか感覚でしか覚えていない。
+前提: 投稿の反応を記録していないため、伸びた理由も伸びなかった理由も感覚でしか語れない。
+指示: 投稿日・媒体・投稿の型（質問／実績／解説／告知）・反応数を記録し、型ごとの平均を比べられるツールを作りたい。
+出力形式: 最初の完成は「1件記録できる／型ごとの平均が出る」だけ。自動取得やグラフは後回し。
+
+33. 広告文の言い換え候補
+痛み: 広告文のバリエーションを作るのに時間がかかる。
+前提: 広告文のA/Bテスト用に文言のバリエーションを作る必要があるが、毎回頭を捻っており数が揃わない。
+指示: 元の文章を貼ると、あらかじめ登録した切り口（数字入り／問いかけ／逆張り／得の明示）ごとに言い換え候補を出すツールを作りたい。表現の禁止事項も登録して避けさせる。
+出力形式: 最初の完成は「文章を貼る → 切り口ごとの候補が出る」だけ。効果測定との連携は作らない。
+
+34. 競合の投稿ウォッチ表
+痛み: 競合の動きを見に行くのが後回しになる。
+前提: 競合アカウントの投稿傾向を定期的に見たいが、開くのが手間で結局後回しになる。
+指示: 見に行くべきアカウントのURLと確認頻度を登録し、「今日見るべきアカウント」の一覧を出してくれるツールを作りたい。気づいたことをメモとして残せるようにする。
+出力形式: 最初の完成は「登録 → 今日見るべき一覧が出る → メモを残せる」だけ。自動収集はしない。
+
+35. キャンペーンの進行表
+痛み: キャンペーン準備の抜けが出る。
+前提: キャンペーンごとに準備すること（LP・告知文・画像・特典・計測）が多く、毎回抜けが出る。
+指示: キャンペーン名と開始日を入れると、標準の準備項目が並んで印を付けられる進行表を作りたい。項目は自分で編集できるようにする。
+出力形式: 最初の完成は「開始日を入れる → 準備項目が並ぶ → 印を付けられる」だけ。担当割り当ては後回し。
+
+36. 問い合わせ経路の記録
+痛み: どこ経由の問い合わせか分からない。
+前提: 問い合わせがどの投稿・どの媒体から来たか記録しておらず、力を入れるべき場所が判断できない。
+指示: 問い合わせ日・経路（媒体名や投稿名）・内容の種類を記録し、経路ごとの件数を数えられるツールを作りたい。
+出力形式: 最初の完成は「1件記録できる／経路ごとの件数が出る」だけ。自動計測との連携は作らない。
+
+37. メール件名の在庫
+痛み: メールの件名を毎回悩む。
+前提: メール配信の件名を毎回ゼロから考えており、過去に反応が良かった件名も記録していない。
+指示: 件名と配信日と開封率を記録し、開封率の高い順に並べ替えられる在庫表を作りたい。件名の型（数字入り／期限あり／問いかけ）でも絞り込めるようにする。
+出力形式: 最初の完成は「1件記録できる／開封率順に並べられる」だけ。配信システムとの連携は作らない。
+
+38. 画像素材の使用履歴
+痛み: 同じ画像を続けて使ってしまう。
+前提: 投稿画像の素材を使い回しており、同じ画像が短期間に何度も出ていることに気づけない。
+指示: 画像のファイル名と使用した投稿・日付を記録し、直近で使った画像を一覧できるツールを作りたい。
+出力形式: 最初の完成は「1件記録できる／直近で使ったものが分かる」だけ。画像本体の管理は作らない。
+
+39. お客様の声の台帳
+痛み: 感想が各所に散って探せない。
+前提: お客様からの感想がメール・チャット・レビューに散らばり、掲載許諾の有無も分からないまま探し直している。
+指示: 感想の本文・出どころ・掲載許諾の有無・使った実績を記録し、許諾済みだけを絞り込める台帳を作りたい。
+出力形式: 最初の完成は「1件登録できる／許諾済みだけを絞り込める」だけ。自動収集はしない。
+
+40. 表記ルールの共有窓
+痛み: 表記ルールが人によってばらつく。
+前提: チームで文章を書くとき、サービス名や記号の表記が人によってばらつき、公開後に直している。
+指示: NG表記とOK表記の対応表を登録し、書いた文章を貼ると違反箇所を指摘してくれるツールを作りたい。ルールは誰でも追加できるようにする。
+出力形式: 最初の完成は「文章を貼る → 違反箇所が並ぶ」だけ。自動置換は作らない。
+
+■ 人事・採用
+
+41. 応募者の進行ボード
+痛み: 応募者の状況がメールを遡らないと分からない。
+前提: 採用の応募者ごとの選考状況をメールで管理しており、いま何人がどの段階にいるか即答できない。
+指示: 応募者名・応募経路・状態（書類／一次／二次／内定／見送り）を管理し、状態ごとの人数が見えるボードを作りたい。個人情報を扱うので保存先は自分の管理下に限る。
+出力形式: 最初の完成は「1件登録できる／状態ごとの人数が出る」だけ。日程調整や通知は作らない。
+
+42. 面接質問の使い回し集
+痛み: 面接で聞くことを毎回考えている。
+前提: 面接で聞くべき質問を毎回その場で考えており、面接官によって深さがばらつく。
+指示: 職種と見極めたい点（主体性／再現性／協働）で絞り込める質問集を作りたい。質問には「良い回答の例」を添えられるようにする。
+出力形式: 最初の完成は「職種で絞り込む → 質問一覧が出る」だけ。評価の集計は後回し。
+
+43. 面接評価の記録
+痛み: 評価の基準が面接官ごとに違う。
+前提: 面接の評価がメモ書きのままで、面接官ごとの基準の違いが可視化されない。
+指示: 応募者ごとに評価項目（4〜6項目）を点数と一言で記録し、面接官ごとの平均を並べられるツールを作りたい。
+出力形式: 最初の完成は「1件記録できる／応募者ごとの点数一覧が出る」だけ。集計グラフは次の段階に回す。
+
+44. 求人票の使い回し台帳
+痛み: 求人票を毎回ゼロから書いている。
+前提: 職種ごとの求人票を毎回書き起こしており、過去の良い表現が残っていない。
+指示: 職種・業務内容・必須条件・歓迎条件・待遇の項目ごとに文章の断片を登録し、組み合わせて求人票の下書きを作れるツールを作りたい。
+出力形式: 最初の完成は「項目ごとに断片を選ぶ → 下書きが組み上がる」だけ。媒体への投稿連携は作らない。
+
+45. 研修の受講記録
+痛み: 誰がどの研修を受けたか分からない。
+前提: 社内研修の受講記録が紙とファイルに分散し、未受講者の抽出に時間がかかる。
+指示: 研修名・受講者・受講日を記録し、研修ごとの未受講者を一覧できるツールを作りたい。
+出力形式: 最初の完成は「1件記録できる／研修ごとの受講済み一覧が出る」だけ。案内メールの送信は作らない。
+
+46. 1on1の話題メモ
+痛み: 1on1で前回の話を思い出せない。
+前提: メンバーとの1on1で前回の話題や約束を思い出せず、同じ話を繰り返してしまう。
+指示: メンバーごとに日付・話した内容・次回までの約束を記録し、次回の冒頭で前回分を表示するツールを作りたい。
+出力形式: 最初の完成は「1件記録できる／メンバーごとに前回分が表示される」だけ。目標管理との連携は作らない。
+
+47. 入社後の立ち上がり表
+痛み: 新入社員の立ち上がりが人によってばらつく。
+前提: 新しく入った人が最初の1か月で何をすべきかが担当者の記憶に頼っており、抜けが出る。
+指示: 入社日を入れると、1日目・1週目・1か月目にやることが並ぶ表を作りたい。項目は職種ごとに切り替えられるようにする。
+出力形式: 最初の完成は「入社日と職種を選ぶ → やることが並ぶ → 印を付けられる」だけ。担当者への通知は後回し。
+
+48. スキル棚卸し表
+痛み: 誰が何をできるのか把握できていない。
+前提: チーム内の得意分野を把握しておらず、仕事の割り振りが偏っている。
+指示: メンバーごとにスキル項目を3段階（できる／できそう／未経験）で記録し、スキルごとにできる人を一覧できるツールを作りたい。
+出力形式: 最初の完成は「1人分を登録できる／スキルごとに人を絞り込める」だけ。評価連動は作らない。
+
+49. 退職面談の記録
+痛み: 退職理由が個人の記憶にしか残らない。
+前提: 退職時の面談内容が担当者の記憶に留まり、組織の課題として蓄積されない。
+指示: 退職者の在籍期間・部署・理由の分類・自由記述を記録し、理由ごとの件数を数えられるツールを作りたい。個人が特定されない形で集計できるようにする。
+出力形式: 最初の完成は「1件記録できる／理由ごとの件数が出る」だけ。個人名の表示は集計側に出さない。
+
+50. 採用媒体の費用対効果表
+痛み: どの媒体が効いているか分からない。
+前提: 複数の採用媒体を併用しているが、媒体ごとの応募数と採用数を並べて見たことがない。
+指示: 媒体名・期間・費用・応募数・採用数を記録し、1人採用あたりの費用を計算するツールを作りたい。
+出力形式: 最初の完成は「1件記録できる／1人あたり費用が計算される」だけ。グラフは次の段階に回す。
+
+■ 経理・請求
+
+51. 請求書の抜け漏れチェック
+痛み: 月末に請求し忘れた案件が出る。
+前提: 複数の取引先に月次で請求しており、案件が増えると請求し忘れが出る。気づくのは翌月の入金確認のとき。
+指示: 取引先・案件名・請求予定月・請求済みかどうかを記録し、当月の未請求だけを一覧できるツールを作りたい。
+出力形式: 最初の完成は「1件登録できる／当月の未請求だけ出る」だけ。請求書の作成機能は作らない。
+
+52. 入金確認の照合メモ
+痛み: 入金と請求の突き合わせに時間がかかる。
+前提: 入金明細と請求一覧を目で突き合わせており、金額が一致しない件を探すのに毎月1時間以上かかる。
+指示: 請求金額の一覧と入金金額の一覧をそれぞれ貼ると、金額が一致しない件だけを並べてくれるツールを作りたい。
+出力形式: 最初の完成は「2つの一覧を貼る → 不一致の件が並ぶ」だけ。銀行との連携は作らない。
+
+53. 経費の科目振り分けメモ
+痛み: 勘定科目の判断を毎回迷う。
+前提: 経費を登録するときの勘定科目の判断を毎回迷い、過去の登録を探して真似している。
+指示: 支払先や品目のキーワードから、過去に使った勘定科目の候補を出してくれるツールを作りたい。対応表は自分で育てられるようにする。
+出力形式: 最初の完成は「キーワードを入れる → 過去に使った科目の候補が出る」だけ。会計ソフト連携は作らない。
+
+54. 交通費の集計メモ
+痛み: 交通費の集計が毎月の苦行になっている。
+前提: 交通費を月末にまとめて入力しており、経路と金額を思い出す作業に時間がかかる。
+指示: よく使う経路を登録しておき、日付を選んで経路をタップするだけで交通費を積み上げられるツールを作りたい。月合計も出す。
+出力形式: 最初の完成は「経路を登録できる／日付ごとに積み上げて合計が出る」だけ。申請システム連携は作らない。
+
+55. 支払期日カレンダー
+痛み: 支払期日の把握が属人的。
+前提: 取引先ごとの支払サイトが違い、いつ何を支払うかの把握が個人の記憶に頼っている。
+指示: 取引先ごとの支払条件を登録すると、当月に支払うべき一覧と金額の合計を出すツールを作りたい。
+出力形式: 最初の完成は「条件を登録できる／当月の支払一覧と合計が出る」だけ。振込データ生成は作らない。
+
+56. 見積と実績の差分表
+痛み: 見積と実績のずれを振り返っていない。
+前提: 案件ごとの見積工数と実績工数を記録しておらず、毎回同じように見積を外している。
+指示: 案件名・見積工数・実績工数を記録し、ずれの大きい案件順に並べられるツールを作りたい。
+出力形式: 最初の完成は「1件記録できる／ずれの大きい順に並ぶ」だけ。原因の分類は次の段階に回す。
+
+57. 領収書の保管場所メモ
+痛み: 領収書がどこにあるか分からない。
+前提: 紙とデータの領収書が混在し、保管場所が分からず探し直すことがある。
+指示: 日付・支払先・金額・保管場所（ファイル名や箱番号）を記録し、支払先で検索できる台帳を作りたい。
+出力形式: 最初の完成は「1件記録できる／支払先で検索できる」だけ。画像の取り込みは後回し。
+
+58. 定期契約の棚卸し
+痛み: 使っていないサブスクに払い続けている。
+前提: 業務で使うサブスクが増え、使っていないものにも払い続けている可能性がある。
+指示: サービス名・月額・契約日・最終利用日・契約者を記録し、直近3か月使っていないものを目立たせるツールを作りたい。
+出力形式: 最初の完成は「1件登録できる／最終利用日が古いものが色で分かる」だけ。解約手続きの管理は作らない。
+
+59. インボイス番号の確認台帳
+痛み: 取引先の登録番号を毎回探している。
+前提: 取引先ごとの適格請求書発行事業者の登録番号を、毎回過去の請求書から探している。
+指示: 取引先名・登録番号・確認した日を記録し、取引先名で検索できる台帳を作りたい。
+出力形式: 最初の完成は「1件記録できる／取引先名で検索できる」だけ。外部照会の自動化は作らない。
+
+60. 月次締めの手順表
+痛み: 月次締めの手順が担当者しか知らない。
+前提: 月次締めの作業手順が担当者の頭の中にあり、休むと止まってしまう。
+指示: 締め作業の手順を順番に並べ、当月分の進行に印を付けられる表を作りたい。手順は自分で編集できるようにする。
+出力形式: 最初の完成は「手順が並ぶ／印を付けられる」だけ。前月分の履歴保存は次の段階に回す。
+
+■ 教育・研修・スクール運営
+
+61. 受講生の進捗ボード
+痛み: 受講生の進み具合が個別のやり取りにしか残らない。
+前提: 受講生ごとの進み具合がチャットのやり取りにしか残らず、止まっている人に気づくのが遅れる。
+指示: 受講生名・現在の課題番号・最終提出日を記録し、最終提出から日が経っている人を目立たせるボードを作りたい。
+出力形式: 最初の完成は「1件登録できる／滞留している人が色で分かる」だけ。自動催促は作らない。
+
+62. 課題フィードバックの型集
+痛み: フィードバックの文面を毎回考えている。
+前提: 課題へのフィードバックを毎回ゼロから書いており、講師によって粒度がばらつく。
+指示: よくある指摘（命名／構成／読みやすさ／出典）ごとに、褒める部分と直す部分をセットにした定型文を登録し、選んで組み合わせられるツールを作りたい。
+出力形式: 最初の完成は「指摘を選ぶ → 定型文が組み上がる → コピーできる」だけ。提出物との紐付けは後回し。
+
+63. 小テストの自動採点
+痛み: 小テストの採点を手作業でやっている。
+前提: 受講後の小テストを紙や表計算で集めて手採点しており、返却までに時間がかかる。
+指示: 問題と正解を登録しておき、回答を貼ると正誤と点数を出してくれるツールを作りたい。間違いの多い問題も並べる。
+出力形式: 最初の完成は「回答を貼る → 点数と正誤が出る」だけ。受講生ごとの履歴は次の段階に回す。
+
+64. 講座台本の版管理メモ
+痛み: 講座台本の最新版がどれか分からない。
+前提: 講座の台本を更新するたびにファイルが増え、最新版がどれか分からなくなる。
+指示: 台本名・版数・更新日・変更点の一言を記録し、台本ごとの最新版が一目で分かる台帳を作りたい。
+出力形式: 最初の完成は「1件記録できる／台本ごとの最新版が分かる」だけ。ファイル本体の管理は作らない。
+
+65. 質問と回答の蓄積
+痛み: 同じ質問に毎回答えている。
+前提: 受講生からの質問の多くが繰り返しで、そのたびに回答を書き直している。
+指示: 質問と回答を登録し、キーワードで検索できる蓄積庫を作りたい。よく検索される質問が上に来るようにする。
+出力形式: 最初の完成は「1件登録できる／キーワードで検索できる」だけ。検索回数の集計は次の段階に回す。
+
+66. 出席と振替の管理
+痛み: 欠席と振替の管理が煩雑。
+前提: 欠席連絡と振替受講の管理を個別のやり取りで行っており、振替の残数が分からなくなる。
+指示: 受講生ごとの出席・欠席・振替の予定を記録し、振替の残数を自動計算するツールを作りたい。
+出力形式: 最初の完成は「1件記録できる／振替残数が出る」だけ。予約システムは作らない。
+
+67. 教材の使用実績表
+痛み: どの教材がどの回で使われたか分からない。
+前提: 教材の再利用時に「どの回でどこまで使ったか」が分からず、内容が重複する。
+指示: 教材名・使用した回・カバーした範囲を記録し、教材ごとの使用履歴を見られるツールを作りたい。
+出力形式: 最初の完成は「1件記録できる／教材ごとの履歴が出る」だけ。教材本体の管理は作らない。
+
+68. 修了判定のチェック表
+痛み: 修了要件の判定を目で確認している。
+前提: 修了要件（提出物の数・出席率・最終課題）の判定を毎回目で確認しており、間違いが起きうる。
+指示: 受講生ごとの実績を入れると、修了要件を満たしているかを判定して不足項目を並べるツールを作りたい。要件は自分で編集できるようにする。
+出力形式: 最初の完成は「実績を入れる → 判定と不足項目が出る」だけ。証明書の発行は作らない。
+
+69. 講師のシフト表
+痛み: 講師の担当調整を毎回チャットでやっている。
+前提: 講師の担当回をチャットで調整しており、確定した内容がどこにあるか分からなくなる。
+指示: 日付・コマ・担当講師を登録し、講師ごとの担当数と空きコマを一覧できる表を作りたい。
+出力形式: 最初の完成は「1件登録できる／講師ごとの担当数が出る」だけ。希望の自動反映は作らない。
+
+70. アンケートの読み込みメモ
+痛み: アンケートの自由記述を読み切れない。
+前提: 講座後アンケートの自由記述が大量にあり、読み切れずに活かせていない。
+指示: 自由記述をまとめて貼ると、内容を数種類の観点（良かった点／分かりにくかった点／要望）に振り分けて並べるツールを作りたい。
+出力形式: 最初の完成は「貼る → 観点ごとに振り分けられて並ぶ」だけ。点数との相関分析は作らない。
+
+■ 店舗・接客・予約
+
+71. 予約の空き確認メモ
+痛み: 電話予約の空き確認に時間がかかる。
+前提: 電話で予約を受けるとき、紙の台帳をめくって空きを探しており、待たせてしまう。
+指示: 日付を選ぶと時間帯ごとの予約状況が見え、その場で書き込める台帳を作りたい。予約はスタッフだけが操作する前提でよい。
+出力形式: 最初の完成は「日付を選ぶ → 時間帯の空きが見える → 書き込める」だけ。ネット予約の受付は作らない。
+
+72. 常連さんのメモ
+痛み: 常連さんの好みを個人の記憶に頼っている。
+前提: 常連さんの好みや前回の話題を覚えているスタッフしか対応できず、担当が変わると質が落ちる。
+指示: お客様の名前・前回来店日・好み・前回の話題を記録し、名前で検索できるメモ帳を作りたい。個人情報を扱うので保存先は自分の管理下に限る。
+出力形式: 最初の完成は「1件記録できる／名前で検索できる」だけ。来店履歴の自動集計は後回し。
+
+73. 在庫の発注点メモ
+痛み: 在庫が切れてから気づく。
+前提: 消耗品や食材の在庫を目で見て管理しており、切れてから気づいて慌てて発注している。
+指示: 品目ごとの発注点（この数を下回ったら発注）を登録し、現在数を入れると発注すべき品目が並ぶツールを作りたい。
+出力形式: 最初の完成は「現在数を入れる → 発注すべき品目が並ぶ」だけ。発注書の作成は作らない。
+
+74. シフト希望のまとめ
+痛み: シフト希望の集約が手作業。
+前提: スタッフのシフト希望をチャットで集め、表に手で写しており、転記ミスが起きる。
+指示: スタッフが希望を入れると、日付ごとの人数が自動集計され、人数が足りない日を目立たせるツールを作りたい。
+出力形式: 最初の完成は「希望を入れる → 日付ごとの人数が出る → 不足日が色で分かる」だけ。確定シフトの自動生成は作らない。
+
+75. クレーム対応の記録
+痛み: クレームの内容と対応が残らない。
+前提: クレームの内容と対応をその場の口頭で済ませており、再発の傾向が見えない。
+指示: 発生日・内容の分類・対応内容・再発防止策を記録し、分類ごとの件数を数えられるツールを作りたい。
+出力形式: 最初の完成は「1件記録できる／分類ごとの件数が出る」だけ。エスカレーション機能は作らない。
+
+76. 日報の入力を短くする
+痛み: 日報を書くのが面倒で形骸化している。
+前提: 日報を自由記述で書かせているため、書く側の負担が大きく内容も揃わない。
+指示: 決まった項目（客数・売上・特記事項・在庫の気づき）だけを選択と数値で入力できる日報ツールを作りたい。自由記述は1行に限る。
+出力形式: 最初の完成は「入力して保存できる／過去分を日付で見られる」だけ。集計グラフは次の段階に回す。
+
+77. メニューの原価計算
+痛み: 原価計算を表計算で毎回作り直している。
+前提: メニューの原価を表計算で計算しているが、食材の単価が変わるたびに作り直している。
+指示: 食材の単価を登録しておき、メニューごとの使用量を入れると原価と原価率を計算するツールを作りたい。単価の更新が全メニューに反映されるようにする。
+出力形式: 最初の完成は「食材登録／メニューの原価と原価率が出る」だけ。仕入との連携は作らない。
+
+78. 会計後の忘れ物メモ
+痛み: 忘れ物の管理が曖昧。
+前提: 店内の忘れ物を紙で管理しており、問い合わせがあったときに探すのに時間がかかる。
+指示: 発見日・場所・物の特徴・保管場所を記録し、特徴のキーワードで検索できるツールを作りたい。
+出力形式: 最初の完成は「1件記録できる／キーワードで検索できる」だけ。写真の添付は後回し。
+
+79. キャンペーンの効果メモ
+痛み: 販促の効果を感覚で判断している。
+前提: 販促（割引・ポイント・SNS投稿）の効果を感覚で判断しており、続けるべきか分からない。
+指示: 施策名・期間・費用・期間中の客数と売上を記録し、施策前後の変化を並べて見られるツールを作りたい。
+出力形式: 最初の完成は「1件記録できる／期間前後の数値が並ぶ」だけ。統計的な検定は作らない。
+
+80. スタッフ引き継ぎメモ
+痛み: シフト交代時の引き継ぎが口頭だけ。
+前提: シフト交代時の引き継ぎが口頭のみで、伝わらないまま次の時間帯に問題が持ち越される。
+指示: 引き継ぎ事項を「対応済み／未対応」の状態付きで記録し、未対応だけを次のシフトに表示するツールを作りたい。
+出力形式: 最初の完成は「1件記録できる／未対応だけ表示される」だけ。通知は作らない。
+
+■ 企画・リサーチ
+
+81. 参考事例の切り抜き帳
+痛み: 参考にしたい事例を保存しても見返さない。
+前提: 参考になる事例やページをブックマークするだけで、あとから見返せず活かせていない。
+指示: URL・一言メモ・使えそうな場面のタグを登録し、タグで絞り込める切り抜き帳を作りたい。
+出力形式: 最初の完成は「1件登録できる／タグで絞り込める」だけ。ページ内容の自動取得は作らない。
+
+82. 競合の機能比較表
+痛み: 競合の機能比較を毎回作り直している。
+前提: 競合サービスの機能比較を企画のたびに作り直しており、前回作った表が見つからない。
+指示: サービスと機能項目の組み合わせで対応状況を記録し、企画ごとに必要な項目だけを抜き出して表示できるツールを作りたい。
+出力形式: 最初の完成は「対応状況を登録できる／項目を選んで表を表示できる」だけ。自動調査は作らない。
+
+83. アンケート結果の読み込み
+痛み: 自由記述の集計に丸1日かかる。
+前提: アンケートの自由記述が数百件あり、読んで分類する作業に丸1日かかっている。
+指示: 自由記述をまとめて貼ると、自分が指定した分類（要望／不満／称賛／解約理由）に振り分けて、分類ごとの件数と代表的な文を並べるツールを作りたい。
+出力形式: 最初の完成は「貼る → 分類ごとに件数と代表文が出る」だけ。感情の点数化は作らない。
+
+84. 企画の判定シート
+痛み: 企画の良し悪しを感覚で判断している。
+前提: 企画の可否を会議の空気で決めており、判断基準が人によって違う。
+指示: 自分たちの判断基準（需要／独自性／実現コスト／収益／リスク）を項目化し、点数を入れると合計と弱点を示すシートを作りたい。基準の重みも設定できるようにする。
+出力形式: 最初の完成は「点数を入れる → 合計と最低点の項目が出る」だけ。過去企画との比較は次の段階に回す。
+
+85. 用語集の共有
+痛み: 社内用語が新メンバーに伝わらない。
+前提: 社内・業界の略語が多く、新しく入った人が会話を理解できない。
+指示: 用語・読み・意味・使う場面を登録し、キーワードで検索できる用語集を作りたい。誰でも追加できるようにする。
+出力形式: 最初の完成は「1件登録できる／検索できる」だけ。承認フローは作らない。
+
+86. リサーチの出典管理
+痛み: 調べた情報の出典が後から分からなくなる。
+前提: 調べた数字をメモに書き写すうちに出典が分からなくなり、資料化のときに探し直している。
+指示: 数字・出典URL・取得日・確度（公式／報道／推測）を1件ずつ記録し、確度で絞り込める台帳を作りたい。
+出力形式: 最初の完成は「1件記録できる／確度で絞り込める」だけ。自動の出典検証は作らない。
+
+87. 会議のアジェンダ生成
+痛み: 会議のアジェンダを毎回ゼロから書いている。
+前提: 定例会議のアジェンダを毎回ゼロから書いており、前回の宿題が引き継がれない。
+指示: 前回の議事録を貼ると、未完了の宿題を引き継いだ今回のアジェンダの下書きを作るツールを作りたい。所要時間の目安も入れる。
+出力形式: 最初の完成は「前回分を貼る → 今回のアジェンダ案が出る」だけ。カレンダー連携は作らない。
+
+88. 仮説と検証の記録
+痛み: 検証した仮説が記録に残らない。
+前提: 試した施策とその結果が記録に残らず、同じ検証を繰り返している。
+指示: 仮説・検証方法・期間・結果・次の一手を記録し、結果（当たり／外れ／判断保留）で絞り込める台帳を作りたい。
+出力形式: 最初の完成は「1件記録できる／結果で絞り込める」だけ。統計処理は作らない。
+
+89. 社内向け説明の言い換え
+痛み: 専門用語だらけの説明が伝わらない。
+前提: 技術寄りの内容を非専門の社内メンバーに説明する必要があるが、毎回言い換えに時間がかかる。
+指示: 専門用語を含む文章を貼ると、登録した言い換え辞書に沿って平易な表現に置き換えた案を出すツールを作りたい。置き換えた箇所が分かるように印を付ける。
+出力形式: 最初の完成は「文章を貼る → 言い換え案と置換箇所が出る」だけ。辞書の自動学習は作らない。
+
+90. 読んだ資料の要点メモ
+痛み: 読んだ資料の要点を残していない。
+前提: 報告書や記事を読んでも要点をメモに残さず、必要になったときにまた読み直している。
+指示: 資料名・URL・要点3つ・自分の仕事への影響を記録し、キーワードで検索できるメモ帳を作りたい。
+出力形式: 最初の完成は「1件記録できる／キーワードで検索できる」だけ。自動要約は次の段階に回す。
+
+■ 個人の暮らし・副業
+
+91. 献立の使い回し表
+痛み: 献立を考えるのに毎日悩む。
+前提: 毎日の献立を考えるのに時間がかかり、結果的に同じものが続く。
+指示: 作れる料理を登録しておき、直近で作った料理を除いた候補を数件出してくれるツールを作りたい。主材料でも絞り込めるようにする。
+出力形式: 最初の完成は「料理を登録できる／直近を除いた候補が出る」だけ。買い物リストの生成は次の段階に回す。
+
+92. 読書メモの蓄積
+痛み: 読んだ本の内容を思い出せない。
+前提: 本を読んでも内容を書き留めておらず、人に説明できない。
+指示: 書名・読了日・要点3つ・自分の行動に落とす1つを記録し、書名や要点で検索できるメモ帳を作りたい。
+出力形式: 最初の完成は「1件記録できる／検索できる」だけ。読書時間の集計は作らない。
+
+93. 習慣の記録
+痛み: 続けたい習慣が続かない。
+前提: 続けたい習慣（運動・語学・投稿）が三日坊主になり、続いた日数も分からない。
+指示: 習慣を登録し、日ごとに実施の印を付けると連続日数と月の達成率が出るツールを作りたい。
+出力形式: 最初の完成は「印を付けられる／連続日数が出る」だけ。通知やご褒美機能は作らない。
+
+94. 副業の稼働記録
+痛み: 副業の時間単価が分からない。
+前提: 副業の作業時間を記録しておらず、案件ごとの時間単価が分からないまま受け続けている。
+指示: 案件名・作業日・作業時間・報酬を記録し、案件ごとの時間単価を計算するツールを作りたい。
+出力形式: 最初の完成は「1件記録できる／案件ごとの時間単価が出る」だけ。請求書作成は作らない。
+
+95. サブスクの棚卸し
+痛み: 個人契約のサブスクを把握していない。
+前提: 個人で契約しているサブスクが増え、月にいくら払っているか把握していない。
+指示: サービス名・月額・更新日・最終利用日を登録し、月合計と直近使っていないものを表示するツールを作りたい。
+出力形式: 最初の完成は「1件登録できる／月合計と未使用が分かる」だけ。解約リンク集は次の段階に回す。
+
+96. 旅行の持ち物リスト
+痛み: 毎回持ち物を忘れる。
+前提: 旅行のたびに持ち物リストを作り直しており、毎回同じものを忘れる。
+指示: 旅行の種類（国内／海外／出張／キャンプ）を選ぶと基本の持ち物が並び、印を付けられるリストを作りたい。項目は自分で追加できるようにする。
+出力形式: 最初の完成は「種類を選ぶ → 持ち物が並ぶ → 印を付けられる」だけ。共有機能は作らない。
+
+97. 家計の固定費表
+痛み: 固定費の内訳を把握していない。
+前提: 家計の固定費が何にいくらかかっているか把握しておらず、見直しの入口が分からない。
+指示: 項目・金額・支払日・見直し余地の有無を登録し、金額の大きい順に並べて合計を出すツールを作りたい。
+出力形式: 最初の完成は「1件登録できる／金額順に並んで合計が出る」だけ。銀行連携は作らない。
+
+98. 写真の整理メモ
+痛み: 撮った写真の整理が追いつかない。
+前提: 撮った写真が大量にあり、あとで探せる状態になっていない。
+指示: 日付・場所・一言メモ・写真フォルダへのリンクを記録し、日付や場所で検索できる索引を作りたい。写真本体は移動させない。
+出力形式: 最初の完成は「1件記録できる／日付で絞り込める」だけ。画像の自動分類は作らない。
+
+99. 学習の進捗表
+痛み: 学習教材の進み具合が分からない。
+前提: 複数の教材を並行して進めており、どれがどこまで進んだか分からない。
+指示: 教材名・全体量・現在位置・最終学習日を記録し、進捗率と放置日数を表示するツールを作りたい。
+出力形式: 最初の完成は「1件登録できる／進捗率と放置日数が出る」だけ。学習時間の計測は作らない。
+
+100. 欲しいものの検討メモ
+痛み: 衝動買いと検討忘れを繰り返す。
+前提: 欲しいものをその場の勢いで買ったり、逆に検討したまま忘れたりしている。
+指示: 品名・価格・欲しい理由・検討開始日を登録し、登録から2週間経ったものを「判断待ち」として表示するツールを作りたい。
+出力形式: 最初の完成は「1件登録できる／2週間経過分が表示される」だけ。価格の自動追跡は作らない。
+
+以上、100個です。内訳は 動画編集・クリエイター 10件／営業・商談 10件／事務・総務 10件／マーケティング・SNS 10件／人事・採用 10件／経理・請求 10件／教育・研修・スクール運営 10件／店舗・接客・予約 10件／企画・リサーチ 10件／個人の暮らし・副業 10件 の合計100件。
+```
+
+**ポイント**: 題材は「先月10回以上やった作業」から選ぶと続きます。週1回以下の作業は、作っても使わなくなります。</pre>
+<script>
+function flash(btn, label){
+  const old = btn.textContent, cls = btn.className;
+  btn.textContent = label; btn.classList.add('ok');
+  setTimeout(() => { btn.textContent = old; btn.className = cls; }, 1600);
+}
+function textOf(id){ return document.getElementById(id).textContent; }
+
+async function copyText(btn, id){
+  const t = textOf(id);
+  try {
+    await navigator.clipboard.writeText(t);
+  } catch (e) {
+    const ta = document.createElement('textarea');
+    ta.value = t; ta.style.position='fixed'; ta.style.opacity='0';
+    document.body.appendChild(ta); ta.select();
+    document.execCommand('copy'); ta.remove();
+  }
+  flash(btn, '✓ コピーしました');
+}
+
+function saveText(btn, id, name){
+  const blob = new Blob([textOf(id)], {type:'text/plain;charset=utf-8'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = name;
+  document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+  if (btn) flash(btn, '✓ 保存しました');
+}
+
+document.addEventListener('click', e => {
+  const b = e.target.closest('[data-copy]');
+  if (b) { copyText(b, b.dataset.copy); return; }
+  const d = e.target.closest('[data-save]');
+  if (d) { saveText(d, d.dataset.save, d.dataset.name); }
+});
+</script>
+</body></html>

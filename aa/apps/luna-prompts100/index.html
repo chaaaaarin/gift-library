@@ -1,0 +1,2011 @@
+<!doctype html>
+<html lang="ja"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Luna格上げ運用プロンプト100選 — Kawaru Gifts</title>
+<meta name="description" content="GPT-5.6 Lunaの推論設定（High/Max）を活かして、コーディング・実装／リサーチ・情報整理／文章・ドキュメント作成／レビュー・チェックの4ジャンルで即戦力になるプロンプト集です。10ジャンル×25本ではなく4ジャンル×25本、貼るだけで使えます。">
+<link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHgAAABPCAIAAACveZaQAAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAeKADAAQAAAABAAAATwAAAAAb4zF4AAAQkklEQVR4Ae1cCZAU1Rmenmt3lt0d2GVnFlhwWQSPRQklAgZFEVHCIYtERSspNQY0lcSKEmOqrFSMlcuUJjFVGkotY2JMeURAlEM8kBhQlIiCKFoCuxx7zV6zx+zO9PRMvtdv5k1P3z3TsyyVtO7M6//95/f+9/fr1z1wgpDgOAc58JkUG4oPjuOSjiTn4JJJwiGyEwoVIXRRkrCJDDIFoIOSktXmyZKF0rQ5uTbRKvNUZEwrT3siFxGNMvdoQ/qp5GcOo0H9ZxR2mqJk45bqJYgwH8Ho4BKJBPke8Ud2OCPFXZZk+g4h05wGHDR99ZmMeknS5X1I08MWhXl7RBTI0lapk7qKeW4AtKEipWolxRYlUrW2K5Qqp22WGqyh5NGhMCnqKuqJAdA6unLuYk7krGEYBNkEYg1LRmVSuPwYAF2ISSpzQhpAIcxJ9Wu1TY69STZVKwZAm5mk+ZiX+WTGnEzEllOMvZkx1kkRfTeMS0dBzes7N8y9hR3j4bkYDjNkI9AcRhGlw8apb1uMdvlklx6twMzrN6jRWgbyoKd803cx52ooc8wuPTK17NSkflqjTTIz5Xk2UuaG2WqeTucvnpXR0izDZdDMlTB/D5gVqXVLapkGS1LDyYx19Bmz1zGcuJixhbTQmpSqXVkZbcbAsPEMQ57mPIcAghbKWl0jF+jCLmzFfNEBS5lPeQ68W6mxEBTV2cQM6fcyNq2GkEjG+Ti5pmgc6PB68400z4HP17xGaHKyfu7o98p10Z14EndKbv+nRxpPhlwuZ2rTPSNAGcgAzJkxbVxwdKZHrYWcZTppv5KiJmeKNkxAm/JFm0kWMHsWQ5F9+MnNO/ccLCryEjZygaeKRJTxwXHRaOzRn3/n5hXzmaCqKRnK4FFSVAXNEM8MoHUCBnbd4YEhnhcfrKVDTuW6iJXDERmK9g0Mpfvs+cZoZoyYUHlmAC0LRBpk6nmkkEy4ycNPF+ck8ZOkTv1ROBRVRabS8qkllKE9F6ClcVp2UCEgKwtmlGcFmXQEx46pqiz3FRfFeaGnL5KyQHDGQ1sOf2IjSyjFk8eXGT+ZegwzgE6JyAJmTMqGvS7LyoJSuY5jpCBz3JrVC6+Yc57H6/3X3kOb39wnzmngS5YhVJvt6QxMlH4qgWIU+Il1dEpEFjBjQpysbXtjIBLt7Yv09g/i/2gsrqpfyzHKjBjmz6m/9YaF06dNPNLUircnRDrICZrKtIRYxdqWmCl09NO4dOjHqQqNSeJQNL5px95w34DL6eIF4dwpE66ad6FJWSkbEP3ks8Z7fvXM/kPHish6OYmVdTGpJHG8jYI8Sme2VMigbSlhtXRR6OhnpnRocZun68xxpRKkWEd3+GePPN8T7ne6nFiBXTN/5qJLZ6TehVEKaFE47vMvj9//8D/2HzxaVOTB/ATKY/yjZl1w9s69h5DXoNiCmpZ9k3RSOmyZJrBnNSK8u5NICC4sFLBacDr5OE+cltzgGVYtjNaRxpYH/vDCnn2fi7nswOrDV+y97foFt994pcALIsYEZ7U3qIi1YTvIXsdpHPDMGANUeiLxRn/kgHLTqY4H//TSjnc/LvJ6EQjGrcjjXr183j23r0DpEIs0VWc/ziwJWENnzOCq5qaSGXkd1aa6JJiSlKOnGez1dMD1U21dv3l8w+Y3PvACZc4BWN0u18rFc+//wTd9Pi+uhaQ2E62kRLvMqYVJk4xpd6FbGoa6z7g0a14Mzcira7VCFX0EaGJ0kqKho4NkAOdoDfX8/slXX3jt3x6PB3LIZZfbtezKWQ/86IYx/lKIV1aUzpo+hSZ1LBafOL5KR6e0yxg2KbfYhvcyKUaBrxRJ44shY1Xoz5sgTR6glZrfMp8VVjhHqKv38Wdff+blnW6nCy+KAk2nk7t63oW/uGd1VYUf6QPF50yesP7Xa3lxtQfVBGj760fKN6XHSopmRrP4CpraItQAAJtBaYOskSZIv5H7XT39Tz3/1p+f3e5EVXcS9JxJ7vLZ9Q+uu2lCsAIogx9/bpezblK1VJZ2SSks76REe9sMPWOg7TWsro3uuJkoHU2nQr9dv+mfW/ZgfYxdUVIxXM5vNVy+bs2149MoUxMi3rqDppjv6r5ZoWqNHKpC5s6QKhRTzIpuO3hJjTZhuKW9+9G/bN247X3kJtI5mUhgXbhq8SV33bpEhrIdTuWiQ2tgkdfyVQdlNYzbkMGymxkf1SFHXX7sb9uf3/wu7iGRy+QO2+FYtnDW3bcvP6smoCwLlh0wIaAatSpRqUwONOVglUUpYJJBS1CVbmiupzfyxHNv/HXDO9EYjywGv5BMLrpsxrq1DVMnjyvcVY56y0Ze1U9VojJMdaCVfIWi0CDgLNmTIIfSb+zZP/3im0+9+GZkcAiPq8AjxAVc/X5yR0P91InI5cxkEDXY/qGl30wuM57TDTQLIt1gnlG8Bof4Zze+s/7vr/f2DeB+BFzYdJ49c+p931s5s75Ovny1HWNdhcqcULIzHgDNZoaSrcAU4kUKYIKvwpEYH0dRfuyZbR09/W6XGyWCjwsz6iffd+equTOnwTkmXmBHLahXCUOUBtDpXLKgzUbW9AqaoEyRJv5gHQJMX972/h+ffq011O1xu0AEBVup99258oq59TjFLt3JgaG4uPePU1sOEytMFTvSDFEfe/FXWVI2FS0FJBHLeEQiIgx46YgjJTgO+/d4VvLIU6+ebOlwA2WSy/HamuC9a1dcPX8GRGJCYl8ovOFo24GOPhurdG713jhVk+SZYRYbos46LyDMbLGAJKAbAimkcUu9bdf+h5/YdKSpxesht1SCINRUV9z93aXXLpqNDdUBXtjb3r3zVFdzJBrm4/4i99n+UXA8N5gKGWJGt/xiyFDWqjUZ0bxb6XmKb2qWfAKst/cc/N36TYePNHvFipGIC6MCFStWX3P9knm4sQbPwa7eLU0d7YMxr8uJ6rHleEdrJJquPHm7VQgFOj/oVK81djuRHs5U/YD63fsOP/T4xoNfNBGUcZMtCGWBiulLLi372jld5NfUZO8J9yqxhIAmCjweGxzu6d9xsrM3Fie9I+nIeGP4G5ZCu80mEFl0cM4PD3z10PqN+z494nEBZQdQLvGXnb/467Wz6o9FottPdHQNxcA3o7J8/rgK7CWJBZ5UjA/aenY1d0bpSBTaadP6ER3DWl46TCuxi1GEWnyU1d4Zxhbz7v8cpijjelha6pt+zSUTLzqfXDgSyY9CvW81d0VQSTyuhRMqZ1aVOfDIG8nCOeLJxM7mrg/ae3DHONLymiJ12oGmQ8653e7G5o633zvoxkaGk2zLlfjw6G/hquWXOd1OFAtUBT6Z2N3S/V5rdzyRqCj2fmNSYIrfJ27tA2sOV0ik/KGuPgTG8siudMhZD5uyANqqV1b59ZzM6AKOPNbECVQGrORG+Yp+ue6mH6+59sbzai6uKhfI8ygHqslgQnilKbTjRCfqRU1p8benTZjmL4lDCL1OrmMo9tyXLR93hKFEz+rp6FPP6PQ1StUjNkiqvYRoNkqiCX+UHZ/kf1SMYq/np99ftXLxJSW+olKXc9mkQH3FKJ4MAcE6mhDeau78MBSGcLCkaGVddbXPQ7DmODxuCfP8psb2Y72REVVA4AyAVgEuzyWHikaCv+IgwOJPTFfRDVQM3ATee0fDTcsvLRtVDAGoqvJ5V9QGakYV0ZeQgPVAPL65qf3Lnn4w1JaVXFdXXe514UaR6muJxDY0tnUOxQqNNcyZPDD/1DPapHz+bOQWQ4QaX2Ih5u66bcktqxb4y0qYcng5qbTkusnBMq+LbEITCVQJfmNjqH0wiithfUXZsrMCHjzWEruwWf1VT2RTY9tgHEtA82gwg2Yboi9mmU8z0MRNMRGBJmbX2psXrVm9CO8ZydzH4vncMaUNtSKa4gQA1k19kQ3H2vtjcY+Tuzjgv6pmLL0zxMMXjNrHHf3bT4Romsu0aZ3qFkwtIQM6G2kAXcAxN/ACtolx4JPEFvM5deN/eMvSqkq/qhReKrgoMHrRhCoMCQQgh6Xdgc6+LSdCeNRd4nYtGF85O1COYi0WIS6WFHa19Lzb2k1tqOqUEfMsmDJtqdN02qdqdCEGU92wnArECNp4lauivLS6ajSBXe0ACsVObkFNxdzq0ViEkIlA1taJPa3du1q6cF7udS+dFDzX7yP7eQ780zrcIB/fejz0SWcvSys1xXo06MnhkILJBi9VOth5DnrzFaHRIEmpL7pVtcztWjopcN5oLOnopY8biiew2vtIXIQESrwNddXjfF7WG47xrzS2H+8fNIm1DFk25jK6fshKMGE9q3RYUqdvzFwvMUiNkrJKw9LIaKoQLFiErJwcJGgic3E15xy9PL/5eOhomLzrX1vmW1kXLPe4EglyoYfy5v6hDUdbu6P2LEJygwjFDs6wYZO0zOGUNxett6IahrluRoMVMpMImtVAk97IgNg6EMWSLjQYwy1ifUX58rOCeEkVnFTrFz0Drza2D5lYhGSwyI6N0Vkju9/4jE5XY74CcbAZTQIwnS1gJEu62iDu17Hgw30KRuer8ODGY20RXiCLkKD/qvGVFBSSSth1ag+/cbKD7IQUKBIjtZaBllZ6I+XG/Ug6wgScLKYKFiFzAv6FE8ZCDlgDPieXPNDVt/VEO3ZCsAi5smYs1nwCKoioHlX7neau99ssLEKMvc/mkA2hDCjLQCsrfbY5ciazoWSQUyyiDHG4UexyLqypJGhitPBfkuzh7W4N72rpBoPf68ZdzFR/Kc1ilPJ+Xtja1PFZVz+bRnI38juXBZEFVIGeGWbZ0PderMhwkQBFb/tk/uqK+z3u5bWBaeUl5DkAee2KLOl2HA/RRQh2QlZNqQ7ixyzYq8KixunoiOLuvOWk6UWIrnHNTllqEz5x499KZJrKc+lAweT5BF4+ipEjjt07q1owPEEf3VcqjiYSPNbVjiTQfPlY29HwALRhJ6ShLlDi9mCLFfcyWK03hodeOtbWE+ULlNcwqgqo/W+TkoWaui05jKPLShZfMaO7ZwAb0HyUnzcbG/wkteV8uueo8rXlvoa6ILaqUT0wQ7BDjcnRFYvXkSKWvKCi/LrJwr523LaQUo7c9nAOPD0YjV8W5XRAiXkXGRrYYoeUecGcXNMWCvdF6HYEwMFvqrANrc2r1wP4Bsndd+bwujjyUwDxwCpwKPX7wxSDz41CYu2whK9Stfi+/OkDWunQmUUxiz4uhlan6rABYXnpMmyeSQyZLQVka5IULpsPhhFr6BtQ9SDnDFDVpu9AwXuV73VIodFqG7rFMGINfRGzeaGvJd1LtVmC25DZkCFtXOMbC6wErhL5qtHQbp0MR+wFXeqCJeWWmKVWtNrkccTIOQqHMmJUVa4VvSpzjkCJNjQXOdK6kaMBc2JaoZqTzpdLCqhOyHk5KdrQBFq1vCrtKSlWQ5eGClmdaJnm/I0yVdKGasiUQeakVMpkWxNoVXmlPSVFVVCHKENNJ1odJcPbJXPZlHFrQKuqzMWsRFEOQ5WDiMRg/s1c7NsAdC5m8w/2TNNgDWit5NWi54yGmUqds/LhF0Q4xkBLY2bJK0OW0U3GIBNXShlWai0NWnTRhEqnCknhjRkeqZCSH+H8/9+PlkJk3EbaGSaBUgv2vo0zOiNGn+9lzv8XW5ZRFkHDJvB/AQFxZ5IQHzayAAAAAElFTkSuQmCC">
+<link rel="stylesheet" href="../../assets/site.css">
+</head><body>
+<header class="kh"><div class="top">
+  <a class="back" href="../../">← 一覧へ</a>
+  <img src="data:image/png;base64,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" alt="">
+  <h1>Luna格上げ運用プロンプト100選</h1>
+  <span class="badge">100個</span>
+  <button class="btn sm" style="margin-left:auto" data-save="pfull" data-name="luna-prompts100.md">⬇ 全件ダウンロード</button>
+</div></header>
+
+<div class="kwrap">
+  <section class="epctx epctx-top">
+  <div class="ep-thumb epctx-thumb"><img src="https://i.ytimg.com/vi/S2GfN8h4PZA/hqdefault.jpg" alt=""></div>
+  <div>
+    <p class="epctx-label">この動画のプレゼントです</p>
+    <p class="epctx-title">GPT-5.6 Luna過小評価されすぎ</p>
+    <p class="epctx-date">2026-08-09</p>
+    <a class="watch" href="https://www.youtube.com/watch?v=S2GfN8h4PZA" target="_blank" rel="noopener">▶ 動画を見る</a>
+  </div>
+</section>
+
+  <section class="kintro">
+    <h2>Luna格上げ運用プロンプト100選</h2>
+    <p><span class="nb">GPT-5.6 Lunaの推論設定</span><span class="nb">（High/Max）を活かして、</span><span class="nb">コーディング・</span><span class="nb">実装／リサーチ・</span><span class="nb">情報整理／文章・</span><span class="nb">ドキュメント作成／レビュー・</span><span class="nb">チェックの4ジャンルで</span><span class="nb">即戦力になるプロンプト集です。</span><span class="nb">10ジャンル×25本ではなく4ジャンル×25本、</span><span class="nb">貼るだけで使えます。</span></p>
+    <div class="kmeta"><span>プロンプト集</span><span>収録 100個</span><span>No.82 GPT-5.6 Luna過小評価されすぎ</span><span>2026-08-02 配布</span></div>
+    <div class="pnote"><span class="nb">下のカードから、</span><span class="nb">1件ずつコピー、</span><span class="nb">または個別にダウンロードできます。</span><span class="nb">まとめて欲しいときは、</span><span class="nb">上の</span><span class="nb">「全件ダウンロード」を</span><span class="nb">お使いください。</span></div>
+  </section>
+
+  <h2 class="cat">コーディング・実装</h2>
+<div class="icard">
+  <div class="ih"><span class="num">001</span><span class="ititle">REST APIエンドポイントに新しいバリデーション…</span></div>
+  
+  <pre class="prompt" id="b1">前提: 既存のREST APIエンドポイントに新しいバリデーションルールを追加したい場面。
+指示: 対象エンドポイントの入力パラメータを確認し、必須項目チェック・型チェック・範囲チェックを既存のエラーレスポンス形式に合わせて追加して。
+出力形式: 変更箇所を差分（diff）形式で示し、追加したチェック内容を箇条書きで説明して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b1">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b1" data-name="luna-prompts100-001.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">002</span><span class="ititle">同じ処理が3箇所以上のファイルに重複しているコードベ…</span></div>
+  
+  <pre class="prompt" id="b2">前提: 同じ処理が3箇所以上のファイルに重複しているコードベース。
+指示: 重複しているロジックを見つけ、共通関数として1箇所に切り出し、呼び出し元をその関数を使う形に置き換えて。
+出力形式: 切り出した関数のシグネチャと、置き換えたファイル一覧を先頭にまとめて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b2">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b2" data-name="luna-prompts100-002.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">003</span><span class="ititle">新しく実装した関数にテストが1つもない状態</span></div>
+  
+  <pre class="prompt" id="b3">前提: 新しく実装した関数にテストが1つもない状態。
+指示: 対象関数の正常系1〜2件・異常系(null/空/型不一致)1〜2件・境界値1〜2件のテストケースを、既存のテストフレームワークの作法に合わせて追加して。
+出力形式: テストファイルへの追記差分と、実行結果（成功/失敗件数）を報告して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b3">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b3" data-name="luna-prompts100-003.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">004</span><span class="ititle">エラーハンドリングが不十分で、例外発生時にスタックト…</span></div>
+  
+  <pre class="prompt" id="b4">前提: エラーハンドリングが不十分で、例外発生時にスタックトレースがそのままユーザーに見えてしまう箇所がある。
+指示: 該当箇所を洗い出し、ユーザー向けには汎用メッセージ、ログには詳細を出す形に統一して。
+出力形式: 修正した箇所ごとに「変更前→変更後」を対比表で示して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b4">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b4" data-name="luna-prompts100-004.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">005</span><span class="ititle">CSVインポート機能で、文字コードや区切り文字の異な…</span></div>
+  
+  <pre class="prompt" id="b5">前提: CSVインポート機能で、文字コードや区切り文字の異なるファイルが混在して読み込みエラーになる。
+指示: 文字コード自動判定と区切り文字の自動検出を追加し、判定できない場合はエラーメッセージで理由を明示して。
+出力形式: 追加したロジックの説明と、対応した文字コード・区切り文字の一覧を示して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b5">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b5" data-name="luna-prompts100-005.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">006</span><span class="ititle">フロントエンドのフォームでバリデーションエラーが分か…</span></div>
+  
+  <pre class="prompt" id="b6">前提: フロントエンドのフォームでバリデーションエラーが分かりにくいと報告されている。
+指示: 各入力項目のエラーメッセージを「何が」「なぜダメか」「どう直せばいいか」の3点が伝わる文言に書き換えて。
+出力形式: 項目ごとに変更前後のメッセージを一覧表で示して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b6">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b6" data-name="luna-prompts100-006.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">007</span><span class="ititle">データベースのN+1クエリ問題でページ表示が遅い箇所…</span></div>
+  
+  <pre class="prompt" id="b7">前提: データベースのN+1クエリ問題でページ表示が遅い箇所がある。
+指示: 該当箇所を特定し、Eager Loading（関連データの事前読み込み）に書き換えて。
+出力形式: 修正前後のクエリ発行数の見積もりと、変更したコード差分を示して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b7">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b7" data-name="luna-prompts100-007.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">008</span><span class="ititle">環境変数の読み込み処理が複数箇所に散らばっていて管理…</span></div>
+  
+  <pre class="prompt" id="b8">前提: 環境変数の読み込み処理が複数箇所に散らばっていて管理しづらい。
+指示: 環境変数を1つの設定モジュールに集約し、デフォルト値と型変換を明示して。
+出力形式: 集約後のモジュール構成と、既存コードでの参照方法の変更点を示して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b8">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b8" data-name="luna-prompts100-008.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">009</span><span class="ititle">APIのレスポンスタイムを計測するログが入っていない</span></div>
+  
+  <pre class="prompt" id="b9">前提: APIのレスポンスタイムを計測するログが入っていない。
+指示: 主要なAPIエンドポイントにリクエスト開始〜終了の処理時間を記録するログを追加して。
+出力形式: 追加したログの出力フォーマット例と、対象にしたエンドポイント一覧を示して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b9">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b9" data-name="luna-prompts100-009.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">010</span><span class="ititle">古いライブラリのバージョンを最新に上げたい</span></div>
+  
+  <pre class="prompt" id="b10">前提: 古いライブラリのバージョンを最新に上げたい。
+指示: 対象ライブラリの変更履歴（CHANGELOG）から破壊的変更を確認し、影響を受けるコード箇所を洗い出して。
+出力形式: 「破壊的変更の内容」「影響箇所」「対応方針」の3列表で示して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b10">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b10" data-name="luna-prompts100-010.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">011</span><span class="ititle">フォームの二重送信でデータが重複登録される不具合があ…</span></div>
+  
+  <pre class="prompt" id="b11">前提: フォームの二重送信でデータが重複登録される不具合がある。
+指示: 送信ボタンを押した直後にボタンを無効化し、処理完了後に再度有効化する仕組みを追加して。
+出力形式: 変更したコード箇所と、動作確認の手順を箇条書きで示して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b11">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b11" data-name="luna-prompts100-011.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">012</span><span class="ititle">ログイン画面のパスワード入力欄に表示/非表示切り替え…</span></div>
+  
+  <pre class="prompt" id="b12">前提: ログイン画面のパスワード入力欄に表示/非表示切り替えボタンがない。
+指示: 目のアイコンをクリックするとパスワードの表示・非表示が切り替わる機能を追加して。
+出力形式: 追加したUI要素とイベント処理のコードを示し、既存のスタイルに合わせたか確認して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b12">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b12" data-name="luna-prompts100-012.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">013</span><span class="ititle">画像アップロード機能でファイルサイズ上限のチェックが…</span></div>
+  
+  <pre class="prompt" id="b13">前提: 画像アップロード機能でファイルサイズ上限のチェックがない。
+指示: アップロード前にファイルサイズを確認し、上限（例: 10MB）を超える場合はエラーメッセージを表示して送信をブロックして。
+出力形式: 変更箇所と、上限値を変更したい場合にどこを直せばいいかを明記して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b13">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b13" data-name="luna-prompts100-013.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">014</span><span class="ititle">定期実行バッチ処理が失敗しても通知が来ない</span></div>
+  
+  <pre class="prompt" id="b14">前提: 定期実行バッチ処理が失敗しても通知が来ない。
+指示: バッチ処理の失敗時にエラー内容をログに記録し、指定の通知先（Slack等）に送る仕組みを追加して。
+出力形式: 追加した通知処理のコードと、通知メッセージのサンプルを示して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b14">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b14" data-name="luna-prompts100-014.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">015</span><span class="ititle">ページネーション処理が全件取得してからスライスする非…</span></div>
+  
+  <pre class="prompt" id="b15">前提: ページネーション処理が全件取得してからスライスする非効率な実装になっている。
+指示: データベース側のLIMIT/OFFSET（またはカーソルベース）に書き換え、全件取得をやめて。
+出力形式: 修正前後のクエリと、想定される性能改善の理由を説明して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b15">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b15" data-name="luna-prompts100-015.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">016</span><span class="ititle">日付フォーマットの表記がページごとにバラバラ（yyy…</span></div>
+  
+  <pre class="prompt" id="b16">前提: 日付フォーマットの表記がページごとにバラバラ（yyyy/mm/ddとyyyy-mm-ddが混在）。
+指示: 共通の日付フォーマット関数を作り、表示箇所をすべてその関数経由に統一して。
+出力形式: 統一後のフォーマット仕様と、置き換えたファイル一覧を示して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b16">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b16" data-name="luna-prompts100-016.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">017</span><span class="ititle">ユニットテストの実行時間が長くなってきている</span></div>
+  
+  <pre class="prompt" id="b17">前提: ユニットテストの実行時間が長くなってきている。
+指示: 実行時間が長いテストを特定し、不要な待機処理（sleep等）やモック化できる外部呼び出しを洗い出して。
+出力形式: 「テスト名」「現在の実行時間」「改善案」の3列表で示して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b17">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b17" data-name="luna-prompts100-017.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">018</span><span class="ititle">APIキーやシークレットがコード内にハードコードされ…</span></div>
+  
+  <pre class="prompt" id="b18">前提: APIキーやシークレットがコード内にハードコードされている箇所がある。
+指示: ハードコードされている値を環境変数に置き換え、リポジトリ内に残っていないか確認して。
+出力形式: 置き換えた箇所の一覧と、環境変数の設定方法の案内を示して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b18">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b18" data-name="luna-prompts100-018.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">019</span><span class="ititle">フロントエンドでAPIエラー時に何も表示されず、ユー…</span></div>
+  
+  <pre class="prompt" id="b19">前提: フロントエンドでAPIエラー時に何も表示されず、ユーザーが操作できなくなる。
+指示: APIエラー発生時に共通のエラー表示コンポーネントを出し、再試行ボタンを設置して。
+出力形式: 追加したコンポーネントのコードと、既存画面への組み込み箇所を示して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b19">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b19" data-name="luna-prompts100-019.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">020</span><span class="ititle">ソート機能が数値と文字列で挙動が混在していて意図しな…</span></div>
+  
+  <pre class="prompt" id="b20">前提: ソート機能が数値と文字列で挙動が混在していて意図しない順序になる。
+指示: ソート対象のデータ型を確認し、数値は数値として、文字列は指定のロケールでソートされるよう修正して。
+出力形式: 修正前後の挙動の違いを具体例（データ例）付きで説明して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b20">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b20" data-name="luna-prompts100-020.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">021</span><span class="ititle">フォームの入力途中でページ離脱すると入力内容が消えて…</span></div>
+  
+  <pre class="prompt" id="b21">前提: フォームの入力途中でページ離脱すると入力内容が消えて再入力になる。
+指示: 入力内容をローカルストレージに一時保存し、再訪問時に復元する仕組みを追加して。
+出力形式: 保存・復元のタイミングと、保存データのクリア条件を明記して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b21">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b21" data-name="luna-prompts100-021.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">022</span><span class="ititle">同じバリデーションロジックがフロントエンドとバックエ…</span></div>
+  
+  <pre class="prompt" id="b22">前提: 同じバリデーションロジックがフロントエンドとバックエンドで別々に書かれ、ズレが生じている。
+指示: 共通化できるバリデーションルールを洗い出し、可能な箇所は共有できる形（設定ファイル等）に整理して。
+出力形式: 共通化できた項目とできなかった項目を分けて一覧化して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b22">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b22" data-name="luna-prompts100-022.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">023</span><span class="ititle">ログ出力のレベル（info/warn/error）が…</span></div>
+  
+  <pre class="prompt" id="b23">前提: ログ出力のレベル（info/warn/error）が統一されておらず、重要なエラーが埋もれる。
+指示: 各ログ呼び出し箇所を確認し、内容に応じて適切なレベルに統一して。
+出力形式: レベルを変更した箇所と変更理由を一覧表で示して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b23">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b23" data-name="luna-prompts100-023.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">024</span><span class="ititle">検索機能で全角・半角の違いにより検索結果がヒットしな…</span></div>
+  
+  <pre class="prompt" id="b24">前提: 検索機能で全角・半角の違いにより検索結果がヒットしないことがある。
+指示: 検索クエリと検索対象の双方を正規化（全角半角統一）してから比較する処理を追加して。
+出力形式: 正規化処理のコードと、正規化前後での検索結果の違いを例示して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b24">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b24" data-name="luna-prompts100-024.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">025</span><span class="ititle">フロントエンドのビルド時間が長く開発効率が落ちている</span></div>
+  
+  <pre class="prompt" id="b25">前提: フロントエンドのビルド時間が長く開発効率が落ちている。
+指示: ビルド設定を確認し、不要な依存関係や重複するバンドル処理を洗い出して。
+出力形式: 「原因箇所」「想定される短縮効果」「対応の難易度」の3列表で示して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b25">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b25" data-name="luna-prompts100-025.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<h2 class="cat">リサーチ・情報整理</h2>
+<div class="icard">
+  <div class="ih"><span class="num">026</span><span class="ititle">新しいSaaSツールの導入を検討している</span></div>
+  
+  <pre class="prompt" id="b26">前提: 新しいSaaSツールの導入を検討している。
+指示: 候補ツール3つについて、価格・主要機能・日本語対応の有無を公式サイトから調べて。
+出力形式: 3列の比較表にまとめ、それぞれの一次情報URLを添えて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b26">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b26" data-name="luna-prompts100-026.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">027</span><span class="ititle">競合サービスの最近のアップデート内容を把握したい</span></div>
+  
+  <pre class="prompt" id="b27">前提: 競合サービスの最近のアップデート内容を把握したい。
+指示: 競合の公式ブログ・リリースノートを確認し、直近3ヶ月の主要な変更点を時系列で整理して。
+出力形式: 日付順のタイムラインと、各変更の影響度（大中小）の見立てを添えて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b27">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b27" data-name="luna-prompts100-027.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">028</span><span class="ititle">業界の最新トレンドについて社内共有資料を作りたい</span></div>
+  
+  <pre class="prompt" id="b28">前提: 業界の最新トレンドについて社内共有資料を作りたい。
+指示: 信頼できる情報源（公式発表・大手メディア）から直近のニュースを集め、共通するテーマを抽出して。
+出力形式: テーマごとに見出しをつけ、各テーマの根拠となる情報源を1行で添えて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b28">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b28" data-name="luna-prompts100-028.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">029</span><span class="ititle">特定の技術用語について社内メンバー向けに説明が必要</span></div>
+  
+  <pre class="prompt" id="b29">前提: 特定の技術用語について社内メンバー向けに説明が必要。
+指示: 専門用語の定義・使われる文脈・関連する用語を調べ、非専門家にも分かる言葉で説明して。
+出力形式: 「一言でいうと」「詳しい説明」「関連用語」の3段構成で示して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b29">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b29" data-name="luna-prompts100-029.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">030</span><span class="ititle">過去の自社データから傾向を読み取りたい</span></div>
+  
+  <pre class="prompt" id="b30">前提: 過去の自社データから傾向を読み取りたい。
+指示: 提供したデータの中から、時系列での増減・季節性・外れ値を確認して。
+出力形式: 気づいた傾向を箇条書きで示し、それぞれ根拠となる数値を添えて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b30">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b30" data-name="luna-prompts100-030.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">031</span><span class="ititle">新しい法規制が自社の業務に影響するか確認したい</span></div>
+  
+  <pre class="prompt" id="b31">前提: 新しい法規制が自社の業務に影響するか確認したい。
+指示: 該当する法規制の公式情報を確認し、自社の業務プロセスのどこに影響しうるか洗い出して。
+出力形式: 「規制の要点」「影響箇所」「確度（確認済み/要確認）」の3列表で示して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b31">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b31" data-name="luna-prompts100-031.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">032</span><span class="ititle">取引先企業の最新の動向を把握しておきたい</span></div>
+  
+  <pre class="prompt" id="b32">前提: 取引先企業の最新の動向を把握しておきたい。
+指示: 取引先の公式発表・IR情報・プレスリリースを確認し、直近の動きを整理して。
+出力形式: 時系列の箇条書きにまとめ、特に注視すべき点を先頭に太字で示して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b32">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b32" data-name="luna-prompts100-032.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">033</span><span class="ititle">複数の候補案の中からどれを採用すべきか判断材料が欲し…</span></div>
+  
+  <pre class="prompt" id="b33">前提: 複数の候補案の中からどれを採用すべきか判断材料が欲しい。
+指示: 各案のメリット・デメリット・実現コストを洗い出し、判断基準ごとに比較して。
+出力形式: 判断基準を列にした比較表と、総合的な所感を最後に1段落添えて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b33">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b33" data-name="luna-prompts100-033.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">034</span><span class="ititle">海外の記事や発表を日本語で社内共有したい</span></div>
+  
+  <pre class="prompt" id="b34">前提: 海外の記事や発表を日本語で社内共有したい。
+指示: 対象記事の要点を抽出し、専門用語には簡単な注釈を添えて日本語でまとめて。
+出力形式: 「結論」「詳細」「原文で確認すべき箇所」の3段構成で示して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b34">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b34" data-name="luna-prompts100-034.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">035</span><span class="ititle">過去に似た問題が発生していないか社内記録を調べたい</span></div>
+  
+  <pre class="prompt" id="b35">前提: 過去に似た問題が発生していないか社内記録を調べたい。
+指示: 提供された過去の記録・議事録から、類似する事例やキーワードを検索して。
+出力形式: 見つかった事例を日付・概要・対応結果の一覧表で示して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b35">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b35" data-name="luna-prompts100-035.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">036</span><span class="ititle">新規参入する市場の規模感を把握したい</span></div>
+  
+  <pre class="prompt" id="b36">前提: 新規参入する市場の規模感を把握したい。
+指示: 公開されている統計・調査レポートから市場規模・成長率のデータを集めて。
+出力形式: 数値ごとに出典を明記した箇条書きで示し、数値の年度・調査対象範囲も添えて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b36">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b36" data-name="luna-prompts100-036.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">037</span><span class="ititle">あるサービスのユーザーからの評判を確認したい</span></div>
+  
+  <pre class="prompt" id="b37">前提: あるサービスのユーザーからの評判を確認したい。
+指示: レビューサイト・SNS上の意見から、良い点・悪い点として繰り返し挙がる声を抽出して。
+出力形式: 良い点・悪い点をそれぞれ3〜5個の箇条書きで示し、件数感（多い/少ない）を添えて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b37">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b37" data-name="luna-prompts100-037.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">038</span><span class="ititle">社内で使っているツールの代替候補を探している</span></div>
+  
+  <pre class="prompt" id="b38">前提: 社内で使っているツールの代替候補を探している。
+指示: 同カテゴリのツールを3〜5個リストアップし、現行ツールとの違いを洗い出して。
+出力形式: 「ツール名」「特徴」「現行との違い」の3列表で示して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b38">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b38" data-name="luna-prompts100-038.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">039</span><span class="ititle">プロジェクトのリスク要因を事前に洗い出したい</span></div>
+  
+  <pre class="prompt" id="b39">前提: プロジェクトのリスク要因を事前に洗い出したい。
+指示: 類似プロジェクトの過去事例や一般的な失敗パターンを調べ、想定されるリスクを整理して。
+出力形式: リスクごとに「発生確率」「影響度」「対策案」を添えた一覧表で示して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b39">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b39" data-name="luna-prompts100-039.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">040</span><span class="ititle">特定の統計データの信頼性を確認したい</span></div>
+  
+  <pre class="prompt" id="b40">前提: 特定の統計データの信頼性を確認したい。
+指示: データの出典・調査方法・サンプル数を確認し、他の調査結果と矛盾がないか照らし合わせて。
+出力形式: 「データの出典」「信頼度の見立て」「矛盾点の有無」を明記して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b40">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b40" data-name="luna-prompts100-040.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">041</span><span class="ititle">新機能のネーミング案を検討している</span></div>
+  
+  <pre class="prompt" id="b41">前提: 新機能のネーミング案を検討している。
+指示: 類似サービスの命名例を調べ、命名の傾向（英語表記/和製英語/ひらがな等）を整理して。
+出力形式: 傾向ごとに事例を2〜3個添えて分類し、自社での採用可否の所感も添えて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b41">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b41" data-name="luna-prompts100-041.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">042</span><span class="ititle">あるキーワードに関する検索エンジンでの上位表示状況を…</span></div>
+  
+  <pre class="prompt" id="b42">前提: あるキーワードに関する検索エンジンでの上位表示状況を知りたい。
+指示: 対象キーワードで上位表示されている記事の見出し構成・文字数の傾向を調べて。
+出力形式: 上位記事ごとの特徴を一覧表にまとめ、共通するパターンを最後に指摘して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b42">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b42" data-name="luna-prompts100-042.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">043</span><span class="ititle">新しいツールの導入事例を社内で集めたい</span></div>
+  
+  <pre class="prompt" id="b43">前提: 新しいツールの導入事例を社内で集めたい。
+指示: 同業種・同規模の企業がそのツールをどう活用しているか、公開事例を調べて。
+出力形式: 事例ごとに「企業名（公開情報のみ）」「活用方法」「得られた成果」を示して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b43">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b43" data-name="luna-prompts100-043.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">044</span><span class="ititle">あるテーマについての専門家の見解を集めたい</span></div>
+  
+  <pre class="prompt" id="b44">前提: あるテーマについての専門家の見解を集めたい。
+指示: 信頼できる専門家・公式機関の発言を調べ、共通する見解と意見が分かれる点を整理して。
+出力形式: 「共通見解」「意見が分かれる点」の2つに分けて、それぞれ発信者を明記して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b44">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b44" data-name="luna-prompts100-044.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">045</span><span class="ititle">過去の自社施策の効果を振り返りたい</span></div>
+  
+  <pre class="prompt" id="b45">前提: 過去の自社施策の効果を振り返りたい。
+指示: 提供されたデータから、施策実施前後での数値の変化を比較して。
+出力形式: 「実施前」「実施後」「変化率」の3列表で示し、変化の要因についての仮説を添えて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b45">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b45" data-name="luna-prompts100-045.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">046</span><span class="ititle">新しいアイデアが既に他社で実現されていないか確認した…</span></div>
+  
+  <pre class="prompt" id="b46">前提: 新しいアイデアが既に他社で実現されていないか確認したい。
+指示: 類似する既存サービス・特許情報・記事を調べ、近しい取り組みがあるか確認して。
+出力形式: 見つかった類似事例と、自社アイデアとの違いを明記して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b46">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b46" data-name="luna-prompts100-046.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">047</span><span class="ititle">用語の表記ゆれ（例: 「サーバ」と「サーバー」）を統…</span></div>
+  
+  <pre class="prompt" id="b47">前提: 用語の表記ゆれ（例: 「サーバ」と「サーバー」）を統一したい。
+指示: 社内文書・公開資料での表記の使われ方を確認し、どちらが多数派かを調べて。
+出力形式: 表記ごとの使用頻度の見立てと、統一する場合の推奨表記を示して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b47">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b47" data-name="luna-prompts100-047.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">048</span><span class="ititle">新しい採用ポジションの職務内容を明確にしたい</span></div>
+  
+  <pre class="prompt" id="b48">前提: 新しい採用ポジションの職務内容を明確にしたい。
+指示: 類似ポジションの求人票を複数調べ、共通して求められるスキル・経験を整理して。
+出力形式: 「必須スキル」「歓迎スキル」に分けて頻出項目を箇条書きで示して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b48">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b48" data-name="luna-prompts100-048.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">049</span><span class="ititle">顧客からのよくある問い合わせ内容を整理したい</span></div>
+  
+  <pre class="prompt" id="b49">前提: 顧客からのよくある問い合わせ内容を整理したい。
+指示: 提供された問い合わせ履歴から、頻出するテーマ・キーワードを抽出して。
+出力形式: テーマごとに件数感と代表的な質問例を添えて示して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b49">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b49" data-name="luna-prompts100-049.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">050</span><span class="ititle">新しい規約・利用条件の変更点を分かりやすく説明したい</span></div>
+  
+  <pre class="prompt" id="b50">前提: 新しい規約・利用条件の変更点を分かりやすく説明したい。
+指示: 変更前後の条文を比較し、ユーザーにとって何がどう変わるのかを洗い出して。
+出力形式: 「変更点」「ユーザーへの影響」の2列表で示して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b50">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b50" data-name="luna-prompts100-050.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<h2 class="cat">文章・ドキュメント作成</h2>
+<div class="icard">
+  <div class="ih"><span class="num">051</span><span class="ititle">会議の議事録を箇条書きのメモから清書したい</span></div>
+  
+  <pre class="prompt" id="b51">前提: 会議の議事録を箇条書きのメモから清書したい。
+指示: 提供した箇条書きメモを、決定事項・保留事項・次回までのタスクの3つに分類して整理して。
+出力形式: 見出しごとに箇条書きでまとめ、担当者と期限が分かるものは明記して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b51">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b51" data-name="luna-prompts100-051.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">052</span><span class="ititle">社外向けのお知らせ文を作成したい</span></div>
+  
+  <pre class="prompt" id="b52">前提: 社外向けのお知らせ文を作成したい。
+指示: 提供した要点をもとに、丁寧語で簡潔なお知らせ文を作成して。
+出力形式: 「件名」「本文（挨拶・要点・締めの3段構成）」の形で示して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b52">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b52" data-name="luna-prompts100-052.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">053</span><span class="ititle">技術的な内容を非エンジニア向けに説明する資料を作りた…</span></div>
+  
+  <pre class="prompt" id="b53">前提: 技術的な内容を非エンジニア向けに説明する資料を作りたい。
+指示: 専門用語を避け、日常的な比喩を使って分かりやすく言い換えて。
+出力形式: 「専門的な説明」と「かみ砕いた説明」を対比させる形で示して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b53">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b53" data-name="luna-prompts100-053.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">054</span><span class="ititle">プロジェクトの進捗報告メールを作成したい</span></div>
+  
+  <pre class="prompt" id="b54">前提: プロジェクトの進捗報告メールを作成したい。
+指示: 提供した進捗情報をもとに、完了事項・進行中事項・遅延事項に分けて報告文を作成して。
+出力形式: 箇条書きベースで、遅延事項には理由と対応策を添えて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b54">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b54" data-name="luna-prompts100-054.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">055</span><span class="ititle">新しいメンバー向けのオンボーディング資料を作りたい</span></div>
+  
+  <pre class="prompt" id="b55">前提: 新しいメンバー向けのオンボーディング資料を作りたい。
+指示: 業務の全体像から日々の作業手順まで、初日に読む順番を意識して構成して。
+出力形式: 章立てにして、各章の冒頭にその章で分かることを1行で示して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b55">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b55" data-name="luna-prompts100-055.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">056</span><span class="ititle">よくある質問（FAQ）ページの文章を作成したい</span></div>
+  
+  <pre class="prompt" id="b56">前提: よくある質問（FAQ）ページの文章を作成したい。
+指示: 提供した質問リストに対し、簡潔で分かりやすい回答を作成して。
+出力形式: Q&amp;A形式で、回答は3行以内を目安にまとめて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b56">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b56" data-name="luna-prompts100-056.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">057</span><span class="ititle">プレスリリースの下書きを作りたい</span></div>
+  
+  <pre class="prompt" id="b57">前提: プレスリリースの下書きを作りたい。
+指示: 提供した発表内容をもとに、見出し・リード文・本文の構成で下書きを作成して。
+出力形式: 「見出し案を3パターン」「リード文」「本文」の順で示して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b57">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b57" data-name="luna-prompts100-057.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">058</span><span class="ititle">社内マニュアルの手順書を作成したい</span></div>
+  
+  <pre class="prompt" id="b58">前提: 社内マニュアルの手順書を作成したい。
+指示: 提供した操作手順を、番号付きの手順として抜け漏れなく整理して。
+出力形式: 手順ごとに番号を振り、つまずきやすい箇所には注意書きを添えて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b58">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b58" data-name="luna-prompts100-058.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">059</span><span class="ititle">お詫び・謝罪の文面を作成したい</span></div>
+  
+  <pre class="prompt" id="b59">前提: お詫び・謝罪の文面を作成したい。
+指示: 提供した経緯をもとに、事実関係・謝罪・再発防止策の3点を含む文面を作成して。
+出力形式: 誠実さが伝わる丁寧な文体で、簡潔にまとめて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b59">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b59" data-name="luna-prompts100-059.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">060</span><span class="ititle">製品の特徴を紹介する文章を作りたい</span></div>
+  
+  <pre class="prompt" id="b60">前提: 製品の特徴を紹介する文章を作りたい。
+指示: 提供した機能一覧から、ユーザーにとっての利点（ベネフィット）に翻訳して紹介文を作成して。
+出力形式: 機能ごとに「機能名」「利点」をセットにした箇条書きで示して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b60">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b60" data-name="luna-prompts100-060.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">061</span><span class="ititle">長文の資料を要約して共有したい</span></div>
+  
+  <pre class="prompt" id="b61">前提: 長文の資料を要約して共有したい。
+指示: 提供した資料の要点を抽出し、元の意図を損なわない範囲で圧縮して。
+出力形式: 全体を3行で要約したうえで、詳細を箇条書きで補足して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b61">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b61" data-name="luna-prompts100-061.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">062</span><span class="ititle">SNS投稿文のたたき台を複数パターン作りたい</span></div>
+  
+  <pre class="prompt" id="b62">前提: SNS投稿文のたたき台を複数パターン作りたい。
+指示: 提供した内容をもとに、フォーマル・カジュアルの2つのトーンで投稿文を作成して。
+出力形式: トーンごとに1〜2案ずつ示し、文字数の目安も添えて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b62">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b62" data-name="luna-prompts100-062.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">063</span><span class="ititle">会議のアジェンダを事前に準備したい</span></div>
+  
+  <pre class="prompt" id="b63">前提: 会議のアジェンダを事前に準備したい。
+指示: 提供した議題リストから、優先度と所要時間の目安を付けたアジェンダを作成して。
+出力形式: 「議題」「目的」「所要時間」の3列表で示して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b63">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b63" data-name="luna-prompts100-063.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">064</span><span class="ititle">契約書・規約の一部を平易な言葉に言い換えたい</span></div>
+  
+  <pre class="prompt" id="b64">前提: 契約書・規約の一部を平易な言葉に言い換えたい。
+指示: 提供した条文の意味を変えずに、専門用語を減らして分かりやすい表現に書き換えて。
+出力形式: 「原文」「言い換え後」を対比させる形で示して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b64">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b64" data-name="luna-prompts100-064.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">065</span><span class="ititle">社内アンケートの質問項目を作成したい</span></div>
+  
+  <pre class="prompt" id="b65">前提: 社内アンケートの質問項目を作成したい。
+指示: 調査したい目的をもとに、回答しやすい選択式と自由記述式を組み合わせた質問を作成して。
+出力形式: 質問ごとに回答形式（選択式/自由記述）を明記して示して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b65">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b65" data-name="luna-prompts100-065.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">066</span><span class="ititle">顧客への提案書の骨子を作りたい</span></div>
+  
+  <pre class="prompt" id="b66">前提: 顧客への提案書の骨子を作りたい。
+指示: 提供した顧客の課題感をもとに、課題・解決策・期待効果の流れで骨子を作成して。
+出力形式: 章立てのアウトラインとして示し、各章に入れる要点を箇条書きで添えて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b66">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b66" data-name="luna-prompts100-066.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">067</span><span class="ititle">メールの返信文をより丁寧なトーンに直したい</span></div>
+  
+  <pre class="prompt" id="b67">前提: メールの返信文をより丁寧なトーンに直したい。
+指示: 提供した文面を、失礼のない敬語表現に整えつつ、要件が伝わりやすいよう再構成して。
+出力形式: 「変更前」「変更後」を並べて示して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b67">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b67" data-name="luna-prompts100-067.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">068</span><span class="ititle">資料内の箇条書きが冗長で読みにくい</span></div>
+  
+  <pre class="prompt" id="b68">前提: 資料内の箇条書きが冗長で読みにくい。
+指示: 各項目を1行に収まる簡潔な表現に整理し、重複している内容はまとめて。
+出力形式: 修正前後の箇条書きを両方示して、削減できた項目数を最後に添えて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b68">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b68" data-name="luna-prompts100-068.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">069</span><span class="ititle">新サービスのキャッチコピー案を複数出したい</span></div>
+  
+  <pre class="prompt" id="b69">前提: 新サービスのキャッチコピー案を複数出したい。
+指示: 提供したサービスの特徴をもとに、異なる切り口（機能訴求/感情訴求/数字訴求）で案を作成して。
+出力形式: 切り口ごとに2〜3案ずつ、それぞれ狙いを1行で添えて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b69">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b69" data-name="luna-prompts100-069.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">070</span><span class="ititle">週次の活動報告テンプレートを作りたい</span></div>
+  
+  <pre class="prompt" id="b70">前提: 週次の活動報告テンプレートを作りたい。
+指示: 毎週埋めるべき項目（今週の成果・課題・来週の予定等）を洗い出し、テンプレート化して。
+出力形式: 見出しと記入例をセットにしたテンプレートとして示して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b70">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b70" data-name="luna-prompts100-070.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">071</span><span class="ititle">長いタイトルを検索に強い簡潔なタイトルに直したい</span></div>
+  
+  <pre class="prompt" id="b71">前提: 長いタイトルを検索に強い簡潔なタイトルに直したい。
+指示: 元のタイトルの要点を残しつつ、文字数を短縮した案を複数作成して。
+出力形式: 元のタイトルと文字数、短縮案とその文字数を並べて示して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b71">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b71" data-name="luna-prompts100-071.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">072</span><span class="ititle">社内向けの用語集を整備したい</span></div>
+  
+  <pre class="prompt" id="b72">前提: 社内向けの用語集を整備したい。
+指示: 提供した用語リストについて、それぞれ1〜2文で簡潔な定義を作成して。
+出力形式: 五十音順またはアルファベット順に並べた用語集として示して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b72">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b72" data-name="luna-prompts100-072.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">073</span><span class="ititle">プロジェクトの振り返り（KPT）をまとめたい</span></div>
+  
+  <pre class="prompt" id="b73">前提: プロジェクトの振り返り（KPT）をまとめたい。
+指示: 提供したメンバーの意見を、Keep（続けること）・Problem（課題）・Try（次に試すこと）に分類して整理して。
+出力形式: 3つの見出しごとに箇条書きでまとめ、重複する意見は集約して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b73">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b73" data-name="luna-prompts100-073.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">074</span><span class="ititle">サービス終了・変更のお知らせ文を作成したい</span></div>
+  
+  <pre class="prompt" id="b74">前提: サービス終了・変更のお知らせ文を作成したい。
+指示: 提供した経緯と代替案をもとに、利用者の不安に配慮した丁寧なお知らせ文を作成して。
+出力形式: 「経緯」「今後の対応」「問い合わせ先」の3段構成で示して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b74">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b74" data-name="luna-prompts100-074.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">075</span><span class="ititle">資料内の図表に添えるキャプションを作成したい</span></div>
+  
+  <pre class="prompt" id="b75">前提: 資料内の図表に添えるキャプションを作成したい。
+指示: 提供したデータの内容から、図表が伝えたい要点を1〜2文で言語化して。
+出力形式: 図表ごとにキャプション案を1行で示して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b75">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b75" data-name="luna-prompts100-075.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<h2 class="cat">レビュー・チェック・品質保証</h2>
+<div class="icard">
+  <div class="ih"><span class="num">076</span><span class="ititle">作成した文章に誤字脱字や表記ゆれがないか確認したい</span></div>
+  
+  <pre class="prompt" id="b76">前提: 作成した文章に誤字脱字や表記ゆれがないか確認したい。
+指示: 提供したテキストを確認し、誤字脱字・表記ゆれ・不自然な言い回しを洗い出して。
+出力形式: 「該当箇所」「指摘内容」「修正案」の3列表で示して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b76">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b76" data-name="luna-prompts100-076.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">077</span><span class="ititle">コードレビューで見落としがないか確認したい</span></div>
+  
+  <pre class="prompt" id="b77">前提: コードレビューで見落としがないか確認したい。
+指示: 提供した差分を確認し、命名の妥当性・エラーハンドリング漏れ・テスト不足の観点でチェックして。
+出力形式: 観点ごとに指摘事項を箇条書きで示し、重要度（高中低）を添えて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b77">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b77" data-name="luna-prompts100-077.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">078</span><span class="ititle">資料の内容に矛盾する記述がないか確認したい</span></div>
+  
+  <pre class="prompt" id="b78">前提: 資料の内容に矛盾する記述がないか確認したい。
+指示: 提供した資料全体を読み、数値や主張が箇所によって食い違っていないか確認して。
+出力形式: 矛盾が見つかった箇所を引用し、どこと矛盾しているかを明記して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b78">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b78" data-name="luna-prompts100-078.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">079</span><span class="ititle">提案書が顧客の課題に対応できているか確認したい</span></div>
+  
+  <pre class="prompt" id="b79">前提: 提案書が顧客の課題に対応できているか確認したい。
+指示: 提供した提案書と顧客の課題一覧を照らし合わせ、対応漏れがないか確認して。
+出力形式: 課題ごとに「対応済み/未対応」を明記した一覧表で示して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b79">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b79" data-name="luna-prompts100-079.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">080</span><span class="ititle">契約書に不利な条項が含まれていないか確認したい（最終…</span></div>
+  
+  <pre class="prompt" id="b80">前提: 契約書に不利な条項が含まれていないか確認したい（最終判断は専門家に確認する前提）。
+指示: 提供した契約書を確認し、一般的に注意すべき条項（違約金・解約条件等）が含まれていないか洗い出して。
+出力形式: 気になる条項を引用し、確認すべきポイントを添えて。※法的な最終判断は専門家に確認してください</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b80">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b80" data-name="luna-prompts100-080.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">081</span><span class="ititle">プレゼン資料のスライドが1枚に情報を詰め込みすぎてい…</span></div>
+  
+  <pre class="prompt" id="b81">前提: プレゼン資料のスライドが1枚に情報を詰め込みすぎていないか確認したい。
+指示: 各スライドの文字量・要素数を確認し、詰め込みすぎているスライドを指摘して。
+出力形式: 該当スライド番号と、分割・簡略化の提案を添えて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b81">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b81" data-name="luna-prompts100-081.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">082</span><span class="ititle">APIのレスポンス仕様がドキュメントと実装で一致して…</span></div>
+  
+  <pre class="prompt" id="b82">前提: APIのレスポンス仕様がドキュメントと実装で一致しているか確認したい。
+指示: 提供したドキュメントと実装コードを照らし合わせ、フィールド名・型・必須項目の相違を確認して。
+出力形式: 相違点を「ドキュメント記載」「実装」の対比表で示して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b82">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b82" data-name="luna-prompts100-082.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">083</span><span class="ititle">メール文面を送信前に失礼な表現がないか確認したい</span></div>
+  
+  <pre class="prompt" id="b83">前提: メール文面を送信前に失礼な表現がないか確認したい。
+指示: 提供した文面を確認し、高圧的・曖昧・誤解を招く可能性がある表現を洗い出して。
+出力形式: 該当箇所と、より適切な言い換え案をセットで示して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b83">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b83" data-name="luna-prompts100-083.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">084</span><span class="ititle">テストコードが実装の意図を正しく検証できているか確認…</span></div>
+  
+  <pre class="prompt" id="b84">前提: テストコードが実装の意図を正しく検証できているか確認したい。
+指示: 提供したテストコードと対象の実装を照らし合わせ、検証漏れがある観点を洗い出して。
+出力形式: 「検証できている観点」「不足している観点」に分けて示して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b84">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b84" data-name="luna-prompts100-084.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">085</span><span class="ititle">見積書の項目に抜け漏れがないか確認したい</span></div>
+  
+  <pre class="prompt" id="b85">前提: 見積書の項目に抜け漏れがないか確認したい。
+指示: 提供した見積書と作業範囲の説明を照らし合わせ、計上漏れがありそうな項目を洗い出して。
+出力形式: 気になる項目とその理由を箇条書きで示して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b85">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b85" data-name="luna-prompts100-085.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">086</span><span class="ititle">資料内の数値の桁や単位に誤りがないか確認したい</span></div>
+  
+  <pre class="prompt" id="b86">前提: 資料内の数値の桁や単位に誤りがないか確認したい。
+指示: 提供した資料内の数値表現を確認し、桁の誤り・単位の欠落・不自然な数値を洗い出して。
+出力形式: 該当箇所を引用し、疑われる誤りの内容を添えて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b86">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b86" data-name="luna-prompts100-086.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">087</span><span class="ititle">リリースノートに書き漏れがないか確認したい</span></div>
+  
+  <pre class="prompt" id="b87">前提: リリースノートに書き漏れがないか確認したい。
+指示: 提供したリリースノートと、実際の変更差分（コミット履歴等）を照らし合わせ、記載漏れの変更を洗い出して。
+出力形式: 「記載済みの変更」「記載漏れの変更」に分けて一覧化して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b87">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b87" data-name="luna-prompts100-087.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">088</span><span class="ititle">UIのテキストが画面幅からはみ出していないか確認した…</span></div>
+  
+  <pre class="prompt" id="b88">前提: UIのテキストが画面幅からはみ出していないか確認したい。
+指示: 提供した画面のテキスト量と表示枠のサイズ関係から、はみ出しのリスクがある箇所を洗い出して。
+出力形式: リスクがある箇所と、想定される対処法（文言短縮/枠拡大等）を添えて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b88">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b88" data-name="luna-prompts100-088.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">089</span><span class="ititle">セキュリティ観点で危険な実装がないか確認したい</span></div>
+  
+  <pre class="prompt" id="b89">前提: セキュリティ観点で危険な実装がないか確認したい。
+指示: 提供したコードを確認し、SQLインジェクション・XSS・機密情報のログ出力等の典型的な脆弱性パターンがないか洗い出して。
+出力形式: 該当箇所・リスク内容・推奨対応を3列表で示して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b89">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b89" data-name="luna-prompts100-089.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">090</span><span class="ititle">翻訳された文章が原文の意図とズレていないか確認したい</span></div>
+  
+  <pre class="prompt" id="b90">前提: 翻訳された文章が原文の意図とズレていないか確認したい。
+指示: 提供した原文と翻訳文を照らし合わせ、意味が変わってしまっている箇所を洗い出して。
+出力形式: 「原文」「翻訳文」「ズレの内容」の3列表で示して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b90">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b90" data-name="luna-prompts100-090.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">091</span><span class="ititle">資料の見出し構成に論理的な飛躍がないか確認したい</span></div>
+  
+  <pre class="prompt" id="b91">前提: 資料の見出し構成に論理的な飛躍がないか確認したい。
+指示: 提供した資料の見出し一覧を確認し、話の流れが自然につながっているか、飛躍がある箇所を洗い出して。
+出力形式: 飛躍がある箇所と、補うべき内容の提案を添えて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b91">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b91" data-name="luna-prompts100-091.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">092</span><span class="ititle">アンケート結果の集計に計算ミスがないか確認したい</span></div>
+  
+  <pre class="prompt" id="b92">前提: アンケート結果の集計に計算ミスがないか確認したい。
+指示: 提供した集計データの合計・割合の計算を再確認し、不一致がないか検証して。
+出力形式: 検証結果（一致/不一致）と、不一致箇所の詳細を示して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b92">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b92" data-name="luna-prompts100-092.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">093</span><span class="ititle">SNS投稿文が炎上リスクのある表現を含んでいないか確…</span></div>
+  
+  <pre class="prompt" id="b93">前提: SNS投稿文が炎上リスクのある表現を含んでいないか確認したい。
+指示: 提供した投稿文を確認し、誤解を招く表現・断定しすぎている表現・配慮に欠ける表現を洗い出して。
+出力形式: 該当箇所と、リスクを下げる言い換え案を添えて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b93">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b93" data-name="luna-prompts100-093.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">094</span><span class="ititle">プロジェクトのスケジュールに無理がないか確認したい</span></div>
+  
+  <pre class="prompt" id="b94">前提: プロジェクトのスケジュールに無理がないか確認したい。
+指示: 提供したタスク一覧と期限を照らし合わせ、依存関係を考慮して無理のあるスケジュールを洗い出して。
+出力形式: 懸念があるタスクと、その理由を箇条書きで示して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b94">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b94" data-name="luna-prompts100-094.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">095</span><span class="ititle">資料内の固有名詞の表記が統一されているか確認したい</span></div>
+  
+  <pre class="prompt" id="b95">前提: 資料内の固有名詞の表記が統一されているか確認したい。
+指示: 提供した資料内で、同じ対象を指す表記（例: 「Claude Code」と「claude code」）が揺れていないか確認して。
+出力形式: 表記ゆれの一覧と、統一すべき表記の提案を示して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b95">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b95" data-name="luna-prompts100-095.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">096</span><span class="ititle">バグ報告の内容が再現可能な情報を含んでいるか確認した…</span></div>
+  
+  <pre class="prompt" id="b96">前提: バグ報告の内容が再現可能な情報を含んでいるか確認したい。
+指示: 提供したバグ報告を確認し、再現手順・環境情報・期待結果が不足していないか洗い出して。
+出力形式: 「記載されている情報」「不足している情報」に分けて示して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b96">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b96" data-name="luna-prompts100-096.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">097</span><span class="ititle">資料が想定読者のレベルに合っているか確認したい</span></div>
+  
+  <pre class="prompt" id="b97">前提: 資料が想定読者のレベルに合っているか確認したい。
+指示: 提供した資料を確認し、想定読者（例: 初心者）にとって説明不足・専門用語過多な箇所を洗い出して。
+出力形式: 該当箇所と、補足すべき内容の提案を示して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b97">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b97" data-name="luna-prompts100-097.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">098</span><span class="ititle">フォームのエラーメッセージが分かりやすいか確認したい</span></div>
+  
+  <pre class="prompt" id="b98">前提: フォームのエラーメッセージが分かりやすいか確認したい。
+指示: 提供したエラーメッセージ一覧を確認し、原因と対処法が伝わらない曖昧な表現を洗い出して。
+出力形式: 該当メッセージと、改善案をセットで示して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b98">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b98" data-name="luna-prompts100-098.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">099</span><span class="ititle">議事録の決定事項に責任者と期限が明記されているか確認…</span></div>
+  
+  <pre class="prompt" id="b99">前提: 議事録の決定事項に責任者と期限が明記されているか確認したい。
+指示: 提供した議事録を確認し、責任者・期限が抜けている決定事項を洗い出して。
+出力形式: 抜けている項目の一覧と、確認すべき相手を添えて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b99">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b99" data-name="luna-prompts100-099.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">100</span><span class="ititle">リリース前のチェックリストに漏れがないか、過去のリリ…</span></div>
+  
+  <pre class="prompt" id="b100">前提: リリース前のチェックリストに漏れがないか、過去のリリースと比較して確認したい。
+指示: 提供した今回のチェックリストと過去のリリース時のチェック項目を照らし合わせ、今回だけ抜けている項目を洗い出して。
+出力形式: 抜けている項目と、なぜ必要かの理由を添えて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b100">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b100" data-name="luna-prompts100-100.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+
+  <section class="epctx">
+  <p class="epctx-label">この動画のほかのプレゼント</p>
+  <div class="ep-kits"><a class="kchip" href="../cost-simulation-sheet/"><span class="kt">コスト削減シミュレーションシート</span><span class="badge">10項目</span><span class="go">開く →</span></a><a class="kchip" href="../luna-routing-rules50/"><span class="kt">Luna前提 モデル振り分けルール50本</span><span class="badge">50個</span><span class="go">開く →</span></a></div>
+</section>
+
+  <footer><a href="../../">← AIエージェント / Kawaru プレゼント図書館にもどる</a></footer>
+</div>
+
+<pre id="pfull" class="hidden"># 🎁 Luna格上げ運用プロンプト100選
+
+GPT-5.6 Lunaの推論設定（High/Max）を活かして、コーディング・実装／リサーチ・情報整理／文章・ドキュメント作成／レビュー・チェックの4ジャンルで即戦力になるプロンプト集です。10ジャンル×25本ではなく4ジャンル×25本、貼るだけで使えます。
+
+**受け取り方**: 各項目のコードブロック右上のコピーボタンでコピーするか、このファイルをそのままダウンロードしてください。
+
+**使い方**: Codex・ChatGPT WorkでGPT-5.6 Lunaを選択し（推論設定はHigh以上を推奨）、チャット欄にそのまま貼り付けてください。〇〇の部分はご自身の状況に合わせて書き換えてください。
+
+
+## コーディング・実装
+
+### 1. REST APIエンドポイントに新しいバリデーション…
+
+```text
+前提: 既存のREST APIエンドポイントに新しいバリデーションルールを追加したい場面。
+指示: 対象エンドポイントの入力パラメータを確認し、必須項目チェック・型チェック・範囲チェックを既存のエラーレスポンス形式に合わせて追加して。
+出力形式: 変更箇所を差分（diff）形式で示し、追加したチェック内容を箇条書きで説明して。
+```
+
+### 2. 同じ処理が3箇所以上のファイルに重複しているコードベ…
+
+```text
+前提: 同じ処理が3箇所以上のファイルに重複しているコードベース。
+指示: 重複しているロジックを見つけ、共通関数として1箇所に切り出し、呼び出し元をその関数を使う形に置き換えて。
+出力形式: 切り出した関数のシグネチャと、置き換えたファイル一覧を先頭にまとめて。
+```
+
+### 3. 新しく実装した関数にテストが1つもない状態
+
+```text
+前提: 新しく実装した関数にテストが1つもない状態。
+指示: 対象関数の正常系1〜2件・異常系(null/空/型不一致)1〜2件・境界値1〜2件のテストケースを、既存のテストフレームワークの作法に合わせて追加して。
+出力形式: テストファイルへの追記差分と、実行結果（成功/失敗件数）を報告して。
+```
+
+### 4. エラーハンドリングが不十分で、例外発生時にスタックト…
+
+```text
+前提: エラーハンドリングが不十分で、例外発生時にスタックトレースがそのままユーザーに見えてしまう箇所がある。
+指示: 該当箇所を洗い出し、ユーザー向けには汎用メッセージ、ログには詳細を出す形に統一して。
+出力形式: 修正した箇所ごとに「変更前→変更後」を対比表で示して。
+```
+
+### 5. CSVインポート機能で、文字コードや区切り文字の異な…
+
+```text
+前提: CSVインポート機能で、文字コードや区切り文字の異なるファイルが混在して読み込みエラーになる。
+指示: 文字コード自動判定と区切り文字の自動検出を追加し、判定できない場合はエラーメッセージで理由を明示して。
+出力形式: 追加したロジックの説明と、対応した文字コード・区切り文字の一覧を示して。
+```
+
+### 6. フロントエンドのフォームでバリデーションエラーが分か…
+
+```text
+前提: フロントエンドのフォームでバリデーションエラーが分かりにくいと報告されている。
+指示: 各入力項目のエラーメッセージを「何が」「なぜダメか」「どう直せばいいか」の3点が伝わる文言に書き換えて。
+出力形式: 項目ごとに変更前後のメッセージを一覧表で示して。
+```
+
+### 7. データベースのN+1クエリ問題でページ表示が遅い箇所…
+
+```text
+前提: データベースのN+1クエリ問題でページ表示が遅い箇所がある。
+指示: 該当箇所を特定し、Eager Loading（関連データの事前読み込み）に書き換えて。
+出力形式: 修正前後のクエリ発行数の見積もりと、変更したコード差分を示して。
+```
+
+### 8. 環境変数の読み込み処理が複数箇所に散らばっていて管理…
+
+```text
+前提: 環境変数の読み込み処理が複数箇所に散らばっていて管理しづらい。
+指示: 環境変数を1つの設定モジュールに集約し、デフォルト値と型変換を明示して。
+出力形式: 集約後のモジュール構成と、既存コードでの参照方法の変更点を示して。
+```
+
+### 9. APIのレスポンスタイムを計測するログが入っていない
+
+```text
+前提: APIのレスポンスタイムを計測するログが入っていない。
+指示: 主要なAPIエンドポイントにリクエスト開始〜終了の処理時間を記録するログを追加して。
+出力形式: 追加したログの出力フォーマット例と、対象にしたエンドポイント一覧を示して。
+```
+
+### 10. 古いライブラリのバージョンを最新に上げたい
+
+```text
+前提: 古いライブラリのバージョンを最新に上げたい。
+指示: 対象ライブラリの変更履歴（CHANGELOG）から破壊的変更を確認し、影響を受けるコード箇所を洗い出して。
+出力形式: 「破壊的変更の内容」「影響箇所」「対応方針」の3列表で示して。
+```
+
+### 11. フォームの二重送信でデータが重複登録される不具合があ…
+
+```text
+前提: フォームの二重送信でデータが重複登録される不具合がある。
+指示: 送信ボタンを押した直後にボタンを無効化し、処理完了後に再度有効化する仕組みを追加して。
+出力形式: 変更したコード箇所と、動作確認の手順を箇条書きで示して。
+```
+
+### 12. ログイン画面のパスワード入力欄に表示/非表示切り替え…
+
+```text
+前提: ログイン画面のパスワード入力欄に表示/非表示切り替えボタンがない。
+指示: 目のアイコンをクリックするとパスワードの表示・非表示が切り替わる機能を追加して。
+出力形式: 追加したUI要素とイベント処理のコードを示し、既存のスタイルに合わせたか確認して。
+```
+
+### 13. 画像アップロード機能でファイルサイズ上限のチェックが…
+
+```text
+前提: 画像アップロード機能でファイルサイズ上限のチェックがない。
+指示: アップロード前にファイルサイズを確認し、上限（例: 10MB）を超える場合はエラーメッセージを表示して送信をブロックして。
+出力形式: 変更箇所と、上限値を変更したい場合にどこを直せばいいかを明記して。
+```
+
+### 14. 定期実行バッチ処理が失敗しても通知が来ない
+
+```text
+前提: 定期実行バッチ処理が失敗しても通知が来ない。
+指示: バッチ処理の失敗時にエラー内容をログに記録し、指定の通知先（Slack等）に送る仕組みを追加して。
+出力形式: 追加した通知処理のコードと、通知メッセージのサンプルを示して。
+```
+
+### 15. ページネーション処理が全件取得してからスライスする非…
+
+```text
+前提: ページネーション処理が全件取得してからスライスする非効率な実装になっている。
+指示: データベース側のLIMIT/OFFSET（またはカーソルベース）に書き換え、全件取得をやめて。
+出力形式: 修正前後のクエリと、想定される性能改善の理由を説明して。
+```
+
+### 16. 日付フォーマットの表記がページごとにバラバラ（yyy…
+
+```text
+前提: 日付フォーマットの表記がページごとにバラバラ（yyyy/mm/ddとyyyy-mm-ddが混在）。
+指示: 共通の日付フォーマット関数を作り、表示箇所をすべてその関数経由に統一して。
+出力形式: 統一後のフォーマット仕様と、置き換えたファイル一覧を示して。
+```
+
+### 17. ユニットテストの実行時間が長くなってきている
+
+```text
+前提: ユニットテストの実行時間が長くなってきている。
+指示: 実行時間が長いテストを特定し、不要な待機処理（sleep等）やモック化できる外部呼び出しを洗い出して。
+出力形式: 「テスト名」「現在の実行時間」「改善案」の3列表で示して。
+```
+
+### 18. APIキーやシークレットがコード内にハードコードされ…
+
+```text
+前提: APIキーやシークレットがコード内にハードコードされている箇所がある。
+指示: ハードコードされている値を環境変数に置き換え、リポジトリ内に残っていないか確認して。
+出力形式: 置き換えた箇所の一覧と、環境変数の設定方法の案内を示して。
+```
+
+### 19. フロントエンドでAPIエラー時に何も表示されず、ユー…
+
+```text
+前提: フロントエンドでAPIエラー時に何も表示されず、ユーザーが操作できなくなる。
+指示: APIエラー発生時に共通のエラー表示コンポーネントを出し、再試行ボタンを設置して。
+出力形式: 追加したコンポーネントのコードと、既存画面への組み込み箇所を示して。
+```
+
+### 20. ソート機能が数値と文字列で挙動が混在していて意図しな…
+
+```text
+前提: ソート機能が数値と文字列で挙動が混在していて意図しない順序になる。
+指示: ソート対象のデータ型を確認し、数値は数値として、文字列は指定のロケールでソートされるよう修正して。
+出力形式: 修正前後の挙動の違いを具体例（データ例）付きで説明して。
+```
+
+### 21. フォームの入力途中でページ離脱すると入力内容が消えて…
+
+```text
+前提: フォームの入力途中でページ離脱すると入力内容が消えて再入力になる。
+指示: 入力内容をローカルストレージに一時保存し、再訪問時に復元する仕組みを追加して。
+出力形式: 保存・復元のタイミングと、保存データのクリア条件を明記して。
+```
+
+### 22. 同じバリデーションロジックがフロントエンドとバックエ…
+
+```text
+前提: 同じバリデーションロジックがフロントエンドとバックエンドで別々に書かれ、ズレが生じている。
+指示: 共通化できるバリデーションルールを洗い出し、可能な箇所は共有できる形（設定ファイル等）に整理して。
+出力形式: 共通化できた項目とできなかった項目を分けて一覧化して。
+```
+
+### 23. ログ出力のレベル（info/warn/error）が…
+
+```text
+前提: ログ出力のレベル（info/warn/error）が統一されておらず、重要なエラーが埋もれる。
+指示: 各ログ呼び出し箇所を確認し、内容に応じて適切なレベルに統一して。
+出力形式: レベルを変更した箇所と変更理由を一覧表で示して。
+```
+
+### 24. 検索機能で全角・半角の違いにより検索結果がヒットしな…
+
+```text
+前提: 検索機能で全角・半角の違いにより検索結果がヒットしないことがある。
+指示: 検索クエリと検索対象の双方を正規化（全角半角統一）してから比較する処理を追加して。
+出力形式: 正規化処理のコードと、正規化前後での検索結果の違いを例示して。
+```
+
+### 25. フロントエンドのビルド時間が長く開発効率が落ちている
+
+```text
+前提: フロントエンドのビルド時間が長く開発効率が落ちている。
+指示: ビルド設定を確認し、不要な依存関係や重複するバンドル処理を洗い出して。
+出力形式: 「原因箇所」「想定される短縮効果」「対応の難易度」の3列表で示して。
+```
+
+
+## リサーチ・情報整理
+
+### 26. 新しいSaaSツールの導入を検討している
+
+```text
+前提: 新しいSaaSツールの導入を検討している。
+指示: 候補ツール3つについて、価格・主要機能・日本語対応の有無を公式サイトから調べて。
+出力形式: 3列の比較表にまとめ、それぞれの一次情報URLを添えて。
+```
+
+### 27. 競合サービスの最近のアップデート内容を把握したい
+
+```text
+前提: 競合サービスの最近のアップデート内容を把握したい。
+指示: 競合の公式ブログ・リリースノートを確認し、直近3ヶ月の主要な変更点を時系列で整理して。
+出力形式: 日付順のタイムラインと、各変更の影響度（大中小）の見立てを添えて。
+```
+
+### 28. 業界の最新トレンドについて社内共有資料を作りたい
+
+```text
+前提: 業界の最新トレンドについて社内共有資料を作りたい。
+指示: 信頼できる情報源（公式発表・大手メディア）から直近のニュースを集め、共通するテーマを抽出して。
+出力形式: テーマごとに見出しをつけ、各テーマの根拠となる情報源を1行で添えて。
+```
+
+### 29. 特定の技術用語について社内メンバー向けに説明が必要
+
+```text
+前提: 特定の技術用語について社内メンバー向けに説明が必要。
+指示: 専門用語の定義・使われる文脈・関連する用語を調べ、非専門家にも分かる言葉で説明して。
+出力形式: 「一言でいうと」「詳しい説明」「関連用語」の3段構成で示して。
+```
+
+### 30. 過去の自社データから傾向を読み取りたい
+
+```text
+前提: 過去の自社データから傾向を読み取りたい。
+指示: 提供したデータの中から、時系列での増減・季節性・外れ値を確認して。
+出力形式: 気づいた傾向を箇条書きで示し、それぞれ根拠となる数値を添えて。
+```
+
+### 31. 新しい法規制が自社の業務に影響するか確認したい
+
+```text
+前提: 新しい法規制が自社の業務に影響するか確認したい。
+指示: 該当する法規制の公式情報を確認し、自社の業務プロセスのどこに影響しうるか洗い出して。
+出力形式: 「規制の要点」「影響箇所」「確度（確認済み/要確認）」の3列表で示して。
+```
+
+### 32. 取引先企業の最新の動向を把握しておきたい
+
+```text
+前提: 取引先企業の最新の動向を把握しておきたい。
+指示: 取引先の公式発表・IR情報・プレスリリースを確認し、直近の動きを整理して。
+出力形式: 時系列の箇条書きにまとめ、特に注視すべき点を先頭に太字で示して。
+```
+
+### 33. 複数の候補案の中からどれを採用すべきか判断材料が欲し…
+
+```text
+前提: 複数の候補案の中からどれを採用すべきか判断材料が欲しい。
+指示: 各案のメリット・デメリット・実現コストを洗い出し、判断基準ごとに比較して。
+出力形式: 判断基準を列にした比較表と、総合的な所感を最後に1段落添えて。
+```
+
+### 34. 海外の記事や発表を日本語で社内共有したい
+
+```text
+前提: 海外の記事や発表を日本語で社内共有したい。
+指示: 対象記事の要点を抽出し、専門用語には簡単な注釈を添えて日本語でまとめて。
+出力形式: 「結論」「詳細」「原文で確認すべき箇所」の3段構成で示して。
+```
+
+### 35. 過去に似た問題が発生していないか社内記録を調べたい
+
+```text
+前提: 過去に似た問題が発生していないか社内記録を調べたい。
+指示: 提供された過去の記録・議事録から、類似する事例やキーワードを検索して。
+出力形式: 見つかった事例を日付・概要・対応結果の一覧表で示して。
+```
+
+### 36. 新規参入する市場の規模感を把握したい
+
+```text
+前提: 新規参入する市場の規模感を把握したい。
+指示: 公開されている統計・調査レポートから市場規模・成長率のデータを集めて。
+出力形式: 数値ごとに出典を明記した箇条書きで示し、数値の年度・調査対象範囲も添えて。
+```
+
+### 37. あるサービスのユーザーからの評判を確認したい
+
+```text
+前提: あるサービスのユーザーからの評判を確認したい。
+指示: レビューサイト・SNS上の意見から、良い点・悪い点として繰り返し挙がる声を抽出して。
+出力形式: 良い点・悪い点をそれぞれ3〜5個の箇条書きで示し、件数感（多い/少ない）を添えて。
+```
+
+### 38. 社内で使っているツールの代替候補を探している
+
+```text
+前提: 社内で使っているツールの代替候補を探している。
+指示: 同カテゴリのツールを3〜5個リストアップし、現行ツールとの違いを洗い出して。
+出力形式: 「ツール名」「特徴」「現行との違い」の3列表で示して。
+```
+
+### 39. プロジェクトのリスク要因を事前に洗い出したい
+
+```text
+前提: プロジェクトのリスク要因を事前に洗い出したい。
+指示: 類似プロジェクトの過去事例や一般的な失敗パターンを調べ、想定されるリスクを整理して。
+出力形式: リスクごとに「発生確率」「影響度」「対策案」を添えた一覧表で示して。
+```
+
+### 40. 特定の統計データの信頼性を確認したい
+
+```text
+前提: 特定の統計データの信頼性を確認したい。
+指示: データの出典・調査方法・サンプル数を確認し、他の調査結果と矛盾がないか照らし合わせて。
+出力形式: 「データの出典」「信頼度の見立て」「矛盾点の有無」を明記して。
+```
+
+### 41. 新機能のネーミング案を検討している
+
+```text
+前提: 新機能のネーミング案を検討している。
+指示: 類似サービスの命名例を調べ、命名の傾向（英語表記/和製英語/ひらがな等）を整理して。
+出力形式: 傾向ごとに事例を2〜3個添えて分類し、自社での採用可否の所感も添えて。
+```
+
+### 42. あるキーワードに関する検索エンジンでの上位表示状況を…
+
+```text
+前提: あるキーワードに関する検索エンジンでの上位表示状況を知りたい。
+指示: 対象キーワードで上位表示されている記事の見出し構成・文字数の傾向を調べて。
+出力形式: 上位記事ごとの特徴を一覧表にまとめ、共通するパターンを最後に指摘して。
+```
+
+### 43. 新しいツールの導入事例を社内で集めたい
+
+```text
+前提: 新しいツールの導入事例を社内で集めたい。
+指示: 同業種・同規模の企業がそのツールをどう活用しているか、公開事例を調べて。
+出力形式: 事例ごとに「企業名（公開情報のみ）」「活用方法」「得られた成果」を示して。
+```
+
+### 44. あるテーマについての専門家の見解を集めたい
+
+```text
+前提: あるテーマについての専門家の見解を集めたい。
+指示: 信頼できる専門家・公式機関の発言を調べ、共通する見解と意見が分かれる点を整理して。
+出力形式: 「共通見解」「意見が分かれる点」の2つに分けて、それぞれ発信者を明記して。
+```
+
+### 45. 過去の自社施策の効果を振り返りたい
+
+```text
+前提: 過去の自社施策の効果を振り返りたい。
+指示: 提供されたデータから、施策実施前後での数値の変化を比較して。
+出力形式: 「実施前」「実施後」「変化率」の3列表で示し、変化の要因についての仮説を添えて。
+```
+
+### 46. 新しいアイデアが既に他社で実現されていないか確認した…
+
+```text
+前提: 新しいアイデアが既に他社で実現されていないか確認したい。
+指示: 類似する既存サービス・特許情報・記事を調べ、近しい取り組みがあるか確認して。
+出力形式: 見つかった類似事例と、自社アイデアとの違いを明記して。
+```
+
+### 47. 用語の表記ゆれ（例: 「サーバ」と「サーバー」）を統…
+
+```text
+前提: 用語の表記ゆれ（例: 「サーバ」と「サーバー」）を統一したい。
+指示: 社内文書・公開資料での表記の使われ方を確認し、どちらが多数派かを調べて。
+出力形式: 表記ごとの使用頻度の見立てと、統一する場合の推奨表記を示して。
+```
+
+### 48. 新しい採用ポジションの職務内容を明確にしたい
+
+```text
+前提: 新しい採用ポジションの職務内容を明確にしたい。
+指示: 類似ポジションの求人票を複数調べ、共通して求められるスキル・経験を整理して。
+出力形式: 「必須スキル」「歓迎スキル」に分けて頻出項目を箇条書きで示して。
+```
+
+### 49. 顧客からのよくある問い合わせ内容を整理したい
+
+```text
+前提: 顧客からのよくある問い合わせ内容を整理したい。
+指示: 提供された問い合わせ履歴から、頻出するテーマ・キーワードを抽出して。
+出力形式: テーマごとに件数感と代表的な質問例を添えて示して。
+```
+
+### 50. 新しい規約・利用条件の変更点を分かりやすく説明したい
+
+```text
+前提: 新しい規約・利用条件の変更点を分かりやすく説明したい。
+指示: 変更前後の条文を比較し、ユーザーにとって何がどう変わるのかを洗い出して。
+出力形式: 「変更点」「ユーザーへの影響」の2列表で示して。
+```
+
+
+## 文章・ドキュメント作成
+
+### 51. 会議の議事録を箇条書きのメモから清書したい
+
+```text
+前提: 会議の議事録を箇条書きのメモから清書したい。
+指示: 提供した箇条書きメモを、決定事項・保留事項・次回までのタスクの3つに分類して整理して。
+出力形式: 見出しごとに箇条書きでまとめ、担当者と期限が分かるものは明記して。
+```
+
+### 52. 社外向けのお知らせ文を作成したい
+
+```text
+前提: 社外向けのお知らせ文を作成したい。
+指示: 提供した要点をもとに、丁寧語で簡潔なお知らせ文を作成して。
+出力形式: 「件名」「本文（挨拶・要点・締めの3段構成）」の形で示して。
+```
+
+### 53. 技術的な内容を非エンジニア向けに説明する資料を作りた…
+
+```text
+前提: 技術的な内容を非エンジニア向けに説明する資料を作りたい。
+指示: 専門用語を避け、日常的な比喩を使って分かりやすく言い換えて。
+出力形式: 「専門的な説明」と「かみ砕いた説明」を対比させる形で示して。
+```
+
+### 54. プロジェクトの進捗報告メールを作成したい
+
+```text
+前提: プロジェクトの進捗報告メールを作成したい。
+指示: 提供した進捗情報をもとに、完了事項・進行中事項・遅延事項に分けて報告文を作成して。
+出力形式: 箇条書きベースで、遅延事項には理由と対応策を添えて。
+```
+
+### 55. 新しいメンバー向けのオンボーディング資料を作りたい
+
+```text
+前提: 新しいメンバー向けのオンボーディング資料を作りたい。
+指示: 業務の全体像から日々の作業手順まで、初日に読む順番を意識して構成して。
+出力形式: 章立てにして、各章の冒頭にその章で分かることを1行で示して。
+```
+
+### 56. よくある質問（FAQ）ページの文章を作成したい
+
+```text
+前提: よくある質問（FAQ）ページの文章を作成したい。
+指示: 提供した質問リストに対し、簡潔で分かりやすい回答を作成して。
+出力形式: Q&amp;A形式で、回答は3行以内を目安にまとめて。
+```
+
+### 57. プレスリリースの下書きを作りたい
+
+```text
+前提: プレスリリースの下書きを作りたい。
+指示: 提供した発表内容をもとに、見出し・リード文・本文の構成で下書きを作成して。
+出力形式: 「見出し案を3パターン」「リード文」「本文」の順で示して。
+```
+
+### 58. 社内マニュアルの手順書を作成したい
+
+```text
+前提: 社内マニュアルの手順書を作成したい。
+指示: 提供した操作手順を、番号付きの手順として抜け漏れなく整理して。
+出力形式: 手順ごとに番号を振り、つまずきやすい箇所には注意書きを添えて。
+```
+
+### 59. お詫び・謝罪の文面を作成したい
+
+```text
+前提: お詫び・謝罪の文面を作成したい。
+指示: 提供した経緯をもとに、事実関係・謝罪・再発防止策の3点を含む文面を作成して。
+出力形式: 誠実さが伝わる丁寧な文体で、簡潔にまとめて。
+```
+
+### 60. 製品の特徴を紹介する文章を作りたい
+
+```text
+前提: 製品の特徴を紹介する文章を作りたい。
+指示: 提供した機能一覧から、ユーザーにとっての利点（ベネフィット）に翻訳して紹介文を作成して。
+出力形式: 機能ごとに「機能名」「利点」をセットにした箇条書きで示して。
+```
+
+### 61. 長文の資料を要約して共有したい
+
+```text
+前提: 長文の資料を要約して共有したい。
+指示: 提供した資料の要点を抽出し、元の意図を損なわない範囲で圧縮して。
+出力形式: 全体を3行で要約したうえで、詳細を箇条書きで補足して。
+```
+
+### 62. SNS投稿文のたたき台を複数パターン作りたい
+
+```text
+前提: SNS投稿文のたたき台を複数パターン作りたい。
+指示: 提供した内容をもとに、フォーマル・カジュアルの2つのトーンで投稿文を作成して。
+出力形式: トーンごとに1〜2案ずつ示し、文字数の目安も添えて。
+```
+
+### 63. 会議のアジェンダを事前に準備したい
+
+```text
+前提: 会議のアジェンダを事前に準備したい。
+指示: 提供した議題リストから、優先度と所要時間の目安を付けたアジェンダを作成して。
+出力形式: 「議題」「目的」「所要時間」の3列表で示して。
+```
+
+### 64. 契約書・規約の一部を平易な言葉に言い換えたい
+
+```text
+前提: 契約書・規約の一部を平易な言葉に言い換えたい。
+指示: 提供した条文の意味を変えずに、専門用語を減らして分かりやすい表現に書き換えて。
+出力形式: 「原文」「言い換え後」を対比させる形で示して。
+```
+
+### 65. 社内アンケートの質問項目を作成したい
+
+```text
+前提: 社内アンケートの質問項目を作成したい。
+指示: 調査したい目的をもとに、回答しやすい選択式と自由記述式を組み合わせた質問を作成して。
+出力形式: 質問ごとに回答形式（選択式/自由記述）を明記して示して。
+```
+
+### 66. 顧客への提案書の骨子を作りたい
+
+```text
+前提: 顧客への提案書の骨子を作りたい。
+指示: 提供した顧客の課題感をもとに、課題・解決策・期待効果の流れで骨子を作成して。
+出力形式: 章立てのアウトラインとして示し、各章に入れる要点を箇条書きで添えて。
+```
+
+### 67. メールの返信文をより丁寧なトーンに直したい
+
+```text
+前提: メールの返信文をより丁寧なトーンに直したい。
+指示: 提供した文面を、失礼のない敬語表現に整えつつ、要件が伝わりやすいよう再構成して。
+出力形式: 「変更前」「変更後」を並べて示して。
+```
+
+### 68. 資料内の箇条書きが冗長で読みにくい
+
+```text
+前提: 資料内の箇条書きが冗長で読みにくい。
+指示: 各項目を1行に収まる簡潔な表現に整理し、重複している内容はまとめて。
+出力形式: 修正前後の箇条書きを両方示して、削減できた項目数を最後に添えて。
+```
+
+### 69. 新サービスのキャッチコピー案を複数出したい
+
+```text
+前提: 新サービスのキャッチコピー案を複数出したい。
+指示: 提供したサービスの特徴をもとに、異なる切り口（機能訴求/感情訴求/数字訴求）で案を作成して。
+出力形式: 切り口ごとに2〜3案ずつ、それぞれ狙いを1行で添えて。
+```
+
+### 70. 週次の活動報告テンプレートを作りたい
+
+```text
+前提: 週次の活動報告テンプレートを作りたい。
+指示: 毎週埋めるべき項目（今週の成果・課題・来週の予定等）を洗い出し、テンプレート化して。
+出力形式: 見出しと記入例をセットにしたテンプレートとして示して。
+```
+
+### 71. 長いタイトルを検索に強い簡潔なタイトルに直したい
+
+```text
+前提: 長いタイトルを検索に強い簡潔なタイトルに直したい。
+指示: 元のタイトルの要点を残しつつ、文字数を短縮した案を複数作成して。
+出力形式: 元のタイトルと文字数、短縮案とその文字数を並べて示して。
+```
+
+### 72. 社内向けの用語集を整備したい
+
+```text
+前提: 社内向けの用語集を整備したい。
+指示: 提供した用語リストについて、それぞれ1〜2文で簡潔な定義を作成して。
+出力形式: 五十音順またはアルファベット順に並べた用語集として示して。
+```
+
+### 73. プロジェクトの振り返り（KPT）をまとめたい
+
+```text
+前提: プロジェクトの振り返り（KPT）をまとめたい。
+指示: 提供したメンバーの意見を、Keep（続けること）・Problem（課題）・Try（次に試すこと）に分類して整理して。
+出力形式: 3つの見出しごとに箇条書きでまとめ、重複する意見は集約して。
+```
+
+### 74. サービス終了・変更のお知らせ文を作成したい
+
+```text
+前提: サービス終了・変更のお知らせ文を作成したい。
+指示: 提供した経緯と代替案をもとに、利用者の不安に配慮した丁寧なお知らせ文を作成して。
+出力形式: 「経緯」「今後の対応」「問い合わせ先」の3段構成で示して。
+```
+
+### 75. 資料内の図表に添えるキャプションを作成したい
+
+```text
+前提: 資料内の図表に添えるキャプションを作成したい。
+指示: 提供したデータの内容から、図表が伝えたい要点を1〜2文で言語化して。
+出力形式: 図表ごとにキャプション案を1行で示して。
+```
+
+
+## レビュー・チェック・品質保証
+
+### 76. 作成した文章に誤字脱字や表記ゆれがないか確認したい
+
+```text
+前提: 作成した文章に誤字脱字や表記ゆれがないか確認したい。
+指示: 提供したテキストを確認し、誤字脱字・表記ゆれ・不自然な言い回しを洗い出して。
+出力形式: 「該当箇所」「指摘内容」「修正案」の3列表で示して。
+```
+
+### 77. コードレビューで見落としがないか確認したい
+
+```text
+前提: コードレビューで見落としがないか確認したい。
+指示: 提供した差分を確認し、命名の妥当性・エラーハンドリング漏れ・テスト不足の観点でチェックして。
+出力形式: 観点ごとに指摘事項を箇条書きで示し、重要度（高中低）を添えて。
+```
+
+### 78. 資料の内容に矛盾する記述がないか確認したい
+
+```text
+前提: 資料の内容に矛盾する記述がないか確認したい。
+指示: 提供した資料全体を読み、数値や主張が箇所によって食い違っていないか確認して。
+出力形式: 矛盾が見つかった箇所を引用し、どこと矛盾しているかを明記して。
+```
+
+### 79. 提案書が顧客の課題に対応できているか確認したい
+
+```text
+前提: 提案書が顧客の課題に対応できているか確認したい。
+指示: 提供した提案書と顧客の課題一覧を照らし合わせ、対応漏れがないか確認して。
+出力形式: 課題ごとに「対応済み/未対応」を明記した一覧表で示して。
+```
+
+### 80. 契約書に不利な条項が含まれていないか確認したい（最終…
+
+```text
+前提: 契約書に不利な条項が含まれていないか確認したい（最終判断は専門家に確認する前提）。
+指示: 提供した契約書を確認し、一般的に注意すべき条項（違約金・解約条件等）が含まれていないか洗い出して。
+出力形式: 気になる条項を引用し、確認すべきポイントを添えて。※法的な最終判断は専門家に確認してください
+```
+
+### 81. プレゼン資料のスライドが1枚に情報を詰め込みすぎてい…
+
+```text
+前提: プレゼン資料のスライドが1枚に情報を詰め込みすぎていないか確認したい。
+指示: 各スライドの文字量・要素数を確認し、詰め込みすぎているスライドを指摘して。
+出力形式: 該当スライド番号と、分割・簡略化の提案を添えて。
+```
+
+### 82. APIのレスポンス仕様がドキュメントと実装で一致して…
+
+```text
+前提: APIのレスポンス仕様がドキュメントと実装で一致しているか確認したい。
+指示: 提供したドキュメントと実装コードを照らし合わせ、フィールド名・型・必須項目の相違を確認して。
+出力形式: 相違点を「ドキュメント記載」「実装」の対比表で示して。
+```
+
+### 83. メール文面を送信前に失礼な表現がないか確認したい
+
+```text
+前提: メール文面を送信前に失礼な表現がないか確認したい。
+指示: 提供した文面を確認し、高圧的・曖昧・誤解を招く可能性がある表現を洗い出して。
+出力形式: 該当箇所と、より適切な言い換え案をセットで示して。
+```
+
+### 84. テストコードが実装の意図を正しく検証できているか確認…
+
+```text
+前提: テストコードが実装の意図を正しく検証できているか確認したい。
+指示: 提供したテストコードと対象の実装を照らし合わせ、検証漏れがある観点を洗い出して。
+出力形式: 「検証できている観点」「不足している観点」に分けて示して。
+```
+
+### 85. 見積書の項目に抜け漏れがないか確認したい
+
+```text
+前提: 見積書の項目に抜け漏れがないか確認したい。
+指示: 提供した見積書と作業範囲の説明を照らし合わせ、計上漏れがありそうな項目を洗い出して。
+出力形式: 気になる項目とその理由を箇条書きで示して。
+```
+
+### 86. 資料内の数値の桁や単位に誤りがないか確認したい
+
+```text
+前提: 資料内の数値の桁や単位に誤りがないか確認したい。
+指示: 提供した資料内の数値表現を確認し、桁の誤り・単位の欠落・不自然な数値を洗い出して。
+出力形式: 該当箇所を引用し、疑われる誤りの内容を添えて。
+```
+
+### 87. リリースノートに書き漏れがないか確認したい
+
+```text
+前提: リリースノートに書き漏れがないか確認したい。
+指示: 提供したリリースノートと、実際の変更差分（コミット履歴等）を照らし合わせ、記載漏れの変更を洗い出して。
+出力形式: 「記載済みの変更」「記載漏れの変更」に分けて一覧化して。
+```
+
+### 88. UIのテキストが画面幅からはみ出していないか確認した…
+
+```text
+前提: UIのテキストが画面幅からはみ出していないか確認したい。
+指示: 提供した画面のテキスト量と表示枠のサイズ関係から、はみ出しのリスクがある箇所を洗い出して。
+出力形式: リスクがある箇所と、想定される対処法（文言短縮/枠拡大等）を添えて。
+```
+
+### 89. セキュリティ観点で危険な実装がないか確認したい
+
+```text
+前提: セキュリティ観点で危険な実装がないか確認したい。
+指示: 提供したコードを確認し、SQLインジェクション・XSS・機密情報のログ出力等の典型的な脆弱性パターンがないか洗い出して。
+出力形式: 該当箇所・リスク内容・推奨対応を3列表で示して。
+```
+
+### 90. 翻訳された文章が原文の意図とズレていないか確認したい
+
+```text
+前提: 翻訳された文章が原文の意図とズレていないか確認したい。
+指示: 提供した原文と翻訳文を照らし合わせ、意味が変わってしまっている箇所を洗い出して。
+出力形式: 「原文」「翻訳文」「ズレの内容」の3列表で示して。
+```
+
+### 91. 資料の見出し構成に論理的な飛躍がないか確認したい
+
+```text
+前提: 資料の見出し構成に論理的な飛躍がないか確認したい。
+指示: 提供した資料の見出し一覧を確認し、話の流れが自然につながっているか、飛躍がある箇所を洗い出して。
+出力形式: 飛躍がある箇所と、補うべき内容の提案を添えて。
+```
+
+### 92. アンケート結果の集計に計算ミスがないか確認したい
+
+```text
+前提: アンケート結果の集計に計算ミスがないか確認したい。
+指示: 提供した集計データの合計・割合の計算を再確認し、不一致がないか検証して。
+出力形式: 検証結果（一致/不一致）と、不一致箇所の詳細を示して。
+```
+
+### 93. SNS投稿文が炎上リスクのある表現を含んでいないか確…
+
+```text
+前提: SNS投稿文が炎上リスクのある表現を含んでいないか確認したい。
+指示: 提供した投稿文を確認し、誤解を招く表現・断定しすぎている表現・配慮に欠ける表現を洗い出して。
+出力形式: 該当箇所と、リスクを下げる言い換え案を添えて。
+```
+
+### 94. プロジェクトのスケジュールに無理がないか確認したい
+
+```text
+前提: プロジェクトのスケジュールに無理がないか確認したい。
+指示: 提供したタスク一覧と期限を照らし合わせ、依存関係を考慮して無理のあるスケジュールを洗い出して。
+出力形式: 懸念があるタスクと、その理由を箇条書きで示して。
+```
+
+### 95. 資料内の固有名詞の表記が統一されているか確認したい
+
+```text
+前提: 資料内の固有名詞の表記が統一されているか確認したい。
+指示: 提供した資料内で、同じ対象を指す表記（例: 「Claude Code」と「claude code」）が揺れていないか確認して。
+出力形式: 表記ゆれの一覧と、統一すべき表記の提案を示して。
+```
+
+### 96. バグ報告の内容が再現可能な情報を含んでいるか確認した…
+
+```text
+前提: バグ報告の内容が再現可能な情報を含んでいるか確認したい。
+指示: 提供したバグ報告を確認し、再現手順・環境情報・期待結果が不足していないか洗い出して。
+出力形式: 「記載されている情報」「不足している情報」に分けて示して。
+```
+
+### 97. 資料が想定読者のレベルに合っているか確認したい
+
+```text
+前提: 資料が想定読者のレベルに合っているか確認したい。
+指示: 提供した資料を確認し、想定読者（例: 初心者）にとって説明不足・専門用語過多な箇所を洗い出して。
+出力形式: 該当箇所と、補足すべき内容の提案を示して。
+```
+
+### 98. フォームのエラーメッセージが分かりやすいか確認したい
+
+```text
+前提: フォームのエラーメッセージが分かりやすいか確認したい。
+指示: 提供したエラーメッセージ一覧を確認し、原因と対処法が伝わらない曖昧な表現を洗い出して。
+出力形式: 該当メッセージと、改善案をセットで示して。
+```
+
+### 99. 議事録の決定事項に責任者と期限が明記されているか確認…
+
+```text
+前提: 議事録の決定事項に責任者と期限が明記されているか確認したい。
+指示: 提供した議事録を確認し、責任者・期限が抜けている決定事項を洗い出して。
+出力形式: 抜けている項目の一覧と、確認すべき相手を添えて。
+```
+
+### 100. リリース前のチェックリストに漏れがないか、過去のリリ…
+
+```text
+前提: リリース前のチェックリストに漏れがないか、過去のリリースと比較して確認したい。
+指示: 提供した今回のチェックリストと過去のリリース時のチェック項目を照らし合わせ、今回だけ抜けている項目を洗い出して。
+出力形式: 抜けている項目と、なぜ必要かの理由を添えて。
+```
+
+
+---
+以上、100個です。内訳: コーディング・実装25／リサーチ・情報整理25／文章・ドキュメント作成25／レビュー・チェック・品質保証25。
+</pre>
+<script>
+function flash(btn, label){
+  const old = btn.textContent, cls = btn.className;
+  btn.textContent = label; btn.classList.add('ok');
+  setTimeout(() => { btn.textContent = old; btn.className = cls; }, 1600);
+}
+function textOf(id){ return document.getElementById(id).textContent; }
+
+async function copyText(btn, id){
+  const t = textOf(id);
+  try {
+    await navigator.clipboard.writeText(t);
+  } catch (e) {
+    const ta = document.createElement('textarea');
+    ta.value = t; ta.style.position='fixed'; ta.style.opacity='0';
+    document.body.appendChild(ta); ta.select();
+    document.execCommand('copy'); ta.remove();
+  }
+  flash(btn, '✓ コピーしました');
+}
+
+function saveText(btn, id, name){
+  const blob = new Blob([textOf(id)], {type:'text/plain;charset=utf-8'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = name;
+  document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+  if (btn) flash(btn, '✓ 保存しました');
+}
+
+document.addEventListener('click', e => {
+  const b = e.target.closest('[data-copy]');
+  if (b) { copyText(b, b.dataset.copy); return; }
+  const d = e.target.closest('[data-save]');
+  if (d) { saveText(d, d.dataset.save, d.dataset.name); }
+});
+</script>
+</body></html>
