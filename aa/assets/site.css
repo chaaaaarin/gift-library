@@ -187,8 +187,10 @@ display:grid;place-items:center;}
 .promo-body{display:flex;gap:11px;align-items:center;text-decoration:none;color:inherit;}
 .promo-body img{width:42px;height:42px;border-radius:50%;flex-shrink:0;object-fit:cover;
 border:2px solid #1C3461;}
-.promo-ch{margin:0 0 3px;font-weight:900;font-size:12.5px;color:#1C3461;
+.promo-ch{margin:0 0 3px;font-weight:900;font-size:13.5px;color:#1C3461;
 font-family:'Noto Sans JP',sans-serif;}
+.promo-tag{margin-left:6px;font-weight:700;font-size:10px;color:#5BBCD4;
+background:rgba(91,188,212,.14);border-radius:999px;padding:1.5px 8px;vertical-align:1px;}
 .promo-tx{margin:0;font-size:11.5px;color:#4A5568;line-height:1.55;}
 @media(max-width:600px){.promo{left:14px;right:14px;bottom:14px;max-width:none;}}
 
