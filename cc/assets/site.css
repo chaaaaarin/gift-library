@@ -171,6 +171,27 @@ footer{padding:26px 0 40px;border-top:1.5px solid var(--line);font-size:12.5px;
 color:var(--ink-mid);text-align:center;margin-top:20px;}
 footer a{color:var(--brand-deep);font-weight:700;}
 
+/* ---------- Kawaruクロスプロモ（ポップアップ） ----------
+   ホストサイトの配色（--brand等）は使わず、Kawaru自身のブランド色で固定表示する
+   （「これは他チャンネルの広告」と視覚的に分かるように）。 */
+.promo{position:fixed;right:18px;bottom:18px;z-index:500;max-width:290px;
+background:#fff;border:1.5px solid rgba(20,30,50,.10);border-radius:16px;
+box-shadow:0 12px 32px rgba(0,0,0,.18);padding:13px 15px 13px 13px;
+transform:translateY(130%);opacity:0;transition:transform .4s cubic-bezier(.2,.8,.2,1),opacity .4s;
+pointer-events:none;}
+.promo.show{transform:translateY(0);opacity:1;pointer-events:auto;}
+.promo-x{position:absolute;top:4px;right:6px;width:24px;height:24px;border:none;
+background:none;color:#9099a8;font-size:18px;line-height:1;cursor:pointer;border-radius:50%;
+display:grid;place-items:center;}
+.promo-x:hover{background:rgba(20,30,50,.07);color:#1C3461;}
+.promo-body{display:flex;gap:11px;align-items:center;text-decoration:none;color:inherit;}
+.promo-body img{width:42px;height:42px;border-radius:50%;flex-shrink:0;object-fit:cover;
+border:2px solid #1C3461;}
+.promo-ch{margin:0 0 3px;font-weight:900;font-size:12.5px;color:#1C3461;
+font-family:'Noto Sans JP',sans-serif;}
+.promo-tx{margin:0;font-size:11.5px;color:#4A5568;line-height:1.55;}
+@media(max-width:600px){.promo{left:14px;right:14px;bottom:14px;max-width:none;}}
+
 @media(max-width:900px){
   .cols{grid-template-columns:1fr;}
   .side{position:static;}
