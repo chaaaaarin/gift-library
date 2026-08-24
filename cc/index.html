@@ -80,12 +80,14 @@ function epCard(e, kitsToShow){
   const watchLink = (e.watch && !e.upcoming)
     ? `<a class="watch" href="${e.watch}" target="_blank" rel="noopener">▶ 動画を見る</a>` : '';
   return `<article class="ep">
-    <div class="ep-thumb">${thumb}${upBadge}</div>
+    <div class="ep-left">
+      <div class="ep-thumb">${thumb}${upBadge}</div>
+      ${watchLink}
+    </div>
     <div class="ep-body">
       <div class="ep-date">${fmtDate(e.date) || '日付未定'}</div>
       <h2 class="ep-title">${e.th}</h2>
       <div class="ep-kits">${kitsToShow.map(g=>kitChip(g)).join('')}</div>
-      ${watchLink}
     </div>
   </article>`;
 }
