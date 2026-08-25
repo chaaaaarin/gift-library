@@ -31,7 +31,8 @@
     <aside class="side">
       <div class="grp"><h3>キーワード検索</h3>
         <input id="q" type="search" placeholder="例: 動画タイトル、プロンプト、設定" autocomplete="off"></div>
-      <div class="grp"><h3>種別でしぼる</h3><label><input type="radio" name="type" value="" checked>すべて<span class="n">97</span></label><label><input type="radio" name="type" value="プロンプト集">プロンプト集<span class="n">29</span></label><label><input type="radio" name="type" value="設定・スニペット">設定・スニペット<span class="n">16</span></label><label><input type="radio" name="type" value="早見表・逆引き">早見表・逆引き<span class="n">11</span></label><label><input type="radio" name="type" value="テンプレート">テンプレート<span class="n">18</span></label><label><input type="radio" name="type" value="チェックリスト">チェックリスト<span class="n">17</span></label><label><input type="radio" name="type" value="判断シート">判断シート<span class="n">3</span></label><label><input type="radio" name="type" value="ワークフロー">ワークフロー<span class="n">3</span></label></div>
+      <details class="grp type-grp"><summary>種別でしぼる</summary>
+        <div class="grp-body"><label><input type="radio" name="type" value="" checked>すべて<span class="n">97</span></label><label><input type="radio" name="type" value="プロンプト集">プロンプト集<span class="n">29</span></label><label><input type="radio" name="type" value="設定・スニペット">設定・スニペット<span class="n">16</span></label><label><input type="radio" name="type" value="早見表・逆引き">早見表・逆引き<span class="n">11</span></label><label><input type="radio" name="type" value="テンプレート">テンプレート<span class="n">18</span></label><label><input type="radio" name="type" value="チェックリスト">チェックリスト<span class="n">17</span></label><label><input type="radio" name="type" value="判断シート">判断シート<span class="n">3</span></label><label><input type="radio" name="type" value="ワークフロー">ワークフロー<span class="n">3</span></label></div></details>
       <div class="grp"><h3>並び順</h3>
         <div class="selwrap"><select id="sort">
           <option value="new">投稿が新しい順</option>
@@ -121,7 +122,10 @@ function render(){
 
   cnt.textContent = list.length;
   if (!list.length){
-    out.innerHTML = '<div class="empty">条件に合うプレゼントが見つかりませんでした。<br>キーワードを短くするか、種別を「すべて」に戻してみてください。</div>';
+    out.innerHTML = `<div class="empty">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="6.2"/><path d="M15 15l5.5 5.5"/><path d="M7.3 10h5.4"/></svg>
+      <p>条件に合うプレゼントが見つかりませんでした。<br>キーワードを短くするか、種別を「すべて」に戻してみてください。</p>
+    </div>`;
     return;
   }
   out.innerHTML = `<div class="eplist">${list.map(({e,kits}) => epCard(e, kits)).join('')}</div>`;
