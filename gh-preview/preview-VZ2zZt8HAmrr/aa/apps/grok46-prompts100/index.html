@@ -1,0 +1,2029 @@
+<!doctype html>
+<html lang="ja"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Grok 4.6実践プロンプト100選 — Kawaru Gifts</title>
+<meta name="description" content="Grok Build／Cursor／Grok Bot／APIの各プラットフォームで、Grok 4.6が「本当に得意な作業」に絞った実践プロンプトを100個集めました。「前提／指示／出力形式」の3点セットで、そのまま貼って使えます。4分野×25本、計100本です。">
+<meta name="robots" content="noindex,nofollow">
+<link rel="icon" href="data:image/png;base64,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">
+<link rel="stylesheet" href="../../assets/site.css">
+</head><body>
+<header class="kh"><div class="top">
+  <a class="back" href="../../">← 一覧へ</a>
+  <img src="data:image/png;base64,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" alt="">
+  <h1>Grok 4.6実践プロンプト100選</h1>
+  <span class="badge">100個</span>
+  <button class="btn sm" style="margin-left:auto" data-save="pfull" data-name="grok46-prompts100.md">⬇ 全件ダウンロード</button>
+</div></header>
+
+<div class="kwrap">
+  <section class="epctx epctx-top">
+  <div class="ep-left">
+    <div class="ep-thumb epctx-thumb"><div class="noimg"></div></div>
+    
+  </div>
+  <div>
+    <p class="epctx-label">この動画のプレゼントです</p>
+    <p class="epctx-title">Grok-4.6</p>
+    <p class="epctx-date">2026-08-25</p>
+  </div>
+</section>
+
+  <section class="kintro">
+    <h2>Grok 4.6実践プロンプト100選</h2>
+    <p>Grok Build／Cursor／Grok Bot／APIの<span class="nb">各プラットフォームで、</span><span class="nb">Grok 4.6が</span><span class="nb">「本当に得意な作業」に</span><span class="nb">絞った実践プロンプトを</span><span class="nb">100個集めました。</span><span class="nb">「前提／指示／出力形式」の</span><span class="nb">3点セットで、</span><span class="nb">そのまま貼って使えます。</span><span class="nb">4分野×25本、</span><span class="nb">計100本です。</span></p>
+    <div class="kmeta"><span>プロンプト集</span><span>収録 100個</span><span>No.97 Grok-4.6</span><span>2026-08-19 配布</span></div>
+    <div class="pnote"><span class="nb">下のカードから、</span><span class="nb">1件ずつコピー、</span><span class="nb">または個別にダウンロードできます。</span><span class="nb">まとめて欲しいときは、</span><span class="nb">上の</span><span class="nb">「全件ダウンロード」を</span><span class="nb">お使いください。</span></div>
+  </section>
+
+  <h2 class="cat">知識作業・リサーチをGrok 4.6に任せる</h2>
+<div class="icard">
+  <div class="ih"><span class="num">001</span><span class="ititle">業界レポートの要点抽出</span></div>
+  
+  <pre class="prompt" id="b1">前提: 複数の業界レポート・調査資料を毎回自分で読み込む時間が取れない担当者向けの依頼。
+指示: 指定した業界レポート(PDFまたはURL)群を読み込み、共通して出てくる主張と、レポート間で食い違っている数字・見解を洗い出して。
+出力形式: 「共通する主張」「レポート間で食い違う点」の2セクションに分け、それぞれ出典レポート名を添えた箇条書きで。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b1">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b1" data-name="grok46-prompts100-001.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">002</span><span class="ititle">競合比較マトリクスの作成</span></div>
+  
+  <pre class="prompt" id="b2">前提: 競合サービスの機能・料金を比較表にまとめたいが、公式サイトを1社ずつ見に行く時間がない場面。
+指示: 指定した競合サービス3〜5社の公式サイト・料金ページを調べ、主要機能と料金プランを横並びで比較して。
+出力形式: 「観点／自社／競合A／競合B／競合C」のマトリクス表で。情報源が確認できない項目は「未確認」と明記して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b2">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b2" data-name="grok46-prompts100-002.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">003</span><span class="ititle">市場規模推定の裏付け調査</span></div>
+  
+  <pre class="prompt" id="b3">前提: 新規事業提案のために市場規模の数字が要るが、社内に確たる根拠となる資料がない状況。
+指示: 指定した市場について、公開されている調査会社・官公庁データから市場規模・成長率の推定値を複数集め、出典ごとの前提条件の違いを整理して。
+出力形式: 「出典／推定市場規模／成長率／算出時点／前提条件」の表と、採用する際の注意点を3行で。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b3">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b3" data-name="grok46-prompts100-003.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">004</span><span class="ititle">顧客インタビュー録の構造化要約</span></div>
+  
+  <pre class="prompt" id="b4">前提: 顧客インタビューの文字起こしが溜まっているが、傾向をまとめる時間が取れないプロダクト担当者向け。
+指示: 貼り付けたインタビュー文字起こし複数件を読み込み、共通して出てくる不満・要望をカテゴリ別に分類して。
+出力形式: カテゴリごとに「頻出フレーズ」「言及した人数」「代表的な発言引用」を表でまとめて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b4">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b4" data-name="grok46-prompts100-004.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">005</span><span class="ititle">社内ナレッジベースのFAQ化</span></div>
+  
+  <pre class="prompt" id="b5">前提: 過去のサポート対応履歴は蓄積されているが、FAQとして整理されておらず同じ質問が繰り返される状況。
+指示: 貼り付けた過去の問い合わせ履歴から、頻出する質問パターンを抽出し、回答の型を作って。
+出力形式: 「質問カテゴリ／代表的な質問文／回答テンプレート」の一覧を、頻度が高い順に並べて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b5">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b5" data-name="grok46-prompts100-005.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">006</span><span class="ititle">展示会・カンファレンス情報の収集</span></div>
+  
+  <pre class="prompt" id="b6">前提: 参加を検討している展示会・カンファレンスの情報を毎回個別に調べるのが手間な担当者向け。
+指示: 指定した業界の直近3ヶ月に開催される展示会・カンファレンスを調べ、規模・参加費・過去の評判を整理して。
+出力形式: 「イベント名／開催時期／参加費目安／規模感／出典」の表形式で、開催日が近い順に並べて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b6">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b6" data-name="grok46-prompts100-006.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">007</span><span class="ititle">規制動向の定点観測</span></div>
+  
+  <pre class="prompt" id="b7">前提: 業界に関わる法規制の改正情報を、担当者が見落として後から慌てることを防ぎたい場面。
+指示: 指定した業界・地域に関わる規制の直近の改正・パブリックコメント状況を調べ、自社業務への影響度を推測して。
+出力形式: 「規制名／改正内容の要点／施行(予定)時期／影響度(高中低)／出典」の表で。推測部分には推測である旨を明記して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b7">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b7" data-name="grok46-prompts100-007.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">008</span><span class="ititle">特許・技術動向の俯瞰</span></div>
+  
+  <pre class="prompt" id="b8">前提: 自社と近い技術領域で他社がどんな特許・技術発表をしているか、定期的に把握したい研究開発担当者向け。
+指示: 指定したキーワードに関連する直近の特許出願・技術発表を検索し、出願者・技術の要点・自社との近さを整理して。
+出力形式: 「出願者／技術要点1行／公開日／自社技術との近さ(高中低)」の表で、近さが高い順に並べて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b8">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b8" data-name="grok46-prompts100-008.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">009</span><span class="ititle">サプライヤー候補の一次スクリーニング</span></div>
+  
+  <pre class="prompt" id="b9">前提: 新しい取引先候補を探す際、条件に合わない企業を早い段階で除外し工数を減らしたい調達担当者向け。
+指示: 指定した条件(取扱品目・地域・実績年数等)に沿って候補企業を検索し、条件を満たすか満たさないかを一次判定して。
+出力形式: 「企業名／条件適合(○△×)／根拠となった情報／確認が必要な項目」の表で。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b9">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b9" data-name="grok46-prompts100-009.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">010</span><span class="ititle">決算資料のハイライト抽出</span></div>
+  
+  <pre class="prompt" id="b10">前提: 取引先や競合の決算発表を毎回チェックする時間がなく、重要な変化だけ知りたい経営企画担当者向け。
+指示: 指定した企業の直近の決算資料・決算説明会資料を読み込み、前年同期比で大きく変化した指標だけを抜き出して。
+出力形式: 「指標名／前年同期比の変化／経営陣のコメント要約1行」の表で、変化の大きい順に並べて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b10">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b10" data-name="grok46-prompts100-010.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">011</span><span class="ititle">業界レポートの矛盾点洗い出し</span></div>
+  
+  <pre class="prompt" id="b11">前提: 複数のレポートを参考にする際、数字の食い違いに気づかず引用してしまうリスクを避けたい場面。
+指示: 指定した複数の業界レポートを横断的に読み込み、同じ指標について数字が食い違っている箇所を洗い出して。
+出力形式: 「指標名／レポートA の数値／レポートB の数値／差の原因の推測」の表で。推測は🔶等の確度マークを添えて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b11">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b11" data-name="grok46-prompts100-011.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">012</span><span class="ititle">用語集・社内辞書の自動生成</span></div>
+  
+  <pre class="prompt" id="b12">前提: 新しいメンバーが増えるたびに専門用語の説明を個別にする手間を減らしたいチームリーダー向け。
+指示: 貼り付けた社内資料・議事録から専門用語・略語を抽出し、文脈から意味を推測して簡潔な説明を付けて。
+出力形式: 「用語／読み方(必要な場合)／簡潔な説明1〜2行／出てきた資料」の五十音順一覧で。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b12">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b12" data-name="grok46-prompts100-012.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">013</span><span class="ititle">リサーチ依頼の事前ヒアリングシート作成</span></div>
+  
+  <pre class="prompt" id="b13">前提: リサーチを外部やチームメンバーに依頼する前に、依頼内容を明確にしたい発注者向け。
+指示: これから依頼したいリサーチのテーマを伝えるので、依頼を明確にするために確認すべき質問項目を洗い出して。
+出力形式: 「確認すべき項目」を「目的」「範囲」「期限」「アウトプット形式」の4カテゴリに分けて箇条書きで。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b13">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b13" data-name="grok46-prompts100-013.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">014</span><span class="ititle">複数言語資料の要点統合</span></div>
+  
+  <pre class="prompt" id="b14">前提: 英語・その他言語の一次資料を都度翻訳しながら読むのが負担な担当者向け。
+指示: 貼り付けた複数言語の資料(英語中心)を読み込み、言語をまたいで共通する主張と、言語ごとに異なる論調を整理して。
+出力形式: 日本語で「共通する主張」「資料ごとの論調の違い」の2セクションに分けて要約して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b14">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b14" data-name="grok46-prompts100-014.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">015</span><span class="ititle">アンケート自由記述の分類集計</span></div>
+  
+  <pre class="prompt" id="b15">前提: 顧客アンケートの自由記述欄が数百件溜まっており、手作業での分類が追いつかない場面。
+指示: 貼り付けたアンケート自由記述の回答群を読み込み、内容が近いものをカテゴリにまとめて件数を集計して。
+出力形式: 「カテゴリ名／件数／代表的な回答例2〜3件」の表で、件数が多い順に並べて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b15">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b15" data-name="grok46-prompts100-015.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">016</span><span class="ititle">会議議事録からのアクション抽出</span></div>
+  
+  <pre class="prompt" id="b16">前提: 会議のたびに議事録は取っているが、決定事項とアクションアイテムが埋もれてしまう場面。
+指示: 貼り付けた会議の議事録・文字起こしから、決定事項とアクションアイテムを抜き出して。
+出力形式: 「決定事項」「アクションアイテム(担当者・期限つき)」の2リストに分けて。担当者が不明な場合は「未定」と明記して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b16">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b16" data-name="grok46-prompts100-016.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">017</span><span class="ititle">提案書のたたき台リサーチ</span></div>
+  
+  <pre class="prompt" id="b17">前提: 新規提案書を書く前段階として、市場・競合・顧客課題の材料を素早く集めたい営業企画担当者向け。
+指示: 指定したテーマの提案書に使う材料として、市場動向・競合状況・想定される顧客課題を調べて。
+出力形式: 「市場動向」「競合状況」「想定される顧客課題」の3セクションで、各セクション3〜5行の要約にして。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b17">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b17" data-name="grok46-prompts100-017.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">018</span><span class="ititle">採用candidate市場のベンチマーク</span></div>
+  
+  <pre class="prompt" id="b18">前提: 採用ポジションの給与水準・必須スキルの相場感がつかめず、募集要項が作れない採用担当者向け。
+指示: 指定した職種・地域の求人市場について、給与レンジと頻出する必須スキルを調べて。
+出力形式: 「給与レンジの目安」「頻出必須スキル上位5」「関連する求人例3件」を出典つきでまとめて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b18">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b18" data-name="grok46-prompts100-018.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">019</span><span class="ititle">イベントレポートのSNS反応まとめ</span></div>
+  
+  <pre class="prompt" id="b19">前提: 参加できなかったイベントの雰囲気・反応を後から把握したい担当者向け。
+指示: 指定したイベントについて、公開されているレポート記事や公式発表を調べ、参加者・登壇者の反応の傾向をまとめて。
+出力形式: 「良かった点として挙がっていたこと」「課題として挙がっていたこと」の2セクションで、出典を添えて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b19">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b19" data-name="grok46-prompts100-019.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">020</span><span class="ititle">業界ニュースの週次ダイジェスト作成</span></div>
+  
+  <pre class="prompt" id="b20">前提: 毎週の業界ニュースを個別にチェックする時間がなく、まとめて把握したいチームリーダー向け。
+指示: 指定した業界の直近1週間のニュースを検索し、重要度が高い順に並べて要約して。
+出力形式: 上位5件を「見出し／要点2行／なぜ重要か1行／出典」のカード形式で。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b20">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b20" data-name="grok46-prompts100-020.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">021</span><span class="ititle">顧客セグメント別ニーズ整理</span></div>
+  
+  <pre class="prompt" id="b21">前提: 顧客層ごとにニーズが違うはずだが、感覚的にしか把握できていないマーケティング担当者向け。
+指示: 貼り付けた顧客データ・アンケート結果を読み込み、セグメントごとに異なるニーズの傾向を整理して。
+出力形式: 「セグメント名／主なニーズ／裏付けとなったデータ」の表で。データが不足しているセグメントは明記して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b21">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b21" data-name="grok46-prompts100-021.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">022</span><span class="ititle">過去プロジェクトの類似案件検索</span></div>
+  
+  <pre class="prompt" id="b22">前提: 新しい案件に取り組む前に、社内の過去事例を参考にしたいが検索が大変な担当者向け。
+指示: 貼り付けた過去プロジェクトの記録群から、今回の案件条件(業界・規模・課題)に近い事例を探して。
+出力形式: 「類似度が高い順」に「案件名／類似点／当時の進め方の要点／参考になりそうな箇所」の表で。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b22">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b22" data-name="grok46-prompts100-022.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">023</span><span class="ititle">出典クロスチェック(裏取り)</span></div>
+  
+  <pre class="prompt" id="b23">前提: 資料に書かれた数字や主張を、そのまま引用する前に裏取りしたい編集・広報担当者向け。
+指示: 貼り付けた文章中の数字・固有名詞・日付を1つずつ拾い出し、複数の情報源で一致するか確認して。
+出力形式: 「該当箇所／確認できた出典／確度(✅🔶⚠️)／矛盾があれば内容」の表で。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b23">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b23" data-name="grok46-prompts100-023.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">024</span><span class="ititle">社内ドキュメントの陳腐化チェック</span></div>
+  
+  <pre class="prompt" id="b24">前提: 社内wikiやマニュアルが古いまま放置され、実態と合わなくなっていないか確認したい場面。
+指示: 貼り付けた社内ドキュメントの内容を読み込み、日付・ツール名・手順が現在の実態と食い違っていそうな箇所を指摘して。
+出力形式: 「該当箇所／古い可能性がある理由／確認すべき担当者」の一覧で、確信度が高い順に並べて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b24">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b24" data-name="grok46-prompts100-024.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">025</span><span class="ititle">リサーチ結果のプレゼン用要約</span></div>
+  
+  <pre class="prompt" id="b25">前提: 詳細なリサーチ結果はできたが、経営層向けに短く要約する時間がない担当者向け。
+指示: 貼り付けたリサーチ結果の詳細資料を、経営層向けプレゼンの冒頭で使える3行サマリーに圧縮して。
+出力形式: 「結論」「根拠となる数字1〜2個」「推奨アクション」の3行構成で、専門用語は平易な言葉に言い換えて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b25">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b25" data-name="grok46-prompts100-025.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<h2 class="cat">法務・契約・規約チェックをGrok 4.6に任せる</h2>
+<div class="icard">
+  <div class="ih"><span class="num">026</span><span class="ititle">契約書の不利条項スクリーニング</span></div>
+  
+  <pre class="prompt" id="b26">前提: 契約書を締結する前に、自社に不利な条項が紛れていないか確認したい担当者向け(最終判断は必ず弁護士が行う前提)。
+指示: 貼り付けた契約書案を読み込み、一般的に自社に不利になりやすい条項(一方的解除権・過大な違約金等)がないか洗い出して。
+出力形式: 「該当条項の要約／なぜ不利になり得るか／条番号」の一覧で。法的助言ではなく一次スクリーニングである旨を明記して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b26">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b26" data-name="grok46-prompts100-026.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">027</span><span class="ititle">NDA(秘密保持契約)の期間・範囲チェック</span></div>
+  
+  <pre class="prompt" id="b27">前提: NDAを複数社と結んでいて、期間・対象範囲がバラバラになっていないか確認したい担当者向け。
+指示: 貼り付けたNDA案について、秘密保持期間・対象情報の範囲・目的外利用禁止の有無を抽出して。
+出力形式: 「相手先／秘密保持期間／対象範囲の要約／目的外利用禁止の有無」の表で。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b27">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b27" data-name="grok46-prompts100-027.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">028</span><span class="ititle">利用規約変更点の差分抽出</span></div>
+  
+  <pre class="prompt" id="b28">前提: 利用しているサービスの規約が改定されたとき、何が変わったのか素早く把握したい担当者向け。
+指示: 旧規約と新規約のテキストを貼り付けるので、意味が変わった箇所だけを抽出して。
+出力形式: 「変更箇所／旧文言の要約／新文言の要約／利用者への影響」の表で。表現のみの変更は除外して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b28">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b28" data-name="grok46-prompts100-028.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">029</span><span class="ititle">下請け契約の支払条件確認</span></div>
+  
+  <pre class="prompt" id="b29">前提: 下請法の観点から、支払条件が適切かどうか一次確認したい発注担当者向け。
+指示: 貼り付けた業務委託契約案の支払条件(支払期日・検収期間)を抽出し、一般的な下請法の目安と照らして確認して。
+出力形式: 「支払期日」「検収期間」「目安との比較」「懸念点があれば内容」を整理して。最終判断は専門家確認が必要な旨を明記して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b29">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b29" data-name="grok46-prompts100-029.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">030</span><span class="ititle">個人情報保護方針のギャップチェック</span></div>
+  
+  <pre class="prompt" id="b30">前提: 自社のプライバシーポリシーが、実際の個人情報の取り扱いと合っているか確認したい担当者向け。
+指示: 貼り付けたプライバシーポリシーと、実際の個人情報取得・利用の実態(箇条書きで伝える)を突き合わせて、記載が不足していそうな箇所を指摘して。
+出力形式: 「実態」「ポリシー上の記載有無」「不足している可能性」の3列表で。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b30">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b30" data-name="grok46-prompts100-030.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">031</span><span class="ititle">商標・著作権リスクの一次スクリーニング</span></div>
+  
+  <pre class="prompt" id="b31">前提: 新しいサービス名・ロゴ案を検討する際、明らかな商標リスクがないか一次確認したい担当者向け。
+指示: 指定したサービス名候補について、同一・類似の既存商標や既存サービスが無いか検索して。
+出力形式: 「候補名／類似する既存事例／リスクレベル(高中低)の目安」の表で。最終判断は商標調査の専門家に依頼する前提を明記して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b31">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b31" data-name="grok46-prompts100-031.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">032</span><span class="ititle">契約更新期日のリマインド一覧化</span></div>
+  
+  <pre class="prompt" id="b32">前提: 複数の契約の更新期日を個別のカレンダーで管理しきれず、うっかり自動更新されてしまう場面。
+指示: 貼り付けた契約一覧(契約名・締結日・契約期間)から、更新期日と解約通知の締切を計算して。
+出力形式: 「契約名／更新期日／解約通知締切／残り日数」の表で、締切が近い順に並べて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b32">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b32" data-name="grok46-prompts100-032.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">033</span><span class="ititle">海外契約の準拠法・裁判管轄チェック</span></div>
+  
+  <pre class="prompt" id="b33">前提: 海外取引先との契約で、準拠法・裁判管轄が自社に不利になっていないか確認したい担当者向け。
+指示: 貼り付けた契約案から準拠法・裁判管轄・言語の優先順位に関する条項を抽出して。
+出力形式: 「準拠法」「裁判管轄」「言語の優先順位」「自社にとっての懸念点」を整理して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b33">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b33" data-name="grok46-prompts100-033.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">034</span><span class="ititle">業務委託契約の成果物定義チェック</span></div>
+  
+  <pre class="prompt" id="b34">前提: 成果物の範囲が曖昧なまま契約してトラブルになるのを避けたい発注担当者向け。
+指示: 貼り付けた業務委託契約案から、成果物の定義・検収基準が具体的に書かれているか確認して。
+出力形式: 「成果物として定義されている内容」「曖昧さが残る箇所」「追記を検討すべき文言案」を整理して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b34">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b34" data-name="grok46-prompts100-034.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">035</span><span class="ititle">賠償責任条項の上限確認</span></div>
+  
+  <pre class="prompt" id="b35">前提: 万一のトラブル時に、賠償責任の上限がどう設定されているか把握しておきたい担当者向け。
+指示: 貼り付けた契約案から賠償責任の上限額・除外事由に関する条項を抽出して。
+出力形式: 「賠償上限の有無と金額」「上限が適用されない例外事由」「自社にとってのリスク評価」を整理して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b35">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b35" data-name="grok46-prompts100-035.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">036</span><span class="ititle">解約条項の通知期間チェック</span></div>
+  
+  <pre class="prompt" id="b36">前提: サービス利用契約を解約する際、通知期間を見落として余分な費用が発生するのを防ぎたい担当者向け。
+指示: 貼り付けた契約書・利用規約から、解約に必要な通知期間と手続き方法を抽出して。
+出力形式: 「契約名／必要な通知期間／通知方法／次の解約可能タイミング」の表で。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b36">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b36" data-name="grok46-prompts100-036.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">037</span><span class="ititle">コンプライアンス規程の社内周知資料化</span></div>
+  
+  <pre class="prompt" id="b37">前提: コンプライアンス規程は存在するが、現場が読み込む時間がなく形骸化している場面。
+指示: 貼り付けたコンプライアンス規程の中から、現場が日常業務で特に気をつけるべき項目を抽出して。
+出力形式: 「場面」「気をつけること」「違反した場合のリスク」を、専門用語を避けた平易な言葉でまとめて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b37">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b37" data-name="grok46-prompts100-037.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">038</span><span class="ititle">契約書テンプレートの標準化提案</span></div>
+  
+  <pre class="prompt" id="b38">前提: 案件ごとに契約書がバラバラで、社内テンプレートを整備したい法務担当者向け。
+指示: 貼り付けた過去の契約書複数件を比較し、共通して使われている条項と、案件ごとに異なる条項を分類して。
+出力形式: 「共通化できそうな条項」「案件ごとに個別対応が必要な条項」の2リストに分けて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b38">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b38" data-name="grok46-prompts100-038.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">039</span><span class="ititle">サブスクリプション規約の自動更新条件抽出</span></div>
+  
+  <pre class="prompt" id="b39">前提: 利用中のサブスクリプションサービスが、意図せず自動更新されるのを防ぎたい担当者向け。
+指示: 貼り付けた利用規約から、自動更新の条件・解約可能なタイミング・料金改定の通知方法を抽出して。
+出力形式: 「自動更新の条件」「解約可能タイミング」「料金改定時の通知方法」を整理して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b39">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b39" data-name="grok46-prompts100-039.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">040</span><span class="ititle">労務規程と実態の乖離チェック</span></div>
+  
+  <pre class="prompt" id="b40">前提: 就業規則の内容と実際の運用がずれていないか確認したい人事担当者向け。
+指示: 貼り付けた就業規則の該当箇所と、実際の運用(箇条書きで伝える)を突き合わせて、乖離がありそうな箇所を指摘して。
+出力形式: 「規則上の定め」「実際の運用」「乖離の有無と懸念点」の3列表で。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b40">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b40" data-name="grok46-prompts100-040.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">041</span><span class="ititle">秘密情報の第三者提供条件確認</span></div>
+  
+  <pre class="prompt" id="b41">前提: 業務委託先が、さらに別会社に情報を渡してよい条件になっているか確認したい担当者向け。
+指示: 貼り付けた契約案から、秘密情報を第三者(再委託先等)に提供できる条件を抽出して。
+出力形式: 「第三者提供が認められる条件」「事前承諾の要否」「懸念点」を整理して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b41">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b41" data-name="grok46-prompts100-041.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">042</span><span class="ititle">契約交渉ログの論点整理</span></div>
+  
+  <pre class="prompt" id="b42">前提: 契約交渉のメールやメモが散らばっていて、残っている論点が分からなくなっている担当者向け。
+指示: 貼り付けた契約交渉のやり取り(メール・メモ)から、まだ合意に至っていない論点を抽出して。
+出力形式: 「論点」「自社の希望」「相手方の希望」「現時点のギャップ」の表で。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b42">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b42" data-name="grok46-prompts100-042.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">043</span><span class="ititle">ライセンス条項の再配布可否チェック</span></div>
+  
+  <pre class="prompt" id="b43">前提: 利用しているソフトウェア・素材が、社内外に再配布してよいライセンスか確認したい担当者向け。
+指示: 貼り付けたライセンス条項から、再配布・改変・商用利用の可否を抽出して。
+出力形式: 「再配布可否」「改変可否」「商用利用可否」「表記義務の有無」を◯×で整理して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b43">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b43" data-name="grok46-prompts100-043.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">044</span><span class="ititle">反社チェック項目の確認リスト化</span></div>
+  
+  <pre class="prompt" id="b44">前提: 新規取引先の反社会的勢力チェックで、確認すべき項目に漏れがないか整えたい担当者向け。
+指示: 新規取引先の一次スクリーニングで一般的に確認すべき項目を、公開情報から確認できる範囲で洗い出して。
+出力形式: 「確認項目」「確認方法」「今回の確認結果(分かる範囲で)」の表で。最終判断は正式な調査機関の確認が必要な旨を明記して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b44">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b44" data-name="grok46-prompts100-044.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">045</span><span class="ititle">契約書の用語統一チェック</span></div>
+  
+  <pre class="prompt" id="b45">前提: 同じ意味の言葉が契約書内で表記ゆれしていて、解釈の余地を生んでいないか確認したい担当者向け。
+指示: 貼り付けた契約書内で、同じ対象を指しているのに表記がゆれている箇所(例:「甲」と「発注者」の混在)を洗い出して。
+出力形式: 「表記ゆれの内容」「登場箇所」「統一すべき表記の提案」の一覧で。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b45">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b45" data-name="grok46-prompts100-045.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">046</span><span class="ititle">規約改定の社内周知文ドラフト</span></div>
+  
+  <pre class="prompt" id="b46">前提: 利用規約を改定した際、ユーザーや社内に分かりやすく伝える文章を作りたい担当者向け。
+指示: 貼り付けた規約の変更点をもとに、専門用語を避けた分かりやすい周知文の下書きを作って。
+出力形式: 「何が変わるか」「いつから適用されるか」「利用者は何をすればよいか」の3段落構成で。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b46">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b46" data-name="grok46-prompts100-046.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">047</span><span class="ititle">取引先与信情報の一次整理</span></div>
+  
+  <pre class="prompt" id="b47">前提: 新規取引先の信用情報を確認する際、公開情報だけでも一次的に整理しておきたい担当者向け。
+指示: 指定した企業について、公開されている登記情報・決算公告・報道等から確認できる範囲の情報を整理して。
+出力形式: 「設立年」「資本金」「事業内容」「確認できたリスク情報の有無」を出典つきでまとめて。正式な与信調査の代替にはならない旨を明記して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b47">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b47" data-name="grok46-prompts100-047.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">048</span><span class="ititle">契約書の言語間差異チェック(和文英文)</span></div>
+  
+  <pre class="prompt" id="b48">前提: 和文と英文の両方がある契約書で、意味にずれがないか確認したい担当者向け。
+指示: 貼り付けた和文契約書と英文契約書を突き合わせ、意味が食い違っている可能性がある箇所を指摘して。
+出力形式: 「該当箇所」「和文の意味」「英文の意味」「食い違いの可能性」の表で。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b48">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b48" data-name="grok46-prompts100-048.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">049</span><span class="ititle">データ処理委託契約のGDPR整合性確認</span></div>
+  
+  <pre class="prompt" id="b49">前提: 海外ユーザーのデータを扱う際、GDPR等のデータ保護規制に沿った契約になっているか確認したい担当者向け。
+指示: 貼り付けたデータ処理委託契約案から、データ処理の目的・期間・越境移転条項の記載有無を抽出して。
+出力形式: 「処理目的の明記有無」「保持期間の明記有無」「越境移転条項の有無」を整理して。最終判断は専門家確認が必要な旨を明記して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b49">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b49" data-name="grok46-prompts100-049.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">050</span><span class="ititle">契約リスクの優先順位付けレポート</span></div>
+  
+  <pre class="prompt" id="b50">前提: 複数の契約を抱えていて、どれから優先的にレビューすべきか判断したい法務担当者向け。
+指示: 貼り付けた契約一覧(契約名・金額規模・相手先)から、リスクの大きさを金額規模・更新時期・過去のトラブル有無で評価して。
+出力形式: 「契約名／リスクスコア(高中低)／根拠」の表で、優先度が高い順に並べて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b50">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b50" data-name="grok46-prompts100-050.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<h2 class="cat">Cursor×Grok 4.6でコーディングを進める</h2>
+<div class="icard">
+  <div class="ih"><span class="num">051</span><span class="ititle">新機能の設計たたき台作成</span></div>
+  
+  <pre class="prompt" id="b51">前提: 新機能を実装する前に、設計の選択肢を整理してから着手したいエンジニア向け。
+指示: 実装したい新機能の概要を伝えるので、考えられる実装アプローチを2〜3案出し、それぞれのメリット・デメリットを整理して。
+出力形式: 「アプローチ名／概要／メリット／デメリット／推奨度」の表で。既存コードの構成に触れる場合は該当ファイルを明記して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b51">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b51" data-name="grok46-prompts100-051.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">052</span><span class="ititle">既存コードのリファクタ提案</span></div>
+  
+  <pre class="prompt" id="b52">前提: 動いてはいるが読みにくくなったコードを、挙動を変えずに整理したい場面。
+指示: 指定したファイルのコードを読み込み、挙動を変えずに可読性を改善できる箇所を洗い出して。
+出力形式: 「該当箇所／現状の問題点／改善案」のリストで。挙動が変わる可能性がある変更は別枠で「要確認」として報告して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b52">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b52" data-name="grok46-prompts100-052.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">053</span><span class="ititle">APIエンドポイントの仕様書生成</span></div>
+  
+  <pre class="prompt" id="b53">前提: 実装済みのAPIに仕様書が無く、後から他のメンバーが困っている状況。
+指示: 指定したAPIのコードを読み込み、エンドポイント・リクエスト・レスポンスの仕様を抽出して。
+出力形式: 「エンドポイント／メソッド／リクエストパラメータ／レスポンス例／エラーケース」の表で。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b53">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b53" data-name="grok46-prompts100-053.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">054</span><span class="ititle">テストケースの自動生成</span></div>
+  
+  <pre class="prompt" id="b54">前提: 新しく実装した関数にテストが無く、後回しになりがちな場面。
+指示: 指定した関数・クラスを読み込み、正常系・異常系・境界値のテストケースを既存のテストフレームワークの書式で提案して。
+出力形式: 既存のテストファイルの命名規則に沿ったコード形式で。テスト実行後、失敗した場合は原因を報告して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b54">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b54" data-name="grok46-prompts100-054.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">055</span><span class="ititle">バグ再現手順の言語化</span></div>
+  
+  <pre class="prompt" id="b55">前提: バグ報告が「なんか動かない」レベルで、再現手順が整理されていない場面。
+指示: 貼り付けたエラーログ・関連コードから、バグが発生する条件と再現手順の仮説を立てて。
+出力形式: 「発生条件の仮説」「再現手順」「確認したいログ・情報」の3セクションで。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b55">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b55" data-name="grok46-prompts100-055.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">056</span><span class="ititle">コードレビューコメントのドラフト</span></div>
+  
+  <pre class="prompt" id="b56">前提: プルリクエストのレビューに時間がかかり、指摘の書き方に悩む場面。
+指示: 指定した差分(diff)を読み込み、レビューで指摘すべき点を洗い出して。
+出力形式: 「指摘箇所／指摘内容／重要度(必須修正・提案・任意)」の一覧で。良い点があれば1つは肯定的コメントも添えて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b56">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b56" data-name="grok46-prompts100-056.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">057</span><span class="ititle">マイグレーションスクリプトの下書き</span></div>
+  
+  <pre class="prompt" id="b57">前提: データベースのスキーマ変更に伴うマイグレーションを毎回手作業で書くのが手間な場面。
+指示: 現在のスキーマと変更したい内容を伝えるので、使用しているマイグレーションツールの書式でスクリプト案を作って。
+出力形式: マイグレーションファイルのコード形式で。ロールバック(down側)の処理も必ず含めて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b57">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b57" data-name="grok46-prompts100-057.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">058</span><span class="ititle">パフォーマンスボトルネックの仮説出し</span></div>
+  
+  <pre class="prompt" id="b58">前提: 処理が遅いという体感はあるが、原因の見当がついていない場面。
+指示: 指定したコード・処理フローを読み込み、パフォーマンスのボトルネックになり得る箇所を仮説として挙げて。
+出力形式: 「該当箇所／ボトルネックになり得る理由／検証方法の提案」の一覧で、影響が大きそうな順に並べて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b58">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b58" data-name="grok46-prompts100-058.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">059</span><span class="ititle">依存パッケージの更新影響調査</span></div>
+  
+  <pre class="prompt" id="b59">前提: 依存パッケージを更新したいが、破壊的変更の影響範囲が分からず着手できない場面。
+指示: 指定したパッケージの現バージョンと更新先バージョンの変更履歴を調べ、自プロジェクトへの影響を推測して。
+出力形式: 「破壊的変更の内容」「自プロジェクトで影響を受けそうな箇所」「対応の要否」を整理して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b59">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b59" data-name="grok46-prompts100-059.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">060</span><span class="ititle">READMEの自動更新</span></div>
+  
+  <pre class="prompt" id="b60">前提: コードは更新されているのにREADMEが古いまま放置されている場面。
+指示: 現在のコード・設定ファイルを読み込み、既存のREADMEと実態が食い違っている箇所を指摘して更新案を作って。
+出力形式: 更新後のREADME全文と、変更した箇所のサマリーを分けて出力して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b60">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b60" data-name="grok46-prompts100-060.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">061</span><span class="ititle">エラーログからの原因仮説抽出</span></div>
+  
+  <pre class="prompt" id="b61">前提: 本番環境でエラーが多発しているが、ログの量が多く原因の絞り込みに時間がかかる場面。
+指示: 貼り付けたエラーログ群を読み込み、頻出するエラーパターンごとに原因の仮説を立てて。
+出力形式: 「エラーパターン／発生件数／原因の仮説／優先対応度」の表で、件数が多い順に並べて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b61">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b61" data-name="grok46-prompts100-061.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">062</span><span class="ititle">CI設定ファイルのたたき台作成</span></div>
+  
+  <pre class="prompt" id="b62">前提: CI/CDパイプラインをまだ組んでいないプロジェクトで、最初の設定を作りたい場面。
+指示: プロジェクトの構成(言語・テストコマンド・デプロイ先)を伝えるので、使用しているCIサービスの設定ファイル案を作って。
+出力形式: 設定ファイルのコード形式で。各ステップに短いコメントを添えて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b62">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b62" data-name="grok46-prompts100-062.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">063</span><span class="ititle">コミットメッセージの整形</span></div>
+  
+  <pre class="prompt" id="b63">前提: 差分の内容から適切なコミットメッセージを毎回考えるのが地味に手間な場面。
+指示: 指定した差分(diff)を読み込み、変更内容を要約したコミットメッセージ案を複数パターン提案して。
+出力形式: プロジェクトのコミット規約(Conventional Commits等)に沿った形式で3案。それぞれ1行の理由を添えて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b63">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b63" data-name="grok46-prompts100-063.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">064</span><span class="ititle">型定義の自動補完提案</span></div>
+  
+  <pre class="prompt" id="b64">前提: JavaScriptプロジェクトにTypeScriptの型を後から付けたい場面。
+指示: 指定したファイルの実装を読み込み、推測できる型定義を提案して。
+出力形式: 型定義のコード形式で。型が確定できない箇所は「要確認」のコメントを付けて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b64">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b64" data-name="grok46-prompts100-064.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">065</span><span class="ititle">デザインパターン適用の提案</span></div>
+  
+  <pre class="prompt" id="b65">前提: 同じような条件分岐が増えてきて、設計を見直したいと感じている場面。
+指示: 指定したコードを読み込み、適用できそうなデザインパターン(Strategy・Factory等)があれば提案して。
+出力形式: 「現状の問題」「提案するパターン」「適用後のイメージ(簡易コード例)」を整理して。過剰設計にならない範囲での提案に絞って。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b65">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b65" data-name="grok46-prompts100-065.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">066</span><span class="ititle">未使用コードの検出依頼</span></div>
+  
+  <pre class="prompt" id="b66">前提: 長く運用しているプロジェクトで、使われなくなった関数・ファイルが残っていないか整理したい場面。
+指示: 指定したディレクトリ配下のコードを調べ、どこからも参照されていない関数・ファイルの候補を洗い出して。
+出力形式: 「該当箇所／未使用と判断した根拠／削除前に確認すべき点」の一覧で。動的参照の可能性がある場合はその旨を明記して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b66">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b66" data-name="grok46-prompts100-066.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">067</span><span class="ititle">環境構築手順書の自動生成</span></div>
+  
+  <pre class="prompt" id="b67">前提: 新しいメンバーが加わるたびに環境構築の手順を口頭で説明している場面。
+指示: プロジェクトの設定ファイル・READMEを読み込み、ゼロから開発環境を構築する手順を洗い出して。
+出力形式: 番号付き手順のMarkdown形式で。つまずきやすいポイントには補足を添えて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b67">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b67" data-name="grok46-prompts100-067.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">068</span><span class="ititle">マルチファイルにまたがる一括置換提案</span></div>
+  
+  <pre class="prompt" id="b68">前提: 命名規則を変更したいが、影響範囲が複数ファイルにまたがっていて手作業では不安な場面。
+指示: 指定した変更前後の命名を伝えるので、影響を受けるファイルと置換箇所を洗い出して。
+出力形式: 「ファイル名／該当箇所／置換前／置換後」の一覧を提示してから、実際の置換に進んで。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b68">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b68" data-name="grok46-prompts100-068.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">069</span><span class="ititle">APIレスポンスのモックデータ生成</span></div>
+  
+  <pre class="prompt" id="b69">前提: フロントエンド開発を先行して進めたいが、バックエンドAPIがまだ完成していない場面。
+指示: 指定したAPI仕様(またはコード)をもとに、開発用のモックレスポンスデータを生成して。
+出力形式: 実際のレスポンス形式に沿ったJSON形式で、正常系・エラー系それぞれ用意して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b69">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b69" data-name="grok46-prompts100-069.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">070</span><span class="ititle">アクセシビリティ観点のコードチェック</span></div>
+  
+  <pre class="prompt" id="b70">前提: UIコードがアクセシビリティ基準を満たしているか、リリース前に一次確認したい場面。
+指示: 指定したUIコンポーネントのコードを読み込み、alt属性・ARIA属性・コントラスト等の基本的な不足点を洗い出して。
+出力形式: 「該当箇所／不足している点／修正案」の一覧で。専門的な監査の代替にはならない旨を明記して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b70">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b70" data-name="grok46-prompts100-070.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">071</span><span class="ititle">セキュリティ脆弱性の一次スクリーニング</span></div>
+  
+  <pre class="prompt" id="b71">前提: リリース前にコードの明らかなセキュリティリスクだけでも一次チェックしたい場面。
+指示: 指定したコードを読み込み、SQLインジェクション・XSS等の典型的な脆弱性パターンがないか確認して。
+出力形式: 「該当箇所／脆弱性の種類／リスクレベル／修正案」の一覧で。専門的なセキュリティ監査の代替にはならない旨を明記して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b71">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b71" data-name="grok46-prompts100-071.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">072</span><span class="ititle">ドキュメントコメントの自動補完</span></div>
+  
+  <pre class="prompt" id="b72">前提: 関数にドキュメントコメントが付いておらず、後から読む人が困っている場面。
+指示: 指定したファイルの関数を読み込み、引数・戻り値・処理概要を説明するドキュメントコメントを追加して。
+出力形式: 使用している言語の標準的なドキュメントコメント形式(JSDoc・docstring等)で。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b72">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b72" data-name="grok46-prompts100-072.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">073</span><span class="ititle">機能追加のタスク分解</span></div>
+  
+  <pre class="prompt" id="b73">前提: 大きめの機能追加を、着手しやすい単位に分割したいエンジニア向け。
+指示: 実装したい機能の概要を伝えるので、着手可能な単位のタスクに分解して。
+出力形式: 「タスク名／概要／依存関係(先に終える必要があるタスク)／見積もり感(小中大)」の一覧で。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b73">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b73" data-name="grok46-prompts100-073.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">074</span><span class="ititle">リリースノートのドラフト作成</span></div>
+  
+  <pre class="prompt" id="b74">前提: リリースのたびにリリースノートを書く時間が取れず後回しになる場面。
+指示: 指定した期間のコミット履歴・プルリクエストを読み込み、ユーザー向けのリリースノート案を作って。
+出力形式: 「新機能」「改善」「不具合修正」のカテゴリ別に、専門用語を避けた文章で。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b74">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b74" data-name="grok46-prompts100-074.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">075</span><span class="ititle">長時間タスクをGrok Botに預ける下準備</span></div>
+  
+  <pre class="prompt" id="b75">前提: Grok Botのような常駐エージェントに任せる前に、タスクの範囲を明確にしておきたい場面。
+指示: 任せたい作業の概要を伝えるので、常駐エージェントに委任する際に明確にしておくべき「完了の定義」「承認が必要な場面」を整理して。
+出力形式: 「タスクの範囲」「完了の定義」「承認が必要になりそうな場面」の3セクションで、Grok Botのドライラン非対応という制約を踏まえた注意点も添えて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b75">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b75" data-name="grok46-prompts100-075.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<h2 class="cat">コスト最適化・モデル使い分けをGrok 4.6に任せる</h2>
+<div class="icard">
+  <div class="ih"><span class="num">076</span><span class="ititle">タスク別モデル選定シートの作成</span></div>
+  
+  <pre class="prompt" id="b76">前提: チームで使うAIモデルがバラバラで、判断基準を整えたいマネージャー向け。
+指示: 普段発生するタスクの種類(コーディング・知識作業・法務チェック等)を伝えるので、それぞれに向くモデルの判断基準を整理して。
+出力形式: 「タスク種別／推奨モデル／理由(価格・性能どちらを重視するか)」の表で。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b76">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b76" data-name="grok46-prompts100-076.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">077</span><span class="ititle">月次AI利用コストの見える化</span></div>
+  
+  <pre class="prompt" id="b77">前提: 複数のAIサービスを契約していて、合計コストが把握しづらいチーム向け。
+指示: 貼り付けた各サービスの利用明細から、月次のAI関連コストを合算して。
+出力形式: 「サービス名／月額費用／主な用途」の表と、合計金額を明記して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b77">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b77" data-name="grok46-prompts100-077.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">078</span><span class="ititle">高頻度タスクのモデル切り替えテスト</span></div>
+  
+  <pre class="prompt" id="b78">前提: 毎日繰り返している定型タスクを、より安価なモデルに切り替えられないか検証したい場面。
+指示: 普段Claude/GPTに投げているタスクの例を1つ伝えるので、同じ条件でGrok 4.6にも投げた場合の出力を比較する観点を整理して。
+出力形式: 「比較する観点(精度・速度・費用)」「合格ラインの目安」を先に整理してから、実際の比較を行って。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b78">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b78" data-name="grok46-prompts100-078.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">079</span><span class="ititle">トークン消費量の多い処理の特定</span></div>
+  
+  <pre class="prompt" id="b79">前提: AIサービスの請求額が急に増え、原因を特定したいコスト管理担当者向け。
+指示: 貼り付けた利用ログ(タスク内容・トークン数)から、トークン消費量が特に多い処理を洗い出して。
+出力形式: 「処理内容／トークン数／全体に占める割合」の表で、消費量が多い順に並べて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b79">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b79" data-name="grok46-prompts100-079.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">080</span><span class="ititle">同一タスクの多モデル比較実験</span></div>
+  
+  <pre class="prompt" id="b80">前提: 複数のAIモデルのどれを標準にするか、実験して決めたいチーム向け。
+指示: 指定したタスク例を、Grok 4.6・GPT-5.6 Sol・Fable 5それぞれに投げた場合の想定される出力の傾向・コストを整理して。
+出力形式: 「モデル名／想定コスト/想定される強み・弱み」の表で。実際の出力比較は各モデルで個別に実施する前提を明記して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b80">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b80" data-name="grok46-prompts100-080.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">081</span><span class="ititle">コスト超過時のフォールバック設計</span></div>
+  
+  <pre class="prompt" id="b81">前提: 予算を超えそうなときに自動で安価なモデルへ切り替えるルールを決めたい場面。
+指示: 月間予算と現在の消費ペースを伝えるので、予算超過を防ぐためのモデル切り替えルールを設計して。
+出力形式: 「消費ペースの閾値」「切り替え先モデル」「切り替え時の注意点」を整理して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b81">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b81" data-name="grok46-prompts100-081.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">082</span><span class="ititle">チームメンバー別利用状況の集計</span></div>
+  
+  <pre class="prompt" id="b82">前提: チーム内で誰がどれだけAIを使っているか把握したいマネージャー向け。
+指示: 貼り付けたメンバー別の利用ログから、利用頻度・主な用途を集計して。
+出力形式: 「メンバー名／利用回数／主な用途／概算コスト」の表で。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b82">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b82" data-name="grok46-prompts100-082.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">083</span><span class="ititle">無料枠の使い切り具合チェック</span></div>
+  
+  <pre class="prompt" id="b83">前提: 契約しているプランの無料枠を使い切れているか、逆に使いすぎていないか確認したい場面。
+指示: 貼り付けた利用実績と契約プランの無料枠上限を比較して、使用率を計算して。
+出力形式: 「プラン名」「無料枠上限」「今月の利用量」「使用率」を整理して、使いすぎ・使い切れていないものをそれぞれ指摘して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b83">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b83" data-name="grok46-prompts100-083.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">084</span><span class="ititle">モデル切り替えによる品質差の検証</span></div>
+  
+  <pre class="prompt" id="b84">前提: コストを下げるためにモデルを切り替えた際、出力品質が落ちていないか確認したい場面。
+指示: 同じプロンプトに対する切り替え前後の出力例を貼り付けるので、品質の差を評価して。
+出力形式: 「評価観点(正確さ・網羅性・分かりやすさ)ごとの差」「総合判断(切り替え可否)」を整理して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b84">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b84" data-name="grok46-prompts100-084.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">085</span><span class="ititle">バッチ処理のコスト試算</span></div>
+  
+  <pre class="prompt" id="b85">前提: 大量のデータをまとめて処理する前に、コストを事前に見積もりたい場面。
+指示: 処理したいデータ件数と1件あたりの想定トークン数を伝えるので、Grok 4.6の料金体系で概算コストを試算して。
+出力形式: 「入力トークン概算コスト」「出力トークン概算コスト」「合計概算」を計算式つきで示して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b85">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b85" data-name="grok46-prompts100-085.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">086</span><span class="ititle">API呼び出し回数の最適化提案</span></div>
+  
+  <pre class="prompt" id="b86">前提: 同じような処理でAPIを何度も呼び出しており、まとめられないか検討したい開発者向け。
+指示: 貼り付けた処理フローを読み込み、API呼び出しをまとめて回数を減らせる箇所がないか提案して。
+出力形式: 「現状の呼び出し回数」「まとめられる箇所」「まとめた場合の想定削減率」を整理して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b86">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b86" data-name="grok46-prompts100-086.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">087</span><span class="ititle">長文コンテキストのコスト影響試算</span></div>
+  
+  <pre class="prompt" id="b87">前提: コンテキスト長が20万トークンを超えると単価が上がる仕様を踏まえ、影響を試算したい場面。
+指示: 普段扱っている文書の想定トークン数を伝えるので、20万トークンの閾値を超えるかどうかとコストへの影響を試算して。
+出力形式: 「想定トークン数」「閾値超過の有無」「超過した場合の追加コスト」を計算して示して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b87">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b87" data-name="grok46-prompts100-087.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">088</span><span class="ititle">モデル料金改定の影響シミュレーション</span></div>
+  
+  <pre class="prompt" id="b88">前提: モデルの料金が改定された場合、月額コストがどう変わるか事前に把握したい場面。
+指示: 現在の月間利用量と、想定される新料金を伝えるので、改定後の月額コストをシミュレーションして。
+出力形式: 「現行コスト」「改定後コスト」「差額」を示し、差が大きい場合は代替案も1つ提案して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b88">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b88" data-name="grok46-prompts100-088.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">089</span><span class="ititle">社内向けモデル選定ガイドのドラフト</span></div>
+  
+  <pre class="prompt" id="b89">前提: チーム全員が同じ基準でモデルを選べるよう、ガイドを整備したいリーダー向け。
+指示: これまで整理してきたタスク別のモデル選定基準をもとに、社内向けの簡潔なガイド文書を作って。
+出力形式: 「基本方針」「タスク別の推奨表」「迷ったときの相談先」の3セクション構成で、専門用語を避けた文章にして。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b89">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b89" data-name="grok46-prompts100-089.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">090</span><span class="ititle">コスト削減施策の優先順位付け</span></div>
+  
+  <pre class="prompt" id="b90">前提: コスト削減のアイデアはいくつかあるが、どれから着手すべきか判断したい場面。
+指示: 検討しているコスト削減施策のアイデアを箇条書きで伝えるので、削減効果と実施の手間を評価して優先順位をつけて。
+出力形式: 「施策名／想定削減効果(高中低)／実施の手間(高中低)／優先度」の表で。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b90">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b90" data-name="grok46-prompts100-090.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">091</span><span class="ititle">高コストタスクの代替手段検討</span></div>
+  
+  <pre class="prompt" id="b91">前提: 特定のタスクだけコストが突出して高く、別のやり方がないか検討したい場面。
+指示: コストが高くなっているタスクの内容を伝えるので、より安価なモデルやアプローチに置き換えられないか検討して。
+出力形式: 「現状のやり方とコスト」「代替案」「品質面でのトレードオフ」を整理して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b91">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b91" data-name="grok46-prompts100-091.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">092</span><span class="ititle">複数ベンダー請求書の突合</span></div>
+  
+  <pre class="prompt" id="b92">前提: 複数のAIベンダーからの請求書を毎月手作業で突合するのが手間な経理担当者向け。
+指示: 貼り付けた各ベンダーの請求内容を、契約内容・想定利用量と突き合わせて。
+出力形式: 「ベンダー名／請求額／契約上の想定額との差」の表で、差が大きいものを先頭に並べて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b92">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b92" data-name="grok46-prompts100-092.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">093</span><span class="ititle">予算超過アラートの設計</span></div>
+  
+  <pre class="prompt" id="b93">前提: AI利用コストが予算を超えそうなとき、事前に気づける仕組みを作りたい場面。
+指示: 月間予算額を伝えるので、消費ペースに応じたアラートを出すタイミング(50%・80%等)の設計案を作って。
+出力形式: 「消費率の閾値」「アラート内容」「アラートを受けた際の対応方針」を整理して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b93">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b93" data-name="grok46-prompts100-093.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">094</span><span class="ititle">部門別AI活用コストの按分試算</span></div>
+  
+  <pre class="prompt" id="b94">前提: 全社契約のAIサービスコストを、利用実態に応じて部門ごとに按分したい経理担当者向け。
+指示: 貼り付けた部門別の利用ログ(件数・処理内容)をもとに、全体コストを按分する試算をして。
+出力形式: 「部門名」「利用割合」「按分後の負担額」の表で、按分の考え方も1行で添えて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b94">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b94" data-name="grok46-prompts100-094.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">095</span><span class="ititle">サブスクリプションの重複契約チェック</span></div>
+  
+  <pre class="prompt" id="b95">前提: 似たようなAIサービスを複数契約していないか、無駄がないか確認したい場面。
+指示: 貼り付けた契約中のサービス一覧から、機能が重複していそうな契約の組み合わせを洗い出して。
+出力形式: 「サービスA／サービスB／重複している機能／統合の余地」の表で。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b95">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b95" data-name="grok46-prompts100-095.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">096</span><span class="ititle">トライアル期間終了前のリマインド作成</span></div>
+  
+  <pre class="prompt" id="b96">前提: 無料トライアルの終了に気づかず自動課金されるのを防ぎたい担当者向け。
+指示: 貼り付けたトライアル契約一覧(開始日・トライアル期間)から、終了日と課金開始日を計算して。
+出力形式: 「サービス名／トライアル終了日／課金開始日／残り日数」の表で、期限が近い順に並べて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b96">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b96" data-name="grok46-prompts100-096.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">097</span><span class="ititle">コストパフォーマンス比較レポート作成</span></div>
+  
+  <pre class="prompt" id="b97">前提: 各モデルの費用対効果を経営層に説明する資料を作りたい担当者向け。
+指示: これまで整理してきたモデル別の性能・料金データをもとに、コストパフォーマンスの比較レポート案を作って。
+出力形式: 「結論」「比較表(性能・価格)」「推奨する使い分け方針」の3セクション構成で、専門用語を避けて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b97">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b97" data-name="grok46-prompts100-097.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">098</span><span class="ititle">社外向けコスト削減提案資料の下書き</span></div>
+  
+  <pre class="prompt" id="b98">前提: AI活用によるコスト削減効果を、社外(株主・取引先等)に説明する資料を作りたい場面。
+指示: 社内で確認済みのコスト削減実績データを伝えるので、社外向けに説明できる形の資料構成案を作って。
+出力形式: 「削減前後の比較」「削減できた理由」「今後の見通し」の3セクションで、誇張のない範囲の表現にして。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b98">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b98" data-name="grok46-prompts100-098.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">099</span><span class="ititle">長期利用を見据えた契約プラン比較</span></div>
+  
+  <pre class="prompt" id="b99">前提: 短期契約と長期契約でどちらが得か、契約更新のタイミングで検討したい場面。
+指示: 各サービスの短期プランと長期プランの料金体系を伝えるので、想定利用期間ごとの総コストを比較して。
+出力形式: 「プラン名」「6ヶ月利用時の総コスト」「12ヶ月利用時の総コスト」「損益分岐点」を計算して示して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b99">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b99" data-name="grok46-prompts100-099.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">100</span><span class="ititle">コスト最適化の月次振り返りレポート</span></div>
+  
+  <pre class="prompt" id="b100">前提: 毎月のコスト最適化の取り組みを振り返り、次月の方針を決めたいチーム向け。
+指示: 今月の利用実績と実施したコスト削減施策を伝えるので、効果があった施策・なかった施策を整理して。
+出力形式: 「実施した施策」「効果(削減額の目安)」「来月への示唆」の3セクションで簡潔にまとめて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b100">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b100" data-name="grok46-prompts100-100.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+
+  <section class="epctx">
+  <p class="epctx-label">この動画のほかのプレゼント</p>
+  <div class="ep-kits"><a class="kchip" href="../grokbot-checklist/"><span class="kt">Grok Bot導入前チェックシート</span><span class="badge">7項目</span><span class="go">開く →</span></a></div>
+</section>
+
+  <footer><a href="../../">← AIエージェント / Kawaru プレゼント図書館にもどる</a></footer>
+</div>
+
+<pre id="pfull" class="hidden"># 🎁 Grok 4.6実践プロンプト100選
+
+Grok Build／Cursor／Grok Bot／APIの各プラットフォームで、Grok 4.6が「本当に得意な作業」に絞った実践プロンプトを100個集めました。「前提／指示／出力形式」の3点セットで、そのまま貼って使えます。4分野×25本、計100本です。
+
+**受け取り方**: 下のコードブロック右上のコピーボタンでコピーするか、このファイルをそのままダウンロードしてください。
+
+**使い方**: 通し番号はカテゴリをまたいだ連番です。カテゴリ見出しごとに25本ずつ並んでいます。実際に使うときは、括弧内の指示を状況に応じて調整してください。
+
+## 知識作業・リサーチをGrok 4.6に任せる
+
+### 1. 業界レポートの要点抽出
+
+```text
+前提: 複数の業界レポート・調査資料を毎回自分で読み込む時間が取れない担当者向けの依頼。
+指示: 指定した業界レポート(PDFまたはURL)群を読み込み、共通して出てくる主張と、レポート間で食い違っている数字・見解を洗い出して。
+出力形式: 「共通する主張」「レポート間で食い違う点」の2セクションに分け、それぞれ出典レポート名を添えた箇条書きで。
+```
+
+### 2. 競合比較マトリクスの作成
+
+```text
+前提: 競合サービスの機能・料金を比較表にまとめたいが、公式サイトを1社ずつ見に行く時間がない場面。
+指示: 指定した競合サービス3〜5社の公式サイト・料金ページを調べ、主要機能と料金プランを横並びで比較して。
+出力形式: 「観点／自社／競合A／競合B／競合C」のマトリクス表で。情報源が確認できない項目は「未確認」と明記して。
+```
+
+### 3. 市場規模推定の裏付け調査
+
+```text
+前提: 新規事業提案のために市場規模の数字が要るが、社内に確たる根拠となる資料がない状況。
+指示: 指定した市場について、公開されている調査会社・官公庁データから市場規模・成長率の推定値を複数集め、出典ごとの前提条件の違いを整理して。
+出力形式: 「出典／推定市場規模／成長率／算出時点／前提条件」の表と、採用する際の注意点を3行で。
+```
+
+### 4. 顧客インタビュー録の構造化要約
+
+```text
+前提: 顧客インタビューの文字起こしが溜まっているが、傾向をまとめる時間が取れないプロダクト担当者向け。
+指示: 貼り付けたインタビュー文字起こし複数件を読み込み、共通して出てくる不満・要望をカテゴリ別に分類して。
+出力形式: カテゴリごとに「頻出フレーズ」「言及した人数」「代表的な発言引用」を表でまとめて。
+```
+
+### 5. 社内ナレッジベースのFAQ化
+
+```text
+前提: 過去のサポート対応履歴は蓄積されているが、FAQとして整理されておらず同じ質問が繰り返される状況。
+指示: 貼り付けた過去の問い合わせ履歴から、頻出する質問パターンを抽出し、回答の型を作って。
+出力形式: 「質問カテゴリ／代表的な質問文／回答テンプレート」の一覧を、頻度が高い順に並べて。
+```
+
+### 6. 展示会・カンファレンス情報の収集
+
+```text
+前提: 参加を検討している展示会・カンファレンスの情報を毎回個別に調べるのが手間な担当者向け。
+指示: 指定した業界の直近3ヶ月に開催される展示会・カンファレンスを調べ、規模・参加費・過去の評判を整理して。
+出力形式: 「イベント名／開催時期／参加費目安／規模感／出典」の表形式で、開催日が近い順に並べて。
+```
+
+### 7. 規制動向の定点観測
+
+```text
+前提: 業界に関わる法規制の改正情報を、担当者が見落として後から慌てることを防ぎたい場面。
+指示: 指定した業界・地域に関わる規制の直近の改正・パブリックコメント状況を調べ、自社業務への影響度を推測して。
+出力形式: 「規制名／改正内容の要点／施行(予定)時期／影響度(高中低)／出典」の表で。推測部分には推測である旨を明記して。
+```
+
+### 8. 特許・技術動向の俯瞰
+
+```text
+前提: 自社と近い技術領域で他社がどんな特許・技術発表をしているか、定期的に把握したい研究開発担当者向け。
+指示: 指定したキーワードに関連する直近の特許出願・技術発表を検索し、出願者・技術の要点・自社との近さを整理して。
+出力形式: 「出願者／技術要点1行／公開日／自社技術との近さ(高中低)」の表で、近さが高い順に並べて。
+```
+
+### 9. サプライヤー候補の一次スクリーニング
+
+```text
+前提: 新しい取引先候補を探す際、条件に合わない企業を早い段階で除外し工数を減らしたい調達担当者向け。
+指示: 指定した条件(取扱品目・地域・実績年数等)に沿って候補企業を検索し、条件を満たすか満たさないかを一次判定して。
+出力形式: 「企業名／条件適合(○△×)／根拠となった情報／確認が必要な項目」の表で。
+```
+
+### 10. 決算資料のハイライト抽出
+
+```text
+前提: 取引先や競合の決算発表を毎回チェックする時間がなく、重要な変化だけ知りたい経営企画担当者向け。
+指示: 指定した企業の直近の決算資料・決算説明会資料を読み込み、前年同期比で大きく変化した指標だけを抜き出して。
+出力形式: 「指標名／前年同期比の変化／経営陣のコメント要約1行」の表で、変化の大きい順に並べて。
+```
+
+### 11. 業界レポートの矛盾点洗い出し
+
+```text
+前提: 複数のレポートを参考にする際、数字の食い違いに気づかず引用してしまうリスクを避けたい場面。
+指示: 指定した複数の業界レポートを横断的に読み込み、同じ指標について数字が食い違っている箇所を洗い出して。
+出力形式: 「指標名／レポートA の数値／レポートB の数値／差の原因の推測」の表で。推測は🔶等の確度マークを添えて。
+```
+
+### 12. 用語集・社内辞書の自動生成
+
+```text
+前提: 新しいメンバーが増えるたびに専門用語の説明を個別にする手間を減らしたいチームリーダー向け。
+指示: 貼り付けた社内資料・議事録から専門用語・略語を抽出し、文脈から意味を推測して簡潔な説明を付けて。
+出力形式: 「用語／読み方(必要な場合)／簡潔な説明1〜2行／出てきた資料」の五十音順一覧で。
+```
+
+### 13. リサーチ依頼の事前ヒアリングシート作成
+
+```text
+前提: リサーチを外部やチームメンバーに依頼する前に、依頼内容を明確にしたい発注者向け。
+指示: これから依頼したいリサーチのテーマを伝えるので、依頼を明確にするために確認すべき質問項目を洗い出して。
+出力形式: 「確認すべき項目」を「目的」「範囲」「期限」「アウトプット形式」の4カテゴリに分けて箇条書きで。
+```
+
+### 14. 複数言語資料の要点統合
+
+```text
+前提: 英語・その他言語の一次資料を都度翻訳しながら読むのが負担な担当者向け。
+指示: 貼り付けた複数言語の資料(英語中心)を読み込み、言語をまたいで共通する主張と、言語ごとに異なる論調を整理して。
+出力形式: 日本語で「共通する主張」「資料ごとの論調の違い」の2セクションに分けて要約して。
+```
+
+### 15. アンケート自由記述の分類集計
+
+```text
+前提: 顧客アンケートの自由記述欄が数百件溜まっており、手作業での分類が追いつかない場面。
+指示: 貼り付けたアンケート自由記述の回答群を読み込み、内容が近いものをカテゴリにまとめて件数を集計して。
+出力形式: 「カテゴリ名／件数／代表的な回答例2〜3件」の表で、件数が多い順に並べて。
+```
+
+### 16. 会議議事録からのアクション抽出
+
+```text
+前提: 会議のたびに議事録は取っているが、決定事項とアクションアイテムが埋もれてしまう場面。
+指示: 貼り付けた会議の議事録・文字起こしから、決定事項とアクションアイテムを抜き出して。
+出力形式: 「決定事項」「アクションアイテム(担当者・期限つき)」の2リストに分けて。担当者が不明な場合は「未定」と明記して。
+```
+
+### 17. 提案書のたたき台リサーチ
+
+```text
+前提: 新規提案書を書く前段階として、市場・競合・顧客課題の材料を素早く集めたい営業企画担当者向け。
+指示: 指定したテーマの提案書に使う材料として、市場動向・競合状況・想定される顧客課題を調べて。
+出力形式: 「市場動向」「競合状況」「想定される顧客課題」の3セクションで、各セクション3〜5行の要約にして。
+```
+
+### 18. 採用candidate市場のベンチマーク
+
+```text
+前提: 採用ポジションの給与水準・必須スキルの相場感がつかめず、募集要項が作れない採用担当者向け。
+指示: 指定した職種・地域の求人市場について、給与レンジと頻出する必須スキルを調べて。
+出力形式: 「給与レンジの目安」「頻出必須スキル上位5」「関連する求人例3件」を出典つきでまとめて。
+```
+
+### 19. イベントレポートのSNS反応まとめ
+
+```text
+前提: 参加できなかったイベントの雰囲気・反応を後から把握したい担当者向け。
+指示: 指定したイベントについて、公開されているレポート記事や公式発表を調べ、参加者・登壇者の反応の傾向をまとめて。
+出力形式: 「良かった点として挙がっていたこと」「課題として挙がっていたこと」の2セクションで、出典を添えて。
+```
+
+### 20. 業界ニュースの週次ダイジェスト作成
+
+```text
+前提: 毎週の業界ニュースを個別にチェックする時間がなく、まとめて把握したいチームリーダー向け。
+指示: 指定した業界の直近1週間のニュースを検索し、重要度が高い順に並べて要約して。
+出力形式: 上位5件を「見出し／要点2行／なぜ重要か1行／出典」のカード形式で。
+```
+
+### 21. 顧客セグメント別ニーズ整理
+
+```text
+前提: 顧客層ごとにニーズが違うはずだが、感覚的にしか把握できていないマーケティング担当者向け。
+指示: 貼り付けた顧客データ・アンケート結果を読み込み、セグメントごとに異なるニーズの傾向を整理して。
+出力形式: 「セグメント名／主なニーズ／裏付けとなったデータ」の表で。データが不足しているセグメントは明記して。
+```
+
+### 22. 過去プロジェクトの類似案件検索
+
+```text
+前提: 新しい案件に取り組む前に、社内の過去事例を参考にしたいが検索が大変な担当者向け。
+指示: 貼り付けた過去プロジェクトの記録群から、今回の案件条件(業界・規模・課題)に近い事例を探して。
+出力形式: 「類似度が高い順」に「案件名／類似点／当時の進め方の要点／参考になりそうな箇所」の表で。
+```
+
+### 23. 出典クロスチェック(裏取り)
+
+```text
+前提: 資料に書かれた数字や主張を、そのまま引用する前に裏取りしたい編集・広報担当者向け。
+指示: 貼り付けた文章中の数字・固有名詞・日付を1つずつ拾い出し、複数の情報源で一致するか確認して。
+出力形式: 「該当箇所／確認できた出典／確度(✅🔶⚠️)／矛盾があれば内容」の表で。
+```
+
+### 24. 社内ドキュメントの陳腐化チェック
+
+```text
+前提: 社内wikiやマニュアルが古いまま放置され、実態と合わなくなっていないか確認したい場面。
+指示: 貼り付けた社内ドキュメントの内容を読み込み、日付・ツール名・手順が現在の実態と食い違っていそうな箇所を指摘して。
+出力形式: 「該当箇所／古い可能性がある理由／確認すべき担当者」の一覧で、確信度が高い順に並べて。
+```
+
+### 25. リサーチ結果のプレゼン用要約
+
+```text
+前提: 詳細なリサーチ結果はできたが、経営層向けに短く要約する時間がない担当者向け。
+指示: 貼り付けたリサーチ結果の詳細資料を、経営層向けプレゼンの冒頭で使える3行サマリーに圧縮して。
+出力形式: 「結論」「根拠となる数字1〜2個」「推奨アクション」の3行構成で、専門用語は平易な言葉に言い換えて。
+```
+
+## 法務・契約・規約チェックをGrok 4.6に任せる
+
+### 26. 契約書の不利条項スクリーニング
+
+```text
+前提: 契約書を締結する前に、自社に不利な条項が紛れていないか確認したい担当者向け(最終判断は必ず弁護士が行う前提)。
+指示: 貼り付けた契約書案を読み込み、一般的に自社に不利になりやすい条項(一方的解除権・過大な違約金等)がないか洗い出して。
+出力形式: 「該当条項の要約／なぜ不利になり得るか／条番号」の一覧で。法的助言ではなく一次スクリーニングである旨を明記して。
+```
+
+### 27. NDA(秘密保持契約)の期間・範囲チェック
+
+```text
+前提: NDAを複数社と結んでいて、期間・対象範囲がバラバラになっていないか確認したい担当者向け。
+指示: 貼り付けたNDA案について、秘密保持期間・対象情報の範囲・目的外利用禁止の有無を抽出して。
+出力形式: 「相手先／秘密保持期間／対象範囲の要約／目的外利用禁止の有無」の表で。
+```
+
+### 28. 利用規約変更点の差分抽出
+
+```text
+前提: 利用しているサービスの規約が改定されたとき、何が変わったのか素早く把握したい担当者向け。
+指示: 旧規約と新規約のテキストを貼り付けるので、意味が変わった箇所だけを抽出して。
+出力形式: 「変更箇所／旧文言の要約／新文言の要約／利用者への影響」の表で。表現のみの変更は除外して。
+```
+
+### 29. 下請け契約の支払条件確認
+
+```text
+前提: 下請法の観点から、支払条件が適切かどうか一次確認したい発注担当者向け。
+指示: 貼り付けた業務委託契約案の支払条件(支払期日・検収期間)を抽出し、一般的な下請法の目安と照らして確認して。
+出力形式: 「支払期日」「検収期間」「目安との比較」「懸念点があれば内容」を整理して。最終判断は専門家確認が必要な旨を明記して。
+```
+
+### 30. 個人情報保護方針のギャップチェック
+
+```text
+前提: 自社のプライバシーポリシーが、実際の個人情報の取り扱いと合っているか確認したい担当者向け。
+指示: 貼り付けたプライバシーポリシーと、実際の個人情報取得・利用の実態(箇条書きで伝える)を突き合わせて、記載が不足していそうな箇所を指摘して。
+出力形式: 「実態」「ポリシー上の記載有無」「不足している可能性」の3列表で。
+```
+
+### 31. 商標・著作権リスクの一次スクリーニング
+
+```text
+前提: 新しいサービス名・ロゴ案を検討する際、明らかな商標リスクがないか一次確認したい担当者向け。
+指示: 指定したサービス名候補について、同一・類似の既存商標や既存サービスが無いか検索して。
+出力形式: 「候補名／類似する既存事例／リスクレベル(高中低)の目安」の表で。最終判断は商標調査の専門家に依頼する前提を明記して。
+```
+
+### 32. 契約更新期日のリマインド一覧化
+
+```text
+前提: 複数の契約の更新期日を個別のカレンダーで管理しきれず、うっかり自動更新されてしまう場面。
+指示: 貼り付けた契約一覧(契約名・締結日・契約期間)から、更新期日と解約通知の締切を計算して。
+出力形式: 「契約名／更新期日／解約通知締切／残り日数」の表で、締切が近い順に並べて。
+```
+
+### 33. 海外契約の準拠法・裁判管轄チェック
+
+```text
+前提: 海外取引先との契約で、準拠法・裁判管轄が自社に不利になっていないか確認したい担当者向け。
+指示: 貼り付けた契約案から準拠法・裁判管轄・言語の優先順位に関する条項を抽出して。
+出力形式: 「準拠法」「裁判管轄」「言語の優先順位」「自社にとっての懸念点」を整理して。
+```
+
+### 34. 業務委託契約の成果物定義チェック
+
+```text
+前提: 成果物の範囲が曖昧なまま契約してトラブルになるのを避けたい発注担当者向け。
+指示: 貼り付けた業務委託契約案から、成果物の定義・検収基準が具体的に書かれているか確認して。
+出力形式: 「成果物として定義されている内容」「曖昧さが残る箇所」「追記を検討すべき文言案」を整理して。
+```
+
+### 35. 賠償責任条項の上限確認
+
+```text
+前提: 万一のトラブル時に、賠償責任の上限がどう設定されているか把握しておきたい担当者向け。
+指示: 貼り付けた契約案から賠償責任の上限額・除外事由に関する条項を抽出して。
+出力形式: 「賠償上限の有無と金額」「上限が適用されない例外事由」「自社にとってのリスク評価」を整理して。
+```
+
+### 36. 解約条項の通知期間チェック
+
+```text
+前提: サービス利用契約を解約する際、通知期間を見落として余分な費用が発生するのを防ぎたい担当者向け。
+指示: 貼り付けた契約書・利用規約から、解約に必要な通知期間と手続き方法を抽出して。
+出力形式: 「契約名／必要な通知期間／通知方法／次の解約可能タイミング」の表で。
+```
+
+### 37. コンプライアンス規程の社内周知資料化
+
+```text
+前提: コンプライアンス規程は存在するが、現場が読み込む時間がなく形骸化している場面。
+指示: 貼り付けたコンプライアンス規程の中から、現場が日常業務で特に気をつけるべき項目を抽出して。
+出力形式: 「場面」「気をつけること」「違反した場合のリスク」を、専門用語を避けた平易な言葉でまとめて。
+```
+
+### 38. 契約書テンプレートの標準化提案
+
+```text
+前提: 案件ごとに契約書がバラバラで、社内テンプレートを整備したい法務担当者向け。
+指示: 貼り付けた過去の契約書複数件を比較し、共通して使われている条項と、案件ごとに異なる条項を分類して。
+出力形式: 「共通化できそうな条項」「案件ごとに個別対応が必要な条項」の2リストに分けて。
+```
+
+### 39. サブスクリプション規約の自動更新条件抽出
+
+```text
+前提: 利用中のサブスクリプションサービスが、意図せず自動更新されるのを防ぎたい担当者向け。
+指示: 貼り付けた利用規約から、自動更新の条件・解約可能なタイミング・料金改定の通知方法を抽出して。
+出力形式: 「自動更新の条件」「解約可能タイミング」「料金改定時の通知方法」を整理して。
+```
+
+### 40. 労務規程と実態の乖離チェック
+
+```text
+前提: 就業規則の内容と実際の運用がずれていないか確認したい人事担当者向け。
+指示: 貼り付けた就業規則の該当箇所と、実際の運用(箇条書きで伝える)を突き合わせて、乖離がありそうな箇所を指摘して。
+出力形式: 「規則上の定め」「実際の運用」「乖離の有無と懸念点」の3列表で。
+```
+
+### 41. 秘密情報の第三者提供条件確認
+
+```text
+前提: 業務委託先が、さらに別会社に情報を渡してよい条件になっているか確認したい担当者向け。
+指示: 貼り付けた契約案から、秘密情報を第三者(再委託先等)に提供できる条件を抽出して。
+出力形式: 「第三者提供が認められる条件」「事前承諾の要否」「懸念点」を整理して。
+```
+
+### 42. 契約交渉ログの論点整理
+
+```text
+前提: 契約交渉のメールやメモが散らばっていて、残っている論点が分からなくなっている担当者向け。
+指示: 貼り付けた契約交渉のやり取り(メール・メモ)から、まだ合意に至っていない論点を抽出して。
+出力形式: 「論点」「自社の希望」「相手方の希望」「現時点のギャップ」の表で。
+```
+
+### 43. ライセンス条項の再配布可否チェック
+
+```text
+前提: 利用しているソフトウェア・素材が、社内外に再配布してよいライセンスか確認したい担当者向け。
+指示: 貼り付けたライセンス条項から、再配布・改変・商用利用の可否を抽出して。
+出力形式: 「再配布可否」「改変可否」「商用利用可否」「表記義務の有無」を◯×で整理して。
+```
+
+### 44. 反社チェック項目の確認リスト化
+
+```text
+前提: 新規取引先の反社会的勢力チェックで、確認すべき項目に漏れがないか整えたい担当者向け。
+指示: 新規取引先の一次スクリーニングで一般的に確認すべき項目を、公開情報から確認できる範囲で洗い出して。
+出力形式: 「確認項目」「確認方法」「今回の確認結果(分かる範囲で)」の表で。最終判断は正式な調査機関の確認が必要な旨を明記して。
+```
+
+### 45. 契約書の用語統一チェック
+
+```text
+前提: 同じ意味の言葉が契約書内で表記ゆれしていて、解釈の余地を生んでいないか確認したい担当者向け。
+指示: 貼り付けた契約書内で、同じ対象を指しているのに表記がゆれている箇所(例:「甲」と「発注者」の混在)を洗い出して。
+出力形式: 「表記ゆれの内容」「登場箇所」「統一すべき表記の提案」の一覧で。
+```
+
+### 46. 規約改定の社内周知文ドラフト
+
+```text
+前提: 利用規約を改定した際、ユーザーや社内に分かりやすく伝える文章を作りたい担当者向け。
+指示: 貼り付けた規約の変更点をもとに、専門用語を避けた分かりやすい周知文の下書きを作って。
+出力形式: 「何が変わるか」「いつから適用されるか」「利用者は何をすればよいか」の3段落構成で。
+```
+
+### 47. 取引先与信情報の一次整理
+
+```text
+前提: 新規取引先の信用情報を確認する際、公開情報だけでも一次的に整理しておきたい担当者向け。
+指示: 指定した企業について、公開されている登記情報・決算公告・報道等から確認できる範囲の情報を整理して。
+出力形式: 「設立年」「資本金」「事業内容」「確認できたリスク情報の有無」を出典つきでまとめて。正式な与信調査の代替にはならない旨を明記して。
+```
+
+### 48. 契約書の言語間差異チェック(和文英文)
+
+```text
+前提: 和文と英文の両方がある契約書で、意味にずれがないか確認したい担当者向け。
+指示: 貼り付けた和文契約書と英文契約書を突き合わせ、意味が食い違っている可能性がある箇所を指摘して。
+出力形式: 「該当箇所」「和文の意味」「英文の意味」「食い違いの可能性」の表で。
+```
+
+### 49. データ処理委託契約のGDPR整合性確認
+
+```text
+前提: 海外ユーザーのデータを扱う際、GDPR等のデータ保護規制に沿った契約になっているか確認したい担当者向け。
+指示: 貼り付けたデータ処理委託契約案から、データ処理の目的・期間・越境移転条項の記載有無を抽出して。
+出力形式: 「処理目的の明記有無」「保持期間の明記有無」「越境移転条項の有無」を整理して。最終判断は専門家確認が必要な旨を明記して。
+```
+
+### 50. 契約リスクの優先順位付けレポート
+
+```text
+前提: 複数の契約を抱えていて、どれから優先的にレビューすべきか判断したい法務担当者向け。
+指示: 貼り付けた契約一覧(契約名・金額規模・相手先)から、リスクの大きさを金額規模・更新時期・過去のトラブル有無で評価して。
+出力形式: 「契約名／リスクスコア(高中低)／根拠」の表で、優先度が高い順に並べて。
+```
+
+## Cursor×Grok 4.6でコーディングを進める
+
+### 51. 新機能の設計たたき台作成
+
+```text
+前提: 新機能を実装する前に、設計の選択肢を整理してから着手したいエンジニア向け。
+指示: 実装したい新機能の概要を伝えるので、考えられる実装アプローチを2〜3案出し、それぞれのメリット・デメリットを整理して。
+出力形式: 「アプローチ名／概要／メリット／デメリット／推奨度」の表で。既存コードの構成に触れる場合は該当ファイルを明記して。
+```
+
+### 52. 既存コードのリファクタ提案
+
+```text
+前提: 動いてはいるが読みにくくなったコードを、挙動を変えずに整理したい場面。
+指示: 指定したファイルのコードを読み込み、挙動を変えずに可読性を改善できる箇所を洗い出して。
+出力形式: 「該当箇所／現状の問題点／改善案」のリストで。挙動が変わる可能性がある変更は別枠で「要確認」として報告して。
+```
+
+### 53. APIエンドポイントの仕様書生成
+
+```text
+前提: 実装済みのAPIに仕様書が無く、後から他のメンバーが困っている状況。
+指示: 指定したAPIのコードを読み込み、エンドポイント・リクエスト・レスポンスの仕様を抽出して。
+出力形式: 「エンドポイント／メソッド／リクエストパラメータ／レスポンス例／エラーケース」の表で。
+```
+
+### 54. テストケースの自動生成
+
+```text
+前提: 新しく実装した関数にテストが無く、後回しになりがちな場面。
+指示: 指定した関数・クラスを読み込み、正常系・異常系・境界値のテストケースを既存のテストフレームワークの書式で提案して。
+出力形式: 既存のテストファイルの命名規則に沿ったコード形式で。テスト実行後、失敗した場合は原因を報告して。
+```
+
+### 55. バグ再現手順の言語化
+
+```text
+前提: バグ報告が「なんか動かない」レベルで、再現手順が整理されていない場面。
+指示: 貼り付けたエラーログ・関連コードから、バグが発生する条件と再現手順の仮説を立てて。
+出力形式: 「発生条件の仮説」「再現手順」「確認したいログ・情報」の3セクションで。
+```
+
+### 56. コードレビューコメントのドラフト
+
+```text
+前提: プルリクエストのレビューに時間がかかり、指摘の書き方に悩む場面。
+指示: 指定した差分(diff)を読み込み、レビューで指摘すべき点を洗い出して。
+出力形式: 「指摘箇所／指摘内容／重要度(必須修正・提案・任意)」の一覧で。良い点があれば1つは肯定的コメントも添えて。
+```
+
+### 57. マイグレーションスクリプトの下書き
+
+```text
+前提: データベースのスキーマ変更に伴うマイグレーションを毎回手作業で書くのが手間な場面。
+指示: 現在のスキーマと変更したい内容を伝えるので、使用しているマイグレーションツールの書式でスクリプト案を作って。
+出力形式: マイグレーションファイルのコード形式で。ロールバック(down側)の処理も必ず含めて。
+```
+
+### 58. パフォーマンスボトルネックの仮説出し
+
+```text
+前提: 処理が遅いという体感はあるが、原因の見当がついていない場面。
+指示: 指定したコード・処理フローを読み込み、パフォーマンスのボトルネックになり得る箇所を仮説として挙げて。
+出力形式: 「該当箇所／ボトルネックになり得る理由／検証方法の提案」の一覧で、影響が大きそうな順に並べて。
+```
+
+### 59. 依存パッケージの更新影響調査
+
+```text
+前提: 依存パッケージを更新したいが、破壊的変更の影響範囲が分からず着手できない場面。
+指示: 指定したパッケージの現バージョンと更新先バージョンの変更履歴を調べ、自プロジェクトへの影響を推測して。
+出力形式: 「破壊的変更の内容」「自プロジェクトで影響を受けそうな箇所」「対応の要否」を整理して。
+```
+
+### 60. READMEの自動更新
+
+```text
+前提: コードは更新されているのにREADMEが古いまま放置されている場面。
+指示: 現在のコード・設定ファイルを読み込み、既存のREADMEと実態が食い違っている箇所を指摘して更新案を作って。
+出力形式: 更新後のREADME全文と、変更した箇所のサマリーを分けて出力して。
+```
+
+### 61. エラーログからの原因仮説抽出
+
+```text
+前提: 本番環境でエラーが多発しているが、ログの量が多く原因の絞り込みに時間がかかる場面。
+指示: 貼り付けたエラーログ群を読み込み、頻出するエラーパターンごとに原因の仮説を立てて。
+出力形式: 「エラーパターン／発生件数／原因の仮説／優先対応度」の表で、件数が多い順に並べて。
+```
+
+### 62. CI設定ファイルのたたき台作成
+
+```text
+前提: CI/CDパイプラインをまだ組んでいないプロジェクトで、最初の設定を作りたい場面。
+指示: プロジェクトの構成(言語・テストコマンド・デプロイ先)を伝えるので、使用しているCIサービスの設定ファイル案を作って。
+出力形式: 設定ファイルのコード形式で。各ステップに短いコメントを添えて。
+```
+
+### 63. コミットメッセージの整形
+
+```text
+前提: 差分の内容から適切なコミットメッセージを毎回考えるのが地味に手間な場面。
+指示: 指定した差分(diff)を読み込み、変更内容を要約したコミットメッセージ案を複数パターン提案して。
+出力形式: プロジェクトのコミット規約(Conventional Commits等)に沿った形式で3案。それぞれ1行の理由を添えて。
+```
+
+### 64. 型定義の自動補完提案
+
+```text
+前提: JavaScriptプロジェクトにTypeScriptの型を後から付けたい場面。
+指示: 指定したファイルの実装を読み込み、推測できる型定義を提案して。
+出力形式: 型定義のコード形式で。型が確定できない箇所は「要確認」のコメントを付けて。
+```
+
+### 65. デザインパターン適用の提案
+
+```text
+前提: 同じような条件分岐が増えてきて、設計を見直したいと感じている場面。
+指示: 指定したコードを読み込み、適用できそうなデザインパターン(Strategy・Factory等)があれば提案して。
+出力形式: 「現状の問題」「提案するパターン」「適用後のイメージ(簡易コード例)」を整理して。過剰設計にならない範囲での提案に絞って。
+```
+
+### 66. 未使用コードの検出依頼
+
+```text
+前提: 長く運用しているプロジェクトで、使われなくなった関数・ファイルが残っていないか整理したい場面。
+指示: 指定したディレクトリ配下のコードを調べ、どこからも参照されていない関数・ファイルの候補を洗い出して。
+出力形式: 「該当箇所／未使用と判断した根拠／削除前に確認すべき点」の一覧で。動的参照の可能性がある場合はその旨を明記して。
+```
+
+### 67. 環境構築手順書の自動生成
+
+```text
+前提: 新しいメンバーが加わるたびに環境構築の手順を口頭で説明している場面。
+指示: プロジェクトの設定ファイル・READMEを読み込み、ゼロから開発環境を構築する手順を洗い出して。
+出力形式: 番号付き手順のMarkdown形式で。つまずきやすいポイントには補足を添えて。
+```
+
+### 68. マルチファイルにまたがる一括置換提案
+
+```text
+前提: 命名規則を変更したいが、影響範囲が複数ファイルにまたがっていて手作業では不安な場面。
+指示: 指定した変更前後の命名を伝えるので、影響を受けるファイルと置換箇所を洗い出して。
+出力形式: 「ファイル名／該当箇所／置換前／置換後」の一覧を提示してから、実際の置換に進んで。
+```
+
+### 69. APIレスポンスのモックデータ生成
+
+```text
+前提: フロントエンド開発を先行して進めたいが、バックエンドAPIがまだ完成していない場面。
+指示: 指定したAPI仕様(またはコード)をもとに、開発用のモックレスポンスデータを生成して。
+出力形式: 実際のレスポンス形式に沿ったJSON形式で、正常系・エラー系それぞれ用意して。
+```
+
+### 70. アクセシビリティ観点のコードチェック
+
+```text
+前提: UIコードがアクセシビリティ基準を満たしているか、リリース前に一次確認したい場面。
+指示: 指定したUIコンポーネントのコードを読み込み、alt属性・ARIA属性・コントラスト等の基本的な不足点を洗い出して。
+出力形式: 「該当箇所／不足している点／修正案」の一覧で。専門的な監査の代替にはならない旨を明記して。
+```
+
+### 71. セキュリティ脆弱性の一次スクリーニング
+
+```text
+前提: リリース前にコードの明らかなセキュリティリスクだけでも一次チェックしたい場面。
+指示: 指定したコードを読み込み、SQLインジェクション・XSS等の典型的な脆弱性パターンがないか確認して。
+出力形式: 「該当箇所／脆弱性の種類／リスクレベル／修正案」の一覧で。専門的なセキュリティ監査の代替にはならない旨を明記して。
+```
+
+### 72. ドキュメントコメントの自動補完
+
+```text
+前提: 関数にドキュメントコメントが付いておらず、後から読む人が困っている場面。
+指示: 指定したファイルの関数を読み込み、引数・戻り値・処理概要を説明するドキュメントコメントを追加して。
+出力形式: 使用している言語の標準的なドキュメントコメント形式(JSDoc・docstring等)で。
+```
+
+### 73. 機能追加のタスク分解
+
+```text
+前提: 大きめの機能追加を、着手しやすい単位に分割したいエンジニア向け。
+指示: 実装したい機能の概要を伝えるので、着手可能な単位のタスクに分解して。
+出力形式: 「タスク名／概要／依存関係(先に終える必要があるタスク)／見積もり感(小中大)」の一覧で。
+```
+
+### 74. リリースノートのドラフト作成
+
+```text
+前提: リリースのたびにリリースノートを書く時間が取れず後回しになる場面。
+指示: 指定した期間のコミット履歴・プルリクエストを読み込み、ユーザー向けのリリースノート案を作って。
+出力形式: 「新機能」「改善」「不具合修正」のカテゴリ別に、専門用語を避けた文章で。
+```
+
+### 75. 長時間タスクをGrok Botに預ける下準備
+
+```text
+前提: Grok Botのような常駐エージェントに任せる前に、タスクの範囲を明確にしておきたい場面。
+指示: 任せたい作業の概要を伝えるので、常駐エージェントに委任する際に明確にしておくべき「完了の定義」「承認が必要な場面」を整理して。
+出力形式: 「タスクの範囲」「完了の定義」「承認が必要になりそうな場面」の3セクションで、Grok Botのドライラン非対応という制約を踏まえた注意点も添えて。
+```
+
+## コスト最適化・モデル使い分けをGrok 4.6に任せる
+
+### 76. タスク別モデル選定シートの作成
+
+```text
+前提: チームで使うAIモデルがバラバラで、判断基準を整えたいマネージャー向け。
+指示: 普段発生するタスクの種類(コーディング・知識作業・法務チェック等)を伝えるので、それぞれに向くモデルの判断基準を整理して。
+出力形式: 「タスク種別／推奨モデル／理由(価格・性能どちらを重視するか)」の表で。
+```
+
+### 77. 月次AI利用コストの見える化
+
+```text
+前提: 複数のAIサービスを契約していて、合計コストが把握しづらいチーム向け。
+指示: 貼り付けた各サービスの利用明細から、月次のAI関連コストを合算して。
+出力形式: 「サービス名／月額費用／主な用途」の表と、合計金額を明記して。
+```
+
+### 78. 高頻度タスクのモデル切り替えテスト
+
+```text
+前提: 毎日繰り返している定型タスクを、より安価なモデルに切り替えられないか検証したい場面。
+指示: 普段Claude/GPTに投げているタスクの例を1つ伝えるので、同じ条件でGrok 4.6にも投げた場合の出力を比較する観点を整理して。
+出力形式: 「比較する観点(精度・速度・費用)」「合格ラインの目安」を先に整理してから、実際の比較を行って。
+```
+
+### 79. トークン消費量の多い処理の特定
+
+```text
+前提: AIサービスの請求額が急に増え、原因を特定したいコスト管理担当者向け。
+指示: 貼り付けた利用ログ(タスク内容・トークン数)から、トークン消費量が特に多い処理を洗い出して。
+出力形式: 「処理内容／トークン数／全体に占める割合」の表で、消費量が多い順に並べて。
+```
+
+### 80. 同一タスクの多モデル比較実験
+
+```text
+前提: 複数のAIモデルのどれを標準にするか、実験して決めたいチーム向け。
+指示: 指定したタスク例を、Grok 4.6・GPT-5.6 Sol・Fable 5それぞれに投げた場合の想定される出力の傾向・コストを整理して。
+出力形式: 「モデル名／想定コスト/想定される強み・弱み」の表で。実際の出力比較は各モデルで個別に実施する前提を明記して。
+```
+
+### 81. コスト超過時のフォールバック設計
+
+```text
+前提: 予算を超えそうなときに自動で安価なモデルへ切り替えるルールを決めたい場面。
+指示: 月間予算と現在の消費ペースを伝えるので、予算超過を防ぐためのモデル切り替えルールを設計して。
+出力形式: 「消費ペースの閾値」「切り替え先モデル」「切り替え時の注意点」を整理して。
+```
+
+### 82. チームメンバー別利用状況の集計
+
+```text
+前提: チーム内で誰がどれだけAIを使っているか把握したいマネージャー向け。
+指示: 貼り付けたメンバー別の利用ログから、利用頻度・主な用途を集計して。
+出力形式: 「メンバー名／利用回数／主な用途／概算コスト」の表で。
+```
+
+### 83. 無料枠の使い切り具合チェック
+
+```text
+前提: 契約しているプランの無料枠を使い切れているか、逆に使いすぎていないか確認したい場面。
+指示: 貼り付けた利用実績と契約プランの無料枠上限を比較して、使用率を計算して。
+出力形式: 「プラン名」「無料枠上限」「今月の利用量」「使用率」を整理して、使いすぎ・使い切れていないものをそれぞれ指摘して。
+```
+
+### 84. モデル切り替えによる品質差の検証
+
+```text
+前提: コストを下げるためにモデルを切り替えた際、出力品質が落ちていないか確認したい場面。
+指示: 同じプロンプトに対する切り替え前後の出力例を貼り付けるので、品質の差を評価して。
+出力形式: 「評価観点(正確さ・網羅性・分かりやすさ)ごとの差」「総合判断(切り替え可否)」を整理して。
+```
+
+### 85. バッチ処理のコスト試算
+
+```text
+前提: 大量のデータをまとめて処理する前に、コストを事前に見積もりたい場面。
+指示: 処理したいデータ件数と1件あたりの想定トークン数を伝えるので、Grok 4.6の料金体系で概算コストを試算して。
+出力形式: 「入力トークン概算コスト」「出力トークン概算コスト」「合計概算」を計算式つきで示して。
+```
+
+### 86. API呼び出し回数の最適化提案
+
+```text
+前提: 同じような処理でAPIを何度も呼び出しており、まとめられないか検討したい開発者向け。
+指示: 貼り付けた処理フローを読み込み、API呼び出しをまとめて回数を減らせる箇所がないか提案して。
+出力形式: 「現状の呼び出し回数」「まとめられる箇所」「まとめた場合の想定削減率」を整理して。
+```
+
+### 87. 長文コンテキストのコスト影響試算
+
+```text
+前提: コンテキスト長が20万トークンを超えると単価が上がる仕様を踏まえ、影響を試算したい場面。
+指示: 普段扱っている文書の想定トークン数を伝えるので、20万トークンの閾値を超えるかどうかとコストへの影響を試算して。
+出力形式: 「想定トークン数」「閾値超過の有無」「超過した場合の追加コスト」を計算して示して。
+```
+
+### 88. モデル料金改定の影響シミュレーション
+
+```text
+前提: モデルの料金が改定された場合、月額コストがどう変わるか事前に把握したい場面。
+指示: 現在の月間利用量と、想定される新料金を伝えるので、改定後の月額コストをシミュレーションして。
+出力形式: 「現行コスト」「改定後コスト」「差額」を示し、差が大きい場合は代替案も1つ提案して。
+```
+
+### 89. 社内向けモデル選定ガイドのドラフト
+
+```text
+前提: チーム全員が同じ基準でモデルを選べるよう、ガイドを整備したいリーダー向け。
+指示: これまで整理してきたタスク別のモデル選定基準をもとに、社内向けの簡潔なガイド文書を作って。
+出力形式: 「基本方針」「タスク別の推奨表」「迷ったときの相談先」の3セクション構成で、専門用語を避けた文章にして。
+```
+
+### 90. コスト削減施策の優先順位付け
+
+```text
+前提: コスト削減のアイデアはいくつかあるが、どれから着手すべきか判断したい場面。
+指示: 検討しているコスト削減施策のアイデアを箇条書きで伝えるので、削減効果と実施の手間を評価して優先順位をつけて。
+出力形式: 「施策名／想定削減効果(高中低)／実施の手間(高中低)／優先度」の表で。
+```
+
+### 91. 高コストタスクの代替手段検討
+
+```text
+前提: 特定のタスクだけコストが突出して高く、別のやり方がないか検討したい場面。
+指示: コストが高くなっているタスクの内容を伝えるので、より安価なモデルやアプローチに置き換えられないか検討して。
+出力形式: 「現状のやり方とコスト」「代替案」「品質面でのトレードオフ」を整理して。
+```
+
+### 92. 複数ベンダー請求書の突合
+
+```text
+前提: 複数のAIベンダーからの請求書を毎月手作業で突合するのが手間な経理担当者向け。
+指示: 貼り付けた各ベンダーの請求内容を、契約内容・想定利用量と突き合わせて。
+出力形式: 「ベンダー名／請求額／契約上の想定額との差」の表で、差が大きいものを先頭に並べて。
+```
+
+### 93. 予算超過アラートの設計
+
+```text
+前提: AI利用コストが予算を超えそうなとき、事前に気づける仕組みを作りたい場面。
+指示: 月間予算額を伝えるので、消費ペースに応じたアラートを出すタイミング(50%・80%等)の設計案を作って。
+出力形式: 「消費率の閾値」「アラート内容」「アラートを受けた際の対応方針」を整理して。
+```
+
+### 94. 部門別AI活用コストの按分試算
+
+```text
+前提: 全社契約のAIサービスコストを、利用実態に応じて部門ごとに按分したい経理担当者向け。
+指示: 貼り付けた部門別の利用ログ(件数・処理内容)をもとに、全体コストを按分する試算をして。
+出力形式: 「部門名」「利用割合」「按分後の負担額」の表で、按分の考え方も1行で添えて。
+```
+
+### 95. サブスクリプションの重複契約チェック
+
+```text
+前提: 似たようなAIサービスを複数契約していないか、無駄がないか確認したい場面。
+指示: 貼り付けた契約中のサービス一覧から、機能が重複していそうな契約の組み合わせを洗い出して。
+出力形式: 「サービスA／サービスB／重複している機能／統合の余地」の表で。
+```
+
+### 96. トライアル期間終了前のリマインド作成
+
+```text
+前提: 無料トライアルの終了に気づかず自動課金されるのを防ぎたい担当者向け。
+指示: 貼り付けたトライアル契約一覧(開始日・トライアル期間)から、終了日と課金開始日を計算して。
+出力形式: 「サービス名／トライアル終了日／課金開始日／残り日数」の表で、期限が近い順に並べて。
+```
+
+### 97. コストパフォーマンス比較レポート作成
+
+```text
+前提: 各モデルの費用対効果を経営層に説明する資料を作りたい担当者向け。
+指示: これまで整理してきたモデル別の性能・料金データをもとに、コストパフォーマンスの比較レポート案を作って。
+出力形式: 「結論」「比較表(性能・価格)」「推奨する使い分け方針」の3セクション構成で、専門用語を避けて。
+```
+
+### 98. 社外向けコスト削減提案資料の下書き
+
+```text
+前提: AI活用によるコスト削減効果を、社外(株主・取引先等)に説明する資料を作りたい場面。
+指示: 社内で確認済みのコスト削減実績データを伝えるので、社外向けに説明できる形の資料構成案を作って。
+出力形式: 「削減前後の比較」「削減できた理由」「今後の見通し」の3セクションで、誇張のない範囲の表現にして。
+```
+
+### 99. 長期利用を見据えた契約プラン比較
+
+```text
+前提: 短期契約と長期契約でどちらが得か、契約更新のタイミングで検討したい場面。
+指示: 各サービスの短期プランと長期プランの料金体系を伝えるので、想定利用期間ごとの総コストを比較して。
+出力形式: 「プラン名」「6ヶ月利用時の総コスト」「12ヶ月利用時の総コスト」「損益分岐点」を計算して示して。
+```
+
+### 100. コスト最適化の月次振り返りレポート
+
+```text
+前提: 毎月のコスト最適化の取り組みを振り返り、次月の方針を決めたいチーム向け。
+指示: 今月の利用実績と実施したコスト削減施策を伝えるので、効果があった施策・なかった施策を整理して。
+出力形式: 「実施した施策」「効果(削減額の目安)」「来月への示唆」の3セクションで簡潔にまとめて。
+```
+</pre>
+<script>
+function flash(btn, label){
+  const old = btn.textContent, cls = btn.className;
+  btn.textContent = label; btn.classList.add('ok');
+  setTimeout(() => { btn.textContent = old; btn.className = cls; }, 1600);
+}
+function textOf(id){ return document.getElementById(id).textContent; }
+
+async function copyText(btn, id){
+  const t = textOf(id);
+  try {
+    await navigator.clipboard.writeText(t);
+  } catch (e) {
+    const ta = document.createElement('textarea');
+    ta.value = t; ta.style.position='fixed'; ta.style.opacity='0';
+    document.body.appendChild(ta); ta.select();
+    document.execCommand('copy'); ta.remove();
+  }
+  flash(btn, '✓ コピーしました');
+}
+
+function saveText(btn, id, name){
+  const blob = new Blob([textOf(id)], {type:'text/plain;charset=utf-8'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = name;
+  document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+  if (btn) flash(btn, '✓ 保存しました');
+}
+
+document.addEventListener('click', e => {
+  const b = e.target.closest('[data-copy]');
+  if (b) { copyText(b, b.dataset.copy); return; }
+  const d = e.target.closest('[data-save]');
+  if (d) { saveText(d, d.dataset.save, d.dataset.name); }
+});
+</script>
+<aside id="promo" class="promo">
+  <button id="promoClose" class="promo-x" aria-label="閉じる">×</button>
+  <a class="promo-body" href="https://lp.kawaru-ai.jp/" target="_blank" rel="noopener">
+    <img src="data:image/png;base64,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" alt="">
+    <div>
+      <p class="promo-ch">Kawaru<span class="promo-tag">AIエージェント</span></p>
+      <p class="promo-tx">「これ自動化して」と話すだけ。無料で試す →</p>
+    </div>
+  </a>
+</aside>
+<script>
+(function(){
+  if (sessionStorage.getItem('promoClosed')) return;
+  var el = document.getElementById('promo');
+  if (!el) return;
+  setTimeout(function(){ el.classList.add('show'); }, 1400);
+  document.getElementById('promoClose').addEventListener('click', function(e){
+    e.preventDefault();
+    el.classList.remove('show');
+    sessionStorage.setItem('promoClosed', '1');
+  });
+})();
+</script>
+</body></html>

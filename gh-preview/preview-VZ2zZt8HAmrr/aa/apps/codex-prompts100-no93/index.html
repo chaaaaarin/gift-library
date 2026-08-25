@@ -1,0 +1,2246 @@
+<!doctype html>
+<html lang="ja"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Codex移行・併用 実践プロンプト100選 — Kawaru Gifts</title>
+<meta name="description" content="Claude Code⇔Codexの移行・併用シーンでそのまま使える実践プロンプトを100本、7カテゴリに分けてまとめました。">
+<meta name="robots" content="noindex,nofollow">
+<link rel="icon" href="data:image/png;base64,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">
+<link rel="stylesheet" href="../../assets/site.css">
+</head><body>
+<header class="kh"><div class="top">
+  <a class="back" href="../../">← 一覧へ</a>
+  <img src="data:image/png;base64,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" alt="">
+  <h1>Codex移行・併用 実践プロンプト100選</h1>
+  <span class="badge">100個</span>
+  <button class="btn sm" style="margin-left:auto" data-save="pfull" data-name="codex-prompts100-no93.md">⬇ 全件ダウンロード</button>
+</div></header>
+
+<div class="kwrap">
+  <section class="epctx epctx-top">
+  <div class="ep-left">
+    <div class="ep-thumb epctx-thumb"><img src="https://i.ytimg.com/vi/7yCW6Xd8Lbk/hqdefault.jpg" alt=""></div>
+    <a class="watch" href="https://www.youtube.com/watch?v=7yCW6Xd8Lbk" target="_blank" rel="noopener">▶ 動画を見る</a>
+  </div>
+  <div>
+    <p class="epctx-label">この動画のプレゼントです</p>
+    <p class="epctx-title">【公式発表】ClaudeCodeとCursorをCodexに完全自動で引き継いだら、ヤバすぎる結果になりました...w</p>
+    <p class="epctx-date">2026-08-21</p>
+  </div>
+</section>
+
+  <section class="kintro">
+    <h2>Codex移行・併用 実践プロンプト100選</h2>
+    <p><span class="nb">Claude Code⇔Codexの</span><span class="nb">移行・</span><span class="nb">併用シーンでその</span><span class="nb">まま使える実践プロンプトを100本、</span><span class="nb">7カテゴリに分けてまとめました。</span></p>
+    <div class="kmeta"><span>プロンプト集</span><span>収録 100個</span><span>No.93 Codexに全て引き継げ</span><span>2026-08-13 配布</span></div>
+    <div class="pnote"><span class="nb">下のカードから、</span><span class="nb">1件ずつコピー、</span><span class="nb">または個別にダウンロードできます。</span><span class="nb">まとめて欲しいときは、</span><span class="nb">上の</span><span class="nb">「全件ダウンロード」を</span><span class="nb">お使いください。</span></div>
+  </section>
+
+  <h2 class="cat">移行判断・準備系</h2>
+<div class="icard">
+  <div class="ih"><span class="num">001</span><span class="ititle">移行コストの棚卸し</span></div>
+  
+  <pre class="prompt" id="b1">前提: 私はClaude CodeからCodexへの移行を検討しているエンジニアで、自分の.claude/フォルダ構成を貼り付ける。
+指示: 貼り付けた設定・スキル・サブエージェント・フックの一覧を確認し、Codexで「そのまま移る」「再作成が必要」「非対応」の3分類に振り分けて。
+出力形式: 3列の表（項目名／分類／理由）で出力し、再作成が必要な項目には対応の目安時間も添えて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b1">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b1" data-name="codex-prompts100-no93-001.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">002</span><span class="ititle">移行動機の言語化</span></div>
+  
+  <pre class="prompt" id="b2">前提: 私は月20ドルのClaude Proプランで、週次リミットに月2〜3回引っかかって作業が止まっている。
+指示: この状況が移行を検討すべきレベルの問題なのか、単なる使い方の工夫で解決できる範囲なのかを判定して。
+出力形式: 「移行検討レベル」か「使い方改善レベル」かの一言判定と、その理由を3行以内で。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b2">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b2" data-name="codex-prompts100-no93-002.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">003</span><span class="ititle">既存プロジェクトの依存確認</span></div>
+  
+  <pre class="prompt" id="b3">前提: 現在のプロジェクトのCLAUDE.md・.claude/hooks・.claude/agentsの中身をすべて貼り付ける。
+指示: Codexに無い機能（ConfigChangeフック・Output styles・細かいpermission制御など）への依存箇所を洗い出して。
+出力形式: 依存箇所ごとに「影響度（高中低）」と「代替手段の有無」を箇条書きで。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b3">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b3" data-name="codex-prompts100-no93-003.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">004</span><span class="ititle">並行稼働期間の設計</span></div>
+  
+  <pre class="prompt" id="b4">前提: 私はチームで開発しており、移行にあたって1ヶ月程度の並行稼働期間を設けたい。
+指示: 並行稼働中に発生しうるリスク（設定のズレ・チーム内の混乱・二重管理コスト）と、その予防策を提案して。
+出力形式: リスクと予防策のセットを表形式で、優先度が高い順に並べて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b4">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b4" data-name="codex-prompts100-no93-004.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">005</span><span class="ititle">バックアップ計画の作成</span></div>
+  
+  <pre class="prompt" id="b5">前提: 移行対象は.claude/フォルダ全体とグローバル設定（~/.claude/）を含む。
+指示: 移行前に取っておくべきバックアップの範囲と、Git管理していないファイル（settings.local.json等）の扱いを整理して。
+出力形式: バックアップ手順をコマンド付きのチェックリストで。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b5">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b5" data-name="codex-prompts100-no93-005.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">006</span><span class="ititle">チーム合意形成の叩き台</span></div>
+  
+  <pre class="prompt" id="b6">前提: チームは4人で、うち2人はClaude Code歴が長く、2人はツールにこだわりが薄い。
+指示: チーム全員が納得しやすい移行提案の叩き台を、反対意見が出そうなポイントへの回答つきで作って。
+出力形式: 提案文（300字程度）＋想定される反対意見と回答のQ&amp;A3セット。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b6">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b6" data-name="codex-prompts100-no93-006.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">007</span><span class="ititle">移行スケジュールの逆算</span></div>
+  
+  <pre class="prompt" id="b7">前提: 3週間後に大きめの開発フェーズが始まるため、それまでに移行の可否を判断したい。
+指示: 3週間を「検証」「並行稼働」「判断」の3フェーズに分け、各フェーズでやることを具体化して。
+出力形式: 週ごとのタスクリストとして、各タスクに目安時間を添えて出力して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b7">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b7" data-name="codex-prompts100-no93-007.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">008</span><span class="ititle">移行対象外の切り分け</span></div>
+  
+  <pre class="prompt" id="b8">前提: 現在10個のカスタムスキルと5個のサブエージェントを運用しているが、実際に使用頻度が高いのは半分程度。
+指示: 使用頻度・重要度の観点から、優先的に移行すべきものと後回しでよいものを分類して。
+出力形式: 「優先移行」「様子見」「移行不要」の3グループに分けたリストで。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b8">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b8" data-name="codex-prompts100-no93-008.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">009</span><span class="ititle">移行後の検証観点の洗い出し</span></div>
+  
+  <pre class="prompt" id="b9">前提: 移行対象はCLAUDE.mdの指示内容・3個のカスタムスキル・2個のMCPサーバー接続。
+指示: それぞれについて「動作確認済みと言えるための具体的なテスト項目」を挙げて。
+出力形式: 項目ごとにテスト手順と期待される結果を1行ずつで。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b9">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b9" data-name="codex-prompts100-no93-009.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">010</span><span class="ititle">移行に伴うコスト試算</span></div>
+  
+  <pre class="prompt" id="b10">前提: 移行作業に想定している時間は1人日、月額の想定コスト差はCodex併用で+3,500円。
+指示: この投資が何ヶ月で回収できるか、作業時間削減率の仮定を3パターン置いて試算して。
+出力形式: 仮定ごとの回収月数を表にし、最も現実的なパターンに一言コメントを添えて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b10">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b10" data-name="codex-prompts100-no93-010.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">011</span><span class="ititle">移行しない場合の代替策検討</span></div>
+  
+  <pre class="prompt" id="b11">前提: Claude Proの週次リミットが問題だが、Codexへの移行はまだ踏み切れない。
+指示: 移行せずに今の制限を緩和する方法（プラン変更・使用量の分散・トークン節約テクニック）を挙げて。
+出力形式: 施策ごとに効果の見込みと実施難易度を3段階(高中低)で評価して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b11">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b11" data-name="codex-prompts100-no93-011.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">012</span><span class="ititle">移行の失敗パターン事前学習</span></div>
+  
+  <pre class="prompt" id="b12">前提: 私はエンジニア歴2年で、大規模な移行作業の経験がまだ少ない。
+指示: AIツール移行でよくある失敗パターン（設定の消失・権限周りの見落とし・チーム内の情報格差など）を教えて。
+出力形式: 失敗パターンごとに、事前にできる予防策を1つずつセットで。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b12">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b12" data-name="codex-prompts100-no93-012.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">013</span><span class="ititle">個人開発とチーム開発での判断分岐</span></div>
+  
+  <pre class="prompt" id="b13">前提: 私は個人開発とチーム開発の両方でAIコーディングツールを使っている。
+指示: 個人開発とチーム開発それぞれで、移行のメリット・デメリットがどう変わるかを比較して。
+出力形式: 2列比較表（個人開発／チーム開発）で、判断基準を明確にして。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b13">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b13" data-name="codex-prompts100-no93-013.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">014</span><span class="ititle">移行判断のための試用計画</span></div>
+  
+  <pre class="prompt" id="b14">前提: 本格的な移行前に、1週間だけ試用期間を設けて判断材料を集めたい。
+指示: 試用期間中に意識的に試すべきタスクの種類（軽いバグ修正・新機能実装・リファクタ等）を提案して。
+出力形式: タスク種類ごとに、何を観察すればよいかのチェック観点を添えて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b14">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b14" data-name="codex-prompts100-no93-014.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<h2 class="cat">インポート実行・検証系</h2>
+<div class="icard">
+  <div class="ih"><span class="num">015</span><span class="ititle">インポート項目の事前確認</span></div>
+  
+  <pre class="prompt" id="b15">前提: Codexの「他のAIアプリから設定をインポート」画面で、Tools &amp; setup・Projects・Chat sessionsの3項目が表示されている。
+指示: それぞれの項目に何が含まれるか具体的に説明し、初回はどれにチェックを入れるべきか推奨案を出して。
+出力形式: 3項目それぞれの説明と、推奨チェック状態（入れる／様子見）を明記して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b15">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b15" data-name="codex-prompts100-no93-015.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">016</span><span class="ititle">AGENTS.md変換後のレビュー</span></div>
+  
+  <pre class="prompt" id="b16">前提: 自動変換後のAGENTS.mdの内容を貼り付ける。元のCLAUDE.mdの内容も併せて貼り付ける。
+指示: 意味が変わってしまった箇所や、欠落した指示がないかを1行ずつ突き合わせて確認して。
+出力形式: 「一致」「変化あり（要注意）」「欠落」の3分類で、変化箇所には元の文言も示して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b16">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b16" data-name="codex-prompts100-no93-016.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">017</span><span class="ititle">MCPサーバー設定の変換確認</span></div>
+  
+  <pre class="prompt" id="b17">前提: 変換前のJSON設定と変換後のTOML設定の両方を貼り付ける。
+指示: コマンド・引数・環境変数がすべて正しく引き継がれているか照合して。
+出力形式: 差分があれば具体的な行を示し、動作に影響するかどうかも判定して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b17">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b17" data-name="codex-prompts100-no93-017.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">018</span><span class="ititle">サブエージェント再宣言の作成</span></div>
+  
+  <pre class="prompt" id="b18">前提: 既存のサブエージェント定義（name・description・tools・model・本文）を貼り付ける。
+指示: Codexのプロファイル形式に合わせて再宣言し、元の指示内容の意図を壊さないように書き換えて。
+出力形式: TOML形式のコードブロックで、変更点に一言コメントを添えて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b18">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b18" data-name="codex-prompts100-no93-018.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">019</span><span class="ititle">権限設定の意図移行</span></div>
+  
+  <pre class="prompt" id="b19">前提: Claude Codeのpermission allowlist（許可コマンドの一覧）を貼り付ける。
+指示: Codexの粗いsandboxレベルで、同じ安全性の意図をできるだけ再現する設定案を考えて。
+出力形式: 「完全に再現できる」「近い水準で妥協が必要」を項目ごとに分けて説明して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b19">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b19" data-name="codex-prompts100-no93-019.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">020</span><span class="ititle">インポート後の動作スモークテスト</span></div>
+  
+  <pre class="prompt" id="b20">前提: インポート直後で、まだ本格的なタスクを試していない状態。
+指示: 5分以内でできる簡単な動作確認手順（スキル呼び出し・MCP接続・基本会話）を3つ提案して。
+出力形式: 手順ごとに「成功時に見えるべき状態」を明記して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b20">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b20" data-name="codex-prompts100-no93-020.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">021</span><span class="ititle">チャット履歴の引き継ぎ確認</span></div>
+  
+  <pre class="prompt" id="b21">前提: 直近30日で重要なやり取りをしたチャットが3〜4件ある。
+指示: インポートされたチャット一覧から、その重要なやり取りが含まれているか確認する手順を教えて。
+出力形式: 確認手順を番号付きステップで、見つからなかった場合の対処法も添えて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b21">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b21" data-name="codex-prompts100-no93-021.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">022</span><span class="ititle">プロジェクトメモリの整合性確認</span></div>
+  
+  <pre class="prompt" id="b22">前提: プロジェクトメモリに記録していた過去の決定事項・注意点のリストを貼り付ける。
+指示: Codex側でそれらの情報が参照可能になっているか、確認する方法を教えて。
+出力形式: 確認方法と、反映されていない場合の再登録手順を示して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b22">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b22" data-name="codex-prompts100-no93-022.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">023</span><span class="ititle">自動同期のオプトイン判断</span></div>
+  
+  <pre class="prompt" id="b23">前提: 自動同期をオンにすると、Claude Code側の変更が自動でCodex側に反映される仕組みがある。
+指示: 自動同期のメリットとリスク（意図しない変更の混入・情報漏洩の可能性等）を整理して。
+出力形式: メリット・リスクを表にし、最終的なおすすめ設定を一言で。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b23">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b23" data-name="codex-prompts100-no93-023.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">024</span><span class="ititle">インポート履歴の定期チェック習慣化</span></div>
+  
+  <pre class="prompt" id="b24">前提: 設定＞Importの画面からインポート履歴を確認できる仕組みがある。
+指示: 月1回のペースで見直すとしたら、何をチェックすべきかのチェックリストを作って。
+出力形式: チェック項目を5個以内で、それぞれ確認にかかる目安時間も添えて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b24">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b24" data-name="codex-prompts100-no93-024.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">025</span><span class="ititle">インポート失敗時のトラブルシュート</span></div>
+  
+  <pre class="prompt" id="b25">前提: 「他のAIアプリから設定をインポート」を実行したが、一部の項目がエラーになった。
+指示: 考えられる原因（権限不足・ファイル形式の非対応・認証切れ等）を洗い出し、確認する順番を提案して。
+出力形式: 原因候補を優先度順に並べ、それぞれの確認方法を1行で添えて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b25">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b25" data-name="codex-prompts100-no93-025.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">026</span><span class="ititle">既存環境の非破壊確認</span></div>
+  
+  <pre class="prompt" id="b26">前提: 公式には「既存設定は変更されない」とあるが、念のため自分で確認したい。
+指示: Claude Code側で確認すべきファイル・動作を具体的にリストアップして。
+出力形式: 確認項目ごとに「変化があってはいけない箇所」を明記して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b26">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b26" data-name="codex-prompts100-no93-026.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">027</span><span class="ititle">プラグイン権限の再承認手順</span></div>
+  
+  <pre class="prompt" id="b27">前提: インポート後、いくつかのプラグインが「要承認」の状態になっている。
+指示: 承認前に確認すべきセキュリティ観点と、承認する際の手順を教えて。
+出力形式: 確認観点のチェックリストと、承認手順を番号付きで。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b27">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b27" data-name="codex-prompts100-no93-027.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">028</span><span class="ititle">カスタム認証設定の再設定手順</span></div>
+  
+  <pre class="prompt" id="b28">前提: 自社APIへのカスタム認証を使っており、公式ドキュメントでは自動移行対象外とされている。
+指示: 手動で再設定する際の手順と、誤って認証情報を平文で残さないための注意点を教えて。
+出力形式: 手順を番号付きで、セキュリティ上の注意点は太字で強調して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b28">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b28" data-name="codex-prompts100-no93-028.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">029</span><span class="ititle">移行完了の合格ラインの設定</span></div>
+  
+  <pre class="prompt" id="b29">前提: 移行作業をどこまでやれば完了と言えるか、曖昧なまま進めてしまっている。
+指示: 「最低限動けばOK」から「完全に元と同じ」までの段階を定義し、自分たちに合う合格ラインを提案して。
+出力形式: 3段階のレベル分けと、それぞれの具体的な確認項目を表で。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b29">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b29" data-name="codex-prompts100-no93-029.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<h2 class="cat">スキル・プラグイン復旧系</h2>
+<div class="icard">
+  <div class="ih"><span class="num">030</span><span class="ititle">未移行スキルの洗い出し</span></div>
+  
+  <pre class="prompt" id="b30">前提: 移行前に使っていたスキル一覧（名前と用途）を貼り付ける。
+指示: Codex側でスラッシュコマンド・$記号それぞれで呼び出しを試し、動くもの・動かないものを分類して。
+出力形式: スキルごとに「動作」「非動作」「未確認」の3分類の表で。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b30">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b30" data-name="codex-prompts100-no93-030.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">031</span><span class="ititle">GitHub公開スキルの再連携</span></div>
+  
+  <pre class="prompt" id="b31">前提: 動かなくなったスキル名のリストと、それぞれの元の入手元（分かる範囲で）を貼り付ける。
+指示: GitHub上の公開スキルを探索し、同等のものを見つけて再連携する手順を提案して。
+出力形式: スキルごとに「探索キーワード」「再連携の手順」をセットで示して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b31">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b31" data-name="codex-prompts100-no93-031.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">032</span><span class="ititle">ローカルマーケットプレイスの導入</span></div>
+  
+  <pre class="prompt" id="b32">前提: Codexでスラッシュコマンドが呼び出せない問題があり、ローカルマーケットプレイス経由の解決策があると聞いた。
+指示: ローカルマーケットプレイスを導入する手順を、初心者でも迷わないレベルまで分解して教えて。
+出力形式: 手順を番号付きステップで、各ステップの完了確認方法も添えて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b32">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b32" data-name="codex-prompts100-no93-032.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">033</span><span class="ititle">重要スキルの優先復旧リスト</span></div>
+  
+  <pre class="prompt" id="b33">前提: 未移行のスキルが7つあり、それぞれの週間利用頻度も分かっている（貼り付ける）。
+指示: 利用頻度をもとに復旧の優先順位をつけ、上位3つから着手する計画を立てて。
+出力形式: 優先順位付きリストと、それぞれの復旧に必要な作業時間の見積もりを添えて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b33">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b33" data-name="codex-prompts100-no93-033.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">034</span><span class="ititle">スキル定義ファイルの手動移植</span></div>
+  
+  <pre class="prompt" id="b34">前提: Claude Code側のSKILL.mdの中身を貼り付ける。
+指示: Codex側で同等の機能を持たせるための設定ファイルとフォルダ配置を提案して。
+出力形式: 配置先のパスと、変換後の設定内容をコードブロックで示して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b34">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b34" data-name="codex-prompts100-no93-034.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">035</span><span class="ititle">プラグインの有効化確認</span></div>
+  
+  <pre class="prompt" id="b35">前提: ローカルマーケットプレイスを追加し、プラグインをインストールする操作は終えた。
+指示: 有効化が正しく完了しているかを確認する方法と、アプリの再起動が必要かどうかの判断基準を教えて。
+出力形式: 確認手順と、再起動が必要になる典型的なケースを箇条書きで。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b35">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b35" data-name="codex-prompts100-no93-035.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">036</span><span class="ititle">復旧作業のログ記録</span></div>
+  
+  <pre class="prompt" id="b36">前提: 今回、3つのスキルの復旧作業を行った。それぞれの手順を貼り付ける。
+指示: 次回同じことが起きたときに再利用できる形で、手順書としてまとめて。
+出力形式: スキル名ごとに見出しを立てたMarkdown手順書で。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b36">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b36" data-name="codex-prompts100-no93-036.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">037</span><span class="ititle">スキル動作の回帰テスト</span></div>
+  
+  <pre class="prompt" id="b37">前提: 復旧したスキルの元の仕様（何をトリガーに、何をするか）を貼り付ける。
+指示: 同じ条件で呼び出したときに期待通りの結果が返るか確認するテストケースを3つ作って。
+出力形式: テストケースごとに入力と期待される出力を明記して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b37">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b37" data-name="codex-prompts100-no93-037.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">038</span><span class="ititle">非対応スキルの代替設計</span></div>
+  
+  <pre class="prompt" id="b38">前提: Output stylesのようにCodexでモデル化されていない機能に依存したスキルがある。
+指示: 同じ目的を別のアプローチ（プロンプトの工夫・別ツールとの連携等）で実現できないか提案して。
+出力形式: 代替案を2〜3案出し、それぞれの実現難易度と再現度を評価して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b38">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b38" data-name="codex-prompts100-no93-038.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">039</span><span class="ititle">スキル復旧の一括プロンプト作成</span></div>
+  
+  <pre class="prompt" id="b39">前提: 未移行のスキルが5つあり、それぞれの名前と概要のリストを貼り付ける。
+指示: これらすべてをGitHub探索により一括で再連携するための、AIへの依頼文を1本作成して。
+出力形式: そのままCodexに貼り付けられる形の依頼文として出力して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b39">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b39" data-name="codex-prompts100-no93-039.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">040</span><span class="ititle">MCP接続の復旧確認</span></div>
+  
+  <pre class="prompt" id="b40">前提: 移行前に使っていたMCPサーバーの一覧（名前・用途）を貼り付ける。
+指示: Codex側で同じMCPサーバーに接続できているか確認する手順と、接続できない場合の対処を教えて。
+出力形式: サーバーごとの確認結果を表にまとめて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b40">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b40" data-name="codex-prompts100-no93-040.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">041</span><span class="ititle">フック機能の代替実装</span></div>
+  
+  <pre class="prompt" id="b41">前提: 使っていたフックの一覧（PreToolUse・PostToolUse・ConfigChange等）を貼り付ける。
+指示: Codexで対応しているフックとしていないフックを分類し、非対応分の代替アプローチを提案して。
+出力形式: 対応表と、非対応分への代替案をセットで出力して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b41">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b41" data-name="codex-prompts100-no93-041.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">042</span><span class="ititle">復旧作業の所要時間見積もり</span></div>
+  
+  <pre class="prompt" id="b42">前提: 未移行のスキル・プラグインが合計8個あり、複雑さもそれぞれ異なる。
+指示: 1個あたりの複雑さ（単純／中程度／複雑）を仮に分類してもらい、合計の所要時間を見積もって。
+出力形式: 個数×複雑さの内訳と、合計時間の見積もりを示して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b42">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b42" data-name="codex-prompts100-no93-042.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">043</span><span class="ititle">復旧不要スキルの棚卸し</span></div>
+  
+  <pre class="prompt" id="b43">前提: 未移行のスキルのうち、直近3ヶ月でほぼ使っていないものが混ざっている。
+指示: 使用頻度の低いスキルを見極め、復旧の優先度から外してよいか判断材料を出して。
+出力形式: 「復旧不要候補」リストと、判断の根拠を添えて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b43">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b43" data-name="codex-prompts100-no93-043.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">044</span><span class="ititle">復旧完了後の最終チェックリスト</span></div>
+  
+  <pre class="prompt" id="b44">前提: 未移行だったスキル・プラグインすべての復旧作業を一通り終えた状態。
+指示: 「本当に全部終わったか」を確認するための最終チェックリストを作って。
+出力形式: チェック項目を□付きの箇条書きで、抜け漏れが起きやすいポイントには注記を添えて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b44">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b44" data-name="codex-prompts100-no93-044.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<h2 class="cat">設定同期・併用運用系</h2>
+<div class="icard">
+  <div class="ih"><span class="num">045</span><span class="ititle">シンボリックリンクの設計</span></div>
+  
+  <pre class="prompt" id="b45">前提: 両ツールでスキルセットとルール定義ファイルを共有したいと考えている。
+指示: シンボリックリンクを使って、片方の変更がもう片方に自動反映される構成を設計して。
+出力形式: ディレクトリ構成図と、実際に張るべきシンボリックリンクのコマンドを示して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b45">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b45" data-name="codex-prompts100-no93-045.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">046</span><span class="ititle">併用時のディレクトリ構成設計</span></div>
+  
+  <pre class="prompt" id="b46">前提: リポジトリのルートに現在CLAUDE.mdのみが存在する状態。
+指示: AGENTS.mdを追加しつつ、内容の重複や矛盾が起きないディレクトリ構成を提案して。
+出力形式: ファイルツリーと、それぞれのファイルの役割分担を明記して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b46">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b46" data-name="codex-prompts100-no93-046.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">047</span><span class="ititle">チーム内ツール混在の運用ルール作成</span></div>
+  
+  <pre class="prompt" id="b47">前提: チーム4人のうち2人がClaude Code、2人がCodexを主に使っている。
+指示: 設定をできる限り一致させるための運用ルール（誰が何を更新したら誰に共有するか等）を作って。
+出力形式: 役割分担表と、更新時の連絡フローを図解イメージで説明して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b47">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b47" data-name="codex-prompts100-no93-047.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">048</span><span class="ititle">併用時のタスク振り分けルール</span></div>
+  
+  <pre class="prompt" id="b48">前提: 推論型のClaude Codeと直示型のCodexの特性を踏まえて振り分けたい。
+指示: タスクの性質（曖昧な要件／明確な要件、新規実装／既存改修等）ごとに、どちらが向くか判断基準を作って。
+出力形式: タスクの性質×推奨ツールのマトリクス表で。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b48">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b48" data-name="codex-prompts100-no93-048.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">049</span><span class="ititle">設定変更時の反映確認フロー</span></div>
+  
+  <pre class="prompt" id="b49">前提: シンボリックリンクで設定を共有する構成にしている。
+指示: 設定変更後、両方のツールで実際に反映されているか確認する簡単な手順を作って。
+出力形式: 確認手順を3ステップ以内で、確認にかかる時間も添えて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b49">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b49" data-name="codex-prompts100-no93-049.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">050</span><span class="ititle">併用コストの月次モニタリング表</span></div>
+  
+  <pre class="prompt" id="b50">前提: Claude ProとChatGPT Plusの両方を契約し、併用している状態。
+指示: 毎月のコストと利用量を記録し、無駄がないか確認するためのモニタリング項目を設計して。
+出力形式: 記録すべき項目を表形式で、月末に見直すチェックポイントも添えて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b50">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b50" data-name="codex-prompts100-no93-050.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">051</span><span class="ititle">併用時のコンテキスト引き継ぎ</span></div>
+  
+  <pre class="prompt" id="b51">前提: Claude Codeで途中まで進めていた実装を、Codexに引き継いで続きをやってもらいたい。
+指示: 何を伝えれば手戻りなく引き継げるか、引き継ぎメモのフォーマットを作って。
+出力形式: 引き継ぎメモのテンプレート（背景・現状・次にやること）で。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b51">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b51" data-name="codex-prompts100-no93-051.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">052</span><span class="ititle">併用ルールの新メンバーへの説明</span></div>
+  
+  <pre class="prompt" id="b52">前提: チームでは併用ルール（タスク振り分け・設定同期の仕組み）を運用している。
+指示: AIツールに詳しくない新メンバーにも伝わるよう、併用ルールを説明する資料の構成を作って。
+出力形式: 見出し付きの説明資料の構成案（5項目以内）で。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b52">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b52" data-name="codex-prompts100-no93-052.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">053</span><span class="ititle">設定の一致度セルフチェック</span></div>
+  
+  <pre class="prompt" id="b53">前提: 月1回、設定の一致度を確認する習慣をつけたい。
+指示: CLAUDE.mdとAGENTS.mdの内容を突き合わせて、意味的なズレがないか確認する手順を作って。
+出力形式: 確認手順と、ズレを見つけたときの修正フローをセットで。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b53">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b53" data-name="codex-prompts100-no93-053.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">054</span><span class="ititle">併用継続・停止の判断基準</span></div>
+  
+  <pre class="prompt" id="b54">前提: 併用を始めて1ヶ月が経過し、そろそろ継続するか絞るかを判断したい。
+指示: 併用を継続すべきサイン、片方に絞るべきサインをそれぞれ挙げて。
+出力形式: サインごとに、該当したときの推奨アクションを添えて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b54">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b54" data-name="codex-prompts100-no93-054.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">055</span><span class="ititle">併用環境のトラブル事例対応</span></div>
+  
+  <pre class="prompt" id="b55">前提: 併用を始めたばかりで、まだトラブル対応の経験が少ない。
+指示: 併用環境でよくあるトラブル（設定の競合・二重課金・記憶の食い違い等）と対処法を教えて。
+出力形式: トラブルごとに、発生の兆候と対処手順をセットで示して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b55">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b55" data-name="codex-prompts100-no93-055.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">056</span><span class="ititle">併用フェーズごとの見直しタイミング設計</span></div>
+  
+  <pre class="prompt" id="b56">前提: 併用開始から3ヶ月・半年・1年というスパンで運用を見直したい。
+指示: 各タイミングで確認すべき観点（コスト・満足度・使用頻度の変化等）を設計して。
+出力形式: タイミングごとの確認観点リストを表で。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b56">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b56" data-name="codex-prompts100-no93-056.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">057</span><span class="ititle">個人設定とチーム共通設定の分離</span></div>
+  
+  <pre class="prompt" id="b57">前提: settings.jsonとsettings.local.jsonのような、共有／非共有の使い分けをCodex側でも行いたい。
+指示: 個人設定とチーム共通設定を分離する構成を提案して。
+出力形式: ファイル構成案と、それぞれに何を書くべきかの基準を示して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b57">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b57" data-name="codex-prompts100-no93-057.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">058</span><span class="ititle">併用時の学習コスト最小化</span></div>
+  
+  <pre class="prompt" id="b58">前提: 両ツールのコマンド体系や操作感の違いに戸惑うことが多い。
+指示: 最初に覚えるべき最小限のコマンド・概念だけに絞った学習ロードマップを作って。
+出力形式: 1週目・2週目に分けた学習項目リストで。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b58">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b58" data-name="codex-prompts100-no93-058.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<h2 class="cat">開発スタイル使い分け系</h2>
+<div class="icard">
+  <div class="ih"><span class="num">059</span><span class="ititle">推論型タスクの見極め</span></div>
+  
+  <pre class="prompt" id="b59">前提: これから着手するタスクの概要（要件が固まりきっていない新機能アイデア）を貼り付ける。
+指示: このタスクが推論型（Claude Code向き）か直示型（Codex向き）かを判定して。
+出力形式: 判定結果とその理由を3行以内で、依頼時の書き方のコツも添えて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b59">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b59" data-name="codex-prompts100-no93-059.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">060</span><span class="ititle">曖昧な要望の計画モード活用</span></div>
+  
+  <pre class="prompt" id="b60">前提: 「もっと使いやすいダッシュボードにしたい」という曖昧な要望がある。
+指示: 計画モードで要望を具体的な実装計画に落とし込むための、最初の質問リストを作って。
+出力形式: AIに聞かれそうな確認事項を先回りしてリスト化して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b60">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b60" data-name="codex-prompts100-no93-060.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">061</span><span class="ititle">直示型タスクへの要件明文化</span></div>
+  
+  <pre class="prompt" id="b61">前提: 実装したい機能の大まかなイメージ（貼り付ける）はあるが、詳細な仕様書はまだない。
+指示: Codexに渡せるレベルまで要件を明示的に分解し、曖昧さが残る点を洗い出して。
+出力形式: 要件リストと、まだ曖昧な点への確認質問をセットで。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b61">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b61" data-name="codex-prompts100-no93-061.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">062</span><span class="ititle">TDDでの段階実行計画</span></div>
+  
+  <pre class="prompt" id="b62">前提: これから実装する機能（貼り付ける）についてテスト駆動で進めたい。
+指示: 最初に書くべきテストケースと、それに対応する実装ステップを順番に並べて。
+出力形式: テスト→実装のペアをステップごとに番号付きで。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b62">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b62" data-name="codex-prompts100-no93-062.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">063</span><span class="ititle">先行リサーチの依頼文作成</span></div>
+  
+  <pre class="prompt" id="b63">前提: 使いたい新しいライブラリ（貼り付ける）の最新の使い方をまだ把握できていない。
+指示: 実装前にリサーチしてほしい内容を明確にした依頼文を作成して。
+出力形式: そのまま貼り付けられる依頼文の形で出力して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b63">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b63" data-name="codex-prompts100-no93-063.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">064</span><span class="ititle">レビュー観点の相互補完</span></div>
+  
+  <pre class="prompt" id="b64">前提: Claude Codeで実装したコードを、別の視点でレビューしたい。
+指示: Codexにレビューを依頼する際、Claude Codeとは違う観点（テスト網羅性・エッジケース等）を重点的に見てもらう依頼文を作って。
+出力形式: レビュー観点リストと、依頼文の本体をセットで。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b64">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b64" data-name="codex-prompts100-no93-064.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">065</span><span class="ititle">大規模タスクの分解方針</span></div>
+  
+  <pre class="prompt" id="b65">前提: 着手予定の大規模タスク（ライブラリ移行等、貼り付ける）がある。
+指示: 推論型の計画作成と、直示型の段階実行、それぞれの強みを活かした進め方を提案して。
+出力形式: フェーズごとに「どちらのツールで」「何を」やるかの表で。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b65">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b65" data-name="codex-prompts100-no93-065.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">066</span><span class="ititle">新人エンジニアへのツール選定アドバイス</span></div>
+  
+  <pre class="prompt" id="b66">前提: チームに加わった新人エンジニアがAIコーディングツールに不慣れ。
+指示: 新人にはどちらのツールが取っつきやすいか、理由とともにアドバイスして。
+出力形式: 推奨ツールと、最初の1週間でやるべき練習タスクを添えて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b66">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b66" data-name="codex-prompts100-no93-066.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">067</span><span class="ititle">ガイド前提の依頼文設計</span></div>
+  
+  <pre class="prompt" id="b67">前提: 実装してほしい機能の背景と、注目してほしいコードベースの箇所（貼り付ける）がある。
+指示: Codexが迷わず動けるよう、注目箇所・制約条件・完了条件を明示した依頼文を作成して。
+出力形式: 背景／注目箇所／制約／完了条件の4項目に分けた依頼文で。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b67">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b67" data-name="codex-prompts100-no93-067.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">068</span><span class="ititle">音声・長文コンテキストの整理</span></div>
+  
+  <pre class="prompt" id="b68">前提: Codexとの会話で、まとめてコンテキストを与えてから作業してもらうスタイルを試したい。
+指示: 1回のやり取りで伝えるべき情報（背景・目的・制約・完了条件）を整理する型を作って。
+出力形式: そのまま使える情報整理テンプレートで。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b68">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b68" data-name="codex-prompts100-no93-068.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">069</span><span class="ititle">エッジケース対応方針の切り替え</span></div>
+  
+  <pre class="prompt" id="b69">前提: プロトタイプ段階か本番実装段階かで、求めるべき品質レベルが変わる。
+指示: プロトタイプ段階と本番段階それぞれで、どちらのスタイル（動く優先／丁寧優先）が向くか整理して。
+出力形式: 段階×推奨スタイルの対応表で。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b69">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b69" data-name="codex-prompts100-no93-069.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">070</span><span class="ititle">PR前クリーンアップの依頼文</span></div>
+  
+  <pre class="prompt" id="b70">前提: 実装がひととおり終わり、プルリクエストを出す前の整理をしたい。
+指示: テスト・Playwright確認・コードクリーンアップの依頼文を、直示型の進め方に合わせて作成して。
+出力形式: 作業ステップごとに分けた依頼文で。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b70">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b70" data-name="codex-prompts100-no93-070.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">071</span><span class="ititle">使い分け実績の振り返りフォーマット</span></div>
+  
+  <pre class="prompt" id="b71">前提: 1ヶ月間、タスクの性質に応じて両ツールを使い分けてみた。
+指示: 振り返りに使えるフォーマット（うまくいった判断／見直すべき判断）を作って。
+出力形式: 振り返り項目を3〜5個のシンプルな質問形式で。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b71">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b71" data-name="codex-prompts100-no93-071.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">072</span><span class="ititle">スタイル混同時の軌道修正</span></div>
+  
+  <pre class="prompt" id="b72">前提: Codexに曖昧な依頼をしてしまい、意図と違う実装が返ってきた（内容を貼り付ける）。
+指示: この食い違いの原因を分析し、次回同じ依頼をする際の改善した書き方を提案して。
+出力形式: 原因分析と、改善版の依頼文をセットで。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b72">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b72" data-name="codex-prompts100-no93-072.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<h2 class="cat">コスト最適化系</h2>
+<div class="icard">
+  <div class="ih"><span class="num">073</span><span class="ititle">月間トークン使用量の可視化</span></div>
+  
+  <pre class="prompt" id="b73">前提: 直近1ヶ月の作業内容（頻度・タスクの重さ）を大まかに貼り付ける。
+指示: この使用パターンに対して、Claude Pro・Codex（ChatGPT Plus）・併用のどれが最もコスト効率が良いか試算して。
+出力形式: 選択肢ごとの想定コストと、おすすめ度を◎○△の3段階で示して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b73">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b73" data-name="codex-prompts100-no93-073.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">074</span><span class="ititle">週次リミット引っかかり対策</span></div>
+  
+  <pre class="prompt" id="b74">前提: 週の後半になるといつも利用制限に引っかかってしまう。
+指示: 利用ペースを平準化する工夫と、Codex併用による負荷分散案を提案して。
+出力形式: 「今すぐできる工夫」と「併用による対策」を分けて箇条書きで。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b74">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b74" data-name="codex-prompts100-no93-074.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">075</span><span class="ititle">併用時の作業振り分けによるコスト削減</span></div>
+  
+  <pre class="prompt" id="b75">前提: 1日の作業に軽いタスクと重いタスクが混在している（内容を貼り付ける）。
+指示: コスト効率の観点から、どちらのツールにどのタスクを振るべきか提案して。
+出力形式: タスクごとの振り分け結果と、その理由を1行ずつで。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b75">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b75" data-name="codex-prompts100-no93-075.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">076</span><span class="ititle">上位プラン移行の損益分岐点計算</span></div>
+  
+  <pre class="prompt" id="b76">前提: 現在のプランでの制限到達頻度と、上位プランの価格差（貼り付ける）がある。
+指示: 上位プランに上げることで得られる価値が、価格差に見合うか損益分岐点を計算して。
+出力形式: 損益分岐点となる利用頻度の目安と、現状との比較を示して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b76">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b76" data-name="codex-prompts100-no93-076.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">077</span><span class="ititle">無駄なトークン消費の削減案</span></div>
+  
+  <pre class="prompt" id="b77">前提: 普段のやり取りのスタイル（長い前置き・何度もの言い直し等）を貼り付ける。
+指示: トークンを無駄に消費している可能性がある習慣を指摘し、改善案を提案して。
+出力形式: 習慣ごとに「無駄の程度」と「改善案」をセットで。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b77">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b77" data-name="codex-prompts100-no93-077.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">078</span><span class="ititle">DeepSeek等の低価格AI併用検討</span></div>
+  
+  <pre class="prompt" id="b78">前提: コストを最優先で抑えたいが、品質もある程度は担保したいタスクがある。
+指示: 低価格帯のAI（DeepSeek等）を組み込む場合、どんなタスクなら任せられるか整理して。
+出力形式: 任せられるタスクの条件と、任せるべきでないタスクの条件を分けて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b78">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b78" data-name="codex-prompts100-no93-078.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">079</span><span class="ititle">チーム全体のコスト最適化提案</span></div>
+  
+  <pre class="prompt" id="b79">前提: チームメンバーそれぞれが個別にプランを契約している状態（一覧を貼り付ける）。
+指示: チーム全体で見たときに無駄がないか、まとめ買いや役割分担での最適化余地を提案して。
+出力形式: 現状の課題と、最適化案を表形式で。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b79">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b79" data-name="codex-prompts100-no93-079.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">080</span><span class="ititle">コスト最適化の定期レビュー設計</span></div>
+  
+  <pre class="prompt" id="b80">前提: 料金プランやAIの性能は今後も変わっていくことが予想される。
+指示: 3ヶ月に1回のペースでコスト最適化を見直す際のチェック項目を設計して。
+出力形式: チェック項目をリスト化し、判断基準も添えて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b80">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b80" data-name="codex-prompts100-no93-080.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">081</span><span class="ititle">無料枠の使い切り戦略</span></div>
+  
+  <pre class="prompt" id="b81">前提: まだ有料プランへの移行を迷っており、無料枠でできる範囲を試したい。
+指示: 無料枠で試すべき検証項目（速度感・品質・制限のかかり方）を整理して。
+出力形式: 検証項目ごとに、無料枠内でどこまで試せるかの目安を添えて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b81">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b81" data-name="codex-prompts100-no93-081.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">082</span><span class="ititle">コストと生産性のバランス判断</span></div>
+  
+  <pre class="prompt" id="b82">前提: 低コストなプランに変えることで、作業速度が落ちる可能性がある。
+指示: コスト削減額と生産性低下のリスクを天秤にかけて、判断材料を整理して。
+出力形式: 「コスト優先」「生産性優先」それぞれのケースでの推奨判断を示して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b82">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b82" data-name="codex-prompts100-no93-082.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">083</span><span class="ititle">サブスク解約タイミングの見極め</span></div>
+  
+  <pre class="prompt" id="b83">前提: 併用を始めてから、片方のプランをほとんど使わなくなってきている。
+指示: 解約を検討すべきサインと、解約前に確認しておくべきことを整理して。
+出力形式: サインのリストと、解約前チェックリストをセットで。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b83">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b83" data-name="codex-prompts100-no93-083.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">084</span><span class="ititle">為替変動を踏まえた価格比較</span></div>
+  
+  <pre class="prompt" id="b84">前提: 契約中のプランはドル建てで、為替レートの変動でコストが変わる可能性がある。
+指示: 為替変動リスクを踏まえた上で、プラン選びに気をつけるべき点を整理して。
+出力形式: リスクの説明と、対策となる考え方を3点以内で。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b84">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b84" data-name="codex-prompts100-no93-084.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">085</span><span class="ititle">経費精算のための利用ログ整理</span></div>
+  
+  <pre class="prompt" id="b85">前提: 個人と業務の両方でAIツールを使っており、業務分だけ経費申請したい。
+指示: 利用ログを業務用途と個人用途に分けて整理する方法を提案して。
+出力形式: 分類の基準と、記録フォーマットの案を示して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b85">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b85" data-name="codex-prompts100-no93-085.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">086</span><span class="ititle">コスト削減の落とし穴回避</span></div>
+  
+  <pre class="prompt" id="b86">前提: コストを削減する施策をいくつか検討している（貼り付ける）。
+指示: その施策の中に、後で品質低下として跳ね返ってきそうな落とし穴がないか点検して。
+出力形式: 施策ごとに「安全」「要注意」の判定と理由を添えて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b86">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b86" data-name="codex-prompts100-no93-086.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<h2 class="cat">チーム導入・展開系</h2>
+<div class="icard">
+  <div class="ih"><span class="num">087</span><span class="ititle">導入提案書のたたき台作成</span></div>
+  
+  <pre class="prompt" id="b87">前提: チームの現状の課題（貼り付ける）と、導入によって期待できる効果を整理したい。
+指示: 上司にも伝わりやすい導入提案書のたたき台を、背景・効果・コスト・リスクの構成で作って。
+出力形式: 見出し付きの提案書構成（各項目3〜5行）で。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b87">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b87" data-name="codex-prompts100-no93-087.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">088</span><span class="ititle">パイロット導入の対象選定</span></div>
+  
+  <pre class="prompt" id="b88">前提: チームは5つあり、それぞれの業務内容とAIツールへの慣れ度合い（貼り付ける）が異なる。
+指示: パイロット導入に最も適したチームを選び、その理由を説明して。
+出力形式: 推奨チームと理由、パイロット期間の目安を示して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b88">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b88" data-name="codex-prompts100-no93-088.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">089</span><span class="ititle">導入効果測定指標の設計</span></div>
+  
+  <pre class="prompt" id="b89">前提: 導入前の状態（作業時間・エラー件数等の目安）を貼り付ける。
+指示: 導入効果を測定するための指標と、測定方法を設計して。
+出力形式: 指標名・測定方法・目標値の3列表で。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b89">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b89" data-name="codex-prompts100-no93-089.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">090</span><span class="ititle">セキュリティ懸念への回答準備</span></div>
+  
+  <pre class="prompt" id="b90">前提: 社内でAIツール導入時にセキュリティ懸念が出ることが多い。
+指示: 想定される質問（データの取り扱い・権限設定・監査ログ等）と、それぞれへの回答案を準備して。
+出力形式: Q&amp;A形式で、5問以上想定して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b90">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b90" data-name="codex-prompts100-no93-090.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">091</span><span class="ititle">既存ワークフローへの組み込み計画</span></div>
+  
+  <pre class="prompt" id="b91">前提: チームの開発フロー（要件定義→実装→レビュー→リリース）を貼り付ける。
+指示: 各工程のどこにAIツールを組み込むと効果的か、具体的に提案して。
+出力形式: 工程ごとに「組み込み方」と「期待効果」をセットで。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b91">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b91" data-name="codex-prompts100-no93-091.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">092</span><span class="ititle">社内向け勉強会の構成案</span></div>
+  
+  <pre class="prompt" id="b92">前提: 勉強会の対象は、AIツールにあまり触れたことがないメンバー中心。
+指示: 1時間程度で「使えるようになる」ことを目標にした勉強会の構成を作って。
+出力形式: アジェンダ（時間配分つき）と、ハンズオンで扱うべき題材を示して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b92">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b92" data-name="codex-prompts100-no93-092.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">093</span><span class="ititle">導入後のサポート体制設計</span></div>
+  
+  <pre class="prompt" id="b93">前提: チームメンバーはAIツールの習熟度にばらつきがある。
+指示: 困りごとが出たときに相談できる体制（社内チャンネル・担当者・FAQ等）を設計して。
+出力形式: 体制図と、よくある質問への対応フローを示して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b93">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b93" data-name="codex-prompts100-no93-093.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">094</span><span class="ititle">他部署への展開ロードマップ</span></div>
+  
+  <pre class="prompt" id="b94">前提: パイロットチームでの導入が一定の成果を出した状態（結果を貼り付ける）。
+指示: 他部署への展開を、リスクを抑えながら段階的に進めるロードマップを作って。
+出力形式: フェーズごとの展開範囲と、進める前の確認事項を示して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b94">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b94" data-name="codex-prompts100-no93-094.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">095</span><span class="ititle">導入失敗時の撤退基準</span></div>
+  
+  <pre class="prompt" id="b95">前提: パイロット導入を始める前に、撤退基準も併せて決めておきたい。
+指示: 「これが起きたら見直す」という撤退・見直しの基準を具体的に設計して。
+出力形式: 基準を数値または明確な状態で3つ以上示して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b95">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b95" data-name="codex-prompts100-no93-095.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">096</span><span class="ititle">ツール選定の意思決定フロー</span></div>
+  
+  <pre class="prompt" id="b96">前提: ツール選定の権限が曖昧で、誰が最終決定するか不明確な状態。
+指示: 意思決定に関わるべき役割（現場・マネージャー・情シスなど）と、決定までのフローを整理して。
+出力形式: 関係者と役割の一覧、決定フローの図解イメージを示して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b96">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b96" data-name="codex-prompts100-no93-096.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">097</span><span class="ititle">導入コストの予算化資料</span></div>
+  
+  <pre class="prompt" id="b97">前提: 想定人数・プラン・利用期間（貼り付ける）から予算感を出したい。
+指示: 予算申請書に使える形で、初期費用・月額費用・想定効果をまとめて。
+出力形式: 予算申請フォーマットに沿った項目立てで出力して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b97">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b97" data-name="codex-prompts100-no93-097.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">098</span><span class="ititle">既存ツールからの移行スケジュール</span></div>
+  
+  <pre class="prompt" id="b98">前提: チーム全体で使っている既存ツールから、段階的に移行したい。
+指示: 混乱を最小限にするための移行スケジュール（周知→並行→切り替え）を設計して。
+出力形式: 週単位のスケジュール表と、各週の目標状態を示して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b98">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b98" data-name="codex-prompts100-no93-098.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">099</span><span class="ititle">導入後のガバナンスルール整備</span></div>
+  
+  <pre class="prompt" id="b99">前提: チームでの利用が広がってきたが、明文化されたルールがまだない。
+指示: 最低限守るべきガバナンスルール（機密情報の扱い・利用範囲等）を整理して。
+出力形式: ルールを箇条書きで、違反時の対応方針も添えて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b99">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b99" data-name="codex-prompts100-no93-099.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">100</span><span class="ititle">導入事例の社内共有フォーマット</span></div>
+  
+  <pre class="prompt" id="b100">前提: 導入によって効果が出た具体的な事例（貼り付ける）がある。
+指示: 他のチームにも伝わりやすい事例共有のフォーマット（課題→施策→効果）を作って。
+出力形式: 見出し付きの事例共有テンプレートで。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b100">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b100" data-name="codex-prompts100-no93-100.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+
+  <section class="epctx">
+  <p class="epctx-label">この動画のほかのプレゼント</p>
+  <div class="ep-kits"><a class="kchip" href="../migration-selfcheck/"><span class="kt">乗り換え前セルフ診断チェックリスト</span><span class="badge">12項目</span><span class="go">開く →</span></a><a class="kchip" href="../symlink-recovery-guide/"><span class="kt">Claude Code⇔Codex 対応表＋スキル復旧プロンプト集</span><span class="go">開く →</span></a></div>
+</section>
+
+  <footer><a href="../../">← AIエージェント / Kawaru プレゼント図書館にもどる</a></footer>
+</div>
+
+<pre id="pfull" class="hidden"># 🎁 Codex移行・併用 実践プロンプト100選
+
+Claude Code⇔Codexの移行・併用シーンでそのまま使える実践プロンプトを100本、7カテゴリに分けてまとめました。
+
+**受け取り方**: 下の各コードブロック右上のコピーボタンでコピーするか、このファイルをそのままダウンロードしてください。
+
+
+## 移行判断・準備系
+
+### 1. 移行コストの棚卸し
+
+現在のClaude Code環境から何をどれだけ移す必要があるか事前に把握したい人向け。
+
+```text
+前提: 私はClaude CodeからCodexへの移行を検討しているエンジニアで、自分の.claude/フォルダ構成を貼り付ける。
+指示: 貼り付けた設定・スキル・サブエージェント・フックの一覧を確認し、Codexで「そのまま移る」「再作成が必要」「非対応」の3分類に振り分けて。
+出力形式: 3列の表（項目名／分類／理由）で出力し、再作成が必要な項目には対応の目安時間も添えて。
+```
+
+### 2. 移行動機の言語化
+
+「なんとなく気になる」で終わらせず、移行すべきかどうかの判断材料を整理したい人向け。
+
+```text
+前提: 私は月20ドルのClaude Proプランで、週次リミットに月2〜3回引っかかって作業が止まっている。
+指示: この状況が移行を検討すべきレベルの問題なのか、単なる使い方の工夫で解決できる範囲なのかを判定して。
+出力形式: 「移行検討レベル」か「使い方改善レベル」かの一言判定と、その理由を3行以内で。
+```
+
+### 3. 既存プロジェクトの依存確認
+
+移行前に、今のプロジェクトがClaude Code固有機能にどれだけ依存しているか調べたい人向け。
+
+```text
+前提: 現在のプロジェクトのCLAUDE.md・.claude/hooks・.claude/agentsの中身をすべて貼り付ける。
+指示: Codexに無い機能（ConfigChangeフック・Output styles・細かいpermission制御など）への依存箇所を洗い出して。
+出力形式: 依存箇所ごとに「影響度（高中低）」と「代替手段の有無」を箇条書きで。
+```
+
+### 4. 並行稼働期間の設計
+
+いきなり乗り換えるのではなく、しばらく両方使う移行期間を計画したい人向け。
+
+```text
+前提: 私はチームで開発しており、移行にあたって1ヶ月程度の並行稼働期間を設けたい。
+指示: 並行稼働中に発生しうるリスク（設定のズレ・チーム内の混乱・二重管理コスト）と、その予防策を提案して。
+出力形式: リスクと予防策のセットを表形式で、優先度が高い順に並べて。
+```
+
+### 5. バックアップ計画の作成
+
+移行作業でミスがあっても元に戻せるよう、事前にバックアップを取っておきたい人向け。
+
+```text
+前提: 移行対象は.claude/フォルダ全体とグローバル設定（~/.claude/）を含む。
+指示: 移行前に取っておくべきバックアップの範囲と、Git管理していないファイル（settings.local.json等）の扱いを整理して。
+出力形式: バックアップ手順をコマンド付きのチェックリストで。
+```
+
+### 6. チーム合意形成の叩き台
+
+個人の判断だけでなく、チームメンバーの合意を得てから移行したい人向け。
+
+```text
+前提: チームは4人で、うち2人はClaude Code歴が長く、2人はツールにこだわりが薄い。
+指示: チーム全員が納得しやすい移行提案の叩き台を、反対意見が出そうなポイントへの回答つきで作って。
+出力形式: 提案文（300字程度）＋想定される反対意見と回答のQ&amp;A3セット。
+```
+
+### 7. 移行スケジュールの逆算
+
+リリース時期から逆算して、いつまでに何を終えておくべきか計画したい人向け。
+
+```text
+前提: 3週間後に大きめの開発フェーズが始まるため、それまでに移行の可否を判断したい。
+指示: 3週間を「検証」「並行稼働」「判断」の3フェーズに分け、各フェーズでやることを具体化して。
+出力形式: 週ごとのタスクリストとして、各タスクに目安時間を添えて出力して。
+```
+
+### 8. 移行対象外の切り分け
+
+全部を移すのではなく、移す価値があるものだけを絞り込みたい人向け。
+
+```text
+前提: 現在10個のカスタムスキルと5個のサブエージェントを運用しているが、実際に使用頻度が高いのは半分程度。
+指示: 使用頻度・重要度の観点から、優先的に移行すべきものと後回しでよいものを分類して。
+出力形式: 「優先移行」「様子見」「移行不要」の3グループに分けたリストで。
+```
+
+### 9. 移行後の検証観点の洗い出し
+
+移行が「成功した」と言えるかどうかの判断基準を先に決めておきたい人向け。
+
+```text
+前提: 移行対象はCLAUDE.mdの指示内容・3個のカスタムスキル・2個のMCPサーバー接続。
+指示: それぞれについて「動作確認済みと言えるための具体的なテスト項目」を挙げて。
+出力形式: 項目ごとにテスト手順と期待される結果を1行ずつで。
+```
+
+### 10. 移行に伴うコスト試算
+
+移行にかかる作業時間と、移行後に見込める効果を金額換算で比較したい人向け。
+
+```text
+前提: 移行作業に想定している時間は1人日、月額の想定コスト差はCodex併用で+3,500円。
+指示: この投資が何ヶ月で回収できるか、作業時間削減率の仮定を3パターン置いて試算して。
+出力形式: 仮定ごとの回収月数を表にし、最も現実的なパターンに一言コメントを添えて。
+```
+
+### 11. 移行しない場合の代替策検討
+
+移行せず今のツールのまま制限を回避したい人向け。
+
+```text
+前提: Claude Proの週次リミットが問題だが、Codexへの移行はまだ踏み切れない。
+指示: 移行せずに今の制限を緩和する方法（プラン変更・使用量の分散・トークン節約テクニック）を挙げて。
+出力形式: 施策ごとに効果の見込みと実施難易度を3段階(高中低)で評価して。
+```
+
+### 12. 移行の失敗パターン事前学習
+
+他の人がつまずいたポイントを先に知っておき、同じ失敗を避けたい人向け。
+
+```text
+前提: 私はエンジニア歴2年で、大規模な移行作業の経験がまだ少ない。
+指示: AIツール移行でよくある失敗パターン（設定の消失・権限周りの見落とし・チーム内の情報格差など）を教えて。
+出力形式: 失敗パターンごとに、事前にできる予防策を1つずつセットで。
+```
+
+### 13. 個人開発とチーム開発での判断分岐
+
+自分の立場（個人開発かチーム開発か）によって最適な移行判断が変わることを整理したい人向け。
+
+```text
+前提: 私は個人開発とチーム開発の両方でAIコーディングツールを使っている。
+指示: 個人開発とチーム開発それぞれで、移行のメリット・デメリットがどう変わるかを比較して。
+出力形式: 2列比較表（個人開発／チーム開発）で、判断基準を明確にして。
+```
+
+### 14. 移行判断のための試用計画
+
+本格移行の前に、小さく試して感触を確かめたい人向け。
+
+```text
+前提: 本格的な移行前に、1週間だけ試用期間を設けて判断材料を集めたい。
+指示: 試用期間中に意識的に試すべきタスクの種類（軽いバグ修正・新機能実装・リファクタ等）を提案して。
+出力形式: タスク種類ごとに、何を観察すればよいかのチェック観点を添えて。
+```
+
+
+## インポート実行・検証系
+
+### 15. インポート項目の事前確認
+
+実際にインポートを実行する前に、何が対象になるか確認したい人向け。
+
+```text
+前提: Codexの「他のAIアプリから設定をインポート」画面で、Tools &amp; setup・Projects・Chat sessionsの3項目が表示されている。
+指示: それぞれの項目に何が含まれるか具体的に説明し、初回はどれにチェックを入れるべきか推奨案を出して。
+出力形式: 3項目それぞれの説明と、推奨チェック状態（入れる／様子見）を明記して。
+```
+
+### 16. AGENTS.md変換後のレビュー
+
+CLAUDE.mdからAGENTS.mdへ自動変換された内容が正しいか確認したい人向け。
+
+```text
+前提: 自動変換後のAGENTS.mdの内容を貼り付ける。元のCLAUDE.mdの内容も併せて貼り付ける。
+指示: 意味が変わってしまった箇所や、欠落した指示がないかを1行ずつ突き合わせて確認して。
+出力形式: 「一致」「変化あり（要注意）」「欠落」の3分類で、変化箇所には元の文言も示して。
+```
+
+### 17. MCPサーバー設定の変換確認
+
+JSON形式からTOML形式に変換されたMCP設定が正しく動くか確認したい人向け。
+
+```text
+前提: 変換前のJSON設定と変換後のTOML設定の両方を貼り付ける。
+指示: コマンド・引数・環境変数がすべて正しく引き継がれているか照合して。
+出力形式: 差分があれば具体的な行を示し、動作に影響するかどうかも判定して。
+```
+
+### 18. サブエージェント再宣言の作成
+
+Markdown形式のサブエージェント定義をCodex用のTOML形式に書き換えたい人向け。
+
+```text
+前提: 既存のサブエージェント定義（name・description・tools・model・本文）を貼り付ける。
+指示: Codexのプロファイル形式に合わせて再宣言し、元の指示内容の意図を壊さないように書き換えて。
+出力形式: TOML形式のコードブロックで、変更点に一言コメントを添えて。
+```
+
+### 19. 権限設定の意図移行
+
+そのままコピーできない権限設定を、意図を保ったまま作り直したい人向け。
+
+```text
+前提: Claude Codeのpermission allowlist（許可コマンドの一覧）を貼り付ける。
+指示: Codexの粗いsandboxレベルで、同じ安全性の意図をできるだけ再現する設定案を考えて。
+出力形式: 「完全に再現できる」「近い水準で妥協が必要」を項目ごとに分けて説明して。
+```
+
+### 20. インポート後の動作スモークテスト
+
+インポート直後に、最低限の動作確認を素早く済ませたい人向け。
+
+```text
+前提: インポート直後で、まだ本格的なタスクを試していない状態。
+指示: 5分以内でできる簡単な動作確認手順（スキル呼び出し・MCP接続・基本会話）を3つ提案して。
+出力形式: 手順ごとに「成功時に見えるべき状態」を明記して。
+```
+
+### 21. チャット履歴の引き継ぎ確認
+
+直近のチャット履歴がインポートされたか確認し、抜けがないかチェックしたい人向け。
+
+```text
+前提: 直近30日で重要なやり取りをしたチャットが3〜4件ある。
+指示: インポートされたチャット一覧から、その重要なやり取りが含まれているか確認する手順を教えて。
+出力形式: 確認手順を番号付きステップで、見つからなかった場合の対処法も添えて。
+```
+
+### 22. プロジェクトメモリの整合性確認
+
+Claude Codeのプロジェクトメモリが正しくCodex側に反映されたか確認したい人向け。
+
+```text
+前提: プロジェクトメモリに記録していた過去の決定事項・注意点のリストを貼り付ける。
+指示: Codex側でそれらの情報が参照可能になっているか、確認する方法を教えて。
+出力形式: 確認方法と、反映されていない場合の再登録手順を示して。
+```
+
+### 23. 自動同期のオプトイン判断
+
+自動更新をオンにするかどうか、メリットとリスクを比較して決めたい人向け。
+
+```text
+前提: 自動同期をオンにすると、Claude Code側の変更が自動でCodex側に反映される仕組みがある。
+指示: 自動同期のメリットとリスク（意図しない変更の混入・情報漏洩の可能性等）を整理して。
+出力形式: メリット・リスクを表にし、最終的なおすすめ設定を一言で。
+```
+
+### 24. インポート履歴の定期チェック習慣化
+
+インポート履歴を放置せず、定期的に見直す習慣をつけたい人向け。
+
+```text
+前提: 設定＞Importの画面からインポート履歴を確認できる仕組みがある。
+指示: 月1回のペースで見直すとしたら、何をチェックすべきかのチェックリストを作って。
+出力形式: チェック項目を5個以内で、それぞれ確認にかかる目安時間も添えて。
+```
+
+### 25. インポート失敗時のトラブルシュート
+
+インポートがうまくいかなかったときの原因切り分けをしたい人向け。
+
+```text
+前提: 「他のAIアプリから設定をインポート」を実行したが、一部の項目がエラーになった。
+指示: 考えられる原因（権限不足・ファイル形式の非対応・認証切れ等）を洗い出し、確認する順番を提案して。
+出力形式: 原因候補を優先度順に並べ、それぞれの確認方法を1行で添えて。
+```
+
+### 26. 既存環境の非破壊確認
+
+インポートによって元のClaude Code環境が壊れていないか確認したい人向け。
+
+```text
+前提: 公式には「既存設定は変更されない」とあるが、念のため自分で確認したい。
+指示: Claude Code側で確認すべきファイル・動作を具体的にリストアップして。
+出力形式: 確認項目ごとに「変化があってはいけない箇所」を明記して。
+```
+
+### 27. プラグイン権限の再承認手順
+
+インポートされたプラグインが認可待ちになっている場合の対処を知りたい人向け。
+
+```text
+前提: インポート後、いくつかのプラグインが「要承認」の状態になっている。
+指示: 承認前に確認すべきセキュリティ観点と、承認する際の手順を教えて。
+出力形式: 確認観点のチェックリストと、承認手順を番号付きで。
+```
+
+### 28. カスタム認証設定の再設定手順
+
+自動移行されないカスタム認証情報を手動で設定し直したい人向け。
+
+```text
+前提: 自社APIへのカスタム認証を使っており、公式ドキュメントでは自動移行対象外とされている。
+指示: 手動で再設定する際の手順と、誤って認証情報を平文で残さないための注意点を教えて。
+出力形式: 手順を番号付きで、セキュリティ上の注意点は太字で強調して。
+```
+
+### 29. 移行完了の合格ラインの設定
+
+「これで移行完了」と言える基準を明確にしたい人向け。
+
+```text
+前提: 移行作業をどこまでやれば完了と言えるか、曖昧なまま進めてしまっている。
+指示: 「最低限動けばOK」から「完全に元と同じ」までの段階を定義し、自分たちに合う合格ラインを提案して。
+出力形式: 3段階のレベル分けと、それぞれの具体的な確認項目を表で。
+```
+
+
+## スキル・プラグイン復旧系
+
+### 30. 未移行スキルの洗い出し
+
+インポート後にどのスキルが呼び出せなくなっているか確認したい人向け。
+
+```text
+前提: 移行前に使っていたスキル一覧（名前と用途）を貼り付ける。
+指示: Codex側でスラッシュコマンド・$記号それぞれで呼び出しを試し、動くもの・動かないものを分類して。
+出力形式: スキルごとに「動作」「非動作」「未確認」の3分類の表で。
+```
+
+### 31. GitHub公開スキルの再連携
+
+自動移行されなかったプラグインスキルを、公開リポジトリから再連携したい人向け。
+
+```text
+前提: 動かなくなったスキル名のリストと、それぞれの元の入手元（分かる範囲で）を貼り付ける。
+指示: GitHub上の公開スキルを探索し、同等のものを見つけて再連携する手順を提案して。
+出力形式: スキルごとに「探索キーワード」「再連携の手順」をセットで示して。
+```
+
+### 32. ローカルマーケットプレイスの導入
+
+手動でローカルのプラグインマーケットプレイスを設定したい人向け。
+
+```text
+前提: Codexでスラッシュコマンドが呼び出せない問題があり、ローカルマーケットプレイス経由の解決策があると聞いた。
+指示: ローカルマーケットプレイスを導入する手順を、初心者でも迷わないレベルまで分解して教えて。
+出力形式: 手順を番号付きステップで、各ステップの完了確認方法も添えて。
+```
+
+### 33. 重要スキルの優先復旧リスト
+
+全部を一度に直そうとせず、重要なものから優先的に復旧したい人向け。
+
+```text
+前提: 未移行のスキルが7つあり、それぞれの週間利用頻度も分かっている（貼り付ける）。
+指示: 利用頻度をもとに復旧の優先順位をつけ、上位3つから着手する計画を立てて。
+出力形式: 優先順位付きリストと、それぞれの復旧に必要な作業時間の見積もりを添えて。
+```
+
+### 34. スキル定義ファイルの手動移植
+
+自動移行に頼らず、スキル定義ファイルを手動でコピーして動かしたい人向け。
+
+```text
+前提: Claude Code側のSKILL.mdの中身を貼り付ける。
+指示: Codex側で同等の機能を持たせるための設定ファイルとフォルダ配置を提案して。
+出力形式: 配置先のパスと、変換後の設定内容をコードブロックで示して。
+```
+
+### 35. プラグインの有効化確認
+
+再連携したプラグインが実際に有効化されているか確認したい人向け。
+
+```text
+前提: ローカルマーケットプレイスを追加し、プラグインをインストールする操作は終えた。
+指示: 有効化が正しく完了しているかを確認する方法と、アプリの再起動が必要かどうかの判断基準を教えて。
+出力形式: 確認手順と、再起動が必要になる典型的なケースを箇条書きで。
+```
+
+### 36. 復旧作業のログ記録
+
+同じ復旧作業を繰り返さずに済むよう、手順を記録しておきたい人向け。
+
+```text
+前提: 今回、3つのスキルの復旧作業を行った。それぞれの手順を貼り付ける。
+指示: 次回同じことが起きたときに再利用できる形で、手順書としてまとめて。
+出力形式: スキル名ごとに見出しを立てたMarkdown手順書で。
+```
+
+### 37. スキル動作の回帰テスト
+
+復旧したスキルが元と同じ挙動をするか確認したい人向け。
+
+```text
+前提: 復旧したスキルの元の仕様（何をトリガーに、何をするか）を貼り付ける。
+指示: 同じ条件で呼び出したときに期待通りの結果が返るか確認するテストケースを3つ作って。
+出力形式: テストケースごとに入力と期待される出力を明記して。
+```
+
+### 38. 非対応スキルの代替設計
+
+どうしても移行できないスキルについて、代替の実現方法を考えたい人向け。
+
+```text
+前提: Output stylesのようにCodexでモデル化されていない機能に依存したスキルがある。
+指示: 同じ目的を別のアプローチ（プロンプトの工夫・別ツールとの連携等）で実現できないか提案して。
+出力形式: 代替案を2〜3案出し、それぞれの実現難易度と再現度を評価して。
+```
+
+### 39. スキル復旧の一括プロンプト作成
+
+個別に対応せず、複数スキルをまとめて復旧させる指示を作りたい人向け。
+
+```text
+前提: 未移行のスキルが5つあり、それぞれの名前と概要のリストを貼り付ける。
+指示: これらすべてをGitHub探索により一括で再連携するための、AIへの依頼文を1本作成して。
+出力形式: そのままCodexに貼り付けられる形の依頼文として出力して。
+```
+
+### 40. MCP接続の復旧確認
+
+MCPサーバーへの接続が移行後も生きているか確認したい人向け。
+
+```text
+前提: 移行前に使っていたMCPサーバーの一覧（名前・用途）を貼り付ける。
+指示: Codex側で同じMCPサーバーに接続できているか確認する手順と、接続できない場合の対処を教えて。
+出力形式: サーバーごとの確認結果を表にまとめて。
+```
+
+### 41. フック機能の代替実装
+
+対応しているフックとしていないフックを整理し、非対応分の代替を考えたい人向け。
+
+```text
+前提: 使っていたフックの一覧（PreToolUse・PostToolUse・ConfigChange等）を貼り付ける。
+指示: Codexで対応しているフックとしていないフックを分類し、非対応分の代替アプローチを提案して。
+出力形式: 対応表と、非対応分への代替案をセットで出力して。
+```
+
+### 42. 復旧作業の所要時間見積もり
+
+復旧作業にどれくらい時間がかかるか、着手前に見積もりたい人向け。
+
+```text
+前提: 未移行のスキル・プラグインが合計8個あり、複雑さもそれぞれ異なる。
+指示: 1個あたりの複雑さ（単純／中程度／複雑）を仮に分類してもらい、合計の所要時間を見積もって。
+出力形式: 個数×複雑さの内訳と、合計時間の見積もりを示して。
+```
+
+### 43. 復旧不要スキルの棚卸し
+
+使用頻度が低いスキルは無理に復旧せず、諦める判断もしたい人向け。
+
+```text
+前提: 未移行のスキルのうち、直近3ヶ月でほぼ使っていないものが混ざっている。
+指示: 使用頻度の低いスキルを見極め、復旧の優先度から外してよいか判断材料を出して。
+出力形式: 「復旧不要候補」リストと、判断の根拠を添えて。
+```
+
+### 44. 復旧完了後の最終チェックリスト
+
+すべての復旧作業が終わったあと、最終確認をまとめて行いたい人向け。
+
+```text
+前提: 未移行だったスキル・プラグインすべての復旧作業を一通り終えた状態。
+指示: 「本当に全部終わったか」を確認するための最終チェックリストを作って。
+出力形式: チェック項目を□付きの箇条書きで、抜け漏れが起きやすいポイントには注記を添えて。
+```
+
+
+## 設定同期・併用運用系
+
+### 45. シンボリックリンクの設計
+
+Claude CodeとCodexの設定を同期させながら併用したい人向け。
+
+```text
+前提: 両ツールでスキルセットとルール定義ファイルを共有したいと考えている。
+指示: シンボリックリンクを使って、片方の変更がもう片方に自動反映される構成を設計して。
+出力形式: ディレクトリ構成図と、実際に張るべきシンボリックリンクのコマンドを示して。
+```
+
+### 46. 併用時のディレクトリ構成設計
+
+1つのリポジトリでCLAUDE.mdとAGENTS.mdを共存させたい人向け。
+
+```text
+前提: リポジトリのルートに現在CLAUDE.mdのみが存在する状態。
+指示: AGENTS.mdを追加しつつ、内容の重複や矛盾が起きないディレクトリ構成を提案して。
+出力形式: ファイルツリーと、それぞれのファイルの役割分担を明記して。
+```
+
+### 47. チーム内ツール混在の運用ルール作成
+
+チーム内でClaude CodeとCodexが混在する状況を整理したい人向け。
+
+```text
+前提: チーム4人のうち2人がClaude Code、2人がCodexを主に使っている。
+指示: 設定をできる限り一致させるための運用ルール（誰が何を更新したら誰に共有するか等）を作って。
+出力形式: 役割分担表と、更新時の連絡フローを図解イメージで説明して。
+```
+
+### 48. 併用時のタスク振り分けルール
+
+どのタスクをどちらのツールに任せるか、判断基準を決めたい人向け。
+
+```text
+前提: 推論型のClaude Codeと直示型のCodexの特性を踏まえて振り分けたい。
+指示: タスクの性質（曖昧な要件／明確な要件、新規実装／既存改修等）ごとに、どちらが向くか判断基準を作って。
+出力形式: タスクの性質×推奨ツールのマトリクス表で。
+```
+
+### 49. 設定変更時の反映確認フロー
+
+設定を片方で変更したとき、もう片方にちゃんと反映されているか確認したい人向け。
+
+```text
+前提: シンボリックリンクで設定を共有する構成にしている。
+指示: 設定変更後、両方のツールで実際に反映されているか確認する簡単な手順を作って。
+出力形式: 確認手順を3ステップ以内で、確認にかかる時間も添えて。
+```
+
+### 50. 併用コストの月次モニタリング表
+
+併用による月額コストを継続的に把握したい人向け。
+
+```text
+前提: Claude ProとChatGPT Plusの両方を契約し、併用している状態。
+指示: 毎月のコストと利用量を記録し、無駄がないか確認するためのモニタリング項目を設計して。
+出力形式: 記録すべき項目を表形式で、月末に見直すチェックポイントも添えて。
+```
+
+### 51. 併用時のコンテキスト引き継ぎ
+
+片方のツールで進めていた作業を、もう片方に引き継ぐ方法を知りたい人向け。
+
+```text
+前提: Claude Codeで途中まで進めていた実装を、Codexに引き継いで続きをやってもらいたい。
+指示: 何を伝えれば手戻りなく引き継げるか、引き継ぎメモのフォーマットを作って。
+出力形式: 引き継ぎメモのテンプレート（背景・現状・次にやること）で。
+```
+
+### 52. 併用ルールの新メンバーへの説明
+
+新しくチームに加わる人に、併用ルールを分かりやすく説明したい人向け。
+
+```text
+前提: チームでは併用ルール（タスク振り分け・設定同期の仕組み）を運用している。
+指示: AIツールに詳しくない新メンバーにも伝わるよう、併用ルールを説明する資料の構成を作って。
+出力形式: 見出し付きの説明資料の構成案（5項目以内）で。
+```
+
+### 53. 設定の一致度セルフチェック
+
+定期的に両ツールの設定がズレていないか自分でチェックしたい人向け。
+
+```text
+前提: 月1回、設定の一致度を確認する習慣をつけたい。
+指示: CLAUDE.mdとAGENTS.mdの内容を突き合わせて、意味的なズレがないか確認する手順を作って。
+出力形式: 確認手順と、ズレを見つけたときの修正フローをセットで。
+```
+
+### 54. 併用継続・停止の判断基準
+
+しばらく併用してみて、続けるかどちらかに絞るかを判断したい人向け。
+
+```text
+前提: 併用を始めて1ヶ月が経過し、そろそろ継続するか絞るかを判断したい。
+指示: 併用を継続すべきサイン、片方に絞るべきサインをそれぞれ挙げて。
+出力形式: サインごとに、該当したときの推奨アクションを添えて。
+```
+
+### 55. 併用環境のトラブル事例対応
+
+併用中に起きがちなトラブルとその対処法を先に知っておきたい人向け。
+
+```text
+前提: 併用を始めたばかりで、まだトラブル対応の経験が少ない。
+指示: 併用環境でよくあるトラブル（設定の競合・二重課金・記憶の食い違い等）と対処法を教えて。
+出力形式: トラブルごとに、発生の兆候と対処手順をセットで示して。
+```
+
+### 56. 併用フェーズごとの見直しタイミング設計
+
+併用を「ずっと同じ形」で続けず、段階的に見直したい人向け。
+
+```text
+前提: 併用開始から3ヶ月・半年・1年というスパンで運用を見直したい。
+指示: 各タイミングで確認すべき観点（コスト・満足度・使用頻度の変化等）を設計して。
+出力形式: タイミングごとの確認観点リストを表で。
+```
+
+### 57. 個人設定とチーム共通設定の分離
+
+個人の好みの設定と、チーム全体で揃えるべき設定を分けて管理したい人向け。
+
+```text
+前提: settings.jsonとsettings.local.jsonのような、共有／非共有の使い分けをCodex側でも行いたい。
+指示: 個人設定とチーム共通設定を分離する構成を提案して。
+出力形式: ファイル構成案と、それぞれに何を書くべきかの基準を示して。
+```
+
+### 58. 併用時の学習コスト最小化
+
+2つのツールを覚える負担をできるだけ減らしたい人向け。
+
+```text
+前提: 両ツールのコマンド体系や操作感の違いに戸惑うことが多い。
+指示: 最初に覚えるべき最小限のコマンド・概念だけに絞った学習ロードマップを作って。
+出力形式: 1週目・2週目に分けた学習項目リストで。
+```
+
+
+## 開発スタイル使い分け系
+
+### 59. 推論型タスクの見極め
+
+曖昧な要件のタスクをClaude Codeに任せるべきか判断したい人向け。
+
+```text
+前提: これから着手するタスクの概要（要件が固まりきっていない新機能アイデア）を貼り付ける。
+指示: このタスクが推論型（Claude Code向き）か直示型（Codex向き）かを判定して。
+出力形式: 判定結果とその理由を3行以内で、依頼時の書き方のコツも添えて。
+```
+
+### 60. 曖昧な要望の計画モード活用
+
+ふわっとした要望を、計画モードで整理してから実装に入りたい人向け。
+
+```text
+前提: 「もっと使いやすいダッシュボードにしたい」という曖昧な要望がある。
+指示: 計画モードで要望を具体的な実装計画に落とし込むための、最初の質問リストを作って。
+出力形式: AIに聞かれそうな確認事項を先回りしてリスト化して。
+```
+
+### 61. 直示型タスクへの要件明文化
+
+Codexに任せる前に、要件を明示的に書き出しておきたい人向け。
+
+```text
+前提: 実装したい機能の大まかなイメージ（貼り付ける）はあるが、詳細な仕様書はまだない。
+指示: Codexに渡せるレベルまで要件を明示的に分解し、曖昧さが残る点を洗い出して。
+出力形式: 要件リストと、まだ曖昧な点への確認質問をセットで。
+```
+
+### 62. TDDでの段階実行計画
+
+Codexの強みであるテスト駆動開発の進め方を計画したい人向け。
+
+```text
+前提: これから実装する機能（貼り付ける）についてテスト駆動で進めたい。
+指示: 最初に書くべきテストケースと、それに対応する実装ステップを順番に並べて。
+出力形式: テスト→実装のペアをステップごとに番号付きで。
+```
+
+### 63. 先行リサーチの依頼文作成
+
+Codexに実装前のリサーチを丁寧にやってもらうための依頼文を作りたい人向け。
+
+```text
+前提: 使いたい新しいライブラリ（貼り付ける）の最新の使い方をまだ把握できていない。
+指示: 実装前にリサーチしてほしい内容を明確にした依頼文を作成して。
+出力形式: そのまま貼り付けられる依頼文の形で出力して。
+```
+
+### 64. レビュー観点の相互補完
+
+片方で実装し、もう片方にレビューしてもらう体制を作りたい人向け。
+
+```text
+前提: Claude Codeで実装したコードを、別の視点でレビューしたい。
+指示: Codexにレビューを依頼する際、Claude Codeとは違う観点（テスト網羅性・エッジケース等）を重点的に見てもらう依頼文を作って。
+出力形式: レビュー観点リストと、依頼文の本体をセットで。
+```
+
+### 65. 大規模タスクの分解方針
+
+大きなタスクをどちらのツールでどう分解して進めるか計画したい人向け。
+
+```text
+前提: 着手予定の大規模タスク（ライブラリ移行等、貼り付ける）がある。
+指示: 推論型の計画作成と、直示型の段階実行、それぞれの強みを活かした進め方を提案して。
+出力形式: フェーズごとに「どちらのツールで」「何を」やるかの表で。
+```
+
+### 66. 新人エンジニアへのツール選定アドバイス
+
+経験の浅いメンバーにどちらのツールを勧めるべきか判断材料が欲しい人向け。
+
+```text
+前提: チームに加わった新人エンジニアがAIコーディングツールに不慣れ。
+指示: 新人にはどちらのツールが取っつきやすいか、理由とともにアドバイスして。
+出力形式: 推奨ツールと、最初の1週間でやるべき練習タスクを添えて。
+```
+
+### 67. ガイド前提の依頼文設計
+
+Codexを「賢いモデル」として扱い、こちらがしっかりガイドする依頼文を作りたい人向け。
+
+```text
+前提: 実装してほしい機能の背景と、注目してほしいコードベースの箇所（貼り付ける）がある。
+指示: Codexが迷わず動けるよう、注目箇所・制約条件・完了条件を明示した依頼文を作成して。
+出力形式: 背景／注目箇所／制約／完了条件の4項目に分けた依頼文で。
+```
+
+### 68. 音声・長文コンテキストの整理
+
+長い会話でまとめて背景情報を伝える進め方を整理したい人向け。
+
+```text
+前提: Codexとの会話で、まとめてコンテキストを与えてから作業してもらうスタイルを試したい。
+指示: 1回のやり取りで伝えるべき情報（背景・目的・制約・完了条件）を整理する型を作って。
+出力形式: そのまま使える情報整理テンプレートで。
+```
+
+### 69. エッジケース対応方針の切り替え
+
+動くものを先に作るか、エッジケースまで含めて丁寧に作るかを選びたい人向け。
+
+```text
+前提: プロトタイプ段階か本番実装段階かで、求めるべき品質レベルが変わる。
+指示: プロトタイプ段階と本番段階それぞれで、どちらのスタイル（動く優先／丁寧優先）が向くか整理して。
+出力形式: 段階×推奨スタイルの対応表で。
+```
+
+### 70. PR前クリーンアップの依頼文
+
+実装後の仕上げ作業をどちらに任せるか判断し、依頼文を作りたい人向け。
+
+```text
+前提: 実装がひととおり終わり、プルリクエストを出す前の整理をしたい。
+指示: テスト・Playwright確認・コードクリーンアップの依頼文を、直示型の進め方に合わせて作成して。
+出力形式: 作業ステップごとに分けた依頼文で。
+```
+
+### 71. 使い分け実績の振り返りフォーマット
+
+しばらく使い分けてみて、実際にどう機能したか振り返りたい人向け。
+
+```text
+前提: 1ヶ月間、タスクの性質に応じて両ツールを使い分けてみた。
+指示: 振り返りに使えるフォーマット（うまくいった判断／見直すべき判断）を作って。
+出力形式: 振り返り項目を3〜5個のシンプルな質問形式で。
+```
+
+### 72. スタイル混同時の軌道修正
+
+推論型のつもりで頼んだのに直示的すぎる／その逆、という食い違いを直したい人向け。
+
+```text
+前提: Codexに曖昧な依頼をしてしまい、意図と違う実装が返ってきた（内容を貼り付ける）。
+指示: この食い違いの原因を分析し、次回同じ依頼をする際の改善した書き方を提案して。
+出力形式: 原因分析と、改善版の依頼文をセットで。
+```
+
+
+## コスト最適化系
+
+### 73. 月間トークン使用量の可視化
+
+自分がどれくらいトークンを使っているか把握し、最適なプランを選びたい人向け。
+
+```text
+前提: 直近1ヶ月の作業内容（頻度・タスクの重さ）を大まかに貼り付ける。
+指示: この使用パターンに対して、Claude Pro・Codex（ChatGPT Plus）・併用のどれが最もコスト効率が良いか試算して。
+出力形式: 選択肢ごとの想定コストと、おすすめ度を◎○△の3段階で示して。
+```
+
+### 74. 週次リミット引っかかり対策
+
+週次リミットに頻繁に引っかかる状況を改善したい人向け。
+
+```text
+前提: 週の後半になるといつも利用制限に引っかかってしまう。
+指示: 利用ペースを平準化する工夫と、Codex併用による負荷分散案を提案して。
+出力形式: 「今すぐできる工夫」と「併用による対策」を分けて箇条書きで。
+```
+
+### 75. 併用時の作業振り分けによるコスト削減
+
+重いタスクと軽いタスクを振り分けてコストを抑えたい人向け。
+
+```text
+前提: 1日の作業に軽いタスクと重いタスクが混在している（内容を貼り付ける）。
+指示: コスト効率の観点から、どちらのツールにどのタスクを振るべきか提案して。
+出力形式: タスクごとの振り分け結果と、その理由を1行ずつで。
+```
+
+### 76. 上位プラン移行の損益分岐点計算
+
+上位プランに上げるべきか、現状維持か判断したい人向け。
+
+```text
+前提: 現在のプランでの制限到達頻度と、上位プランの価格差（貼り付ける）がある。
+指示: 上位プランに上げることで得られる価値が、価格差に見合うか損益分岐点を計算して。
+出力形式: 損益分岐点となる利用頻度の目安と、現状との比較を示して。
+```
+
+### 77. 無駄なトークン消費の削減案
+
+気づかないうちに無駄遣いしているトークンを見直したい人向け。
+
+```text
+前提: 普段のやり取りのスタイル（長い前置き・何度もの言い直し等）を貼り付ける。
+指示: トークンを無駄に消費している可能性がある習慣を指摘し、改善案を提案して。
+出力形式: 習慣ごとに「無駄の程度」と「改善案」をセットで。
+```
+
+### 78. DeepSeek等の低価格AI併用検討
+
+さらにコストを抑えるため、低価格な他のAIとの組み合わせを検討したい人向け。
+
+```text
+前提: コストを最優先で抑えたいが、品質もある程度は担保したいタスクがある。
+指示: 低価格帯のAI（DeepSeek等）を組み込む場合、どんなタスクなら任せられるか整理して。
+出力形式: 任せられるタスクの条件と、任せるべきでないタスクの条件を分けて。
+```
+
+### 79. チーム全体のコスト最適化提案
+
+個人ではなくチーム単位でコストを最適化したい人向け。
+
+```text
+前提: チームメンバーそれぞれが個別にプランを契約している状態（一覧を貼り付ける）。
+指示: チーム全体で見たときに無駄がないか、まとめ買いや役割分担での最適化余地を提案して。
+出力形式: 現状の課題と、最適化案を表形式で。
+```
+
+### 80. コスト最適化の定期レビュー設計
+
+一度最適化して終わりではなく、継続的に見直す仕組みを作りたい人向け。
+
+```text
+前提: 料金プランやAIの性能は今後も変わっていくことが予想される。
+指示: 3ヶ月に1回のペースでコスト最適化を見直す際のチェック項目を設計して。
+出力形式: チェック項目をリスト化し、判断基準も添えて。
+```
+
+### 81. 無料枠の使い切り戦略
+
+有料プランに入る前に、無料枠を最大限活用したい人向け。
+
+```text
+前提: まだ有料プランへの移行を迷っており、無料枠でできる範囲を試したい。
+指示: 無料枠で試すべき検証項目（速度感・品質・制限のかかり方）を整理して。
+出力形式: 検証項目ごとに、無料枠内でどこまで試せるかの目安を添えて。
+```
+
+### 82. コストと生産性のバランス判断
+
+安さだけでなく、生産性への影響も含めて判断したい人向け。
+
+```text
+前提: 低コストなプランに変えることで、作業速度が落ちる可能性がある。
+指示: コスト削減額と生産性低下のリスクを天秤にかけて、判断材料を整理して。
+出力形式: 「コスト優先」「生産性優先」それぞれのケースでの推奨判断を示して。
+```
+
+### 83. サブスク解約タイミングの見極め
+
+使わなくなったプランを解約するタイミングを見極めたい人向け。
+
+```text
+前提: 併用を始めてから、片方のプランをほとんど使わなくなってきている。
+指示: 解約を検討すべきサインと、解約前に確認しておくべきことを整理して。
+出力形式: サインのリストと、解約前チェックリストをセットで。
+```
+
+### 84. 為替変動を踏まえた価格比較
+
+ドル建て価格の変動リスクを踏まえて、プラン選びを見直したい人向け。
+
+```text
+前提: 契約中のプランはドル建てで、為替レートの変動でコストが変わる可能性がある。
+指示: 為替変動リスクを踏まえた上で、プラン選びに気をつけるべき点を整理して。
+出力形式: リスクの説明と、対策となる考え方を3点以内で。
+```
+
+### 85. 経費精算のための利用ログ整理
+
+業務利用分を経費精算するために、利用状況を整理したい人向け。
+
+```text
+前提: 個人と業務の両方でAIツールを使っており、業務分だけ経費申請したい。
+指示: 利用ログを業務用途と個人用途に分けて整理する方法を提案して。
+出力形式: 分類の基準と、記録フォーマットの案を示して。
+```
+
+### 86. コスト削減の落とし穴回避
+
+安易なコスト削減で品質が下がることを避けたい人向け。
+
+```text
+前提: コストを削減する施策をいくつか検討している（貼り付ける）。
+指示: その施策の中に、後で品質低下として跳ね返ってきそうな落とし穴がないか点検して。
+出力形式: 施策ごとに「安全」「要注意」の判定と理由を添えて。
+```
+
+
+## チーム導入・展開系
+
+### 87. 導入提案書のたたき台作成
+
+チームや上司に導入を提案するための資料を作りたい人向け。
+
+```text
+前提: チームの現状の課題（貼り付ける）と、導入によって期待できる効果を整理したい。
+指示: 上司にも伝わりやすい導入提案書のたたき台を、背景・効果・コスト・リスクの構成で作って。
+出力形式: 見出し付きの提案書構成（各項目3〜5行）で。
+```
+
+### 88. パイロット導入の対象選定
+
+全社展開の前に、小さく試すパイロット導入の対象を選びたい人向け。
+
+```text
+前提: チームは5つあり、それぞれの業務内容とAIツールへの慣れ度合い（貼り付ける）が異なる。
+指示: パイロット導入に最も適したチームを選び、その理由を説明して。
+出力形式: 推奨チームと理由、パイロット期間の目安を示して。
+```
+
+### 89. 導入効果測定指標の設計
+
+導入がうまくいったかどうかを数字で示せるようにしたい人向け。
+
+```text
+前提: 導入前の状態（作業時間・エラー件数等の目安）を貼り付ける。
+指示: 導入効果を測定するための指標と、測定方法を設計して。
+出力形式: 指標名・測定方法・目標値の3列表で。
+```
+
+### 90. セキュリティ懸念への回答準備
+
+情シスやセキュリティ担当からの質問に事前に備えたい人向け。
+
+```text
+前提: 社内でAIツール導入時にセキュリティ懸念が出ることが多い。
+指示: 想定される質問（データの取り扱い・権限設定・監査ログ等）と、それぞれへの回答案を準備して。
+出力形式: Q&amp;A形式で、5問以上想定して。
+```
+
+### 91. 既存ワークフローへの組み込み計画
+
+今のチームの開発フローにどう組み込むか計画したい人向け。
+
+```text
+前提: チームの開発フロー（要件定義→実装→レビュー→リリース）を貼り付ける。
+指示: 各工程のどこにAIツールを組み込むと効果的か、具体的に提案して。
+出力形式: 工程ごとに「組み込み方」と「期待効果」をセットで。
+```
+
+### 92. 社内向け勉強会の構成案
+
+チームメンバー向けに使い方を伝える勉強会を開きたい人向け。
+
+```text
+前提: 勉強会の対象は、AIツールにあまり触れたことがないメンバー中心。
+指示: 1時間程度で「使えるようになる」ことを目標にした勉強会の構成を作って。
+出力形式: アジェンダ（時間配分つき）と、ハンズオンで扱うべき題材を示して。
+```
+
+### 93. 導入後のサポート体制設計
+
+導入した後、困った人をサポートする体制を用意したい人向け。
+
+```text
+前提: チームメンバーはAIツールの習熟度にばらつきがある。
+指示: 困りごとが出たときに相談できる体制（社内チャンネル・担当者・FAQ等）を設計して。
+出力形式: 体制図と、よくある質問への対応フローを示して。
+```
+
+### 94. 他部署への展開ロードマップ
+
+1チームでの成功を他部署に広げる計画を立てたい人向け。
+
+```text
+前提: パイロットチームでの導入が一定の成果を出した状態（結果を貼り付ける）。
+指示: 他部署への展開を、リスクを抑えながら段階的に進めるロードマップを作って。
+出力形式: フェーズごとの展開範囲と、進める前の確認事項を示して。
+```
+
+### 95. 導入失敗時の撤退基準
+
+うまくいかなかった場合に、無理に続けず撤退する基準も決めておきたい人向け。
+
+```text
+前提: パイロット導入を始める前に、撤退基準も併せて決めておきたい。
+指示: 「これが起きたら見直す」という撤退・見直しの基準を具体的に設計して。
+出力形式: 基準を数値または明確な状態で3つ以上示して。
+```
+
+### 96. ツール選定の意思決定フロー
+
+誰がどう決めるかの意思決定プロセスを明確にしたい人向け。
+
+```text
+前提: ツール選定の権限が曖昧で、誰が最終決定するか不明確な状態。
+指示: 意思決定に関わるべき役割（現場・マネージャー・情シスなど）と、決定までのフローを整理して。
+出力形式: 関係者と役割の一覧、決定フローの図解イメージを示して。
+```
+
+### 97. 導入コストの予算化資料
+
+予算申請のために、導入コストを分かりやすくまとめたい人向け。
+
+```text
+前提: 想定人数・プラン・利用期間（貼り付ける）から予算感を出したい。
+指示: 予算申請書に使える形で、初期費用・月額費用・想定効果をまとめて。
+出力形式: 予算申請フォーマットに沿った項目立てで出力して。
+```
+
+### 98. 既存ツールからの移行スケジュール
+
+他のAIツールから乗り換える場合の、チーム全体のスケジュールを作りたい人向け。
+
+```text
+前提: チーム全体で使っている既存ツールから、段階的に移行したい。
+指示: 混乱を最小限にするための移行スケジュール（周知→並行→切り替え）を設計して。
+出力形式: 週単位のスケジュール表と、各週の目標状態を示して。
+```
+
+### 99. 導入後のガバナンスルール整備
+
+野放図に使われないよう、最低限のガバナンスルールを決めたい人向け。
+
+```text
+前提: チームでの利用が広がってきたが、明文化されたルールがまだない。
+指示: 最低限守るべきガバナンスルール（機密情報の扱い・利用範囲等）を整理して。
+出力形式: ルールを箇条書きで、違反時の対応方針も添えて。
+```
+
+### 100. 導入事例の社内共有フォーマット
+
+うまくいった事例を社内に共有し、横展開を促したい人向け。
+
+```text
+前提: 導入によって効果が出た具体的な事例（貼り付ける）がある。
+指示: 他のチームにも伝わりやすい事例共有のフォーマット（課題→施策→効果）を作って。
+出力形式: 見出し付きの事例共有テンプレートで。
+```
+
+
+以上、100個です。内訳: 移行判断・準備系14本／インポート実行・検証系15本／スキル・プラグイン復旧系15本／設定同期・併用運用系14本／開発スタイル使い分け系14本／コスト最適化系14本／チーム導入・展開系14本
+</pre>
+<script>
+function flash(btn, label){
+  const old = btn.textContent, cls = btn.className;
+  btn.textContent = label; btn.classList.add('ok');
+  setTimeout(() => { btn.textContent = old; btn.className = cls; }, 1600);
+}
+function textOf(id){ return document.getElementById(id).textContent; }
+
+async function copyText(btn, id){
+  const t = textOf(id);
+  try {
+    await navigator.clipboard.writeText(t);
+  } catch (e) {
+    const ta = document.createElement('textarea');
+    ta.value = t; ta.style.position='fixed'; ta.style.opacity='0';
+    document.body.appendChild(ta); ta.select();
+    document.execCommand('copy'); ta.remove();
+  }
+  flash(btn, '✓ コピーしました');
+}
+
+function saveText(btn, id, name){
+  const blob = new Blob([textOf(id)], {type:'text/plain;charset=utf-8'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = name;
+  document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+  if (btn) flash(btn, '✓ 保存しました');
+}
+
+document.addEventListener('click', e => {
+  const b = e.target.closest('[data-copy]');
+  if (b) { copyText(b, b.dataset.copy); return; }
+  const d = e.target.closest('[data-save]');
+  if (d) { saveText(d, d.dataset.save, d.dataset.name); }
+});
+</script>
+<aside id="promo" class="promo">
+  <button id="promoClose" class="promo-x" aria-label="閉じる">×</button>
+  <a class="promo-body" href="https://lp.kawaru-ai.jp/" target="_blank" rel="noopener">
+    <img src="data:image/png;base64,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" alt="">
+    <div>
+      <p class="promo-ch">Kawaru<span class="promo-tag">AIエージェント</span></p>
+      <p class="promo-tx">「これ自動化して」と話すだけ。無料で試す →</p>
+    </div>
+  </a>
+</aside>
+<script>
+(function(){
+  if (sessionStorage.getItem('promoClosed')) return;
+  var el = document.getElementById('promo');
+  if (!el) return;
+  setTimeout(function(){ el.classList.add('show'); }, 1400);
+  document.getElementById('promoClose').addEventListener('click', function(e){
+    e.preventDefault();
+    el.classList.remove('show');
+    sessionStorage.setItem('promoClosed', '1');
+  });
+})();
+</script>
+</body></html>

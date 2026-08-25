@@ -1,0 +1,2046 @@
+<!doctype html>
+<html lang="ja"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MiniMax H3×Qwen3.8-Max 実践プロンプト100選 — Kawaru Gifts</title>
+<meta name="description" content="動画生成（MiniMax H3）60本＋コーディング/エージェント（Qwen3.8-Max）40本。貼るだけで使える実践プロンプト集です。">
+<meta name="robots" content="noindex,nofollow">
+<link rel="icon" href="data:image/png;base64,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">
+<link rel="stylesheet" href="../../assets/site.css">
+</head><body>
+<header class="kh"><div class="top">
+  <a class="back" href="../../">← 一覧へ</a>
+  <img src="data:image/png;base64,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" alt="">
+  <h1>MiniMax H3×Qwen3.8-Max 実践プロンプト100選</h1>
+  <span class="badge">100個</span>
+  <button class="btn sm" style="margin-left:auto" data-save="pfull" data-name="prompts100.md">⬇ 全件ダウンロード</button>
+</div></header>
+
+<div class="kwrap">
+  <section class="epctx epctx-top">
+  <div class="ep-left">
+    <div class="ep-thumb epctx-thumb"><img src="https://i.ytimg.com/vi/ARy4S--ZP2w/hqdefault.jpg" alt=""></div>
+    <a class="watch" href="https://www.youtube.com/watch?v=ARy4S--ZP2w" target="_blank" rel="noopener">▶ 動画を見る</a>
+  </div>
+  <div>
+    <p class="epctx-label">この動画のプレゼントです</p>
+    <p class="epctx-title">【激ヤバ】新モデルが登場したことで、Claudeを超える最も安くて賢いAIが爆誕しました</p>
+    <p class="epctx-date">2026-08-13</p>
+  </div>
+</section>
+
+  <section class="kintro">
+    <h2>MiniMax H3×Qwen3.8-Max 実践プロンプト100選</h2>
+    <p><span class="nb">動画生成</span>（MiniMax H3）<span class="nb">60本＋コーディング/エージェント</span>（Qwen3.8-Max）<span class="nb">40本。</span><span class="nb">貼るだけで使える実践プロンプト集で</span><span class="nb">す。</span></p>
+    <div class="kmeta"><span>プロンプト集</span><span>収録 100個</span><span>No.85 MiniMaxとQwenの気骨がヤバい</span><span>2026-08-06 配布</span></div>
+    <div class="pnote"><span class="nb">下のカードから、</span><span class="nb">1件ずつコピー、</span><span class="nb">または個別にダウンロードできます。</span><span class="nb">まとめて欲しいときは、</span><span class="nb">上の</span><span class="nb">「全件ダウンロード」を</span><span class="nb">お使いください。</span></div>
+  </section>
+
+  <h2 class="cat">商品・EC訴求（MiniMax H3）</h2>
+<div class="icard">
+  <div class="ih"><span class="num">001</span><span class="ititle">商品360度回転ショット</span></div>
+  <p class="imeta"><span class="nb">ECサイトのメイン画像1枚から、</span><span class="nb">商品を360度回転させる紹介動画を</span><span class="nb">作る。</span></p>
+  <pre class="prompt" id="b1">前提: アパレル・雑貨などECサイトに掲載する、商品単体の静止画1枚から動画を作りたい場面。
+指示: この商品画像を参照素材として使い、背景を白飛びのないスタジオ照明に統一したまま、商品がゆっくり360度回転する8秒のカットを生成して。回転速度は一定にし、途中で形が歪まないようにして。
+出力形式: 2K・8秒・16:9。音声はオフ。ECサイトのメイン枠にそのまま貼れる仕上がりにして。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b1">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b1" data-name="prompts100-001.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">002</span><span class="ititle">質感が伝わるマクロ寄りカット</span></div>
+  <p class="imeta"><span class="nb">生地・</span><span class="nb">素材の質感をアップで見せ、</span><span class="nb">購買意欲につなげる。</span></p>
+  <pre class="prompt" id="b2">前提: 生地や素材の質感が売りの商品（ニット・革小物など）を、写真だけでは伝わりにくいと感じている場面。
+指示: 参照画像の商品にゆっくりカメラが寄っていき、繊維や表面の質感が分かる位置で3秒静止するカットを作って。ライティングは自然光の柔らかさを保って。
+出力形式: 2K・6〜8秒・正方形（Instagram投稿用）。テキストは入れない。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b2">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b2" data-name="prompts100-002.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">003</span><span class="ititle">使用シーンの再現デモ</span></div>
+  <p class="imeta"><span class="nb">商品単体ではなく、</span><span class="nb">実際に使っているシーンを</span><span class="nb">イメージ映像として作る。</span></p>
+  <pre class="prompt" id="b3">前提: キッチン用品・文房具など、使用シーンを見せた方が魅力が伝わる商品を扱っている場面。
+指示: 商品画像を参照に、実際にその商品が使われている様子（手が伸びてくる、動かす等）を自然な動きで再現して。人物の顔は映さず手元だけに絞って。
+出力形式: 2K・10〜15秒・縦型（9:16、ショート動画用）。ステレオ音声はオンにし、環境音のみ（BGMなし）。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b3">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b3" data-name="prompts100-003.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">004</span><span class="ititle">Before/Afterの変化演出</span></div>
+  <p class="imeta"><span class="nb">使用前後の違いを1本の動画で</span><span class="nb">つなげて見せる。</span></p>
+  <pre class="prompt" id="b4">前提: 掃除用品・美容系など「変化」が訴求ポイントになる商品を紹介したい場面。
+指示: Before状態の画像とAfter状態の画像を2つとも参照素材として渡し、その間をなめらかにつなぐモーフィング風の遷移カットを生成して。変化が誇張されすぎないよう、自然な速度で。
+出力形式: 2K・5〜8秒・16:9。中間フレームで不自然な破綻が出ないか確認してから採用して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b4">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b4" data-name="prompts100-004.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">005</span><span class="ititle">パッケージ開封アングル</span></div>
+  <p class="imeta"><span class="nb">開封の瞬間のワクワク感を動画で</span><span class="nb">演出する。</span></p>
+  <pre class="prompt" id="b5">前提: 化粧品・ギフト商品など、パッケージの見た目にもこだわっている商品を紹介する場面。
+指示: 閉じた状態のパッケージ画像を参照に、蓋やフタがゆっくり開き中身が見える瞬間までのカットを作って。開ける手の動きは映さず、パッケージ自体が自律的に開くような演出にして。
+出力形式: 2K・6秒・16:9。開封音を想定したステレオ音声をオンにして。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b5">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b5" data-name="prompts100-005.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">006</span><span class="ititle">価格訴求バナー動画化</span></div>
+  <p class="imeta"><span class="nb">静止画の価格訴求バナーに動きを</span><span class="nb">足してSNS広告用にする。</span></p>
+  <pre class="prompt" id="b6">前提: すでに作成済みの静止画バナー（商品＋価格文字入り）をSNS広告として動画化したい場面。
+指示: このバナー画像を参照に、背景の光の反射がゆっくり動くパララックス風の演出を加えて。文字要素は動かさず固定のままにして、可読性を保って。
+出力形式: 2K・5秒・1:1と9:16の2パターン。ループしても違和感のない始点と終点にして。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b6">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b6" data-name="prompts100-006.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">007</span><span class="ititle">複数商品の比較訴求</span></div>
+  <p class="imeta"><span class="nb">同シリーズの色違い・</span><span class="nb">サイズ違いを並べて見せる。</span></p>
+  <pre class="prompt" id="b7">前提: 同じ商品のカラーバリエーションやサイズ展開を、1本の動画でまとめて訴求したい場面。
+指示: 各バリエーションの画像を参照素材として渡し、横に並んだ状態から1つずつスポットライトが当たるように順番にフォーカスが移っていく演出を作って。
+出力形式: 2K・12秒・16:9。バリエーション数に応じて尺を調整し、各アイテムに最低2秒は当てて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b7">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b7" data-name="prompts100-007.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">008</span><span class="ititle">屋外シーンへの合成イメージ</span></div>
+  <p class="imeta"><span class="nb">スタジオで撮った商品画像を、</span><span class="nb">屋外の使用イメージに変換する。</span></p>
+  <pre class="prompt" id="b8">前提: スタジオで撮った商品画像しかないが、アウトドアでの使用イメージを見せたい場面。
+指示: この商品画像を参照に、自然光の屋外（公園・テラスなど）に置かれているような映像に変換して。商品自体の形・色は変えず、背景と光の当たり方だけを変えて。
+出力形式: 2K・8秒・16:9。不自然な合成感が出た場合は、光の向きの指示をやり直して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b8">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b8" data-name="prompts100-008.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">009</span><span class="ititle">季節限定感の演出</span></div>
+  <p class="imeta"><span class="nb">同じ商品でも季節ごとの</span><span class="nb">訴求バリエーションを作る。</span></p>
+  <pre class="prompt" id="b9">前提: 通年商品だが、季節キャンペーンに合わせた見せ方のバリエーションが欲しい場面。
+指示: 商品画像を参照に、桜や紅葉・雪といった季節を感じさせる要素が背景にふわりと舞う演出を加えて。商品自体への視線誘導は妨げないようにして。
+出力形式: 2K・8秒・16:9。季節要素は控えめにし、主役はあくまで商品であることを保って。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b9">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b9" data-name="prompts100-009.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">010</span><span class="ititle">ミニマルな余白重視カット</span></div>
+  <p class="imeta"><span class="nb">高級路線のブランドイメージに合う、</span><span class="nb">静けさのあるカットを作る。</span></p>
+  <pre class="prompt" id="b10">前提: 高価格帯・ハイブランド寄りの商品で、賑やかな演出ではなく「間」を活かした見せ方をしたい場面。
+指示: 商品画像を参照に、背景は無地に近い状態を保ちながら、商品にごくわずかな影の揺らぎだけを加える最小限の動きを作って。
+出力形式: 2K・10秒・16:9。BGM・効果音は付けず、静寂な余白がそのまま伝わる仕上がりにして。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b10">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b10" data-name="prompts100-010.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<h2 class="cat">SNS広告・ショート動画（MiniMax H3）</h2>
+<div class="icard">
+  <div class="ih"><span class="num">011</span><span class="ititle">3秒で惹きつける冒頭フック</span></div>
+  <p class="imeta"><span class="nb">ショート動画の最初の3秒に</span><span class="nb">絞って離脱を防ぐカットを作る。</span></p>
+  <pre class="prompt" id="b11">前提: TikTok・Reels等、最初の3秒で離脱されるかどうかが決まる媒体に載せる動画を作りたい場面。
+指示: 商品または人物の参照画像から、最初の1秒で画面全体が大きく動く（ズームイン・カメラが素早く寄る等）インパクトのあるオープニングカットを生成して。
+出力形式: 2K・3秒・9:16。テンポの速さを最優先し、静止している時間を作らないようにして。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b11">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b11" data-name="prompts100-011.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">012</span><span class="ititle">字幕連動のテンポ編集用素材</span></div>
+  <p class="imeta"><span class="nb">後から字幕を載せる前提で、</span><span class="nb">間を意識したカットを作る。</span></p>
+  <pre class="prompt" id="b12">前提: 生成した動画に後から字幕テロップを重ねる編集を前提にしている場面。
+指示: 画面下1/3にテキストが乗ることを想定し、その領域に情報量の多い被写体が来ないよう構図を調整した映像を生成して。動きは字幕の切り替えタイミングに合わせて緩急をつけて。
+出力形式: 2K・15秒・9:16。下部1/3は比較的シンプルな背景・動きに抑えて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b12">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b12" data-name="prompts100-012.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">013</span><span class="ititle">ビフォーアフター広告フォーマット</span></div>
+  <p class="imeta"><span class="nb">広告でよく使われる左右分割の</span><span class="nb">比較演出を作る。</span></p>
+  <pre class="prompt" id="b13">前提: 「使う前」と「使った後」を1画面で同時に見せる広告フォーマットを作りたい場面。
+指示: Before画像とAfter画像を参照に、画面を左右または上下に分割し、それぞれが独立して微妙に動く（呼吸するような）演出を加えて。
+出力形式: 2K・8秒・9:16。分割線ははっきり見えるように、境界をぼかしすぎないで。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b13">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b13" data-name="prompts100-013.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">014</span><span class="ititle">反応・驚き演出カット</span></div>
+  <p class="imeta"><span class="nb">人物が商品に驚く・</span><span class="nb">喜ぶリアクションのカットを作る。</span></p>
+  <pre class="prompt" id="b14">前提: 商品を受け取った人のリアクション動画があると訴求力が上がると分かっている場面。
+指示: 人物の参照画像を使い、表情がだんだん驚き・笑顔に変わっていく自然な変化のカットを作って。過剰な誇張表現にはせず、リアルな反応の範囲に収めて。
+出力形式: 2K・6秒・9:16。V2Vのモーション転写機能があれば、参考にしたい実写動画も合わせて渡して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b14">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b14" data-name="prompts100-014.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">015</span><span class="ititle">カウントダウン・限定感の演出</span></div>
+  <p class="imeta"><span class="nb">セール告知など緊急性を伝える動画を</span><span class="nb">作る。</span></p>
+  <pre class="prompt" id="b15">前提: タイムセール・数量限定など、緊急性を伝えたい告知を動画化する場面。
+指示: 商品画像を参照に、背景に光が明滅するような緊張感のある演出を加え、時間や数量が迫っている印象を作って。派手すぎて安っぽくならない範囲に抑えて。
+出力形式: 2K・5秒・9:16。テキスト情報（残り時間等）は別途重ねる前提で、映像側に文字は焼き込まないで。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b15">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b15" data-name="prompts100-015.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">016</span><span class="ititle">ロゴ登場のブランドスティング</span></div>
+  <p class="imeta"><span class="nb">動画の最後に流すブランドロゴの</span><span class="nb">登場カットを作る。</span></p>
+  <pre class="prompt" id="b16">前提: 動画コンテンツの締めに毎回使う、短いブランドロゴ演出（スティング）を作りたい場面。
+指示: ロゴ画像を参照に、光の粒子が集まってロゴの形を作り上げるような2〜3秒の演出を生成して。ブランドカラーを保ったまま作って。
+出力形式: 2K・3秒・16:9と9:16の両方。ループの最初と最後で違和感が出ないようにして。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b16">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b16" data-name="prompts100-016.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">017</span><span class="ititle">縦型広告の複数バリエーション出し</span></div>
+  <p class="imeta"><span class="nb">同じ訴求で複数パターンを一気に作り、</span><span class="nb">A/Bテストに使う。</span></p>
+  <pre class="prompt" id="b17">前提: 同じ商品訴求で、広告文言や色味だけ変えた複数パターンを短時間で用意したい場面。
+指示: ベースとなる商品画像を参照に、背景色（3パターン程度）を変えたバリエーションを、同じカメラワーク・同じ尺で生成して。
+出力形式: 2K・6秒・9:16を3パターン。比較しやすいよう、カメラの動き方だけは全パターン共通にして。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b17">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b17" data-name="prompts100-017.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">018</span><span class="ititle">問いかけ型フックのオープニング</span></div>
+  <p class="imeta"><span class="nb">「こんな悩みありませんか？」</span><span class="nb">形式の冒頭カットを作る。</span></p>
+  <pre class="prompt" id="b18">前提: 視聴者への問いかけから始まる、悩み訴求型の広告構成にしたい場面。
+指示: 悩んでいる様子が伝わる人物または状況の参照画像から、画面全体がわずかに揺れる不安定な演出（悩み・迷いを感じさせる動き）のカットを作って。
+出力形式: 2K・4秒・9:16。過度に暗い雰囲気にはせず、この後の解決パートにつながるトーンを保って。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b18">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b18" data-name="prompts100-018.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">019</span><span class="ititle">実演・ハウツー動画の1カット</span></div>
+  <p class="imeta"><span class="nb">使い方を説明するハウツー動画の一部と</span><span class="nb">して使う。</span></p>
+  <pre class="prompt" id="b19">前提: 商品の使い方を順を追って説明するハウツー動画を作っている場面。
+指示: 手順の1ステップに対応する画像を参照に、その動作（開ける・塗る・押す等）が自然に完了するまでの一連の動きを生成して。
+出力形式: 2K・8〜10秒・16:9。次のステップにつなげやすいよう、動作の始点と終点をはっきりさせて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b19">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b19" data-name="prompts100-019.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">020</span><span class="ititle">季節・イベント告知バンパー</span></div>
+  <p class="imeta"><span class="nb">季節イベントに合わせた短い告知動画を</span><span class="nb">作る。</span></p>
+  <pre class="prompt" id="b20">前提: セール・キャンペーンなど、季節イベントに合わせた短い告知動画（バンパー）が欲しい場面。
+指示: イベントを象徴する要素（雪・花火・花等）が画面に舞い、その中央にロゴまたは商品が浮かび上がる演出を作って。
+出力形式: 2K・5秒・9:16と16:9の両方。イベント要素は主張しすぎず、あくまで背景演出に留めて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b20">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b20" data-name="prompts100-020.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<h2 class="cat">UI/UX・プロダクトデモ（MiniMax H3）</h2>
+<div class="icard">
+  <div class="ih"><span class="num">021</span><span class="ititle">アプリ画面遷移のイメージ動画</span></div>
+  <p class="imeta"><span class="nb">アプリのスクリーンショットから、</span><span class="nb">画面遷移のイメージ映像を作る。</span></p>
+  <pre class="prompt" id="b21">前提: アプリのスクリーンショット2〜3枚はあるが、実際の操作動画がまだ撮れていない場面。
+指示: 各画面のスクリーンショットを参照に、画面Aから画面Bへスワイプまたはフェードで自然に遷移するイメージ映像を生成して。UIの文字が歪まないよう注意して。
+出力形式: 2K・10秒・9:16（スマホ画面想定）。実機で撮ったような自然な速度にして。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b21">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b21" data-name="prompts100-021.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">022</span><span class="ititle">プロダクトのローンチティザー</span></div>
+  <p class="imeta"><span class="nb">新製品発表前に使う、</span><span class="nb">抽象的なティザー動画を作る。</span></p>
+  <pre class="prompt" id="b22">前提: 製品発表前で詳細をまだ見せられないが、期待感を高めるティザー動画を出したい場面。
+指示: 製品のシルエットまたは一部だけが見える画像を参照に、光と影だけで形が浮かび上がる、正体を明かさない演出のカットを作って。
+出力形式: 2K・8秒・16:9。製品の全体像は見せず、輪郭やパーツの一部のみに留めて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b22">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b22" data-name="prompts100-022.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">023</span><span class="ititle">ダッシュボードのデータ更新演出</span></div>
+  <p class="imeta"><span class="nb">管理画面のグラフや数値が</span><span class="nb">動くイメージ映像を作る。</span></p>
+  <pre class="prompt" id="b23">前提: SaaSプロダクトの管理画面（ダッシュボード）のスクリーンショットを、動きのある紹介映像にしたい場面。
+指示: ダッシュボード画面を参照に、グラフの数値がカウントアップし、棒グラフが伸びていくようなデータ更新のアニメーション風カットを生成して。
+出力形式: 2K・8秒・16:9。UIのレイアウト自体は変えず、数値・グラフ部分だけが動くようにして。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b23">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b23" data-name="prompts100-023.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">024</span><span class="ititle">ハードウェア製品の質感訴求</span></div>
+  <p class="imeta"><span class="nb">デバイス製品の素材感・</span><span class="nb">精密さを見せるカットを作る。</span></p>
+  <pre class="prompt" id="b24">前提: イヤホン・ガジェット等のハードウェア製品で、素材の質感や精密さを訴求したい場面。
+指示: 製品画像を参照に、金属やガラスの反射光がゆっくり動きながら製品の輪郭をなぞっていくような、質感重視のカットを作って。
+出力形式: 2K・8秒・16:9。反射のハイライトが不自然にちらつかないか確認してから採用して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b24">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b24" data-name="prompts100-024.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">025</span><span class="ititle">オンボーディング画面の紹介動画</span></div>
+  <p class="imeta"><span class="nb">アプリの初回起動時に見せる説明動画を</span><span class="nb">作る。</span></p>
+  <pre class="prompt" id="b25">前提: アプリの新規ユーザー向けオンボーディング画面用に、機能説明の短い動画がほしい場面。
+指示: 機能を表すアイコンやイラスト画像を参照に、要素が1つずつ画面中央にふわっと現れては消えていく、シンプルな説明用アニメーションを作って。
+出力形式: 2K・6秒×機能数分・9:16。1要素あたり2秒を目安に、テンポよく切り替えて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b25">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b25" data-name="prompts100-025.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">026</span><span class="ititle">物理製品×デジタル画面の合成</span></div>
+  <p class="imeta"><span class="nb">スマホの中に実物の製品が</span><span class="nb">浮かぶような演出を作る。</span></p>
+  <pre class="prompt" id="b26">前提: 物理製品とアプリ（デジタル）の両方を持つブランドで、両者のつながりを1カットで見せたい場面。
+指示: 製品画像とアプリ画面のスクリーンショットを両方参照素材として渡し、スマホ画面から製品が浮かび上がって出てくるような演出のカットを作って。
+出力形式: 2K・8秒・16:9。境界の合成が不自然な場合は、光の演出で馴染ませて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b26">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b26" data-name="prompts100-026.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">027</span><span class="ititle">使い勝手を伝える手元操作イメージ</span></div>
+  <p class="imeta"><span class="nb">実機がなくても操作イメージを</span><span class="nb">伝える動画を作る。</span></p>
+  <pre class="prompt" id="b27">前提: 実機の操作動画がまだ撮れていないが、使い勝手のイメージだけでも伝えたい場面。
+指示: 製品画像を参照に、手がボタンやタッチパネルに触れて操作している様子を、手元のみのアングルで自然に再現して。
+出力形式: 2K・8〜10秒・16:9。顔や全身は映さず、製品と手元だけにフォーカスして。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b27">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b27" data-name="prompts100-027.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">028</span><span class="ititle">進化・アップデートの比較演出</span></div>
+  <p class="imeta"><span class="nb">旧バージョンと新バージョンの違いを</span><span class="nb">動画で見せる。</span></p>
+  <pre class="prompt" id="b28">前提: 製品の新バージョンをリリースし、旧バージョンとの違いをアピールしたい場面。
+指示: 旧製品と新製品の画像を両方参照に、旧製品が徐々に新製品へと形を変えていく変化のカットを作って。
+出力形式: 2K・8秒・16:9。変化がどこで起きているか分かりやすいよう、該当パーツにわずかに光を当てて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b28">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b28" data-name="prompts100-028.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">029</span><span class="ititle">パートナー企業ロゴの一覧演出</span></div>
+  <p class="imeta"><span class="nb">導入企業・</span><span class="nb">パートナー企業のロゴを</span><span class="nb">並べて紹介する動画を作る。</span></p>
+  <pre class="prompt" id="b29">前提: 導入実績としてパートナー企業のロゴを複数紹介したい場面。
+指示: 各ロゴ画像を参照に、画面上を横スクロールしながら1つずつロゴが流れていく、シンプルなロゴパレード演出を作って。
+出力形式: 2K・10秒・16:9。ロゴの縦横比・色味は変えず、動きだけを加えて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b29">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b29" data-name="prompts100-029.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">030</span><span class="ititle">料金プラン比較の視覚化</span></div>
+  <p class="imeta"><span class="nb">複数の料金プランの違いを動画で</span><span class="nb">分かりやすく見せる。</span></p>
+  <pre class="prompt" id="b30">前提: 料金プラン表（静止画）はあるが、動画としてもっと分かりやすく伝えたい場面。
+指示: プラン表画像を参照に、おすすめプランにだけスポットライトが当たり、他のプランは少しトーンダウンする演出のカットを作って。
+出力形式: 2K・6秒・16:9。数字・文字要素は変形させず、光の演出のみで注目を集めて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b30">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b30" data-name="prompts100-030.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<h2 class="cat">ブランディング・世界観（MiniMax H3）</h2>
+<div class="icard">
+  <div class="ih"><span class="num">031</span><span class="ititle">ブランド世界観のムービー</span></div>
+  <p class="imeta"><span class="nb">ブランドイメージを</span><span class="nb">伝える抽象的な世界観動画を作る。</span></p>
+  <pre class="prompt" id="b31">前提: 商品説明ではなく、ブランドの雰囲気・世界観そのものを伝えたい場面。
+指示: ブランドカラーやモチーフとなる画像を参照に、色や光がゆっくり流動する抽象的な映像を、具体的な物体の形にはせず生成して。
+出力形式: 2K・15秒・16:9。ブランドカラーから逸脱しない範囲で、色の揺らぎを作って。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b31">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b31" data-name="prompts100-031.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">032</span><span class="ititle">創業ストーリー用のイメージ映像</span></div>
+  <p class="imeta"><span class="nb">会社紹介・</span><span class="nb">採用ページに使う情緒的な映像を作る。</span></p>
+  <pre class="prompt" id="b32">前提: 会社紹介動画や採用ページに使う、情緒的なイメージ映像がほしい場面。
+指示: オフィスや製品づくりの様子が伝わる画像を参照に、時間の経過を感じさせるゆっくりとしたカメラの動き（パン・チルト）のカットを作って。
+出力形式: 2K・10秒・16:9。ナレーションを別で乗せる前提で、映像側の音声は環境音程度に抑えて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b32">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b32" data-name="prompts100-032.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">033</span><span class="ititle">サステナビリティ訴求の映像</span></div>
+  <p class="imeta"><span class="nb">環境配慮などのメッセージを象徴的に</span><span class="nb">伝える映像を作る。</span></p>
+  <pre class="prompt" id="b33">前提: 環境配慮・サステナビリティの取り組みを、データではなく情緒的に伝えたい場面。
+指示: 自然や素材の画像を参照に、植物が育つ・水が流れるといった自然な生成変化を感じさせるカットを作って。
+出力形式: 2K・10秒・16:9。誇張表現（過度な演出）は避け、落ち着いたトーンを保って。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b33">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b33" data-name="prompts100-033.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">034</span><span class="ititle">複数カットのブランドムービー構成</span></div>
+  <p class="imeta"><span class="nb">複数のシーンをつないで1本の</span><span class="nb">ブランドムービーにする。</span></p>
+  <pre class="prompt" id="b34">前提: 複数の画像素材があり、それらをつないで1本のストーリー性あるムービーにしたい場面。
+指示: 渡す画像素材の順番通りに、各カット3〜4秒でつながるよう、カット間のトランジション（フェード等）も含めて生成して。
+出力形式: 2K・各カット3〜4秒×素材数・16:9。全体を通してトーンと色味の一貫性を保って。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b34">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b34" data-name="prompts100-034.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">035</span><span class="ititle">季節キャンペーンのキービジュアル動画化</span></div>
+  <p class="imeta"><span class="nb">季節ごとのキービジュアルを動画に</span><span class="nb">展開する。</span></p>
+  <pre class="prompt" id="b35">前提: 季節ごとに制作しているキービジュアル（静止画）を、SNS用に動画展開したい場面。
+指示: キービジュアル画像を参照に、季節を象徴する要素（光・粒子・気候感）がゆっくり画面内を動く演出を加えて。
+出力形式: 2K・8秒・1:1と9:16の2パターン。ビジュアルの主役（人物・商品）の位置は動かさないで。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b35">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b35" data-name="prompts100-035.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">036</span><span class="ititle">ロゴアニメーションのラフ検討</span></div>
+  <p class="imeta"><span class="nb">ロゴが動く案を</span><span class="nb">複数パターン素早く試す。</span></p>
+  <pre class="prompt" id="b36">前提: ロゴアニメーションの発注前に、方向性を複数パターン素早く確認したい場面。
+指示: ロゴ画像を参照に、①フェードイン②光が集まって形成③パーツが組み合わさる、の3パターンの短い動きをそれぞれ作って。
+出力形式: 2K・各2〜3秒・16:9を3パターン。本番用ではなくラフ検討用と明記して比較して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b36">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b36" data-name="prompts100-036.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">037</span><span class="ititle">採用ページ用の雰囲気映像</span></div>
+  <p class="imeta"><span class="nb">職場の雰囲気を伝える採用向け映像を</span><span class="nb">作る。</span></p>
+  <pre class="prompt" id="b37">前提: 職場の雰囲気を伝える写真はあるが、採用ページ用に動画として展開したい場面。
+指示: オフィスや働く様子の画像を参照に、自然光が窓から差し込むような柔らかい光の変化を加えた、落ち着いたトーンのカットを作って。
+出力形式: 2K・8秒・16:9。過度に演出感を出さず、実際の雰囲気に近い自然さを保って。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b37">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b37" data-name="prompts100-037.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">038</span><span class="ititle">記念日・周年ロゴムービー</span></div>
+  <p class="imeta"><span class="nb">創業記念日など周年を祝うロゴ演出を</span><span class="nb">作る。</span></p>
+  <pre class="prompt" id="b38">前提: 会社設立〇周年など、記念日を祝うロゴムービーを作りたい場面。
+指示: ロゴと周年を表す数字の画像を参照に、数字が輝きながら浮かび上がり、最後にロゴと並ぶ演出のカットを作って。
+出力形式: 2K・6秒・16:9。祝祭感のある明るいトーンで、派手すぎない上品な光の演出にして。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b38">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b38" data-name="prompts100-038.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">039</span><span class="ititle">空間・店舗の雰囲気映像</span></div>
+  <p class="imeta"><span class="nb">実店舗の写真から、</span><span class="nb">雰囲気の伝わる映像を作る。</span></p>
+  <pre class="prompt" id="b39">前提: 実店舗の写真はあるが、来店前に雰囲気が伝わる動画がSNSに欲しい場面。
+指示: 店内写真を参照に、照明の揺らぎや空間の奥行きが伝わるような、ゆっくりとしたカメラの前進移動カットを作って。
+出力形式: 2K・10秒・16:9。人物のプライバシーに配慮し、顔がはっきり映る構図は避けて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b39">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b39" data-name="prompts100-039.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">040</span><span class="ititle">メッセージ性のあるモノローグ映像</span></div>
+  <p class="imeta"><span class="nb">一言メッセージに</span><span class="nb">合わせた象徴的な映像を作る。</span></p>
+  <pre class="prompt" id="b40">前提: ブランドのメッセージ（一言コピー）に合わせて、それを象徴する映像を作りたい場面。
+指示: メッセージの内容に合う情景（例: 「挑戦」なら朝日、「安心」なら穏やかな水面等）の画像を参照に、その情景がゆっくり変化する映像を生成して。
+出力形式: 2K・8秒・16:9。テキストは映像に焼き込まず、後から別で重ねる前提にして。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b40">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b40" data-name="prompts100-040.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<h2 class="cat">実写参照・スタイル変換（MiniMax H3）</h2>
+<div class="icard">
+  <div class="ih"><span class="num">041</span><span class="ititle">実写動画のスタイル転写</span></div>
+  <p class="imeta"><span class="nb">手持ちの参考動画の動きを、</span><span class="nb">自社素材に転写する。</span></p>
+  <pre class="prompt" id="b41">前提: 動きの参考にしたい実写動画（他社事例やイメージ動画）が手元にあり、その動きを自社商品で再現したい場面。
+指示: 参考にしたい動画をモーション参照として渡し、自社の商品画像に対して同じカメラワーク・同じ動きの質感を転写して生成して。
+出力形式: 2K・元動画と同じ尺・16:9。転写後、動きが不自然な箇所がないか必ず確認して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b41">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b41" data-name="prompts100-041.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">042</span><span class="ititle">イラスト画像の実写風変換</span></div>
+  <p class="imeta"><span class="nb">イラストのキャラクターやモチーフを、</span><span class="nb">実写のような質感の動画にする。</span></p>
+  <pre class="prompt" id="b42">前提: イラストで描いたキャラクター・モチーフ画像を、実写に近い質感の動画として動かしたい場面。
+指示: このイラスト画像を参照に、質感だけを実写寄りに変換しつつ、キャラクターの形・ポーズは保ったまま、ごく小さな呼吸のような動きを加えて。
+出力形式: 2K・6秒・16:9。イラストらしさが完全に失われすぎないよう、変換の強さは控えめに調整して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b42">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b42" data-name="prompts100-042.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">043</span><span class="ititle">旧素材のリマスター風生成</span></div>
+  <p class="imeta"><span class="nb">画質の粗い過去の素材から、</span><span class="nb">高品質な新素材を作る。</span></p>
+  <pre class="prompt" id="b43">前提: 過去に使っていた画質の粗い商品画像を、現在のクオリティ基準で作り直したい場面。
+指示: この過去の商品画像を参照に、同じ構図・同じ商品のまま、2K解像度で質感を保った短いカットとして再生成して。
+出力形式: 2K・6秒・16:9。商品の形状・色が元画像から変わっていないか、生成後に見比べて確認して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b43">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b43" data-name="prompts100-043.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">044</span><span class="ititle">競合参考動画からの着想展開</span></div>
+  <p class="imeta"><span class="nb">参考にしたい構成の動画から、</span><span class="nb">自社版のアイデアを展開する。</span></p>
+  <pre class="prompt" id="b44">前提: 業界内で話題になっている演出手法があり、それを参考に自社版を作りたい場面。
+指示: 参考動画の構成（画角・カット割りの雰囲気）を参照情報として伝え、自社の商品画像を使って同じ構成のオリジナルカットを生成して。
+出力形式: 2K・参考動画と同程度の尺・16:9。丸ごとの模倣ではなく、構成の着想のみを活かすようにして。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b44">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b44" data-name="prompts100-044.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">045</span><span class="ititle">複数参照画像の合成シーン生成</span></div>
+  <p class="imeta"><span class="nb">人物・</span><span class="nb">商品・</span><span class="nb">背景を別々の画像から</span><span class="nb">組み合わせて1シーンにする。</span></p>
+  <pre class="prompt" id="b45">前提: 人物・商品・背景がそれぞれ別の画像素材としてあり、これらを組み合わせた1シーンを作りたい場面。
+指示: 3つの画像（人物・商品・背景）をすべて参照素材として渡し、自然な配置・自然な光の当たり方になるよう1つのシーンとして合成生成して。
+出力形式: 2K・8秒・16:9。光の向き・影の付き方に矛盾がないか、生成後に確認して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b45">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b45" data-name="prompts100-045.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">046</span><span class="ititle">参照動画の色調だけを転写</span></div>
+  <p class="imeta"><span class="nb">参考動画のトーン・</span><span class="nb">色味だけを自社素材に反映する。</span></p>
+  <pre class="prompt" id="b46">前提: 参考にしたい動画の「色味・トーン」だけを自社素材に取り入れたい場面（動きの真似はしない）。
+指示: 参考動画を色調参照として渡し、自社の商品画像に対して同じ色温度・コントラストの傾向だけを反映したカットを生成して。動きは新規に指定して。
+出力形式: 2K・8秒・16:9。色調転写後、商品本来の色が過度に変わっていないか確認して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b46">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b46" data-name="prompts100-046.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">047</span><span class="ititle">First/Lastフレーム指定の遷移</span></div>
+  <p class="imeta"><span class="nb">始まりと終わりの画像を指定して、</span><span class="nb">その間の動きを生成する。</span></p>
+  <pre class="prompt" id="b47">前提: 「この状態から始まり、この状態で終わる」という始点・終点のイメージが明確にある場面。
+指示: 始点の画像と終点の画像を両方渡し、その間を自然につなぐ遷移カットを生成して。急激な変化ではなく、滑らかな移行にして。
+出力形式: 2K・6〜10秒・16:9。中間のフレームで不自然な破綻がないか確認してから採用して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b47">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b47" data-name="prompts100-047.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">048</span><span class="ititle">キャラクターの表情バリエーション展開</span></div>
+  <p class="imeta"><span class="nb">1枚のキャラクター画像から、</span><span class="nb">複数の表情違いの短い動画を作る。</span></p>
+  <pre class="prompt" id="b48">前提: キャラクターの立ち絵は1枚あるが、複数の感情表現のバリエーションが必要な場面。
+指示: このキャラクター画像を参照に、①笑顔②驚き③考え込む、の3パターンそれぞれで表情が変化する短いカットを作って。
+出力形式: 2K・各3秒・9:16を3パターン。キャラクターの顔立ち・髪型は全パターンで統一して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b48">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b48" data-name="prompts100-048.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">049</span><span class="ititle">実演動画の登場人物差し替えイメージ</span></div>
+  <p class="imeta"><span class="nb">実演の構成を保ったまま、</span><span class="nb">別の商品・</span><span class="nb">別の人物イメージに置き換える。</span></p>
+  <pre class="prompt" id="b49">前提: 過去に作った実演動画の「構成」は良かったが、商品や見た目を今回用に差し替えたい場面。
+指示: 過去動画をモーション参照として渡し、今回の商品画像に対して同じ動きの構成（カメラワーク・タイミング）を適用して生成して。
+出力形式: 2K・元動画と同尺・16:9。動きの構成のみ流用し、見た目の要素はすべて新しい画像に基づかせて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b49">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b49" data-name="prompts100-049.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">050</span><span class="ititle">参照画像の解像度・尺の統一出し</span></div>
+  <p class="imeta"><span class="nb">バラバラな解像度・</span><span class="nb">雰囲気の素材を、</span><span class="nb">統一感のあるシリーズに揃える。</span></p>
+  <pre class="prompt" id="b50">前提: 撮った時期や担当者が違う複数の商品画像があり、動画にすると統一感がなくなってしまう場面。
+指示: 各商品画像を個別に参照しつつ、同じカメラワーク・同じ尺・同じ色調のテンプレートを適用して、シリーズとして統一感のあるカット群を生成して。
+出力形式: 2K・各8秒・16:9を商品数ぶん。全カットを並べたときに違和感がないか確認して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b50">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b50" data-name="prompts100-050.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<h2 class="cat">音声・ナレーション同期（MiniMax H3）</h2>
+<div class="icard">
+  <div class="ih"><span class="num">051</span><span class="ititle">商品説明ナレーション付きカット</span></div>
+  <p class="imeta"><span class="nb">商品カットに合わせて、</span><span class="nb">環境音・</span><span class="nb">効果音を同期させる。</span></p>
+  <pre class="prompt" id="b51">前提: 商品紹介動画に、それらしい環境音（開封音・動作音）を同期させたい場面。
+指示: 商品画像を参照に、動きに合わせたステレオ音声（例: 蓋を開ける音、生地が擦れる音）が自然に同期する短いカットを生成して。
+出力形式: 2K・6〜8秒・16:9。音声はネイティブステレオでオンにし、動きと音のタイミングがずれていないか確認して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b51">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b51" data-name="prompts100-051.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">052</span><span class="ititle">音楽ビートに合わせたカット割り</span></div>
+  <p class="imeta"><span class="nb">想定するBGMのテンポに合わせて、</span><span class="nb">カットの切り替えタイミングを</span><span class="nb">設計する。</span></p>
+  <pre class="prompt" id="b52">前提: 使用予定のBGMのテンポ（例: 120BPM）が決まっており、それに合わせた映像を作りたい場面。
+指示: 商品画像を参照に、指定したテンポ感に合う周期でカメラの動き・光の変化が起きるカットを生成して。
+出力形式: 2K・8秒・9:16。動きの周期がテンポ感と大きくずれていないか確認して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b52">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b52" data-name="prompts100-052.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">053</span><span class="ititle">音声付き挨拶・オープニングカット</span></div>
+  <p class="imeta"><span class="nb">チャンネル冒頭で使う、</span><span class="nb">音声同期した挨拶演出を作る。</span></p>
+  <pre class="prompt" id="b53">前提: 動画冒頭で使う、ロゴと一緒に短い効果音が鳴るオープニング演出がほしい場面。
+指示: ロゴ画像を参照に、ロゴが現れる瞬間に合わせて短い効果音（チャイム・シンセ音等）が同期するオープニングカットを作って。
+出力形式: 2K・3秒・16:9と9:16。音のタイミングがロゴの動きとぴったり合っているか確認して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b53">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b53" data-name="prompts100-053.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">054</span><span class="ititle">ASMR風の音重視カット</span></div>
+  <p class="imeta"><span class="nb">音そのものを主役にした、</span><span class="nb">質感重視のカットを作る。</span></p>
+  <pre class="prompt" id="b54">前提: 商品の「音」自体に魅力がある（コーヒー豆を挽く音、紙をめくる音等）ことを伝えたい場面。
+指示: 商品画像を参照に、動きは最小限に抑えつつ、その動作にともなう音がクリアに聞こえることを重視したカットを生成して。
+出力形式: 2K・10秒・16:9。BGMは加えず、環境音・動作音のみをステレオではっきり聞かせて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b54">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b54" data-name="prompts100-054.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">055</span><span class="ititle">会話シーンの口の動き同期</span></div>
+  <p class="imeta"><span class="nb">人物が話している設定のカットで、</span><span class="nb">口の動きと音声を同期させる。</span></p>
+  <pre class="prompt" id="b55">前提: 人物が何かを説明している設定の短いカットに、話す音声を同期させたい場面。
+指示: 人物画像を参照に、話している内容の音声（渡すテキストまたは音声素材）に合わせて口の動きが自然に同期するカットを生成して。
+出力形式: 2K・音声の尺に合わせる・9:16。口の動きと音声のズレが無いか、生成後に確認して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b55">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b55" data-name="prompts100-055.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">056</span><span class="ititle">環境音のみのアンビエントカット</span></div>
+  <p class="imeta"><span class="nb">セリフやBGMなしで、</span><span class="nb">環境音だけで場の雰囲気を伝える。</span></p>
+  <pre class="prompt" id="b56">前提: 派手な演出をせず、環境音だけで落ち着いた場の雰囲気を伝えたい場面。
+指示: 背景・情景の画像を参照に、風や水、雑踏といった環境音がリアルに感じられるカットを生成して。映像の動きも音に合わせてごく自然な範囲に抑えて。
+出力形式: 2K・10秒・16:9。環境音の音量バランスが不自然に大きすぎないか確認して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b56">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b56" data-name="prompts100-056.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">057</span><span class="ititle">効果音つきトランジション素材</span></div>
+  <p class="imeta"><span class="nb">カットとカットの間に使う、</span><span class="nb">音付きの切り替え素材を作る。</span></p>
+  <pre class="prompt" id="b57">前提: 複数のカットをつなぐ際に使う、音付きのトランジション（切り替え）素材が欲しい場面。
+指示: 抽象的な光や粒子の動きの画像を参照に、その動きに合わせたスワイプ音・シンセ音が同期する短いトランジションを生成して。
+出力形式: 2K・1〜2秒・16:9と9:16。前後のカットに違和感なくつながる始点・終点にして。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b57">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b57" data-name="prompts100-057.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">058</span><span class="ititle">複数言語ナレーションの検討用ラフ</span></div>
+  <p class="imeta"><span class="nb">同じ映像に対して、</span><span class="nb">異なる言語の音声パターンを試す。</span></p>
+  <pre class="prompt" id="b58">前提: 同じ映像素材で、日本語版・英語版のナレーション付きバージョンを検討したい場面。
+指示: 映像の元になる画像を参照に、日本語ナレーションと英語ナレーションそれぞれで、口の動きが各言語に合わせて自然になるバージョンを個別に生成して。
+出力形式: 2K・同尺・16:9を2パターン（日本語版・英語版）。どちらも音声と口の動きの同期を優先して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b58">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b58" data-name="prompts100-058.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">059</span><span class="ititle">楽器演奏イメージの音同期カット</span></div>
+  <p class="imeta"><span class="nb">楽器や音楽に関連する商品で、</span><span class="nb">演奏音と動きを同期させる。</span></p>
+  <pre class="prompt" id="b59">前提: 楽器・音響機器などを扱っており、演奏音や動作音を伴う訴求映像を作りたい場面。
+指示: 商品画像を参照に、演奏または操作している様子と、それに対応する音がタイミングよく同期するカットを生成して。
+出力形式: 2K・8秒・16:9。音の発生タイミングと映像内の動作が一致しているか確認して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b59">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b59" data-name="prompts100-059.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">060</span><span class="ititle">警告・通知音の演出カット</span></div>
+  <p class="imeta"><span class="nb">アプリ通知など、</span><span class="nb">音と視覚効果を同期させたUI演出を</span><span class="nb">作る。</span></p>
+  <pre class="prompt" id="b60">前提: アプリの通知・アラートを、音と視覚効果が同期した印象的な演出として見せたい場面。
+指示: 通知UIのスクリーンショットを参照に、通知が表示される瞬間に合わせて短い通知音が同期するカットを生成して。
+出力形式: 2K・3秒・9:16。通知音の音量・トーンがUIの雰囲気（緊急度）に合っているか確認して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b60">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b60" data-name="prompts100-060.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<h2 class="cat">自律コーディング・長時間タスク（Qwen3.8-Max）</h2>
+<div class="icard">
+  <div class="ih"><span class="num">061</span><span class="ititle">空フォルダからのハーネス自動構築</span></div>
+  <p class="imeta"><span class="nb">何もない状態から、</span><span class="nb">自律実行の土台を作らせる。</span></p>
+  <pre class="prompt" id="b61">前提: 新規プロジェクトを立ち上げる際、Qwen3.8-Maxに長時間の自律コーディングを任せたい場面。
+指示: 空のフォルダから、要件（機能一覧・技術スタック）を渡し、テストコードとCI設定を含む開発ハーネスをまず構築させて。10日規模の長期タスクを想定した進捗ログの残し方も設計させて。
+出力形式: 構築計画（マイルストーン区切り）と、初期コミットまでの実行ログを箇条書きで報告させて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b61">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b61" data-name="prompts100-061.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">062</span><span class="ititle">既存リポジトリの自律改修</span></div>
+  <p class="imeta"><span class="nb">既存コードベースに新機能を</span><span class="nb">長時間かけて実装させる。</span></p>
+  <pre class="prompt" id="b62">前提: 中規模の既存リポジトリに、複数ファイルにまたがる新機能を追加したい場面。
+指示: リポジトリ構造を読み込ませたうえで、新機能の実装計画を立てさせ、既存のテストを壊さない範囲で段階的に実装・自己検証を繰り返させて。
+出力形式: 変更ファイル一覧・各変更の理由・テスト結果のサマリーを、実装完了後にまとめて報告させて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b62">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b62" data-name="prompts100-062.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">063</span><span class="ititle">長時間タスクの中間チェックポイント設計</span></div>
+  <p class="imeta"><span class="nb">途中で人間が確認できるよう、</span><span class="nb">進捗の区切りを設計させる。</span></p>
+  <pre class="prompt" id="b63">前提: 長時間の自律タスクを任せる際、途中で暴走していないか人間が確認したい場面。
+指示: これから始めるタスクを、2時間ごとに人間がレビューできる区切り（チェックポイント）に分割させ、各区切りでの完了条件を明確にさせて。
+出力形式: チェックポイントの一覧（何が完了していれば次に進めるか）を表形式で出力させて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b63">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b63" data-name="prompts100-063.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">064</span><span class="ititle">エージェント間の役割分担設計</span></div>
+  <p class="imeta"><span class="nb">複数のサブタスクを並行させるための</span><span class="nb">役割分担を設計させる。</span></p>
+  <pre class="prompt" id="b64">前提: 1つの大きな開発タスクを、複数の観点（実装・テスト・ドキュメント）で並行して進めたい場面。
+指示: タスク全体を分析させ、実装担当・テスト担当・ドキュメント担当に分けた場合の役割分担案と、各担当が参照すべき情報の受け渡し方を設計させて。
+出力形式: 役割ごとの責任範囲と、成果物の受け渡しタイミングを図解的な箇条書きで示させて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b64">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b64" data-name="prompts100-064.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">065</span><span class="ititle">暴走防止のガードレール設定</span></div>
+  <p class="imeta"><span class="nb">自律実行が想定外の操作をしないよう、</span><span class="nb">事前に制約を設計させる。</span></p>
+  <pre class="prompt" id="b65">前提: 自律コーディングを任せる際、破壊的な操作（データ削除・本番環境への反映等）を防ぎたい場面。
+指示: これから任せるタスクの範囲で、触れてはいけないファイル・実行してはいけないコマンドのリストを提案させ、実行前に確認を挟むべきポイントを洗い出させて。
+出力形式: 禁止事項リストと、確認が必要なタイミングの一覧を明示的に出力させて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b65">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b65" data-name="prompts100-065.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">066</span><span class="ititle">実装後の自己レビュー実施</span></div>
+  <p class="imeta"><span class="nb">実装が終わった直後に、</span><span class="nb">自分のコードを批判的に見直させる。</span></p>
+  <pre class="prompt" id="b66">前提: 実装は完了したが、そのまま提出せず一度品質を見直したい場面。
+指示: 実装したコードを、可読性・エラー処理・パフォーマンスの3観点で自己レビューさせ、改善すべき箇所があれば理由付きで指摘させて。
+出力形式: 観点ごとの指摘事項と、それぞれの修正優先度（高中低）を表にまとめさせて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b66">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b66" data-name="prompts100-066.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">067</span><span class="ititle">パフォーマンスボトルネックの自律調査</span></div>
+  <p class="imeta"><span class="nb">動作が重い箇所を自分で特定し、</span><span class="nb">改善案を出させる。</span></p>
+  <pre class="prompt" id="b67">前提: アプリの一部処理が遅いことは分かっているが、原因箇所が特定できていない場面。
+指示: 対象コードを読み込ませ、処理時間がかかっていそうな箇所を推定させたうえで、実際に計測コードを追加して裏付けを取らせて。
+出力形式: ボトルネック箇所の推定理由・計測結果・改善案を、根拠つきで報告させて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b67">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b67" data-name="prompts100-067.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">068</span><span class="ititle">マイグレーション作業の段階実行</span></div>
+  <p class="imeta"><span class="nb">ライブラリの大規模バージョンアップを</span><span class="nb">安全に進めさせる。</span></p>
+  <pre class="prompt" id="b68">前提: 依存ライブラリの大規模バージョンアップが必要だが、影響範囲が広く一気には進められない場面。
+指示: 影響を受けるファイルを洗い出させ、リスクの低い箇所から順に移行する計画を立てさせたうえで、各ステップごとにテストを実行しながら進めさせて。
+出力形式: 移行ステップの順番とその理由、各ステップ完了時のテスト結果を記録させて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b68">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b68" data-name="prompts100-068.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">069</span><span class="ititle">障害調査ログの時系列整理</span></div>
+  <p class="imeta"><span class="nb">発生したエラーログから、</span><span class="nb">原因の時系列を整理させる。</span></p>
+  <pre class="prompt" id="b69">前提: 本番環境で発生したエラーのログが大量にあり、原因を特定したい場面。
+指示: 渡したログを時系列に整理させ、エラーが発生し始めたタイミングと、その前後で変化したこと（デプロイ・設定変更等）の関連を推定させて。
+出力形式: 時系列の要約と、最も疑わしい原因候補を根拠つきで上位3つ挙げさせて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b69">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b69" data-name="prompts100-069.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">070</span><span class="ititle">長時間タスクの途中経過サマリー</span></div>
+  <p class="imeta"><span class="nb">実行中のタスクについて、</span><span class="nb">現時点までの進捗を要約させる。</span></p>
+  <pre class="prompt" id="b70">前提: 長時間の自律タスクを実行中で、今何が終わっていて何が残っているか把握したい場面。
+指示: ここまでの実行内容を振り返らせ、完了した作業・現在進行中の作業・未着手の作業に分類して整理させて。
+出力形式: 3分類（完了/進行中/未着手）のチェックリスト形式で、簡潔に出力させて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b70">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b70" data-name="prompts100-070.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<h2 class="cat">リサーチ・実験設計（Qwen3.8-Max）</h2>
+<div class="icard">
+  <div class="ih"><span class="num">071</span><span class="ititle">研究再現の実験計画立案</span></div>
+  <p class="imeta"><span class="nb">論文やレポートの内容を、</span><span class="nb">自分の環境で再現する計画を</span><span class="nb">立てさせる。</span></p>
+  <pre class="prompt" id="b71">前提: 参考にしたい論文・技術レポートがあり、その内容を自分たちの環境で再現検証したい場面。
+指示: 対象の論文概要を渡し、再現に必要な手順・データ・評価方法を整理させたうえで、実行可能な実験計画として組み立てさせて。
+出力形式: 手順のステップ一覧と、各ステップで必要なリソース・想定される所要時間を示させて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b71">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b71" data-name="prompts100-071.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">072</span><span class="ititle">A/Bテスト設計の壁打ち</span></div>
+  <p class="imeta"><span class="nb">施策のA/Bテスト設計について、</span><span class="nb">抜け漏れがないか確認させる。</span></p>
+  <pre class="prompt" id="b72">前提: 新機能のA/Bテストを設計しているが、統計的に妥当な設計になっているか不安な場面。
+指示: このA/Bテスト案（対象・指標・期間）を渡し、サンプルサイズの妥当性・見落としている交絡要因がないかをチェックさせて。
+出力形式: 懸念点のリストと、それぞれへの対処案を優先度つきで提示させて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b72">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b72" data-name="prompts100-072.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">073</span><span class="ititle">複数モデルのベンチマーク比較設計</span></div>
+  <p class="imeta"><span class="nb">自社ユースケースに</span><span class="nb">合わせたベンチマーク評価の設計を</span><span class="nb">させる。</span></p>
+  <pre class="prompt" id="b73">前提: 複数のAIモデルを比較検討しているが、汎用ベンチマークだけでは自社用途との相性が分からない場面。
+指示: 自社の具体的なユースケースを説明し、それに即した評価項目・評価データセットの作り方を設計させて。
+出力形式: 評価項目一覧と、各項目をどう採点するかの基準を表形式で出力させて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b73">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b73" data-name="prompts100-073.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">074</span><span class="ititle">仮説検証の実験デザイン</span></div>
+  <p class="imeta"><span class="nb">ビジネス上の仮説を、</span><span class="nb">検証可能な実験設計に落とし込ませる。</span></p>
+  <pre class="prompt" id="b74">前提: 「〇〇をすれば△△が改善するはず」という仮説はあるが、どう検証すればいいか整理できていない場面。
+指示: この仮説を渡し、検証に必要な指標・比較対象・実施期間を含めた実験デザインに落とし込ませて。
+出力形式: 仮説→検証方法→判断基準、の3段構成で簡潔にまとめさせて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b74">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b74" data-name="prompts100-074.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">075</span><span class="ititle">先行事例の横断リサーチ</span></div>
+  <p class="imeta"><span class="nb">同じ課題に取り組んだ他社事例を</span><span class="nb">横断的に整理させる。</span></p>
+  <pre class="prompt" id="b75">前提: 取り組もうとしている課題について、他社がどう対処しているか事前に把握したい場面。
+指示: この課題領域について、想定される先行事例のパターンをいくつかのアプローチ別に分類し、それぞれの長所・短所を整理させて。
+出力形式: アプローチの分類と、各分類の長所・短所を対比表で出力させて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b75">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b75" data-name="prompts100-075.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">076</span><span class="ititle">データ収集計画の妥当性チェック</span></div>
+  <p class="imeta"><span class="nb">これから集めようとしているデータの</span><span class="nb">計画に不備がないか確認させる。</span></p>
+  <pre class="prompt" id="b76">前提: 分析のためにこれからデータを収集する予定だが、後から「足りなかった」とならないか不安な場面。
+指示: このデータ収集計画（項目・頻度・期間）を渡し、後の分析で必要になりそうな項目が抜けていないかをチェックさせて。
+出力形式: 不足している可能性のある項目と、その理由をリストで出力させて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b76">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b76" data-name="prompts100-076.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">077</span><span class="ititle">実験結果の解釈サポート</span></div>
+  <p class="imeta"><span class="nb">得られた実験結果を、</span><span class="nb">次のアクションにつなげる形で</span><span class="nb">解釈させる。</span></p>
+  <pre class="prompt" id="b77">前提: 実験・テストの結果データは出たが、そこから何を意思決定すべきか整理しきれていない場面。
+指示: この結果データを渡し、統計的に意味のある差なのか、次にどんなアクションを取るべきかの選択肢を整理させて。
+出力形式: 結果の解釈・確信度・推奨アクションの3点を簡潔にまとめさせて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b77">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b77" data-name="prompts100-077.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">078</span><span class="ititle">プロトタイプの技術選定リサーチ</span></div>
+  <p class="imeta"><span class="nb">新規プロトタイプ開発に</span><span class="nb">おける技術スタックの選定を</span><span class="nb">支援させる。</span></p>
+  <pre class="prompt" id="b78">前提: 新しいプロトタイプを作る際、どの技術スタックを使うか決めきれていない場面。
+指示: 想定している要件（速度・拡張性・チームの習熟度）を伝え、候補となる技術スタックを複数案出させ、それぞれのトレードオフを整理させて。
+出力形式: 候補ごとのメリット・デメリットと、要件に照らした推奨順位を出力させて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b78">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b78" data-name="prompts100-078.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">079</span><span class="ititle">競合調査のリサーチ設計</span></div>
+  <p class="imeta"><span class="nb">競合サービスの調査項目と手順を</span><span class="nb">設計させる。</span></p>
+  <pre class="prompt" id="b79">前提: 競合サービスを調査したいが、何を・どの順番で調べればいいか整理できていない場面。
+指示: 調査対象の領域を伝え、調査すべき項目（機能・価格・ポジショニング等）と調査の進め方を設計させて。
+出力形式: 調査項目のチェックリストと、調査結果をまとめるフォーマット案を出力させて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b79">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b79" data-name="prompts100-079.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">080</span><span class="ititle">長期プロジェクトのマイルストーン設計</span></div>
+  <p class="imeta"><span class="nb">数か月規模のプロジェクトを、</span><span class="nb">検証可能な区切りに分割させる。</span></p>
+  <pre class="prompt" id="b80">前提: 数か月かかる見込みの大きなプロジェクトを、途中で軌道修正できる形に設計したい場面。
+指示: プロジェクトの最終ゴールを伝え、途中で成果を確認できるマイルストーンに分割させ、各マイルストーンでの判断基準を設定させて。
+出力形式: マイルストーンごとの目標・期限・判断基準を表形式で出力させて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b80">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b80" data-name="prompts100-080.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<h2 class="cat">ドキュメント・レポート生成（Qwen3.8-Max）</h2>
+<div class="icard">
+  <div class="ih"><span class="num">081</span><span class="ititle">技術仕様書のドラフト作成</span></div>
+  <p class="imeta"><span class="nb">実装した機能について、</span><span class="nb">技術仕様書のたたき台を作らせる。</span></p>
+  <pre class="prompt" id="b81">前提: 実装は終わっているが、後から見返せる技術仕様書がまだない場面。
+指示: 対象のコードを読み込ませ、機能の目的・入出力・処理の流れが分かる技術仕様書のドラフトを作成させて。
+出力形式: 目的・前提条件・処理フロー・制約事項、の見出し構成で1,000〜1,500字程度にまとめさせて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b81">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b81" data-name="prompts100-081.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">082</span><span class="ititle">障害報告書のドラフト作成</span></div>
+  <p class="imeta"><span class="nb">発生した障害について、</span><span class="nb">報告書のたたき台を作らせる。</span></p>
+  <pre class="prompt" id="b82">前提: 障害は解決したが、社内・顧客向けの報告書をこれから書く必要がある場面。
+指示: 障害の発生経緯・原因・対応内容・再発防止策の情報を渡し、報告書として読みやすい構成のドラフトを作らせて。
+出力形式: 概要・時系列・原因・対応・再発防止策、の見出し構成で出力させて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b82">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b82" data-name="prompts100-082.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">083</span><span class="ititle">長文レビュー結果の要約</span></div>
+  <p class="imeta"><span class="nb">大量のコードレビューコメントを、</span><span class="nb">要点だけに要約させる。</span></p>
+  <pre class="prompt" id="b83">前提: 大量のレビューコメントが付いており、何から手を付ければいいか整理したい場面。
+指示: このレビューコメント一覧を渡し、重要度の高い指摘から順に並び替え、対応が必要な箇所を要約させて。
+出力形式: 重要度（高中低）ごとに分類したチェックリストで出力させて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b83">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b83" data-name="prompts100-083.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">084</span><span class="ititle">議事録からのタスク抽出</span></div>
+  <p class="imeta"><span class="nb">会議の文字起こしから、</span><span class="nb">実行すべきタスクだけを抽出させる。</span></p>
+  <pre class="prompt" id="b84">前提: 会議の文字起こしはあるが、そこから「誰が何をやるか」を手作業で拾うのが手間な場面。
+指示: この文字起こしを渡し、決定事項とタスク（担当者・期限が分かるもの）だけを抽出させて。
+出力形式: タスク一覧を「担当者／内容／期限」の3列表で出力させて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b84">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b84" data-name="prompts100-084.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">085</span><span class="ititle">複数資料の内容統合</span></div>
+  <p class="imeta"><span class="nb">別々に作られた複数の資料を、</span><span class="nb">1つの整合した文書にまとめさせる。</span></p>
+  <pre class="prompt" id="b85">前提: 部署ごとに別々に作られた資料があり、内容の重複・矛盾を整理して1つにまとめたい場面。
+指示: これらの資料をすべて渡し、重複している内容は1つに統合し、矛盾している箇所があれば明示したうえで統合版を作らせて。
+出力形式: 統合後の文書本体と、矛盾が見つかった箇所の一覧を分けて出力させて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b85">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b85" data-name="prompts100-085.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">086</span><span class="ititle">英語資料の技術的な要約翻訳</span></div>
+  <p class="imeta"><span class="nb">英語の技術文書を、</span><span class="nb">専門用語のニュアンスを</span><span class="nb">保ったまま要約させる。</span></p>
+  <pre class="prompt" id="b86">前提: 英語の技術文書・リリースノートを、社内共有用に日本語で要約したい場面。
+指示: この英語文書を渡し、専門用語は無理に意訳せず原語を併記しながら、要点を日本語で要約させて。
+出力形式: 原文の章立てに沿った箇条書きの要約を、800字程度で出力させて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b86">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b86" data-name="prompts100-086.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">087</span><span class="ititle">READMEの初稿作成</span></div>
+  <p class="imeta"><span class="nb">新規プロジェクトの</span><span class="nb">README.mdの初稿を作らせる。</span></p>
+  <pre class="prompt" id="b87">前提: プロジェクトのコードはあるが、README.mdがまだ無く新規メンバーが参入しづらい場面。
+指示: プロジェクトのファイル構成と主要コードを読み込ませ、セットアップ手順・使い方・ディレクトリ構成が分かるREADME.mdの初稿を作らせて。
+出力形式: Markdown形式で、見出し構成（概要／セットアップ／使い方／構成）を守って出力させて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b87">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b87" data-name="prompts100-087.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">088</span><span class="ititle">リリースノートの自動下書き</span></div>
+  <p class="imeta"><span class="nb">変更差分から、</span><span class="nb">ユーザー向けリリースノートの下書きを</span><span class="nb">作らせる。</span></p>
+  <pre class="prompt" id="b88">前提: 開発者向けの変更ログはあるが、ユーザー向けの分かりやすいリリースノートに書き直したい場面。
+指示: この変更ログを渡し、専門用語を避けてユーザー視点で「何が良くなったか」が伝わるリリースノートの下書きを作らせて。
+出力形式: 新機能・改善・不具合修正の3カテゴリに分けた箇条書きで出力させて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b88">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b88" data-name="prompts100-088.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">089</span><span class="ititle">FAQドラフトの生成</span></div>
+  <p class="imeta"><span class="nb">想定される質問と回答のセットを、</span><span class="nb">資料から作らせる。</span></p>
+  <pre class="prompt" id="b89">前提: サービス紹介資料はあるが、想定FAQがまだ整理されていない場面。
+指示: この資料を渡し、初めて見る人が疑問に思いそうな点を想定し、質問と回答のセットを作らせて。
+出力形式: Q&amp;A形式で最低10セット、初心者にも分かる言葉で出力させて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b89">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b89" data-name="prompts100-089.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">090</span><span class="ititle">週次レポートのたたき台作成</span></div>
+  <p class="imeta"><span class="nb">進捗ログから、</span><span class="nb">週次報告用の文書を組み立てさせる。</span></p>
+  <pre class="prompt" id="b90">前提: 日々の作業ログは残しているが、それを週次報告の形にまとめる作業が毎回手間な場面。
+指示: 今週分の作業ログを渡し、進捗・課題・来週の予定に分けた週次報告のたたき台を作らせて。
+出力形式: 進捗（完了したこと）・課題（詰まっていること）・来週の予定、の3見出しで簡潔にまとめさせて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b90">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b90" data-name="prompts100-090.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<h2 class="cat">マルチモーダル解析・エージェント操作（Qwen3.8-Max）</h2>
+<div class="icard">
+  <div class="ih"><span class="num">091</span><span class="ititle">スクリーンショットからのUI不具合検出</span></div>
+  <p class="imeta"><span class="nb">画面キャプチャを渡して、</span><span class="nb">UI上の問題点を指摘させる。</span></p>
+  <pre class="prompt" id="b91">前提: アプリのスクリーンショットを渡して、見た目の不具合をチェックしてもらいたい場面。
+指示: このスクリーンショットを読み込ませ、レイアウト崩れ・文字のはみ出し・コントラスト不足など、UI上の問題点を指摘させて。
+出力形式: 問題箇所ごとに、画面内のどのあたりかの説明と改善案をセットで出力させて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b91">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b91" data-name="prompts100-091.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">092</span><span class="ititle">画像資料からのデータ抽出</span></div>
+  <p class="imeta"><span class="nb">グラフや表の画像から、</span><span class="nb">数値データをテキストと</span><span class="nb">して抽出させる。</span></p>
+  <pre class="prompt" id="b92">前提: グラフや表の画像しかなく、その中の数値をテキストデータとして扱いたい場面。
+指示: この画像を読み込ませ、グラフ・表内の数値を可能な限り正確に読み取り、構造化されたデータとして抽出させて。
+出力形式: 表形式（項目名／数値）で出力させ、読み取りに自信がない箇所は明示させて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b92">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b92" data-name="prompts100-092.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">093</span><span class="ititle">動画キャプチャからの手順書作成</span></div>
+  <p class="imeta"><span class="nb">操作を録画した動画から、</span><span class="nb">手順書を自動生成させる。</span></p>
+  <pre class="prompt" id="b93">前提: 操作の様子を録画した動画はあるが、テキストの手順書がまだない場面。
+指示: この動画を読み込ませ、画面上で行われている操作を時系列に沿ってステップとして書き出させて。
+出力形式: 「ステップ1: 〇〇をクリック」のような番号付き手順として出力させて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b93">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b93" data-name="prompts100-093.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">094</span><span class="ititle">エージェント型操作タスクの実行計画</span></div>
+  <p class="imeta"><span class="nb">パソコン上の一連の操作を、</span><span class="nb">実行可能なタスクに分解させる。</span></p>
+  <pre class="prompt" id="b94">前提: 複数のアプリをまたぐ定型作業を、エージェントに自動操作させたい場面。
+指示: この作業の目的とゴールを伝え、どのアプリでどんな操作をどの順番で行う必要があるか、実行可能なステップに分解させて。
+出力形式: アプリ名・操作内容・確認ポイントを含むステップ一覧で出力させて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b94">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b94" data-name="prompts100-094.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">095</span><span class="ititle">画像とテキストの整合性チェック</span></div>
+  <p class="imeta"><span class="nb">資料内の図と説明文が</span><span class="nb">矛盾していないか確認させる。</span></p>
+  <pre class="prompt" id="b95">前提: プレゼン資料の図とテキスト説明が、内容として一致しているか不安な場面。
+指示: 画像（図）とその近くのテキスト説明を両方渡し、内容に矛盾や説明不足がないかをチェックさせて。
+出力形式: 矛盾・不足箇所の一覧と、それぞれの修正案を出力させて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b95">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b95" data-name="prompts100-095.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">096</span><span class="ititle">ドキュメントとコードの整合性確認</span></div>
+  <p class="imeta"><span class="nb">仕様書の記載と実際のコードが</span><span class="nb">一致しているか確認させる。</span></p>
+  <pre class="prompt" id="b96">前提: 仕様書を書いた後にコードを修正しており、両者がずれていないか確認したい場面。
+指示: 仕様書とコードの両方を渡し、記載内容と実装が一致していない箇所を洗い出させて。
+出力形式: ずれている箇所ごとに、仕様書側とコード側それぞれの記述を並べて提示させて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b96">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b96" data-name="prompts100-096.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">097</span><span class="ititle">長尺動画からの要点タイムスタンプ抽出</span></div>
+  <p class="imeta"><span class="nb">長い動画の中から、</span><span class="nb">重要な場面のタイムスタンプを</span><span class="nb">抽出させる。</span></p>
+  <pre class="prompt" id="b97">前提: 長時間の会議録画・セミナー動画があり、重要な部分だけ後から見返したい場面。
+指示: この動画を読み込ませ、重要な発言や画面変化があったタイミングを推定し、タイムスタンプ付きで要点を抽出させて。
+出力形式: 「00:12:30 〜 議題の要点」のような時刻＋要約の一覧で出力させて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b97">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b97" data-name="prompts100-097.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">098</span><span class="ititle">複数言語資料の横断比較</span></div>
+  <p class="imeta"><span class="nb">日本語版と英語版の資料内容が</span><span class="nb">一致しているか確認させる。</span></p>
+  <pre class="prompt" id="b98">前提: 同じ資料の日本語版・英語版があり、内容にズレがないか確認したい場面。
+指示: 両方の資料を渡し、内容として欠落・誤訳が疑われる箇所がないかを比較チェックさせて。
+出力形式: ズレが疑われる箇所を、日本語版・英語版を並べて提示し、理由を添えさせて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b98">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b98" data-name="prompts100-098.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">099</span><span class="ititle">Webページのアクセシビリティ確認</span></div>
+  <p class="imeta"><span class="nb">スクリーンショットから</span><span class="nb">アクセシビリティ上の懸念を</span><span class="nb">指摘させる。</span></p>
+  <pre class="prompt" id="b99">前提: 公開前のWebページについて、視認性・アクセシビリティの観点で問題がないか確認したい場面。
+指示: このページのスクリーンショットを読み込ませ、文字とのコントラスト・文字サイズ・情報の優先順位に問題がないかを指摘させて。
+出力形式: 指摘事項を重要度つきで一覧化し、修正の方向性も添えさせて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b99">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b99" data-name="prompts100-099.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">100</span><span class="ititle">エージェント実行結果の検収チェック</span></div>
+  <p class="imeta"><span class="nb">自律実行タスクの成果物を、</span><span class="nb">要件と照らして検収させる。</span></p>
+  <pre class="prompt" id="b100">前提: エージェントに任せたタスクが完了したと報告を受けたが、要件を満たしているか確認したい場面。
+指示: 最初に渡した要件と、実際の成果物（コード・画面・文書等）を照らし合わせ、満たしている点・不足している点を洗い出させて。
+出力形式: 要件ごとに「満たしている／不足」を判定し、不足分は具体的な追加対応を提案させて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b100">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b100" data-name="prompts100-100.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+
+  <section class="epctx">
+  <p class="epctx-label">この動画のほかのプレゼント</p>
+  <div class="ep-kits"><a class="kchip" href="../license-trap-checklist/"><span class="kt">オープンウェイト ライセンス罠チェックリスト</span><span class="badge">12項目</span><span class="go">開く →</span></a><a class="kchip" href="../local-api-judgment-sheet/"><span class="kt">ローカル/API判定シート</span><span class="badge">14項目</span><span class="go">開く →</span></a></div>
+</section>
+
+  <footer><a href="../../">← AIエージェント / Kawaru プレゼント図書館にもどる</a></footer>
+</div>
+
+<pre id="pfull" class="hidden"># 🎁 MiniMax H3×Qwen3.8-Max 実践プロンプト100選
+動画生成（MiniMax H3）60本＋コーディング/エージェント（Qwen3.8-Max）40本。貼るだけで使える実践プロンプト集です。
+**受け取り方**: 下のコードブロックをコピーするか、このファイルをそのままダウンロードしてください。
+
+## 商品・EC訴求（MiniMax H3）
+
+### 1. 商品360度回転ショット
+説明: ECサイトのメイン画像1枚から、商品を360度回転させる紹介動画を作る。
+```text
+前提: アパレル・雑貨などECサイトに掲載する、商品単体の静止画1枚から動画を作りたい場面。
+指示: この商品画像を参照素材として使い、背景を白飛びのないスタジオ照明に統一したまま、商品がゆっくり360度回転する8秒のカットを生成して。回転速度は一定にし、途中で形が歪まないようにして。
+出力形式: 2K・8秒・16:9。音声はオフ。ECサイトのメイン枠にそのまま貼れる仕上がりにして。
+```
+
+### 2. 質感が伝わるマクロ寄りカット
+説明: 生地・素材の質感をアップで見せ、購買意欲につなげる。
+```text
+前提: 生地や素材の質感が売りの商品（ニット・革小物など）を、写真だけでは伝わりにくいと感じている場面。
+指示: 参照画像の商品にゆっくりカメラが寄っていき、繊維や表面の質感が分かる位置で3秒静止するカットを作って。ライティングは自然光の柔らかさを保って。
+出力形式: 2K・6〜8秒・正方形（Instagram投稿用）。テキストは入れない。
+```
+
+### 3. 使用シーンの再現デモ
+説明: 商品単体ではなく、実際に使っているシーンをイメージ映像として作る。
+```text
+前提: キッチン用品・文房具など、使用シーンを見せた方が魅力が伝わる商品を扱っている場面。
+指示: 商品画像を参照に、実際にその商品が使われている様子（手が伸びてくる、動かす等）を自然な動きで再現して。人物の顔は映さず手元だけに絞って。
+出力形式: 2K・10〜15秒・縦型（9:16、ショート動画用）。ステレオ音声はオンにし、環境音のみ（BGMなし）。
+```
+
+### 4. Before/Afterの変化演出
+説明: 使用前後の違いを1本の動画でつなげて見せる。
+```text
+前提: 掃除用品・美容系など「変化」が訴求ポイントになる商品を紹介したい場面。
+指示: Before状態の画像とAfter状態の画像を2つとも参照素材として渡し、その間をなめらかにつなぐモーフィング風の遷移カットを生成して。変化が誇張されすぎないよう、自然な速度で。
+出力形式: 2K・5〜8秒・16:9。中間フレームで不自然な破綻が出ないか確認してから採用して。
+```
+
+### 5. パッケージ開封アングル
+説明: 開封の瞬間のワクワク感を動画で演出する。
+```text
+前提: 化粧品・ギフト商品など、パッケージの見た目にもこだわっている商品を紹介する場面。
+指示: 閉じた状態のパッケージ画像を参照に、蓋やフタがゆっくり開き中身が見える瞬間までのカットを作って。開ける手の動きは映さず、パッケージ自体が自律的に開くような演出にして。
+出力形式: 2K・6秒・16:9。開封音を想定したステレオ音声をオンにして。
+```
+
+### 6. 価格訴求バナー動画化
+説明: 静止画の価格訴求バナーに動きを足してSNS広告用にする。
+```text
+前提: すでに作成済みの静止画バナー（商品＋価格文字入り）をSNS広告として動画化したい場面。
+指示: このバナー画像を参照に、背景の光の反射がゆっくり動くパララックス風の演出を加えて。文字要素は動かさず固定のままにして、可読性を保って。
+出力形式: 2K・5秒・1:1と9:16の2パターン。ループしても違和感のない始点と終点にして。
+```
+
+### 7. 複数商品の比較訴求
+説明: 同シリーズの色違い・サイズ違いを並べて見せる。
+```text
+前提: 同じ商品のカラーバリエーションやサイズ展開を、1本の動画でまとめて訴求したい場面。
+指示: 各バリエーションの画像を参照素材として渡し、横に並んだ状態から1つずつスポットライトが当たるように順番にフォーカスが移っていく演出を作って。
+出力形式: 2K・12秒・16:9。バリエーション数に応じて尺を調整し、各アイテムに最低2秒は当てて。
+```
+
+### 8. 屋外シーンへの合成イメージ
+説明: スタジオで撮った商品画像を、屋外の使用イメージに変換する。
+```text
+前提: スタジオで撮った商品画像しかないが、アウトドアでの使用イメージを見せたい場面。
+指示: この商品画像を参照に、自然光の屋外（公園・テラスなど）に置かれているような映像に変換して。商品自体の形・色は変えず、背景と光の当たり方だけを変えて。
+出力形式: 2K・8秒・16:9。不自然な合成感が出た場合は、光の向きの指示をやり直して。
+```
+
+### 9. 季節限定感の演出
+説明: 同じ商品でも季節ごとの訴求バリエーションを作る。
+```text
+前提: 通年商品だが、季節キャンペーンに合わせた見せ方のバリエーションが欲しい場面。
+指示: 商品画像を参照に、桜や紅葉・雪といった季節を感じさせる要素が背景にふわりと舞う演出を加えて。商品自体への視線誘導は妨げないようにして。
+出力形式: 2K・8秒・16:9。季節要素は控えめにし、主役はあくまで商品であることを保って。
+```
+
+### 10. ミニマルな余白重視カット
+説明: 高級路線のブランドイメージに合う、静けさのあるカットを作る。
+```text
+前提: 高価格帯・ハイブランド寄りの商品で、賑やかな演出ではなく「間」を活かした見せ方をしたい場面。
+指示: 商品画像を参照に、背景は無地に近い状態を保ちながら、商品にごくわずかな影の揺らぎだけを加える最小限の動きを作って。
+出力形式: 2K・10秒・16:9。BGM・効果音は付けず、静寂な余白がそのまま伝わる仕上がりにして。
+```
+
+## SNS広告・ショート動画（MiniMax H3）
+
+### 11. 3秒で惹きつける冒頭フック
+説明: ショート動画の最初の3秒に絞って離脱を防ぐカットを作る。
+```text
+前提: TikTok・Reels等、最初の3秒で離脱されるかどうかが決まる媒体に載せる動画を作りたい場面。
+指示: 商品または人物の参照画像から、最初の1秒で画面全体が大きく動く（ズームイン・カメラが素早く寄る等）インパクトのあるオープニングカットを生成して。
+出力形式: 2K・3秒・9:16。テンポの速さを最優先し、静止している時間を作らないようにして。
+```
+
+### 12. 字幕連動のテンポ編集用素材
+説明: 後から字幕を載せる前提で、間を意識したカットを作る。
+```text
+前提: 生成した動画に後から字幕テロップを重ねる編集を前提にしている場面。
+指示: 画面下1/3にテキストが乗ることを想定し、その領域に情報量の多い被写体が来ないよう構図を調整した映像を生成して。動きは字幕の切り替えタイミングに合わせて緩急をつけて。
+出力形式: 2K・15秒・9:16。下部1/3は比較的シンプルな背景・動きに抑えて。
+```
+
+### 13. ビフォーアフター広告フォーマット
+説明: 広告でよく使われる左右分割の比較演出を作る。
+```text
+前提: 「使う前」と「使った後」を1画面で同時に見せる広告フォーマットを作りたい場面。
+指示: Before画像とAfter画像を参照に、画面を左右または上下に分割し、それぞれが独立して微妙に動く（呼吸するような）演出を加えて。
+出力形式: 2K・8秒・9:16。分割線ははっきり見えるように、境界をぼかしすぎないで。
+```
+
+### 14. 反応・驚き演出カット
+説明: 人物が商品に驚く・喜ぶリアクションのカットを作る。
+```text
+前提: 商品を受け取った人のリアクション動画があると訴求力が上がると分かっている場面。
+指示: 人物の参照画像を使い、表情がだんだん驚き・笑顔に変わっていく自然な変化のカットを作って。過剰な誇張表現にはせず、リアルな反応の範囲に収めて。
+出力形式: 2K・6秒・9:16。V2Vのモーション転写機能があれば、参考にしたい実写動画も合わせて渡して。
+```
+
+### 15. カウントダウン・限定感の演出
+説明: セール告知など緊急性を伝える動画を作る。
+```text
+前提: タイムセール・数量限定など、緊急性を伝えたい告知を動画化する場面。
+指示: 商品画像を参照に、背景に光が明滅するような緊張感のある演出を加え、時間や数量が迫っている印象を作って。派手すぎて安っぽくならない範囲に抑えて。
+出力形式: 2K・5秒・9:16。テキスト情報（残り時間等）は別途重ねる前提で、映像側に文字は焼き込まないで。
+```
+
+### 16. ロゴ登場のブランドスティング
+説明: 動画の最後に流すブランドロゴの登場カットを作る。
+```text
+前提: 動画コンテンツの締めに毎回使う、短いブランドロゴ演出（スティング）を作りたい場面。
+指示: ロゴ画像を参照に、光の粒子が集まってロゴの形を作り上げるような2〜3秒の演出を生成して。ブランドカラーを保ったまま作って。
+出力形式: 2K・3秒・16:9と9:16の両方。ループの最初と最後で違和感が出ないようにして。
+```
+
+### 17. 縦型広告の複数バリエーション出し
+説明: 同じ訴求で複数パターンを一気に作り、A/Bテストに使う。
+```text
+前提: 同じ商品訴求で、広告文言や色味だけ変えた複数パターンを短時間で用意したい場面。
+指示: ベースとなる商品画像を参照に、背景色（3パターン程度）を変えたバリエーションを、同じカメラワーク・同じ尺で生成して。
+出力形式: 2K・6秒・9:16を3パターン。比較しやすいよう、カメラの動き方だけは全パターン共通にして。
+```
+
+### 18. 問いかけ型フックのオープニング
+説明: 「こんな悩みありませんか？」形式の冒頭カットを作る。
+```text
+前提: 視聴者への問いかけから始まる、悩み訴求型の広告構成にしたい場面。
+指示: 悩んでいる様子が伝わる人物または状況の参照画像から、画面全体がわずかに揺れる不安定な演出（悩み・迷いを感じさせる動き）のカットを作って。
+出力形式: 2K・4秒・9:16。過度に暗い雰囲気にはせず、この後の解決パートにつながるトーンを保って。
+```
+
+### 19. 実演・ハウツー動画の1カット
+説明: 使い方を説明するハウツー動画の一部として使う。
+```text
+前提: 商品の使い方を順を追って説明するハウツー動画を作っている場面。
+指示: 手順の1ステップに対応する画像を参照に、その動作（開ける・塗る・押す等）が自然に完了するまでの一連の動きを生成して。
+出力形式: 2K・8〜10秒・16:9。次のステップにつなげやすいよう、動作の始点と終点をはっきりさせて。
+```
+
+### 20. 季節・イベント告知バンパー
+説明: 季節イベントに合わせた短い告知動画を作る。
+```text
+前提: セール・キャンペーンなど、季節イベントに合わせた短い告知動画（バンパー）が欲しい場面。
+指示: イベントを象徴する要素（雪・花火・花等）が画面に舞い、その中央にロゴまたは商品が浮かび上がる演出を作って。
+出力形式: 2K・5秒・9:16と16:9の両方。イベント要素は主張しすぎず、あくまで背景演出に留めて。
+```
+
+## UI/UX・プロダクトデモ（MiniMax H3）
+
+### 21. アプリ画面遷移のイメージ動画
+説明: アプリのスクリーンショットから、画面遷移のイメージ映像を作る。
+```text
+前提: アプリのスクリーンショット2〜3枚はあるが、実際の操作動画がまだ撮れていない場面。
+指示: 各画面のスクリーンショットを参照に、画面Aから画面Bへスワイプまたはフェードで自然に遷移するイメージ映像を生成して。UIの文字が歪まないよう注意して。
+出力形式: 2K・10秒・9:16（スマホ画面想定）。実機で撮ったような自然な速度にして。
+```
+
+### 22. プロダクトのローンチティザー
+説明: 新製品発表前に使う、抽象的なティザー動画を作る。
+```text
+前提: 製品発表前で詳細をまだ見せられないが、期待感を高めるティザー動画を出したい場面。
+指示: 製品のシルエットまたは一部だけが見える画像を参照に、光と影だけで形が浮かび上がる、正体を明かさない演出のカットを作って。
+出力形式: 2K・8秒・16:9。製品の全体像は見せず、輪郭やパーツの一部のみに留めて。
+```
+
+### 23. ダッシュボードのデータ更新演出
+説明: 管理画面のグラフや数値が動くイメージ映像を作る。
+```text
+前提: SaaSプロダクトの管理画面（ダッシュボード）のスクリーンショットを、動きのある紹介映像にしたい場面。
+指示: ダッシュボード画面を参照に、グラフの数値がカウントアップし、棒グラフが伸びていくようなデータ更新のアニメーション風カットを生成して。
+出力形式: 2K・8秒・16:9。UIのレイアウト自体は変えず、数値・グラフ部分だけが動くようにして。
+```
+
+### 24. ハードウェア製品の質感訴求
+説明: デバイス製品の素材感・精密さを見せるカットを作る。
+```text
+前提: イヤホン・ガジェット等のハードウェア製品で、素材の質感や精密さを訴求したい場面。
+指示: 製品画像を参照に、金属やガラスの反射光がゆっくり動きながら製品の輪郭をなぞっていくような、質感重視のカットを作って。
+出力形式: 2K・8秒・16:9。反射のハイライトが不自然にちらつかないか確認してから採用して。
+```
+
+### 25. オンボーディング画面の紹介動画
+説明: アプリの初回起動時に見せる説明動画を作る。
+```text
+前提: アプリの新規ユーザー向けオンボーディング画面用に、機能説明の短い動画がほしい場面。
+指示: 機能を表すアイコンやイラスト画像を参照に、要素が1つずつ画面中央にふわっと現れては消えていく、シンプルな説明用アニメーションを作って。
+出力形式: 2K・6秒×機能数分・9:16。1要素あたり2秒を目安に、テンポよく切り替えて。
+```
+
+### 26. 物理製品×デジタル画面の合成
+説明: スマホの中に実物の製品が浮かぶような演出を作る。
+```text
+前提: 物理製品とアプリ（デジタル）の両方を持つブランドで、両者のつながりを1カットで見せたい場面。
+指示: 製品画像とアプリ画面のスクリーンショットを両方参照素材として渡し、スマホ画面から製品が浮かび上がって出てくるような演出のカットを作って。
+出力形式: 2K・8秒・16:9。境界の合成が不自然な場合は、光の演出で馴染ませて。
+```
+
+### 27. 使い勝手を伝える手元操作イメージ
+説明: 実機がなくても操作イメージを伝える動画を作る。
+```text
+前提: 実機の操作動画がまだ撮れていないが、使い勝手のイメージだけでも伝えたい場面。
+指示: 製品画像を参照に、手がボタンやタッチパネルに触れて操作している様子を、手元のみのアングルで自然に再現して。
+出力形式: 2K・8〜10秒・16:9。顔や全身は映さず、製品と手元だけにフォーカスして。
+```
+
+### 28. 進化・アップデートの比較演出
+説明: 旧バージョンと新バージョンの違いを動画で見せる。
+```text
+前提: 製品の新バージョンをリリースし、旧バージョンとの違いをアピールしたい場面。
+指示: 旧製品と新製品の画像を両方参照に、旧製品が徐々に新製品へと形を変えていく変化のカットを作って。
+出力形式: 2K・8秒・16:9。変化がどこで起きているか分かりやすいよう、該当パーツにわずかに光を当てて。
+```
+
+### 29. パートナー企業ロゴの一覧演出
+説明: 導入企業・パートナー企業のロゴを並べて紹介する動画を作る。
+```text
+前提: 導入実績としてパートナー企業のロゴを複数紹介したい場面。
+指示: 各ロゴ画像を参照に、画面上を横スクロールしながら1つずつロゴが流れていく、シンプルなロゴパレード演出を作って。
+出力形式: 2K・10秒・16:9。ロゴの縦横比・色味は変えず、動きだけを加えて。
+```
+
+### 30. 料金プラン比較の視覚化
+説明: 複数の料金プランの違いを動画で分かりやすく見せる。
+```text
+前提: 料金プラン表（静止画）はあるが、動画としてもっと分かりやすく伝えたい場面。
+指示: プラン表画像を参照に、おすすめプランにだけスポットライトが当たり、他のプランは少しトーンダウンする演出のカットを作って。
+出力形式: 2K・6秒・16:9。数字・文字要素は変形させず、光の演出のみで注目を集めて。
+```
+
+## ブランディング・世界観（MiniMax H3）
+
+### 31. ブランド世界観のムービー
+説明: ブランドイメージを伝える抽象的な世界観動画を作る。
+```text
+前提: 商品説明ではなく、ブランドの雰囲気・世界観そのものを伝えたい場面。
+指示: ブランドカラーやモチーフとなる画像を参照に、色や光がゆっくり流動する抽象的な映像を、具体的な物体の形にはせず生成して。
+出力形式: 2K・15秒・16:9。ブランドカラーから逸脱しない範囲で、色の揺らぎを作って。
+```
+
+### 32. 創業ストーリー用のイメージ映像
+説明: 会社紹介・採用ページに使う情緒的な映像を作る。
+```text
+前提: 会社紹介動画や採用ページに使う、情緒的なイメージ映像がほしい場面。
+指示: オフィスや製品づくりの様子が伝わる画像を参照に、時間の経過を感じさせるゆっくりとしたカメラの動き（パン・チルト）のカットを作って。
+出力形式: 2K・10秒・16:9。ナレーションを別で乗せる前提で、映像側の音声は環境音程度に抑えて。
+```
+
+### 33. サステナビリティ訴求の映像
+説明: 環境配慮などのメッセージを象徴的に伝える映像を作る。
+```text
+前提: 環境配慮・サステナビリティの取り組みを、データではなく情緒的に伝えたい場面。
+指示: 自然や素材の画像を参照に、植物が育つ・水が流れるといった自然な生成変化を感じさせるカットを作って。
+出力形式: 2K・10秒・16:9。誇張表現（過度な演出）は避け、落ち着いたトーンを保って。
+```
+
+### 34. 複数カットのブランドムービー構成
+説明: 複数のシーンをつないで1本のブランドムービーにする。
+```text
+前提: 複数の画像素材があり、それらをつないで1本のストーリー性あるムービーにしたい場面。
+指示: 渡す画像素材の順番通りに、各カット3〜4秒でつながるよう、カット間のトランジション（フェード等）も含めて生成して。
+出力形式: 2K・各カット3〜4秒×素材数・16:9。全体を通してトーンと色味の一貫性を保って。
+```
+
+### 35. 季節キャンペーンのキービジュアル動画化
+説明: 季節ごとのキービジュアルを動画に展開する。
+```text
+前提: 季節ごとに制作しているキービジュアル（静止画）を、SNS用に動画展開したい場面。
+指示: キービジュアル画像を参照に、季節を象徴する要素（光・粒子・気候感）がゆっくり画面内を動く演出を加えて。
+出力形式: 2K・8秒・1:1と9:16の2パターン。ビジュアルの主役（人物・商品）の位置は動かさないで。
+```
+
+### 36. ロゴアニメーションのラフ検討
+説明: ロゴが動く案を複数パターン素早く試す。
+```text
+前提: ロゴアニメーションの発注前に、方向性を複数パターン素早く確認したい場面。
+指示: ロゴ画像を参照に、①フェードイン②光が集まって形成③パーツが組み合わさる、の3パターンの短い動きをそれぞれ作って。
+出力形式: 2K・各2〜3秒・16:9を3パターン。本番用ではなくラフ検討用と明記して比較して。
+```
+
+### 37. 採用ページ用の雰囲気映像
+説明: 職場の雰囲気を伝える採用向け映像を作る。
+```text
+前提: 職場の雰囲気を伝える写真はあるが、採用ページ用に動画として展開したい場面。
+指示: オフィスや働く様子の画像を参照に、自然光が窓から差し込むような柔らかい光の変化を加えた、落ち着いたトーンのカットを作って。
+出力形式: 2K・8秒・16:9。過度に演出感を出さず、実際の雰囲気に近い自然さを保って。
+```
+
+### 38. 記念日・周年ロゴムービー
+説明: 創業記念日など周年を祝うロゴ演出を作る。
+```text
+前提: 会社設立〇周年など、記念日を祝うロゴムービーを作りたい場面。
+指示: ロゴと周年を表す数字の画像を参照に、数字が輝きながら浮かび上がり、最後にロゴと並ぶ演出のカットを作って。
+出力形式: 2K・6秒・16:9。祝祭感のある明るいトーンで、派手すぎない上品な光の演出にして。
+```
+
+### 39. 空間・店舗の雰囲気映像
+説明: 実店舗の写真から、雰囲気の伝わる映像を作る。
+```text
+前提: 実店舗の写真はあるが、来店前に雰囲気が伝わる動画がSNSに欲しい場面。
+指示: 店内写真を参照に、照明の揺らぎや空間の奥行きが伝わるような、ゆっくりとしたカメラの前進移動カットを作って。
+出力形式: 2K・10秒・16:9。人物のプライバシーに配慮し、顔がはっきり映る構図は避けて。
+```
+
+### 40. メッセージ性のあるモノローグ映像
+説明: 一言メッセージに合わせた象徴的な映像を作る。
+```text
+前提: ブランドのメッセージ（一言コピー）に合わせて、それを象徴する映像を作りたい場面。
+指示: メッセージの内容に合う情景（例: 「挑戦」なら朝日、「安心」なら穏やかな水面等）の画像を参照に、その情景がゆっくり変化する映像を生成して。
+出力形式: 2K・8秒・16:9。テキストは映像に焼き込まず、後から別で重ねる前提にして。
+```
+
+## 実写参照・スタイル変換（MiniMax H3）
+
+### 41. 実写動画のスタイル転写
+説明: 手持ちの参考動画の動きを、自社素材に転写する。
+```text
+前提: 動きの参考にしたい実写動画（他社事例やイメージ動画）が手元にあり、その動きを自社商品で再現したい場面。
+指示: 参考にしたい動画をモーション参照として渡し、自社の商品画像に対して同じカメラワーク・同じ動きの質感を転写して生成して。
+出力形式: 2K・元動画と同じ尺・16:9。転写後、動きが不自然な箇所がないか必ず確認して。
+```
+
+### 42. イラスト画像の実写風変換
+説明: イラストのキャラクターやモチーフを、実写のような質感の動画にする。
+```text
+前提: イラストで描いたキャラクター・モチーフ画像を、実写に近い質感の動画として動かしたい場面。
+指示: このイラスト画像を参照に、質感だけを実写寄りに変換しつつ、キャラクターの形・ポーズは保ったまま、ごく小さな呼吸のような動きを加えて。
+出力形式: 2K・6秒・16:9。イラストらしさが完全に失われすぎないよう、変換の強さは控えめに調整して。
+```
+
+### 43. 旧素材のリマスター風生成
+説明: 画質の粗い過去の素材から、高品質な新素材を作る。
+```text
+前提: 過去に使っていた画質の粗い商品画像を、現在のクオリティ基準で作り直したい場面。
+指示: この過去の商品画像を参照に、同じ構図・同じ商品のまま、2K解像度で質感を保った短いカットとして再生成して。
+出力形式: 2K・6秒・16:9。商品の形状・色が元画像から変わっていないか、生成後に見比べて確認して。
+```
+
+### 44. 競合参考動画からの着想展開
+説明: 参考にしたい構成の動画から、自社版のアイデアを展開する。
+```text
+前提: 業界内で話題になっている演出手法があり、それを参考に自社版を作りたい場面。
+指示: 参考動画の構成（画角・カット割りの雰囲気）を参照情報として伝え、自社の商品画像を使って同じ構成のオリジナルカットを生成して。
+出力形式: 2K・参考動画と同程度の尺・16:9。丸ごとの模倣ではなく、構成の着想のみを活かすようにして。
+```
+
+### 45. 複数参照画像の合成シーン生成
+説明: 人物・商品・背景を別々の画像から組み合わせて1シーンにする。
+```text
+前提: 人物・商品・背景がそれぞれ別の画像素材としてあり、これらを組み合わせた1シーンを作りたい場面。
+指示: 3つの画像（人物・商品・背景）をすべて参照素材として渡し、自然な配置・自然な光の当たり方になるよう1つのシーンとして合成生成して。
+出力形式: 2K・8秒・16:9。光の向き・影の付き方に矛盾がないか、生成後に確認して。
+```
+
+### 46. 参照動画の色調だけを転写
+説明: 参考動画のトーン・色味だけを自社素材に反映する。
+```text
+前提: 参考にしたい動画の「色味・トーン」だけを自社素材に取り入れたい場面（動きの真似はしない）。
+指示: 参考動画を色調参照として渡し、自社の商品画像に対して同じ色温度・コントラストの傾向だけを反映したカットを生成して。動きは新規に指定して。
+出力形式: 2K・8秒・16:9。色調転写後、商品本来の色が過度に変わっていないか確認して。
+```
+
+### 47. First/Lastフレーム指定の遷移
+説明: 始まりと終わりの画像を指定して、その間の動きを生成する。
+```text
+前提: 「この状態から始まり、この状態で終わる」という始点・終点のイメージが明確にある場面。
+指示: 始点の画像と終点の画像を両方渡し、その間を自然につなぐ遷移カットを生成して。急激な変化ではなく、滑らかな移行にして。
+出力形式: 2K・6〜10秒・16:9。中間のフレームで不自然な破綻がないか確認してから採用して。
+```
+
+### 48. キャラクターの表情バリエーション展開
+説明: 1枚のキャラクター画像から、複数の表情違いの短い動画を作る。
+```text
+前提: キャラクターの立ち絵は1枚あるが、複数の感情表現のバリエーションが必要な場面。
+指示: このキャラクター画像を参照に、①笑顔②驚き③考え込む、の3パターンそれぞれで表情が変化する短いカットを作って。
+出力形式: 2K・各3秒・9:16を3パターン。キャラクターの顔立ち・髪型は全パターンで統一して。
+```
+
+### 49. 実演動画の登場人物差し替えイメージ
+説明: 実演の構成を保ったまま、別の商品・別の人物イメージに置き換える。
+```text
+前提: 過去に作った実演動画の「構成」は良かったが、商品や見た目を今回用に差し替えたい場面。
+指示: 過去動画をモーション参照として渡し、今回の商品画像に対して同じ動きの構成（カメラワーク・タイミング）を適用して生成して。
+出力形式: 2K・元動画と同尺・16:9。動きの構成のみ流用し、見た目の要素はすべて新しい画像に基づかせて。
+```
+
+### 50. 参照画像の解像度・尺の統一出し
+説明: バラバラな解像度・雰囲気の素材を、統一感のあるシリーズに揃える。
+```text
+前提: 撮った時期や担当者が違う複数の商品画像があり、動画にすると統一感がなくなってしまう場面。
+指示: 各商品画像を個別に参照しつつ、同じカメラワーク・同じ尺・同じ色調のテンプレートを適用して、シリーズとして統一感のあるカット群を生成して。
+出力形式: 2K・各8秒・16:9を商品数ぶん。全カットを並べたときに違和感がないか確認して。
+```
+
+## 音声・ナレーション同期（MiniMax H3）
+
+### 51. 商品説明ナレーション付きカット
+説明: 商品カットに合わせて、環境音・効果音を同期させる。
+```text
+前提: 商品紹介動画に、それらしい環境音（開封音・動作音）を同期させたい場面。
+指示: 商品画像を参照に、動きに合わせたステレオ音声（例: 蓋を開ける音、生地が擦れる音）が自然に同期する短いカットを生成して。
+出力形式: 2K・6〜8秒・16:9。音声はネイティブステレオでオンにし、動きと音のタイミングがずれていないか確認して。
+```
+
+### 52. 音楽ビートに合わせたカット割り
+説明: 想定するBGMのテンポに合わせて、カットの切り替えタイミングを設計する。
+```text
+前提: 使用予定のBGMのテンポ（例: 120BPM）が決まっており、それに合わせた映像を作りたい場面。
+指示: 商品画像を参照に、指定したテンポ感に合う周期でカメラの動き・光の変化が起きるカットを生成して。
+出力形式: 2K・8秒・9:16。動きの周期がテンポ感と大きくずれていないか確認して。
+```
+
+### 53. 音声付き挨拶・オープニングカット
+説明: チャンネル冒頭で使う、音声同期した挨拶演出を作る。
+```text
+前提: 動画冒頭で使う、ロゴと一緒に短い効果音が鳴るオープニング演出がほしい場面。
+指示: ロゴ画像を参照に、ロゴが現れる瞬間に合わせて短い効果音（チャイム・シンセ音等）が同期するオープニングカットを作って。
+出力形式: 2K・3秒・16:9と9:16。音のタイミングがロゴの動きとぴったり合っているか確認して。
+```
+
+### 54. ASMR風の音重視カット
+説明: 音そのものを主役にした、質感重視のカットを作る。
+```text
+前提: 商品の「音」自体に魅力がある（コーヒー豆を挽く音、紙をめくる音等）ことを伝えたい場面。
+指示: 商品画像を参照に、動きは最小限に抑えつつ、その動作にともなう音がクリアに聞こえることを重視したカットを生成して。
+出力形式: 2K・10秒・16:9。BGMは加えず、環境音・動作音のみをステレオではっきり聞かせて。
+```
+
+### 55. 会話シーンの口の動き同期
+説明: 人物が話している設定のカットで、口の動きと音声を同期させる。
+```text
+前提: 人物が何かを説明している設定の短いカットに、話す音声を同期させたい場面。
+指示: 人物画像を参照に、話している内容の音声（渡すテキストまたは音声素材）に合わせて口の動きが自然に同期するカットを生成して。
+出力形式: 2K・音声の尺に合わせる・9:16。口の動きと音声のズレが無いか、生成後に確認して。
+```
+
+### 56. 環境音のみのアンビエントカット
+説明: セリフやBGMなしで、環境音だけで場の雰囲気を伝える。
+```text
+前提: 派手な演出をせず、環境音だけで落ち着いた場の雰囲気を伝えたい場面。
+指示: 背景・情景の画像を参照に、風や水、雑踏といった環境音がリアルに感じられるカットを生成して。映像の動きも音に合わせてごく自然な範囲に抑えて。
+出力形式: 2K・10秒・16:9。環境音の音量バランスが不自然に大きすぎないか確認して。
+```
+
+### 57. 効果音つきトランジション素材
+説明: カットとカットの間に使う、音付きの切り替え素材を作る。
+```text
+前提: 複数のカットをつなぐ際に使う、音付きのトランジション（切り替え）素材が欲しい場面。
+指示: 抽象的な光や粒子の動きの画像を参照に、その動きに合わせたスワイプ音・シンセ音が同期する短いトランジションを生成して。
+出力形式: 2K・1〜2秒・16:9と9:16。前後のカットに違和感なくつながる始点・終点にして。
+```
+
+### 58. 複数言語ナレーションの検討用ラフ
+説明: 同じ映像に対して、異なる言語の音声パターンを試す。
+```text
+前提: 同じ映像素材で、日本語版・英語版のナレーション付きバージョンを検討したい場面。
+指示: 映像の元になる画像を参照に、日本語ナレーションと英語ナレーションそれぞれで、口の動きが各言語に合わせて自然になるバージョンを個別に生成して。
+出力形式: 2K・同尺・16:9を2パターン（日本語版・英語版）。どちらも音声と口の動きの同期を優先して。
+```
+
+### 59. 楽器演奏イメージの音同期カット
+説明: 楽器や音楽に関連する商品で、演奏音と動きを同期させる。
+```text
+前提: 楽器・音響機器などを扱っており、演奏音や動作音を伴う訴求映像を作りたい場面。
+指示: 商品画像を参照に、演奏または操作している様子と、それに対応する音がタイミングよく同期するカットを生成して。
+出力形式: 2K・8秒・16:9。音の発生タイミングと映像内の動作が一致しているか確認して。
+```
+
+### 60. 警告・通知音の演出カット
+説明: アプリ通知など、音と視覚効果を同期させたUI演出を作る。
+```text
+前提: アプリの通知・アラートを、音と視覚効果が同期した印象的な演出として見せたい場面。
+指示: 通知UIのスクリーンショットを参照に、通知が表示される瞬間に合わせて短い通知音が同期するカットを生成して。
+出力形式: 2K・3秒・9:16。通知音の音量・トーンがUIの雰囲気（緊急度）に合っているか確認して。
+```
+
+## 自律コーディング・長時間タスク（Qwen3.8-Max）
+
+### 61. 空フォルダからのハーネス自動構築
+説明: 何もない状態から、自律実行の土台を作らせる。
+```text
+前提: 新規プロジェクトを立ち上げる際、Qwen3.8-Maxに長時間の自律コーディングを任せたい場面。
+指示: 空のフォルダから、要件（機能一覧・技術スタック）を渡し、テストコードとCI設定を含む開発ハーネスをまず構築させて。10日規模の長期タスクを想定した進捗ログの残し方も設計させて。
+出力形式: 構築計画（マイルストーン区切り）と、初期コミットまでの実行ログを箇条書きで報告させて。
+```
+
+### 62. 既存リポジトリの自律改修
+説明: 既存コードベースに新機能を長時間かけて実装させる。
+```text
+前提: 中規模の既存リポジトリに、複数ファイルにまたがる新機能を追加したい場面。
+指示: リポジトリ構造を読み込ませたうえで、新機能の実装計画を立てさせ、既存のテストを壊さない範囲で段階的に実装・自己検証を繰り返させて。
+出力形式: 変更ファイル一覧・各変更の理由・テスト結果のサマリーを、実装完了後にまとめて報告させて。
+```
+
+### 63. 長時間タスクの中間チェックポイント設計
+説明: 途中で人間が確認できるよう、進捗の区切りを設計させる。
+```text
+前提: 長時間の自律タスクを任せる際、途中で暴走していないか人間が確認したい場面。
+指示: これから始めるタスクを、2時間ごとに人間がレビューできる区切り（チェックポイント）に分割させ、各区切りでの完了条件を明確にさせて。
+出力形式: チェックポイントの一覧（何が完了していれば次に進めるか）を表形式で出力させて。
+```
+
+### 64. エージェント間の役割分担設計
+説明: 複数のサブタスクを並行させるための役割分担を設計させる。
+```text
+前提: 1つの大きな開発タスクを、複数の観点（実装・テスト・ドキュメント）で並行して進めたい場面。
+指示: タスク全体を分析させ、実装担当・テスト担当・ドキュメント担当に分けた場合の役割分担案と、各担当が参照すべき情報の受け渡し方を設計させて。
+出力形式: 役割ごとの責任範囲と、成果物の受け渡しタイミングを図解的な箇条書きで示させて。
+```
+
+### 65. 暴走防止のガードレール設定
+説明: 自律実行が想定外の操作をしないよう、事前に制約を設計させる。
+```text
+前提: 自律コーディングを任せる際、破壊的な操作（データ削除・本番環境への反映等）を防ぎたい場面。
+指示: これから任せるタスクの範囲で、触れてはいけないファイル・実行してはいけないコマンドのリストを提案させ、実行前に確認を挟むべきポイントを洗い出させて。
+出力形式: 禁止事項リストと、確認が必要なタイミングの一覧を明示的に出力させて。
+```
+
+### 66. 実装後の自己レビュー実施
+説明: 実装が終わった直後に、自分のコードを批判的に見直させる。
+```text
+前提: 実装は完了したが、そのまま提出せず一度品質を見直したい場面。
+指示: 実装したコードを、可読性・エラー処理・パフォーマンスの3観点で自己レビューさせ、改善すべき箇所があれば理由付きで指摘させて。
+出力形式: 観点ごとの指摘事項と、それぞれの修正優先度（高中低）を表にまとめさせて。
+```
+
+### 67. パフォーマンスボトルネックの自律調査
+説明: 動作が重い箇所を自分で特定し、改善案を出させる。
+```text
+前提: アプリの一部処理が遅いことは分かっているが、原因箇所が特定できていない場面。
+指示: 対象コードを読み込ませ、処理時間がかかっていそうな箇所を推定させたうえで、実際に計測コードを追加して裏付けを取らせて。
+出力形式: ボトルネック箇所の推定理由・計測結果・改善案を、根拠つきで報告させて。
+```
+
+### 68. マイグレーション作業の段階実行
+説明: ライブラリの大規模バージョンアップを安全に進めさせる。
+```text
+前提: 依存ライブラリの大規模バージョンアップが必要だが、影響範囲が広く一気には進められない場面。
+指示: 影響を受けるファイルを洗い出させ、リスクの低い箇所から順に移行する計画を立てさせたうえで、各ステップごとにテストを実行しながら進めさせて。
+出力形式: 移行ステップの順番とその理由、各ステップ完了時のテスト結果を記録させて。
+```
+
+### 69. 障害調査ログの時系列整理
+説明: 発生したエラーログから、原因の時系列を整理させる。
+```text
+前提: 本番環境で発生したエラーのログが大量にあり、原因を特定したい場面。
+指示: 渡したログを時系列に整理させ、エラーが発生し始めたタイミングと、その前後で変化したこと（デプロイ・設定変更等）の関連を推定させて。
+出力形式: 時系列の要約と、最も疑わしい原因候補を根拠つきで上位3つ挙げさせて。
+```
+
+### 70. 長時間タスクの途中経過サマリー
+説明: 実行中のタスクについて、現時点までの進捗を要約させる。
+```text
+前提: 長時間の自律タスクを実行中で、今何が終わっていて何が残っているか把握したい場面。
+指示: ここまでの実行内容を振り返らせ、完了した作業・現在進行中の作業・未着手の作業に分類して整理させて。
+出力形式: 3分類（完了/進行中/未着手）のチェックリスト形式で、簡潔に出力させて。
+```
+
+## リサーチ・実験設計（Qwen3.8-Max）
+
+### 71. 研究再現の実験計画立案
+説明: 論文やレポートの内容を、自分の環境で再現する計画を立てさせる。
+```text
+前提: 参考にしたい論文・技術レポートがあり、その内容を自分たちの環境で再現検証したい場面。
+指示: 対象の論文概要を渡し、再現に必要な手順・データ・評価方法を整理させたうえで、実行可能な実験計画として組み立てさせて。
+出力形式: 手順のステップ一覧と、各ステップで必要なリソース・想定される所要時間を示させて。
+```
+
+### 72. A/Bテスト設計の壁打ち
+説明: 施策のA/Bテスト設計について、抜け漏れがないか確認させる。
+```text
+前提: 新機能のA/Bテストを設計しているが、統計的に妥当な設計になっているか不安な場面。
+指示: このA/Bテスト案（対象・指標・期間）を渡し、サンプルサイズの妥当性・見落としている交絡要因がないかをチェックさせて。
+出力形式: 懸念点のリストと、それぞれへの対処案を優先度つきで提示させて。
+```
+
+### 73. 複数モデルのベンチマーク比較設計
+説明: 自社ユースケースに合わせたベンチマーク評価の設計をさせる。
+```text
+前提: 複数のAIモデルを比較検討しているが、汎用ベンチマークだけでは自社用途との相性が分からない場面。
+指示: 自社の具体的なユースケースを説明し、それに即した評価項目・評価データセットの作り方を設計させて。
+出力形式: 評価項目一覧と、各項目をどう採点するかの基準を表形式で出力させて。
+```
+
+### 74. 仮説検証の実験デザイン
+説明: ビジネス上の仮説を、検証可能な実験設計に落とし込ませる。
+```text
+前提: 「〇〇をすれば△△が改善するはず」という仮説はあるが、どう検証すればいいか整理できていない場面。
+指示: この仮説を渡し、検証に必要な指標・比較対象・実施期間を含めた実験デザインに落とし込ませて。
+出力形式: 仮説→検証方法→判断基準、の3段構成で簡潔にまとめさせて。
+```
+
+### 75. 先行事例の横断リサーチ
+説明: 同じ課題に取り組んだ他社事例を横断的に整理させる。
+```text
+前提: 取り組もうとしている課題について、他社がどう対処しているか事前に把握したい場面。
+指示: この課題領域について、想定される先行事例のパターンをいくつかのアプローチ別に分類し、それぞれの長所・短所を整理させて。
+出力形式: アプローチの分類と、各分類の長所・短所を対比表で出力させて。
+```
+
+### 76. データ収集計画の妥当性チェック
+説明: これから集めようとしているデータの計画に不備がないか確認させる。
+```text
+前提: 分析のためにこれからデータを収集する予定だが、後から「足りなかった」とならないか不安な場面。
+指示: このデータ収集計画（項目・頻度・期間）を渡し、後の分析で必要になりそうな項目が抜けていないかをチェックさせて。
+出力形式: 不足している可能性のある項目と、その理由をリストで出力させて。
+```
+
+### 77. 実験結果の解釈サポート
+説明: 得られた実験結果を、次のアクションにつなげる形で解釈させる。
+```text
+前提: 実験・テストの結果データは出たが、そこから何を意思決定すべきか整理しきれていない場面。
+指示: この結果データを渡し、統計的に意味のある差なのか、次にどんなアクションを取るべきかの選択肢を整理させて。
+出力形式: 結果の解釈・確信度・推奨アクションの3点を簡潔にまとめさせて。
+```
+
+### 78. プロトタイプの技術選定リサーチ
+説明: 新規プロトタイプ開発における技術スタックの選定を支援させる。
+```text
+前提: 新しいプロトタイプを作る際、どの技術スタックを使うか決めきれていない場面。
+指示: 想定している要件（速度・拡張性・チームの習熟度）を伝え、候補となる技術スタックを複数案出させ、それぞれのトレードオフを整理させて。
+出力形式: 候補ごとのメリット・デメリットと、要件に照らした推奨順位を出力させて。
+```
+
+### 79. 競合調査のリサーチ設計
+説明: 競合サービスの調査項目と手順を設計させる。
+```text
+前提: 競合サービスを調査したいが、何を・どの順番で調べればいいか整理できていない場面。
+指示: 調査対象の領域を伝え、調査すべき項目（機能・価格・ポジショニング等）と調査の進め方を設計させて。
+出力形式: 調査項目のチェックリストと、調査結果をまとめるフォーマット案を出力させて。
+```
+
+### 80. 長期プロジェクトのマイルストーン設計
+説明: 数か月規模のプロジェクトを、検証可能な区切りに分割させる。
+```text
+前提: 数か月かかる見込みの大きなプロジェクトを、途中で軌道修正できる形に設計したい場面。
+指示: プロジェクトの最終ゴールを伝え、途中で成果を確認できるマイルストーンに分割させ、各マイルストーンでの判断基準を設定させて。
+出力形式: マイルストーンごとの目標・期限・判断基準を表形式で出力させて。
+```
+
+## ドキュメント・レポート生成（Qwen3.8-Max）
+
+### 81. 技術仕様書のドラフト作成
+説明: 実装した機能について、技術仕様書のたたき台を作らせる。
+```text
+前提: 実装は終わっているが、後から見返せる技術仕様書がまだない場面。
+指示: 対象のコードを読み込ませ、機能の目的・入出力・処理の流れが分かる技術仕様書のドラフトを作成させて。
+出力形式: 目的・前提条件・処理フロー・制約事項、の見出し構成で1,000〜1,500字程度にまとめさせて。
+```
+
+### 82. 障害報告書のドラフト作成
+説明: 発生した障害について、報告書のたたき台を作らせる。
+```text
+前提: 障害は解決したが、社内・顧客向けの報告書をこれから書く必要がある場面。
+指示: 障害の発生経緯・原因・対応内容・再発防止策の情報を渡し、報告書として読みやすい構成のドラフトを作らせて。
+出力形式: 概要・時系列・原因・対応・再発防止策、の見出し構成で出力させて。
+```
+
+### 83. 長文レビュー結果の要約
+説明: 大量のコードレビューコメントを、要点だけに要約させる。
+```text
+前提: 大量のレビューコメントが付いており、何から手を付ければいいか整理したい場面。
+指示: このレビューコメント一覧を渡し、重要度の高い指摘から順に並び替え、対応が必要な箇所を要約させて。
+出力形式: 重要度（高中低）ごとに分類したチェックリストで出力させて。
+```
+
+### 84. 議事録からのタスク抽出
+説明: 会議の文字起こしから、実行すべきタスクだけを抽出させる。
+```text
+前提: 会議の文字起こしはあるが、そこから「誰が何をやるか」を手作業で拾うのが手間な場面。
+指示: この文字起こしを渡し、決定事項とタスク（担当者・期限が分かるもの）だけを抽出させて。
+出力形式: タスク一覧を「担当者／内容／期限」の3列表で出力させて。
+```
+
+### 85. 複数資料の内容統合
+説明: 別々に作られた複数の資料を、1つの整合した文書にまとめさせる。
+```text
+前提: 部署ごとに別々に作られた資料があり、内容の重複・矛盾を整理して1つにまとめたい場面。
+指示: これらの資料をすべて渡し、重複している内容は1つに統合し、矛盾している箇所があれば明示したうえで統合版を作らせて。
+出力形式: 統合後の文書本体と、矛盾が見つかった箇所の一覧を分けて出力させて。
+```
+
+### 86. 英語資料の技術的な要約翻訳
+説明: 英語の技術文書を、専門用語のニュアンスを保ったまま要約させる。
+```text
+前提: 英語の技術文書・リリースノートを、社内共有用に日本語で要約したい場面。
+指示: この英語文書を渡し、専門用語は無理に意訳せず原語を併記しながら、要点を日本語で要約させて。
+出力形式: 原文の章立てに沿った箇条書きの要約を、800字程度で出力させて。
+```
+
+### 87. READMEの初稿作成
+説明: 新規プロジェクトのREADME.mdの初稿を作らせる。
+```text
+前提: プロジェクトのコードはあるが、README.mdがまだ無く新規メンバーが参入しづらい場面。
+指示: プロジェクトのファイル構成と主要コードを読み込ませ、セットアップ手順・使い方・ディレクトリ構成が分かるREADME.mdの初稿を作らせて。
+出力形式: Markdown形式で、見出し構成（概要／セットアップ／使い方／構成）を守って出力させて。
+```
+
+### 88. リリースノートの自動下書き
+説明: 変更差分から、ユーザー向けリリースノートの下書きを作らせる。
+```text
+前提: 開発者向けの変更ログはあるが、ユーザー向けの分かりやすいリリースノートに書き直したい場面。
+指示: この変更ログを渡し、専門用語を避けてユーザー視点で「何が良くなったか」が伝わるリリースノートの下書きを作らせて。
+出力形式: 新機能・改善・不具合修正の3カテゴリに分けた箇条書きで出力させて。
+```
+
+### 89. FAQドラフトの生成
+説明: 想定される質問と回答のセットを、資料から作らせる。
+```text
+前提: サービス紹介資料はあるが、想定FAQがまだ整理されていない場面。
+指示: この資料を渡し、初めて見る人が疑問に思いそうな点を想定し、質問と回答のセットを作らせて。
+出力形式: Q&amp;A形式で最低10セット、初心者にも分かる言葉で出力させて。
+```
+
+### 90. 週次レポートのたたき台作成
+説明: 進捗ログから、週次報告用の文書を組み立てさせる。
+```text
+前提: 日々の作業ログは残しているが、それを週次報告の形にまとめる作業が毎回手間な場面。
+指示: 今週分の作業ログを渡し、進捗・課題・来週の予定に分けた週次報告のたたき台を作らせて。
+出力形式: 進捗（完了したこと）・課題（詰まっていること）・来週の予定、の3見出しで簡潔にまとめさせて。
+```
+
+## マルチモーダル解析・エージェント操作（Qwen3.8-Max）
+
+### 91. スクリーンショットからのUI不具合検出
+説明: 画面キャプチャを渡して、UI上の問題点を指摘させる。
+```text
+前提: アプリのスクリーンショットを渡して、見た目の不具合をチェックしてもらいたい場面。
+指示: このスクリーンショットを読み込ませ、レイアウト崩れ・文字のはみ出し・コントラスト不足など、UI上の問題点を指摘させて。
+出力形式: 問題箇所ごとに、画面内のどのあたりかの説明と改善案をセットで出力させて。
+```
+
+### 92. 画像資料からのデータ抽出
+説明: グラフや表の画像から、数値データをテキストとして抽出させる。
+```text
+前提: グラフや表の画像しかなく、その中の数値をテキストデータとして扱いたい場面。
+指示: この画像を読み込ませ、グラフ・表内の数値を可能な限り正確に読み取り、構造化されたデータとして抽出させて。
+出力形式: 表形式（項目名／数値）で出力させ、読み取りに自信がない箇所は明示させて。
+```
+
+### 93. 動画キャプチャからの手順書作成
+説明: 操作を録画した動画から、手順書を自動生成させる。
+```text
+前提: 操作の様子を録画した動画はあるが、テキストの手順書がまだない場面。
+指示: この動画を読み込ませ、画面上で行われている操作を時系列に沿ってステップとして書き出させて。
+出力形式: 「ステップ1: 〇〇をクリック」のような番号付き手順として出力させて。
+```
+
+### 94. エージェント型操作タスクの実行計画
+説明: パソコン上の一連の操作を、実行可能なタスクに分解させる。
+```text
+前提: 複数のアプリをまたぐ定型作業を、エージェントに自動操作させたい場面。
+指示: この作業の目的とゴールを伝え、どのアプリでどんな操作をどの順番で行う必要があるか、実行可能なステップに分解させて。
+出力形式: アプリ名・操作内容・確認ポイントを含むステップ一覧で出力させて。
+```
+
+### 95. 画像とテキストの整合性チェック
+説明: 資料内の図と説明文が矛盾していないか確認させる。
+```text
+前提: プレゼン資料の図とテキスト説明が、内容として一致しているか不安な場面。
+指示: 画像（図）とその近くのテキスト説明を両方渡し、内容に矛盾や説明不足がないかをチェックさせて。
+出力形式: 矛盾・不足箇所の一覧と、それぞれの修正案を出力させて。
+```
+
+### 96. ドキュメントとコードの整合性確認
+説明: 仕様書の記載と実際のコードが一致しているか確認させる。
+```text
+前提: 仕様書を書いた後にコードを修正しており、両者がずれていないか確認したい場面。
+指示: 仕様書とコードの両方を渡し、記載内容と実装が一致していない箇所を洗い出させて。
+出力形式: ずれている箇所ごとに、仕様書側とコード側それぞれの記述を並べて提示させて。
+```
+
+### 97. 長尺動画からの要点タイムスタンプ抽出
+説明: 長い動画の中から、重要な場面のタイムスタンプを抽出させる。
+```text
+前提: 長時間の会議録画・セミナー動画があり、重要な部分だけ後から見返したい場面。
+指示: この動画を読み込ませ、重要な発言や画面変化があったタイミングを推定し、タイムスタンプ付きで要点を抽出させて。
+出力形式: 「00:12:30 〜 議題の要点」のような時刻＋要約の一覧で出力させて。
+```
+
+### 98. 複数言語資料の横断比較
+説明: 日本語版と英語版の資料内容が一致しているか確認させる。
+```text
+前提: 同じ資料の日本語版・英語版があり、内容にズレがないか確認したい場面。
+指示: 両方の資料を渡し、内容として欠落・誤訳が疑われる箇所がないかを比較チェックさせて。
+出力形式: ズレが疑われる箇所を、日本語版・英語版を並べて提示し、理由を添えさせて。
+```
+
+### 99. Webページのアクセシビリティ確認
+説明: スクリーンショットからアクセシビリティ上の懸念を指摘させる。
+```text
+前提: 公開前のWebページについて、視認性・アクセシビリティの観点で問題がないか確認したい場面。
+指示: このページのスクリーンショットを読み込ませ、文字とのコントラスト・文字サイズ・情報の優先順位に問題がないかを指摘させて。
+出力形式: 指摘事項を重要度つきで一覧化し、修正の方向性も添えさせて。
+```
+
+### 100. エージェント実行結果の検収チェック
+説明: 自律実行タスクの成果物を、要件と照らして検収させる。
+```text
+前提: エージェントに任せたタスクが完了したと報告を受けたが、要件を満たしているか確認したい場面。
+指示: 最初に渡した要件と、実際の成果物（コード・画面・文書等）を照らし合わせ、満たしている点・不足している点を洗い出させて。
+出力形式: 要件ごとに「満たしている／不足」を判定し、不足分は具体的な追加対応を提案させて。
+```
+
+---
+以上、100個です。内訳: 商品・EC訴求10／SNS広告・ショート動画10／UI-UXプロダクトデモ10／ブランディング・世界観10／実写参照・スタイル変換10／音声・ナレーション同期10（以上MiniMax H3=60）、自律コーディング・長時間タスク10／リサーチ・実験設計10／ドキュメント・レポート生成10／マルチモーダル解析・エージェント操作10（以上Qwen3.8-Max=40）。
+</pre>
+<script>
+function flash(btn, label){
+  const old = btn.textContent, cls = btn.className;
+  btn.textContent = label; btn.classList.add('ok');
+  setTimeout(() => { btn.textContent = old; btn.className = cls; }, 1600);
+}
+function textOf(id){ return document.getElementById(id).textContent; }
+
+async function copyText(btn, id){
+  const t = textOf(id);
+  try {
+    await navigator.clipboard.writeText(t);
+  } catch (e) {
+    const ta = document.createElement('textarea');
+    ta.value = t; ta.style.position='fixed'; ta.style.opacity='0';
+    document.body.appendChild(ta); ta.select();
+    document.execCommand('copy'); ta.remove();
+  }
+  flash(btn, '✓ コピーしました');
+}
+
+function saveText(btn, id, name){
+  const blob = new Blob([textOf(id)], {type:'text/plain;charset=utf-8'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = name;
+  document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+  if (btn) flash(btn, '✓ 保存しました');
+}
+
+document.addEventListener('click', e => {
+  const b = e.target.closest('[data-copy]');
+  if (b) { copyText(b, b.dataset.copy); return; }
+  const d = e.target.closest('[data-save]');
+  if (d) { saveText(d, d.dataset.save, d.dataset.name); }
+});
+</script>
+<aside id="promo" class="promo">
+  <button id="promoClose" class="promo-x" aria-label="閉じる">×</button>
+  <a class="promo-body" href="https://lp.kawaru-ai.jp/" target="_blank" rel="noopener">
+    <img src="data:image/png;base64,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" alt="">
+    <div>
+      <p class="promo-ch">Kawaru<span class="promo-tag">AIエージェント</span></p>
+      <p class="promo-tx">「これ自動化して」と話すだけ。無料で試す →</p>
+    </div>
+  </a>
+</aside>
+<script>
+(function(){
+  if (sessionStorage.getItem('promoClosed')) return;
+  var el = document.getElementById('promo');
+  if (!el) return;
+  setTimeout(function(){ el.classList.add('show'); }, 1400);
+  document.getElementById('promoClose').addEventListener('click', function(e){
+    e.preventDefault();
+    el.classList.remove('show');
+    sessionStorage.setItem('promoClosed', '1');
+  });
+})();
+</script>
+</body></html>

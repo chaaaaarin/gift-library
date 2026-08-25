@@ -1,0 +1,587 @@
+<!doctype html>
+<html lang="ja"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Record &amp; Replayでスキルを量産する手順ガイド — Kawaru Gifts</title>
+<meta name="description" content="自分がPCで一度やってみせた操作を録画すると、Codexがそれを再現できる手順（スキル）に変えてくれる機能の使い方をまとめたガイドです。プロンプトが書けなくても、やって見せるだけで定型業務を自動化できます。">
+<meta name="robots" content="noindex,nofollow">
+<link rel="icon" href="data:image/png;base64,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">
+<link rel="stylesheet" href="../../assets/site.css">
+</head><body>
+<header class="kh"><div class="top">
+  <a class="back" href="../../">← 一覧へ</a>
+  <img src="data:image/png;base64,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" alt="">
+  <h1>Record &amp; Replayでスキルを量産する手順ガイド</h1>
+  <span class="badge">31項目</span>
+  <button class="btn sm" style="margin-left:auto" data-save="pfull" data-name="record-replay-guide.md">⬇ 全件ダウンロード</button>
+</div></header>
+
+<div class="kwrap">
+  <section class="epctx epctx-top">
+  <div class="ep-left">
+    <div class="ep-thumb epctx-thumb"><img src="https://i.ytimg.com/vi/67GV4MKJOqI/hqdefault.jpg" alt=""></div>
+    <a class="watch" href="https://www.youtube.com/watch?v=67GV4MKJOqI" target="_blank" rel="noopener">▶ 動画を見る</a>
+  </div>
+  <div>
+    <p class="epctx-label">この動画のプレゼントです</p>
+    <p class="epctx-title">【衝撃的】公式が推奨するCodexをスマホで使う方法がレベチすぎた件について</p>
+    <p class="epctx-date">2026-08-01</p>
+  </div>
+</section>
+
+  <section class="kintro">
+    <h2>Record &amp; Replayでスキルを量産する手順ガイド</h2>
+    <p><span class="nb">自分がPCで一度やってみせた操作を</span><span class="nb">録画すると、</span><span class="nb">Codexがそれを再現できる手順</span><span class="nb">（スキル）に変えてくれる機能の</span><span class="nb">使い方をまとめたガイドです。</span><span class="nb">プロンプトが書けなくても、</span><span class="nb">やって見せるだけで定型業務を自動化で</span><span class="nb">きます。</span></p>
+    <div class="kmeta"><span>ワークフロー</span><span>収録 31項目</span><span>No.74 Codexはスマホで使え</span><span>2026-07-27 配布</span></div>
+    <div class="pnote"><span class="nb">下のカードから、</span><span class="nb">1件ずつコピー、</span><span class="nb">または個別にダウンロードできます。</span><span class="nb">まとめて欲しいときは、</span><span class="nb">上の</span><span class="nb">「全件ダウンロード」を</span><span class="nb">お使いください。</span></div>
+  </section>
+
+  <div class="icard">
+  <div class="ih"><span class="num">001</span><span class="ititle">Record &amp; Replayとは何か</span></div>
+  
+  <pre class="prompt" id="b1">自分がPCで実際にやった操作を録画すると、Codexがその流れを読み取って、あとから同じことを再現できる手順書に変えてくれる機能です。この手順書のことをスキルと呼びます。
+一度スキルにしてしまえば、次からはスキルの名前を伝えるだけで、同じ作業が最初から最後まで自動で走ります。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b1">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b1" data-name="record-replay-guide-001.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">002</span><span class="ititle">何が嬉しいのか</span></div>
+  
+  <pre class="prompt" id="b2">□ 指示の文章を書けなくても自動化できる
+やり方を言葉で説明するのは難しくても、やって見せるだけなら誰でもできます。説明が苦手な作業ほど向いています。
+
+□ 頭の中にしかない手順が形に残る
+自分だけがやり方を知っている作業を、他の人にも渡せる形にできます。引き継ぎ資料を書く手間が減ります。
+
+□ 外出先から呼び出せるようになる
+スキルにしておけば、スマホからスキル名を送るだけでPC側の作業が走ります。手順を毎回説明する必要がなくなります。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b2">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b2" data-name="record-replay-guide-002.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<h2 class="cat">起動のしかた</h2>
+<div class="icard">
+  <div class="ih"><span class="num">003</span><span class="ititle">PCでCodexを開き、いつも指示を書いているチャット欄にカーソルを置きます。</span></div>
+  
+  <pre class="prompt" id="b3">PCでCodexを開き、いつも指示を書いているチャット欄にカーソルを置きます。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b3">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b3" data-name="record-replay-guide-003.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">004</span><span class="ititle">半角のスラッシュを1つ入力します。使えるコマンドの一覧が出てきます。</span></div>
+  
+  <pre class="prompt" id="b4">半角のスラッシュを1つ入力します。使えるコマンドの一覧が出てきます。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b4">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b4" data-name="record-replay-guide-004.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">005</span><span class="ititle">その中から Record &amp; Replay を選びます。</span></div>
+  
+  <pre class="prompt" id="b5">その中から Record &amp; Replay を選びます。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b5">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b5" data-name="record-replay-guide-005.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">006</span><span class="ititle">一覧に出てこない場合は、プラグインの設定画面を開き、Record &amp; Replay …</span></div>
+  
+  <pre class="prompt" id="b6">一覧に出てこない場合は、プラグインの設定画面を開き、Record &amp; Replay を追加してからもう一度スラッシュを入力してください。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b6">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b6" data-name="record-replay-guide-006.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">007</span><span class="ititle">録画開始を押したら、あとはいつもどおりに作業するだけです。終わったら停止を押します。</span></div>
+  
+  <pre class="prompt" id="b7">録画開始を押したら、あとはいつもどおりに作業するだけです。終わったら停止を押します。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b7">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b7" data-name="record-replay-guide-007.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">008</span><span class="ititle">録画する前の準備（ここで9割決まる）</span></div>
+  
+  <pre class="prompt" id="b8">□ 関係ないウィンドウをすべて閉じる
+録画中に映ったものは、すべて手順の一部として拾われる可能性があります。今日の作業に必要な画面だけを開いてください。
+
+□ 通知を切る
+録画の途中でチャットやメールの通知が飛び出すと、その操作まで手順に混ざります。集中モードなどで通知を止めてから始めてください。
+
+□ 個人情報や見せたくない画面を開かない
+給与明細、他社の資料、パスワードの入っている画面などは、録画前に必ず閉じます。ブラウザのタブも確認してください。
+
+□ 毎回変わる値を決めておく
+日付、案件名、担当者名、金額など、実行のたびに変わるものがあります。録画前に「今日はこれを変数として扱う」と決めておき、その値をコピー＆ペーストで入力するようにすると、あとで直しやすくなります。
+
+□ 作業の最初と最後をはっきり決める
+どこから始めてどこで終わるかを、録画開始前に一言で言えるようにしておきます。言えないなら、その作業はまだ大きすぎます。
+
+□ 練習で一度やってみる
+本番の録画の前に、同じ作業を一度通しでやってみてください。迷う箇所が見つかったら、それは録画では詰まるところです。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b8">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b8" data-name="record-replay-guide-008.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">009</span><span class="ititle">録画中のコツ</span></div>
+  
+  <pre class="prompt" id="b9">□ 迷わず一本道でやる
+最短のルートを一度だけ通ります。あちこち開いて確かめる動きが入ると、その確認作業まで手順に含まれてしまいます。
+
+□ 途中でやり直さない
+間違えたら、その場で戻さず録画を止めて、最初から録り直してください。やり直しの操作まで手順として学習されてしまいます。
+
+□ ゆっくり確実に操作する
+速く動かす必要はありません。1つ操作したら画面が切り替わるのを待ってから、次に進みます。
+
+□ 分岐がある作業は分けて録る
+もしAならこうする、Bならこうする、という枝分かれは1本の録画に入れないでください。AのスキルとBのスキルに分けて、それぞれ録ります。
+
+□ 迷いやすい場所では手を止めない
+どのボタンを押すか考え込む時間が長いと、その部分の手順があいまいになります。考えるのは録画前に済ませておきます。
+
+□ 5分を超えそうなら区切る
+長い録画は再現の精度が落ちます。工程ごとに区切って、複数のスキルにしてください。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b9">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b9" data-name="record-replay-guide-009.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">010</span><span class="ititle">録画のあとにやること（ここを飛ばすと使えないスキルになる）</span></div>
+  
+  <pre class="prompt" id="b10">□ 生成されたスキルを最後まで読む
+自分の操作がどう手順に変換されたかを目で確認します。意図と違う解釈になっている箇所がよく見つかります。
+
+□ 固定値になってしまった箇所を直す
+録画時に使った日付やファイル名が、そのまま固定の値として書き込まれていることがあります。ここを、実行するたびに指定する項目に書き換えてください。
+指示例: このスキルの中で、日付とクライアント名が固定になっている箇所を、実行時に指定できる項目に変えてください。
+
+□ 名前を分かりやすくする
+自分が3か月後に見ても分かる名前をつけます。何をするスキルなのかが名前だけで伝わることが基準です。スマホから呼ぶ時に打ちやすい短さも意識してください。
+
+□ 説明文を1行つける
+どんな時に使うスキルなのかを1行で書いておくと、数が増えた時に迷わなくなります。
+
+□ 一度テスト実行する
+録画時とは別のデータで実行して、同じ結果になるかを確かめます。ここで初めて実用になります。
+指示例: 作ったスキルを、別のファイルを対象にしてテスト実行してください。途中で止まった箇所があれば教えてください。
+
+□ 失敗した時の逃げ道を決める
+うまくいかなかった場合にどこまで戻ればいいかを、スキルの説明に書き添えておきます。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b10">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b10" data-name="record-replay-guide-010.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<h2 class="cat">スキルにすると効くもの12選</h2>
+<div class="icard">
+  <div class="ih"><span class="num">011</span><span class="ititle">カメラ素材の取り込みとリネーム</span></div>
+  
+  <pre class="prompt" id="b11">カメラ素材の取り込みとリネーム
+カメラやSDカードから素材を決まったフォルダに移し、日付と案件名のルールで名前を揃えるところまで。案件のたびに発生する作業なので、効果がすぐ出ます。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b11">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b11" data-name="record-replay-guide-011.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">012</span><span class="ititle">動画の無音カットと書き出し</span></div>
+  
+  <pre class="prompt" id="b12">動画の無音カットと書き出し
+素材を読み込み、しゃべっていない区間を削り、決まった設定で書き出すまでの流れ。手順が完全に固定なので、録画一発でスキルになります。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b12">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b12" data-name="record-replay-guide-012.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">013</span><span class="ititle">字幕の下書き作成と流し込み</span></div>
+  
+  <pre class="prompt" id="b13">字幕の下書き作成と流し込み
+音声から文字を起こし、1行あたりの文字数ルールに整えて、編集ソフトに読み込める形で保存するところまで。整形ルールを含めて録っておくのがコツです。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b13">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b13" data-name="record-replay-guide-013.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">014</span><span class="ititle">請求書の作成と保存</span></div>
+  
+  <pre class="prompt" id="b14">請求書の作成と保存
+テンプレートを開き、金額と宛名と日付を入れ、PDFにして所定のフォルダに保存するまで。毎月同じ動きをするので、真っ先にスキルにすべき作業です。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b14">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b14" data-name="record-replay-guide-014.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">015</span><span class="ititle">経費レシートの仕分けと集計</span></div>
+  
+  <pre class="prompt" id="b15">経費レシートの仕分けと集計
+撮りためたレシート画像を読み取り、日付と金額と用途を表に転記して合計を出すまで。月末の憂鬱がひとつ消えます。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b15">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b15" data-name="record-replay-guide-015.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">016</span><span class="ititle">会議の議事録の整形と保存</span></div>
+  
+  <pre class="prompt" id="b16">会議の議事録の整形と保存
+録音から文字を起こし、決定事項と宿題と次回日程の形に整えて、共有フォルダに保存するまで。形式が決まっている議事録ほど向いています。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b16">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b16" data-name="record-replay-guide-016.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">017</span><span class="ititle">日報や週報の作成</span></div>
+  
+  <pre class="prompt" id="b17">日報や週報の作成
+その週に触ったファイルや完了したタスクを集め、いつもの報告フォーマットに流し込むところまで。書き出しの重さがなくなります。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b17">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b17" data-name="record-replay-guide-017.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">018</span><span class="ititle">問い合わせへの一次返信の下書き</span></div>
+  
+  <pre class="prompt" id="b18">問い合わせへの一次返信の下書き
+届いた問い合わせを分類し、種類ごとの返信文の下書きを作って、送信の手前で止めるところまで。送信自体は自分の手でやる形にしておくのが安全です。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b18">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b18" data-name="record-replay-guide-018.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">019</span><span class="ititle">見積書の作成と履歴の記録</span></div>
+  
+  <pre class="prompt" id="b19">見積書の作成と履歴の記録
+過去の類似案件を参照して見積の型を作り、一覧表に案件として追記するまで。前回いくらで出したかを探す時間がなくなります。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b19">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b19" data-name="record-replay-guide-019.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">020</span><span class="ititle">広告や販売の数値の集計とレポート化</span></div>
+  
+  <pre class="prompt" id="b20">広告や販売の数値の集計とレポート化
+各所から数字を集め、決まった表とグラフの形にまとめ、コメント欄の下書きまで作るところ。毎週や毎月の定例作業に効きます。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b20">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b20" data-name="record-replay-guide-020.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">021</span><span class="ititle">競合や業界の新着チェックとまとめ</span></div>
+  
+  <pre class="prompt" id="b21">競合や業界の新着チェックとまとめ
+決まった情報源を順に見て、新しい動きだけを箇条書きにまとめるまで。見るべき場所が固定されている人ほど時間が浮きます。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b21">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b21" data-name="record-replay-guide-021.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">022</span><span class="ititle">SNS投稿の下書きと素材そろえ</span></div>
+  
+  <pre class="prompt" id="b22">SNS投稿の下書きと素材そろえ
+その週のネタから投稿文の案を作り、使う画像を所定のフォルダに集めて、投稿予約の直前の状態まで持っていくところ。公開は自分の手で押す形に留めます。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b22">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b22" data-name="record-replay-guide-022.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">023</span><span class="ititle">うまくいかない時</span></div>
+  
+  <pre class="prompt" id="b23">□ 録画が長すぎて、途中から再現できない
+→ 工程ごとに区切って、複数のスキルに分けて録り直してください。ひとつのスキルは5分以内が目安です。
+
+□ 画面のレイアウトが変わって再現できない
+→ Computer Use（Codexが画面を直接操作する機能）を有効にしてください。ボタンの位置ではなく画面を見て判断できるようになり、多少の変化に強くなります。
+
+□ 毎回同じところで止まる
+→ 止まる手順だけを切り出して、その部分だけを短く録り直してください。前後をつなぎ直す方が、全体を録り直すより確実です。
+
+□ 実行するたびに違う結果になる
+→ 固定すべき値が指定されていない可能性があります。出力の形式や保存先を、スキルの中に明記してください。
+
+□ 意図しないファイルまで触ってしまう
+→ 対象フォルダをスキルの中で限定してください。範囲を狭めるのが一番効きます。
+
+□ 録画したのにスキルが生成されない
+→ 操作が短すぎるか、画面上の変化がほとんどなかった可能性があります。もう少し工程を足して録り直してください。
+
+□ 途中で確認を求められて止まる
+→ 承認モードが都度承認になっています。安全な作業に限り、実行時の設定を見直してください。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b23">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b23" data-name="record-replay-guide-023.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">024</span><span class="ititle">スマホから呼び出す時の書き方</span></div>
+  
+  <pre class="prompt" id="b24">ゴールは、スキル名を送るだけで走る状態にすることです。文章で手順を説明する必要はもうありません。
+指示例: 素材取り込みのスキルを実行してください。対象は本日のカメラ素材です。
+指示例: 議事録整形のスキルを実行してください。対象は今朝の定例です。終わったら保存先だけ教えてください。
+指示例: 請求書作成のスキルを実行してください。クライアント名と金額はこれから送ります。
+
+□ 実行前に、変わる値だけを添えるのがコツです（日付、案件名、対象フォルダなど）。
+□ 走らせたあとは、完了報告に何を含めてほしいかを一度決めておくと、毎回の確認が短く済みます。
+□ 送信、公開、支払いを含むスキルは、その手前で止まる作りにしておいてください。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b24">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b24" data-name="record-replay-guide-024.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+
+  <section class="epctx">
+  <p class="epctx-label">この動画のほかのプレゼント</p>
+  <div class="ep-kits"><a class="kchip" href="../gaishutsu-checklist/"><span class="kt">外出前5分セットアップ・チェックリスト</span><span class="badge">30項目</span><span class="go">開く →</span></a><a class="kchip" href="../mobile-prompts100/"><span class="kt">スマホ送信用 Codex指示文100選</span><span class="badge">100個</span><span class="go">開く →</span></a></div>
+</section>
+
+  <footer><a href="../../">← AIエージェント / Kawaru プレゼント図書館にもどる</a></footer>
+</div>
+
+<pre id="pfull" class="hidden"># 🎁 Record &amp; Replayでスキルを量産する手順ガイド
+
+自分がPCで一度やってみせた操作を録画すると、Codexがそれを再現できる手順（スキル）に変えてくれる機能の使い方をまとめたガイドです。プロンプトが書けなくても、やって見せるだけで定型業務を自動化できます。
+
+**受け取り方**: 下のコードブロック右上のコピーボタンでコピーするか、このファイルをそのままダウンロードしてください。
+
+**使い方**: 上から順に読み、まずは3分以内で終わる小さな作業をひとつ選んで録画してみてください。
+
+```text
+【Record &amp; Replayでスキルを量産する手順ガイド】
+
+■ Record &amp; Replayとは何か
+自分がPCで実際にやった操作を録画すると、Codexがその流れを読み取って、あとから同じことを再現できる手順書に変えてくれる機能です。この手順書のことをスキルと呼びます。
+一度スキルにしてしまえば、次からはスキルの名前を伝えるだけで、同じ作業が最初から最後まで自動で走ります。
+
+■ 何が嬉しいのか
+□ 指示の文章を書けなくても自動化できる
+やり方を言葉で説明するのは難しくても、やって見せるだけなら誰でもできます。説明が苦手な作業ほど向いています。
+
+□ 頭の中にしかない手順が形に残る
+自分だけがやり方を知っている作業を、他の人にも渡せる形にできます。引き継ぎ資料を書く手間が減ります。
+
+□ 外出先から呼び出せるようになる
+スキルにしておけば、スマホからスキル名を送るだけでPC側の作業が走ります。手順を毎回説明する必要がなくなります。
+
+■ 起動のしかた
+1. PCでCodexを開き、いつも指示を書いているチャット欄にカーソルを置きます。
+2. 半角のスラッシュを1つ入力します。使えるコマンドの一覧が出てきます。
+3. その中から Record &amp; Replay を選びます。
+4. 一覧に出てこない場合は、プラグインの設定画面を開き、Record &amp; Replay を追加してからもう一度スラッシュを入力してください。
+5. 録画開始を押したら、あとはいつもどおりに作業するだけです。終わったら停止を押します。
+
+■ 録画する前の準備（ここで9割決まる）
+□ 関係ないウィンドウをすべて閉じる
+録画中に映ったものは、すべて手順の一部として拾われる可能性があります。今日の作業に必要な画面だけを開いてください。
+
+□ 通知を切る
+録画の途中でチャットやメールの通知が飛び出すと、その操作まで手順に混ざります。集中モードなどで通知を止めてから始めてください。
+
+□ 個人情報や見せたくない画面を開かない
+給与明細、他社の資料、パスワードの入っている画面などは、録画前に必ず閉じます。ブラウザのタブも確認してください。
+
+□ 毎回変わる値を決めておく
+日付、案件名、担当者名、金額など、実行のたびに変わるものがあります。録画前に「今日はこれを変数として扱う」と決めておき、その値をコピー＆ペーストで入力するようにすると、あとで直しやすくなります。
+
+□ 作業の最初と最後をはっきり決める
+どこから始めてどこで終わるかを、録画開始前に一言で言えるようにしておきます。言えないなら、その作業はまだ大きすぎます。
+
+□ 練習で一度やってみる
+本番の録画の前に、同じ作業を一度通しでやってみてください。迷う箇所が見つかったら、それは録画では詰まるところです。
+
+■ 録画中のコツ
+□ 迷わず一本道でやる
+最短のルートを一度だけ通ります。あちこち開いて確かめる動きが入ると、その確認作業まで手順に含まれてしまいます。
+
+□ 途中でやり直さない
+間違えたら、その場で戻さず録画を止めて、最初から録り直してください。やり直しの操作まで手順として学習されてしまいます。
+
+□ ゆっくり確実に操作する
+速く動かす必要はありません。1つ操作したら画面が切り替わるのを待ってから、次に進みます。
+
+□ 分岐がある作業は分けて録る
+もしAならこうする、Bならこうする、という枝分かれは1本の録画に入れないでください。AのスキルとBのスキルに分けて、それぞれ録ります。
+
+□ 迷いやすい場所では手を止めない
+どのボタンを押すか考え込む時間が長いと、その部分の手順があいまいになります。考えるのは録画前に済ませておきます。
+
+□ 5分を超えそうなら区切る
+長い録画は再現の精度が落ちます。工程ごとに区切って、複数のスキルにしてください。
+
+■ 録画のあとにやること（ここを飛ばすと使えないスキルになる）
+□ 生成されたスキルを最後まで読む
+自分の操作がどう手順に変換されたかを目で確認します。意図と違う解釈になっている箇所がよく見つかります。
+
+□ 固定値になってしまった箇所を直す
+録画時に使った日付やファイル名が、そのまま固定の値として書き込まれていることがあります。ここを、実行するたびに指定する項目に書き換えてください。
+指示例: このスキルの中で、日付とクライアント名が固定になっている箇所を、実行時に指定できる項目に変えてください。
+
+□ 名前を分かりやすくする
+自分が3か月後に見ても分かる名前をつけます。何をするスキルなのかが名前だけで伝わることが基準です。スマホから呼ぶ時に打ちやすい短さも意識してください。
+
+□ 説明文を1行つける
+どんな時に使うスキルなのかを1行で書いておくと、数が増えた時に迷わなくなります。
+
+□ 一度テスト実行する
+録画時とは別のデータで実行して、同じ結果になるかを確かめます。ここで初めて実用になります。
+指示例: 作ったスキルを、別のファイルを対象にしてテスト実行してください。途中で止まった箇所があれば教えてください。
+
+□ 失敗した時の逃げ道を決める
+うまくいかなかった場合にどこまで戻ればいいかを、スキルの説明に書き添えておきます。
+
+■ スキルにすると効くもの12選
+
+1. カメラ素材の取り込みとリネーム
+カメラやSDカードから素材を決まったフォルダに移し、日付と案件名のルールで名前を揃えるところまで。案件のたびに発生する作業なので、効果がすぐ出ます。
+
+2. 動画の無音カットと書き出し
+素材を読み込み、しゃべっていない区間を削り、決まった設定で書き出すまでの流れ。手順が完全に固定なので、録画一発でスキルになります。
+
+3. 字幕の下書き作成と流し込み
+音声から文字を起こし、1行あたりの文字数ルールに整えて、編集ソフトに読み込める形で保存するところまで。整形ルールを含めて録っておくのがコツです。
+
+4. 請求書の作成と保存
+テンプレートを開き、金額と宛名と日付を入れ、PDFにして所定のフォルダに保存するまで。毎月同じ動きをするので、真っ先にスキルにすべき作業です。
+
+5. 経費レシートの仕分けと集計
+撮りためたレシート画像を読み取り、日付と金額と用途を表に転記して合計を出すまで。月末の憂鬱がひとつ消えます。
+
+6. 会議の議事録の整形と保存
+録音から文字を起こし、決定事項と宿題と次回日程の形に整えて、共有フォルダに保存するまで。形式が決まっている議事録ほど向いています。
+
+7. 日報や週報の作成
+その週に触ったファイルや完了したタスクを集め、いつもの報告フォーマットに流し込むところまで。書き出しの重さがなくなります。
+
+8. 問い合わせへの一次返信の下書き
+届いた問い合わせを分類し、種類ごとの返信文の下書きを作って、送信の手前で止めるところまで。送信自体は自分の手でやる形にしておくのが安全です。
+
+9. 見積書の作成と履歴の記録
+過去の類似案件を参照して見積の型を作り、一覧表に案件として追記するまで。前回いくらで出したかを探す時間がなくなります。
+
+10. 広告や販売の数値の集計とレポート化
+各所から数字を集め、決まった表とグラフの形にまとめ、コメント欄の下書きまで作るところ。毎週や毎月の定例作業に効きます。
+
+11. 競合や業界の新着チェックとまとめ
+決まった情報源を順に見て、新しい動きだけを箇条書きにまとめるまで。見るべき場所が固定されている人ほど時間が浮きます。
+
+12. SNS投稿の下書きと素材そろえ
+その週のネタから投稿文の案を作り、使う画像を所定のフォルダに集めて、投稿予約の直前の状態まで持っていくところ。公開は自分の手で押す形に留めます。
+
+■ うまくいかない時
+□ 録画が長すぎて、途中から再現できない
+→ 工程ごとに区切って、複数のスキルに分けて録り直してください。ひとつのスキルは5分以内が目安です。
+
+□ 画面のレイアウトが変わって再現できない
+→ Computer Use（Codexが画面を直接操作する機能）を有効にしてください。ボタンの位置ではなく画面を見て判断できるようになり、多少の変化に強くなります。
+
+□ 毎回同じところで止まる
+→ 止まる手順だけを切り出して、その部分だけを短く録り直してください。前後をつなぎ直す方が、全体を録り直すより確実です。
+
+□ 実行するたびに違う結果になる
+→ 固定すべき値が指定されていない可能性があります。出力の形式や保存先を、スキルの中に明記してください。
+
+□ 意図しないファイルまで触ってしまう
+→ 対象フォルダをスキルの中で限定してください。範囲を狭めるのが一番効きます。
+
+□ 録画したのにスキルが生成されない
+→ 操作が短すぎるか、画面上の変化がほとんどなかった可能性があります。もう少し工程を足して録り直してください。
+
+□ 途中で確認を求められて止まる
+→ 承認モードが都度承認になっています。安全な作業に限り、実行時の設定を見直してください。
+
+■ スマホから呼び出す時の書き方
+ゴールは、スキル名を送るだけで走る状態にすることです。文章で手順を説明する必要はもうありません。
+指示例: 素材取り込みのスキルを実行してください。対象は本日のカメラ素材です。
+指示例: 議事録整形のスキルを実行してください。対象は今朝の定例です。終わったら保存先だけ教えてください。
+指示例: 請求書作成のスキルを実行してください。クライアント名と金額はこれから送ります。
+
+□ 実行前に、変わる値だけを添えるのがコツです（日付、案件名、対象フォルダなど）。
+□ 走らせたあとは、完了報告に何を含めてほしいかを一度決めておくと、毎回の確認が短く済みます。
+□ 送信、公開、支払いを含むスキルは、その手前で止まる作りにしておいてください。
+```
+
+**ポイント**: 最初の1本は、失敗しても困らない小さな作業で試してください。録画は数分でも、そのあとの手直しとテスト実行まで含めて初めて使えるスキルになります。
+</pre>
+<script>
+function flash(btn, label){
+  const old = btn.textContent, cls = btn.className;
+  btn.textContent = label; btn.classList.add('ok');
+  setTimeout(() => { btn.textContent = old; btn.className = cls; }, 1600);
+}
+function textOf(id){ return document.getElementById(id).textContent; }
+
+async function copyText(btn, id){
+  const t = textOf(id);
+  try {
+    await navigator.clipboard.writeText(t);
+  } catch (e) {
+    const ta = document.createElement('textarea');
+    ta.value = t; ta.style.position='fixed'; ta.style.opacity='0';
+    document.body.appendChild(ta); ta.select();
+    document.execCommand('copy'); ta.remove();
+  }
+  flash(btn, '✓ コピーしました');
+}
+
+function saveText(btn, id, name){
+  const blob = new Blob([textOf(id)], {type:'text/plain;charset=utf-8'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = name;
+  document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+  if (btn) flash(btn, '✓ 保存しました');
+}
+
+document.addEventListener('click', e => {
+  const b = e.target.closest('[data-copy]');
+  if (b) { copyText(b, b.dataset.copy); return; }
+  const d = e.target.closest('[data-save]');
+  if (d) { saveText(d, d.dataset.save, d.dataset.name); }
+});
+</script>
+<aside id="promo" class="promo">
+  <button id="promoClose" class="promo-x" aria-label="閉じる">×</button>
+  <a class="promo-body" href="https://lp.kawaru-ai.jp/" target="_blank" rel="noopener">
+    <img src="data:image/png;base64,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" alt="">
+    <div>
+      <p class="promo-ch">Kawaru<span class="promo-tag">AIエージェント</span></p>
+      <p class="promo-tx">「これ自動化して」と話すだけ。無料で試す →</p>
+    </div>
+  </a>
+</aside>
+<script>
+(function(){
+  if (sessionStorage.getItem('promoClosed')) return;
+  var el = document.getElementById('promo');
+  if (!el) return;
+  setTimeout(function(){ el.classList.add('show'); }, 1400);
+  document.getElementById('promoClose').addEventListener('click', function(e){
+    e.preventDefault();
+    el.classList.remove('show');
+    sessionStorage.setItem('promoClosed', '1');
+  });
+})();
+</script>
+</body></html>

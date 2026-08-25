@@ -1,0 +1,2248 @@
+<!doctype html>
+<html lang="ja"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>業務シーン別フロー設計図100選 — Kawaru Gifts</title>
+<meta name="description" content="Workspace Studioで「トリガー→処理→変数」をどう組めばいいか、業務シーン別に100パターンまとめました。">
+<meta name="robots" content="noindex,nofollow">
+<link rel="icon" href="data:image/png;base64,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">
+<link rel="stylesheet" href="../../assets/site.css">
+</head><body>
+<header class="kh"><div class="top">
+  <a class="back" href="../../">← 一覧へ</a>
+  <img src="data:image/png;base64,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" alt="">
+  <h1>業務シーン別フロー設計図100選</h1>
+  <span class="badge">100個</span>
+  <button class="btn sm" style="margin-left:auto" data-save="pfull" data-name="flow-designs100.md">⬇ 全件ダウンロード</button>
+</div></header>
+
+<div class="kwrap">
+  <section class="epctx epctx-top">
+  <div class="ep-left">
+    <div class="ep-thumb epctx-thumb"><img src="https://i.ytimg.com/vi/rek5j2ZYbgA/hqdefault.jpg" alt=""></div>
+    <a class="watch" href="https://www.youtube.com/watch?v=rek5j2ZYbgA" target="_blank" rel="noopener">▶ 動画を見る</a>
+  </div>
+  <div>
+    <p class="epctx-label">この動画のプレゼントです</p>
+    <p class="epctx-title">【神ツール】n8nもDifyも全て削除して、全国民はこのAIだけ使ってください【Google Workspace Studio】</p>
+    <p class="epctx-date">2026-08-05</p>
+  </div>
+</section>
+
+  <section class="kintro">
+    <h2>業務シーン別フロー設計図100選</h2>
+    <p><span class="nb">Workspace Studioで</span><span class="nb">「トリガー→処理→変数」を</span><span class="nb">どう組めばいいか、</span><span class="nb">業務シーン別に100パターンまと</span><span class="nb">めました。</span></p>
+    <div class="kmeta"><span>ワークフロー</span><span>収録 100個</span><span>No.78 Google Workspace Studio紹介</span><span>2026-07-29 配布</span></div>
+    <div class="pnote"><span class="nb">下のカードから、</span><span class="nb">1件ずつコピー、</span><span class="nb">または個別にダウンロードできます。</span><span class="nb">まとめて欲しいときは、</span><span class="nb">上の</span><span class="nb">「全件ダウンロード」を</span><span class="nb">お使いください。</span></div>
+  </section>
+
+  <h2 class="cat">メール管理</h2>
+<div class="icard">
+  <div class="ih"><span class="num">001</span><span class="ititle">重要人物からのメール通知</span></div>
+  
+  <pre class="prompt" id="b1">トリガー: 上司や取引先などVIPリストのメールを受信したら
+処理: Geminiが送信元をVIPリストと照合 → 該当すればChatに即時通知
+変数: 送信元アドレス・件名をChatメッセージへ渡す
+自然言語で作るなら: &quot;上司からメールが来たら、件名と要約をすぐChatで教えて&quot;</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b1">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b1" data-name="flow-designs100-001.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">002</span><span class="ititle">未読メールの1日サマリー</span></div>
+  
+  <pre class="prompt" id="b2">トリガー: 毎日18時になったら
+処理: その日の未読メールを取得 → Geminiが要点を3行で要約 → Chatに一括通知
+変数: 未読メール本文の要約テキスト
+自然言語で作るなら: &quot;毎日18時に、その日届いた未読メールの内容を3行で要約してChatに送って&quot;</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b2">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b2" data-name="flow-designs100-002.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">003</span><span class="ititle">アクションアイテム付きメールにラベル</span></div>
+  
+  <pre class="prompt" id="b3">トリガー: メールを受信したら
+処理: Geminiが本文から要対応の有無を判定 → 該当すれば専用ラベルを付与
+変数: 要対応フラグ(true/false)
+自然言語で作るなら: &quot;対応が必要そうなメールに自動でラベルを付けて&quot;</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b3">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b3" data-name="flow-designs100-003.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">004</span><span class="ititle">問い合わせメールの自動要約+返信案</span></div>
+  
+  <pre class="prompt" id="b4">トリガー: 問い合わせ用アドレス宛にメールが届いたら
+処理: Geminiが内容を要約 → 返信案を下書き作成
+変数: 要約テキスト・返信案テキスト
+自然言語で作るなら: &quot;問い合わせメールが来たら、内容を要約して返信の下書きも作って&quot;</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b4">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b4" data-name="flow-designs100-004.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">005</span><span class="ititle">見積もり依頼メールの内容抽出</span></div>
+  
+  <pre class="prompt" id="b5">トリガー: 見積もり関連のメールを受信したら
+処理: Geminiが品目・数量・希望納期を抽出 → スプレッドシートに1行追加
+変数: 抽出したJSON(品目/数量/納期)
+自然言語で作るなら: &quot;見積もり依頼メールから品目・数量・納期を読み取って表に追加して&quot;</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b5">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b5" data-name="flow-designs100-005.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">006</span><span class="ititle">クレームメールの緊急検知+即時通知</span></div>
+  
+  <pre class="prompt" id="b6">トリガー: メールを受信したら
+処理: Geminiが苦情・クレームの可能性を判定 → 該当すれば担当チャンネルへ即時通知
+変数: 緊急度フラグ・要約
+自然言語で作るなら: &quot;クレームらしいメールが来たら、すぐ担当チャンネルに知らせて&quot;</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b6">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b6" data-name="flow-designs100-006.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">007</span><span class="ititle">添付ファイル付きメールの自動保存</span></div>
+  
+  <pre class="prompt" id="b7">トリガー: 添付ファイル付きメールを受信したら
+処理: 添付を指定のドライブフォルダへ保存 → 保存先リンクをメール内容と紐付け
+変数: 保存先フォルダのファイルリンク
+自然言語で作るなら: &quot;添付ファイルが付いたメールが来たら、指定フォルダに自動保存して&quot;</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b7">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b7" data-name="flow-designs100-007.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">008</span><span class="ititle">定期レポートメールの数値抽出</span></div>
+  
+  <pre class="prompt" id="b8">トリガー: 定型フォーマットのレポートメールを受信したら
+処理: Geminiが本文から主要数値を抽出 → スプレッドシートの該当行を更新
+変数: 抽出した数値データ
+自然言語で作るなら: &quot;毎週届くレポートメールから数字だけ抜き出して表を更新して&quot;</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b8">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b8" data-name="flow-designs100-008.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">009</span><span class="ititle">未返信メールのフォローアップリマインド</span></div>
+  
+  <pre class="prompt" id="b9">トリガー: 毎週月曜9時になったら
+処理: 過去1週間の未返信メールを抽出 → 本人宛にリマインドをChatで送付
+変数: 未返信メールの一覧
+自然言語で作るなら: &quot;1週間返信していないメールがあれば、月曜の朝に教えて&quot;</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b9">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b9" data-name="flow-designs100-009.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">010</span><span class="ititle">メルマガの要点だけ週次まとめ</span></div>
+  
+  <pre class="prompt" id="b10">トリガー: 毎週金曜17時になったら
+処理: 購読中メルマガの本文を収集 → Geminiが要点だけ抽出してまとめ
+変数: 要点リストのテキスト
+自然言語で作るなら: &quot;週に届いたメルマガの要点だけ、金曜にまとめて送って&quot;</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b10">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b10" data-name="flow-designs100-010.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">011</span><span class="ititle">社内問い合わせの一次切り分け</span></div>
+  
+  <pre class="prompt" id="b11">トリガー: 社内問い合わせ窓口にメールが届いたら
+処理: Geminiが担当部署を推定 → 該当部署のChatスペースへ転送
+変数: 推定担当部署名
+自然言語で作るなら: &quot;社内問い合わせは内容を見て担当部署に振り分けて&quot;</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b11">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b11" data-name="flow-designs100-011.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">012</span><span class="ititle">退職・異動連絡メールの自動アーカイブ</span></div>
+  
+  <pre class="prompt" id="b12">トリガー: 人事から異動・退職の連絡メールが届いたら
+処理: 対象者名を抽出 → 専用フォルダにアーカイブ保存
+変数: 対象者名・異動日
+自然言語で作るなら: &quot;異動や退職の連絡メールは、専用フォルダに自動で整理して&quot;</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b12">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b12" data-name="flow-designs100-012.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<h2 class="cat">会議・スケジュール</h2>
+<div class="icard">
+  <div class="ih"><span class="num">013</span><span class="ititle">会議後の議事録自動整形</span></div>
+  
+  <pre class="prompt" id="b13">トリガー: Google Meetの会議が終わったら
+処理: 自動生成メモを取得 → Geminiが出席者・議題・決定事項の形式に整形 → Googleドキュメントとして保存
+変数: 整形済み議事録テキスト
+自然言語で作るなら: &quot;会議が終わったら、メモを議事録の形式に整えてドキュメントにして&quot;</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b13">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b13" data-name="flow-designs100-013.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">014</span><span class="ititle">会議メモのアクションアイテムをタスク化</span></div>
+  
+  <pre class="prompt" id="b14">トリガー: 会議メモが完成したら
+処理: Geminiがアクションアイテムをリスト抽出 → 各項目を1件ずつタスク化(Repeat for each)
+変数: アクションアイテムのリスト
+自然言語で作るなら: &quot;会議メモからやることリストを抜き出して、1つずつタスクにして&quot;</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b14">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b14" data-name="flow-designs100-014.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">015</span><span class="ititle">複数会議の要点を1通のダイジェストに</span></div>
+  
+  <pre class="prompt" id="b15">トリガー: 毎日18時になったら
+処理: その日の全会議メモを収集 → Geminiが横断的に要点を整理
+変数: 当日の会議要点まとめ
+自然言語で作るなら: &quot;今日あった会議の要点を1通にまとめて送って&quot;</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b15">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b15" data-name="flow-designs100-015.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">016</span><span class="ititle">予定調整メールから空き時間を提案</span></div>
+  
+  <pre class="prompt" id="b16">トリガー: 日程調整の依頼メールが届いたら
+処理: カレンダーの空き状況を確認 → 候補日時を返信案として提示
+変数: 候補日時リスト
+自然言語で作るなら: &quot;日程調整メールが来たら、空いている時間を返信案として出して&quot;</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b16">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b16" data-name="flow-designs100-016.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">017</span><span class="ititle">会議前リマインドの自動送信</span></div>
+  
+  <pre class="prompt" id="b17">トリガー: 会議開始30分前になったら
+処理: 会議資料の有無を確認 → 参加者にリマインドをChatで送付
+変数: 会議名・資料リンク
+自然言語で作るなら: &quot;会議の30分前に、資料へのリンク付きでリマインドして&quot;</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b17">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b17" data-name="flow-designs100-017.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">018</span><span class="ititle">週次定例の準備チェックリスト送付</span></div>
+  
+  <pre class="prompt" id="b18">トリガー: 毎週の定例会議の前日になったら
+処理: 前回の議事録から未完了事項を抽出 → チェックリストとして送付
+変数: 未完了事項リスト
+自然言語で作るなら: &quot;定例会議の前日に、前回の宿題を一覧にして送って&quot;</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b18">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b18" data-name="flow-designs100-018.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">019</span><span class="ititle">出張予定のカレンダー自動ブロック</span></div>
+  
+  <pre class="prompt" id="b19">トリガー: 出張申請フォームに回答があったら
+処理: 出張期間を抽出 → カレンダーに時間を確保(Block time)
+変数: 出張開始日・終了日
+自然言語で作るなら: &quot;出張申請が来たら、その期間のカレンダーを自動でブロックして&quot;</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b19">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b19" data-name="flow-designs100-019.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">020</span><span class="ititle">面談予約フォームからの日程確定通知</span></div>
+  
+  <pre class="prompt" id="b20">トリガー: 面談予約フォームに回答があったら
+処理: 希望日時を抽出 → カレンダー登録+双方へ通知
+変数: 確定日時
+自然言語で作るなら: &quot;面談予約が来たら、カレンダーに入れて双方に知らせて&quot;</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b20">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b20" data-name="flow-designs100-020.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">021</span><span class="ititle">会議室予約状況の日次サマリー</span></div>
+  
+  <pre class="prompt" id="b21">トリガー: 毎朝9時になったら
+処理: 当日の会議室予約状況を取得 → 空き状況をまとめて通知
+変数: 当日の予約一覧
+自然言語で作るなら: &quot;毎朝、今日の会議室の空き状況をまとめて教えて&quot;</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b21">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b21" data-name="flow-designs100-021.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">022</span><span class="ititle">オンライン会議のリンク自動発行+共有</span></div>
+  
+  <pre class="prompt" id="b22">トリガー: 会議依頼フォームに回答があったら
+処理: Meetリンクを発行 → 参加者へ一斉共有
+変数: 発行したMeetリンク
+自然言語で作るなら: &quot;会議の依頼が来たら、リンクを発行して参加者に共有して&quot;</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b22">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b22" data-name="flow-designs100-022.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">023</span><span class="ititle">締切前タスクのカレンダー登録</span></div>
+  
+  <pre class="prompt" id="b23">トリガー: 新しいタスクが作成されたら
+処理: 締切日を抽出 → カレンダーに予定として登録
+変数: タスク名・締切日
+自然言語で作るなら: &quot;締切のあるタスクは、自動でカレンダーに入れて&quot;</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b23">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b23" data-name="flow-designs100-023.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">024</span><span class="ititle">休暇申請の承認フロー通知</span></div>
+  
+  <pre class="prompt" id="b24">トリガー: 休暇申請フォームに回答があったら
+処理: 申請内容を要約 → 承認者のChatに通知
+変数: 申請者名・期間・理由
+自然言語で作るなら: &quot;休暇申請が来たら、承認者にすぐ知らせて&quot;</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b24">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b24" data-name="flow-designs100-024.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<h2 class="cat">顧客対応・問い合わせ</h2>
+<div class="icard">
+  <div class="ih"><span class="num">025</span><span class="ititle">問い合わせフォーム回答の種類判定</span></div>
+  
+  <pre class="prompt" id="b25">トリガー: 問い合わせフォームに回答があったら
+処理: Geminiが内容を種類ごとに分類 → 対応案とあわせてChatに通知
+変数: 種類・対応案(JSON)
+自然言語で作るなら: &quot;問い合わせが来たら、種類を判定して対応案と一緒に知らせて&quot;</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b25">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b25" data-name="flow-designs100-025.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">026</span><span class="ititle">緊急度別のChat通知振り分け</span></div>
+  
+  <pre class="prompt" id="b26">トリガー: 問い合わせフォームに回答があったら
+処理: Geminiが緊急度を3段階で判定 → 段階に応じて通知先を出し分け
+変数: 緊急度レベル
+自然言語で作るなら: &quot;問い合わせの緊急度を判定して、レベルに応じて通知先を変えて&quot;</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b26">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b26" data-name="flow-designs100-026.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">027</span><span class="ititle">FAQに基づく一次回答案の自動生成</span></div>
+  
+  <pre class="prompt" id="b27">トリガー: 問い合わせが届いたら
+処理: 社内FAQドキュメントを参照 → 一次回答案を下書き作成
+変数: 回答案テキスト
+自然言語で作るなら: &quot;問い合わせにはFAQを見て、まず一次回答案を作って&quot;</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b27">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b27" data-name="flow-designs100-027.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">028</span><span class="ititle">対応履歴のスプレッドシート自動記録</span></div>
+  
+  <pre class="prompt" id="b28">トリガー: 問い合わせに対応したら
+処理: 対応内容を要約 → 対応履歴表に1行追加
+変数: 対応日時・内容の要約
+自然言語で作るなら: &quot;問い合わせ対応が終わったら、履歴表に記録して&quot;</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b28">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b28" data-name="flow-designs100-028.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">029</span><span class="ititle">アンケート回答の感情分析サマリー</span></div>
+  
+  <pre class="prompt" id="b29">トリガー: アンケートフォームに回答があったら
+処理: Geminiが好意的/中立/否定的を判定 → 週次でサマリー化
+変数: 感情分類の集計
+自然言語で作るなら: &quot;アンケートの回答がポジティブかネガティブか判定して、週ごとにまとめて&quot;</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b29">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b29" data-name="flow-designs100-029.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">030</span><span class="ititle">サポートチケットの担当割り振り提案</span></div>
+  
+  <pre class="prompt" id="b30">トリガー: サポートチケットが起票されたら
+処理: 内容から適任者を推定 → 担当候補をChatで提案
+変数: 推定担当者名
+自然言語で作るなら: &quot;サポートチケットが来たら、誰が対応すべきか提案して&quot;</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b30">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b30" data-name="flow-designs100-030.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">031</span><span class="ititle">契約更新前リマインドの自動送信</span></div>
+  
+  <pre class="prompt" id="b31">トリガー: 契約終了日の30日前になったら
+処理: 対象契約を抽出 → 担当営業へリマインド送付
+変数: 契約先名・終了日
+自然言語で作るなら: &quot;契約更新の30日前になったら、担当営業に知らせて&quot;</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b31">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b31" data-name="flow-designs100-031.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">032</span><span class="ititle">解約申請メールの即時エスカレーション</span></div>
+  
+  <pre class="prompt" id="b32">トリガー: 解約に関するメールを受信したら
+処理: Geminiが解約意向を検知 → 責任者へ即時エスカレーション
+変数: 顧客名・解約理由(推定)
+自然言語で作るなら: &quot;解約したそうなメールが来たら、すぐ責任者に伝えて&quot;</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b32">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b32" data-name="flow-designs100-032.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">033</span><span class="ititle">顧客からの資料請求への自動送付</span></div>
+  
+  <pre class="prompt" id="b33">トリガー: 資料請求フォームに回答があったら
+処理: 該当資料をドライブから取得 → 自動返信で送付
+変数: 送付資料のリンク
+自然言語で作るなら: &quot;資料請求が来たら、該当資料へのリンクを自動で返信して&quot;</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b33">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b33" data-name="flow-designs100-033.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">034</span><span class="ititle">商談後フォローメールの下書き作成</span></div>
+  
+  <pre class="prompt" id="b34">トリガー: 商談メモが作成されたら
+処理: Geminiが商談内容を要約 → フォローメールの下書きを作成
+変数: 商談要約・下書き文面
+自然言語で作るなら: &quot;商談が終わったらメモを見て、お礼メールの下書きを作って&quot;</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b34">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b34" data-name="flow-designs100-034.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">035</span><span class="ititle">レビュー投稿の内容分類+通知</span></div>
+  
+  <pre class="prompt" id="b35">トリガー: レビューフォームに回答があったら
+処理: 内容を良い点/改善点に分類 → 担当チャンネルへ通知
+変数: 分類結果
+自然言語で作るなら: &quot;レビューが来たら、良い点と改善点に分けて担当に知らせて&quot;</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b35">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b35" data-name="flow-designs100-035.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">036</span><span class="ititle">問い合わせ増加日のアラート</span></div>
+  
+  <pre class="prompt" id="b36">トリガー: 毎日終業時になったら
+処理: 当日の問い合わせ件数を集計 → 通常より多ければアラート通知
+変数: 当日件数・平均比
+自然言語で作るなら: &quot;今日の問い合わせがいつもより多かったら教えて&quot;</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b36">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b36" data-name="flow-designs100-036.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<h2 class="cat">経理・請求</h2>
+<div class="icard">
+  <div class="ih"><span class="num">037</span><span class="ititle">請求書PDFの金額抽出+台帳登録</span></div>
+  
+  <pre class="prompt" id="b37">トリガー: 請求書フォルダにファイルが追加されたら
+処理: Geminiが金額・発行元・期日を抽出 → 経理台帳に1行追加
+変数: 抽出した請求情報(JSON)
+自然言語で作るなら: &quot;請求書が届いたら、金額と期日を読み取って台帳に記録して&quot;</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b37">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b37" data-name="flow-designs100-037.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">038</span><span class="ititle">経費申請メールの内容チェック</span></div>
+  
+  <pre class="prompt" id="b38">トリガー: 経費申請メールを受信したら
+処理: 申請内容が規定内か判定 → 不備があれば差し戻しコメント
+変数: 判定結果・差し戻し理由
+自然言語で作るなら: &quot;経費申請が来たら、規定に沿っているかチェックして&quot;</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b38">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b38" data-name="flow-designs100-038.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">039</span><span class="ititle">支払い期限リマインドの自動送信</span></div>
+  
+  <pre class="prompt" id="b39">トリガー: 支払い期限の3日前になったら
+処理: 対象の請求を抽出 → 経理担当へリマインド
+変数: 請求先名・金額・期日
+自然言語で作るなら: &quot;支払い期限の3日前になったら、経理に知らせて&quot;</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b39">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b39" data-name="flow-designs100-039.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">040</span><span class="ititle">月次売上サマリーのレポート化</span></div>
+  
+  <pre class="prompt" id="b40">トリガー: 毎月1日になったら
+処理: 前月の売上データを集計 → レポート形式でドキュメント化
+変数: 月次集計データ
+自然言語で作るなら: &quot;毎月1日に、前月の売上をレポートにまとめて&quot;</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b40">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b40" data-name="flow-designs100-040.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">041</span><span class="ititle">領収書メールの自動仕分け</span></div>
+  
+  <pre class="prompt" id="b41">トリガー: 領収書らしいメールを受信したら
+処理: Geminiが金額・支払先を抽出 → カテゴリ別フォルダに保存
+変数: 金額・支払先・カテゴリ
+自然言語で作るなら: &quot;領収書のメールは、内容を見てカテゴリ別に整理して&quot;</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b41">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b41" data-name="flow-designs100-041.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">042</span><span class="ititle">見積書テンプレートへの自動転記</span></div>
+  
+  <pre class="prompt" id="b42">トリガー: 見積もり内容が確定したら
+処理: 確定情報をテンプレートへ反映 → ドキュメントとして生成
+変数: 品目・金額・宛先
+自然言語で作るなら: &quot;見積もり内容が固まったら、テンプレートに転記して見積書を作って&quot;</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b42">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b42" data-name="flow-designs100-042.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">043</span><span class="ititle">未払い一覧の週次通知</span></div>
+  
+  <pre class="prompt" id="b43">トリガー: 毎週月曜9時になったら
+処理: 未払いの請求を抽出 → 一覧にして経理へ通知
+変数: 未払い一覧
+自然言語で作るなら: &quot;毎週月曜に、未払いの請求一覧を経理に送って&quot;</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b43">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b43" data-name="flow-designs100-043.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">044</span><span class="ititle">交通費精算の一次チェック</span></div>
+  
+  <pre class="prompt" id="b44">トリガー: 交通費精算フォームに回答があったら
+処理: 金額と経路の妥当性を確認 → 不自然な点があれば確認依頼
+変数: チェック結果
+自然言語で作るなら: &quot;交通費精算が来たら、金額に不自然な点がないか確認して&quot;</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b44">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b44" data-name="flow-designs100-044.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">045</span><span class="ititle">契約金額の変更履歴記録</span></div>
+  
+  <pre class="prompt" id="b45">トリガー: 契約書ドキュメントが更新されたら
+処理: 変更前後の金額差分を抽出 → 変更履歴表に追記
+変数: 変更前後の金額
+自然言語で作るなら: &quot;契約金額が変わったら、変更履歴として記録して&quot;</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b45">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b45" data-name="flow-designs100-045.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">046</span><span class="ititle">予算超過アラートの自動検知</span></div>
+  
+  <pre class="prompt" id="b46">トリガー: 予算管理シートが更新されたら
+処理: 各項目の予算消化率を計算 → 80%を超えたらアラート
+変数: 項目名・消化率
+自然言語で作るなら: &quot;予算の消化率が8割を超えたら、すぐ教えて&quot;</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b46">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b46" data-name="flow-designs100-046.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<h2 class="cat">人事・総務</h2>
+<div class="icard">
+  <div class="ih"><span class="num">047</span><span class="ititle">入社手続きチェックリストの自動送付</span></div>
+  
+  <pre class="prompt" id="b47">トリガー: 入社日の1週間前になったら
+処理: 対象者の入社手続き一覧を取得 → チェックリストとして本人へ送付
+変数: 氏名・入社日・手続き一覧
+自然言語で作るなら: &quot;入社の1週間前になったら、必要な手続きを本人に案内して&quot;</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b47">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b47" data-name="flow-designs100-047.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">048</span><span class="ititle">勤怠申請の不備チェック</span></div>
+  
+  <pre class="prompt" id="b48">トリガー: 勤怠修正申請が届いたら
+処理: 申請内容が規定と矛盾しないか確認 → 不備があれば差し戻し
+変数: チェック結果・差し戻し理由
+自然言語で作るなら: &quot;勤怠の修正申請が来たら、内容に不備がないか確認して&quot;</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b48">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b48" data-name="flow-designs100-048.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">049</span><span class="ititle">社内アンケート回答の集計サマリー</span></div>
+  
+  <pre class="prompt" id="b49">トリガー: アンケートの回答期限が来たら
+処理: 全回答を集計 → 傾向をサマリー化
+変数: 集計結果
+自然言語で作るなら: &quot;アンケートの回答が締め切られたら、結果をまとめて&quot;</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b49">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b49" data-name="flow-designs100-049.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">050</span><span class="ititle">備品発注依頼の一次受付</span></div>
+  
+  <pre class="prompt" id="b50">トリガー: 備品発注フォームに回答があったら
+処理: 在庫・予算の確認を依頼 → 総務担当へ通知
+変数: 品目・数量・申請者
+自然言語で作るなら: &quot;備品の発注依頼が来たら、総務に内容を伝えて&quot;</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b50">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b50" data-name="flow-designs100-050.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">051</span><span class="ititle">社内規定変更の周知通知</span></div>
+  
+  <pre class="prompt" id="b51">トリガー: 規定ドキュメントが更新されたら
+処理: 変更点をGeminiが要約 → 全社Chatへ周知
+変数: 変更点の要約
+自然言語で作るなら: &quot;社内規定が変わったら、変更点を要約して全社に知らせて&quot;</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b51">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b51" data-name="flow-designs100-051.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">052</span><span class="ititle">健康診断予約リマインド</span></div>
+  
+  <pre class="prompt" id="b52">トリガー: 健康診断の予約期限が近づいたら
+処理: 未予約者を抽出 → リマインドを送付
+変数: 未予約者リスト
+自然言語で作るなら: &quot;健康診断をまだ予約していない人に、リマインドを送って&quot;</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b52">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b52" data-name="flow-designs100-052.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">053</span><span class="ititle">研修申込フォームの自動振り分け</span></div>
+  
+  <pre class="prompt" id="b53">トリガー: 研修申込フォームに回答があったら
+処理: 希望研修ごとに参加者を分類 → 担当講師へ共有
+変数: 研修名・参加者一覧
+自然言語で作るなら: &quot;研修の申し込みが来たら、研修ごとに振り分けて講師に共有して&quot;</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b53">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b53" data-name="flow-designs100-053.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">054</span><span class="ititle">退職手続きタスクの自動生成</span></div>
+  
+  <pre class="prompt" id="b54">トリガー: 退職届が受理されたら
+処理: 必要な退職手続きを洗い出し → タスクとして1件ずつ登録
+変数: 手続き項目リスト
+自然言語で作るなら: &quot;退職が決まったら、必要な手続きをタスクにして&quot;</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b54">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b54" data-name="flow-designs100-054.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">055</span><span class="ititle">座席・備品管理台帳の更新</span></div>
+  
+  <pre class="prompt" id="b55">トリガー: 座席異動の連絡が来たら
+処理: 異動情報を抽出 → 管理台帳を更新
+変数: 氏名・新旧座席
+自然言語で作るなら: &quot;座席が変わったら、管理台帳を更新して&quot;</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b55">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b55" data-name="flow-designs100-055.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">056</span><span class="ititle">社内イベント出欠管理</span></div>
+  
+  <pre class="prompt" id="b56">トリガー: イベント案内フォームに回答があったら
+処理: 出欠を集計 → 主催者へ随時共有
+変数: 出欠状況
+自然言語で作るなら: &quot;社内イベントの出欠が来たら、主催者にリアルタイムで伝えて&quot;</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b56">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b56" data-name="flow-designs100-056.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<h2 class="cat">営業・CRM連携</h2>
+<div class="icard">
+  <div class="ih"><span class="num">057</span><span class="ititle">営業リード表の行ごとにメール下書き</span></div>
+  
+  <pre class="prompt" id="b57">トリガー: 週次で営業リード表を確認するタイミングになったら
+処理: 表の行を1件ずつ取得(Repeat for each) → 各リードにあわせたメール下書きを作成
+変数: リード情報(氏名/会社/状況)
+自然言語で作るなら: &quot;リード表の行ごとに、フォローメールの下書きを作って&quot;</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b57">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b57" data-name="flow-designs100-057.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">058</span><span class="ititle">商談ステータス変更の通知</span></div>
+  
+  <pre class="prompt" id="b58">トリガー: 商談管理シートのステータスが更新されたら
+処理: 変更内容を検知 → 関係者へChat通知
+変数: 商談名・新ステータス
+自然言語で作るなら: &quot;商談のステータスが変わったら、関係者に知らせて&quot;</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b58">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b58" data-name="flow-designs100-058.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">059</span><span class="ititle">名刺データの台帳自動登録</span></div>
+  
+  <pre class="prompt" id="b59">トリガー: 名刺画像がフォルダに追加されたら
+処理: Geminiが企業名・氏名・連絡先を抽出 → 名刺管理台帳に1行追加
+変数: 抽出した名刺情報(JSON)
+自然言語で作るなら: &quot;名刺の画像を置いたら、内容を読み取って台帳に登録して&quot;</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b59">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b59" data-name="flow-designs100-059.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">060</span><span class="ititle">見込み客からの反応をスコアリング</span></div>
+  
+  <pre class="prompt" id="b60">トリガー: メール開封・返信などの反応があったら
+処理: 反応内容から関心度を推定 → スコアを台帳に記録
+変数: 関心度スコア
+自然言語で作るなら: &quot;見込み客の反応があったら、関心度を推定して記録して&quot;</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b60">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b60" data-name="flow-designs100-060.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">061</span><span class="ititle">提案書送付後のフォローアップ</span></div>
+  
+  <pre class="prompt" id="b61">トリガー: 提案書を送付してから3日後になったら
+処理: 未返信であればフォローメール下書き
+変数: 送付先・提案書名
+自然言語で作るなら: &quot;提案書を送って3日返信がなければ、フォローメールを作って&quot;</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b61">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b61" data-name="flow-designs100-061.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">062</span><span class="ititle">商談議事録からネクストアクション抽出</span></div>
+  
+  <pre class="prompt" id="b62">トリガー: 商談議事録が作成されたら
+処理: Geminiがネクストアクションを抽出 → 担当者ごとにタスク化
+変数: アクション項目・担当者
+自然言語で作るなら: &quot;商談議事録から次にやることを抜き出して、担当者ごとにタスクにして&quot;</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b62">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b62" data-name="flow-designs100-062.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">063</span><span class="ititle">週次パイプラインサマリー</span></div>
+  
+  <pre class="prompt" id="b63">トリガー: 毎週金曜17時になったら
+処理: 商談管理シートを集計 → フェーズ別サマリーを作成
+変数: フェーズ別件数・金額
+自然言語で作るなら: &quot;毎週金曜に、商談の進捗をフェーズ別にまとめて&quot;</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b63">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b63" data-name="flow-designs100-063.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">064</span><span class="ititle">契約書ドラフトの初稿作成</span></div>
+  
+  <pre class="prompt" id="b64">トリガー: 契約条件が確定したら
+処理: 確定条件をテンプレートへ反映 → 初稿ドキュメントを生成
+変数: 契約条件(相手先/金額/期間)
+自然言語で作るなら: &quot;契約条件が決まったら、契約書の初稿を作って&quot;</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b64">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b64" data-name="flow-designs100-064.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">065</span><span class="ititle">顧客別のやり取り履歴集約</span></div>
+  
+  <pre class="prompt" id="b65">トリガー: 月末になったら
+処理: 該当顧客とのメール・メモを収集 → 1つのドキュメントに集約
+変数: 顧客名・やり取り履歴
+自然言語で作るなら: &quot;月末に、顧客ごとのやり取りを1つにまとめて&quot;</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b65">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b65" data-name="flow-designs100-065.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">066</span><span class="ititle">失注理由の分類集計</span></div>
+  
+  <pre class="prompt" id="b66">トリガー: 商談が失注ステータスになったら
+処理: 失注理由をGeminiが分類 → 月次で集計
+変数: 失注理由カテゴリ
+自然言語で作るなら: &quot;失注した商談の理由を分類して、月ごとに集計して&quot;</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b66">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b66" data-name="flow-designs100-066.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<h2 class="cat">ドキュメント・ナレッジ管理</h2>
+<div class="icard">
+  <div class="ih"><span class="num">067</span><span class="ititle">議事録から社内Wiki用ページを自動生成</span></div>
+  
+  <pre class="prompt" id="b67">トリガー: 議事録が確定したら
+処理: Geminiが社内Wiki形式に変換 → ナレッジベースに追加
+変数: 整形済みWikiページ
+自然言語で作るなら: &quot;確定した議事録を、社内Wikiのページ形式にして追加して&quot;</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b67">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b67" data-name="flow-designs100-067.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">068</span><span class="ititle">マニュアル更新の変更履歴記録</span></div>
+  
+  <pre class="prompt" id="b68">トリガー: マニュアルドキュメントが更新されたら
+処理: 変更箇所を抽出 → 変更履歴表に追記
+変数: 変更箇所の要約
+自然言語で作るなら: &quot;マニュアルが更新されたら、何が変わったか記録して&quot;</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b68">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b68" data-name="flow-designs100-068.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">069</span><span class="ititle">NotebookLMを使った資料への質問応答フロー</span></div>
+  
+  <pre class="prompt" id="b69">トリガー: 社内問い合わせがマニュアルに関するものだったら
+処理: NotebookLMのノートブックに質問 → 回答を要約して返信
+変数: NotebookLMの回答
+自然言語で作るなら: &quot;マニュアルに関する質問が来たら、資料を根拠に回答して&quot;</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b69">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b69" data-name="flow-designs100-069.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">070</span><span class="ititle">社内ナレッジのカテゴリ別自動振り分け</span></div>
+  
+  <pre class="prompt" id="b70">トリガー: ナレッジ投稿フォームに回答があったら
+処理: 内容からカテゴリを推定 → 該当フォルダへ保存
+変数: 推定カテゴリ
+自然言語で作るなら: &quot;投稿されたナレッジを、内容を見てカテゴリごとに整理して&quot;</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b70">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b70" data-name="flow-designs100-070.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">071</span><span class="ititle">ドキュメントの体裁統一チェック</span></div>
+  
+  <pre class="prompt" id="b71">トリガー: ドキュメントが共有されたら
+処理: 社内フォーマットとの差分を確認 → 修正提案をコメント
+変数: 体裁の差分箇所
+自然言語で作るなら: &quot;共有されたドキュメントが、社内フォーマットに沿っているか確認して&quot;</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b71">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b71" data-name="flow-designs100-071.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">072</span><span class="ititle">古い資料の棚卸しリスト作成</span></div>
+  
+  <pre class="prompt" id="b72">トリガー: 四半期の初めになったら
+処理: 更新が半年以上ないファイルを抽出 → 棚卸しリストとして通知
+変数: 対象ファイル一覧
+自然言語で作るなら: &quot;半年以上更新のない資料を、棚卸しリストにして教えて&quot;</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b72">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b72" data-name="flow-designs100-072.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">073</span><span class="ititle">複数資料の要点を1枚に集約</span></div>
+  
+  <pre class="prompt" id="b73">トリガー: 関連資料が複数指定されたら
+処理: 各資料の要点をGeminiが抽出 → 1枚のサマリーに統合
+変数: 統合サマリー
+自然言語で作るなら: &quot;この資料たちの要点を、1枚にまとめて&quot;</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b73">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b73" data-name="flow-designs100-073.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">074</span><span class="ititle">用語集の自動更新</span></div>
+  
+  <pre class="prompt" id="b74">トリガー: 新しい社内用語が投稿されたら
+処理: 定義をGeminiが整形 → 用語集ドキュメントに追記
+変数: 用語・定義
+自然言語で作るなら: &quot;新しい用語が投稿されたら、用語集に追加して&quot;</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b74">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b74" data-name="flow-designs100-074.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">075</span><span class="ititle">資料レビュー依頼の自動配信</span></div>
+  
+  <pre class="prompt" id="b75">トリガー: レビュー依頼フォームに回答があったら
+処理: 対象資料へのリンクを取得 → レビュアーへ配信
+変数: 資料リンク・依頼者名
+自然言語で作るなら: &quot;資料のレビュー依頼が来たら、レビュアーに配信して&quot;</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b75">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b75" data-name="flow-designs100-075.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">076</span><span class="ititle">版数管理台帳の自動更新</span></div>
+  
+  <pre class="prompt" id="b76">トリガー: ドキュメントが新しいバージョンで保存されたら
+処理: 版数と更新日を検知 → 版数管理台帳に追記
+変数: 版数・更新日
+自然言語で作るなら: &quot;ドキュメントが更新されたら、版数管理表に記録して&quot;</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b76">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b76" data-name="flow-designs100-076.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<h2 class="cat">チーム連携・通知</h2>
+<div class="icard">
+  <div class="ih"><span class="num">077</span><span class="ititle">毎朝のニュース見出し要約配信</span></div>
+  
+  <pre class="prompt" id="b77">トリガー: 毎朝8時になったら
+処理: 業界ニュースを収集 → Geminiが見出しだけ要約
+変数: 見出し要約リスト
+自然言語で作るなら: &quot;毎朝8時に、業界ニュースの見出しだけまとめて送って&quot;</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b77">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b77" data-name="flow-designs100-077.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">078</span><span class="ititle">チーム全体への進捗ダイジェスト</span></div>
+  
+  <pre class="prompt" id="b78">トリガー: 毎週金曜の終業時になったら
+処理: 各タスクの進捗を集計 → ダイジェストとして配信
+変数: 進捗サマリー
+自然言語で作るなら: &quot;毎週金曜に、チームの進捗をまとめて配信して&quot;</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b78">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b78" data-name="flow-designs100-078.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">079</span><span class="ititle">Slack/Chat横断の重要トピック抽出</span></div>
+  
+  <pre class="prompt" id="b79">トリガー: 1日の終わりになったら
+処理: その日のChatメッセージを収集 → 重要そうな話題だけ抽出
+変数: 重要トピックの要約
+自然言語で作るなら: &quot;今日のChatで話題になった重要な件だけ、まとめて教えて&quot;</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b79">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b79" data-name="flow-designs100-079.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">080</span><span class="ititle">タスク遅延の自動アラート</span></div>
+  
+  <pre class="prompt" id="b80">トリガー: タスクの締切が過ぎたら
+処理: 遅延タスクを検知 → 担当者へアラート通知
+変数: タスク名・遅延日数
+自然言語で作るなら: &quot;締切を過ぎたタスクがあれば、担当者にすぐ知らせて&quot;</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b80">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b80" data-name="flow-designs100-080.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">081</span><span class="ititle">新規メンバーへのオンボーディング案内</span></div>
+  
+  <pre class="prompt" id="b81">トリガー: 新規メンバーが追加されたら
+処理: オンボーディング資料一式を取得 → 案内メッセージとして送付
+変数: 資料リンク一覧
+自然言語で作るなら: &quot;新しいメンバーが増えたら、オンボーディング案内を送って&quot;</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b81">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b81" data-name="flow-designs100-081.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">082</span><span class="ititle">週報の自動リマインド+集約</span></div>
+  
+  <pre class="prompt" id="b82">トリガー: 毎週金曜15時になったら
+処理: 未提出者にリマインド → 提出済みの週報を1つに集約
+変数: 週報の要約集
+自然言語で作るなら: &quot;週報を出していない人にリマインドして、出ている分はまとめて&quot;</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b82">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b82" data-name="flow-designs100-082.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">083</span><span class="ititle">プロジェクト完了時の関係者通知</span></div>
+  
+  <pre class="prompt" id="b83">トリガー: プロジェクトのステータスが完了になったら
+処理: 関係者リストを取得 → 完了報告を一斉送付
+変数: プロジェクト名・完了日
+自然言語で作るなら: &quot;プロジェクトが完了したら、関係者全員に報告して&quot;</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b83">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b83" data-name="flow-designs100-083.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">084</span><span class="ititle">社内表彰・お知らせの自動配信</span></div>
+  
+  <pre class="prompt" id="b84">トリガー: 表彰・お知らせフォームに入力があったら
+処理: 内容を整形 → 全社Chatへ配信
+変数: お知らせ本文
+自然言語で作るなら: &quot;表彰やお知らせが登録されたら、全社に配信して&quot;</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b84">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b84" data-name="flow-designs100-084.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">085</span><span class="ititle">障害・トラブル発生時の一斉通知</span></div>
+  
+  <pre class="prompt" id="b85">トリガー: 障害報告フォームに回答があったら
+処理: 内容を要約 → 関係チャンネルへ一斉通知
+変数: 障害内容・影響範囲
+自然言語で作るなら: &quot;障害の報告が来たら、内容を要約して関係者に知らせて&quot;</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b85">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b85" data-name="flow-designs100-085.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">086</span><span class="ititle">定例会議の議題事前収集</span></div>
+  
+  <pre class="prompt" id="b86">トリガー: 定例会議の2日前になったら
+処理: 議題募集フォームへの誘導を送付 → 集まった議題を一覧化
+変数: 議題リスト
+自然言語で作るなら: &quot;定例会議の2日前に、議題を募集してまとめて&quot;</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b86">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b86" data-name="flow-designs100-086.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<h2 class="cat">個人生産性</h2>
+<div class="icard">
+  <div class="ih"><span class="num">087</span><span class="ititle">1日の未読メール概要取得</span></div>
+  
+  <pre class="prompt" id="b87">トリガー: 毎日夜になったら
+処理: その日の未読メールを取得 → 概要をChat通知
+変数: 未読メール概要
+自然言語で作るなら: &quot;毎日夜に、その日の未読メールの概要を教えて&quot;</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b87">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b87" data-name="flow-designs100-087.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">088</span><span class="ititle">フォロー必要メールへのスター付与</span></div>
+  
+  <pre class="prompt" id="b88">トリガー: メールを受信したら
+処理: フォローが必要そうか判定 → 該当メールにスターを付与
+変数: 要フォローフラグ
+自然言語で作るなら: &quot;対応が必要そうなメールに、自動でスターを付けて&quot;</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b88">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b88" data-name="flow-designs100-088.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">089</span><span class="ititle">朝の予定+天気+ニュースまとめ配信</span></div>
+  
+  <pre class="prompt" id="b89">トリガー: 毎朝7時になったら
+処理: 当日の予定・天気・主要ニュースを収集 → 1通にまとめて配信
+変数: 当日の統合サマリー
+自然言語で作るなら: &quot;毎朝7時に、今日の予定と天気とニュースを1通にまとめて&quot;</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b89">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b89" data-name="flow-designs100-089.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">090</span><span class="ititle">To Doリストの自動整理</span></div>
+  
+  <pre class="prompt" id="b90">トリガー: 毎朝になったら
+処理: Google ToDoの項目を優先度順に並べ替え → 上位項目を通知
+変数: 優先度付きTo Doリスト
+自然言語で作るなら: &quot;毎朝、今日やることを優先順位順に並べて教えて&quot;</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b90">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b90" data-name="flow-designs100-090.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">091</span><span class="ititle">資料下書きの叩き台作成</span></div>
+  
+  <pre class="prompt" id="b91">トリガー: 資料作成の依頼を受けたら
+処理: 要件をGeminiに伝える → 叩き台ドキュメントを生成
+変数: 資料の構成案
+自然言語で作るなら: &quot;この内容で、資料の叩き台を作って&quot;</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b91">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b91" data-name="flow-designs100-091.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">092</span><span class="ititle">週次の振り返りメモ自動生成</span></div>
+  
+  <pre class="prompt" id="b92">トリガー: 毎週金曜の終業時になったら
+処理: その週のタスク完了状況を集計 → 振り返りメモを作成
+変数: 週次振り返りテキスト
+自然言語で作るなら: &quot;今週やったことを振り返って、メモにまとめて&quot;</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b92">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b92" data-name="flow-designs100-092.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">093</span><span class="ititle">名刺画像からの連絡先登録</span></div>
+  
+  <pre class="prompt" id="b93">トリガー: 名刺画像を指定フォルダに置いたら
+処理: Geminiが情報を抽出 → 連絡先として登録
+変数: 氏名・会社・連絡先
+自然言語で作るなら: &quot;名刺の写真を置いたら、連絡先として登録して&quot;</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b93">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b93" data-name="flow-designs100-093.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">094</span><span class="ititle">長文メールの3行要約</span></div>
+  
+  <pre class="prompt" id="b94">トリガー: 長いメールを受信したら
+処理: 本文をGeminiが3行に要約
+変数: 3行要約テキスト
+自然言語で作るなら: &quot;長いメールが来たら、3行に要約して&quot;</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b94">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b94" data-name="flow-designs100-094.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">095</span><span class="ititle">複数ソースからの情報収集ダイジェスト</span></div>
+  
+  <pre class="prompt" id="b95">トリガー: 指定した情報源が更新されたら
+処理: 各ソースの更新内容を収集 → 1通のダイジェストに統合
+変数: 統合ダイジェスト
+自然言語で作るなら: &quot;登録した情報源が更新されたら、まとめて教えて&quot;</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b95">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b95" data-name="flow-designs100-095.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">096</span><span class="ititle">スプレッドシートのデータ行を1件ずつメール送信</span></div>
+  
+  <pre class="prompt" id="b96">トリガー: 対象シートを確認するタイミングになったら
+処理: 行を1件ずつ取得(Repeat for each) → 各行の宛先にメール送信
+変数: 行データ(宛先/本文情報)
+自然言語で作るなら: &quot;この表の行ごとに、宛先へメールを送って&quot;</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b96">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b96" data-name="flow-designs100-096.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">097</span><span class="ititle">定型業務のチェックリスト化</span></div>
+  
+  <pre class="prompt" id="b97">トリガー: 繰り返しの多い作業を洗い出すとき
+処理: 過去の作業ログから頻出パターンを抽出 → チェックリスト化して保存
+変数: 作業手順リスト
+自然言語で作るなら: &quot;よくやる作業を、チェックリストにまとめて&quot;</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b97">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b97" data-name="flow-designs100-097.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">098</span><span class="ititle">資料の翻訳下書き作成</span></div>
+  
+  <pre class="prompt" id="b98">トリガー: 英語資料の翻訳依頼が来たら
+処理: Geminiが日本語訳の下書きを作成
+変数: 翻訳下書きテキスト
+自然言語で作るなら: &quot;この資料を、日本語に訳した下書きを作って&quot;</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b98">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b98" data-name="flow-designs100-098.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">099</span><span class="ititle">会議アジェンダのテンプレート生成</span></div>
+  
+  <pre class="prompt" id="b99">トリガー: 新しい定例会議を設定するとき
+処理: 過去の議事録から典型的な項目を抽出 → アジェンダテンプレートを作成
+変数: アジェンダ項目リスト
+自然言語で作るなら: &quot;この定例会議用の、アジェンダテンプレートを作って&quot;</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b99">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b99" data-name="flow-designs100-099.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">100</span><span class="ititle">月末振り返りレポートの自動作成</span></div>
+  
+  <pre class="prompt" id="b100">トリガー: 毎月末になったら
+処理: その月の主要な出来事・数字を収集 → レポート形式でまとめる
+変数: 月次レポート本文
+自然言語で作るなら: &quot;月末に、今月の振り返りレポートを作って&quot;</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b100">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b100" data-name="flow-designs100-100.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+
+  <section class="epctx">
+  <p class="epctx-label">この動画のほかのプレゼント</p>
+  <div class="ep-kits"><a class="kchip" href="../capability-cheatsheet/"><span class="kt">できること・できなくなったこと早見表</span><span class="badge">11項目</span><span class="go">開く →</span></a><a class="kchip" href="../security-checklist/"><span class="kt">導入前セキュリティ&amp;権限チェックリスト</span><span class="badge">8項目</span><span class="go">開く →</span></a></div>
+</section>
+
+  <footer><a href="../../">← AIエージェント / Kawaru プレゼント図書館にもどる</a></footer>
+</div>
+
+<pre id="pfull" class="hidden"># 🎁 業務シーン別フロー設計図100選
+
+Workspace Studioで「トリガー→処理→変数」をどう組めばいいか、業務シーン別に100パターンまとめました。
+
+**受け取り方**: 各項目のコードブロックをコピーするか、このファイルをそのままダウンロードしてください。
+
+**使い方**: 「自然言語で作るなら」の1行をWorkspace Studioの自然言語入力欄にそのまま貼るか、トリガー/処理/変数を見ながら手動で組み立ててください。
+
+## メール管理
+
+### 1. 重要人物からのメール通知
+
+```text
+トリガー: 上司や取引先などVIPリストのメールを受信したら
+処理: Geminiが送信元をVIPリストと照合 → 該当すればChatに即時通知
+変数: 送信元アドレス・件名をChatメッセージへ渡す
+自然言語で作るなら: &quot;上司からメールが来たら、件名と要約をすぐChatで教えて&quot;
+```
+
+### 2. 未読メールの1日サマリー
+
+```text
+トリガー: 毎日18時になったら
+処理: その日の未読メールを取得 → Geminiが要点を3行で要約 → Chatに一括通知
+変数: 未読メール本文の要約テキスト
+自然言語で作るなら: &quot;毎日18時に、その日届いた未読メールの内容を3行で要約してChatに送って&quot;
+```
+
+### 3. アクションアイテム付きメールにラベル
+
+```text
+トリガー: メールを受信したら
+処理: Geminiが本文から要対応の有無を判定 → 該当すれば専用ラベルを付与
+変数: 要対応フラグ(true/false)
+自然言語で作るなら: &quot;対応が必要そうなメールに自動でラベルを付けて&quot;
+```
+
+### 4. 問い合わせメールの自動要約+返信案
+
+```text
+トリガー: 問い合わせ用アドレス宛にメールが届いたら
+処理: Geminiが内容を要約 → 返信案を下書き作成
+変数: 要約テキスト・返信案テキスト
+自然言語で作るなら: &quot;問い合わせメールが来たら、内容を要約して返信の下書きも作って&quot;
+```
+
+### 5. 見積もり依頼メールの内容抽出
+
+```text
+トリガー: 見積もり関連のメールを受信したら
+処理: Geminiが品目・数量・希望納期を抽出 → スプレッドシートに1行追加
+変数: 抽出したJSON(品目/数量/納期)
+自然言語で作るなら: &quot;見積もり依頼メールから品目・数量・納期を読み取って表に追加して&quot;
+```
+
+### 6. クレームメールの緊急検知+即時通知
+
+```text
+トリガー: メールを受信したら
+処理: Geminiが苦情・クレームの可能性を判定 → 該当すれば担当チャンネルへ即時通知
+変数: 緊急度フラグ・要約
+自然言語で作るなら: &quot;クレームらしいメールが来たら、すぐ担当チャンネルに知らせて&quot;
+```
+
+### 7. 添付ファイル付きメールの自動保存
+
+```text
+トリガー: 添付ファイル付きメールを受信したら
+処理: 添付を指定のドライブフォルダへ保存 → 保存先リンクをメール内容と紐付け
+変数: 保存先フォルダのファイルリンク
+自然言語で作るなら: &quot;添付ファイルが付いたメールが来たら、指定フォルダに自動保存して&quot;
+```
+
+### 8. 定期レポートメールの数値抽出
+
+```text
+トリガー: 定型フォーマットのレポートメールを受信したら
+処理: Geminiが本文から主要数値を抽出 → スプレッドシートの該当行を更新
+変数: 抽出した数値データ
+自然言語で作るなら: &quot;毎週届くレポートメールから数字だけ抜き出して表を更新して&quot;
+```
+
+### 9. 未返信メールのフォローアップリマインド
+
+```text
+トリガー: 毎週月曜9時になったら
+処理: 過去1週間の未返信メールを抽出 → 本人宛にリマインドをChatで送付
+変数: 未返信メールの一覧
+自然言語で作るなら: &quot;1週間返信していないメールがあれば、月曜の朝に教えて&quot;
+```
+
+### 10. メルマガの要点だけ週次まとめ
+
+```text
+トリガー: 毎週金曜17時になったら
+処理: 購読中メルマガの本文を収集 → Geminiが要点だけ抽出してまとめ
+変数: 要点リストのテキスト
+自然言語で作るなら: &quot;週に届いたメルマガの要点だけ、金曜にまとめて送って&quot;
+```
+
+### 11. 社内問い合わせの一次切り分け
+
+```text
+トリガー: 社内問い合わせ窓口にメールが届いたら
+処理: Geminiが担当部署を推定 → 該当部署のChatスペースへ転送
+変数: 推定担当部署名
+自然言語で作るなら: &quot;社内問い合わせは内容を見て担当部署に振り分けて&quot;
+```
+
+### 12. 退職・異動連絡メールの自動アーカイブ
+
+```text
+トリガー: 人事から異動・退職の連絡メールが届いたら
+処理: 対象者名を抽出 → 専用フォルダにアーカイブ保存
+変数: 対象者名・異動日
+自然言語で作るなら: &quot;異動や退職の連絡メールは、専用フォルダに自動で整理して&quot;
+```
+
+## 会議・スケジュール
+
+### 13. 会議後の議事録自動整形
+
+```text
+トリガー: Google Meetの会議が終わったら
+処理: 自動生成メモを取得 → Geminiが出席者・議題・決定事項の形式に整形 → Googleドキュメントとして保存
+変数: 整形済み議事録テキスト
+自然言語で作るなら: &quot;会議が終わったら、メモを議事録の形式に整えてドキュメントにして&quot;
+```
+
+### 14. 会議メモのアクションアイテムをタスク化
+
+```text
+トリガー: 会議メモが完成したら
+処理: Geminiがアクションアイテムをリスト抽出 → 各項目を1件ずつタスク化(Repeat for each)
+変数: アクションアイテムのリスト
+自然言語で作るなら: &quot;会議メモからやることリストを抜き出して、1つずつタスクにして&quot;
+```
+
+### 15. 複数会議の要点を1通のダイジェストに
+
+```text
+トリガー: 毎日18時になったら
+処理: その日の全会議メモを収集 → Geminiが横断的に要点を整理
+変数: 当日の会議要点まとめ
+自然言語で作るなら: &quot;今日あった会議の要点を1通にまとめて送って&quot;
+```
+
+### 16. 予定調整メールから空き時間を提案
+
+```text
+トリガー: 日程調整の依頼メールが届いたら
+処理: カレンダーの空き状況を確認 → 候補日時を返信案として提示
+変数: 候補日時リスト
+自然言語で作るなら: &quot;日程調整メールが来たら、空いている時間を返信案として出して&quot;
+```
+
+### 17. 会議前リマインドの自動送信
+
+```text
+トリガー: 会議開始30分前になったら
+処理: 会議資料の有無を確認 → 参加者にリマインドをChatで送付
+変数: 会議名・資料リンク
+自然言語で作るなら: &quot;会議の30分前に、資料へのリンク付きでリマインドして&quot;
+```
+
+### 18. 週次定例の準備チェックリスト送付
+
+```text
+トリガー: 毎週の定例会議の前日になったら
+処理: 前回の議事録から未完了事項を抽出 → チェックリストとして送付
+変数: 未完了事項リスト
+自然言語で作るなら: &quot;定例会議の前日に、前回の宿題を一覧にして送って&quot;
+```
+
+### 19. 出張予定のカレンダー自動ブロック
+
+```text
+トリガー: 出張申請フォームに回答があったら
+処理: 出張期間を抽出 → カレンダーに時間を確保(Block time)
+変数: 出張開始日・終了日
+自然言語で作るなら: &quot;出張申請が来たら、その期間のカレンダーを自動でブロックして&quot;
+```
+
+### 20. 面談予約フォームからの日程確定通知
+
+```text
+トリガー: 面談予約フォームに回答があったら
+処理: 希望日時を抽出 → カレンダー登録+双方へ通知
+変数: 確定日時
+自然言語で作るなら: &quot;面談予約が来たら、カレンダーに入れて双方に知らせて&quot;
+```
+
+### 21. 会議室予約状況の日次サマリー
+
+```text
+トリガー: 毎朝9時になったら
+処理: 当日の会議室予約状況を取得 → 空き状況をまとめて通知
+変数: 当日の予約一覧
+自然言語で作るなら: &quot;毎朝、今日の会議室の空き状況をまとめて教えて&quot;
+```
+
+### 22. オンライン会議のリンク自動発行+共有
+
+```text
+トリガー: 会議依頼フォームに回答があったら
+処理: Meetリンクを発行 → 参加者へ一斉共有
+変数: 発行したMeetリンク
+自然言語で作るなら: &quot;会議の依頼が来たら、リンクを発行して参加者に共有して&quot;
+```
+
+### 23. 締切前タスクのカレンダー登録
+
+```text
+トリガー: 新しいタスクが作成されたら
+処理: 締切日を抽出 → カレンダーに予定として登録
+変数: タスク名・締切日
+自然言語で作るなら: &quot;締切のあるタスクは、自動でカレンダーに入れて&quot;
+```
+
+### 24. 休暇申請の承認フロー通知
+
+```text
+トリガー: 休暇申請フォームに回答があったら
+処理: 申請内容を要約 → 承認者のChatに通知
+変数: 申請者名・期間・理由
+自然言語で作るなら: &quot;休暇申請が来たら、承認者にすぐ知らせて&quot;
+```
+
+## 顧客対応・問い合わせ
+
+### 25. 問い合わせフォーム回答の種類判定
+
+```text
+トリガー: 問い合わせフォームに回答があったら
+処理: Geminiが内容を種類ごとに分類 → 対応案とあわせてChatに通知
+変数: 種類・対応案(JSON)
+自然言語で作るなら: &quot;問い合わせが来たら、種類を判定して対応案と一緒に知らせて&quot;
+```
+
+### 26. 緊急度別のChat通知振り分け
+
+```text
+トリガー: 問い合わせフォームに回答があったら
+処理: Geminiが緊急度を3段階で判定 → 段階に応じて通知先を出し分け
+変数: 緊急度レベル
+自然言語で作るなら: &quot;問い合わせの緊急度を判定して、レベルに応じて通知先を変えて&quot;
+```
+
+### 27. FAQに基づく一次回答案の自動生成
+
+```text
+トリガー: 問い合わせが届いたら
+処理: 社内FAQドキュメントを参照 → 一次回答案を下書き作成
+変数: 回答案テキスト
+自然言語で作るなら: &quot;問い合わせにはFAQを見て、まず一次回答案を作って&quot;
+```
+
+### 28. 対応履歴のスプレッドシート自動記録
+
+```text
+トリガー: 問い合わせに対応したら
+処理: 対応内容を要約 → 対応履歴表に1行追加
+変数: 対応日時・内容の要約
+自然言語で作るなら: &quot;問い合わせ対応が終わったら、履歴表に記録して&quot;
+```
+
+### 29. アンケート回答の感情分析サマリー
+
+```text
+トリガー: アンケートフォームに回答があったら
+処理: Geminiが好意的/中立/否定的を判定 → 週次でサマリー化
+変数: 感情分類の集計
+自然言語で作るなら: &quot;アンケートの回答がポジティブかネガティブか判定して、週ごとにまとめて&quot;
+```
+
+### 30. サポートチケットの担当割り振り提案
+
+```text
+トリガー: サポートチケットが起票されたら
+処理: 内容から適任者を推定 → 担当候補をChatで提案
+変数: 推定担当者名
+自然言語で作るなら: &quot;サポートチケットが来たら、誰が対応すべきか提案して&quot;
+```
+
+### 31. 契約更新前リマインドの自動送信
+
+```text
+トリガー: 契約終了日の30日前になったら
+処理: 対象契約を抽出 → 担当営業へリマインド送付
+変数: 契約先名・終了日
+自然言語で作るなら: &quot;契約更新の30日前になったら、担当営業に知らせて&quot;
+```
+
+### 32. 解約申請メールの即時エスカレーション
+
+```text
+トリガー: 解約に関するメールを受信したら
+処理: Geminiが解約意向を検知 → 責任者へ即時エスカレーション
+変数: 顧客名・解約理由(推定)
+自然言語で作るなら: &quot;解約したそうなメールが来たら、すぐ責任者に伝えて&quot;
+```
+
+### 33. 顧客からの資料請求への自動送付
+
+```text
+トリガー: 資料請求フォームに回答があったら
+処理: 該当資料をドライブから取得 → 自動返信で送付
+変数: 送付資料のリンク
+自然言語で作るなら: &quot;資料請求が来たら、該当資料へのリンクを自動で返信して&quot;
+```
+
+### 34. 商談後フォローメールの下書き作成
+
+```text
+トリガー: 商談メモが作成されたら
+処理: Geminiが商談内容を要約 → フォローメールの下書きを作成
+変数: 商談要約・下書き文面
+自然言語で作るなら: &quot;商談が終わったらメモを見て、お礼メールの下書きを作って&quot;
+```
+
+### 35. レビュー投稿の内容分類+通知
+
+```text
+トリガー: レビューフォームに回答があったら
+処理: 内容を良い点/改善点に分類 → 担当チャンネルへ通知
+変数: 分類結果
+自然言語で作るなら: &quot;レビューが来たら、良い点と改善点に分けて担当に知らせて&quot;
+```
+
+### 36. 問い合わせ増加日のアラート
+
+```text
+トリガー: 毎日終業時になったら
+処理: 当日の問い合わせ件数を集計 → 通常より多ければアラート通知
+変数: 当日件数・平均比
+自然言語で作るなら: &quot;今日の問い合わせがいつもより多かったら教えて&quot;
+```
+
+## 経理・請求
+
+### 37. 請求書PDFの金額抽出+台帳登録
+
+```text
+トリガー: 請求書フォルダにファイルが追加されたら
+処理: Geminiが金額・発行元・期日を抽出 → 経理台帳に1行追加
+変数: 抽出した請求情報(JSON)
+自然言語で作るなら: &quot;請求書が届いたら、金額と期日を読み取って台帳に記録して&quot;
+```
+
+### 38. 経費申請メールの内容チェック
+
+```text
+トリガー: 経費申請メールを受信したら
+処理: 申請内容が規定内か判定 → 不備があれば差し戻しコメント
+変数: 判定結果・差し戻し理由
+自然言語で作るなら: &quot;経費申請が来たら、規定に沿っているかチェックして&quot;
+```
+
+### 39. 支払い期限リマインドの自動送信
+
+```text
+トリガー: 支払い期限の3日前になったら
+処理: 対象の請求を抽出 → 経理担当へリマインド
+変数: 請求先名・金額・期日
+自然言語で作るなら: &quot;支払い期限の3日前になったら、経理に知らせて&quot;
+```
+
+### 40. 月次売上サマリーのレポート化
+
+```text
+トリガー: 毎月1日になったら
+処理: 前月の売上データを集計 → レポート形式でドキュメント化
+変数: 月次集計データ
+自然言語で作るなら: &quot;毎月1日に、前月の売上をレポートにまとめて&quot;
+```
+
+### 41. 領収書メールの自動仕分け
+
+```text
+トリガー: 領収書らしいメールを受信したら
+処理: Geminiが金額・支払先を抽出 → カテゴリ別フォルダに保存
+変数: 金額・支払先・カテゴリ
+自然言語で作るなら: &quot;領収書のメールは、内容を見てカテゴリ別に整理して&quot;
+```
+
+### 42. 見積書テンプレートへの自動転記
+
+```text
+トリガー: 見積もり内容が確定したら
+処理: 確定情報をテンプレートへ反映 → ドキュメントとして生成
+変数: 品目・金額・宛先
+自然言語で作るなら: &quot;見積もり内容が固まったら、テンプレートに転記して見積書を作って&quot;
+```
+
+### 43. 未払い一覧の週次通知
+
+```text
+トリガー: 毎週月曜9時になったら
+処理: 未払いの請求を抽出 → 一覧にして経理へ通知
+変数: 未払い一覧
+自然言語で作るなら: &quot;毎週月曜に、未払いの請求一覧を経理に送って&quot;
+```
+
+### 44. 交通費精算の一次チェック
+
+```text
+トリガー: 交通費精算フォームに回答があったら
+処理: 金額と経路の妥当性を確認 → 不自然な点があれば確認依頼
+変数: チェック結果
+自然言語で作るなら: &quot;交通費精算が来たら、金額に不自然な点がないか確認して&quot;
+```
+
+### 45. 契約金額の変更履歴記録
+
+```text
+トリガー: 契約書ドキュメントが更新されたら
+処理: 変更前後の金額差分を抽出 → 変更履歴表に追記
+変数: 変更前後の金額
+自然言語で作るなら: &quot;契約金額が変わったら、変更履歴として記録して&quot;
+```
+
+### 46. 予算超過アラートの自動検知
+
+```text
+トリガー: 予算管理シートが更新されたら
+処理: 各項目の予算消化率を計算 → 80%を超えたらアラート
+変数: 項目名・消化率
+自然言語で作るなら: &quot;予算の消化率が8割を超えたら、すぐ教えて&quot;
+```
+
+## 人事・総務
+
+### 47. 入社手続きチェックリストの自動送付
+
+```text
+トリガー: 入社日の1週間前になったら
+処理: 対象者の入社手続き一覧を取得 → チェックリストとして本人へ送付
+変数: 氏名・入社日・手続き一覧
+自然言語で作るなら: &quot;入社の1週間前になったら、必要な手続きを本人に案内して&quot;
+```
+
+### 48. 勤怠申請の不備チェック
+
+```text
+トリガー: 勤怠修正申請が届いたら
+処理: 申請内容が規定と矛盾しないか確認 → 不備があれば差し戻し
+変数: チェック結果・差し戻し理由
+自然言語で作るなら: &quot;勤怠の修正申請が来たら、内容に不備がないか確認して&quot;
+```
+
+### 49. 社内アンケート回答の集計サマリー
+
+```text
+トリガー: アンケートの回答期限が来たら
+処理: 全回答を集計 → 傾向をサマリー化
+変数: 集計結果
+自然言語で作るなら: &quot;アンケートの回答が締め切られたら、結果をまとめて&quot;
+```
+
+### 50. 備品発注依頼の一次受付
+
+```text
+トリガー: 備品発注フォームに回答があったら
+処理: 在庫・予算の確認を依頼 → 総務担当へ通知
+変数: 品目・数量・申請者
+自然言語で作るなら: &quot;備品の発注依頼が来たら、総務に内容を伝えて&quot;
+```
+
+### 51. 社内規定変更の周知通知
+
+```text
+トリガー: 規定ドキュメントが更新されたら
+処理: 変更点をGeminiが要約 → 全社Chatへ周知
+変数: 変更点の要約
+自然言語で作るなら: &quot;社内規定が変わったら、変更点を要約して全社に知らせて&quot;
+```
+
+### 52. 健康診断予約リマインド
+
+```text
+トリガー: 健康診断の予約期限が近づいたら
+処理: 未予約者を抽出 → リマインドを送付
+変数: 未予約者リスト
+自然言語で作るなら: &quot;健康診断をまだ予約していない人に、リマインドを送って&quot;
+```
+
+### 53. 研修申込フォームの自動振り分け
+
+```text
+トリガー: 研修申込フォームに回答があったら
+処理: 希望研修ごとに参加者を分類 → 担当講師へ共有
+変数: 研修名・参加者一覧
+自然言語で作るなら: &quot;研修の申し込みが来たら、研修ごとに振り分けて講師に共有して&quot;
+```
+
+### 54. 退職手続きタスクの自動生成
+
+```text
+トリガー: 退職届が受理されたら
+処理: 必要な退職手続きを洗い出し → タスクとして1件ずつ登録
+変数: 手続き項目リスト
+自然言語で作るなら: &quot;退職が決まったら、必要な手続きをタスクにして&quot;
+```
+
+### 55. 座席・備品管理台帳の更新
+
+```text
+トリガー: 座席異動の連絡が来たら
+処理: 異動情報を抽出 → 管理台帳を更新
+変数: 氏名・新旧座席
+自然言語で作るなら: &quot;座席が変わったら、管理台帳を更新して&quot;
+```
+
+### 56. 社内イベント出欠管理
+
+```text
+トリガー: イベント案内フォームに回答があったら
+処理: 出欠を集計 → 主催者へ随時共有
+変数: 出欠状況
+自然言語で作るなら: &quot;社内イベントの出欠が来たら、主催者にリアルタイムで伝えて&quot;
+```
+
+## 営業・CRM連携
+
+### 57. 営業リード表の行ごとにメール下書き
+
+```text
+トリガー: 週次で営業リード表を確認するタイミングになったら
+処理: 表の行を1件ずつ取得(Repeat for each) → 各リードにあわせたメール下書きを作成
+変数: リード情報(氏名/会社/状況)
+自然言語で作るなら: &quot;リード表の行ごとに、フォローメールの下書きを作って&quot;
+```
+
+### 58. 商談ステータス変更の通知
+
+```text
+トリガー: 商談管理シートのステータスが更新されたら
+処理: 変更内容を検知 → 関係者へChat通知
+変数: 商談名・新ステータス
+自然言語で作るなら: &quot;商談のステータスが変わったら、関係者に知らせて&quot;
+```
+
+### 59. 名刺データの台帳自動登録
+
+```text
+トリガー: 名刺画像がフォルダに追加されたら
+処理: Geminiが企業名・氏名・連絡先を抽出 → 名刺管理台帳に1行追加
+変数: 抽出した名刺情報(JSON)
+自然言語で作るなら: &quot;名刺の画像を置いたら、内容を読み取って台帳に登録して&quot;
+```
+
+### 60. 見込み客からの反応をスコアリング
+
+```text
+トリガー: メール開封・返信などの反応があったら
+処理: 反応内容から関心度を推定 → スコアを台帳に記録
+変数: 関心度スコア
+自然言語で作るなら: &quot;見込み客の反応があったら、関心度を推定して記録して&quot;
+```
+
+### 61. 提案書送付後のフォローアップ
+
+```text
+トリガー: 提案書を送付してから3日後になったら
+処理: 未返信であればフォローメール下書き
+変数: 送付先・提案書名
+自然言語で作るなら: &quot;提案書を送って3日返信がなければ、フォローメールを作って&quot;
+```
+
+### 62. 商談議事録からネクストアクション抽出
+
+```text
+トリガー: 商談議事録が作成されたら
+処理: Geminiがネクストアクションを抽出 → 担当者ごとにタスク化
+変数: アクション項目・担当者
+自然言語で作るなら: &quot;商談議事録から次にやることを抜き出して、担当者ごとにタスクにして&quot;
+```
+
+### 63. 週次パイプラインサマリー
+
+```text
+トリガー: 毎週金曜17時になったら
+処理: 商談管理シートを集計 → フェーズ別サマリーを作成
+変数: フェーズ別件数・金額
+自然言語で作るなら: &quot;毎週金曜に、商談の進捗をフェーズ別にまとめて&quot;
+```
+
+### 64. 契約書ドラフトの初稿作成
+
+```text
+トリガー: 契約条件が確定したら
+処理: 確定条件をテンプレートへ反映 → 初稿ドキュメントを生成
+変数: 契約条件(相手先/金額/期間)
+自然言語で作るなら: &quot;契約条件が決まったら、契約書の初稿を作って&quot;
+```
+
+### 65. 顧客別のやり取り履歴集約
+
+```text
+トリガー: 月末になったら
+処理: 該当顧客とのメール・メモを収集 → 1つのドキュメントに集約
+変数: 顧客名・やり取り履歴
+自然言語で作るなら: &quot;月末に、顧客ごとのやり取りを1つにまとめて&quot;
+```
+
+### 66. 失注理由の分類集計
+
+```text
+トリガー: 商談が失注ステータスになったら
+処理: 失注理由をGeminiが分類 → 月次で集計
+変数: 失注理由カテゴリ
+自然言語で作るなら: &quot;失注した商談の理由を分類して、月ごとに集計して&quot;
+```
+
+## ドキュメント・ナレッジ管理
+
+### 67. 議事録から社内Wiki用ページを自動生成
+
+```text
+トリガー: 議事録が確定したら
+処理: Geminiが社内Wiki形式に変換 → ナレッジベースに追加
+変数: 整形済みWikiページ
+自然言語で作るなら: &quot;確定した議事録を、社内Wikiのページ形式にして追加して&quot;
+```
+
+### 68. マニュアル更新の変更履歴記録
+
+```text
+トリガー: マニュアルドキュメントが更新されたら
+処理: 変更箇所を抽出 → 変更履歴表に追記
+変数: 変更箇所の要約
+自然言語で作るなら: &quot;マニュアルが更新されたら、何が変わったか記録して&quot;
+```
+
+### 69. NotebookLMを使った資料への質問応答フロー
+
+```text
+トリガー: 社内問い合わせがマニュアルに関するものだったら
+処理: NotebookLMのノートブックに質問 → 回答を要約して返信
+変数: NotebookLMの回答
+自然言語で作るなら: &quot;マニュアルに関する質問が来たら、資料を根拠に回答して&quot;
+```
+
+### 70. 社内ナレッジのカテゴリ別自動振り分け
+
+```text
+トリガー: ナレッジ投稿フォームに回答があったら
+処理: 内容からカテゴリを推定 → 該当フォルダへ保存
+変数: 推定カテゴリ
+自然言語で作るなら: &quot;投稿されたナレッジを、内容を見てカテゴリごとに整理して&quot;
+```
+
+### 71. ドキュメントの体裁統一チェック
+
+```text
+トリガー: ドキュメントが共有されたら
+処理: 社内フォーマットとの差分を確認 → 修正提案をコメント
+変数: 体裁の差分箇所
+自然言語で作るなら: &quot;共有されたドキュメントが、社内フォーマットに沿っているか確認して&quot;
+```
+
+### 72. 古い資料の棚卸しリスト作成
+
+```text
+トリガー: 四半期の初めになったら
+処理: 更新が半年以上ないファイルを抽出 → 棚卸しリストとして通知
+変数: 対象ファイル一覧
+自然言語で作るなら: &quot;半年以上更新のない資料を、棚卸しリストにして教えて&quot;
+```
+
+### 73. 複数資料の要点を1枚に集約
+
+```text
+トリガー: 関連資料が複数指定されたら
+処理: 各資料の要点をGeminiが抽出 → 1枚のサマリーに統合
+変数: 統合サマリー
+自然言語で作るなら: &quot;この資料たちの要点を、1枚にまとめて&quot;
+```
+
+### 74. 用語集の自動更新
+
+```text
+トリガー: 新しい社内用語が投稿されたら
+処理: 定義をGeminiが整形 → 用語集ドキュメントに追記
+変数: 用語・定義
+自然言語で作るなら: &quot;新しい用語が投稿されたら、用語集に追加して&quot;
+```
+
+### 75. 資料レビュー依頼の自動配信
+
+```text
+トリガー: レビュー依頼フォームに回答があったら
+処理: 対象資料へのリンクを取得 → レビュアーへ配信
+変数: 資料リンク・依頼者名
+自然言語で作るなら: &quot;資料のレビュー依頼が来たら、レビュアーに配信して&quot;
+```
+
+### 76. 版数管理台帳の自動更新
+
+```text
+トリガー: ドキュメントが新しいバージョンで保存されたら
+処理: 版数と更新日を検知 → 版数管理台帳に追記
+変数: 版数・更新日
+自然言語で作るなら: &quot;ドキュメントが更新されたら、版数管理表に記録して&quot;
+```
+
+## チーム連携・通知
+
+### 77. 毎朝のニュース見出し要約配信
+
+```text
+トリガー: 毎朝8時になったら
+処理: 業界ニュースを収集 → Geminiが見出しだけ要約
+変数: 見出し要約リスト
+自然言語で作るなら: &quot;毎朝8時に、業界ニュースの見出しだけまとめて送って&quot;
+```
+
+### 78. チーム全体への進捗ダイジェスト
+
+```text
+トリガー: 毎週金曜の終業時になったら
+処理: 各タスクの進捗を集計 → ダイジェストとして配信
+変数: 進捗サマリー
+自然言語で作るなら: &quot;毎週金曜に、チームの進捗をまとめて配信して&quot;
+```
+
+### 79. Slack/Chat横断の重要トピック抽出
+
+```text
+トリガー: 1日の終わりになったら
+処理: その日のChatメッセージを収集 → 重要そうな話題だけ抽出
+変数: 重要トピックの要約
+自然言語で作るなら: &quot;今日のChatで話題になった重要な件だけ、まとめて教えて&quot;
+```
+
+### 80. タスク遅延の自動アラート
+
+```text
+トリガー: タスクの締切が過ぎたら
+処理: 遅延タスクを検知 → 担当者へアラート通知
+変数: タスク名・遅延日数
+自然言語で作るなら: &quot;締切を過ぎたタスクがあれば、担当者にすぐ知らせて&quot;
+```
+
+### 81. 新規メンバーへのオンボーディング案内
+
+```text
+トリガー: 新規メンバーが追加されたら
+処理: オンボーディング資料一式を取得 → 案内メッセージとして送付
+変数: 資料リンク一覧
+自然言語で作るなら: &quot;新しいメンバーが増えたら、オンボーディング案内を送って&quot;
+```
+
+### 82. 週報の自動リマインド+集約
+
+```text
+トリガー: 毎週金曜15時になったら
+処理: 未提出者にリマインド → 提出済みの週報を1つに集約
+変数: 週報の要約集
+自然言語で作るなら: &quot;週報を出していない人にリマインドして、出ている分はまとめて&quot;
+```
+
+### 83. プロジェクト完了時の関係者通知
+
+```text
+トリガー: プロジェクトのステータスが完了になったら
+処理: 関係者リストを取得 → 完了報告を一斉送付
+変数: プロジェクト名・完了日
+自然言語で作るなら: &quot;プロジェクトが完了したら、関係者全員に報告して&quot;
+```
+
+### 84. 社内表彰・お知らせの自動配信
+
+```text
+トリガー: 表彰・お知らせフォームに入力があったら
+処理: 内容を整形 → 全社Chatへ配信
+変数: お知らせ本文
+自然言語で作るなら: &quot;表彰やお知らせが登録されたら、全社に配信して&quot;
+```
+
+### 85. 障害・トラブル発生時の一斉通知
+
+```text
+トリガー: 障害報告フォームに回答があったら
+処理: 内容を要約 → 関係チャンネルへ一斉通知
+変数: 障害内容・影響範囲
+自然言語で作るなら: &quot;障害の報告が来たら、内容を要約して関係者に知らせて&quot;
+```
+
+### 86. 定例会議の議題事前収集
+
+```text
+トリガー: 定例会議の2日前になったら
+処理: 議題募集フォームへの誘導を送付 → 集まった議題を一覧化
+変数: 議題リスト
+自然言語で作るなら: &quot;定例会議の2日前に、議題を募集してまとめて&quot;
+```
+
+## 個人生産性
+
+### 87. 1日の未読メール概要取得
+
+```text
+トリガー: 毎日夜になったら
+処理: その日の未読メールを取得 → 概要をChat通知
+変数: 未読メール概要
+自然言語で作るなら: &quot;毎日夜に、その日の未読メールの概要を教えて&quot;
+```
+
+### 88. フォロー必要メールへのスター付与
+
+```text
+トリガー: メールを受信したら
+処理: フォローが必要そうか判定 → 該当メールにスターを付与
+変数: 要フォローフラグ
+自然言語で作るなら: &quot;対応が必要そうなメールに、自動でスターを付けて&quot;
+```
+
+### 89. 朝の予定+天気+ニュースまとめ配信
+
+```text
+トリガー: 毎朝7時になったら
+処理: 当日の予定・天気・主要ニュースを収集 → 1通にまとめて配信
+変数: 当日の統合サマリー
+自然言語で作るなら: &quot;毎朝7時に、今日の予定と天気とニュースを1通にまとめて&quot;
+```
+
+### 90. To Doリストの自動整理
+
+```text
+トリガー: 毎朝になったら
+処理: Google ToDoの項目を優先度順に並べ替え → 上位項目を通知
+変数: 優先度付きTo Doリスト
+自然言語で作るなら: &quot;毎朝、今日やることを優先順位順に並べて教えて&quot;
+```
+
+### 91. 資料下書きの叩き台作成
+
+```text
+トリガー: 資料作成の依頼を受けたら
+処理: 要件をGeminiに伝える → 叩き台ドキュメントを生成
+変数: 資料の構成案
+自然言語で作るなら: &quot;この内容で、資料の叩き台を作って&quot;
+```
+
+### 92. 週次の振り返りメモ自動生成
+
+```text
+トリガー: 毎週金曜の終業時になったら
+処理: その週のタスク完了状況を集計 → 振り返りメモを作成
+変数: 週次振り返りテキスト
+自然言語で作るなら: &quot;今週やったことを振り返って、メモにまとめて&quot;
+```
+
+### 93. 名刺画像からの連絡先登録
+
+```text
+トリガー: 名刺画像を指定フォルダに置いたら
+処理: Geminiが情報を抽出 → 連絡先として登録
+変数: 氏名・会社・連絡先
+自然言語で作るなら: &quot;名刺の写真を置いたら、連絡先として登録して&quot;
+```
+
+### 94. 長文メールの3行要約
+
+```text
+トリガー: 長いメールを受信したら
+処理: 本文をGeminiが3行に要約
+変数: 3行要約テキスト
+自然言語で作るなら: &quot;長いメールが来たら、3行に要約して&quot;
+```
+
+### 95. 複数ソースからの情報収集ダイジェスト
+
+```text
+トリガー: 指定した情報源が更新されたら
+処理: 各ソースの更新内容を収集 → 1通のダイジェストに統合
+変数: 統合ダイジェスト
+自然言語で作るなら: &quot;登録した情報源が更新されたら、まとめて教えて&quot;
+```
+
+### 96. スプレッドシートのデータ行を1件ずつメール送信
+
+```text
+トリガー: 対象シートを確認するタイミングになったら
+処理: 行を1件ずつ取得(Repeat for each) → 各行の宛先にメール送信
+変数: 行データ(宛先/本文情報)
+自然言語で作るなら: &quot;この表の行ごとに、宛先へメールを送って&quot;
+```
+
+### 97. 定型業務のチェックリスト化
+
+```text
+トリガー: 繰り返しの多い作業を洗い出すとき
+処理: 過去の作業ログから頻出パターンを抽出 → チェックリスト化して保存
+変数: 作業手順リスト
+自然言語で作るなら: &quot;よくやる作業を、チェックリストにまとめて&quot;
+```
+
+### 98. 資料の翻訳下書き作成
+
+```text
+トリガー: 英語資料の翻訳依頼が来たら
+処理: Geminiが日本語訳の下書きを作成
+変数: 翻訳下書きテキスト
+自然言語で作るなら: &quot;この資料を、日本語に訳した下書きを作って&quot;
+```
+
+### 99. 会議アジェンダのテンプレート生成
+
+```text
+トリガー: 新しい定例会議を設定するとき
+処理: 過去の議事録から典型的な項目を抽出 → アジェンダテンプレートを作成
+変数: アジェンダ項目リスト
+自然言語で作るなら: &quot;この定例会議用の、アジェンダテンプレートを作って&quot;
+```
+
+### 100. 月末振り返りレポートの自動作成
+
+```text
+トリガー: 毎月末になったら
+処理: その月の主要な出来事・数字を収集 → レポート形式でまとめる
+変数: 月次レポート本文
+自然言語で作るなら: &quot;月末に、今月の振り返りレポートを作って&quot;
+```
+
+---
+
+以上、100個です。内訳: メール管理12個 / 会議・スケジュール12個 / 顧客対応・問い合わせ12個 / 経理・請求10個 / 人事・総務10個 / 営業・CRM連携10個 / ドキュメント・ナレッジ管理10個 / チーム連携・通知10個 / 個人生産性14個
+</pre>
+<script>
+function flash(btn, label){
+  const old = btn.textContent, cls = btn.className;
+  btn.textContent = label; btn.classList.add('ok');
+  setTimeout(() => { btn.textContent = old; btn.className = cls; }, 1600);
+}
+function textOf(id){ return document.getElementById(id).textContent; }
+
+async function copyText(btn, id){
+  const t = textOf(id);
+  try {
+    await navigator.clipboard.writeText(t);
+  } catch (e) {
+    const ta = document.createElement('textarea');
+    ta.value = t; ta.style.position='fixed'; ta.style.opacity='0';
+    document.body.appendChild(ta); ta.select();
+    document.execCommand('copy'); ta.remove();
+  }
+  flash(btn, '✓ コピーしました');
+}
+
+function saveText(btn, id, name){
+  const blob = new Blob([textOf(id)], {type:'text/plain;charset=utf-8'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = name;
+  document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+  if (btn) flash(btn, '✓ 保存しました');
+}
+
+document.addEventListener('click', e => {
+  const b = e.target.closest('[data-copy]');
+  if (b) { copyText(b, b.dataset.copy); return; }
+  const d = e.target.closest('[data-save]');
+  if (d) { saveText(d, d.dataset.save, d.dataset.name); }
+});
+</script>
+<aside id="promo" class="promo">
+  <button id="promoClose" class="promo-x" aria-label="閉じる">×</button>
+  <a class="promo-body" href="https://lp.kawaru-ai.jp/" target="_blank" rel="noopener">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHgAAABPCAIAAACveZaQAAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAeKADAAQAAAABAAAATwAAAAAb4zF4AAAQkklEQVR4Ae1cCZAU1Rmenmt3lt0d2GVnFlhwWQSPRQklAgZFEVHCIYtERSspNQY0lcSKEmOqrFSMlcuUJjFVGkotY2JMeURAlEM8kBhQlIiCKFoCuxx7zV6zx+zO9PRMvtdv5k1P3z3TsyyVtO7M6//95/f+9/fr1z1wgpDgOAc58JkUG4oPjuOSjiTn4JJJwiGyEwoVIXRRkrCJDDIFoIOSktXmyZKF0rQ5uTbRKvNUZEwrT3siFxGNMvdoQ/qp5GcOo0H9ZxR2mqJk45bqJYgwH8Ho4BKJBPke8Ud2OCPFXZZk+g4h05wGHDR99ZmMeknS5X1I08MWhXl7RBTI0lapk7qKeW4AtKEipWolxRYlUrW2K5Qqp22WGqyh5NGhMCnqKuqJAdA6unLuYk7krGEYBNkEYg1LRmVSuPwYAF2ISSpzQhpAIcxJ9Wu1TY69STZVKwZAm5mk+ZiX+WTGnEzEllOMvZkx1kkRfTeMS0dBzes7N8y9hR3j4bkYDjNkI9AcRhGlw8apb1uMdvlklx6twMzrN6jRWgbyoKd803cx52ooc8wuPTK17NSkflqjTTIz5Xk2UuaG2WqeTucvnpXR0izDZdDMlTB/D5gVqXVLapkGS1LDyYx19Bmz1zGcuJixhbTQmpSqXVkZbcbAsPEMQ57mPIcAghbKWl0jF+jCLmzFfNEBS5lPeQ68W6mxEBTV2cQM6fcyNq2GkEjG+Ti5pmgc6PB68400z4HP17xGaHKyfu7o98p10Z14EndKbv+nRxpPhlwuZ2rTPSNAGcgAzJkxbVxwdKZHrYWcZTppv5KiJmeKNkxAm/JFm0kWMHsWQ5F9+MnNO/ccLCryEjZygaeKRJTxwXHRaOzRn3/n5hXzmaCqKRnK4FFSVAXNEM8MoHUCBnbd4YEhnhcfrKVDTuW6iJXDERmK9g0Mpfvs+cZoZoyYUHlmAC0LRBpk6nmkkEy4ycNPF+ck8ZOkTv1ROBRVRabS8qkllKE9F6ClcVp2UCEgKwtmlGcFmXQEx46pqiz3FRfFeaGnL5KyQHDGQ1sOf2IjSyjFk8eXGT+ZegwzgE6JyAJmTMqGvS7LyoJSuY5jpCBz3JrVC6+Yc57H6/3X3kOb39wnzmngS5YhVJvt6QxMlH4qgWIU+Il1dEpEFjBjQpysbXtjIBLt7Yv09g/i/2gsrqpfyzHKjBjmz6m/9YaF06dNPNLUircnRDrICZrKtIRYxdqWmCl09NO4dOjHqQqNSeJQNL5px95w34DL6eIF4dwpE66ad6FJWSkbEP3ks8Z7fvXM/kPHish6OYmVdTGpJHG8jYI8Sme2VMigbSlhtXRR6OhnpnRocZun68xxpRKkWEd3+GePPN8T7ne6nFiBXTN/5qJLZ6TehVEKaFE47vMvj9//8D/2HzxaVOTB/ATKY/yjZl1w9s69h5DXoNiCmpZ9k3RSOmyZJrBnNSK8u5NICC4sFLBacDr5OE+cltzgGVYtjNaRxpYH/vDCnn2fi7nswOrDV+y97foFt994pcALIsYEZ7U3qIi1YTvIXsdpHPDMGANUeiLxRn/kgHLTqY4H//TSjnc/LvJ6EQjGrcjjXr183j23r0DpEIs0VWc/ziwJWENnzOCq5qaSGXkd1aa6JJiSlKOnGez1dMD1U21dv3l8w+Y3PvACZc4BWN0u18rFc+//wTd9Pi+uhaQ2E62kRLvMqYVJk4xpd6FbGoa6z7g0a14Mzcira7VCFX0EaGJ0kqKho4NkAOdoDfX8/slXX3jt3x6PB3LIZZfbtezKWQ/86IYx/lKIV1aUzpo+hSZ1LBafOL5KR6e0yxg2KbfYhvcyKUaBrxRJ44shY1Xoz5sgTR6glZrfMp8VVjhHqKv38Wdff+blnW6nCy+KAk2nk7t63oW/uGd1VYUf6QPF50yesP7Xa3lxtQfVBGj760fKN6XHSopmRrP4CpraItQAAJtBaYOskSZIv5H7XT39Tz3/1p+f3e5EVXcS9JxJ7vLZ9Q+uu2lCsAIogx9/bpezblK1VJZ2SSks76REe9sMPWOg7TWsro3uuJkoHU2nQr9dv+mfW/ZgfYxdUVIxXM5vNVy+bs2149MoUxMi3rqDppjv6r5ZoWqNHKpC5s6QKhRTzIpuO3hJjTZhuKW9+9G/bN247X3kJtI5mUhgXbhq8SV33bpEhrIdTuWiQ2tgkdfyVQdlNYzbkMGymxkf1SFHXX7sb9uf3/wu7iGRy+QO2+FYtnDW3bcvP6smoCwLlh0wIaAatSpRqUwONOVglUUpYJJBS1CVbmiupzfyxHNv/HXDO9EYjywGv5BMLrpsxrq1DVMnjyvcVY56y0Ze1U9VojJMdaCVfIWi0CDgLNmTIIfSb+zZP/3im0+9+GZkcAiPq8AjxAVc/X5yR0P91InI5cxkEDXY/qGl30wuM57TDTQLIt1gnlG8Bof4Zze+s/7vr/f2DeB+BFzYdJ49c+p931s5s75Ovny1HWNdhcqcULIzHgDNZoaSrcAU4kUKYIKvwpEYH0dRfuyZbR09/W6XGyWCjwsz6iffd+equTOnwTkmXmBHLahXCUOUBtDpXLKgzUbW9AqaoEyRJv5gHQJMX972/h+ffq011O1xu0AEBVup99258oq59TjFLt3JgaG4uPePU1sOEytMFTvSDFEfe/FXWVI2FS0FJBHLeEQiIgx46YgjJTgO+/d4VvLIU6+ebOlwA2WSy/HamuC9a1dcPX8GRGJCYl8ovOFo24GOPhurdG713jhVk+SZYRYbos46LyDMbLGAJKAbAimkcUu9bdf+h5/YdKSpxesht1SCINRUV9z93aXXLpqNDdUBXtjb3r3zVFdzJBrm4/4i99n+UXA8N5gKGWJGt/xiyFDWqjUZ0bxb6XmKb2qWfAKst/cc/N36TYePNHvFipGIC6MCFStWX3P9knm4sQbPwa7eLU0d7YMxr8uJ6rHleEdrJJquPHm7VQgFOj/oVK81djuRHs5U/YD63fsOP/T4xoNfNBGUcZMtCGWBiulLLi372jld5NfUZO8J9yqxhIAmCjweGxzu6d9xsrM3Fie9I+nIeGP4G5ZCu80mEFl0cM4PD3z10PqN+z494nEBZQdQLvGXnb/467Wz6o9FottPdHQNxcA3o7J8/rgK7CWJBZ5UjA/aenY1d0bpSBTaadP6ER3DWl46TCuxi1GEWnyU1d4Zxhbz7v8cpijjelha6pt+zSUTLzqfXDgSyY9CvW81d0VQSTyuhRMqZ1aVOfDIG8nCOeLJxM7mrg/ae3DHONLymiJ12oGmQ8653e7G5o633zvoxkaGk2zLlfjw6G/hquWXOd1OFAtUBT6Z2N3S/V5rdzyRqCj2fmNSYIrfJ27tA2sOV0ik/KGuPgTG8siudMhZD5uyANqqV1b59ZzM6AKOPNbECVQGrORG+Yp+ue6mH6+59sbzai6uKhfI8ygHqslgQnilKbTjRCfqRU1p8benTZjmL4lDCL1OrmMo9tyXLR93hKFEz+rp6FPP6PQ1StUjNkiqvYRoNkqiCX+UHZ/kf1SMYq/np99ftXLxJSW+olKXc9mkQH3FKJ4MAcE6mhDeau78MBSGcLCkaGVddbXPQ7DmODxuCfP8psb2Y72REVVA4AyAVgEuzyWHikaCv+IgwOJPTFfRDVQM3ATee0fDTcsvLRtVDAGoqvJ5V9QGakYV0ZeQgPVAPL65qf3Lnn4w1JaVXFdXXe514UaR6muJxDY0tnUOxQqNNcyZPDD/1DPapHz+bOQWQ4QaX2Ih5u66bcktqxb4y0qYcng5qbTkusnBMq+LbEITCVQJfmNjqH0wiithfUXZsrMCHjzWEruwWf1VT2RTY9tgHEtA82gwg2Yboi9mmU8z0MRNMRGBJmbX2psXrVm9CO8ZydzH4vncMaUNtSKa4gQA1k19kQ3H2vtjcY+Tuzjgv6pmLL0zxMMXjNrHHf3bT4Romsu0aZ3qFkwtIQM6G2kAXcAxN/ACtolx4JPEFvM5deN/eMvSqkq/qhReKrgoMHrRhCoMCQQgh6Xdgc6+LSdCeNRd4nYtGF85O1COYi0WIS6WFHa19Lzb2k1tqOqUEfMsmDJtqdN02qdqdCEGU92wnArECNp4lauivLS6ajSBXe0ACsVObkFNxdzq0ViEkIlA1taJPa3du1q6cF7udS+dFDzX7yP7eQ780zrcIB/fejz0SWcvSys1xXo06MnhkILJBi9VOth5DnrzFaHRIEmpL7pVtcztWjopcN5oLOnopY8biiew2vtIXIQESrwNddXjfF7WG47xrzS2H+8fNIm1DFk25jK6fshKMGE9q3RYUqdvzFwvMUiNkrJKw9LIaKoQLFiErJwcJGgic3E15xy9PL/5eOhomLzrX1vmW1kXLPe4EglyoYfy5v6hDUdbu6P2LEJygwjFDs6wYZO0zOGUNxett6IahrluRoMVMpMImtVAk97IgNg6EMWSLjQYwy1ifUX58rOCeEkVnFTrFz0Drza2D5lYhGSwyI6N0Vkju9/4jE5XY74CcbAZTQIwnS1gJEu62iDu17Hgw30KRuer8ODGY20RXiCLkKD/qvGVFBSSSth1ag+/cbKD7IQUKBIjtZaBllZ6I+XG/Ug6wgScLKYKFiFzAv6FE8ZCDlgDPieXPNDVt/VEO3ZCsAi5smYs1nwCKoioHlX7neau99ssLEKMvc/mkA2hDCjLQCsrfbY5ciazoWSQUyyiDHG4UexyLqypJGhitPBfkuzh7W4N72rpBoPf68ZdzFR/Kc1ilPJ+Xtja1PFZVz+bRnI38juXBZEFVIGeGWbZ0PderMhwkQBFb/tk/uqK+z3u5bWBaeUl5DkAee2KLOl2HA/RRQh2QlZNqQ7ixyzYq8KixunoiOLuvOWk6UWIrnHNTllqEz5x499KZJrKc+lAweT5BF4+ipEjjt07q1owPEEf3VcqjiYSPNbVjiTQfPlY29HwALRhJ6ShLlDi9mCLFfcyWK03hodeOtbWE+ULlNcwqgqo/W+TkoWaui05jKPLShZfMaO7ZwAb0HyUnzcbG/wkteV8uueo8rXlvoa6ILaqUT0wQ7BDjcnRFYvXkSKWvKCi/LrJwr523LaQUo7c9nAOPD0YjV8W5XRAiXkXGRrYYoeUecGcXNMWCvdF6HYEwMFvqrANrc2r1wP4Bsndd+bwujjyUwDxwCpwKPX7wxSDz41CYu2whK9Stfi+/OkDWunQmUUxiz4uhlan6rABYXnpMmyeSQyZLQVka5IULpsPhhFr6BtQ9SDnDFDVpu9AwXuV73VIodFqG7rFMGINfRGzeaGvJd1LtVmC25DZkCFtXOMbC6wErhL5qtHQbp0MR+wFXeqCJeWWmKVWtNrkccTIOQqHMmJUVa4VvSpzjkCJNjQXOdK6kaMBc2JaoZqTzpdLCqhOyHk5KdrQBFq1vCrtKSlWQ5eGClmdaJnm/I0yVdKGasiUQeakVMpkWxNoVXmlPSVFVVCHKENNJ1odJcPbJXPZlHFrQKuqzMWsRFEOQ5WDiMRg/s1c7NsAdC5m8w/2TNNgDWit5NWi54yGmUqds/LhF0Q4xkBLY2bJK0OW0U3GIBNXShlWai0NWnTRhEqnCknhjRkeqZCSH+H8/9+PlkJk3EbaGSaBUgv2vo0zOiNGn+9lzv8XW5ZRFkHDJvB/AQFxZ5IQHzayAAAAAElFTkSuQmCC" alt="">
+    <div>
+      <p class="promo-ch">Kawaru<span class="promo-tag">AIエージェント</span></p>
+      <p class="promo-tx">「これ自動化して」と話すだけ。無料で試す →</p>
+    </div>
+  </a>
+</aside>
+<script>
+(function(){
+  if (sessionStorage.getItem('promoClosed')) return;
+  var el = document.getElementById('promo');
+  if (!el) return;
+  setTimeout(function(){ el.classList.add('show'); }, 1400);
+  document.getElementById('promoClose').addEventListener('click', function(e){
+    e.preventDefault();
+    el.classList.remove('show');
+    sessionStorage.setItem('promoClosed', '1');
+  });
+})();
+</script>
+</body></html>

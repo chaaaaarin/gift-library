@@ -65,7 +65,8 @@ function fmtDate(d){
 }
 
 function kitChip(g, epSlugHint){
-  const badge = g.c ? `<span class="badge">${g.c}${g.u}</span>` : '';
+  const badge = g.c ? `<span class="badge">${g.c}${g.u}</span>`
+               : (g.t === 'アプリ' ? `<span class="badge">アプリ</span>` : '');
   return `<a class="kchip" href="apps/${g.s}/" target="_blank" rel="noopener">
     <span class="ic">${window.ICONS[g.t]||''}</span>
     <span class="kt">${g.nh}</span>${badge}<span class="go">開く →</span>
