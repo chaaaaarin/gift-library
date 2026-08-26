@@ -1,0 +1,2053 @@
+<!doctype html>
+<html lang="ja"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>コンテキスト管理 設定&amp;指示文100選 — Kawaru Gifts</title>
+<meta name="description" content="Codex（コーデックス）のコンテキストウィンドウを賢く使うための、設定プリセット・AGENTS.md雛形・引き継ぎ/圧迫回避/コスト防止の指示文をまとめました。">
+<link rel="icon" href="data:image/png;base64,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">
+<link rel="stylesheet" href="../../assets/site.css">
+</head><body>
+<header class="kh"><div class="top">
+  <a class="back" href="../../">← 一覧へ</a>
+  <img src="data:image/png;base64,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" alt="">
+  <h1>コンテキスト管理 設定&amp;指示文100選</h1>
+  <span class="badge">100個</span>
+  <button class="btn sm" style="margin-left:auto" data-save="pfull" data-name="context-prompts100.md">⬇ 全件ダウンロード</button>
+</div></header>
+
+<div class="kwrap">
+  <section class="epctx epctx-top">
+  <div class="ep-left">
+    <div class="ep-thumb epctx-thumb"><img src="https://i.ytimg.com/vi/fC8Jhw6EJXs/hqdefault.jpg" alt=""></div>
+    <a class="watch" href="https://www.youtube.com/watch?v=fC8Jhw6EJXs" target="_blank" rel="noopener">▶ 動画を見る</a>
+  </div>
+  <div>
+    <p class="epctx-label">この動画のプレゼントです</p>
+    <p class="epctx-title">【公式発表】Codexを100倍賢くする方法がヤバすぎたので徹底解説します</p>
+    <p class="epctx-date">2026-08-26</p>
+  </div>
+</section>
+
+  <section class="kintro">
+    <h2>コンテキスト管理 設定&amp;指示文100選</h2>
+    <p>Codex<span class="nb">（コーデックス）の</span><span class="nb">コンテキストウィンドウを</span><span class="nb">賢く使うための、</span><span class="nb">設定プリセット・</span><span class="nb">AGENTS.md雛形・</span><span class="nb">引き継ぎ/圧迫回避/コスト防止の</span><span class="nb">指示文をまとめました。</span></p>
+    <div class="kmeta"><span>プロンプト集</span><span>収録 100個</span><span>No.98 Codexはコンテキストが大事</span><span>2026-08-19 配布</span></div>
+    <div class="pnote"><span class="nb">下のカードから、</span><span class="nb">1件ずつコピー、</span><span class="nb">または個別にダウンロードできます。</span><span class="nb">まとめて欲しいときは、</span><span class="nb">上の</span><span class="nb">「全件ダウンロード」を</span><span class="nb">お使いください。</span></div>
+  </section>
+
+  <h2 class="cat">config.tomlプリセット集</h2>
+<div class="icard">
+  <div class="ih"><span class="num">001</span><span class="ititle">日常タスク用・省コスト型（窓200,000 / 圧縮180,000）</span></div>
+  
+  <pre class="prompt" id="b1">前提: チャット的なやり取りや小さな修正が中心で、コストを抑えたい日常利用。
+指示: ~/.codex/config.toml（またはプロジェクト直下の設定）に model_context_window = 200000 と model_auto_compact_token_limit = 180000 を設定し、Codexクライアントを再起動して新しいセッションで確認する。
+出力形式: 設定後は /status 相当のコマンドか会話冒頭の応答で、現在のコンテキストウィンドウが意図した値になっているかを確認する一言を返させる。1日の作業のほとんどがこの設定で足りるはずです。窓を広げたくなったら、まず作業内容がB〜Eのどれに該当するか確認してください。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b1">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b1" data-name="context-prompts100-001.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">002</span><span class="ititle">中規模リファクタ用（窓400,000 / 圧縮360,000）</span></div>
+  
+  <pre class="prompt" id="b2">前提: 1つのモジュール規模のリファクタリングを、複数ファイルにまたがって進めたいとき。
+指示: ~/.codex/config.toml（またはプロジェクト直下の設定）に model_context_window = 400000 と model_auto_compact_token_limit = 360000 を設定し、Codexクライアントを再起動して新しいセッションで確認する。
+出力形式: 設定後は /status 相当のコマンドか会話冒頭の応答で、現在のコンテキストウィンドウが意図した値になっているかを確認する一言を返させる。圧縮が起きても差分の意図を見失わないよう、要所でAIに現在の方針を要約させてから作業を再開してください。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b2">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b2" data-name="context-prompts100-002.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">003</span><span class="ititle">大型リファクタ・一気通貫用（窓1,000,000 / 圧縮900,000）</span></div>
+  
+  <pre class="prompt" id="b3">前提: 1つの大きなリファクタリングを、長時間の1セッションでやり切りたいとき。
+指示: ~/.codex/config.toml（またはプロジェクト直下の設定）に model_context_window = 1000000 と model_auto_compact_token_limit = 900000 を設定し、Codexクライアントを再起動して新しいセッションで確認する。
+出力形式: 設定後は /status 相当のコマンドか会話冒頭の応答で、現在のコンテキストウィンドウが意図した値になっているかを確認する一言を返させる。常設ではなくこの作業のときだけ有効化し、終わったら日常用の設定に戻してください。コストが跳ねやすい設定です。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b3">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b3" data-name="context-prompts100-003.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">004</span><span class="ititle">モノレポ全体把握用（窓700,000 / 圧縮630,000）</span></div>
+  
+  <pre class="prompt" id="b4">前提: 複数パッケージにまたがるモノレポで、依存関係の全体像を把握してから作業したいとき。
+指示: ~/.codex/config.toml（またはプロジェクト直下の設定）に model_context_window = 700000 と model_auto_compact_token_limit = 630000 を設定し、Codexクライアントを再起動して新しいセッションで確認する。
+出力形式: 設定後は /status 相当のコマンドか会話冒頭の応答で、現在のコンテキストウィンドウが意図した値になっているかを確認する一言を返させる。最初の1回で全体像を要約させ、以降のセッションではその要約をAGENTS.mdに転記して窓を圧迫しないようにしてください。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b4">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b4" data-name="context-prompts100-004.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">005</span><span class="ititle">コードレビュー専用（窓300,000 / 圧縮260,000）</span></div>
+  
+  <pre class="prompt" id="b5">前提: 1件のプルリクエストを一気に読み込んでレビューコメントを書きたいとき。
+指示: ~/.codex/config.toml（またはプロジェクト直下の設定）に model_context_window = 300000 と model_auto_compact_token_limit = 260000 を設定し、Codexクライアントを再起動して新しいセッションで確認する。
+出力形式: 設定後は /status 相当のコマンドか会話冒頭の応答で、現在のコンテキストウィンドウが意図した値になっているかを確認する一言を返させる。レビュー観点（設計・命名・テスト網羅性）を先に指示し、差分だけでなく変更理由も含めて読ませてください。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b5">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b5" data-name="context-prompts100-005.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">006</span><span class="ititle">バグ調査・原因追跡用（窓500,000 / 圧縮450,000）</span></div>
+  
+  <pre class="prompt" id="b6">前提: 再現条件が複雑なバグを、ログとコードを行き来しながら調査したいとき。
+指示: ~/.codex/config.toml（またはプロジェクト直下の設定）に model_context_window = 500000 と model_auto_compact_token_limit = 450000 を設定し、Codexクライアントを再起動して新しいセッションで確認する。
+出力形式: 設定後は /status 相当のコマンドか会話冒頭の応答で、現在のコンテキストウィンドウが意図した値になっているかを確認する一言を返させる。調査過程で分かった除外条件を都度AIに復唱させ、圧縮後も同じ仮説を再検証しないようにしてください。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b6">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b6" data-name="context-prompts100-006.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">007</span><span class="ititle">ドキュメント生成用（窓250,000 / 圧縮220,000）</span></div>
+  
+  <pre class="prompt" id="b7">前提: 既存コードから技術ドキュメントやREADMEをまとめて生成したいとき。
+指示: ~/.codex/config.toml（またはプロジェクト直下の設定）に model_context_window = 250000 と model_auto_compact_token_limit = 220000 を設定し、Codexクライアントを再起動して新しいセッションで確認する。
+出力形式: 設定後は /status 相当のコマンドか会話冒頭の応答で、現在のコンテキストウィンドウが意図した値になっているかを確認する一言を返させる。ドキュメントの読者（新規参加者・運用担当者など）を先に伝えてから生成させると、無駄な詳細が減ります。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b7">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b7" data-name="context-prompts100-007.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">008</span><span class="ititle">テスト網羅性強化用（窓350,000 / 圧縮310,000）</span></div>
+  
+  <pre class="prompt" id="b8">前提: 既存のテストカバレッジを確認しながら不足分を洗い出し追加したいとき。
+指示: ~/.codex/config.toml（またはプロジェクト直下の設定）に model_context_window = 350000 と model_auto_compact_token_limit = 310000 を設定し、Codexクライアントを再起動して新しいセッションで確認する。
+出力形式: 設定後は /status 相当のコマンドか会話冒頭の応答で、現在のコンテキストウィンドウが意図した値になっているかを確認する一言を返させる。既存テストの命名規則・アサーション書式を先に読ませ、新規テストがその作法から外れないようにしてください。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b8">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b8" data-name="context-prompts100-008.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">009</span><span class="ititle">マイグレーション作業用（窓600,000 / 圧縮540,000）</span></div>
+  
+  <pre class="prompt" id="b9">前提: 旧ライブラリから新ライブラリへの移行など、影響範囲が広い作業をするとき。
+指示: ~/.codex/config.toml（またはプロジェクト直下の設定）に model_context_window = 600000 と model_auto_compact_token_limit = 540000 を設定し、Codexクライアントを再起動して新しいセッションで確認する。
+出力形式: 設定後は /status 相当のコマンドか会話冒頭の応答で、現在のコンテキストウィンドウが意図した値になっているかを確認する一言を返させる。移行済み・未移行のファイル一覧を都度更新させ、圧縮が起きても進捗を見失わないようにしてください。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b9">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b9" data-name="context-prompts100-009.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">010</span><span class="ititle">APIキー利用・実験用（上限）（窓1,000,000 / 圧縮900,000）</span></div>
+  
+  <pre class="prompt" id="b10">前提: API課金で使っており、性能を最優先で1M窓を試したいとき。
+指示: ~/.codex/config.toml（またはプロジェクト直下の設定）に model_context_window = 1000000 と model_auto_compact_token_limit = 900000 を設定し、Codexクライアントを再起動して新しいセッションで確認する。
+出力形式: 設定後は /status 相当のコマンドか会話冒頭の応答で、現在のコンテキストウィンドウが意図した値になっているかを確認する一言を返させる。コストが跳ねやすい設定です。1セッションのトークン消費量をこまめに確認する運用と併用してください。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b10">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b10" data-name="context-prompts100-010.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">011</span><span class="ititle">ペアプロ・対話重視用（窓320,000 / 圧縮280,000）</span></div>
+  
+  <pre class="prompt" id="b11">前提: AIと会話しながら設計方針を練る、対話量の多い作業のとき。
+指示: ~/.codex/config.toml（またはプロジェクト直下の設定）に model_context_window = 320000 と model_auto_compact_token_limit = 280000 を設定し、Codexクライアントを再起動して新しいセッションで確認する。
+出力形式: 設定後は /status 相当のコマンドか会話冒頭の応答で、現在のコンテキストウィンドウが意図した値になっているかを確認する一言を返させる。結論が出た時点で、方針を短い箇条書きに要約させてからAGENTS.mdや設計メモに転記してください。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b11">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b11" data-name="context-prompts100-011.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">012</span><span class="ititle">CI/CD設定調整用（窓220,000 / 圧縮190,000）</span></div>
+  
+  <pre class="prompt" id="b12">前提: ビルド・デプロイパイプラインの設定ファイルを調整するとき。
+指示: ~/.codex/config.toml（またはプロジェクト直下の設定）に model_context_window = 220000 と model_auto_compact_token_limit = 190000 を設定し、Codexクライアントを再起動して新しいセッションで確認する。
+出力形式: 設定後は /status 相当のコマンドか会話冒頭の応答で、現在のコンテキストウィンドウが意図した値になっているかを確認する一言を返させる。設定変更の影響範囲（どのジョブに波及するか）を先に確認させてから変更させてください。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b12">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b12" data-name="context-prompts100-012.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">013</span><span class="ititle">セキュリティレビュー用（窓380,000 / 圧縮330,000）</span></div>
+  
+  <pre class="prompt" id="b13">前提: 認証・権限まわりのコードを重点的にレビューしたいとき。
+指示: ~/.codex/config.toml（またはプロジェクト直下の設定）に model_context_window = 380000 と model_auto_compact_token_limit = 330000 を設定し、Codexクライアントを再起動して新しいセッションで確認する。
+出力形式: 設定後は /status 相当のコマンドか会話冒頭の応答で、現在のコンテキストウィンドウが意図した値になっているかを確認する一言を返させる。OWASP Top10等のチェック観点を先に与え、指摘ごとに深刻度を付けさせてください。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b13">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b13" data-name="context-prompts100-013.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">014</span><span class="ititle">パフォーマンス調査用（窓420,000 / 圧縮370,000）</span></div>
+  
+  <pre class="prompt" id="b14">前提: 処理速度のボトルネックをプロファイリング結果と照らし合わせて調査したいとき。
+指示: ~/.codex/config.toml（またはプロジェクト直下の設定）に model_context_window = 420000 と model_auto_compact_token_limit = 370000 を設定し、Codexクライアントを再起動して新しいセッションで確認する。
+出力形式: 設定後は /status 相当のコマンドか会話冒頭の応答で、現在のコンテキストウィンドウが意図した値になっているかを確認する一言を返させる。計測データの単位・条件を最初に明示し、AIが憶測で数値を語らないようにしてください。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b14">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b14" data-name="context-prompts100-014.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">015</span><span class="ititle">複数リポジトリ横断調査用（窓800,000 / 圧縮720,000）</span></div>
+  
+  <pre class="prompt" id="b15">前提: サービス間の連携仕様を、複数リポジトリを横断して確認したいとき。
+指示: ~/.codex/config.toml（またはプロジェクト直下の設定）に model_context_window = 800000 と model_auto_compact_token_limit = 720000 を設定し、Codexクライアントを再起動して新しいセッションで確認する。
+出力形式: 設定後は /status 相当のコマンドか会話冒頭の応答で、現在のコンテキストウィンドウが意図した値になっているかを確認する一言を返させる。各リポジトリの役割を最初にAIへ簡潔に伝え、無関係なリポジトリの詳細まで読み込ませないでください。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b15">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b15" data-name="context-prompts100-015.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">016</span><span class="ititle">新人オンボーディング資料作成用（窓260,000 / 圧縮230,000）</span></div>
+  
+  <pre class="prompt" id="b16">前提: 新しく参加するメンバー向けに、コードベースの案内資料を作りたいとき。
+指示: ~/.codex/config.toml（またはプロジェクト直下の設定）に model_context_window = 260000 と model_auto_compact_token_limit = 230000 を設定し、Codexクライアントを再起動して新しいセッションで確認する。
+出力形式: 設定後は /status 相当のコマンドか会話冒頭の応答で、現在のコンテキストウィンドウが意図した値になっているかを確認する一言を返させる。読者が初心者である前提を伝え、専門用語には一言注釈を付けさせてください。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b16">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b16" data-name="context-prompts100-016.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">017</span><span class="ititle">設計ドキュメントレビュー用（窓240,000 / 圧縮210,000）</span></div>
+  
+  <pre class="prompt" id="b17">前提: 実装前の設計書やRFCを、実装可能性の観点でレビューしたいとき。
+指示: ~/.codex/config.toml（またはプロジェクト直下の設定）に model_context_window = 240000 と model_auto_compact_token_limit = 210000 を設定し、Codexクライアントを再起動して新しいセッションで確認する。
+出力形式: 設定後は /status 相当のコマンドか会話冒頭の応答で、現在のコンテキストウィンドウが意図した値になっているかを確認する一言を返させる。既存コードとの整合性を確認させたい場合は、関連ファイルのパスを先に指定してください。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b17">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b17" data-name="context-prompts100-017.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">018</span><span class="ititle">障害対応・緊急調査用（窓450,000 / 圧縮400,000）</span></div>
+  
+  <pre class="prompt" id="b18">前提: 本番障害の原因調査を急いで進めたいとき。
+指示: ~/.codex/config.toml（またはプロジェクト直下の設定）に model_context_window = 450000 と model_auto_compact_token_limit = 400000 を設定し、Codexクライアントを再起動して新しいセッションで確認する。
+出力形式: 設定後は /status 相当のコマンドか会話冒頭の応答で、現在のコンテキストウィンドウが意図した値になっているかを確認する一言を返させる。圧縮によって時系列の把握がずれないよう、発生時刻とログのタイムスタンプを都度明記させてください。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b18">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b18" data-name="context-prompts100-018.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">019</span><span class="ititle">学習・素振り用（最小構成）（窓150,000 / 圧縮130,000）</span></div>
+  
+  <pre class="prompt" id="b19">前提: 新しい言語やフレームワークを試しながら学びたいとき。
+指示: ~/.codex/config.toml（またはプロジェクト直下の設定）に model_context_window = 150000 と model_auto_compact_token_limit = 130000 を設定し、Codexクライアントを再起動して新しいセッションで確認する。
+出力形式: 設定後は /status 相当のコマンドか会話冒頭の応答で、現在のコンテキストウィンドウが意図した値になっているかを確認する一言を返させる。最小構成のため、長いセッションだと圧縮が頻発します。区切りの良いところで新セッションに切り替えてください。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b19">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b19" data-name="context-prompts100-019.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">020</span><span class="ititle">複数エージェント連携の親セッション用（窓900,000 / 圧縮800,000）</span></div>
+  
+  <pre class="prompt" id="b20">前提: 複数のサブタスクを1つの親セッションで統括し、状況を俯瞰したいとき。
+指示: ~/.codex/config.toml（またはプロジェクト直下の設定）に model_context_window = 900000 と model_auto_compact_token_limit = 800000 を設定し、Codexクライアントを再起動して新しいセッションで確認する。
+出力形式: 設定後は /status 相当のコマンドか会話冒頭の応答で、現在のコンテキストウィンドウが意図した値になっているかを確認する一言を返させる。サブタスクごとの結果は要約してから親セッションに戻し、詳細ログはそのまま持ち込まないでください。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b20">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b20" data-name="context-prompts100-020.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<h2 class="cat">AGENTS.md定型文</h2>
+<div class="icard">
+  <div class="ih"><span class="num">021</span><span class="ititle">AGENTS.md雛形：Next.js（ネクストジェイエス）フロントエンド</span></div>
+  
+  <pre class="prompt" id="b21">前提: Next.js（ネクストジェイエス）フロントエンドのプロジェクトで、Codexに毎回同じ説明を繰り返している状態を解消したい。
+指示: プロジェクト直下（または ~/.codex/）に AGENTS.md を作成し、App Router構成、コンポーネント命名規則、状態管理の方針と、TypeScript strictモードでの型付け方針を箇条書きで書き出す。長文の説明にはせず、Codexが読んで即座に行動へ移せる具体的な指示の形で書く。
+出力形式: 「### ビルド」「### 規約」のような短い見出しごとに箇条書きを並べ、1項目は1〜2行に収める。書いた内容は次回セッションの冒頭で一度読み上げさせて確認する。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b21">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b21" data-name="context-prompts100-021.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">022</span><span class="ititle">AGENTS.md雛形：Python バックエンドAPI</span></div>
+  
+  <pre class="prompt" id="b22">前提: Python バックエンドAPIのプロジェクトで、Codexに毎回同じ説明を繰り返している状態を解消したい。
+指示: プロジェクト直下（または ~/.codex/）に AGENTS.md を作成し、フレームワークとディレクトリ構成、DBマイグレーションの手順と、型ヒントとテストフレームワークの指定を箇条書きで書き出す。長文の説明にはせず、Codexが読んで即座に行動へ移せる具体的な指示の形で書く。
+出力形式: 「### ビルド」「### 規約」のような短い見出しごとに箇条書きを並べ、1項目は1〜2行に収める。書いた内容は次回セッションの冒頭で一度読み上げさせて確認する。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b22">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b22" data-name="context-prompts100-022.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">023</span><span class="ititle">AGENTS.md雛形：モバイルアプリ（iOS/Android共通）</span></div>
+  
+  <pre class="prompt" id="b23">前提: モバイルアプリ（iOS/Android共通）のプロジェクトで、Codexに毎回同じ説明を繰り返している状態を解消したい。
+指示: プロジェクト直下（または ~/.codex/）に AGENTS.md を作成し、画面遷移の命名規則、多言語対応の方針と、ビルド・実機確認の手順を箇条書きで書き出す。長文の説明にはせず、Codexが読んで即座に行動へ移せる具体的な指示の形で書く。
+出力形式: 「### ビルド」「### 規約」のような短い見出しごとに箇条書きを並べ、1項目は1〜2行に収める。書いた内容は次回セッションの冒頭で一度読み上げさせて確認する。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b23">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b23" data-name="context-prompts100-023.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">024</span><span class="ititle">AGENTS.md雛形：データ基盤・ETLパイプライン</span></div>
+  
+  <pre class="prompt" id="b24">前提: データ基盤・ETLパイプラインのプロジェクトで、Codexに毎回同じ説明を繰り返している状態を解消したい。
+指示: プロジェクト直下（または ~/.codex/）に AGENTS.md を作成し、データソースと変換ルールの一覧と、スキーマ変更時の周知手順を箇条書きで書き出す。長文の説明にはせず、Codexが読んで即座に行動へ移せる具体的な指示の形で書く。
+出力形式: 「### ビルド」「### 規約」のような短い見出しごとに箇条書きを並べ、1項目は1〜2行に収める。書いた内容は次回セッションの冒頭で一度読み上げさせて確認する。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b24">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b24" data-name="context-prompts100-024.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">025</span><span class="ititle">AGENTS.md雛形：デザインシステム・UIライブラリ</span></div>
+  
+  <pre class="prompt" id="b25">前提: デザインシステム・UIライブラリのプロジェクトで、Codexに毎回同じ説明を繰り返している状態を解消したい。
+指示: プロジェクト直下（または ~/.codex/）に AGENTS.md を作成し、コンポーネントの命名規則とStorybook運用と、アクセシビリティ基準を箇条書きで書き出す。長文の説明にはせず、Codexが読んで即座に行動へ移せる具体的な指示の形で書く。
+出力形式: 「### ビルド」「### 規約」のような短い見出しごとに箇条書きを並べ、1項目は1〜2行に収める。書いた内容は次回セッションの冒頭で一度読み上げさせて確認する。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b25">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b25" data-name="context-prompts100-025.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">026</span><span class="ititle">AGENTS.md雛形：社内管理画面・業務システム</span></div>
+  
+  <pre class="prompt" id="b26">前提: 社内管理画面・業務システムのプロジェクトで、Codexに毎回同じ説明を繰り返している状態を解消したい。
+指示: プロジェクト直下（または ~/.codex/）に AGENTS.md を作成し、権限ロールの一覧と画面ごとの権限と、既存の業務用語集を箇条書きで書き出す。長文の説明にはせず、Codexが読んで即座に行動へ移せる具体的な指示の形で書く。
+出力形式: 「### ビルド」「### 規約」のような短い見出しごとに箇条書きを並べ、1項目は1〜2行に収める。書いた内容は次回セッションの冒頭で一度読み上げさせて確認する。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b26">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b26" data-name="context-prompts100-026.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">027</span><span class="ititle">AGENTS.md雛形：OSS（オープンソース）ライブラリ</span></div>
+  
+  <pre class="prompt" id="b27">前提: OSS（オープンソース）ライブラリのプロジェクトで、Codexに毎回同じ説明を繰り返している状態を解消したい。
+指示: プロジェクト直下（または ~/.codex/）に AGENTS.md を作成し、公開APIの後方互換ポリシーと、コントリビューションガイドラインとの整合を箇条書きで書き出す。長文の説明にはせず、Codexが読んで即座に行動へ移せる具体的な指示の形で書く。
+出力形式: 「### ビルド」「### 規約」のような短い見出しごとに箇条書きを並べ、1項目は1〜2行に収める。書いた内容は次回セッションの冒頭で一度読み上げさせて確認する。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b27">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b27" data-name="context-prompts100-027.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">028</span><span class="ititle">AGENTS.md雛形：マイクロサービス群の1サービス</span></div>
+  
+  <pre class="prompt" id="b28">前提: マイクロサービス群の1サービスのプロジェクトで、Codexに毎回同じ説明を繰り返している状態を解消したい。
+指示: プロジェクト直下（または ~/.codex/）に AGENTS.md を作成し、他サービスとの連携インターフェースと、ローカル起動に必要な依存サービスを箇条書きで書き出す。長文の説明にはせず、Codexが読んで即座に行動へ移せる具体的な指示の形で書く。
+出力形式: 「### ビルド」「### 規約」のような短い見出しごとに箇条書きを並べ、1項目は1〜2行に収める。書いた内容は次回セッションの冒頭で一度読み上げさせて確認する。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b28">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b28" data-name="context-prompts100-028.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">029</span><span class="ititle">AGENTS.md雛形：インフラ・IaC（Terraform等）構成</span></div>
+  
+  <pre class="prompt" id="b29">前提: インフラ・IaC（Terraform等）構成のプロジェクトで、Codexに毎回同じ説明を繰り返している状態を解消したい。
+指示: プロジェクト直下（または ~/.codex/）に AGENTS.md を作成し、環境ごとの命名規則とタグ付けルールと、変更適用前の確認手順を箇条書きで書き出す。長文の説明にはせず、Codexが読んで即座に行動へ移せる具体的な指示の形で書く。
+出力形式: 「### ビルド」「### 規約」のような短い見出しごとに箇条書きを並べ、1項目は1〜2行に収める。書いた内容は次回セッションの冒頭で一度読み上げさせて確認する。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b29">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b29" data-name="context-prompts100-029.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">030</span><span class="ititle">AGENTS.md雛形：機械学習パイプライン</span></div>
+  
+  <pre class="prompt" id="b30">前提: 機械学習パイプラインのプロジェクトで、Codexに毎回同じ説明を繰り返している状態を解消したい。
+指示: プロジェクト直下（または ~/.codex/）に AGENTS.md を作成し、学習データのバージョン管理方針と、実験結果の記録先を箇条書きで書き出す。長文の説明にはせず、Codexが読んで即座に行動へ移せる具体的な指示の形で書く。
+出力形式: 「### ビルド」「### 規約」のような短い見出しごとに箇条書きを並べ、1項目は1〜2行に収める。書いた内容は次回セッションの冒頭で一度読み上げさせて確認する。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b30">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b30" data-name="context-prompts100-030.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">031</span><span class="ititle">AGENTS.md雛形：ゲームクライアント開発</span></div>
+  
+  <pre class="prompt" id="b31">前提: ゲームクライアント開発のプロジェクトで、Codexに毎回同じ説明を繰り返している状態を解消したい。
+指示: プロジェクト直下（または ~/.codex/）に AGENTS.md を作成し、アセット命名規則とシーン構成と、パフォーマンス目標値を箇条書きで書き出す。長文の説明にはせず、Codexが読んで即座に行動へ移せる具体的な指示の形で書く。
+出力形式: 「### ビルド」「### 規約」のような短い見出しごとに箇条書きを並べ、1項目は1〜2行に収める。書いた内容は次回セッションの冒頭で一度読み上げさせて確認する。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b31">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b31" data-name="context-prompts100-031.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">032</span><span class="ititle">AGENTS.md雛形：ブラウザ拡張機能開発</span></div>
+  
+  <pre class="prompt" id="b32">前提: ブラウザ拡張機能開発のプロジェクトで、Codexに毎回同じ説明を繰り返している状態を解消したい。
+指示: プロジェクト直下（または ~/.codex/）に AGENTS.md を作成し、権限（permissions）の最小化方針と、ストア審査で注意すべき項目を箇条書きで書き出す。長文の説明にはせず、Codexが読んで即座に行動へ移せる具体的な指示の形で書く。
+出力形式: 「### ビルド」「### 規約」のような短い見出しごとに箇条書きを並べ、1項目は1〜2行に収める。書いた内容は次回セッションの冒頭で一度読み上げさせて確認する。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b32">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b32" data-name="context-prompts100-032.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">033</span><span class="ititle">AGENTS.md雛形：CLIツール開発</span></div>
+  
+  <pre class="prompt" id="b33">前提: CLIツール開発のプロジェクトで、Codexに毎回同じ説明を繰り返している状態を解消したい。
+指示: プロジェクト直下（または ~/.codex/）に AGENTS.md を作成し、サブコマンドの命名規則とヘルプ文言の書式と、後方互換を壊さないための確認手順を箇条書きで書き出す。長文の説明にはせず、Codexが読んで即座に行動へ移せる具体的な指示の形で書く。
+出力形式: 「### ビルド」「### 規約」のような短い見出しごとに箇条書きを並べ、1項目は1〜2行に収める。書いた内容は次回セッションの冒頭で一度読み上げさせて確認する。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b33">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b33" data-name="context-prompts100-033.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">034</span><span class="ititle">AGENTS.md雛形：社内向けSlack/Chatボット</span></div>
+  
+  <pre class="prompt" id="b34">前提: 社内向けSlack/Chatボットのプロジェクトで、Codexに毎回同じ説明を繰り返している状態を解消したい。
+指示: プロジェクト直下（または ~/.codex/）に AGENTS.md を作成し、応答トーンのガイドラインと、機密情報を出力しないための制約を箇条書きで書き出す。長文の説明にはせず、Codexが読んで即座に行動へ移せる具体的な指示の形で書く。
+出力形式: 「### ビルド」「### 規約」のような短い見出しごとに箇条書きを並べ、1項目は1〜2行に収める。書いた内容は次回セッションの冒頭で一度読み上げさせて確認する。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b34">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b34" data-name="context-prompts100-034.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">035</span><span class="ititle">AGENTS.md雛形：ドキュメントサイト（技術ブログ等）</span></div>
+  
+  <pre class="prompt" id="b35">前提: ドキュメントサイト（技術ブログ等）のプロジェクトで、Codexに毎回同じ説明を繰り返している状態を解消したい。
+指示: プロジェクト直下（または ~/.codex/）に AGENTS.md を作成し、記事の文体・見出し規則と、画像・図表の扱い方を箇条書きで書き出す。長文の説明にはせず、Codexが読んで即座に行動へ移せる具体的な指示の形で書く。
+出力形式: 「### ビルド」「### 規約」のような短い見出しごとに箇条書きを並べ、1項目は1〜2行に収める。書いた内容は次回セッションの冒頭で一度読み上げさせて確認する。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b35">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b35" data-name="context-prompts100-035.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">036</span><span class="ititle">AGENTS.md雛形：決済・課金まわりの機能</span></div>
+  
+  <pre class="prompt" id="b36">前提: 決済・課金まわりの機能のプロジェクトで、Codexに毎回同じ説明を繰り返している状態を解消したい。
+指示: プロジェクト直下（または ~/.codex/）に AGENTS.md を作成し、金額計算で守るべき丸め規則と、テスト時に使う疑似カード番号の指定を箇条書きで書き出す。長文の説明にはせず、Codexが読んで即座に行動へ移せる具体的な指示の形で書く。
+出力形式: 「### ビルド」「### 規約」のような短い見出しごとに箇条書きを並べ、1項目は1〜2行に収める。書いた内容は次回セッションの冒頭で一度読み上げさせて確認する。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b36">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b36" data-name="context-prompts100-036.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">037</span><span class="ititle">AGENTS.md雛形：認証・権限管理モジュール</span></div>
+  
+  <pre class="prompt" id="b37">前提: 認証・権限管理モジュールのプロジェクトで、Codexに毎回同じ説明を繰り返している状態を解消したい。
+指示: プロジェクト直下（または ~/.codex/）に AGENTS.md を作成し、セッション管理の方針と、パスワード・トークンの取り扱い上の禁止事項を箇条書きで書き出す。長文の説明にはせず、Codexが読んで即座に行動へ移せる具体的な指示の形で書く。
+出力形式: 「### ビルド」「### 規約」のような短い見出しごとに箇条書きを並べ、1項目は1〜2行に収める。書いた内容は次回セッションの冒頭で一度読み上げさせて確認する。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b37">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b37" data-name="context-prompts100-037.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">038</span><span class="ititle">AGENTS.md雛形：バッチ処理・定期実行ジョブ</span></div>
+  
+  <pre class="prompt" id="b38">前提: バッチ処理・定期実行ジョブのプロジェクトで、Codexに毎回同じ説明を繰り返している状態を解消したい。
+指示: プロジェクト直下（または ~/.codex/）に AGENTS.md を作成し、冪等性（同じ処理を繰り返しても安全）の確保方針と、失敗時のリトライ・通知ルールを箇条書きで書き出す。長文の説明にはせず、Codexが読んで即座に行動へ移せる具体的な指示の形で書く。
+出力形式: 「### ビルド」「### 規約」のような短い見出しごとに箇条書きを並べ、1項目は1〜2行に収める。書いた内容は次回セッションの冒頭で一度読み上げさせて確認する。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b38">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b38" data-name="context-prompts100-038.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">039</span><span class="ititle">AGENTS.md雛形：レガシーコードの保守案件</span></div>
+  
+  <pre class="prompt" id="b39">前提: レガシーコードの保守案件のプロジェクトで、Codexに毎回同じ説明を繰り返している状態を解消したい。
+指示: プロジェクト直下（または ~/.codex/）に AGENTS.md を作成し、触ってはいけない箇所の一覧と、変更前後で必ず確認するテストの範囲を箇条書きで書き出す。長文の説明にはせず、Codexが読んで即座に行動へ移せる具体的な指示の形で書く。
+出力形式: 「### ビルド」「### 規約」のような短い見出しごとに箇条書きを並べ、1項目は1〜2行に収める。書いた内容は次回セッションの冒頭で一度読み上げさせて確認する。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b39">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b39" data-name="context-prompts100-039.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">040</span><span class="ititle">AGENTS.md雛形：複数チームで共有するモノレポ全体</span></div>
+  
+  <pre class="prompt" id="b40">前提: 複数チームで共有するモノレポ全体のプロジェクトで、Codexに毎回同じ説明を繰り返している状態を解消したい。
+指示: プロジェクト直下（または ~/.codex/）に AGENTS.md を作成し、パッケージ間の依存を増やす際の承認フローと、各パッケージの担当チーム一覧を箇条書きで書き出す。長文の説明にはせず、Codexが読んで即座に行動へ移せる具体的な指示の形で書く。
+出力形式: 「### ビルド」「### 規約」のような短い見出しごとに箇条書きを並べ、1項目は1〜2行に収める。書いた内容は次回セッションの冒頭で一度読み上げさせて確認する。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b40">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b40" data-name="context-prompts100-040.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<h2 class="cat">セッション引き継ぎ・圧縮前メモ化プロンプト</h2>
+<div class="icard">
+  <div class="ih"><span class="num">041</span><span class="ititle">引き継ぎメモ化：長時間のリファクタ作業を翌日に持ち越すとき</span></div>
+  
+  <pre class="prompt" id="b41">前提: 長時間のリファクタ作業を翌日に持ち越すときに、コンテキストの圧縮（要約）で重要な情報が失われるのを防ぎたい。
+指示: 作業を区切る直前に、Codexへ「ここまでの変更済みファイルと未着手ファイルの一覧、途中で決めた命名方針を、次のセッションでそのまま読み込める形で箇条書きに要約して」と依頼する。
+出力形式: 見出し付きの短い箇条書き（5〜10行程度）で出力させ、AGENTS.mdや作業メモに保存してから新しいセッションを開始する。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b41">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b41" data-name="context-prompts100-041.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">042</span><span class="ititle">引き継ぎメモ化：圧縮（自動要約）が近そうだと感じたとき</span></div>
+  
+  <pre class="prompt" id="b42">前提: 圧縮（自動要約）が近そうだと感じたときに、コンテキストの圧縮（要約）で重要な情報が失われるのを防ぎたい。
+指示: 作業を区切る直前に、Codexへ「ここまでの直近で却下した実装案とその理由、現在採用している方針を、次のセッションでそのまま読み込める形で箇条書きに要約して」と依頼する。
+出力形式: 見出し付きの短い箇条書き（5〜10行程度）で出力させ、AGENTS.mdや作業メモに保存してから新しいセッションを開始する。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b42">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b42" data-name="context-prompts100-042.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">043</span><span class="ititle">引き継ぎメモ化：別の担当者に作業を引き継ぐとき</span></div>
+  
+  <pre class="prompt" id="b43">前提: 別の担当者に作業を引き継ぐときに、コンテキストの圧縮（要約）で重要な情報が失われるのを防ぎたい。
+指示: 作業を区切る直前に、Codexへ「ここまでのここまでの意思決定とその根拠、次にやるべきタスクを、次のセッションでそのまま読み込める形で箇条書きに要約して」と依頼する。
+出力形式: 見出し付きの短い箇条書き（5〜10行程度）で出力させ、AGENTS.mdや作業メモに保存してから新しいセッションを開始する。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b43">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b43" data-name="context-prompts100-043.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">044</span><span class="ititle">引き継ぎメモ化：バグ調査を一時中断するとき</span></div>
+  
+  <pre class="prompt" id="b44">前提: バグ調査を一時中断するときに、コンテキストの圧縮（要約）で重要な情報が失われるのを防ぎたい。
+指示: 作業を区切る直前に、Codexへ「ここまでのこれまでに除外した原因候補と、まだ試していない仮説を、次のセッションでそのまま読み込める形で箇条書きに要約して」と依頼する。
+出力形式: 見出し付きの短い箇条書き（5〜10行程度）で出力させ、AGENTS.mdや作業メモに保存してから新しいセッションを開始する。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b44">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b44" data-name="context-prompts100-044.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">045</span><span class="ititle">引き継ぎメモ化：設計方針の議論が一区切りついたとき</span></div>
+  
+  <pre class="prompt" id="b45">前提: 設計方針の議論が一区切りついたときに、コンテキストの圧縮（要約）で重要な情報が失われるのを防ぎたい。
+指示: 作業を区切る直前に、Codexへ「ここまでの確定した設計方針と、保留にした論点を、次のセッションでそのまま読み込める形で箇条書きに要約して」と依頼する。
+出力形式: 見出し付きの短い箇条書き（5〜10行程度）で出力させ、AGENTS.mdや作業メモに保存してから新しいセッションを開始する。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b45">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b45" data-name="context-prompts100-045.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">046</span><span class="ititle">引き継ぎメモ化：大きな窓（1M等）のセッションを終えるとき</span></div>
+  
+  <pre class="prompt" id="b46">前提: 大きな窓（1M等）のセッションを終えるときに、コンテキストの圧縮（要約）で重要な情報が失われるのを防ぎたい。
+指示: 作業を区切る直前に、Codexへ「ここまでのセッション全体の要点を、次回に読み込ませる前提でコンパクトにまとめるを、次のセッションでそのまま読み込める形で箇条書きに要約して」と依頼する。
+出力形式: 見出し付きの短い箇条書き（5〜10行程度）で出力させ、AGENTS.mdや作業メモに保存してから新しいセッションを開始する。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b46">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b46" data-name="context-prompts100-046.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">047</span><span class="ititle">引き継ぎメモ化：複数人でレビューを回すとき</span></div>
+  
+  <pre class="prompt" id="b47">前提: 複数人でレビューを回すときに、コンテキストの圧縮（要約）で重要な情報が失われるのを防ぎたい。
+指示: 作業を区切る直前に、Codexへ「ここまでの指摘済みの項目と、まだレビューが済んでいない範囲を、次のセッションでそのまま読み込める形で箇条書きに要約して」と依頼する。
+出力形式: 見出し付きの短い箇条書き（5〜10行程度）で出力させ、AGENTS.mdや作業メモに保存してから新しいセッションを開始する。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b47">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b47" data-name="context-prompts100-047.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">048</span><span class="ititle">引き継ぎメモ化：テスト作成が長引いているとき</span></div>
+  
+  <pre class="prompt" id="b48">前提: テスト作成が長引いているときに、コンテキストの圧縮（要約）で重要な情報が失われるのを防ぎたい。
+指示: 作業を区切る直前に、Codexへ「ここまでの作成済みのテストケース一覧と、カバーできていない境界値を、次のセッションでそのまま読み込める形で箇条書きに要約して」と依頼する。
+出力形式: 見出し付きの短い箇条書き（5〜10行程度）で出力させ、AGENTS.mdや作業メモに保存してから新しいセッションを開始する。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b48">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b48" data-name="context-prompts100-048.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">049</span><span class="ititle">引き継ぎメモ化：マイグレーション作業の途中経過を残すとき</span></div>
+  
+  <pre class="prompt" id="b49">前提: マイグレーション作業の途中経過を残すときに、コンテキストの圧縮（要約）で重要な情報が失われるのを防ぎたい。
+指示: 作業を区切る直前に、Codexへ「ここまでの移行が完了したファイルと、残りの作業量の見積もりを、次のセッションでそのまま読み込める形で箇条書きに要約して」と依頼する。
+出力形式: 見出し付きの短い箇条書き（5〜10行程度）で出力させ、AGENTS.mdや作業メモに保存してから新しいセッションを開始する。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b49">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b49" data-name="context-prompts100-049.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">050</span><span class="ititle">引き継ぎメモ化：障害対応の引き継ぎをするとき</span></div>
+  
+  <pre class="prompt" id="b50">前提: 障害対応の引き継ぎをするときに、コンテキストの圧縮（要約）で重要な情報が失われるのを防ぎたい。
+指示: 作業を区切る直前に、Codexへ「ここまでの発生時刻・影響範囲・現在の暫定対応状況を、次のセッションでそのまま読み込める形で箇条書きに要約して」と依頼する。
+出力形式: 見出し付きの短い箇条書き（5〜10行程度）で出力させ、AGENTS.mdや作業メモに保存してから新しいセッションを開始する。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b50">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b50" data-name="context-prompts100-050.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">051</span><span class="ititle">引き継ぎメモ化：新しいセッションで前回の続きから始めるとき</span></div>
+  
+  <pre class="prompt" id="b51">前提: 新しいセッションで前回の続きから始めるときに、コンテキストの圧縮（要約）で重要な情報が失われるのを防ぎたい。
+指示: 作業を区切る直前に、Codexへ「ここまでの前回セッションの要約を貼り付けてから作業を再開するを、次のセッションでそのまま読み込める形で箇条書きに要約して」と依頼する。
+出力形式: 見出し付きの短い箇条書き（5〜10行程度）で出力させ、AGENTS.mdや作業メモに保存してから新しいセッションを開始する。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b51">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b51" data-name="context-prompts100-051.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">052</span><span class="ititle">引き継ぎメモ化：週をまたいで同じ機能開発を続けるとき</span></div>
+  
+  <pre class="prompt" id="b52">前提: 週をまたいで同じ機能開発を続けるときに、コンテキストの圧縮（要約）で重要な情報が失われるのを防ぎたい。
+指示: 作業を区切る直前に、Codexへ「ここまでの先週時点の完成度と、今週の目標を、次のセッションでそのまま読み込める形で箇条書きに要約して」と依頼する。
+出力形式: 見出し付きの短い箇条書き（5〜10行程度）で出力させ、AGENTS.mdや作業メモに保存してから新しいセッションを開始する。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b52">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b52" data-name="context-prompts100-052.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">053</span><span class="ititle">引き継ぎメモ化：複数のブランチを行き来しているとき</span></div>
+  
+  <pre class="prompt" id="b53">前提: 複数のブランチを行き来しているときに、コンテキストの圧縮（要約）で重要な情報が失われるのを防ぎたい。
+指示: 作業を区切る直前に、Codexへ「ここまでのブランチごとの目的と現在の状態を、次のセッションでそのまま読み込める形で箇条書きに要約して」と依頼する。
+出力形式: 見出し付きの短い箇条書き（5〜10行程度）で出力させ、AGENTS.mdや作業メモに保存してから新しいセッションを開始する。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b53">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b53" data-name="context-prompts100-053.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">054</span><span class="ititle">引き継ぎメモ化：外部レビュー（コードレビュー）の指摘対応中</span></div>
+  
+  <pre class="prompt" id="b54">前提: 外部レビュー（コードレビュー）の指摘対応中に、コンテキストの圧縮（要約）で重要な情報が失われるのを防ぎたい。
+指示: 作業を区切る直前に、Codexへ「ここまでの対応済み・未対応の指摘を分けて記録するを、次のセッションでそのまま読み込める形で箇条書きに要約して」と依頼する。
+出力形式: 見出し付きの短い箇条書き（5〜10行程度）で出力させ、AGENTS.mdや作業メモに保存してから新しいセッションを開始する。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b54">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b54" data-name="context-prompts100-054.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">055</span><span class="ititle">引き継ぎメモ化：APIの仕様変更を追いかけているとき</span></div>
+  
+  <pre class="prompt" id="b55">前提: APIの仕様変更を追いかけているときに、コンテキストの圧縮（要約）で重要な情報が失われるのを防ぎたい。
+指示: 作業を区切る直前に、Codexへ「ここまでの変更前後の差分と、影響を受けた呼び出し箇所を、次のセッションでそのまま読み込める形で箇条書きに要約して」と依頼する。
+出力形式: 見出し付きの短い箇条書き（5〜10行程度）で出力させ、AGENTS.mdや作業メモに保存してから新しいセッションを開始する。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b55">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b55" data-name="context-prompts100-055.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">056</span><span class="ititle">引き継ぎメモ化：パフォーマンス改善の試行錯誤を記録するとき</span></div>
+  
+  <pre class="prompt" id="b56">前提: パフォーマンス改善の試行錯誤を記録するときに、コンテキストの圧縮（要約）で重要な情報が失われるのを防ぎたい。
+指示: 作業を区切る直前に、Codexへ「ここまでの試した施策と、それぞれの計測結果を、次のセッションでそのまま読み込める形で箇条書きに要約して」と依頼する。
+出力形式: 見出し付きの短い箇条書き（5〜10行程度）で出力させ、AGENTS.mdや作業メモに保存してから新しいセッションを開始する。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b56">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b56" data-name="context-prompts100-056.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">057</span><span class="ititle">引き継ぎメモ化：ドキュメント執筆を分割して進めるとき</span></div>
+  
+  <pre class="prompt" id="b57">前提: ドキュメント執筆を分割して進めるときに、コンテキストの圧縮（要約）で重要な情報が失われるのを防ぎたい。
+指示: 作業を区切る直前に、Codexへ「ここまでの書き終えた章と、次に書く章の構成を、次のセッションでそのまま読み込める形で箇条書きに要約して」と依頼する。
+出力形式: 見出し付きの短い箇条書き（5〜10行程度）で出力させ、AGENTS.mdや作業メモに保存してから新しいセッションを開始する。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b57">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b57" data-name="context-prompts100-057.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">058</span><span class="ititle">引き継ぎメモ化：複数の環境（開発・検証・本番）で作業するとき</span></div>
+  
+  <pre class="prompt" id="b58">前提: 複数の環境（開発・検証・本番）で作業するときに、コンテキストの圧縮（要約）で重要な情報が失われるのを防ぎたい。
+指示: 作業を区切る直前に、Codexへ「ここまでの環境ごとの差分と、反映済みの環境を、次のセッションでそのまま読み込める形で箇条書きに要約して」と依頼する。
+出力形式: 見出し付きの短い箇条書き（5〜10行程度）で出力させ、AGENTS.mdや作業メモに保存してから新しいセッションを開始する。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b58">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b58" data-name="context-prompts100-058.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">059</span><span class="ititle">引き継ぎメモ化：チームの朝会前に状況を整理するとき</span></div>
+  
+  <pre class="prompt" id="b59">前提: チームの朝会前に状況を整理するときに、コンテキストの圧縮（要約）で重要な情報が失われるのを防ぎたい。
+指示: 作業を区切る直前に、Codexへ「ここまでの昨日やったこと・今日やること・詰まっている点を、次のセッションでそのまま読み込める形で箇条書きに要約して」と依頼する。
+出力形式: 見出し付きの短い箇条書き（5〜10行程度）で出力させ、AGENTS.mdや作業メモに保存してから新しいセッションを開始する。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b59">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b59" data-name="context-prompts100-059.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">060</span><span class="ititle">引き継ぎメモ化：長期プロジェクトのマイルストーン到達時</span></div>
+  
+  <pre class="prompt" id="b60">前提: 長期プロジェクトのマイルストーン到達時に、コンテキストの圧縮（要約）で重要な情報が失われるのを防ぎたい。
+指示: 作業を区切る直前に、Codexへ「ここまでのここまでの成果物一覧と、次のマイルストーンの定義を、次のセッションでそのまま読み込める形で箇条書きに要約して」と依頼する。
+出力形式: 見出し付きの短い箇条書き（5〜10行程度）で出力させ、AGENTS.mdや作業メモに保存してから新しいセッションを開始する。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b60">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b60" data-name="context-prompts100-060.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<h2 class="cat">コンテキストを圧迫させない指示フレーズ</h2>
+<div class="icard">
+  <div class="ih"><span class="num">061</span><span class="ititle">圧迫回避フレーズ：大きなログファイルを読ませたいとき</span></div>
+  
+  <pre class="prompt" id="b61">前提: 大きなログファイルを読ませたいときに、窓を無駄に消費してしまうのを避けたい。
+指示: Codexへの依頼文に「全文ではなくエラー箇所の前後50行だけを対象にする」という条件を明示的に加えて伝える。
+出力形式: 依頼の冒頭1文でこの条件を宣言してから本題に入り、Codexの応答も同じ粒度（詳細すぎない）に保たれているかを確認する。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b61">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b61" data-name="context-prompts100-061.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">062</span><span class="ititle">圧迫回避フレーズ：大量のファイルを一括で調査させたいとき</span></div>
+  
+  <pre class="prompt" id="b62">前提: 大量のファイルを一括で調査させたいときに、窓を無駄に消費してしまうのを避けたい。
+指示: Codexへの依頼文に「ファイル名と該当箇所の一覧だけをまず出させ、詳細は必要な分だけ深掘りする」という条件を明示的に加えて伝える。
+出力形式: 依頼の冒頭1文でこの条件を宣言してから本題に入り、Codexの応答も同じ粒度（詳細すぎない）に保たれているかを確認する。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b62">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b62" data-name="context-prompts100-062.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">063</span><span class="ititle">圧迫回避フレーズ：既に説明済みの前提を繰り返させたくないとき</span></div>
+  
+  <pre class="prompt" id="b63">前提: 既に説明済みの前提を繰り返させたくないときに、窓を無駄に消費してしまうのを避けたい。
+指示: Codexへの依頼文に「「AGENTS.mdに書いた前提を踏まえて」と一言添える」という条件を明示的に加えて伝える。
+出力形式: 依頼の冒頭1文でこの条件を宣言してから本題に入り、Codexの応答も同じ粒度（詳細すぎない）に保たれているかを確認する。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b63">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b63" data-name="context-prompts100-063.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">064</span><span class="ititle">圧迫回避フレーズ：同じ質問を何度もさせたくないとき</span></div>
+  
+  <pre class="prompt" id="b64">前提: 同じ質問を何度もさせたくないときに、窓を無駄に消費してしまうのを避けたい。
+指示: Codexへの依頼文に「回答をAGENTS.mdやREADMEに転記し、以降はファイルを参照させる」という条件を明示的に加えて伝える。
+出力形式: 依頼の冒頭1文でこの条件を宣言してから本題に入り、Codexの応答も同じ粒度（詳細すぎない）に保たれているかを確認する。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b64">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b64" data-name="context-prompts100-064.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">065</span><span class="ititle">圧迫回避フレーズ：長い会話履歴を持つセッションで新しい依頼をするとき</span></div>
+  
+  <pre class="prompt" id="b65">前提: 長い会話履歴を持つセッションで新しい依頼をするときに、窓を無駄に消費してしまうのを避けたい。
+指示: Codexへの依頼文に「関係のない過去の議論を明示的に「これは無視して」と伝える」という条件を明示的に加えて伝える。
+出力形式: 依頼の冒頭1文でこの条件を宣言してから本題に入り、Codexの応答も同じ粒度（詳細すぎない）に保たれているかを確認する。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b65">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b65" data-name="context-prompts100-065.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">066</span><span class="ititle">圧迫回避フレーズ：MCP（複数のツール連携）を多用しているとき</span></div>
+  
+  <pre class="prompt" id="b66">前提: MCP（複数のツール連携）を多用しているときに、窓を無駄に消費してしまうのを避けたい。
+指示: Codexへの依頼文に「今回のタスクで不要なツール接続は一時的に外しておく」という条件を明示的に加えて伝える。
+出力形式: 依頼の冒頭1文でこの条件を宣言してから本題に入り、Codexの応答も同じ粒度（詳細すぎない）に保たれているかを確認する。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b66">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b66" data-name="context-prompts100-066.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">067</span><span class="ititle">圧迫回避フレーズ：巨大な設定ファイルの一部だけを変更したいとき</span></div>
+  
+  <pre class="prompt" id="b67">前提: 巨大な設定ファイルの一部だけを変更したいときに、窓を無駄に消費してしまうのを避けたい。
+指示: Codexへの依頼文に「変更箇所の周辺のみを抜粋して渡す」という条件を明示的に加えて伝える。
+出力形式: 依頼の冒頭1文でこの条件を宣言してから本題に入り、Codexの応答も同じ粒度（詳細すぎない）に保たれているかを確認する。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b67">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b67" data-name="context-prompts100-067.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">068</span><span class="ititle">圧迫回避フレーズ：複数のドキュメントを参照させたいとき</span></div>
+  
+  <pre class="prompt" id="b68">前提: 複数のドキュメントを参照させたいときに、窓を無駄に消費してしまうのを避けたい。
+指示: Codexへの依頼文に「要点だけを先にまとめさせ、原文全体は必要なときだけ読ませる」という条件を明示的に加えて伝える。
+出力形式: 依頼の冒頭1文でこの条件を宣言してから本題に入り、Codexの応答も同じ粒度（詳細すぎない）に保たれているかを確認する。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b68">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b68" data-name="context-prompts100-068.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">069</span><span class="ititle">圧迫回避フレーズ：過去の会話を要約させたいとき</span></div>
+  
+  <pre class="prompt" id="b69">前提: 過去の会話を要約させたいときに、窓を無駄に消費してしまうのを避けたい。
+指示: Codexへの依頼文に「「直近の結論だけを3行で」と明確に文字数・行数を指定する」という条件を明示的に加えて伝える。
+出力形式: 依頼の冒頭1文でこの条件を宣言してから本題に入り、Codexの応答も同じ粒度（詳細すぎない）に保たれているかを確認する。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b69">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b69" data-name="context-prompts100-069.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">070</span><span class="ititle">圧迫回避フレーズ：大量のコード生成を依頼するとき</span></div>
+  
+  <pre class="prompt" id="b70">前提: 大量のコード生成を依頼するときに、窓を無駄に消費してしまうのを避けたい。
+指示: Codexへの依頼文に「1ファイルずつ生成させ、都度確認してから次に進める」という条件を明示的に加えて伝える。
+出力形式: 依頼の冒頭1文でこの条件を宣言してから本題に入り、Codexの応答も同じ粒度（詳細すぎない）に保たれているかを確認する。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b70">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b70" data-name="context-prompts100-070.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">071</span><span class="ititle">圧迫回避フレーズ：スキーマ変更の影響範囲を調べさせるとき</span></div>
+  
+  <pre class="prompt" id="b71">前提: スキーマ変更の影響範囲を調べさせるときに、窓を無駄に消費してしまうのを避けたい。
+指示: Codexへの依頼文に「調査対象のディレクトリを限定して伝える」という条件を明示的に加えて伝える。
+出力形式: 依頼の冒頭1文でこの条件を宣言してから本題に入り、Codexの応答も同じ粒度（詳細すぎない）に保たれているかを確認する。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b71">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b71" data-name="context-prompts100-071.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">072</span><span class="ititle">圧迫回避フレーズ：テスト全件を実行させたログを読ませるとき</span></div>
+  
+  <pre class="prompt" id="b72">前提: テスト全件を実行させたログを読ませるときに、窓を無駄に消費してしまうのを避けたい。
+指示: Codexへの依頼文に「失敗したテストだけを抽出させてから読み込ませる」という条件を明示的に加えて伝える。
+出力形式: 依頼の冒頭1文でこの条件を宣言してから本題に入り、Codexの応答も同じ粒度（詳細すぎない）に保たれているかを確認する。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b72">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b72" data-name="context-prompts100-072.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">073</span><span class="ititle">圧迫回避フレーズ：ツール出力が冗長になりがちなとき</span></div>
+  
+  <pre class="prompt" id="b73">前提: ツール出力が冗長になりがちなときに、窓を無駄に消費してしまうのを避けたい。
+指示: Codexへの依頼文に「「結論だけ先に、詳細は聞かれたら答えて」と応答形式を指定する」という条件を明示的に加えて伝える。
+出力形式: 依頼の冒頭1文でこの条件を宣言してから本題に入り、Codexの応答も同じ粒度（詳細すぎない）に保たれているかを確認する。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b73">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b73" data-name="context-prompts100-073.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">074</span><span class="ititle">圧迫回避フレーズ：複数の提案を比較検討したいとき</span></div>
+  
+  <pre class="prompt" id="b74">前提: 複数の提案を比較検討したいときに、窓を無駄に消費してしまうのを避けたい。
+指示: Codexへの依頼文に「各案の要点を表形式で簡潔にまとめさせる」という条件を明示的に加えて伝える。
+出力形式: 依頼の冒頭1文でこの条件を宣言してから本題に入り、Codexの応答も同じ粒度（詳細すぎない）に保たれているかを確認する。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b74">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b74" data-name="context-prompts100-074.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">075</span><span class="ititle">圧迫回避フレーズ：外部APIのレスポンスを確認したいとき</span></div>
+  
+  <pre class="prompt" id="b75">前提: 外部APIのレスポンスを確認したいときに、窓を無駄に消費してしまうのを避けたい。
+指示: Codexへの依頼文に「必要なフィールドだけを抽出させ、生のJSON全体は貼らない」という条件を明示的に加えて伝える。
+出力形式: 依頼の冒頭1文でこの条件を宣言してから本題に入り、Codexの応答も同じ粒度（詳細すぎない）に保たれているかを確認する。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b75">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b75" data-name="context-prompts100-075.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">076</span><span class="ititle">圧迫回避フレーズ：長いプルリクエストをレビューするとき</span></div>
+  
+  <pre class="prompt" id="b76">前提: 長いプルリクエストをレビューするときに、窓を無駄に消費してしまうのを避けたい。
+指示: Codexへの依頼文に「差分の要約を先に出させ、詳細は指摘があった箇所だけ深掘りする」という条件を明示的に加えて伝える。
+出力形式: 依頼の冒頭1文でこの条件を宣言してから本題に入り、Codexの応答も同じ粒度（詳細すぎない）に保たれているかを確認する。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b76">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b76" data-name="context-prompts100-076.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">077</span><span class="ititle">圧迫回避フレーズ：複数ブランチの差分を比較したいとき</span></div>
+  
+  <pre class="prompt" id="b77">前提: 複数ブランチの差分を比較したいときに、窓を無駄に消費してしまうのを避けたい。
+指示: Codexへの依頼文に「変更ファイル一覧だけをまず出し、中身は絞って見せる」という条件を明示的に加えて伝える。
+出力形式: 依頼の冒頭1文でこの条件を宣言してから本題に入り、Codexの応答も同じ粒度（詳細すぎない）に保たれているかを確認する。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b77">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b77" data-name="context-prompts100-077.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">078</span><span class="ititle">圧迫回避フレーズ：会議の議事録をもとに作業させるとき</span></div>
+  
+  <pre class="prompt" id="b78">前提: 会議の議事録をもとに作業させるときに、窓を無駄に消費してしまうのを避けたい。
+指示: Codexへの依頼文に「決定事項だけを抜き出させ、雑談部分は要約から外す」という条件を明示的に加えて伝える。
+出力形式: 依頼の冒頭1文でこの条件を宣言してから本題に入り、Codexの応答も同じ粒度（詳細すぎない）に保たれているかを確認する。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b78">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b78" data-name="context-prompts100-078.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">079</span><span class="ititle">圧迫回避フレーズ：繰り返し使う定型コマンドがあるとき</span></div>
+  
+  <pre class="prompt" id="b79">前提: 繰り返し使う定型コマンドがあるときに、窓を無駄に消費してしまうのを避けたい。
+指示: Codexへの依頼文に「AGENTS.mdにコマンド一覧を書いておき、都度説明しない」という条件を明示的に加えて伝える。
+出力形式: 依頼の冒頭1文でこの条件を宣言してから本題に入り、Codexの応答も同じ粒度（詳細すぎない）に保たれているかを確認する。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b79">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b79" data-name="context-prompts100-079.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">080</span><span class="ititle">圧迫回避フレーズ：大きなセッションの終盤で新しい調査を始めるとき</span></div>
+  
+  <pre class="prompt" id="b80">前提: 大きなセッションの終盤で新しい調査を始めるときに、窓を無駄に消費してしまうのを避けたい。
+指示: Codexへの依頼文に「新しい調査は別セッションに切り出すことを検討する」という条件を明示的に加えて伝える。
+出力形式: 依頼の冒頭1文でこの条件を宣言してから本題に入り、Codexの応答も同じ粒度（詳細すぎない）に保たれているかを確認する。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b80">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b80" data-name="context-prompts100-080.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<h2 class="cat">コスト監視・請求防止の指示文</h2>
+<div class="icard">
+  <div class="ih"><span class="num">081</span><span class="ititle">コスト防止ルール：大きな窓を有効化する前に</span></div>
+  
+  <pre class="prompt" id="b81">前提: 大きな窓を有効化する前にに、意図しない高額請求を避けたい。
+指示: 現在の設定（model_context_window・model_auto_compact_token_limit）を確認させてから変更することを、作業ルールとしてAGENTS.mdやチームの運用メモに明記しておく。
+出力形式: 「いつ」「誰が」「何を確認するか」が一目で分かる短いチェック項目として書き、定期的に見返せる場所に保存する。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b81">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b81" data-name="context-prompts100-081.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">082</span><span class="ititle">コスト防止ルール：1セッションのコストが気になるとき</span></div>
+  
+  <pre class="prompt" id="b82">前提: 1セッションのコストが気になるときに、意図しない高額請求を避けたい。
+指示: 作業の節目でおおよそのトークン消費量を報告させることを、作業ルールとしてAGENTS.mdやチームの運用メモに明記しておく。
+出力形式: 「いつ」「誰が」「何を確認するか」が一目で分かる短いチェック項目として書き、定期的に見返せる場所に保存する。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b82">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b82" data-name="context-prompts100-082.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">083</span><span class="ititle">コスト防止ルール：272,000トークンを超えそうなとき</span></div>
+  
+  <pre class="prompt" id="b83">前提: 272,000トークンを超えそうなときに、意図しない高額請求を避けたい。
+指示: その旨を先に警告させ、続行するか判断させる一言を挟むことを、作業ルールとしてAGENTS.mdやチームの運用メモに明記しておく。
+出力形式: 「いつ」「誰が」「何を確認するか」が一目で分かる短いチェック項目として書き、定期的に見返せる場所に保存する。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b83">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b83" data-name="context-prompts100-083.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">084</span><span class="ititle">コスト防止ルール：API中継業者（再販業者）経由で使っているとき</span></div>
+  
+  <pre class="prompt" id="b84">前提: API中継業者（再販業者）経由で使っているときに、意図しない高額請求を避けたい。
+指示: 従量課金の切り替え設定が有効かどうかを、契約先の管理画面で確認することを、作業ルールとしてAGENTS.mdやチームの運用メモに明記しておく。
+出力形式: 「いつ」「誰が」「何を確認するか」が一目で分かる短いチェック項目として書き、定期的に見返せる場所に保存する。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b84">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b84" data-name="context-prompts100-084.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">085</span><span class="ititle">コスト防止ルール：複数プロジェクトを掛け持ちしているとき</span></div>
+  
+  <pre class="prompt" id="b85">前提: 複数プロジェクトを掛け持ちしているときに、意図しない高額請求を避けたい。
+指示: プロジェクトごとにコンテキスト窓の設定を分けて管理することを、作業ルールとしてAGENTS.mdやチームの運用メモに明記しておく。
+出力形式: 「いつ」「誰が」「何を確認するか」が一目で分かる短いチェック項目として書き、定期的に見返せる場所に保存する。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b85">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b85" data-name="context-prompts100-085.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">086</span><span class="ititle">コスト防止ルール：1Mトークン設定を試したあと</span></div>
+  
+  <pre class="prompt" id="b86">前提: 1Mトークン設定を試したあとに、意図しない高額請求を避けたい。
+指示: 作業が終わったら日常用の設定に戻すことを忘れないことを、作業ルールとしてAGENTS.mdやチームの運用メモに明記しておく。
+出力形式: 「いつ」「誰が」「何を確認するか」が一目で分かる短いチェック項目として書き、定期的に見返せる場所に保存する。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b86">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b86" data-name="context-prompts100-086.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">087</span><span class="ititle">コスト防止ルール：チームで共有のAPIキーを使っているとき</span></div>
+  
+  <pre class="prompt" id="b87">前提: チームで共有のAPIキーを使っているときに、意図しない高額請求を避けたい。
+指示: 誰がいつ大きな窓を使ったか分かるよう、簡単な使用ログを残すことを、作業ルールとしてAGENTS.mdやチームの運用メモに明記しておく。
+出力形式: 「いつ」「誰が」「何を確認するか」が一目で分かる短いチェック項目として書き、定期的に見返せる場所に保存する。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b87">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b87" data-name="context-prompts100-087.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">088</span><span class="ititle">コスト防止ルール：月内の利用上限が決まっているとき</span></div>
+  
+  <pre class="prompt" id="b88">前提: 月内の利用上限が決まっているときに、意図しない高額請求を避けたい。
+指示: 上限に対する現在の消費割合を定期的に確認することを、作業ルールとしてAGENTS.mdやチームの運用メモに明記しておく。
+出力形式: 「いつ」「誰が」「何を確認するか」が一目で分かる短いチェック項目として書き、定期的に見返せる場所に保存する。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b88">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b88" data-name="context-prompts100-088.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">089</span><span class="ititle">コスト防止ルール：キャッシュが効く読み込みを繰り返すとき</span></div>
+  
+  <pre class="prompt" id="b89">前提: キャッシュが効く読み込みを繰り返すときに、意図しない高額請求を避けたい。
+指示: 同じ内容を毎回全文で渡さず、キャッシュされる形式で渡すことを、作業ルールとしてAGENTS.mdやチームの運用メモに明記しておく。
+出力形式: 「いつ」「誰が」「何を確認するか」が一目で分かる短いチェック項目として書き、定期的に見返せる場所に保存する。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b89">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b89" data-name="context-prompts100-089.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">090</span><span class="ititle">コスト防止ルール：出力トークンが多くなりがちな依頼をするとき</span></div>
+  
+  <pre class="prompt" id="b90">前提: 出力トークンが多くなりがちな依頼をするときに、意図しない高額請求を避けたい。
+指示: 出力の分量（行数・文字数）を先に指定して依頼することを、作業ルールとしてAGENTS.mdやチームの運用メモに明記しておく。
+出力形式: 「いつ」「誰が」「何を確認するか」が一目で分かる短いチェック項目として書き、定期的に見返せる場所に保存する。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b90">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b90" data-name="context-prompts100-090.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">091</span><span class="ititle">コスト防止ルール：長時間の自動実行タスクを組むとき</span></div>
+  
+  <pre class="prompt" id="b91">前提: 長時間の自動実行タスクを組むときに、意図しない高額請求を避けたい。
+指示: 1回あたりの想定コストを見積もってから本番投入することを、作業ルールとしてAGENTS.mdやチームの運用メモに明記しておく。
+出力形式: 「いつ」「誰が」「何を確認するか」が一目で分かる短いチェック項目として書き、定期的に見返せる場所に保存する。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b91">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b91" data-name="context-prompts100-091.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">092</span><span class="ititle">コスト防止ルール：新しいモデル・料金体系に切り替えるとき</span></div>
+  
+  <pre class="prompt" id="b92">前提: 新しいモデル・料金体系に切り替えるときに、意図しない高額請求を避けたい。
+指示: 旧設定と新設定でのコスト差を小さいタスクで試算してから移行することを、作業ルールとしてAGENTS.mdやチームの運用メモに明記しておく。
+出力形式: 「いつ」「誰が」「何を確認するか」が一目で分かる短いチェック項目として書き、定期的に見返せる場所に保存する。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b92">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b92" data-name="context-prompts100-092.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">093</span><span class="ititle">コスト防止ルール：複数のAIツールを併用しているとき</span></div>
+  
+  <pre class="prompt" id="b93">前提: 複数のAIツールを併用しているときに、意図しない高額請求を避けたい。
+指示: どのツールがどのタスクで最もコスト効率が良いかを記録しておくことを、作業ルールとしてAGENTS.mdやチームの運用メモに明記しておく。
+出力形式: 「いつ」「誰が」「何を確認するか」が一目で分かる短いチェック項目として書き、定期的に見返せる場所に保存する。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b93">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b93" data-name="context-prompts100-093.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">094</span><span class="ititle">コスト防止ルール：大量の自動テストをAIに書かせるとき</span></div>
+  
+  <pre class="prompt" id="b94">前提: 大量の自動テストをAIに書かせるときに、意図しない高額請求を避けたい。
+指示: 一度に依頼する件数を区切り、コストの跳ね上がりを避けることを、作業ルールとしてAGENTS.mdやチームの運用メモに明記しておく。
+出力形式: 「いつ」「誰が」「何を確認するか」が一目で分かる短いチェック項目として書き、定期的に見返せる場所に保存する。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b94">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b94" data-name="context-prompts100-094.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">095</span><span class="ititle">コスト防止ルール：請求書に見慣れない金額があったとき</span></div>
+  
+  <pre class="prompt" id="b95">前提: 請求書に見慣れない金額があったときに、意図しない高額請求を避けたい。
+指示: 直近のセッションでどの設定を使っていたかをまず確認することを、作業ルールとしてAGENTS.mdやチームの運用メモに明記しておく。
+出力形式: 「いつ」「誰が」「何を確認するか」が一目で分かる短いチェック項目として書き、定期的に見返せる場所に保存する。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b95">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b95" data-name="context-prompts100-095.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">096</span><span class="ititle">コスト防止ルール：新人がCodexを使い始めるとき</span></div>
+  
+  <pre class="prompt" id="b96">前提: 新人がCodexを使い始めるときに、意図しない高額請求を避けたい。
+指示: デフォルト設定のまま使うよう案内し、大きな窓は必要時のみ許可することを、作業ルールとしてAGENTS.mdやチームの運用メモに明記しておく。
+出力形式: 「いつ」「誰が」「何を確認するか」が一目で分かる短いチェック項目として書き、定期的に見返せる場所に保存する。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b96">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b96" data-name="context-prompts100-096.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">097</span><span class="ititle">コスト防止ルール：休日や夜間の自動実行があるとき</span></div>
+  
+  <pre class="prompt" id="b97">前提: 休日や夜間の自動実行があるときに、意図しない高額請求を避けたい。
+指示: 無人実行時は窓を広げすぎない設定に固定しておくことを、作業ルールとしてAGENTS.mdやチームの運用メモに明記しておく。
+出力形式: 「いつ」「誰が」「何を確認するか」が一目で分かる短いチェック項目として書き、定期的に見返せる場所に保存する。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b97">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b97" data-name="context-prompts100-097.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">098</span><span class="ititle">コスト防止ルール：複数リポジトリを横断する調査を依頼するとき</span></div>
+  
+  <pre class="prompt" id="b98">前提: 複数リポジトリを横断する調査を依頼するときに、意図しない高額請求を避けたい。
+指示: 対象範囲を絞ってから依頼し、想定外の広範囲読み込みを防ぐことを、作業ルールとしてAGENTS.mdやチームの運用メモに明記しておく。
+出力形式: 「いつ」「誰が」「何を確認するか」が一目で分かる短いチェック項目として書き、定期的に見返せる場所に保存する。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b98">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b98" data-name="context-prompts100-098.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">099</span><span class="ititle">コスト防止ルール：コスト試算をチームに共有するとき</span></div>
+  
+  <pre class="prompt" id="b99">前提: コスト試算をチームに共有するときに、意図しない高額請求を避けたい。
+指示: 設定値（窓のサイズ）と概算コストをセットで報告することを、作業ルールとしてAGENTS.mdやチームの運用メモに明記しておく。
+出力形式: 「いつ」「誰が」「何を確認するか」が一目で分かる短いチェック項目として書き、定期的に見返せる場所に保存する。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b99">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b99" data-name="context-prompts100-099.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+<div class="icard">
+  <div class="ih"><span class="num">100</span><span class="ititle">コスト防止ルール：四半期ごとにAI利用コストを振り返るとき</span></div>
+  
+  <pre class="prompt" id="b100">前提: 四半期ごとにAI利用コストを振り返るときに、意図しない高額請求を避けたい。
+指示: どの設定・用途がコストの大半を占めていたかを洗い出すことを、作業ルールとしてAGENTS.mdやチームの運用メモに明記しておく。
+出力形式: 「いつ」「誰が」「何を確認するか」が一目で分かる短いチェック項目として書き、定期的に見返せる場所に保存する。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b100">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b100" data-name="context-prompts100-100.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+
+  <section class="epctx">
+  <p class="epctx-label">この動画のほかのプレゼント</p>
+  <div class="ep-kits"><a class="kchip" href="../budget-selfcheck/"><span class="kt">コンテキスト予算セルフ診断シート</span><span class="badge">6項目</span><span class="go">開く →</span></a><a class="kchip" href="../compaction-checklist/"><span class="kt">圧縮事故防止チェックリスト</span><span class="badge">6項目</span><span class="go">開く →</span></a></div>
+</section>
+
+  <footer><a href="../../">← AIエージェント / Kawaru プレゼント図書館にもどる</a></footer>
+</div>
+
+<pre id="pfull" class="hidden"># 🎁 コンテキスト管理 設定&amp;指示文100選
+
+Codex（コーデックス）のコンテキストウィンドウを賢く使うための、設定プリセット・AGENTS.md雛形・引き継ぎ/圧迫回避/コスト防止の指示文をまとめました。
+
+**受け取り方**: 各項目のコードブロック右上のコピーボタンでコピーするか、このファイルをそのままダウンロードしてください。
+
+**使い方**: 前提が近いものを選び、指示文をそのままCodex（や他のAIコーディングエージェント）に貼るか、config.toml・AGENTS.mdに転記して使ってください。
+
+
+## config.tomlプリセット集
+
+### 1. 日常タスク用・省コスト型（窓200,000 / 圧縮180,000）
+
+```text
+前提: チャット的なやり取りや小さな修正が中心で、コストを抑えたい日常利用。
+指示: ~/.codex/config.toml（またはプロジェクト直下の設定）に model_context_window = 200000 と model_auto_compact_token_limit = 180000 を設定し、Codexクライアントを再起動して新しいセッションで確認する。
+出力形式: 設定後は /status 相当のコマンドか会話冒頭の応答で、現在のコンテキストウィンドウが意図した値になっているかを確認する一言を返させる。1日の作業のほとんどがこの設定で足りるはずです。窓を広げたくなったら、まず作業内容がB〜Eのどれに該当するか確認してください。
+```
+
+### 2. 中規模リファクタ用（窓400,000 / 圧縮360,000）
+
+```text
+前提: 1つのモジュール規模のリファクタリングを、複数ファイルにまたがって進めたいとき。
+指示: ~/.codex/config.toml（またはプロジェクト直下の設定）に model_context_window = 400000 と model_auto_compact_token_limit = 360000 を設定し、Codexクライアントを再起動して新しいセッションで確認する。
+出力形式: 設定後は /status 相当のコマンドか会話冒頭の応答で、現在のコンテキストウィンドウが意図した値になっているかを確認する一言を返させる。圧縮が起きても差分の意図を見失わないよう、要所でAIに現在の方針を要約させてから作業を再開してください。
+```
+
+### 3. 大型リファクタ・一気通貫用（窓1,000,000 / 圧縮900,000）
+
+```text
+前提: 1つの大きなリファクタリングを、長時間の1セッションでやり切りたいとき。
+指示: ~/.codex/config.toml（またはプロジェクト直下の設定）に model_context_window = 1000000 と model_auto_compact_token_limit = 900000 を設定し、Codexクライアントを再起動して新しいセッションで確認する。
+出力形式: 設定後は /status 相当のコマンドか会話冒頭の応答で、現在のコンテキストウィンドウが意図した値になっているかを確認する一言を返させる。常設ではなくこの作業のときだけ有効化し、終わったら日常用の設定に戻してください。コストが跳ねやすい設定です。
+```
+
+### 4. モノレポ全体把握用（窓700,000 / 圧縮630,000）
+
+```text
+前提: 複数パッケージにまたがるモノレポで、依存関係の全体像を把握してから作業したいとき。
+指示: ~/.codex/config.toml（またはプロジェクト直下の設定）に model_context_window = 700000 と model_auto_compact_token_limit = 630000 を設定し、Codexクライアントを再起動して新しいセッションで確認する。
+出力形式: 設定後は /status 相当のコマンドか会話冒頭の応答で、現在のコンテキストウィンドウが意図した値になっているかを確認する一言を返させる。最初の1回で全体像を要約させ、以降のセッションではその要約をAGENTS.mdに転記して窓を圧迫しないようにしてください。
+```
+
+### 5. コードレビュー専用（窓300,000 / 圧縮260,000）
+
+```text
+前提: 1件のプルリクエストを一気に読み込んでレビューコメントを書きたいとき。
+指示: ~/.codex/config.toml（またはプロジェクト直下の設定）に model_context_window = 300000 と model_auto_compact_token_limit = 260000 を設定し、Codexクライアントを再起動して新しいセッションで確認する。
+出力形式: 設定後は /status 相当のコマンドか会話冒頭の応答で、現在のコンテキストウィンドウが意図した値になっているかを確認する一言を返させる。レビュー観点（設計・命名・テスト網羅性）を先に指示し、差分だけでなく変更理由も含めて読ませてください。
+```
+
+### 6. バグ調査・原因追跡用（窓500,000 / 圧縮450,000）
+
+```text
+前提: 再現条件が複雑なバグを、ログとコードを行き来しながら調査したいとき。
+指示: ~/.codex/config.toml（またはプロジェクト直下の設定）に model_context_window = 500000 と model_auto_compact_token_limit = 450000 を設定し、Codexクライアントを再起動して新しいセッションで確認する。
+出力形式: 設定後は /status 相当のコマンドか会話冒頭の応答で、現在のコンテキストウィンドウが意図した値になっているかを確認する一言を返させる。調査過程で分かった除外条件を都度AIに復唱させ、圧縮後も同じ仮説を再検証しないようにしてください。
+```
+
+### 7. ドキュメント生成用（窓250,000 / 圧縮220,000）
+
+```text
+前提: 既存コードから技術ドキュメントやREADMEをまとめて生成したいとき。
+指示: ~/.codex/config.toml（またはプロジェクト直下の設定）に model_context_window = 250000 と model_auto_compact_token_limit = 220000 を設定し、Codexクライアントを再起動して新しいセッションで確認する。
+出力形式: 設定後は /status 相当のコマンドか会話冒頭の応答で、現在のコンテキストウィンドウが意図した値になっているかを確認する一言を返させる。ドキュメントの読者（新規参加者・運用担当者など）を先に伝えてから生成させると、無駄な詳細が減ります。
+```
+
+### 8. テスト網羅性強化用（窓350,000 / 圧縮310,000）
+
+```text
+前提: 既存のテストカバレッジを確認しながら不足分を洗い出し追加したいとき。
+指示: ~/.codex/config.toml（またはプロジェクト直下の設定）に model_context_window = 350000 と model_auto_compact_token_limit = 310000 を設定し、Codexクライアントを再起動して新しいセッションで確認する。
+出力形式: 設定後は /status 相当のコマンドか会話冒頭の応答で、現在のコンテキストウィンドウが意図した値になっているかを確認する一言を返させる。既存テストの命名規則・アサーション書式を先に読ませ、新規テストがその作法から外れないようにしてください。
+```
+
+### 9. マイグレーション作業用（窓600,000 / 圧縮540,000）
+
+```text
+前提: 旧ライブラリから新ライブラリへの移行など、影響範囲が広い作業をするとき。
+指示: ~/.codex/config.toml（またはプロジェクト直下の設定）に model_context_window = 600000 と model_auto_compact_token_limit = 540000 を設定し、Codexクライアントを再起動して新しいセッションで確認する。
+出力形式: 設定後は /status 相当のコマンドか会話冒頭の応答で、現在のコンテキストウィンドウが意図した値になっているかを確認する一言を返させる。移行済み・未移行のファイル一覧を都度更新させ、圧縮が起きても進捗を見失わないようにしてください。
+```
+
+### 10. APIキー利用・実験用（上限）（窓1,000,000 / 圧縮900,000）
+
+```text
+前提: API課金で使っており、性能を最優先で1M窓を試したいとき。
+指示: ~/.codex/config.toml（またはプロジェクト直下の設定）に model_context_window = 1000000 と model_auto_compact_token_limit = 900000 を設定し、Codexクライアントを再起動して新しいセッションで確認する。
+出力形式: 設定後は /status 相当のコマンドか会話冒頭の応答で、現在のコンテキストウィンドウが意図した値になっているかを確認する一言を返させる。コストが跳ねやすい設定です。1セッションのトークン消費量をこまめに確認する運用と併用してください。
+```
+
+### 11. ペアプロ・対話重視用（窓320,000 / 圧縮280,000）
+
+```text
+前提: AIと会話しながら設計方針を練る、対話量の多い作業のとき。
+指示: ~/.codex/config.toml（またはプロジェクト直下の設定）に model_context_window = 320000 と model_auto_compact_token_limit = 280000 を設定し、Codexクライアントを再起動して新しいセッションで確認する。
+出力形式: 設定後は /status 相当のコマンドか会話冒頭の応答で、現在のコンテキストウィンドウが意図した値になっているかを確認する一言を返させる。結論が出た時点で、方針を短い箇条書きに要約させてからAGENTS.mdや設計メモに転記してください。
+```
+
+### 12. CI/CD設定調整用（窓220,000 / 圧縮190,000）
+
+```text
+前提: ビルド・デプロイパイプラインの設定ファイルを調整するとき。
+指示: ~/.codex/config.toml（またはプロジェクト直下の設定）に model_context_window = 220000 と model_auto_compact_token_limit = 190000 を設定し、Codexクライアントを再起動して新しいセッションで確認する。
+出力形式: 設定後は /status 相当のコマンドか会話冒頭の応答で、現在のコンテキストウィンドウが意図した値になっているかを確認する一言を返させる。設定変更の影響範囲（どのジョブに波及するか）を先に確認させてから変更させてください。
+```
+
+### 13. セキュリティレビュー用（窓380,000 / 圧縮330,000）
+
+```text
+前提: 認証・権限まわりのコードを重点的にレビューしたいとき。
+指示: ~/.codex/config.toml（またはプロジェクト直下の設定）に model_context_window = 380000 と model_auto_compact_token_limit = 330000 を設定し、Codexクライアントを再起動して新しいセッションで確認する。
+出力形式: 設定後は /status 相当のコマンドか会話冒頭の応答で、現在のコンテキストウィンドウが意図した値になっているかを確認する一言を返させる。OWASP Top10等のチェック観点を先に与え、指摘ごとに深刻度を付けさせてください。
+```
+
+### 14. パフォーマンス調査用（窓420,000 / 圧縮370,000）
+
+```text
+前提: 処理速度のボトルネックをプロファイリング結果と照らし合わせて調査したいとき。
+指示: ~/.codex/config.toml（またはプロジェクト直下の設定）に model_context_window = 420000 と model_auto_compact_token_limit = 370000 を設定し、Codexクライアントを再起動して新しいセッションで確認する。
+出力形式: 設定後は /status 相当のコマンドか会話冒頭の応答で、現在のコンテキストウィンドウが意図した値になっているかを確認する一言を返させる。計測データの単位・条件を最初に明示し、AIが憶測で数値を語らないようにしてください。
+```
+
+### 15. 複数リポジトリ横断調査用（窓800,000 / 圧縮720,000）
+
+```text
+前提: サービス間の連携仕様を、複数リポジトリを横断して確認したいとき。
+指示: ~/.codex/config.toml（またはプロジェクト直下の設定）に model_context_window = 800000 と model_auto_compact_token_limit = 720000 を設定し、Codexクライアントを再起動して新しいセッションで確認する。
+出力形式: 設定後は /status 相当のコマンドか会話冒頭の応答で、現在のコンテキストウィンドウが意図した値になっているかを確認する一言を返させる。各リポジトリの役割を最初にAIへ簡潔に伝え、無関係なリポジトリの詳細まで読み込ませないでください。
+```
+
+### 16. 新人オンボーディング資料作成用（窓260,000 / 圧縮230,000）
+
+```text
+前提: 新しく参加するメンバー向けに、コードベースの案内資料を作りたいとき。
+指示: ~/.codex/config.toml（またはプロジェクト直下の設定）に model_context_window = 260000 と model_auto_compact_token_limit = 230000 を設定し、Codexクライアントを再起動して新しいセッションで確認する。
+出力形式: 設定後は /status 相当のコマンドか会話冒頭の応答で、現在のコンテキストウィンドウが意図した値になっているかを確認する一言を返させる。読者が初心者である前提を伝え、専門用語には一言注釈を付けさせてください。
+```
+
+### 17. 設計ドキュメントレビュー用（窓240,000 / 圧縮210,000）
+
+```text
+前提: 実装前の設計書やRFCを、実装可能性の観点でレビューしたいとき。
+指示: ~/.codex/config.toml（またはプロジェクト直下の設定）に model_context_window = 240000 と model_auto_compact_token_limit = 210000 を設定し、Codexクライアントを再起動して新しいセッションで確認する。
+出力形式: 設定後は /status 相当のコマンドか会話冒頭の応答で、現在のコンテキストウィンドウが意図した値になっているかを確認する一言を返させる。既存コードとの整合性を確認させたい場合は、関連ファイルのパスを先に指定してください。
+```
+
+### 18. 障害対応・緊急調査用（窓450,000 / 圧縮400,000）
+
+```text
+前提: 本番障害の原因調査を急いで進めたいとき。
+指示: ~/.codex/config.toml（またはプロジェクト直下の設定）に model_context_window = 450000 と model_auto_compact_token_limit = 400000 を設定し、Codexクライアントを再起動して新しいセッションで確認する。
+出力形式: 設定後は /status 相当のコマンドか会話冒頭の応答で、現在のコンテキストウィンドウが意図した値になっているかを確認する一言を返させる。圧縮によって時系列の把握がずれないよう、発生時刻とログのタイムスタンプを都度明記させてください。
+```
+
+### 19. 学習・素振り用（最小構成）（窓150,000 / 圧縮130,000）
+
+```text
+前提: 新しい言語やフレームワークを試しながら学びたいとき。
+指示: ~/.codex/config.toml（またはプロジェクト直下の設定）に model_context_window = 150000 と model_auto_compact_token_limit = 130000 を設定し、Codexクライアントを再起動して新しいセッションで確認する。
+出力形式: 設定後は /status 相当のコマンドか会話冒頭の応答で、現在のコンテキストウィンドウが意図した値になっているかを確認する一言を返させる。最小構成のため、長いセッションだと圧縮が頻発します。区切りの良いところで新セッションに切り替えてください。
+```
+
+### 20. 複数エージェント連携の親セッション用（窓900,000 / 圧縮800,000）
+
+```text
+前提: 複数のサブタスクを1つの親セッションで統括し、状況を俯瞰したいとき。
+指示: ~/.codex/config.toml（またはプロジェクト直下の設定）に model_context_window = 900000 と model_auto_compact_token_limit = 800000 を設定し、Codexクライアントを再起動して新しいセッションで確認する。
+出力形式: 設定後は /status 相当のコマンドか会話冒頭の応答で、現在のコンテキストウィンドウが意図した値になっているかを確認する一言を返させる。サブタスクごとの結果は要約してから親セッションに戻し、詳細ログはそのまま持ち込まないでください。
+```
+
+
+## AGENTS.md定型文
+
+### 21. AGENTS.md雛形：Next.js（ネクストジェイエス）フロントエンド
+
+```text
+前提: Next.js（ネクストジェイエス）フロントエンドのプロジェクトで、Codexに毎回同じ説明を繰り返している状態を解消したい。
+指示: プロジェクト直下（または ~/.codex/）に AGENTS.md を作成し、App Router構成、コンポーネント命名規則、状態管理の方針と、TypeScript strictモードでの型付け方針を箇条書きで書き出す。長文の説明にはせず、Codexが読んで即座に行動へ移せる具体的な指示の形で書く。
+出力形式: 「### ビルド」「### 規約」のような短い見出しごとに箇条書きを並べ、1項目は1〜2行に収める。書いた内容は次回セッションの冒頭で一度読み上げさせて確認する。
+```
+
+### 22. AGENTS.md雛形：Python バックエンドAPI
+
+```text
+前提: Python バックエンドAPIのプロジェクトで、Codexに毎回同じ説明を繰り返している状態を解消したい。
+指示: プロジェクト直下（または ~/.codex/）に AGENTS.md を作成し、フレームワークとディレクトリ構成、DBマイグレーションの手順と、型ヒントとテストフレームワークの指定を箇条書きで書き出す。長文の説明にはせず、Codexが読んで即座に行動へ移せる具体的な指示の形で書く。
+出力形式: 「### ビルド」「### 規約」のような短い見出しごとに箇条書きを並べ、1項目は1〜2行に収める。書いた内容は次回セッションの冒頭で一度読み上げさせて確認する。
+```
+
+### 23. AGENTS.md雛形：モバイルアプリ（iOS/Android共通）
+
+```text
+前提: モバイルアプリ（iOS/Android共通）のプロジェクトで、Codexに毎回同じ説明を繰り返している状態を解消したい。
+指示: プロジェクト直下（または ~/.codex/）に AGENTS.md を作成し、画面遷移の命名規則、多言語対応の方針と、ビルド・実機確認の手順を箇条書きで書き出す。長文の説明にはせず、Codexが読んで即座に行動へ移せる具体的な指示の形で書く。
+出力形式: 「### ビルド」「### 規約」のような短い見出しごとに箇条書きを並べ、1項目は1〜2行に収める。書いた内容は次回セッションの冒頭で一度読み上げさせて確認する。
+```
+
+### 24. AGENTS.md雛形：データ基盤・ETLパイプライン
+
+```text
+前提: データ基盤・ETLパイプラインのプロジェクトで、Codexに毎回同じ説明を繰り返している状態を解消したい。
+指示: プロジェクト直下（または ~/.codex/）に AGENTS.md を作成し、データソースと変換ルールの一覧と、スキーマ変更時の周知手順を箇条書きで書き出す。長文の説明にはせず、Codexが読んで即座に行動へ移せる具体的な指示の形で書く。
+出力形式: 「### ビルド」「### 規約」のような短い見出しごとに箇条書きを並べ、1項目は1〜2行に収める。書いた内容は次回セッションの冒頭で一度読み上げさせて確認する。
+```
+
+### 25. AGENTS.md雛形：デザインシステム・UIライブラリ
+
+```text
+前提: デザインシステム・UIライブラリのプロジェクトで、Codexに毎回同じ説明を繰り返している状態を解消したい。
+指示: プロジェクト直下（または ~/.codex/）に AGENTS.md を作成し、コンポーネントの命名規則とStorybook運用と、アクセシビリティ基準を箇条書きで書き出す。長文の説明にはせず、Codexが読んで即座に行動へ移せる具体的な指示の形で書く。
+出力形式: 「### ビルド」「### 規約」のような短い見出しごとに箇条書きを並べ、1項目は1〜2行に収める。書いた内容は次回セッションの冒頭で一度読み上げさせて確認する。
+```
+
+### 26. AGENTS.md雛形：社内管理画面・業務システム
+
+```text
+前提: 社内管理画面・業務システムのプロジェクトで、Codexに毎回同じ説明を繰り返している状態を解消したい。
+指示: プロジェクト直下（または ~/.codex/）に AGENTS.md を作成し、権限ロールの一覧と画面ごとの権限と、既存の業務用語集を箇条書きで書き出す。長文の説明にはせず、Codexが読んで即座に行動へ移せる具体的な指示の形で書く。
+出力形式: 「### ビルド」「### 規約」のような短い見出しごとに箇条書きを並べ、1項目は1〜2行に収める。書いた内容は次回セッションの冒頭で一度読み上げさせて確認する。
+```
+
+### 27. AGENTS.md雛形：OSS（オープンソース）ライブラリ
+
+```text
+前提: OSS（オープンソース）ライブラリのプロジェクトで、Codexに毎回同じ説明を繰り返している状態を解消したい。
+指示: プロジェクト直下（または ~/.codex/）に AGENTS.md を作成し、公開APIの後方互換ポリシーと、コントリビューションガイドラインとの整合を箇条書きで書き出す。長文の説明にはせず、Codexが読んで即座に行動へ移せる具体的な指示の形で書く。
+出力形式: 「### ビルド」「### 規約」のような短い見出しごとに箇条書きを並べ、1項目は1〜2行に収める。書いた内容は次回セッションの冒頭で一度読み上げさせて確認する。
+```
+
+### 28. AGENTS.md雛形：マイクロサービス群の1サービス
+
+```text
+前提: マイクロサービス群の1サービスのプロジェクトで、Codexに毎回同じ説明を繰り返している状態を解消したい。
+指示: プロジェクト直下（または ~/.codex/）に AGENTS.md を作成し、他サービスとの連携インターフェースと、ローカル起動に必要な依存サービスを箇条書きで書き出す。長文の説明にはせず、Codexが読んで即座に行動へ移せる具体的な指示の形で書く。
+出力形式: 「### ビルド」「### 規約」のような短い見出しごとに箇条書きを並べ、1項目は1〜2行に収める。書いた内容は次回セッションの冒頭で一度読み上げさせて確認する。
+```
+
+### 29. AGENTS.md雛形：インフラ・IaC（Terraform等）構成
+
+```text
+前提: インフラ・IaC（Terraform等）構成のプロジェクトで、Codexに毎回同じ説明を繰り返している状態を解消したい。
+指示: プロジェクト直下（または ~/.codex/）に AGENTS.md を作成し、環境ごとの命名規則とタグ付けルールと、変更適用前の確認手順を箇条書きで書き出す。長文の説明にはせず、Codexが読んで即座に行動へ移せる具体的な指示の形で書く。
+出力形式: 「### ビルド」「### 規約」のような短い見出しごとに箇条書きを並べ、1項目は1〜2行に収める。書いた内容は次回セッションの冒頭で一度読み上げさせて確認する。
+```
+
+### 30. AGENTS.md雛形：機械学習パイプライン
+
+```text
+前提: 機械学習パイプラインのプロジェクトで、Codexに毎回同じ説明を繰り返している状態を解消したい。
+指示: プロジェクト直下（または ~/.codex/）に AGENTS.md を作成し、学習データのバージョン管理方針と、実験結果の記録先を箇条書きで書き出す。長文の説明にはせず、Codexが読んで即座に行動へ移せる具体的な指示の形で書く。
+出力形式: 「### ビルド」「### 規約」のような短い見出しごとに箇条書きを並べ、1項目は1〜2行に収める。書いた内容は次回セッションの冒頭で一度読み上げさせて確認する。
+```
+
+### 31. AGENTS.md雛形：ゲームクライアント開発
+
+```text
+前提: ゲームクライアント開発のプロジェクトで、Codexに毎回同じ説明を繰り返している状態を解消したい。
+指示: プロジェクト直下（または ~/.codex/）に AGENTS.md を作成し、アセット命名規則とシーン構成と、パフォーマンス目標値を箇条書きで書き出す。長文の説明にはせず、Codexが読んで即座に行動へ移せる具体的な指示の形で書く。
+出力形式: 「### ビルド」「### 規約」のような短い見出しごとに箇条書きを並べ、1項目は1〜2行に収める。書いた内容は次回セッションの冒頭で一度読み上げさせて確認する。
+```
+
+### 32. AGENTS.md雛形：ブラウザ拡張機能開発
+
+```text
+前提: ブラウザ拡張機能開発のプロジェクトで、Codexに毎回同じ説明を繰り返している状態を解消したい。
+指示: プロジェクト直下（または ~/.codex/）に AGENTS.md を作成し、権限（permissions）の最小化方針と、ストア審査で注意すべき項目を箇条書きで書き出す。長文の説明にはせず、Codexが読んで即座に行動へ移せる具体的な指示の形で書く。
+出力形式: 「### ビルド」「### 規約」のような短い見出しごとに箇条書きを並べ、1項目は1〜2行に収める。書いた内容は次回セッションの冒頭で一度読み上げさせて確認する。
+```
+
+### 33. AGENTS.md雛形：CLIツール開発
+
+```text
+前提: CLIツール開発のプロジェクトで、Codexに毎回同じ説明を繰り返している状態を解消したい。
+指示: プロジェクト直下（または ~/.codex/）に AGENTS.md を作成し、サブコマンドの命名規則とヘルプ文言の書式と、後方互換を壊さないための確認手順を箇条書きで書き出す。長文の説明にはせず、Codexが読んで即座に行動へ移せる具体的な指示の形で書く。
+出力形式: 「### ビルド」「### 規約」のような短い見出しごとに箇条書きを並べ、1項目は1〜2行に収める。書いた内容は次回セッションの冒頭で一度読み上げさせて確認する。
+```
+
+### 34. AGENTS.md雛形：社内向けSlack/Chatボット
+
+```text
+前提: 社内向けSlack/Chatボットのプロジェクトで、Codexに毎回同じ説明を繰り返している状態を解消したい。
+指示: プロジェクト直下（または ~/.codex/）に AGENTS.md を作成し、応答トーンのガイドラインと、機密情報を出力しないための制約を箇条書きで書き出す。長文の説明にはせず、Codexが読んで即座に行動へ移せる具体的な指示の形で書く。
+出力形式: 「### ビルド」「### 規約」のような短い見出しごとに箇条書きを並べ、1項目は1〜2行に収める。書いた内容は次回セッションの冒頭で一度読み上げさせて確認する。
+```
+
+### 35. AGENTS.md雛形：ドキュメントサイト（技術ブログ等）
+
+```text
+前提: ドキュメントサイト（技術ブログ等）のプロジェクトで、Codexに毎回同じ説明を繰り返している状態を解消したい。
+指示: プロジェクト直下（または ~/.codex/）に AGENTS.md を作成し、記事の文体・見出し規則と、画像・図表の扱い方を箇条書きで書き出す。長文の説明にはせず、Codexが読んで即座に行動へ移せる具体的な指示の形で書く。
+出力形式: 「### ビルド」「### 規約」のような短い見出しごとに箇条書きを並べ、1項目は1〜2行に収める。書いた内容は次回セッションの冒頭で一度読み上げさせて確認する。
+```
+
+### 36. AGENTS.md雛形：決済・課金まわりの機能
+
+```text
+前提: 決済・課金まわりの機能のプロジェクトで、Codexに毎回同じ説明を繰り返している状態を解消したい。
+指示: プロジェクト直下（または ~/.codex/）に AGENTS.md を作成し、金額計算で守るべき丸め規則と、テスト時に使う疑似カード番号の指定を箇条書きで書き出す。長文の説明にはせず、Codexが読んで即座に行動へ移せる具体的な指示の形で書く。
+出力形式: 「### ビルド」「### 規約」のような短い見出しごとに箇条書きを並べ、1項目は1〜2行に収める。書いた内容は次回セッションの冒頭で一度読み上げさせて確認する。
+```
+
+### 37. AGENTS.md雛形：認証・権限管理モジュール
+
+```text
+前提: 認証・権限管理モジュールのプロジェクトで、Codexに毎回同じ説明を繰り返している状態を解消したい。
+指示: プロジェクト直下（または ~/.codex/）に AGENTS.md を作成し、セッション管理の方針と、パスワード・トークンの取り扱い上の禁止事項を箇条書きで書き出す。長文の説明にはせず、Codexが読んで即座に行動へ移せる具体的な指示の形で書く。
+出力形式: 「### ビルド」「### 規約」のような短い見出しごとに箇条書きを並べ、1項目は1〜2行に収める。書いた内容は次回セッションの冒頭で一度読み上げさせて確認する。
+```
+
+### 38. AGENTS.md雛形：バッチ処理・定期実行ジョブ
+
+```text
+前提: バッチ処理・定期実行ジョブのプロジェクトで、Codexに毎回同じ説明を繰り返している状態を解消したい。
+指示: プロジェクト直下（または ~/.codex/）に AGENTS.md を作成し、冪等性（同じ処理を繰り返しても安全）の確保方針と、失敗時のリトライ・通知ルールを箇条書きで書き出す。長文の説明にはせず、Codexが読んで即座に行動へ移せる具体的な指示の形で書く。
+出力形式: 「### ビルド」「### 規約」のような短い見出しごとに箇条書きを並べ、1項目は1〜2行に収める。書いた内容は次回セッションの冒頭で一度読み上げさせて確認する。
+```
+
+### 39. AGENTS.md雛形：レガシーコードの保守案件
+
+```text
+前提: レガシーコードの保守案件のプロジェクトで、Codexに毎回同じ説明を繰り返している状態を解消したい。
+指示: プロジェクト直下（または ~/.codex/）に AGENTS.md を作成し、触ってはいけない箇所の一覧と、変更前後で必ず確認するテストの範囲を箇条書きで書き出す。長文の説明にはせず、Codexが読んで即座に行動へ移せる具体的な指示の形で書く。
+出力形式: 「### ビルド」「### 規約」のような短い見出しごとに箇条書きを並べ、1項目は1〜2行に収める。書いた内容は次回セッションの冒頭で一度読み上げさせて確認する。
+```
+
+### 40. AGENTS.md雛形：複数チームで共有するモノレポ全体
+
+```text
+前提: 複数チームで共有するモノレポ全体のプロジェクトで、Codexに毎回同じ説明を繰り返している状態を解消したい。
+指示: プロジェクト直下（または ~/.codex/）に AGENTS.md を作成し、パッケージ間の依存を増やす際の承認フローと、各パッケージの担当チーム一覧を箇条書きで書き出す。長文の説明にはせず、Codexが読んで即座に行動へ移せる具体的な指示の形で書く。
+出力形式: 「### ビルド」「### 規約」のような短い見出しごとに箇条書きを並べ、1項目は1〜2行に収める。書いた内容は次回セッションの冒頭で一度読み上げさせて確認する。
+```
+
+
+## セッション引き継ぎ・圧縮前メモ化プロンプト
+
+### 41. 引き継ぎメモ化：長時間のリファクタ作業を翌日に持ち越すとき
+
+```text
+前提: 長時間のリファクタ作業を翌日に持ち越すときに、コンテキストの圧縮（要約）で重要な情報が失われるのを防ぎたい。
+指示: 作業を区切る直前に、Codexへ「ここまでの変更済みファイルと未着手ファイルの一覧、途中で決めた命名方針を、次のセッションでそのまま読み込める形で箇条書きに要約して」と依頼する。
+出力形式: 見出し付きの短い箇条書き（5〜10行程度）で出力させ、AGENTS.mdや作業メモに保存してから新しいセッションを開始する。
+```
+
+### 42. 引き継ぎメモ化：圧縮（自動要約）が近そうだと感じたとき
+
+```text
+前提: 圧縮（自動要約）が近そうだと感じたときに、コンテキストの圧縮（要約）で重要な情報が失われるのを防ぎたい。
+指示: 作業を区切る直前に、Codexへ「ここまでの直近で却下した実装案とその理由、現在採用している方針を、次のセッションでそのまま読み込める形で箇条書きに要約して」と依頼する。
+出力形式: 見出し付きの短い箇条書き（5〜10行程度）で出力させ、AGENTS.mdや作業メモに保存してから新しいセッションを開始する。
+```
+
+### 43. 引き継ぎメモ化：別の担当者に作業を引き継ぐとき
+
+```text
+前提: 別の担当者に作業を引き継ぐときに、コンテキストの圧縮（要約）で重要な情報が失われるのを防ぎたい。
+指示: 作業を区切る直前に、Codexへ「ここまでのここまでの意思決定とその根拠、次にやるべきタスクを、次のセッションでそのまま読み込める形で箇条書きに要約して」と依頼する。
+出力形式: 見出し付きの短い箇条書き（5〜10行程度）で出力させ、AGENTS.mdや作業メモに保存してから新しいセッションを開始する。
+```
+
+### 44. 引き継ぎメモ化：バグ調査を一時中断するとき
+
+```text
+前提: バグ調査を一時中断するときに、コンテキストの圧縮（要約）で重要な情報が失われるのを防ぎたい。
+指示: 作業を区切る直前に、Codexへ「ここまでのこれまでに除外した原因候補と、まだ試していない仮説を、次のセッションでそのまま読み込める形で箇条書きに要約して」と依頼する。
+出力形式: 見出し付きの短い箇条書き（5〜10行程度）で出力させ、AGENTS.mdや作業メモに保存してから新しいセッションを開始する。
+```
+
+### 45. 引き継ぎメモ化：設計方針の議論が一区切りついたとき
+
+```text
+前提: 設計方針の議論が一区切りついたときに、コンテキストの圧縮（要約）で重要な情報が失われるのを防ぎたい。
+指示: 作業を区切る直前に、Codexへ「ここまでの確定した設計方針と、保留にした論点を、次のセッションでそのまま読み込める形で箇条書きに要約して」と依頼する。
+出力形式: 見出し付きの短い箇条書き（5〜10行程度）で出力させ、AGENTS.mdや作業メモに保存してから新しいセッションを開始する。
+```
+
+### 46. 引き継ぎメモ化：大きな窓（1M等）のセッションを終えるとき
+
+```text
+前提: 大きな窓（1M等）のセッションを終えるときに、コンテキストの圧縮（要約）で重要な情報が失われるのを防ぎたい。
+指示: 作業を区切る直前に、Codexへ「ここまでのセッション全体の要点を、次回に読み込ませる前提でコンパクトにまとめるを、次のセッションでそのまま読み込める形で箇条書きに要約して」と依頼する。
+出力形式: 見出し付きの短い箇条書き（5〜10行程度）で出力させ、AGENTS.mdや作業メモに保存してから新しいセッションを開始する。
+```
+
+### 47. 引き継ぎメモ化：複数人でレビューを回すとき
+
+```text
+前提: 複数人でレビューを回すときに、コンテキストの圧縮（要約）で重要な情報が失われるのを防ぎたい。
+指示: 作業を区切る直前に、Codexへ「ここまでの指摘済みの項目と、まだレビューが済んでいない範囲を、次のセッションでそのまま読み込める形で箇条書きに要約して」と依頼する。
+出力形式: 見出し付きの短い箇条書き（5〜10行程度）で出力させ、AGENTS.mdや作業メモに保存してから新しいセッションを開始する。
+```
+
+### 48. 引き継ぎメモ化：テスト作成が長引いているとき
+
+```text
+前提: テスト作成が長引いているときに、コンテキストの圧縮（要約）で重要な情報が失われるのを防ぎたい。
+指示: 作業を区切る直前に、Codexへ「ここまでの作成済みのテストケース一覧と、カバーできていない境界値を、次のセッションでそのまま読み込める形で箇条書きに要約して」と依頼する。
+出力形式: 見出し付きの短い箇条書き（5〜10行程度）で出力させ、AGENTS.mdや作業メモに保存してから新しいセッションを開始する。
+```
+
+### 49. 引き継ぎメモ化：マイグレーション作業の途中経過を残すとき
+
+```text
+前提: マイグレーション作業の途中経過を残すときに、コンテキストの圧縮（要約）で重要な情報が失われるのを防ぎたい。
+指示: 作業を区切る直前に、Codexへ「ここまでの移行が完了したファイルと、残りの作業量の見積もりを、次のセッションでそのまま読み込める形で箇条書きに要約して」と依頼する。
+出力形式: 見出し付きの短い箇条書き（5〜10行程度）で出力させ、AGENTS.mdや作業メモに保存してから新しいセッションを開始する。
+```
+
+### 50. 引き継ぎメモ化：障害対応の引き継ぎをするとき
+
+```text
+前提: 障害対応の引き継ぎをするときに、コンテキストの圧縮（要約）で重要な情報が失われるのを防ぎたい。
+指示: 作業を区切る直前に、Codexへ「ここまでの発生時刻・影響範囲・現在の暫定対応状況を、次のセッションでそのまま読み込める形で箇条書きに要約して」と依頼する。
+出力形式: 見出し付きの短い箇条書き（5〜10行程度）で出力させ、AGENTS.mdや作業メモに保存してから新しいセッションを開始する。
+```
+
+### 51. 引き継ぎメモ化：新しいセッションで前回の続きから始めるとき
+
+```text
+前提: 新しいセッションで前回の続きから始めるときに、コンテキストの圧縮（要約）で重要な情報が失われるのを防ぎたい。
+指示: 作業を区切る直前に、Codexへ「ここまでの前回セッションの要約を貼り付けてから作業を再開するを、次のセッションでそのまま読み込める形で箇条書きに要約して」と依頼する。
+出力形式: 見出し付きの短い箇条書き（5〜10行程度）で出力させ、AGENTS.mdや作業メモに保存してから新しいセッションを開始する。
+```
+
+### 52. 引き継ぎメモ化：週をまたいで同じ機能開発を続けるとき
+
+```text
+前提: 週をまたいで同じ機能開発を続けるときに、コンテキストの圧縮（要約）で重要な情報が失われるのを防ぎたい。
+指示: 作業を区切る直前に、Codexへ「ここまでの先週時点の完成度と、今週の目標を、次のセッションでそのまま読み込める形で箇条書きに要約して」と依頼する。
+出力形式: 見出し付きの短い箇条書き（5〜10行程度）で出力させ、AGENTS.mdや作業メモに保存してから新しいセッションを開始する。
+```
+
+### 53. 引き継ぎメモ化：複数のブランチを行き来しているとき
+
+```text
+前提: 複数のブランチを行き来しているときに、コンテキストの圧縮（要約）で重要な情報が失われるのを防ぎたい。
+指示: 作業を区切る直前に、Codexへ「ここまでのブランチごとの目的と現在の状態を、次のセッションでそのまま読み込める形で箇条書きに要約して」と依頼する。
+出力形式: 見出し付きの短い箇条書き（5〜10行程度）で出力させ、AGENTS.mdや作業メモに保存してから新しいセッションを開始する。
+```
+
+### 54. 引き継ぎメモ化：外部レビュー（コードレビュー）の指摘対応中
+
+```text
+前提: 外部レビュー（コードレビュー）の指摘対応中に、コンテキストの圧縮（要約）で重要な情報が失われるのを防ぎたい。
+指示: 作業を区切る直前に、Codexへ「ここまでの対応済み・未対応の指摘を分けて記録するを、次のセッションでそのまま読み込める形で箇条書きに要約して」と依頼する。
+出力形式: 見出し付きの短い箇条書き（5〜10行程度）で出力させ、AGENTS.mdや作業メモに保存してから新しいセッションを開始する。
+```
+
+### 55. 引き継ぎメモ化：APIの仕様変更を追いかけているとき
+
+```text
+前提: APIの仕様変更を追いかけているときに、コンテキストの圧縮（要約）で重要な情報が失われるのを防ぎたい。
+指示: 作業を区切る直前に、Codexへ「ここまでの変更前後の差分と、影響を受けた呼び出し箇所を、次のセッションでそのまま読み込める形で箇条書きに要約して」と依頼する。
+出力形式: 見出し付きの短い箇条書き（5〜10行程度）で出力させ、AGENTS.mdや作業メモに保存してから新しいセッションを開始する。
+```
+
+### 56. 引き継ぎメモ化：パフォーマンス改善の試行錯誤を記録するとき
+
+```text
+前提: パフォーマンス改善の試行錯誤を記録するときに、コンテキストの圧縮（要約）で重要な情報が失われるのを防ぎたい。
+指示: 作業を区切る直前に、Codexへ「ここまでの試した施策と、それぞれの計測結果を、次のセッションでそのまま読み込める形で箇条書きに要約して」と依頼する。
+出力形式: 見出し付きの短い箇条書き（5〜10行程度）で出力させ、AGENTS.mdや作業メモに保存してから新しいセッションを開始する。
+```
+
+### 57. 引き継ぎメモ化：ドキュメント執筆を分割して進めるとき
+
+```text
+前提: ドキュメント執筆を分割して進めるときに、コンテキストの圧縮（要約）で重要な情報が失われるのを防ぎたい。
+指示: 作業を区切る直前に、Codexへ「ここまでの書き終えた章と、次に書く章の構成を、次のセッションでそのまま読み込める形で箇条書きに要約して」と依頼する。
+出力形式: 見出し付きの短い箇条書き（5〜10行程度）で出力させ、AGENTS.mdや作業メモに保存してから新しいセッションを開始する。
+```
+
+### 58. 引き継ぎメモ化：複数の環境（開発・検証・本番）で作業するとき
+
+```text
+前提: 複数の環境（開発・検証・本番）で作業するときに、コンテキストの圧縮（要約）で重要な情報が失われるのを防ぎたい。
+指示: 作業を区切る直前に、Codexへ「ここまでの環境ごとの差分と、反映済みの環境を、次のセッションでそのまま読み込める形で箇条書きに要約して」と依頼する。
+出力形式: 見出し付きの短い箇条書き（5〜10行程度）で出力させ、AGENTS.mdや作業メモに保存してから新しいセッションを開始する。
+```
+
+### 59. 引き継ぎメモ化：チームの朝会前に状況を整理するとき
+
+```text
+前提: チームの朝会前に状況を整理するときに、コンテキストの圧縮（要約）で重要な情報が失われるのを防ぎたい。
+指示: 作業を区切る直前に、Codexへ「ここまでの昨日やったこと・今日やること・詰まっている点を、次のセッションでそのまま読み込める形で箇条書きに要約して」と依頼する。
+出力形式: 見出し付きの短い箇条書き（5〜10行程度）で出力させ、AGENTS.mdや作業メモに保存してから新しいセッションを開始する。
+```
+
+### 60. 引き継ぎメモ化：長期プロジェクトのマイルストーン到達時
+
+```text
+前提: 長期プロジェクトのマイルストーン到達時に、コンテキストの圧縮（要約）で重要な情報が失われるのを防ぎたい。
+指示: 作業を区切る直前に、Codexへ「ここまでのここまでの成果物一覧と、次のマイルストーンの定義を、次のセッションでそのまま読み込める形で箇条書きに要約して」と依頼する。
+出力形式: 見出し付きの短い箇条書き（5〜10行程度）で出力させ、AGENTS.mdや作業メモに保存してから新しいセッションを開始する。
+```
+
+
+## コンテキストを圧迫させない指示フレーズ
+
+### 61. 圧迫回避フレーズ：大きなログファイルを読ませたいとき
+
+```text
+前提: 大きなログファイルを読ませたいときに、窓を無駄に消費してしまうのを避けたい。
+指示: Codexへの依頼文に「全文ではなくエラー箇所の前後50行だけを対象にする」という条件を明示的に加えて伝える。
+出力形式: 依頼の冒頭1文でこの条件を宣言してから本題に入り、Codexの応答も同じ粒度（詳細すぎない）に保たれているかを確認する。
+```
+
+### 62. 圧迫回避フレーズ：大量のファイルを一括で調査させたいとき
+
+```text
+前提: 大量のファイルを一括で調査させたいときに、窓を無駄に消費してしまうのを避けたい。
+指示: Codexへの依頼文に「ファイル名と該当箇所の一覧だけをまず出させ、詳細は必要な分だけ深掘りする」という条件を明示的に加えて伝える。
+出力形式: 依頼の冒頭1文でこの条件を宣言してから本題に入り、Codexの応答も同じ粒度（詳細すぎない）に保たれているかを確認する。
+```
+
+### 63. 圧迫回避フレーズ：既に説明済みの前提を繰り返させたくないとき
+
+```text
+前提: 既に説明済みの前提を繰り返させたくないときに、窓を無駄に消費してしまうのを避けたい。
+指示: Codexへの依頼文に「「AGENTS.mdに書いた前提を踏まえて」と一言添える」という条件を明示的に加えて伝える。
+出力形式: 依頼の冒頭1文でこの条件を宣言してから本題に入り、Codexの応答も同じ粒度（詳細すぎない）に保たれているかを確認する。
+```
+
+### 64. 圧迫回避フレーズ：同じ質問を何度もさせたくないとき
+
+```text
+前提: 同じ質問を何度もさせたくないときに、窓を無駄に消費してしまうのを避けたい。
+指示: Codexへの依頼文に「回答をAGENTS.mdやREADMEに転記し、以降はファイルを参照させる」という条件を明示的に加えて伝える。
+出力形式: 依頼の冒頭1文でこの条件を宣言してから本題に入り、Codexの応答も同じ粒度（詳細すぎない）に保たれているかを確認する。
+```
+
+### 65. 圧迫回避フレーズ：長い会話履歴を持つセッションで新しい依頼をするとき
+
+```text
+前提: 長い会話履歴を持つセッションで新しい依頼をするときに、窓を無駄に消費してしまうのを避けたい。
+指示: Codexへの依頼文に「関係のない過去の議論を明示的に「これは無視して」と伝える」という条件を明示的に加えて伝える。
+出力形式: 依頼の冒頭1文でこの条件を宣言してから本題に入り、Codexの応答も同じ粒度（詳細すぎない）に保たれているかを確認する。
+```
+
+### 66. 圧迫回避フレーズ：MCP（複数のツール連携）を多用しているとき
+
+```text
+前提: MCP（複数のツール連携）を多用しているときに、窓を無駄に消費してしまうのを避けたい。
+指示: Codexへの依頼文に「今回のタスクで不要なツール接続は一時的に外しておく」という条件を明示的に加えて伝える。
+出力形式: 依頼の冒頭1文でこの条件を宣言してから本題に入り、Codexの応答も同じ粒度（詳細すぎない）に保たれているかを確認する。
+```
+
+### 67. 圧迫回避フレーズ：巨大な設定ファイルの一部だけを変更したいとき
+
+```text
+前提: 巨大な設定ファイルの一部だけを変更したいときに、窓を無駄に消費してしまうのを避けたい。
+指示: Codexへの依頼文に「変更箇所の周辺のみを抜粋して渡す」という条件を明示的に加えて伝える。
+出力形式: 依頼の冒頭1文でこの条件を宣言してから本題に入り、Codexの応答も同じ粒度（詳細すぎない）に保たれているかを確認する。
+```
+
+### 68. 圧迫回避フレーズ：複数のドキュメントを参照させたいとき
+
+```text
+前提: 複数のドキュメントを参照させたいときに、窓を無駄に消費してしまうのを避けたい。
+指示: Codexへの依頼文に「要点だけを先にまとめさせ、原文全体は必要なときだけ読ませる」という条件を明示的に加えて伝える。
+出力形式: 依頼の冒頭1文でこの条件を宣言してから本題に入り、Codexの応答も同じ粒度（詳細すぎない）に保たれているかを確認する。
+```
+
+### 69. 圧迫回避フレーズ：過去の会話を要約させたいとき
+
+```text
+前提: 過去の会話を要約させたいときに、窓を無駄に消費してしまうのを避けたい。
+指示: Codexへの依頼文に「「直近の結論だけを3行で」と明確に文字数・行数を指定する」という条件を明示的に加えて伝える。
+出力形式: 依頼の冒頭1文でこの条件を宣言してから本題に入り、Codexの応答も同じ粒度（詳細すぎない）に保たれているかを確認する。
+```
+
+### 70. 圧迫回避フレーズ：大量のコード生成を依頼するとき
+
+```text
+前提: 大量のコード生成を依頼するときに、窓を無駄に消費してしまうのを避けたい。
+指示: Codexへの依頼文に「1ファイルずつ生成させ、都度確認してから次に進める」という条件を明示的に加えて伝える。
+出力形式: 依頼の冒頭1文でこの条件を宣言してから本題に入り、Codexの応答も同じ粒度（詳細すぎない）に保たれているかを確認する。
+```
+
+### 71. 圧迫回避フレーズ：スキーマ変更の影響範囲を調べさせるとき
+
+```text
+前提: スキーマ変更の影響範囲を調べさせるときに、窓を無駄に消費してしまうのを避けたい。
+指示: Codexへの依頼文に「調査対象のディレクトリを限定して伝える」という条件を明示的に加えて伝える。
+出力形式: 依頼の冒頭1文でこの条件を宣言してから本題に入り、Codexの応答も同じ粒度（詳細すぎない）に保たれているかを確認する。
+```
+
+### 72. 圧迫回避フレーズ：テスト全件を実行させたログを読ませるとき
+
+```text
+前提: テスト全件を実行させたログを読ませるときに、窓を無駄に消費してしまうのを避けたい。
+指示: Codexへの依頼文に「失敗したテストだけを抽出させてから読み込ませる」という条件を明示的に加えて伝える。
+出力形式: 依頼の冒頭1文でこの条件を宣言してから本題に入り、Codexの応答も同じ粒度（詳細すぎない）に保たれているかを確認する。
+```
+
+### 73. 圧迫回避フレーズ：ツール出力が冗長になりがちなとき
+
+```text
+前提: ツール出力が冗長になりがちなときに、窓を無駄に消費してしまうのを避けたい。
+指示: Codexへの依頼文に「「結論だけ先に、詳細は聞かれたら答えて」と応答形式を指定する」という条件を明示的に加えて伝える。
+出力形式: 依頼の冒頭1文でこの条件を宣言してから本題に入り、Codexの応答も同じ粒度（詳細すぎない）に保たれているかを確認する。
+```
+
+### 74. 圧迫回避フレーズ：複数の提案を比較検討したいとき
+
+```text
+前提: 複数の提案を比較検討したいときに、窓を無駄に消費してしまうのを避けたい。
+指示: Codexへの依頼文に「各案の要点を表形式で簡潔にまとめさせる」という条件を明示的に加えて伝える。
+出力形式: 依頼の冒頭1文でこの条件を宣言してから本題に入り、Codexの応答も同じ粒度（詳細すぎない）に保たれているかを確認する。
+```
+
+### 75. 圧迫回避フレーズ：外部APIのレスポンスを確認したいとき
+
+```text
+前提: 外部APIのレスポンスを確認したいときに、窓を無駄に消費してしまうのを避けたい。
+指示: Codexへの依頼文に「必要なフィールドだけを抽出させ、生のJSON全体は貼らない」という条件を明示的に加えて伝える。
+出力形式: 依頼の冒頭1文でこの条件を宣言してから本題に入り、Codexの応答も同じ粒度（詳細すぎない）に保たれているかを確認する。
+```
+
+### 76. 圧迫回避フレーズ：長いプルリクエストをレビューするとき
+
+```text
+前提: 長いプルリクエストをレビューするときに、窓を無駄に消費してしまうのを避けたい。
+指示: Codexへの依頼文に「差分の要約を先に出させ、詳細は指摘があった箇所だけ深掘りする」という条件を明示的に加えて伝える。
+出力形式: 依頼の冒頭1文でこの条件を宣言してから本題に入り、Codexの応答も同じ粒度（詳細すぎない）に保たれているかを確認する。
+```
+
+### 77. 圧迫回避フレーズ：複数ブランチの差分を比較したいとき
+
+```text
+前提: 複数ブランチの差分を比較したいときに、窓を無駄に消費してしまうのを避けたい。
+指示: Codexへの依頼文に「変更ファイル一覧だけをまず出し、中身は絞って見せる」という条件を明示的に加えて伝える。
+出力形式: 依頼の冒頭1文でこの条件を宣言してから本題に入り、Codexの応答も同じ粒度（詳細すぎない）に保たれているかを確認する。
+```
+
+### 78. 圧迫回避フレーズ：会議の議事録をもとに作業させるとき
+
+```text
+前提: 会議の議事録をもとに作業させるときに、窓を無駄に消費してしまうのを避けたい。
+指示: Codexへの依頼文に「決定事項だけを抜き出させ、雑談部分は要約から外す」という条件を明示的に加えて伝える。
+出力形式: 依頼の冒頭1文でこの条件を宣言してから本題に入り、Codexの応答も同じ粒度（詳細すぎない）に保たれているかを確認する。
+```
+
+### 79. 圧迫回避フレーズ：繰り返し使う定型コマンドがあるとき
+
+```text
+前提: 繰り返し使う定型コマンドがあるときに、窓を無駄に消費してしまうのを避けたい。
+指示: Codexへの依頼文に「AGENTS.mdにコマンド一覧を書いておき、都度説明しない」という条件を明示的に加えて伝える。
+出力形式: 依頼の冒頭1文でこの条件を宣言してから本題に入り、Codexの応答も同じ粒度（詳細すぎない）に保たれているかを確認する。
+```
+
+### 80. 圧迫回避フレーズ：大きなセッションの終盤で新しい調査を始めるとき
+
+```text
+前提: 大きなセッションの終盤で新しい調査を始めるときに、窓を無駄に消費してしまうのを避けたい。
+指示: Codexへの依頼文に「新しい調査は別セッションに切り出すことを検討する」という条件を明示的に加えて伝える。
+出力形式: 依頼の冒頭1文でこの条件を宣言してから本題に入り、Codexの応答も同じ粒度（詳細すぎない）に保たれているかを確認する。
+```
+
+
+## コスト監視・請求防止の指示文
+
+### 81. コスト防止ルール：大きな窓を有効化する前に
+
+```text
+前提: 大きな窓を有効化する前にに、意図しない高額請求を避けたい。
+指示: 現在の設定（model_context_window・model_auto_compact_token_limit）を確認させてから変更することを、作業ルールとしてAGENTS.mdやチームの運用メモに明記しておく。
+出力形式: 「いつ」「誰が」「何を確認するか」が一目で分かる短いチェック項目として書き、定期的に見返せる場所に保存する。
+```
+
+### 82. コスト防止ルール：1セッションのコストが気になるとき
+
+```text
+前提: 1セッションのコストが気になるときに、意図しない高額請求を避けたい。
+指示: 作業の節目でおおよそのトークン消費量を報告させることを、作業ルールとしてAGENTS.mdやチームの運用メモに明記しておく。
+出力形式: 「いつ」「誰が」「何を確認するか」が一目で分かる短いチェック項目として書き、定期的に見返せる場所に保存する。
+```
+
+### 83. コスト防止ルール：272,000トークンを超えそうなとき
+
+```text
+前提: 272,000トークンを超えそうなときに、意図しない高額請求を避けたい。
+指示: その旨を先に警告させ、続行するか判断させる一言を挟むことを、作業ルールとしてAGENTS.mdやチームの運用メモに明記しておく。
+出力形式: 「いつ」「誰が」「何を確認するか」が一目で分かる短いチェック項目として書き、定期的に見返せる場所に保存する。
+```
+
+### 84. コスト防止ルール：API中継業者（再販業者）経由で使っているとき
+
+```text
+前提: API中継業者（再販業者）経由で使っているときに、意図しない高額請求を避けたい。
+指示: 従量課金の切り替え設定が有効かどうかを、契約先の管理画面で確認することを、作業ルールとしてAGENTS.mdやチームの運用メモに明記しておく。
+出力形式: 「いつ」「誰が」「何を確認するか」が一目で分かる短いチェック項目として書き、定期的に見返せる場所に保存する。
+```
+
+### 85. コスト防止ルール：複数プロジェクトを掛け持ちしているとき
+
+```text
+前提: 複数プロジェクトを掛け持ちしているときに、意図しない高額請求を避けたい。
+指示: プロジェクトごとにコンテキスト窓の設定を分けて管理することを、作業ルールとしてAGENTS.mdやチームの運用メモに明記しておく。
+出力形式: 「いつ」「誰が」「何を確認するか」が一目で分かる短いチェック項目として書き、定期的に見返せる場所に保存する。
+```
+
+### 86. コスト防止ルール：1Mトークン設定を試したあと
+
+```text
+前提: 1Mトークン設定を試したあとに、意図しない高額請求を避けたい。
+指示: 作業が終わったら日常用の設定に戻すことを忘れないことを、作業ルールとしてAGENTS.mdやチームの運用メモに明記しておく。
+出力形式: 「いつ」「誰が」「何を確認するか」が一目で分かる短いチェック項目として書き、定期的に見返せる場所に保存する。
+```
+
+### 87. コスト防止ルール：チームで共有のAPIキーを使っているとき
+
+```text
+前提: チームで共有のAPIキーを使っているときに、意図しない高額請求を避けたい。
+指示: 誰がいつ大きな窓を使ったか分かるよう、簡単な使用ログを残すことを、作業ルールとしてAGENTS.mdやチームの運用メモに明記しておく。
+出力形式: 「いつ」「誰が」「何を確認するか」が一目で分かる短いチェック項目として書き、定期的に見返せる場所に保存する。
+```
+
+### 88. コスト防止ルール：月内の利用上限が決まっているとき
+
+```text
+前提: 月内の利用上限が決まっているときに、意図しない高額請求を避けたい。
+指示: 上限に対する現在の消費割合を定期的に確認することを、作業ルールとしてAGENTS.mdやチームの運用メモに明記しておく。
+出力形式: 「いつ」「誰が」「何を確認するか」が一目で分かる短いチェック項目として書き、定期的に見返せる場所に保存する。
+```
+
+### 89. コスト防止ルール：キャッシュが効く読み込みを繰り返すとき
+
+```text
+前提: キャッシュが効く読み込みを繰り返すときに、意図しない高額請求を避けたい。
+指示: 同じ内容を毎回全文で渡さず、キャッシュされる形式で渡すことを、作業ルールとしてAGENTS.mdやチームの運用メモに明記しておく。
+出力形式: 「いつ」「誰が」「何を確認するか」が一目で分かる短いチェック項目として書き、定期的に見返せる場所に保存する。
+```
+
+### 90. コスト防止ルール：出力トークンが多くなりがちな依頼をするとき
+
+```text
+前提: 出力トークンが多くなりがちな依頼をするときに、意図しない高額請求を避けたい。
+指示: 出力の分量（行数・文字数）を先に指定して依頼することを、作業ルールとしてAGENTS.mdやチームの運用メモに明記しておく。
+出力形式: 「いつ」「誰が」「何を確認するか」が一目で分かる短いチェック項目として書き、定期的に見返せる場所に保存する。
+```
+
+### 91. コスト防止ルール：長時間の自動実行タスクを組むとき
+
+```text
+前提: 長時間の自動実行タスクを組むときに、意図しない高額請求を避けたい。
+指示: 1回あたりの想定コストを見積もってから本番投入することを、作業ルールとしてAGENTS.mdやチームの運用メモに明記しておく。
+出力形式: 「いつ」「誰が」「何を確認するか」が一目で分かる短いチェック項目として書き、定期的に見返せる場所に保存する。
+```
+
+### 92. コスト防止ルール：新しいモデル・料金体系に切り替えるとき
+
+```text
+前提: 新しいモデル・料金体系に切り替えるときに、意図しない高額請求を避けたい。
+指示: 旧設定と新設定でのコスト差を小さいタスクで試算してから移行することを、作業ルールとしてAGENTS.mdやチームの運用メモに明記しておく。
+出力形式: 「いつ」「誰が」「何を確認するか」が一目で分かる短いチェック項目として書き、定期的に見返せる場所に保存する。
+```
+
+### 93. コスト防止ルール：複数のAIツールを併用しているとき
+
+```text
+前提: 複数のAIツールを併用しているときに、意図しない高額請求を避けたい。
+指示: どのツールがどのタスクで最もコスト効率が良いかを記録しておくことを、作業ルールとしてAGENTS.mdやチームの運用メモに明記しておく。
+出力形式: 「いつ」「誰が」「何を確認するか」が一目で分かる短いチェック項目として書き、定期的に見返せる場所に保存する。
+```
+
+### 94. コスト防止ルール：大量の自動テストをAIに書かせるとき
+
+```text
+前提: 大量の自動テストをAIに書かせるときに、意図しない高額請求を避けたい。
+指示: 一度に依頼する件数を区切り、コストの跳ね上がりを避けることを、作業ルールとしてAGENTS.mdやチームの運用メモに明記しておく。
+出力形式: 「いつ」「誰が」「何を確認するか」が一目で分かる短いチェック項目として書き、定期的に見返せる場所に保存する。
+```
+
+### 95. コスト防止ルール：請求書に見慣れない金額があったとき
+
+```text
+前提: 請求書に見慣れない金額があったときに、意図しない高額請求を避けたい。
+指示: 直近のセッションでどの設定を使っていたかをまず確認することを、作業ルールとしてAGENTS.mdやチームの運用メモに明記しておく。
+出力形式: 「いつ」「誰が」「何を確認するか」が一目で分かる短いチェック項目として書き、定期的に見返せる場所に保存する。
+```
+
+### 96. コスト防止ルール：新人がCodexを使い始めるとき
+
+```text
+前提: 新人がCodexを使い始めるときに、意図しない高額請求を避けたい。
+指示: デフォルト設定のまま使うよう案内し、大きな窓は必要時のみ許可することを、作業ルールとしてAGENTS.mdやチームの運用メモに明記しておく。
+出力形式: 「いつ」「誰が」「何を確認するか」が一目で分かる短いチェック項目として書き、定期的に見返せる場所に保存する。
+```
+
+### 97. コスト防止ルール：休日や夜間の自動実行があるとき
+
+```text
+前提: 休日や夜間の自動実行があるときに、意図しない高額請求を避けたい。
+指示: 無人実行時は窓を広げすぎない設定に固定しておくことを、作業ルールとしてAGENTS.mdやチームの運用メモに明記しておく。
+出力形式: 「いつ」「誰が」「何を確認するか」が一目で分かる短いチェック項目として書き、定期的に見返せる場所に保存する。
+```
+
+### 98. コスト防止ルール：複数リポジトリを横断する調査を依頼するとき
+
+```text
+前提: 複数リポジトリを横断する調査を依頼するときに、意図しない高額請求を避けたい。
+指示: 対象範囲を絞ってから依頼し、想定外の広範囲読み込みを防ぐことを、作業ルールとしてAGENTS.mdやチームの運用メモに明記しておく。
+出力形式: 「いつ」「誰が」「何を確認するか」が一目で分かる短いチェック項目として書き、定期的に見返せる場所に保存する。
+```
+
+### 99. コスト防止ルール：コスト試算をチームに共有するとき
+
+```text
+前提: コスト試算をチームに共有するときに、意図しない高額請求を避けたい。
+指示: 設定値（窓のサイズ）と概算コストをセットで報告することを、作業ルールとしてAGENTS.mdやチームの運用メモに明記しておく。
+出力形式: 「いつ」「誰が」「何を確認するか」が一目で分かる短いチェック項目として書き、定期的に見返せる場所に保存する。
+```
+
+### 100. コスト防止ルール：四半期ごとにAI利用コストを振り返るとき
+
+```text
+前提: 四半期ごとにAI利用コストを振り返るときに、意図しない高額請求を避けたい。
+指示: どの設定・用途がコストの大半を占めていたかを洗い出すことを、作業ルールとしてAGENTS.mdやチームの運用メモに明記しておく。
+出力形式: 「いつ」「誰が」「何を確認するか」が一目で分かる短いチェック項目として書き、定期的に見返せる場所に保存する。
+```
+
+---
+以上、全100件です。内訳: config.tomlプリセット集20件・AGENTS.md定型文20件・セッション引き継ぎ・圧縮前メモ化プロンプト20件・コンテキストを圧迫させない指示フレーズ20件・コスト監視・請求防止の指示文20件。
+</pre>
+<script>
+function flash(btn, label){
+  const old = btn.textContent, cls = btn.className;
+  btn.textContent = label; btn.classList.add('ok');
+  setTimeout(() => { btn.textContent = old; btn.className = cls; }, 1600);
+}
+function textOf(id){ return document.getElementById(id).textContent; }
+
+async function copyText(btn, id){
+  const t = textOf(id);
+  try {
+    await navigator.clipboard.writeText(t);
+  } catch (e) {
+    const ta = document.createElement('textarea');
+    ta.value = t; ta.style.position='fixed'; ta.style.opacity='0';
+    document.body.appendChild(ta); ta.select();
+    document.execCommand('copy'); ta.remove();
+  }
+  flash(btn, '✓ コピーしました');
+}
+
+function saveText(btn, id, name){
+  const blob = new Blob([textOf(id)], {type:'text/plain;charset=utf-8'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = name;
+  document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+  if (btn) flash(btn, '✓ 保存しました');
+}
+
+document.addEventListener('click', e => {
+  const b = e.target.closest('[data-copy]');
+  if (b) { copyText(b, b.dataset.copy); return; }
+  const d = e.target.closest('[data-save]');
+  if (d) { saveText(d, d.dataset.save, d.dataset.name); }
+});
+</script>
+<div id="promo" class="promo">
+  <div class="promo-card">
+    <button id="promoClose" class="promo-x" aria-label="閉じる">×</button>
+    <img class="promo-icon" id="promoIcon" src="" alt="">
+    <p class="promo-tag" id="promoTag"></p>
+    <p class="promo-title" id="promoTitle"></p>
+    <p class="promo-text" id="promoText"></p>
+    <a id="promoLink" class="promo-cta" href="#" target="_blank" rel="noopener sponsored">
+      <span id="promoCta"></span><span class="promo-arrow">→</span>
+    </a>
+  </div>
+</div>
+<script>window.PROMO_CREATIVES = [{"icon": "data:image/png;base64,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", "tag": "AIエージェント", "title": "Kawaru", "text": "「これ自動化して」と話すだけで、業務フローが自動で完成。", "cta": "無料で試す", "url": "https://lp.kawaru-ai.jp/"}, {"icon": "data:image/png;base64,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", "tag": "伴走型AI顧問サービス", "title": "Kawaru Coach", "text": "AIのプロが専属で伴走。月5万円から、組織のAI活用が進む。", "cta": "詳しく見る", "url": "https://kawarucoach-lp.kawaru-ai.jp/"}, {"icon": "data:image/png;base64,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", "tag": "AI社員構築代行", "title": "エヌイチ", "text": "あなたの代わりに働く「AI社員」を、無料相談から構築。", "cta": "無料相談を見る", "url": "https://n1-inc.co.jp/lp-ai-staff-build-offer-with-image/"}, {"icon": "data:image/png;base64,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", "tag": "法人研修", "title": "Claude Code / Codex研修", "text": "指示するだけで仕事が進む組織へ。現場定着まで伴走します。", "cta": "研修内容を見る", "url": "https://n1-inc.co.jp/lp-claude-codex-training-offer-with-image/"}, {"icon": "data:image/png;base64,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", "tag": "運営会社", "title": "株式会社エヌイチ", "text": "AI・ChatGPTを活用した社内DXと人材育成のプロ集団です。", "cta": "会社サイトを見る", "url": "https://n1-inc.co.jp/"}];</script>
+<script>
+(function(){
+  if (sessionStorage.getItem('promoClosed')) return;
+  var el = document.getElementById('promo');
+  if (!el) return;
+  var creatives = window.PROMO_CREATIVES || [];
+  if (!creatives.length) return;
+  var c = creatives[Math.floor(Math.random() * creatives.length)];
+  document.getElementById('promoIcon').src = c.icon;
+  document.getElementById('promoTag').textContent = c.tag;
+  document.getElementById('promoTitle').textContent = c.title;
+  document.getElementById('promoText').textContent = c.text;
+  document.getElementById('promoCta').textContent = c.cta;
+  var link = document.getElementById('promoLink');
+  link.href = c.url;
+  function close(){
+    el.classList.remove('show');
+    sessionStorage.setItem('promoClosed', '1');
+  }
+  setTimeout(function(){ el.classList.add('show'); }, 1600);
+  document.getElementById('promoClose').addEventListener('click', function(e){ e.preventDefault(); close(); });
+  el.addEventListener('click', function(e){ if (e.target === el) close(); });
+})();
+</script>
+</body></html>
