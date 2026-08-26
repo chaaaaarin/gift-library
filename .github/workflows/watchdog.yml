@@ -1,0 +1,40 @@
+name: 公開状態の見張り
+
+# Macの電源が落ちていた・launchdのジョブが消えた等で自動更新が止まった場合、
+# Mac上のどの仕組みも通知を出せない。これはGitHub側から公開サイトを見張り、
+# 更新が止まっていたらワークフローを失敗させて（＝GitHubからメールが届く）気づけるようにするもの。
+on:
+  schedule:
+    - cron: '0 15 * * *'   # 毎日 00:00 JST
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 公開サイトのハートビートを確認
+        run: |
+          set -euo pipefail
+          URL="https://chaaaaarin.github.io/gift-library/status.json"
+
+          if ! BODY=$(curl -fsS --max-time 30 -H 'Cache-Control: no-cache' "$URL?t=$(date +%s)"); then
+            echo "::error::$URL を取得できませんでした（Pagesの配信が止まっている可能性）"
+            exit 1
+          fi
+          echo "$BODY"
+
+          LAST=$(echo "$BODY" | grep -o '"date":"[0-9-]*"' | head -1 | grep -o '[0-9-]\{10\}' || true)
+          if [ -z "$LAST" ]; then
+            echo "::error::status.json から日付を読み取れませんでした"
+            exit 1
+          fi
+
+          AGE=$(( ( $(date -u +%s) - $(date -u -d "$LAST" +%s) ) / 86400 ))
+          echo "最後に自動更新が通ったのは $LAST（${AGE}日前）"
+
+          # 実行は1日6回あるので、2日以上空くのは明確な異常。
+          if [ "$AGE" -gt 2 ]; then
+            echo "::error::プレゼント図書館の自動更新が ${AGE}日間 通っていません（最終: $LAST）"
+            exit 1
+          fi
+          echo "正常です"
