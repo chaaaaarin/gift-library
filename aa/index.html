@@ -31,8 +31,25 @@
     <aside class="side">
       <div class="grp"><h3>キーワード検索</h3>
         <input id="q" type="search" placeholder="例: 動画タイトル、プロンプト、設定" autocomplete="off"></div>
-      <details class="grp type-grp"><summary>種別でしぼる</summary>
+      <details class="grp type-grp" open><summary>種別でしぼる</summary>
         <div class="grp-body"><label><input type="radio" name="type" value="" checked>すべて<span class="n">89</span></label><label><input type="radio" name="type" value="プロンプト集">プロンプト集<span class="n">30</span></label><label><input type="radio" name="type" value="設定・スニペット">設定・スニペット<span class="n">5</span></label><label><input type="radio" name="type" value="早見表・逆引き">早見表・逆引き<span class="n">6</span></label><label><input type="radio" name="type" value="テンプレート">テンプレート<span class="n">18</span></label><label><input type="radio" name="type" value="チェックリスト">チェックリスト<span class="n">22</span></label><label><input type="radio" name="type" value="判断シート">判断シート<span class="n">1</span></label><label><input type="radio" name="type" value="ワークフロー">ワークフロー<span class="n">7</span></label></div></details>
+      <script>
+      /* details は閉じている間、中身をCSSで display:block にしても描画されない
+         （要素の高さが summary のぶんだけになり、中身は枠外扱いで消える）。
+         2026-08-25にモバイル用の折りたたみを入れた際、広い画面では中身をCSSで
+         出すつもりが、この仕様のため種別しぼり込みが両チャンネルとも消えていた。
+         そこで「常に open で出し、狭い画面のときだけ閉じる」向きに変えている。
+         HTMLをopenで出しているのでJSが動かなくても広い画面では表示される。
+         畳む前に描画されないよう、要素の直後で実行する。 */
+      (function(){
+        var d = document.querySelector('.type-grp');
+        if (!d) return;
+        var mq = matchMedia('(max-width:900px)');
+        var apply = function(){ d.open = !mq.matches; };
+        apply();
+        mq.addEventListener('change', apply);
+      })();
+      </script>
       <div class="grp"><h3>並び順</h3>
         <div class="selwrap"><select id="sort">
           <option value="new">投稿が新しい順</option>
