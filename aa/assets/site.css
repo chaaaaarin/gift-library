@@ -210,8 +210,11 @@ cursor:pointer;display:flex;align-items:center;gap:6px;transition:.15s;}
 /* 検索で当たった項目の名指し（一覧側） */
 .khit-in{display:block;font-size:11px;font-weight:700;color:var(--brand-deep);
 margin-top:3px;line-height:1.5;}
-/* 名指しリンクで飛んできたとき、貼り付いたツールバーの下に隠れないようにする */
-.icard{scroll-margin-top:132px;}
+/* 名指しリンク（#i37）で飛んできたとき、貼り付いた要素の下に隠れないようにする。
+   ヘッダだけのページと、絞り込みツールバーもあるページで必要な余白が違う
+   （実測: ヘッダ62px / ツールバー141px）。 */
+.icard{scroll-margin-top:74px;}
+.ktools ~ .icard{scroll-margin-top:215px;}
 .icard:target,.icard.flashme{box-shadow:0 0 0 2px var(--brand),var(--sh);}
 .icard{background:var(--paper);border:none;
 border-radius:18px;padding:18px 20px;margin-bottom:14px;box-shadow:var(--sh);
