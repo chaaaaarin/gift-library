@@ -36,7 +36,7 @@
   </section>
 
   <h2 class="cat" data-cat="2. 「二度と同じ間違いをしない」ルールの書き方">2. 「二度と同じ間違いをしない」ルールの書き方</h2>
-<div class="icard" data-cat="2. 「二度と同じ間違いをしない」ルールの書き方">
+<div class="icard" id="i1" data-cat="2. 「二度と同じ間違いをしない」ルールの書き方">
   <div class="ih"><span class="num">001</span><span class="ititle">&lt;間違いの種類&gt;</span></div>
   
   <pre class="prompt" id="b1">- 発生日: &lt;日付&gt;
@@ -48,9 +48,10 @@
   <div class="cbtns">
     <button class="btn sm" data-copy="b1">📋 コピー</button>
     <button class="btn ghost sm" data-save="b1" data-name="harness-templates-001.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i1">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="2. 「二度と同じ間違いをしない」ルールの書き方">
+<div class="icard" id="i2" data-cat="2. 「二度と同じ間違いをしない」ルールの書き方">
   <div class="ih"><span class="num">002</span><span class="ititle">テストファイルの誤削除</span></div>
   
   <pre class="prompt" id="b2">- 発生日: 2026-08-01
@@ -61,12 +62,17 @@
   <div class="cbtns">
     <button class="btn sm" data-copy="b2">📋 コピー</button>
     <button class="btn ghost sm" data-save="b2" data-name="harness-templates-002.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i2">🔗 リンク</button>
   </div>
 </div>
 
   <section class="epctx">
   <p class="epctx-label">この動画のほかのプレゼント</p>
   <div class="ep-kits"><a class="kchip" href="../diagnosis-prompts100/"><span class="kt">5段階診断プロンプト100選</span><span class="badge">100個</span><span class="go">開く →</span></a><a class="kchip" href="../stage-checklist/"><span class="kt">今どの段階にいるか診断チェックシート</span><span class="badge">15項目</span><span class="go">開く →</span></a></div>
+</section>
+  <section class="epctx">
+  <p class="epctx-label">ほかの回の「テンプレート」</p>
+  <div class="ep-kits"><a class="kchip" href="../cost-simulation-2027/"><span class="kt">タスク別コスト削減シミュレーションシート</span><span class="badge">9項目</span><span class="go">開く →</span></a><a class="kchip" href="../long-run-tasks100/"><span class="kt">長時間タスクの投げっぱなしテンプレート100選</span><span class="badge">100個</span><span class="go">開く →</span></a><a class="kchip" href="../model-selection-sheet/"><span class="kt">モデル選定シート — Grok 4.6 / GPT-5.6 Sol / Fable 5</span><span class="badge">7項目</span><span class="go">開く →</span></a><a class="kchip" href="../block-override-phrases50/"><span class="kt">ブロック解除の切り返し文例50選</span><span class="badge">50個</span><span class="go">開く →</span></a></div>
 </section>
 
   <footer><a href="../../">← ClaudeCodeチャンネル プレゼント図書館にもどる</a></footer>
@@ -214,6 +220,23 @@ model: sonnet
 **ポイント**: 「口で毎回注意する」のではなく「二度と起きない仕組み」を作るのがハーネスエンジニアリングの核心です。AGENTS.mdは育てるもの——間違いが起きるたびに1行ずつ増やしてください。
 </pre>
 <script>
+
+// 名指しリンク（#i37）で来たとき、その項目まで確実に運んで少しの間だけ目立たせる。
+// ブラウザ任せだと、項目数の多いページでは狙った位置に着かないことがある
+// （html に scroll-behavior:smooth が効いており、数万px を滑らせようとして届かない）。
+(function(){
+  function go(){
+    if (!location.hash) return;
+    var el = document.querySelector(location.hash);
+    if (!el || !el.classList.contains('icard')) return;
+    el.scrollIntoView({block: 'start', behavior: 'auto'});
+    el.classList.add('flashme');
+    setTimeout(function(){ el.classList.remove('flashme'); }, 2400);
+  }
+  addEventListener('hashchange', go);
+  if (document.readyState === 'loading') addEventListener('DOMContentLoaded', go);
+  else go();
+})();
 // 項目の多いキットで、目的の1件に辿り着けるようにする絞り込み。
 // 検索はタイトル・説明だけでなく本文も対象にする（「あの文言が入っていた項目」で探せるように）。
 (function(){
@@ -299,8 +322,27 @@ document.addEventListener('click', e => {
   const b = e.target.closest('[data-copy]');
   if (b) { copyText(b, b.dataset.copy); return; }
   const d = e.target.closest('[data-save]');
-  if (d) { saveText(d, d.dataset.save, d.dataset.name); }
+  if (d) { saveText(d, d.dataset.save, d.dataset.name); return; }
+  // その項目だけを名指しで人に渡せるようにする
+  const l = e.target.closest('[data-link]');
+  if (l) {
+    const url = location.origin + location.pathname + '#' + l.dataset.link;
+    navigator.clipboard.writeText(url).then(() => flash(l, '✓ コピーしました'));
+  }
 });
+
+// 「/」ですぐ検索を始められるようにする。入力中は邪魔しない。
+addEventListener('keydown', e => {
+  if (e.key !== '/' || e.metaKey || e.ctrlKey || e.altKey) return;
+  const t = e.target;
+  if (t && (t.tagName === 'INPUT' || t.tagName === 'TEXTAREA' || t.isContentEditable)) return;
+  const box = document.getElementById('q') || document.getElementById('kq');
+  if (!box) return;
+  e.preventDefault();
+  box.focus();
+  box.select();
+});
+
 </script>
 <div id="promo" class="promo">
   <div class="promo-card">

@@ -35,7 +35,7 @@
     <div class="pnote"><span class="nb">下のカードから、</span><span class="nb">1件ずつコピー、</span><span class="nb">または個別にダウンロードできます。</span><span class="nb">まとめて欲しいときは、</span><span class="nb">上の</span><span class="nb">「全件ダウンロード」を</span><span class="nb">お使いください。</span></div>
   </section>
 
-  <div class="icard" data-cat="">
+  <div class="icard" id="i1" data-cat="">
   <div class="ih"><span class="num">001</span><span class="ititle">ステップ0：接続コマンド早見表</span></div>
   
   <pre class="prompt" id="b1">□ Claude Codeに繋ぐ
@@ -48,9 +48,10 @@
   <div class="cbtns">
     <button class="btn sm" data-copy="b1">📋 コピー</button>
     <button class="btn ghost sm" data-save="b1" data-name="tool-connect-cheatsheet-40-001.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i1">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="">
+<div class="icard" id="i2" data-cat="">
   <div class="ih"><span class="num">002</span><span class="ititle">ステップ1：Claude Codeで繋がらない</span></div>
   
   <pre class="prompt" id="b2">□ claude mcp add を実行してもエラーが出る
@@ -69,9 +70,10 @@
   <div class="cbtns">
     <button class="btn sm" data-copy="b2">📋 コピー</button>
     <button class="btn ghost sm" data-save="b2" data-name="tool-connect-cheatsheet-40-002.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i2">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="">
+<div class="icard" id="i3" data-cat="">
   <div class="ih"><span class="num">003</span><span class="ititle">ステップ2：Codex CLIで繋がらない</span></div>
   
   <pre class="prompt" id="b3">□ codex mcp add は成功したのに /mcp で表示されない
@@ -90,9 +92,10 @@
   <div class="cbtns">
     <button class="btn sm" data-copy="b3">📋 コピー</button>
     <button class="btn ghost sm" data-save="b3" data-name="tool-connect-cheatsheet-40-003.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i3">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="">
+<div class="icard" id="i4" data-cat="">
   <div class="ih"><span class="num">004</span><span class="ititle">ステップ3：Cursorで繋がらない</span></div>
   
   <pre class="prompt" id="b4">□ .cursor/mcp.json を編集したのにツールが増えない
@@ -111,9 +114,10 @@
   <div class="cbtns">
     <button class="btn sm" data-copy="b4">📋 コピー</button>
     <button class="btn ghost sm" data-save="b4" data-name="tool-connect-cheatsheet-40-004.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i4">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="">
+<div class="icard" id="i5" data-cat="">
   <div class="ih"><span class="num">005</span><span class="ititle">ステップ4：認証・鍵まわりの共通トラブル</span></div>
   
   <pre class="prompt" id="b5">□ Bearerトークンをコピペしたのに認証エラーになる
@@ -132,9 +136,10 @@
   <div class="cbtns">
     <button class="btn sm" data-copy="b5">📋 コピー</button>
     <button class="btn ghost sm" data-save="b5" data-name="tool-connect-cheatsheet-40-005.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i5">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="">
+<div class="icard" id="i6" data-cat="">
   <div class="ih"><span class="num">006</span><span class="ititle">ステップ5：GitHubリポジトリ配信元（方法2）のトラブル</span></div>
   
   <pre class="prompt" id="b6">□ SKILL.mdを置いたのにMCPサーバー化されない
@@ -153,9 +158,10 @@
   <div class="cbtns">
     <button class="btn sm" data-copy="b6">📋 コピー</button>
     <button class="btn ghost sm" data-save="b6" data-name="tool-connect-cheatsheet-40-006.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i6">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="">
+<div class="icard" id="i7" data-cat="">
   <div class="ih"><span class="num">007</span><span class="ititle">ステップ6：複数ツールを併用しているときの切り分け</span></div>
   
   <pre class="prompt" id="b7">□ Claude Codeでは動くのにCodexでは動かない
@@ -174,9 +180,10 @@
   <div class="cbtns">
     <button class="btn sm" data-copy="b7">📋 コピー</button>
     <button class="btn ghost sm" data-save="b7" data-name="tool-connect-cheatsheet-40-007.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i7">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="">
+<div class="icard" id="i8" data-cat="">
   <div class="ih"><span class="num">008</span><span class="ititle">ステップ7：それでも解決しないとき</span></div>
   
   <pre class="prompt" id="b8">□ ここまでのステップを全部試しても直らない
@@ -191,12 +198,17 @@
   <div class="cbtns">
     <button class="btn sm" data-copy="b8">📋 コピー</button>
     <button class="btn ghost sm" data-save="b8" data-name="tool-connect-cheatsheet-40-008.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i8">🔗 リンク</button>
   </div>
 </div>
 
   <section class="epctx">
   <p class="epctx-label">この動画のほかのプレゼント</p>
   <div class="ep-kits"><a class="kchip" href="../mcp-migration-prompts-100/"><span class="kt">ツール横断 MCP移行プロンプト100選</span><span class="badge">100個</span><span class="go">開く →</span></a><a class="kchip" href="../skill-to-mcp-checklist-30/"><span class="kt">Skill→MCP 乗り換え判定シート＋移行チェックリスト30</span><span class="badge">38項目</span><span class="go">開く →</span></a></div>
+</section>
+  <section class="epctx">
+  <p class="epctx-label">ほかの回の「設定・スニペット」</p>
+  <div class="ep-kits"><a class="kchip" href="../setup-cheatsheet/"><span class="kt">Open Design 導入コマンド早見表</span><span class="badge">11項目</span><span class="go">開く →</span></a><a class="kchip" href="../usewake-combos-100/"><span class="kt">タスク別モデル使い分け早見表＋Combos設定レシピ100選</span><span class="badge">100個</span><span class="go">開く →</span></a><a class="kchip" href="../agents-md-x-automation/"><span class="kt">X自動投稿エージェント AGENTS.md / CLAUDE.mdテンプレート</span><span class="go">開く →</span></a><a class="kchip" href="../agents-md-seo-rules/"><span class="kt">AGENTS.md（SEOルール）</span><span class="go">開く →</span></a></div>
 </section>
 
   <footer><a href="../../">← AIエージェント / Kawaru プレゼント図書館にもどる</a></footer>
@@ -327,6 +339,23 @@ Claude Code・Codex CLI・Cursorのどれで詰まっても、この1枚で切�
 **ポイント**: 迷ったら「ステップ0の早見表どおりに繋ぎ直す」を先に試すと、多くのつまずきは設定ミスだと分かります。
 </pre>
 <script>
+
+// 名指しリンク（#i37）で来たとき、その項目まで確実に運んで少しの間だけ目立たせる。
+// ブラウザ任せだと、項目数の多いページでは狙った位置に着かないことがある
+// （html に scroll-behavior:smooth が効いており、数万px を滑らせようとして届かない）。
+(function(){
+  function go(){
+    if (!location.hash) return;
+    var el = document.querySelector(location.hash);
+    if (!el || !el.classList.contains('icard')) return;
+    el.scrollIntoView({block: 'start', behavior: 'auto'});
+    el.classList.add('flashme');
+    setTimeout(function(){ el.classList.remove('flashme'); }, 2400);
+  }
+  addEventListener('hashchange', go);
+  if (document.readyState === 'loading') addEventListener('DOMContentLoaded', go);
+  else go();
+})();
 // 項目の多いキットで、目的の1件に辿り着けるようにする絞り込み。
 // 検索はタイトル・説明だけでなく本文も対象にする（「あの文言が入っていた項目」で探せるように）。
 (function(){
@@ -412,8 +441,27 @@ document.addEventListener('click', e => {
   const b = e.target.closest('[data-copy]');
   if (b) { copyText(b, b.dataset.copy); return; }
   const d = e.target.closest('[data-save]');
-  if (d) { saveText(d, d.dataset.save, d.dataset.name); }
+  if (d) { saveText(d, d.dataset.save, d.dataset.name); return; }
+  // その項目だけを名指しで人に渡せるようにする
+  const l = e.target.closest('[data-link]');
+  if (l) {
+    const url = location.origin + location.pathname + '#' + l.dataset.link;
+    navigator.clipboard.writeText(url).then(() => flash(l, '✓ コピーしました'));
+  }
 });
+
+// 「/」ですぐ検索を始められるようにする。入力中は邪魔しない。
+addEventListener('keydown', e => {
+  if (e.key !== '/' || e.metaKey || e.ctrlKey || e.altKey) return;
+  const t = e.target;
+  if (t && (t.tagName === 'INPUT' || t.tagName === 'TEXTAREA' || t.isContentEditable)) return;
+  const box = document.getElementById('q') || document.getElementById('kq');
+  if (!box) return;
+  e.preventDefault();
+  box.focus();
+  box.select();
+});
+
 </script>
 <div id="promo" class="promo">
   <div class="promo-card">

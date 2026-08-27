@@ -63,6 +63,10 @@
   <p class="epctx-label">この動画のほかのプレゼント</p>
   <div class="ep-kits"><a class="kchip" href="../block-override-phrases50/"><span class="kt">ブロック解除の切り返し文例50選</span><span class="badge">50個</span><span class="go">開く →</span></a><a class="kchip" href="../rollout-checklist/"><span class="kt">Auto Mode安全導入ロールアウトチェックリスト</span><span class="badge">12項目</span><span class="go">開く →</span></a></div>
 </section>
+  <section class="epctx">
+  <p class="epctx-label">ほかの回の「設定・スニペット」</p>
+  <div class="ep-kits"><a class="kchip" href="../claude-md-lightweight50/"><span class="kt">CLAUDE.md軽量化スニペット50選</span><span class="badge">50個</span><span class="go">開く →</span></a><a class="kchip" href="../safety-checklist/"><span class="kt">Claude in Chrome 安全設定チェックリスト</span><span class="badge">9項目</span><span class="go">開く →</span></a><a class="kchip" href="../skill-templates-60/"><span class="kt">配布前提の SKILL.md ひな型60本</span><span class="badge">60個</span><span class="go">開く →</span></a><a class="kchip" href="../cross-session-settings40/"><span class="kt">セッション間連絡 設定＆安全運用スニペット40</span><span class="go">開く →</span></a></div>
+</section>
 
   <footer><a href="../../">← ClaudeCodeチャンネル プレゼント図書館にもどる</a></footer>
 </div>
@@ -924,6 +928,23 @@ Claude CodeのAuto Modeは、`autoMode.environment`に「あなたの環境が�
 **以上、業種別15・インフラ構成別15・チーム規模別10・特殊ケース10の合計50個です。**
 </pre>
 <script>
+
+// 名指しリンク（#i37）で来たとき、その項目まで確実に運んで少しの間だけ目立たせる。
+// ブラウザ任せだと、項目数の多いページでは狙った位置に着かないことがある
+// （html に scroll-behavior:smooth が効いており、数万px を滑らせようとして届かない）。
+(function(){
+  function go(){
+    if (!location.hash) return;
+    var el = document.querySelector(location.hash);
+    if (!el || !el.classList.contains('icard')) return;
+    el.scrollIntoView({block: 'start', behavior: 'auto'});
+    el.classList.add('flashme');
+    setTimeout(function(){ el.classList.remove('flashme'); }, 2400);
+  }
+  addEventListener('hashchange', go);
+  if (document.readyState === 'loading') addEventListener('DOMContentLoaded', go);
+  else go();
+})();
 // 項目の多いキットで、目的の1件に辿り着けるようにする絞り込み。
 // 検索はタイトル・説明だけでなく本文も対象にする（「あの文言が入っていた項目」で探せるように）。
 (function(){
@@ -1009,8 +1030,27 @@ document.addEventListener('click', e => {
   const b = e.target.closest('[data-copy]');
   if (b) { copyText(b, b.dataset.copy); return; }
   const d = e.target.closest('[data-save]');
-  if (d) { saveText(d, d.dataset.save, d.dataset.name); }
+  if (d) { saveText(d, d.dataset.save, d.dataset.name); return; }
+  // その項目だけを名指しで人に渡せるようにする
+  const l = e.target.closest('[data-link]');
+  if (l) {
+    const url = location.origin + location.pathname + '#' + l.dataset.link;
+    navigator.clipboard.writeText(url).then(() => flash(l, '✓ コピーしました'));
+  }
 });
+
+// 「/」ですぐ検索を始められるようにする。入力中は邪魔しない。
+addEventListener('keydown', e => {
+  if (e.key !== '/' || e.metaKey || e.ctrlKey || e.altKey) return;
+  const t = e.target;
+  if (t && (t.tagName === 'INPUT' || t.tagName === 'TEXTAREA' || t.isContentEditable)) return;
+  const box = document.getElementById('q') || document.getElementById('kq');
+  if (!box) return;
+  e.preventDefault();
+  box.focus();
+  box.select();
+});
+
 </script>
 <div id="promo" class="promo">
   <div class="promo-card">

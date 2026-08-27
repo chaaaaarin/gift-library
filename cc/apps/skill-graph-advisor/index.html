@@ -41,7 +41,7 @@ description: ユーザーが</span><span class="nb">説明する既存のAIル�
 
 # グラフ化アドバイザー
 
-あなたは</span><span class="nb">Claude Codeの</span>Dynamic Workflows・<span class="nb">エージェントループに関する公式知識を</span><span class="nb">踏まえて、</span><span class="nb">ユーザーの既存の仕組みを</span><span class="nb">診断するアドバイザーです。</span></p><div class="icard" data-cat="">
+あなたは</span><span class="nb">Claude Codeの</span>Dynamic Workflows・<span class="nb">エージェントループに関する公式知識を</span><span class="nb">踏まえて、</span><span class="nb">ユーザーの既存の仕組みを</span><span class="nb">診断するアドバイザーです。</span></p><div class="icard" id="i1" data-cat="">
   <div class="ih"><span class="num">001</span><span class="ititle">前提知識</span></div>
   
   <pre class="prompt" id="b1">- ループ＝1つのAIが「発見→計画→実行→検証」を繰り返す1本の輪。グラフ＝複数のノード（ループ）を配線でつなぎ、結果の種類ごとに戻り先を変える仕組み。
@@ -50,9 +50,10 @@ description: ユーザーが</span><span class="nb">説明する既存のAIル�
   <div class="cbtns">
     <button class="btn sm" data-copy="b1">📋 コピー</button>
     <button class="btn ghost sm" data-save="b1" data-name="skill-graph-advisor-001.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i1">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="">
+<div class="icard" id="i2" data-cat="">
   <div class="ih"><span class="num">002</span><span class="ititle">診断手順</span></div>
   
   <pre class="prompt" id="b2">ユーザーが仕組みを説明したら、次の4条件を順に確認する。
@@ -64,9 +65,10 @@ description: ユーザーが</span><span class="nb">説明する既存のAIル�
   <div class="cbtns">
     <button class="btn sm" data-copy="b2">📋 コピー</button>
     <button class="btn ghost sm" data-save="b2" data-name="skill-graph-advisor-002.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i2">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="">
+<div class="icard" id="i3" data-cat="">
   <div class="ih"><span class="num">003</span><span class="ititle">判定と提案</span></div>
   
   <pre class="prompt" id="b3">- 2つ以上がYESなら「グラフ化の価値あり」と判定し、具体的な分岐ラベル案（例：【再検証】【構成】【局所】）と、それぞれの戻り先・打ち切り条件を提案する
@@ -75,9 +77,10 @@ description: ユーザーが</span><span class="nb">説明する既存のAIル�
   <div class="cbtns">
     <button class="btn sm" data-copy="b3">📋 コピー</button>
     <button class="btn ghost sm" data-save="b3" data-name="skill-graph-advisor-003.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i3">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="">
+<div class="icard" id="i4" data-cat="">
   <div class="ih"><span class="num">004</span><span class="ititle">注意点</span></div>
   
   <pre class="prompt" id="b4">- グラフ化しても、外部の実際の成果・変更できないルール・人間の最終判断という「アンカー」がなければ、同じ失敗を繰り返しうる点も併せて伝える
@@ -85,12 +88,17 @@ description: ユーザーが</span><span class="nb">説明する既存のAIル�
   <div class="cbtns">
     <button class="btn sm" data-copy="b4">📋 コピー</button>
     <button class="btn ghost sm" data-save="b4" data-name="skill-graph-advisor-004.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i4">🔗 リンク</button>
   </div>
 </div>
 
   <section class="epctx">
   <p class="epctx-label">この動画のほかのプレゼント</p>
   <div class="ep-kits"><a class="kchip" href="../graph-check4/"><span class="kt">グラフ化 要否4条件診断チェックリスト</span><span class="badge">6項目</span><span class="go">開く →</span></a><a class="kchip" href="../prompts100-no101/"><span class="kt">グラフエンジニアリング実践プロンプト100選</span><span class="badge">100個</span><span class="go">開く →</span></a><a class="kchip" href="../skill-dynamic-workflow-writer/"><span class="kt">Dynamic Workflows実装ライター SKILL.md</span><span class="go">開く →</span></a><a class="kchip" href="../skill-loop-graph-reviewer/"><span class="kt">定期レビュアー SKILL.md</span><span class="go">開く →</span></a></div>
+</section>
+  <section class="epctx">
+  <p class="epctx-label">ほかの回の「設定・スニペット」</p>
+  <div class="ep-kits"><a class="kchip" href="../claude-md-lightweight50/"><span class="kt">CLAUDE.md軽量化スニペット50選</span><span class="badge">50個</span><span class="go">開く →</span></a><a class="kchip" href="../safety-checklist/"><span class="kt">Claude in Chrome 安全設定チェックリスト</span><span class="badge">9項目</span><span class="go">開く →</span></a><a class="kchip" href="../skill-templates-60/"><span class="kt">配布前提の SKILL.md ひな型60本</span><span class="badge">60個</span><span class="go">開く →</span></a><a class="kchip" href="../automode-environment-templates50/"><span class="kt">autoMode環境設定コピペテンプレート50選</span><span class="badge">50個</span><span class="go">開く →</span></a></div>
 </section>
 
   <footer><a href="../../">← ClaudeCodeチャンネル プレゼント図書館にもどる</a></footer>
@@ -137,6 +145,23 @@ description: ユーザーが説明する既存のAIループ・業務フロー�
 ```
 </pre>
 <script>
+
+// 名指しリンク（#i37）で来たとき、その項目まで確実に運んで少しの間だけ目立たせる。
+// ブラウザ任せだと、項目数の多いページでは狙った位置に着かないことがある
+// （html に scroll-behavior:smooth が効いており、数万px を滑らせようとして届かない）。
+(function(){
+  function go(){
+    if (!location.hash) return;
+    var el = document.querySelector(location.hash);
+    if (!el || !el.classList.contains('icard')) return;
+    el.scrollIntoView({block: 'start', behavior: 'auto'});
+    el.classList.add('flashme');
+    setTimeout(function(){ el.classList.remove('flashme'); }, 2400);
+  }
+  addEventListener('hashchange', go);
+  if (document.readyState === 'loading') addEventListener('DOMContentLoaded', go);
+  else go();
+})();
 // 項目の多いキットで、目的の1件に辿り着けるようにする絞り込み。
 // 検索はタイトル・説明だけでなく本文も対象にする（「あの文言が入っていた項目」で探せるように）。
 (function(){
@@ -222,8 +247,27 @@ document.addEventListener('click', e => {
   const b = e.target.closest('[data-copy]');
   if (b) { copyText(b, b.dataset.copy); return; }
   const d = e.target.closest('[data-save]');
-  if (d) { saveText(d, d.dataset.save, d.dataset.name); }
+  if (d) { saveText(d, d.dataset.save, d.dataset.name); return; }
+  // その項目だけを名指しで人に渡せるようにする
+  const l = e.target.closest('[data-link]');
+  if (l) {
+    const url = location.origin + location.pathname + '#' + l.dataset.link;
+    navigator.clipboard.writeText(url).then(() => flash(l, '✓ コピーしました'));
+  }
 });
+
+// 「/」ですぐ検索を始められるようにする。入力中は邪魔しない。
+addEventListener('keydown', e => {
+  if (e.key !== '/' || e.metaKey || e.ctrlKey || e.altKey) return;
+  const t = e.target;
+  if (t && (t.tagName === 'INPUT' || t.tagName === 'TEXTAREA' || t.isContentEditable)) return;
+  const box = document.getElementById('q') || document.getElementById('kq');
+  if (!box) return;
+  e.preventDefault();
+  box.focus();
+  box.select();
+});
+
 </script>
 <div id="promo" class="promo">
   <div class="promo-card">

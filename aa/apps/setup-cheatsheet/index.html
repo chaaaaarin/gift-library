@@ -35,7 +35,7 @@
     <div class="pnote"><span class="nb">下のカードから、</span><span class="nb">1件ずつコピー、</span><span class="nb">または個別にダウンロードできます。</span><span class="nb">まとめて欲しいときは、</span><span class="nb">上の</span><span class="nb">「全件ダウンロード」を</span><span class="nb">お使いください。</span></div>
   </section>
 
-  <div class="icard" data-cat="">
+  <div class="icard" id="i1" data-cat="">
   <div class="ih"><span class="num">001</span><span class="ititle">デスクトップアプリ(推奨・GUI操作のみ)</span></div>
   
   <pre class="prompt" id="b1">□ Mac(Apple Silicon) → open-design.ai から .dmg(arm64)をダウンロードしてインストール
@@ -44,27 +44,30 @@
   <div class="cbtns">
     <button class="btn sm" data-copy="b1">📋 コピー</button>
     <button class="btn ghost sm" data-save="b1" data-name="setup-cheatsheet-001.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i1">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="">
+<div class="icard" id="i2" data-cat="">
   <div class="ih"><span class="num">002</span><span class="ititle">Docker(サーバーに常駐させたい場合)</span></div>
   
   <pre class="prompt" id="b2">指示例: git clone https://github.com/nexu-io/open-design.git してから cd open-design/deploy &amp;&amp; docker compose up -d を実行して。</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b2">📋 コピー</button>
     <button class="btn ghost sm" data-save="b2" data-name="setup-cheatsheet-002.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i2">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="">
+<div class="icard" id="i3" data-cat="">
   <div class="ih"><span class="num">003</span><span class="ititle">ソースビルド(開発者・カスタマイズしたい場合)</span></div>
   
   <pre class="prompt" id="b3">指示例: git clone 後、corepack enable &amp;&amp; pnpm install &amp;&amp; pnpm tools-dev run web を順に実行して。</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b3">📋 コピー</button>
     <button class="btn ghost sm" data-save="b3" data-name="setup-cheatsheet-003.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i3">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="">
+<div class="icard" id="i4" data-cat="">
   <div class="ih"><span class="num">004</span><span class="ititle">各AIエージェントへの接続(共通コマンド)</span></div>
   
   <pre class="prompt" id="b4">□ Claude Code → od mcp install claude
@@ -75,9 +78,10 @@
   <div class="cbtns">
     <button class="btn sm" data-copy="b4">📋 コピー</button>
     <button class="btn ghost sm" data-save="b4" data-name="setup-cheatsheet-004.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i4">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="">
+<div class="icard" id="i5" data-cat="">
   <div class="ih"><span class="num">005</span><span class="ititle">つながらない時のチェック</span></div>
   
   <pre class="prompt" id="b5">□ デスクトップアプリを起動したままか → YES: 再度コマンドを実行
@@ -86,12 +90,17 @@
   <div class="cbtns">
     <button class="btn sm" data-copy="b5">📋 コピー</button>
     <button class="btn ghost sm" data-save="b5" data-name="setup-cheatsheet-005.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i5">🔗 リンク</button>
   </div>
 </div>
 
   <section class="epctx">
   <p class="epctx-label">この動画のほかのプレゼント</p>
   <div class="ep-kits"><a class="kchip" href="../prompts100-no86/"><span class="kt">Open Design依頼プロンプト100選</span><span class="badge">100個</span><span class="go">開く →</span></a><a class="kchip" href="../tool-choice-checklist/"><span class="kt">ツール選び判定シート(Claude Design / Figma / Open Design)</span><span class="badge">10項目</span><span class="go">開く →</span></a></div>
+</section>
+  <section class="epctx">
+  <p class="epctx-label">ほかの回の「設定・スニペット」</p>
+  <div class="ep-kits"><a class="kchip" href="../tool-connect-cheatsheet-40/"><span class="kt">AIツール別 接続コマンド逆引き表＋トラブル脱出40</span><span class="badge">43項目</span><span class="go">開く →</span></a><a class="kchip" href="../usewake-combos-100/"><span class="kt">タスク別モデル使い分け早見表＋Combos設定レシピ100選</span><span class="badge">100個</span><span class="go">開く →</span></a><a class="kchip" href="../agents-md-x-automation/"><span class="kt">X自動投稿エージェント AGENTS.md / CLAUDE.mdテンプレート</span><span class="go">開く →</span></a><a class="kchip" href="../agents-md-seo-rules/"><span class="kt">AGENTS.md（SEOルール）</span><span class="go">開く →</span></a></div>
 </section>
 
   <footer><a href="../../">← AIエージェント / Kawaru プレゼント図書館にもどる</a></footer>
@@ -135,6 +144,23 @@
 **ポイント**: コマンドは全てターミナルにコピペで実行できます。うまくいかない場合は公式ドキュメント(github.com/nexu-io/open-design)の最新情報も確認してください。
 </pre>
 <script>
+
+// 名指しリンク（#i37）で来たとき、その項目まで確実に運んで少しの間だけ目立たせる。
+// ブラウザ任せだと、項目数の多いページでは狙った位置に着かないことがある
+// （html に scroll-behavior:smooth が効いており、数万px を滑らせようとして届かない）。
+(function(){
+  function go(){
+    if (!location.hash) return;
+    var el = document.querySelector(location.hash);
+    if (!el || !el.classList.contains('icard')) return;
+    el.scrollIntoView({block: 'start', behavior: 'auto'});
+    el.classList.add('flashme');
+    setTimeout(function(){ el.classList.remove('flashme'); }, 2400);
+  }
+  addEventListener('hashchange', go);
+  if (document.readyState === 'loading') addEventListener('DOMContentLoaded', go);
+  else go();
+})();
 // 項目の多いキットで、目的の1件に辿り着けるようにする絞り込み。
 // 検索はタイトル・説明だけでなく本文も対象にする（「あの文言が入っていた項目」で探せるように）。
 (function(){
@@ -220,8 +246,27 @@ document.addEventListener('click', e => {
   const b = e.target.closest('[data-copy]');
   if (b) { copyText(b, b.dataset.copy); return; }
   const d = e.target.closest('[data-save]');
-  if (d) { saveText(d, d.dataset.save, d.dataset.name); }
+  if (d) { saveText(d, d.dataset.save, d.dataset.name); return; }
+  // その項目だけを名指しで人に渡せるようにする
+  const l = e.target.closest('[data-link]');
+  if (l) {
+    const url = location.origin + location.pathname + '#' + l.dataset.link;
+    navigator.clipboard.writeText(url).then(() => flash(l, '✓ コピーしました'));
+  }
 });
+
+// 「/」ですぐ検索を始められるようにする。入力中は邪魔しない。
+addEventListener('keydown', e => {
+  if (e.key !== '/' || e.metaKey || e.ctrlKey || e.altKey) return;
+  const t = e.target;
+  if (t && (t.tagName === 'INPUT' || t.tagName === 'TEXTAREA' || t.isContentEditable)) return;
+  const box = document.getElementById('q') || document.getElementById('kq');
+  if (!box) return;
+  e.preventDefault();
+  box.focus();
+  box.select();
+});
+
 </script>
 <div id="promo" class="promo">
   <div class="promo-card">

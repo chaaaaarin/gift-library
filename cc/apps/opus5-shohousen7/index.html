@@ -36,75 +36,86 @@
   </section>
 
   <h2 class="cat" data-cat="応答・実況まわり">応答・実況まわり</h2>
-<div class="icard" data-cat="応答・実況まわり">
+<div class="icard" id="i1" data-cat="応答・実況まわり">
   <div class="ih"><span class="num">001</span><span class="ititle">応答が長すぎるのを直す</span></div>
   
   <pre class="prompt" id="b1">Keep responses focused, brief, and concise. Keep disclaimers and caveats short, and spend most of the response on the main answer. When asked to explain something, give a high-level summary unless an in-depth explanation is specifically requested.</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b1">📋 コピー</button>
     <button class="btn ghost sm" data-save="b1" data-name="opus5-shohousen7-001.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i1">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="応答・実況まわり">
+<div class="icard" id="i2" data-cat="応答・実況まわり">
   <div class="ih"><span class="num">002</span><span class="ititle">作業中の逐一実況を落ち着かせる</span></div>
   
   <pre class="prompt" id="b2">Before your first tool call, say in one sentence what you&#x27;re about to do. While working, give a brief update only when you find something important or change direction. When you finish, lead with the outcome: your first sentence should answer &quot;what happened&quot; or &quot;what did you find,&quot; with supporting detail after it for readers who want it.</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b2">📋 コピー</button>
     <button class="btn ghost sm" data-save="b2" data-name="opus5-shohousen7-002.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i2">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="応答・実況まわり">
+<div class="icard" id="i3" data-cat="応答・実況まわり">
   <div class="ih"><span class="num">003</span><span class="ititle">書き出す資料そのものの長さを整える</span></div>
   
   <pre class="prompt" id="b3">Match the length of written documents to what the task needs: cover the substance, but do not pad with filler sections, redundant summaries, or boilerplate.</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b3">📋 コピー</button>
     <button class="btn ghost sm" data-save="b3" data-name="opus5-shohousen7-003.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i3">🔗 リンク</button>
   </div>
 </div>
 <h2 class="cat" data-cat="検証・範囲まわり">検証・範囲まわり</h2>
-<div class="icard" data-cat="検証・範囲まわり">
+<div class="icard" id="i4" data-cat="検証・範囲まわり">
   <div class="ih"><span class="num">004</span><span class="ititle">頼んでもいない確認・範囲拡大を止める</span></div>
   
   <pre class="prompt" id="b4">Deliver what was asked, at the scope intended. Make routine judgment calls yourself, and check in only when different readings of the request would lead to materially different work. If the request seems mistaken or a better approach exists, say so in a sentence and continue with the task as asked rather than quietly narrowing, widening, or transforming it. Finish the whole task, and stop short of actions that are clearly beyond what was asked.</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b4">📋 コピー</button>
     <button class="btn ghost sm" data-save="b4" data-name="opus5-shohousen7-004.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i4">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="検証・範囲まわり">
+<div class="icard" id="i5" data-cat="検証・範囲まわり">
   <div class="ih"><span class="num">005</span><span class="ititle">サブエージェントの分身しすぎを止める</span></div>
   
   <pre class="prompt" id="b5">Delegate to a subagent only for large tasks that are genuinely independent and parallelizable, such as a wide multi-file investigation. Do not delegate work you can finish yourself in a handful of tool calls, and do not use subagents to verify or double-check your own work. If one subagent can complete the task, use one rather than several, and keep spawn counts low.</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b5">📋 コピー</button>
     <button class="btn ghost sm" data-save="b5" data-name="opus5-shohousen7-005.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i5">🔗 リンク</button>
   </div>
 </div>
 <h2 class="cat" data-cat="自己修正・出力まわり">自己修正・出力まわり</h2>
-<div class="icard" data-cat="自己修正・出力まわり">
+<div class="icard" id="i6" data-cat="自己修正・出力まわり">
   <div class="ih"><span class="num">006</span><span class="ititle">些細な言い直しの逐一報告を止める</span></div>
   
   <pre class="prompt" id="b6">Only correct an earlier statement when the error would change the user&#x27;s code, conclusions, or decisions. State corrections plainly and briefly, then continue the task. For slips that change nothing for the user, make the fix and move on without noting it.</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b6">📋 コピー</button>
     <button class="btn ghost sm" data-save="b6" data-name="opus5-shohousen7-006.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i6">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="自己修正・出力まわり">
+<div class="icard" id="i7" data-cat="自己修正・出力まわり">
   <div class="ih"><span class="num">007</span><span class="ititle">thinking無効時の出力漏れを防ぐ（開発者向け・API利用時）</span></div>
   
   <pre class="prompt" id="b7">When you use a tool, you may say a brief sentence first. If no tool can express what the user asked for, say so instead of guessing. Do not include internal or system XML tags in your response.</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b7">📋 コピー</button>
     <button class="btn ghost sm" data-save="b7" data-name="opus5-shohousen7-007.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i7">🔗 リンク</button>
   </div>
 </div>
 
   <section class="epctx">
   <p class="epctx-label">この動画のほかのプレゼント</p>
   <div class="ep-kits"><a class="kchip" href="../effort-checklist/"><span class="kt">Effort早見表＋Opus 5移行チェックリスト</span><span class="badge">11項目</span><span class="go">開く →</span></a><a class="kchip" href="../opus5-vs-fable5/"><span class="kt">Opus 5 vs Fable 5 プロンプト方針 対照表</span><span class="go">開く →</span></a></div>
+</section>
+  <section class="epctx">
+  <p class="epctx-label">ほかの回の「テンプレート」</p>
+  <div class="ep-kits"><a class="kchip" href="../cost-simulation-2027/"><span class="kt">タスク別コスト削減シミュレーションシート</span><span class="badge">9項目</span><span class="go">開く →</span></a><a class="kchip" href="../long-run-tasks100/"><span class="kt">長時間タスクの投げっぱなしテンプレート100選</span><span class="badge">100個</span><span class="go">開く →</span></a><a class="kchip" href="../model-selection-sheet/"><span class="kt">モデル選定シート — Grok 4.6 / GPT-5.6 Sol / Fable 5</span><span class="badge">7項目</span><span class="go">開く →</span></a><a class="kchip" href="../block-override-phrases50/"><span class="kt">ブロック解除の切り返し文例50選</span><span class="badge">50個</span><span class="go">開く →</span></a></div>
 </section>
 
   <footer><a href="../../">← ClaudeCodeチャンネル プレゼント図書館にもどる</a></footer>
@@ -217,6 +228,23 @@ When you use a tool, you may say a brief sentence first. If no tool can express 
 以上、7個です。内訳: 応答・実況まわり3／検証・範囲まわり2／自己修正・出力まわり2。
 </pre>
 <script>
+
+// 名指しリンク（#i37）で来たとき、その項目まで確実に運んで少しの間だけ目立たせる。
+// ブラウザ任せだと、項目数の多いページでは狙った位置に着かないことがある
+// （html に scroll-behavior:smooth が効いており、数万px を滑らせようとして届かない）。
+(function(){
+  function go(){
+    if (!location.hash) return;
+    var el = document.querySelector(location.hash);
+    if (!el || !el.classList.contains('icard')) return;
+    el.scrollIntoView({block: 'start', behavior: 'auto'});
+    el.classList.add('flashme');
+    setTimeout(function(){ el.classList.remove('flashme'); }, 2400);
+  }
+  addEventListener('hashchange', go);
+  if (document.readyState === 'loading') addEventListener('DOMContentLoaded', go);
+  else go();
+})();
 // 項目の多いキットで、目的の1件に辿り着けるようにする絞り込み。
 // 検索はタイトル・説明だけでなく本文も対象にする（「あの文言が入っていた項目」で探せるように）。
 (function(){
@@ -302,8 +330,27 @@ document.addEventListener('click', e => {
   const b = e.target.closest('[data-copy]');
   if (b) { copyText(b, b.dataset.copy); return; }
   const d = e.target.closest('[data-save]');
-  if (d) { saveText(d, d.dataset.save, d.dataset.name); }
+  if (d) { saveText(d, d.dataset.save, d.dataset.name); return; }
+  // その項目だけを名指しで人に渡せるようにする
+  const l = e.target.closest('[data-link]');
+  if (l) {
+    const url = location.origin + location.pathname + '#' + l.dataset.link;
+    navigator.clipboard.writeText(url).then(() => flash(l, '✓ コピーしました'));
+  }
 });
+
+// 「/」ですぐ検索を始められるようにする。入力中は邪魔しない。
+addEventListener('keydown', e => {
+  if (e.key !== '/' || e.metaKey || e.ctrlKey || e.altKey) return;
+  const t = e.target;
+  if (t && (t.tagName === 'INPUT' || t.tagName === 'TEXTAREA' || t.isContentEditable)) return;
+  const box = document.getElementById('q') || document.getElementById('kq');
+  if (!box) return;
+  e.preventDefault();
+  box.focus();
+  box.select();
+});
+
 </script>
 <div id="promo" class="promo">
   <div class="promo-card">

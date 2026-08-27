@@ -35,7 +35,7 @@
     <div class="pnote"><span class="nb">下のカードから、</span><span class="nb">1件ずつコピー、</span><span class="nb">または個別にダウンロードできます。</span><span class="nb">まとめて欲しいときは、</span><span class="nb">上の</span><span class="nb">「全件ダウンロード」を</span><span class="nb">お使いください。</span></div>
   </section>
 
-  <div class="icard" data-cat="">
+  <div class="icard" id="i1" data-cat="">
   <div class="ih"><span class="num">001</span><span class="ititle">ステップ1：まず入れるべきか判断する</span></div>
   
   <pre class="prompt" id="b1">□ 同じ作業を今後も繰り返す予定がある
@@ -45,9 +45,10 @@
   <div class="cbtns">
     <button class="btn sm" data-copy="b1">📋 コピー</button>
     <button class="btn ghost sm" data-save="b1" data-name="plugin-select-flowchart-001.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i1">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="">
+<div class="icard" id="i2" data-cat="">
   <div class="ih"><span class="num">002</span><span class="ititle">ステップ2：カテゴリを選ぶ</span></div>
   
   <pre class="prompt" id="b2">□ Slack・Notion・Gmail等、普段使っているツールと連携したい
@@ -64,9 +65,10 @@
   <div class="cbtns">
     <button class="btn sm" data-copy="b2">📋 コピー</button>
     <button class="btn ghost sm" data-save="b2" data-name="plugin-select-flowchart-002.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i2">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="">
+<div class="icard" id="i3" data-cat="">
   <div class="ih"><span class="num">003</span><span class="ititle">ステップ3：信頼できるか確認する</span></div>
   
   <pre class="prompt" id="b3">□ 公式提供、またはGitHub star数万以上等の実績がある
@@ -77,9 +79,10 @@
   <div class="cbtns">
     <button class="btn sm" data-copy="b3">📋 コピー</button>
     <button class="btn ghost sm" data-save="b3" data-name="plugin-select-flowchart-003.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i3">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="">
+<div class="icard" id="i4" data-cat="">
   <div class="ih"><span class="num">004</span><span class="ititle">ステップ4：権限を確認する</span></div>
   
   <pre class="prompt" id="b4">□ 読み取りだけで十分な用途である
@@ -90,9 +93,10 @@
   <div class="cbtns">
     <button class="btn sm" data-copy="b4">📋 コピー</button>
     <button class="btn ghost sm" data-save="b4" data-name="plugin-select-flowchart-004.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i4">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="">
+<div class="icard" id="i5" data-cat="">
   <div class="ih"><span class="num">005</span><span class="ititle">ステップ5：入れすぎていないか定期的に見直す</span></div>
   
   <pre class="prompt" id="b5">□ 使っていないプラグインが増えてきた
@@ -101,12 +105,17 @@
   <div class="cbtns">
     <button class="btn sm" data-copy="b5">📋 コピー</button>
     <button class="btn ghost sm" data-save="b5" data-name="plugin-select-flowchart-005.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i5">🔗 リンク</button>
   </div>
 </div>
 
   <section class="epctx">
   <p class="epctx-label">この動画のほかのプレゼント</p>
   <div class="ep-kits"><a class="kchip" href="../plugin-prompts90/"><span class="kt">Codex神プラグイン30選 導入プロンプト90選</span><span class="badge">30個</span><span class="go">開く →</span></a></div>
+</section>
+  <section class="epctx">
+  <p class="epctx-label">ほかの回の「ワークフロー」</p>
+  <div class="ep-kits"><a class="kchip" href="../flow-designs100/"><span class="kt">業務シーン別フロー設計図100選</span><span class="badge">100個</span><span class="go">開く →</span></a><a class="kchip" href="../record-replay-guide/"><span class="kt">Record &amp; Replayでスキルを量産する手順ガイド</span><span class="badge">31項目</span><span class="go">開く →</span></a><a class="kchip" href="../skill-starter-guide/"><span class="kt">自分の業務をスキル化する手順書</span><span class="badge">10項目</span><span class="go">開く →</span></a><a class="kchip" href="../github-actions-workflow/"><span class="kt">GitHub Actions 定時実行ワークフロー例</span><span class="go">開く →</span></a></div>
 </section>
 
   <footer><a href="../../">← AIエージェント / Kawaru プレゼント図書館にもどる</a></footer>
@@ -165,6 +174,23 @@
 **ポイント**: 迷ったらステップ1に戻り、「繰り返すかどうか」だけで一度判断してください。
 </pre>
 <script>
+
+// 名指しリンク（#i37）で来たとき、その項目まで確実に運んで少しの間だけ目立たせる。
+// ブラウザ任せだと、項目数の多いページでは狙った位置に着かないことがある
+// （html に scroll-behavior:smooth が効いており、数万px を滑らせようとして届かない）。
+(function(){
+  function go(){
+    if (!location.hash) return;
+    var el = document.querySelector(location.hash);
+    if (!el || !el.classList.contains('icard')) return;
+    el.scrollIntoView({block: 'start', behavior: 'auto'});
+    el.classList.add('flashme');
+    setTimeout(function(){ el.classList.remove('flashme'); }, 2400);
+  }
+  addEventListener('hashchange', go);
+  if (document.readyState === 'loading') addEventListener('DOMContentLoaded', go);
+  else go();
+})();
 // 項目の多いキットで、目的の1件に辿り着けるようにする絞り込み。
 // 検索はタイトル・説明だけでなく本文も対象にする（「あの文言が入っていた項目」で探せるように）。
 (function(){
@@ -250,8 +276,27 @@ document.addEventListener('click', e => {
   const b = e.target.closest('[data-copy]');
   if (b) { copyText(b, b.dataset.copy); return; }
   const d = e.target.closest('[data-save]');
-  if (d) { saveText(d, d.dataset.save, d.dataset.name); }
+  if (d) { saveText(d, d.dataset.save, d.dataset.name); return; }
+  // その項目だけを名指しで人に渡せるようにする
+  const l = e.target.closest('[data-link]');
+  if (l) {
+    const url = location.origin + location.pathname + '#' + l.dataset.link;
+    navigator.clipboard.writeText(url).then(() => flash(l, '✓ コピーしました'));
+  }
 });
+
+// 「/」ですぐ検索を始められるようにする。入力中は邪魔しない。
+addEventListener('keydown', e => {
+  if (e.key !== '/' || e.metaKey || e.ctrlKey || e.altKey) return;
+  const t = e.target;
+  if (t && (t.tagName === 'INPUT' || t.tagName === 'TEXTAREA' || t.isContentEditable)) return;
+  const box = document.getElementById('q') || document.getElementById('kq');
+  if (!box) return;
+  e.preventDefault();
+  box.focus();
+  box.select();
+});
+
 </script>
 <div id="promo" class="promo">
   <div class="promo-card">

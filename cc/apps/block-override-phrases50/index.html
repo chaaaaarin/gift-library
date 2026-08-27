@@ -49,6 +49,10 @@
   <p class="epctx-label">この動画のほかのプレゼント</p>
   <div class="ep-kits"><a class="kchip" href="../automode-environment-templates50/"><span class="kt">autoMode環境設定コピペテンプレート50選</span><span class="badge">50個</span><span class="go">開く →</span></a><a class="kchip" href="../rollout-checklist/"><span class="kt">Auto Mode安全導入ロールアウトチェックリスト</span><span class="badge">12項目</span><span class="go">開く →</span></a></div>
 </section>
+  <section class="epctx">
+  <p class="epctx-label">ほかの回の「テンプレート」</p>
+  <div class="ep-kits"><a class="kchip" href="../cost-simulation-2027/"><span class="kt">タスク別コスト削減シミュレーションシート</span><span class="badge">9項目</span><span class="go">開く →</span></a><a class="kchip" href="../long-run-tasks100/"><span class="kt">長時間タスクの投げっぱなしテンプレート100選</span><span class="badge">100個</span><span class="go">開く →</span></a><a class="kchip" href="../model-selection-sheet/"><span class="kt">モデル選定シート — Grok 4.6 / GPT-5.6 Sol / Fable 5</span><span class="badge">7項目</span><span class="go">開く →</span></a><a class="kchip" href="../harness-templates/"><span class="kt">ハーネス実装テンプレート集</span><span class="badge">2個</span><span class="go">開く →</span></a></div>
+</section>
 
   <footer><a href="../../">← ClaudeCodeチャンネル プレゼント図書館にもどる</a></footer>
 </div>
@@ -374,6 +378,23 @@ Auto Modeの分類器は「ユーザーの意図を超えた」破壊的操作�
 **以上、Git操作系15・インフラ/デプロイ系15・データ/ファイル系10・その他10の合計50個です。**
 </pre>
 <script>
+
+// 名指しリンク（#i37）で来たとき、その項目まで確実に運んで少しの間だけ目立たせる。
+// ブラウザ任せだと、項目数の多いページでは狙った位置に着かないことがある
+// （html に scroll-behavior:smooth が効いており、数万px を滑らせようとして届かない）。
+(function(){
+  function go(){
+    if (!location.hash) return;
+    var el = document.querySelector(location.hash);
+    if (!el || !el.classList.contains('icard')) return;
+    el.scrollIntoView({block: 'start', behavior: 'auto'});
+    el.classList.add('flashme');
+    setTimeout(function(){ el.classList.remove('flashme'); }, 2400);
+  }
+  addEventListener('hashchange', go);
+  if (document.readyState === 'loading') addEventListener('DOMContentLoaded', go);
+  else go();
+})();
 // 項目の多いキットで、目的の1件に辿り着けるようにする絞り込み。
 // 検索はタイトル・説明だけでなく本文も対象にする（「あの文言が入っていた項目」で探せるように）。
 (function(){
@@ -459,8 +480,27 @@ document.addEventListener('click', e => {
   const b = e.target.closest('[data-copy]');
   if (b) { copyText(b, b.dataset.copy); return; }
   const d = e.target.closest('[data-save]');
-  if (d) { saveText(d, d.dataset.save, d.dataset.name); }
+  if (d) { saveText(d, d.dataset.save, d.dataset.name); return; }
+  // その項目だけを名指しで人に渡せるようにする
+  const l = e.target.closest('[data-link]');
+  if (l) {
+    const url = location.origin + location.pathname + '#' + l.dataset.link;
+    navigator.clipboard.writeText(url).then(() => flash(l, '✓ コピーしました'));
+  }
 });
+
+// 「/」ですぐ検索を始められるようにする。入力中は邪魔しない。
+addEventListener('keydown', e => {
+  if (e.key !== '/' || e.metaKey || e.ctrlKey || e.altKey) return;
+  const t = e.target;
+  if (t && (t.tagName === 'INPUT' || t.tagName === 'TEXTAREA' || t.isContentEditable)) return;
+  const box = document.getElementById('q') || document.getElementById('kq');
+  if (!box) return;
+  e.preventDefault();
+  box.focus();
+  box.select();
+});
+
 </script>
 <div id="promo" class="promo">
   <div class="promo-card">

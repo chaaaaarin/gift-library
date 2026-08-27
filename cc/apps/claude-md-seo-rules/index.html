@@ -70,6 +70,10 @@
   <p class="epctx-label">この動画のほかのプレゼント</p>
   <div class="ep-kits"><a class="kchip" href="../article-review-checklist/"><span class="kt">記事レビュー チェックリスト</span><span class="badge">15項目</span><span class="go">開く →</span></a><a class="kchip" href="../keyword-research-prompts/"><span class="kt">キーワードリサーチ プロンプト集</span><span class="go">開く →</span></a><a class="kchip" href="../loop-engineering-seo-template/"><span class="kt">SEO Loop 設計テンプレート</span><span class="badge">7項目</span><span class="go">開く →</span></a><a class="kchip" href="../search-console-workflow/"><span class="kt">Search Console 改善ワークフロー</span><span class="go">開く →</span></a><a class="kchip" href="../seo-agent-workflow-mermaid/"><span class="kt">SEO Agent Workflow（Mermaid）</span><span class="go">開く →</span></a></div>
 </section>
+  <section class="epctx">
+  <p class="epctx-label">ほかの回の「設定・スニペット」</p>
+  <div class="ep-kits"><a class="kchip" href="../claude-md-lightweight50/"><span class="kt">CLAUDE.md軽量化スニペット50選</span><span class="badge">50個</span><span class="go">開く →</span></a><a class="kchip" href="../safety-checklist/"><span class="kt">Claude in Chrome 安全設定チェックリスト</span><span class="badge">9項目</span><span class="go">開く →</span></a><a class="kchip" href="../skill-templates-60/"><span class="kt">配布前提の SKILL.md ひな型60本</span><span class="badge">60個</span><span class="go">開く →</span></a><a class="kchip" href="../automode-environment-templates50/"><span class="kt">autoMode環境設定コピペテンプレート50選</span><span class="badge">50個</span><span class="go">開く →</span></a></div>
+</section>
 
   <footer><a href="../../">← ClaudeCodeチャンネル プレゼント図書館にもどる</a></footer>
 </div>
@@ -112,6 +116,23 @@ SEOループを回すエージェントに読ませる CLAUDE.md のSEO運用ル
 **ポイント**: 「品質ゲートを通るまで公開しない」を明記すると、自動化しても質が崩れない。
 </pre>
 <script>
+
+// 名指しリンク（#i37）で来たとき、その項目まで確実に運んで少しの間だけ目立たせる。
+// ブラウザ任せだと、項目数の多いページでは狙った位置に着かないことがある
+// （html に scroll-behavior:smooth が効いており、数万px を滑らせようとして届かない）。
+(function(){
+  function go(){
+    if (!location.hash) return;
+    var el = document.querySelector(location.hash);
+    if (!el || !el.classList.contains('icard')) return;
+    el.scrollIntoView({block: 'start', behavior: 'auto'});
+    el.classList.add('flashme');
+    setTimeout(function(){ el.classList.remove('flashme'); }, 2400);
+  }
+  addEventListener('hashchange', go);
+  if (document.readyState === 'loading') addEventListener('DOMContentLoaded', go);
+  else go();
+})();
 // 項目の多いキットで、目的の1件に辿り着けるようにする絞り込み。
 // 検索はタイトル・説明だけでなく本文も対象にする（「あの文言が入っていた項目」で探せるように）。
 (function(){
@@ -197,8 +218,27 @@ document.addEventListener('click', e => {
   const b = e.target.closest('[data-copy]');
   if (b) { copyText(b, b.dataset.copy); return; }
   const d = e.target.closest('[data-save]');
-  if (d) { saveText(d, d.dataset.save, d.dataset.name); }
+  if (d) { saveText(d, d.dataset.save, d.dataset.name); return; }
+  // その項目だけを名指しで人に渡せるようにする
+  const l = e.target.closest('[data-link]');
+  if (l) {
+    const url = location.origin + location.pathname + '#' + l.dataset.link;
+    navigator.clipboard.writeText(url).then(() => flash(l, '✓ コピーしました'));
+  }
 });
+
+// 「/」ですぐ検索を始められるようにする。入力中は邪魔しない。
+addEventListener('keydown', e => {
+  if (e.key !== '/' || e.metaKey || e.ctrlKey || e.altKey) return;
+  const t = e.target;
+  if (t && (t.tagName === 'INPUT' || t.tagName === 'TEXTAREA' || t.isContentEditable)) return;
+  const box = document.getElementById('q') || document.getElementById('kq');
+  if (!box) return;
+  e.preventDefault();
+  box.focus();
+  box.select();
+});
+
 </script>
 <div id="promo" class="promo">
   <div class="promo-card">

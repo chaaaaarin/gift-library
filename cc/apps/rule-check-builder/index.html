@@ -38,7 +38,7 @@
   <p class="imeta" style="margin:0 0 18px"><span class="nb">あなたは</span><span class="nb">【自社・</span><span class="nb">自部門の名前】の</span><span class="nb">【役割：例 審査担当者／経理担当／レビュアー】で</span><span class="nb">す。</span><span class="nb">
 以下のルールに沿って、</span><span class="nb">渡された</span>【対象：例 広告原稿／経費申請／応募書類／コード／契約書】を<span class="nb">確認してください。</span><span class="nb">
 
-# チェックするルール</span></p><div class="icard" data-cat="">
+# チェックするルール</span></p><div class="icard" id="i1" data-cat="">
   <div class="ih"><span class="num">001</span><span class="ititle">明確なNG（これに該当したら必ず指摘）</span></div>
   
   <pre class="prompt" id="b1">明確なNG（これに該当したら必ず指摘）
@@ -48,9 +48,10 @@
   <div class="cbtns">
     <button class="btn sm" data-copy="b1">📋 コピー</button>
     <button class="btn ghost sm" data-save="b1" data-name="rule-check-builder-001.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i1">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="">
+<div class="icard" id="i2" data-cat="">
   <div class="ih"><span class="num">002</span><span class="ititle">表記・形式のルール</span></div>
   
   <pre class="prompt" id="b2">表記・形式のルール
@@ -59,9 +60,10 @@
   <div class="cbtns">
     <button class="btn sm" data-copy="b2">📋 コピー</button>
     <button class="btn ghost sm" data-save="b2" data-name="rule-check-builder-002.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i2">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="">
+<div class="icard" id="i3" data-cat="">
   <div class="ih"><span class="num">003</span><span class="ititle">トーン・ニュアンスのルール</span></div>
   
   <pre class="prompt" id="b3">トーン・ニュアンスのルール
@@ -70,9 +72,10 @@
   <div class="cbtns">
     <button class="btn sm" data-copy="b3">📋 コピー</button>
     <button class="btn ghost sm" data-save="b3" data-name="rule-check-builder-003.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i3">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="">
+<div class="icard" id="i4" data-cat="">
   <div class="ih"><span class="num">004</span><span class="ititle">業界・法令に関する注意点</span></div>
   
   <pre class="prompt" id="b4">業界・法令に関する注意点
@@ -97,12 +100,17 @@
   <div class="cbtns">
     <button class="btn sm" data-copy="b4">📋 コピー</button>
     <button class="btn ghost sm" data-save="b4" data-name="rule-check-builder-004.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i4">🔗 リンク</button>
   </div>
 </div>
 
   <section class="epctx">
   <p class="epctx-label">この動画のほかのプレゼント</p>
   <div class="ep-kits"><a class="kchip" href="../ad-ops-prompts100/"><span class="kt">広告運用・代理店業務 実践プロンプト100選</span><span class="badge">100個</span><span class="go">開く →</span></a><a class="kchip" href="../business-translation-worksheet/"><span class="kt">自分の業務に翻訳するワークシート</span><span class="badge">10項目</span><span class="go">開く →</span></a><a class="kchip" href="../slack-claude-code-setup/"><span class="kt">Slack→Claude Code 自動化セットアップテンプレート</span><span class="badge">8項目</span><span class="go">開く →</span></a><a class="kchip" href="../work-prompts100/"><span class="kt">業種別 業務自動化プロンプト100選（3つの型）</span><span class="badge">100個</span><span class="go">開く →</span></a></div>
+</section>
+  <section class="epctx">
+  <p class="epctx-label">ほかの回の「チェックリスト」</p>
+  <div class="ep-kits"><a class="kchip" href="../session-checklist/"><span class="kt">セッション運用チェックシート</span><span class="badge">12項目</span><span class="go">開く →</span></a><a class="kchip" href="../anomaly-checklist/"><span class="kt">導入後の異常行動 早期発見チェックリスト</span><span class="badge">14項目</span><span class="go">開く →</span></a><a class="kchip" href="../key-handoff-checklist/"><span class="kt">合鍵チェックリスト——渡していい仕事・渡しちゃダメな仕事</span><span class="badge">5項目</span><span class="go">開く →</span></a><a class="kchip" href="../rollout-checklist/"><span class="kt">Auto Mode安全導入ロールアウトチェックリスト</span><span class="badge">12項目</span><span class="go">開く →</span></a></div>
 </section>
 
   <footer><a href="../../">← ClaudeCodeチャンネル プレゼント図書館にもどる</a></footer>
@@ -167,6 +175,23 @@
 判断基準そのものがまだ言葉になっていない場合は、まず過去に差し戻された理由を3〜5件書き出し、そこから共通点を抜き出すところから始めてください（[業務自動化プロンプト100選](./work-prompts100.md)の1番「判断基準そのものを言葉にする」がその作業用です）。
 </pre>
 <script>
+
+// 名指しリンク（#i37）で来たとき、その項目まで確実に運んで少しの間だけ目立たせる。
+// ブラウザ任せだと、項目数の多いページでは狙った位置に着かないことがある
+// （html に scroll-behavior:smooth が効いており、数万px を滑らせようとして届かない）。
+(function(){
+  function go(){
+    if (!location.hash) return;
+    var el = document.querySelector(location.hash);
+    if (!el || !el.classList.contains('icard')) return;
+    el.scrollIntoView({block: 'start', behavior: 'auto'});
+    el.classList.add('flashme');
+    setTimeout(function(){ el.classList.remove('flashme'); }, 2400);
+  }
+  addEventListener('hashchange', go);
+  if (document.readyState === 'loading') addEventListener('DOMContentLoaded', go);
+  else go();
+})();
 // 項目の多いキットで、目的の1件に辿り着けるようにする絞り込み。
 // 検索はタイトル・説明だけでなく本文も対象にする（「あの文言が入っていた項目」で探せるように）。
 (function(){
@@ -252,8 +277,27 @@ document.addEventListener('click', e => {
   const b = e.target.closest('[data-copy]');
   if (b) { copyText(b, b.dataset.copy); return; }
   const d = e.target.closest('[data-save]');
-  if (d) { saveText(d, d.dataset.save, d.dataset.name); }
+  if (d) { saveText(d, d.dataset.save, d.dataset.name); return; }
+  // その項目だけを名指しで人に渡せるようにする
+  const l = e.target.closest('[data-link]');
+  if (l) {
+    const url = location.origin + location.pathname + '#' + l.dataset.link;
+    navigator.clipboard.writeText(url).then(() => flash(l, '✓ コピーしました'));
+  }
 });
+
+// 「/」ですぐ検索を始められるようにする。入力中は邪魔しない。
+addEventListener('keydown', e => {
+  if (e.key !== '/' || e.metaKey || e.ctrlKey || e.altKey) return;
+  const t = e.target;
+  if (t && (t.tagName === 'INPUT' || t.tagName === 'TEXTAREA' || t.isContentEditable)) return;
+  const box = document.getElementById('q') || document.getElementById('kq');
+  if (!box) return;
+  e.preventDefault();
+  box.focus();
+  box.select();
+});
+
 </script>
 <div id="promo" class="promo">
   <div class="promo-card">

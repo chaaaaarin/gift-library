@@ -35,7 +35,7 @@
     <div class="pnote"><span class="nb">下のカードから、</span><span class="nb">1件ずつコピー、</span><span class="nb">または個別にダウンロードできます。</span><span class="nb">まとめて欲しいときは、</span><span class="nb">上の</span><span class="nb">「全件ダウンロード」を</span><span class="nb">お使いください。</span></div>
   </section>
 
-  <div class="icard" data-cat="">
+  <div class="icard" id="i1" data-cat="">
   <div class="ih"><span class="num">001</span><span class="ititle">Effort設定</span></div>
   
   <pre class="prompt" id="b1">[Effortを既定に戻す確認]
@@ -55,9 +55,10 @@
   <div class="cbtns">
     <button class="btn sm" data-copy="b1">📋 コピー</button>
     <button class="btn ghost sm" data-save="b1" data-name="prompts40-001.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i1">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="">
+<div class="icard" id="i2" data-cat="">
   <div class="ih"><span class="num">002</span><span class="ititle">バーベル戦略・役割分担</span></div>
   
   <pre class="prompt" id="b2">[計画だけFable 5に任せる]
@@ -77,9 +78,10 @@
   <div class="cbtns">
     <button class="btn sm" data-copy="b2">📋 コピー</button>
     <button class="btn ghost sm" data-save="b2" data-name="prompts40-002.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i2">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="">
+<div class="icard" id="i3" data-cat="">
   <div class="ih"><span class="num">003</span><span class="ititle">セッション・コンテキスト管理</span></div>
   
   <pre class="prompt" id="b3">[会話が長くなったらまとめてクリア]
@@ -99,9 +101,10 @@
   <div class="cbtns">
     <button class="btn sm" data-copy="b3">📋 コピー</button>
     <button class="btn ghost sm" data-save="b3" data-name="prompts40-003.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i3">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="">
+<div class="icard" id="i4" data-cat="">
   <div class="ih"><span class="num">004</span><span class="ititle">MCP・コネクタ整理</span></div>
   
   <pre class="prompt" id="b4">[使用中のコネクタを棚卸しする]
@@ -121,9 +124,10 @@
   <div class="cbtns">
     <button class="btn sm" data-copy="b4">📋 コピー</button>
     <button class="btn ghost sm" data-save="b4" data-name="prompts40-004.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i4">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="">
+<div class="icard" id="i5" data-cat="">
   <div class="ih"><span class="num">005</span><span class="ititle">トークン圧縮ツール導入</span></div>
   
   <pre class="prompt" id="b5">[rtkの導入効果を試算する]
@@ -143,9 +147,10 @@ rtkを導入して、シェル出力の圧縮率を試算して
   <div class="cbtns">
     <button class="btn sm" data-copy="b5">📋 コピー</button>
     <button class="btn ghost sm" data-save="b5" data-name="prompts40-005.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i5">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="">
+<div class="icard" id="i6" data-cat="">
   <div class="ih"><span class="num">006</span><span class="ititle">引き継ぎ書・継続性</span></div>
   
   <pre class="prompt" id="b6">[引き継ぎ書を作る]
@@ -165,9 +170,10 @@ rtkを導入して、シェル出力の圧縮率を試算して
   <div class="cbtns">
     <button class="btn sm" data-copy="b6">📋 コピー</button>
     <button class="btn ghost sm" data-save="b6" data-name="prompts40-006.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i6">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="">
+<div class="icard" id="i7" data-cat="">
   <div class="ih"><span class="num">007</span><span class="ititle">日常のトークン大掃除</span></div>
   
   <pre class="prompt" id="b7">[メモリファイルを圧縮する]
@@ -187,9 +193,10 @@ rtkを導入して、シェル出力の圧縮率を試算して
   <div class="cbtns">
     <button class="btn sm" data-copy="b7">📋 コピー</button>
     <button class="btn ghost sm" data-save="b7" data-name="prompts40-007.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i7">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="">
+<div class="icard" id="i8" data-cat="">
   <div class="ih"><span class="num">008</span><span class="ititle">画像レンダリングの裏技</span></div>
   
   <pre class="prompt" id="b8">[画像化してOCRさせる]
@@ -209,12 +216,17 @@ Fable 5とOpus 4.8、GPT 5.5のベンチマーク比較表を教えて
   <div class="cbtns">
     <button class="btn sm" data-copy="b8">📋 コピー</button>
     <button class="btn ghost sm" data-save="b8" data-name="prompts40-008.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i8">🔗 リンク</button>
   </div>
 </div>
 
   <section class="epctx">
   <p class="epctx-label">この動画のほかのプレゼント</p>
   <div class="ep-kits"><a class="kchip" href="../barbell-strategy-checklist/"><span class="kt">バーベル戦略（10-80-10）実践チェックリスト</span><span class="badge">12項目</span><span class="go">開く →</span></a><a class="kchip" href="../effort-cheatsheet/"><span class="kt">Effort×用途 使い分け早見表</span><span class="badge">10項目</span><span class="go">開く →</span></a></div>
+</section>
+  <section class="epctx">
+  <p class="epctx-label">ほかの回の「プロンプト集」</p>
+  <div class="ep-kits"><a class="kchip" href="../gemini-claude-prompts60/"><span class="kt">Gemini 3.7 Flash × Claude Code 実践プロンプト60選</span><span class="badge">60個</span><span class="go">開く →</span></a><a class="kchip" href="../newfeatures-prompts100/"><span class="kt">今週の新機能 活用プロンプト100選</span><span class="badge">100個</span><span class="go">開く →</span></a><a class="kchip" href="../roommate-team-prompts100/"><span class="kt">合鍵チーム編成プロンプト100選</span><span class="badge">100個</span><span class="go">開く →</span></a><a class="kchip" href="../browser-prompts-60/"><span class="kt">Claude in Chromeブラウザ操作プロンプト60選</span><span class="badge">60個</span><span class="go">開く →</span></a></div>
 </section>
 
   <footer><a href="../../">← ClaudeCodeチャンネル プレゼント図書館にもどる</a></footer>
@@ -358,6 +370,23 @@ Fable 5とOpus 4.8、GPT 5.5のベンチマーク比較表を教えて
 ```
 </pre>
 <script>
+
+// 名指しリンク（#i37）で来たとき、その項目まで確実に運んで少しの間だけ目立たせる。
+// ブラウザ任せだと、項目数の多いページでは狙った位置に着かないことがある
+// （html に scroll-behavior:smooth が効いており、数万px を滑らせようとして届かない）。
+(function(){
+  function go(){
+    if (!location.hash) return;
+    var el = document.querySelector(location.hash);
+    if (!el || !el.classList.contains('icard')) return;
+    el.scrollIntoView({block: 'start', behavior: 'auto'});
+    el.classList.add('flashme');
+    setTimeout(function(){ el.classList.remove('flashme'); }, 2400);
+  }
+  addEventListener('hashchange', go);
+  if (document.readyState === 'loading') addEventListener('DOMContentLoaded', go);
+  else go();
+})();
 // 項目の多いキットで、目的の1件に辿り着けるようにする絞り込み。
 // 検索はタイトル・説明だけでなく本文も対象にする（「あの文言が入っていた項目」で探せるように）。
 (function(){
@@ -443,8 +472,27 @@ document.addEventListener('click', e => {
   const b = e.target.closest('[data-copy]');
   if (b) { copyText(b, b.dataset.copy); return; }
   const d = e.target.closest('[data-save]');
-  if (d) { saveText(d, d.dataset.save, d.dataset.name); }
+  if (d) { saveText(d, d.dataset.save, d.dataset.name); return; }
+  // その項目だけを名指しで人に渡せるようにする
+  const l = e.target.closest('[data-link]');
+  if (l) {
+    const url = location.origin + location.pathname + '#' + l.dataset.link;
+    navigator.clipboard.writeText(url).then(() => flash(l, '✓ コピーしました'));
+  }
 });
+
+// 「/」ですぐ検索を始められるようにする。入力中は邪魔しない。
+addEventListener('keydown', e => {
+  if (e.key !== '/' || e.metaKey || e.ctrlKey || e.altKey) return;
+  const t = e.target;
+  if (t && (t.tagName === 'INPUT' || t.tagName === 'TEXTAREA' || t.isContentEditable)) return;
+  const box = document.getElementById('q') || document.getElementById('kq');
+  if (!box) return;
+  e.preventDefault();
+  box.focus();
+  box.select();
+});
+
 </script>
 <div id="promo" class="promo">
   <div class="promo-card">

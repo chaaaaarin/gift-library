@@ -35,7 +35,7 @@
     <div class="pnote"><span class="nb">下のカードから、</span><span class="nb">1件ずつコピー、</span><span class="nb">または個別にダウンロードできます。</span><span class="nb">まとめて欲しいときは、</span><span class="nb">上の</span><span class="nb">「全件ダウンロード」を</span><span class="nb">お使いください。</span></div>
   </section>
 
-  <div class="icard" data-cat="">
+  <div class="icard" id="i1" data-cat="">
   <div class="ih"><span class="num">001</span><span class="ititle">カテゴリ1: ベンチマーク（テストの名前）</span></div>
   
   <pre class="prompt" id="b1">【ベンチマーク】
@@ -58,9 +58,10 @@ AIモデルの性能を測るための「共通の試験問題」。同じ問題
   <div class="cbtns">
     <button class="btn sm" data-copy="b1">📋 コピー</button>
     <button class="btn ghost sm" data-save="b1" data-name="model-hikaku-yougo-jiten-001.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i1">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="">
+<div class="icard" id="i2" data-cat="">
   <div class="ih"><span class="num">002</span><span class="ititle">カテゴリ2: 点数・単位の読み方</span></div>
   
   <pre class="prompt" id="b2">【％（パーセント）表記】
@@ -74,9 +75,10 @@ AIモデルの性能を測るための「共通の試験問題」。同じ問題
   <div class="cbtns">
     <button class="btn sm" data-copy="b2">📋 コピー</button>
     <button class="btn ghost sm" data-save="b2" data-name="model-hikaku-yougo-jiten-002.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i2">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="">
+<div class="icard" id="i3" data-cat="">
   <div class="ih"><span class="num">003</span><span class="ititle">カテゴリ3: 使い方に関わる言葉</span></div>
   
   <pre class="prompt" id="b3">【effort（エフォート）】
@@ -93,9 +95,10 @@ AIが文章を処理する際の最小単位。日本語1文字＝1トークン�
   <div class="cbtns">
     <button class="btn sm" data-copy="b3">📋 コピー</button>
     <button class="btn ghost sm" data-save="b3" data-name="model-hikaku-yougo-jiten-003.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i3">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="">
+<div class="icard" id="i4" data-cat="">
   <div class="ih"><span class="num">004</span><span class="ititle">カテゴリ4: 読み方の注意（本資料側の解釈）</span></div>
   
   <pre class="prompt" id="b4">【自社発表と第三者評価の違い】
@@ -109,12 +112,17 @@ AIが文章を処理する際の最小単位。日本語1文字＝1トークン�
   <div class="cbtns">
     <button class="btn sm" data-copy="b4">📋 コピー</button>
     <button class="btn ghost sm" data-save="b4" data-name="model-hikaku-yougo-jiten-004.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i4">🔗 リンク</button>
   </div>
 </div>
 
   <section class="epctx">
   <p class="epctx-label">この動画のほかのプレゼント</p>
   <div class="ep-kits"><a class="kchip" href="../dokuritsu-kensho-checklist/"><span class="kt">独立検証の見方チェックリスト（自分でベンチマークを疑う）</span><span class="badge">10項目</span><span class="go">開く →</span></a><a class="kchip" href="../opus5-fable5-prompts100/"><span class="kt">Opus 5×Fable 5 タスク別使い分けプロンプト100選</span><span class="badge">100個</span><span class="go">開く →</span></a></div>
+</section>
+  <section class="epctx">
+  <p class="epctx-label">ほかの回の「早見表・逆引き」</p>
+  <div class="ep-kits"><a class="kchip" href="../grokbot-vs-cowork-sheet/"><span class="kt">Grok Bot vs Claude Cowork 使い分け早見表</span><span class="badge">6項目</span><span class="go">開く →</span></a><a class="kchip" href="../ai-empire-roadmap/"><span class="kt">AI帝国ロードマップ早見表 — SpaceXAI編</span><span class="badge">6項目</span><span class="go">開く →</span></a><a class="kchip" href="../hermes-claude-code-feature-map/"><span class="kt">Hermes Agent × Claude Code 機能対応表</span><span class="badge">14項目</span><span class="go">開く →</span></a><a class="kchip" href="../mcp-glossary/"><span class="kt">MCP用語辞典</span><span class="go">開く →</span></a></div>
 </section>
 
   <footer><a href="../../">← ClaudeCodeチャンネル プレゼント図書館にもどる</a></footer>
@@ -187,6 +195,23 @@ AIが文章を処理する際の最小単位。日本語1文字＝1トークン�
 **ポイント**: この辞典はベンチマーク用語の理解を助けるためのものです。個別の数値・仕様は必ず各公式サイトで最新情報をご確認ください。
 </pre>
 <script>
+
+// 名指しリンク（#i37）で来たとき、その項目まで確実に運んで少しの間だけ目立たせる。
+// ブラウザ任せだと、項目数の多いページでは狙った位置に着かないことがある
+// （html に scroll-behavior:smooth が効いており、数万px を滑らせようとして届かない）。
+(function(){
+  function go(){
+    if (!location.hash) return;
+    var el = document.querySelector(location.hash);
+    if (!el || !el.classList.contains('icard')) return;
+    el.scrollIntoView({block: 'start', behavior: 'auto'});
+    el.classList.add('flashme');
+    setTimeout(function(){ el.classList.remove('flashme'); }, 2400);
+  }
+  addEventListener('hashchange', go);
+  if (document.readyState === 'loading') addEventListener('DOMContentLoaded', go);
+  else go();
+})();
 // 項目の多いキットで、目的の1件に辿り着けるようにする絞り込み。
 // 検索はタイトル・説明だけでなく本文も対象にする（「あの文言が入っていた項目」で探せるように）。
 (function(){
@@ -272,8 +297,27 @@ document.addEventListener('click', e => {
   const b = e.target.closest('[data-copy]');
   if (b) { copyText(b, b.dataset.copy); return; }
   const d = e.target.closest('[data-save]');
-  if (d) { saveText(d, d.dataset.save, d.dataset.name); }
+  if (d) { saveText(d, d.dataset.save, d.dataset.name); return; }
+  // その項目だけを名指しで人に渡せるようにする
+  const l = e.target.closest('[data-link]');
+  if (l) {
+    const url = location.origin + location.pathname + '#' + l.dataset.link;
+    navigator.clipboard.writeText(url).then(() => flash(l, '✓ コピーしました'));
+  }
 });
+
+// 「/」ですぐ検索を始められるようにする。入力中は邪魔しない。
+addEventListener('keydown', e => {
+  if (e.key !== '/' || e.metaKey || e.ctrlKey || e.altKey) return;
+  const t = e.target;
+  if (t && (t.tagName === 'INPUT' || t.tagName === 'TEXTAREA' || t.isContentEditable)) return;
+  const box = document.getElementById('q') || document.getElementById('kq');
+  if (!box) return;
+  e.preventDefault();
+  box.focus();
+  box.select();
+});
+
 </script>
 <div id="promo" class="promo">
   <div class="promo-card">

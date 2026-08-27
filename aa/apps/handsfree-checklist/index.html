@@ -35,7 +35,7 @@
     <div class="pnote"><span class="nb">下のカードから、</span><span class="nb">1件ずつコピー、</span><span class="nb">または個別にダウンロードできます。</span><span class="nb">まとめて欲しいときは、</span><span class="nb">上の</span><span class="nb">「全件ダウンロード」を</span><span class="nb">お使いください。</span></div>
   </section>
 
-  <div class="icard" data-cat="">
+  <div class="icard" id="i1" data-cat="">
   <div class="ih"><span class="num">001</span><span class="ititle">ステップ1：今、手や目がどれくらいふさがっているか確認する</span></div>
   
   <pre class="prompt" id="b1">□ 両手が完全にふさがっている（運転・料理・育児中など）
@@ -45,9 +45,10 @@
   <div class="cbtns">
     <button class="btn sm" data-copy="b1">📋 コピー</button>
     <button class="btn ghost sm" data-save="b1" data-name="handsfree-checklist-001.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i1">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="">
+<div class="icard" id="i2" data-cat="">
   <div class="ih"><span class="num">002</span><span class="ititle">ステップ2：周囲の環境を確認する</span></div>
   
   <pre class="prompt" id="b2">□ 声を出しても迷惑にならない場所にいる
@@ -58,9 +59,10 @@
   <div class="cbtns">
     <button class="btn sm" data-copy="b2">📋 コピー</button>
     <button class="btn ghost sm" data-save="b2" data-name="handsfree-checklist-002.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i2">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="">
+<div class="icard" id="i3" data-cat="">
   <div class="ih"><span class="num">003</span><span class="ititle">ステップ3：やりたいことが画面・映像を必要とするか確認する</span></div>
   
   <pre class="prompt" id="b3">□ 画面共有や動画を見せる必要がある
@@ -70,9 +72,10 @@
   <div class="cbtns">
     <button class="btn sm" data-copy="b3">📋 コピー</button>
     <button class="btn ghost sm" data-save="b3" data-name="handsfree-checklist-003.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i3">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="">
+<div class="icard" id="i4" data-cat="">
   <div class="ih"><span class="num">004</span><span class="ititle">ステップ4：割り込みや中断が発生しそうか確認する</span></div>
   
   <pre class="prompt" id="b4">□ 途中で誰かに話しかけられる可能性が高い（育児中・接客中等）
@@ -82,9 +85,10 @@
   <div class="cbtns">
     <button class="btn sm" data-copy="b4">📋 コピー</button>
     <button class="btn ghost sm" data-save="b4" data-name="handsfree-checklist-004.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i4">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="">
+<div class="icard" id="i5" data-cat="">
   <div class="ih"><span class="num">005</span><span class="ititle">ステップ5：会話の内容が機密情報を含むか確認する</span></div>
   
   <pre class="prompt" id="b5">□ 個人情報・パスワード・社外秘の情報を話す予定がある
@@ -94,9 +98,10 @@
   <div class="cbtns">
     <button class="btn sm" data-copy="b5">📋 コピー</button>
     <button class="btn ghost sm" data-save="b5" data-name="handsfree-checklist-005.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i5">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="">
+<div class="icard" id="i6" data-cat="">
   <div class="ih"><span class="num">006</span><span class="ititle">ステップ6：どのReasoning Effortを使うか最終確認する</span></div>
   
   <pre class="prompt" id="b6">□ 急いでいる／テンポ重視 → Instant
@@ -106,12 +111,17 @@
   <div class="cbtns">
     <button class="btn sm" data-copy="b6">📋 コピー</button>
     <button class="btn ghost sm" data-save="b6" data-name="handsfree-checklist-006.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i6">🔗 リンク</button>
   </div>
 </div>
 
   <section class="epctx">
   <p class="epctx-label">この動画のほかのプレゼント</p>
   <div class="ep-kits"><a class="kchip" href="../reasoning-effort-hayamihyo/"><span class="kt">Reasoning Effort使い分け早見表</span><span class="badge">15項目</span><span class="go">開く →</span></a><a class="kchip" href="../voice-prompts100/"><span class="kt">GPT-Live音声指示100選</span><span class="badge">100個</span><span class="go">開く →</span></a></div>
+</section>
+  <section class="epctx">
+  <p class="epctx-label">ほかの回の「チェックリスト」</p>
+  <div class="ep-kits"><a class="kchip" href="../budget-selfcheck/"><span class="kt">コンテキスト予算セルフ診断シート</span><span class="badge">6項目</span><span class="go">開く →</span></a><a class="kchip" href="../compaction-checklist/"><span class="kt">圧縮事故防止チェックリスト</span><span class="badge">6項目</span><span class="go">開く →</span></a><a class="kchip" href="../grokbot-checklist/"><span class="kt">Grok Bot導入前チェックシート</span><span class="badge">7項目</span><span class="go">開く →</span></a><a class="kchip" href="../switch-checklist/"><span class="kt">格安モデル切り替え判断チェックリスト</span><span class="badge">9項目</span><span class="go">開く →</span></a></div>
 </section>
 
   <footer><a href="../../">← AIエージェント / Kawaru プレゼント図書館にもどる</a></footer>
@@ -169,6 +179,23 @@
 **ポイント**: ステップ3・5で「NO以外」に該当した場合は無理に音声を使わず、他の方法に切り替えるのが安全です。
 </pre>
 <script>
+
+// 名指しリンク（#i37）で来たとき、その項目まで確実に運んで少しの間だけ目立たせる。
+// ブラウザ任せだと、項目数の多いページでは狙った位置に着かないことがある
+// （html に scroll-behavior:smooth が効いており、数万px を滑らせようとして届かない）。
+(function(){
+  function go(){
+    if (!location.hash) return;
+    var el = document.querySelector(location.hash);
+    if (!el || !el.classList.contains('icard')) return;
+    el.scrollIntoView({block: 'start', behavior: 'auto'});
+    el.classList.add('flashme');
+    setTimeout(function(){ el.classList.remove('flashme'); }, 2400);
+  }
+  addEventListener('hashchange', go);
+  if (document.readyState === 'loading') addEventListener('DOMContentLoaded', go);
+  else go();
+})();
 // 項目の多いキットで、目的の1件に辿り着けるようにする絞り込み。
 // 検索はタイトル・説明だけでなく本文も対象にする（「あの文言が入っていた項目」で探せるように）。
 (function(){
@@ -254,8 +281,27 @@ document.addEventListener('click', e => {
   const b = e.target.closest('[data-copy]');
   if (b) { copyText(b, b.dataset.copy); return; }
   const d = e.target.closest('[data-save]');
-  if (d) { saveText(d, d.dataset.save, d.dataset.name); }
+  if (d) { saveText(d, d.dataset.save, d.dataset.name); return; }
+  // その項目だけを名指しで人に渡せるようにする
+  const l = e.target.closest('[data-link]');
+  if (l) {
+    const url = location.origin + location.pathname + '#' + l.dataset.link;
+    navigator.clipboard.writeText(url).then(() => flash(l, '✓ コピーしました'));
+  }
 });
+
+// 「/」ですぐ検索を始められるようにする。入力中は邪魔しない。
+addEventListener('keydown', e => {
+  if (e.key !== '/' || e.metaKey || e.ctrlKey || e.altKey) return;
+  const t = e.target;
+  if (t && (t.tagName === 'INPUT' || t.tagName === 'TEXTAREA' || t.isContentEditable)) return;
+  const box = document.getElementById('q') || document.getElementById('kq');
+  if (!box) return;
+  e.preventDefault();
+  box.focus();
+  box.select();
+});
+
 </script>
 <div id="promo" class="promo">
   <div class="promo-card">
