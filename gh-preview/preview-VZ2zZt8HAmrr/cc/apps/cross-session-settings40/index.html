@@ -42,7 +42,7 @@
   <p class="khit" id="khit" role="status"></p>
 </div>
 <h2 class="cat" data-cat="受け取り方を決める">受け取り方を決める</h2>
-<div class="icard" data-cat="受け取り方を決める">
+<div class="icard" id="i1" data-cat="受け取り方を決める">
   <div class="ih"><span class="num">001</span><span class="ititle">すべて受け取る</span></div>
   
   <pre class="prompt" id="b1">すべて受け取る
@@ -53,9 +53,10 @@
   <div class="cbtns">
     <button class="btn sm" data-copy="b1">📋 コピー</button>
     <button class="btn ghost sm" data-save="b1" data-name="cross-session-settings40-001.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i1">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="受け取り方を決める">
+<div class="icard" id="i2" data-cat="受け取り方を決める">
   <div class="ih"><span class="num">002</span><span class="ititle">いったん保留にする</span></div>
   
   <pre class="prompt" id="b2">いったん保留にする
@@ -66,9 +67,10 @@
   <div class="cbtns">
     <button class="btn sm" data-copy="b2">📋 コピー</button>
     <button class="btn ghost sm" data-save="b2" data-name="cross-session-settings40-002.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i2">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="受け取り方を決める">
+<div class="icard" id="i3" data-cat="受け取り方を決める">
   <div class="ih"><span class="num">003</span><span class="ititle">いっさい受け取らない</span></div>
   
   <pre class="prompt" id="b3">いっさい受け取らない
@@ -79,9 +81,10 @@
   <div class="cbtns">
     <button class="btn sm" data-copy="b3">📋 コピー</button>
     <button class="btn ghost sm" data-save="b3" data-name="cross-session-settings40-003.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i3">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="受け取り方を決める">
+<div class="icard" id="i4" data-cat="受け取り方を決める">
   <div class="ih"><span class="num">004</span><span class="ititle">承認ダイアログの待ち時間を延ばす</span></div>
   
   <pre class="prompt" id="b4">承認ダイアログの待ち時間を延ばす
@@ -92,9 +95,10 @@
   <div class="cbtns">
     <button class="btn sm" data-copy="b4">📋 コピー</button>
     <button class="btn ghost sm" data-save="b4" data-name="cross-session-settings40-004.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i4">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="受け取り方を決める">
+<div class="icard" id="i5" data-cat="受け取り方を決める">
   <div class="ih"><span class="num">005</span><span class="ititle">受け取りは許すが確認は長めに待つ</span></div>
   
   <pre class="prompt" id="b5">受け取りは許すが確認は長めに待つ
@@ -106,9 +110,10 @@
   <div class="cbtns">
     <button class="btn sm" data-copy="b5">📋 コピー</button>
     <button class="btn ghost sm" data-save="b5" data-name="cross-session-settings40-005.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i5">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="受け取り方を決める">
+<div class="icard" id="i6" data-cat="受け取り方を決める">
   <div class="ih"><span class="num">006</span><span class="ititle">このプロジェクトだけ受け取りを止める</span></div>
   
   <pre class="prompt" id="b6">このプロジェクトだけ受け取りを止める
@@ -119,9 +124,10 @@
   <div class="cbtns">
     <button class="btn sm" data-copy="b6">📋 コピー</button>
     <button class="btn ghost sm" data-save="b6" data-name="cross-session-settings40-006.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i6">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="受け取り方を決める">
+<div class="icard" id="i7" data-cat="受け取り方を決める">
   <div class="ih"><span class="num">007</span><span class="ititle">自分だけの設定として受け取りを止める</span></div>
   
   <pre class="prompt" id="b7">自分だけの設定として受け取りを止める
@@ -132,9 +138,10 @@
   <div class="cbtns">
     <button class="btn sm" data-copy="b7">📋 コピー</button>
     <button class="btn ghost sm" data-save="b7" data-name="cross-session-settings40-007.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i7">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="受け取り方を決める">
+<div class="icard" id="i8" data-cat="受け取り方を決める">
   <div class="ih"><span class="num">008</span><span class="ititle">起動時だけ受け取りを許可する</span></div>
   
   <pre class="prompt" id="b8">起動時だけ受け取りを許可する
@@ -143,10 +150,11 @@ claude --settings &#x27;{&quot;crossSessionInbound&quot;:&quot;accept&quot;}&#x2
   <div class="cbtns">
     <button class="btn sm" data-copy="b8">📋 コピー</button>
     <button class="btn ghost sm" data-save="b8" data-name="cross-session-settings40-008.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i8">🔗 リンク</button>
   </div>
 </div>
 <h2 class="cat" data-cat="マシンの外へ出す送信を絞る">マシンの外へ出す送信を絞る</h2>
-<div class="icard" data-cat="マシンの外へ出す送信を絞る">
+<div class="icard" id="i9" data-cat="マシンの外へ出す送信を絞る">
   <div class="ih"><span class="num">009</span><span class="ititle">外へ出る送信すべてに承認を要求する</span></div>
   
   <pre class="prompt" id="b9">外へ出る送信すべてに承認を要求する
@@ -157,9 +165,10 @@ claude --settings &#x27;{&quot;crossSessionInbound&quot;:&quot;accept&quot;}&#x2
   <div class="cbtns">
     <button class="btn sm" data-copy="b9">📋 コピー</button>
     <button class="btn ghost sm" data-save="b9" data-name="cross-session-settings40-009.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i9">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="マシンの外へ出す送信を絞る">
+<div class="icard" id="i10" data-cat="マシンの外へ出す送信を絞る">
   <div class="ih"><span class="num">010</span><span class="ititle">プロジェクト側から強制する</span></div>
   
   <pre class="prompt" id="b10">プロジェクト側から強制する
@@ -170,9 +179,10 @@ claude --settings &#x27;{&quot;crossSessionInbound&quot;:&quot;accept&quot;}&#x2
   <div class="cbtns">
     <button class="btn sm" data-copy="b10">📋 コピー</button>
     <button class="btn ghost sm" data-save="b10" data-name="cross-session-settings40-010.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i10">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="マシンの外へ出す送信を絞る">
+<div class="icard" id="i11" data-cat="マシンの外へ出す送信を絞る">
   <div class="ih"><span class="num">011</span><span class="ititle">組織全体に強制する</span></div>
   
   <pre class="prompt" id="b11">組織全体に強制する
@@ -183,9 +193,10 @@ claude --settings &#x27;{&quot;crossSessionInbound&quot;:&quot;accept&quot;}&#x2
   <div class="cbtns">
     <button class="btn sm" data-copy="b11">📋 コピー</button>
     <button class="btn ghost sm" data-save="b11" data-name="cross-session-settings40-011.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i11">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="マシンの外へ出す送信を絞る">
+<div class="icard" id="i12" data-cat="マシンの外へ出す送信を絞る">
   <div class="ih"><span class="num">012</span><span class="ititle">外は承認・中は自由にする</span></div>
   
   <pre class="prompt" id="b12">外は承認・中は自由にする
@@ -197,9 +208,10 @@ claude --settings &#x27;{&quot;crossSessionInbound&quot;:&quot;accept&quot;}&#x2
   <div class="cbtns">
     <button class="btn sm" data-copy="b12">📋 コピー</button>
     <button class="btn ghost sm" data-save="b12" data-name="cross-session-settings40-012.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i12">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="マシンの外へ出す送信を絞る">
+<div class="icard" id="i13" data-cat="マシンの外へ出す送信を絞る">
   <div class="ih"><span class="num">013</span><span class="ititle">外も中も、いったん全部止める</span></div>
   
   <pre class="prompt" id="b13">外も中も、いったん全部止める
@@ -211,9 +223,10 @@ claude --settings &#x27;{&quot;crossSessionInbound&quot;:&quot;accept&quot;}&#x2
   <div class="cbtns">
     <button class="btn sm" data-copy="b13">📋 コピー</button>
     <button class="btn ghost sm" data-save="b13" data-name="cross-session-settings40-013.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i13">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="マシンの外へ出す送信を絞る">
+<div class="icard" id="i14" data-cat="マシンの外へ出す送信を絞る">
   <div class="ih"><span class="num">014</span><span class="ititle">一時的に外への承認を有効にして起動する</span></div>
   
   <pre class="prompt" id="b14">一時的に外への承認を有効にして起動する
@@ -222,10 +235,11 @@ claude --settings &#x27;{&quot;isolatePeerMachines&quot;:true}&#x27;</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b14">📋 コピー</button>
     <button class="btn ghost sm" data-save="b14" data-name="cross-session-settings40-014.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i14">🔗 リンク</button>
   </div>
 </div>
 <h2 class="cat" data-cat="完全に止める・組織で管理する">完全に止める・組織で管理する</h2>
-<div class="icard" data-cat="完全に止める・組織で管理する">
+<div class="icard" id="i15" data-cat="完全に止める・組織で管理する">
   <div class="ih"><span class="num">015</span><span class="ititle">送るのと探すのを止める</span></div>
   
   <pre class="prompt" id="b15">送るのと探すのを止める
@@ -238,9 +252,10 @@ claude --settings &#x27;{&quot;isolatePeerMachines&quot;:true}&#x27;</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b15">📋 コピー</button>
     <button class="btn ghost sm" data-save="b15" data-name="cross-session-settings40-015.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i15">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="完全に止める・組織で管理する">
+<div class="icard" id="i16" data-cat="完全に止める・組織で管理する">
   <div class="ih"><span class="num">016</span><span class="ititle">送受信の両方を止める</span></div>
   
   <pre class="prompt" id="b16">送受信の両方を止める
@@ -254,9 +269,10 @@ claude --settings &#x27;{&quot;isolatePeerMachines&quot;:true}&#x27;</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b16">📋 コピー</button>
     <button class="btn ghost sm" data-save="b16" data-name="cross-session-settings40-016.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i16">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="完全に止める・組織で管理する">
+<div class="icard" id="i17" data-cat="完全に止める・組織で管理する">
   <div class="ih"><span class="num">017</span><span class="ititle">組織全体で無効にする</span></div>
   
   <pre class="prompt" id="b17">組織全体で無効にする
@@ -270,9 +286,10 @@ claude --settings &#x27;{&quot;isolatePeerMachines&quot;:true}&#x27;</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b17">📋 コピー</button>
     <button class="btn ghost sm" data-save="b17" data-name="cross-session-settings40-017.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i17">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="完全に止める・組織で管理する">
+<div class="icard" id="i18" data-cat="完全に止める・組織で管理する">
   <div class="ih"><span class="num">018</span><span class="ititle">探すのだけ許して、送るのは止める</span></div>
   
   <pre class="prompt" id="b18">探すのだけ許して、送るのは止める
@@ -285,9 +302,10 @@ claude --settings &#x27;{&quot;isolatePeerMachines&quot;:true}&#x27;</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b18">📋 コピー</button>
     <button class="btn ghost sm" data-save="b18" data-name="cross-session-settings40-018.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i18">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="完全に止める・組織で管理する">
+<div class="icard" id="i19" data-cat="完全に止める・組織で管理する">
   <div class="ih"><span class="num">019</span><span class="ititle">受け取りだけ止めて、送るのは残す</span></div>
   
   <pre class="prompt" id="b19">受け取りだけ止めて、送るのは残す
@@ -298,9 +316,10 @@ claude --settings &#x27;{&quot;isolatePeerMachines&quot;:true}&#x27;</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b19">📋 コピー</button>
     <button class="btn ghost sm" data-save="b19" data-name="cross-session-settings40-019.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i19">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="完全に止める・組織で管理する">
+<div class="icard" id="i20" data-cat="完全に止める・組織で管理する">
   <div class="ih"><span class="num">020</span><span class="ititle">一時的に全部止めて起動する</span></div>
   
   <pre class="prompt" id="b20">一時的に全部止めて起動する
@@ -309,9 +328,10 @@ claude --settings &#x27;{&quot;permissions&quot;:{&quot;deny&quot;:[&quot;SendMe
   <div class="cbtns">
     <button class="btn sm" data-copy="b20">📋 コピー</button>
     <button class="btn ghost sm" data-save="b20" data-name="cross-session-settings40-020.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i20">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="完全に止める・組織で管理する">
+<div class="icard" id="i21" data-cat="完全に止める・組織で管理する">
   <div class="ih"><span class="num">021</span><span class="ititle">停止の副作用を確認する</span></div>
   
   <pre class="prompt" id="b21">停止の副作用を確認する
@@ -326,9 +346,10 @@ claude --settings &#x27;{&quot;permissions&quot;:{&quot;deny&quot;:[&quot;SendMe
   <div class="cbtns">
     <button class="btn sm" data-copy="b21">📋 コピー</button>
     <button class="btn ghost sm" data-save="b21" data-name="cross-session-settings40-021.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i21">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="完全に止める・組織で管理する">
+<div class="icard" id="i22" data-cat="完全に止める・組織で管理する">
   <div class="ih"><span class="num">022</span><span class="ititle">停止できているか確かめる</span></div>
   
   <pre class="prompt" id="b22">停止できているか確かめる
@@ -344,10 +365,11 @@ claude --settings &#x27;{&quot;permissions&quot;:{&quot;deny&quot;:[&quot;SendMe
   <div class="cbtns">
     <button class="btn sm" data-copy="b22">📋 コピー</button>
     <button class="btn ghost sm" data-save="b22" data-name="cross-session-settings40-022.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i22">🔗 リンク</button>
   </div>
 </div>
 <h2 class="cat" data-cat="無人・バックグラウンドで動かす">無人・バックグラウンドで動かす</h2>
-<div class="icard" data-cat="無人・バックグラウンドで動かす">
+<div class="icard" id="i23" data-cat="無人・バックグラウンドで動かす">
   <div class="ih"><span class="num">023</span><span class="ititle">無人ワーカーに受け取らせる</span></div>
   
   <pre class="prompt" id="b23">無人ワーカーに受け取らせる
@@ -356,9 +378,10 @@ claude -p &quot;指示内容&quot; --settings &#x27;{&quot;crossSessionInbound&q
   <div class="cbtns">
     <button class="btn sm" data-copy="b23">📋 コピー</button>
     <button class="btn ghost sm" data-save="b23" data-name="cross-session-settings40-023.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i23">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="無人・バックグラウンドで動かす">
+<div class="icard" id="i24" data-cat="無人・バックグラウンドで動かす">
   <div class="ih"><span class="num">024</span><span class="ititle">名前を付けて起動する</span></div>
   
   <pre class="prompt" id="b24">名前を付けて起動する
@@ -367,9 +390,10 @@ claude --name migration-worker</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b24">📋 コピー</button>
     <button class="btn ghost sm" data-save="b24" data-name="cross-session-settings40-024.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i24">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="無人・バックグラウンドで動かす">
+<div class="icard" id="i25" data-cat="無人・バックグラウンドで動かす">
   <div class="ih"><span class="num">025</span><span class="ititle">名前を付けて裏で走らせる</span></div>
   
   <pre class="prompt" id="b25">名前を付けて裏で走らせる
@@ -378,9 +402,10 @@ claude --bg --name test-runner &quot;テストを最後まで走らせて、終�
   <div class="cbtns">
     <button class="btn sm" data-copy="b25">📋 コピー</button>
     <button class="btn ghost sm" data-save="b25" data-name="cross-session-settings40-025.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i25">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="無人・バックグラウンドで動かす">
+<div class="icard" id="i26" data-cat="無人・バックグラウンドで動かす">
   <div class="ih"><span class="num">026</span><span class="ititle">動いているセッションに後から名前を付ける</span></div>
   
   <pre class="prompt" id="b26">動いているセッションに後から名前を付ける
@@ -389,9 +414,10 @@ claude --bg --name test-runner &quot;テストを最後まで走らせて、終�
   <div class="cbtns">
     <button class="btn sm" data-copy="b26">📋 コピー</button>
     <button class="btn ghost sm" data-save="b26" data-name="cross-session-settings40-026.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i26">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="無人・バックグラウンドで動かす">
+<div class="icard" id="i27" data-cat="無人・バックグラウンドで動かす">
   <div class="ih"><span class="num">027</span><span class="ititle">無人ワーカー用の設定をファイルにまとめる</span></div>
   
   <pre class="prompt" id="b27">無人ワーカー用の設定をファイルにまとめる
@@ -403,9 +429,10 @@ claude --bg --name test-runner &quot;テストを最後まで走らせて、終�
   <div class="cbtns">
     <button class="btn sm" data-copy="b27">📋 コピー</button>
     <button class="btn ghost sm" data-save="b27" data-name="cross-session-settings40-027.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i27">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="無人・バックグラウンドで動かす">
+<div class="icard" id="i28" data-cat="無人・バックグラウンドで動かす">
   <div class="ih"><span class="num">028</span><span class="ititle">設定ファイルを指定して無人起動する</span></div>
   
   <pre class="prompt" id="b28">設定ファイルを指定して無人起動する
@@ -414,10 +441,11 @@ claude -p &quot;指示内容&quot; --settings ~/.claude/worker-settings.json</pr
   <div class="cbtns">
     <button class="btn sm" data-copy="b28">📋 コピー</button>
     <button class="btn ghost sm" data-save="b28" data-name="cross-session-settings40-028.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i28">🔗 リンク</button>
   </div>
 </div>
 <h2 class="cat" data-cat="確認と切り分けをする">確認と切り分けをする</h2>
-<div class="icard" data-cat="確認と切り分けをする">
+<div class="icard" id="i29" data-cat="確認と切り分けをする">
   <div class="ih"><span class="num">029</span><span class="ititle">届く相手を一覧で見る</span></div>
   
   <pre class="prompt" id="b29">届く相手を一覧で見る
@@ -426,9 +454,10 @@ claude -p &quot;指示内容&quot; --settings ~/.claude/worker-settings.json</pr
   <div class="cbtns">
     <button class="btn sm" data-copy="b29">📋 コピー</button>
     <button class="btn ghost sm" data-save="b29" data-name="cross-session-settings40-029.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i29">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="確認と切り分けをする">
+<div class="icard" id="i30" data-cat="確認と切り分けをする">
   <div class="ih"><span class="num">030</span><span class="ititle">同じ意味の別名で確認する</span></div>
   
   <pre class="prompt" id="b30">同じ意味の別名で確認する
@@ -437,9 +466,10 @@ claude -p &quot;指示内容&quot; --settings ~/.claude/worker-settings.json</pr
   <div class="cbtns">
     <button class="btn sm" data-copy="b30">📋 コピー</button>
     <button class="btn ghost sm" data-save="b30" data-name="cross-session-settings40-030.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i30">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="確認と切り分けをする">
+<div class="icard" id="i31" data-cat="確認と切り分けをする">
   <div class="ih"><span class="num">031</span><span class="ititle">自分の受け口のアドレスを見る</span></div>
   
   <pre class="prompt" id="b31">自分の受け口のアドレスを見る
@@ -448,9 +478,10 @@ claude -p &quot;指示内容&quot; --settings ~/.claude/worker-settings.json</pr
   <div class="cbtns">
     <button class="btn sm" data-copy="b31">📋 コピー</button>
     <button class="btn ghost sm" data-save="b31" data-name="cross-session-settings40-031.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i31">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="確認と切り分けをする">
+<div class="icard" id="i32" data-cat="確認と切り分けをする">
   <div class="ih"><span class="num">032</span><span class="ititle">バージョンを確認する</span></div>
   
   <pre class="prompt" id="b32">バージョンを確認する
@@ -459,9 +490,10 @@ claude --version</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b32">📋 コピー</button>
     <button class="btn ghost sm" data-save="b32" data-name="cross-session-settings40-032.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i32">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="確認と切り分けをする">
+<div class="icard" id="i33" data-cat="確認と切り分けをする">
   <div class="ih"><span class="num">033</span><span class="ititle">切り分けの順番を手元に置く</span></div>
   
   <pre class="prompt" id="b33">切り分けの順番を手元に置く
@@ -469,9 +501,10 @@ claude --version</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b33">📋 コピー</button>
     <button class="btn ghost sm" data-save="b33" data-name="cross-session-settings40-033.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i33">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="確認と切り分けをする">
+<div class="icard" id="i34" data-cat="確認と切り分けをする">
   <div class="ih"><span class="num">034</span><span class="ititle">/list-agents が認識されるか</span></div>
   
   <pre class="prompt" id="b34">/list-agents が認識されるか
@@ -479,9 +512,10 @@ claude --version</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b34">📋 コピー</button>
     <button class="btn ghost sm" data-save="b34" data-name="cross-session-settings40-034.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i34">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="確認と切り分けをする">
+<div class="icard" id="i35" data-cat="確認と切り分けをする">
   <div class="ih"><span class="num">035</span><span class="ititle">claude --version が v2.1.224 以降か</span></div>
   
   <pre class="prompt" id="b35">claude --version が v2.1.224 以降か
@@ -489,9 +523,10 @@ claude --version</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b35">📋 コピー</button>
     <button class="btn ghost sm" data-save="b35" data-name="cross-session-settings40-035.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i35">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="確認と切り分けをする">
+<div class="icard" id="i36" data-cat="確認と切り分けをする">
   <div class="ih"><span class="num">036</span><span class="ititle">相手が一覧に出ているか</span></div>
   
   <pre class="prompt" id="b36">相手が一覧に出ているか
@@ -499,9 +534,10 @@ claude --version</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b36">📋 コピー</button>
     <button class="btn ghost sm" data-save="b36" data-name="cross-session-settings40-036.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i36">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="確認と切り分けをする">
+<div class="icard" id="i37" data-cat="確認と切り分けをする">
   <div class="ih"><span class="num">037</span><span class="ititle">相手の受け取り設定が refuse になっていないか</span></div>
   
   <pre class="prompt" id="b37">相手の受け取り設定が refuse になっていないか
@@ -509,9 +545,10 @@ claude --version</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b37">📋 コピー</button>
     <button class="btn ghost sm" data-save="b37" data-name="cross-session-settings40-037.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i37">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="確認と切り分けをする">
+<div class="icard" id="i38" data-cat="確認と切り分けをする">
   <div class="ih"><span class="num">038</span><span class="ititle">相手が別マシン・ブラウザ版でないか</span></div>
   
   <pre class="prompt" id="b38">相手が別マシン・ブラウザ版でないか
@@ -519,9 +556,10 @@ claude --version</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b38">📋 コピー</button>
     <button class="btn ghost sm" data-save="b38" data-name="cross-session-settings40-038.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i38">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="確認と切り分けをする">
+<div class="icard" id="i39" data-cat="確認と切り分けをする">
   <div class="ih"><span class="num">039</span><span class="ititle">受け口の環境変数を確認する</span></div>
   
   <pre class="prompt" id="b39">受け口の環境変数を確認する
@@ -530,10 +568,11 @@ echo &quot;$CLAUDE_CODE_MESSAGING_SOCKET&quot;</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b39">📋 コピー</button>
     <button class="btn ghost sm" data-save="b39" data-name="cross-session-settings40-039.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i39">🔗 リンク</button>
   </div>
 </div>
 <h2 class="cat" data-cat="フック・スクリプトから投函する">フック・スクリプトから投函する</h2>
-<div class="icard" data-cat="フック・スクリプトから投函する">
+<div class="icard" id="i40" data-cat="フック・スクリプトから投函する">
   <div class="ih"><span class="num">040</span><span class="ititle">受け口の変数が使えるか確かめる</span></div>
   
   <pre class="prompt" id="b40">受け口の変数が使えるか確かめる
@@ -546,9 +585,10 @@ fi</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b40">📋 コピー</button>
     <button class="btn ghost sm" data-save="b40" data-name="cross-session-settings40-040.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i40">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="フック・スクリプトから投函する">
+<div class="icard" id="i41" data-cat="フック・スクリプトから投函する">
   <div class="ih"><span class="num">041</span><span class="ititle">親から引き継いだ変数と混同しない</span></div>
   
   <pre class="prompt" id="b41">親から引き継いだ変数と混同しない
@@ -561,9 +601,10 @@ echo &quot;$CLAUDE_CODE_MESSAGING_SOCKET&quot;</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b41">📋 コピー</button>
     <button class="btn ghost sm" data-save="b41" data-name="cross-session-settings40-041.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i41">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="フック・スクリプトから投函する">
+<div class="icard" id="i42" data-cat="フック・スクリプトから投函する">
   <div class="ih"><span class="num">042</span><span class="ititle">サンドボックスから受け口へ届かせる</span></div>
   
   <pre class="prompt" id="b42">サンドボックスから受け口へ届かせる
@@ -578,9 +619,10 @@ echo &quot;$CLAUDE_CODE_MESSAGING_SOCKET&quot;</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b42">📋 コピー</button>
     <button class="btn ghost sm" data-save="b42" data-name="cross-session-settings40-042.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i42">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="フック・スクリプトから投函する">
+<div class="icard" id="i43" data-cat="フック・スクリプトから投函する">
   <div class="ih"><span class="num">043</span><span class="ititle">特定の受け口だけ許可する</span></div>
   
   <pre class="prompt" id="b43">特定の受け口だけ許可する
@@ -595,9 +637,10 @@ echo &quot;$CLAUDE_CODE_MESSAGING_SOCKET&quot;</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b43">📋 コピー</button>
     <button class="btn ghost sm" data-save="b43" data-name="cross-session-settings40-043.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i43">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="フック・スクリプトから投函する">
+<div class="icard" id="i44" data-cat="フック・スクリプトから投函する">
   <div class="ih"><span class="num">044</span><span class="ititle">自分の子プロセスからの投函の挙動を押さえる</span></div>
   
   <pre class="prompt" id="b44">自分の子プロセスからの投函の挙動を押さえる
@@ -618,9 +661,10 @@ echo &quot;$CLAUDE_CODE_MESSAGING_SOCKET&quot;</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b44">📋 コピー</button>
     <button class="btn ghost sm" data-save="b44" data-name="cross-session-settings40-044.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i44">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="フック・スクリプトから投函する">
+<div class="icard" id="i45" data-cat="フック・スクリプトから投函する">
   <div class="ih"><span class="num">045</span><span class="ititle">バックグラウンド起動をまとめて設定する</span></div>
   
   <pre class="prompt" id="b45">バックグラウンド起動をまとめて設定する
@@ -635,12 +679,17 @@ echo &quot;$CLAUDE_CODE_MESSAGING_SOCKET&quot;</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b45">📋 コピー</button>
     <button class="btn ghost sm" data-save="b45" data-name="cross-session-settings40-045.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i45">🔗 リンク</button>
   </div>
 </div>
 
   <section class="epctx">
   <p class="epctx-label">この動画のほかのプレゼント</p>
   <div class="ep-kits"><a class="kchip" href="../parallel-choice-sheet/"><span class="kt">7つの並列手段 使い分け判断シート</span><span class="badge">58項目</span><span class="go">開く →</span></a><a class="kchip" href="../session-relay-prompts100/"><span class="kt">マルチセッション連携 指示文100選</span><span class="badge">100個</span><span class="go">開く →</span></a></div>
+</section>
+  <section class="epctx">
+  <p class="epctx-label">ほかの回の「設定・スニペット」</p>
+  <div class="ep-kits"><a class="kchip" href="../cc-weekly-settings-checklist/"><span class="kt">Claude Code 今週の設定一斉反映チェックリスト</span><span class="badge">11項目</span><span class="go">開く →</span></a><a class="kchip" href="../command-situations100/"><span class="kt">セッション節約コマンド逆引き100選</span><span class="badge">100個</span><span class="go">開く →</span></a><a class="kchip" href="../hooks-filters50/"><span class="kt">hooks出力フィルタリングスクリプト50選</span><span class="badge">50個</span><span class="go">開く →</span></a><a class="kchip" href="../claude-md-lightweight50/"><span class="kt">CLAUDE.md軽量化スニペット50選</span><span class="badge">50個</span><span class="go">開く →</span></a></div>
 </section>
 
   <footer><a href="../../">← ClaudeCodeチャンネル プレゼント図書館にもどる</a></footer>
@@ -947,6 +996,23 @@ echo &quot;$CLAUDE_CODE_MESSAGING_SOCKET&quot;
 **ポイント**: 受け取りを止める `refuse` はプロジェクト設定から指定すると他のどの指定より優先されます。逆に「送るのを止める」設定は、同じセッション内の助手への連絡も一緒に消える点に注意してください。
 </pre>
 <script>
+
+// 名指しリンク（#i37）で来たとき、その項目まで確実に運んで少しの間だけ目立たせる。
+// ブラウザ任せだと、項目数の多いページでは狙った位置に着かないことがある
+// （html に scroll-behavior:smooth が効いており、数万px を滑らせようとして届かない）。
+(function(){
+  function go(){
+    if (!location.hash) return;
+    var el = document.querySelector(location.hash);
+    if (!el || !el.classList.contains('icard')) return;
+    el.scrollIntoView({block: 'start', behavior: 'auto'});
+    el.classList.add('flashme');
+    setTimeout(function(){ el.classList.remove('flashme'); }, 2400);
+  }
+  addEventListener('hashchange', go);
+  if (document.readyState === 'loading') addEventListener('DOMContentLoaded', go);
+  else go();
+})();
 // 項目の多いキットで、目的の1件に辿り着けるようにする絞り込み。
 // 検索はタイトル・説明だけでなく本文も対象にする（「あの文言が入っていた項目」で探せるように）。
 (function(){
@@ -1032,8 +1098,27 @@ document.addEventListener('click', e => {
   const b = e.target.closest('[data-copy]');
   if (b) { copyText(b, b.dataset.copy); return; }
   const d = e.target.closest('[data-save]');
-  if (d) { saveText(d, d.dataset.save, d.dataset.name); }
+  if (d) { saveText(d, d.dataset.save, d.dataset.name); return; }
+  // その項目だけを名指しで人に渡せるようにする
+  const l = e.target.closest('[data-link]');
+  if (l) {
+    const url = location.origin + location.pathname + '#' + l.dataset.link;
+    navigator.clipboard.writeText(url).then(() => flash(l, '✓ コピーしました'));
+  }
 });
+
+// 「/」ですぐ検索を始められるようにする。入力中は邪魔しない。
+addEventListener('keydown', e => {
+  if (e.key !== '/' || e.metaKey || e.ctrlKey || e.altKey) return;
+  const t = e.target;
+  if (t && (t.tagName === 'INPUT' || t.tagName === 'TEXTAREA' || t.isContentEditable)) return;
+  const box = document.getElementById('q') || document.getElementById('kq');
+  if (!box) return;
+  e.preventDefault();
+  box.focus();
+  box.select();
+});
+
 </script>
 <div id="promo" class="promo">
   <div class="promo-card">

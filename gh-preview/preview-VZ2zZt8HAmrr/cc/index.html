@@ -52,7 +52,7 @@
   <footer>ClaudeCodeチャンネル — プレゼント図書館</footer>
 </div>
 
-<script src="data.js?v=8c094dda826e"></script>
+<script src="data.js?v=4f09acbd1285"></script>
 <script>
 window.ICONS = {"アプリ": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"3\" y=\"4\" width=\"18\" height=\"13\" rx=\"2\"/><path d=\"M8 20h8M12 17v3\"/><path d=\"M9 8.7v5.6l4.3-2.8L9 8.7Z\" fill=\"currentColor\" stroke=\"none\"/></svg>", "プロンプト集": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M4 5h16v11H8l-4 4V5Z\"/><path d=\"M8 9h8M8 12.5h5\"/></svg>", "設定・スニペット": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M9 8l-4 4 4 4M15 8l4 4-4 4\"/><path d=\"M13 5.5l-2 13\"/></svg>", "早見表・逆引き": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M4 5h16v14H4z\"/><path d=\"M4 9.5h16M9.5 9.5V19M4 14.2h16\"/></svg>", "テンプレート": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M6 3h8l4 4v14H6z\"/><path d=\"M14 3v4h4\"/><path d=\"M9 12h6M9 15.5h4\"/></svg>", "チェックリスト": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M5 4h14v16H5z\"/><path d=\"M8.5 9.2l1.6 1.6 3.4-3.4M8.5 15.2l1.6 1.6 3.4-3.4\"/></svg>", "判断シート": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M12 3v5M12 3 6.5 8.5M12 3l5.5 5.5\"/><circle cx=\"12\" cy=\"13\" r=\"2.2\"/><path d=\"M6.5 21h11\"/></svg>", "ワークフロー": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M4 6h6v4H4zM14 14h6v4h-6z\"/><path d=\"M7 10v5a1.5 1.5 0 0 0 1.5 1.5H14\"/></svg>", "_play": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"3\" y=\"5\" width=\"18\" height=\"14\" rx=\"2.5\"/><path d=\"M10.5 9.2v5.6l4.8-2.8-4.8-2.8Z\" fill=\"currentColor\" stroke=\"none\"/></svg>"};
 </script>
@@ -89,16 +89,29 @@ function fmtDate(d){
   return m ? `${m[1]}年${+m[2]}月${+m[3]}日` : d;
 }
 
-function kitChip(g, epSlugHint){
+const esc = s => (s||'').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+// 検索語に当たった項目の番号（カードの採番と同じ。無ければ -1）
+function itemHit(g, q){
+  if (!q || !g.i) return -1;
+  for (let i = 0; i < g.i.length; i++) if (norm(g.i[i]).includes(q)) return i;
+  return -1;
+}
+
+function kitChip(g, q){
   const badge = g.c ? `<span class="badge">${g.c}${g.u}</span>`
                : (g.t === 'アプリ' ? `<span class="badge">アプリ</span>` : '');
-  return `<a class="kchip" href="apps/${g.s}/" target="_blank" rel="noopener">
+  // 中の項目が当たったときは、その項目へ直接飛ばす（開いてから探し直さなくて済む）
+  const hi = itemHit(g, q);
+  const href = hi >= 0 ? `apps/${g.s}/#i${hi + 1}` : `apps/${g.s}/`;
+  const hit = hi >= 0 ? `<span class="khit-in">この中の「${esc(g.i[hi])}」へ</span>` : '';
+  return `<a class="kchip" href="${href}" target="_blank" rel="noopener">
     <span class="ic">${window.ICONS[g.t]||''}</span>
-    <span class="kt">${g.nh}</span>${badge}<span class="go">開く →</span>
+    <span class="kt">${g.nh}${hit}</span>${badge}<span class="go">開く →</span>
   </a>`;
 }
 
-function epCard(e, kitsToShow){
+function epCard(e, kitsToShow, q){
   const thumb = e.thumb
     ? `<img src="${e.thumb}" alt="" loading="lazy">`
     : `<div class="noimg">${window.ICONS['_play']||''}</div>`;
@@ -113,7 +126,7 @@ function epCard(e, kitsToShow){
     <div class="ep-body">
       <div class="ep-date">${fmtDate(e.date) || '日付未定'}${isNew(e.date) ? '<span class="newbadge">NEW</span>' : ''}</div>
       <h2 class="ep-title">${e.th}</h2>
-      <div class="ep-kits">${kitsToShow.map(g=>kitChip(g)).join('')}</div>
+      <div class="ep-kits">${kitsToShow.map(g=>kitChip(g, q)).join('')}</div>
     </div>
   </article>`;
 }
@@ -133,7 +146,7 @@ function render(){
   if (q){
     list = list.map(({e, kits}) => {
       const epHit = norm(e.title).includes(q);
-      const kitHits = kits.filter(g => norm(g.q).includes(q));
+      const kitHits = kits.filter(g => norm(g.q).includes(q) || itemHit(g, q) >= 0);
       return {e, kits: epHit ? kits : kitHits, hit: epHit || kitHits.length > 0};
     }).filter(x => x.hit);
   }
@@ -155,7 +168,7 @@ function render(){
     </div>`;
     return;
   }
-  out.innerHTML = `<div class="eplist">${list.map(({e,kits}) => epCard(e, kits)).join('')}</div>`;
+  out.innerHTML = `<div class="eplist">${list.map(({e,kits}) => epCard(e, kits, q)).join('')}</div>`;
 }
 
 // しぼり込みの状態をURLに残す。
@@ -197,6 +210,18 @@ addEventListener('popstate', () => { readURL(); render(); });
 
 readURL();
 render();
+
+// 「/」ですぐ検索を始められるようにする。入力中は邪魔しない。
+addEventListener('keydown', e => {
+  if (e.key !== '/' || e.metaKey || e.ctrlKey || e.altKey) return;
+  const t = e.target;
+  if (t && (t.tagName === 'INPUT' || t.tagName === 'TEXTAREA' || t.isContentEditable)) return;
+  const box = document.getElementById('q') || document.getElementById('kq');
+  if (!box) return;
+  e.preventDefault();
+  box.focus();
+  box.select();
+});
 </script>
 <div id="promo" class="promo">
   <div class="promo-card">

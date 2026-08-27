@@ -81,6 +81,10 @@
   <p class="epctx-label">この動画のほかのプレゼント</p>
   <div class="ep-kits"><a class="kchip" href="../agents-md-x-automation/"><span class="kt">X自動投稿エージェント AGENTS.md / CLAUDE.mdテンプレート</span><span class="go">開く →</span></a><a class="kchip" href="../github-actions-workflow/"><span class="kt">GitHub Actions 定時実行ワークフロー例</span><span class="go">開く →</span></a><a class="kchip" href="../hermes-grok-build-x-setup/"><span class="kt">HermesAgent × Grok Build でのX連携セットアップ（参考・比較用）</span><span class="go">開く →</span></a><a class="kchip" href="../post-article-templates/"><span class="kt">投稿・記事Markdownテンプレート</span><span class="go">開く →</span></a><a class="kchip" href="../x-mcp-setup-guide/"><span class="kt">X公式MCP セットアップ手順</span><span class="go">開く →</span></a><a class="kchip" href="../x-post-checklist/"><span class="kt">X投稿前チェックリスト</span><span class="go">開く →</span></a></div>
 </section>
+  <section class="epctx">
+  <p class="epctx-label">ほかの回の「プロンプト集」</p>
+  <div class="ep-kits"><a class="kchip" href="../anonymous-model-verification-prompts10/"><span class="kt">正体不明の無料AIモデルを安全に検証する実践プロンプト&amp;チェック10選</span><span class="badge">10個</span><span class="go">開く →</span></a><a class="kchip" href="../kiro-spec-driven-prompts10/"><span class="kt">Kiroスペック駆動 スタート指示文10選</span><span class="badge">10個</span><span class="go">開く →</span></a><a class="kchip" href="../degradation-diagnosis-prompts100/"><span class="kt">「AIが弱くなった」と感じた時の診断＆代替依頼プロンプト100選</span><span class="badge">100個</span><span class="go">開く →</span></a><a class="kchip" href="../newsprompts100/"><span class="kt">今週の新機能 即使えるプロンプト&amp;設定100選</span><span class="badge">100個</span><span class="go">開く →</span></a></div>
+</section>
 
   <footer><a href="../../">← AIエージェント / Kawaru プレゼント図書館にもどる</a></footer>
 </div>
@@ -133,6 +137,23 @@
 **ポイント**: 「投稿はまだしないで」「実行前に確認して」という一文を毎回のプロンプトに入れる癖をつけると、AGENTS.md/CLAUDE.mdの運用ルールと二重に事故を防げます。
 </pre>
 <script>
+
+// 名指しリンク（#i37）で来たとき、その項目まで確実に運んで少しの間だけ目立たせる。
+// ブラウザ任せだと、項目数の多いページでは狙った位置に着かないことがある
+// （html に scroll-behavior:smooth が効いており、数万px を滑らせようとして届かない）。
+(function(){
+  function go(){
+    if (!location.hash) return;
+    var el = document.querySelector(location.hash);
+    if (!el || !el.classList.contains('icard')) return;
+    el.scrollIntoView({block: 'start', behavior: 'auto'});
+    el.classList.add('flashme');
+    setTimeout(function(){ el.classList.remove('flashme'); }, 2400);
+  }
+  addEventListener('hashchange', go);
+  if (document.readyState === 'loading') addEventListener('DOMContentLoaded', go);
+  else go();
+})();
 // 項目の多いキットで、目的の1件に辿り着けるようにする絞り込み。
 // 検索はタイトル・説明だけでなく本文も対象にする（「あの文言が入っていた項目」で探せるように）。
 (function(){
@@ -218,8 +239,27 @@ document.addEventListener('click', e => {
   const b = e.target.closest('[data-copy]');
   if (b) { copyText(b, b.dataset.copy); return; }
   const d = e.target.closest('[data-save]');
-  if (d) { saveText(d, d.dataset.save, d.dataset.name); }
+  if (d) { saveText(d, d.dataset.save, d.dataset.name); return; }
+  // その項目だけを名指しで人に渡せるようにする
+  const l = e.target.closest('[data-link]');
+  if (l) {
+    const url = location.origin + location.pathname + '#' + l.dataset.link;
+    navigator.clipboard.writeText(url).then(() => flash(l, '✓ コピーしました'));
+  }
 });
+
+// 「/」ですぐ検索を始められるようにする。入力中は邪魔しない。
+addEventListener('keydown', e => {
+  if (e.key !== '/' || e.metaKey || e.ctrlKey || e.altKey) return;
+  const t = e.target;
+  if (t && (t.tagName === 'INPUT' || t.tagName === 'TEXTAREA' || t.isContentEditable)) return;
+  const box = document.getElementById('q') || document.getElementById('kq');
+  if (!box) return;
+  e.preventDefault();
+  box.focus();
+  box.select();
+});
+
 </script>
 <div id="promo" class="promo">
   <div class="promo-card">

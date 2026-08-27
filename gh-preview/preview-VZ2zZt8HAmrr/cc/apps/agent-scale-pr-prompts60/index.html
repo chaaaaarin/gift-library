@@ -42,7 +42,7 @@
   <p class="khit" id="khit" role="status"></p>
 </div>
 <h2 class="cat" data-cat="①ブランチ・コミット規約">①ブランチ・コミット規約</h2>
-<div class="icard" data-cat="①ブランチ・コミット規約">
+<div class="icard" id="i1" data-cat="①ブランチ・コミット規約">
   <div class="ih"><span class="num">001</span><span class="ititle">新しい機能ブランチを切る前に、変更内容から適切なブランチ名（feature/fix/ch…</span></div>
   
   <pre class="prompt" id="b1">前提: 複数のAIエージェントに並行して機能実装を任せる開発チーム向け。
@@ -51,9 +51,10 @@
   <div class="cbtns">
     <button class="btn sm" data-copy="b1">📋 コピー</button>
     <button class="btn ghost sm" data-save="b1" data-name="agent-scale-pr-prompts60-001.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i1">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="①ブランチ・コミット規約">
+<div class="icard" id="i2" data-cat="①ブランチ・コミット規約">
   <div class="ih"><span class="num">002</span><span class="ititle">直近の変更差分を確認し、Conventional Commits形式（feat/fix/…</span></div>
   
   <pre class="prompt" id="b2">前提: エージェントが自律的にコミットする頻度が増え、コミット履歴が読みにくくなっているプロジェクト。
@@ -62,9 +63,10 @@
   <div class="cbtns">
     <button class="btn sm" data-copy="b2">📋 コピー</button>
     <button class="btn ghost sm" data-save="b2" data-name="agent-scale-pr-prompts60-002.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i2">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="①ブランチ・コミット規約">
+<div class="icard" id="i3" data-cat="①ブランチ・コミット規約">
   <div class="ih"><span class="num">003</span><span class="ititle">今回の変更を、後続の変更が依存できる最小単位に分割する案を考えて。</span></div>
   
   <pre class="prompt" id="b3">前提: 依存関係のあるPRを連続して出したいが、レビュー待ちで後続作業がブロックされがちなチーム。
@@ -73,9 +75,10 @@
   <div class="cbtns">
     <button class="btn sm" data-copy="b3">📋 コピー</button>
     <button class="btn ghost sm" data-save="b3" data-name="agent-scale-pr-prompts60-003.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i3">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="①ブランチ・コミット規約">
+<div class="icard" id="i4" data-cat="①ブランチ・コミット規約">
   <div class="ih"><span class="num">004</span><span class="ititle">今から着手する作業が、他の進行中のブランチと衝突しそうなファイルを触っていないか確認して…</span></div>
   
   <pre class="prompt" id="b4">前提: 複数人・複数エージェントが同時に同じリポジトリで作業する状況。
@@ -84,9 +87,10 @@
   <div class="cbtns">
     <button class="btn sm" data-copy="b4">📋 コピー</button>
     <button class="btn ghost sm" data-save="b4" data-name="agent-scale-pr-prompts60-004.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i4">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="①ブランチ・コミット規約">
+<div class="icard" id="i5" data-cat="①ブランチ・コミット規約">
   <div class="ih"><span class="num">005</span><span class="ititle">直接プッシュしそうな変更を検知したら、代わりに新しいブランチを作ってそこにコミットし直す…</span></div>
   
   <pre class="prompt" id="b5">前提: mainブランチへの直接プッシュを禁止し、PR経由に統一したいチーム。
@@ -95,9 +99,10 @@
   <div class="cbtns">
     <button class="btn sm" data-copy="b5">📋 コピー</button>
     <button class="btn ghost sm" data-save="b5" data-name="agent-scale-pr-prompts60-005.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i5">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="①ブランチ・コミット規約">
+<div class="icard" id="i6" data-cat="①ブランチ・コミット規約">
   <div class="ih"><span class="num">006</span><span class="ititle">統合対象のブランチ一覧をもとに、マージ順序（依存関係が壊れない順番）を提案して。</span></div>
   
   <pre class="prompt" id="b6">前提: リリース前に、複数のfeatureブランチをまとめて統合する必要があるプロジェクト。
@@ -106,9 +111,10 @@
   <div class="cbtns">
     <button class="btn sm" data-copy="b6">📋 コピー</button>
     <button class="btn ghost sm" data-save="b6" data-name="agent-scale-pr-prompts60-006.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i6">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="①ブランチ・コミット規約">
+<div class="icard" id="i7" data-cat="①ブランチ・コミット規約">
   <div class="ih"><span class="num">007</span><span class="ititle">今回のコミットメッセージの末尾に、使用したモデル名と生成範囲（全体/一部）を注記する形式…</span></div>
   
   <pre class="prompt" id="b7">前提: コミットメッセージに「AIが生成した」ことを明示したいチームのポリシー。
@@ -117,9 +123,10 @@
   <div class="cbtns">
     <button class="btn sm" data-copy="b7">📋 コピー</button>
     <button class="btn ghost sm" data-save="b7" data-name="agent-scale-pr-prompts60-007.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i7">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="①ブランチ・コミット規約">
+<div class="icard" id="i8" data-cat="①ブランチ・コミット規約">
   <div class="ih"><span class="num">008</span><span class="ititle">全ブランチの最終更新日とマージ状況を確認し、削除候補・要確認・生存中の3分類に振り分けて…</span></div>
   
   <pre class="prompt" id="b8">前提: 長期間放置されたブランチが増え、どれが生きているか分からなくなっているリポジトリ。
@@ -128,9 +135,10 @@
   <div class="cbtns">
     <button class="btn sm" data-copy="b8">📋 コピー</button>
     <button class="btn ghost sm" data-save="b8" data-name="agent-scale-pr-prompts60-008.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i8">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="①ブランチ・コミット規約">
+<div class="icard" id="i9" data-cat="①ブランチ・コミット規約">
   <div class="ih"><span class="num">009</span><span class="ititle">作業開始前に、mainブランチが最新であることを確認し、古ければ最新化してから作業ブラン…</span></div>
   
   <pre class="prompt" id="b9">前提: 複数のエージェントが同時にmainブランチをベースに作業を始めるタイミング。
@@ -139,9 +147,10 @@
   <div class="cbtns">
     <button class="btn sm" data-copy="b9">📋 コピー</button>
     <button class="btn ghost sm" data-save="b9" data-name="agent-scale-pr-prompts60-009.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i9">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="①ブランチ・コミット規約">
+<div class="icard" id="i10" data-cat="①ブランチ・コミット規約">
   <div class="ih"><span class="num">010</span><span class="ititle">今回の変更差分から、PRタイトル（変更内容が一目で分かる形）と説明文（背景・変更点・確認…</span></div>
   
   <pre class="prompt" id="b10">前提: PRのタイトルと説明文が空欄・簡素すぎて後から追いにくいプロジェクト。
@@ -150,9 +159,10 @@
   <div class="cbtns">
     <button class="btn sm" data-copy="b10">📋 コピー</button>
     <button class="btn ghost sm" data-save="b10" data-name="agent-scale-pr-prompts60-010.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i10">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="①ブランチ・コミット規約">
+<div class="icard" id="i11" data-cat="①ブランチ・コミット規約">
   <div class="ih"><span class="num">011</span><span class="ititle">関連する複数リポジトリのコミットに、共通の識別子（作業チケット番号等）をコミットメッセー…</span></div>
   
   <pre class="prompt" id="b11">前提: 複数のリポジトリにまたがる変更を1つの意図として管理したいプロジェクト。
@@ -161,9 +171,10 @@
   <div class="cbtns">
     <button class="btn sm" data-copy="b11">📋 コピー</button>
     <button class="btn ghost sm" data-save="b11" data-name="agent-scale-pr-prompts60-011.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i11">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="①ブランチ・コミット規約">
+<div class="icard" id="i12" data-cat="①ブランチ・コミット規約">
   <div class="ih"><span class="num">012</span><span class="ititle">セマンティックバージョニング（major.minor.patch）に沿ったタグ名を、今回…</span></div>
   
   <pre class="prompt" id="b12">前提: Gitタグでのリリース管理を始めたいが運用ルールが未整備なチーム。
@@ -172,10 +183,11 @@
   <div class="cbtns">
     <button class="btn sm" data-copy="b12">📋 コピー</button>
     <button class="btn ghost sm" data-save="b12" data-name="agent-scale-pr-prompts60-012.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i12">🔗 リンク</button>
   </div>
 </div>
 <h2 class="cat" data-cat="②PRレビュー観点">②PRレビュー観点</h2>
-<div class="icard" data-cat="②PRレビュー観点">
+<div class="icard" id="i13" data-cat="②PRレビュー観点">
   <div class="ih"><span class="num">013</span><span class="ititle">このPRの差分を確認し、意図しないファイル変更・デバッグ用コードの残存・機密情報の混入が…</span></div>
   
   <pre class="prompt" id="b13">前提: AIエージェントが開いたPRの一次チェックを人間の手間なく済ませたいチーム。
@@ -184,9 +196,10 @@
   <div class="cbtns">
     <button class="btn sm" data-copy="b13">📋 コピー</button>
     <button class="btn ghost sm" data-save="b13" data-name="agent-scale-pr-prompts60-013.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i13">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="②PRレビュー観点">
+<div class="icard" id="i14" data-cat="②PRレビュー観点">
   <div class="ih"><span class="num">014</span><span class="ititle">未レビューのPR一覧から、変更の影響範囲（大/中/小）とレビューの緊急度を判定して優先順…</span></div>
   
   <pre class="prompt" id="b14">前提: 複数のPRが同時に積み上がり、優先度が分かりにくくなっているレビューキュー。
@@ -195,9 +208,10 @@
   <div class="cbtns">
     <button class="btn sm" data-copy="b14">📋 コピー</button>
     <button class="btn ghost sm" data-save="b14" data-name="agent-scale-pr-prompts60-014.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i14">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="②PRレビュー観点">
+<div class="icard" id="i15" data-cat="②PRレビュー観点">
   <div class="ih"><span class="num">015</span><span class="ititle">依存関係にあるPR群を確認し、どの順番でレビュー・マージすべきかを、依存が壊れないように…</span></div>
   
   <pre class="prompt" id="b15">前提: スタックPR（依存関係のある複数PR）を扱う機会が増えたチーム。
@@ -206,9 +220,10 @@
   <div class="cbtns">
     <button class="btn sm" data-copy="b15">📋 コピー</button>
     <button class="btn ghost sm" data-save="b15" data-name="agent-scale-pr-prompts60-015.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i15">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="②PRレビュー観点">
+<div class="icard" id="i16" data-cat="②PRレビュー観点">
   <div class="ih"><span class="num">016</span><span class="ititle">このPRの差分から、レビュアーが最初に確認すべき3つのポイントを抽出して。</span></div>
   
   <pre class="prompt" id="b16">前提: PRの説明文だけでは変更意図が読み取れないことが多いチーム。
@@ -217,9 +232,10 @@
   <div class="cbtns">
     <button class="btn sm" data-copy="b16">📋 コピー</button>
     <button class="btn ghost sm" data-save="b16" data-name="agent-scale-pr-prompts60-016.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i16">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="②PRレビュー観点">
+<div class="icard" id="i17" data-cat="②PRレビュー観点">
   <div class="ih"><span class="num">017</span><span class="ititle">このPRの本体コードの変更に対して、対応するテストが追加・修正されているか確認して。</span></div>
   
   <pre class="prompt" id="b17">前提: テストコードが変更に追随しているか毎回確認するのが手間なプロジェクト。
@@ -228,9 +244,10 @@
   <div class="cbtns">
     <button class="btn sm" data-copy="b17">📋 コピー</button>
     <button class="btn ghost sm" data-save="b17" data-name="agent-scale-pr-prompts60-017.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i17">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="②PRレビュー観点">
+<div class="icard" id="i18" data-cat="②PRレビュー観点">
   <div class="ih"><span class="num">018</span><span class="ititle">このPRの差分に、既存の呼び出し側に影響する可能性のある変更が含まれていないか確認して。</span></div>
   
   <pre class="prompt" id="b18">前提: 破壊的変更（Breaking Change）が意図せず紛れ込むことがあるAPIプロジェクト。
@@ -239,9 +256,10 @@
   <div class="cbtns">
     <button class="btn sm" data-copy="b18">📋 コピー</button>
     <button class="btn ghost sm" data-save="b18" data-name="agent-scale-pr-prompts60-018.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i18">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="②PRレビュー観点">
+<div class="icard" id="i19" data-cat="②PRレビュー観点">
   <div class="ih"><span class="num">019</span><span class="ititle">このPRのコードスタイル上の問題（命名規則・フォーマット・重複コード）を機械的にチェック…</span></div>
   
   <pre class="prompt" id="b19">前提: コードスタイルの指摘に毎回時間を取られているレビュー体制。
@@ -250,9 +268,10 @@
   <div class="cbtns">
     <button class="btn sm" data-copy="b19">📋 コピー</button>
     <button class="btn ghost sm" data-save="b19" data-name="agent-scale-pr-prompts60-019.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i19">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="②PRレビュー観点">
+<div class="icard" id="i20" data-cat="②PRレビュー観点">
   <div class="ih"><span class="num">020</span><span class="ititle">このPRが「ドキュメント修正のみ」「軽微な文言修正のみ」等、自動承認して良い基準に該当す…</span></div>
   
   <pre class="prompt" id="b20">前提: 大量のPRを効率よく捌くため、自動承認してよい変更とそうでない変更を切り分けたいチーム。
@@ -261,9 +280,10 @@
   <div class="cbtns">
     <button class="btn sm" data-copy="b20">📋 コピー</button>
     <button class="btn ghost sm" data-save="b20" data-name="agent-scale-pr-prompts60-020.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i20">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="②PRレビュー観点">
+<div class="icard" id="i21" data-cat="②PRレビュー観点">
   <div class="ih"><span class="num">021</span><span class="ititle">このPRにセキュリティへ影響する変更（認証処理・権限チェック・外部API呼び出し）が含ま…</span></div>
   
   <pre class="prompt" id="b21">前提: セキュリティに関わる変更（認証・権限・外部通信）を見落とさずレビューしたいチーム。
@@ -272,9 +292,10 @@
   <div class="cbtns">
     <button class="btn sm" data-copy="b21">📋 コピー</button>
     <button class="btn ghost sm" data-save="b21" data-name="agent-scale-pr-prompts60-021.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i21">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="②PRレビュー観点">
+<div class="icard" id="i22" data-cat="②PRレビュー観点">
   <div class="ih"><span class="num">022</span><span class="ititle">このPRの変更内容が、他の進行中のPRと機能的に重複していないか確認して。</span></div>
   
   <pre class="prompt" id="b22">前提: 複数エージェントが並行して同じ機能に手を入れており、重複実装が起きやすい状況。
@@ -283,9 +304,10 @@
   <div class="cbtns">
     <button class="btn sm" data-copy="b22">📋 コピー</button>
     <button class="btn ghost sm" data-save="b22" data-name="agent-scale-pr-prompts60-022.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i22">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="②PRレビュー観点">
+<div class="icard" id="i23" data-cat="②PRレビュー観点">
   <div class="ih"><span class="num">023</span><span class="ititle">過去のレビューコメント一覧と現在の差分を突き合わせ、対応済み・未対応を仕分けして。</span></div>
   
   <pre class="prompt" id="b23">前提: レビューコメントへの対応漏れが頻発しているプロジェクト。
@@ -294,9 +316,10 @@
   <div class="cbtns">
     <button class="btn sm" data-copy="b23">📋 コピー</button>
     <button class="btn ghost sm" data-save="b23" data-name="agent-scale-pr-prompts60-023.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i23">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="②PRレビュー観点">
+<div class="icard" id="i24" data-cat="②PRレビュー観点">
   <div class="ih"><span class="num">024</span><span class="ititle">このPRに、既存処理の実行速度を悪化させる可能性がある変更が含まれていないか確認して。</span></div>
   
   <pre class="prompt" id="b24">前提: パフォーマンスに影響しうる変更（ループ処理・DBクエリ追加等）を見落としたくないチーム。
@@ -305,10 +328,11 @@
   <div class="cbtns">
     <button class="btn sm" data-copy="b24">📋 コピー</button>
     <button class="btn ghost sm" data-save="b24" data-name="agent-scale-pr-prompts60-024.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i24">🔗 リンク</button>
   </div>
 </div>
 <h2 class="cat" data-cat="③コンフリクト解決">③コンフリクト解決</h2>
-<div class="icard" data-cat="③コンフリクト解決">
+<div class="icard" id="i25" data-cat="③コンフリクト解決">
   <div class="ih"><span class="num">025</span><span class="ititle">発生しているコンフリクトの内容を確認し、両者の変更意図を壊さずに統合する修正案を提示して…</span></div>
   
   <pre class="prompt" id="b25">前提: 複数のAIエージェントが同じファイルを並行編集し、マージコンフリクトが頻発するプロジェクト。
@@ -317,9 +341,10 @@
   <div class="cbtns">
     <button class="btn sm" data-copy="b25">📋 コピー</button>
     <button class="btn ghost sm" data-save="b25" data-name="agent-scale-pr-prompts60-025.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i25">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="③コンフリクト解決">
+<div class="icard" id="i26" data-cat="③コンフリクト解決">
   <div class="ih"><span class="num">026</span><span class="ititle">自動解決できなかったコンフリクト箇所を一覧化し、それぞれなぜ自動判断できなかったかを推測…</span></div>
   
   <pre class="prompt" id="b26">前提: 自動マージを試みて失敗した箇所を、人間が最終確認する前段階の整理をしたいチーム。
@@ -328,9 +353,10 @@
   <div class="cbtns">
     <button class="btn sm" data-copy="b26">📋 コピー</button>
     <button class="btn ghost sm" data-save="b26" data-name="agent-scale-pr-prompts60-026.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i26">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="③コンフリクト解決">
+<div class="icard" id="i27" data-cat="③コンフリクト解決">
   <div class="ih"><span class="num">027</span><span class="ititle">コンフリクトの原因が依存パッケージの更新にあるかを確認し、そうであればバージョン整合の取…</span></div>
   
   <pre class="prompt" id="b27">前提: 依存パッケージの更新が原因で複数箇所にコンフリクトが波及したプロジェクト。
@@ -339,9 +365,10 @@
   <div class="cbtns">
     <button class="btn sm" data-copy="b27">📋 コピー</button>
     <button class="btn ghost sm" data-save="b27" data-name="agent-scale-pr-prompts60-027.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i27">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="③コンフリクト解決">
+<div class="icard" id="i28" data-cat="③コンフリクト解決">
   <div class="ih"><span class="num">028</span><span class="ititle">マージ前に、コンフリクトが起きそうなファイルを事前に洗い出し、影響が大きい順に並べて。</span></div>
   
   <pre class="prompt" id="b28">前提: 長期間分岐していたブランチをmainに統合する際、大量のコンフリクトが予想される状況。
@@ -350,9 +377,10 @@
   <div class="cbtns">
     <button class="btn sm" data-copy="b28">📋 コピー</button>
     <button class="btn ghost sm" data-save="b28" data-name="agent-scale-pr-prompts60-028.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i28">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="③コンフリクト解決">
+<div class="icard" id="i29" data-cat="③コンフリクト解決">
   <div class="ih"><span class="num">029</span><span class="ititle">差分に `&lt;&lt;&lt;&lt;&lt;&lt;&lt;` 等のコンフリクトマーカーが残っていないか確認して。</span></div>
   
   <pre class="prompt" id="b29">前提: CIが落ちる原因がコンフリクトの残骸（マーカー消し忘れ等）であることが多いプロジェクト。
@@ -361,9 +389,10 @@
   <div class="cbtns">
     <button class="btn sm" data-copy="b29">📋 コピー</button>
     <button class="btn ghost sm" data-save="b29" data-name="agent-scale-pr-prompts60-029.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i29">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="③コンフリクト解決">
+<div class="icard" id="i30" data-cat="③コンフリクト解決">
   <div class="ih"><span class="num">030</span><span class="ititle">両方のリファクタリング意図を汲み取り、どちらの設計思想を採用すべきか、または両立できる第…</span></div>
   
   <pre class="prompt" id="b30">前提: 同じ関数を複数エージェントが別方向にリファクタリングしてコンフリクトした状況。
@@ -372,9 +401,10 @@
   <div class="cbtns">
     <button class="btn sm" data-copy="b30">📋 コピー</button>
     <button class="btn ghost sm" data-save="b30" data-name="agent-scale-pr-prompts60-030.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i30">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="③コンフリクト解決">
+<div class="icard" id="i31" data-cat="③コンフリクト解決">
   <div class="ih"><span class="num">031</span><span class="ititle">今回のコンフリクトをどう解決したか、判断の理由とともに記録を残して。</span></div>
   
   <pre class="prompt" id="b31">前提: コンフリクト解決の判断を後から追えるようにしたいチーム。
@@ -383,9 +413,10 @@
   <div class="cbtns">
     <button class="btn sm" data-copy="b31">📋 コピー</button>
     <button class="btn ghost sm" data-save="b31" data-name="agent-scale-pr-prompts60-031.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i31">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="③コンフリクト解決">
+<div class="icard" id="i32" data-cat="③コンフリクト解決">
   <div class="ih"><span class="num">032</span><span class="ititle">今回のコンフリクトが機械的に解決可能か、それとも設計判断が必要かを見極めて。</span></div>
   
   <pre class="prompt" id="b32">前提: テキストベースの自動マージでは対応できない、設計判断が必要なコンフリクトが多いプロジェクト。
@@ -394,9 +425,10 @@
   <div class="cbtns">
     <button class="btn sm" data-copy="b32">📋 コピー</button>
     <button class="btn ghost sm" data-save="b32" data-name="agent-scale-pr-prompts60-032.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i32">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="③コンフリクト解決">
+<div class="icard" id="i33" data-cat="③コンフリクト解決">
   <div class="ih"><span class="num">033</span><span class="ititle">コンフリクトしているファイル群の依存関係を整理し、どのファイルから解決すべきかの着手順を…</span></div>
   
   <pre class="prompt" id="b33">前提: 複数ファイルにまたがる大規模な変更同士がコンフリクトした状況。
@@ -405,9 +437,10 @@
   <div class="cbtns">
     <button class="btn sm" data-copy="b33">📋 コピー</button>
     <button class="btn ghost sm" data-save="b33" data-name="agent-scale-pr-prompts60-033.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i33">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="③コンフリクト解決">
+<div class="icard" id="i34" data-cat="③コンフリクト解決">
   <div class="ih"><span class="num">034</span><span class="ititle">コンフリクトを解決したら、関連するテストを特定して実行し、結果を報告して。</span></div>
   
   <pre class="prompt" id="b34">前提: コンフリクト解決後にテストが通るかを都度確認する手間を減らしたいチーム。
@@ -416,9 +449,10 @@
   <div class="cbtns">
     <button class="btn sm" data-copy="b34">📋 コピー</button>
     <button class="btn ghost sm" data-save="b34" data-name="agent-scale-pr-prompts60-034.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i34">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="③コンフリクト解決">
+<div class="icard" id="i35" data-cat="③コンフリクト解決">
   <div class="ih"><span class="num">035</span><span class="ititle">今回の状況（ブランチの共有状況・履歴の見やすさへの要求）から、リベースかマージのどちらが…</span></div>
   
   <pre class="prompt" id="b35">前提: リベースとマージのどちらでコンフリクトを解決すべきか毎回迷うチーム。
@@ -427,9 +461,10 @@
   <div class="cbtns">
     <button class="btn sm" data-copy="b35">📋 コピー</button>
     <button class="btn ghost sm" data-save="b35" data-name="agent-scale-pr-prompts60-035.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i35">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="③コンフリクト解決">
+<div class="icard" id="i36" data-cat="③コンフリクト解決">
   <div class="ih"><span class="num">036</span><span class="ititle">直近のコンフリクト履歴を振り返り、同じファイル・同じ関数で繰り返しコンフリクトが起きてい…</span></div>
   
   <pre class="prompt" id="b36">前提: コンフリクト頻発の根本原因（設計の疎結合度の低さ等）を把握したいチーム。
@@ -438,10 +473,11 @@
   <div class="cbtns">
     <button class="btn sm" data-copy="b36">📋 コピー</button>
     <button class="btn ghost sm" data-save="b36" data-name="agent-scale-pr-prompts60-036.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i36">🔗 リンク</button>
   </div>
 </div>
 <h2 class="cat" data-cat="④監査証跡・メタデータ管理">④監査証跡・メタデータ管理</h2>
-<div class="icard" data-cat="④監査証跡・メタデータ管理">
+<div class="icard" id="i37" data-cat="④監査証跡・メタデータ管理">
   <div class="ih"><span class="num">037</span><span class="ititle">今回のコミットに含まれる変更のうち、AIが生成した割合と箇所を整理して。</span></div>
   
   <pre class="prompt" id="b37">前提: AIが書いたコードと人間が書いたコードを後から区別できるようにしたいチーム。
@@ -450,9 +486,10 @@
   <div class="cbtns">
     <button class="btn sm" data-copy="b37">📋 コピー</button>
     <button class="btn ghost sm" data-save="b37" data-name="agent-scale-pr-prompts60-037.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i37">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="④監査証跡・メタデータ管理">
+<div class="icard" id="i38" data-cat="④監査証跡・メタデータ管理">
   <div class="ih"><span class="num">038</span><span class="ititle">今回のコード生成に使った指示内容を、要約した形でコミットメッセージまたは別ファイルに記録…</span></div>
   
   <pre class="prompt" id="b38">前提: 使用したプロンプトを後から振り返れるようにしたいプロジェクト。
@@ -461,9 +498,10 @@
   <div class="cbtns">
     <button class="btn sm" data-copy="b38">📋 コピー</button>
     <button class="btn ghost sm" data-save="b38" data-name="agent-scale-pr-prompts60-038.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i38">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="④監査証跡・メタデータ管理">
+<div class="icard" id="i39" data-cat="④監査証跡・メタデータ管理">
   <div class="ih"><span class="num">039</span><span class="ititle">指定した範囲のコードについて、生成に使ったモデル・日時・元になった指示の記録が残っている…</span></div>
   
   <pre class="prompt" id="b39">前提: 監査対応のため、特定のコード変更がいつ・どのモデルで生成されたか追跡する必要があるプロジェクト。
@@ -472,9 +510,10 @@
   <div class="cbtns">
     <button class="btn sm" data-copy="b39">📋 コピー</button>
     <button class="btn ghost sm" data-save="b39" data-name="agent-scale-pr-prompts60-039.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i39">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="④監査証跡・メタデータ管理">
+<div class="icard" id="i40" data-cat="④監査証跡・メタデータ管理">
   <div class="ih"><span class="num">040</span><span class="ititle">AI生成コードのうち、認証・決済・外部通信に関わる「高リスク領域」を触っている箇所を特定…</span></div>
   
   <pre class="prompt" id="b40">前提: エージェントが自律的に大量のコードを書くため、レビュー優先度をリスクベースで決めたいチーム。
@@ -483,9 +522,10 @@
   <div class="cbtns">
     <button class="btn sm" data-copy="b40">📋 コピー</button>
     <button class="btn ghost sm" data-save="b40" data-name="agent-scale-pr-prompts60-040.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i40">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="④監査証跡・メタデータ管理">
+<div class="icard" id="i41" data-cat="④監査証跡・メタデータ管理">
   <div class="ih"><span class="num">041</span><span class="ititle">今回の変更で参照したファイル・ドキュメントの一覧を、生成時のコンテキストとして記録して。</span></div>
   
   <pre class="prompt" id="b41">前提: コンテキストウィンドウの設定（読み込んだファイル範囲等）を記録に残したいプロジェクト。
@@ -494,9 +534,10 @@
   <div class="cbtns">
     <button class="btn sm" data-copy="b41">📋 コピー</button>
     <button class="btn ghost sm" data-save="b41" data-name="agent-scale-pr-prompts60-041.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i41">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="④監査証跡・メタデータ管理">
+<div class="icard" id="i42" data-cat="④監査証跡・メタデータ管理">
   <div class="ih"><span class="num">042</span><span class="ititle">直近のAI生成コミットを集計し、後から修正が必要になった割合（手直し率）を確認して。</span></div>
   
   <pre class="prompt" id="b42">前提: AI生成コードの品質を定期的に振り返りたいチーム。
@@ -505,9 +546,10 @@
   <div class="cbtns">
     <button class="btn sm" data-copy="b42">📋 コピー</button>
     <button class="btn ghost sm" data-save="b42" data-name="agent-scale-pr-prompts60-042.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i42">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="④監査証跡・メタデータ管理">
+<div class="icard" id="i43" data-cat="④監査証跡・メタデータ管理">
   <div class="ih"><span class="num">043</span><span class="ititle">リポジトリ内のコミット履歴から、使用ツール・モデル別の生成コード量を集計して。</span></div>
   
   <pre class="prompt" id="b43">前提: どのモデル・どのツールでコードが生成されたかをプロジェクト全体で可視化したいチーム。
@@ -516,9 +558,10 @@
   <div class="cbtns">
     <button class="btn sm" data-copy="b43">📋 コピー</button>
     <button class="btn ghost sm" data-save="b43" data-name="agent-scale-pr-prompts60-043.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i43">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="④監査証跡・メタデータ管理">
+<div class="icard" id="i44" data-cat="④監査証跡・メタデータ管理">
   <div class="ih"><span class="num">044</span><span class="ititle">今回のコミットに、モデル名・プロンプト概要・生成範囲の記録が漏れなく含まれているか確認し…</span></div>
   
   <pre class="prompt" id="b44">前提: 監査証跡の記録漏れを防ぎたいプロジェクト。
@@ -527,9 +570,10 @@
   <div class="cbtns">
     <button class="btn sm" data-copy="b44">📋 コピー</button>
     <button class="btn ghost sm" data-save="b44" data-name="agent-scale-pr-prompts60-044.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i44">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="④監査証跡・メタデータ管理">
+<div class="icard" id="i45" data-cat="④監査証跡・メタデータ管理">
   <div class="ih"><span class="num">045</span><span class="ititle">指定した不具合発生箇所のコードについて、生成時の記録（モデル・プロンプト・日時）を遡って…</span></div>
   
   <pre class="prompt" id="b45">前提: 過去にさかのぼって、ある不具合の原因コードがAI生成かどうかを調べたいチーム。
@@ -538,9 +582,10 @@
   <div class="cbtns">
     <button class="btn sm" data-copy="b45">📋 コピー</button>
     <button class="btn ghost sm" data-save="b45" data-name="agent-scale-pr-prompts60-045.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i45">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="④監査証跡・メタデータ管理">
+<div class="icard" id="i46" data-cat="④監査証跡・メタデータ管理">
   <div class="ih"><span class="num">046</span><span class="ititle">今回使用した指示文のうち、意図通りの結果が得られたものとそうでなかったものを振り返って。</span></div>
   
   <pre class="prompt" id="b46">前提: プロンプトの品質改善のため、良かった指示・悪かった指示を蓄積したいチーム。
@@ -549,9 +594,10 @@
   <div class="cbtns">
     <button class="btn sm" data-copy="b46">📋 コピー</button>
     <button class="btn ghost sm" data-save="b46" data-name="agent-scale-pr-prompts60-046.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i46">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="④監査証跡・メタデータ管理">
+<div class="icard" id="i47" data-cat="④監査証跡・メタデータ管理">
   <div class="ih"><span class="num">047</span><span class="ititle">今回の生成コードが、既存の外部コードを参考にした可能性がある箇所を洗い出して。</span></div>
   
   <pre class="prompt" id="b47">前提: 生成コードのライセンス・著作権リスクを記録として残しておきたいプロジェクト。
@@ -560,9 +606,10 @@
   <div class="cbtns">
     <button class="btn sm" data-copy="b47">📋 コピー</button>
     <button class="btn ghost sm" data-save="b47" data-name="agent-scale-pr-prompts60-047.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i47">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="④監査証跡・メタデータ管理">
+<div class="icard" id="i48" data-cat="④監査証跡・メタデータ管理">
   <div class="ih"><span class="num">048</span><span class="ititle">今回のエージェントの作業内容（実行したコマンド・生成したファイル・判断した分岐点）を要約…</span></div>
   
   <pre class="prompt" id="b48">前提: エージェントの自律作業ログを、後から人間が読める形で要約したいチーム。
@@ -571,10 +618,11 @@
   <div class="cbtns">
     <button class="btn sm" data-copy="b48">📋 コピー</button>
     <button class="btn ghost sm" data-save="b48" data-name="agent-scale-pr-prompts60-048.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i48">🔗 リンク</button>
   </div>
 </div>
 <h2 class="cat" data-cat="⑤CI・デプロイ連携">⑤CI・デプロイ連携</h2>
-<div class="icard" data-cat="⑤CI・デプロイ連携">
+<div class="icard" id="i49" data-cat="⑤CI・デプロイ連携">
   <div class="ih"><span class="num">049</span><span class="ititle">今回のPRに対応するプレビューデプロイのURLを確認し、変更箇所が実際に反映されているか…</span></div>
   
   <pre class="prompt" id="b49">前提: PRごとにプレビュー環境を用意し、レビュー時に実際の画面を確認したいチーム。
@@ -583,9 +631,10 @@
   <div class="cbtns">
     <button class="btn sm" data-copy="b49">📋 コピー</button>
     <button class="btn ghost sm" data-save="b49" data-name="agent-scale-pr-prompts60-049.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i49">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="⑤CI・デプロイ連携">
+<div class="icard" id="i50" data-cat="⑤CI・デプロイ連携">
   <div class="ih"><span class="num">050</span><span class="ititle">現在のCI設定ファイルを確認し、既存のジョブを壊さない形で新しいチェック（Lint等）を…</span></div>
   
   <pre class="prompt" id="b50">前提: 既存のCIワークフローを大きく変更せずに新しいチェックを追加したいプロジェクト。
@@ -594,9 +643,10 @@
   <div class="cbtns">
     <button class="btn sm" data-copy="b50">📋 コピー</button>
     <button class="btn ghost sm" data-save="b50" data-name="agent-scale-pr-prompts60-050.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i50">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="⑤CI・デプロイ連携">
+<div class="icard" id="i51" data-cat="⑤CI・デプロイ連携">
   <div class="ih"><span class="num">051</span><span class="ititle">直近で失敗したCIログを確認し、失敗の根本原因を特定して。</span></div>
   
   <pre class="prompt" id="b51">前提: CIが失敗した際に原因特定に時間がかかっているチーム。
@@ -605,9 +655,10 @@
   <div class="cbtns">
     <button class="btn sm" data-copy="b51">📋 コピー</button>
     <button class="btn ghost sm" data-save="b51" data-name="agent-scale-pr-prompts60-051.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i51">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="⑤CI・デプロイ連携">
+<div class="icard" id="i52" data-cat="⑤CI・デプロイ連携">
   <div class="ih"><span class="num">052</span><span class="ititle">マージ条件として必須にすべきチェック項目を、現在のプロジェクト構成から提案して。</span></div>
   
   <pre class="prompt" id="b52">前提: マージ前に必ず特定のチェック（テスト・型検査等）を通す運用にしたいプロジェクト。
@@ -616,9 +667,10 @@
   <div class="cbtns">
     <button class="btn sm" data-copy="b52">📋 コピー</button>
     <button class="btn ghost sm" data-save="b52" data-name="agent-scale-pr-prompts60-052.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i52">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="⑤CI・デプロイ連携">
+<div class="icard" id="i53" data-cat="⑤CI・デプロイ連携">
   <div class="ih"><span class="num">053</span><span class="ititle">今回のデプロイに対するロールバック手順を、事前に確認できる形で整理して。</span></div>
   
   <pre class="prompt" id="b53">前提: デプロイ後に問題が起きた際、すぐに切り戻せる体制を整えたいチーム。
@@ -627,9 +679,10 @@
   <div class="cbtns">
     <button class="btn sm" data-copy="b53">📋 コピー</button>
     <button class="btn ghost sm" data-save="b53" data-name="agent-scale-pr-prompts60-053.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i53">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="⑤CI・デプロイ連携">
+<div class="icard" id="i54" data-cat="⑤CI・デプロイ連携">
   <div class="ih"><span class="num">054</span><span class="ititle">各環境の設定ファイルを比較し、意図しない差分が無いか確認して。</span></div>
   
   <pre class="prompt" id="b54">前提: 複数の環境（開発・検証・本番）でデプロイ設定が食い違いがちなプロジェクト。
@@ -638,9 +691,10 @@
   <div class="cbtns">
     <button class="btn sm" data-copy="b54">📋 コピー</button>
     <button class="btn ghost sm" data-save="b54" data-name="agent-scale-pr-prompts60-054.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i54">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="⑤CI・デプロイ連携">
+<div class="icard" id="i55" data-cat="⑤CI・デプロイ連携">
   <div class="ih"><span class="num">055</span><span class="ititle">現在のCIパイプラインのうち、時間がかかっているステップを特定し、並列化や不要な処理の削…</span></div>
   
   <pre class="prompt" id="b55">前提: CI実行時間が長くなり開発速度が落ちているプロジェクト。
@@ -649,9 +703,10 @@
   <div class="cbtns">
     <button class="btn sm" data-copy="b55">📋 コピー</button>
     <button class="btn ghost sm" data-save="b55" data-name="agent-scale-pr-prompts60-055.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i55">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="⑤CI・デプロイ連携">
+<div class="icard" id="i56" data-cat="⑤CI・デプロイ連携">
   <div class="ih"><span class="num">056</span><span class="ititle">現在の設定を確認し、チーム共有の環境シークレットに移すべき項目を洗い出して。</span></div>
   
   <pre class="prompt" id="b56">前提: 環境変数やシークレットの管理が個人の手元に散らばっているプロジェクト。
@@ -660,9 +715,10 @@
   <div class="cbtns">
     <button class="btn sm" data-copy="b56">📋 コピー</button>
     <button class="btn ghost sm" data-save="b56" data-name="agent-scale-pr-prompts60-056.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i56">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="⑤CI・デプロイ連携">
+<div class="icard" id="i57" data-cat="⑤CI・デプロイ連携">
   <div class="ih"><span class="num">057</span><span class="ititle">現在のPRに紐づくすべてのチェック（ビルド・テスト・デプロイ）の状態を確認して。</span></div>
   
   <pre class="prompt" id="b57">前提: CI/CDのステータスをPR画面から一目で把握したいチーム。
@@ -671,9 +727,10 @@
   <div class="cbtns">
     <button class="btn sm" data-copy="b57">📋 コピー</button>
     <button class="btn ghost sm" data-save="b57" data-name="agent-scale-pr-prompts60-057.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i57">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="⑤CI・デプロイ連携">
+<div class="icard" id="i58" data-cat="⑤CI・デプロイ連携">
   <div class="ih"><span class="num">058</span><span class="ititle">現在の依存関係一覧から、既知の脆弱性が報告されているパッケージが無いか確認して。</span></div>
   
   <pre class="prompt" id="b58">前提: 依存パッケージの脆弱性チェックをCIに組み込みたいプロジェクト。
@@ -682,9 +739,10 @@
   <div class="cbtns">
     <button class="btn sm" data-copy="b58">📋 コピー</button>
     <button class="btn ghost sm" data-save="b58" data-name="agent-scale-pr-prompts60-058.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i58">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="⑤CI・デプロイ連携">
+<div class="icard" id="i59" data-cat="⑤CI・デプロイ連携">
   <div class="ih"><span class="num">059</span><span class="ititle">同じチェック内容が両方のCIで二重実行されていないか確認して。</span></div>
   
   <pre class="prompt" id="b59">前提: 複数のCIプロバイダ（例: 既存のGitHub Actionsと新しいCI）を併用する移行期間にあるプロジェクト。
@@ -693,9 +751,10 @@
   <div class="cbtns">
     <button class="btn sm" data-copy="b59">📋 コピー</button>
     <button class="btn ghost sm" data-save="b59" data-name="agent-scale-pr-prompts60-059.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i59">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="⑤CI・デプロイ連携">
+<div class="icard" id="i60" data-cat="⑤CI・デプロイ連携">
   <div class="ih"><span class="num">060</span><span class="ititle">直近のデプロイ履歴から、成功率と失敗時の主な原因を集計して。</span></div>
   
   <pre class="prompt" id="b60">前提: デプロイの成功率を定期的にモニタリングしたいチーム。
@@ -704,12 +763,17 @@
   <div class="cbtns">
     <button class="btn sm" data-copy="b60">📋 コピー</button>
     <button class="btn ghost sm" data-save="b60" data-name="agent-scale-pr-prompts60-060.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i60">🔗 リンク</button>
   </div>
 </div>
 
   <section class="epctx">
   <p class="epctx-label">この動画のほかのプレゼント</p>
   <div class="ep-kits"><a class="kchip" href="../origin-migration-checklist/"><span class="kt">GitHub→Origin乗り換え判断チェックリスト</span><span class="badge">9項目</span><span class="go">開く →</span></a></div>
+</section>
+  <section class="epctx">
+  <p class="epctx-label">ほかの回の「プロンプト集」</p>
+  <div class="ep-kits"><a class="kchip" href="../memory-control-prompts10/"><span class="kt">Claudeに覚えさせたい指示文 厳選10選</span><span class="badge">10個</span><span class="go">開く →</span></a><a class="kchip" href="../agent-collab-prompts100/"><span class="kt">Slack Code時代のAIエージェント協働 指示文100選</span><span class="badge">100個</span><span class="go">開く →</span></a><a class="kchip" href="../soul-prompts100/"><span class="kt">専門Bot SOUL.md定型文100選</span><span class="badge">100個</span><span class="go">開く →</span></a><a class="kchip" href="../cf-prompts100/"><span class="kt">Claude Code × Cloudflare 実践プロンプト100選</span><span class="badge">100個</span><span class="go">開く →</span></a></div>
 </section>
 
   <footer><a href="../../">← ClaudeCodeチャンネル プレゼント図書館にもどる</a></footer>
@@ -1215,6 +1279,23 @@ AIエージェントが大量にPRを開く時代の運用を、ブランチ規�
 
 **ポイント**: 出力はそのまま採用せず、必ず人間が最終確認してから反映してください。以上、60個です。</pre>
 <script>
+
+// 名指しリンク（#i37）で来たとき、その項目まで確実に運んで少しの間だけ目立たせる。
+// ブラウザ任せだと、項目数の多いページでは狙った位置に着かないことがある
+// （html に scroll-behavior:smooth が効いており、数万px を滑らせようとして届かない）。
+(function(){
+  function go(){
+    if (!location.hash) return;
+    var el = document.querySelector(location.hash);
+    if (!el || !el.classList.contains('icard')) return;
+    el.scrollIntoView({block: 'start', behavior: 'auto'});
+    el.classList.add('flashme');
+    setTimeout(function(){ el.classList.remove('flashme'); }, 2400);
+  }
+  addEventListener('hashchange', go);
+  if (document.readyState === 'loading') addEventListener('DOMContentLoaded', go);
+  else go();
+})();
 // 項目の多いキットで、目的の1件に辿り着けるようにする絞り込み。
 // 検索はタイトル・説明だけでなく本文も対象にする（「あの文言が入っていた項目」で探せるように）。
 (function(){
@@ -1300,8 +1381,27 @@ document.addEventListener('click', e => {
   const b = e.target.closest('[data-copy]');
   if (b) { copyText(b, b.dataset.copy); return; }
   const d = e.target.closest('[data-save]');
-  if (d) { saveText(d, d.dataset.save, d.dataset.name); }
+  if (d) { saveText(d, d.dataset.save, d.dataset.name); return; }
+  // その項目だけを名指しで人に渡せるようにする
+  const l = e.target.closest('[data-link]');
+  if (l) {
+    const url = location.origin + location.pathname + '#' + l.dataset.link;
+    navigator.clipboard.writeText(url).then(() => flash(l, '✓ コピーしました'));
+  }
 });
+
+// 「/」ですぐ検索を始められるようにする。入力中は邪魔しない。
+addEventListener('keydown', e => {
+  if (e.key !== '/' || e.metaKey || e.ctrlKey || e.altKey) return;
+  const t = e.target;
+  if (t && (t.tagName === 'INPUT' || t.tagName === 'TEXTAREA' || t.isContentEditable)) return;
+  const box = document.getElementById('q') || document.getElementById('kq');
+  if (!box) return;
+  e.preventDefault();
+  box.focus();
+  box.select();
+});
+
 </script>
 <div id="promo" class="promo">
   <div class="promo-card">

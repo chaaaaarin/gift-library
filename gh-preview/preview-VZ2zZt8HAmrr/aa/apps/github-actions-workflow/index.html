@@ -92,6 +92,10 @@ jobs:
   <p class="epctx-label">この動画のほかのプレゼント</p>
   <div class="ep-kits"><a class="kchip" href="../agents-md-x-automation/"><span class="kt">X自動投稿エージェント AGENTS.md / CLAUDE.mdテンプレート</span><span class="go">開く →</span></a><a class="kchip" href="../automation-prompts/"><span class="kt">X自動運用プロンプト集</span><span class="go">開く →</span></a><a class="kchip" href="../hermes-grok-build-x-setup/"><span class="kt">HermesAgent × Grok Build でのX連携セットアップ（参考・比較用）</span><span class="go">開く →</span></a><a class="kchip" href="../post-article-templates/"><span class="kt">投稿・記事Markdownテンプレート</span><span class="go">開く →</span></a><a class="kchip" href="../x-mcp-setup-guide/"><span class="kt">X公式MCP セットアップ手順</span><span class="go">開く →</span></a><a class="kchip" href="../x-post-checklist/"><span class="kt">X投稿前チェックリスト</span><span class="go">開く →</span></a></div>
 </section>
+  <section class="epctx">
+  <p class="epctx-label">ほかの回の「ワークフロー」</p>
+  <div class="ep-kits"><a class="kchip" href="../flow-designs100/"><span class="kt">業務シーン別フロー設計図100選</span><span class="badge">100個</span><span class="go">開く →</span></a><a class="kchip" href="../plugin-select-flowchart/"><span class="kt">Codexプラグイン選定フローチャート</span><span class="badge">12項目</span><span class="go">開く →</span></a><a class="kchip" href="../record-replay-guide/"><span class="kt">Record &amp; Replayでスキルを量産する手順ガイド</span><span class="badge">31項目</span><span class="go">開く →</span></a><a class="kchip" href="../skill-starter-guide/"><span class="kt">自分の業務をスキル化する手順書</span><span class="badge">10項目</span><span class="go">開く →</span></a></div>
+</section>
 
   <footer><a href="../../">← AIエージェント / Kawaru プレゼント図書館にもどる</a></footer>
 </div>
@@ -155,6 +159,23 @@ jobs:
 **ポイント**: `cancel-in-progress: false` にしているのは、前回の投稿処理が終わる前に次のcronが重複起動して二重投稿するのを防ぐためです。認証情報は必ずGitHub Secretsに登録し、YAMLに直書きしないでください。
 </pre>
 <script>
+
+// 名指しリンク（#i37）で来たとき、その項目まで確実に運んで少しの間だけ目立たせる。
+// ブラウザ任せだと、項目数の多いページでは狙った位置に着かないことがある
+// （html に scroll-behavior:smooth が効いており、数万px を滑らせようとして届かない）。
+(function(){
+  function go(){
+    if (!location.hash) return;
+    var el = document.querySelector(location.hash);
+    if (!el || !el.classList.contains('icard')) return;
+    el.scrollIntoView({block: 'start', behavior: 'auto'});
+    el.classList.add('flashme');
+    setTimeout(function(){ el.classList.remove('flashme'); }, 2400);
+  }
+  addEventListener('hashchange', go);
+  if (document.readyState === 'loading') addEventListener('DOMContentLoaded', go);
+  else go();
+})();
 // 項目の多いキットで、目的の1件に辿り着けるようにする絞り込み。
 // 検索はタイトル・説明だけでなく本文も対象にする（「あの文言が入っていた項目」で探せるように）。
 (function(){
@@ -240,8 +261,27 @@ document.addEventListener('click', e => {
   const b = e.target.closest('[data-copy]');
   if (b) { copyText(b, b.dataset.copy); return; }
   const d = e.target.closest('[data-save]');
-  if (d) { saveText(d, d.dataset.save, d.dataset.name); }
+  if (d) { saveText(d, d.dataset.save, d.dataset.name); return; }
+  // その項目だけを名指しで人に渡せるようにする
+  const l = e.target.closest('[data-link]');
+  if (l) {
+    const url = location.origin + location.pathname + '#' + l.dataset.link;
+    navigator.clipboard.writeText(url).then(() => flash(l, '✓ コピーしました'));
+  }
 });
+
+// 「/」ですぐ検索を始められるようにする。入力中は邪魔しない。
+addEventListener('keydown', e => {
+  if (e.key !== '/' || e.metaKey || e.ctrlKey || e.altKey) return;
+  const t = e.target;
+  if (t && (t.tagName === 'INPUT' || t.tagName === 'TEXTAREA' || t.isContentEditable)) return;
+  const box = document.getElementById('q') || document.getElementById('kq');
+  if (!box) return;
+  e.preventDefault();
+  box.focus();
+  box.select();
+});
+
 </script>
 <div id="promo" class="promo">
   <div class="promo-card">

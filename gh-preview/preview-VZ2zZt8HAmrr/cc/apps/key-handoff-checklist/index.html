@@ -36,7 +36,7 @@
     <div class="pnote"><span class="nb">下のカードから、</span><span class="nb">1件ずつコピー、</span><span class="nb">または個別にダウンロードできます。</span><span class="nb">まとめて欲しいときは、</span><span class="nb">上の</span><span class="nb">「全件ダウンロード」を</span><span class="nb">お使いください。</span></div>
   </section>
 
-  <div class="icard" data-cat="">
+  <div class="icard" id="i1" data-cat="">
   <div class="ih"><span class="num">001</span><span class="ititle">ステップ1：その作業は「取り消せる」か</span></div>
   
   <pre class="prompt" id="b1">□ 送信・削除・支払いなど、実行後に取り消せない操作を含むか
@@ -45,9 +45,10 @@
   <div class="cbtns">
     <button class="btn sm" data-copy="b1">📋 コピー</button>
     <button class="btn ghost sm" data-save="b1" data-name="key-handoff-checklist-001.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i1">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="">
+<div class="icard" id="i2" data-cat="">
   <div class="ih"><span class="num">002</span><span class="ititle">ステップ2：ログインするアカウントは共有していい相手か</span></div>
   
   <pre class="prompt" id="b2">□ 金融・人事・法務など、機密性の高いアカウントへのログインを含むか
@@ -56,9 +57,10 @@
   <div class="cbtns">
     <button class="btn sm" data-copy="b2">📋 コピー</button>
     <button class="btn ghost sm" data-save="b2" data-name="key-handoff-checklist-002.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i2">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="">
+<div class="icard" id="i3" data-cat="">
   <div class="ih"><span class="num">003</span><span class="ititle">ステップ3：ミスの影響範囲はどこまで広がるか</span></div>
   
   <pre class="prompt" id="b3">□ 顧客・取引先など社外に影響が及ぶ可能性があるか
@@ -67,9 +69,10 @@
   <div class="cbtns">
     <button class="btn sm" data-copy="b3">📋 コピー</button>
     <button class="btn ghost sm" data-save="b3" data-name="key-handoff-checklist-003.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i3">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="">
+<div class="icard" id="i4" data-cat="">
   <div class="ih"><span class="num">004</span><span class="ititle">ステップ4：ログや記録が残るか</span></div>
   
   <pre class="prompt" id="b4">□ 何をしたかを後から確認できる仕組みがあるか(監査ログ等)
@@ -78,9 +81,10 @@
   <div class="cbtns">
     <button class="btn sm" data-copy="b4">📋 コピー</button>
     <button class="btn ghost sm" data-save="b4" data-name="key-handoff-checklist-004.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i4">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="">
+<div class="icard" id="i5" data-cat="">
   <div class="ih"><span class="num">005</span><span class="ititle">ステップ5：一度見せれば再現できる作業か</span></div>
   
   <pre class="prompt" id="b5">□ 手順が毎回同じで、10分以内で見せられる作業か
@@ -91,12 +95,17 @@
   <div class="cbtns">
     <button class="btn sm" data-copy="b5">📋 コピー</button>
     <button class="btn ghost sm" data-save="b5" data-name="key-handoff-checklist-005.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i5">🔗 リンク</button>
   </div>
 </div>
 
   <section class="epctx">
   <p class="epctx-label">この動画のほかのプレゼント</p>
   <div class="ep-kits"><a class="kchip" href="../grokbot-vs-cowork-sheet/"><span class="kt">Grok Bot vs Claude Cowork 使い分け早見表</span><span class="badge">6項目</span><span class="go">開く →</span></a><a class="kchip" href="../roommate-team-prompts100/"><span class="kt">合鍵チーム編成プロンプト100選</span><span class="badge">100個</span><span class="go">開く →</span></a></div>
+</section>
+  <section class="epctx">
+  <p class="epctx-label">ほかの回の「チェックリスト」</p>
+  <div class="ep-kits"><a class="kchip" href="../share-before-checklist/"><span class="kt">共有前セキュリティチェックシート</span><span class="badge">8項目</span><span class="go">開く →</span></a><a class="kchip" href="../rollout-4phase-checklist/"><span class="kt">Claude Code社内展開4フェーズ進捗チェックシート</span><span class="badge">8項目</span><span class="go">開く →</span></a><a class="kchip" href="../vendor-vuln-claims-checklist/"><span class="kt">他社の脆弱性・セキュリティ発表 鵜呑み防止チェックシート</span><span class="badge">10項目</span><span class="go">開く →</span></a><a class="kchip" href="../cost-diagnosis-checklist/"><span class="kt">セッションコスト診断チェックシート</span><span class="badge">18項目</span><span class="go">開く →</span></a></div>
 </section>
 
   <footer><a href="../../">← ClaudeCodeチャンネル プレゼント図書館にもどる</a></footer>
@@ -144,6 +153,23 @@
 **ポイント**: このチェックリストはGrok Botに限らず、常駐型のAIエージェント全般に任せる作業を仕分ける際に使えます。
 </pre>
 <script>
+
+// 名指しリンク（#i37）で来たとき、その項目まで確実に運んで少しの間だけ目立たせる。
+// ブラウザ任せだと、項目数の多いページでは狙った位置に着かないことがある
+// （html に scroll-behavior:smooth が効いており、数万px を滑らせようとして届かない）。
+(function(){
+  function go(){
+    if (!location.hash) return;
+    var el = document.querySelector(location.hash);
+    if (!el || !el.classList.contains('icard')) return;
+    el.scrollIntoView({block: 'start', behavior: 'auto'});
+    el.classList.add('flashme');
+    setTimeout(function(){ el.classList.remove('flashme'); }, 2400);
+  }
+  addEventListener('hashchange', go);
+  if (document.readyState === 'loading') addEventListener('DOMContentLoaded', go);
+  else go();
+})();
 // 項目の多いキットで、目的の1件に辿り着けるようにする絞り込み。
 // 検索はタイトル・説明だけでなく本文も対象にする（「あの文言が入っていた項目」で探せるように）。
 (function(){
@@ -229,8 +255,27 @@ document.addEventListener('click', e => {
   const b = e.target.closest('[data-copy]');
   if (b) { copyText(b, b.dataset.copy); return; }
   const d = e.target.closest('[data-save]');
-  if (d) { saveText(d, d.dataset.save, d.dataset.name); }
+  if (d) { saveText(d, d.dataset.save, d.dataset.name); return; }
+  // その項目だけを名指しで人に渡せるようにする
+  const l = e.target.closest('[data-link]');
+  if (l) {
+    const url = location.origin + location.pathname + '#' + l.dataset.link;
+    navigator.clipboard.writeText(url).then(() => flash(l, '✓ コピーしました'));
+  }
 });
+
+// 「/」ですぐ検索を始められるようにする。入力中は邪魔しない。
+addEventListener('keydown', e => {
+  if (e.key !== '/' || e.metaKey || e.ctrlKey || e.altKey) return;
+  const t = e.target;
+  if (t && (t.tagName === 'INPUT' || t.tagName === 'TEXTAREA' || t.isContentEditable)) return;
+  const box = document.getElementById('q') || document.getElementById('kq');
+  if (!box) return;
+  e.preventDefault();
+  box.focus();
+  box.select();
+});
+
 </script>
 <div id="promo" class="promo">
   <div class="promo-card">

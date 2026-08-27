@@ -62,6 +62,10 @@
   <p class="epctx-label">この動画のほかのプレゼント</p>
   <div class="ep-kits"><a class="kchip" href="../mcp-migration-checklist/"><span class="kt">MCPサーバー移行チェックリスト</span><span class="badge">6項目</span><span class="go">開く →</span></a><a class="kchip" href="../mcp-servers-100/"><span class="kt">厳選MCPサーバー100選 つなぐだけコピペ設定</span><span class="badge">100個</span><span class="go">開く →</span></a></div>
 </section>
+  <section class="epctx">
+  <p class="epctx-label">ほかの回の「早見表・逆引き」</p>
+  <div class="ep-kits"><a class="kchip" href="../academy-lookup-50/"><span class="kt">Claude Academy逆引き表50選</span><span class="badge">50個</span><span class="go">開く →</span></a><a class="kchip" href="../grokbot-vs-hermesbot-sheet/"><span class="kt">Grok Bot vs Hermes Bot Mode 使い分け早見表</span><span class="badge">9項目</span><span class="go">開く →</span></a><a class="kchip" href="../grokbot-vs-cowork-sheet/"><span class="kt">Grok Bot vs Claude Cowork 使い分け早見表</span><span class="badge">6項目</span><span class="go">開く →</span></a><a class="kchip" href="../ai-empire-roadmap/"><span class="kt">AI帝国ロードマップ早見表 — SpaceXAI編</span><span class="badge">6項目</span><span class="go">開く →</span></a></div>
+</section>
 
   <footer><a href="../../">← ClaudeCodeチャンネル プレゼント図書館にもどる</a></footer>
 </div>
@@ -91,6 +95,23 @@
 ```
 </pre>
 <script>
+
+// 名指しリンク（#i37）で来たとき、その項目まで確実に運んで少しの間だけ目立たせる。
+// ブラウザ任せだと、項目数の多いページでは狙った位置に着かないことがある
+// （html に scroll-behavior:smooth が効いており、数万px を滑らせようとして届かない）。
+(function(){
+  function go(){
+    if (!location.hash) return;
+    var el = document.querySelector(location.hash);
+    if (!el || !el.classList.contains('icard')) return;
+    el.scrollIntoView({block: 'start', behavior: 'auto'});
+    el.classList.add('flashme');
+    setTimeout(function(){ el.classList.remove('flashme'); }, 2400);
+  }
+  addEventListener('hashchange', go);
+  if (document.readyState === 'loading') addEventListener('DOMContentLoaded', go);
+  else go();
+})();
 // 項目の多いキットで、目的の1件に辿り着けるようにする絞り込み。
 // 検索はタイトル・説明だけでなく本文も対象にする（「あの文言が入っていた項目」で探せるように）。
 (function(){
@@ -176,8 +197,27 @@ document.addEventListener('click', e => {
   const b = e.target.closest('[data-copy]');
   if (b) { copyText(b, b.dataset.copy); return; }
   const d = e.target.closest('[data-save]');
-  if (d) { saveText(d, d.dataset.save, d.dataset.name); }
+  if (d) { saveText(d, d.dataset.save, d.dataset.name); return; }
+  // その項目だけを名指しで人に渡せるようにする
+  const l = e.target.closest('[data-link]');
+  if (l) {
+    const url = location.origin + location.pathname + '#' + l.dataset.link;
+    navigator.clipboard.writeText(url).then(() => flash(l, '✓ コピーしました'));
+  }
 });
+
+// 「/」ですぐ検索を始められるようにする。入力中は邪魔しない。
+addEventListener('keydown', e => {
+  if (e.key !== '/' || e.metaKey || e.ctrlKey || e.altKey) return;
+  const t = e.target;
+  if (t && (t.tagName === 'INPUT' || t.tagName === 'TEXTAREA' || t.isContentEditable)) return;
+  const box = document.getElementById('q') || document.getElementById('kq');
+  if (!box) return;
+  e.preventDefault();
+  box.focus();
+  box.select();
+});
+
 </script>
 <div id="promo" class="promo">
   <div class="promo-card">

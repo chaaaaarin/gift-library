@@ -42,919 +42,1023 @@
   <p class="khit" id="khit" role="status"></p>
 </div>
 <h2 class="cat" data-cat="経理・請求書">経理・請求書</h2>
-<div class="icard" data-cat="経理・請求書">
+<div class="icard" id="i1" data-cat="経理・請求書">
   <div class="ih"><span class="num">001</span><span class="ititle">領収書フォルダの一括整理</span></div>
   
   <pre class="prompt" id="b1">このフォルダの中の領収書画像を1枚ずつ確認し、日付(YYYYMMDD)・店名・金額が分かるファイル名に変更してください。同じフォルダにcsvファイルを作り、日付/店名/金額/カテゴリの列で一覧化してください。カテゴリは交通費・飲食費・消耗品費・その他から判断して割り振ってください。</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b1">📋 コピー</button>
     <button class="btn ghost sm" data-save="b1" data-name="work-prompts100-001.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i1">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="経理・請求書">
+<div class="icard" id="i2" data-cat="経理・請求書">
   <div class="ih"><span class="num">002</span><span class="ititle">月次経費レポートの下書き</span></div>
   
   <pre class="prompt" id="b2">先ほど作成した経費CSVを元に、今月の経費レポートを作成してください。カテゴリ別の合計、先月比の増減、予算オーバーしている項目があれば赤字で注記してください。</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b2">📋 コピー</button>
     <button class="btn ghost sm" data-save="b2" data-name="work-prompts100-002.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i2">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="経理・請求書">
+<div class="icard" id="i3" data-cat="経理・請求書">
   <div class="ih"><span class="num">003</span><span class="ititle">請求書の内容チェック</span></div>
   
   <pre class="prompt" id="b3">このフォルダにある請求書PDFと発注書PDFを突き合わせ、金額・品目・数量に食い違いがないか確認してください。食い違いがあれば該当箇所を引用して一覧にしてください。</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b3">📋 コピー</button>
     <button class="btn ghost sm" data-save="b3" data-name="work-prompts100-003.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i3">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="経理・請求書">
+<div class="icard" id="i4" data-cat="経理・請求書">
   <div class="ih"><span class="num">004</span><span class="ititle">経費精算の期日リマインド</span></div>
   
   <pre class="prompt" id="b4">毎月25日の朝9時に、今月分の領収書フォルダを確認し、まだCSVに反映されていない画像が残っていないかチェックして、私に結果を知らせるスケジュールを作ってください。</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b4">📋 コピー</button>
     <button class="btn ghost sm" data-save="b4" data-name="work-prompts100-004.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i4">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="経理・請求書">
+<div class="icard" id="i5" data-cat="経理・請求書">
   <div class="ih"><span class="num">005</span><span class="ititle">交通費精算の自動計算</span></div>
   
   <pre class="prompt" id="b5">今月の訪問先一覧（会社名と住所）を渡すので、自宅からの往復交通費を経路ごとに調べて、精算用の一覧表（訪問日・訪問先・区間・金額）を作ってください。</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b5">📋 コピー</button>
     <button class="btn ghost sm" data-save="b5" data-name="work-prompts100-005.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i5">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="経理・請求書">
+<div class="icard" id="i6" data-cat="経理・請求書">
   <div class="ih"><span class="num">006</span><span class="ititle">固定費の見直し提案</span></div>
   
   <pre class="prompt" id="b6">このフォルダの契約書・請求書から、毎月発生している固定費（サブスクリプション・リース等）を一覧化し、用途が重複していそうなもの、直近3か月使用実績が見当たらないものを指摘してください。</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b6">📋 コピー</button>
     <button class="btn ghost sm" data-save="b6" data-name="work-prompts100-006.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i6">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="経理・請求書">
+<div class="icard" id="i7" data-cat="経理・請求書">
   <div class="ih"><span class="num">007</span><span class="ititle">見積書テンプレートの作成</span></div>
   
   <pre class="prompt" id="b7">このフォルダにある過去の見積書3件を参考に、共通のフォーマット（会社ロゴ位置・項目構成・税表示）を抽出し、新規案件用の見積書テンプレートをスプレッドシートで作ってください。</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b7">📋 コピー</button>
     <button class="btn ghost sm" data-save="b7" data-name="work-prompts100-007.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i7">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="経理・請求書">
+<div class="icard" id="i8" data-cat="経理・請求書">
   <div class="ih"><span class="num">008</span><span class="ititle">入金消込の確認</span></div>
   
   <pre class="prompt" id="b8">この入出金明細CSVと請求書一覧を突き合わせて、入金が確認できていない請求書を一覧にしてください。取引先名・請求金額・請求日・経過日数を含めてください。</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b8">📋 コピー</button>
     <button class="btn ghost sm" data-save="b8" data-name="work-prompts100-008.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i8">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="経理・請求書">
+<div class="icard" id="i9" data-cat="経理・請求書">
   <div class="ih"><span class="num">009</span><span class="ititle">年末調整資料の整理</span></div>
   
   <pre class="prompt" id="b9">このフォルダの1年分の領収書・証明書PDFを、社会保険料控除・生命保険料控除・医療費控除などの種類ごとに仕分けし、それぞれの合計金額が分かる一覧を作ってください。</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b9">📋 コピー</button>
     <button class="btn ghost sm" data-save="b9" data-name="work-prompts100-009.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i9">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="経理・請求書">
+<div class="icard" id="i10" data-cat="経理・請求書">
   <div class="ih"><span class="num">010</span><span class="ititle">経費規定違反のチェック</span></div>
   
   <pre class="prompt" id="b10">この経費規定PDFの内容を踏まえて、今月の経費申請一覧の中に規定の上限額を超えている、または対象外カテゴリに分類されている項目がないか確認してください。</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b10">📋 コピー</button>
     <button class="btn ghost sm" data-save="b10" data-name="work-prompts100-010.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i10">🔗 リンク</button>
   </div>
 </div>
 <h2 class="cat" data-cat="営業・提案">営業・提案</h2>
-<div class="icard" data-cat="営業・提案">
+<div class="icard" id="i11" data-cat="営業・提案">
   <div class="ih"><span class="num">011</span><span class="ititle">提案書のたたき台作成</span></div>
   
   <pre class="prompt" id="b11">この商談メモ（顧客の課題・予算感・希望納期）を元に、課題整理→提案内容→導入効果→スケジュール→費用の構成で提案書のたたき台をスライド資料として作ってください。</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b11">📋 コピー</button>
     <button class="btn ghost sm" data-save="b11" data-name="work-prompts100-011.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i11">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="営業・提案">
+<div class="icard" id="i12" data-cat="営業・提案">
   <div class="ih"><span class="num">012</span><span class="ititle">競合比較表の作成</span></div>
   
   <pre class="prompt" id="b12">自社サービスの特徴と、指定する競合3社の公開情報を調べて、価格・機能・サポート体制の観点で比較表を作ってください。自社の強みが伝わる並びにしてください。</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b12">📋 コピー</button>
     <button class="btn ghost sm" data-save="b12" data-name="work-prompts100-012.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i12">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="営業・提案">
+<div class="icard" id="i13" data-cat="営業・提案">
   <div class="ih"><span class="num">013</span><span class="ititle">商談後のお礼メール下書き</span></div>
   
   <pre class="prompt" id="b13">この商談議事録を元に、先方へのお礼メールの下書きを作ってください。次回アクションと期日を明記し、丁寧だが冗長にならない文面にしてください。</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b13">📋 コピー</button>
     <button class="btn ghost sm" data-save="b13" data-name="work-prompts100-013.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i13">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="営業・提案">
+<div class="icard" id="i14" data-cat="営業・提案">
   <div class="ih"><span class="num">014</span><span class="ititle">見込み顧客リストの優先順位づけ</span></div>
   
   <pre class="prompt" id="b14">この見込み顧客リスト（業種・規模・接触履歴）を元に、受注確度が高そうな順に並び替え、それぞれの根拠を1行でつけてください。</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b14">📋 コピー</button>
     <button class="btn ghost sm" data-save="b14" data-name="work-prompts100-014.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i14">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="営業・提案">
+<div class="icard" id="i15" data-cat="営業・提案">
   <div class="ih"><span class="num">015</span><span class="ititle">提案資料の反論想定Q&amp;A</span></div>
   
   <pre class="prompt" id="b15">この提案書の内容を読んで、先方の決裁者から出そうな質問を10個想定し、それぞれに対する回答例をつけてください。</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b15">📋 コピー</button>
     <button class="btn ghost sm" data-save="b15" data-name="work-prompts100-015.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i15">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="営業・提案">
+<div class="icard" id="i16" data-cat="営業・提案">
   <div class="ih"><span class="num">016</span><span class="ititle">失注理由の分析</span></div>
   
   <pre class="prompt" id="b16">このフォルダにある過去半年分の失注案件メモを読み、失注理由を分類し、件数の多い順にランキングにしてください。改善できそうな共通パターンがあれば指摘してください。</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b16">📋 コピー</button>
     <button class="btn ghost sm" data-save="b16" data-name="work-prompts100-016.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i16">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="営業・提案">
+<div class="icard" id="i17" data-cat="営業・提案">
   <div class="ih"><span class="num">017</span><span class="ititle">営業週報の自動作成</span></div>
   
   <pre class="prompt" id="b17">今週の商談ログ（訪問先・内容・進捗）を元に、上司向けの週報を作成してください。今週の成果、来週の予定、懸念点の3構成でお願いします。</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b17">📋 コピー</button>
     <button class="btn ghost sm" data-save="b17" data-name="work-prompts100-017.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i17">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="営業・提案">
+<div class="icard" id="i18" data-cat="営業・提案">
   <div class="ih"><span class="num">018</span><span class="ititle">価格交渉シミュレーション</span></div>
   
   <pre class="prompt" id="b18">この案件の原価と希望利益率を伝えるので、先方から10%値引きを要求された場合に取りうる交渉パターン（値引き幅・条件変更案）を3つ提案してください。</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b18">📋 コピー</button>
     <button class="btn ghost sm" data-save="b18" data-name="work-prompts100-018.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i18">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="営業・提案">
+<div class="icard" id="i19" data-cat="営業・提案">
   <div class="ih"><span class="num">019</span><span class="ititle">紹介案件の御礼状作成</span></div>
   
   <pre class="prompt" id="b19">この案件を紹介してくれた〇〇様への御礼状の下書きを作ってください。案件の進捗を軽く触れつつ、今後も相談しやすい関係を維持できる文面にしてください。</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b19">📋 コピー</button>
     <button class="btn ghost sm" data-save="b19" data-name="work-prompts100-019.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i19">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="営業・提案">
+<div class="icard" id="i20" data-cat="営業・提案">
   <div class="ih"><span class="num">020</span><span class="ititle">展示会リード対応の優先順位づけ</span></div>
   
   <pre class="prompt" id="b20">この展示会アンケート回答一覧を読み、フォロー優先度（高・中・低）を判定し、優先度が高い相手には初回連絡メールの下書きも作ってください。</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b20">📋 コピー</button>
     <button class="btn ghost sm" data-save="b20" data-name="work-prompts100-020.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i20">🔗 リンク</button>
   </div>
 </div>
 <h2 class="cat" data-cat="マーケティング・SNS運用">マーケティング・SNS運用</h2>
-<div class="icard" data-cat="マーケティング・SNS運用">
+<div class="icard" id="i21" data-cat="マーケティング・SNS運用">
   <div class="ih"><span class="num">021</span><span class="ititle">SNS投稿の1週間分ドラフト</span></div>
   
   <pre class="prompt" id="b21">今週伝えたいトピックを3つ渡すので、X（旧Twitter）・Instagram・note向けにそれぞれ文体を変えた投稿文を1本ずつ作ってください。絵文字は使わず、媒体ごとの文字数制限を守ってください。</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b21">📋 コピー</button>
     <button class="btn ghost sm" data-save="b21" data-name="work-prompts100-021.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i21">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="マーケティング・SNS運用">
+<div class="icard" id="i22" data-cat="マーケティング・SNS運用">
   <div class="ih"><span class="num">022</span><span class="ititle">competitor SNSのトレンド調査</span></div>
   
   <pre class="prompt" id="b22">指定する競合3アカウントの直近1か月の投稿を調べ、エンゲージメントが高かった投稿の共通点（テーマ・時間帯・形式）をまとめてください。</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b22">📋 コピー</button>
     <button class="btn ghost sm" data-save="b22" data-name="work-prompts100-022.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i22">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="マーケティング・SNS運用">
+<div class="icard" id="i23" data-cat="マーケティング・SNS運用">
   <div class="ih"><span class="num">023</span><span class="ititle">バナー画像のラフ案生成</span></div>
   
   <pre class="prompt" id="b23">このロゴとブランドカラーを踏まえて、「〇〇キャンペーン」を訴求するバナー画像案を3パターン作ってください。それぞれ異なる訴求軸（お得感・信頼感・限定感）にしてください。</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b23">📋 コピー</button>
     <button class="btn ghost sm" data-save="b23" data-name="work-prompts100-023.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i23">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="マーケティング・SNS運用">
+<div class="icard" id="i24" data-cat="マーケティング・SNS運用">
   <div class="ih"><span class="num">024</span><span class="ititle">メルマガの構成案作成</span></div>
   
   <pre class="prompt" id="b24">今月配信したいトピック一覧を渡すので、開封率が上がりやすい件名案を3つと、本文の構成案（導入・本題・CTA）を作ってください。</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b24">📋 コピー</button>
     <button class="btn ghost sm" data-save="b24" data-name="work-prompts100-024.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i24">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="マーケティング・SNS運用">
+<div class="icard" id="i25" data-cat="マーケティング・SNS運用">
   <div class="ih"><span class="num">025</span><span class="ititle">SNSダッシュボードの作成</span></div>
   
   <pre class="prompt" id="b25">X・Instagramのフォロワー数・エンゲージメント率のデータを取り込んで、日次で自動更新されるダッシュボードを作り、公開してチームに共有してください。</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b25">📋 コピー</button>
     <button class="btn ghost sm" data-save="b25" data-name="work-prompts100-025.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i25">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="マーケティング・SNS運用">
+<div class="icard" id="i26" data-cat="マーケティング・SNS運用">
   <div class="ih"><span class="num">026</span><span class="ititle">ブログ記事のリライト提案</span></div>
   
   <pre class="prompt" id="b26">この記事URLの内容を読み、狙っているキーワードに対して不足している見出し・情報を指摘し、リライト案の見出し構成を作ってください。</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b26">📋 コピー</button>
     <button class="btn ghost sm" data-save="b26" data-name="work-prompts100-026.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i26">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="マーケティング・SNS運用">
+<div class="icard" id="i27" data-cat="マーケティング・SNS運用">
   <div class="ih"><span class="num">027</span><span class="ititle">キャンペーン効果測定レポート</span></div>
   
   <pre class="prompt" id="b27">このキャンペーン期間中のアクセス数・CV数のCSVを元に、目標に対する達成率と、次回への改善提案を含むレポートを作ってください。</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b27">📋 コピー</button>
     <button class="btn ghost sm" data-save="b27" data-name="work-prompts100-027.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i27">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="マーケティング・SNS運用">
+<div class="icard" id="i28" data-cat="マーケティング・SNS運用">
   <div class="ih"><span class="num">028</span><span class="ititle">インフルエンサー候補のリストアップ</span></div>
   
   <pre class="prompt" id="b28">この商材のターゲット層に合いそうなインフルエンサー候補を10名分調べ、フォロワー数・投稿頻度・雰囲気の合致度をまとめた一覧にしてください。</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b28">📋 コピー</button>
     <button class="btn ghost sm" data-save="b28" data-name="work-prompts100-028.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i28">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="マーケティング・SNS運用">
+<div class="icard" id="i29" data-cat="マーケティング・SNS運用">
   <div class="ih"><span class="num">029</span><span class="ititle">プレスリリースの下書き</span></div>
   
   <pre class="prompt" id="b29">この新サービスの概要資料を元に、プレスリリースの下書きを作ってください。見出し・リード文・本文・会社概要の構成でお願いします。</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b29">📋 コピー</button>
     <button class="btn ghost sm" data-save="b29" data-name="work-prompts100-029.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i29">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="マーケティング・SNS運用">
+<div class="icard" id="i30" data-cat="マーケティング・SNS運用">
   <div class="ih"><span class="num">030</span><span class="ititle">SNS炎上リスクの事前チェック</span></div>
   
   <pre class="prompt" id="b30">この投稿予定文を、誤解を招く表現・配慮に欠ける言い回しがないかレビューしてください。リスクがあれば該当箇所と理由、改善案を示してください。</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b30">📋 コピー</button>
     <button class="btn ghost sm" data-save="b30" data-name="work-prompts100-030.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i30">🔗 リンク</button>
   </div>
 </div>
 <h2 class="cat" data-cat="データ分析・レポート">データ分析・レポート</h2>
-<div class="icard" data-cat="データ分析・レポート">
+<div class="icard" id="i31" data-cat="データ分析・レポート">
   <div class="ih"><span class="num">031</span><span class="ititle">週次KPIダッシュボードの作成</span></div>
   
   <pre class="prompt" id="b31">このスプレッドシートの売上・アクセス数・CVRデータを取り込んで、週次で更新されるダッシュボードを作成し、チームチャンネルで共有できるようURLを発行してください。</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b31">📋 コピー</button>
     <button class="btn ghost sm" data-save="b31" data-name="work-prompts100-031.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i31">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="データ分析・レポート">
+<div class="icard" id="i32" data-cat="データ分析・レポート">
   <div class="ih"><span class="num">032</span><span class="ititle">異常値の自動検知</span></div>
   
   <pre class="prompt" id="b32">毎朝9時に前日のアクセスデータを確認し、前週同曜日比で±30%以上の変動があれば、その原因として考えられる要素とあわせて私に知らせるスケジュールを作ってください。</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b32">📋 コピー</button>
     <button class="btn ghost sm" data-save="b32" data-name="work-prompts100-032.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i32">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="データ分析・レポート">
+<div class="icard" id="i33" data-cat="データ分析・レポート">
   <div class="ih"><span class="num">033</span><span class="ititle">複数ソースのデータ統合</span></div>
   
   <pre class="prompt" id="b33">このスプレッドシートの顧客データと、接続済みのデータベースの購買履歴を突き合わせて、顧客ごとのLTVが分かる一覧表を作ってください。</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b33">📋 コピー</button>
     <button class="btn ghost sm" data-save="b33" data-name="work-prompts100-033.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i33">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="データ分析・レポート">
+<div class="icard" id="i34" data-cat="データ分析・レポート">
   <div class="ih"><span class="num">034</span><span class="ititle">A/Bテスト結果のレポート化</span></div>
   
   <pre class="prompt" id="b34">このA/Bテストの結果データを元に、どちらのパターンが優位か、統計的な有意差があるかを含めてレポートにまとめてください。</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b34">📋 コピー</button>
     <button class="btn ghost sm" data-save="b34" data-name="work-prompts100-034.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i34">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="データ分析・レポート">
+<div class="icard" id="i35" data-cat="データ分析・レポート">
   <div class="ih"><span class="num">035</span><span class="ititle">オンボーディングファネルの可視化</span></div>
   
   <pre class="prompt" id="b35">このユーザー行動ログから、登録〜初回利用までの各ステップの離脱率を計算し、ファネル図として可視化したダッシュボードを作ってください。</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b35">📋 コピー</button>
     <button class="btn ghost sm" data-save="b35" data-name="work-prompts100-035.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i35">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="データ分析・レポート">
+<div class="icard" id="i36" data-cat="データ分析・レポート">
   <div class="ih"><span class="num">036</span><span class="ititle">月次レポートの自動生成</span></div>
   
   <pre class="prompt" id="b36">毎月1日の朝に、前月の売上・新規顧客数・解約数を集計し、先月のフォーマットに沿った月次レポートのスライドを自動作成するスケジュールを組んでください。</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b36">📋 コピー</button>
     <button class="btn ghost sm" data-save="b36" data-name="work-prompts100-036.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i36">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="データ分析・レポート">
+<div class="icard" id="i37" data-cat="データ分析・レポート">
   <div class="ih"><span class="num">037</span><span class="ititle">地域別パフォーマンスの比較</span></div>
   
   <pre class="prompt" id="b37">この地域別の売上・アクティベーション率データを比較し、平均から大きく外れている地域を特定して、考えられる要因を挙げてください。</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b37">📋 コピー</button>
     <button class="btn ghost sm" data-save="b37" data-name="work-prompts100-037.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i37">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="データ分析・レポート">
+<div class="icard" id="i38" data-cat="データ分析・レポート">
   <div class="ih"><span class="num">038</span><span class="ititle">顧客セグメント別の傾向分析</span></div>
   
   <pre class="prompt" id="b38">この顧客データを利用頻度と購入金額でセグメント分けし、それぞれのセグメントの特徴と、優先的にアプローチすべきセグメントを提案してください。</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b38">📋 コピー</button>
     <button class="btn ghost sm" data-save="b38" data-name="work-prompts100-038.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i38">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="データ分析・レポート">
+<div class="icard" id="i39" data-cat="データ分析・レポート">
   <div class="ih"><span class="num">039</span><span class="ititle">ダッシュボードの1行サマリー</span></div>
   
   <pre class="prompt" id="b39">このダッシュボードの今週の状況を、会議でそのまま話せる1行サマリーにまとめてください。良かった点と懸念点を両方含めてください。</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b39">📋 コピー</button>
     <button class="btn ghost sm" data-save="b39" data-name="work-prompts100-039.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i39">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="データ分析・レポート">
+<div class="icard" id="i40" data-cat="データ分析・レポート">
   <div class="ih"><span class="num">040</span><span class="ititle">データの注釈付けと共有</span></div>
   
   <pre class="prompt" id="b40">このダッシュボードの3月のグラフで急落している箇所に注釈をつけ、考えられる原因のメモを添えて、チームチャンネルにリンクを共有してください。</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b40">📋 コピー</button>
     <button class="btn ghost sm" data-save="b40" data-name="work-prompts100-040.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i40">🔗 リンク</button>
   </div>
 </div>
 <h2 class="cat" data-cat="秘書・スケジュール管理">秘書・スケジュール管理</h2>
-<div class="icard" data-cat="秘書・スケジュール管理">
+<div class="icard" id="i41" data-cat="秘書・スケジュール管理">
   <div class="ih"><span class="num">041</span><span class="ititle">毎朝の1日ブリーフィング</span></div>
   
   <pre class="prompt" id="b41">私のカレンダー・メール・Slackをチェックして、今日の予定、対応が必要なメール、優先度の高いタスクをまとめて教えてください。これを毎朝7時に自動で行うようにしてください。</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b41">📋 コピー</button>
     <button class="btn ghost sm" data-save="b41" data-name="work-prompts100-041.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i41">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="秘書・スケジュール管理">
+<div class="icard" id="i42" data-cat="秘書・スケジュール管理">
   <div class="ih"><span class="num">042</span><span class="ititle">会議日程調整の代行</span></div>
   
   <pre class="prompt" id="b42">この3名との来週の打ち合わせ日程を調整してください。私の空き時間候補を3つ提示するメール文面を作り、返信が来たら候補を絞り込んでカレンダーに登録してください。</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b42">📋 コピー</button>
     <button class="btn ghost sm" data-save="b42" data-name="work-prompts100-042.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i42">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="秘書・スケジュール管理">
+<div class="icard" id="i43" data-cat="秘書・スケジュール管理">
   <div class="ih"><span class="num">043</span><span class="ititle">出張準備チェックリスト</span></div>
   
   <pre class="prompt" id="b43">来週の大阪出張（1泊2日）の準備チェックリストを作ってください。交通手段の手配、宿泊予約、持ち物、訪問先への事前連絡の要否を含めてください。</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b43">📋 コピー</button>
     <button class="btn ghost sm" data-save="b43" data-name="work-prompts100-043.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i43">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="秘書・スケジュール管理">
+<div class="icard" id="i44" data-cat="秘書・スケジュール管理">
   <div class="ih"><span class="num">044</span><span class="ititle">優先順位の整理</span></div>
   
   <pre class="prompt" id="b44">このタスクリストを緊急度と重要度の2軸で整理し、今日中にやるべきもの・今週中でよいもの・後回しにできるものに分類してください。</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b44">📋 コピー</button>
     <button class="btn ghost sm" data-save="b44" data-name="work-prompts100-044.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i44">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="秘書・スケジュール管理">
+<div class="icard" id="i45" data-cat="秘書・スケジュール管理">
   <div class="ih"><span class="num">045</span><span class="ititle">誕生日・記念日リマインド</span></div>
   
   <pre class="prompt" id="b45">この取引先リストの誕生日・契約更新日を記憶しておき、1週間前になったら私にリマインドするようにしてください。</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b45">📋 コピー</button>
     <button class="btn ghost sm" data-save="b45" data-name="work-prompts100-045.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i45">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="秘書・スケジュール管理">
+<div class="icard" id="i46" data-cat="秘書・スケジュール管理">
   <div class="ih"><span class="num">046</span><span class="ititle">会食のお店リストアップ</span></div>
   
   <pre class="prompt" id="b46">来週、取引先4名との会食があります。個室があり、アレルギー対応可能な和食店を、オフィス（渋谷）から徒歩15分以内で3件探してください。</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b46">📋 コピー</button>
     <button class="btn ghost sm" data-save="b46" data-name="work-prompts100-046.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i46">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="秘書・スケジュール管理">
+<div class="icard" id="i47" data-cat="秘書・スケジュール管理">
   <div class="ih"><span class="num">047</span><span class="ititle">引き継ぎメモの作成</span></div>
   
   <pre class="prompt" id="b47">来週1週間休暇を取るので、現在進行中の案件それぞれについて、進捗状況・次のアクション・連絡先をまとめた引き継ぎメモを作ってください。</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b47">📋 コピー</button>
     <button class="btn ghost sm" data-save="b47" data-name="work-prompts100-047.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i47">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="秘書・スケジュール管理">
+<div class="icard" id="i48" data-cat="秘書・スケジュール管理">
   <div class="ih"><span class="num">048</span><span class="ititle">名刺情報のデータ化</span></div>
   
   <pre class="prompt" id="b48">この名刺画像フォルダから、会社名・氏名・役職・連絡先を読み取って、連絡先リストのCSVを作ってください。</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b48">📋 コピー</button>
     <button class="btn ghost sm" data-save="b48" data-name="work-prompts100-048.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i48">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="秘書・スケジュール管理">
+<div class="icard" id="i49" data-cat="秘書・スケジュール管理">
   <div class="ih"><span class="num">049</span><span class="ititle">週末の振り返りメモ</span></div>
   
   <pre class="prompt" id="b49">今週やり取りしたメール・完了したタスクを振り返り、今週の成果と来週への申し送り事項を箇条書きでまとめてください。毎週金曜の夕方に自動で行ってください。</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b49">📋 コピー</button>
     <button class="btn ghost sm" data-save="b49" data-name="work-prompts100-049.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i49">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="秘書・スケジュール管理">
+<div class="icard" id="i50" data-cat="秘書・スケジュール管理">
   <div class="ih"><span class="num">050</span><span class="ititle">プレゼント選びのリサーチ</span></div>
   
   <pre class="prompt" id="b50">お世話になった取引先へのお礼の品を探しています。5000円前後で、甘い物が苦手な方でも喜ばれそうなものを3つ提案してください。</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b50">📋 コピー</button>
     <button class="btn ghost sm" data-save="b50" data-name="work-prompts100-050.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i50">🔗 リンク</button>
   </div>
 </div>
 <h2 class="cat" data-cat="メール・コミュニケーション">メール・コミュニケーション</h2>
-<div class="icard" data-cat="メール・コミュニケーション">
+<div class="icard" id="i51" data-cat="メール・コミュニケーション">
   <div class="ih"><span class="num">051</span><span class="ititle">メール文体の自分化</span></div>
   
   <pre class="prompt" id="b51">このフォルダの過去の送信メールを読んで、私の文体の特徴（丁寧さのレベル・よく使う言い回し）を把握してください。以降、返信メールの下書きはその文体に合わせて作ってください。</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b51">📋 コピー</button>
     <button class="btn ghost sm" data-save="b51" data-name="work-prompts100-051.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i51">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="メール・コミュニケーション">
+<div class="icard" id="i52" data-cat="メール・コミュニケーション">
   <div class="ih"><span class="num">052</span><span class="ititle">問い合わせメールへの一次回答</span></div>
   
   <pre class="prompt" id="b52">このお問い合わせメールについて、過去のFAQ資料を参照しながら回答案を作ってください。資料に無い内容は「要確認」として明記してください。</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b52">📋 コピー</button>
     <button class="btn ghost sm" data-save="b52" data-name="work-prompts100-052.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i52">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="メール・コミュニケーション">
+<div class="icard" id="i53" data-cat="メール・コミュニケーション">
   <div class="ih"><span class="num">053</span><span class="ititle">お詫びメールの文面調整</span></div>
   
   <pre class="prompt" id="b53">この納期遅延のお詫びメールの下書きを、言い訳がましくならないよう、誠実さが伝わる文面に整えてください。</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b53">📋 コピー</button>
     <button class="btn ghost sm" data-save="b53" data-name="work-prompts100-053.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i53">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="メール・コミュニケーション">
+<div class="icard" id="i54" data-cat="メール・コミュニケーション">
   <div class="ih"><span class="num">054</span><span class="ititle">メール要約と対応要否の判定</span></div>
   
   <pre class="prompt" id="b54">未読メール30件を1件ずつ要約し、返信が必要なもの・確認だけでよいもの・無視してよいものに分類したリストを作ってください。</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b54">📋 コピー</button>
     <button class="btn ghost sm" data-save="b54" data-name="work-prompts100-054.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i54">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="メール・コミュニケーション">
+<div class="icard" id="i55" data-cat="メール・コミュニケーション">
   <div class="ih"><span class="num">055</span><span class="ititle">多言語メールの翻訳と返信案</span></div>
   
   <pre class="prompt" id="b55">この英語メールを日本語に翻訳し、内容を踏まえた返信案を日本語で作ってから、それを自然な英語に翻訳してください。</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b55">📋 コピー</button>
     <button class="btn ghost sm" data-save="b55" data-name="work-prompts100-055.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i55">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="メール・コミュニケーション">
+<div class="icard" id="i56" data-cat="メール・コミュニケーション">
   <div class="ih"><span class="num">056</span><span class="ititle">督促メールの段階的テンプレート</span></div>
   
   <pre class="prompt" id="b56">支払い期日を過ぎている取引先への督促メールを、初回（柔らかめ）・2回目（やや強め）・最終通告の3段階のテンプレートで作ってください。</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b56">📋 コピー</button>
     <button class="btn ghost sm" data-save="b56" data-name="work-prompts100-056.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i56">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="メール・コミュニケーション">
+<div class="icard" id="i57" data-cat="メール・コミュニケーション">
   <div class="ih"><span class="num">057</span><span class="ititle">社内通知文の作成</span></div>
   
   <pre class="prompt" id="b57">このオフィス移転の詳細メモを元に、社員向けの通知メールを作ってください。要点を箇条書きにし、問い合わせ先を明記してください。</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b57">📋 コピー</button>
     <button class="btn ghost sm" data-save="b57" data-name="work-prompts100-057.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i57">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="メール・コミュニケーション">
+<div class="icard" id="i58" data-cat="メール・コミュニケーション">
   <div class="ih"><span class="num">058</span><span class="ititle">Slackメッセージの整形</span></div>
   
   <pre class="prompt" id="b58">この長い相談内容を、Slackで投稿しやすいように、結論→背景→相談したいことの順に整形してください。</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b58">📋 コピー</button>
     <button class="btn ghost sm" data-save="b58" data-name="work-prompts100-058.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i58">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="メール・コミュニケーション">
+<div class="icard" id="i59" data-cat="メール・コミュニケーション">
   <div class="ih"><span class="num">059</span><span class="ititle">返信漏れの検知</span></div>
   
   <pre class="prompt" id="b59">先週送ったメールのうち、まだ返信が来ていないものを一覧にしてください。重要度が高そうなものには催促の下書きも添えてください。</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b59">📋 コピー</button>
     <button class="btn ghost sm" data-save="b59" data-name="work-prompts100-059.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i59">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="メール・コミュニケーション">
+<div class="icard" id="i60" data-cat="メール・コミュニケーション">
   <div class="ih"><span class="num">060</span><span class="ititle">会議招待文の作成</span></div>
   
   <pre class="prompt" id="b60">この会議の目的とアジェンダを元に、参加者への招待メール文面を作ってください。事前に準備してほしいことがあれば明記してください。</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b60">📋 コピー</button>
     <button class="btn ghost sm" data-save="b60" data-name="work-prompts100-060.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i60">🔗 リンク</button>
   </div>
 </div>
 <h2 class="cat" data-cat="会議・議事録">会議・議事録</h2>
-<div class="icard" data-cat="会議・議事録">
+<div class="icard" id="i61" data-cat="会議・議事録">
   <div class="ih"><span class="num">061</span><span class="ititle">会議の自動文字起こしと要約</span></div>
   
   <pre class="prompt" id="b61">この会議の録音ファイルを文字起こしし、決定事項・アクションアイテム（担当者・期限つき）・懸念点の3構成で議事録にまとめてください。</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b61">📋 コピー</button>
     <button class="btn ghost sm" data-save="b61" data-name="work-prompts100-061.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i61">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="会議・議事録">
+<div class="icard" id="i62" data-cat="会議・議事録">
   <div class="ih"><span class="num">062</span><span class="ititle">アジェンダの事前作成</span></div>
   
   <pre class="prompt" id="b62">来週の企画会議の目的（新商品の方向性決定）を伝えるので、時間配分つきのアジェンダを作ってください。</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b62">📋 コピー</button>
     <button class="btn ghost sm" data-save="b62" data-name="work-prompts100-062.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i62">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="会議・議事録">
+<div class="icard" id="i63" data-cat="会議・議事録">
   <div class="ih"><span class="num">063</span><span class="ititle">過去議事録からの申し送り確認</span></div>
   
   <pre class="prompt" id="b63">前回の議事録を読み、アクションアイテムのうち期限が過ぎているものがないか確認し、今回の会議のアジェンダに含めてください。</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b63">📋 コピー</button>
     <button class="btn ghost sm" data-save="b63" data-name="work-prompts100-063.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i63">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="会議・議事録">
+<div class="icard" id="i64" data-cat="会議・議事録">
   <div class="ih"><span class="num">064</span><span class="ititle">複数会議の決定事項まとめ</span></div>
   
   <pre class="prompt" id="b64">今週行った会議の議事録すべてから、決定事項だけを抽出して、経営陣向けのサマリーを作ってください。</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b64">📋 コピー</button>
     <button class="btn ghost sm" data-save="b64" data-name="work-prompts100-064.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i64">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="会議・議事録">
+<div class="icard" id="i65" data-cat="会議・議事録">
   <div class="ih"><span class="num">065</span><span class="ititle">会議中のリアルタイムメモ整理</span></div>
   
   <pre class="prompt" id="b65">この会議中に取った箇条書きメモを、読みやすい議事録の形式に整形してください。</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b65">📋 コピー</button>
     <button class="btn ghost sm" data-save="b65" data-name="work-prompts100-065.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i65">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="会議・議事録">
+<div class="icard" id="i66" data-cat="会議・議事録">
   <div class="ih"><span class="num">066</span><span class="ititle">アクションアイテムの進捗トラッキング</span></div>
   
   <pre class="prompt" id="b66">過去1か月分の議事録からアクションアイテムを抽出し、担当者・期限・現在の進捗状況が分かる一覧表を作り、定期的に更新してください。</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b66">📋 コピー</button>
     <button class="btn ghost sm" data-save="b66" data-name="work-prompts100-066.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i66">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="会議・議事録">
+<div class="icard" id="i67" data-cat="会議・議事録">
   <div class="ih"><span class="num">067</span><span class="ititle">英語会議の同時要約</span></div>
   
   <pre class="prompt" id="b67">この英語会議の録音を文字起こしした上で、日本語で要点を要約してください。専門用語には簡単な補足も添えてください。</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b67">📋 コピー</button>
     <button class="btn ghost sm" data-save="b67" data-name="work-prompts100-067.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i67">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="会議・議事録">
+<div class="icard" id="i68" data-cat="会議・議事録">
   <div class="ih"><span class="num">068</span><span class="ititle">次回アジェンダの自動生成</span></div>
   
   <pre class="prompt" id="b68">今回の議事録の中で結論が出なかった議題を洗い出し、次回会議のアジェンダ案として整理してください。</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b68">📋 コピー</button>
     <button class="btn ghost sm" data-save="b68" data-name="work-prompts100-068.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i68">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="会議・議事録">
+<div class="icard" id="i69" data-cat="会議・議事録">
   <div class="ih"><span class="num">069</span><span class="ititle">意思決定の背景記録</span></div>
   
   <pre class="prompt" id="b69">今回の会議で〇〇という決定に至った背景（検討した選択肢とその理由）を、後から振り返れるように別途まとめておいてください。</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b69">📋 コピー</button>
     <button class="btn ghost sm" data-save="b69" data-name="work-prompts100-069.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i69">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="会議・議事録">
+<div class="icard" id="i70" data-cat="会議・議事録">
   <div class="ih"><span class="num">070</span><span class="ititle">会議の効率化提案</span></div>
   
   <pre class="prompt" id="b70">過去3か月分の議事録を分析し、時間がかかりすぎている議題のパターンや、決定が先送りになりがちな傾向があれば指摘してください。</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b70">📋 コピー</button>
     <button class="btn ghost sm" data-save="b70" data-name="work-prompts100-070.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i70">🔗 リンク</button>
   </div>
 </div>
 <h2 class="cat" data-cat="リサーチ・情報収集">リサーチ・情報収集</h2>
-<div class="icard" data-cat="リサーチ・情報収集">
+<div class="icard" id="i71" data-cat="リサーチ・情報収集">
   <div class="ih"><span class="num">071</span><span class="ititle">業界ニュースの朝刊まとめ</span></div>
   
   <pre class="prompt" id="b71">毎朝8時に、AI・SaaS業界の主要ニュースをWeb検索で調べて、3行で要約したリストを作ってください。</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b71">📋 コピー</button>
     <button class="btn ghost sm" data-save="b71" data-name="work-prompts100-071.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i71">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="リサーチ・情報収集">
+<div class="icard" id="i72" data-cat="リサーチ・情報収集">
   <div class="ih"><span class="num">072</span><span class="ititle">競合サービスの機能調査</span></div>
   
   <pre class="prompt" id="b72">指定する競合3社の公式サイトを調べて、主要機能・料金プラン・ターゲット顧客層を比較表にまとめてください。</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b72">📋 コピー</button>
     <button class="btn ghost sm" data-save="b72" data-name="work-prompts100-072.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i72">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="リサーチ・情報収集">
+<div class="icard" id="i73" data-cat="リサーチ・情報収集">
   <div class="ih"><span class="num">073</span><span class="ititle">市場規模の一次情報調査</span></div>
   
   <pre class="prompt" id="b73">国内の〇〇市場の市場規模について、官公庁や調査会社が発表している一次情報を調べ、出典つきでまとめてください。</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b73">📋 コピー</button>
     <button class="btn ghost sm" data-save="b73" data-name="work-prompts100-073.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i73">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="リサーチ・情報収集">
+<div class="icard" id="i74" data-cat="リサーチ・情報収集">
   <div class="ih"><span class="num">074</span><span class="ititle">法改正の影響調査</span></div>
   
   <pre class="prompt" id="b74">来年施行予定の〇〇法改正について、公式情報を調べ、自社の業務にどう影響しそうかをまとめてください。</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b74">📋 コピー</button>
     <button class="btn ghost sm" data-save="b74" data-name="work-prompts100-074.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i74">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="リサーチ・情報収集">
+<div class="icard" id="i75" data-cat="リサーチ・情報収集">
   <div class="ih"><span class="num">075</span><span class="ititle">展示会・セミナー情報の収集</span></div>
   
   <pre class="prompt" id="b75">来月開催される、AI活用をテーマにした展示会・セミナーを東京近郊で探し、日程・参加費・対象者をまとめてください。</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b75">📋 コピー</button>
     <button class="btn ghost sm" data-save="b75" data-name="work-prompts100-075.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i75">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="リサーチ・情報収集">
+<div class="icard" id="i76" data-cat="リサーチ・情報収集">
   <div class="ih"><span class="num">076</span><span class="ititle">採用候補ツールの比較調査</span></div>
   
   <pre class="prompt" id="b76">経費精算を効率化できるツールを、月額1万円以下・freee連携可能という条件で調べて、上位3つを比較してください。</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b76">📋 コピー</button>
     <button class="btn ghost sm" data-save="b76" data-name="work-prompts100-076.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i76">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="リサーチ・情報収集">
+<div class="icard" id="i77" data-cat="リサーチ・情報収集">
   <div class="ih"><span class="num">077</span><span class="ititle">顧客の口コミ調査</span></div>
   
   <pre class="prompt" id="b77">自社サービスと競合サービスの口コミをレビューサイトで調べ、それぞれの評価されている点・不満点の傾向をまとめてください。</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b77">📋 コピー</button>
     <button class="btn ghost sm" data-save="b77" data-name="work-prompts100-077.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i77">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="リサーチ・情報収集">
+<div class="icard" id="i78" data-cat="リサーチ・情報収集">
   <div class="ih"><span class="num">078</span><span class="ititle">助成金・補助金の該当調査</span></div>
   
   <pre class="prompt" id="b78">従業員20名規模のIT企業が対象になりそうな、国や自治体の助成金・補助金を調べて、申請条件と締切をまとめてください。</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b78">📋 コピー</button>
     <button class="btn ghost sm" data-save="b78" data-name="work-prompts100-078.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i78">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="リサーチ・情報収集">
+<div class="icard" id="i79" data-cat="リサーチ・情報収集">
   <div class="ih"><span class="num">079</span><span class="ititle">引用元付きファクトチェック</span></div>
   
   <pre class="prompt" id="b79">この資料に書かれている数字（市場成長率・ユーザー数）について、一次情報で裏取りできるか確認し、できたものには出典を、できなかったものには「未確認」と明記してください。</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b79">📋 コピー</button>
     <button class="btn ghost sm" data-save="b79" data-name="work-prompts100-079.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i79">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="リサーチ・情報収集">
+<div class="icard" id="i80" data-cat="リサーチ・情報収集">
   <div class="ih"><span class="num">080</span><span class="ititle">海外事例のリサーチ</span></div>
   
   <pre class="prompt" id="b80">海外で〇〇の分野で成功している事例を3つ調べ、それぞれの成功要因と、日本市場への応用可能性をまとめてください。</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b80">📋 コピー</button>
     <button class="btn ghost sm" data-save="b80" data-name="work-prompts100-080.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i80">🔗 リンク</button>
   </div>
 </div>
 <h2 class="cat" data-cat="ドキュメント・資料作成">ドキュメント・資料作成</h2>
-<div class="icard" data-cat="ドキュメント・資料作成">
+<div class="icard" id="i81" data-cat="ドキュメント・資料作成">
   <div class="ih"><span class="num">081</span><span class="ititle">マニュアルの自動生成</span></div>
   
   <pre class="prompt" id="b81">これから画面共有しながらこの作業をやるので、手順を見ながら新人向けのマニュアルを作成してください。スクリーンショットが必要な箇所は指示してください。</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b81">📋 コピー</button>
     <button class="btn ghost sm" data-save="b81" data-name="work-prompts100-081.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i81">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="ドキュメント・資料作成">
+<div class="icard" id="i82" data-cat="ドキュメント・資料作成">
   <div class="ih"><span class="num">082</span><span class="ititle">社内規定の分かりやすい要約</span></div>
   
   <pre class="prompt" id="b82">この社内規定PDF（20ページ）を読み、社員が最低限知っておくべき内容を1ページのチェックリストに要約してください。</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b82">📋 コピー</button>
     <button class="btn ghost sm" data-save="b82" data-name="work-prompts100-082.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i82">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="ドキュメント・資料作成">
+<div class="icard" id="i83" data-cat="ドキュメント・資料作成">
   <div class="ih"><span class="num">083</span><span class="ititle">プレゼン資料のデザイン統一</span></div>
   
   <pre class="prompt" id="b83">このプレゼン資料のスライドのフォント・配色・レイアウトを、指定のブランドガイドラインに沿って統一してください。</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b83">📋 コピー</button>
     <button class="btn ghost sm" data-save="b83" data-name="work-prompts100-083.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i83">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="ドキュメント・資料作成">
+<div class="icard" id="i84" data-cat="ドキュメント・資料作成">
   <div class="ih"><span class="num">084</span><span class="ititle">契約書のリスク箇所抽出</span></div>
   
   <pre class="prompt" id="b84">この契約書ドラフトを読み、自社に不利になりそうな条項（違約金・解約条件等）を指摘し、修正案を提案してください。※法的な最終判断は必ず専門家に確認する前提で使う</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b84">📋 コピー</button>
     <button class="btn ghost sm" data-save="b84" data-name="work-prompts100-084.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i84">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="ドキュメント・資料作成">
+<div class="icard" id="i85" data-cat="ドキュメント・資料作成">
   <div class="ih"><span class="num">085</span><span class="ititle">社内Wikiページの作成</span></div>
   
   <pre class="prompt" id="b85">このフォルダに散らばっている〇〇業務に関する資料をまとめて、社内Wiki用の1ページにまとめてください。</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b85">📋 コピー</button>
     <button class="btn ghost sm" data-save="b85" data-name="work-prompts100-085.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i85">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="ドキュメント・資料作成">
+<div class="icard" id="i86" data-cat="ドキュメント・資料作成">
   <div class="ih"><span class="num">086</span><span class="ititle">報告書のフォーマット変換</span></div>
   
   <pre class="prompt" id="b86">このメモの内容を、当社所定の報告書フォーマット（テンプレート添付）に流し込んで整形してください。</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b86">📋 コピー</button>
     <button class="btn ghost sm" data-save="b86" data-name="work-prompts100-086.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i86">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="ドキュメント・資料作成">
+<div class="icard" id="i87" data-cat="ドキュメント・資料作成">
   <div class="ih"><span class="num">087</span><span class="ititle">研修資料のクイズ作成</span></div>
   
   <pre class="prompt" id="b87">この研修資料の内容を元に、理解度チェック用の○×クイズを10問作成してください。</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b87">📋 コピー</button>
     <button class="btn ghost sm" data-save="b87" data-name="work-prompts100-087.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i87">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="ドキュメント・資料作成">
+<div class="icard" id="i88" data-cat="ドキュメント・資料作成">
   <div class="ih"><span class="num">088</span><span class="ititle">提案書の誤字脱字チェック</span></div>
   
   <pre class="prompt" id="b88">この提案書PDFを読み、誤字脱字・表記ゆれ（半角全角の混在等）がないかチェックし、該当箇所を一覧にしてください。</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b88">📋 コピー</button>
     <button class="btn ghost sm" data-save="b88" data-name="work-prompts100-088.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i88">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="ドキュメント・資料作成">
+<div class="icard" id="i89" data-cat="ドキュメント・資料作成">
   <div class="ih"><span class="num">089</span><span class="ititle">複数資料の内容統合</span></div>
   
   <pre class="prompt" id="b89">この3つの資料は同じプロジェクトについて別々の人が作ったものです。内容の重複・矛盾を整理しながら、1つの資料に統合してください。</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b89">📋 コピー</button>
     <button class="btn ghost sm" data-save="b89" data-name="work-prompts100-089.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i89">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="ドキュメント・資料作成">
+<div class="icard" id="i90" data-cat="ドキュメント・資料作成">
   <div class="ih"><span class="num">090</span><span class="ititle">読み手別の資料バリエーション作成</span></div>
   
   <pre class="prompt" id="b90">この詳細資料を元に、経営層向けの1ページサマリー版と、現場向けの手順詳細版の2パターンを作ってください。</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b90">📋 コピー</button>
     <button class="btn ghost sm" data-save="b90" data-name="work-prompts100-090.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i90">🔗 リンク</button>
   </div>
 </div>
 <h2 class="cat" data-cat="自動化・スキル化">自動化・スキル化</h2>
-<div class="icard" data-cat="自動化・スキル化">
+<div class="icard" id="i91" data-cat="自動化・スキル化">
   <div class="ih"><span class="num">091</span><span class="ititle">繰り返し作業のスキル化</span></div>
   
   <pre class="prompt" id="b91">今やった「領収書を整理してCSVを作る」という一連の作業を、次から `/レシートオーガナイザー` と送るだけで実行できるスキルにしてください。</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b91">📋 コピー</button>
     <button class="btn ghost sm" data-save="b91" data-name="work-prompts100-091.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i91">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="自動化・スキル化">
+<div class="icard" id="i92" data-cat="自動化・スキル化">
   <div class="ih"><span class="num">092</span><span class="ititle">週次定型レポートの自動化</span></div>
   
   <pre class="prompt" id="b92">毎週月曜の朝に、先週の売上データを取り込んで、いつもの週次レポートフォーマットで自動作成するスケジュールを組んでください。</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b92">📋 コピー</button>
     <button class="btn ghost sm" data-save="b92" data-name="work-prompts100-092.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i92">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="自動化・スキル化">
+<div class="icard" id="i93" data-cat="自動化・スキル化">
   <div class="ih"><span class="num">093</span><span class="ititle">複数ステップ作業の手順書化</span></div>
   
   <pre class="prompt" id="b93">この一連の作業（データ取得→整形→レポート化→共有）の流れを、他の人が読んでも再現できる手順書としてまとめ、スキル化してください。</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b93">📋 コピー</button>
     <button class="btn ghost sm" data-save="b93" data-name="work-prompts100-093.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i93">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="自動化・スキル化">
+<div class="icard" id="i94" data-cat="自動化・スキル化">
   <div class="ih"><span class="num">094</span><span class="ititle">カスタム指示の棚卸し</span></div>
   
   <pre class="prompt" id="b94">現在設定しているカスタム指示の内容を確認し、重複している指示や矛盾している指示がないかチェックして、整理案を提案してください。</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b94">📋 コピー</button>
     <button class="btn ghost sm" data-save="b94" data-name="work-prompts100-094.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i94">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="自動化・スキル化">
+<div class="icard" id="i95" data-cat="自動化・スキル化">
   <div class="ih"><span class="num">095</span><span class="ititle">プラグイン活用の見直し</span></div>
   
   <pre class="prompt" id="b95">現在接続しているプラグインの一覧と、直近1か月の利用状況を確認し、まだ接続していないが業務に役立ちそうなプラグインを提案してください。</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b95">📋 コピー</button>
     <button class="btn ghost sm" data-save="b95" data-name="work-prompts100-095.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i95">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="自動化・スキル化">
+<div class="icard" id="i96" data-cat="自動化・スキル化">
   <div class="ih"><span class="num">096</span><span class="ititle">スキルの動作テスト</span></div>
   
   <pre class="prompt" id="b96">先ほど作った〇〇スキルについて、3パターンの異なる入力でテストを実行し、意図通りの結果が出るか確認してください。</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b96">📋 コピー</button>
     <button class="btn ghost sm" data-save="b96" data-name="work-prompts100-096.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i96">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="自動化・スキル化">
+<div class="icard" id="i97" data-cat="自動化・スキル化">
   <div class="ih"><span class="num">097</span><span class="ititle">自動化の権限範囲チェック</span></div>
   
   <pre class="prompt" id="b97">現在動いているスケジュールタスクの実行ログを確認し、想定していない範囲のファイル操作やアクセスが発生していないかチェックしてください。</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b97">📋 コピー</button>
     <button class="btn ghost sm" data-save="b97" data-name="work-prompts100-097.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i97">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="自動化・スキル化">
+<div class="icard" id="i98" data-cat="自動化・スキル化">
   <div class="ih"><span class="num">098</span><span class="ititle">サイト機能でのダッシュボード公開</span></div>
   
   <pre class="prompt" id="b98">このデータを元にしたダッシュボードを作成し、サイト機能で公開して、チームに共有できるURLを発行してください。毎日自動更新されるようにしてください。</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b98">📋 コピー</button>
     <button class="btn ghost sm" data-save="b98" data-name="work-prompts100-098.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i98">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="自動化・スキル化">
+<div class="icard" id="i99" data-cat="自動化・スキル化">
   <div class="ih"><span class="num">099</span><span class="ititle">業務全体のボトルネック診断</span></div>
   
   <pre class="prompt" id="b99">私の1週間の業務内容（会議・資料作成・メール対応等）を聞き取った上で、ChatGPT Workで自動化・効率化できそうな作業を3つ提案してください。</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b99">📋 コピー</button>
     <button class="btn ghost sm" data-save="b99" data-name="work-prompts100-099.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i99">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="自動化・スキル化">
+<div class="icard" id="i100" data-cat="自動化・スキル化">
   <div class="ih"><span class="num">100</span><span class="ititle">右腕AI育成ロードマップの作成</span></div>
   
   <pre class="prompt" id="b100">私の職種（〇〇）と主な業務内容を伝えるので、ChatGPT Workを右腕として育てるための、権限設定→プラグイン接続→スキル化→自動化の4段階ロードマップを作ってください。</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b100">📋 コピー</button>
     <button class="btn ghost sm" data-save="b100" data-name="work-prompts100-100.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i100">🔗 リンク</button>
   </div>
 </div>
 
   <section class="epctx">
   <p class="epctx-label">この動画のほかのプレゼント</p>
   <div class="ep-kits"><a class="kchip" href="../custom-instructions/"><span class="kt">カスタム指示コピペテンプレート集</span><span class="go">開く →</span></a><a class="kchip" href="../skill-starter-guide/"><span class="kt">自分の業務をスキル化する手順書</span><span class="badge">10項目</span><span class="go">開く →</span></a><a class="kchip" href="../skill-starter-receipt/"><span class="kt">領収書整理スキルのひな形</span><span class="go">開く →</span></a></div>
+</section>
+  <section class="epctx">
+  <p class="epctx-label">ほかの回の「プロンプト集」</p>
+  <div class="ep-kits"><a class="kchip" href="../anonymous-model-verification-prompts10/"><span class="kt">正体不明の無料AIモデルを安全に検証する実践プロンプト&amp;チェック10選</span><span class="badge">10個</span><span class="go">開く →</span></a><a class="kchip" href="../kiro-spec-driven-prompts10/"><span class="kt">Kiroスペック駆動 スタート指示文10選</span><span class="badge">10個</span><span class="go">開く →</span></a><a class="kchip" href="../degradation-diagnosis-prompts100/"><span class="kt">「AIが弱くなった」と感じた時の診断＆代替依頼プロンプト100選</span><span class="badge">100個</span><span class="go">開く →</span></a><a class="kchip" href="../newsprompts100/"><span class="kt">今週の新機能 即使えるプロンプト&amp;設定100選</span><span class="badge">100個</span><span class="go">開く →</span></a></div>
 </section>
 
   <footer><a href="../../">← AIエージェント / Kawaru プレゼント図書館にもどる</a></footer>
@@ -1791,6 +1895,23 @@ A/Bテストの生データから、有意差の有無を含めたレポート�
 ---
 以上、100個です。内訳: 経理・請求書10／営業・提案10／マーケティング・SNS運用10／データ分析・レポート10／秘書・スケジュール管理10／メール・コミュニケーション10／会議・議事録10／リサーチ・情報収集10／ドキュメント・資料作成10／自動化・スキル化10</pre>
 <script>
+
+// 名指しリンク（#i37）で来たとき、その項目まで確実に運んで少しの間だけ目立たせる。
+// ブラウザ任せだと、項目数の多いページでは狙った位置に着かないことがある
+// （html に scroll-behavior:smooth が効いており、数万px を滑らせようとして届かない）。
+(function(){
+  function go(){
+    if (!location.hash) return;
+    var el = document.querySelector(location.hash);
+    if (!el || !el.classList.contains('icard')) return;
+    el.scrollIntoView({block: 'start', behavior: 'auto'});
+    el.classList.add('flashme');
+    setTimeout(function(){ el.classList.remove('flashme'); }, 2400);
+  }
+  addEventListener('hashchange', go);
+  if (document.readyState === 'loading') addEventListener('DOMContentLoaded', go);
+  else go();
+})();
 // 項目の多いキットで、目的の1件に辿り着けるようにする絞り込み。
 // 検索はタイトル・説明だけでなく本文も対象にする（「あの文言が入っていた項目」で探せるように）。
 (function(){
@@ -1876,8 +1997,27 @@ document.addEventListener('click', e => {
   const b = e.target.closest('[data-copy]');
   if (b) { copyText(b, b.dataset.copy); return; }
   const d = e.target.closest('[data-save]');
-  if (d) { saveText(d, d.dataset.save, d.dataset.name); }
+  if (d) { saveText(d, d.dataset.save, d.dataset.name); return; }
+  // その項目だけを名指しで人に渡せるようにする
+  const l = e.target.closest('[data-link]');
+  if (l) {
+    const url = location.origin + location.pathname + '#' + l.dataset.link;
+    navigator.clipboard.writeText(url).then(() => flash(l, '✓ コピーしました'));
+  }
 });
+
+// 「/」ですぐ検索を始められるようにする。入力中は邪魔しない。
+addEventListener('keydown', e => {
+  if (e.key !== '/' || e.metaKey || e.ctrlKey || e.altKey) return;
+  const t = e.target;
+  if (t && (t.tagName === 'INPUT' || t.tagName === 'TEXTAREA' || t.isContentEditable)) return;
+  const box = document.getElementById('q') || document.getElementById('kq');
+  if (!box) return;
+  e.preventDefault();
+  box.focus();
+  box.select();
+});
+
 </script>
 <div id="promo" class="promo">
   <div class="promo-card">

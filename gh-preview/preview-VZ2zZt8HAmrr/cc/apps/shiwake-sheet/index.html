@@ -37,7 +37,7 @@
   </section>
 
   <p class="imeta" style="margin:0 0 18px"><span class="nb">手元の仕事を1つ思い浮かべて、</span><span class="nb">上から順に答えてください。</span><span class="nb">
-どこかで</span><span class="nb">「YES」になったら、</span><span class="nb">そこで判定が確定します。</span></p><div class="icard" data-cat="">
+どこかで</span><span class="nb">「YES」になったら、</span><span class="nb">そこで判定が確定します。</span></p><div class="icard" id="i1" data-cat="">
   <div class="ih"><span class="num">001</span><span class="ititle">ステップ1：まず、その仕事の形を見る</span></div>
   
   <pre class="prompt" id="b1">□ 手順もゴールも決まっていて、あとは実行するだけか
@@ -49,9 +49,10 @@
   <div class="cbtns">
     <button class="btn sm" data-copy="b1">📋 コピー</button>
     <button class="btn ghost sm" data-save="b1" data-name="shiwake-sheet-001.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i1">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="">
+<div class="icard" id="i2" data-cat="">
   <div class="ih"><span class="num">002</span><span class="ititle">ステップ2：AIが動き続ける時間を見る</span></div>
   
   <pre class="prompt" id="b2">□ 1回の依頼で、AIが30分以上ひとりで作業し続ける必要があるか
@@ -63,9 +64,10 @@
   <div class="cbtns">
     <button class="btn sm" data-copy="b2">📋 コピー</button>
     <button class="btn ghost sm" data-save="b2" data-name="shiwake-sheet-002.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i2">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="">
+<div class="icard" id="i3" data-cat="">
   <div class="ih"><span class="num">003</span><span class="ititle">ステップ3：難しさの種類を見分ける</span></div>
   
   <pre class="prompt" id="b3">□ 前例のない問題で、解き方そのものを探す必要があるか
@@ -79,9 +81,10 @@
   <div class="cbtns">
     <button class="btn sm" data-copy="b3">📋 コピー</button>
     <button class="btn ghost sm" data-save="b3" data-name="shiwake-sheet-003.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i3">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="">
+<div class="icard" id="i4" data-cat="">
   <div class="ih"><span class="num">004</span><span class="ititle">ステップ4：判定が出たあとにやること</span></div>
   
   <pre class="prompt" id="b4">□ 9割側だった
@@ -96,9 +99,10 @@
   <div class="cbtns">
     <button class="btn sm" data-copy="b4">📋 コピー</button>
     <button class="btn ghost sm" data-save="b4" data-name="shiwake-sheet-004.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i4">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="">
+<div class="icard" id="i5" data-cat="">
   <div class="ih"><span class="num">005</span><span class="ititle">ステップ5：1週間後に見直す</span></div>
   
   <pre class="prompt" id="b5">□ 無料のまま回せたか
@@ -113,12 +117,17 @@
   <div class="cbtns">
     <button class="btn sm" data-copy="b5">📋 コピー</button>
     <button class="btn ghost sm" data-save="b5" data-name="shiwake-sheet-005.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i5">🔗 リンク</button>
   </div>
 </div>
 
   <section class="epctx">
   <p class="epctx-label">この動画のほかのプレゼント</p>
   <div class="ep-kits"><a class="kchip" href="../automation-recipes-60/"><span class="kt">Grok Automations 自動化レシピ60</span><span class="badge">60個</span><span class="go">開く →</span></a><a class="kchip" href="../free-grok-100/"><span class="kt">無料Grokで完結する仕事100選</span><span class="badge">100個</span><span class="go">開く →</span></a></div>
+</section>
+  <section class="epctx">
+  <p class="epctx-label">ほかの回の「テンプレート」</p>
+  <div class="ep-kits"><a class="kchip" href="../ai-hardrule-examples10/"><span class="kt">AIの暴走を止めるハードルール文例10選</span><span class="badge">10個</span><span class="go">開く →</span></a><a class="kchip" href="../weekly-handoff-7steps/"><span class="kt">週次の手作業をClaudeに引き継ぐ7ステップ台本</span><span class="go">開く →</span></a><a class="kchip" href="../4d-fluency-worksheet/"><span class="kt">4D AI Fluency実践ワークシート</span><span class="badge">8項目</span><span class="go">開く →</span></a><a class="kchip" href="../cost-simulation-2027/"><span class="kt">タスク別コスト削減シミュレーションシート</span><span class="badge">9項目</span><span class="go">開く →</span></a></div>
 </section>
 
   <footer><a href="../../">← ClaudeCodeチャンネル プレゼント図書館にもどる</a></footer>
@@ -190,6 +199,23 @@
 **ポイント**: 判定はあくまで目安です。1週間試してから見直す前提で使ってください。
 </pre>
 <script>
+
+// 名指しリンク（#i37）で来たとき、その項目まで確実に運んで少しの間だけ目立たせる。
+// ブラウザ任せだと、項目数の多いページでは狙った位置に着かないことがある
+// （html に scroll-behavior:smooth が効いており、数万px を滑らせようとして届かない）。
+(function(){
+  function go(){
+    if (!location.hash) return;
+    var el = document.querySelector(location.hash);
+    if (!el || !el.classList.contains('icard')) return;
+    el.scrollIntoView({block: 'start', behavior: 'auto'});
+    el.classList.add('flashme');
+    setTimeout(function(){ el.classList.remove('flashme'); }, 2400);
+  }
+  addEventListener('hashchange', go);
+  if (document.readyState === 'loading') addEventListener('DOMContentLoaded', go);
+  else go();
+})();
 // 項目の多いキットで、目的の1件に辿り着けるようにする絞り込み。
 // 検索はタイトル・説明だけでなく本文も対象にする（「あの文言が入っていた項目」で探せるように）。
 (function(){
@@ -275,8 +301,27 @@ document.addEventListener('click', e => {
   const b = e.target.closest('[data-copy]');
   if (b) { copyText(b, b.dataset.copy); return; }
   const d = e.target.closest('[data-save]');
-  if (d) { saveText(d, d.dataset.save, d.dataset.name); }
+  if (d) { saveText(d, d.dataset.save, d.dataset.name); return; }
+  // その項目だけを名指しで人に渡せるようにする
+  const l = e.target.closest('[data-link]');
+  if (l) {
+    const url = location.origin + location.pathname + '#' + l.dataset.link;
+    navigator.clipboard.writeText(url).then(() => flash(l, '✓ コピーしました'));
+  }
 });
+
+// 「/」ですぐ検索を始められるようにする。入力中は邪魔しない。
+addEventListener('keydown', e => {
+  if (e.key !== '/' || e.metaKey || e.ctrlKey || e.altKey) return;
+  const t = e.target;
+  if (t && (t.tagName === 'INPUT' || t.tagName === 'TEXTAREA' || t.isContentEditable)) return;
+  const box = document.getElementById('q') || document.getElementById('kq');
+  if (!box) return;
+  e.preventDefault();
+  box.focus();
+  box.select();
+});
+
 </script>
 <div id="promo" class="promo">
   <div class="promo-card">

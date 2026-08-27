@@ -36,7 +36,7 @@
     <div class="pnote"><span class="nb">下のカードから、</span><span class="nb">1件ずつコピー、</span><span class="nb">または個別にダウンロードできます。</span><span class="nb">まとめて欲しいときは、</span><span class="nb">上の</span><span class="nb">「全件ダウンロード」を</span><span class="nb">お使いください。</span></div>
   </section>
 
-  <div class="icard" data-cat="">
+  <div class="icard" id="i1" data-cat="">
   <div class="ih"><span class="num">001</span><span class="ititle">ステップ1：現在の月間タスク量を棚卸しする</span></div>
   
   <pre class="prompt" id="b1">□ Claude Codeで処理している月間タスク数を把握しているか
@@ -47,9 +47,10 @@
   <div class="cbtns">
     <button class="btn sm" data-copy="b1">📋 コピー</button>
     <button class="btn ghost sm" data-save="b1" data-name="cost-simulation-2027-001.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i1">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="">
+<div class="icard" id="i2" data-cat="">
   <div class="ih"><span class="num">002</span><span class="ititle">ステップ2：分業できるタスクを仕分ける</span></div>
   
   <pre class="prompt" id="b2">□ そのタスクは「量が多く、単純な処理（抽出・変換・整形等）」か
@@ -60,9 +61,10 @@
   <div class="cbtns">
     <button class="btn sm" data-copy="b2">📋 コピー</button>
     <button class="btn ghost sm" data-save="b2" data-name="cost-simulation-2027-002.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i2">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="">
+<div class="icard" id="i3" data-cat="">
   <div class="ih"><span class="num">003</span><span class="ititle">ステップ3：現状コストを試算する（2026年内・導入価格ベース）</span></div>
   
   <pre class="prompt" id="b3">□ Claude Sonnet 5のみで全タスクを処理した場合の月額を計算したか
@@ -71,9 +73,10 @@
   <div class="cbtns">
     <button class="btn sm" data-copy="b3">📋 コピー</button>
     <button class="btn ghost sm" data-save="b3" data-name="cost-simulation-2027-003.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i3">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="">
+<div class="icard" id="i4" data-cat="">
   <div class="ih"><span class="num">004</span><span class="ititle">ステップ4：分業後のコストを試算する（2026年内・導入価格ベース）</span></div>
   
   <pre class="prompt" id="b4">□ Gemini向きタスクをGemini 3.7 Flash（入力$0.75/出力$3.75 per 1M）に置き換えた場合の月額を計算したか
@@ -82,9 +85,10 @@
   <div class="cbtns">
     <button class="btn sm" data-copy="b4">📋 コピー</button>
     <button class="btn ghost sm" data-save="b4" data-name="cost-simulation-2027-004.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i4">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="">
+<div class="icard" id="i5" data-cat="">
   <div class="ih"><span class="num">005</span><span class="ititle">ステップ5：2027年1月以降の価格改定を織り込む</span></div>
   
   <pre class="prompt" id="b5">□ Gemini 3.7 Flashの通常価格（入力$1.50/出力$7.50 per 1M、2027年1月1日〜）で再計算したか
@@ -93,9 +97,10 @@
   <div class="cbtns">
     <button class="btn sm" data-copy="b5">📋 コピー</button>
     <button class="btn ghost sm" data-save="b5" data-name="cost-simulation-2027-005.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i5">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="">
+<div class="icard" id="i6" data-cat="">
   <div class="ih"><span class="num">006</span><span class="ititle">ステップ6：損益分岐点を確認する</span></div>
   
   <pre class="prompt" id="b6">□ 2027年以降の分業コストが、Claude単独運用コストを上回っていないか
@@ -105,9 +110,10 @@
   <div class="cbtns">
     <button class="btn sm" data-copy="b6">📋 コピー</button>
     <button class="btn ghost sm" data-save="b6" data-name="cost-simulation-2027-006.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i6">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="">
+<div class="icard" id="i7" data-cat="">
   <div class="ih"><span class="num">007</span><span class="ititle">ステップ7：定期的な見直しサイクルを決める</span></div>
   
   <pre class="prompt" id="b7">□ この試算を毎月／四半期ごとなど、定期的に見直す頻度を決めたか
@@ -116,12 +122,17 @@
   <div class="cbtns">
     <button class="btn sm" data-copy="b7">📋 コピー</button>
     <button class="btn ghost sm" data-save="b7" data-name="cost-simulation-2027-007.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i7">🔗 リンク</button>
   </div>
 </div>
 
   <section class="epctx">
   <p class="epctx-label">この動画のほかのプレゼント</p>
   <div class="ep-kits"><a class="kchip" href="../gemini-claude-prompts60/"><span class="kt">Gemini 3.7 Flash × Claude Code 実践プロンプト60選</span><span class="badge">60個</span><span class="go">開く →</span></a><a class="kchip" href="../hybrid-workflow-recipes30/"><span class="kt">Gemini 3.7 Flash×Claude Code 分業ワークフロー設計図30</span><span class="badge">30個</span><span class="go">開く →</span></a></div>
+</section>
+  <section class="epctx">
+  <p class="epctx-label">ほかの回の「テンプレート」</p>
+  <div class="ep-kits"><a class="kchip" href="../ai-hardrule-examples10/"><span class="kt">AIの暴走を止めるハードルール文例10選</span><span class="badge">10個</span><span class="go">開く →</span></a><a class="kchip" href="../weekly-handoff-7steps/"><span class="kt">週次の手作業をClaudeに引き継ぐ7ステップ台本</span><span class="go">開く →</span></a><a class="kchip" href="../4d-fluency-worksheet/"><span class="kt">4D AI Fluency実践ワークシート</span><span class="badge">8項目</span><span class="go">開く →</span></a><a class="kchip" href="../long-run-tasks100/"><span class="kt">長時間タスクの投げっぱなしテンプレート100選</span><span class="badge">100個</span><span class="go">開く →</span></a></div>
 </section>
 
   <footer><a href="../../">← ClaudeCodeチャンネル プレゼント図書館にもどる</a></footer>
@@ -180,6 +191,23 @@ Gemini 3.7 Flashへの分業で、月々のAI活用コストがどれだけ変�
 ```
 </pre>
 <script>
+
+// 名指しリンク（#i37）で来たとき、その項目まで確実に運んで少しの間だけ目立たせる。
+// ブラウザ任せだと、項目数の多いページでは狙った位置に着かないことがある
+// （html に scroll-behavior:smooth が効いており、数万px を滑らせようとして届かない）。
+(function(){
+  function go(){
+    if (!location.hash) return;
+    var el = document.querySelector(location.hash);
+    if (!el || !el.classList.contains('icard')) return;
+    el.scrollIntoView({block: 'start', behavior: 'auto'});
+    el.classList.add('flashme');
+    setTimeout(function(){ el.classList.remove('flashme'); }, 2400);
+  }
+  addEventListener('hashchange', go);
+  if (document.readyState === 'loading') addEventListener('DOMContentLoaded', go);
+  else go();
+})();
 // 項目の多いキットで、目的の1件に辿り着けるようにする絞り込み。
 // 検索はタイトル・説明だけでなく本文も対象にする（「あの文言が入っていた項目」で探せるように）。
 (function(){
@@ -265,8 +293,27 @@ document.addEventListener('click', e => {
   const b = e.target.closest('[data-copy]');
   if (b) { copyText(b, b.dataset.copy); return; }
   const d = e.target.closest('[data-save]');
-  if (d) { saveText(d, d.dataset.save, d.dataset.name); }
+  if (d) { saveText(d, d.dataset.save, d.dataset.name); return; }
+  // その項目だけを名指しで人に渡せるようにする
+  const l = e.target.closest('[data-link]');
+  if (l) {
+    const url = location.origin + location.pathname + '#' + l.dataset.link;
+    navigator.clipboard.writeText(url).then(() => flash(l, '✓ コピーしました'));
+  }
 });
+
+// 「/」ですぐ検索を始められるようにする。入力中は邪魔しない。
+addEventListener('keydown', e => {
+  if (e.key !== '/' || e.metaKey || e.ctrlKey || e.altKey) return;
+  const t = e.target;
+  if (t && (t.tagName === 'INPUT' || t.tagName === 'TEXTAREA' || t.isContentEditable)) return;
+  const box = document.getElementById('q') || document.getElementById('kq');
+  if (!box) return;
+  e.preventDefault();
+  box.focus();
+  box.select();
+});
+
 </script>
 <div id="promo" class="promo">
   <div class="promo-card">

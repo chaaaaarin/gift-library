@@ -36,7 +36,7 @@
     <div class="pnote"><span class="nb">下のカードから、</span><span class="nb">1件ずつコピー、</span><span class="nb">または個別にダウンロードできます。</span><span class="nb">まとめて欲しいときは、</span><span class="nb">上の</span><span class="nb">「全件ダウンロード」を</span><span class="nb">お使いください。</span></div>
   </section>
 
-  <div class="icard" data-cat="">
+  <div class="icard" id="i1" data-cat="">
   <div class="ih"><span class="num">001</span><span class="ititle">機能1：自動メモリ</span></div>
   
   <pre class="prompt" id="b1">□ 前回までのやり取りで学んだこと・好みを、毎回説明し直していないか
@@ -46,9 +46,10 @@
   <div class="cbtns">
     <button class="btn sm" data-copy="b1">📋 コピー</button>
     <button class="btn ghost sm" data-save="b1" data-name="feature-cheatsheet-001.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i1">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="">
+<div class="icard" id="i2" data-cat="">
   <div class="ih"><span class="num">002</span><span class="ititle">機能2：Artifacts参照</span></div>
   
   <pre class="prompt" id="b2">□ デザイン・画面仕様をスクリーンショットや文章の説明だけで渡していないか
@@ -58,9 +59,10 @@
   <div class="cbtns">
     <button class="btn sm" data-copy="b2">📋 コピー</button>
     <button class="btn ghost sm" data-save="b2" data-name="feature-cheatsheet-002.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i2">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="">
+<div class="icard" id="i3" data-cat="">
   <div class="ih"><span class="num">003</span><span class="ititle">機能3：Deferred Tools（ToolSearch）</span></div>
   
   <pre class="prompt" id="b3">□ 使わないツールの定義まで毎回コンテキストに載っていて重くなっていないか
@@ -70,9 +72,10 @@
   <div class="cbtns">
     <button class="btn sm" data-copy="b3">📋 コピー</button>
     <button class="btn ghost sm" data-save="b3" data-name="feature-cheatsheet-003.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i3">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="">
+<div class="icard" id="i4" data-cat="">
   <div class="ih"><span class="num">004</span><span class="ititle">機能4：send_to_userツール</span></div>
   
   <pre class="prompt" id="b4">□ 長時間の自律実行中に、ユーザーへ確実に見せたい内容（途中経過・部分成果物）があるか
@@ -82,9 +85,10 @@
   <div class="cbtns">
     <button class="btn sm" data-copy="b4">📋 コピー</button>
     <button class="btn ghost sm" data-save="b4" data-name="feature-cheatsheet-004.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i4">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="">
+<div class="icard" id="i5" data-cat="">
   <div class="ih"><span class="num">005</span><span class="ititle">機能5：/doctor（CLAUDE.md・Skillの棚卸し）</span></div>
   
   <pre class="prompt" id="b5">□ CLAUDE.md・Skillsを一度も棚卸ししたことがないか
@@ -94,9 +98,10 @@
   <div class="cbtns">
     <button class="btn sm" data-copy="b5">📋 コピー</button>
     <button class="btn ghost sm" data-save="b5" data-name="feature-cheatsheet-005.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i5">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="">
+<div class="icard" id="i6" data-cat="">
   <div class="ih"><span class="num">006</span><span class="ititle">機能6：effortパラメータ</span></div>
   
   <pre class="prompt" id="b6">□ すべてのタスクを同じ設定のまま実行していないか
@@ -106,12 +111,17 @@
   <div class="cbtns">
     <button class="btn sm" data-copy="b6">📋 コピー</button>
     <button class="btn ghost sm" data-save="b6" data-name="feature-cheatsheet-006.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i6">🔗 リンク</button>
   </div>
 </div>
 
   <section class="epctx">
   <p class="epctx-label">この動画のほかのプレゼント</p>
   <div class="ep-kits"><a class="kchip" href="../claude-md-sample/"><span class="kt">この記事を丸ごと実装したCLAUDE.mdサンプル</span><span class="go">開く →</span></a><a class="kchip" href="../copypaste13/"><span class="kt">Claude 5時代の指示文コピペ集（13点）</span><span class="badge">13個</span><span class="go">開く →</span></a></div>
+</section>
+  <section class="epctx">
+  <p class="epctx-label">ほかの回の「早見表・逆引き」</p>
+  <div class="ep-kits"><a class="kchip" href="../academy-lookup-50/"><span class="kt">Claude Academy逆引き表50選</span><span class="badge">50個</span><span class="go">開く →</span></a><a class="kchip" href="../grokbot-vs-hermesbot-sheet/"><span class="kt">Grok Bot vs Hermes Bot Mode 使い分け早見表</span><span class="badge">9項目</span><span class="go">開く →</span></a><a class="kchip" href="../grokbot-vs-cowork-sheet/"><span class="kt">Grok Bot vs Claude Cowork 使い分け早見表</span><span class="badge">6項目</span><span class="go">開く →</span></a><a class="kchip" href="../ai-empire-roadmap/"><span class="kt">AI帝国ロードマップ早見表 — SpaceXAI編</span><span class="badge">6項目</span><span class="go">開く →</span></a></div>
 </section>
 
   <footer><a href="../../">← ClaudeCodeチャンネル プレゼント図書館にもどる</a></footer>
@@ -156,6 +166,23 @@
 指示例: サブエージェントの単純作業はlow、通常のコーディングはhigh（既定）、30分を超える長時間タスクはxhighを検討する。
 </pre>
 <script>
+
+// 名指しリンク（#i37）で来たとき、その項目まで確実に運んで少しの間だけ目立たせる。
+// ブラウザ任せだと、項目数の多いページでは狙った位置に着かないことがある
+// （html に scroll-behavior:smooth が効いており、数万px を滑らせようとして届かない）。
+(function(){
+  function go(){
+    if (!location.hash) return;
+    var el = document.querySelector(location.hash);
+    if (!el || !el.classList.contains('icard')) return;
+    el.scrollIntoView({block: 'start', behavior: 'auto'});
+    el.classList.add('flashme');
+    setTimeout(function(){ el.classList.remove('flashme'); }, 2400);
+  }
+  addEventListener('hashchange', go);
+  if (document.readyState === 'loading') addEventListener('DOMContentLoaded', go);
+  else go();
+})();
 // 項目の多いキットで、目的の1件に辿り着けるようにする絞り込み。
 // 検索はタイトル・説明だけでなく本文も対象にする（「あの文言が入っていた項目」で探せるように）。
 (function(){
@@ -241,8 +268,27 @@ document.addEventListener('click', e => {
   const b = e.target.closest('[data-copy]');
   if (b) { copyText(b, b.dataset.copy); return; }
   const d = e.target.closest('[data-save]');
-  if (d) { saveText(d, d.dataset.save, d.dataset.name); }
+  if (d) { saveText(d, d.dataset.save, d.dataset.name); return; }
+  // その項目だけを名指しで人に渡せるようにする
+  const l = e.target.closest('[data-link]');
+  if (l) {
+    const url = location.origin + location.pathname + '#' + l.dataset.link;
+    navigator.clipboard.writeText(url).then(() => flash(l, '✓ コピーしました'));
+  }
 });
+
+// 「/」ですぐ検索を始められるようにする。入力中は邪魔しない。
+addEventListener('keydown', e => {
+  if (e.key !== '/' || e.metaKey || e.ctrlKey || e.altKey) return;
+  const t = e.target;
+  if (t && (t.tagName === 'INPUT' || t.tagName === 'TEXTAREA' || t.isContentEditable)) return;
+  const box = document.getElementById('q') || document.getElementById('kq');
+  if (!box) return;
+  e.preventDefault();
+  box.focus();
+  box.select();
+});
+
 </script>
 <div id="promo" class="promo">
   <div class="promo-card">

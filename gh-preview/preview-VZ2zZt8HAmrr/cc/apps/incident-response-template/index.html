@@ -36,7 +36,7 @@
     <div class="pnote"><span class="nb">下のカードから、</span><span class="nb">1件ずつコピー、</span><span class="nb">または個別にダウンロードできます。</span><span class="nb">まとめて欲しいときは、</span><span class="nb">上の</span><span class="nb">「全件ダウンロード」を</span><span class="nb">お使いください。</span></div>
   </section>
 
-  <p class="imeta" style="margin:0 0 18px"><span class="nb">このテンプレートは、</span><span class="nb">AIエージェントが想定外のシステム・</span><span class="nb">データにアクセスした</span><span class="nb">（またはその疑いがある）ときに、</span><span class="nb">発見から公表までを型どおりに</span><span class="nb">進めるための雛形です。</span><span class="nb">空欄</span><span class="nb">（＜　＞）を埋めなが</span><span class="nb">ら使ってください。</span></p><div class="icard" data-cat="">
+  <p class="imeta" style="margin:0 0 18px"><span class="nb">このテンプレートは、</span><span class="nb">AIエージェントが想定外のシステム・</span><span class="nb">データにアクセスした</span><span class="nb">（またはその疑いがある）ときに、</span><span class="nb">発見から公表までを型どおりに</span><span class="nb">進めるための雛形です。</span><span class="nb">空欄</span><span class="nb">（＜　＞）を埋めなが</span><span class="nb">ら使ってください。</span></p><div class="icard" id="i1" data-cat="">
   <div class="ih"><span class="num">001</span><span class="ititle">フェーズ0：発見</span></div>
   
   <pre class="prompt" id="b1">発見日時: ＜YYYY-MM-DD HH:MM＞
@@ -46,9 +46,10 @@
   <div class="cbtns">
     <button class="btn sm" data-copy="b1">📋 コピー</button>
     <button class="btn ghost sm" data-save="b1" data-name="incident-response-template-001.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i1">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="">
+<div class="icard" id="i2" data-cat="">
   <div class="ih"><span class="num">002</span><span class="ititle">フェーズ1：停止（発見から最優先で行う）</span></div>
   
   <pre class="prompt" id="b2">□ 該当エージェント・該当タスクの実行を停止した（時刻: ＜　＞）
@@ -57,9 +58,10 @@
   <div class="cbtns">
     <button class="btn sm" data-copy="b2">📋 コピー</button>
     <button class="btn ghost sm" data-save="b2" data-name="incident-response-template-002.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i2">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="">
+<div class="icard" id="i3" data-cat="">
   <div class="ih"><span class="num">003</span><span class="ititle">フェーズ2：影響範囲の特定</span></div>
   
   <pre class="prompt" id="b3">影響を受けた可能性があるシステム・組織: ＜　＞
@@ -71,9 +73,10 @@
   <div class="cbtns">
     <button class="btn sm" data-copy="b3">📋 コピー</button>
     <button class="btn ghost sm" data-save="b3" data-name="incident-response-template-003.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i3">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="">
+<div class="icard" id="i4" data-cat="">
   <div class="ih"><span class="num">004</span><span class="ititle">フェーズ3：通知</span></div>
   
   <pre class="prompt" id="b4">社内関係者への通知日時: ＜　＞
@@ -86,9 +89,10 @@
   <div class="cbtns">
     <button class="btn sm" data-copy="b4">📋 コピー</button>
     <button class="btn ghost sm" data-save="b4" data-name="incident-response-template-004.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i4">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="">
+<div class="icard" id="i5" data-cat="">
   <div class="ih"><span class="num">005</span><span class="ititle">フェーズ4：原因分析</span></div>
   
   <pre class="prompt" id="b5">モデル側の要因: ＜　＞
@@ -97,9 +101,10 @@
   <div class="cbtns">
     <button class="btn sm" data-copy="b5">📋 コピー</button>
     <button class="btn ghost sm" data-save="b5" data-name="incident-response-template-005.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i5">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="">
+<div class="icard" id="i6" data-cat="">
   <div class="ih"><span class="num">006</span><span class="ititle">フェーズ5：再発防止策</span></div>
   
   <pre class="prompt" id="b6">対応策1: ＜　＞（担当: ＜　＞ ／期限: ＜　＞）
@@ -108,9 +113,10 @@
   <div class="cbtns">
     <button class="btn sm" data-copy="b6">📋 コピー</button>
     <button class="btn ghost sm" data-save="b6" data-name="incident-response-template-006.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i6">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="">
+<div class="icard" id="i7" data-cat="">
   <div class="ih"><span class="num">007</span><span class="ititle">フェーズ6：公表（社外に説明が必要な場合）</span></div>
   
   <pre class="prompt" id="b7">公表する内容の3要素:
@@ -122,9 +128,10 @@
   <div class="cbtns">
     <button class="btn sm" data-copy="b7">📋 コピー</button>
     <button class="btn ghost sm" data-save="b7" data-name="incident-response-template-007.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i7">🔗 リンク</button>
   </div>
 </div>
-<div class="icard" data-cat="">
+<div class="icard" id="i8" data-cat="">
   <div class="ih"><span class="num">008</span><span class="ititle">フェーズ7：フォローアップ</span></div>
   
   <pre class="prompt" id="b8">再発防止策の実行確認予定日: ＜公表から1ヶ月後など＞
@@ -132,12 +139,17 @@
   <div class="cbtns">
     <button class="btn sm" data-copy="b8">📋 コピー</button>
     <button class="btn ghost sm" data-save="b8" data-name="incident-response-template-008.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i8">🔗 リンク</button>
   </div>
 </div>
 
   <section class="epctx">
   <p class="epctx-label">この動画のほかのプレゼント</p>
   <div class="ep-kits"><a class="kchip" href="../agent-safety-prompts100/"><span class="kt">AIエージェント安全運用プロンプト100選</span><span class="badge">100個</span><span class="go">開く →</span></a><a class="kchip" href="../pre-adoption-security-checklist50/"><span class="kt">AIエージェント導入前セキュリティ点検チェックリスト50</span><span class="badge">50項目</span><span class="go">開く →</span></a></div>
+</section>
+  <section class="epctx">
+  <p class="epctx-label">ほかの回の「ワークフロー」</p>
+  <div class="ep-kits"><a class="kchip" href="../wp-to-emdash-checklist/"><span class="kt">WordPress→EmDash 移行判定シート＋乗り換え手順</span><span class="badge">9項目</span><span class="go">開く →</span></a><a class="kchip" href="../hybrid-workflow-recipes30/"><span class="kt">Gemini 3.7 Flash×Claude Code 分業ワークフロー設計図30</span><span class="badge">30個</span><span class="go">開く →</span></a><a class="kchip" href="../ai-moneyflow-sheet/"><span class="kt">今週のAIマネーフロー定点観測シート</span><span class="badge">9項目</span><span class="go">開く →</span></a><a class="kchip" href="../search-console-workflow/"><span class="kt">Search Console 改善ワークフロー</span><span class="go">開く →</span></a></div>
 </section>
 
   <footer><a href="../../">← ClaudeCodeチャンネル プレゼント図書館にもどる</a></footer>
@@ -210,6 +222,23 @@ AIエージェントが想定外のシステムにアクセスした（疑いを
 **ポイント**: フェーズ1（停止）を、原因究明より絶対に優先してください。止めてから考える、が鉄則です。
 </pre>
 <script>
+
+// 名指しリンク（#i37）で来たとき、その項目まで確実に運んで少しの間だけ目立たせる。
+// ブラウザ任せだと、項目数の多いページでは狙った位置に着かないことがある
+// （html に scroll-behavior:smooth が効いており、数万px を滑らせようとして届かない）。
+(function(){
+  function go(){
+    if (!location.hash) return;
+    var el = document.querySelector(location.hash);
+    if (!el || !el.classList.contains('icard')) return;
+    el.scrollIntoView({block: 'start', behavior: 'auto'});
+    el.classList.add('flashme');
+    setTimeout(function(){ el.classList.remove('flashme'); }, 2400);
+  }
+  addEventListener('hashchange', go);
+  if (document.readyState === 'loading') addEventListener('DOMContentLoaded', go);
+  else go();
+})();
 // 項目の多いキットで、目的の1件に辿り着けるようにする絞り込み。
 // 検索はタイトル・説明だけでなく本文も対象にする（「あの文言が入っていた項目」で探せるように）。
 (function(){
@@ -295,8 +324,27 @@ document.addEventListener('click', e => {
   const b = e.target.closest('[data-copy]');
   if (b) { copyText(b, b.dataset.copy); return; }
   const d = e.target.closest('[data-save]');
-  if (d) { saveText(d, d.dataset.save, d.dataset.name); }
+  if (d) { saveText(d, d.dataset.save, d.dataset.name); return; }
+  // その項目だけを名指しで人に渡せるようにする
+  const l = e.target.closest('[data-link]');
+  if (l) {
+    const url = location.origin + location.pathname + '#' + l.dataset.link;
+    navigator.clipboard.writeText(url).then(() => flash(l, '✓ コピーしました'));
+  }
 });
+
+// 「/」ですぐ検索を始められるようにする。入力中は邪魔しない。
+addEventListener('keydown', e => {
+  if (e.key !== '/' || e.metaKey || e.ctrlKey || e.altKey) return;
+  const t = e.target;
+  if (t && (t.tagName === 'INPUT' || t.tagName === 'TEXTAREA' || t.isContentEditable)) return;
+  const box = document.getElementById('q') || document.getElementById('kq');
+  if (!box) return;
+  e.preventDefault();
+  box.focus();
+  box.select();
+});
+
 </script>
 <div id="promo" class="promo">
   <div class="promo-card">
