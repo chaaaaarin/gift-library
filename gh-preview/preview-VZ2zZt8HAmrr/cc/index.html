@@ -36,8 +36,25 @@
     <aside class="side">
       <div class="grp"><h3>キーワード検索</h3>
         <input id="q" type="search" placeholder="例: 動画タイトル、プロンプト、設定" autocomplete="off"></div>
-      <details class="grp type-grp"><summary>種別でしぼる</summary>
+      <details class="grp type-grp" open><summary>種別でしぼる</summary>
         <div class="grp-body"><label><input type="radio" name="type" value="" checked>すべて<span class="n">124</span></label><label><input type="radio" name="type" value="アプリ">アプリ<span class="n">3</span></label><label><input type="radio" name="type" value="プロンプト集">プロンプト集<span class="n">35</span></label><label><input type="radio" name="type" value="設定・スニペット">設定・スニペット<span class="n">19</span></label><label><input type="radio" name="type" value="早見表・逆引き">早見表・逆引き<span class="n">13</span></label><label><input type="radio" name="type" value="テンプレート">テンプレート<span class="n">22</span></label><label><input type="radio" name="type" value="チェックリスト">チェックリスト<span class="n">24</span></label><label><input type="radio" name="type" value="判断シート">判断シート<span class="n">3</span></label><label><input type="radio" name="type" value="ワークフロー">ワークフロー<span class="n">5</span></label></div></details>
+      <script>
+      /* details は閉じている間、中身をCSSで display:block にしても描画されない
+         （要素の高さが summary のぶんだけになり、中身は枠外扱いで消える）。
+         2026-08-25にモバイル用の折りたたみを入れた際、広い画面では中身をCSSで
+         出すつもりが、この仕様のため種別しぼり込みが両チャンネルとも消えていた。
+         そこで「常に open で出し、狭い画面のときだけ閉じる」向きに変えている。
+         HTMLをopenで出しているのでJSが動かなくても広い画面では表示される。
+         畳む前に描画されないよう、要素の直後で実行する。 */
+      (function(){
+        var d = document.querySelector('.type-grp');
+        if (!d) return;
+        var mq = matchMedia('(max-width:900px)');
+        var apply = function(){ d.open = !mq.matches; };
+        apply();
+        mq.addEventListener('change', apply);
+      })();
+      </script>
       <div class="grp"><h3>並び順</h3>
         <div class="selwrap"><select id="sort">
           <option value="new">投稿が新しい順</option>
@@ -52,7 +69,7 @@
   <footer>ClaudeCodeチャンネル — プレゼント図書館</footer>
 </div>
 
-<script src="data.js"></script>
+<script src="data.js?v=cbc846f4f182"></script>
 <script>
 window.ICONS = {"アプリ": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"3\" y=\"4\" width=\"18\" height=\"13\" rx=\"2\"/><path d=\"M8 20h8M12 17v3\"/><path d=\"M9 8.7v5.6l4.3-2.8L9 8.7Z\" fill=\"currentColor\" stroke=\"none\"/></svg>", "プロンプト集": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M4 5h16v11H8l-4 4V5Z\"/><path d=\"M8 9h8M8 12.5h5\"/></svg>", "設定・スニペット": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M9 8l-4 4 4 4M15 8l4 4-4 4\"/><path d=\"M13 5.5l-2 13\"/></svg>", "早見表・逆引き": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M4 5h16v14H4z\"/><path d=\"M4 9.5h16M9.5 9.5V19M4 14.2h16\"/></svg>", "テンプレート": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M6 3h8l4 4v14H6z\"/><path d=\"M14 3v4h4\"/><path d=\"M9 12h6M9 15.5h4\"/></svg>", "チェックリスト": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M5 4h14v16H5z\"/><path d=\"M8.5 9.2l1.6 1.6 3.4-3.4M8.5 15.2l1.6 1.6 3.4-3.4\"/></svg>", "判断シート": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M12 3v5M12 3 6.5 8.5M12 3l5.5 5.5\"/><circle cx=\"12\" cy=\"13\" r=\"2.2\"/><path d=\"M6.5 21h11\"/></svg>", "ワークフロー": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M4 6h6v4H4zM14 14h6v4h-6z\"/><path d=\"M7 10v5a1.5 1.5 0 0 0 1.5 1.5H14\"/></svg>", "_play": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"3\" y=\"5\" width=\"18\" height=\"14\" rx=\"2.5\"/><path d=\"M10.5 9.2v5.6l4.8-2.8-4.8-2.8Z\" fill=\"currentColor\" stroke=\"none\"/></svg>"};
 </script>
