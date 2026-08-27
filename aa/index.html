@@ -36,6 +36,14 @@
     <div id="shownBox" class="hidden"><b id="shown">30</b><span>表示中</span></div>
   </div>
 
+  <details class="finder">
+    <summary>どれを選べばいいか分からない方へ<span class="fhint">2つの質問でおすすめを出します</span></summary>
+    <div class="finder-body">
+      <div class="fq"><h4>何を使っていますか？</h4><div class="fopts"><button type="button" class="fopt" data-g="tool" data-v="claude ?code|claude\.md">Claude Code</button><button type="button" class="fopt" data-g="tool" data-v="codex|gpt|openai">Codex / GPT</button><button type="button" class="fopt" data-g="tool" data-v="gemini">Gemini</button><button type="button" class="fopt" data-g="tool" data-v="grok">Grok</button><button type="button" class="fopt" data-g="tool" data-v="mcp|skill|スキル|hooks|フック">MCP・スキル</button><button type="button" class="fopt" data-g="tool" data-v="">まだ決めていない</button></div></div><div class="fq"><h4>いま困っているのは？</h4><div class="fopts"><button type="button" class="fopt" data-g="need" data-v="コスト|料金|節約|安く|無料|削減|価格">料金を抑えたい</button><button type="button" class="fopt" data-g="need" data-v="入門|はじめ|始め|導入|初心者|セットアップ|最初">始め方が分からない</button><button type="button" class="fopt" data-g="need" data-v="セキュリ|安全|権限|リスク|事故|防止">安全に使いたい</button><button type="button" class="fopt" data-g="need" data-v="効率|時短|高速|自動|一括|爆速">作業を速くしたい</button><button type="button" class="fopt" data-g="need" data-v="チーム|組織|社内|研修|共有|運用">チームに広げたい</button></div></div><div class="fq"><h4>欲しい形（任意）</h4><div class="fopts"><button type="button" class="fopt" data-g="form" data-v="プロンプト集">そのまま使える指示文</button><button type="button" class="fopt" data-g="form" data-v="チェックリスト">抜け漏れを防ぎたい</button><button type="button" class="fopt" data-g="form" data-v="テンプレート">書き換えて使う型</button><button type="button" class="fopt" data-g="form" data-v="設定・スニペット">設定をコピーしたい</button><button type="button" class="fopt" data-g="form" data-v="判断シート">選び方を知りたい</button><button type="button" class="fopt" data-g="form" data-v="早見表・逆引き">困りごとから引きたい</button></div></div>
+      <div class="fresult" id="fresult"></div>
+    </div>
+  </details>
+
   <div class="cols">
     <aside class="side">
       <div class="grp"><h3>キーワード検索</h3>
@@ -214,6 +222,80 @@ addEventListener('popstate', () => { readURL(); render(); });
 
 readURL();
 render();
+
+// おすすめ診断。数問の答えを点数にして上位を出す。
+// 「該当/非該当」で切らないのは、Claude CodeとCodexのように語が重なるキットが多く、
+// 絞り込みだとほとんど減らないため（2026-08-27に実データで確認）。
+(function(){
+  var box = document.getElementById('fresult');
+  if (!box) return;
+  var pick = {tool:'', need:'', form:''};
+  var newest = EPS.reduce(function(a, e){ return (e.date || '') > a ? e.date : a; }, '');
+
+  // AIの情報は古くなるのが速いので、新しい回を優遇する
+  function freshness(date){
+    if (!date || !newest) return 0;
+    var d = (new Date(newest) - new Date(date)) / 86400000;
+    return d <= 14 ? 2 : (d <= 60 ? 1 : 0);
+  }
+
+  function run(){
+    if (!pick.tool && !pick.need && !pick.form){ box.innerHTML = ''; return; }
+    // ツールと目的は語の重なりが大きいので点数にする。
+    // 「形」は種別そのもので迷いようがないため、点数ではなく絞り込みにする
+    // （チェックリストを選んだ人にプロンプト集を出さない）。
+    function collect(useForm){
+      var rows = [];
+      EPS.forEach(function(e){
+        e.kits.forEach(function(g){
+          if (useForm && pick.form && g.t !== pick.form) return;
+          var hay = (g.n + ' ' + (g.q || '') + ' ' + e.title).toLowerCase();
+          var s = 0;
+          if (pick.tool && new RegExp(pick.tool, 'i').test(hay)) s += 3;
+          if (pick.need && new RegExp(pick.need, 'i').test(hay)) s += 3;
+          if (!s && !(useForm && pick.form)) return;
+          rows.push({e:e, g:g, s: s + freshness(e.date)});
+        });
+      });
+      rows.sort(function(a,b){ return b.s - a.s || (b.e.date||'').localeCompare(a.e.date||''); });
+      return rows;
+    }
+    var rows = collect(true);
+    var loosened = false;
+    // 形で絞ると0件になることがある（判断シートは全体で4件しかない等）。
+    // 行き止まりにせず、形を外して出し直したことを伝える。
+    if (!rows.length && pick.form){ rows = collect(false); loosened = rows.length > 0; }
+
+    if (!rows.length){
+      box.innerHTML = '<p class="fnone">条件に合うものが見つかりませんでした。'
+        + '「まだ決めていない」を選ぶか、下の一覧から探してみてください。</p>';
+      return;
+    }
+    box.innerHTML = '<p class="flabel">この' + Math.min(rows.length, 5) + '件がおすすめです'
+      + (loosened ? '<span class="fhint">（その形では見つからなかったので、形の指定を外しました）</span>' : '')
+      + '</p>'
+      + '<div class="ep-kits">'
+      + rows.slice(0, 5).map(function(r){
+          var badge = r.g.c ? '<span class="badge">' + r.g.c + r.g.u + '</span>' : '';
+          return '<a class="kchip" href="apps/' + r.g.s + '/" target="_blank" rel="noopener">'
+            + '<span class="ic">' + (window.ICONS[r.g.t] || '') + '</span>'
+            + '<span class="kt">' + r.g.nh
+            + '<span class="khit-in">' + fmtDate(r.e.date) + 'の回</span></span>'
+            + badge + '<span class="go">開く →</span></a>';
+        }).join('')
+      + '</div>';
+  }
+
+  document.querySelectorAll('.fopt').forEach(function(b){
+    b.addEventListener('click', function(){
+      var g = b.dataset.g;
+      var same = pick[g] === b.dataset.v && b.classList.contains('on');
+      document.querySelectorAll('.fopt[data-g="' + g + '"]').forEach(function(x){ x.classList.remove('on'); });
+      if (same) { pick[g] = ''; } else { pick[g] = b.dataset.v; b.classList.add('on'); }
+      run();
+    });
+  });
+})();
 
 // 「/」ですぐ検索を始められるようにする。入力中は邪魔しない。
 addEventListener('keydown', e => {
