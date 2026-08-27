@@ -29,7 +29,7 @@
     <div><b>109</b><span>プレゼント</span></div>
     <div><b>3,205</b><span>収録アイテム</span></div>
     <div><b>8</b><span>種別</span></div>
-    <div><b id="shown">36</b><span>表示中</span></div>
+    <div id="shownBox" class="hidden"><b id="shown">36</b><span>表示中</span></div>
   </div>
 
   <div class="cols">
@@ -145,6 +145,9 @@ function render(){
   });
 
   cnt.textContent = list.length;
+  // 絞り込んでいるときだけ出す（未絞り込みでは「配布回」と同じ数字が並ぶだけになる）
+  $('#shownBox').classList.toggle('hidden', !(f.q || f.type));
+  $('.stats').style.gridTemplateColumns = 'repeat(' + ((f.q || f.type) ? 5 : 4) + ',1fr)';
   if (!list.length){
     out.innerHTML = `<div class="empty">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="6.2"/><path d="M15 15l5.5 5.5"/><path d="M7.3 10h5.4"/></svg>
