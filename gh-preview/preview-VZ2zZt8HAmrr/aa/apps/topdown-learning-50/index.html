@@ -36,8 +36,13 @@
     <div class="pnote"><span class="nb">下のカードから、</span><span class="nb">1件ずつコピー、</span><span class="nb">または個別にダウンロードできます。</span><span class="nb">まとめて欲しいときは、</span><span class="nb">上の</span><span class="nb">「全件ダウンロード」を</span><span class="nb">お使いください。</span></div>
   </section>
 
-  <h2 class="cat">技術・プログラミングを学ぶとき</h2>
-<div class="icard">
+  <div class="ktools">
+  <input type="search" id="kq" placeholder="この中から探す" autocomplete="off" aria-label="この中から探す">
+  <div class="kcats"><button type="button" class="kcat on" data-cat="">すべて<span class="n">50</span></button><button type="button" class="kcat" data-cat="技術・プログラミングを学ぶとき">技術・プログラミングを学ぶとき<span class="n">10</span></button><button type="button" class="kcat" data-cat="新しいツール・ソフトを学ぶとき">新しいツール・ソフトを学ぶとき<span class="n">10</span></button><button type="button" class="kcat" data-cat="ビジネス・仕事のスキルを学ぶとき">ビジネス・仕事のスキルを学ぶとき<span class="n">10</span></button><button type="button" class="kcat" data-cat="資格・専門知識を学ぶとき">資格・専門知識を学ぶとき<span class="n">10</span></button><button type="button" class="kcat" data-cat="学び方そのものを深める(メタ学習)">学び方そのものを深める(メタ学習)<span class="n">10</span></button></div>
+  <p class="khit" id="khit" role="status"></p>
+</div>
+<h2 class="cat" data-cat="技術・プログラミングを学ぶとき">技術・プログラミングを学ぶとき</h2>
+<div class="icard" data-cat="技術・プログラミングを学ぶとき">
   <div class="ih"><span class="num">001</span><span class="ititle">動くコードから理解する</span></div>
   
   <pre class="prompt" id="b1">まず動くコードを書かせてから、中身を理解する
@@ -50,7 +55,7 @@
     <button class="btn ghost sm" data-save="b1" data-name="topdown-learning-50-001.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="技術・プログラミングを学ぶとき">
   <div class="ih"><span class="num">002</span><span class="ititle">なぜそう書くのかを聞く</span></div>
   
   <pre class="prompt" id="b2">慣習的な書き方の理由を掘り下げる
@@ -63,7 +68,7 @@
     <button class="btn ghost sm" data-save="b2" data-name="topdown-learning-50-002.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="技術・プログラミングを学ぶとき">
   <div class="ih"><span class="num">003</span><span class="ititle">エラーの原因を推理させる</span></div>
   
   <pre class="prompt" id="b3">エラーメッセージから原因を一緒に特定する
@@ -76,7 +81,7 @@
     <button class="btn ghost sm" data-save="b3" data-name="topdown-learning-50-003.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="技術・プログラミングを学ぶとき">
   <div class="ih"><span class="num">004</span><span class="ititle">設計思想の背景を聞く</span></div>
   
   <pre class="prompt" id="b4">そのツール・言語がなぜその設計になっているか理解する
@@ -89,7 +94,7 @@
     <button class="btn ghost sm" data-save="b4" data-name="topdown-learning-50-004.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="技術・プログラミングを学ぶとき">
   <div class="ih"><span class="num">005</span><span class="ititle">小さな課題で反復練習する</span></div>
   
   <pre class="prompt" id="b5">理解した概念を別の小さい課題で試す
@@ -102,7 +107,7 @@
     <button class="btn ghost sm" data-save="b5" data-name="topdown-learning-50-005.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="技術・プログラミングを学ぶとき">
   <div class="ih"><span class="num">006</span><span class="ititle">12歳に説明させる</span></div>
   
   <pre class="prompt" id="b6">難しい概念を身近な例えに変換してもらう
@@ -115,7 +120,7 @@
     <button class="btn ghost sm" data-save="b6" data-name="topdown-learning-50-006.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="技術・プログラミングを学ぶとき">
   <div class="ih"><span class="num">007</span><span class="ititle">複数の選択肢を比較させる</span></div>
   
   <pre class="prompt" id="b7">確信が持てないときに選択肢と根拠を並べてもらう
@@ -128,7 +133,7 @@
     <button class="btn ghost sm" data-save="b7" data-name="topdown-learning-50-007.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="技術・プログラミングを学ぶとき">
   <div class="ih"><span class="num">008</span><span class="ititle">中間状態を全部見せてもらう</span></div>
   
   <pre class="prompt" id="b8">処理の途中経過を省略せずに確認する
@@ -141,7 +146,7 @@
     <button class="btn ghost sm" data-save="b8" data-name="topdown-learning-50-008.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="技術・プログラミングを学ぶとき">
   <div class="ih"><span class="num">009</span><span class="ititle">既存コードを読み解く</span></div>
   
   <pre class="prompt" id="b9">他人のコードを読むときに要点を掴む
@@ -154,7 +159,7 @@
     <button class="btn ghost sm" data-save="b9" data-name="topdown-learning-50-009.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="技術・プログラミングを学ぶとき">
   <div class="ih"><span class="num">010</span><span class="ititle">改善アイデアを10個出させる</span></div>
   
   <pre class="prompt" id="b10">詰まったときにブレインストーミングの相手にする
@@ -167,8 +172,8 @@
     <button class="btn ghost sm" data-save="b10" data-name="topdown-learning-50-010.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">新しいツール・ソフトを学ぶとき</h2>
-<div class="icard">
+<h2 class="cat" data-cat="新しいツール・ソフトを学ぶとき">新しいツール・ソフトを学ぶとき</h2>
+<div class="icard" data-cat="新しいツール・ソフトを学ぶとき">
   <div class="ih"><span class="num">011</span><span class="ititle">最初の一歩だけ教えてもらう</span></div>
   
   <pre class="prompt" id="b11">全機能ではなく今すぐ必要な操作だけ聞く
@@ -181,7 +186,7 @@
     <button class="btn ghost sm" data-save="b11" data-name="topdown-learning-50-011.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="新しいツール・ソフトを学ぶとき">
   <div class="ih"><span class="num">012</span><span class="ititle">つまずきポイントを先回りしてもらう</span></div>
   
   <pre class="prompt" id="b12">初心者が引っかかりやすい罠を事前に聞く
@@ -194,7 +199,7 @@
     <button class="btn ghost sm" data-save="b12" data-name="topdown-learning-50-012.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="新しいツール・ソフトを学ぶとき">
   <div class="ih"><span class="num">013</span><span class="ititle">他ツールとの対応表を作る</span></div>
   
   <pre class="prompt" id="b13">使い慣れたツールと新ツールの機能を対応づける
@@ -207,7 +212,7 @@
     <button class="btn ghost sm" data-save="b13" data-name="topdown-learning-50-013.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="新しいツール・ソフトを学ぶとき">
   <div class="ih"><span class="num">014</span><span class="ititle">設定の意味を確認する</span></div>
   
   <pre class="prompt" id="b14">初期設定の各項目が何をするか理解する
@@ -220,7 +225,7 @@
     <button class="btn ghost sm" data-save="b14" data-name="topdown-learning-50-014.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="新しいツール・ソフトを学ぶとき">
   <div class="ih"><span class="num">015</span><span class="ititle">トラブル時の切り分け方を聞く</span></div>
   
   <pre class="prompt" id="b15">不具合が起きたときの確認手順を教えてもらう
@@ -233,7 +238,7 @@
     <button class="btn ghost sm" data-save="b15" data-name="topdown-learning-50-015.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="新しいツール・ソフトを学ぶとき">
   <div class="ih"><span class="num">016</span><span class="ititle">ショートカット・効率化の提案</span></div>
   
   <pre class="prompt" id="b16">作業を速くする使い方を聞く
@@ -246,7 +251,7 @@
     <button class="btn ghost sm" data-save="b16" data-name="topdown-learning-50-016.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="新しいツール・ソフトを学ぶとき">
   <div class="ih"><span class="num">017</span><span class="ititle">公式ドキュメントの要点抽出</span></div>
   
   <pre class="prompt" id="b17">長いマニュアルから必要な部分だけ知る
@@ -259,7 +264,7 @@
     <button class="btn ghost sm" data-save="b17" data-name="topdown-learning-50-017.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="新しいツール・ソフトを学ぶとき">
   <div class="ih"><span class="num">018</span><span class="ititle">失敗しても戻せる範囲を確認する</span></div>
   
   <pre class="prompt" id="b18">新しい操作を試す前にリスクを把握する
@@ -272,7 +277,7 @@
     <button class="btn ghost sm" data-save="b18" data-name="topdown-learning-50-018.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="新しいツール・ソフトを学ぶとき">
   <div class="ih"><span class="num">019</span><span class="ititle">連携・自動化の可能性を聞く</span></div>
   
   <pre class="prompt" id="b19">他のツールと組み合わせられないか探る
@@ -285,7 +290,7 @@
     <button class="btn ghost sm" data-save="b19" data-name="topdown-learning-50-019.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="新しいツール・ソフトを学ぶとき">
   <div class="ih"><span class="num">020</span><span class="ititle">チームへの説明資料化</span></div>
   
   <pre class="prompt" id="b20">覚えたことをチームに共有する形にする
@@ -298,8 +303,8 @@
     <button class="btn ghost sm" data-save="b20" data-name="topdown-learning-50-020.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">ビジネス・仕事のスキルを学ぶとき</h2>
-<div class="icard">
+<h2 class="cat" data-cat="ビジネス・仕事のスキルを学ぶとき">ビジネス・仕事のスキルを学ぶとき</h2>
+<div class="icard" data-cat="ビジネス・仕事のスキルを学ぶとき">
   <div class="ih"><span class="num">021</span><span class="ititle">実際の案件を題材に練習する</span></div>
   
   <pre class="prompt" id="b21">架空の例ではなく手元の実案件で学ぶ
@@ -312,7 +317,7 @@
     <button class="btn ghost sm" data-save="b21" data-name="topdown-learning-50-021.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="ビジネス・仕事のスキルを学ぶとき">
   <div class="ih"><span class="num">022</span><span class="ititle">反対意見をぶつけてもらう</span></div>
   
   <pre class="prompt" id="b22">自分の考えの弱点を突いてもらう
@@ -325,7 +330,7 @@
     <button class="btn ghost sm" data-save="b22" data-name="topdown-learning-50-022.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="ビジネス・仕事のスキルを学ぶとき">
   <div class="ih"><span class="num">023</span><span class="ititle">業界の暗黙知を言語化してもらう</span></div>
   
   <pre class="prompt" id="b23">経験者しか知らない前提知識を教わる
@@ -338,7 +343,7 @@
     <button class="btn ghost sm" data-save="b23" data-name="topdown-learning-50-023.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="ビジネス・仕事のスキルを学ぶとき">
   <div class="ih"><span class="num">024</span><span class="ititle">交渉・商談のシミュレーション</span></div>
   
   <pre class="prompt" id="b24">本番前に想定問答を作る
@@ -351,7 +356,7 @@
     <button class="btn ghost sm" data-save="b24" data-name="topdown-learning-50-024.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="ビジネス・仕事のスキルを学ぶとき">
   <div class="ih"><span class="num">025</span><span class="ititle">フィードバックの深掘り</span></div>
   
   <pre class="prompt" id="b25">もらった指摘の本当の意図を理解する
@@ -364,7 +369,7 @@
     <button class="btn ghost sm" data-save="b25" data-name="topdown-learning-50-025.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="ビジネス・仕事のスキルを学ぶとき">
   <div class="ih"><span class="num">026</span><span class="ititle">数字の意味を読み解く</span></div>
   
   <pre class="prompt" id="b26">データや指標の意味を業務文脈で理解する
@@ -377,7 +382,7 @@
     <button class="btn ghost sm" data-save="b26" data-name="topdown-learning-50-026.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="ビジネス・仕事のスキルを学ぶとき">
   <div class="ih"><span class="num">027</span><span class="ititle">失敗パターンを先に知る</span></div>
   
   <pre class="prompt" id="b27">同じ失敗を繰り返さないよう先回りする
@@ -390,7 +395,7 @@
     <button class="btn ghost sm" data-save="b27" data-name="topdown-learning-50-027.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="ビジネス・仕事のスキルを学ぶとき">
   <div class="ih"><span class="num">028</span><span class="ititle">自分の説明を添削してもらう</span></div>
   
   <pre class="prompt" id="b28">自分で書いた説明・提案の分かりやすさを検証する
@@ -403,7 +408,7 @@
     <button class="btn ghost sm" data-save="b28" data-name="topdown-learning-50-028.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="ビジネス・仕事のスキルを学ぶとき">
   <div class="ih"><span class="num">029</span><span class="ititle">複数の立場から考えさせる</span></div>
   
   <pre class="prompt" id="b29">異なる利害関係者の視点を洗い出す
@@ -416,7 +421,7 @@
     <button class="btn ghost sm" data-save="b29" data-name="topdown-learning-50-029.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="ビジネス・仕事のスキルを学ぶとき">
   <div class="ih"><span class="num">030</span><span class="ititle">学んだことを人に教える練習</span></div>
   
   <pre class="prompt" id="b30">理解度を確認するために説明の練習をする
@@ -429,8 +434,8 @@
     <button class="btn ghost sm" data-save="b30" data-name="topdown-learning-50-030.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">資格・専門知識を学ぶとき</h2>
-<div class="icard">
+<h2 class="cat" data-cat="資格・専門知識を学ぶとき">資格・専門知識を学ぶとき</h2>
+<div class="icard" data-cat="資格・専門知識を学ぶとき">
   <div class="ih"><span class="num">031</span><span class="ititle">過去問から逆算して学ぶ</span></div>
   
   <pre class="prompt" id="b31">出題傾向から必要な知識を絞り込む
@@ -443,7 +448,7 @@
     <button class="btn ghost sm" data-save="b31" data-name="topdown-learning-50-031.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="資格・専門知識を学ぶとき">
   <div class="ih"><span class="num">032</span><span class="ititle">間違えた問題の背景知識を深掘り</span></div>
   
   <pre class="prompt" id="b32">誤答の理由を根本から理解する
@@ -456,7 +461,7 @@
     <button class="btn ghost sm" data-save="b32" data-name="topdown-learning-50-032.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="資格・専門知識を学ぶとき">
   <div class="ih"><span class="num">033</span><span class="ititle">公式・定義の直感的理解</span></div>
   
   <pre class="prompt" id="b33">丸暗記になっている公式の意味を理解する
@@ -469,7 +474,7 @@
     <button class="btn ghost sm" data-save="b33" data-name="topdown-learning-50-033.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="資格・専門知識を学ぶとき">
   <div class="ih"><span class="num">034</span><span class="ititle">暗記カード形式に変換</span></div>
   
   <pre class="prompt" id="b34">覚えるべき知識を反復学習しやすい形にする
@@ -482,7 +487,7 @@
     <button class="btn ghost sm" data-save="b34" data-name="topdown-learning-50-034.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="資格・専門知識を学ぶとき">
   <div class="ih"><span class="num">035</span><span class="ititle">類似概念の違いを比較</span></div>
   
   <pre class="prompt" id="b35">混同しやすい用語を並べて整理する
@@ -495,7 +500,7 @@
     <button class="btn ghost sm" data-save="b35" data-name="topdown-learning-50-035.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="資格・専門知識を学ぶとき">
   <div class="ih"><span class="num">036</span><span class="ititle">実務での使われ方を確認</span></div>
   
   <pre class="prompt" id="b36">知識が実際の場面でどう使われるか理解する
@@ -508,7 +513,7 @@
     <button class="btn ghost sm" data-save="b36" data-name="topdown-learning-50-036.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="資格・専門知識を学ぶとき">
   <div class="ih"><span class="num">037</span><span class="ititle">弱点分野の診断</span></div>
   
   <pre class="prompt" id="b37">自分がどこを苦手にしているか把握する
@@ -521,7 +526,7 @@
     <button class="btn ghost sm" data-save="b37" data-name="topdown-learning-50-037.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="資格・専門知識を学ぶとき">
   <div class="ih"><span class="num">038</span><span class="ititle">学習スケジュールの逆算</span></div>
   
   <pre class="prompt" id="b38">試験日から逆算して学習計画を立てる
@@ -534,7 +539,7 @@
     <button class="btn ghost sm" data-save="b38" data-name="topdown-learning-50-038.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="資格・専門知識を学ぶとき">
   <div class="ih"><span class="num">039</span><span class="ititle">記述式問題の添削</span></div>
   
   <pre class="prompt" id="b39">自分で書いた解答を採点基準に照らして添削してもらう
@@ -547,7 +552,7 @@
     <button class="btn ghost sm" data-save="b39" data-name="topdown-learning-50-039.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="資格・専門知識を学ぶとき">
   <div class="ih"><span class="num">040</span><span class="ititle">最新の改定・変更点の確認</span></div>
   
   <pre class="prompt" id="b40">制度や基準の最新の変更点を把握する
@@ -560,8 +565,8 @@
     <button class="btn ghost sm" data-save="b40" data-name="topdown-learning-50-040.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">学び方そのものを深める(メタ学習)</h2>
-<div class="icard">
+<h2 class="cat" data-cat="学び方そのものを深める(メタ学習)">学び方そのものを深める(メタ学習)</h2>
+<div class="icard" data-cat="学び方そのものを深める(メタ学習)">
   <div class="ih"><span class="num">041</span><span class="ititle">分からないことを言語化する練習</span></div>
   
   <pre class="prompt" id="b41">漠然とした「分からない」を具体化する
@@ -574,7 +579,7 @@
     <button class="btn ghost sm" data-save="b41" data-name="topdown-learning-50-041.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="学び方そのものを深める(メタ学習)">
   <div class="ih"><span class="num">042</span><span class="ititle">理解の「カチッ」を意識する</span></div>
   
   <pre class="prompt" id="b42">腑に落ちた瞬間を自覚する練習をする
@@ -587,7 +592,7 @@
     <button class="btn ghost sm" data-save="b42" data-name="topdown-learning-50-042.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="学び方そのものを深める(メタ学習)">
   <div class="ih"><span class="num">043</span><span class="ititle">知識のギャップを可視化</span></div>
   
   <pre class="prompt" id="b43">自分が知らないことの地図を作る
@@ -600,7 +605,7 @@
     <button class="btn ghost sm" data-save="b43" data-name="topdown-learning-50-043.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="学び方そのものを深める(メタ学習)">
   <div class="ih"><span class="num">044</span><span class="ititle">再帰的に深掘りする質問の型</span></div>
   
   <pre class="prompt" id="b44">1つの答えからさらに疑問を広げる練習
@@ -613,7 +618,7 @@
     <button class="btn ghost sm" data-save="b44" data-name="topdown-learning-50-044.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="学び方そのものを深める(メタ学習)">
   <div class="ih"><span class="num">045</span><span class="ititle">学んだ内容を説明し返す</span></div>
   
   <pre class="prompt" id="b45">インプットした内容をアウトプットして定着させる
@@ -626,7 +631,7 @@
     <button class="btn ghost sm" data-save="b45" data-name="topdown-learning-50-045.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="学び方そのものを深める(メタ学習)">
   <div class="ih"><span class="num">046</span><span class="ititle">最短ルートを逆算する</span></div>
   
   <pre class="prompt" id="b46">目標から必要な学習だけを絞り込む
@@ -639,7 +644,7 @@
     <button class="btn ghost sm" data-save="b46" data-name="topdown-learning-50-046.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="学び方そのものを深める(メタ学習)">
   <div class="ih"><span class="num">047</span><span class="ititle">プレッシャーのある状況を作る</span></div>
   
   <pre class="prompt" id="b47">現実の締切・課題を学習のきっかけにする
@@ -652,7 +657,7 @@
     <button class="btn ghost sm" data-save="b47" data-name="topdown-learning-50-047.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="学び方そのものを深める(メタ学習)">
   <div class="ih"><span class="num">048</span><span class="ititle">助言を取捨選択する基準を作る</span></div>
   
   <pre class="prompt" id="b48">もらった助言を鵜呑みにせず判断する
@@ -665,7 +670,7 @@
     <button class="btn ghost sm" data-save="b48" data-name="topdown-learning-50-048.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="学び方そのものを深める(メタ学習)">
   <div class="ih"><span class="num">049</span><span class="ititle">小さな実績を可視化する</span></div>
   
   <pre class="prompt" id="b49">自信をつけるために成長の跡を記録する
@@ -678,7 +683,7 @@
     <button class="btn ghost sm" data-save="b49" data-name="topdown-learning-50-049.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="学び方そのものを深める(メタ学習)">
   <div class="ih"><span class="num">050</span><span class="ititle">次に学ぶべきことを提案してもらう</span></div>
   
   <pre class="prompt" id="b50">現在地から次のステップを明確にする
@@ -1086,6 +1091,57 @@ Gabriel Petersson氏の「問題から入り、AIに聞き倒しながら知識�
 **ポイント**: 1つの質問で終わらせず、返ってきた答えにさらに疑問を重ねることで「トップダウン学習」の効果が最大化します。
 </pre>
 <script>
+// 項目の多いキットで、目的の1件に辿り着けるようにする絞り込み。
+// 検索はタイトル・説明だけでなく本文も対象にする（「あの文言が入っていた項目」で探せるように）。
+(function(){
+  var q = document.getElementById('kq');
+  if (!q) return;
+  var hit = document.getElementById('khit');
+  var cards = [].slice.call(document.querySelectorAll('.kwrap .icard'));
+  var heads = [].slice.call(document.querySelectorAll('.kwrap h2.cat'));
+  var chips = [].slice.call(document.querySelectorAll('.kcat'));
+  var cat = '';
+
+  // ひらがな・カタカナの違いで取りこぼさないようにする（ハブ側の検索と同じ扱い）
+  function norm(s){
+    return (s || '').toLowerCase().replace(/[ぁ-ん]/g, function(c){
+      return String.fromCharCode(c.charCodeAt(0) + 0x60);
+    });
+  }
+
+  // カード全体の textContent だとボタンの「コピー」まで拾ってしまうため、中身を選んで集める
+  cards.forEach(function(c){
+    var t = c.querySelector('.ititle'), d = c.querySelector('.imeta'), p = c.querySelector('.prompt');
+    c._t = norm((t ? t.textContent : '') + ' ' + (d ? d.textContent : '') + ' ' + (p ? p.textContent : ''));
+  });
+
+  function apply(){
+    var kw = norm(q.value.trim()), n = 0, shown = {};
+    cards.forEach(function(c){
+      var ok = (!cat || c.getAttribute('data-cat') === cat)
+            && (!kw || c._t.indexOf(kw) !== -1);
+      c.classList.toggle('hide', !ok);
+      if (ok){ n++; shown[c.getAttribute('data-cat')] = 1; }
+    });
+    // 残った項目が1件も無いカテゴリの見出しは隠す
+    heads.forEach(function(h){
+      h.classList.toggle('hide', !shown[h.getAttribute('data-cat')]);
+    });
+    hit.textContent = (kw || cat)
+      ? (n ? n + '件を表示中' : '該当する項目がありません')
+      : '';
+  }
+
+  q.addEventListener('input', apply);
+  chips.forEach(function(b){
+    b.addEventListener('click', function(){
+      cat = b.getAttribute('data-cat');
+      chips.forEach(function(x){ x.classList.toggle('on', x === b); });
+      apply();
+    });
+  });
+})();
+
 function flash(btn, label){
   const old = btn.textContent, cls = btn.className;
   btn.textContent = label; btn.classList.add('ok');
@@ -1155,7 +1211,22 @@ document.addEventListener('click', e => {
     el.classList.remove('show');
     sessionStorage.setItem('promoClosed', '1');
   }
-  setTimeout(function(){ el.classList.add('show'); }, 1600);
+  // 動画の概要欄から来た人が、自分のプレゼントを探し始める瞬間に被らないようにする。
+  // 以前は読み込み1.6秒後に無条件で出しており、いちばん目的意識の高い時間を塞いでいた。
+  // 中身を見に行った（＝目当てのものに辿り着いた）ころに出す。
+  var shown = false;
+  function show(){
+    if (shown) return;
+    shown = true;
+    el.classList.add('show');
+    removeEventListener('scroll', onScroll);
+  }
+  function onScroll(){
+    if (scrollY > innerHeight * 0.8) show();
+  }
+  addEventListener('scroll', onScroll, {passive:true});
+  // まったくスクロールしない人にも最後には出す（ただし十分に間を置いてから）
+  setTimeout(show, 45000);
   document.getElementById('promoClose').addEventListener('click', function(e){ e.preventDefault(); close(); });
   el.addEventListener('click', function(e){ if (e.target === el) close(); });
 })();

@@ -36,8 +36,13 @@
     <div class="pnote"><span class="nb">下のカードから、</span><span class="nb">1件ずつコピー、</span><span class="nb">または個別にダウンロードできます。</span><span class="nb">まとめて欲しいときは、</span><span class="nb">上の</span><span class="nb">「全件ダウンロード」を</span><span class="nb">お使いください。</span></div>
   </section>
 
-  <h2 class="cat">Agent Pluginsを使い倒す</h2>
-<div class="icard">
+  <div class="ktools">
+  <input type="search" id="kq" placeholder="この中から探す" autocomplete="off" aria-label="この中から探す">
+  <div class="kcats"><button type="button" class="kcat on" data-cat="">すべて<span class="n">100</span></button><button type="button" class="kcat" data-cat="Agent Pluginsを使い倒す">Agent Pluginsを使い倒す<span class="n">13</span></button><button type="button" class="kcat" data-cat="Claude Design + HyperFramesで動画を作る">Claude Design + HyperFramesで動画を作る<span class="n">13</span></button><button type="button" class="kcat" data-cat="Sonnet 5の恒久価格を活かす使い方">Sonnet 5の恒久価格を活かす使い方<span class="n">12</span></button><button type="button" class="kcat" data-cat="Hermesの発想をClaude Codeで再現する">Hermesの発想をClaude Codeで再現する<span class="n">12</span></button><button type="button" class="kcat" data-cat="Muse Glimmer的なオープンモデルを検討する">Muse Glimmer的なオープンモデルを検討する<span class="n">12</span></button><button type="button" class="kcat" data-cat="GPT-5.6-Cyber時代のセキュリティ意識を高める">GPT-5.6-Cyber時代のセキュリティ意識を高める<span class="n">13</span></button><button type="button" class="kcat" data-cat="ChatGPT Linux版時代のマルチOS運用">ChatGPT Linux版時代のマルチOS運用<span class="n">12</span></button><button type="button" class="kcat" data-cat="今週の学びを仕事に落とし込む">今週の学びを仕事に落とし込む<span class="n">13</span></button></div>
+  <p class="khit" id="khit" role="status"></p>
+</div>
+<h2 class="cat" data-cat="Agent Pluginsを使い倒す">Agent Pluginsを使い倒す</h2>
+<div class="icard" data-cat="Agent Pluginsを使い倒す">
   <div class="ih"><span class="num">001</span><span class="ititle">既存のSkillをAgent Plugin形式に変換する</span></div>
   
   <pre class="prompt" id="b1">前提: 手元に既存のClaude Code用SKILL.mdやワークフローが複数ある状況。
@@ -48,7 +53,7 @@
     <button class="btn ghost sm" data-save="b1" data-name="newfeatures-prompts100-001.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Agent Pluginsを使い倒す">
   <div class="ih"><span class="num">002</span><span class="ititle">複数ツールで共有するプラグインを設計する</span></div>
   
   <pre class="prompt" id="b2">前提: 同じ作業を複数のAIツール(Claude Code・Cursor・ChatGPT等)で行っている状況。
@@ -59,7 +64,7 @@
     <button class="btn ghost sm" data-save="b2" data-name="newfeatures-prompts100-002.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Agent Pluginsを使い倒す">
   <div class="ih"><span class="num">003</span><span class="ititle">MCPサーバー設定をプラグイン化する</span></div>
   
   <pre class="prompt" id="b3">前提: 個別に設定していたMCPサーバーが増えてきて管理が煩雑な状況。
@@ -70,7 +75,7 @@
     <button class="btn ghost sm" data-save="b3" data-name="newfeatures-prompts100-003.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Agent Pluginsを使い倒す">
   <div class="ih"><span class="num">004</span><span class="ititle">プラグインの動作テストを作る</span></div>
   
   <pre class="prompt" id="b4">前提: 作成したプラグインが意図通り動くか確認したい状況。
@@ -81,7 +86,7 @@
     <button class="btn ghost sm" data-save="b4" data-name="newfeatures-prompts100-004.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Agent Pluginsを使い倒す">
   <div class="ih"><span class="num">005</span><span class="ititle">プラグインのドキュメントを整備する</span></div>
   
   <pre class="prompt" id="b5">前提: 作ったプラグインの使い方を他の人にも分かるようにしたい状況。
@@ -92,7 +97,7 @@
     <button class="btn ghost sm" data-save="b5" data-name="newfeatures-prompts100-005.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Agent Pluginsを使い倒す">
   <div class="ih"><span class="num">006</span><span class="ititle">既存のワークフローをプラグイン境界で整理する</span></div>
   
   <pre class="prompt" id="b6">前提: 1つの大きなワークフローの中に、複数の独立した機能が混ざっている状況。
@@ -103,7 +108,7 @@
     <button class="btn ghost sm" data-save="b6" data-name="newfeatures-prompts100-006.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Agent Pluginsを使い倒す">
   <div class="ih"><span class="num">007</span><span class="ititle">プラグインのバージョン管理方針を決める</span></div>
   
   <pre class="prompt" id="b7">前提: プラグインを継続的に更新していく必要がある状況。
@@ -114,7 +119,7 @@
     <button class="btn ghost sm" data-save="b7" data-name="newfeatures-prompts100-007.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Agent Pluginsを使い倒す">
   <div class="ih"><span class="num">008</span><span class="ititle">複数プラグインの依存関係を整理する</span></div>
   
   <pre class="prompt" id="b8">前提: 作成したプラグインが増えてきて、互いの依存関係が分かりにくい状況。
@@ -125,7 +130,7 @@
     <button class="btn ghost sm" data-save="b8" data-name="newfeatures-prompts100-008.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Agent Pluginsを使い倒す">
   <div class="ih"><span class="num">009</span><span class="ititle">社内向けプラグインカタログを作る</span></div>
   
   <pre class="prompt" id="b9">前提: チーム内で使えるプラグインが増え、何があるか把握しづらい状況。
@@ -136,7 +141,7 @@
     <button class="btn ghost sm" data-save="b9" data-name="newfeatures-prompts100-009.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Agent Pluginsを使い倒す">
   <div class="ih"><span class="num">010</span><span class="ititle">プラグイン移行の影響範囲を確認する</span></div>
   
   <pre class="prompt" id="b10">前提: 既存の個別ツール設定からプラグイン形式へ移行したい状況。
@@ -147,7 +152,7 @@
     <button class="btn ghost sm" data-save="b10" data-name="newfeatures-prompts100-010.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Agent Pluginsを使い倒す">
   <div class="ih"><span class="num">011</span><span class="ititle">プラグインのセキュリティレビューを行う</span></div>
   
   <pre class="prompt" id="b11">前提: 外部で公開されているプラグインを導入するか検討している状況。
@@ -158,7 +163,7 @@
     <button class="btn ghost sm" data-save="b11" data-name="newfeatures-prompts100-011.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Agent Pluginsを使い倒す">
   <div class="ih"><span class="num">012</span><span class="ititle">チーム全員がプラグインを使える環境を整える</span></div>
   
   <pre class="prompt" id="b12">前提: 自分だけがプラグインを使っていて、チーム展開ができていない状況。
@@ -169,7 +174,7 @@
     <button class="btn ghost sm" data-save="b12" data-name="newfeatures-prompts100-012.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Agent Pluginsを使い倒す">
   <div class="ih"><span class="num">013</span><span class="ititle">プラグインの効果を振り返る</span></div>
   
   <pre class="prompt" id="b13">前提: プラグイン導入からしばらく経ち、効果を確認したい状況。
@@ -180,8 +185,8 @@
     <button class="btn ghost sm" data-save="b13" data-name="newfeatures-prompts100-013.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">Claude Design + HyperFramesで動画を作る</h2>
-<div class="icard">
+<h2 class="cat" data-cat="Claude Design + HyperFramesで動画を作る">Claude Design + HyperFramesで動画を作る</h2>
+<div class="icard" data-cat="Claude Design + HyperFramesで動画を作る">
   <div class="ih"><span class="num">014</span><span class="ititle">既存の資料を動画化する</span></div>
   
   <pre class="prompt" id="b14">前提: テキストや図解でまとめた資料を、動画として見せたい状況。
@@ -192,7 +197,7 @@
     <button class="btn ghost sm" data-save="b14" data-name="newfeatures-prompts100-014.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Claude Design + HyperFramesで動画を作る">
   <div class="ih"><span class="num">015</span><span class="ititle">製品紹介の短尺動画を作る</span></div>
   
   <pre class="prompt" id="b15">前提: 製品・サービスの紹介動画を手早く作りたい状況。
@@ -203,7 +208,7 @@
     <button class="btn ghost sm" data-save="b15" data-name="newfeatures-prompts100-015.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Claude Design + HyperFramesで動画を作る">
   <div class="ih"><span class="num">016</span><span class="ititle">データをビジュアル化して動画にする</span></div>
   
   <pre class="prompt" id="b16">前提: 数字の羅列だけでは伝わりにくいデータがある状況。
@@ -214,7 +219,7 @@
     <button class="btn ghost sm" data-save="b16" data-name="newfeatures-prompts100-016.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Claude Design + HyperFramesで動画を作る">
   <div class="ih"><span class="num">017</span><span class="ititle">SNS投稿用の短尺クリップを作る</span></div>
   
   <pre class="prompt" id="b17">前提: SNSでシェアしやすい短い動画素材が欲しい状況。
@@ -225,7 +230,7 @@
     <button class="btn ghost sm" data-save="b17" data-name="newfeatures-prompts100-017.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Claude Design + HyperFramesで動画を作る">
   <div class="ih"><span class="num">018</span><span class="ititle">チュートリアル動画の構成を作る</span></div>
   
   <pre class="prompt" id="b18">前提: 使い方を説明するチュートリアル動画を作りたい状況。
@@ -236,7 +241,7 @@
     <button class="btn ghost sm" data-save="b18" data-name="newfeatures-prompts100-018.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Claude Design + HyperFramesで動画を作る">
   <div class="ih"><span class="num">019</span><span class="ititle">プレゼン資料をそのまま動画化する</span></div>
   
   <pre class="prompt" id="b19">前提: 既存のスライド資料を動画として活用したい状況。
@@ -247,7 +252,7 @@
     <button class="btn ghost sm" data-save="b19" data-name="newfeatures-prompts100-019.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Claude Design + HyperFramesで動画を作る">
   <div class="ih"><span class="num">020</span><span class="ititle">動画のトーン・雰囲気を指定して作る</span></div>
   
   <pre class="prompt" id="b20">前提: ブランドイメージに合った雰囲気の動画にしたい状況。
@@ -258,7 +263,7 @@
     <button class="btn ghost sm" data-save="b20" data-name="newfeatures-prompts100-020.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Claude Design + HyperFramesで動画を作る">
   <div class="ih"><span class="num">021</span><span class="ititle">複数バリエーションを比較検討する</span></div>
   
   <pre class="prompt" id="b21">前提: 1つの内容に対して、複数の見せ方を比較したい状況。
@@ -269,7 +274,7 @@
     <button class="btn ghost sm" data-save="b21" data-name="newfeatures-prompts100-021.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Claude Design + HyperFramesで動画を作る">
   <div class="ih"><span class="num">022</span><span class="ititle">動画の尺を目標時間に収める</span></div>
   
   <pre class="prompt" id="b22">前提: 伝えたい内容が多く、目標の動画尺に収まるか不安な状況。
@@ -280,7 +285,7 @@
     <button class="btn ghost sm" data-save="b22" data-name="newfeatures-prompts100-022.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Claude Design + HyperFramesで動画を作る">
   <div class="ih"><span class="num">023</span><span class="ititle">音・モーションの効果を指定する</span></div>
   
   <pre class="prompt" id="b23">前提: HyperFramesに仕上げてもらう際、狙った印象にしたい状況。
@@ -291,7 +296,7 @@
     <button class="btn ghost sm" data-save="b23" data-name="newfeatures-prompts100-023.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Claude Design + HyperFramesで動画を作る">
   <div class="ih"><span class="num">024</span><span class="ititle">完成動画をレビューして改善する</span></div>
   
   <pre class="prompt" id="b24">前提: HyperFramesで生成した動画を見て、改善点を洗い出したい状況。
@@ -302,7 +307,7 @@
     <button class="btn ghost sm" data-save="b24" data-name="newfeatures-prompts100-024.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Claude Design + HyperFramesで動画を作る">
   <div class="ih"><span class="num">025</span><span class="ititle">動画素材を配布用に整理する</span></div>
   
   <pre class="prompt" id="b25">前提: 作った動画素材を他のメンバーが使えるように整理したい状況。
@@ -313,7 +318,7 @@
     <button class="btn ghost sm" data-save="b25" data-name="newfeatures-prompts100-025.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Claude Design + HyperFramesで動画を作る">
   <div class="ih"><span class="num">026</span><span class="ititle">動画制作のワークフローを型にする</span></div>
   
   <pre class="prompt" id="b26">前提: 毎回同じような動画を一から作っていて非効率な状況。
@@ -324,8 +329,8 @@
     <button class="btn ghost sm" data-save="b26" data-name="newfeatures-prompts100-026.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">Sonnet 5の恒久価格を活かす使い方</h2>
-<div class="icard">
+<h2 class="cat" data-cat="Sonnet 5の恒久価格を活かす使い方">Sonnet 5の恒久価格を活かす使い方</h2>
+<div class="icard" data-cat="Sonnet 5の恒久価格を活かす使い方">
   <div class="ih"><span class="num">027</span><span class="ititle">価格が下がったことを踏まえて用途を広げる</span></div>
   
   <pre class="prompt" id="b27">前提: コスト面で使用を控えていたタスクがある状況(値上げ撤回で$2/$10のまま恒久化)。
@@ -336,7 +341,7 @@
     <button class="btn ghost sm" data-save="b27" data-name="newfeatures-prompts100-027.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Sonnet 5の恒久価格を活かす使い方">
   <div class="ih"><span class="num">028</span><span class="ititle">大量処理タスクをSonnet 5に任せる設計にする</span></div>
   
   <pre class="prompt" id="b28">前提: 件数が多く、コストが気になっていたバッチ処理がある状況。
@@ -347,7 +352,7 @@
     <button class="btn ghost sm" data-save="b28" data-name="newfeatures-prompts100-028.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Sonnet 5の恒久価格を活かす使い方">
   <div class="ih"><span class="num">029</span><span class="ititle">複数モデルの使い分け基準を更新する</span></div>
   
   <pre class="prompt" id="b29">前提: 以前作った「モデル使い分け表」が値上げ前提のままの状況。
@@ -358,7 +363,7 @@
     <button class="btn ghost sm" data-save="b29" data-name="newfeatures-prompts100-029.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Sonnet 5の恒久価格を活かす使い方">
   <div class="ih"><span class="num">030</span><span class="ititle">チーム全体のコスト試算を出す</span></div>
   
   <pre class="prompt" id="b30">前提: チームでSonnet 5を本格導入するか検討している状況。
@@ -369,7 +374,7 @@
     <button class="btn ghost sm" data-save="b30" data-name="newfeatures-prompts100-030.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Sonnet 5の恒久価格を活かす使い方">
   <div class="ih"><span class="num">031</span><span class="ititle">エージェント常駐運用のコストを試算する</span></div>
   
   <pre class="prompt" id="b31">前提: Sonnet 5を使った常駐エージェントの運用を検討している状況。
@@ -380,7 +385,7 @@
     <button class="btn ghost sm" data-save="b31" data-name="newfeatures-prompts100-031.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Sonnet 5の恒久価格を活かす使い方">
   <div class="ih"><span class="num">032</span><span class="ititle">価格恒久化を踏まえた長期契約の検討材料を作る</span></div>
   
   <pre class="prompt" id="b32">前提: 長期的な利用計画を立てる必要がある状況。
@@ -391,7 +396,7 @@
     <button class="btn ghost sm" data-save="b32" data-name="newfeatures-prompts100-032.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Sonnet 5の恒久価格を活かす使い方">
   <div class="ih"><span class="num">033</span><span class="ititle">小規模タスクの自動化をSonnet 5前提に広げる</span></div>
   
   <pre class="prompt" id="b33">前提: コストを理由に自動化を見送っていた小さなタスクが複数ある状況。
@@ -402,7 +407,7 @@
     <button class="btn ghost sm" data-save="b33" data-name="newfeatures-prompts100-033.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Sonnet 5の恒久価格を活かす使い方">
   <div class="ih"><span class="num">034</span><span class="ititle">他社モデルとのコスト比較資料を作る</span></div>
   
   <pre class="prompt" id="b34">前提: 社内でモデル選定の説明が必要な状況。
@@ -413,7 +418,7 @@
     <button class="btn ghost sm" data-save="b34" data-name="newfeatures-prompts100-034.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Sonnet 5の恒久価格を活かす使い方">
   <div class="ih"><span class="num">035</span><span class="ititle">テスト・検証フェーズのコストを見積もる</span></div>
   
   <pre class="prompt" id="b35">前提: 新しい用途でSonnet 5を試そうとしている状況。
@@ -424,7 +429,7 @@
     <button class="btn ghost sm" data-save="b35" data-name="newfeatures-prompts100-035.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Sonnet 5の恒久価格を活かす使い方">
   <div class="ih"><span class="num">036</span><span class="ititle">価格変更のリスクに備えた設計にする</span></div>
   
   <pre class="prompt" id="b36">前提: 将来また価格が変わる可能性を考慮しておきたい状況。
@@ -435,7 +440,7 @@
     <button class="btn ghost sm" data-save="b36" data-name="newfeatures-prompts100-036.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Sonnet 5の恒久価格を活かす使い方">
   <div class="ih"><span class="num">037</span><span class="ititle">社内向けにSonnet 5の使い方ガイドを作る</span></div>
   
   <pre class="prompt" id="b37">前提: チームメンバーがSonnet 5をどう使えばよいか分からない状況。
@@ -446,7 +451,7 @@
     <button class="btn ghost sm" data-save="b37" data-name="newfeatures-prompts100-037.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Sonnet 5の恒久価格を活かす使い方">
   <div class="ih"><span class="num">038</span><span class="ititle">予算内で最大限活用するプランを作る</span></div>
   
   <pre class="prompt" id="b38">前提: 決まった予算内でSonnet 5を最大限活用したい状況。
@@ -457,8 +462,8 @@
     <button class="btn ghost sm" data-save="b38" data-name="newfeatures-prompts100-038.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">Hermesの発想をClaude Codeで再現する</h2>
-<div class="icard">
+<h2 class="cat" data-cat="Hermesの発想をClaude Codeで再現する">Hermesの発想をClaude Codeで再現する</h2>
+<div class="icard" data-cat="Hermesの発想をClaude Codeで再現する">
   <div class="ih"><span class="num">039</span><span class="ititle">複数ツール呼び出しを1つのスクリプトにまとめる</span></div>
   
   <pre class="prompt" id="b39">前提: 同じような操作でツール呼び出しを何度も繰り返している状況(Hermesの12→1ツール統合の発想)。
@@ -469,7 +474,7 @@
     <button class="btn ghost sm" data-save="b39" data-name="newfeatures-prompts100-039.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Hermesの発想をClaude Codeで再現する">
   <div class="ih"><span class="num">040</span><span class="ititle">ブラウザ操作を効率化する仕組みを作る</span></div>
   
   <pre class="prompt" id="b40">前提: ブラウザ操作のたびに細かいツール呼び出しが発生している状況。
@@ -480,7 +485,7 @@
     <button class="btn ghost sm" data-save="b40" data-name="newfeatures-prompts100-040.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Hermesの発想をClaude Codeで再現する">
   <div class="ih"><span class="num">041</span><span class="ititle">トークン消費量を計測する仕組みを作る</span></div>
   
   <pre class="prompt" id="b41">前提: エージェントのトークン消費量を把握できていない状況。
@@ -491,7 +496,7 @@
     <button class="btn ghost sm" data-save="b41" data-name="newfeatures-prompts100-041.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Hermesの発想をClaude Codeで再現する">
   <div class="ih"><span class="num">042</span><span class="ititle">繰り返し処理をスクリプト化する</span></div>
   
   <pre class="prompt" id="b42">前提: 似た操作を毎回イチから指示している状況。
@@ -502,7 +507,7 @@
     <button class="btn ghost sm" data-save="b42" data-name="newfeatures-prompts100-042.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Hermesの発想をClaude Codeで再現する">
   <div class="ih"><span class="num">043</span><span class="ititle">精度を落とさずに効率化できないか検証する</span></div>
   
   <pre class="prompt" id="b43">前提: 効率化によって精度が落ちないか不安な状況。
@@ -513,7 +518,7 @@
     <button class="btn ghost sm" data-save="b43" data-name="newfeatures-prompts100-043.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Hermesの発想をClaude Codeで再現する">
   <div class="ih"><span class="num">044</span><span class="ititle">大量のクリック操作を一括化する</span></div>
   
   <pre class="prompt" id="b44">前提: 画面操作で同じようなクリックを繰り返している状況。
@@ -524,7 +529,7 @@
     <button class="btn ghost sm" data-save="b44" data-name="newfeatures-prompts100-044.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Hermesの発想をClaude Codeで再現する">
   <div class="ih"><span class="num">045</span><span class="ititle">APIコールの回数を減らす設計にする</span></div>
   
   <pre class="prompt" id="b45">前提: 細かいAPIコールを何度も行っていてコストがかさんでいる状況。
@@ -535,7 +540,7 @@
     <button class="btn ghost sm" data-save="b45" data-name="newfeatures-prompts100-045.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Hermesの発想をClaude Codeで再現する">
   <div class="ih"><span class="num">046</span><span class="ititle">エージェントの動きをログで可視化する</span></div>
   
   <pre class="prompt" id="b46">前提: エージェントが具体的にどう動いているか把握しづらい状況。
@@ -546,7 +551,7 @@
     <button class="btn ghost sm" data-save="b46" data-name="newfeatures-prompts100-046.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Hermesの発想をClaude Codeで再現する">
   <div class="ih"><span class="num">047</span><span class="ititle">他のツールでも同じ発想を応用する</span></div>
   
   <pre class="prompt" id="b47">前提: Hermesの効率化発想を別のツール・場面にも活かしたい状況。
@@ -557,7 +562,7 @@
     <button class="btn ghost sm" data-save="b47" data-name="newfeatures-prompts100-047.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Hermesの発想をClaude Codeで再現する">
   <div class="ih"><span class="num">048</span><span class="ititle">効率化の効果を数値で示す</span></div>
   
   <pre class="prompt" id="b48">前提: 効率化の効果を周囲に説明する必要がある状況。
@@ -568,7 +573,7 @@
     <button class="btn ghost sm" data-save="b48" data-name="newfeatures-prompts100-048.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Hermesの発想をClaude Codeで再現する">
   <div class="ih"><span class="num">049</span><span class="ititle">スクリプト化の安全性を確認する</span></div>
   
   <pre class="prompt" id="b49">前提: 操作をスクリプト化することで予期しない挙動が起きないか心配な状況。
@@ -579,7 +584,7 @@
     <button class="btn ghost sm" data-save="b49" data-name="newfeatures-prompts100-049.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Hermesの発想をClaude Codeで再現する">
   <div class="ih"><span class="num">050</span><span class="ititle">チームに効率化の型を共有する</span></div>
   
   <pre class="prompt" id="b50">前提: 自分だけが効率化の恩恵を受けていて、チームに広がっていない状況。
@@ -590,8 +595,8 @@
     <button class="btn ghost sm" data-save="b50" data-name="newfeatures-prompts100-050.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">Muse Glimmer的なオープンモデルを検討する</h2>
-<div class="icard">
+<h2 class="cat" data-cat="Muse Glimmer的なオープンモデルを検討する">Muse Glimmer的なオープンモデルを検討する</h2>
+<div class="icard" data-cat="Muse Glimmer的なオープンモデルを検討する">
   <div class="ih"><span class="num">051</span><span class="ititle">自社用途にオープンウェイトモデルが向くか判定する</span></div>
   
   <pre class="prompt" id="b51">前提: クラウドAPI利用のコストが気になり、オープンモデルの導入を検討している状況。
@@ -602,7 +607,7 @@
     <button class="btn ghost sm" data-save="b51" data-name="newfeatures-prompts100-051.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Muse Glimmer的なオープンモデルを検討する">
   <div class="ih"><span class="num">052</span><span class="ititle">ローカル実行環境の要件を整理する</span></div>
   
   <pre class="prompt" id="b52">前提: オープンモデルをローカルで動かす環境を用意する必要がある状況。
@@ -613,7 +618,7 @@
     <button class="btn ghost sm" data-save="b52" data-name="newfeatures-prompts100-052.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Muse Glimmer的なオープンモデルを検討する">
   <div class="ih"><span class="num">053</span><span class="ititle">常時稼働ワークロードの候補を洗い出す</span></div>
   
   <pre class="prompt" id="b53">前提: 常時稼働させたいタスクがあるが、クラウドAPIコストが気になる状況。
@@ -624,7 +629,7 @@
     <button class="btn ghost sm" data-save="b53" data-name="newfeatures-prompts100-053.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Muse Glimmer的なオープンモデルを検討する">
   <div class="ih"><span class="num">054</span><span class="ititle">オープンモデルとクラウドモデルの使い分けを設計する</span></div>
   
   <pre class="prompt" id="b54">前提: オープンモデルとクラウドモデルをどう使い分けるか整理したい状況。
@@ -635,7 +640,7 @@
     <button class="btn ghost sm" data-save="b54" data-name="newfeatures-prompts100-054.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Muse Glimmer的なオープンモデルを検討する">
   <div class="ih"><span class="num">055</span><span class="ititle">ライセンス面の確認事項を洗い出す</span></div>
   
   <pre class="prompt" id="b55">前提: オープンウェイトモデルを商用利用する前に確認したい状況。
@@ -646,7 +651,7 @@
     <button class="btn ghost sm" data-save="b55" data-name="newfeatures-prompts100-055.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Muse Glimmer的なオープンモデルを検討する">
   <div class="ih"><span class="num">056</span><span class="ititle">量子化による精度への影響を確認する</span></div>
   
   <pre class="prompt" id="b56">前提: 軽量化(4bit量子化等)したモデルの精度低下が心配な状況。
@@ -657,7 +662,7 @@
     <button class="btn ghost sm" data-save="b56" data-name="newfeatures-prompts100-056.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Muse Glimmer的なオープンモデルを検討する">
   <div class="ih"><span class="num">057</span><span class="ititle">導入検証の計画を立てる</span></div>
   
   <pre class="prompt" id="b57">前提: オープンモデルの導入を本格検討する前段階の状況。
@@ -668,7 +673,7 @@
     <button class="btn ghost sm" data-save="b57" data-name="newfeatures-prompts100-057.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Muse Glimmer的なオープンモデルを検討する">
   <div class="ih"><span class="num">058</span><span class="ititle">既存のClaude Code環境との連携方法を検討する</span></div>
   
   <pre class="prompt" id="b58">前提: オープンモデルをClaude Codeのワークフローに組み込みたい状況。
@@ -679,7 +684,7 @@
     <button class="btn ghost sm" data-save="b58" data-name="newfeatures-prompts100-058.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Muse Glimmer的なオープンモデルを検討する">
   <div class="ih"><span class="num">059</span><span class="ititle">コスト比較のシミュレーションを作る</span></div>
   
   <pre class="prompt" id="b59">前提: オープンモデル導入のコストメリットを試算したい状況。
@@ -690,7 +695,7 @@
     <button class="btn ghost sm" data-save="b59" data-name="newfeatures-prompts100-059.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Muse Glimmer的なオープンモデルを検討する">
   <div class="ih"><span class="num">060</span><span class="ititle">セキュリティ・データ管理面の利点を整理する</span></div>
   
   <pre class="prompt" id="b60">前提: 機密データを扱う業務でクラウドAPI利用を避けたい状況。
@@ -701,7 +706,7 @@
     <button class="btn ghost sm" data-save="b60" data-name="newfeatures-prompts100-060.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Muse Glimmer的なオープンモデルを検討する">
   <div class="ih"><span class="num">061</span><span class="ititle">学習データの生成元による品質差を確認する</span></div>
   
   <pre class="prompt" id="b61">前提: オープンモデルの出力品質にばらつきがないか確認したい状況。
@@ -712,7 +717,7 @@
     <button class="btn ghost sm" data-save="b61" data-name="newfeatures-prompts100-061.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Muse Glimmer的なオープンモデルを検討する">
   <div class="ih"><span class="num">062</span><span class="ititle">将来のアップデートに備えた運用体制を作る</span></div>
   
   <pre class="prompt" id="b62">前提: オープンモデルは今後もバージョンアップが続く前提の状況。
@@ -723,8 +728,8 @@
     <button class="btn ghost sm" data-save="b62" data-name="newfeatures-prompts100-062.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">GPT-5.6-Cyber時代のセキュリティ意識を高める</h2>
-<div class="icard">
+<h2 class="cat" data-cat="GPT-5.6-Cyber時代のセキュリティ意識を高める">GPT-5.6-Cyber時代のセキュリティ意識を高める</h2>
+<div class="icard" data-cat="GPT-5.6-Cyber時代のセキュリティ意識を高める">
   <div class="ih"><span class="num">063</span><span class="ititle">自社のセキュリティ体制を棚卸しする</span></div>
   
   <pre class="prompt" id="b63">前提: AIのサイバー能力が急速に上がっている中、自社の体制を見直したい状況(Astra Critical判定を踏まえて)。
@@ -735,7 +740,7 @@
     <button class="btn ghost sm" data-save="b63" data-name="newfeatures-prompts100-063.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="GPT-5.6-Cyber時代のセキュリティ意識を高める">
   <div class="ih"><span class="num">064</span><span class="ititle">防御側として使えるAIツールを検討する</span></div>
   
   <pre class="prompt" id="b64">前提: 攻撃側のAI能力向上に対して、防御側の備えも強化したい状況。
@@ -746,7 +751,7 @@
     <button class="btn ghost sm" data-save="b64" data-name="newfeatures-prompts100-064.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="GPT-5.6-Cyber時代のセキュリティ意識を高める">
   <div class="ih"><span class="num">065</span><span class="ititle">ゼロデイ対応フローを見直す</span></div>
   
   <pre class="prompt" id="b65">前提: AIによる自律的な脆弱性発見が現実的になってきた状況。
@@ -757,7 +762,7 @@
     <button class="btn ghost sm" data-save="b65" data-name="newfeatures-prompts100-065.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="GPT-5.6-Cyber時代のセキュリティ意識を高める">
   <div class="ih"><span class="num">066</span><span class="ititle">社内向けにAIセキュリティの動向を説明する資料を作る</span></div>
   
   <pre class="prompt" id="b66">前提: AIのセキュリティリスクについて社内の理解を広めたい状況。
@@ -768,7 +773,7 @@
     <button class="btn ghost sm" data-save="b66" data-name="newfeatures-prompts100-066.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="GPT-5.6-Cyber時代のセキュリティ意識を高める">
   <div class="ih"><span class="num">067</span><span class="ititle">エージェントの権限管理ポリシーを作る</span></div>
   
   <pre class="prompt" id="b67">前提: AIエージェントに与える権限の基準が明確でない状況。
@@ -779,7 +784,7 @@
     <button class="btn ghost sm" data-save="b67" data-name="newfeatures-prompts100-067.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="GPT-5.6-Cyber時代のセキュリティ意識を高める">
   <div class="ih"><span class="num">068</span><span class="ititle">インシデント対応の訓練シナリオを作る</span></div>
   
   <pre class="prompt" id="b68">前提: AIエージェントの異常行動を想定した訓練をしたことがない状況。
@@ -790,7 +795,7 @@
     <button class="btn ghost sm" data-save="b68" data-name="newfeatures-prompts100-068.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="GPT-5.6-Cyber時代のセキュリティ意識を高める">
   <div class="ih"><span class="num">069</span><span class="ititle">外部委託先のAI利用状況を確認する</span></div>
   
   <pre class="prompt" id="b69">前提: 業務委託先がどのようにAIを使っているか把握できていない状況。
@@ -801,7 +806,7 @@
     <button class="btn ghost sm" data-save="b69" data-name="newfeatures-prompts100-069.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="GPT-5.6-Cyber時代のセキュリティ意識を高める">
   <div class="ih"><span class="num">070</span><span class="ititle">自社製品のAI関連リスクを評価する</span></div>
   
   <pre class="prompt" id="b70">前提: 自社製品にAI機能を組み込んでいて、リスク評価が必要な状況。
@@ -812,7 +817,7 @@
     <button class="btn ghost sm" data-save="b70" data-name="newfeatures-prompts100-070.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="GPT-5.6-Cyber時代のセキュリティ意識を高める">
   <div class="ih"><span class="num">071</span><span class="ititle">最新のAI安全性動向を定期的に追う仕組みを作る</span></div>
   
   <pre class="prompt" id="b71">前提: AIの安全性動向を追いきれていない状況。
@@ -823,7 +828,7 @@
     <button class="btn ghost sm" data-save="b71" data-name="newfeatures-prompts100-071.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="GPT-5.6-Cyber時代のセキュリティ意識を高める">
   <div class="ih"><span class="num">072</span><span class="ititle">開発チームへのセキュリティ教育資料を作る</span></div>
   
   <pre class="prompt" id="b72">前提: 開発チームのAIセキュリティ意識を高めたい状況。
@@ -834,7 +839,7 @@
     <button class="btn ghost sm" data-save="b72" data-name="newfeatures-prompts100-072.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="GPT-5.6-Cyber時代のセキュリティ意識を高める">
   <div class="ih"><span class="num">073</span><span class="ititle">サプライチェーンの依存関係を確認する</span></div>
   
   <pre class="prompt" id="b73">前提: LiteLLM等のOSS侵害を踏まえ、自社の依存関係が心配な状況。
@@ -845,7 +850,7 @@
     <button class="btn ghost sm" data-save="b73" data-name="newfeatures-prompts100-073.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="GPT-5.6-Cyber時代のセキュリティ意識を高める">
   <div class="ih"><span class="num">074</span><span class="ititle">経営層への報告資料を作る</span></div>
   
   <pre class="prompt" id="b74">前提: AIセキュリティの動向を経営層に報告する必要がある状況。
@@ -856,7 +861,7 @@
     <button class="btn ghost sm" data-save="b74" data-name="newfeatures-prompts100-074.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="GPT-5.6-Cyber時代のセキュリティ意識を高める">
   <div class="ih"><span class="num">075</span><span class="ititle">セキュリティ関連の予算要求資料を作る</span></div>
   
   <pre class="prompt" id="b75">前提: セキュリティ対策強化のための予算取りが必要な状況。
@@ -867,8 +872,8 @@
     <button class="btn ghost sm" data-save="b75" data-name="newfeatures-prompts100-075.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">ChatGPT Linux版時代のマルチOS運用</h2>
-<div class="icard">
+<h2 class="cat" data-cat="ChatGPT Linux版時代のマルチOS運用">ChatGPT Linux版時代のマルチOS運用</h2>
+<div class="icard" data-cat="ChatGPT Linux版時代のマルチOS運用">
   <div class="ih"><span class="num">076</span><span class="ititle">複数OS環境での作業フローを統一する</span></div>
   
   <pre class="prompt" id="b76">前提: Windows・Mac・Linuxで作業環境がバラバラな状況。
@@ -879,7 +884,7 @@
     <button class="btn ghost sm" data-save="b76" data-name="newfeatures-prompts100-076.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="ChatGPT Linux版時代のマルチOS運用">
   <div class="ih"><span class="num">077</span><span class="ititle">Linux環境でのセットアップ手順を作る</span></div>
   
   <pre class="prompt" id="b77">前提: Linux環境でAIツールを使い始めることになった状況。
@@ -890,7 +895,7 @@
     <button class="btn ghost sm" data-save="b77" data-name="newfeatures-prompts100-077.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="ChatGPT Linux版時代のマルチOS運用">
   <div class="ih"><span class="num">078</span><span class="ititle">OS間でのプロジェクト共有を効率化する</span></div>
   
   <pre class="prompt" id="b78">前提: 同じプロジェクトを複数OSで作業するメンバーがいる状況。
@@ -901,7 +906,7 @@
     <button class="btn ghost sm" data-save="b78" data-name="newfeatures-prompts100-078.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="ChatGPT Linux版時代のマルチOS運用">
   <div class="ih"><span class="num">079</span><span class="ititle">クラウド環境とローカルLinuxの使い分けを整理する</span></div>
   
   <pre class="prompt" id="b79">前提: クラウド上のLinux環境とローカルのLinux環境をどう使い分けるか迷っている状況。
@@ -912,7 +917,7 @@
     <button class="btn ghost sm" data-save="b79" data-name="newfeatures-prompts100-079.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="ChatGPT Linux版時代のマルチOS運用">
   <div class="ih"><span class="num">080</span><span class="ititle">マルチOSでのトラブルシューティング手順を作る</span></div>
   
   <pre class="prompt" id="b80">前提: OSによって発生するエラーが異なり対応に時間がかかっている状況。
@@ -923,7 +928,7 @@
     <button class="btn ghost sm" data-save="b80" data-name="newfeatures-prompts100-080.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="ChatGPT Linux版時代のマルチOS運用">
   <div class="ih"><span class="num">081</span><span class="ititle">チームの開発環境を標準化する</span></div>
   
   <pre class="prompt" id="b81">前提: チームメンバーの開発環境がバラバラで、再現性の低い問題が起きている状況。
@@ -934,7 +939,7 @@
     <button class="btn ghost sm" data-save="b81" data-name="newfeatures-prompts100-081.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="ChatGPT Linux版時代のマルチOS運用">
   <div class="ih"><span class="num">082</span><span class="ititle">CI/CDパイプラインのOS依存を確認する</span></div>
   
   <pre class="prompt" id="b82">前提: ビルド・テストの自動化パイプラインがOSに依存していないか心配な状況。
@@ -945,7 +950,7 @@
     <button class="btn ghost sm" data-save="b82" data-name="newfeatures-prompts100-082.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="ChatGPT Linux版時代のマルチOS運用">
   <div class="ih"><span class="num">083</span><span class="ititle">リモート開発環境の構築を検討する</span></div>
   
   <pre class="prompt" id="b83">前提: ローカルマシンの性能に頼らない開発環境を検討している状況。
@@ -956,7 +961,7 @@
     <button class="btn ghost sm" data-save="b83" data-name="newfeatures-prompts100-083.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="ChatGPT Linux版時代のマルチOS運用">
   <div class="ih"><span class="num">084</span><span class="ititle">OS移行の計画を立てる</span></div>
   
   <pre class="prompt" id="b84">前提: 既存の開発環境から別のOSへの移行を検討している状況。
@@ -967,7 +972,7 @@
     <button class="btn ghost sm" data-save="b84" data-name="newfeatures-prompts100-084.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="ChatGPT Linux版時代のマルチOS運用">
   <div class="ih"><span class="num">085</span><span class="ititle">ドキュメントのOS別の記載を整理する</span></div>
   
   <pre class="prompt" id="b85">前提: 社内ドキュメントがOSごとにバラバラに書かれていて分かりにくい状況。
@@ -978,7 +983,7 @@
     <button class="btn ghost sm" data-save="b85" data-name="newfeatures-prompts100-085.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="ChatGPT Linux版時代のマルチOS運用">
   <div class="ih"><span class="num">086</span><span class="ititle">新規メンバーのオンボーディングを効率化する</span></div>
   
   <pre class="prompt" id="b86">前提: 新しいメンバーが加わるたびに環境構築で時間がかかっている状況。
@@ -989,7 +994,7 @@
     <button class="btn ghost sm" data-save="b86" data-name="newfeatures-prompts100-086.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="ChatGPT Linux版時代のマルチOS運用">
   <div class="ih"><span class="num">087</span><span class="ititle">マルチOS対応のコストを評価する</span></div>
   
   <pre class="prompt" id="b87">前提: マルチOS対応にどれだけ工数をかけるべきか判断したい状況。
@@ -1000,8 +1005,8 @@
     <button class="btn ghost sm" data-save="b87" data-name="newfeatures-prompts100-087.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">今週の学びを仕事に落とし込む</h2>
-<div class="icard">
+<h2 class="cat" data-cat="今週の学びを仕事に落とし込む">今週の学びを仕事に落とし込む</h2>
+<div class="icard" data-cat="今週の学びを仕事に落とし込む">
   <div class="ih"><span class="num">088</span><span class="ititle">今週のニュースを社内共有する要約を作る</span></div>
   
   <pre class="prompt" id="b88">前提: チームに今週のAIニュースを簡潔に共有したい状況。
@@ -1012,7 +1017,7 @@
     <button class="btn ghost sm" data-save="b88" data-name="newfeatures-prompts100-088.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="今週の学びを仕事に落とし込む">
   <div class="ih"><span class="num">089</span><span class="ititle">新機能を試す優先順位をつける</span></div>
   
   <pre class="prompt" id="b89">前提: 今週だけで複数の新機能が出て、どれから試すか迷っている状況。
@@ -1023,7 +1028,7 @@
     <button class="btn ghost sm" data-save="b89" data-name="newfeatures-prompts100-089.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="今週の学びを仕事に落とし込む">
   <div class="ih"><span class="num">090</span><span class="ititle">学んだことを来週の計画に反映する</span></div>
   
   <pre class="prompt" id="b90">前提: 今週の情報収集を、具体的な行動につなげたい状況。
@@ -1034,7 +1039,7 @@
     <button class="btn ghost sm" data-save="b90" data-name="newfeatures-prompts100-090.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="今週の学びを仕事に落とし込む">
   <div class="ih"><span class="num">091</span><span class="ititle">チームの技術選定に反映する</span></div>
   
   <pre class="prompt" id="b91">前提: 今週のニュースが自社の技術選定に影響しそうな状況。
@@ -1045,7 +1050,7 @@
     <button class="btn ghost sm" data-save="b91" data-name="newfeatures-prompts100-091.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="今週の学びを仕事に落とし込む">
   <div class="ih"><span class="num">092</span><span class="ititle">競合の動きと比較する</span></div>
   
   <pre class="prompt" id="b92">前提: 今週のニュースをもとに、自社の立ち位置を確認したい状況。
@@ -1056,7 +1061,7 @@
     <button class="btn ghost sm" data-save="b92" data-name="newfeatures-prompts100-092.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="今週の学びを仕事に落とし込む">
   <div class="ih"><span class="num">093</span><span class="ititle">週次レビューのテンプレートを作る</span></div>
   
   <pre class="prompt" id="b93">前提: 毎週のAIニュースを振り返る習慣をつけたい状況。
@@ -1067,7 +1072,7 @@
     <button class="btn ghost sm" data-save="b93" data-name="newfeatures-prompts100-093.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="今週の学びを仕事に落とし込む">
   <div class="ih"><span class="num">094</span><span class="ititle">学んだ内容を自分の言葉で説明できるか確認する</span></div>
   
   <pre class="prompt" id="b94">前提: 今週の内容を人に説明できるか自信がない状況。
@@ -1078,7 +1083,7 @@
     <button class="btn ghost sm" data-save="b94" data-name="newfeatures-prompts100-094.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="今週の学びを仕事に落とし込む">
   <div class="ih"><span class="num">095</span><span class="ititle">今週の情報の裏取りを再確認する</span></div>
   
   <pre class="prompt" id="b95">前提: 今週得た情報の確度を再確認したい状況。
@@ -1089,7 +1094,7 @@
     <button class="btn ghost sm" data-save="b95" data-name="newfeatures-prompts100-095.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="今週の学びを仕事に落とし込む">
   <div class="ih"><span class="num">096</span><span class="ititle">チームに新機能のデモを見せる準備をする</span></div>
   
   <pre class="prompt" id="b96">前提: チームに今週の新機能を実際に見せたい状況。
@@ -1100,7 +1105,7 @@
     <button class="btn ghost sm" data-save="b96" data-name="newfeatures-prompts100-096.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="今週の学びを仕事に落とし込む">
   <div class="ih"><span class="num">097</span><span class="ititle">今後の学習計画に組み込む</span></div>
   
   <pre class="prompt" id="b97">前提: 今週分かった新しい概念について、もっと深く理解したい状況。
@@ -1111,7 +1116,7 @@
     <button class="btn ghost sm" data-save="b97" data-name="newfeatures-prompts100-097.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="今週の学びを仕事に落とし込む">
   <div class="ih"><span class="num">098</span><span class="ititle">今週の内容を振り返るチェックリストを作る</span></div>
   
   <pre class="prompt" id="b98">前提: 今週の内容をきちんと理解できたか確認したい状況。
@@ -1122,7 +1127,7 @@
     <button class="btn ghost sm" data-save="b98" data-name="newfeatures-prompts100-098.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="今週の学びを仕事に落とし込む">
   <div class="ih"><span class="num">099</span><span class="ititle">次回のニュースチェックに向けた準備をする</span></div>
   
   <pre class="prompt" id="b99">前提: 来週も同じように情報収集を続けたい状況。
@@ -1133,7 +1138,7 @@
     <button class="btn ghost sm" data-save="b99" data-name="newfeatures-prompts100-099.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="今週の学びを仕事に落とし込む">
   <div class="ih"><span class="num">100</span><span class="ititle">学んだ内容を仕組み化して継続する</span></div>
   
   <pre class="prompt" id="b100">前提: 今週のような情報収集・活用のサイクルを一度きりで終わらせたくない状況。
@@ -1881,6 +1886,57 @@ Sonnet 5恒久価格・Hermes Browser Use・Muse Glimmer・GPT-5.6-Cyber・ChatG
 
 以上、100個です。8カテゴリの内訳で構成しています。</pre>
 <script>
+// 項目の多いキットで、目的の1件に辿り着けるようにする絞り込み。
+// 検索はタイトル・説明だけでなく本文も対象にする（「あの文言が入っていた項目」で探せるように）。
+(function(){
+  var q = document.getElementById('kq');
+  if (!q) return;
+  var hit = document.getElementById('khit');
+  var cards = [].slice.call(document.querySelectorAll('.kwrap .icard'));
+  var heads = [].slice.call(document.querySelectorAll('.kwrap h2.cat'));
+  var chips = [].slice.call(document.querySelectorAll('.kcat'));
+  var cat = '';
+
+  // ひらがな・カタカナの違いで取りこぼさないようにする（ハブ側の検索と同じ扱い）
+  function norm(s){
+    return (s || '').toLowerCase().replace(/[ぁ-ん]/g, function(c){
+      return String.fromCharCode(c.charCodeAt(0) + 0x60);
+    });
+  }
+
+  // カード全体の textContent だとボタンの「コピー」まで拾ってしまうため、中身を選んで集める
+  cards.forEach(function(c){
+    var t = c.querySelector('.ititle'), d = c.querySelector('.imeta'), p = c.querySelector('.prompt');
+    c._t = norm((t ? t.textContent : '') + ' ' + (d ? d.textContent : '') + ' ' + (p ? p.textContent : ''));
+  });
+
+  function apply(){
+    var kw = norm(q.value.trim()), n = 0, shown = {};
+    cards.forEach(function(c){
+      var ok = (!cat || c.getAttribute('data-cat') === cat)
+            && (!kw || c._t.indexOf(kw) !== -1);
+      c.classList.toggle('hide', !ok);
+      if (ok){ n++; shown[c.getAttribute('data-cat')] = 1; }
+    });
+    // 残った項目が1件も無いカテゴリの見出しは隠す
+    heads.forEach(function(h){
+      h.classList.toggle('hide', !shown[h.getAttribute('data-cat')]);
+    });
+    hit.textContent = (kw || cat)
+      ? (n ? n + '件を表示中' : '該当する項目がありません')
+      : '';
+  }
+
+  q.addEventListener('input', apply);
+  chips.forEach(function(b){
+    b.addEventListener('click', function(){
+      cat = b.getAttribute('data-cat');
+      chips.forEach(function(x){ x.classList.toggle('on', x === b); });
+      apply();
+    });
+  });
+})();
+
 function flash(btn, label){
   const old = btn.textContent, cls = btn.className;
   btn.textContent = label; btn.classList.add('ok');
@@ -1950,7 +2006,22 @@ document.addEventListener('click', e => {
     el.classList.remove('show');
     sessionStorage.setItem('promoClosed', '1');
   }
-  setTimeout(function(){ el.classList.add('show'); }, 1600);
+  // 動画の概要欄から来た人が、自分のプレゼントを探し始める瞬間に被らないようにする。
+  // 以前は読み込み1.6秒後に無条件で出しており、いちばん目的意識の高い時間を塞いでいた。
+  // 中身を見に行った（＝目当てのものに辿り着いた）ころに出す。
+  var shown = false;
+  function show(){
+    if (shown) return;
+    shown = true;
+    el.classList.add('show');
+    removeEventListener('scroll', onScroll);
+  }
+  function onScroll(){
+    if (scrollY > innerHeight * 0.8) show();
+  }
+  addEventListener('scroll', onScroll, {passive:true});
+  // まったくスクロールしない人にも最後には出す（ただし十分に間を置いてから）
+  setTimeout(show, 45000);
   document.getElementById('promoClose').addEventListener('click', function(e){ e.preventDefault(); close(); });
   el.addEventListener('click', function(e){ if (e.target === el) close(); });
 })();

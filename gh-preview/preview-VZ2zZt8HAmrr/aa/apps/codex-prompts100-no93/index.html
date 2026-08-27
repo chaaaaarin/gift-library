@@ -36,8 +36,13 @@
     <div class="pnote"><span class="nb">下のカードから、</span><span class="nb">1件ずつコピー、</span><span class="nb">または個別にダウンロードできます。</span><span class="nb">まとめて欲しいときは、</span><span class="nb">上の</span><span class="nb">「全件ダウンロード」を</span><span class="nb">お使いください。</span></div>
   </section>
 
-  <h2 class="cat">移行判断・準備系</h2>
-<div class="icard">
+  <div class="ktools">
+  <input type="search" id="kq" placeholder="この中から探す" autocomplete="off" aria-label="この中から探す">
+  <div class="kcats"><button type="button" class="kcat on" data-cat="">すべて<span class="n">100</span></button><button type="button" class="kcat" data-cat="移行判断・準備系">移行判断・準備系<span class="n">14</span></button><button type="button" class="kcat" data-cat="インポート実行・検証系">インポート実行・検証系<span class="n">15</span></button><button type="button" class="kcat" data-cat="スキル・プラグイン復旧系">スキル・プラグイン復旧系<span class="n">15</span></button><button type="button" class="kcat" data-cat="設定同期・併用運用系">設定同期・併用運用系<span class="n">14</span></button><button type="button" class="kcat" data-cat="開発スタイル使い分け系">開発スタイル使い分け系<span class="n">14</span></button><button type="button" class="kcat" data-cat="コスト最適化系">コスト最適化系<span class="n">14</span></button><button type="button" class="kcat" data-cat="チーム導入・展開系">チーム導入・展開系<span class="n">14</span></button></div>
+  <p class="khit" id="khit" role="status"></p>
+</div>
+<h2 class="cat" data-cat="移行判断・準備系">移行判断・準備系</h2>
+<div class="icard" data-cat="移行判断・準備系">
   <div class="ih"><span class="num">001</span><span class="ititle">移行コストの棚卸し</span></div>
   
   <pre class="prompt" id="b1">前提: 私はClaude CodeからCodexへの移行を検討しているエンジニアで、自分の.claude/フォルダ構成を貼り付ける。
@@ -48,7 +53,7 @@
     <button class="btn ghost sm" data-save="b1" data-name="codex-prompts100-no93-001.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="移行判断・準備系">
   <div class="ih"><span class="num">002</span><span class="ititle">移行動機の言語化</span></div>
   
   <pre class="prompt" id="b2">前提: 私は月20ドルのClaude Proプランで、週次リミットに月2〜3回引っかかって作業が止まっている。
@@ -59,7 +64,7 @@
     <button class="btn ghost sm" data-save="b2" data-name="codex-prompts100-no93-002.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="移行判断・準備系">
   <div class="ih"><span class="num">003</span><span class="ititle">既存プロジェクトの依存確認</span></div>
   
   <pre class="prompt" id="b3">前提: 現在のプロジェクトのCLAUDE.md・.claude/hooks・.claude/agentsの中身をすべて貼り付ける。
@@ -70,7 +75,7 @@
     <button class="btn ghost sm" data-save="b3" data-name="codex-prompts100-no93-003.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="移行判断・準備系">
   <div class="ih"><span class="num">004</span><span class="ititle">並行稼働期間の設計</span></div>
   
   <pre class="prompt" id="b4">前提: 私はチームで開発しており、移行にあたって1ヶ月程度の並行稼働期間を設けたい。
@@ -81,7 +86,7 @@
     <button class="btn ghost sm" data-save="b4" data-name="codex-prompts100-no93-004.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="移行判断・準備系">
   <div class="ih"><span class="num">005</span><span class="ititle">バックアップ計画の作成</span></div>
   
   <pre class="prompt" id="b5">前提: 移行対象は.claude/フォルダ全体とグローバル設定（~/.claude/）を含む。
@@ -92,7 +97,7 @@
     <button class="btn ghost sm" data-save="b5" data-name="codex-prompts100-no93-005.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="移行判断・準備系">
   <div class="ih"><span class="num">006</span><span class="ititle">チーム合意形成の叩き台</span></div>
   
   <pre class="prompt" id="b6">前提: チームは4人で、うち2人はClaude Code歴が長く、2人はツールにこだわりが薄い。
@@ -103,7 +108,7 @@
     <button class="btn ghost sm" data-save="b6" data-name="codex-prompts100-no93-006.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="移行判断・準備系">
   <div class="ih"><span class="num">007</span><span class="ititle">移行スケジュールの逆算</span></div>
   
   <pre class="prompt" id="b7">前提: 3週間後に大きめの開発フェーズが始まるため、それまでに移行の可否を判断したい。
@@ -114,7 +119,7 @@
     <button class="btn ghost sm" data-save="b7" data-name="codex-prompts100-no93-007.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="移行判断・準備系">
   <div class="ih"><span class="num">008</span><span class="ititle">移行対象外の切り分け</span></div>
   
   <pre class="prompt" id="b8">前提: 現在10個のカスタムスキルと5個のサブエージェントを運用しているが、実際に使用頻度が高いのは半分程度。
@@ -125,7 +130,7 @@
     <button class="btn ghost sm" data-save="b8" data-name="codex-prompts100-no93-008.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="移行判断・準備系">
   <div class="ih"><span class="num">009</span><span class="ititle">移行後の検証観点の洗い出し</span></div>
   
   <pre class="prompt" id="b9">前提: 移行対象はCLAUDE.mdの指示内容・3個のカスタムスキル・2個のMCPサーバー接続。
@@ -136,7 +141,7 @@
     <button class="btn ghost sm" data-save="b9" data-name="codex-prompts100-no93-009.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="移行判断・準備系">
   <div class="ih"><span class="num">010</span><span class="ititle">移行に伴うコスト試算</span></div>
   
   <pre class="prompt" id="b10">前提: 移行作業に想定している時間は1人日、月額の想定コスト差はCodex併用で+3,500円。
@@ -147,7 +152,7 @@
     <button class="btn ghost sm" data-save="b10" data-name="codex-prompts100-no93-010.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="移行判断・準備系">
   <div class="ih"><span class="num">011</span><span class="ititle">移行しない場合の代替策検討</span></div>
   
   <pre class="prompt" id="b11">前提: Claude Proの週次リミットが問題だが、Codexへの移行はまだ踏み切れない。
@@ -158,7 +163,7 @@
     <button class="btn ghost sm" data-save="b11" data-name="codex-prompts100-no93-011.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="移行判断・準備系">
   <div class="ih"><span class="num">012</span><span class="ititle">移行の失敗パターン事前学習</span></div>
   
   <pre class="prompt" id="b12">前提: 私はエンジニア歴2年で、大規模な移行作業の経験がまだ少ない。
@@ -169,7 +174,7 @@
     <button class="btn ghost sm" data-save="b12" data-name="codex-prompts100-no93-012.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="移行判断・準備系">
   <div class="ih"><span class="num">013</span><span class="ititle">個人開発とチーム開発での判断分岐</span></div>
   
   <pre class="prompt" id="b13">前提: 私は個人開発とチーム開発の両方でAIコーディングツールを使っている。
@@ -180,7 +185,7 @@
     <button class="btn ghost sm" data-save="b13" data-name="codex-prompts100-no93-013.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="移行判断・準備系">
   <div class="ih"><span class="num">014</span><span class="ititle">移行判断のための試用計画</span></div>
   
   <pre class="prompt" id="b14">前提: 本格的な移行前に、1週間だけ試用期間を設けて判断材料を集めたい。
@@ -191,8 +196,8 @@
     <button class="btn ghost sm" data-save="b14" data-name="codex-prompts100-no93-014.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">インポート実行・検証系</h2>
-<div class="icard">
+<h2 class="cat" data-cat="インポート実行・検証系">インポート実行・検証系</h2>
+<div class="icard" data-cat="インポート実行・検証系">
   <div class="ih"><span class="num">015</span><span class="ititle">インポート項目の事前確認</span></div>
   
   <pre class="prompt" id="b15">前提: Codexの「他のAIアプリから設定をインポート」画面で、Tools &amp; setup・Projects・Chat sessionsの3項目が表示されている。
@@ -203,7 +208,7 @@
     <button class="btn ghost sm" data-save="b15" data-name="codex-prompts100-no93-015.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="インポート実行・検証系">
   <div class="ih"><span class="num">016</span><span class="ititle">AGENTS.md変換後のレビュー</span></div>
   
   <pre class="prompt" id="b16">前提: 自動変換後のAGENTS.mdの内容を貼り付ける。元のCLAUDE.mdの内容も併せて貼り付ける。
@@ -214,7 +219,7 @@
     <button class="btn ghost sm" data-save="b16" data-name="codex-prompts100-no93-016.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="インポート実行・検証系">
   <div class="ih"><span class="num">017</span><span class="ititle">MCPサーバー設定の変換確認</span></div>
   
   <pre class="prompt" id="b17">前提: 変換前のJSON設定と変換後のTOML設定の両方を貼り付ける。
@@ -225,7 +230,7 @@
     <button class="btn ghost sm" data-save="b17" data-name="codex-prompts100-no93-017.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="インポート実行・検証系">
   <div class="ih"><span class="num">018</span><span class="ititle">サブエージェント再宣言の作成</span></div>
   
   <pre class="prompt" id="b18">前提: 既存のサブエージェント定義（name・description・tools・model・本文）を貼り付ける。
@@ -236,7 +241,7 @@
     <button class="btn ghost sm" data-save="b18" data-name="codex-prompts100-no93-018.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="インポート実行・検証系">
   <div class="ih"><span class="num">019</span><span class="ititle">権限設定の意図移行</span></div>
   
   <pre class="prompt" id="b19">前提: Claude Codeのpermission allowlist（許可コマンドの一覧）を貼り付ける。
@@ -247,7 +252,7 @@
     <button class="btn ghost sm" data-save="b19" data-name="codex-prompts100-no93-019.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="インポート実行・検証系">
   <div class="ih"><span class="num">020</span><span class="ititle">インポート後の動作スモークテスト</span></div>
   
   <pre class="prompt" id="b20">前提: インポート直後で、まだ本格的なタスクを試していない状態。
@@ -258,7 +263,7 @@
     <button class="btn ghost sm" data-save="b20" data-name="codex-prompts100-no93-020.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="インポート実行・検証系">
   <div class="ih"><span class="num">021</span><span class="ititle">チャット履歴の引き継ぎ確認</span></div>
   
   <pre class="prompt" id="b21">前提: 直近30日で重要なやり取りをしたチャットが3〜4件ある。
@@ -269,7 +274,7 @@
     <button class="btn ghost sm" data-save="b21" data-name="codex-prompts100-no93-021.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="インポート実行・検証系">
   <div class="ih"><span class="num">022</span><span class="ititle">プロジェクトメモリの整合性確認</span></div>
   
   <pre class="prompt" id="b22">前提: プロジェクトメモリに記録していた過去の決定事項・注意点のリストを貼り付ける。
@@ -280,7 +285,7 @@
     <button class="btn ghost sm" data-save="b22" data-name="codex-prompts100-no93-022.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="インポート実行・検証系">
   <div class="ih"><span class="num">023</span><span class="ititle">自動同期のオプトイン判断</span></div>
   
   <pre class="prompt" id="b23">前提: 自動同期をオンにすると、Claude Code側の変更が自動でCodex側に反映される仕組みがある。
@@ -291,7 +296,7 @@
     <button class="btn ghost sm" data-save="b23" data-name="codex-prompts100-no93-023.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="インポート実行・検証系">
   <div class="ih"><span class="num">024</span><span class="ititle">インポート履歴の定期チェック習慣化</span></div>
   
   <pre class="prompt" id="b24">前提: 設定＞Importの画面からインポート履歴を確認できる仕組みがある。
@@ -302,7 +307,7 @@
     <button class="btn ghost sm" data-save="b24" data-name="codex-prompts100-no93-024.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="インポート実行・検証系">
   <div class="ih"><span class="num">025</span><span class="ititle">インポート失敗時のトラブルシュート</span></div>
   
   <pre class="prompt" id="b25">前提: 「他のAIアプリから設定をインポート」を実行したが、一部の項目がエラーになった。
@@ -313,7 +318,7 @@
     <button class="btn ghost sm" data-save="b25" data-name="codex-prompts100-no93-025.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="インポート実行・検証系">
   <div class="ih"><span class="num">026</span><span class="ititle">既存環境の非破壊確認</span></div>
   
   <pre class="prompt" id="b26">前提: 公式には「既存設定は変更されない」とあるが、念のため自分で確認したい。
@@ -324,7 +329,7 @@
     <button class="btn ghost sm" data-save="b26" data-name="codex-prompts100-no93-026.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="インポート実行・検証系">
   <div class="ih"><span class="num">027</span><span class="ititle">プラグイン権限の再承認手順</span></div>
   
   <pre class="prompt" id="b27">前提: インポート後、いくつかのプラグインが「要承認」の状態になっている。
@@ -335,7 +340,7 @@
     <button class="btn ghost sm" data-save="b27" data-name="codex-prompts100-no93-027.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="インポート実行・検証系">
   <div class="ih"><span class="num">028</span><span class="ititle">カスタム認証設定の再設定手順</span></div>
   
   <pre class="prompt" id="b28">前提: 自社APIへのカスタム認証を使っており、公式ドキュメントでは自動移行対象外とされている。
@@ -346,7 +351,7 @@
     <button class="btn ghost sm" data-save="b28" data-name="codex-prompts100-no93-028.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="インポート実行・検証系">
   <div class="ih"><span class="num">029</span><span class="ititle">移行完了の合格ラインの設定</span></div>
   
   <pre class="prompt" id="b29">前提: 移行作業をどこまでやれば完了と言えるか、曖昧なまま進めてしまっている。
@@ -357,8 +362,8 @@
     <button class="btn ghost sm" data-save="b29" data-name="codex-prompts100-no93-029.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">スキル・プラグイン復旧系</h2>
-<div class="icard">
+<h2 class="cat" data-cat="スキル・プラグイン復旧系">スキル・プラグイン復旧系</h2>
+<div class="icard" data-cat="スキル・プラグイン復旧系">
   <div class="ih"><span class="num">030</span><span class="ititle">未移行スキルの洗い出し</span></div>
   
   <pre class="prompt" id="b30">前提: 移行前に使っていたスキル一覧（名前と用途）を貼り付ける。
@@ -369,7 +374,7 @@
     <button class="btn ghost sm" data-save="b30" data-name="codex-prompts100-no93-030.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="スキル・プラグイン復旧系">
   <div class="ih"><span class="num">031</span><span class="ititle">GitHub公開スキルの再連携</span></div>
   
   <pre class="prompt" id="b31">前提: 動かなくなったスキル名のリストと、それぞれの元の入手元（分かる範囲で）を貼り付ける。
@@ -380,7 +385,7 @@
     <button class="btn ghost sm" data-save="b31" data-name="codex-prompts100-no93-031.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="スキル・プラグイン復旧系">
   <div class="ih"><span class="num">032</span><span class="ititle">ローカルマーケットプレイスの導入</span></div>
   
   <pre class="prompt" id="b32">前提: Codexでスラッシュコマンドが呼び出せない問題があり、ローカルマーケットプレイス経由の解決策があると聞いた。
@@ -391,7 +396,7 @@
     <button class="btn ghost sm" data-save="b32" data-name="codex-prompts100-no93-032.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="スキル・プラグイン復旧系">
   <div class="ih"><span class="num">033</span><span class="ititle">重要スキルの優先復旧リスト</span></div>
   
   <pre class="prompt" id="b33">前提: 未移行のスキルが7つあり、それぞれの週間利用頻度も分かっている（貼り付ける）。
@@ -402,7 +407,7 @@
     <button class="btn ghost sm" data-save="b33" data-name="codex-prompts100-no93-033.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="スキル・プラグイン復旧系">
   <div class="ih"><span class="num">034</span><span class="ititle">スキル定義ファイルの手動移植</span></div>
   
   <pre class="prompt" id="b34">前提: Claude Code側のSKILL.mdの中身を貼り付ける。
@@ -413,7 +418,7 @@
     <button class="btn ghost sm" data-save="b34" data-name="codex-prompts100-no93-034.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="スキル・プラグイン復旧系">
   <div class="ih"><span class="num">035</span><span class="ititle">プラグインの有効化確認</span></div>
   
   <pre class="prompt" id="b35">前提: ローカルマーケットプレイスを追加し、プラグインをインストールする操作は終えた。
@@ -424,7 +429,7 @@
     <button class="btn ghost sm" data-save="b35" data-name="codex-prompts100-no93-035.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="スキル・プラグイン復旧系">
   <div class="ih"><span class="num">036</span><span class="ititle">復旧作業のログ記録</span></div>
   
   <pre class="prompt" id="b36">前提: 今回、3つのスキルの復旧作業を行った。それぞれの手順を貼り付ける。
@@ -435,7 +440,7 @@
     <button class="btn ghost sm" data-save="b36" data-name="codex-prompts100-no93-036.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="スキル・プラグイン復旧系">
   <div class="ih"><span class="num">037</span><span class="ititle">スキル動作の回帰テスト</span></div>
   
   <pre class="prompt" id="b37">前提: 復旧したスキルの元の仕様（何をトリガーに、何をするか）を貼り付ける。
@@ -446,7 +451,7 @@
     <button class="btn ghost sm" data-save="b37" data-name="codex-prompts100-no93-037.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="スキル・プラグイン復旧系">
   <div class="ih"><span class="num">038</span><span class="ititle">非対応スキルの代替設計</span></div>
   
   <pre class="prompt" id="b38">前提: Output stylesのようにCodexでモデル化されていない機能に依存したスキルがある。
@@ -457,7 +462,7 @@
     <button class="btn ghost sm" data-save="b38" data-name="codex-prompts100-no93-038.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="スキル・プラグイン復旧系">
   <div class="ih"><span class="num">039</span><span class="ititle">スキル復旧の一括プロンプト作成</span></div>
   
   <pre class="prompt" id="b39">前提: 未移行のスキルが5つあり、それぞれの名前と概要のリストを貼り付ける。
@@ -468,7 +473,7 @@
     <button class="btn ghost sm" data-save="b39" data-name="codex-prompts100-no93-039.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="スキル・プラグイン復旧系">
   <div class="ih"><span class="num">040</span><span class="ititle">MCP接続の復旧確認</span></div>
   
   <pre class="prompt" id="b40">前提: 移行前に使っていたMCPサーバーの一覧（名前・用途）を貼り付ける。
@@ -479,7 +484,7 @@
     <button class="btn ghost sm" data-save="b40" data-name="codex-prompts100-no93-040.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="スキル・プラグイン復旧系">
   <div class="ih"><span class="num">041</span><span class="ititle">フック機能の代替実装</span></div>
   
   <pre class="prompt" id="b41">前提: 使っていたフックの一覧（PreToolUse・PostToolUse・ConfigChange等）を貼り付ける。
@@ -490,7 +495,7 @@
     <button class="btn ghost sm" data-save="b41" data-name="codex-prompts100-no93-041.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="スキル・プラグイン復旧系">
   <div class="ih"><span class="num">042</span><span class="ititle">復旧作業の所要時間見積もり</span></div>
   
   <pre class="prompt" id="b42">前提: 未移行のスキル・プラグインが合計8個あり、複雑さもそれぞれ異なる。
@@ -501,7 +506,7 @@
     <button class="btn ghost sm" data-save="b42" data-name="codex-prompts100-no93-042.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="スキル・プラグイン復旧系">
   <div class="ih"><span class="num">043</span><span class="ititle">復旧不要スキルの棚卸し</span></div>
   
   <pre class="prompt" id="b43">前提: 未移行のスキルのうち、直近3ヶ月でほぼ使っていないものが混ざっている。
@@ -512,7 +517,7 @@
     <button class="btn ghost sm" data-save="b43" data-name="codex-prompts100-no93-043.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="スキル・プラグイン復旧系">
   <div class="ih"><span class="num">044</span><span class="ititle">復旧完了後の最終チェックリスト</span></div>
   
   <pre class="prompt" id="b44">前提: 未移行だったスキル・プラグインすべての復旧作業を一通り終えた状態。
@@ -523,8 +528,8 @@
     <button class="btn ghost sm" data-save="b44" data-name="codex-prompts100-no93-044.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">設定同期・併用運用系</h2>
-<div class="icard">
+<h2 class="cat" data-cat="設定同期・併用運用系">設定同期・併用運用系</h2>
+<div class="icard" data-cat="設定同期・併用運用系">
   <div class="ih"><span class="num">045</span><span class="ititle">シンボリックリンクの設計</span></div>
   
   <pre class="prompt" id="b45">前提: 両ツールでスキルセットとルール定義ファイルを共有したいと考えている。
@@ -535,7 +540,7 @@
     <button class="btn ghost sm" data-save="b45" data-name="codex-prompts100-no93-045.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="設定同期・併用運用系">
   <div class="ih"><span class="num">046</span><span class="ititle">併用時のディレクトリ構成設計</span></div>
   
   <pre class="prompt" id="b46">前提: リポジトリのルートに現在CLAUDE.mdのみが存在する状態。
@@ -546,7 +551,7 @@
     <button class="btn ghost sm" data-save="b46" data-name="codex-prompts100-no93-046.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="設定同期・併用運用系">
   <div class="ih"><span class="num">047</span><span class="ititle">チーム内ツール混在の運用ルール作成</span></div>
   
   <pre class="prompt" id="b47">前提: チーム4人のうち2人がClaude Code、2人がCodexを主に使っている。
@@ -557,7 +562,7 @@
     <button class="btn ghost sm" data-save="b47" data-name="codex-prompts100-no93-047.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="設定同期・併用運用系">
   <div class="ih"><span class="num">048</span><span class="ititle">併用時のタスク振り分けルール</span></div>
   
   <pre class="prompt" id="b48">前提: 推論型のClaude Codeと直示型のCodexの特性を踏まえて振り分けたい。
@@ -568,7 +573,7 @@
     <button class="btn ghost sm" data-save="b48" data-name="codex-prompts100-no93-048.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="設定同期・併用運用系">
   <div class="ih"><span class="num">049</span><span class="ititle">設定変更時の反映確認フロー</span></div>
   
   <pre class="prompt" id="b49">前提: シンボリックリンクで設定を共有する構成にしている。
@@ -579,7 +584,7 @@
     <button class="btn ghost sm" data-save="b49" data-name="codex-prompts100-no93-049.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="設定同期・併用運用系">
   <div class="ih"><span class="num">050</span><span class="ititle">併用コストの月次モニタリング表</span></div>
   
   <pre class="prompt" id="b50">前提: Claude ProとChatGPT Plusの両方を契約し、併用している状態。
@@ -590,7 +595,7 @@
     <button class="btn ghost sm" data-save="b50" data-name="codex-prompts100-no93-050.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="設定同期・併用運用系">
   <div class="ih"><span class="num">051</span><span class="ititle">併用時のコンテキスト引き継ぎ</span></div>
   
   <pre class="prompt" id="b51">前提: Claude Codeで途中まで進めていた実装を、Codexに引き継いで続きをやってもらいたい。
@@ -601,7 +606,7 @@
     <button class="btn ghost sm" data-save="b51" data-name="codex-prompts100-no93-051.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="設定同期・併用運用系">
   <div class="ih"><span class="num">052</span><span class="ititle">併用ルールの新メンバーへの説明</span></div>
   
   <pre class="prompt" id="b52">前提: チームでは併用ルール（タスク振り分け・設定同期の仕組み）を運用している。
@@ -612,7 +617,7 @@
     <button class="btn ghost sm" data-save="b52" data-name="codex-prompts100-no93-052.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="設定同期・併用運用系">
   <div class="ih"><span class="num">053</span><span class="ititle">設定の一致度セルフチェック</span></div>
   
   <pre class="prompt" id="b53">前提: 月1回、設定の一致度を確認する習慣をつけたい。
@@ -623,7 +628,7 @@
     <button class="btn ghost sm" data-save="b53" data-name="codex-prompts100-no93-053.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="設定同期・併用運用系">
   <div class="ih"><span class="num">054</span><span class="ititle">併用継続・停止の判断基準</span></div>
   
   <pre class="prompt" id="b54">前提: 併用を始めて1ヶ月が経過し、そろそろ継続するか絞るかを判断したい。
@@ -634,7 +639,7 @@
     <button class="btn ghost sm" data-save="b54" data-name="codex-prompts100-no93-054.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="設定同期・併用運用系">
   <div class="ih"><span class="num">055</span><span class="ititle">併用環境のトラブル事例対応</span></div>
   
   <pre class="prompt" id="b55">前提: 併用を始めたばかりで、まだトラブル対応の経験が少ない。
@@ -645,7 +650,7 @@
     <button class="btn ghost sm" data-save="b55" data-name="codex-prompts100-no93-055.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="設定同期・併用運用系">
   <div class="ih"><span class="num">056</span><span class="ititle">併用フェーズごとの見直しタイミング設計</span></div>
   
   <pre class="prompt" id="b56">前提: 併用開始から3ヶ月・半年・1年というスパンで運用を見直したい。
@@ -656,7 +661,7 @@
     <button class="btn ghost sm" data-save="b56" data-name="codex-prompts100-no93-056.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="設定同期・併用運用系">
   <div class="ih"><span class="num">057</span><span class="ititle">個人設定とチーム共通設定の分離</span></div>
   
   <pre class="prompt" id="b57">前提: settings.jsonとsettings.local.jsonのような、共有／非共有の使い分けをCodex側でも行いたい。
@@ -667,7 +672,7 @@
     <button class="btn ghost sm" data-save="b57" data-name="codex-prompts100-no93-057.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="設定同期・併用運用系">
   <div class="ih"><span class="num">058</span><span class="ititle">併用時の学習コスト最小化</span></div>
   
   <pre class="prompt" id="b58">前提: 両ツールのコマンド体系や操作感の違いに戸惑うことが多い。
@@ -678,8 +683,8 @@
     <button class="btn ghost sm" data-save="b58" data-name="codex-prompts100-no93-058.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">開発スタイル使い分け系</h2>
-<div class="icard">
+<h2 class="cat" data-cat="開発スタイル使い分け系">開発スタイル使い分け系</h2>
+<div class="icard" data-cat="開発スタイル使い分け系">
   <div class="ih"><span class="num">059</span><span class="ititle">推論型タスクの見極め</span></div>
   
   <pre class="prompt" id="b59">前提: これから着手するタスクの概要（要件が固まりきっていない新機能アイデア）を貼り付ける。
@@ -690,7 +695,7 @@
     <button class="btn ghost sm" data-save="b59" data-name="codex-prompts100-no93-059.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="開発スタイル使い分け系">
   <div class="ih"><span class="num">060</span><span class="ititle">曖昧な要望の計画モード活用</span></div>
   
   <pre class="prompt" id="b60">前提: 「もっと使いやすいダッシュボードにしたい」という曖昧な要望がある。
@@ -701,7 +706,7 @@
     <button class="btn ghost sm" data-save="b60" data-name="codex-prompts100-no93-060.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="開発スタイル使い分け系">
   <div class="ih"><span class="num">061</span><span class="ititle">直示型タスクへの要件明文化</span></div>
   
   <pre class="prompt" id="b61">前提: 実装したい機能の大まかなイメージ（貼り付ける）はあるが、詳細な仕様書はまだない。
@@ -712,7 +717,7 @@
     <button class="btn ghost sm" data-save="b61" data-name="codex-prompts100-no93-061.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="開発スタイル使い分け系">
   <div class="ih"><span class="num">062</span><span class="ititle">TDDでの段階実行計画</span></div>
   
   <pre class="prompt" id="b62">前提: これから実装する機能（貼り付ける）についてテスト駆動で進めたい。
@@ -723,7 +728,7 @@
     <button class="btn ghost sm" data-save="b62" data-name="codex-prompts100-no93-062.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="開発スタイル使い分け系">
   <div class="ih"><span class="num">063</span><span class="ititle">先行リサーチの依頼文作成</span></div>
   
   <pre class="prompt" id="b63">前提: 使いたい新しいライブラリ（貼り付ける）の最新の使い方をまだ把握できていない。
@@ -734,7 +739,7 @@
     <button class="btn ghost sm" data-save="b63" data-name="codex-prompts100-no93-063.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="開発スタイル使い分け系">
   <div class="ih"><span class="num">064</span><span class="ititle">レビュー観点の相互補完</span></div>
   
   <pre class="prompt" id="b64">前提: Claude Codeで実装したコードを、別の視点でレビューしたい。
@@ -745,7 +750,7 @@
     <button class="btn ghost sm" data-save="b64" data-name="codex-prompts100-no93-064.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="開発スタイル使い分け系">
   <div class="ih"><span class="num">065</span><span class="ititle">大規模タスクの分解方針</span></div>
   
   <pre class="prompt" id="b65">前提: 着手予定の大規模タスク（ライブラリ移行等、貼り付ける）がある。
@@ -756,7 +761,7 @@
     <button class="btn ghost sm" data-save="b65" data-name="codex-prompts100-no93-065.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="開発スタイル使い分け系">
   <div class="ih"><span class="num">066</span><span class="ititle">新人エンジニアへのツール選定アドバイス</span></div>
   
   <pre class="prompt" id="b66">前提: チームに加わった新人エンジニアがAIコーディングツールに不慣れ。
@@ -767,7 +772,7 @@
     <button class="btn ghost sm" data-save="b66" data-name="codex-prompts100-no93-066.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="開発スタイル使い分け系">
   <div class="ih"><span class="num">067</span><span class="ititle">ガイド前提の依頼文設計</span></div>
   
   <pre class="prompt" id="b67">前提: 実装してほしい機能の背景と、注目してほしいコードベースの箇所（貼り付ける）がある。
@@ -778,7 +783,7 @@
     <button class="btn ghost sm" data-save="b67" data-name="codex-prompts100-no93-067.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="開発スタイル使い分け系">
   <div class="ih"><span class="num">068</span><span class="ititle">音声・長文コンテキストの整理</span></div>
   
   <pre class="prompt" id="b68">前提: Codexとの会話で、まとめてコンテキストを与えてから作業してもらうスタイルを試したい。
@@ -789,7 +794,7 @@
     <button class="btn ghost sm" data-save="b68" data-name="codex-prompts100-no93-068.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="開発スタイル使い分け系">
   <div class="ih"><span class="num">069</span><span class="ititle">エッジケース対応方針の切り替え</span></div>
   
   <pre class="prompt" id="b69">前提: プロトタイプ段階か本番実装段階かで、求めるべき品質レベルが変わる。
@@ -800,7 +805,7 @@
     <button class="btn ghost sm" data-save="b69" data-name="codex-prompts100-no93-069.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="開発スタイル使い分け系">
   <div class="ih"><span class="num">070</span><span class="ititle">PR前クリーンアップの依頼文</span></div>
   
   <pre class="prompt" id="b70">前提: 実装がひととおり終わり、プルリクエストを出す前の整理をしたい。
@@ -811,7 +816,7 @@
     <button class="btn ghost sm" data-save="b70" data-name="codex-prompts100-no93-070.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="開発スタイル使い分け系">
   <div class="ih"><span class="num">071</span><span class="ititle">使い分け実績の振り返りフォーマット</span></div>
   
   <pre class="prompt" id="b71">前提: 1ヶ月間、タスクの性質に応じて両ツールを使い分けてみた。
@@ -822,7 +827,7 @@
     <button class="btn ghost sm" data-save="b71" data-name="codex-prompts100-no93-071.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="開発スタイル使い分け系">
   <div class="ih"><span class="num">072</span><span class="ititle">スタイル混同時の軌道修正</span></div>
   
   <pre class="prompt" id="b72">前提: Codexに曖昧な依頼をしてしまい、意図と違う実装が返ってきた（内容を貼り付ける）。
@@ -833,8 +838,8 @@
     <button class="btn ghost sm" data-save="b72" data-name="codex-prompts100-no93-072.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">コスト最適化系</h2>
-<div class="icard">
+<h2 class="cat" data-cat="コスト最適化系">コスト最適化系</h2>
+<div class="icard" data-cat="コスト最適化系">
   <div class="ih"><span class="num">073</span><span class="ititle">月間トークン使用量の可視化</span></div>
   
   <pre class="prompt" id="b73">前提: 直近1ヶ月の作業内容（頻度・タスクの重さ）を大まかに貼り付ける。
@@ -845,7 +850,7 @@
     <button class="btn ghost sm" data-save="b73" data-name="codex-prompts100-no93-073.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="コスト最適化系">
   <div class="ih"><span class="num">074</span><span class="ititle">週次リミット引っかかり対策</span></div>
   
   <pre class="prompt" id="b74">前提: 週の後半になるといつも利用制限に引っかかってしまう。
@@ -856,7 +861,7 @@
     <button class="btn ghost sm" data-save="b74" data-name="codex-prompts100-no93-074.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="コスト最適化系">
   <div class="ih"><span class="num">075</span><span class="ititle">併用時の作業振り分けによるコスト削減</span></div>
   
   <pre class="prompt" id="b75">前提: 1日の作業に軽いタスクと重いタスクが混在している（内容を貼り付ける）。
@@ -867,7 +872,7 @@
     <button class="btn ghost sm" data-save="b75" data-name="codex-prompts100-no93-075.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="コスト最適化系">
   <div class="ih"><span class="num">076</span><span class="ititle">上位プラン移行の損益分岐点計算</span></div>
   
   <pre class="prompt" id="b76">前提: 現在のプランでの制限到達頻度と、上位プランの価格差（貼り付ける）がある。
@@ -878,7 +883,7 @@
     <button class="btn ghost sm" data-save="b76" data-name="codex-prompts100-no93-076.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="コスト最適化系">
   <div class="ih"><span class="num">077</span><span class="ititle">無駄なトークン消費の削減案</span></div>
   
   <pre class="prompt" id="b77">前提: 普段のやり取りのスタイル（長い前置き・何度もの言い直し等）を貼り付ける。
@@ -889,7 +894,7 @@
     <button class="btn ghost sm" data-save="b77" data-name="codex-prompts100-no93-077.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="コスト最適化系">
   <div class="ih"><span class="num">078</span><span class="ititle">DeepSeek等の低価格AI併用検討</span></div>
   
   <pre class="prompt" id="b78">前提: コストを最優先で抑えたいが、品質もある程度は担保したいタスクがある。
@@ -900,7 +905,7 @@
     <button class="btn ghost sm" data-save="b78" data-name="codex-prompts100-no93-078.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="コスト最適化系">
   <div class="ih"><span class="num">079</span><span class="ititle">チーム全体のコスト最適化提案</span></div>
   
   <pre class="prompt" id="b79">前提: チームメンバーそれぞれが個別にプランを契約している状態（一覧を貼り付ける）。
@@ -911,7 +916,7 @@
     <button class="btn ghost sm" data-save="b79" data-name="codex-prompts100-no93-079.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="コスト最適化系">
   <div class="ih"><span class="num">080</span><span class="ititle">コスト最適化の定期レビュー設計</span></div>
   
   <pre class="prompt" id="b80">前提: 料金プランやAIの性能は今後も変わっていくことが予想される。
@@ -922,7 +927,7 @@
     <button class="btn ghost sm" data-save="b80" data-name="codex-prompts100-no93-080.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="コスト最適化系">
   <div class="ih"><span class="num">081</span><span class="ititle">無料枠の使い切り戦略</span></div>
   
   <pre class="prompt" id="b81">前提: まだ有料プランへの移行を迷っており、無料枠でできる範囲を試したい。
@@ -933,7 +938,7 @@
     <button class="btn ghost sm" data-save="b81" data-name="codex-prompts100-no93-081.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="コスト最適化系">
   <div class="ih"><span class="num">082</span><span class="ititle">コストと生産性のバランス判断</span></div>
   
   <pre class="prompt" id="b82">前提: 低コストなプランに変えることで、作業速度が落ちる可能性がある。
@@ -944,7 +949,7 @@
     <button class="btn ghost sm" data-save="b82" data-name="codex-prompts100-no93-082.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="コスト最適化系">
   <div class="ih"><span class="num">083</span><span class="ititle">サブスク解約タイミングの見極め</span></div>
   
   <pre class="prompt" id="b83">前提: 併用を始めてから、片方のプランをほとんど使わなくなってきている。
@@ -955,7 +960,7 @@
     <button class="btn ghost sm" data-save="b83" data-name="codex-prompts100-no93-083.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="コスト最適化系">
   <div class="ih"><span class="num">084</span><span class="ititle">為替変動を踏まえた価格比較</span></div>
   
   <pre class="prompt" id="b84">前提: 契約中のプランはドル建てで、為替レートの変動でコストが変わる可能性がある。
@@ -966,7 +971,7 @@
     <button class="btn ghost sm" data-save="b84" data-name="codex-prompts100-no93-084.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="コスト最適化系">
   <div class="ih"><span class="num">085</span><span class="ititle">経費精算のための利用ログ整理</span></div>
   
   <pre class="prompt" id="b85">前提: 個人と業務の両方でAIツールを使っており、業務分だけ経費申請したい。
@@ -977,7 +982,7 @@
     <button class="btn ghost sm" data-save="b85" data-name="codex-prompts100-no93-085.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="コスト最適化系">
   <div class="ih"><span class="num">086</span><span class="ititle">コスト削減の落とし穴回避</span></div>
   
   <pre class="prompt" id="b86">前提: コストを削減する施策をいくつか検討している（貼り付ける）。
@@ -988,8 +993,8 @@
     <button class="btn ghost sm" data-save="b86" data-name="codex-prompts100-no93-086.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">チーム導入・展開系</h2>
-<div class="icard">
+<h2 class="cat" data-cat="チーム導入・展開系">チーム導入・展開系</h2>
+<div class="icard" data-cat="チーム導入・展開系">
   <div class="ih"><span class="num">087</span><span class="ititle">導入提案書のたたき台作成</span></div>
   
   <pre class="prompt" id="b87">前提: チームの現状の課題（貼り付ける）と、導入によって期待できる効果を整理したい。
@@ -1000,7 +1005,7 @@
     <button class="btn ghost sm" data-save="b87" data-name="codex-prompts100-no93-087.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="チーム導入・展開系">
   <div class="ih"><span class="num">088</span><span class="ititle">パイロット導入の対象選定</span></div>
   
   <pre class="prompt" id="b88">前提: チームは5つあり、それぞれの業務内容とAIツールへの慣れ度合い（貼り付ける）が異なる。
@@ -1011,7 +1016,7 @@
     <button class="btn ghost sm" data-save="b88" data-name="codex-prompts100-no93-088.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="チーム導入・展開系">
   <div class="ih"><span class="num">089</span><span class="ititle">導入効果測定指標の設計</span></div>
   
   <pre class="prompt" id="b89">前提: 導入前の状態（作業時間・エラー件数等の目安）を貼り付ける。
@@ -1022,7 +1027,7 @@
     <button class="btn ghost sm" data-save="b89" data-name="codex-prompts100-no93-089.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="チーム導入・展開系">
   <div class="ih"><span class="num">090</span><span class="ititle">セキュリティ懸念への回答準備</span></div>
   
   <pre class="prompt" id="b90">前提: 社内でAIツール導入時にセキュリティ懸念が出ることが多い。
@@ -1033,7 +1038,7 @@
     <button class="btn ghost sm" data-save="b90" data-name="codex-prompts100-no93-090.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="チーム導入・展開系">
   <div class="ih"><span class="num">091</span><span class="ititle">既存ワークフローへの組み込み計画</span></div>
   
   <pre class="prompt" id="b91">前提: チームの開発フロー（要件定義→実装→レビュー→リリース）を貼り付ける。
@@ -1044,7 +1049,7 @@
     <button class="btn ghost sm" data-save="b91" data-name="codex-prompts100-no93-091.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="チーム導入・展開系">
   <div class="ih"><span class="num">092</span><span class="ititle">社内向け勉強会の構成案</span></div>
   
   <pre class="prompt" id="b92">前提: 勉強会の対象は、AIツールにあまり触れたことがないメンバー中心。
@@ -1055,7 +1060,7 @@
     <button class="btn ghost sm" data-save="b92" data-name="codex-prompts100-no93-092.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="チーム導入・展開系">
   <div class="ih"><span class="num">093</span><span class="ititle">導入後のサポート体制設計</span></div>
   
   <pre class="prompt" id="b93">前提: チームメンバーはAIツールの習熟度にばらつきがある。
@@ -1066,7 +1071,7 @@
     <button class="btn ghost sm" data-save="b93" data-name="codex-prompts100-no93-093.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="チーム導入・展開系">
   <div class="ih"><span class="num">094</span><span class="ititle">他部署への展開ロードマップ</span></div>
   
   <pre class="prompt" id="b94">前提: パイロットチームでの導入が一定の成果を出した状態（結果を貼り付ける）。
@@ -1077,7 +1082,7 @@
     <button class="btn ghost sm" data-save="b94" data-name="codex-prompts100-no93-094.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="チーム導入・展開系">
   <div class="ih"><span class="num">095</span><span class="ititle">導入失敗時の撤退基準</span></div>
   
   <pre class="prompt" id="b95">前提: パイロット導入を始める前に、撤退基準も併せて決めておきたい。
@@ -1088,7 +1093,7 @@
     <button class="btn ghost sm" data-save="b95" data-name="codex-prompts100-no93-095.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="チーム導入・展開系">
   <div class="ih"><span class="num">096</span><span class="ititle">ツール選定の意思決定フロー</span></div>
   
   <pre class="prompt" id="b96">前提: ツール選定の権限が曖昧で、誰が最終決定するか不明確な状態。
@@ -1099,7 +1104,7 @@
     <button class="btn ghost sm" data-save="b96" data-name="codex-prompts100-no93-096.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="チーム導入・展開系">
   <div class="ih"><span class="num">097</span><span class="ititle">導入コストの予算化資料</span></div>
   
   <pre class="prompt" id="b97">前提: 想定人数・プラン・利用期間（貼り付ける）から予算感を出したい。
@@ -1110,7 +1115,7 @@
     <button class="btn ghost sm" data-save="b97" data-name="codex-prompts100-no93-097.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="チーム導入・展開系">
   <div class="ih"><span class="num">098</span><span class="ititle">既存ツールからの移行スケジュール</span></div>
   
   <pre class="prompt" id="b98">前提: チーム全体で使っている既存ツールから、段階的に移行したい。
@@ -1121,7 +1126,7 @@
     <button class="btn ghost sm" data-save="b98" data-name="codex-prompts100-no93-098.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="チーム導入・展開系">
   <div class="ih"><span class="num">099</span><span class="ititle">導入後のガバナンスルール整備</span></div>
   
   <pre class="prompt" id="b99">前提: チームでの利用が広がってきたが、明文化されたルールがまだない。
@@ -1132,7 +1137,7 @@
     <button class="btn ghost sm" data-save="b99" data-name="codex-prompts100-no93-099.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="チーム導入・展開系">
   <div class="ih"><span class="num">100</span><span class="ititle">導入事例の社内共有フォーマット</span></div>
   
   <pre class="prompt" id="b100">前提: 導入によって効果が出た具体的な事例（貼り付ける）がある。
@@ -2183,6 +2188,57 @@ Codexを「賢いモデル」として扱い、こちらがしっかりガイド
 以上、100個です。内訳: 移行判断・準備系14本／インポート実行・検証系15本／スキル・プラグイン復旧系15本／設定同期・併用運用系14本／開発スタイル使い分け系14本／コスト最適化系14本／チーム導入・展開系14本
 </pre>
 <script>
+// 項目の多いキットで、目的の1件に辿り着けるようにする絞り込み。
+// 検索はタイトル・説明だけでなく本文も対象にする（「あの文言が入っていた項目」で探せるように）。
+(function(){
+  var q = document.getElementById('kq');
+  if (!q) return;
+  var hit = document.getElementById('khit');
+  var cards = [].slice.call(document.querySelectorAll('.kwrap .icard'));
+  var heads = [].slice.call(document.querySelectorAll('.kwrap h2.cat'));
+  var chips = [].slice.call(document.querySelectorAll('.kcat'));
+  var cat = '';
+
+  // ひらがな・カタカナの違いで取りこぼさないようにする（ハブ側の検索と同じ扱い）
+  function norm(s){
+    return (s || '').toLowerCase().replace(/[ぁ-ん]/g, function(c){
+      return String.fromCharCode(c.charCodeAt(0) + 0x60);
+    });
+  }
+
+  // カード全体の textContent だとボタンの「コピー」まで拾ってしまうため、中身を選んで集める
+  cards.forEach(function(c){
+    var t = c.querySelector('.ititle'), d = c.querySelector('.imeta'), p = c.querySelector('.prompt');
+    c._t = norm((t ? t.textContent : '') + ' ' + (d ? d.textContent : '') + ' ' + (p ? p.textContent : ''));
+  });
+
+  function apply(){
+    var kw = norm(q.value.trim()), n = 0, shown = {};
+    cards.forEach(function(c){
+      var ok = (!cat || c.getAttribute('data-cat') === cat)
+            && (!kw || c._t.indexOf(kw) !== -1);
+      c.classList.toggle('hide', !ok);
+      if (ok){ n++; shown[c.getAttribute('data-cat')] = 1; }
+    });
+    // 残った項目が1件も無いカテゴリの見出しは隠す
+    heads.forEach(function(h){
+      h.classList.toggle('hide', !shown[h.getAttribute('data-cat')]);
+    });
+    hit.textContent = (kw || cat)
+      ? (n ? n + '件を表示中' : '該当する項目がありません')
+      : '';
+  }
+
+  q.addEventListener('input', apply);
+  chips.forEach(function(b){
+    b.addEventListener('click', function(){
+      cat = b.getAttribute('data-cat');
+      chips.forEach(function(x){ x.classList.toggle('on', x === b); });
+      apply();
+    });
+  });
+})();
+
 function flash(btn, label){
   const old = btn.textContent, cls = btn.className;
   btn.textContent = label; btn.classList.add('ok');
@@ -2252,7 +2308,22 @@ document.addEventListener('click', e => {
     el.classList.remove('show');
     sessionStorage.setItem('promoClosed', '1');
   }
-  setTimeout(function(){ el.classList.add('show'); }, 1600);
+  // 動画の概要欄から来た人が、自分のプレゼントを探し始める瞬間に被らないようにする。
+  // 以前は読み込み1.6秒後に無条件で出しており、いちばん目的意識の高い時間を塞いでいた。
+  // 中身を見に行った（＝目当てのものに辿り着いた）ころに出す。
+  var shown = false;
+  function show(){
+    if (shown) return;
+    shown = true;
+    el.classList.add('show');
+    removeEventListener('scroll', onScroll);
+  }
+  function onScroll(){
+    if (scrollY > innerHeight * 0.8) show();
+  }
+  addEventListener('scroll', onScroll, {passive:true});
+  // まったくスクロールしない人にも最後には出す（ただし十分に間を置いてから）
+  setTimeout(show, 45000);
   document.getElementById('promoClose').addEventListener('click', function(e){ e.preventDefault(); close(); });
   el.addEventListener('click', function(e){ if (e.target === el) close(); });
 })();

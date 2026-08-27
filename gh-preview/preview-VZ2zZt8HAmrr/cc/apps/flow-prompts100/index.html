@@ -36,8 +36,13 @@
     <div class="pnote"><span class="nb">下のカードから、</span><span class="nb">1件ずつコピー、</span><span class="nb">または個別にダウンロードできます。</span><span class="nb">まとめて欲しいときは、</span><span class="nb">上の</span><span class="nb">「全件ダウンロード」を</span><span class="nb">お使いください。</span></div>
   </section>
 
-  <h2 class="cat">メール整理・通知</h2>
-<div class="icard">
+  <div class="ktools">
+  <input type="search" id="kq" placeholder="この中から探す" autocomplete="off" aria-label="この中から探す">
+  <div class="kcats"><button type="button" class="kcat on" data-cat="">すべて<span class="n">100</span></button><button type="button" class="kcat" data-cat="メール整理・通知">メール整理・通知<span class="n">10</span></button><button type="button" class="kcat" data-cat="会議・カレンダー">会議・カレンダー<span class="n">10</span></button><button type="button" class="kcat" data-cat="タスク・ToDo管理">タスク・ToDo管理<span class="n">10</span></button><button type="button" class="kcat" data-cat="承認・ワークフロー">承認・ワークフロー<span class="n">10</span></button><button type="button" class="kcat" data-cat="週次・月次レポート">週次・月次レポート<span class="n">10</span></button><button type="button" class="kcat" data-cat="クレーム・カスタマー対応">クレーム・カスタマー対応<span class="n">10</span></button><button type="button" class="kcat" data-cat="情報収集・要約">情報収集・要約<span class="n">10</span></button><button type="button" class="kcat" data-cat="ドキュメント・議事録">ドキュメント・議事録<span class="n">10</span></button><button type="button" class="kcat" data-cat="チーム連携・Chat通知">チーム連携・Chat通知<span class="n">10</span></button><button type="button" class="kcat" data-cat="外部ツール連携（Asana / Jira / Salesforce等）">外部ツール連携（Asana / Jira / Salesforce等）<span class="n">10</span></button></div>
+  <p class="khit" id="khit" role="status"></p>
+</div>
+<h2 class="cat" data-cat="メール整理・通知">メール整理・通知</h2>
+<div class="icard" data-cat="メール整理・通知">
   <div class="ih"><span class="num">001</span><span class="ititle">毎朝8時に、前日受信した未読メールの件数と要点を3行で要約してChatの「メール」ス…</span></div>
   
   <pre class="prompt" id="b1">毎朝8時に、前日受信した未読メールの件数と要点を3行で要約してChatの「メール」スペースに送って。</pre>
@@ -46,7 +51,7 @@
     <button class="btn ghost sm" data-save="b1" data-name="flow-prompts100-001.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="メール整理・通知">
   <div class="ih"><span class="num">002</span><span class="ititle">件名または本文に「至急」「緊急」という言葉が含まれるメールを受信したら、即座にCha…</span></div>
   
   <pre class="prompt" id="b2">件名または本文に「至急」「緊急」という言葉が含まれるメールを受信したら、即座にChatで自分に通知して。</pre>
@@ -55,7 +60,7 @@
     <button class="btn ghost sm" data-save="b2" data-name="flow-prompts100-002.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="メール整理・通知">
   <div class="ih"><span class="num">003</span><span class="ititle">特定の送信者（上司や重要取引先）からメールが届いたら、内容を1行で要約してChatに…</span></div>
   
   <pre class="prompt" id="b3">特定の送信者（上司や重要取引先）からメールが届いたら、内容を1行で要約してChatに通知して。</pre>
@@ -64,7 +69,7 @@
     <button class="btn ghost sm" data-save="b3" data-name="flow-prompts100-003.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="メール整理・通知">
   <div class="ih"><span class="num">004</span><span class="ititle">受信したメールに質問文が含まれているかGeminiに判定させ、含まれていたら「要返信…</span></div>
   
   <pre class="prompt" id="b4">受信したメールに質問文が含まれているかGeminiに判定させ、含まれていたら「要返信」ラベルを付けて。</pre>
@@ -73,7 +78,7 @@
     <button class="btn ghost sm" data-save="b4" data-name="flow-prompts100-004.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="メール整理・通知">
   <div class="ih"><span class="num">005</span><span class="ititle">アクションアイテム（依頼・締切）が含まれるメールを検出したら自動でスターを付けて。</span></div>
   
   <pre class="prompt" id="b5">アクションアイテム（依頼・締切）が含まれるメールを検出したら自動でスターを付けて。</pre>
@@ -82,7 +87,7 @@
     <button class="btn ghost sm" data-save="b5" data-name="flow-prompts100-005.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="メール整理・通知">
   <div class="ih"><span class="num">006</span><span class="ititle">フォローが必要そうな未返信メールを検出したら、3日後にリマインドとしてChatに通知…</span></div>
   
   <pre class="prompt" id="b6">フォローが必要そうな未返信メールを検出したら、3日後にリマインドとしてChatに通知して。</pre>
@@ -91,7 +96,7 @@
     <button class="btn ghost sm" data-save="b6" data-name="flow-prompts100-006.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="メール整理・通知">
   <div class="ih"><span class="num">007</span><span class="ititle">メールにネガティブな感情（クレーム・苦情）が込められているかGeminiに判定させ、…</span></div>
   
   <pre class="prompt" id="b7">メールにネガティブな感情（クレーム・苦情）が込められているかGeminiに判定させ、該当したらChatでチームに通知して。</pre>
@@ -100,7 +105,7 @@
     <button class="btn ghost sm" data-save="b7" data-name="flow-prompts100-007.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="メール整理・通知">
   <div class="ih"><span class="num">008</span><span class="ititle">添付ファイル付きのメールを受信したら、添付ファイルを指定のドライブフォルダに自動保存…</span></div>
   
   <pre class="prompt" id="b8">添付ファイル付きのメールを受信したら、添付ファイルを指定のドライブフォルダに自動保存して。</pre>
@@ -109,7 +114,7 @@
     <button class="btn ghost sm" data-save="b8" data-name="flow-prompts100-008.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="メール整理・通知">
   <div class="ih"><span class="num">009</span><span class="ititle">毎週金曜17時に、その週に受信した重要メール（スター付き）の一覧をメールで自分に送っ…</span></div>
   
   <pre class="prompt" id="b9">毎週金曜17時に、その週に受信した重要メール（スター付き）の一覧をメールで自分に送って。</pre>
@@ -118,7 +123,7 @@
     <button class="btn ghost sm" data-save="b9" data-name="flow-prompts100-009.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="メール整理・通知">
   <div class="ih"><span class="num">010</span><span class="ititle">特定のラベルが付いたメールが10件たまったら、まとめて要約をChatに送って。</span></div>
   
   <pre class="prompt" id="b10">特定のラベルが付いたメールが10件たまったら、まとめて要約をChatに送って。</pre>
@@ -127,8 +132,8 @@
     <button class="btn ghost sm" data-save="b10" data-name="flow-prompts100-010.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">会議・カレンダー</h2>
-<div class="icard">
+<h2 class="cat" data-cat="会議・カレンダー">会議・カレンダー</h2>
+<div class="icard" data-cat="会議・カレンダー">
   <div class="ih"><span class="num">011</span><span class="ititle">カレンダーの予定が始まる30分前に、関連するメール・ドキュメントへのリンクをまとめて…</span></div>
   
   <pre class="prompt" id="b11">カレンダーの予定が始まる30分前に、関連するメール・ドキュメントへのリンクをまとめてChatで通知して。</pre>
@@ -137,7 +142,7 @@
     <button class="btn ghost sm" data-save="b11" data-name="flow-prompts100-011.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="会議・カレンダー">
   <div class="ih"><span class="num">012</span><span class="ititle">会議が終了したら15分後に、参加者へ「議事録を確認してください」というリマインドメー…</span></div>
   
   <pre class="prompt" id="b12">会議が終了したら15分後に、参加者へ「議事録を確認してください」というリマインドメールを自動送信して。</pre>
@@ -146,7 +151,7 @@
     <button class="btn ghost sm" data-save="b12" data-name="flow-prompts100-012.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="会議・カレンダー">
   <div class="ih"><span class="num">013</span><span class="ititle">新しい予定がカレンダーに追加されたら、その内容を要約してChatの「今週の予定」スペ…</span></div>
   
   <pre class="prompt" id="b13">新しい予定がカレンダーに追加されたら、その内容を要約してChatの「今週の予定」スペースに投稿して。</pre>
@@ -155,7 +160,7 @@
     <button class="btn ghost sm" data-save="b13" data-name="flow-prompts100-013.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="会議・カレンダー">
   <div class="ih"><span class="num">014</span><span class="ititle">終日の予定（休暇など）が登録されたら、チームのChatスペースに自動で共有して。</span></div>
   
   <pre class="prompt" id="b14">終日の予定（休暇など）が登録されたら、チームのChatスペースに自動で共有して。</pre>
@@ -164,7 +169,7 @@
     <button class="btn ghost sm" data-save="b14" data-name="flow-prompts100-014.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="会議・カレンダー">
   <div class="ih"><span class="num">015</span><span class="ititle">毎週月曜9時に、今週のカレンダー予定を一覧化してメールで送って。</span></div>
   
   <pre class="prompt" id="b15">毎週月曜9時に、今週のカレンダー予定を一覧化してメールで送って。</pre>
@@ -173,7 +178,7 @@
     <button class="btn ghost sm" data-save="b15" data-name="flow-prompts100-015.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="会議・カレンダー">
   <div class="ih"><span class="num">016</span><span class="ititle">会議室の予約が重複していそうな予定を検出したら、Chatで注意喚起して。</span></div>
   
   <pre class="prompt" id="b16">会議室の予約が重複していそうな予定を検出したら、Chatで注意喚起して。</pre>
@@ -182,7 +187,7 @@
     <button class="btn ghost sm" data-save="b16" data-name="flow-prompts100-016.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="会議・カレンダー">
   <div class="ih"><span class="num">017</span><span class="ititle">顧客との商談予定が入ったら、関連する過去メールを検索して要点をまとめ、事前準備メモと…</span></div>
   
   <pre class="prompt" id="b17">顧客との商談予定が入ったら、関連する過去メールを検索して要点をまとめ、事前準備メモとしてドキュメントに作成して。</pre>
@@ -191,7 +196,7 @@
     <button class="btn ghost sm" data-save="b17" data-name="flow-prompts100-017.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="会議・カレンダー">
   <div class="ih"><span class="num">018</span><span class="ititle">定例会議の予定に「議題」が書かれていない場合、開催者にリマインドメールを送って。</span></div>
   
   <pre class="prompt" id="b18">定例会議の予定に「議題」が書かれていない場合、開催者にリマインドメールを送って。</pre>
@@ -200,7 +205,7 @@
     <button class="btn ghost sm" data-save="b18" data-name="flow-prompts100-018.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="会議・カレンダー">
   <div class="ih"><span class="num">019</span><span class="ititle">予定のキャンセルが発生したら、参加者全員にChatで通知して。</span></div>
   
   <pre class="prompt" id="b19">予定のキャンセルが発生したら、参加者全員にChatで通知して。</pre>
@@ -209,7 +214,7 @@
     <button class="btn ghost sm" data-save="b19" data-name="flow-prompts100-019.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="会議・カレンダー">
   <div class="ih"><span class="num">020</span><span class="ititle">毎日17時に、翌日の予定件数と最初の予定時刻をChatに通知して。</span></div>
   
   <pre class="prompt" id="b20">毎日17時に、翌日の予定件数と最初の予定時刻をChatに通知して。</pre>
@@ -218,8 +223,8 @@
     <button class="btn ghost sm" data-save="b20" data-name="flow-prompts100-020.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">タスク・ToDo管理</h2>
-<div class="icard">
+<h2 class="cat" data-cat="タスク・ToDo管理">タスク・ToDo管理</h2>
+<div class="icard" data-cat="タスク・ToDo管理">
   <div class="ih"><span class="num">021</span><span class="ititle">メールで依頼された作業内容を抽出して、Google Todoにタスクとして自動登録し…</span></div>
   
   <pre class="prompt" id="b21">メールで依頼された作業内容を抽出して、Google Todoにタスクとして自動登録して。</pre>
@@ -228,7 +233,7 @@
     <button class="btn ghost sm" data-save="b21" data-name="flow-prompts100-021.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="タスク・ToDo管理">
   <div class="ih"><span class="num">022</span><span class="ititle">Chatで自分宛てにメンションされたメッセージから、依頼事項をタスク化して。</span></div>
   
   <pre class="prompt" id="b22">Chatで自分宛てにメンションされたメッセージから、依頼事項をタスク化して。</pre>
@@ -237,7 +242,7 @@
     <button class="btn ghost sm" data-save="b22" data-name="flow-prompts100-022.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="タスク・ToDo管理">
   <div class="ih"><span class="num">023</span><span class="ititle">期限が今日のタスクを朝9時に一覧化してChatに通知して。</span></div>
   
   <pre class="prompt" id="b23">期限が今日のタスクを朝9時に一覧化してChatに通知して。</pre>
@@ -246,7 +251,7 @@
     <button class="btn ghost sm" data-save="b23" data-name="flow-prompts100-023.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="タスク・ToDo管理">
   <div class="ih"><span class="num">024</span><span class="ititle">3日以上更新のないタスクを検出したら、担当者（自分）にリマインドを送って。</span></div>
   
   <pre class="prompt" id="b24">3日以上更新のないタスクを検出したら、担当者（自分）にリマインドを送って。</pre>
@@ -255,7 +260,7 @@
     <button class="btn ghost sm" data-save="b24" data-name="flow-prompts100-024.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="タスク・ToDo管理">
   <div class="ih"><span class="num">025</span><span class="ititle">スプレッドシートの「完了」列がtrueになった行を検出したら、対応するタスクを自動で…</span></div>
   
   <pre class="prompt" id="b25">スプレッドシートの「完了」列がtrueになった行を検出したら、対応するタスクを自動でクローズして。</pre>
@@ -264,7 +269,7 @@
     <button class="btn ghost sm" data-save="b25" data-name="flow-prompts100-025.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="タスク・ToDo管理">
   <div class="ih"><span class="num">026</span><span class="ititle">新しいプロジェクトが始まったら、決まったテンプレートのタスクリストをGoogle T…</span></div>
   
   <pre class="prompt" id="b26">新しいプロジェクトが始まったら、決まったテンプレートのタスクリストをGoogle Todoに一括作成して。</pre>
@@ -273,7 +278,7 @@
     <button class="btn ghost sm" data-save="b26" data-name="flow-prompts100-026.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="タスク・ToDo管理">
   <div class="ih"><span class="num">027</span><span class="ititle">毎週金曜に、今週完了したタスクの件数をまとめてメールで自分に送って。</span></div>
   
   <pre class="prompt" id="b27">毎週金曜に、今週完了したタスクの件数をまとめてメールで自分に送って。</pre>
@@ -282,7 +287,7 @@
     <button class="btn ghost sm" data-save="b27" data-name="flow-prompts100-027.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="タスク・ToDo管理">
   <div class="ih"><span class="num">028</span><span class="ititle">優先度が「高」のタスクが未着手のまま2日経過したら、Chatで自分に警告して。</span></div>
   
   <pre class="prompt" id="b28">優先度が「高」のタスクが未着手のまま2日経過したら、Chatで自分に警告して。</pre>
@@ -291,7 +296,7 @@
     <button class="btn ghost sm" data-save="b28" data-name="flow-prompts100-028.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="タスク・ToDo管理">
   <div class="ih"><span class="num">029</span><span class="ititle">会議の議事録ドキュメントからアクションアイテムを抽出し、タスクとして登録して。</span></div>
   
   <pre class="prompt" id="b29">会議の議事録ドキュメントからアクションアイテムを抽出し、タスクとして登録して。</pre>
@@ -300,7 +305,7 @@
     <button class="btn ghost sm" data-save="b29" data-name="flow-prompts100-029.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="タスク・ToDo管理">
   <div class="ih"><span class="num">030</span><span class="ititle">毎朝、今日締切のタスクと明日締切のタスクをまとめてメールで送って。</span></div>
   
   <pre class="prompt" id="b30">毎朝、今日締切のタスクと明日締切のタスクをまとめてメールで送って。</pre>
@@ -309,8 +314,8 @@
     <button class="btn ghost sm" data-save="b30" data-name="flow-prompts100-030.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">承認・ワークフロー</h2>
-<div class="icard">
+<h2 class="cat" data-cat="承認・ワークフロー">承認・ワークフロー</h2>
+<div class="icard" data-cat="承認・ワークフロー">
   <div class="ih"><span class="num">031</span><span class="ititle">経費申請のスプレッドシートに新しい行が追加されたら、金額が3万円を超える場合のみ上長…</span></div>
   
   <pre class="prompt" id="b31">経費申請のスプレッドシートに新しい行が追加されたら、金額が3万円を超える場合のみ上長にChatで承認依頼を送って。</pre>
@@ -319,7 +324,7 @@
     <button class="btn ghost sm" data-save="b31" data-name="flow-prompts100-031.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="承認・ワークフロー">
   <div class="ih"><span class="num">032</span><span class="ititle">フォームで提出された休暇申請を、内容を要約したうえでメールで承認者に転送して。</span></div>
   
   <pre class="prompt" id="b32">フォームで提出された休暇申請を、内容を要約したうえでメールで承認者に転送して。</pre>
@@ -328,7 +333,7 @@
     <button class="btn ghost sm" data-save="b32" data-name="flow-prompts100-032.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="承認・ワークフロー">
   <div class="ih"><span class="num">033</span><span class="ititle">契約書ドキュメントが「レビュー待ち」ステータスになったら、担当者にChatで通知して…</span></div>
   
   <pre class="prompt" id="b33">契約書ドキュメントが「レビュー待ち」ステータスになったら、担当者にChatで通知して。</pre>
@@ -337,7 +342,7 @@
     <button class="btn ghost sm" data-save="b33" data-name="flow-prompts100-033.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="承認・ワークフロー">
   <div class="ih"><span class="num">034</span><span class="ititle">スプレッドシートの承認ステータスが「承認」に変わったら、申請者にメールで結果を通知し…</span></div>
   
   <pre class="prompt" id="b34">スプレッドシートの承認ステータスが「承認」に変わったら、申請者にメールで結果を通知して。</pre>
@@ -346,7 +351,7 @@
     <button class="btn ghost sm" data-save="b34" data-name="flow-prompts100-034.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="承認・ワークフロー">
   <div class="ih"><span class="num">035</span><span class="ititle">新しいベンダー登録フォームが提出されたら、必須項目が揃っているかGeminiにチェッ…</span></div>
   
   <pre class="prompt" id="b35">新しいベンダー登録フォームが提出されたら、必須項目が揃っているかGeminiにチェックさせ、不備があれば提出者に差し戻しメールを送って。</pre>
@@ -355,7 +360,7 @@
     <button class="btn ghost sm" data-save="b35" data-name="flow-prompts100-035.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="承認・ワークフロー">
   <div class="ih"><span class="num">036</span><span class="ititle">稟議書ドキュメントに一定期間コメントが付かない場合、承認者にリマインドを送って。</span></div>
   
   <pre class="prompt" id="b36">稟議書ドキュメントに一定期間コメントが付かない場合、承認者にリマインドを送って。</pre>
@@ -364,7 +369,7 @@
     <button class="btn ghost sm" data-save="b36" data-name="flow-prompts100-036.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="承認・ワークフロー">
   <div class="ih"><span class="num">037</span><span class="ititle">見積書の依頼メールを受信したら、テンプレートに沿った返信下書きを自動生成して。</span></div>
   
   <pre class="prompt" id="b37">見積書の依頼メールを受信したら、テンプレートに沿った返信下書きを自動生成して。</pre>
@@ -373,7 +378,7 @@
     <button class="btn ghost sm" data-save="b37" data-name="flow-prompts100-037.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="承認・ワークフロー">
   <div class="ih"><span class="num">038</span><span class="ititle">契約更新日の30日前になったら、担当者にChatでリマインドして。</span></div>
   
   <pre class="prompt" id="b38">契約更新日の30日前になったら、担当者にChatでリマインドして。</pre>
@@ -382,7 +387,7 @@
     <button class="btn ghost sm" data-save="b38" data-name="flow-prompts100-038.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="承認・ワークフロー">
   <div class="ih"><span class="num">039</span><span class="ititle">フォームの回答内容を条件分岐で仕分けし、金額規模別に異なる承認者へ自動転送して。</span></div>
   
   <pre class="prompt" id="b39">フォームの回答内容を条件分岐で仕分けし、金額規模別に異なる承認者へ自動転送して。</pre>
@@ -391,7 +396,7 @@
     <button class="btn ghost sm" data-save="b39" data-name="flow-prompts100-039.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="承認・ワークフロー">
   <div class="ih"><span class="num">040</span><span class="ititle">承認待ちの申請が5件たまったら、まとめてダイジェストをメールで承認者に送って。</span></div>
   
   <pre class="prompt" id="b40">承認待ちの申請が5件たまったら、まとめてダイジェストをメールで承認者に送って。</pre>
@@ -400,8 +405,8 @@
     <button class="btn ghost sm" data-save="b40" data-name="flow-prompts100-040.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">週次・月次レポート</h2>
-<div class="icard">
+<h2 class="cat" data-cat="週次・月次レポート">週次・月次レポート</h2>
+<div class="icard" data-cat="週次・月次レポート">
   <div class="ih"><span class="num">041</span><span class="ititle">毎週金曜17時に、その週に受信したニュースレターの見出しを要約してメールで送って。</span></div>
   
   <pre class="prompt" id="b41">毎週金曜17時に、その週に受信したニュースレターの見出しを要約してメールで送って。</pre>
@@ -410,7 +415,7 @@
     <button class="btn ghost sm" data-save="b41" data-name="flow-prompts100-041.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="週次・月次レポート">
   <div class="ih"><span class="num">042</span><span class="ititle">スプレッドシートの売上データを毎週月曜に集計し、前週比の要約をChatに投稿して。</span></div>
   
   <pre class="prompt" id="b42">スプレッドシートの売上データを毎週月曜に集計し、前週比の要約をChatに投稿して。</pre>
@@ -419,7 +424,7 @@
     <button class="btn ghost sm" data-save="b42" data-name="flow-prompts100-042.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="週次・月次レポート">
   <div class="ih"><span class="num">043</span><span class="ititle">月初に、前月のカレンダー実施会議数を集計してレポート化して。</span></div>
   
   <pre class="prompt" id="b43">月初に、前月のカレンダー実施会議数を集計してレポート化して。</pre>
@@ -428,7 +433,7 @@
     <button class="btn ghost sm" data-save="b43" data-name="flow-prompts100-043.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="週次・月次レポート">
   <div class="ih"><span class="num">044</span><span class="ititle">毎週、チームメンバーが完了したタスク数をスプレッドシートから集計してChatに共有し…</span></div>
   
   <pre class="prompt" id="b44">毎週、チームメンバーが完了したタスク数をスプレッドシートから集計してChatに共有して。</pre>
@@ -437,7 +442,7 @@
     <button class="btn ghost sm" data-save="b44" data-name="flow-prompts100-044.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="週次・月次レポート">
   <div class="ih"><span class="num">045</span><span class="ititle">特定のGoogleアラート・ニュースフィードのメールを毎日要約して、朝一でメールにま…</span></div>
   
   <pre class="prompt" id="b45">特定のGoogleアラート・ニュースフィードのメールを毎日要約して、朝一でメールにまとめて送って。</pre>
@@ -446,7 +451,7 @@
     <button class="btn ghost sm" data-save="b45" data-name="flow-prompts100-045.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="週次・月次レポート">
   <div class="ih"><span class="num">046</span><span class="ititle">月次で、顧客からの問い合わせメール件数をカテゴリ別に集計してレポートドキュメントを作…</span></div>
   
   <pre class="prompt" id="b46">月次で、顧客からの問い合わせメール件数をカテゴリ別に集計してレポートドキュメントを作成して。</pre>
@@ -455,7 +460,7 @@
     <button class="btn ghost sm" data-save="b46" data-name="flow-prompts100-046.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="週次・月次レポート">
   <div class="ih"><span class="num">047</span><span class="ititle">四半期ごとに、達成したタスク・プロジェクトの一覧をドキュメントにまとめて。</span></div>
   
   <pre class="prompt" id="b47">四半期ごとに、達成したタスク・プロジェクトの一覧をドキュメントにまとめて。</pre>
@@ -464,7 +469,7 @@
     <button class="btn ghost sm" data-save="b47" data-name="flow-prompts100-047.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="週次・月次レポート">
   <div class="ih"><span class="num">048</span><span class="ititle">毎週水曜に、その週のカレンダー予定と実績（完了タスク）を並べたサマリーをメールで送っ…</span></div>
   
   <pre class="prompt" id="b48">毎週水曜に、その週のカレンダー予定と実績（完了タスク）を並べたサマリーをメールで送って。</pre>
@@ -473,7 +478,7 @@
     <button class="btn ghost sm" data-save="b48" data-name="flow-prompts100-048.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="週次・月次レポート">
   <div class="ih"><span class="num">049</span><span class="ititle">月末に、その月のスプレッドシート更新履歴を要約してChatに共有して。</span></div>
   
   <pre class="prompt" id="b49">月末に、その月のスプレッドシート更新履歴を要約してChatに共有して。</pre>
@@ -482,7 +487,7 @@
     <button class="btn ghost sm" data-save="b49" data-name="flow-prompts100-049.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="週次・月次レポート">
   <div class="ih"><span class="num">050</span><span class="ititle">週次定例前に、先週のアクションアイテムの進捗をスプレッドシートから抽出して要約して。</span></div>
   
   <pre class="prompt" id="b50">週次定例前に、先週のアクションアイテムの進捗をスプレッドシートから抽出して要約して。</pre>
@@ -491,8 +496,8 @@
     <button class="btn ghost sm" data-save="b50" data-name="flow-prompts100-050.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">クレーム・カスタマー対応</h2>
-<div class="icard">
+<h2 class="cat" data-cat="クレーム・カスタマー対応">クレーム・カスタマー対応</h2>
+<div class="icard" data-cat="クレーム・カスタマー対応">
   <div class="ih"><span class="num">051</span><span class="ititle">受信したメールにネガティブな感情が込められているかGeminiに判定させ、該当したら…</span></div>
   
   <pre class="prompt" id="b51">受信したメールにネガティブな感情が込められているかGeminiに判定させ、該当したら内容を要約してChatでサポートチームに通知して。</pre>
@@ -501,7 +506,7 @@
     <button class="btn ghost sm" data-save="b51" data-name="flow-prompts100-051.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="クレーム・カスタマー対応">
   <div class="ih"><span class="num">052</span><span class="ititle">「返金」「キャンセル」という単語を含むメールを受信したら、優先対応としてスターを付け…</span></div>
   
   <pre class="prompt" id="b52">「返金」「キャンセル」という単語を含むメールを受信したら、優先対応としてスターを付けてChatに通知して。</pre>
@@ -510,7 +515,7 @@
     <button class="btn ghost sm" data-save="b52" data-name="flow-prompts100-052.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="クレーム・カスタマー対応">
   <div class="ih"><span class="num">053</span><span class="ititle">問い合わせメールの内容を要約し、過去の類似問い合わせがないかスプレッドシートを検索し…</span></div>
   
   <pre class="prompt" id="b53">問い合わせメールの内容を要約し、過去の類似問い合わせがないかスプレッドシートを検索して関連情報を返信下書きに含めて。</pre>
@@ -519,7 +524,7 @@
     <button class="btn ghost sm" data-save="b53" data-name="flow-prompts100-053.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="クレーム・カスタマー対応">
   <div class="ih"><span class="num">054</span><span class="ititle">顧客満足度アンケートのフォーム回答で評価が低かった場合、担当者にChatで即時通知し…</span></div>
   
   <pre class="prompt" id="b54">顧客満足度アンケートのフォーム回答で評価が低かった場合、担当者にChatで即時通知して。</pre>
@@ -528,7 +533,7 @@
     <button class="btn ghost sm" data-save="b54" data-name="flow-prompts100-054.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="クレーム・カスタマー対応">
   <div class="ih"><span class="num">055</span><span class="ititle">同じ顧客から3日以内に2通以上の問い合わせが来たら、優先度を上げてChatに通知して…</span></div>
   
   <pre class="prompt" id="b55">同じ顧客から3日以内に2通以上の問い合わせが来たら、優先度を上げてChatに通知して。</pre>
@@ -537,7 +542,7 @@
     <button class="btn ghost sm" data-save="b55" data-name="flow-prompts100-055.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="クレーム・カスタマー対応">
   <div class="ih"><span class="num">056</span><span class="ititle">クレームメールを受信したら、内容を要約してスプレッドシートに自動でログとして記録して…</span></div>
   
   <pre class="prompt" id="b56">クレームメールを受信したら、内容を要約してスプレッドシートに自動でログとして記録して。</pre>
@@ -546,7 +551,7 @@
     <button class="btn ghost sm" data-save="b56" data-name="flow-prompts100-056.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="クレーム・カスタマー対応">
   <div class="ih"><span class="num">057</span><span class="ititle">サポート依頼メールの返信下書きを、過去の同様の問い合わせ内容を参考にGeminiに作…</span></div>
   
   <pre class="prompt" id="b57">サポート依頼メールの返信下書きを、過去の同様の問い合わせ内容を参考にGeminiに作成させて。</pre>
@@ -555,7 +560,7 @@
     <button class="btn ghost sm" data-save="b57" data-name="flow-prompts100-057.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="クレーム・カスタマー対応">
   <div class="ih"><span class="num">058</span><span class="ititle">顧客からの問い合わせに24時間以上未返信のものを検出したら、担当者にリマインドを送っ…</span></div>
   
   <pre class="prompt" id="b58">顧客からの問い合わせに24時間以上未返信のものを検出したら、担当者にリマインドを送って。</pre>
@@ -564,7 +569,7 @@
     <button class="btn ghost sm" data-save="b58" data-name="flow-prompts100-058.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="クレーム・カスタマー対応">
   <div class="ih"><span class="num">059</span><span class="ititle">SNS等からの引用を含む問い合わせメールを受信したら、内容を要約してChatの「広報…</span></div>
   
   <pre class="prompt" id="b59">SNS等からの引用を含む問い合わせメールを受信したら、内容を要約してChatの「広報」スペースに共有して。</pre>
@@ -573,7 +578,7 @@
     <button class="btn ghost sm" data-save="b59" data-name="flow-prompts100-059.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="クレーム・カスタマー対応">
   <div class="ih"><span class="num">060</span><span class="ititle">解約意向を示すメールを検出したら、営業担当にChatで即時エスカレーションして。</span></div>
   
   <pre class="prompt" id="b60">解約意向を示すメールを検出したら、営業担当にChatで即時エスカレーションして。</pre>
@@ -582,8 +587,8 @@
     <button class="btn ghost sm" data-save="b60" data-name="flow-prompts100-060.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">情報収集・要約</h2>
-<div class="icard">
+<h2 class="cat" data-cat="情報収集・要約">情報収集・要約</h2>
+<div class="icard" data-cat="情報収集・要約">
   <div class="ih"><span class="num">061</span><span class="ititle">登録しているニュースレターのメールを毎朝要約して、重要なものだけをメールでまとめて送…</span></div>
   
   <pre class="prompt" id="b61">登録しているニュースレターのメールを毎朝要約して、重要なものだけをメールでまとめて送って。</pre>
@@ -592,7 +597,7 @@
     <button class="btn ghost sm" data-save="b61" data-name="flow-prompts100-061.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="情報収集・要約">
   <div class="ih"><span class="num">062</span><span class="ititle">業界ニュースのメールマガジンから、自社に関連しそうなキーワードを含む記事だけを抽出し…</span></div>
   
   <pre class="prompt" id="b62">業界ニュースのメールマガジンから、自社に関連しそうなキーワードを含む記事だけを抽出して要約して。</pre>
@@ -601,7 +606,7 @@
     <button class="btn ghost sm" data-save="b62" data-name="flow-prompts100-062.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="情報収集・要約">
   <div class="ih"><span class="num">063</span><span class="ititle">共有ドライブに新しい資料がアップロードされたら、内容を1段落で要約してChatに投稿…</span></div>
   
   <pre class="prompt" id="b63">共有ドライブに新しい資料がアップロードされたら、内容を1段落で要約してChatに投稿して。</pre>
@@ -610,7 +615,7 @@
     <button class="btn ghost sm" data-save="b63" data-name="flow-prompts100-063.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="情報収集・要約">
   <div class="ih"><span class="num">064</span><span class="ititle">スプレッドシートに追加された競合情報の行を検出したら、要点を抽出してChatに共有し…</span></div>
   
   <pre class="prompt" id="b64">スプレッドシートに追加された競合情報の行を検出したら、要点を抽出してChatに共有して。</pre>
@@ -619,7 +624,7 @@
     <button class="btn ghost sm" data-save="b64" data-name="flow-prompts100-064.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="情報収集・要約">
   <div class="ih"><span class="num">065</span><span class="ititle">特定のフォルダに追加されたPDFの内容を要約して、ドキュメントとして保存して。</span></div>
   
   <pre class="prompt" id="b65">特定のフォルダに追加されたPDFの内容を要約して、ドキュメントとして保存して。</pre>
@@ -628,7 +633,7 @@
     <button class="btn ghost sm" data-save="b65" data-name="flow-prompts100-065.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="情報収集・要約">
   <div class="ih"><span class="num">066</span><span class="ititle">毎週、社内Chatで話題になったキーワードを集計して要約レポートを作成して。</span></div>
   
   <pre class="prompt" id="b66">毎週、社内Chatで話題になったキーワードを集計して要約レポートを作成して。</pre>
@@ -637,7 +642,7 @@
     <button class="btn ghost sm" data-save="b66" data-name="flow-prompts100-066.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="情報収集・要約">
   <div class="ih"><span class="num">067</span><span class="ititle">新しいフォーム回答が来たら、自由記述欄の内容をGeminiに要約させてスプレッドシー…</span></div>
   
   <pre class="prompt" id="b67">新しいフォーム回答が来たら、自由記述欄の内容をGeminiに要約させてスプレッドシートの別列に記録して。</pre>
@@ -646,7 +651,7 @@
     <button class="btn ghost sm" data-save="b67" data-name="flow-prompts100-067.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="情報収集・要約">
   <div class="ih"><span class="num">068</span><span class="ititle">海外ニュースレターのメールを受信したら、日本語で要約してメールで転送して。</span></div>
   
   <pre class="prompt" id="b68">海外ニュースレターのメールを受信したら、日本語で要約してメールで転送して。</pre>
@@ -655,7 +660,7 @@
     <button class="btn ghost sm" data-save="b68" data-name="flow-prompts100-068.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="情報収集・要約">
   <div class="ih"><span class="num">069</span><span class="ititle">毎日、Googleカレンダーに登録された「調査タスク」の内容をもとに関連ドキュメント…</span></div>
   
   <pre class="prompt" id="b69">毎日、Googleカレンダーに登録された「調査タスク」の内容をもとに関連ドキュメントを検索してリンクをまとめて。</pre>
@@ -664,7 +669,7 @@
     <button class="btn ghost sm" data-save="b69" data-name="flow-prompts100-069.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="情報収集・要約">
   <div class="ih"><span class="num">070</span><span class="ititle">月次で、ドライブ内の新規追加ファイル一覧を種類別に分類してレポート化して。</span></div>
   
   <pre class="prompt" id="b70">月次で、ドライブ内の新規追加ファイル一覧を種類別に分類してレポート化して。</pre>
@@ -673,8 +678,8 @@
     <button class="btn ghost sm" data-save="b70" data-name="flow-prompts100-070.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">ドキュメント・議事録</h2>
-<div class="icard">
+<h2 class="cat" data-cat="ドキュメント・議事録">ドキュメント・議事録</h2>
+<div class="icard" data-cat="ドキュメント・議事録">
   <div class="ih"><span class="num">071</span><span class="ititle">会議終了後に、Google Meetの録画・メモをもとに議事録の下書きをドキュメント…</span></div>
   
   <pre class="prompt" id="b71">会議終了後に、Google Meetの録画・メモをもとに議事録の下書きをドキュメントとして作成して。</pre>
@@ -683,7 +688,7 @@
     <button class="btn ghost sm" data-save="b71" data-name="flow-prompts100-071.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="ドキュメント・議事録">
   <div class="ih"><span class="num">072</span><span class="ititle">議事録ドキュメントが作成されたら、アクションアイテムを抽出して参加者にメールで送って…</span></div>
   
   <pre class="prompt" id="b72">議事録ドキュメントが作成されたら、アクションアイテムを抽出して参加者にメールで送って。</pre>
@@ -692,7 +697,7 @@
     <button class="btn ghost sm" data-save="b72" data-name="flow-prompts100-072.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="ドキュメント・議事録">
   <div class="ih"><span class="num">073</span><span class="ititle">会議後にメールで要約とアクションアイテムを参加者へ自動送信して。</span></div>
   
   <pre class="prompt" id="b73">会議後にメールで要約とアクションアイテムを参加者へ自動送信して。</pre>
@@ -701,7 +706,7 @@
     <button class="btn ghost sm" data-save="b73" data-name="flow-prompts100-073.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="ドキュメント・議事録">
   <div class="ih"><span class="num">074</span><span class="ititle">毎週、複数の議事録ドキュメントを横断してアクションアイテムを一覧化した進捗ドキュメン…</span></div>
   
   <pre class="prompt" id="b74">毎週、複数の議事録ドキュメントを横断してアクションアイテムを一覧化した進捗ドキュメントを作成して。</pre>
@@ -710,7 +715,7 @@
     <button class="btn ghost sm" data-save="b74" data-name="flow-prompts100-074.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="ドキュメント・議事録">
   <div class="ih"><span class="num">075</span><span class="ititle">新しいプロジェクト提案がドキュメントとして作成されたら、要約をChatでチームに共有…</span></div>
   
   <pre class="prompt" id="b75">新しいプロジェクト提案がドキュメントとして作成されたら、要約をChatでチームに共有して。</pre>
@@ -719,7 +724,7 @@
     <button class="btn ghost sm" data-save="b75" data-name="flow-prompts100-075.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="ドキュメント・議事録">
   <div class="ih"><span class="num">076</span><span class="ititle">契約書ドキュメントの内容から重要条項（金額・期間・違約金）をGeminiに抽出させて…</span></div>
   
   <pre class="prompt" id="b76">契約書ドキュメントの内容から重要条項（金額・期間・違約金）をGeminiに抽出させて別ドキュメントにまとめて。</pre>
@@ -728,7 +733,7 @@
     <button class="btn ghost sm" data-save="b76" data-name="flow-prompts100-076.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="ドキュメント・議事録">
   <div class="ih"><span class="num">077</span><span class="ititle">議事録に「宿題」「持ち帰り」といった単語が含まれていたら、該当箇所をタスクとして抽出…</span></div>
   
   <pre class="prompt" id="b77">議事録に「宿題」「持ち帰り」といった単語が含まれていたら、該当箇所をタスクとして抽出して。</pre>
@@ -737,7 +742,7 @@
     <button class="btn ghost sm" data-save="b77" data-name="flow-prompts100-077.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="ドキュメント・議事録">
   <div class="ih"><span class="num">078</span><span class="ititle">四半期報告書ドキュメントのドラフトが作成されたら、フォーマットの過不足をGemini…</span></div>
   
   <pre class="prompt" id="b78">四半期報告書ドキュメントのドラフトが作成されたら、フォーマットの過不足をGeminiにチェックさせて。</pre>
@@ -746,7 +751,7 @@
     <button class="btn ghost sm" data-save="b78" data-name="flow-prompts100-078.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="ドキュメント・議事録">
   <div class="ih"><span class="num">079</span><span class="ititle">会議前に、関連する過去の議事録を検索してサマリーをドキュメントとして用意して。</span></div>
   
   <pre class="prompt" id="b79">会議前に、関連する過去の議事録を検索してサマリーをドキュメントとして用意して。</pre>
@@ -755,7 +760,7 @@
     <button class="btn ghost sm" data-save="b79" data-name="flow-prompts100-079.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="ドキュメント・議事録">
   <div class="ih"><span class="num">080</span><span class="ititle">議事録ドキュメントが1週間更新されていないプロジェクトを検出したら、担当者にChat…</span></div>
   
   <pre class="prompt" id="b80">議事録ドキュメントが1週間更新されていないプロジェクトを検出したら、担当者にChatでリマインドして。</pre>
@@ -764,8 +769,8 @@
     <button class="btn ghost sm" data-save="b80" data-name="flow-prompts100-080.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">チーム連携・Chat通知</h2>
-<div class="icard">
+<h2 class="cat" data-cat="チーム連携・Chat通知">チーム連携・Chat通知</h2>
+<div class="icard" data-cat="チーム連携・Chat通知">
   <div class="ih"><span class="num">081</span><span class="ititle">新しいメンバーがChatスペースに参加したら、オンボーディング資料へのリンクを自動で…</span></div>
   
   <pre class="prompt" id="b81">新しいメンバーがChatスペースに参加したら、オンボーディング資料へのリンクを自動で送って。</pre>
@@ -774,7 +779,7 @@
     <button class="btn ghost sm" data-save="b81" data-name="flow-prompts100-081.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="チーム連携・Chat通知">
   <div class="ih"><span class="num">082</span><span class="ititle">Chatスペースで特定のキーワード（バグ・障害）が投稿されたら、担当チームに自動でメ…</span></div>
   
   <pre class="prompt" id="b82">Chatスペースで特定のキーワード（バグ・障害）が投稿されたら、担当チームに自動でメンション通知して。</pre>
@@ -783,7 +788,7 @@
     <button class="btn ghost sm" data-save="b82" data-name="flow-prompts100-082.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="チーム連携・Chat通知">
   <div class="ih"><span class="num">083</span><span class="ititle">毎朝、チームのChatスペースにその日の予定とタスク件数のサマリーを投稿して。</span></div>
   
   <pre class="prompt" id="b83">毎朝、チームのChatスペースにその日の予定とタスク件数のサマリーを投稿して。</pre>
@@ -792,7 +797,7 @@
     <button class="btn ghost sm" data-save="b83" data-name="flow-prompts100-083.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="チーム連携・Chat通知">
   <div class="ih"><span class="num">084</span><span class="ititle">スプレッドシートのステータスが「ブロック中」に変わった行を検出したら、Chatで担当…</span></div>
   
   <pre class="prompt" id="b84">スプレッドシートのステータスが「ブロック中」に変わった行を検出したら、Chatで担当者に通知して。</pre>
@@ -801,7 +806,7 @@
     <button class="btn ghost sm" data-save="b84" data-name="flow-prompts100-084.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="チーム連携・Chat通知">
   <div class="ih"><span class="num">085</span><span class="ititle">週の始めに、チームメンバーそれぞれの今週のタスク件数をChatで一覧共有して。</span></div>
   
   <pre class="prompt" id="b85">週の始めに、チームメンバーそれぞれの今週のタスク件数をChatで一覧共有して。</pre>
@@ -810,7 +815,7 @@
     <button class="btn ghost sm" data-save="b85" data-name="flow-prompts100-085.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="チーム連携・Chat通知">
   <div class="ih"><span class="num">086</span><span class="ititle">Chatでのリアクションが一定数集まった投稿を、重要事項としてドキュメントに記録して…</span></div>
   
   <pre class="prompt" id="b86">Chatでのリアクションが一定数集まった投稿を、重要事項としてドキュメントに記録して。</pre>
@@ -819,7 +824,7 @@
     <button class="btn ghost sm" data-save="b86" data-name="flow-prompts100-086.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="チーム連携・Chat通知">
   <div class="ih"><span class="num">087</span><span class="ititle">新しいドキュメントがチーム共有ドライブに追加されたら、Chatで自動通知して。</span></div>
   
   <pre class="prompt" id="b87">新しいドキュメントがチーム共有ドライブに追加されたら、Chatで自動通知して。</pre>
@@ -828,7 +833,7 @@
     <button class="btn ghost sm" data-save="b87" data-name="flow-prompts100-087.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="チーム連携・Chat通知">
   <div class="ih"><span class="num">088</span><span class="ititle">特定のプロジェクトに関するメールが届いたら、要約してプロジェクト専用のChatスペー…</span></div>
   
   <pre class="prompt" id="b88">特定のプロジェクトに関するメールが届いたら、要約してプロジェクト専用のChatスペースに転送して。</pre>
@@ -837,7 +842,7 @@
     <button class="btn ghost sm" data-save="b88" data-name="flow-prompts100-088.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="チーム連携・Chat通知">
   <div class="ih"><span class="num">089</span><span class="ititle">毎日終業時に、その日Chatで解決していない質問（未回答メッセージ）を一覧化して担当…</span></div>
   
   <pre class="prompt" id="b89">毎日終業時に、その日Chatで解決していない質問（未回答メッセージ）を一覧化して担当者に通知して。</pre>
@@ -846,7 +851,7 @@
     <button class="btn ghost sm" data-save="b89" data-name="flow-prompts100-089.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="チーム連携・Chat通知">
   <div class="ih"><span class="num">090</span><span class="ititle">新しいタスクがGoogle Todoに割り当てられたら、担当者にChatで通知して。</span></div>
   
   <pre class="prompt" id="b90">新しいタスクがGoogle Todoに割り当てられたら、担当者にChatで通知して。</pre>
@@ -855,8 +860,8 @@
     <button class="btn ghost sm" data-save="b90" data-name="flow-prompts100-090.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">外部ツール連携（Asana / Jira / Salesforce等）</h2>
-<div class="icard">
+<h2 class="cat" data-cat="外部ツール連携（Asana / Jira / Salesforce等）">外部ツール連携（Asana / Jira / Salesforce等）</h2>
+<div class="icard" data-cat="外部ツール連携（Asana / Jira / Salesforce等）">
   <div class="ih"><span class="num">091</span><span class="ititle">Jiraで新しいバグチケットが作成されたら、内容を要約してChatの開発チームスペー…</span></div>
   
   <pre class="prompt" id="b91">Jiraで新しいバグチケットが作成されたら、内容を要約してChatの開発チームスペースに通知して。</pre>
@@ -865,7 +870,7 @@
     <button class="btn ghost sm" data-save="b91" data-name="flow-prompts100-091.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="外部ツール連携（Asana / Jira / Salesforce等）">
   <div class="ih"><span class="num">092</span><span class="ititle">Asanaのタスクが「完了」になったら、関係者にメールで完了報告を送って。</span></div>
   
   <pre class="prompt" id="b92">Asanaのタスクが「完了」になったら、関係者にメールで完了報告を送って。</pre>
@@ -874,7 +879,7 @@
     <button class="btn ghost sm" data-save="b92" data-name="flow-prompts100-092.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="外部ツール連携（Asana / Jira / Salesforce等）">
   <div class="ih"><span class="num">093</span><span class="ititle">Salesforceで新しい商談が登録されたら、担当営業にChatで通知して。</span></div>
   
   <pre class="prompt" id="b93">Salesforceで新しい商談が登録されたら、担当営業にChatで通知して。</pre>
@@ -883,7 +888,7 @@
     <button class="btn ghost sm" data-save="b93" data-name="flow-prompts100-093.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="外部ツール連携（Asana / Jira / Salesforce等）">
   <div class="ih"><span class="num">094</span><span class="ititle">Mailchimpのキャンペーン結果メールを受信したら、開封率・クリック率を要約して…</span></div>
   
   <pre class="prompt" id="b94">Mailchimpのキャンペーン結果メールを受信したら、開封率・クリック率を要約してレポートドキュメントに追記して。</pre>
@@ -892,7 +897,7 @@
     <button class="btn ghost sm" data-save="b94" data-name="flow-prompts100-094.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="外部ツール連携（Asana / Jira / Salesforce等）">
   <div class="ih"><span class="num">095</span><span class="ititle">Jiraのチケットが3日以上「進行中」のまま更新されない場合、担当者にリマインドを送…</span></div>
   
   <pre class="prompt" id="b95">Jiraのチケットが3日以上「進行中」のまま更新されない場合、担当者にリマインドを送って。</pre>
@@ -901,7 +906,7 @@
     <button class="btn ghost sm" data-save="b95" data-name="flow-prompts100-095.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="外部ツール連携（Asana / Jira / Salesforce等）">
   <div class="ih"><span class="num">096</span><span class="ititle">Asanaで新しいプロジェクトが作成されたら、標準テンプレートのタスクリストを追加し…</span></div>
   
   <pre class="prompt" id="b96">Asanaで新しいプロジェクトが作成されたら、標準テンプレートのタスクリストを追加して。</pre>
@@ -910,7 +915,7 @@
     <button class="btn ghost sm" data-save="b96" data-name="flow-prompts100-096.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="外部ツール連携（Asana / Jira / Salesforce等）">
   <div class="ih"><span class="num">097</span><span class="ititle">Salesforceの商談ステータスが「成約」に変わったら、経理チームにChatで通…</span></div>
   
   <pre class="prompt" id="b97">Salesforceの商談ステータスが「成約」に変わったら、経理チームにChatで通知して。</pre>
@@ -919,7 +924,7 @@
     <button class="btn ghost sm" data-save="b97" data-name="flow-prompts100-097.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="外部ツール連携（Asana / Jira / Salesforce等）">
   <div class="ih"><span class="num">098</span><span class="ititle">Jiraのスプリント終了時に、完了チケット数をスプレッドシートに自動記録して。</span></div>
   
   <pre class="prompt" id="b98">Jiraのスプリント終了時に、完了チケット数をスプレッドシートに自動記録して。</pre>
@@ -928,7 +933,7 @@
     <button class="btn ghost sm" data-save="b98" data-name="flow-prompts100-098.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="外部ツール連携（Asana / Jira / Salesforce等）">
   <div class="ih"><span class="num">099</span><span class="ititle">Asanaのタスクにコメントが追加されたら、要約してメールで担当者に通知して。</span></div>
   
   <pre class="prompt" id="b99">Asanaのタスクにコメントが追加されたら、要約してメールで担当者に通知して。</pre>
@@ -937,7 +942,7 @@
     <button class="btn ghost sm" data-save="b99" data-name="flow-prompts100-099.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="外部ツール連携（Asana / Jira / Salesforce等）">
   <div class="ih"><span class="num">100</span><span class="ititle">外部ツールからのWebhook経由の通知内容を要約して、社内Chatに転送して（We…</span></div>
   
   <pre class="prompt" id="b100">外部ツールからのWebhook経由の通知内容を要約して、社内Chatに転送して（Webhook利用は2026年5月時点で機能制限期間あり、公式情報を要確認）。
@@ -1104,6 +1109,57 @@ Workspace Studioの自然言語入力欄にそのまま貼れる業務別プロ�
 **ポイント**: 生成されたフローは一度「テスト実行」してから本番オンにすると安全です。
 </pre>
 <script>
+// 項目の多いキットで、目的の1件に辿り着けるようにする絞り込み。
+// 検索はタイトル・説明だけでなく本文も対象にする（「あの文言が入っていた項目」で探せるように）。
+(function(){
+  var q = document.getElementById('kq');
+  if (!q) return;
+  var hit = document.getElementById('khit');
+  var cards = [].slice.call(document.querySelectorAll('.kwrap .icard'));
+  var heads = [].slice.call(document.querySelectorAll('.kwrap h2.cat'));
+  var chips = [].slice.call(document.querySelectorAll('.kcat'));
+  var cat = '';
+
+  // ひらがな・カタカナの違いで取りこぼさないようにする（ハブ側の検索と同じ扱い）
+  function norm(s){
+    return (s || '').toLowerCase().replace(/[ぁ-ん]/g, function(c){
+      return String.fromCharCode(c.charCodeAt(0) + 0x60);
+    });
+  }
+
+  // カード全体の textContent だとボタンの「コピー」まで拾ってしまうため、中身を選んで集める
+  cards.forEach(function(c){
+    var t = c.querySelector('.ititle'), d = c.querySelector('.imeta'), p = c.querySelector('.prompt');
+    c._t = norm((t ? t.textContent : '') + ' ' + (d ? d.textContent : '') + ' ' + (p ? p.textContent : ''));
+  });
+
+  function apply(){
+    var kw = norm(q.value.trim()), n = 0, shown = {};
+    cards.forEach(function(c){
+      var ok = (!cat || c.getAttribute('data-cat') === cat)
+            && (!kw || c._t.indexOf(kw) !== -1);
+      c.classList.toggle('hide', !ok);
+      if (ok){ n++; shown[c.getAttribute('data-cat')] = 1; }
+    });
+    // 残った項目が1件も無いカテゴリの見出しは隠す
+    heads.forEach(function(h){
+      h.classList.toggle('hide', !shown[h.getAttribute('data-cat')]);
+    });
+    hit.textContent = (kw || cat)
+      ? (n ? n + '件を表示中' : '該当する項目がありません')
+      : '';
+  }
+
+  q.addEventListener('input', apply);
+  chips.forEach(function(b){
+    b.addEventListener('click', function(){
+      cat = b.getAttribute('data-cat');
+      chips.forEach(function(x){ x.classList.toggle('on', x === b); });
+      apply();
+    });
+  });
+})();
+
 function flash(btn, label){
   const old = btn.textContent, cls = btn.className;
   btn.textContent = label; btn.classList.add('ok');
@@ -1173,7 +1229,22 @@ document.addEventListener('click', e => {
     el.classList.remove('show');
     sessionStorage.setItem('promoClosed', '1');
   }
-  setTimeout(function(){ el.classList.add('show'); }, 1600);
+  // 動画の概要欄から来た人が、自分のプレゼントを探し始める瞬間に被らないようにする。
+  // 以前は読み込み1.6秒後に無条件で出しており、いちばん目的意識の高い時間を塞いでいた。
+  // 中身を見に行った（＝目当てのものに辿り着いた）ころに出す。
+  var shown = false;
+  function show(){
+    if (shown) return;
+    shown = true;
+    el.classList.add('show');
+    removeEventListener('scroll', onScroll);
+  }
+  function onScroll(){
+    if (scrollY > innerHeight * 0.8) show();
+  }
+  addEventListener('scroll', onScroll, {passive:true});
+  // まったくスクロールしない人にも最後には出す（ただし十分に間を置いてから）
+  setTimeout(show, 45000);
   document.getElementById('promoClose').addEventListener('click', function(e){ e.preventDefault(); close(); });
   el.addEventListener('click', function(e){ if (e.target === el) close(); });
 })();

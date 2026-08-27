@@ -36,8 +36,13 @@
     <div class="pnote"><span class="nb">下のカードから、</span><span class="nb">1件ずつコピー、</span><span class="nb">または個別にダウンロードできます。</span><span class="nb">まとめて欲しいときは、</span><span class="nb">上の</span><span class="nb">「全件ダウンロード」を</span><span class="nb">お使いください。</span></div>
   </section>
 
-  <h2 class="cat">統合方式の選定・設計</h2>
-<div class="icard">
+  <div class="ktools">
+  <input type="search" id="kq" placeholder="この中から探す" autocomplete="off" aria-label="この中から探す">
+  <div class="kcats"><button type="button" class="kcat on" data-cat="">すべて<span class="n">100</span></button><button type="button" class="kcat" data-cat="統合方式の選定・設計">統合方式の選定・設計<span class="n">10</span></button><button type="button" class="kcat" data-cat="codex exec 単発タスク発注">codex exec 単発タスク発注<span class="n">15</span></button><button type="button" class="kcat" data-cat="Codex SDK 組み込み発注">Codex SDK 組み込み発注<span class="n">15</span></button><button type="button" class="kcat" data-cat="Codex App-Server 常駐エージェント設計">Codex App-Server 常駐エージェント設計<span class="n">20</span></button><button type="button" class="kcat" data-cat="MCP・ツール設計">MCP・ツール設計<span class="n">15</span></button><button type="button" class="kcat" data-cat="承認フロー・ガードレール設計">承認フロー・ガードレール設計<span class="n">15</span></button><button type="button" class="kcat" data-cat="AGENTS.md/ドキュメント設計">AGENTS.md/ドキュメント設計<span class="n">10</span></button></div>
+  <p class="khit" id="khit" role="status"></p>
+</div>
+<h2 class="cat" data-cat="統合方式の選定・設計">統合方式の選定・設計</h2>
+<div class="icard" data-cat="統合方式の選定・設計">
   <div class="ih"><span class="num">001</span><span class="ititle">execかSDKかApp-Serverかの一次判定</span></div>
   
   <pre class="prompt" id="b1">前提: 自社のユースケースが単発タスクか、常駐エージェントか、まだ決めきれていない段階。
@@ -48,7 +53,7 @@
     <button class="btn ghost sm" data-save="b1" data-name="harness-prompts100-001.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="統合方式の選定・設計">
   <div class="ih"><span class="num">002</span><span class="ititle">既存プロダクトの組み込み候補箇所の棚卸し</span></div>
   
   <pre class="prompt" id="b2">前提: 自社に複数のダッシュボード・管理画面があり、どこにAIエージェントを組み込むと効果的か整理できていない。
@@ -59,7 +64,7 @@
     <button class="btn ghost sm" data-save="b2" data-name="harness-prompts100-002.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="統合方式の選定・設計">
   <div class="ih"><span class="num">003</span><span class="ititle">チャットツールからの移行判断</span></div>
   
   <pre class="prompt" id="b3">前提: 現状は社員がChatGPTやClaude等の汎用チャット画面にコピペで質問している業務が複数ある。
@@ -70,7 +75,7 @@
     <button class="btn ghost sm" data-save="b3" data-name="harness-prompts100-003.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="統合方式の選定・設計">
   <div class="ih"><span class="num">004</span><span class="ititle">PoC（概念実証）の設計</span></div>
   
   <pre class="prompt" id="b4">前提: App-Server統合の投資判断のため、小規模なPoCを2週間で終わらせたい。
@@ -81,7 +86,7 @@
     <button class="btn ghost sm" data-save="b4" data-name="harness-prompts100-004.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="統合方式の選定・設計">
   <div class="ih"><span class="num">005</span><span class="ititle">複数チーム展開のロードマップ</span></div>
   
   <pre class="prompt" id="b5">前提: PoCが1チームで成功し、他の3チームにも展開したいが、順番と進め方を決めたい。
@@ -92,7 +97,7 @@
     <button class="btn ghost sm" data-save="b5" data-name="harness-prompts100-005.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="統合方式の選定・設計">
   <div class="ih"><span class="num">006</span><span class="ititle">既存MCPワークフローとの統合可否判断</span></div>
   
   <pre class="prompt" id="b6">前提: すでに社内でMCPサーバーをいくつか運用しており、Codexハーネスとの重複や統合可否を判断したい。
@@ -103,7 +108,7 @@
     <button class="btn ghost sm" data-save="b6" data-name="harness-prompts100-006.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="統合方式の選定・設計">
   <div class="ih"><span class="num">007</span><span class="ititle">TUI・IDE・Webいずれのサーフェスに寄せるか</span></div>
   
   <pre class="prompt" id="b7">前提: 社内エンジニア向けにCodex連携を提供するが、TUI・IDE拡張・Web埋め込みのどれを主軸にすべきか未定。
@@ -114,7 +119,7 @@
     <button class="btn ghost sm" data-save="b7" data-name="harness-prompts100-007.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="統合方式の選定・設計">
   <div class="ih"><span class="num">008</span><span class="ititle">リモート実行かローカル実行かの判断</span></div>
   
   <pre class="prompt" id="b8">前提: エージェントの実行環境を、社員のローカルマシンにするかクラウド上のリモート環境にするか判断したい。
@@ -125,7 +130,7 @@
     <button class="btn ghost sm" data-save="b8" data-name="harness-prompts100-008.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="統合方式の選定・設計">
   <div class="ih"><span class="num">009</span><span class="ititle">マルチテナント対応方針の検討</span></div>
   
   <pre class="prompt" id="b9">前提: 複数の顧客企業に同じApp-Server統合をSaaSとして提供する予定で、テナント分離の方針を固めたい。
@@ -136,7 +141,7 @@
     <button class="btn ghost sm" data-save="b9" data-name="harness-prompts100-009.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="統合方式の選定・設計">
   <div class="ih"><span class="num">010</span><span class="ititle">段階的移行計画の立案（exec→SDK→App-Server）</span></div>
   
   <pre class="prompt" id="b10">前提: いきなりApp-Serverから始めるのはリスクが高いと考えており、段階的に統合レベルを上げていきたい。
@@ -147,8 +152,8 @@
     <button class="btn ghost sm" data-save="b10" data-name="harness-prompts100-010.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">codex exec 単発タスク発注</h2>
-<div class="icard">
+<h2 class="cat" data-cat="codex exec 単発タスク発注">codex exec 単発タスク発注</h2>
+<div class="icard" data-cat="codex exec 単発タスク発注">
   <div class="ih"><span class="num">011</span><span class="ititle">PRの自動レビューコメント生成</span></div>
   
   <pre class="prompt" id="b11">前提: GitHubにPRが作成されたタイミングで、CIジョブとしてcodex execを起動する運用を想定。
@@ -159,7 +164,7 @@
     <button class="btn ghost sm" data-save="b11" data-name="harness-prompts100-011.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="codex exec 単発タスク発注">
   <div class="ih"><span class="num">012</span><span class="ititle">ビルド失敗の自動診断</span></div>
   
   <pre class="prompt" id="b12">前提: CIのビルドが失敗した直後、ログを渡してcodex execに原因診断だけを任せたい。
@@ -170,7 +175,7 @@
     <button class="btn ghost sm" data-save="b12" data-name="harness-prompts100-012.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="codex exec 単発タスク発注">
   <div class="ih"><span class="num">013</span><span class="ititle">依存パッケージの脆弱性チェック</span></div>
   
   <pre class="prompt" id="b13">前提: 週次バッチで、依存パッケージの既知脆弱性をチェックしたい。
@@ -181,7 +186,7 @@
     <button class="btn ghost sm" data-save="b13" data-name="harness-prompts100-013.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="codex exec 単発タスク発注">
   <div class="ih"><span class="num">014</span><span class="ititle">テストカバレッジレポート生成</span></div>
   
   <pre class="prompt" id="b14">前提: リリース前に、直近の変更範囲のテストカバレッジ状況を把握したい。
@@ -192,7 +197,7 @@
     <button class="btn ghost sm" data-save="b14" data-name="harness-prompts100-014.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="codex exec 単発タスク発注">
   <div class="ih"><span class="num">015</span><span class="ititle">ログの異常検知バッチ</span></div>
   
   <pre class="prompt" id="b15">前提: 夜間バッチとして、直近24時間のアプリケーションログから異常を検知したい。
@@ -203,7 +208,7 @@
     <button class="btn ghost sm" data-save="b15" data-name="harness-prompts100-015.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="codex exec 単発タスク発注">
   <div class="ih"><span class="num">016</span><span class="ititle">日次のドキュメント鮮度チェック</span></div>
   
   <pre class="prompt" id="b16">前提: AGENTS.mdやdocs/配下のドキュメントが実際のコードと乖離していないか、日次で確認したい。
@@ -214,7 +219,7 @@
     <button class="btn ghost sm" data-save="b16" data-name="harness-prompts100-016.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="codex exec 単発タスク発注">
   <div class="ih"><span class="num">017</span><span class="ititle">週次のリファクタ候補リストアップ</span></div>
   
   <pre class="prompt" id="b17">前提: 週次で、リファクタすべき箇所を機械的に洗い出すバッチを回したい。
@@ -225,7 +230,7 @@
     <button class="btn ghost sm" data-save="b17" data-name="harness-prompts100-017.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="codex exec 単発タスク発注">
   <div class="ih"><span class="num">018</span><span class="ititle">デプロイ前のスモークテスト</span></div>
   
   <pre class="prompt" id="b18">前提: 本番デプロイ直前に、最低限の疎通確認だけを自動で行いたい。
@@ -236,7 +241,7 @@
     <button class="btn ghost sm" data-save="b18" data-name="harness-prompts100-018.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="codex exec 単発タスク発注">
   <div class="ih"><span class="num">019</span><span class="ititle">Slack通知連携タスク</span></div>
   
   <pre class="prompt" id="b19">前提: 特定の条件（テスト失敗など）を検出したら、Slackに通知を送る単発ジョブとして使いたい。
@@ -247,7 +252,7 @@
     <button class="btn ghost sm" data-save="b19" data-name="harness-prompts100-019.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="codex exec 単発タスク発注">
   <div class="ih"><span class="num">020</span><span class="ititle">Issueの自動ラベリング</span></div>
   
   <pre class="prompt" id="b20">前提: 新規作成されたGitHub Issueに、内容に応じたラベルを提案するジョブを組みたい。
@@ -258,7 +263,7 @@
     <button class="btn ghost sm" data-save="b20" data-name="harness-prompts100-020.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="codex exec 単発タスク発注">
   <div class="ih"><span class="num">021</span><span class="ititle">コミットメッセージの規約チェック</span></div>
   
   <pre class="prompt" id="b21">前提: PRのコミット履歴が、社内のコミットメッセージ規約に沿っているか機械的に確認したい。
@@ -269,7 +274,7 @@
     <button class="btn ghost sm" data-save="b21" data-name="harness-prompts100-021.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="codex exec 単発タスク発注">
   <div class="ih"><span class="num">022</span><span class="ititle">スキーマ変更の影響範囲調査</span></div>
   
   <pre class="prompt" id="b22">前提: DBスキーマの変更PRが来たら、影響を受けるコード箇所を機械的に洗い出したい。
@@ -280,7 +285,7 @@
     <button class="btn ghost sm" data-save="b22" data-name="harness-prompts100-022.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="codex exec 単発タスク発注">
   <div class="ih"><span class="num">023</span><span class="ititle">翻訳ファイルの差分チェック</span></div>
   
   <pre class="prompt" id="b23">前提: 多言語対応しているプロダクトで、日本語ファイルの更新に対して他言語ファイルが追従できているか確認したい。
@@ -291,7 +296,7 @@
     <button class="btn ghost sm" data-save="b23" data-name="harness-prompts100-023.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="codex exec 単発タスク発注">
   <div class="ih"><span class="num">024</span><span class="ititle">パフォーマンス回帰の検出</span></div>
   
   <pre class="prompt" id="b24">前提: 直近のPRマージ後、特定処理のレスポンスタイムが悪化していないか確認したい。
@@ -302,7 +307,7 @@
     <button class="btn ghost sm" data-save="b24" data-name="harness-prompts100-024.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="codex exec 単発タスク発注">
   <div class="ih"><span class="num">025</span><span class="ititle">リリースノート自動生成</span></div>
   
   <pre class="prompt" id="b25">前提: リリース直前に、マージ済みPRの一覧からリリースノートの下書きを作りたい。
@@ -313,8 +318,8 @@
     <button class="btn ghost sm" data-save="b25" data-name="harness-prompts100-025.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">Codex SDK 組み込み発注</h2>
-<div class="icard">
+<h2 class="cat" data-cat="Codex SDK 組み込み発注">Codex SDK 組み込み発注</h2>
+<div class="icard" data-cat="Codex SDK 組み込み発注">
   <div class="ih"><span class="num">026</span><span class="ititle">社内ツールへのタスク開始・再開実装</span></div>
   
   <pre class="prompt" id="b26">前提: 自社の内部管理ツール（Node.js/TypeScript製）から、Codexタスクを開始・再開できるようにしたい。
@@ -325,7 +330,7 @@
     <button class="btn ghost sm" data-save="b26" data-name="harness-prompts100-026.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Codex SDK 組み込み発注">
   <div class="ih"><span class="num">027</span><span class="ititle">ストリーミングイベントのUI連携設計</span></div>
   
   <pre class="prompt" id="b27">前提: エージェントの進捗をリアルタイムでフロントエンドに表示したい。
@@ -336,7 +341,7 @@
     <button class="btn ghost sm" data-save="b27" data-name="harness-prompts100-027.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Codex SDK 組み込み発注">
   <div class="ih"><span class="num">028</span><span class="ititle">複数スレッドの並列管理設計</span></div>
   
   <pre class="prompt" id="b28">前提: 1人のユーザーが同時に複数のタスクを走らせられるようにしたい。
@@ -347,7 +352,7 @@
     <button class="btn ghost sm" data-save="b28" data-name="harness-prompts100-028.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Codex SDK 組み込み発注">
   <div class="ih"><span class="num">029</span><span class="ititle">進捗バーへのイベントマッピング</span></div>
   
   <pre class="prompt" id="b29">前提: ユーザーに「あとどれくらいで終わるか」を体感的に伝えたい。
@@ -358,7 +363,7 @@
     <button class="btn ghost sm" data-save="b29" data-name="harness-prompts100-029.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Codex SDK 組み込み発注">
   <div class="ih"><span class="num">030</span><span class="ititle">エラー時のリトライロジック設計</span></div>
   
   <pre class="prompt" id="b30">前提: ネットワーク断や一時的なタイムアウトでタスクが失敗するケースに備えたい。
@@ -369,7 +374,7 @@
     <button class="btn ghost sm" data-save="b30" data-name="harness-prompts100-030.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Codex SDK 組み込み発注">
   <div class="ih"><span class="num">031</span><span class="ititle">カスタムツールのSDK経由登録</span></div>
   
   <pre class="prompt" id="b31">前提: 自社独自の業務ツール（在庫確認等）をエージェントから呼び出せるようにしたい。
@@ -380,7 +385,7 @@
     <button class="btn ghost sm" data-save="b31" data-name="harness-prompts100-031.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Codex SDK 組み込み発注">
   <div class="ih"><span class="num">032</span><span class="ititle">セッション永続化の実装方針</span></div>
   
   <pre class="prompt" id="b32">前提: ブラウザを閉じても、後で同じ会話の続きから再開できるようにしたい。
@@ -391,7 +396,7 @@
     <button class="btn ghost sm" data-save="b32" data-name="harness-prompts100-032.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Codex SDK 組み込み発注">
   <div class="ih"><span class="num">033</span><span class="ititle">Webhookとの連携設計</span></div>
   
   <pre class="prompt" id="b33">前提: 外部システム（例: チケット管理ツール）からのWebhookをトリガーにタスクを開始したい。
@@ -402,7 +407,7 @@
     <button class="btn ghost sm" data-save="b33" data-name="harness-prompts100-033.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Codex SDK 組み込み発注">
   <div class="ih"><span class="num">034</span><span class="ititle">バッチジョブキューとの統合</span></div>
   
   <pre class="prompt" id="b34">前提: 大量のタスクを順次処理するため、既存のジョブキュー（例: BullMQ等）と組み合わせたい。
@@ -413,7 +418,7 @@
     <button class="btn ghost sm" data-save="b34" data-name="harness-prompts100-034.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Codex SDK 組み込み発注">
   <div class="ih"><span class="num">035</span><span class="ititle">マルチユーザー対応のセッション分離</span></div>
   
   <pre class="prompt" id="b35">前提: 複数の社員が同時にそれぞれ別タスクを実行する管理画面を作りたい。
@@ -424,7 +429,7 @@
     <button class="btn ghost sm" data-save="b35" data-name="harness-prompts100-035.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Codex SDK 組み込み発注">
   <div class="ih"><span class="num">036</span><span class="ititle">ローカル開発環境でのSDK動作確認手順</span></div>
   
   <pre class="prompt" id="b36">前提: チームの新規メンバーが、Codex SDKをローカルで最短で動かせるようにしたい。
@@ -435,7 +440,7 @@
     <button class="btn ghost sm" data-save="b36" data-name="harness-prompts100-036.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Codex SDK 組み込み発注">
   <div class="ih"><span class="num">037</span><span class="ititle">TypeScript型定義の活用方針</span></div>
   
   <pre class="prompt" id="b37">前提: SDKが提供する型定義を最大限活用し、実行時エラーを減らしたい。
@@ -446,7 +451,7 @@
     <button class="btn ghost sm" data-save="b37" data-name="harness-prompts100-037.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Codex SDK 組み込み発注">
   <div class="ih"><span class="num">038</span><span class="ititle">SDKのバージョンアップ影響調査</span></div>
   
   <pre class="prompt" id="b38">前提: Codex SDKの新バージョンがリリースされた際、既存実装への影響を確認したい。
@@ -457,7 +462,7 @@
     <button class="btn ghost sm" data-save="b38" data-name="harness-prompts100-038.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Codex SDK 組み込み発注">
   <div class="ih"><span class="num">039</span><span class="ititle">サーバーサイドでのタスクオーケストレーション</span></div>
   
   <pre class="prompt" id="b39">前提: 1つのユーザー操作から複数のCodexタスクを連鎖的に実行したい（例: 調査→下書き作成→通知）。
@@ -468,7 +473,7 @@
     <button class="btn ghost sm" data-save="b39" data-name="harness-prompts100-039.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Codex SDK 組み込み発注">
   <div class="ih"><span class="num">040</span><span class="ititle">結果のキャッシュ戦略設計</span></div>
   
   <pre class="prompt" id="b40">前提: 同じ問い合わせに対して毎回タスクを実行するとコストが嵩むため、キャッシュを検討したい。
@@ -479,8 +484,8 @@
     <button class="btn ghost sm" data-save="b40" data-name="harness-prompts100-040.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">Codex App-Server 常駐エージェント設計</h2>
-<div class="icard">
+<h2 class="cat" data-cat="Codex App-Server 常駐エージェント設計">Codex App-Server 常駐エージェント設計</h2>
+<div class="icard" data-cat="Codex App-Server 常駐エージェント設計">
   <div class="ih"><span class="num">041</span><span class="ititle">サポート: 顧客問い合わせ調査アシスタント</span></div>
   
   <pre class="prompt" id="b41">前提: サポート担当が顧客からの問い合わせ対応時に、いつもの管理画面内でAIに調査を頼みたい。
@@ -491,7 +496,7 @@
     <button class="btn ghost sm" data-save="b41" data-name="harness-prompts100-041.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Codex App-Server 常駐エージェント設計">
   <div class="ih"><span class="num">042</span><span class="ititle">サポート: よくある質問への下書き回答</span></div>
   
   <pre class="prompt" id="b42">前提: 問い合わせ内容が定型的な場合、返信の下書きだけAIに作らせて担当者が確認後に送りたい。
@@ -502,7 +507,7 @@
     <button class="btn ghost sm" data-save="b42" data-name="harness-prompts100-042.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Codex App-Server 常駐エージェント設計">
   <div class="ih"><span class="num">043</span><span class="ititle">オペレーション: 配送遅延の原因調査（Relay型）</span></div>
   
   <pre class="prompt" id="b43">前提: 配送運用ダッシュボードで、遅延が出た荷物についてAIに一次調査をさせたい（公式のRelay実例を参考に）。
@@ -513,7 +518,7 @@
     <button class="btn ghost sm" data-save="b43" data-name="harness-prompts100-043.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Codex App-Server 常駐エージェント設計">
   <div class="ih"><span class="num">044</span><span class="ititle">オペレーション: 在庫アラートの一次切り分け</span></div>
   
   <pre class="prompt" id="b44">前提: 在庫管理システムで、欠品アラートが出た際にAIが原因候補を出す運用にしたい。
@@ -524,7 +529,7 @@
     <button class="btn ghost sm" data-save="b44" data-name="harness-prompts100-044.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Codex App-Server 常駐エージェント設計">
   <div class="ih"><span class="num">045</span><span class="ititle">セキュリティ: インシデント調査キュー</span></div>
   
   <pre class="prompt" id="b45">前提: セキュリティチームが、アラートの調査キューをAIと一緒に捌けるようにしたい。
@@ -535,7 +540,7 @@
     <button class="btn ghost sm" data-save="b45" data-name="harness-prompts100-045.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Codex App-Server 常駐エージェント設計">
   <div class="ih"><span class="num">046</span><span class="ititle">セキュリティ: 脆弱性トリアージ支援</span></div>
   
   <pre class="prompt" id="b46">前提: 脆弱性スキャン結果が大量に出て、優先順位付けに時間がかかっている。
@@ -546,7 +551,7 @@
     <button class="btn ghost sm" data-save="b46" data-name="harness-prompts100-046.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Codex App-Server 常駐エージェント設計">
   <div class="ih"><span class="num">047</span><span class="ititle">営業: アカウント調査アシスタント</span></div>
   
   <pre class="prompt" id="b47">前提: 商談前に、対象企業の情報を素早く整理したい営業チーム向け。
@@ -557,7 +562,7 @@
     <button class="btn ghost sm" data-save="b47" data-name="harness-prompts100-047.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Codex App-Server 常駐エージェント設計">
   <div class="ih"><span class="num">048</span><span class="ititle">営業: 商談メモの要約と次アクション提案</span></div>
   
   <pre class="prompt" id="b48">前提: 商談後の議事録作成が手間で、後回しになりがち。
@@ -568,7 +573,7 @@
     <button class="btn ghost sm" data-save="b48" data-name="harness-prompts100-048.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Codex App-Server 常駐エージェント設計">
   <div class="ih"><span class="num">049</span><span class="ititle">マーケティング: キャンペーン案のドラフト作成</span></div>
   
   <pre class="prompt" id="b49">前提: キャンペーン企画の叩き台をAIに作らせ、人間が磨き込む運用にしたい。
@@ -579,7 +584,7 @@
     <button class="btn ghost sm" data-save="b49" data-name="harness-prompts100-049.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Codex App-Server 常駐エージェント設計">
   <div class="ih"><span class="num">050</span><span class="ititle">マーケティング: 競合動向の定期調査</span></div>
   
   <pre class="prompt" id="b50">前提: 競合他社の動きを毎週定点観測したい。
@@ -590,7 +595,7 @@
     <button class="btn ghost sm" data-save="b50" data-name="harness-prompts100-050.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Codex App-Server 常駐エージェント設計">
   <div class="ih"><span class="num">051</span><span class="ititle">エンジニアリング: コードレビューアシスタント</span></div>
   
   <pre class="prompt" id="b51">前提: PRレビューの一次チェックをAIに任せ、レビュアーの負荷を下げたい。
@@ -601,7 +606,7 @@
     <button class="btn ghost sm" data-save="b51" data-name="harness-prompts100-051.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Codex App-Server 常駐エージェント設計">
   <div class="ih"><span class="num">052</span><span class="ititle">エンジニアリング: SREエージェント（異常検知→提案）</span></div>
   
   <pre class="prompt" id="b52">前提: 本番環境の異常を検知したら、対応案までAIが用意している状態にしたい。
@@ -612,7 +617,7 @@
     <button class="btn ghost sm" data-save="b52" data-name="harness-prompts100-052.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Codex App-Server 常駐エージェント設計">
   <div class="ih"><span class="num">053</span><span class="ititle">プロダクト: タスクボード連携（Ready化→実装着手）</span></div>
   
   <pre class="prompt" id="b53">前提: タスクボードでチケットを「対応可能」状態に移動したら、実装着手までAIに任せたい。
@@ -623,7 +628,7 @@
     <button class="btn ghost sm" data-save="b53" data-name="harness-prompts100-053.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Codex App-Server 常駐エージェント設計">
   <div class="ih"><span class="num">054</span><span class="ititle">人事: 問い合わせ一次対応</span></div>
   
   <pre class="prompt" id="b54">前提: 社内の人事関連問い合わせ（休暇制度等）への一次回答をAIに任せたい。
@@ -634,7 +639,7 @@
     <button class="btn ghost sm" data-save="b54" data-name="harness-prompts100-054.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Codex App-Server 常駐エージェント設計">
   <div class="ih"><span class="num">055</span><span class="ititle">経理: 経費申請の一次チェック</span></div>
   
   <pre class="prompt" id="b55">前提: 経費申請の形式チェック（領収書の有無・金額の妥当性）を自動化したい。
@@ -645,7 +650,7 @@
     <button class="btn ghost sm" data-save="b55" data-name="harness-prompts100-055.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Codex App-Server 常駐エージェント設計">
   <div class="ih"><span class="num">056</span><span class="ititle">法務: 契約書の論点抽出</span></div>
   
   <pre class="prompt" id="b56">前提: 契約書レビューの一次チェックとして、リスクのありそうな条項を洗い出したい。
@@ -656,7 +661,7 @@
     <button class="btn ghost sm" data-save="b56" data-name="harness-prompts100-056.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Codex App-Server 常駐エージェント設計">
   <div class="ih"><span class="num">057</span><span class="ititle">カスタマーサクセス: 解約予兆の早期発見</span></div>
   
   <pre class="prompt" id="b57">前提: 利用データから解約しそうな顧客を早めに見つけて対応したい。
@@ -667,7 +672,7 @@
     <button class="btn ghost sm" data-save="b57" data-name="harness-prompts100-057.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Codex App-Server 常駐エージェント設計">
   <div class="ih"><span class="num">058</span><span class="ititle">QA: バグ報告の再現手順自動生成</span></div>
   
   <pre class="prompt" id="b58">前提: バグ報告が曖昧で再現に時間がかかることが多い。
@@ -678,7 +683,7 @@
     <button class="btn ghost sm" data-save="b58" data-name="harness-prompts100-058.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Codex App-Server 常駐エージェント設計">
   <div class="ih"><span class="num">059</span><span class="ititle">データ分析: レポート下書き生成</span></div>
   
   <pre class="prompt" id="b59">前提: 定例のデータレポート作成に毎回時間がかかっている。
@@ -689,7 +694,7 @@
     <button class="btn ghost sm" data-save="b59" data-name="harness-prompts100-059.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Codex App-Server 常駐エージェント設計">
   <div class="ih"><span class="num">060</span><span class="ititle">社内ヘルプデスク: IT問い合わせの一次対応</span></div>
   
   <pre class="prompt" id="b60">前提: PC・アカウント関連のIT問い合わせが多く、一次対応を効率化したい。
@@ -700,8 +705,8 @@
     <button class="btn ghost sm" data-save="b60" data-name="harness-prompts100-060.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">MCP・ツール設計</h2>
-<div class="icard">
+<h2 class="cat" data-cat="MCP・ツール設計">MCP・ツール設計</h2>
+<div class="icard" data-cat="MCP・ツール設計">
   <div class="ih"><span class="num">061</span><span class="ititle">自社DBの読み取り専用MCPサーバー設計</span></div>
   
   <pre class="prompt" id="b61">前提: エージェントに自社DBの情報を参照させたいが、書き込みは絶対にさせたくない。
@@ -712,7 +717,7 @@
     <button class="btn ghost sm" data-save="b61" data-name="harness-prompts100-061.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="MCP・ツール設計">
   <div class="ih"><span class="num">062</span><span class="ititle">外部APIラッパーMCP設計</span></div>
   
   <pre class="prompt" id="b62">前提: 外部の配送業者APIをエージェントから呼び出せるようにしたい。
@@ -723,7 +728,7 @@
     <button class="btn ghost sm" data-save="b62" data-name="harness-prompts100-062.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="MCP・ツール設計">
   <div class="ih"><span class="num">063</span><span class="ititle">ファイルシステムアクセス範囲の設計</span></div>
   
   <pre class="prompt" id="b63">前提: エージェントにファイル操作をさせるが、アクセスできるディレクトリを限定したい。
@@ -734,7 +739,7 @@
     <button class="btn ghost sm" data-save="b63" data-name="harness-prompts100-063.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="MCP・ツール設計">
   <div class="ih"><span class="num">064</span><span class="ititle">承認必須アクションの切り分け</span></div>
   
   <pre class="prompt" id="b64">前提: MCPツールの中で、読み取り系はそのまま実行させ、書き込み系は承認を挟みたい。
@@ -745,7 +750,7 @@
     <button class="btn ghost sm" data-save="b64" data-name="harness-prompts100-064.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="MCP・ツール設計">
   <div class="ih"><span class="num">065</span><span class="ititle">MCPツールの命名規則策定</span></div>
   
   <pre class="prompt" id="b65">前提: 複数チームがそれぞれMCPツールを作っており、命名がバラバラで分かりにくい。
@@ -756,7 +761,7 @@
     <button class="btn ghost sm" data-save="b65" data-name="harness-prompts100-065.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="MCP・ツール設計">
   <div class="ih"><span class="num">066</span><span class="ititle">エラーハンドリング方針の設計</span></div>
   
   <pre class="prompt" id="b66">前提: MCPツールがエラーを返した際、エージェントが混乱せず適切に振る舞えるようにしたい。
@@ -767,7 +772,7 @@
     <button class="btn ghost sm" data-save="b66" data-name="harness-prompts100-066.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="MCP・ツール設計">
   <div class="ih"><span class="num">067</span><span class="ititle">レート制限の設計</span></div>
   
   <pre class="prompt" id="b67">前提: エージェントが外部APIを呼びすぎて、想定外の課金が発生する事態を防ぎたい。
@@ -778,7 +783,7 @@
     <button class="btn ghost sm" data-save="b67" data-name="harness-prompts100-067.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="MCP・ツール設計">
   <div class="ih"><span class="num">068</span><span class="ititle">マルチMCPサーバーの優先順位設計</span></div>
   
   <pre class="prompt" id="b68">前提: 複数のMCPサーバーを同時に接続する際、同じ目的の情報を複数ソースから取得できてしまう。
@@ -789,7 +794,7 @@
     <button class="btn ghost sm" data-save="b68" data-name="harness-prompts100-068.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="MCP・ツール設計">
   <div class="ih"><span class="num">069</span><span class="ititle">監査ログ出力の設計</span></div>
   
   <pre class="prompt" id="b69">前提: エージェントが何を実行したか、後から必ず追跡できるようにしたい。
@@ -800,7 +805,7 @@
     <button class="btn ghost sm" data-save="b69" data-name="harness-prompts100-069.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="MCP・ツール設計">
   <div class="ih"><span class="num">070</span><span class="ititle">テスト用MCPモックサーバー作成</span></div>
   
   <pre class="prompt" id="b70">前提: 本番APIを叩かずに、エージェント連携のテストをしたい。
@@ -811,7 +816,7 @@
     <button class="btn ghost sm" data-save="b70" data-name="harness-prompts100-070.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="MCP・ツール設計">
   <div class="ih"><span class="num">071</span><span class="ititle">機密データのマスキング方針</span></div>
   
   <pre class="prompt" id="b71">前提: MCPツールが返すデータに個人情報が含まれる場合がある。
@@ -822,7 +827,7 @@
     <button class="btn ghost sm" data-save="b71" data-name="harness-prompts100-071.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="MCP・ツール設計">
   <div class="ih"><span class="num">072</span><span class="ititle">MCPツールのバージョニング方針</span></div>
   
   <pre class="prompt" id="b72">前提: MCPツールの仕様を変更する際、既存のエージェント連携を壊したくない。
@@ -833,7 +838,7 @@
     <button class="btn ghost sm" data-save="b72" data-name="harness-prompts100-072.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="MCP・ツール設計">
   <div class="ih"><span class="num">073</span><span class="ititle">外部SaaS連携（カレンダー/チケット管理等）</span></div>
   
   <pre class="prompt" id="b73">前提: エージェントにカレンダー確認やチケット起票をさせたい。
@@ -844,7 +849,7 @@
     <button class="btn ghost sm" data-save="b73" data-name="harness-prompts100-073.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="MCP・ツール設計">
   <div class="ih"><span class="num">074</span><span class="ititle">社内ナレッジベース検索MCP</span></div>
   
   <pre class="prompt" id="b74">前提: 社内Wikiやドキュメントをエージェントが検索できるようにしたい。
@@ -855,7 +860,7 @@
     <button class="btn ghost sm" data-save="b74" data-name="harness-prompts100-074.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="MCP・ツール設計">
   <div class="ih"><span class="num">075</span><span class="ititle">既存社内APIのMCP化棚卸し</span></div>
   
   <pre class="prompt" id="b75">前提: 社内にすでに存在する複数のAPIを、どれからMCP化すべきか優先順位を付けたい。
@@ -866,8 +871,8 @@
     <button class="btn ghost sm" data-save="b75" data-name="harness-prompts100-075.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">承認フロー・ガードレール設計</h2>
-<div class="icard">
+<h2 class="cat" data-cat="承認フロー・ガードレール設計">承認フロー・ガードレール設計</h2>
+<div class="icard" data-cat="承認フロー・ガードレール設計">
   <div class="ih"><span class="num">076</span><span class="ititle">実行前承認が必要なアクション一覧化</span></div>
   
   <pre class="prompt" id="b76">前提: エージェントが実行できる操作のうち、どこまでを承認なしで許可するか整理したい。
@@ -878,7 +883,7 @@
     <button class="btn ghost sm" data-save="b76" data-name="harness-prompts100-076.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="承認フロー・ガードレール設計">
   <div class="ih"><span class="num">077</span><span class="ititle">承認UIのワイヤーフレーム設計依頼</span></div>
   
   <pre class="prompt" id="b77">前提: 承認画面をこれから作る。何がどこにあれば承認判断がしやすいか整理したい。
@@ -889,7 +894,7 @@
     <button class="btn ghost sm" data-save="b77" data-name="harness-prompts100-077.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="承認フロー・ガードレール設計">
   <div class="ih"><span class="num">078</span><span class="ititle">承認却下時のフォールバック設計</span></div>
   
   <pre class="prompt" id="b78">前提: 承認が却下された場合、エージェントがどう振る舞うべきか決めていない。
@@ -900,7 +905,7 @@
     <button class="btn ghost sm" data-save="b78" data-name="harness-prompts100-078.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="承認フロー・ガードレール設計">
   <div class="ih"><span class="num">079</span><span class="ititle">サンドボックス境界の設計</span></div>
   
   <pre class="prompt" id="b79">前提: エージェントの実行環境がどこまでアクセスできるか、境界線を明確にしたい。
@@ -911,7 +916,7 @@
     <button class="btn ghost sm" data-save="b79" data-name="harness-prompts100-079.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="承認フロー・ガードレール設計">
   <div class="ih"><span class="num">080</span><span class="ititle">権限レベル別のポリシー設計</span></div>
   
   <pre class="prompt" id="b80">前提: 利用者の役職・権限によって、エージェントに許可する操作の範囲を変えたい。
@@ -922,7 +927,7 @@
     <button class="btn ghost sm" data-save="b80" data-name="harness-prompts100-080.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="承認フロー・ガードレール設計">
   <div class="ih"><span class="num">081</span><span class="ititle">監査証跡フォーマット設計</span></div>
   
   <pre class="prompt" id="b81">前提: 後から「誰が何を承認したか」を確実に追跡できるようにしたい。
@@ -933,7 +938,7 @@
     <button class="btn ghost sm" data-save="b81" data-name="harness-prompts100-081.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="承認フロー・ガードレール設計">
   <div class="ih"><span class="num">082</span><span class="ititle">タイムアウト・自動失効ルール設計</span></div>
   
   <pre class="prompt" id="b82">前提: 承認待ちのまま放置されるリクエストへの対処を決めたい。
@@ -944,7 +949,7 @@
     <button class="btn ghost sm" data-save="b82" data-name="harness-prompts100-082.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="承認フロー・ガードレール設計">
   <div class="ih"><span class="num">083</span><span class="ititle">二段階承認が必要なケースの洗い出し</span></div>
   
   <pre class="prompt" id="b83">前提: 特に影響の大きい操作は、1人の承認だけでなく2人の承認を必須にしたい。
@@ -955,7 +960,7 @@
     <button class="btn ghost sm" data-save="b83" data-name="harness-prompts100-083.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="承認フロー・ガードレール設計">
   <div class="ih"><span class="num">084</span><span class="ititle">ロールバック手順の設計</span></div>
   
   <pre class="prompt" id="b84">前提: 承認して実行したアクションを、後から取り消したいケースに備えたい。
@@ -966,7 +971,7 @@
     <button class="btn ghost sm" data-save="b84" data-name="harness-prompts100-084.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="承認フロー・ガードレール設計">
   <div class="ih"><span class="num">085</span><span class="ititle">誤操作防止の確認文言設計</span></div>
   
   <pre class="prompt" id="b85">前提: 承認ボタンを押す前に、利用者が内容を正しく理解できる文言にしたい。
@@ -977,7 +982,7 @@
     <button class="btn ghost sm" data-save="b85" data-name="harness-prompts100-085.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="承認フロー・ガードレール設計">
   <div class="ih"><span class="num">086</span><span class="ititle">承認者不在時のエスカレーション設計</span></div>
   
   <pre class="prompt" id="b86">前提: 承認担当者が不在の場合に、業務が止まってしまうリスクに備えたい。
@@ -988,7 +993,7 @@
     <button class="btn ghost sm" data-save="b86" data-name="harness-prompts100-086.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="承認フロー・ガードレール設計">
   <div class="ih"><span class="num">087</span><span class="ititle">承認ログのダッシュボード設計</span></div>
   
   <pre class="prompt" id="b87">前提: 承認の傾向（却下率が高い操作等）を後から分析できるようにしたい。
@@ -999,7 +1004,7 @@
     <button class="btn ghost sm" data-save="b87" data-name="harness-prompts100-087.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="承認フロー・ガードレール設計">
   <div class="ih"><span class="num">088</span><span class="ititle">高リスクアクションのブロックリスト作成</span></div>
   
   <pre class="prompt" id="b88">前提: どんな状況でも絶対に自動実行させてはいけない操作を明確にしたい。
@@ -1010,7 +1015,7 @@
     <button class="btn ghost sm" data-save="b88" data-name="harness-prompts100-088.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="承認フロー・ガードレール設計">
   <div class="ih"><span class="num">089</span><span class="ititle">承認フローのテストシナリオ作成</span></div>
   
   <pre class="prompt" id="b89">前提: 承認フローを実装したら、リリース前にテストしたい。
@@ -1021,7 +1026,7 @@
     <button class="btn ghost sm" data-save="b89" data-name="harness-prompts100-089.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="承認フロー・ガードレール設計">
   <div class="ih"><span class="num">090</span><span class="ititle">コンプライアンス要件とのマッピング</span></div>
   
   <pre class="prompt" id="b90">前提: 業界の規制・社内規定と、エージェントの承認フローが整合しているか確認したい。
@@ -1032,8 +1037,8 @@
     <button class="btn ghost sm" data-save="b90" data-name="harness-prompts100-090.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">AGENTS.md/ドキュメント設計</h2>
-<div class="icard">
+<h2 class="cat" data-cat="AGENTS.md/ドキュメント設計">AGENTS.md/ドキュメント設計</h2>
+<div class="icard" data-cat="AGENTS.md/ドキュメント設計">
   <div class="ih"><span class="num">091</span><span class="ititle">AGENTS.mdの目次型ひな形作成</span></div>
   
   <pre class="prompt" id="b91">前提: AGENTS.mdを、百科事典ではなく「目次」として設計し直したい。
@@ -1044,7 +1049,7 @@
     <button class="btn ghost sm" data-save="b91" data-name="harness-prompts100-091.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="AGENTS.md/ドキュメント設計">
   <div class="ih"><span class="num">092</span><span class="ititle">docs/配下のディレクトリ構造設計</span></div>
   
   <pre class="prompt" id="b92">前提: 設計ドキュメント・実行プラン・仕様書が整理されておらず、どこに何があるか分かりにくい。
@@ -1055,7 +1060,7 @@
     <button class="btn ghost sm" data-save="b92" data-name="harness-prompts100-092.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="AGENTS.md/ドキュメント設計">
   <div class="ih"><span class="num">093</span><span class="ititle">設計ドキュメントのテンプレート作成</span></div>
   
   <pre class="prompt" id="b93">前提: 新機能を作る前に、設計ドキュメントを書く文化を根付かせたい。
@@ -1066,7 +1071,7 @@
     <button class="btn ghost sm" data-save="b93" data-name="harness-prompts100-093.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="AGENTS.md/ドキュメント設計">
   <div class="ih"><span class="num">094</span><span class="ititle">品質スコアドキュメントの設計</span></div>
   
   <pre class="prompt" id="b94">前提: 各プロダクト領域の技術的な健全性を、継続的に可視化したい。
@@ -1077,7 +1082,7 @@
     <button class="btn ghost sm" data-save="b94" data-name="harness-prompts100-094.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="AGENTS.md/ドキュメント設計">
   <div class="ih"><span class="num">095</span><span class="ititle">実行プラン(exec-plans)のフォーマット設計</span></div>
   
   <pre class="prompt" id="b95">前提: 複雑な作業を始める前に、計画を残す仕組みを作りたい。
@@ -1088,7 +1093,7 @@
     <button class="btn ghost sm" data-save="b95" data-name="harness-prompts100-095.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="AGENTS.md/ドキュメント設計">
   <div class="ih"><span class="num">096</span><span class="ititle">ドキュメント鮮度チェックの自動化設計</span></div>
   
   <pre class="prompt" id="b96">前提: ドキュメントが更新されず陳腐化していくのを防ぎたい。
@@ -1099,7 +1104,7 @@
     <button class="btn ghost sm" data-save="b96" data-name="harness-prompts100-096.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="AGENTS.md/ドキュメント設計">
   <div class="ih"><span class="num">097</span><span class="ititle">黄金の原則リストの初版作成</span></div>
   
   <pre class="prompt" id="b97">前提: コードベース全体で守ってほしい設計原則を明文化したい。
@@ -1110,7 +1115,7 @@
     <button class="btn ghost sm" data-save="b97" data-name="harness-prompts100-097.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="AGENTS.md/ドキュメント設計">
   <div class="ih"><span class="num">098</span><span class="ititle">新規メンバー向けオンボーディング文書設計</span></div>
   
   <pre class="prompt" id="b98">前提: 新しく入ったメンバーが、リポジトリの全体像を最短で掴めるようにしたい。
@@ -1121,7 +1126,7 @@
     <button class="btn ghost sm" data-save="b98" data-name="harness-prompts100-098.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="AGENTS.md/ドキュメント設計">
   <div class="ih"><span class="num">099</span><span class="ititle">アーキテクチャ図のMarkdown化方針</span></div>
   
   <pre class="prompt" id="b99">前提: アーキテクチャ図を画像ではなくテキストベースで管理し、差分が追えるようにしたい。
@@ -1132,7 +1137,7 @@
     <button class="btn ghost sm" data-save="b99" data-name="harness-prompts100-099.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="AGENTS.md/ドキュメント設計">
   <div class="ih"><span class="num">100</span><span class="ititle">技術的負債トラッカーのフォーマット設計</span></div>
   
   <pre class="prompt" id="b100">前提: 「あとで直す」と言われたまま放置される技術的負債を可視化したい。
@@ -1976,6 +1981,57 @@
 
 以上、100個です。内訳は「統合方式の選定・設計」10・「codex exec単発タスク発注」15・「Codex SDK組み込み発注」15・「Codex App-Server常駐エージェント設計」20・「MCP・ツール設計」15・「承認フロー・ガードレール設計」15・「AGENTS.md/ドキュメント設計」10。</pre>
 <script>
+// 項目の多いキットで、目的の1件に辿り着けるようにする絞り込み。
+// 検索はタイトル・説明だけでなく本文も対象にする（「あの文言が入っていた項目」で探せるように）。
+(function(){
+  var q = document.getElementById('kq');
+  if (!q) return;
+  var hit = document.getElementById('khit');
+  var cards = [].slice.call(document.querySelectorAll('.kwrap .icard'));
+  var heads = [].slice.call(document.querySelectorAll('.kwrap h2.cat'));
+  var chips = [].slice.call(document.querySelectorAll('.kcat'));
+  var cat = '';
+
+  // ひらがな・カタカナの違いで取りこぼさないようにする（ハブ側の検索と同じ扱い）
+  function norm(s){
+    return (s || '').toLowerCase().replace(/[ぁ-ん]/g, function(c){
+      return String.fromCharCode(c.charCodeAt(0) + 0x60);
+    });
+  }
+
+  // カード全体の textContent だとボタンの「コピー」まで拾ってしまうため、中身を選んで集める
+  cards.forEach(function(c){
+    var t = c.querySelector('.ititle'), d = c.querySelector('.imeta'), p = c.querySelector('.prompt');
+    c._t = norm((t ? t.textContent : '') + ' ' + (d ? d.textContent : '') + ' ' + (p ? p.textContent : ''));
+  });
+
+  function apply(){
+    var kw = norm(q.value.trim()), n = 0, shown = {};
+    cards.forEach(function(c){
+      var ok = (!cat || c.getAttribute('data-cat') === cat)
+            && (!kw || c._t.indexOf(kw) !== -1);
+      c.classList.toggle('hide', !ok);
+      if (ok){ n++; shown[c.getAttribute('data-cat')] = 1; }
+    });
+    // 残った項目が1件も無いカテゴリの見出しは隠す
+    heads.forEach(function(h){
+      h.classList.toggle('hide', !shown[h.getAttribute('data-cat')]);
+    });
+    hit.textContent = (kw || cat)
+      ? (n ? n + '件を表示中' : '該当する項目がありません')
+      : '';
+  }
+
+  q.addEventListener('input', apply);
+  chips.forEach(function(b){
+    b.addEventListener('click', function(){
+      cat = b.getAttribute('data-cat');
+      chips.forEach(function(x){ x.classList.toggle('on', x === b); });
+      apply();
+    });
+  });
+})();
+
 function flash(btn, label){
   const old = btn.textContent, cls = btn.className;
   btn.textContent = label; btn.classList.add('ok');
@@ -2045,7 +2101,22 @@ document.addEventListener('click', e => {
     el.classList.remove('show');
     sessionStorage.setItem('promoClosed', '1');
   }
-  setTimeout(function(){ el.classList.add('show'); }, 1600);
+  // 動画の概要欄から来た人が、自分のプレゼントを探し始める瞬間に被らないようにする。
+  // 以前は読み込み1.6秒後に無条件で出しており、いちばん目的意識の高い時間を塞いでいた。
+  // 中身を見に行った（＝目当てのものに辿り着いた）ころに出す。
+  var shown = false;
+  function show(){
+    if (shown) return;
+    shown = true;
+    el.classList.add('show');
+    removeEventListener('scroll', onScroll);
+  }
+  function onScroll(){
+    if (scrollY > innerHeight * 0.8) show();
+  }
+  addEventListener('scroll', onScroll, {passive:true});
+  // まったくスクロールしない人にも最後には出す（ただし十分に間を置いてから）
+  setTimeout(show, 45000);
   document.getElementById('promoClose').addEventListener('click', function(e){ e.preventDefault(); close(); });
   el.addEventListener('click', function(e){ if (e.target === el) close(); });
 })();

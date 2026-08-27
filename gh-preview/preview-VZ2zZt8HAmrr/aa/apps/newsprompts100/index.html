@@ -36,8 +36,13 @@
     <div class="pnote"><span class="nb">下のカードから、</span><span class="nb">1件ずつコピー、</span><span class="nb">または個別にダウンロードできます。</span><span class="nb">まとめて欲しいときは、</span><span class="nb">上の</span><span class="nb">「全件ダウンロード」を</span><span class="nb">お使いください。</span></div>
   </section>
 
-  <h2 class="cat">Claude Code: Concise出力スタイル</h2>
-<div class="icard">
+  <div class="ktools">
+  <input type="search" id="kq" placeholder="この中から探す" autocomplete="off" aria-label="この中から探す">
+  <div class="kcats"><button type="button" class="kcat on" data-cat="">すべて<span class="n">100</span></button><button type="button" class="kcat" data-cat="Claude Code: Concise出力スタイル">Claude Code: Concise出力スタイル<span class="n">5</span></button><button type="button" class="kcat" data-cat="Claude Code: /designコマンド">Claude Code: /designコマンド<span class="n">5</span></button><button type="button" class="kcat" data-cat="Claude Code: 週次制限・オートコンティニュー">Claude Code: 週次制限・オートコンティニュー<span class="n">5</span></button><button type="button" class="kcat" data-cat="Claude Academy">Claude Academy<span class="n">5</span></button><button type="button" class="kcat" data-cat="Firecrawlコネクタ">Firecrawlコネクタ<span class="n">5</span></button><button type="button" class="kcat" data-cat="HyperFrames MCP">HyperFrames MCP<span class="n">5</span></button><button type="button" class="kcat" data-cat="OpenArt(Claude Store)">OpenArt(Claude Store)<span class="n">5</span></button><button type="button" class="kcat" data-cat="Codex: 100万トークン・コンテキスト設定">Codex: 100万トークン・コンテキスト設定<span class="n">7</span></button><button type="button" class="kcat" data-cat="Agent Plugins標準">Agent Plugins標準<span class="n">5</span></button><button type="button" class="kcat" data-cat="Apple Messagesプラグイン">Apple Messagesプラグイン<span class="n">5</span></button><button type="button" class="kcat" data-cat="GPT-Image-2 透明背景">GPT-Image-2 透明背景<span class="n">5</span></button><button type="button" class="kcat" data-cat="ChatGPT Sites協業・共有スレッド">ChatGPT Sites協業・共有スレッド<span class="n">5</span></button><button type="button" class="kcat" data-cat="今週のChatGPT新機能(クイズ・予約検索・Drive連携・提案)">今週のChatGPT新機能(クイズ・予約検索・Drive連携・提案)<span class="n">8</span></button><button type="button" class="kcat" data-cat="Cursor Origin: 移行・PR運用">Cursor Origin: 移行・PR運用<span class="n">10</span></button><button type="button" class="kcat" data-cat="Cursorクラウドエージェント">Cursorクラウドエージェント<span class="n">5</span></button><button type="button" class="kcat" data-cat="Hermes Desktop: Bot Mode">Hermes Desktop: Bot Mode<span class="n">10</span></button><button type="button" class="kcat" data-cat="Open Design Go">Open Design Go<span class="n">5</span></button></div>
+  <p class="khit" id="khit" role="status"></p>
+</div>
+<h2 class="cat" data-cat="Claude Code: Concise出力スタイル">Claude Code: Concise出力スタイル</h2>
+<div class="icard" data-cat="Claude Code: Concise出力スタイル">
   <div class="ih"><span class="num">001</span><span class="ititle">Concise切り替えの初回設定</span></div>
   <p class="imeta"><span class="nb">settings.jsonの</span><span class="nb">書き換え箇所を確認しながら安全に</span><span class="nb">切り替える手順を確認したいとき。</span></p>
   <pre class="prompt" id="b1">前提: Claude Codeを日常的に使っているが、まだ出力スタイルを変更したことがない状態。
@@ -48,7 +53,7 @@
     <button class="btn ghost sm" data-save="b1" data-name="newsprompts100-001.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Claude Code: Concise出力スタイル">
   <div class="ih"><span class="num">002</span><span class="ititle">結論ファーストな報告への言い換え</span></div>
   <p class="imeta"><span class="nb">既にConciseにした後、</span><span class="nb">普段の依頼文自体も結論から話す形に</span><span class="nb">揃えたいとき。</span></p>
   <pre class="prompt" id="b2">前提: 出力スタイルはConciseに設定済みだが、依頼の仕方が冗長で前置きが長くなりがち。
@@ -59,7 +64,7 @@
     <button class="btn ghost sm" data-save="b2" data-name="newsprompts100-002.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Claude Code: Concise出力スタイル">
   <div class="ih"><span class="num">003</span><span class="ititle">チーム展開用の案内文</span></div>
   <p class="imeta"><span class="nb">チームメンバーに</span><span class="nb">Conciseスタイルの存在と</span><span class="nb">設定方法を共有したいとき。</span></p>
   <pre class="prompt" id="b3">前提: チームの何人かがまだConciseの存在を知らず、応答の長さに困っている。
@@ -70,7 +75,7 @@
     <button class="btn ghost sm" data-save="b3" data-name="newsprompts100-003.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Claude Code: Concise出力スタイル">
   <div class="ih"><span class="num">004</span><span class="ititle">プロジェクト別の使い分けルール</span></div>
   <p class="imeta"><span class="nb">詳細な説明が必要なプロジェクトと</span><span class="nb">簡潔でよいプロジェクトを</span><span class="nb">切り分けたいとき。</span></p>
   <pre class="prompt" id="b4">前提: 複数プロジェクトを掛け持ちしており、プロジェクトごとに求める応答の詳しさが違う。
@@ -81,7 +86,7 @@
     <button class="btn ghost sm" data-save="b4" data-name="newsprompts100-004.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Claude Code: Concise出力スタイル">
   <div class="ih"><span class="num">005</span><span class="ititle">Concise運用の振り返り依頼</span></div>
   <p class="imeta"><span class="nb">1週間使ってみて、</span><span class="nb">想定通り効果が出ているか確認したいと</span><span class="nb">き。</span></p>
   <pre class="prompt" id="b5">前提: Conciseに切り替えてから1週間ほど使っている。
@@ -92,8 +97,8 @@
     <button class="btn ghost sm" data-save="b5" data-name="newsprompts100-005.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">Claude Code: /designコマンド</h2>
-<div class="icard">
+<h2 class="cat" data-cat="Claude Code: /designコマンド">Claude Code: /designコマンド</h2>
+<div class="icard" data-cat="Claude Code: /designコマンド">
   <div class="ih"><span class="num">006</span><span class="ititle">初回のUI叩き台出し</span></div>
   <p class="imeta"><span class="nb">新機能の画面イメージが</span><span class="nb">まだ固まっていない段階で、</span><span class="nb">複数案から選びたいとき。</span></p>
   <pre class="prompt" id="b6">前提: 新機能のUIをこれから作るが、方向性がまだ決まっていない。
@@ -104,7 +109,7 @@
     <button class="btn ghost sm" data-save="b6" data-name="newsprompts100-006.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Claude Code: /designコマンド">
   <div class="ih"><span class="num">007</span><span class="ititle">既存画面のリニューアル案</span></div>
   <p class="imeta"><span class="nb">既存の画面が古く感じるとき、</span><span class="nb">改善方向性を複数比較したいとき。</span></p>
   <pre class="prompt" id="b7">前提: 既存のログイン画面のデザインが古く、リニューアルを検討している。
@@ -115,7 +120,7 @@
     <button class="btn ghost sm" data-save="b7" data-name="newsprompts100-007.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Claude Code: /designコマンド">
   <div class="ih"><span class="num">008</span><span class="ititle">選んだ案の実装移行</span></div>
   <p class="imeta"><span class="nb">/designで出た案の中から</span><span class="nb">1つ選んだ後、</span><span class="nb">そのまま実装に進みたいとき。</span></p>
   <pre class="prompt" id="b8">前提: /designで出た3案のうち、2番目の案が良いと判断した。
@@ -126,7 +131,7 @@
     <button class="btn ghost sm" data-save="b8" data-name="newsprompts100-008.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Claude Code: /designコマンド">
   <div class="ih"><span class="num">009</span><span class="ititle">モバイル対応版の派生案</span></div>
   <p class="imeta"><span class="nb">デスクトップ向けに決まった案を、</span><span class="nb">モバイル向けにも展開したいとき。</span></p>
   <pre class="prompt" id="b9">前提: /designでデスクトップ向けの画面案が決まった。
@@ -137,7 +142,7 @@
     <button class="btn ghost sm" data-save="b9" data-name="newsprompts100-009.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Claude Code: /designコマンド">
   <div class="ih"><span class="num">010</span><span class="ititle">チームレビュー用の案内</span></div>
   <p class="imeta"><span class="nb">/designで作った案をチームに</span><span class="nb">レビューしてもらう前に、</span><span class="nb">説明資料を作りたいとき。</span></p>
   <pre class="prompt" id="b10">前提: /designで作った3案をチームメンバーに見せてフィードバックをもらう予定。
@@ -148,8 +153,8 @@
     <button class="btn ghost sm" data-save="b10" data-name="newsprompts100-010.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">Claude Code: 週次制限・オートコンティニュー</h2>
-<div class="icard">
+<h2 class="cat" data-cat="Claude Code: 週次制限・オートコンティニュー">Claude Code: 週次制限・オートコンティニュー</h2>
+<div class="icard" data-cat="Claude Code: 週次制限・オートコンティニュー">
   <div class="ih"><span class="num">011</span><span class="ititle">オートコンティニューの有効化確認</span></div>
   <p class="imeta"><span class="nb">設定が本当に</span><span class="nb">オンになっているか不安なとき。</span></p>
   <pre class="prompt" id="b11">前提: Claude Codeデスクトップでオートコンティニューを有効にしたつもりだが、動作が不安。
@@ -160,7 +165,7 @@
     <button class="btn ghost sm" data-save="b11" data-name="newsprompts100-011.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Claude Code: 週次制限・オートコンティニュー">
   <div class="ih"><span class="num">012</span><span class="ititle">週次制限の使用ペース管理</span></div>
   <p class="imeta"><span class="nb">延長された制限(8/31まで)を</span><span class="nb">計画的に使い切りたいとき。</span></p>
   <pre class="prompt" id="b12">前提: 週次利用制限が50%増の状態が8/31まで続く見込み。
@@ -171,7 +176,7 @@
     <button class="btn ghost sm" data-save="b12" data-name="newsprompts100-012.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Claude Code: 週次制限・オートコンティニュー">
   <div class="ih"><span class="num">013</span><span class="ititle">長時間タスクの投げっぱなし設計</span></div>
   <p class="imeta"><span class="nb">オートコンティニューを前提に、</span><span class="nb">夜間や外出中に長いタスクを任せたいと</span><span class="nb">き。</span></p>
   <pre class="prompt" id="b13">前提: オートコンティニューをオンにした状態で、数時間かかる大きめのリファクタを任せたい。
@@ -182,7 +187,7 @@
     <button class="btn ghost sm" data-save="b13" data-name="newsprompts100-013.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Claude Code: 週次制限・オートコンティニュー">
   <div class="ih"><span class="num">014</span><span class="ititle">制限延長終了後の運用切り替え</span></div>
   <p class="imeta"><span class="nb">8/31以降に制限が元に戻った場合の</span><span class="nb">対応を今から準備したいとき。</span></p>
   <pre class="prompt" id="b14">前提: 週次制限50%増の延長は8/31までとアナウンスされている。
@@ -193,7 +198,7 @@
     <button class="btn ghost sm" data-save="b14" data-name="newsprompts100-014.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Claude Code: 週次制限・オートコンティニュー">
   <div class="ih"><span class="num">015</span><span class="ititle">制限到達時の通知運用</span></div>
   <p class="imeta"><span class="nb">制限に達したことに気づかず作業が</span><span class="nb">止まっていた経験があるとき。</span></p>
   <pre class="prompt" id="b15">前提: 週次制限に達したことに気づかず、作業が止まっていたことがあった。
@@ -204,8 +209,8 @@
     <button class="btn ghost sm" data-save="b15" data-name="newsprompts100-015.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">Claude Academy</h2>
-<div class="icard">
+<h2 class="cat" data-cat="Claude Academy">Claude Academy</h2>
+<div class="icard" data-cat="Claude Academy">
   <div class="ih"><span class="num">016</span><span class="ititle">自分に合った学習パスの選定</span></div>
   <p class="imeta"><span class="nb">5プロダクト+基礎コースのどこから</span><span class="nb">始めるべきか迷っているとき。</span></p>
   <pre class="prompt" id="b16">前提: Claude Academyが公開されたが、自分の業務内容(職種・現在のスキルレベル)に合わせてどこから始めるべきか分からない。
@@ -216,7 +221,7 @@
     <button class="btn ghost sm" data-save="b16" data-name="newsprompts100-016.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Claude Academy">
   <div class="ih"><span class="num">017</span><span class="ititle">チーム導入前の学習計画</span></div>
   <p class="imeta"><span class="nb">チームでAI Fluencyコースを</span><span class="nb">受けさせる計画を立てたいとき。</span></p>
   <pre class="prompt" id="b17">前提: チームメンバー数名にAI Fluency(14レッスン・約4時間)を受けてもらう予定。
@@ -227,7 +232,7 @@
     <button class="btn ghost sm" data-save="b17" data-name="newsprompts100-017.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Claude Academy">
   <div class="ih"><span class="num">018</span><span class="ititle">学習後の実践課題づくり</span></div>
   <p class="imeta"><span class="nb">コースを終えた後、</span><span class="nb">実務で試す課題を作りたいとき。</span></p>
   <pre class="prompt" id="b18">前提: AI Capabilities and Limitationsのコースを終えた。
@@ -238,7 +243,7 @@
     <button class="btn ghost sm" data-save="b18" data-name="newsprompts100-018.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Claude Academy">
   <div class="ih"><span class="num">019</span><span class="ititle">既存Anthropic Academy受講済みの人向け案内</span></div>
   <p class="imeta"><span class="nb">既に</span><span class="nb">Anthropic Academyを</span><span class="nb">受けたことがある人に、</span><span class="nb">新サイトとの違いを説明したいとき。</span></p>
   <pre class="prompt" id="b19">前提: チームの一部は既存のAnthropic Academy(anthropic.skilljar.com)を受講済み。
@@ -249,7 +254,7 @@
     <button class="btn ghost sm" data-save="b19" data-name="newsprompts100-019.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Claude Academy">
   <div class="ih"><span class="num">020</span><span class="ititle">学習進捗の振り返りフォーマット</span></div>
   <p class="imeta"><span class="nb">受講後に学びを社内に共有する形式を</span><span class="nb">作りたいとき。</span></p>
   <pre class="prompt" id="b20">前提: Claude Academyのコースを受講し終えた。
@@ -260,8 +265,8 @@
     <button class="btn ghost sm" data-save="b20" data-name="newsprompts100-020.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">Firecrawlコネクタ</h2>
-<div class="icard">
+<h2 class="cat" data-cat="Firecrawlコネクタ">Firecrawlコネクタ</h2>
+<div class="icard" data-cat="Firecrawlコネクタ">
   <div class="ih"><span class="num">021</span><span class="ititle">コネクタの接続手順確認</span></div>
   <p class="imeta"><span class="nb">初めてFirecrawlコネクタを</span><span class="nb">使うとき。</span></p>
   <pre class="prompt" id="b21">前提: Claudeのコネクタディレクトリからまだ何も接続したことがない。
@@ -272,7 +277,7 @@
     <button class="btn ghost sm" data-save="b21" data-name="newsprompts100-021.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Firecrawlコネクタ">
   <div class="ih"><span class="num">022</span><span class="ititle">リサーチタスクへの活用設計</span></div>
   <p class="imeta"><span class="nb">調べ物をFirecrawl経由で</span><span class="nb">効率化したいとき。</span></p>
   <pre class="prompt" id="b22">前提: 業界動向のリサーチを毎週行っている。
@@ -283,7 +288,7 @@
     <button class="btn ghost sm" data-save="b22" data-name="newsprompts100-022.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Firecrawlコネクタ">
   <div class="ih"><span class="num">023</span><span class="ititle">既存の検索フローとの比較</span></div>
   <p class="imeta"><span class="nb">従来のWeb検索と使い分けたいとき。</span></p>
   <pre class="prompt" id="b23">前提: これまで通常のWeb検索でリサーチしていた。
@@ -294,7 +299,7 @@
     <button class="btn ghost sm" data-save="b23" data-name="newsprompts100-023.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Firecrawlコネクタ">
   <div class="ih"><span class="num">024</span><span class="ititle">社内ナレッジ調査への応用</span></div>
   <p class="imeta"><span class="nb">社内文書ではなく外部情報の</span><span class="nb">一次ソース調査に使いたいとき。</span></p>
   <pre class="prompt" id="b24">前提: 外部の一次情報源を調査する機会が多い。
@@ -305,7 +310,7 @@
     <button class="btn ghost sm" data-save="b24" data-name="newsprompts100-024.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Firecrawlコネクタ">
   <div class="ih"><span class="num">025</span><span class="ititle">接続トラブル時の切り分け</span></div>
   <p class="imeta"><span class="nb">コネクタがうまく動かないとき、</span><span class="nb">原因を切り分けたいとき。</span></p>
   <pre class="prompt" id="b25">前提: Firecrawlコネクタを接続したが、期待した結果が返ってこない。
@@ -316,8 +321,8 @@
     <button class="btn ghost sm" data-save="b25" data-name="newsprompts100-025.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">HyperFrames MCP</h2>
-<div class="icard">
+<h2 class="cat" data-cat="HyperFrames MCP">HyperFrames MCP</h2>
+<div class="icard" data-cat="HyperFrames MCP">
   <div class="ih"><span class="num">026</span><span class="ititle">初回セットアップの確認</span></div>
   <p class="imeta"><span class="nb">Claude Designに</span><span class="nb">HyperFrames MCPを</span><span class="nb">導入するとき。</span></p>
   <pre class="prompt" id="b26">前提: Claude Designは使っているが、HyperFrames MCPはまだ導入していない。
@@ -328,7 +333,7 @@
     <button class="btn ghost sm" data-save="b26" data-name="newsprompts100-026.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="HyperFrames MCP">
   <div class="ih"><span class="num">027</span><span class="ititle">アニメーション案の書き出し依頼</span></div>
   <p class="imeta"><span class="nb">作ったアニメーションを</span><span class="nb">MP4化したいとき。</span></p>
   <pre class="prompt" id="b27">前提: Claude Designで簡単なアニメーションを作成済み。
@@ -339,7 +344,7 @@
     <button class="btn ghost sm" data-save="b27" data-name="newsprompts100-027.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="HyperFrames MCP">
   <div class="ih"><span class="num">028</span><span class="ititle">サードパーティ製である点の社内周知</span></div>
   <p class="imeta"><span class="nb">チームに紹介する際、</span><span class="nb">公式機能ではない点を明確にしたいと</span><span class="nb">き。</span></p>
   <pre class="prompt" id="b28">前提: チームにHyperFrames MCPを紹介したいが、Anthropic公式機能ではないサードパーティ連携である点を誤解なく伝えたい。
@@ -350,7 +355,7 @@
     <button class="btn ghost sm" data-save="b28" data-name="newsprompts100-028.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="HyperFrames MCP">
   <div class="ih"><span class="num">029</span><span class="ititle">動画尺の指定テンプレート</span></div>
   <p class="imeta"><span class="nb">SNS投稿用に尺を</span><span class="nb">指定してMP4化したいとき。</span></p>
   <pre class="prompt" id="b29">前提: SNS投稿用に15秒程度のショート動画を作りたい。
@@ -361,7 +366,7 @@
     <button class="btn ghost sm" data-save="b29" data-name="newsprompts100-029.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="HyperFrames MCP">
   <div class="ih"><span class="num">030</span><span class="ititle">導入判断の整理</span></div>
   <p class="imeta"><span class="nb">導入するかどうか迷っているとき。</span></p>
   <pre class="prompt" id="b30">前提: 動画制作の頻度がそこまで高くない状態でHyperFrames MCPを導入すべきか迷っている。
@@ -372,8 +377,8 @@
     <button class="btn ghost sm" data-save="b30" data-name="newsprompts100-030.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">OpenArt(Claude Store)</h2>
-<div class="icard">
+<h2 class="cat" data-cat="OpenArt(Claude Store)">OpenArt(Claude Store)</h2>
+<div class="icard" data-cat="OpenArt(Claude Store)">
   <div class="ih"><span class="num">031</span><span class="ititle">OpenArt Liteの検索・導入確認</span></div>
   <p class="imeta"><span class="nb">初めてOpenArt Liteを</span><span class="nb">試すとき。</span></p>
   <pre class="prompt" id="b31">前提: Claude StoreのConnectorsからOpenArt Liteをまだ試したことがない。
@@ -384,7 +389,7 @@
     <button class="btn ghost sm" data-save="b31" data-name="newsprompts100-031.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="OpenArt(Claude Store)">
   <div class="ih"><span class="num">032</span><span class="ititle">画像生成ワークフローへの組み込み</span></div>
   <p class="imeta"><span class="nb">既存の画像生成フローに</span><span class="nb">OpenArtを組み込みたいとき。</span></p>
   <pre class="prompt" id="b32">前提: これまで別の画像生成ツールを使っていた。
@@ -395,7 +400,7 @@
     <button class="btn ghost sm" data-save="b32" data-name="newsprompts100-032.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="OpenArt(Claude Store)">
   <div class="ih"><span class="num">033</span><span class="ititle">小規模チームでの試験導入案</span></div>
   <p class="imeta"><span class="nb">チームで試験的に導入するかどうかの</span><span class="nb">検討材料が欲しいとき。</span></p>
   <pre class="prompt" id="b33">前提: 小規模チームでOpenArt Liteを試験導入するか検討している。
@@ -406,7 +411,7 @@
     <button class="btn ghost sm" data-save="b33" data-name="newsprompts100-033.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="OpenArt(Claude Store)">
   <div class="ih"><span class="num">034</span><span class="ititle">他コネクタとの併用整理</span></div>
   <p class="imeta"><span class="nb">Firecrawl等、</span><span class="nb">他のコネクタと役割分担したいとき。</span></p>
   <pre class="prompt" id="b34">前提: Firecrawlコネクタなど、他のコネクタも同時に使っている。
@@ -417,7 +422,7 @@
     <button class="btn ghost sm" data-save="b34" data-name="newsprompts100-034.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="OpenArt(Claude Store)">
   <div class="ih"><span class="num">035</span><span class="ititle">規模の小さい発表という前提の共有</span></div>
   <p class="imeta"><span class="nb">社内で紹介する際、</span><span class="nb">まだ規模の小さい発表である点を</span><span class="nb">含めて共有したいとき。</span></p>
   <pre class="prompt" id="b35">前提: OpenArt LiteのClaude Store登場は反響が大きくない発表(表示回数は小規模)だった。
@@ -428,8 +433,8 @@
     <button class="btn ghost sm" data-save="b35" data-name="newsprompts100-035.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">Codex: 100万トークン・コンテキスト設定</h2>
-<div class="icard">
+<h2 class="cat" data-cat="Codex: 100万トークン・コンテキスト設定">Codex: 100万トークン・コンテキスト設定</h2>
+<div class="icard" data-cat="Codex: 100万トークン・コンテキスト設定">
   <div class="ih"><span class="num">036</span><span class="ititle">config.tomlの安全な編集依頼</span></div>
   <p class="imeta"><span class="nb">設定ファイルを壊さずに1M設定を</span><span class="nb">追記したいとき。</span></p>
   <pre class="prompt" id="b36">前提: ~/.codex/config.tomlに他の設定も既に書かれている状態。
@@ -440,7 +445,7 @@
     <button class="btn ghost sm" data-save="b36" data-name="newsprompts100-036.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Codex: 100万トークン・コンテキスト設定">
   <div class="ih"><span class="num">037</span><span class="ititle">単発試用コマンドの組み立て</span></div>
   <p class="imeta"><span class="nb">デフォルトを変えずに</span><span class="nb">1回だけ試したいとき。</span></p>
   <pre class="prompt" id="b37">前提: 普段はデフォルト設定のCodexを使っており、まずは1回だけ100万トークン設定を試したい。
@@ -451,7 +456,7 @@
     <button class="btn ghost sm" data-save="b37" data-name="newsprompts100-037.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Codex: 100万トークン・コンテキスト設定">
   <div class="ih"><span class="num">038</span><span class="ititle">コスト影響の見積もり依頼</span></div>
   <p class="imeta"><span class="nb">コンテキストを増やすとコストが</span><span class="nb">どう変わるか把握したいとき。</span></p>
   <pre class="prompt" id="b38">前提: 100万トークン設定にすると、処理コスト・速度への影響が気になる。
@@ -462,7 +467,7 @@
     <button class="btn ghost sm" data-save="b38" data-name="newsprompts100-038.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Codex: 100万トークン・コンテキスト設定">
   <div class="ih"><span class="num">039</span><span class="ititle">長時間セッションの構成設計</span></div>
   <p class="imeta"><span class="nb">1M設定を前提に、</span><span class="nb">長時間の開発セッションを設計したいと</span><span class="nb">き。</span></p>
   <pre class="prompt" id="b39">前提: 100万トークン設定を有効にした状態で、数時間かかる大規模リファクタを1セッションで進めたい。
@@ -473,7 +478,7 @@
     <button class="btn ghost sm" data-save="b39" data-name="newsprompts100-039.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Codex: 100万トークン・コンテキスト設定">
   <div class="ih"><span class="num">040</span><span class="ititle">自動圧縮閾値のチューニング相談</span></div>
   <p class="imeta">model_auto_compact_token_limitの<span class="nb">値をどう決めるか相談したいとき。</span></p>
   <pre class="prompt" id="b40">前提: model_auto_compact_token_limitを900000のまま使っているが、自分の用途に合っているか分からない。
@@ -484,7 +489,7 @@
     <button class="btn ghost sm" data-save="b40" data-name="newsprompts100-040.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Codex: 100万トークン・コンテキスト設定">
   <div class="ih"><span class="num">041</span><span class="ititle">元の設定への切り戻し手順</span></div>
   <p class="imeta"><span class="nb">1M設定を試してみて、</span><span class="nb">元に戻したくなったとき。</span></p>
   <pre class="prompt" id="b41">前提: 1M設定を試したが、通常設定に戻したくなった。
@@ -495,7 +500,7 @@
     <button class="btn ghost sm" data-save="b41" data-name="newsprompts100-041.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Codex: 100万トークン・コンテキスト設定">
   <div class="ih"><span class="num">042</span><span class="ititle">チームへの展開可否の判断材料</span></div>
   <p class="imeta"><span class="nb">チームメンバー全員に1M設定を</span><span class="nb">勧めるべきか判断したいとき。</span></p>
   <pre class="prompt" id="b42">前提: 自分は1M設定を使って便利だったが、チーム全体に展開すべきか判断材料が欲しい。
@@ -506,8 +511,8 @@
     <button class="btn ghost sm" data-save="b42" data-name="newsprompts100-042.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">Agent Plugins標準</h2>
-<div class="icard">
+<h2 class="cat" data-cat="Agent Plugins標準">Agent Plugins標準</h2>
+<div class="icard" data-cat="Agent Plugins標準">
   <div class="ih"><span class="num">043</span><span class="ititle">既存Skillsの移行可否チェック</span></div>
   <p class="imeta"><span class="nb">手持ちのAgent Skillsを</span><span class="nb">Agent Plugins形式に</span><span class="nb">移行できるか確認したいとき。</span></p>
   <pre class="prompt" id="b43">前提: いくつか自作のAgent Skillsを運用している。
@@ -518,7 +523,7 @@
     <button class="btn ghost sm" data-save="b43" data-name="newsprompts100-043.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Agent Plugins標準">
   <div class="ih"><span class="num">044</span><span class="ititle">MCPサーバー設定の共有形式化</span></div>
   <p class="imeta"><span class="nb">MCPサーバー設定をチームで</span><span class="nb">共有しやすい形にしたいとき。</span></p>
   <pre class="prompt" id="b44">前提: チーム内でMCPサーバー設定がバラバラに管理されている。
@@ -529,7 +534,7 @@
     <button class="btn ghost sm" data-save="b44" data-name="newsprompts100-044.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Agent Plugins標準">
   <div class="ih"><span class="num">045</span><span class="ititle">対応エージェントクライアントの確認</span></div>
   <p class="imeta"><span class="nb">自分が使っているツールが</span><span class="nb">Agent Plugins対応か確認したいと</span><span class="nb">き。</span></p>
   <pre class="prompt" id="b45">前提: 普段CursorとGitHubを併用している。
@@ -540,7 +545,7 @@
     <button class="btn ghost sm" data-save="b45" data-name="newsprompts100-045.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Agent Plugins標準">
   <div class="ih"><span class="num">046</span><span class="ititle">プラグイン配布の準備手順</span></div>
   <p class="imeta"><span class="nb">自作プラグインを配布用に整えたいと</span><span class="nb">き。</span></p>
   <pre class="prompt" id="b46">前提: チーム内限定で使っているツールをプラグインとして配布したい。
@@ -551,7 +556,7 @@
     <button class="btn ghost sm" data-save="b46" data-name="newsprompts100-046.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Agent Plugins標準">
   <div class="ih"><span class="num">047</span><span class="ititle">導入前の社内説明資料</span></div>
   <p class="imeta"><span class="nb">Agent Pluginsと</span><span class="nb">いう概念自体をチームに説明したいと</span><span class="nb">き。</span></p>
   <pre class="prompt" id="b47">前提: チームのほとんどがAgent Pluginsという言葉を初めて聞く状態。
@@ -562,8 +567,8 @@
     <button class="btn ghost sm" data-save="b47" data-name="newsprompts100-047.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">Apple Messagesプラグイン</h2>
-<div class="icard">
+<h2 class="cat" data-cat="Apple Messagesプラグイン">Apple Messagesプラグイン</h2>
+<div class="icard" data-cat="Apple Messagesプラグイン">
   <div class="ih"><span class="num">048</span><span class="ititle">導入前の対象確認</span></div>
   <p class="imeta"><span class="nb">自分の環境で使えるか確認したいとき。</span></p>
   <pre class="prompt" id="b48">前提: ChatGPT WorkかCodexデスクトップ版のどちらを契約しているか曖昧なまま使いたいと思っている。
@@ -574,7 +579,7 @@
     <button class="btn ghost sm" data-save="b48" data-name="newsprompts100-048.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Apple Messagesプラグイン">
   <div class="ih"><span class="num">049</span><span class="ititle">メッセージ整理の依頼テンプレ</span></div>
   <p class="imeta"><span class="nb">溜まったメッセージを整理する使い方を</span><span class="nb">テンプレ化したいとき。</span></p>
   <pre class="prompt" id="b49">前提: Messagesに未返信のやり取りが溜まっている。
@@ -585,7 +590,7 @@
     <button class="btn ghost sm" data-save="b49" data-name="newsprompts100-049.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Apple Messagesプラグイン">
   <div class="ih"><span class="num">050</span><span class="ititle">送信前の確認フロー</span></div>
   <p class="imeta"><span class="nb">AIが下書きした返信を</span><span class="nb">誤送信しないための運用を決めたいと</span><span class="nb">き。</span></p>
   <pre class="prompt" id="b50">前提: 下書きの自動生成は便利だが、誤った内容のまま送信してしまう不安がある。
@@ -596,7 +601,7 @@
     <button class="btn ghost sm" data-save="b50" data-name="newsprompts100-050.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Apple Messagesプラグイン">
   <div class="ih"><span class="num">051</span><span class="ititle">業務利用時のプライバシー配慮</span></div>
   <p class="imeta"><span class="nb">業務でのメッセージ検索利用時に</span><span class="nb">配慮すべき点を整理したいとき。</span></p>
   <pre class="prompt" id="b51">前提: 業務でApple Messagesプラグインを使う予定だが、プライバシーへの配慮が必要な相手とのやり取りも含まれる。
@@ -607,7 +612,7 @@
     <button class="btn ghost sm" data-save="b51" data-name="newsprompts100-051.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Apple Messagesプラグイン">
   <div class="ih"><span class="num">052</span><span class="ititle">よく使う定型文の登録</span></div>
   <p class="imeta"><span class="nb">頻出する返信パターンを</span><span class="nb">あらかじめ用意しておきたいとき。</span></p>
   <pre class="prompt" id="b52">前提: 同じような内容の返信を何度も書いている。
@@ -618,8 +623,8 @@
     <button class="btn ghost sm" data-save="b52" data-name="newsprompts100-052.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">GPT-Image-2 透明背景</h2>
-<div class="icard">
+<h2 class="cat" data-cat="GPT-Image-2 透明背景">GPT-Image-2 透明背景</h2>
+<div class="icard" data-cat="GPT-Image-2 透明背景">
   <div class="ih"><span class="num">053</span><span class="ititle">商品画像アセットの生成依頼</span></div>
   <p class="imeta"><span class="nb">ECサイト用の商品画像を作りたいと</span><span class="nb">き。</span></p>
   <pre class="prompt" id="b53">前提: ECサイトに載せる商品画像を複数の背景パターンで使い回したい。
@@ -630,7 +635,7 @@
     <button class="btn ghost sm" data-save="b53" data-name="newsprompts100-053.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="GPT-Image-2 透明背景">
   <div class="ih"><span class="num">054</span><span class="ititle">Webモックアップ用パーツ生成</span></div>
   <p class="imeta"><span class="nb">サイトモックアップに使う素材を</span><span class="nb">作りたいとき。</span></p>
   <pre class="prompt" id="b54">前提: Webサイトのモックアップを作成中で、アイコンやイラスト素材が足りない。
@@ -641,7 +646,7 @@
     <button class="btn ghost sm" data-save="b54" data-name="newsprompts100-054.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="GPT-Image-2 透明背景">
   <div class="ih"><span class="num">055</span><span class="ititle">マーケティング素材のバリエーション出し</span></div>
   <p class="imeta"><span class="nb">同じ素材を複数の背景で使い分けたいと</span><span class="nb">き。</span></p>
   <pre class="prompt" id="b55">前提: SNS広告用に同じキャラクター・オブジェクトを複数の背景色で使い回したい。
@@ -652,7 +657,7 @@
     <button class="btn ghost sm" data-save="b55" data-name="newsprompts100-055.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="GPT-Image-2 透明背景">
   <div class="ih"><span class="num">056</span><span class="ititle">既存ロゴとの合成前提の生成</span></div>
   <p class="imeta"><span class="nb">既存のブランド素材と</span><span class="nb">組み合わせる前提で作りたいとき。</span></p>
   <pre class="prompt" id="b56">前提: 既存のロゴ・ブランドカラーがあり、それに合わせた透明背景素材が欲しい。
@@ -663,7 +668,7 @@
     <button class="btn ghost sm" data-save="b56" data-name="newsprompts100-056.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="GPT-Image-2 透明背景">
   <div class="ih"><span class="num">057</span><span class="ititle">生成物のライセンス確認事項の整理</span></div>
   <p class="imeta"><span class="nb">商用利用する前に確認すべき点を</span><span class="nb">整理したいとき。</span></p>
   <pre class="prompt" id="b57">前提: 生成した透明背景素材を商用のマーケティング素材として使う予定。
@@ -674,8 +679,8 @@
     <button class="btn ghost sm" data-save="b57" data-name="newsprompts100-057.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">ChatGPT Sites協業・共有スレッド</h2>
-<div class="icard">
+<h2 class="cat" data-cat="ChatGPT Sites協業・共有スレッド">ChatGPT Sites協業・共有スレッド</h2>
+<div class="icard" data-cat="ChatGPT Sites協業・共有スレッド">
   <div class="ih"><span class="num">058</span><span class="ititle">チームエディター招待の準備</span></div>
   <p class="imeta"><span class="nb">ChatGPT Sitesに</span><span class="nb">チームメンバーを招待する前の準備を</span><span class="nb">したいとき。</span></p>
   <pre class="prompt" id="b58">前提: ChatGPT Sitesのプロジェクトを1人で始めており、これからチームメンバーを招待したい。
@@ -686,7 +691,7 @@
     <button class="btn ghost sm" data-save="b58" data-name="newsprompts100-058.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="ChatGPT Sites協業・共有スレッド">
   <div class="ih"><span class="num">059</span><span class="ititle">git運用ルールの明文化</span></div>
   <p class="imeta"><span class="nb">Codexが裏側で</span><span class="nb">処理するgit管理と、</span><span class="nb">人の作業を整理したいとき。</span></p>
   <pre class="prompt" id="b59">前提: ChatGPT SitesでCodexがgit管理・CIを自動処理する環境を使い始める。
@@ -697,7 +702,7 @@
     <button class="btn ghost sm" data-save="b59" data-name="newsprompts100-059.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="ChatGPT Sites協業・共有スレッド">
   <div class="ih"><span class="num">060</span><span class="ititle">共有スレッドを使った引き継ぎ資料化</span></div>
   <p class="imeta"><span class="nb">作業の背景を引き継ぐ相手に</span><span class="nb">説明する準備をしたいとき。</span></p>
   <pre class="prompt" id="b60">前提: 進行中のプロジェクトを別の担当者に引き継ぐ予定。
@@ -708,7 +713,7 @@
     <button class="btn ghost sm" data-save="b60" data-name="newsprompts100-060.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="ChatGPT Sites協業・共有スレッド">
   <div class="ih"><span class="num">061</span><span class="ititle">PR説明への共有スレッド活用</span></div>
   <p class="imeta"><span class="nb">PRの背景説明を共有スレッドで</span><span class="nb">補いたいとき。</span></p>
   <pre class="prompt" id="b61">前提: PRの差分だけでは意図が伝わりにくいと感じている。
@@ -719,7 +724,7 @@
     <button class="btn ghost sm" data-save="b61" data-name="newsprompts100-061.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="ChatGPT Sites協業・共有スレッド">
   <div class="ih"><span class="num">062</span><span class="ititle">共有範囲の見直しチェック</span></div>
   <p class="imeta"><span class="nb">共有スレッドを外部に</span><span class="nb">見せてよいか判断したいとき。</span></p>
   <pre class="prompt" id="b62">前提: 共有スレッドのリンクを社外の関係者に送るか迷っている。
@@ -730,8 +735,8 @@
     <button class="btn ghost sm" data-save="b62" data-name="newsprompts100-062.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">今週のChatGPT新機能(クイズ・予約検索・Drive連携・提案)</h2>
-<div class="icard">
+<h2 class="cat" data-cat="今週のChatGPT新機能(クイズ・予約検索・Drive連携・提案)">今週のChatGPT新機能(クイズ・予約検索・Drive連携・提案)</h2>
+<div class="icard" data-cat="今週のChatGPT新機能(クイズ・予約検索・Drive連携・提案)">
   <div class="ih"><span class="num">063</span><span class="ititle">学習用クイズの自動生成依頼</span></div>
   <p class="imeta"><span class="nb">特定分野の理解度チェックをしたいと</span><span class="nb">き。</span></p>
   <pre class="prompt" id="b63">前提: ある分野(具体的なトピック)についてどれくらい理解できているか確認したい。
@@ -742,7 +747,7 @@
     <button class="btn ghost sm" data-save="b63" data-name="newsprompts100-063.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="今週のChatGPT新機能(クイズ・予約検索・Drive連携・提案)">
   <div class="ih"><span class="num">064</span><span class="ititle">チーム研修用クイズセットの作成</span></div>
   <p class="imeta"><span class="nb">新人研修などでクイズを活用したいと</span><span class="nb">き。</span></p>
   <pre class="prompt" id="b64">前提: 新しいメンバーの研修で、業務知識の定着度を確認したい。
@@ -753,7 +758,7 @@
     <button class="btn ghost sm" data-save="b64" data-name="newsprompts100-064.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="今週のChatGPT新機能(クイズ・予約検索・Drive連携・提案)">
   <div class="ih"><span class="num">065</span><span class="ititle">予約検索の条件指定テンプレ</span></div>
   <p class="imeta"><span class="nb">飲食店やホテルなどの予約検索を</span><span class="nb">自然文でしたいとき。</span></p>
   <pre class="prompt" id="b65">前提: 特定の日時・人数・条件で予約先を探したい。
@@ -764,7 +769,7 @@
     <button class="btn ghost sm" data-save="b65" data-name="newsprompts100-065.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="今週のChatGPT新機能(クイズ・予約検索・Drive連携・提案)">
   <div class="ih"><span class="num">066</span><span class="ititle">複数候補の比較検索依頼</span></div>
   <p class="imeta"><span class="nb">1件だけでなく複数候補を比較したいと</span><span class="nb">き。</span></p>
   <pre class="prompt" id="b66">前提: 予約先候補を複数出して比較検討したい。
@@ -775,7 +780,7 @@
     <button class="btn ghost sm" data-save="b66" data-name="newsprompts100-066.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="今週のChatGPT新機能(クイズ・予約検索・Drive連携・提案)">
   <div class="ih"><span class="num">067</span><span class="ititle">Google Drive連携の初回設定確認</span></div>
   <p class="imeta"><span class="nb">有料プランでDrive連携を</span><span class="nb">初めて使うとき。</span></p>
   <pre class="prompt" id="b67">前提: ChatGPTの有料プランで、まだGoogle Drive連携を使ったことがない。
@@ -786,7 +791,7 @@
     <button class="btn ghost sm" data-save="b67" data-name="newsprompts100-067.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="今週のChatGPT新機能(クイズ・予約検索・Drive連携・提案)">
   <div class="ih"><span class="num">068</span><span class="ititle">Drive資料の要約依頼テンプレ</span></div>
   <p class="imeta"><span class="nb">Driveに保存した資料を</span><span class="nb">すぐ要約させたいとき。</span></p>
   <pre class="prompt" id="b68">前提: Google Driveに複数の資料が保存されている。
@@ -797,7 +802,7 @@
     <button class="btn ghost sm" data-save="b68" data-name="newsprompts100-068.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="今週のChatGPT新機能(クイズ・予約検索・Drive連携・提案)">
   <div class="ih"><span class="num">069</span><span class="ititle">ホーム画面の提案を業務に活かす運用</span></div>
   <p class="imeta"><span class="nb">有料ユーザー向けの提案表示を業務の</span><span class="nb">ヒントに使いたいとき。</span></p>
   <pre class="prompt" id="b69">前提: ChatGPTのホーム画面に表示される提案を、日々の業務のきっかけとして活用したい。
@@ -808,7 +813,7 @@
     <button class="btn ghost sm" data-save="b69" data-name="newsprompts100-069.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="今週のChatGPT新機能(クイズ・予約検索・Drive連携・提案)">
   <div class="ih"><span class="num">070</span><span class="ititle">新機能まとめの社内共有テンプレ</span></div>
   <p class="imeta"><span class="nb">今週の新機能4つをチームに簡潔に</span><span class="nb">共有したいとき。</span></p>
   <pre class="prompt" id="b70">前提: クイズ・予約検索・Drive連携・提案表示の4つの新機能をチームに知らせたい。
@@ -819,8 +824,8 @@
     <button class="btn ghost sm" data-save="b70" data-name="newsprompts100-070.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">Cursor Origin: 移行・PR運用</h2>
-<div class="icard">
+<h2 class="cat" data-cat="Cursor Origin: 移行・PR運用">Cursor Origin: 移行・PR運用</h2>
+<div class="icard" data-cat="Cursor Origin: 移行・PR運用">
   <div class="ih"><span class="num">071</span><span class="ititle">GitHub同期の初回設定確認</span></div>
   <p class="imeta"><span class="nb">Originで</span><span class="nb">GitHubリポジトリを同期する前の</span><span class="nb">確認をしたいとき。</span></p>
   <pre class="prompt" id="b71">前提: CursorのOriginをまだ使ったことがなく、既存のGitHubリポジトリを同期しようとしている。
@@ -831,7 +836,7 @@
     <button class="btn ghost sm" data-save="b71" data-name="newsprompts100-071.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Cursor Origin: 移行・PR運用">
   <div class="ih"><span class="num">072</span><span class="ititle">併用期間のルール決め</span></div>
   <p class="imeta"><span class="nb">GitHubとOriginを</span><span class="nb">併用する期間の運用ルールを決めたいと</span><span class="nb">き。</span></p>
   <pre class="prompt" id="b72">前提: いきなり全面移行はせず、しばらくGitHubとOriginを併用する予定。
@@ -842,7 +847,7 @@
     <button class="btn ghost sm" data-save="b72" data-name="newsprompts100-072.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Cursor Origin: 移行・PR運用">
   <div class="ih"><span class="num">073</span><span class="ititle">小規模リポジトリでの試験導入計画</span></div>
   <p class="imeta"><span class="nb">まずは小さいリポジトリで試したいと</span><span class="nb">き。</span></p>
   <pre class="prompt" id="b73">前提: いきなり本番リポジトリではなく、小規模なリポジトリで試験導入したい。
@@ -853,7 +858,7 @@
     <button class="btn ghost sm" data-save="b73" data-name="newsprompts100-073.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Cursor Origin: 移行・PR運用">
   <div class="ih"><span class="num">074</span><span class="ititle">PRコメント運用の周知文</span></div>
   <p class="imeta"><span class="nb">PRコメントが双方向同期される仕様を</span><span class="nb">チームに周知したいとき。</span></p>
   <pre class="prompt" id="b74">前提: OriginとGitHubでPRコメントが双方向・数秒以内に同期される仕様がある。
@@ -864,7 +869,7 @@
     <button class="btn ghost sm" data-save="b74" data-name="newsprompts100-074.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Cursor Origin: 移行・PR運用">
   <div class="ih"><span class="num">075</span><span class="ititle">Vercel連携のセットアップ確認</span></div>
   <p class="imeta"><span class="nb">day-1連携のVercelを</span><span class="nb">使う場合の確認事項をまとめたいとき。</span></p>
   <pre class="prompt" id="b75">前提: VercelでのプレビューデプロイをOrigin経由で使いたい。
@@ -875,7 +880,7 @@
     <button class="btn ghost sm" data-save="b75" data-name="newsprompts100-075.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Cursor Origin: 移行・PR運用">
   <div class="ih"><span class="num">076</span><span class="ititle">CI移行(Depot/Buildkite)の比較検討</span></div>
   <p class="imeta"><span class="nb">既存の</span><span class="nb">GitHub Actionsから</span><span class="nb">CI連携先を選びたいとき。</span></p>
   <pre class="prompt" id="b76">前提: 既存のGitHub Actionsワークフローを、DepotかBuildkiteのどちらかでOrigin連携したい。
@@ -886,7 +891,7 @@
     <button class="btn ghost sm" data-save="b76" data-name="newsprompts100-076.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Cursor Origin: 移行・PR運用">
   <div class="ih"><span class="num">077</span><span class="ititle">移行のロールバック手順確認</span></div>
   <p class="imeta"><span class="nb">移行がうまくいかなかった場合に</span><span class="nb">備えたいとき。</span></p>
   <pre class="prompt" id="b77">前提: Originへの移行を進めているが、うまくいかない場合に備えたい。
@@ -897,7 +902,7 @@
     <button class="btn ghost sm" data-save="b77" data-name="newsprompts100-077.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Cursor Origin: 移行・PR運用">
   <div class="ih"><span class="num">078</span><span class="ititle">企業向けオプトアウト要否の確認</span></div>
   <p class="imeta"><span class="nb">組織としてOriginを</span><span class="nb">使うか使わないか判断したいとき。</span></p>
   <pre class="prompt" id="b78">前提: 企業組織としてOriginをオプトアウトするかどうか検討中。
@@ -908,7 +913,7 @@
     <button class="btn ghost sm" data-save="b78" data-name="newsprompts100-078.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Cursor Origin: 移行・PR運用">
   <div class="ih"><span class="num">079</span><span class="ititle">コードベース命名規則の統一</span></div>
   <p class="imeta"><span class="nb">複数のOriginリポジトリを</span><span class="nb">整理して命名したいとき。</span></p>
   <pre class="prompt" id="b79">前提: 複数の新規リポジトリをOriginで作成する予定。
@@ -919,7 +924,7 @@
     <button class="btn ghost sm" data-save="b79" data-name="newsprompts100-079.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Cursor Origin: 移行・PR運用">
   <div class="ih"><span class="num">080</span><span class="ititle">移行完了報告の社内共有テンプレ</span></div>
   <p class="imeta"><span class="nb">移行が完了したことをチームに</span><span class="nb">報告したいとき。</span></p>
   <pre class="prompt" id="b80">前提: 試験導入していたOriginへの移行が完了した。
@@ -930,8 +935,8 @@
     <button class="btn ghost sm" data-save="b80" data-name="newsprompts100-080.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">Cursorクラウドエージェント</h2>
-<div class="icard">
+<h2 class="cat" data-cat="Cursorクラウドエージェント">Cursorクラウドエージェント</h2>
+<div class="icard" data-cat="Cursorクラウドエージェント">
   <div class="ih"><span class="num">081</span><span class="ititle">長時間タスクの引き継ぎ設計</span></div>
   <p class="imeta"><span class="nb">イベントから作業を引き継ぐ挙動を</span><span class="nb">活かしたいとき。</span></p>
   <pre class="prompt" id="b81">前提: 長時間かかるタスクをクラウドエージェントに任せたい。
@@ -942,7 +947,7 @@
     <button class="btn ghost sm" data-save="b81" data-name="newsprompts100-081.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Cursorクラウドエージェント">
   <div class="ih"><span class="num">082</span><span class="ititle">軌道維持のための進捗確認ルール</span></div>
   <p class="imeta"><span class="nb">長時間セッションが想定通り進んで</span><span class="nb">いるか確認したいとき。</span></p>
   <pre class="prompt" id="b82">前提: クラウドエージェントに数時間規模のタスクを任せている。
@@ -953,7 +958,7 @@
     <button class="btn ghost sm" data-save="b82" data-name="newsprompts100-082.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Cursorクラウドエージェント">
   <div class="ih"><span class="num">083</span><span class="ititle">複数タスクの並列運用整理</span></div>
   <p class="imeta"><span class="nb">クラウドエージェントに複数タスクを</span><span class="nb">同時に任せたいとき。</span></p>
   <pre class="prompt" id="b83">前提: 複数の独立したタスクをクラウドエージェントに並行して任せたい。
@@ -964,7 +969,7 @@
     <button class="btn ghost sm" data-save="b83" data-name="newsprompts100-083.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Cursorクラウドエージェント">
   <div class="ih"><span class="num">084</span><span class="ititle">目標達成条件の明文化</span></div>
   <p class="imeta"><span class="nb">「目標が達成されるまで保持する」</span><span class="nb">動作を活かすため、</span><span class="nb">達成条件を明確にしたいとき。</span></p>
   <pre class="prompt" id="b84">前提: クラウドエージェントにタスクを任せる際、完了の判断基準が曖昧だった経験がある。
@@ -975,7 +980,7 @@
     <button class="btn ghost sm" data-save="b84" data-name="newsprompts100-084.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Cursorクラウドエージェント">
   <div class="ih"><span class="num">085</span><span class="ititle">失敗時のエスカレーションルール</span></div>
   <p class="imeta"><span class="nb">エージェントが行き詰まった場合の</span><span class="nb">対応を決めておきたいとき。</span></p>
   <pre class="prompt" id="b85">前提: クラウドエージェントが目標を達成できず行き詰まる可能性がある。
@@ -986,8 +991,8 @@
     <button class="btn ghost sm" data-save="b85" data-name="newsprompts100-085.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">Hermes Desktop: Bot Mode</h2>
-<div class="icard">
+<h2 class="cat" data-cat="Hermes Desktop: Bot Mode">Hermes Desktop: Bot Mode</h2>
+<div class="icard" data-cat="Hermes Desktop: Bot Mode">
   <div class="ih"><span class="num">086</span><span class="ititle">役割別Botの設計</span></div>
   <p class="imeta"><span class="nb">複数のBotに役割を割り振りたいと</span><span class="nb">き。</span></p>
   <pre class="prompt" id="b86">前提: これまで1つのエージェントプロファイルで全部の作業をしていた。
@@ -998,7 +1003,7 @@
     <button class="btn ghost sm" data-save="b86" data-name="newsprompts100-086.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Hermes Desktop: Bot Mode">
   <div class="ih"><span class="num">087</span><span class="ititle">Bot間通信を使ったワークフロー設計</span></div>
   <p class="imeta"><span class="nb">Bot同士が通信できる機能を</span><span class="nb">活かしたワークフローを作りたいとき。</span></p>
   <pre class="prompt" id="b87">前提: 調査担当Botと執筆担当Botのように、役割の違うBotを連携させたい。
@@ -1009,7 +1014,7 @@
     <button class="btn ghost sm" data-save="b87" data-name="newsprompts100-087.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Hermes Desktop: Bot Mode">
   <div class="ih"><span class="num">088</span><span class="ititle">専門Botのプロフィール設計</span></div>
   <p class="imeta"><span class="nb">特定分野に特化したBotを</span><span class="nb">1体作りたいとき。</span></p>
   <pre class="prompt" id="b88">前提: 特定分野(具体的な専門領域)に特化したBotを1つ作りたい。
@@ -1020,7 +1025,7 @@
     <button class="btn ghost sm" data-save="b88" data-name="newsprompts100-088.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Hermes Desktop: Bot Mode">
   <div class="ih"><span class="num">089</span><span class="ititle">Botのプロフィール画像・命名ルール</span></div>
   <p class="imeta"><span class="nb">複数Botを見分けやすくしたいとき。</span></p>
   <pre class="prompt" id="b89">前提: 複数のBotを運用する予定で、パッと見て役割が分かるようにしたい。
@@ -1031,7 +1036,7 @@
     <button class="btn ghost sm" data-save="b89" data-name="newsprompts100-089.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Hermes Desktop: Bot Mode">
   <div class="ih"><span class="num">090</span><span class="ititle">Bot運用の権限設計</span></div>
   <p class="imeta"><span class="nb">Botごとにアクセスできる範囲を</span><span class="nb">制限したいとき。</span></p>
   <pre class="prompt" id="b90">前提: 複数のBotのうち、機密情報にアクセスしてよいBotとそうでないBotを分けたい。
@@ -1042,7 +1047,7 @@
     <button class="btn ghost sm" data-save="b90" data-name="newsprompts100-090.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Hermes Desktop: Bot Mode">
   <div class="ih"><span class="num">091</span><span class="ititle">永続Botの棚卸しルール</span></div>
   <p class="imeta"><span class="nb">「一度構築すれば永続的に使用できる」</span><span class="nb">特性を活かし、</span><span class="nb">定期的に見直すルールを作りたいとき。</span></p>
   <pre class="prompt" id="b91">前提: 複数のBotを運用しているうちに、使われなくなるBotが出てくることが予想される。
@@ -1053,7 +1058,7 @@
     <button class="btn ghost sm" data-save="b91" data-name="newsprompts100-091.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Hermes Desktop: Bot Mode">
   <div class="ih"><span class="num">092</span><span class="ititle">既存エージェントプロファイルからの移行計画</span></div>
   <p class="imeta"><span class="nb">既存の単一プロファイルから</span><span class="nb">複数Bot体制へ移行する計画を</span><span class="nb">立てたいとき。</span></p>
   <pre class="prompt" id="b92">前提: 既存の単一エージェントプロファイルを複数Bot体制に移行したい。
@@ -1064,7 +1069,7 @@
     <button class="btn ghost sm" data-save="b92" data-name="newsprompts100-092.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Hermes Desktop: Bot Mode">
   <div class="ih"><span class="num">093</span><span class="ititle">Bot同士の衝突防止ルール</span></div>
   <p class="imeta"><span class="nb">複数Botが同じリソースを同時に</span><span class="nb">触って衝突しないようにしたいとき。</span></p>
   <pre class="prompt" id="b93">前提: 複数のBotが同じファイルやデータに同時にアクセスする可能性がある。
@@ -1075,7 +1080,7 @@
     <button class="btn ghost sm" data-save="b93" data-name="newsprompts100-093.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Hermes Desktop: Bot Mode">
   <div class="ih"><span class="num">094</span><span class="ititle">チーム内Bot共有の運用ルール</span></div>
   <p class="imeta"><span class="nb">作ったBotをチームで共有したいと</span><span class="nb">き。</span></p>
   <pre class="prompt" id="b94">前提: 自分が作った専門Botをチームメンバーにも使ってもらいたい。
@@ -1086,7 +1091,7 @@
     <button class="btn ghost sm" data-save="b94" data-name="newsprompts100-094.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Hermes Desktop: Bot Mode">
   <div class="ih"><span class="num">095</span><span class="ititle">Bot Mode導入効果の振り返りフォーマット</span></div>
   <p class="imeta"><span class="nb">導入後にどれだけ効果が</span><span class="nb">あったか振り返りたいとき。</span></p>
   <pre class="prompt" id="b95">前提: Bot Modeを導入してから一定期間が経過した。
@@ -1097,8 +1102,8 @@
     <button class="btn ghost sm" data-save="b95" data-name="newsprompts100-095.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">Open Design Go</h2>
-<div class="icard">
+<h2 class="cat" data-cat="Open Design Go">Open Design Go</h2>
+<div class="icard" data-cat="Open Design Go">
   <div class="ih"><span class="num">096</span><span class="ititle">初月プランの試用計画</span></div>
   <p class="imeta"><span class="nb">初月5ドルのプランを</span><span class="nb">どう使うか計画したいとき。</span></p>
   <pre class="prompt" id="b96">前提: Open Design Goを初月5ドルで試そうとしている。
@@ -1109,7 +1114,7 @@
     <button class="btn ghost sm" data-save="b96" data-name="newsprompts100-096.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Open Design Go">
   <div class="ih"><span class="num">097</span><span class="ititle">APIキー不要である点の社内周知</span></div>
   <p class="imeta"><span class="nb">導入の手軽さをチームに伝えたいとき。</span></p>
   <pre class="prompt" id="b97">前提: チームにOpen Design Goを紹介したいが、APIキー不要で始められる手軽さを伝えたい。
@@ -1120,7 +1125,7 @@
     <button class="btn ghost sm" data-save="b97" data-name="newsprompts100-097.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Open Design Go">
   <div class="ih"><span class="num">098</span><span class="ititle">既存デザインツールとの役割分担</span></div>
   <p class="imeta"><span class="nb">既存の別ツールと使い分けたいとき。</span></p>
   <pre class="prompt" id="b98">前提: 既に別のデザインツールを使っているが、Open Design Goも試したい。
@@ -1131,7 +1136,7 @@
     <button class="btn ghost sm" data-save="b98" data-name="newsprompts100-098.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Open Design Go">
   <div class="ih"><span class="num">099</span><span class="ititle">料金プラン移行のタイミング判断</span></div>
   <p class="imeta"><span class="nb">初月以降の料金プランへの移行を</span><span class="nb">判断したいとき。</span></p>
   <pre class="prompt" id="b99">前提: 初月5ドルのプランを使い終える時期が近づいている。
@@ -1142,7 +1147,7 @@
     <button class="btn ghost sm" data-save="b99" data-name="newsprompts100-099.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Open Design Go">
   <div class="ih"><span class="num">100</span><span class="ititle">チーム展開前の試験導入報告</span></div>
   <p class="imeta"><span class="nb">個人で試した結果をチームに共有し、</span><span class="nb">展開を提案したいとき。</span></p>
   <pre class="prompt" id="b100">前提: 個人でOpen Design Goを試し、良い手応えを得た。
@@ -2224,6 +2229,57 @@
 - Hermes Desktop: Bot Mode: 10個
 - Open Design Go: 5個</pre>
 <script>
+// 項目の多いキットで、目的の1件に辿り着けるようにする絞り込み。
+// 検索はタイトル・説明だけでなく本文も対象にする（「あの文言が入っていた項目」で探せるように）。
+(function(){
+  var q = document.getElementById('kq');
+  if (!q) return;
+  var hit = document.getElementById('khit');
+  var cards = [].slice.call(document.querySelectorAll('.kwrap .icard'));
+  var heads = [].slice.call(document.querySelectorAll('.kwrap h2.cat'));
+  var chips = [].slice.call(document.querySelectorAll('.kcat'));
+  var cat = '';
+
+  // ひらがな・カタカナの違いで取りこぼさないようにする（ハブ側の検索と同じ扱い）
+  function norm(s){
+    return (s || '').toLowerCase().replace(/[ぁ-ん]/g, function(c){
+      return String.fromCharCode(c.charCodeAt(0) + 0x60);
+    });
+  }
+
+  // カード全体の textContent だとボタンの「コピー」まで拾ってしまうため、中身を選んで集める
+  cards.forEach(function(c){
+    var t = c.querySelector('.ititle'), d = c.querySelector('.imeta'), p = c.querySelector('.prompt');
+    c._t = norm((t ? t.textContent : '') + ' ' + (d ? d.textContent : '') + ' ' + (p ? p.textContent : ''));
+  });
+
+  function apply(){
+    var kw = norm(q.value.trim()), n = 0, shown = {};
+    cards.forEach(function(c){
+      var ok = (!cat || c.getAttribute('data-cat') === cat)
+            && (!kw || c._t.indexOf(kw) !== -1);
+      c.classList.toggle('hide', !ok);
+      if (ok){ n++; shown[c.getAttribute('data-cat')] = 1; }
+    });
+    // 残った項目が1件も無いカテゴリの見出しは隠す
+    heads.forEach(function(h){
+      h.classList.toggle('hide', !shown[h.getAttribute('data-cat')]);
+    });
+    hit.textContent = (kw || cat)
+      ? (n ? n + '件を表示中' : '該当する項目がありません')
+      : '';
+  }
+
+  q.addEventListener('input', apply);
+  chips.forEach(function(b){
+    b.addEventListener('click', function(){
+      cat = b.getAttribute('data-cat');
+      chips.forEach(function(x){ x.classList.toggle('on', x === b); });
+      apply();
+    });
+  });
+})();
+
 function flash(btn, label){
   const old = btn.textContent, cls = btn.className;
   btn.textContent = label; btn.classList.add('ok');
@@ -2293,7 +2349,22 @@ document.addEventListener('click', e => {
     el.classList.remove('show');
     sessionStorage.setItem('promoClosed', '1');
   }
-  setTimeout(function(){ el.classList.add('show'); }, 1600);
+  // 動画の概要欄から来た人が、自分のプレゼントを探し始める瞬間に被らないようにする。
+  // 以前は読み込み1.6秒後に無条件で出しており、いちばん目的意識の高い時間を塞いでいた。
+  // 中身を見に行った（＝目当てのものに辿り着いた）ころに出す。
+  var shown = false;
+  function show(){
+    if (shown) return;
+    shown = true;
+    el.classList.add('show');
+    removeEventListener('scroll', onScroll);
+  }
+  function onScroll(){
+    if (scrollY > innerHeight * 0.8) show();
+  }
+  addEventListener('scroll', onScroll, {passive:true});
+  // まったくスクロールしない人にも最後には出す（ただし十分に間を置いてから）
+  setTimeout(show, 45000);
   document.getElementById('promoClose').addEventListener('click', function(e){ e.preventDefault(); close(); });
   el.addEventListener('click', function(e){ if (e.target === el) close(); });
 })();

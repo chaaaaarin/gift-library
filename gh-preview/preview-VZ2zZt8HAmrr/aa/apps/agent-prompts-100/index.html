@@ -36,8 +36,13 @@
     <div class="pnote"><span class="nb">下のカードから、</span><span class="nb">1件ずつコピー、</span><span class="nb">または個別にダウンロードできます。</span><span class="nb">まとめて欲しいときは、</span><span class="nb">上の</span><span class="nb">「全件ダウンロード」を</span><span class="nb">お使いください。</span></div>
   </section>
 
-  <h2 class="cat">受信箱・メール処理</h2>
-<div class="icard">
+  <div class="ktools">
+  <input type="search" id="kq" placeholder="この中から探す" autocomplete="off" aria-label="この中から探す">
+  <div class="kcats"><button type="button" class="kcat on" data-cat="">すべて<span class="n">100</span></button><button type="button" class="kcat" data-cat="受信箱・メール処理">受信箱・メール処理<span class="n">10</span></button><button type="button" class="kcat" data-cat="営業・商談進行">営業・商談進行<span class="n">10</span></button><button type="button" class="kcat" data-cat="情報収集・リサーチ">情報収集・リサーチ<span class="n">10</span></button><button type="button" class="kcat" data-cat="プロジェクト管理">プロジェクト管理<span class="n">10</span></button><button type="button" class="kcat" data-cat="経理・数字管理">経理・数字管理<span class="n">10</span></button><button type="button" class="kcat" data-cat="スケジュール・会議調整">スケジュール・会議調整<span class="n">10</span></button><button type="button" class="kcat" data-cat="資料・ドキュメント作成">資料・ドキュメント作成<span class="n">10</span></button><button type="button" class="kcat" data-cat="顧客対応・カスタマーサポート">顧客対応・カスタマーサポート<span class="n">10</span></button><button type="button" class="kcat" data-cat="採用・人事関連">採用・人事関連<span class="n">10</span></button><button type="button" class="kcat" data-cat="個人の生産性・雑務">個人の生産性・雑務<span class="n">10</span></button></div>
+  <p class="khit" id="khit" role="status"></p>
+</div>
+<h2 class="cat" data-cat="受信箱・メール処理">受信箱・メール処理</h2>
+<div class="icard" data-cat="受信箱・メール処理">
   <div class="ih"><span class="num">001</span><span class="ititle">未読の一括仕分け</span></div>
   
   <pre class="prompt" id="b1">溜まった未読メールを重要度別に仕分けてもらう
@@ -50,7 +55,7 @@
     <button class="btn ghost sm" data-save="b1" data-name="agent-prompts-100-001.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="受信箱・メール処理">
   <div class="ih"><span class="num">002</span><span class="ititle">請求書・領収書メールの抽出</span></div>
   
   <pre class="prompt" id="b2">経理処理に必要なメールだけを月次で集める
@@ -63,7 +68,7 @@
     <button class="btn ghost sm" data-save="b2" data-name="agent-prompts-100-002.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="受信箱・メール処理">
   <div class="ih"><span class="num">003</span><span class="ititle">問い合わせメールの一次回答</span></div>
   
   <pre class="prompt" id="b3">定型の問い合わせに一次対応する
@@ -76,7 +81,7 @@
     <button class="btn ghost sm" data-save="b3" data-name="agent-prompts-100-003.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="受信箱・メール処理">
   <div class="ih"><span class="num">004</span><span class="ititle">メルマガ・通知メールの整理</span></div>
   
   <pre class="prompt" id="b4">業務に無関係な通知を仕分けてノイズを減らす
@@ -89,7 +94,7 @@
     <button class="btn ghost sm" data-save="b4" data-name="agent-prompts-100-004.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="受信箱・メール処理">
   <div class="ih"><span class="num">005</span><span class="ititle">返信忘れの洗い出し</span></div>
   
   <pre class="prompt" id="b5">返信すべきなのに止まっているメールを見つける
@@ -102,7 +107,7 @@
     <button class="btn ghost sm" data-save="b5" data-name="agent-prompts-100-005.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="受信箱・メール処理">
   <div class="ih"><span class="num">006</span><span class="ititle">週次ダイジェストの作成</span></div>
   
   <pre class="prompt" id="b6">1週間の受信メールを要約して報告する
@@ -115,7 +120,7 @@
     <button class="btn ghost sm" data-save="b6" data-name="agent-prompts-100-006.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="受信箱・メール処理">
   <div class="ih"><span class="num">007</span><span class="ititle">会議招待メールの整理</span></div>
   
   <pre class="prompt" id="b7">乱立する会議招待を整理してカレンダーと突き合わせる
@@ -128,7 +133,7 @@
     <button class="btn ghost sm" data-save="b7" data-name="agent-prompts-100-007.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="受信箱・メール処理">
   <div class="ih"><span class="num">008</span><span class="ititle">紹介・営業メールの選別</span></div>
   
   <pre class="prompt" id="b8">売り込みメールと本当に必要な提案を分ける
@@ -141,7 +146,7 @@
     <button class="btn ghost sm" data-save="b8" data-name="agent-prompts-100-008.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="受信箱・メール処理">
   <div class="ih"><span class="num">009</span><span class="ititle">退職・異動連絡への対応</span></div>
   
   <pre class="prompt" id="b9">取引先の担当変更メールを見落とさず処理する
@@ -154,7 +159,7 @@
     <button class="btn ghost sm" data-save="b9" data-name="agent-prompts-100-009.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="受信箱・メール処理">
   <div class="ih"><span class="num">010</span><span class="ititle">メールからのタスク化</span></div>
   
   <pre class="prompt" id="b10">メールに埋もれた依頼事項をタスクリストに変換する
@@ -167,8 +172,8 @@
     <button class="btn ghost sm" data-save="b10" data-name="agent-prompts-100-010.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">営業・商談進行</h2>
-<div class="icard">
+<h2 class="cat" data-cat="営業・商談進行">営業・商談進行</h2>
+<div class="icard" data-cat="営業・商談進行">
   <div class="ih"><span class="num">011</span><span class="ititle">停滞案件の洗い出し</span></div>
   
   <pre class="prompt" id="b11">動きが止まっている商談を見つけて次の一手を提案する
@@ -181,7 +186,7 @@
     <button class="btn ghost sm" data-save="b11" data-name="agent-prompts-100-011.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="営業・商談進行">
   <div class="ih"><span class="num">012</span><span class="ititle">見積提示後のフォロー</span></div>
   
   <pre class="prompt" id="b12">見積を出したまま返信が止まっている先に催促する
@@ -194,7 +199,7 @@
     <button class="btn ghost sm" data-save="b12" data-name="agent-prompts-100-012.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="営業・商談進行">
   <div class="ih"><span class="num">013</span><span class="ititle">商談メモの要約</span></div>
   
   <pre class="prompt" id="b13">商談後のメモを整理して社内共有できる形にする
@@ -207,7 +212,7 @@
     <button class="btn ghost sm" data-save="b13" data-name="agent-prompts-100-013.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="営業・商談進行">
   <div class="ih"><span class="num">014</span><span class="ititle">新規リードの優先度づけ</span></div>
   
   <pre class="prompt" id="b14">集まった問い合わせリードに優先度をつける
@@ -220,7 +225,7 @@
     <button class="btn ghost sm" data-save="b14" data-name="agent-prompts-100-014.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="営業・商談進行">
   <div class="ih"><span class="num">015</span><span class="ititle">契約更新の期限管理</span></div>
   
   <pre class="prompt" id="b15">契約更新が近い顧客を洗い出して対応漏れを防ぐ
@@ -233,7 +238,7 @@
     <button class="btn ghost sm" data-save="b15" data-name="agent-prompts-100-015.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="営業・商談進行">
   <div class="ih"><span class="num">016</span><span class="ititle">失注理由の分析</span></div>
   
   <pre class="prompt" id="b16">過去の失注案件から傾向を分析する
@@ -246,7 +251,7 @@
     <button class="btn ghost sm" data-save="b16" data-name="agent-prompts-100-016.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="営業・商談進行">
   <div class="ih"><span class="num">017</span><span class="ititle">提案資料の骨子作成</span></div>
   
   <pre class="prompt" id="b17">商談内容から提案資料の構成案を作る
@@ -259,7 +264,7 @@
     <button class="btn ghost sm" data-save="b17" data-name="agent-prompts-100-017.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="営業・商談進行">
   <div class="ih"><span class="num">018</span><span class="ititle">競合状況のヒアリング整理</span></div>
   
   <pre class="prompt" id="b18">商談で出た競合情報を整理する
@@ -272,7 +277,7 @@
     <button class="btn ghost sm" data-save="b18" data-name="agent-prompts-100-018.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="営業・商談進行">
   <div class="ih"><span class="num">019</span><span class="ititle">紹介依頼メールの作成</span></div>
   
   <pre class="prompt" id="b19">既存顧客に新規顧客の紹介を依頼する下書きを作る
@@ -285,7 +290,7 @@
     <button class="btn ghost sm" data-save="b19" data-name="agent-prompts-100-019.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="営業・商談進行">
   <div class="ih"><span class="num">020</span><span class="ititle">月次商談進捗レポート</span></div>
   
   <pre class="prompt" id="b20">月末に商談全体の進捗をまとめて報告する
@@ -298,8 +303,8 @@
     <button class="btn ghost sm" data-save="b20" data-name="agent-prompts-100-020.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">情報収集・リサーチ</h2>
-<div class="icard">
+<h2 class="cat" data-cat="情報収集・リサーチ">情報収集・リサーチ</h2>
+<div class="icard" data-cat="情報収集・リサーチ">
   <div class="ih"><span class="num">021</span><span class="ititle">競合の最新動向まとめ</span></div>
   
   <pre class="prompt" id="b21">競合他社の最近の発表を定期的にまとめる
@@ -312,7 +317,7 @@
     <button class="btn ghost sm" data-save="b21" data-name="agent-prompts-100-021.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="情報収集・リサーチ">
   <div class="ih"><span class="num">022</span><span class="ititle">業界ニュースの日次ダイジェスト</span></div>
   
   <pre class="prompt" id="b22">毎朝、業界関連ニュースを要約して届ける
@@ -325,7 +330,7 @@
     <button class="btn ghost sm" data-save="b22" data-name="agent-prompts-100-022.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="情報収集・リサーチ">
   <div class="ih"><span class="num">023</span><span class="ititle">展示会・イベント情報の収集</span></div>
   
   <pre class="prompt" id="b23">業界の展示会・カンファレンス情報を調べる
@@ -338,7 +343,7 @@
     <button class="btn ghost sm" data-save="b23" data-name="agent-prompts-100-023.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="情報収集・リサーチ">
   <div class="ih"><span class="num">024</span><span class="ititle">法改正・規制動向の確認</span></div>
   
   <pre class="prompt" id="b24">業務に関わる法改正情報を調べる
@@ -351,7 +356,7 @@
     <button class="btn ghost sm" data-save="b24" data-name="agent-prompts-100-024.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="情報収集・リサーチ">
   <div class="ih"><span class="num">025</span><span class="ititle">採用市場の相場調査</span></div>
   
   <pre class="prompt" id="b25">特定職種の採用相場を調べる
@@ -364,7 +369,7 @@
     <button class="btn ghost sm" data-save="b25" data-name="agent-prompts-100-025.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="情報収集・リサーチ">
   <div class="ih"><span class="num">026</span><span class="ititle">顧客企業の最新情報チェック</span></div>
   
   <pre class="prompt" id="b26">商談前に顧客企業の最新動向を調べる
@@ -377,7 +382,7 @@
     <button class="btn ghost sm" data-save="b26" data-name="agent-prompts-100-026.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="情報収集・リサーチ">
   <div class="ih"><span class="num">027</span><span class="ititle">技術トレンドの比較調査</span></div>
   
   <pre class="prompt" id="b27">導入候補の技術・ツールを比較する
@@ -390,7 +395,7 @@
     <button class="btn ghost sm" data-save="b27" data-name="agent-prompts-100-027.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="情報収集・リサーチ">
   <div class="ih"><span class="num">028</span><span class="ititle">助成金・補助金の調査</span></div>
   
   <pre class="prompt" id="b28">利用できそうな助成金・補助金を探す
@@ -403,7 +408,7 @@
     <button class="btn ghost sm" data-save="b28" data-name="agent-prompts-100-028.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="情報収集・リサーチ">
   <div class="ih"><span class="num">029</span><span class="ititle">SNS上の評判モニタリング</span></div>
   
   <pre class="prompt" id="b29">自社や商品に関するSNSの声を集める
@@ -416,7 +421,7 @@
     <button class="btn ghost sm" data-save="b29" data-name="agent-prompts-100-029.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="情報収集・リサーチ">
   <div class="ih"><span class="num">030</span><span class="ititle">参考事例・ベンチマーク調査</span></div>
   
   <pre class="prompt" id="b30">他社の成功事例を調べて自社に応用できないか検討する
@@ -429,8 +434,8 @@
     <button class="btn ghost sm" data-save="b30" data-name="agent-prompts-100-030.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">プロジェクト管理</h2>
-<div class="icard">
+<h2 class="cat" data-cat="プロジェクト管理">プロジェクト管理</h2>
+<div class="icard" data-cat="プロジェクト管理">
   <div class="ih"><span class="num">031</span><span class="ititle">タスク進捗の一覧化</span></div>
   
   <pre class="prompt" id="b31">プロジェクトの各タスクの進捗状況をまとめる
@@ -443,7 +448,7 @@
     <button class="btn ghost sm" data-save="b31" data-name="agent-prompts-100-031.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="プロジェクト管理">
   <div class="ih"><span class="num">032</span><span class="ititle">遅延リスクの早期検知</span></div>
   
   <pre class="prompt" id="b32">期限に間に合わなそうなタスクを事前に見つける
@@ -456,7 +461,7 @@
     <button class="btn ghost sm" data-save="b32" data-name="agent-prompts-100-032.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="プロジェクト管理">
   <div class="ih"><span class="num">033</span><span class="ititle">週次進捗報告の作成</span></div>
   
   <pre class="prompt" id="b33">週次でプロジェクトの状況を報告する資料を作る
@@ -469,7 +474,7 @@
     <button class="btn ghost sm" data-save="b33" data-name="agent-prompts-100-033.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="プロジェクト管理">
   <div class="ih"><span class="num">034</span><span class="ititle">議事録からのタスク抽出</span></div>
   
   <pre class="prompt" id="b34">会議の議事録から新規タスクを拾い出す
@@ -482,7 +487,7 @@
     <button class="btn ghost sm" data-save="b34" data-name="agent-prompts-100-034.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="プロジェクト管理">
   <div class="ih"><span class="num">035</span><span class="ititle">マイルストーンの整理</span></div>
   
   <pre class="prompt" id="b35">プロジェクト全体のマイルストーンを時系列で整理する
@@ -495,7 +500,7 @@
     <button class="btn ghost sm" data-save="b35" data-name="agent-prompts-100-035.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="プロジェクト管理">
   <div class="ih"><span class="num">036</span><span class="ititle">リソース配分の可視化</span></div>
   
   <pre class="prompt" id="b36">誰にタスクが偏っているか可視化する
@@ -508,7 +513,7 @@
     <button class="btn ghost sm" data-save="b36" data-name="agent-prompts-100-036.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="プロジェクト管理">
   <div class="ih"><span class="num">037</span><span class="ititle">課題・リスクの一覧化</span></div>
   
   <pre class="prompt" id="b37">プロジェクトの課題やリスクを一箇所に集約する
@@ -521,7 +526,7 @@
     <button class="btn ghost sm" data-save="b37" data-name="agent-prompts-100-037.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="プロジェクト管理">
   <div class="ih"><span class="num">038</span><span class="ititle">キックオフ資料の骨子作成</span></div>
   
   <pre class="prompt" id="b38">新規プロジェクトのキックオフ資料の構成を作る
@@ -534,7 +539,7 @@
     <button class="btn ghost sm" data-save="b38" data-name="agent-prompts-100-038.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="プロジェクト管理">
   <div class="ih"><span class="num">039</span><span class="ititle">完了タスクの棚卸し</span></div>
   
   <pre class="prompt" id="b39">完了したタスクを月末にまとめて振り返る
@@ -547,7 +552,7 @@
     <button class="btn ghost sm" data-save="b39" data-name="agent-prompts-100-039.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="プロジェクト管理">
   <div class="ih"><span class="num">040</span><span class="ititle">外部関係者への進捗共有</span></div>
   
   <pre class="prompt" id="b40">社外の関係者向けに進捗を分かりやすくまとめる
@@ -560,8 +565,8 @@
     <button class="btn ghost sm" data-save="b40" data-name="agent-prompts-100-040.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">経理・数字管理</h2>
-<div class="icard">
+<h2 class="cat" data-cat="経理・数字管理">経理・数字管理</h2>
+<div class="icard" data-cat="経理・数字管理">
   <div class="ih"><span class="num">041</span><span class="ititle">月次支出の分類集計</span></div>
   
   <pre class="prompt" id="b41">月の支出をカテゴリ別に集計する
@@ -574,7 +579,7 @@
     <button class="btn ghost sm" data-save="b41" data-name="agent-prompts-100-041.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="経理・数字管理">
   <div class="ih"><span class="num">042</span><span class="ititle">未払い請求の洗い出し</span></div>
   
   <pre class="prompt" id="b42">支払いが滞っている請求を洗い出す
@@ -587,7 +592,7 @@
     <button class="btn ghost sm" data-save="b42" data-name="agent-prompts-100-042.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="経理・数字管理">
   <div class="ih"><span class="num">043</span><span class="ititle">経費精算の不備チェック</span></div>
   
   <pre class="prompt" id="b43">提出された経費精算に不備がないか確認する
@@ -600,7 +605,7 @@
     <button class="btn ghost sm" data-save="b43" data-name="agent-prompts-100-043.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="経理・数字管理">
   <div class="ih"><span class="num">044</span><span class="ititle">予算消化状況の確認</span></div>
   
   <pre class="prompt" id="b44">部門ごとの予算消化率を確認する
@@ -613,7 +618,7 @@
     <button class="btn ghost sm" data-save="b44" data-name="agent-prompts-100-044.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="経理・数字管理">
   <div class="ih"><span class="num">045</span><span class="ititle">売上の日次モニタリング</span></div>
   
   <pre class="prompt" id="b45">日々の売上を集計して異常値がないか確認する
@@ -626,7 +631,7 @@
     <button class="btn ghost sm" data-save="b45" data-name="agent-prompts-100-045.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="経理・数字管理">
   <div class="ih"><span class="num">046</span><span class="ititle">与信・入金遅延の確認</span></div>
   
   <pre class="prompt" id="b46">取引先ごとの入金状況を確認する
@@ -639,7 +644,7 @@
     <button class="btn ghost sm" data-save="b46" data-name="agent-prompts-100-046.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="経理・数字管理">
   <div class="ih"><span class="num">047</span><span class="ititle">見積と実績の差異分析</span></div>
   
   <pre class="prompt" id="b47">見積もった金額と実際にかかった金額を比較する
@@ -652,7 +657,7 @@
     <button class="btn ghost sm" data-save="b47" data-name="agent-prompts-100-047.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="経理・数字管理">
   <div class="ih"><span class="num">048</span><span class="ititle">固定費の見直し候補抽出</span></div>
   
   <pre class="prompt" id="b48">削減できそうな固定費を洗い出す
@@ -665,7 +670,7 @@
     <button class="btn ghost sm" data-save="b48" data-name="agent-prompts-100-048.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="経理・数字管理">
   <div class="ih"><span class="num">049</span><span class="ititle">四半期レポートの下地作成</span></div>
   
   <pre class="prompt" id="b49">四半期ごとの数字をまとめて報告資料の下地を作る
@@ -678,7 +683,7 @@
     <button class="btn ghost sm" data-save="b49" data-name="agent-prompts-100-049.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="経理・数字管理">
   <div class="ih"><span class="num">050</span><span class="ititle">キャッシュフローの簡易予測</span></div>
   
   <pre class="prompt" id="b50">今後数ヶ月のお金の流れを予測する
@@ -691,8 +696,8 @@
     <button class="btn ghost sm" data-save="b50" data-name="agent-prompts-100-050.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">スケジュール・会議調整</h2>
-<div class="icard">
+<h2 class="cat" data-cat="スケジュール・会議調整">スケジュール・会議調整</h2>
+<div class="icard" data-cat="スケジュール・会議調整">
   <div class="ih"><span class="num">051</span><span class="ititle">空き時間の候補提示</span></div>
   
   <pre class="prompt" id="b51">複数人の予定を調整して会議候補日を出す
@@ -705,7 +710,7 @@
     <button class="btn ghost sm" data-save="b51" data-name="agent-prompts-100-051.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="スケジュール・会議調整">
   <div class="ih"><span class="num">052</span><span class="ititle">会議の詰め込みすぎチェック</span></div>
   
   <pre class="prompt" id="b52">1日の会議が詰まりすぎていないか確認する
@@ -718,7 +723,7 @@
     <button class="btn ghost sm" data-save="b52" data-name="agent-prompts-100-052.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="スケジュール・会議調整">
   <div class="ih"><span class="num">053</span><span class="ititle">移動時間の確保確認</span></div>
   
   <pre class="prompt" id="b53">対面会議の間に移動時間が確保できているか確認する
@@ -731,7 +736,7 @@
     <button class="btn ghost sm" data-save="b53" data-name="agent-prompts-100-053.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="スケジュール・会議調整">
   <div class="ih"><span class="num">054</span><span class="ititle">リマインド文の作成</span></div>
   
   <pre class="prompt" id="b54">前日リマインドの文面を作る
@@ -744,7 +749,7 @@
     <button class="btn ghost sm" data-save="b54" data-name="agent-prompts-100-054.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="スケジュール・会議調整">
   <div class="ih"><span class="num">055</span><span class="ititle">会議の目的・アジェンダ整理</span></div>
   
   <pre class="prompt" id="b55">会議前にアジェンダを整理する
@@ -757,7 +762,7 @@
     <button class="btn ghost sm" data-save="b55" data-name="agent-prompts-100-055.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="スケジュール・会議調整">
   <div class="ih"><span class="num">056</span><span class="ititle">出張スケジュールの調整</span></div>
   
   <pre class="prompt" id="b56">出張の日程と現地でのアポイントを整理する
@@ -770,7 +775,7 @@
     <button class="btn ghost sm" data-save="b56" data-name="agent-prompts-100-056.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="スケジュール・会議調整">
   <div class="ih"><span class="num">057</span><span class="ititle">定例会議の要否見直し</span></div>
   
   <pre class="prompt" id="b57">定例で続いている会議が今も必要か確認する
@@ -783,7 +788,7 @@
     <button class="btn ghost sm" data-save="b57" data-name="agent-prompts-100-057.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="スケジュール・会議調整">
   <div class="ih"><span class="num">058</span><span class="ititle">休暇取得状況の確認</span></div>
   
   <pre class="prompt" id="b58">チームメンバーの休暇取得状況を確認する
@@ -796,7 +801,7 @@
     <button class="btn ghost sm" data-save="b58" data-name="agent-prompts-100-058.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="スケジュール・会議調整">
   <div class="ih"><span class="num">059</span><span class="ititle">面談・1on1の日程調整</span></div>
   
   <pre class="prompt" id="b59">定期1on1の日程を確保する
@@ -809,7 +814,7 @@
     <button class="btn ghost sm" data-save="b59" data-name="agent-prompts-100-059.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="スケジュール・会議調整">
   <div class="ih"><span class="num">060</span><span class="ititle">繁忙期の負荷分散確認</span></div>
   
   <pre class="prompt" id="b60">繁忙期の予定が特定日に集中していないか確認する
@@ -822,8 +827,8 @@
     <button class="btn ghost sm" data-save="b60" data-name="agent-prompts-100-060.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">資料・ドキュメント作成</h2>
-<div class="icard">
+<h2 class="cat" data-cat="資料・ドキュメント作成">資料・ドキュメント作成</h2>
+<div class="icard" data-cat="資料・ドキュメント作成">
   <div class="ih"><span class="num">061</span><span class="ititle">議事録のドラフト作成</span></div>
   
   <pre class="prompt" id="b61">会議の録音・メモから議事録を起こす
@@ -836,7 +841,7 @@
     <button class="btn ghost sm" data-save="b61" data-name="agent-prompts-100-061.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="資料・ドキュメント作成">
   <div class="ih"><span class="num">062</span><span class="ititle">週報の下書き作成</span></div>
   
   <pre class="prompt" id="b62">週次報告の下書きを作る
@@ -849,7 +854,7 @@
     <button class="btn ghost sm" data-save="b62" data-name="agent-prompts-100-062.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="資料・ドキュメント作成">
   <div class="ih"><span class="num">063</span><span class="ititle">提案書の骨子作成</span></div>
   
   <pre class="prompt" id="b63">新しい企画の提案書の構成案を作る
@@ -862,7 +867,7 @@
     <button class="btn ghost sm" data-save="b63" data-name="agent-prompts-100-063.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="資料・ドキュメント作成">
   <div class="ih"><span class="num">064</span><span class="ititle">マニュアルの初稿作成</span></div>
   
   <pre class="prompt" id="b64">業務手順をマニュアル化する
@@ -875,7 +880,7 @@
     <button class="btn ghost sm" data-save="b64" data-name="agent-prompts-100-064.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="資料・ドキュメント作成">
   <div class="ih"><span class="num">065</span><span class="ititle">社内向けお知らせ文の作成</span></div>
   
   <pre class="prompt" id="b65">社内周知の文章を作る
@@ -888,7 +893,7 @@
     <button class="btn ghost sm" data-save="b65" data-name="agent-prompts-100-065.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="資料・ドキュメント作成">
   <div class="ih"><span class="num">066</span><span class="ititle">FAQページの下書き作成</span></div>
   
   <pre class="prompt" id="b66">よくある質問と回答をまとめる
@@ -901,7 +906,7 @@
     <button class="btn ghost sm" data-save="b66" data-name="agent-prompts-100-066.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="資料・ドキュメント作成">
   <div class="ih"><span class="num">067</span><span class="ititle">プレスリリースの下書き</span></div>
   
   <pre class="prompt" id="b67">新商品・新サービスの発表文を作る
@@ -914,7 +919,7 @@
     <button class="btn ghost sm" data-save="b67" data-name="agent-prompts-100-067.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="資料・ドキュメント作成">
   <div class="ih"><span class="num">068</span><span class="ititle">契約書の要点抽出</span></div>
   
   <pre class="prompt" id="b68">長い契約書から重要な条項を抜き出す
@@ -927,7 +932,7 @@
     <button class="btn ghost sm" data-save="b68" data-name="agent-prompts-100-068.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="資料・ドキュメント作成">
   <div class="ih"><span class="num">069</span><span class="ititle">アンケート結果の要約</span></div>
   
   <pre class="prompt" id="b69">集まったアンケート回答を要約する
@@ -940,7 +945,7 @@
     <button class="btn ghost sm" data-save="b69" data-name="agent-prompts-100-069.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="資料・ドキュメント作成">
   <div class="ih"><span class="num">070</span><span class="ititle">フィードバックの整理・要約</span></div>
   
   <pre class="prompt" id="b70">複数人から集まったフィードバックをまとめる
@@ -953,8 +958,8 @@
     <button class="btn ghost sm" data-save="b70" data-name="agent-prompts-100-070.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">顧客対応・カスタマーサポート</h2>
-<div class="icard">
+<h2 class="cat" data-cat="顧客対応・カスタマーサポート">顧客対応・カスタマーサポート</h2>
+<div class="icard" data-cat="顧客対応・カスタマーサポート">
   <div class="ih"><span class="num">071</span><span class="ititle">問い合わせ対応の一次分類</span></div>
   
   <pre class="prompt" id="b71">届いた問い合わせを内容別に分類する
@@ -967,7 +972,7 @@
     <button class="btn ghost sm" data-save="b71" data-name="agent-prompts-100-071.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="顧客対応・カスタマーサポート">
   <div class="ih"><span class="num">072</span><span class="ititle">よくある質問への回答案作成</span></div>
   
   <pre class="prompt" id="b72">頻出する質問への回答案を作る
@@ -980,7 +985,7 @@
     <button class="btn ghost sm" data-save="b72" data-name="agent-prompts-100-072.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="顧客対応・カスタマーサポート">
   <div class="ih"><span class="num">073</span><span class="ititle">クレーム内容の要約と対応案</span></div>
   
   <pre class="prompt" id="b73">クレームの内容を整理し対応方針を提案する
@@ -993,7 +998,7 @@
     <button class="btn ghost sm" data-save="b73" data-name="agent-prompts-100-073.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="顧客対応・カスタマーサポート">
   <div class="ih"><span class="num">074</span><span class="ititle">解約理由の分析</span></div>
   
   <pre class="prompt" id="b74">解約した顧客の理由を分析する
@@ -1006,7 +1011,7 @@
     <button class="btn ghost sm" data-save="b74" data-name="agent-prompts-100-074.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="顧客対応・カスタマーサポート">
   <div class="ih"><span class="num">075</span><span class="ititle">満足度アンケートの集計</span></div>
   
   <pre class="prompt" id="b75">顧客満足度アンケートの結果を集計する
@@ -1019,7 +1024,7 @@
     <button class="btn ghost sm" data-save="b75" data-name="agent-prompts-100-075.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="顧客対応・カスタマーサポート">
   <div class="ih"><span class="num">076</span><span class="ititle">対応履歴の顧客別まとめ</span></div>
   
   <pre class="prompt" id="b76">特定顧客とのやり取り履歴をまとめる
@@ -1032,7 +1037,7 @@
     <button class="btn ghost sm" data-save="b76" data-name="agent-prompts-100-076.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="顧客対応・カスタマーサポート">
   <div class="ih"><span class="num">077</span><span class="ititle">VIP顧客の対応漏れ確認</span></div>
   
   <pre class="prompt" id="b77">重要顧客への対応が滞っていないか確認する
@@ -1045,7 +1050,7 @@
     <button class="btn ghost sm" data-save="b77" data-name="agent-prompts-100-077.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="顧客対応・カスタマーサポート">
   <div class="ih"><span class="num">078</span><span class="ititle">サポート対応時間の分析</span></div>
   
   <pre class="prompt" id="b78">問い合わせへの対応にかかった時間を分析する
@@ -1058,7 +1063,7 @@
     <button class="btn ghost sm" data-save="b78" data-name="agent-prompts-100-078.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="顧客対応・カスタマーサポート">
   <div class="ih"><span class="num">079</span><span class="ititle">解約防止フォローの提案</span></div>
   
   <pre class="prompt" id="b79">解約リスクがある顧客へのフォロー案を作る
@@ -1071,7 +1076,7 @@
     <button class="btn ghost sm" data-save="b79" data-name="agent-prompts-100-079.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="顧客対応・カスタマーサポート">
   <div class="ih"><span class="num">080</span><span class="ititle">導入事例インタビュー依頼文</span></div>
   
   <pre class="prompt" id="b80">満足度の高い顧客に事例インタビューを依頼する
@@ -1084,8 +1089,8 @@
     <button class="btn ghost sm" data-save="b80" data-name="agent-prompts-100-080.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">採用・人事関連</h2>
-<div class="icard">
+<h2 class="cat" data-cat="採用・人事関連">採用・人事関連</h2>
+<div class="icard" data-cat="採用・人事関連">
   <div class="ih"><span class="num">081</span><span class="ititle">応募書類の一次スクリーニング</span></div>
   
   <pre class="prompt" id="b81">応募者の書類を要件と照合する
@@ -1098,7 +1103,7 @@
     <button class="btn ghost sm" data-save="b81" data-name="agent-prompts-100-081.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="採用・人事関連">
   <div class="ih"><span class="num">082</span><span class="ititle">面接日程の調整</span></div>
   
   <pre class="prompt" id="b82">候補者と面接官の日程を調整する
@@ -1111,7 +1116,7 @@
     <button class="btn ghost sm" data-save="b82" data-name="agent-prompts-100-082.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="採用・人事関連">
   <div class="ih"><span class="num">083</span><span class="ititle">面接評価の集約</span></div>
   
   <pre class="prompt" id="b83">複数面接官の評価を1つにまとめる
@@ -1124,7 +1129,7 @@
     <button class="btn ghost sm" data-save="b83" data-name="agent-prompts-100-083.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="採用・人事関連">
   <div class="ih"><span class="num">084</span><span class="ititle">オンボーディング資料の準備</span></div>
   
   <pre class="prompt" id="b84">新入社員向けの案内資料を整える
@@ -1137,7 +1142,7 @@
     <button class="btn ghost sm" data-save="b84" data-name="agent-prompts-100-084.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="採用・人事関連">
   <div class="ih"><span class="num">085</span><span class="ititle">勤怠データの異常確認</span></div>
   
   <pre class="prompt" id="b85">勤怠記録に異常がないか確認する
@@ -1150,7 +1155,7 @@
     <button class="btn ghost sm" data-save="b85" data-name="agent-prompts-100-085.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="採用・人事関連">
   <div class="ih"><span class="num">086</span><span class="ititle">求人票の見直し</span></div>
   
   <pre class="prompt" id="b86">応募が集まりにくい求人票を見直す
@@ -1163,7 +1168,7 @@
     <button class="btn ghost sm" data-save="b86" data-name="agent-prompts-100-086.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="採用・人事関連">
   <div class="ih"><span class="num">087</span><span class="ititle">退職者インタビューの整理</span></div>
   
   <pre class="prompt" id="b87">退職理由のヒアリング内容を整理する
@@ -1176,7 +1181,7 @@
     <button class="btn ghost sm" data-save="b87" data-name="agent-prompts-100-087.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="採用・人事関連">
   <div class="ih"><span class="num">088</span><span class="ititle">研修スケジュールの調整</span></div>
   
   <pre class="prompt" id="b88">複数の研修プログラムの日程を調整する
@@ -1189,7 +1194,7 @@
     <button class="btn ghost sm" data-save="b88" data-name="agent-prompts-100-088.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="採用・人事関連">
   <div class="ih"><span class="num">089</span><span class="ititle">人事評価コメントの整理</span></div>
   
   <pre class="prompt" id="b89">評価シートのコメントを集計する
@@ -1202,7 +1207,7 @@
     <button class="btn ghost sm" data-save="b89" data-name="agent-prompts-100-089.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="採用・人事関連">
   <div class="ih"><span class="num">090</span><span class="ititle">社内アンケートの分析</span></div>
   
   <pre class="prompt" id="b90">従業員満足度調査の結果を分析する
@@ -1215,8 +1220,8 @@
     <button class="btn ghost sm" data-save="b90" data-name="agent-prompts-100-090.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">個人の生産性・雑務</h2>
-<div class="icard">
+<h2 class="cat" data-cat="個人の生産性・雑務">個人の生産性・雑務</h2>
+<div class="icard" data-cat="個人の生産性・雑務">
   <div class="ih"><span class="num">091</span><span class="ititle">1日のタスク優先順位づけ</span></div>
   
   <pre class="prompt" id="b91">その日にやるべきことの優先順位を整理する
@@ -1229,7 +1234,7 @@
     <button class="btn ghost sm" data-save="b91" data-name="agent-prompts-100-091.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="個人の生産性・雑務">
   <div class="ih"><span class="num">092</span><span class="ititle">読みたい記事の要約</span></div>
   
   <pre class="prompt" id="b92">後で読もうと溜めた記事を要約する
@@ -1242,7 +1247,7 @@
     <button class="btn ghost sm" data-save="b92" data-name="agent-prompts-100-092.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="個人の生産性・雑務">
   <div class="ih"><span class="num">093</span><span class="ititle">旅行・出張の手配整理</span></div>
   
   <pre class="prompt" id="b93">出張の交通・宿泊手配をまとめて確認する
@@ -1255,7 +1260,7 @@
     <button class="btn ghost sm" data-save="b93" data-name="agent-prompts-100-093.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="個人の生産性・雑務">
   <div class="ih"><span class="num">094</span><span class="ititle">領収書のデータ化</span></div>
   
   <pre class="prompt" id="b94">溜まった紙の領収書情報を整理する
@@ -1268,7 +1273,7 @@
     <button class="btn ghost sm" data-save="b94" data-name="agent-prompts-100-094.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="個人の生産性・雑務">
   <div class="ih"><span class="num">095</span><span class="ititle">買い物リストの整理</span></div>
   
   <pre class="prompt" id="b95">必要な備品をリストアップする
@@ -1281,7 +1286,7 @@
     <button class="btn ghost sm" data-save="b95" data-name="agent-prompts-100-095.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="個人の生産性・雑務">
   <div class="ih"><span class="num">096</span><span class="ititle">引っ越し・手続きのタスク化</span></div>
   
   <pre class="prompt" id="b96">引っ越しに伴う各種手続きを整理する
@@ -1294,7 +1299,7 @@
     <button class="btn ghost sm" data-save="b96" data-name="agent-prompts-100-096.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="個人の生産性・雑務">
   <div class="ih"><span class="num">097</span><span class="ititle">読書メモの整理</span></div>
   
   <pre class="prompt" id="b97">読んだ本の感想やメモを整理する
@@ -1307,7 +1312,7 @@
     <button class="btn ghost sm" data-save="b97" data-name="agent-prompts-100-097.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="個人の生産性・雑務">
   <div class="ih"><span class="num">098</span><span class="ititle">SNS投稿文の下書き</span></div>
   
   <pre class="prompt" id="b98">個人・会社のSNS投稿文を作る
@@ -1320,7 +1325,7 @@
     <button class="btn ghost sm" data-save="b98" data-name="agent-prompts-100-098.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="個人の生産性・雑務">
   <div class="ih"><span class="num">099</span><span class="ititle">年間スケジュールの棚卸し</span></div>
   
   <pre class="prompt" id="b99">年間の主要イベントを一覧化する
@@ -1333,7 +1338,7 @@
     <button class="btn ghost sm" data-save="b99" data-name="agent-prompts-100-099.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="個人の生産性・雑務">
   <div class="ih"><span class="num">100</span><span class="ititle">メモアプリの整理・統合</span></div>
   
   <pre class="prompt" id="b100">散らばったメモを1箇所に整理する
@@ -2101,6 +2106,57 @@ Energy／ChatGPT Work／Claude Coworkなど、どのブラウザ操作AIエー�
 **ポイント**: 出力はそのまま実行せず、必ず内容をレビューしてから確定してください。
 </pre>
 <script>
+// 項目の多いキットで、目的の1件に辿り着けるようにする絞り込み。
+// 検索はタイトル・説明だけでなく本文も対象にする（「あの文言が入っていた項目」で探せるように）。
+(function(){
+  var q = document.getElementById('kq');
+  if (!q) return;
+  var hit = document.getElementById('khit');
+  var cards = [].slice.call(document.querySelectorAll('.kwrap .icard'));
+  var heads = [].slice.call(document.querySelectorAll('.kwrap h2.cat'));
+  var chips = [].slice.call(document.querySelectorAll('.kcat'));
+  var cat = '';
+
+  // ひらがな・カタカナの違いで取りこぼさないようにする（ハブ側の検索と同じ扱い）
+  function norm(s){
+    return (s || '').toLowerCase().replace(/[ぁ-ん]/g, function(c){
+      return String.fromCharCode(c.charCodeAt(0) + 0x60);
+    });
+  }
+
+  // カード全体の textContent だとボタンの「コピー」まで拾ってしまうため、中身を選んで集める
+  cards.forEach(function(c){
+    var t = c.querySelector('.ititle'), d = c.querySelector('.imeta'), p = c.querySelector('.prompt');
+    c._t = norm((t ? t.textContent : '') + ' ' + (d ? d.textContent : '') + ' ' + (p ? p.textContent : ''));
+  });
+
+  function apply(){
+    var kw = norm(q.value.trim()), n = 0, shown = {};
+    cards.forEach(function(c){
+      var ok = (!cat || c.getAttribute('data-cat') === cat)
+            && (!kw || c._t.indexOf(kw) !== -1);
+      c.classList.toggle('hide', !ok);
+      if (ok){ n++; shown[c.getAttribute('data-cat')] = 1; }
+    });
+    // 残った項目が1件も無いカテゴリの見出しは隠す
+    heads.forEach(function(h){
+      h.classList.toggle('hide', !shown[h.getAttribute('data-cat')]);
+    });
+    hit.textContent = (kw || cat)
+      ? (n ? n + '件を表示中' : '該当する項目がありません')
+      : '';
+  }
+
+  q.addEventListener('input', apply);
+  chips.forEach(function(b){
+    b.addEventListener('click', function(){
+      cat = b.getAttribute('data-cat');
+      chips.forEach(function(x){ x.classList.toggle('on', x === b); });
+      apply();
+    });
+  });
+})();
+
 function flash(btn, label){
   const old = btn.textContent, cls = btn.className;
   btn.textContent = label; btn.classList.add('ok');
@@ -2170,7 +2226,22 @@ document.addEventListener('click', e => {
     el.classList.remove('show');
     sessionStorage.setItem('promoClosed', '1');
   }
-  setTimeout(function(){ el.classList.add('show'); }, 1600);
+  // 動画の概要欄から来た人が、自分のプレゼントを探し始める瞬間に被らないようにする。
+  // 以前は読み込み1.6秒後に無条件で出しており、いちばん目的意識の高い時間を塞いでいた。
+  // 中身を見に行った（＝目当てのものに辿り着いた）ころに出す。
+  var shown = false;
+  function show(){
+    if (shown) return;
+    shown = true;
+    el.classList.add('show');
+    removeEventListener('scroll', onScroll);
+  }
+  function onScroll(){
+    if (scrollY > innerHeight * 0.8) show();
+  }
+  addEventListener('scroll', onScroll, {passive:true});
+  // まったくスクロールしない人にも最後には出す（ただし十分に間を置いてから）
+  setTimeout(show, 45000);
   document.getElementById('promoClose').addEventListener('click', function(e){ e.preventDefault(); close(); });
   el.addEventListener('click', function(e){ if (e.target === el) close(); });
 })();

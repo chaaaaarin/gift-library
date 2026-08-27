@@ -36,8 +36,13 @@
     <div class="pnote"><span class="nb">下のカードから、</span><span class="nb">1件ずつコピー、</span><span class="nb">または個別にダウンロードできます。</span><span class="nb">まとめて欲しいときは、</span><span class="nb">上の</span><span class="nb">「全件ダウンロード」を</span><span class="nb">お使いください。</span></div>
   </section>
 
-  <h2 class="cat">Step 0→1 突破：安全に始める</h2>
-<div class="icard">
+  <div class="ktools">
+  <input type="search" id="kq" placeholder="この中から探す" autocomplete="off" aria-label="この中から探す">
+  <div class="kcats"><button type="button" class="kcat on" data-cat="">すべて<span class="n">100</span></button><button type="button" class="kcat" data-cat="Step 0→1 突破：安全に始める">Step 0→1 突破：安全に始める<span class="n">20</span></button><button type="button" class="kcat" data-cat="Step 1→2 突破：ペアから指揮者へ">Step 1→2 突破：ペアから指揮者へ<span class="n">20</span></button><button type="button" class="kcat" data-cat="Step 2→3 突破：自動レビュー・権限拡大">Step 2→3 突破：自動レビュー・権限拡大<span class="n">20</span></button><button type="button" class="kcat" data-cat="Step 3→4 突破：大規模自動化">Step 3→4 突破：大規模自動化<span class="n">20</span></button><button type="button" class="kcat" data-cat="共通：自己診断とガードレール設計">共通：自己診断とガードレール設計<span class="n">20</span></button></div>
+  <p class="khit" id="khit" role="status"></p>
+</div>
+<h2 class="cat" data-cat="Step 0→1 突破：安全に始める">Step 0→1 突破：安全に始める</h2>
+<div class="icard" data-cat="Step 0→1 突破：安全に始める">
   <div class="ih"><span class="num">001</span><span class="ititle">社内承認プロセスの棚卸し</span></div>
   
   <pre class="prompt" id="b1">今のAI導入を止めている社内承認プロセスを3つ洗い出して、それぞれの解決策を提案して</pre>
@@ -46,7 +51,7 @@
     <button class="btn ghost sm" data-save="b1" data-name="prompts100-001.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Step 0→1 突破：安全に始める">
   <div class="ih"><span class="num">002</span><span class="ititle">SSO/SCIM要件整理</span></div>
   
   <pre class="prompt" id="b2">Claude導入にあたって必要なSSO/SCIM設定のチェックリストを作って</pre>
@@ -55,7 +60,7 @@
     <button class="btn ghost sm" data-save="b2" data-name="prompts100-002.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Step 0→1 突破：安全に始める">
   <div class="ih"><span class="num">003</span><span class="ititle">予算上限の設計</span></div>
   
   <pre class="prompt" id="b3">チーム単位でのAI利用の予算上限（スペンドキャップ）をどう設計すべきか、選択肢を3つ提案して</pre>
@@ -64,7 +69,7 @@
     <button class="btn ghost sm" data-save="b3" data-name="prompts100-003.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Step 0→1 突破：安全に始める">
   <div class="ih"><span class="num">004</span><span class="ititle">データガバナンス確認</span></div>
   
   <pre class="prompt" id="b4">このプロジェクトでAIに読み込ませてよいデータとダメなデータの線引きを整理して</pre>
@@ -73,7 +78,7 @@
     <button class="btn ghost sm" data-save="b4" data-name="prompts100-004.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Step 0→1 突破：安全に始める">
   <div class="ih"><span class="num">005</span><span class="ititle">最初の1タスク選定</span></div>
   
   <pre class="prompt" id="b5">AI導入の最初の1タスクとして、リスクが低く効果が見えやすいものを3つ提案して</pre>
@@ -82,7 +87,7 @@
     <button class="btn ghost sm" data-save="b5" data-name="prompts100-005.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Step 0→1 突破：安全に始める">
   <div class="ih"><span class="num">006</span><span class="ititle">Plan modeでの計画確認</span></div>
   
   <pre class="prompt" id="b6">このタスクを実行する前に、まずPlan modeで変更計画だけ出して</pre>
@@ -91,7 +96,7 @@
     <button class="btn ghost sm" data-save="b6" data-name="prompts100-006.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Step 0→1 突破：安全に始める">
   <div class="ih"><span class="num">007</span><span class="ititle">レビュー観点の整理</span></div>
   
   <pre class="prompt" id="b7">AIが生成したコードをレビューするときに必ず確認すべき観点をリスト化して</pre>
@@ -100,7 +105,7 @@
     <button class="btn ghost sm" data-save="b7" data-name="prompts100-007.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Step 0→1 突破：安全に始める">
   <div class="ih"><span class="num">008</span><span class="ititle">既存資料の要約</span></div>
   
   <pre class="prompt" id="b8">このプロジェクトのREADMEとCLAUDE.mdを読んで、初めて触る人向けに3行で要約して</pre>
@@ -109,7 +114,7 @@
     <button class="btn ghost sm" data-save="b8" data-name="prompts100-008.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Step 0→1 突破：安全に始める">
   <div class="ih"><span class="num">009</span><span class="ititle">触らせない領域の洗い出し</span></div>
   
   <pre class="prompt" id="b9">このリポジトリでAIに触らせるべきでない領域（機密・決済等）をリストアップして</pre>
@@ -118,7 +123,7 @@
     <button class="btn ghost sm" data-save="b9" data-name="prompts100-009.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Step 0→1 突破：安全に始める">
   <div class="ih"><span class="num">010</span><span class="ititle">導入ロードマップ作成</span></div>
   
   <pre class="prompt" id="b10">このチームがAI導入を始めるための3ヶ月ロードマップを作って</pre>
@@ -127,7 +132,7 @@
     <button class="btn ghost sm" data-save="b10" data-name="prompts100-010.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Step 0→1 突破：安全に始める">
   <div class="ih"><span class="num">011</span><span class="ititle">稟議用の1枚資料</span></div>
   
   <pre class="prompt" id="b11">AI導入の稟議に使う、リスクとメリットを両論併記した1枚資料を作って</pre>
@@ -136,7 +141,7 @@
     <button class="btn ghost sm" data-save="b11" data-name="prompts100-011.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Step 0→1 突破：安全に始める">
   <div class="ih"><span class="num">012</span><span class="ititle">情シス懸念への回答例</span></div>
   
   <pre class="prompt" id="b12">情シス部門からよくある懸念（コード漏洩・ライセンス違反等）への回答例を作って</pre>
@@ -145,7 +150,7 @@
     <button class="btn ghost sm" data-save="b12" data-name="prompts100-012.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Step 0→1 突破：安全に始める">
   <div class="ih"><span class="num">013</span><span class="ititle">パイロットチーム選定基準</span></div>
   
   <pre class="prompt" id="b13">AI導入のパイロットチームを選ぶ際の基準を3つ提案して</pre>
@@ -154,7 +159,7 @@
     <button class="btn ghost sm" data-save="b13" data-name="prompts100-013.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Step 0→1 突破：安全に始める">
   <div class="ih"><span class="num">014</span><span class="ititle">最初の成功指標設定</span></div>
   
   <pre class="prompt" id="b14">AI導入の最初の1ヶ月で計測すべき指標を3つ提案して</pre>
@@ -163,7 +168,7 @@
     <button class="btn ghost sm" data-save="b14" data-name="prompts100-014.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Step 0→1 突破：安全に始める">
   <div class="ih"><span class="num">015</span><span class="ititle">オンボーディング資料作成</span></div>
   
   <pre class="prompt" id="b15">新しくAIツールを使い始めるメンバー向けのオンボーディング資料を作って</pre>
@@ -172,7 +177,7 @@
     <button class="btn ghost sm" data-save="b15" data-name="prompts100-015.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Step 0→1 突破：安全に始める">
   <div class="ih"><span class="num">016</span><span class="ititle">既存ワークフローの可視化</span></div>
   
   <pre class="prompt" id="b16">このチームの現在の開発ワークフローを図解して、AIを差し込める箇所を提案して</pre>
@@ -181,7 +186,7 @@
     <button class="btn ghost sm" data-save="b16" data-name="prompts100-016.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Step 0→1 突破：安全に始める">
   <div class="ih"><span class="num">017</span><span class="ititle">コンプライアンス確認リスト</span></div>
   
   <pre class="prompt" id="b17">法務・コンプライアンス部門に確認すべき質問リストを作って</pre>
@@ -190,7 +195,7 @@
     <button class="btn ghost sm" data-save="b17" data-name="prompts100-017.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Step 0→1 突破：安全に始める">
   <div class="ih"><span class="num">018</span><span class="ititle">小さな成功事例の記録</span></div>
   
   <pre class="prompt" id="b18">今回AIに任せて上手くいったタスクを、次に説得材料として使える形で記録して</pre>
@@ -199,7 +204,7 @@
     <button class="btn ghost sm" data-save="b18" data-name="prompts100-018.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Step 0→1 突破：安全に始める">
   <div class="ih"><span class="num">019</span><span class="ititle">ロールバック手順の整理</span></div>
   
   <pre class="prompt" id="b19">AIの変更が問題を起こした場合のロールバック手順を整理して</pre>
@@ -208,7 +213,7 @@
     <button class="btn ghost sm" data-save="b19" data-name="prompts100-019.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Step 0→1 突破：安全に始める">
   <div class="ih"><span class="num">020</span><span class="ititle">最初のCLAUDE.md作成</span></div>
   
   <pre class="prompt" id="b20">このプロジェクト用のCLAUDE.mdを、規約とよく使うコマンドを中心に作成して</pre>
@@ -217,8 +222,8 @@
     <button class="btn ghost sm" data-save="b20" data-name="prompts100-020.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">Step 1→2 突破：ペアから指揮者へ</h2>
-<div class="icard">
+<h2 class="cat" data-cat="Step 1→2 突破：ペアから指揮者へ">Step 1→2 突破：ペアから指揮者へ</h2>
+<div class="icard" data-cat="Step 1→2 突破：ペアから指揮者へ">
   <div class="ih"><span class="num">021</span><span class="ititle">自己検証ループの設計</span></div>
   
   <pre class="prompt" id="b21">このプロジェクトに、テスト・ビルド・lint・E2Eを含む自己検証ループを組み込んで</pre>
@@ -227,7 +232,7 @@
     <button class="btn ghost sm" data-save="b21" data-name="prompts100-021.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Step 1→2 突破：ペアから指揮者へ">
   <div class="ih"><span class="num">022</span><span class="ititle">自動モードの導入</span></div>
   
   <pre class="prompt" id="b22">許可待ちで作業が止まらないよう、安全な範囲で自動モードの設定を提案して</pre>
@@ -236,7 +241,7 @@
     <button class="btn ghost sm" data-save="b22" data-name="prompts100-022.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Step 1→2 突破：ペアから指揮者へ">
   <div class="ih"><span class="num">023</span><span class="ititle">並行タスクへの分割</span></div>
   
   <pre class="prompt" id="b23">このタスクを、互いに依存しない2つのサブタスクに分割して</pre>
@@ -245,7 +250,7 @@
     <button class="btn ghost sm" data-save="b23" data-name="prompts100-023.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Step 1→2 突破：ペアから指揮者へ">
   <div class="ih"><span class="num">024</span><span class="ititle">worktreeでの作業分離</span></div>
   
   <pre class="prompt" id="b24">複数のエージェントが衝突しないよう、git worktreeで作業を分離する手順を教えて</pre>
@@ -254,7 +259,7 @@
     <button class="btn ghost sm" data-save="b24" data-name="prompts100-024.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Step 1→2 突破：ペアから指揮者へ">
   <div class="ih"><span class="num">025</span><span class="ititle">コードレビューの自動化</span></div>
   
   <pre class="prompt" id="b25">このプロジェクトにコードレビューの自動チェックを追加して</pre>
@@ -263,7 +268,7 @@
     <button class="btn ghost sm" data-save="b25" data-name="prompts100-025.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Step 1→2 突破：ペアから指揮者へ">
   <div class="ih"><span class="num">026</span><span class="ititle">セキュリティスキャンの組み込み</span></div>
   
   <pre class="prompt" id="b26">コミット前に自動でセキュリティスキャンが走る仕組みを追加して</pre>
@@ -272,7 +277,7 @@
     <button class="btn ghost sm" data-save="b26" data-name="prompts100-026.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Step 1→2 突破：ペアから指揮者へ">
   <div class="ih"><span class="num">027</span><span class="ititle">バックログの並行化選定</span></div>
   
   <pre class="prompt" id="b27">積み上がっているバックログを見て、並行して進められるタスクを5つ選んで</pre>
@@ -281,7 +286,7 @@
     <button class="btn ghost sm" data-save="b27" data-name="prompts100-027.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Step 1→2 突破：ペアから指揮者へ">
   <div class="ih"><span class="num">028</span><span class="ititle">複数セッションの状況一覧化</span></div>
   
   <pre class="prompt" id="b28">今動いている複数のエージェントセッションの状況を一覧化して</pre>
@@ -290,7 +295,7 @@
     <button class="btn ghost sm" data-save="b28" data-name="prompts100-028.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Step 1→2 突破：ペアから指揮者へ">
   <div class="ih"><span class="num">029</span><span class="ititle">マージ基準の明文化</span></div>
   
   <pre class="prompt" id="b29">AIが生成した変更をマージしてよい基準をチェックリスト化して</pre>
@@ -299,7 +304,7 @@
     <button class="btn ghost sm" data-save="b29" data-name="prompts100-029.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Step 1→2 突破：ペアから指揮者へ">
   <div class="ih"><span class="num">030</span><span class="ititle">サブエージェントの設計</span></div>
   
   <pre class="prompt" id="b30">特定の作業を任せるサブエージェントの定義ファイルを作って</pre>
@@ -308,7 +313,7 @@
     <button class="btn ghost sm" data-save="b30" data-name="prompts100-030.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Step 1→2 突破：ペアから指揮者へ">
   <div class="ih"><span class="num">031</span><span class="ititle">テストカバレッジの底上げ</span></div>
   
   <pre class="prompt" id="b31">主要な関数のテストカバレッジが薄い箇所を洗い出して、テストを追加して</pre>
@@ -317,7 +322,7 @@
     <button class="btn ghost sm" data-save="b31" data-name="prompts100-031.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Step 1→2 突破：ペアから指揮者へ">
   <div class="ih"><span class="num">032</span><span class="ititle">lint設定の統一</span></div>
   
   <pre class="prompt" id="b32">プロジェクト全体のlint設定を統一し、違反を自動修正して</pre>
@@ -326,7 +331,7 @@
     <button class="btn ghost sm" data-save="b32" data-name="prompts100-032.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Step 1→2 突破：ペアから指揮者へ">
   <div class="ih"><span class="num">033</span><span class="ititle">E2Eテストの整備</span></div>
   
   <pre class="prompt" id="b33">実際の開発環境に近い形でE2Eテストを1本追加して</pre>
@@ -335,7 +340,7 @@
     <button class="btn ghost sm" data-save="b33" data-name="prompts100-033.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Step 1→2 突破：ペアから指揮者へ">
   <div class="ih"><span class="num">034</span><span class="ititle">差分レビューの効率化</span></div>
   
   <pre class="prompt" id="b34">複数の変更をまとめてレビューしやすい形で要約して</pre>
@@ -344,7 +349,7 @@
     <button class="btn ghost sm" data-save="b34" data-name="prompts100-034.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Step 1→2 突破：ペアから指揮者へ">
   <div class="ih"><span class="num">035</span><span class="ititle">権限設定の見直し</span></div>
   
   <pre class="prompt" id="b35">settings.jsonの許可リストを、安全性を保ちつつ広げる提案をして</pre>
@@ -353,7 +358,7 @@
     <button class="btn ghost sm" data-save="b35" data-name="prompts100-035.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Step 1→2 突破：ペアから指揮者へ">
   <div class="ih"><span class="num">036</span><span class="ititle">定型作業のルーティン化</span></div>
   
   <pre class="prompt" id="b36">毎週やっている定型作業をルーティンとして自動化する方法を提案して</pre>
@@ -362,7 +367,7 @@
     <button class="btn ghost sm" data-save="b36" data-name="prompts100-036.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Step 1→2 突破：ペアから指揮者へ">
   <div class="ih"><span class="num">037</span><span class="ititle">モニタリングの導入</span></div>
   
   <pre class="prompt" id="b37">エージェントの利用状況を監視するダッシュボードの要件を整理して</pre>
@@ -371,7 +376,7 @@
     <button class="btn ghost sm" data-save="b37" data-name="prompts100-037.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Step 1→2 突破：ペアから指揮者へ">
   <div class="ih"><span class="num">038</span><span class="ititle">トークン使用量の最適化</span></div>
   
   <pre class="prompt" id="b38">無駄なトークン消費を減らすための工夫を3つ提案して</pre>
@@ -380,7 +385,7 @@
     <button class="btn ghost sm" data-save="b38" data-name="prompts100-038.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Step 1→2 突破：ペアから指揮者へ">
   <div class="ih"><span class="num">039</span><span class="ititle">チーム内共有ルールの整理</span></div>
   
   <pre class="prompt" id="b39">複数人がAIエージェントを使う際の作業ルールを整理して</pre>
@@ -389,7 +394,7 @@
     <button class="btn ghost sm" data-save="b39" data-name="prompts100-039.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Step 1→2 突破：ペアから指揮者へ">
   <div class="ih"><span class="num">040</span><span class="ititle">並行作業の進捗レポート化</span></div>
   
   <pre class="prompt" id="b40">今並行して進んでいる複数タスクの進捗を1枚にまとめて</pre>
@@ -398,8 +403,8 @@
     <button class="btn ghost sm" data-save="b40" data-name="prompts100-040.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">Step 2→3 突破：自動レビュー・権限拡大</h2>
-<div class="icard">
+<h2 class="cat" data-cat="Step 2→3 突破：自動レビュー・権限拡大">Step 2→3 突破：自動レビュー・権限拡大</h2>
+<div class="icard" data-cat="Step 2→3 突破：自動レビュー・権限拡大">
   <div class="ih"><span class="num">041</span><span class="ititle">コンテキスト読み込みの強化</span></div>
   
   <pre class="prompt" id="b41">関連するWikiやドキュメントを読み込んで、このタスクの背景を整理して</pre>
@@ -408,7 +413,7 @@
     <button class="btn ghost sm" data-save="b41" data-name="prompts100-041.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Step 2→3 突破：自動レビュー・権限拡大">
   <div class="ih"><span class="num">042</span><span class="ititle">他チームコードへの配慮</span></div>
   
   <pre class="prompt" id="b42">このコードは他チームが所有している。変更前に影響範囲を確認して</pre>
@@ -417,7 +422,7 @@
     <button class="btn ghost sm" data-save="b42" data-name="prompts100-042.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Step 2→3 突破：自動レビュー・権限拡大">
   <div class="ih"><span class="num">043</span><span class="ititle">ループ・ルーティンの設計</span></div>
   
   <pre class="prompt" id="b43">この定型作業を、繰り返し実行できるルーティンとして定義して</pre>
@@ -426,7 +431,7 @@
     <button class="btn ghost sm" data-save="b43" data-name="prompts100-043.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Step 2→3 突破：自動レビュー・権限拡大">
   <div class="ih"><span class="num">044</span><span class="ititle">次タスクの自動取得</span></div>
   
   <pre class="prompt" id="b44">このルーティンが完了したら、次のタスクを自動で拾う仕組みを設計して</pre>
@@ -435,7 +440,7 @@
     <button class="btn ghost sm" data-save="b44" data-name="prompts100-044.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Step 2→3 突破：自動レビュー・権限拡大">
   <div class="ih"><span class="num">045</span><span class="ititle">権限拡大の段階設計</span></div>
   
   <pre class="prompt" id="b45">エージェントの権限を安全に拡大していく段階を3つに分けて設計して</pre>
@@ -444,7 +449,7 @@
     <button class="btn ghost sm" data-save="b45" data-name="prompts100-045.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Step 2→3 突破：自動レビュー・権限拡大">
   <div class="ih"><span class="num">046</span><span class="ititle">CLAUDE.md／Skillsの整備</span></div>
   
   <pre class="prompt" id="b46">頻出パターンをSkillとして切り出して、CLAUDE.mdから参照できるようにして</pre>
@@ -453,7 +458,7 @@
     <button class="btn ghost sm" data-save="b46" data-name="prompts100-046.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Step 2→3 突破：自動レビュー・権限拡大">
   <div class="ih"><span class="num">047</span><span class="ititle">コードオーナーシップの確認</span></div>
   
   <pre class="prompt" id="b47">このリポジトリの各ディレクトリのオーナーチームを整理して</pre>
@@ -462,7 +467,7 @@
     <button class="btn ghost sm" data-save="b47" data-name="prompts100-047.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Step 2→3 突破：自動レビュー・権限拡大">
   <div class="ih"><span class="num">048</span><span class="ititle">レビュー速度の計測</span></div>
   
   <pre class="prompt" id="b48">コードレビューにかかっている時間を計測し、ボトルネックを特定して</pre>
@@ -471,7 +476,7 @@
     <button class="btn ghost sm" data-save="b48" data-name="prompts100-048.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Step 2→3 突破：自動レビュー・権限拡大">
   <div class="ih"><span class="num">049</span><span class="ititle">自動化対象の選定</span></div>
   
   <pre class="prompt" id="b49">自動化すべき作業と人がやるべき作業を仕分けして</pre>
@@ -480,7 +485,7 @@
     <button class="btn ghost sm" data-save="b49" data-name="prompts100-049.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Step 2→3 突破：自動レビュー・権限拡大">
   <div class="ih"><span class="num">050</span><span class="ititle">長時間タスクの分割</span></div>
   
   <pre class="prompt" id="b50">この大きなタスクを、背景で進められる単位に分割して</pre>
@@ -489,7 +494,7 @@
     <button class="btn ghost sm" data-save="b50" data-name="prompts100-050.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Step 2→3 突破：自動レビュー・権限拡大">
   <div class="ih"><span class="num">051</span><span class="ititle">意思決定ログの整備</span></div>
   
   <pre class="prompt" id="b51">エージェントが行った判断を後から追跡できるログ形式を設計して</pre>
@@ -498,7 +503,7 @@
     <button class="btn ghost sm" data-save="b51" data-name="prompts100-051.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Step 2→3 突破：自動レビュー・権限拡大">
   <div class="ih"><span class="num">052</span><span class="ititle">信頼度の段階的引き上げ</span></div>
   
   <pre class="prompt" id="b52">このエージェントに任せる範囲を、成功実績に応じて段階的に広げる計画を作って</pre>
@@ -507,7 +512,7 @@
     <button class="btn ghost sm" data-save="b52" data-name="prompts100-052.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Step 2→3 突破：自動レビュー・権限拡大">
   <div class="ih"><span class="num">053</span><span class="ititle">インシデント対応手順</span></div>
   
   <pre class="prompt" id="b53">エージェントの誤動作が起きた場合の対応手順を整理して</pre>
@@ -516,7 +521,7 @@
     <button class="btn ghost sm" data-save="b53" data-name="prompts100-053.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Step 2→3 突破：自動レビュー・権限拡大">
   <div class="ih"><span class="num">054</span><span class="ititle">複数チーム連携ルール</span></div>
   
   <pre class="prompt" id="b54">複数チームが同じエージェント基盤を使う際の連携ルールを作って</pre>
@@ -525,7 +530,7 @@
     <button class="btn ghost sm" data-save="b54" data-name="prompts100-054.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Step 2→3 突破：自動レビュー・権限拡大">
   <div class="ih"><span class="num">055</span><span class="ititle">コスト監視の自動化</span></div>
   
   <pre class="prompt" id="b55">トークン使用コストが閾値を超えたら通知する仕組みを設計して</pre>
@@ -534,7 +539,7 @@
     <button class="btn ghost sm" data-save="b55" data-name="prompts100-055.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Step 2→3 突破：自動レビュー・権限拡大">
   <div class="ih"><span class="num">056</span><span class="ititle">定期メンテナンスの自動化</span></div>
   
   <pre class="prompt" id="b56">依存関係の更新など定期メンテナンスをルーティン化して</pre>
@@ -543,7 +548,7 @@
     <button class="btn ghost sm" data-save="b56" data-name="prompts100-056.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Step 2→3 突破：自動レビュー・権限拡大">
   <div class="ih"><span class="num">057</span><span class="ititle">品質ゲートの設計</span></div>
   
   <pre class="prompt" id="b57">マージ前に必ず通過すべき品質ゲートを定義して</pre>
@@ -552,7 +557,7 @@
     <button class="btn ghost sm" data-save="b57" data-name="prompts100-057.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Step 2→3 突破：自動レビュー・権限拡大">
   <div class="ih"><span class="num">058</span><span class="ititle">ドキュメント自動更新</span></div>
   
   <pre class="prompt" id="b58">コード変更に合わせてドキュメントも自動更新する仕組みを設計して</pre>
@@ -561,7 +566,7 @@
     <button class="btn ghost sm" data-save="b58" data-name="prompts100-058.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Step 2→3 突破：自動レビュー・権限拡大">
   <div class="ih"><span class="num">059</span><span class="ititle">エスカレーション基準の明文化</span></div>
   
   <pre class="prompt" id="b59">エージェントが人間に判断を仰ぐべき基準を明文化して</pre>
@@ -570,7 +575,7 @@
     <button class="btn ghost sm" data-save="b59" data-name="prompts100-059.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Step 2→3 突破：自動レビュー・権限拡大">
   <div class="ih"><span class="num">060</span><span class="ititle">組織全体への展開計画</span></div>
   
   <pre class="prompt" id="b60">このチームでの成功事例を、他チームに展開する計画を作って</pre>
@@ -579,8 +584,8 @@
     <button class="btn ghost sm" data-save="b60" data-name="prompts100-060.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">Step 3→4 突破：大規模自動化</h2>
-<div class="icard">
+<h2 class="cat" data-cat="Step 3→4 突破：大規模自動化">Step 3→4 突破：大規模自動化</h2>
+<div class="icard" data-cat="Step 3→4 突破：大規模自動化">
   <div class="ih"><span class="num">061</span><span class="ititle">コード移行の自動化設計</span></div>
   
   <pre class="prompt" id="b61">この大規模なコード移行作業を自動化する計画を立てて</pre>
@@ -589,7 +594,7 @@
     <button class="btn ghost sm" data-save="b61" data-name="prompts100-061.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Step 3→4 突破：大規模自動化">
   <div class="ih"><span class="num">062</span><span class="ititle">ファジングの導入</span></div>
   
   <pre class="prompt" id="b62">主要なAPIに対してファジングテストを自動で回す仕組みを設計して</pre>
@@ -598,7 +603,7 @@
     <button class="btn ghost sm" data-save="b62" data-name="prompts100-062.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Step 3→4 突破：大規模自動化">
   <div class="ih"><span class="num">063</span><span class="ititle">機能開発の自動起動</span></div>
   
   <pre class="prompt" id="b63">要望チケットから機能開発を自動的に開始する仕組みを設計して</pre>
@@ -607,7 +612,7 @@
     <button class="btn ghost sm" data-save="b63" data-name="prompts100-063.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Step 3→4 突破：大規模自動化">
   <div class="ih"><span class="num">064</span><span class="ititle">フィードバック対応の自動化</span></div>
   
   <pre class="prompt" id="b64">ユーザーフィードバックを分類し、対応タスクを自動生成する仕組みを作って</pre>
@@ -616,7 +621,7 @@
     <button class="btn ghost sm" data-save="b64" data-name="prompts100-064.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Step 3→4 突破：大規模自動化">
   <div class="ih"><span class="num">065</span><span class="ititle">領域特化の自動化選定</span></div>
   
   <pre class="prompt" id="b65">自動化する価値が高い領域を、影響範囲と頻度から3つ選んで</pre>
@@ -625,7 +630,7 @@
     <button class="btn ghost sm" data-save="b65" data-name="prompts100-065.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Step 3→4 突破：大規模自動化">
   <div class="ih"><span class="num">066</span><span class="ititle">Agent SDKでの構築</span></div>
   
   <pre class="prompt" id="b66">特定業務向けのエージェントをAgent SDKでプログラム的に構築する設計を作って</pre>
@@ -634,7 +639,7 @@
     <button class="btn ghost sm" data-save="b66" data-name="prompts100-066.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Step 3→4 突破：大規模自動化">
   <div class="ih"><span class="num">067</span><span class="ititle">意図ベースの指示設計</span></div>
   
   <pre class="prompt" id="b67">細かい手順ではなく、意図を伝えるだけで動く指示の書き方を整理して</pre>
@@ -643,7 +648,7 @@
     <button class="btn ghost sm" data-save="b67" data-name="prompts100-067.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Step 3→4 突破：大規模自動化">
   <div class="ih"><span class="num">068</span><span class="ititle">例外監視の仕組み</span></div>
   
   <pre class="prompt" id="b68">大量に動くエージェントの中から例外だけを検知する仕組みを設計して</pre>
@@ -652,7 +657,7 @@
     <button class="btn ghost sm" data-save="b68" data-name="prompts100-068.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Step 3→4 突破：大規模自動化">
   <div class="ih"><span class="num">069</span><span class="ititle">大規模移行のガードレール</span></div>
   
   <pre class="prompt" id="b69">大規模自動化に必要なガードレール（コスト上限・モデル選定等）を設計して</pre>
@@ -661,7 +666,7 @@
     <button class="btn ghost sm" data-save="b69" data-name="prompts100-069.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Step 3→4 突破：大規模自動化">
   <div class="ih"><span class="num">070</span><span class="ititle">四半期規模の計画立案</span></div>
   
   <pre class="prompt" id="b70">四半期単位の移行作業を、自動起動できる単位に分解して</pre>
@@ -670,7 +675,7 @@
     <button class="btn ghost sm" data-save="b70" data-name="prompts100-070.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Step 3→4 突破：大規模自動化">
   <div class="ih"><span class="num">071</span><span class="ititle">自動化のロールバック設計</span></div>
   
   <pre class="prompt" id="b71">大規模自動化が問題を起こした場合の全体ロールバック手順を整理して</pre>
@@ -679,7 +684,7 @@
     <button class="btn ghost sm" data-save="b71" data-name="prompts100-071.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Step 3→4 突破：大規模自動化">
   <div class="ih"><span class="num">072</span><span class="ititle">モデル選定の自動化</span></div>
   
   <pre class="prompt" id="b72">タスクの性質に応じて使うモデルを自動選定するルールを作って</pre>
@@ -688,7 +693,7 @@
     <button class="btn ghost sm" data-save="b72" data-name="prompts100-072.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Step 3→4 突破：大規模自動化">
   <div class="ih"><span class="num">073</span><span class="ititle">Slack連携での自動応答</span></div>
   
   <pre class="prompt" id="b73">特定のSlackチャンネルでの質問に自動応答する仕組みを設計して</pre>
@@ -697,7 +702,7 @@
     <button class="btn ghost sm" data-save="b73" data-name="prompts100-073.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Step 3→4 突破：大規模自動化">
   <div class="ih"><span class="num">074</span><span class="ititle">大規模リファクタの計画</span></div>
   
   <pre class="prompt" id="b74">レガシーコード全体のリファクタ計画を段階的に立てて</pre>
@@ -706,7 +711,7 @@
     <button class="btn ghost sm" data-save="b74" data-name="prompts100-074.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Step 3→4 突破：大規模自動化">
   <div class="ih"><span class="num">075</span><span class="ititle">パフォーマンス自動改善</span></div>
   
   <pre class="prompt" id="b75">ボトルネックとなっている処理を自動で検出し改善案を出して</pre>
@@ -715,7 +720,7 @@
     <button class="btn ghost sm" data-save="b75" data-name="prompts100-075.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Step 3→4 突破：大規模自動化">
   <div class="ih"><span class="num">076</span><span class="ititle">セキュリティ監査の自動化</span></div>
   
   <pre class="prompt" id="b76">定期的なセキュリティ監査を自動で実行する仕組みを設計して</pre>
@@ -724,7 +729,7 @@
     <button class="btn ghost sm" data-save="b76" data-name="prompts100-076.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Step 3→4 突破：大規模自動化">
   <div class="ih"><span class="num">077</span><span class="ititle">多言語対応の自動化</span></div>
   
   <pre class="prompt" id="b77">ドキュメント・UIの多言語対応を自動化する仕組みを設計して</pre>
@@ -733,7 +738,7 @@
     <button class="btn ghost sm" data-save="b77" data-name="prompts100-077.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Step 3→4 突破：大規模自動化">
   <div class="ih"><span class="num">078</span><span class="ititle">依存関係の健全性チェック</span></div>
   
   <pre class="prompt" id="b78">プロジェクト全体の依存関係の健全性を定期チェックする仕組みを作って</pre>
@@ -742,7 +747,7 @@
     <button class="btn ghost sm" data-save="b78" data-name="prompts100-078.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Step 3→4 突破：大規模自動化">
   <div class="ih"><span class="num">079</span><span class="ititle">自動化の成果測定</span></div>
   
   <pre class="prompt" id="b79">大規模自動化によって削減できた工数を測定する方法を提案して</pre>
@@ -751,7 +756,7 @@
     <button class="btn ghost sm" data-save="b79" data-name="prompts100-079.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Step 3→4 突破：大規模自動化">
   <div class="ih"><span class="num">080</span><span class="ititle">次段階への準備</span></div>
   
   <pre class="prompt" id="b80">さらに自動化を広げるために、今整えるべきガードレールを3つ提案して</pre>
@@ -760,8 +765,8 @@
     <button class="btn ghost sm" data-save="b80" data-name="prompts100-080.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">共通：自己診断とガードレール設計</h2>
-<div class="icard">
+<h2 class="cat" data-cat="共通：自己診断とガードレール設計">共通：自己診断とガードレール設計</h2>
+<div class="icard" data-cat="共通：自己診断とガードレール設計">
   <div class="ih"><span class="num">081</span><span class="ititle">現在地の診断</span></div>
   
   <pre class="prompt" id="b81">今のチームのAI活用状況を、5段階のどこに当たるか診断して</pre>
@@ -770,7 +775,7 @@
     <button class="btn ghost sm" data-save="b81" data-name="prompts100-081.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="共通：自己診断とガードレール設計">
   <div class="ih"><span class="num">082</span><span class="ititle">ボトルネックの特定</span></div>
   
   <pre class="prompt" id="b82">次の段階に進むために、今一番のボトルネックになっているものを特定して</pre>
@@ -779,7 +784,7 @@
     <button class="btn ghost sm" data-save="b82" data-name="prompts100-082.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="共通：自己診断とガードレール設計">
   <div class="ih"><span class="num">083</span><span class="ititle">ガードレールの棚卸し</span></div>
   
   <pre class="prompt" id="b83">今のプロジェクトに足りていないガードレールを洗い出して</pre>
@@ -788,7 +793,7 @@
     <button class="btn ghost sm" data-save="b83" data-name="prompts100-083.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="共通：自己診断とガードレール設計">
   <div class="ih"><span class="num">084</span><span class="ititle">予算上限の設定</span></div>
   
   <pre class="prompt" id="b84">チーム・プロジェクト単位の予算上限をどう設定すべきか提案して</pre>
@@ -797,7 +802,7 @@
     <button class="btn ghost sm" data-save="b84" data-name="prompts100-084.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="共通：自己診断とガードレール設計">
   <div class="ih"><span class="num">085</span><span class="ititle">アクセス権限の監査</span></div>
   
   <pre class="prompt" id="b85">AIツールへのアクセス権限が適切に設定されているか監査して</pre>
@@ -806,7 +811,7 @@
     <button class="btn ghost sm" data-save="b85" data-name="prompts100-085.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="共通：自己診断とガードレール設計">
   <div class="ih"><span class="num">086</span><span class="ititle">可観測性の整備</span></div>
   
   <pre class="prompt" id="b86">エージェントの動きを可視化するダッシュボード要件を整理して</pre>
@@ -815,7 +820,7 @@
     <button class="btn ghost sm" data-save="b86" data-name="prompts100-086.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="共通：自己診断とガードレール設計">
   <div class="ih"><span class="num">087</span><span class="ititle">監査ログの整備</span></div>
   
   <pre class="prompt" id="b87">後から追跡できるよう、エージェントの操作ログの要件を整理して</pre>
@@ -824,7 +829,7 @@
     <button class="btn ghost sm" data-save="b87" data-name="prompts100-087.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="共通：自己診断とガードレール設計">
   <div class="ih"><span class="num">088</span><span class="ititle">インシデント対応訓練</span></div>
   
   <pre class="prompt" id="b88">エージェントが誤動作した想定で、対応訓練のシナリオを作って</pre>
@@ -833,7 +838,7 @@
     <button class="btn ghost sm" data-save="b88" data-name="prompts100-088.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="共通：自己診断とガードレール設計">
   <div class="ih"><span class="num">089</span><span class="ititle">スキル格差の把握</span></div>
   
   <pre class="prompt" id="b89">チーム内でAI活用スキルに差がある箇所を洗い出して</pre>
@@ -842,7 +847,7 @@
     <button class="btn ghost sm" data-save="b89" data-name="prompts100-089.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="共通：自己診断とガードレール設計">
   <div class="ih"><span class="num">090</span><span class="ititle">教育プログラムの設計</span></div>
   
   <pre class="prompt" id="b90">AI活用スキルを底上げする社内勉強会のカリキュラムを作って</pre>
@@ -851,7 +856,7 @@
     <button class="btn ghost sm" data-save="b90" data-name="prompts100-090.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="共通：自己診断とガードレール設計">
   <div class="ih"><span class="num">091</span><span class="ititle">成功指標の再設定</span></div>
   
   <pre class="prompt" id="b91">今の段階に合った成功指標（KPI）を再設定して</pre>
@@ -860,7 +865,7 @@
     <button class="btn ghost sm" data-save="b91" data-name="prompts100-091.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="共通：自己診断とガードレール設計">
   <div class="ih"><span class="num">092</span><span class="ititle">経営層への報告資料</span></div>
   
   <pre class="prompt" id="b92">経営層向けにAI導入の進捗と次の一手を1枚で報告する資料を作って</pre>
@@ -869,7 +874,7 @@
     <button class="btn ghost sm" data-save="b92" data-name="prompts100-092.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="共通：自己診断とガードレール設計">
   <div class="ih"><span class="num">093</span><span class="ititle">他社事例との比較</span></div>
   
   <pre class="prompt" id="b93">このチームの導入状況を、一般的な導入パターンと比較して</pre>
@@ -878,7 +883,7 @@
     <button class="btn ghost sm" data-save="b93" data-name="prompts100-093.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="共通：自己診断とガードレール設計">
   <div class="ih"><span class="num">094</span><span class="ititle">次四半期の目標設定</span></div>
   
   <pre class="prompt" id="b94">次の四半期でどの段階まで進むか、現実的な目標を設定して</pre>
@@ -887,7 +892,7 @@
     <button class="btn ghost sm" data-save="b94" data-name="prompts100-094.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="共通：自己診断とガードレール設計">
   <div class="ih"><span class="num">095</span><span class="ititle">リスクと機会の棚卸し</span></div>
   
   <pre class="prompt" id="b95">今の段階でのリスクと機会を両方リストアップして</pre>
@@ -896,7 +901,7 @@
     <button class="btn ghost sm" data-save="b95" data-name="prompts100-095.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="共通：自己診断とガードレール設計">
   <div class="ih"><span class="num">096</span><span class="ititle">ツール選定の見直し</span></div>
   
   <pre class="prompt" id="b96">今使っているAIツール群が、今の段階に見合っているか点検して</pre>
@@ -905,7 +910,7 @@
     <button class="btn ghost sm" data-save="b96" data-name="prompts100-096.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="共通：自己診断とガードレール設計">
   <div class="ih"><span class="num">097</span><span class="ititle">コミュニケーション計画</span></div>
   
   <pre class="prompt" id="b97">AI導入の進捗をチーム全体にどう共有するか計画を作って</pre>
@@ -914,7 +919,7 @@
     <button class="btn ghost sm" data-save="b97" data-name="prompts100-097.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="共通：自己診断とガードレール設計">
   <div class="ih"><span class="num">098</span><span class="ititle">撤退基準の設定</span></div>
   
   <pre class="prompt" id="b98">うまくいかない場合に撤退・見直しする基準をあらかじめ決めておいて</pre>
@@ -923,7 +928,7 @@
     <button class="btn ghost sm" data-save="b98" data-name="prompts100-098.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="共通：自己診断とガードレール設計">
   <div class="ih"><span class="num">099</span><span class="ititle">長期ビジョンの整理</span></div>
   
   <pre class="prompt" id="b99">このチームが最終的にどの段階を目指すか、長期ビジョンを整理して</pre>
@@ -932,7 +937,7 @@
     <button class="btn ghost sm" data-save="b99" data-name="prompts100-099.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="共通：自己診断とガードレール設計">
   <div class="ih"><span class="num">100</span><span class="ititle">振り返りテンプレート</span></div>
   
   <pre class="prompt" id="b100">月次でAI導入の進捗を振り返るテンプレートを作って</pre>
@@ -1572,6 +1577,57 @@ AI導入の進捗をチーム全体にどう共有するか計画を作って
 
 以上、全100個です。内訳: Step 0→1 突破：安全に始める: 20本／Step 1→2 突破：ペアから指揮者へ: 20本／Step 2→3 突破：自動レビュー・権限拡大: 20本／Step 3→4 突破：大規模自動化: 20本／共通：自己診断とガードレール設計: 20本。</pre>
 <script>
+// 項目の多いキットで、目的の1件に辿り着けるようにする絞り込み。
+// 検索はタイトル・説明だけでなく本文も対象にする（「あの文言が入っていた項目」で探せるように）。
+(function(){
+  var q = document.getElementById('kq');
+  if (!q) return;
+  var hit = document.getElementById('khit');
+  var cards = [].slice.call(document.querySelectorAll('.kwrap .icard'));
+  var heads = [].slice.call(document.querySelectorAll('.kwrap h2.cat'));
+  var chips = [].slice.call(document.querySelectorAll('.kcat'));
+  var cat = '';
+
+  // ひらがな・カタカナの違いで取りこぼさないようにする（ハブ側の検索と同じ扱い）
+  function norm(s){
+    return (s || '').toLowerCase().replace(/[ぁ-ん]/g, function(c){
+      return String.fromCharCode(c.charCodeAt(0) + 0x60);
+    });
+  }
+
+  // カード全体の textContent だとボタンの「コピー」まで拾ってしまうため、中身を選んで集める
+  cards.forEach(function(c){
+    var t = c.querySelector('.ititle'), d = c.querySelector('.imeta'), p = c.querySelector('.prompt');
+    c._t = norm((t ? t.textContent : '') + ' ' + (d ? d.textContent : '') + ' ' + (p ? p.textContent : ''));
+  });
+
+  function apply(){
+    var kw = norm(q.value.trim()), n = 0, shown = {};
+    cards.forEach(function(c){
+      var ok = (!cat || c.getAttribute('data-cat') === cat)
+            && (!kw || c._t.indexOf(kw) !== -1);
+      c.classList.toggle('hide', !ok);
+      if (ok){ n++; shown[c.getAttribute('data-cat')] = 1; }
+    });
+    // 残った項目が1件も無いカテゴリの見出しは隠す
+    heads.forEach(function(h){
+      h.classList.toggle('hide', !shown[h.getAttribute('data-cat')]);
+    });
+    hit.textContent = (kw || cat)
+      ? (n ? n + '件を表示中' : '該当する項目がありません')
+      : '';
+  }
+
+  q.addEventListener('input', apply);
+  chips.forEach(function(b){
+    b.addEventListener('click', function(){
+      cat = b.getAttribute('data-cat');
+      chips.forEach(function(x){ x.classList.toggle('on', x === b); });
+      apply();
+    });
+  });
+})();
+
 function flash(btn, label){
   const old = btn.textContent, cls = btn.className;
   btn.textContent = label; btn.classList.add('ok');
@@ -1641,7 +1697,22 @@ document.addEventListener('click', e => {
     el.classList.remove('show');
     sessionStorage.setItem('promoClosed', '1');
   }
-  setTimeout(function(){ el.classList.add('show'); }, 1600);
+  // 動画の概要欄から来た人が、自分のプレゼントを探し始める瞬間に被らないようにする。
+  // 以前は読み込み1.6秒後に無条件で出しており、いちばん目的意識の高い時間を塞いでいた。
+  // 中身を見に行った（＝目当てのものに辿り着いた）ころに出す。
+  var shown = false;
+  function show(){
+    if (shown) return;
+    shown = true;
+    el.classList.add('show');
+    removeEventListener('scroll', onScroll);
+  }
+  function onScroll(){
+    if (scrollY > innerHeight * 0.8) show();
+  }
+  addEventListener('scroll', onScroll, {passive:true});
+  // まったくスクロールしない人にも最後には出す（ただし十分に間を置いてから）
+  setTimeout(show, 45000);
   document.getElementById('promoClose').addEventListener('click', function(e){ e.preventDefault(); close(); });
   el.addEventListener('click', function(e){ if (e.target === el) close(); });
 })();

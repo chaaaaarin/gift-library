@@ -36,8 +36,13 @@
     <div class="pnote"><span class="nb">下のカードから、</span><span class="nb">1件ずつコピー、</span><span class="nb">または個別にダウンロードできます。</span><span class="nb">まとめて欲しいときは、</span><span class="nb">上の</span><span class="nb">「全件ダウンロード」を</span><span class="nb">お使いください。</span></div>
   </section>
 
-  <h2 class="cat">config.tomlプリセット集</h2>
-<div class="icard">
+  <div class="ktools">
+  <input type="search" id="kq" placeholder="この中から探す" autocomplete="off" aria-label="この中から探す">
+  <div class="kcats"><button type="button" class="kcat on" data-cat="">すべて<span class="n">100</span></button><button type="button" class="kcat" data-cat="config.tomlプリセット集">config.tomlプリセット集<span class="n">20</span></button><button type="button" class="kcat" data-cat="AGENTS.md定型文">AGENTS.md定型文<span class="n">20</span></button><button type="button" class="kcat" data-cat="セッション引き継ぎ・圧縮前メモ化プロンプト">セッション引き継ぎ・圧縮前メモ化プロンプト<span class="n">20</span></button><button type="button" class="kcat" data-cat="コンテキストを圧迫させない指示フレーズ">コンテキストを圧迫させない指示フレーズ<span class="n">20</span></button><button type="button" class="kcat" data-cat="コスト監視・請求防止の指示文">コスト監視・請求防止の指示文<span class="n">20</span></button></div>
+  <p class="khit" id="khit" role="status"></p>
+</div>
+<h2 class="cat" data-cat="config.tomlプリセット集">config.tomlプリセット集</h2>
+<div class="icard" data-cat="config.tomlプリセット集">
   <div class="ih"><span class="num">001</span><span class="ititle">日常タスク用・省コスト型（窓200,000 / 圧縮180,000）</span></div>
   
   <pre class="prompt" id="b1">前提: チャット的なやり取りや小さな修正が中心で、コストを抑えたい日常利用。
@@ -48,7 +53,7 @@
     <button class="btn ghost sm" data-save="b1" data-name="context-prompts100-001.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="config.tomlプリセット集">
   <div class="ih"><span class="num">002</span><span class="ititle">中規模リファクタ用（窓400,000 / 圧縮360,000）</span></div>
   
   <pre class="prompt" id="b2">前提: 1つのモジュール規模のリファクタリングを、複数ファイルにまたがって進めたいとき。
@@ -59,7 +64,7 @@
     <button class="btn ghost sm" data-save="b2" data-name="context-prompts100-002.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="config.tomlプリセット集">
   <div class="ih"><span class="num">003</span><span class="ititle">大型リファクタ・一気通貫用（窓1,000,000 / 圧縮900,000）</span></div>
   
   <pre class="prompt" id="b3">前提: 1つの大きなリファクタリングを、長時間の1セッションでやり切りたいとき。
@@ -70,7 +75,7 @@
     <button class="btn ghost sm" data-save="b3" data-name="context-prompts100-003.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="config.tomlプリセット集">
   <div class="ih"><span class="num">004</span><span class="ititle">モノレポ全体把握用（窓700,000 / 圧縮630,000）</span></div>
   
   <pre class="prompt" id="b4">前提: 複数パッケージにまたがるモノレポで、依存関係の全体像を把握してから作業したいとき。
@@ -81,7 +86,7 @@
     <button class="btn ghost sm" data-save="b4" data-name="context-prompts100-004.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="config.tomlプリセット集">
   <div class="ih"><span class="num">005</span><span class="ititle">コードレビュー専用（窓300,000 / 圧縮260,000）</span></div>
   
   <pre class="prompt" id="b5">前提: 1件のプルリクエストを一気に読み込んでレビューコメントを書きたいとき。
@@ -92,7 +97,7 @@
     <button class="btn ghost sm" data-save="b5" data-name="context-prompts100-005.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="config.tomlプリセット集">
   <div class="ih"><span class="num">006</span><span class="ititle">バグ調査・原因追跡用（窓500,000 / 圧縮450,000）</span></div>
   
   <pre class="prompt" id="b6">前提: 再現条件が複雑なバグを、ログとコードを行き来しながら調査したいとき。
@@ -103,7 +108,7 @@
     <button class="btn ghost sm" data-save="b6" data-name="context-prompts100-006.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="config.tomlプリセット集">
   <div class="ih"><span class="num">007</span><span class="ititle">ドキュメント生成用（窓250,000 / 圧縮220,000）</span></div>
   
   <pre class="prompt" id="b7">前提: 既存コードから技術ドキュメントやREADMEをまとめて生成したいとき。
@@ -114,7 +119,7 @@
     <button class="btn ghost sm" data-save="b7" data-name="context-prompts100-007.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="config.tomlプリセット集">
   <div class="ih"><span class="num">008</span><span class="ititle">テスト網羅性強化用（窓350,000 / 圧縮310,000）</span></div>
   
   <pre class="prompt" id="b8">前提: 既存のテストカバレッジを確認しながら不足分を洗い出し追加したいとき。
@@ -125,7 +130,7 @@
     <button class="btn ghost sm" data-save="b8" data-name="context-prompts100-008.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="config.tomlプリセット集">
   <div class="ih"><span class="num">009</span><span class="ititle">マイグレーション作業用（窓600,000 / 圧縮540,000）</span></div>
   
   <pre class="prompt" id="b9">前提: 旧ライブラリから新ライブラリへの移行など、影響範囲が広い作業をするとき。
@@ -136,7 +141,7 @@
     <button class="btn ghost sm" data-save="b9" data-name="context-prompts100-009.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="config.tomlプリセット集">
   <div class="ih"><span class="num">010</span><span class="ititle">APIキー利用・実験用（上限）（窓1,000,000 / 圧縮900,000）</span></div>
   
   <pre class="prompt" id="b10">前提: API課金で使っており、性能を最優先で1M窓を試したいとき。
@@ -147,7 +152,7 @@
     <button class="btn ghost sm" data-save="b10" data-name="context-prompts100-010.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="config.tomlプリセット集">
   <div class="ih"><span class="num">011</span><span class="ititle">ペアプロ・対話重視用（窓320,000 / 圧縮280,000）</span></div>
   
   <pre class="prompt" id="b11">前提: AIと会話しながら設計方針を練る、対話量の多い作業のとき。
@@ -158,7 +163,7 @@
     <button class="btn ghost sm" data-save="b11" data-name="context-prompts100-011.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="config.tomlプリセット集">
   <div class="ih"><span class="num">012</span><span class="ititle">CI/CD設定調整用（窓220,000 / 圧縮190,000）</span></div>
   
   <pre class="prompt" id="b12">前提: ビルド・デプロイパイプラインの設定ファイルを調整するとき。
@@ -169,7 +174,7 @@
     <button class="btn ghost sm" data-save="b12" data-name="context-prompts100-012.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="config.tomlプリセット集">
   <div class="ih"><span class="num">013</span><span class="ititle">セキュリティレビュー用（窓380,000 / 圧縮330,000）</span></div>
   
   <pre class="prompt" id="b13">前提: 認証・権限まわりのコードを重点的にレビューしたいとき。
@@ -180,7 +185,7 @@
     <button class="btn ghost sm" data-save="b13" data-name="context-prompts100-013.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="config.tomlプリセット集">
   <div class="ih"><span class="num">014</span><span class="ititle">パフォーマンス調査用（窓420,000 / 圧縮370,000）</span></div>
   
   <pre class="prompt" id="b14">前提: 処理速度のボトルネックをプロファイリング結果と照らし合わせて調査したいとき。
@@ -191,7 +196,7 @@
     <button class="btn ghost sm" data-save="b14" data-name="context-prompts100-014.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="config.tomlプリセット集">
   <div class="ih"><span class="num">015</span><span class="ititle">複数リポジトリ横断調査用（窓800,000 / 圧縮720,000）</span></div>
   
   <pre class="prompt" id="b15">前提: サービス間の連携仕様を、複数リポジトリを横断して確認したいとき。
@@ -202,7 +207,7 @@
     <button class="btn ghost sm" data-save="b15" data-name="context-prompts100-015.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="config.tomlプリセット集">
   <div class="ih"><span class="num">016</span><span class="ititle">新人オンボーディング資料作成用（窓260,000 / 圧縮230,000）</span></div>
   
   <pre class="prompt" id="b16">前提: 新しく参加するメンバー向けに、コードベースの案内資料を作りたいとき。
@@ -213,7 +218,7 @@
     <button class="btn ghost sm" data-save="b16" data-name="context-prompts100-016.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="config.tomlプリセット集">
   <div class="ih"><span class="num">017</span><span class="ititle">設計ドキュメントレビュー用（窓240,000 / 圧縮210,000）</span></div>
   
   <pre class="prompt" id="b17">前提: 実装前の設計書やRFCを、実装可能性の観点でレビューしたいとき。
@@ -224,7 +229,7 @@
     <button class="btn ghost sm" data-save="b17" data-name="context-prompts100-017.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="config.tomlプリセット集">
   <div class="ih"><span class="num">018</span><span class="ititle">障害対応・緊急調査用（窓450,000 / 圧縮400,000）</span></div>
   
   <pre class="prompt" id="b18">前提: 本番障害の原因調査を急いで進めたいとき。
@@ -235,7 +240,7 @@
     <button class="btn ghost sm" data-save="b18" data-name="context-prompts100-018.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="config.tomlプリセット集">
   <div class="ih"><span class="num">019</span><span class="ititle">学習・素振り用（最小構成）（窓150,000 / 圧縮130,000）</span></div>
   
   <pre class="prompt" id="b19">前提: 新しい言語やフレームワークを試しながら学びたいとき。
@@ -246,7 +251,7 @@
     <button class="btn ghost sm" data-save="b19" data-name="context-prompts100-019.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="config.tomlプリセット集">
   <div class="ih"><span class="num">020</span><span class="ititle">複数エージェント連携の親セッション用（窓900,000 / 圧縮800,000）</span></div>
   
   <pre class="prompt" id="b20">前提: 複数のサブタスクを1つの親セッションで統括し、状況を俯瞰したいとき。
@@ -257,8 +262,8 @@
     <button class="btn ghost sm" data-save="b20" data-name="context-prompts100-020.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">AGENTS.md定型文</h2>
-<div class="icard">
+<h2 class="cat" data-cat="AGENTS.md定型文">AGENTS.md定型文</h2>
+<div class="icard" data-cat="AGENTS.md定型文">
   <div class="ih"><span class="num">021</span><span class="ititle">AGENTS.md雛形：Next.js（ネクストジェイエス）フロントエンド</span></div>
   
   <pre class="prompt" id="b21">前提: Next.js（ネクストジェイエス）フロントエンドのプロジェクトで、Codexに毎回同じ説明を繰り返している状態を解消したい。
@@ -269,7 +274,7 @@
     <button class="btn ghost sm" data-save="b21" data-name="context-prompts100-021.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="AGENTS.md定型文">
   <div class="ih"><span class="num">022</span><span class="ititle">AGENTS.md雛形：Python バックエンドAPI</span></div>
   
   <pre class="prompt" id="b22">前提: Python バックエンドAPIのプロジェクトで、Codexに毎回同じ説明を繰り返している状態を解消したい。
@@ -280,7 +285,7 @@
     <button class="btn ghost sm" data-save="b22" data-name="context-prompts100-022.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="AGENTS.md定型文">
   <div class="ih"><span class="num">023</span><span class="ititle">AGENTS.md雛形：モバイルアプリ（iOS/Android共通）</span></div>
   
   <pre class="prompt" id="b23">前提: モバイルアプリ（iOS/Android共通）のプロジェクトで、Codexに毎回同じ説明を繰り返している状態を解消したい。
@@ -291,7 +296,7 @@
     <button class="btn ghost sm" data-save="b23" data-name="context-prompts100-023.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="AGENTS.md定型文">
   <div class="ih"><span class="num">024</span><span class="ititle">AGENTS.md雛形：データ基盤・ETLパイプライン</span></div>
   
   <pre class="prompt" id="b24">前提: データ基盤・ETLパイプラインのプロジェクトで、Codexに毎回同じ説明を繰り返している状態を解消したい。
@@ -302,7 +307,7 @@
     <button class="btn ghost sm" data-save="b24" data-name="context-prompts100-024.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="AGENTS.md定型文">
   <div class="ih"><span class="num">025</span><span class="ititle">AGENTS.md雛形：デザインシステム・UIライブラリ</span></div>
   
   <pre class="prompt" id="b25">前提: デザインシステム・UIライブラリのプロジェクトで、Codexに毎回同じ説明を繰り返している状態を解消したい。
@@ -313,7 +318,7 @@
     <button class="btn ghost sm" data-save="b25" data-name="context-prompts100-025.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="AGENTS.md定型文">
   <div class="ih"><span class="num">026</span><span class="ititle">AGENTS.md雛形：社内管理画面・業務システム</span></div>
   
   <pre class="prompt" id="b26">前提: 社内管理画面・業務システムのプロジェクトで、Codexに毎回同じ説明を繰り返している状態を解消したい。
@@ -324,7 +329,7 @@
     <button class="btn ghost sm" data-save="b26" data-name="context-prompts100-026.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="AGENTS.md定型文">
   <div class="ih"><span class="num">027</span><span class="ititle">AGENTS.md雛形：OSS（オープンソース）ライブラリ</span></div>
   
   <pre class="prompt" id="b27">前提: OSS（オープンソース）ライブラリのプロジェクトで、Codexに毎回同じ説明を繰り返している状態を解消したい。
@@ -335,7 +340,7 @@
     <button class="btn ghost sm" data-save="b27" data-name="context-prompts100-027.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="AGENTS.md定型文">
   <div class="ih"><span class="num">028</span><span class="ititle">AGENTS.md雛形：マイクロサービス群の1サービス</span></div>
   
   <pre class="prompt" id="b28">前提: マイクロサービス群の1サービスのプロジェクトで、Codexに毎回同じ説明を繰り返している状態を解消したい。
@@ -346,7 +351,7 @@
     <button class="btn ghost sm" data-save="b28" data-name="context-prompts100-028.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="AGENTS.md定型文">
   <div class="ih"><span class="num">029</span><span class="ititle">AGENTS.md雛形：インフラ・IaC（Terraform等）構成</span></div>
   
   <pre class="prompt" id="b29">前提: インフラ・IaC（Terraform等）構成のプロジェクトで、Codexに毎回同じ説明を繰り返している状態を解消したい。
@@ -357,7 +362,7 @@
     <button class="btn ghost sm" data-save="b29" data-name="context-prompts100-029.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="AGENTS.md定型文">
   <div class="ih"><span class="num">030</span><span class="ititle">AGENTS.md雛形：機械学習パイプライン</span></div>
   
   <pre class="prompt" id="b30">前提: 機械学習パイプラインのプロジェクトで、Codexに毎回同じ説明を繰り返している状態を解消したい。
@@ -368,7 +373,7 @@
     <button class="btn ghost sm" data-save="b30" data-name="context-prompts100-030.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="AGENTS.md定型文">
   <div class="ih"><span class="num">031</span><span class="ititle">AGENTS.md雛形：ゲームクライアント開発</span></div>
   
   <pre class="prompt" id="b31">前提: ゲームクライアント開発のプロジェクトで、Codexに毎回同じ説明を繰り返している状態を解消したい。
@@ -379,7 +384,7 @@
     <button class="btn ghost sm" data-save="b31" data-name="context-prompts100-031.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="AGENTS.md定型文">
   <div class="ih"><span class="num">032</span><span class="ititle">AGENTS.md雛形：ブラウザ拡張機能開発</span></div>
   
   <pre class="prompt" id="b32">前提: ブラウザ拡張機能開発のプロジェクトで、Codexに毎回同じ説明を繰り返している状態を解消したい。
@@ -390,7 +395,7 @@
     <button class="btn ghost sm" data-save="b32" data-name="context-prompts100-032.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="AGENTS.md定型文">
   <div class="ih"><span class="num">033</span><span class="ititle">AGENTS.md雛形：CLIツール開発</span></div>
   
   <pre class="prompt" id="b33">前提: CLIツール開発のプロジェクトで、Codexに毎回同じ説明を繰り返している状態を解消したい。
@@ -401,7 +406,7 @@
     <button class="btn ghost sm" data-save="b33" data-name="context-prompts100-033.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="AGENTS.md定型文">
   <div class="ih"><span class="num">034</span><span class="ititle">AGENTS.md雛形：社内向けSlack/Chatボット</span></div>
   
   <pre class="prompt" id="b34">前提: 社内向けSlack/Chatボットのプロジェクトで、Codexに毎回同じ説明を繰り返している状態を解消したい。
@@ -412,7 +417,7 @@
     <button class="btn ghost sm" data-save="b34" data-name="context-prompts100-034.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="AGENTS.md定型文">
   <div class="ih"><span class="num">035</span><span class="ititle">AGENTS.md雛形：ドキュメントサイト（技術ブログ等）</span></div>
   
   <pre class="prompt" id="b35">前提: ドキュメントサイト（技術ブログ等）のプロジェクトで、Codexに毎回同じ説明を繰り返している状態を解消したい。
@@ -423,7 +428,7 @@
     <button class="btn ghost sm" data-save="b35" data-name="context-prompts100-035.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="AGENTS.md定型文">
   <div class="ih"><span class="num">036</span><span class="ititle">AGENTS.md雛形：決済・課金まわりの機能</span></div>
   
   <pre class="prompt" id="b36">前提: 決済・課金まわりの機能のプロジェクトで、Codexに毎回同じ説明を繰り返している状態を解消したい。
@@ -434,7 +439,7 @@
     <button class="btn ghost sm" data-save="b36" data-name="context-prompts100-036.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="AGENTS.md定型文">
   <div class="ih"><span class="num">037</span><span class="ititle">AGENTS.md雛形：認証・権限管理モジュール</span></div>
   
   <pre class="prompt" id="b37">前提: 認証・権限管理モジュールのプロジェクトで、Codexに毎回同じ説明を繰り返している状態を解消したい。
@@ -445,7 +450,7 @@
     <button class="btn ghost sm" data-save="b37" data-name="context-prompts100-037.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="AGENTS.md定型文">
   <div class="ih"><span class="num">038</span><span class="ititle">AGENTS.md雛形：バッチ処理・定期実行ジョブ</span></div>
   
   <pre class="prompt" id="b38">前提: バッチ処理・定期実行ジョブのプロジェクトで、Codexに毎回同じ説明を繰り返している状態を解消したい。
@@ -456,7 +461,7 @@
     <button class="btn ghost sm" data-save="b38" data-name="context-prompts100-038.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="AGENTS.md定型文">
   <div class="ih"><span class="num">039</span><span class="ititle">AGENTS.md雛形：レガシーコードの保守案件</span></div>
   
   <pre class="prompt" id="b39">前提: レガシーコードの保守案件のプロジェクトで、Codexに毎回同じ説明を繰り返している状態を解消したい。
@@ -467,7 +472,7 @@
     <button class="btn ghost sm" data-save="b39" data-name="context-prompts100-039.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="AGENTS.md定型文">
   <div class="ih"><span class="num">040</span><span class="ititle">AGENTS.md雛形：複数チームで共有するモノレポ全体</span></div>
   
   <pre class="prompt" id="b40">前提: 複数チームで共有するモノレポ全体のプロジェクトで、Codexに毎回同じ説明を繰り返している状態を解消したい。
@@ -478,8 +483,8 @@
     <button class="btn ghost sm" data-save="b40" data-name="context-prompts100-040.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">セッション引き継ぎ・圧縮前メモ化プロンプト</h2>
-<div class="icard">
+<h2 class="cat" data-cat="セッション引き継ぎ・圧縮前メモ化プロンプト">セッション引き継ぎ・圧縮前メモ化プロンプト</h2>
+<div class="icard" data-cat="セッション引き継ぎ・圧縮前メモ化プロンプト">
   <div class="ih"><span class="num">041</span><span class="ititle">引き継ぎメモ化：長時間のリファクタ作業を翌日に持ち越すとき</span></div>
   
   <pre class="prompt" id="b41">前提: 長時間のリファクタ作業を翌日に持ち越すときに、コンテキストの圧縮（要約）で重要な情報が失われるのを防ぎたい。
@@ -490,7 +495,7 @@
     <button class="btn ghost sm" data-save="b41" data-name="context-prompts100-041.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="セッション引き継ぎ・圧縮前メモ化プロンプト">
   <div class="ih"><span class="num">042</span><span class="ititle">引き継ぎメモ化：圧縮（自動要約）が近そうだと感じたとき</span></div>
   
   <pre class="prompt" id="b42">前提: 圧縮（自動要約）が近そうだと感じたときに、コンテキストの圧縮（要約）で重要な情報が失われるのを防ぎたい。
@@ -501,7 +506,7 @@
     <button class="btn ghost sm" data-save="b42" data-name="context-prompts100-042.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="セッション引き継ぎ・圧縮前メモ化プロンプト">
   <div class="ih"><span class="num">043</span><span class="ititle">引き継ぎメモ化：別の担当者に作業を引き継ぐとき</span></div>
   
   <pre class="prompt" id="b43">前提: 別の担当者に作業を引き継ぐときに、コンテキストの圧縮（要約）で重要な情報が失われるのを防ぎたい。
@@ -512,7 +517,7 @@
     <button class="btn ghost sm" data-save="b43" data-name="context-prompts100-043.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="セッション引き継ぎ・圧縮前メモ化プロンプト">
   <div class="ih"><span class="num">044</span><span class="ititle">引き継ぎメモ化：バグ調査を一時中断するとき</span></div>
   
   <pre class="prompt" id="b44">前提: バグ調査を一時中断するときに、コンテキストの圧縮（要約）で重要な情報が失われるのを防ぎたい。
@@ -523,7 +528,7 @@
     <button class="btn ghost sm" data-save="b44" data-name="context-prompts100-044.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="セッション引き継ぎ・圧縮前メモ化プロンプト">
   <div class="ih"><span class="num">045</span><span class="ititle">引き継ぎメモ化：設計方針の議論が一区切りついたとき</span></div>
   
   <pre class="prompt" id="b45">前提: 設計方針の議論が一区切りついたときに、コンテキストの圧縮（要約）で重要な情報が失われるのを防ぎたい。
@@ -534,7 +539,7 @@
     <button class="btn ghost sm" data-save="b45" data-name="context-prompts100-045.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="セッション引き継ぎ・圧縮前メモ化プロンプト">
   <div class="ih"><span class="num">046</span><span class="ititle">引き継ぎメモ化：大きな窓（1M等）のセッションを終えるとき</span></div>
   
   <pre class="prompt" id="b46">前提: 大きな窓（1M等）のセッションを終えるときに、コンテキストの圧縮（要約）で重要な情報が失われるのを防ぎたい。
@@ -545,7 +550,7 @@
     <button class="btn ghost sm" data-save="b46" data-name="context-prompts100-046.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="セッション引き継ぎ・圧縮前メモ化プロンプト">
   <div class="ih"><span class="num">047</span><span class="ititle">引き継ぎメモ化：複数人でレビューを回すとき</span></div>
   
   <pre class="prompt" id="b47">前提: 複数人でレビューを回すときに、コンテキストの圧縮（要約）で重要な情報が失われるのを防ぎたい。
@@ -556,7 +561,7 @@
     <button class="btn ghost sm" data-save="b47" data-name="context-prompts100-047.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="セッション引き継ぎ・圧縮前メモ化プロンプト">
   <div class="ih"><span class="num">048</span><span class="ititle">引き継ぎメモ化：テスト作成が長引いているとき</span></div>
   
   <pre class="prompt" id="b48">前提: テスト作成が長引いているときに、コンテキストの圧縮（要約）で重要な情報が失われるのを防ぎたい。
@@ -567,7 +572,7 @@
     <button class="btn ghost sm" data-save="b48" data-name="context-prompts100-048.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="セッション引き継ぎ・圧縮前メモ化プロンプト">
   <div class="ih"><span class="num">049</span><span class="ititle">引き継ぎメモ化：マイグレーション作業の途中経過を残すとき</span></div>
   
   <pre class="prompt" id="b49">前提: マイグレーション作業の途中経過を残すときに、コンテキストの圧縮（要約）で重要な情報が失われるのを防ぎたい。
@@ -578,7 +583,7 @@
     <button class="btn ghost sm" data-save="b49" data-name="context-prompts100-049.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="セッション引き継ぎ・圧縮前メモ化プロンプト">
   <div class="ih"><span class="num">050</span><span class="ititle">引き継ぎメモ化：障害対応の引き継ぎをするとき</span></div>
   
   <pre class="prompt" id="b50">前提: 障害対応の引き継ぎをするときに、コンテキストの圧縮（要約）で重要な情報が失われるのを防ぎたい。
@@ -589,7 +594,7 @@
     <button class="btn ghost sm" data-save="b50" data-name="context-prompts100-050.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="セッション引き継ぎ・圧縮前メモ化プロンプト">
   <div class="ih"><span class="num">051</span><span class="ititle">引き継ぎメモ化：新しいセッションで前回の続きから始めるとき</span></div>
   
   <pre class="prompt" id="b51">前提: 新しいセッションで前回の続きから始めるときに、コンテキストの圧縮（要約）で重要な情報が失われるのを防ぎたい。
@@ -600,7 +605,7 @@
     <button class="btn ghost sm" data-save="b51" data-name="context-prompts100-051.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="セッション引き継ぎ・圧縮前メモ化プロンプト">
   <div class="ih"><span class="num">052</span><span class="ititle">引き継ぎメモ化：週をまたいで同じ機能開発を続けるとき</span></div>
   
   <pre class="prompt" id="b52">前提: 週をまたいで同じ機能開発を続けるときに、コンテキストの圧縮（要約）で重要な情報が失われるのを防ぎたい。
@@ -611,7 +616,7 @@
     <button class="btn ghost sm" data-save="b52" data-name="context-prompts100-052.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="セッション引き継ぎ・圧縮前メモ化プロンプト">
   <div class="ih"><span class="num">053</span><span class="ititle">引き継ぎメモ化：複数のブランチを行き来しているとき</span></div>
   
   <pre class="prompt" id="b53">前提: 複数のブランチを行き来しているときに、コンテキストの圧縮（要約）で重要な情報が失われるのを防ぎたい。
@@ -622,7 +627,7 @@
     <button class="btn ghost sm" data-save="b53" data-name="context-prompts100-053.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="セッション引き継ぎ・圧縮前メモ化プロンプト">
   <div class="ih"><span class="num">054</span><span class="ititle">引き継ぎメモ化：外部レビュー（コードレビュー）の指摘対応中</span></div>
   
   <pre class="prompt" id="b54">前提: 外部レビュー（コードレビュー）の指摘対応中に、コンテキストの圧縮（要約）で重要な情報が失われるのを防ぎたい。
@@ -633,7 +638,7 @@
     <button class="btn ghost sm" data-save="b54" data-name="context-prompts100-054.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="セッション引き継ぎ・圧縮前メモ化プロンプト">
   <div class="ih"><span class="num">055</span><span class="ititle">引き継ぎメモ化：APIの仕様変更を追いかけているとき</span></div>
   
   <pre class="prompt" id="b55">前提: APIの仕様変更を追いかけているときに、コンテキストの圧縮（要約）で重要な情報が失われるのを防ぎたい。
@@ -644,7 +649,7 @@
     <button class="btn ghost sm" data-save="b55" data-name="context-prompts100-055.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="セッション引き継ぎ・圧縮前メモ化プロンプト">
   <div class="ih"><span class="num">056</span><span class="ititle">引き継ぎメモ化：パフォーマンス改善の試行錯誤を記録するとき</span></div>
   
   <pre class="prompt" id="b56">前提: パフォーマンス改善の試行錯誤を記録するときに、コンテキストの圧縮（要約）で重要な情報が失われるのを防ぎたい。
@@ -655,7 +660,7 @@
     <button class="btn ghost sm" data-save="b56" data-name="context-prompts100-056.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="セッション引き継ぎ・圧縮前メモ化プロンプト">
   <div class="ih"><span class="num">057</span><span class="ititle">引き継ぎメモ化：ドキュメント執筆を分割して進めるとき</span></div>
   
   <pre class="prompt" id="b57">前提: ドキュメント執筆を分割して進めるときに、コンテキストの圧縮（要約）で重要な情報が失われるのを防ぎたい。
@@ -666,7 +671,7 @@
     <button class="btn ghost sm" data-save="b57" data-name="context-prompts100-057.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="セッション引き継ぎ・圧縮前メモ化プロンプト">
   <div class="ih"><span class="num">058</span><span class="ititle">引き継ぎメモ化：複数の環境（開発・検証・本番）で作業するとき</span></div>
   
   <pre class="prompt" id="b58">前提: 複数の環境（開発・検証・本番）で作業するときに、コンテキストの圧縮（要約）で重要な情報が失われるのを防ぎたい。
@@ -677,7 +682,7 @@
     <button class="btn ghost sm" data-save="b58" data-name="context-prompts100-058.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="セッション引き継ぎ・圧縮前メモ化プロンプト">
   <div class="ih"><span class="num">059</span><span class="ititle">引き継ぎメモ化：チームの朝会前に状況を整理するとき</span></div>
   
   <pre class="prompt" id="b59">前提: チームの朝会前に状況を整理するときに、コンテキストの圧縮（要約）で重要な情報が失われるのを防ぎたい。
@@ -688,7 +693,7 @@
     <button class="btn ghost sm" data-save="b59" data-name="context-prompts100-059.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="セッション引き継ぎ・圧縮前メモ化プロンプト">
   <div class="ih"><span class="num">060</span><span class="ititle">引き継ぎメモ化：長期プロジェクトのマイルストーン到達時</span></div>
   
   <pre class="prompt" id="b60">前提: 長期プロジェクトのマイルストーン到達時に、コンテキストの圧縮（要約）で重要な情報が失われるのを防ぎたい。
@@ -699,8 +704,8 @@
     <button class="btn ghost sm" data-save="b60" data-name="context-prompts100-060.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">コンテキストを圧迫させない指示フレーズ</h2>
-<div class="icard">
+<h2 class="cat" data-cat="コンテキストを圧迫させない指示フレーズ">コンテキストを圧迫させない指示フレーズ</h2>
+<div class="icard" data-cat="コンテキストを圧迫させない指示フレーズ">
   <div class="ih"><span class="num">061</span><span class="ititle">圧迫回避フレーズ：大きなログファイルを読ませたいとき</span></div>
   
   <pre class="prompt" id="b61">前提: 大きなログファイルを読ませたいときに、窓を無駄に消費してしまうのを避けたい。
@@ -711,7 +716,7 @@
     <button class="btn ghost sm" data-save="b61" data-name="context-prompts100-061.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="コンテキストを圧迫させない指示フレーズ">
   <div class="ih"><span class="num">062</span><span class="ititle">圧迫回避フレーズ：大量のファイルを一括で調査させたいとき</span></div>
   
   <pre class="prompt" id="b62">前提: 大量のファイルを一括で調査させたいときに、窓を無駄に消費してしまうのを避けたい。
@@ -722,7 +727,7 @@
     <button class="btn ghost sm" data-save="b62" data-name="context-prompts100-062.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="コンテキストを圧迫させない指示フレーズ">
   <div class="ih"><span class="num">063</span><span class="ititle">圧迫回避フレーズ：既に説明済みの前提を繰り返させたくないとき</span></div>
   
   <pre class="prompt" id="b63">前提: 既に説明済みの前提を繰り返させたくないときに、窓を無駄に消費してしまうのを避けたい。
@@ -733,7 +738,7 @@
     <button class="btn ghost sm" data-save="b63" data-name="context-prompts100-063.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="コンテキストを圧迫させない指示フレーズ">
   <div class="ih"><span class="num">064</span><span class="ititle">圧迫回避フレーズ：同じ質問を何度もさせたくないとき</span></div>
   
   <pre class="prompt" id="b64">前提: 同じ質問を何度もさせたくないときに、窓を無駄に消費してしまうのを避けたい。
@@ -744,7 +749,7 @@
     <button class="btn ghost sm" data-save="b64" data-name="context-prompts100-064.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="コンテキストを圧迫させない指示フレーズ">
   <div class="ih"><span class="num">065</span><span class="ititle">圧迫回避フレーズ：長い会話履歴を持つセッションで新しい依頼をするとき</span></div>
   
   <pre class="prompt" id="b65">前提: 長い会話履歴を持つセッションで新しい依頼をするときに、窓を無駄に消費してしまうのを避けたい。
@@ -755,7 +760,7 @@
     <button class="btn ghost sm" data-save="b65" data-name="context-prompts100-065.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="コンテキストを圧迫させない指示フレーズ">
   <div class="ih"><span class="num">066</span><span class="ititle">圧迫回避フレーズ：MCP（複数のツール連携）を多用しているとき</span></div>
   
   <pre class="prompt" id="b66">前提: MCP（複数のツール連携）を多用しているときに、窓を無駄に消費してしまうのを避けたい。
@@ -766,7 +771,7 @@
     <button class="btn ghost sm" data-save="b66" data-name="context-prompts100-066.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="コンテキストを圧迫させない指示フレーズ">
   <div class="ih"><span class="num">067</span><span class="ititle">圧迫回避フレーズ：巨大な設定ファイルの一部だけを変更したいとき</span></div>
   
   <pre class="prompt" id="b67">前提: 巨大な設定ファイルの一部だけを変更したいときに、窓を無駄に消費してしまうのを避けたい。
@@ -777,7 +782,7 @@
     <button class="btn ghost sm" data-save="b67" data-name="context-prompts100-067.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="コンテキストを圧迫させない指示フレーズ">
   <div class="ih"><span class="num">068</span><span class="ititle">圧迫回避フレーズ：複数のドキュメントを参照させたいとき</span></div>
   
   <pre class="prompt" id="b68">前提: 複数のドキュメントを参照させたいときに、窓を無駄に消費してしまうのを避けたい。
@@ -788,7 +793,7 @@
     <button class="btn ghost sm" data-save="b68" data-name="context-prompts100-068.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="コンテキストを圧迫させない指示フレーズ">
   <div class="ih"><span class="num">069</span><span class="ititle">圧迫回避フレーズ：過去の会話を要約させたいとき</span></div>
   
   <pre class="prompt" id="b69">前提: 過去の会話を要約させたいときに、窓を無駄に消費してしまうのを避けたい。
@@ -799,7 +804,7 @@
     <button class="btn ghost sm" data-save="b69" data-name="context-prompts100-069.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="コンテキストを圧迫させない指示フレーズ">
   <div class="ih"><span class="num">070</span><span class="ititle">圧迫回避フレーズ：大量のコード生成を依頼するとき</span></div>
   
   <pre class="prompt" id="b70">前提: 大量のコード生成を依頼するときに、窓を無駄に消費してしまうのを避けたい。
@@ -810,7 +815,7 @@
     <button class="btn ghost sm" data-save="b70" data-name="context-prompts100-070.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="コンテキストを圧迫させない指示フレーズ">
   <div class="ih"><span class="num">071</span><span class="ititle">圧迫回避フレーズ：スキーマ変更の影響範囲を調べさせるとき</span></div>
   
   <pre class="prompt" id="b71">前提: スキーマ変更の影響範囲を調べさせるときに、窓を無駄に消費してしまうのを避けたい。
@@ -821,7 +826,7 @@
     <button class="btn ghost sm" data-save="b71" data-name="context-prompts100-071.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="コンテキストを圧迫させない指示フレーズ">
   <div class="ih"><span class="num">072</span><span class="ititle">圧迫回避フレーズ：テスト全件を実行させたログを読ませるとき</span></div>
   
   <pre class="prompt" id="b72">前提: テスト全件を実行させたログを読ませるときに、窓を無駄に消費してしまうのを避けたい。
@@ -832,7 +837,7 @@
     <button class="btn ghost sm" data-save="b72" data-name="context-prompts100-072.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="コンテキストを圧迫させない指示フレーズ">
   <div class="ih"><span class="num">073</span><span class="ititle">圧迫回避フレーズ：ツール出力が冗長になりがちなとき</span></div>
   
   <pre class="prompt" id="b73">前提: ツール出力が冗長になりがちなときに、窓を無駄に消費してしまうのを避けたい。
@@ -843,7 +848,7 @@
     <button class="btn ghost sm" data-save="b73" data-name="context-prompts100-073.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="コンテキストを圧迫させない指示フレーズ">
   <div class="ih"><span class="num">074</span><span class="ititle">圧迫回避フレーズ：複数の提案を比較検討したいとき</span></div>
   
   <pre class="prompt" id="b74">前提: 複数の提案を比較検討したいときに、窓を無駄に消費してしまうのを避けたい。
@@ -854,7 +859,7 @@
     <button class="btn ghost sm" data-save="b74" data-name="context-prompts100-074.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="コンテキストを圧迫させない指示フレーズ">
   <div class="ih"><span class="num">075</span><span class="ititle">圧迫回避フレーズ：外部APIのレスポンスを確認したいとき</span></div>
   
   <pre class="prompt" id="b75">前提: 外部APIのレスポンスを確認したいときに、窓を無駄に消費してしまうのを避けたい。
@@ -865,7 +870,7 @@
     <button class="btn ghost sm" data-save="b75" data-name="context-prompts100-075.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="コンテキストを圧迫させない指示フレーズ">
   <div class="ih"><span class="num">076</span><span class="ititle">圧迫回避フレーズ：長いプルリクエストをレビューするとき</span></div>
   
   <pre class="prompt" id="b76">前提: 長いプルリクエストをレビューするときに、窓を無駄に消費してしまうのを避けたい。
@@ -876,7 +881,7 @@
     <button class="btn ghost sm" data-save="b76" data-name="context-prompts100-076.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="コンテキストを圧迫させない指示フレーズ">
   <div class="ih"><span class="num">077</span><span class="ititle">圧迫回避フレーズ：複数ブランチの差分を比較したいとき</span></div>
   
   <pre class="prompt" id="b77">前提: 複数ブランチの差分を比較したいときに、窓を無駄に消費してしまうのを避けたい。
@@ -887,7 +892,7 @@
     <button class="btn ghost sm" data-save="b77" data-name="context-prompts100-077.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="コンテキストを圧迫させない指示フレーズ">
   <div class="ih"><span class="num">078</span><span class="ititle">圧迫回避フレーズ：会議の議事録をもとに作業させるとき</span></div>
   
   <pre class="prompt" id="b78">前提: 会議の議事録をもとに作業させるときに、窓を無駄に消費してしまうのを避けたい。
@@ -898,7 +903,7 @@
     <button class="btn ghost sm" data-save="b78" data-name="context-prompts100-078.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="コンテキストを圧迫させない指示フレーズ">
   <div class="ih"><span class="num">079</span><span class="ititle">圧迫回避フレーズ：繰り返し使う定型コマンドがあるとき</span></div>
   
   <pre class="prompt" id="b79">前提: 繰り返し使う定型コマンドがあるときに、窓を無駄に消費してしまうのを避けたい。
@@ -909,7 +914,7 @@
     <button class="btn ghost sm" data-save="b79" data-name="context-prompts100-079.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="コンテキストを圧迫させない指示フレーズ">
   <div class="ih"><span class="num">080</span><span class="ititle">圧迫回避フレーズ：大きなセッションの終盤で新しい調査を始めるとき</span></div>
   
   <pre class="prompt" id="b80">前提: 大きなセッションの終盤で新しい調査を始めるときに、窓を無駄に消費してしまうのを避けたい。
@@ -920,8 +925,8 @@
     <button class="btn ghost sm" data-save="b80" data-name="context-prompts100-080.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">コスト監視・請求防止の指示文</h2>
-<div class="icard">
+<h2 class="cat" data-cat="コスト監視・請求防止の指示文">コスト監視・請求防止の指示文</h2>
+<div class="icard" data-cat="コスト監視・請求防止の指示文">
   <div class="ih"><span class="num">081</span><span class="ititle">コスト防止ルール：大きな窓を有効化する前に</span></div>
   
   <pre class="prompt" id="b81">前提: 大きな窓を有効化する前にに、意図しない高額請求を避けたい。
@@ -932,7 +937,7 @@
     <button class="btn ghost sm" data-save="b81" data-name="context-prompts100-081.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="コスト監視・請求防止の指示文">
   <div class="ih"><span class="num">082</span><span class="ititle">コスト防止ルール：1セッションのコストが気になるとき</span></div>
   
   <pre class="prompt" id="b82">前提: 1セッションのコストが気になるときに、意図しない高額請求を避けたい。
@@ -943,7 +948,7 @@
     <button class="btn ghost sm" data-save="b82" data-name="context-prompts100-082.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="コスト監視・請求防止の指示文">
   <div class="ih"><span class="num">083</span><span class="ititle">コスト防止ルール：272,000トークンを超えそうなとき</span></div>
   
   <pre class="prompt" id="b83">前提: 272,000トークンを超えそうなときに、意図しない高額請求を避けたい。
@@ -954,7 +959,7 @@
     <button class="btn ghost sm" data-save="b83" data-name="context-prompts100-083.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="コスト監視・請求防止の指示文">
   <div class="ih"><span class="num">084</span><span class="ititle">コスト防止ルール：API中継業者（再販業者）経由で使っているとき</span></div>
   
   <pre class="prompt" id="b84">前提: API中継業者（再販業者）経由で使っているときに、意図しない高額請求を避けたい。
@@ -965,7 +970,7 @@
     <button class="btn ghost sm" data-save="b84" data-name="context-prompts100-084.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="コスト監視・請求防止の指示文">
   <div class="ih"><span class="num">085</span><span class="ititle">コスト防止ルール：複数プロジェクトを掛け持ちしているとき</span></div>
   
   <pre class="prompt" id="b85">前提: 複数プロジェクトを掛け持ちしているときに、意図しない高額請求を避けたい。
@@ -976,7 +981,7 @@
     <button class="btn ghost sm" data-save="b85" data-name="context-prompts100-085.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="コスト監視・請求防止の指示文">
   <div class="ih"><span class="num">086</span><span class="ititle">コスト防止ルール：1Mトークン設定を試したあと</span></div>
   
   <pre class="prompt" id="b86">前提: 1Mトークン設定を試したあとに、意図しない高額請求を避けたい。
@@ -987,7 +992,7 @@
     <button class="btn ghost sm" data-save="b86" data-name="context-prompts100-086.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="コスト監視・請求防止の指示文">
   <div class="ih"><span class="num">087</span><span class="ititle">コスト防止ルール：チームで共有のAPIキーを使っているとき</span></div>
   
   <pre class="prompt" id="b87">前提: チームで共有のAPIキーを使っているときに、意図しない高額請求を避けたい。
@@ -998,7 +1003,7 @@
     <button class="btn ghost sm" data-save="b87" data-name="context-prompts100-087.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="コスト監視・請求防止の指示文">
   <div class="ih"><span class="num">088</span><span class="ititle">コスト防止ルール：月内の利用上限が決まっているとき</span></div>
   
   <pre class="prompt" id="b88">前提: 月内の利用上限が決まっているときに、意図しない高額請求を避けたい。
@@ -1009,7 +1014,7 @@
     <button class="btn ghost sm" data-save="b88" data-name="context-prompts100-088.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="コスト監視・請求防止の指示文">
   <div class="ih"><span class="num">089</span><span class="ititle">コスト防止ルール：キャッシュが効く読み込みを繰り返すとき</span></div>
   
   <pre class="prompt" id="b89">前提: キャッシュが効く読み込みを繰り返すときに、意図しない高額請求を避けたい。
@@ -1020,7 +1025,7 @@
     <button class="btn ghost sm" data-save="b89" data-name="context-prompts100-089.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="コスト監視・請求防止の指示文">
   <div class="ih"><span class="num">090</span><span class="ititle">コスト防止ルール：出力トークンが多くなりがちな依頼をするとき</span></div>
   
   <pre class="prompt" id="b90">前提: 出力トークンが多くなりがちな依頼をするときに、意図しない高額請求を避けたい。
@@ -1031,7 +1036,7 @@
     <button class="btn ghost sm" data-save="b90" data-name="context-prompts100-090.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="コスト監視・請求防止の指示文">
   <div class="ih"><span class="num">091</span><span class="ititle">コスト防止ルール：長時間の自動実行タスクを組むとき</span></div>
   
   <pre class="prompt" id="b91">前提: 長時間の自動実行タスクを組むときに、意図しない高額請求を避けたい。
@@ -1042,7 +1047,7 @@
     <button class="btn ghost sm" data-save="b91" data-name="context-prompts100-091.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="コスト監視・請求防止の指示文">
   <div class="ih"><span class="num">092</span><span class="ititle">コスト防止ルール：新しいモデル・料金体系に切り替えるとき</span></div>
   
   <pre class="prompt" id="b92">前提: 新しいモデル・料金体系に切り替えるときに、意図しない高額請求を避けたい。
@@ -1053,7 +1058,7 @@
     <button class="btn ghost sm" data-save="b92" data-name="context-prompts100-092.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="コスト監視・請求防止の指示文">
   <div class="ih"><span class="num">093</span><span class="ititle">コスト防止ルール：複数のAIツールを併用しているとき</span></div>
   
   <pre class="prompt" id="b93">前提: 複数のAIツールを併用しているときに、意図しない高額請求を避けたい。
@@ -1064,7 +1069,7 @@
     <button class="btn ghost sm" data-save="b93" data-name="context-prompts100-093.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="コスト監視・請求防止の指示文">
   <div class="ih"><span class="num">094</span><span class="ititle">コスト防止ルール：大量の自動テストをAIに書かせるとき</span></div>
   
   <pre class="prompt" id="b94">前提: 大量の自動テストをAIに書かせるときに、意図しない高額請求を避けたい。
@@ -1075,7 +1080,7 @@
     <button class="btn ghost sm" data-save="b94" data-name="context-prompts100-094.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="コスト監視・請求防止の指示文">
   <div class="ih"><span class="num">095</span><span class="ititle">コスト防止ルール：請求書に見慣れない金額があったとき</span></div>
   
   <pre class="prompt" id="b95">前提: 請求書に見慣れない金額があったときに、意図しない高額請求を避けたい。
@@ -1086,7 +1091,7 @@
     <button class="btn ghost sm" data-save="b95" data-name="context-prompts100-095.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="コスト監視・請求防止の指示文">
   <div class="ih"><span class="num">096</span><span class="ititle">コスト防止ルール：新人がCodexを使い始めるとき</span></div>
   
   <pre class="prompt" id="b96">前提: 新人がCodexを使い始めるときに、意図しない高額請求を避けたい。
@@ -1097,7 +1102,7 @@
     <button class="btn ghost sm" data-save="b96" data-name="context-prompts100-096.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="コスト監視・請求防止の指示文">
   <div class="ih"><span class="num">097</span><span class="ititle">コスト防止ルール：休日や夜間の自動実行があるとき</span></div>
   
   <pre class="prompt" id="b97">前提: 休日や夜間の自動実行があるときに、意図しない高額請求を避けたい。
@@ -1108,7 +1113,7 @@
     <button class="btn ghost sm" data-save="b97" data-name="context-prompts100-097.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="コスト監視・請求防止の指示文">
   <div class="ih"><span class="num">098</span><span class="ititle">コスト防止ルール：複数リポジトリを横断する調査を依頼するとき</span></div>
   
   <pre class="prompt" id="b98">前提: 複数リポジトリを横断する調査を依頼するときに、意図しない高額請求を避けたい。
@@ -1119,7 +1124,7 @@
     <button class="btn ghost sm" data-save="b98" data-name="context-prompts100-098.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="コスト監視・請求防止の指示文">
   <div class="ih"><span class="num">099</span><span class="ititle">コスト防止ルール：コスト試算をチームに共有するとき</span></div>
   
   <pre class="prompt" id="b99">前提: コスト試算をチームに共有するときに、意図しない高額請求を避けたい。
@@ -1130,7 +1135,7 @@
     <button class="btn ghost sm" data-save="b99" data-name="context-prompts100-099.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="コスト監視・請求防止の指示文">
   <div class="ih"><span class="num">100</span><span class="ititle">コスト防止ルール：四半期ごとにAI利用コストを振り返るとき</span></div>
   
   <pre class="prompt" id="b100">前提: 四半期ごとにAI利用コストを振り返るときに、意図しない高額請求を避けたい。
@@ -1977,6 +1982,57 @@ Codex（コーデックス）のコンテキストウィンドウを賢く使う
 以上、全100件です。内訳: config.tomlプリセット集20件・AGENTS.md定型文20件・セッション引き継ぎ・圧縮前メモ化プロンプト20件・コンテキストを圧迫させない指示フレーズ20件・コスト監視・請求防止の指示文20件。
 </pre>
 <script>
+// 項目の多いキットで、目的の1件に辿り着けるようにする絞り込み。
+// 検索はタイトル・説明だけでなく本文も対象にする（「あの文言が入っていた項目」で探せるように）。
+(function(){
+  var q = document.getElementById('kq');
+  if (!q) return;
+  var hit = document.getElementById('khit');
+  var cards = [].slice.call(document.querySelectorAll('.kwrap .icard'));
+  var heads = [].slice.call(document.querySelectorAll('.kwrap h2.cat'));
+  var chips = [].slice.call(document.querySelectorAll('.kcat'));
+  var cat = '';
+
+  // ひらがな・カタカナの違いで取りこぼさないようにする（ハブ側の検索と同じ扱い）
+  function norm(s){
+    return (s || '').toLowerCase().replace(/[ぁ-ん]/g, function(c){
+      return String.fromCharCode(c.charCodeAt(0) + 0x60);
+    });
+  }
+
+  // カード全体の textContent だとボタンの「コピー」まで拾ってしまうため、中身を選んで集める
+  cards.forEach(function(c){
+    var t = c.querySelector('.ititle'), d = c.querySelector('.imeta'), p = c.querySelector('.prompt');
+    c._t = norm((t ? t.textContent : '') + ' ' + (d ? d.textContent : '') + ' ' + (p ? p.textContent : ''));
+  });
+
+  function apply(){
+    var kw = norm(q.value.trim()), n = 0, shown = {};
+    cards.forEach(function(c){
+      var ok = (!cat || c.getAttribute('data-cat') === cat)
+            && (!kw || c._t.indexOf(kw) !== -1);
+      c.classList.toggle('hide', !ok);
+      if (ok){ n++; shown[c.getAttribute('data-cat')] = 1; }
+    });
+    // 残った項目が1件も無いカテゴリの見出しは隠す
+    heads.forEach(function(h){
+      h.classList.toggle('hide', !shown[h.getAttribute('data-cat')]);
+    });
+    hit.textContent = (kw || cat)
+      ? (n ? n + '件を表示中' : '該当する項目がありません')
+      : '';
+  }
+
+  q.addEventListener('input', apply);
+  chips.forEach(function(b){
+    b.addEventListener('click', function(){
+      cat = b.getAttribute('data-cat');
+      chips.forEach(function(x){ x.classList.toggle('on', x === b); });
+      apply();
+    });
+  });
+})();
+
 function flash(btn, label){
   const old = btn.textContent, cls = btn.className;
   btn.textContent = label; btn.classList.add('ok');
@@ -2046,7 +2102,22 @@ document.addEventListener('click', e => {
     el.classList.remove('show');
     sessionStorage.setItem('promoClosed', '1');
   }
-  setTimeout(function(){ el.classList.add('show'); }, 1600);
+  // 動画の概要欄から来た人が、自分のプレゼントを探し始める瞬間に被らないようにする。
+  // 以前は読み込み1.6秒後に無条件で出しており、いちばん目的意識の高い時間を塞いでいた。
+  // 中身を見に行った（＝目当てのものに辿り着いた）ころに出す。
+  var shown = false;
+  function show(){
+    if (shown) return;
+    shown = true;
+    el.classList.add('show');
+    removeEventListener('scroll', onScroll);
+  }
+  function onScroll(){
+    if (scrollY > innerHeight * 0.8) show();
+  }
+  addEventListener('scroll', onScroll, {passive:true});
+  // まったくスクロールしない人にも最後には出す（ただし十分に間を置いてから）
+  setTimeout(show, 45000);
   document.getElementById('promoClose').addEventListener('click', function(e){ e.preventDefault(); close(); });
   el.addEventListener('click', function(e){ if (e.target === el) close(); });
 })();

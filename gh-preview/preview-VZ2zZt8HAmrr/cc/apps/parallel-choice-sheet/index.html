@@ -36,7 +36,12 @@
     <div class="pnote"><span class="nb">下のカードから、</span><span class="nb">1件ずつコピー、</span><span class="nb">または個別にダウンロードできます。</span><span class="nb">まとめて欲しいときは、</span><span class="nb">上の</span><span class="nb">「全件ダウンロード」を</span><span class="nb">お使いください。</span></div>
   </section>
 
-  <div class="icard">
+  <div class="ktools">
+  <input type="search" id="kq" placeholder="この中から探す" autocomplete="off" aria-label="この中から探す">
+  
+  <p class="khit" id="khit" role="status"></p>
+</div>
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">001</span><span class="ititle">まず、この3問に答える</span></div>
   
   <pre class="prompt" id="b1">1. 判断フロー：3つの質問
@@ -47,7 +52,7 @@
     <button class="btn ghost sm" data-save="b1" data-name="parallel-choice-sheet-001.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">002</span><span class="ititle">ステップ1：相手はもう動いているか</span></div>
   
   <pre class="prompt" id="b2">□ 連絡したい相手のセッションは、いま起動して動いているか
@@ -59,7 +64,7 @@
     <button class="btn ghost sm" data-save="b2" data-name="parallel-choice-sheet-002.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">003</span><span class="ititle">ステップ2：渡したいのは要点だけか</span></div>
   
   <pre class="prompt" id="b3">□ 相手に必要なのは「結論・状況・警告」であって、会話の流れそのものではないか
@@ -71,7 +76,7 @@
     <button class="btn ghost sm" data-save="b3" data-name="parallel-choice-sheet-003.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">004</span><span class="ititle">ステップ3：送り元は自分のセッションか</span></div>
   
   <pre class="prompt" id="b4">□ 情報の出どころは、自分が動かしているClaude Codeのセッションか
@@ -83,7 +88,7 @@
     <button class="btn ghost sm" data-save="b4" data-name="parallel-choice-sheet-004.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">005</span><span class="ititle">ステップ4：3問の答えを突き合わせる</span></div>
   
   <pre class="prompt" id="b5">□ 3問すべてYESだったか
@@ -94,7 +99,7 @@
     <button class="btn ghost sm" data-save="b5" data-name="parallel-choice-sheet-005.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">006</span><span class="ititle">7つの手段を1つずつ</span></div>
   
   <pre class="prompt" id="b6">2. ① セッション間メッセージ
@@ -105,7 +110,7 @@
     <button class="btn ghost sm" data-save="b6" data-name="parallel-choice-sheet-006.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">007</span><span class="ititle">どんなときに使うか</span></div>
   
   <pre class="prompt" id="b7">□ 別のセッションに、結論・状況・警告だけを渡したい
@@ -117,7 +122,7 @@
     <button class="btn ghost sm" data-save="b7" data-name="parallel-choice-sheet-007.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">008</span><span class="ititle">使わないほうがよい場面</span></div>
   
   <pre class="prompt" id="b8">□ 会話の流れごと引き継ぎたい
@@ -129,7 +134,7 @@
     <button class="btn ghost sm" data-save="b8" data-name="parallel-choice-sheet-008.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">009</span><span class="ititle">使い方</span></div>
   
   <pre class="prompt" id="b9">□ 相手を確認する
@@ -141,7 +146,7 @@
     <button class="btn ghost sm" data-save="b9" data-name="parallel-choice-sheet-009.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">010</span><span class="ititle">押さえておくこと</span></div>
   
   <pre class="prompt" id="b10">□ 渡るのはテキストだけ（会話履歴・ファイル・権限は渡らない）
@@ -156,7 +161,7 @@
     <button class="btn ghost sm" data-save="b10" data-name="parallel-choice-sheet-010.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">011</span><span class="ititle">どんなときに使うか</span></div>
   
   <pre class="prompt" id="b11">□ 別のターミナルで、同じ会話の続きをやりたい
@@ -168,7 +173,7 @@
     <button class="btn ghost sm" data-save="b11" data-name="parallel-choice-sheet-011.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">012</span><span class="ititle">使わないほうがよい場面</span></div>
   
   <pre class="prompt" id="b12">□ 相手はすでに別の作業をしていて、要点だけ知らせたい
@@ -178,7 +183,7 @@
     <button class="btn ghost sm" data-save="b12" data-name="parallel-choice-sheet-012.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">013</span><span class="ititle">押さえておくこと</span></div>
   
   <pre class="prompt" id="b13">□ メッセージでは会話履歴もファイルも渡らない。文脈が必要ならこちらが正解
@@ -192,7 +197,7 @@
     <button class="btn ghost sm" data-save="b13" data-name="parallel-choice-sheet-013.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">014</span><span class="ititle">どんなときに使うか</span></div>
   
   <pre class="prompt" id="b14">□ 調べもの・検証だけを任せて、結果だけ受け取りたい
@@ -204,7 +209,7 @@
     <button class="btn ghost sm" data-save="b14" data-name="parallel-choice-sheet-014.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">015</span><span class="ititle">使わないほうがよい場面</span></div>
   
   <pre class="prompt" id="b15">□ 助手どうしが互いに議論しながら進めてほしい
@@ -216,7 +221,7 @@
     <button class="btn ghost sm" data-save="b15" data-name="parallel-choice-sheet-015.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">016</span><span class="ititle">押さえておくこと</span></div>
   
   <pre class="prompt" id="b16">□ 助手はメインにしか報告しない。助手どうしは会話しない
@@ -230,7 +235,7 @@
     <button class="btn ghost sm" data-save="b16" data-name="parallel-choice-sheet-016.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">017</span><span class="ititle">どんなときに使うか</span></div>
   
   <pre class="prompt" id="b17">□ 複数の視点で同時に調べて、互いに突き合わせたい
@@ -242,7 +247,7 @@
     <button class="btn ghost sm" data-save="b17" data-name="parallel-choice-sheet-017.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">018</span><span class="ititle">使わないほうがよい場面</span></div>
   
   <pre class="prompt" id="b18">□ 順番にやるしかない作業／同じファイルを触る作業
@@ -254,7 +259,7 @@
     <button class="btn ghost sm" data-save="b18" data-name="parallel-choice-sheet-018.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">019</span><span class="ititle">押さえておくこと</span></div>
   
   <pre class="prompt" id="b19">□ 実験的な機能で、既定では無効になっている
@@ -269,7 +274,7 @@
     <button class="btn ghost sm" data-save="b19" data-name="parallel-choice-sheet-019.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">020</span><span class="ititle">どんなときに使うか</span></div>
   
   <pre class="prompt" id="b20">□ 並行して走っているセッションの状態を、まとめて把握したい
@@ -281,7 +286,7 @@
     <button class="btn ghost sm" data-save="b20" data-name="parallel-choice-sheet-020.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">021</span><span class="ititle">使わないほうがよい場面</span></div>
   
   <pre class="prompt" id="b21">□ セッション同士で情報をやり取りさせたい
@@ -291,7 +296,7 @@
     <button class="btn ghost sm" data-save="b21" data-name="parallel-choice-sheet-021.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">022</span><span class="ititle">押さえておくこと</span></div>
   
   <pre class="prompt" id="b22">□ 背面セッションも届く相手の一覧に出るので、メッセージの宛先にできる
@@ -305,7 +310,7 @@
     <button class="btn ghost sm" data-save="b22" data-name="parallel-choice-sheet-022.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">023</span><span class="ititle">どんなときに使うか</span></div>
   
   <pre class="prompt" id="b23">□ 席を離れているあいだ、自分の手でセッションに指示を出したい
@@ -317,7 +322,7 @@
     <button class="btn ghost sm" data-save="b23" data-name="parallel-choice-sheet-023.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">024</span><span class="ititle">使わないほうがよい場面</span></div>
   
   <pre class="prompt" id="b24">□ セッション同士に自動でやり取りさせたい
@@ -327,7 +332,7 @@
     <button class="btn ghost sm" data-save="b24" data-name="parallel-choice-sheet-024.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">025</span><span class="ititle">押さえておくこと</span></div>
   
   <pre class="prompt" id="b25">□ 別マシンやブラウザ版のセッションは、これが繋がっている間だけ一覧に出る
@@ -341,7 +346,7 @@
     <button class="btn ghost sm" data-save="b25" data-name="parallel-choice-sheet-025.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">026</span><span class="ititle">どんなときに使うか</span></div>
   
   <pre class="prompt" id="b26">□ CIの結果・監視の通知など、外部の出来事をセッションに届けたい
@@ -353,7 +358,7 @@
     <button class="btn ghost sm" data-save="b26" data-name="parallel-choice-sheet-026.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">027</span><span class="ititle">使わないほうがよい場面</span></div>
   
   <pre class="prompt" id="b27">□ 送り元が自分のClaude Codeセッションである
@@ -363,7 +368,7 @@
     <button class="btn ghost sm" data-save="b27" data-name="parallel-choice-sheet-027.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">028</span><span class="ititle">押さえておくこと</span></div>
   
   <pre class="prompt" id="b28">□ 研究プレビューの機能で、起動時に明示して有効にする必要がある
@@ -373,7 +378,7 @@
     <button class="btn ghost sm" data-save="b28" data-name="parallel-choice-sheet-028.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">029</span><span class="ititle">間違えやすいところ</span></div>
   
   <pre class="prompt" id="b29">9. よくある取り違え
@@ -384,7 +389,7 @@
     <button class="btn ghost sm" data-save="b29" data-name="parallel-choice-sheet-029.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">030</span><span class="ititle">ステップ1：「次のセッション」に予約できると思っていないか</span></div>
   
   <pre class="prompt" id="b30">□ まだ起動していないセッションへ、あらかじめ指示を送れると思っている
@@ -395,7 +400,7 @@
     <button class="btn ghost sm" data-save="b30" data-name="parallel-choice-sheet-030.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">031</span><span class="ititle">ステップ2：ファイルが渡ると思っていないか</span></div>
   
   <pre class="prompt" id="b31">□ メッセージで成果物そのものを送ろうとしている
@@ -406,7 +411,7 @@
     <button class="btn ghost sm" data-save="b31" data-name="parallel-choice-sheet-031.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">032</span><span class="ititle">ステップ3：権限を回避できると思っていないか</span></div>
   
   <pre class="prompt" id="b32">□ 自分のセッションで断られた作業を、別のセッションに頼もうとしている
@@ -417,7 +422,7 @@
     <button class="btn ghost sm" data-save="b32" data-name="parallel-choice-sheet-032.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">033</span><span class="ititle">ステップ4：届いた伝言を「本人の指示」と扱っていないか</span></div>
   
   <pre class="prompt" id="b33">□ 他セッションからのメッセージで、設定変更や承認をしようとしている
@@ -427,7 +432,7 @@
     <button class="btn ghost sm" data-save="b33" data-name="parallel-choice-sheet-033.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">034</span><span class="ititle">ステップ5：ループを心配して使うのをやめていないか</span></div>
   
   <pre class="prompt" id="b34">□ AI同士が延々と往復し続けるのが怖くて使っていない
@@ -441,7 +446,7 @@
     <button class="btn ghost sm" data-save="b34" data-name="parallel-choice-sheet-034.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">035</span><span class="ititle">ステップ1：使える状態にする</span></div>
   
   <pre class="prompt" id="b35">□ claude --version が v2.1.224 以降か
@@ -453,7 +458,7 @@
     <button class="btn ghost sm" data-save="b35" data-name="parallel-choice-sheet-035.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">036</span><span class="ititle">ステップ2：見えることを確かめる</span></div>
   
   <pre class="prompt" id="b36">□ ターミナルを2枚開いて /list-agents に相手が出るか
@@ -464,7 +469,7 @@
     <button class="btn ghost sm" data-save="b36" data-name="parallel-choice-sheet-036.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">037</span><span class="ititle">ステップ3：名前を付ける</span></div>
   
   <pre class="prompt" id="b37">□ それぞれのセッションに役割の分かる名前を付けたか
@@ -475,7 +480,7 @@
     <button class="btn ghost sm" data-save="b37" data-name="parallel-choice-sheet-037.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">038</span><span class="ititle">ステップ4：壊れない用件から試す</span></div>
   
   <pre class="prompt" id="b38">□ 最初の1回を「読むだけ」の依頼にしたか
@@ -486,7 +491,7 @@
     <button class="btn ghost sm" data-save="b38" data-name="parallel-choice-sheet-038.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">039</span><span class="ititle">ステップ5：先に頼んでおく形に移る</span></div>
   
   <pre class="prompt" id="b39">□ 都度お願いする形から、条件を先に伝えておく形に変えたか
@@ -497,7 +502,7 @@
     <button class="btn ghost sm" data-save="b39" data-name="parallel-choice-sheet-039.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">040</span><span class="ititle">ステップ6：チーム・組織で使うなら先に絞る</span></div>
   
   <pre class="prompt" id="b40">□ マシンの外へ出る送信に承認を要求する設定を入れたか
@@ -769,6 +774,57 @@ Claude Codeには並列作業のための手段が7つあります。「どれ�
 **ポイント**: 迷ったときは「相手はもう動いているか」「渡したいのは要点だけか」の2問だけでも十分に絞り込めます。
 </pre>
 <script>
+// 項目の多いキットで、目的の1件に辿り着けるようにする絞り込み。
+// 検索はタイトル・説明だけでなく本文も対象にする（「あの文言が入っていた項目」で探せるように）。
+(function(){
+  var q = document.getElementById('kq');
+  if (!q) return;
+  var hit = document.getElementById('khit');
+  var cards = [].slice.call(document.querySelectorAll('.kwrap .icard'));
+  var heads = [].slice.call(document.querySelectorAll('.kwrap h2.cat'));
+  var chips = [].slice.call(document.querySelectorAll('.kcat'));
+  var cat = '';
+
+  // ひらがな・カタカナの違いで取りこぼさないようにする（ハブ側の検索と同じ扱い）
+  function norm(s){
+    return (s || '').toLowerCase().replace(/[ぁ-ん]/g, function(c){
+      return String.fromCharCode(c.charCodeAt(0) + 0x60);
+    });
+  }
+
+  // カード全体の textContent だとボタンの「コピー」まで拾ってしまうため、中身を選んで集める
+  cards.forEach(function(c){
+    var t = c.querySelector('.ititle'), d = c.querySelector('.imeta'), p = c.querySelector('.prompt');
+    c._t = norm((t ? t.textContent : '') + ' ' + (d ? d.textContent : '') + ' ' + (p ? p.textContent : ''));
+  });
+
+  function apply(){
+    var kw = norm(q.value.trim()), n = 0, shown = {};
+    cards.forEach(function(c){
+      var ok = (!cat || c.getAttribute('data-cat') === cat)
+            && (!kw || c._t.indexOf(kw) !== -1);
+      c.classList.toggle('hide', !ok);
+      if (ok){ n++; shown[c.getAttribute('data-cat')] = 1; }
+    });
+    // 残った項目が1件も無いカテゴリの見出しは隠す
+    heads.forEach(function(h){
+      h.classList.toggle('hide', !shown[h.getAttribute('data-cat')]);
+    });
+    hit.textContent = (kw || cat)
+      ? (n ? n + '件を表示中' : '該当する項目がありません')
+      : '';
+  }
+
+  q.addEventListener('input', apply);
+  chips.forEach(function(b){
+    b.addEventListener('click', function(){
+      cat = b.getAttribute('data-cat');
+      chips.forEach(function(x){ x.classList.toggle('on', x === b); });
+      apply();
+    });
+  });
+})();
+
 function flash(btn, label){
   const old = btn.textContent, cls = btn.className;
   btn.textContent = label; btn.classList.add('ok');
@@ -838,7 +894,22 @@ document.addEventListener('click', e => {
     el.classList.remove('show');
     sessionStorage.setItem('promoClosed', '1');
   }
-  setTimeout(function(){ el.classList.add('show'); }, 1600);
+  // 動画の概要欄から来た人が、自分のプレゼントを探し始める瞬間に被らないようにする。
+  // 以前は読み込み1.6秒後に無条件で出しており、いちばん目的意識の高い時間を塞いでいた。
+  // 中身を見に行った（＝目当てのものに辿り着いた）ころに出す。
+  var shown = false;
+  function show(){
+    if (shown) return;
+    shown = true;
+    el.classList.add('show');
+    removeEventListener('scroll', onScroll);
+  }
+  function onScroll(){
+    if (scrollY > innerHeight * 0.8) show();
+  }
+  addEventListener('scroll', onScroll, {passive:true});
+  // まったくスクロールしない人にも最後には出す（ただし十分に間を置いてから）
+  setTimeout(show, 45000);
   document.getElementById('promoClose').addEventListener('click', function(e){ e.preventDefault(); close(); });
   el.addEventListener('click', function(e){ if (e.target === el) close(); });
 })();

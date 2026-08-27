@@ -36,8 +36,13 @@
     <div class="pnote"><span class="nb">下のカードから、</span><span class="nb">1件ずつコピー、</span><span class="nb">または個別にダウンロードできます。</span><span class="nb">まとめて欲しいときは、</span><span class="nb">上の</span><span class="nb">「全件ダウンロード」を</span><span class="nb">お使いください。</span></div>
   </section>
 
-  <h2 class="cat">まずはチャットで試す・基本操作（1〜10）</h2>
-<div class="icard">
+  <div class="ktools">
+  <input type="search" id="kq" placeholder="この中から探す" autocomplete="off" aria-label="この中から探す">
+  <div class="kcats"><button type="button" class="kcat on" data-cat="">すべて<span class="n">100</span></button><button type="button" class="kcat" data-cat="まずはチャットで試す・基本操作（1〜10）">まずはチャットで試す・基本操作（1〜10）<span class="n">10</span></button><button type="button" class="kcat" data-cat="画像生成を使いこなす（11〜18）">画像生成を使いこなす（11〜18）<span class="n">8</span></button><button type="button" class="kcat" data-cat="スキルを作る・呼び出す（19〜30）">スキルを作る・呼び出す（19〜30）<span class="n">12</span></button><button type="button" class="kcat" data-cat="プラグイン・MCP連携（31〜42）">プラグイン・MCP連携（31〜42）<span class="n">12</span></button><button type="button" class="kcat" data-cat="サブエージェントで分担する（43〜52）">サブエージェントで分担する（43〜52）<span class="n">10</span></button><button type="button" class="kcat" data-cat="オートメーション(自動化)を組む（53〜64）">オートメーション(自動化)を組む（53〜64）<span class="n">12</span></button><button type="button" class="kcat" data-cat="資料・ドキュメント作成（65〜74）">資料・ドキュメント作成（65〜74）<span class="n">10</span></button><button type="button" class="kcat" data-cat="アプリ・Web開発（75〜86）">アプリ・Web開発（75〜86）<span class="n">12</span></button><button type="button" class="kcat" data-cat="音声入力・リモート操作（87〜94）">音声入力・リモート操作（87〜94）<span class="n">8</span></button><button type="button" class="kcat" data-cat="Claude Codeからの移行（95〜100）">Claude Codeからの移行（95〜100）<span class="n">6</span></button></div>
+  <p class="khit" id="khit" role="status"></p>
+</div>
+<h2 class="cat" data-cat="まずはチャットで試す・基本操作（1〜10）">まずはチャットで試す・基本操作（1〜10）</h2>
+<div class="icard" data-cat="まずはチャットで試す・基本操作（1〜10）">
   <div class="ih"><span class="num">001</span><span class="ititle">プロジェクトなしで軽く試す</span></div>
   <p class="imeta"><span class="nb">フォルダを決めずにサクッと1つ作業を</span><span class="nb">頼む</span></p>
   <pre class="prompt" id="b1">プロジェクトは指定しないので、このままチャットで簡単なテキストファイルを1つ作って、中身に今日の日付と「Codexテスト」という文字を入れて保存して。</pre>
@@ -46,7 +51,7 @@
     <button class="btn ghost sm" data-save="b1" data-name="codex-prompts100-001.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="まずはチャットで試す・基本操作（1〜10）">
   <div class="ih"><span class="num">002</span><span class="ititle">既存フォルダをプロジェクトにする</span></div>
   <p class="imeta"><span class="nb">手元のフォルダをその</span><span class="nb">ままプロジェクト化する</span></p>
   <pre class="prompt" id="b2">このフォルダをプロジェクトとして扱ってください。まずフォルダの中身をざっと確認して、何が入っているか3行で教えて。</pre>
@@ -55,7 +60,7 @@
     <button class="btn ghost sm" data-save="b2" data-name="codex-prompts100-002.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="まずはチャットで試す・基本操作（1〜10）">
   <div class="ih"><span class="num">003</span><span class="ititle">AGENTS.mdを作らせる</span></div>
   <p class="imeta"><span class="nb">プロジェクト固有の前提をCodexに</span><span class="nb">覚えさせる</span></p>
   <pre class="prompt" id="b3">このプロジェクトの内容を確認した上で、Codexが次回以降このフォルダで作業するときに読み込む AGENTS.md を作成して。プロジェクトの目的・よく使うコマンド・注意点を含めて。</pre>
@@ -64,7 +69,7 @@
     <button class="btn ghost sm" data-save="b3" data-name="codex-prompts100-003.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="まずはチャットで試す・基本操作（1〜10）">
   <div class="ih"><span class="num">004</span><span class="ititle">プランモードで要件を詰める</span></div>
   <p class="imeta"><span class="nb">いきなり実装せず、</span><span class="nb">先に計画だけ立てさせる</span></p>
   <pre class="prompt" id="b4">プランモードで進めます。まだ実装はせず、要件が曖昧な点があれば箇条書きで質問してください。すべて回答したらプランを提示して、私が承認してから実装に進んでください。</pre>
@@ -73,7 +78,7 @@
     <button class="btn ghost sm" data-save="b4" data-name="codex-prompts100-004.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="まずはチャットで試す・基本操作（1〜10）">
   <div class="ih"><span class="num">005</span><span class="ititle">サイドチャットで質問だけする</span></div>
   <p class="imeta"><span class="nb">メインの作業を止めずに別枠で聞く</span></p>
   <pre class="prompt" id="b5">今の作業は止めずに、サイドチャットで質問です。今実行しているコマンドが何をしているか、専門用語を使わずに説明して。</pre>
@@ -82,7 +87,7 @@
     <button class="btn ghost sm" data-save="b5" data-name="codex-prompts100-005.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="まずはチャットで試す・基本操作（1〜10）">
   <div class="ih"><span class="num">006</span><span class="ititle">権限モードを確認してから進める</span></div>
   <p class="imeta"><span class="nb">フルアクセスか自動レビューかを</span><span class="nb">都度選ぶ習慣づけ</span></p>
   <pre class="prompt" id="b6">これから実行する作業は、ファイルの削除を含みますか？含む場合は、実行前に何を削除するか一覧で見せてから確認を取ってください。</pre>
@@ -91,7 +96,7 @@
     <button class="btn ghost sm" data-save="b6" data-name="codex-prompts100-006.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="まずはチャットで試す・基本操作（1〜10）">
   <div class="ih"><span class="num">007</span><span class="ititle">公式ドキュメントを読み込んで要約させる</span></div>
   <p class="imeta"><span class="nb">新機能が出たときの理解を早める</span></p>
   <pre class="prompt" id="b7">Codexの公式ドキュメントの中から「サブエージェント」に関するページを探して読み込み、初心者にもわかるように3つのポイントに要約して。</pre>
@@ -100,7 +105,7 @@
     <button class="btn ghost sm" data-save="b7" data-name="codex-prompts100-007.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="まずはチャットで試す・基本操作（1〜10）">
   <div class="ih"><span class="num">008</span><span class="ititle">完了通知だけオンにして裏で走らせる</span></div>
   <p class="imeta"><span class="nb">手を離しても終わったタイミングが</span><span class="nb">わかるようにする</span></p>
   <pre class="prompt" id="b8">これから頼む作業は完了までしばらくかかると思います。完了したら通知してください。作業中は他のことをしているので、途中経過は聞きません。</pre>
@@ -109,7 +114,7 @@
     <button class="btn ghost sm" data-save="b8" data-name="codex-prompts100-008.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="まずはチャットで試す・基本操作（1〜10）">
   <div class="ih"><span class="num">009</span><span class="ititle">モデルと推論の深さを目的に合わせて選ぶ</span></div>
   <p class="imeta"><span class="nb">簡単な作業は速く、</span><span class="nb">重要な設計は深く考えさせる</span></p>
   <pre class="prompt" id="b9">これはちょっとしたテキスト整形なので、モデルは標準、推論の深さも標準でお願いします。速度優先で進めてください。</pre>
@@ -118,7 +123,7 @@
     <button class="btn ghost sm" data-save="b9" data-name="codex-prompts100-009.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="まずはチャットで試す・基本操作（1〜10）">
   <div class="ih"><span class="num">010</span><span class="ititle">Codexペットに今の状況を聞く</span></div>
   <p class="imeta"><span class="nb">バックグラウンド作業の進捗を</span><span class="nb">軽く確認する</span></p>
   <pre class="prompt" id="b10">今バックグラウンドで動いている作業は、今どの工程まで進んでいますか？ペット経由で一言で教えて。</pre>
@@ -127,8 +132,8 @@
     <button class="btn ghost sm" data-save="b10" data-name="codex-prompts100-010.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">画像生成を使いこなす（11〜18）</h2>
-<div class="icard">
+<h2 class="cat" data-cat="画像生成を使いこなす（11〜18）">画像生成を使いこなす（11〜18）</h2>
+<div class="icard" data-cat="画像生成を使いこなす（11〜18）">
   <div class="ih"><span class="num">011</span><span class="ititle">サクッとポスター画像を作る</span></div>
   <p class="imeta"><span class="nb">チャットのイメージ機能で1枚絵を作る</span></p>
   <pre class="prompt" id="b11">GPT Imageの画像生成機能を使って、「AIエージェント入門セミナー」の告知ポスターを1枚作って。明るい配色で、参加者を募集している雰囲気にして。</pre>
@@ -137,7 +142,7 @@
     <button class="btn ghost sm" data-save="b11" data-name="codex-prompts100-011.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="画像生成を使いこなす（11〜18）">
   <div class="ih"><span class="num">012</span><span class="ititle">画像生成込みでスライド資料を作る</span></div>
   <p class="imeta"><span class="nb">PPTXの中に生成画像を埋め込ませる</span></p>
   <pre class="prompt" id="b12">Codexの概要を説明する2ページ分のスライド資料(PPTX)を作って。文字数は少なめにして、画像生成で作ったインフォグラフィック中心の見せ方にして。</pre>
@@ -146,7 +151,7 @@
     <button class="btn ghost sm" data-save="b12" data-name="codex-prompts100-012.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="画像生成を使いこなす（11〜18）">
   <div class="ih"><span class="num">013</span><span class="ititle">画像から使う機能を切り替える</span></div>
   <p class="imeta"><span class="nb">用途別に画像モデルの世代を指定する</span></p>
   <pre class="prompt" id="b13">今回の画像生成は品質より速度を優先したいので、軽量モデル寄りの設定で生成して。ラフなイメージ確認用です。</pre>
@@ -155,7 +160,7 @@
     <button class="btn ghost sm" data-save="b13" data-name="codex-prompts100-013.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="画像生成を使いこなす（11〜18）">
   <div class="ih"><span class="num">014</span><span class="ititle">自分専用のCodexペットを作る</span></div>
   <p class="imeta"><span class="nb">Hatch Petスキルで</span><span class="nb">キャラクターを作らせる</span></p>
   <pre class="prompt" id="b14">Codex用のオリジナルペットを作りたいです。テーマは「読書好きなふくろう」。既存のペットと同じ雰囲気のドット絵スタイルで作って、設定まで完了させて。</pre>
@@ -164,7 +169,7 @@
     <button class="btn ghost sm" data-save="b14" data-name="codex-prompts100-014.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="画像生成を使いこなす（11〜18）">
   <div class="ih"><span class="num">015</span><span class="ititle">画像を繋いだLP風ページを作る</span></div>
   <p class="imeta"><span class="nb">画像生成を</span><span class="nb">組み合わせてグラフィカルなページに</span><span class="nb">する</span></p>
   <pre class="prompt" id="b15">画像生成を使って、美容系通販サイトのようなグラフィカルなランディングページを1枚作って。商品名は「AI活用スターターキット」にして。</pre>
@@ -173,7 +178,7 @@
     <button class="btn ghost sm" data-save="b15" data-name="codex-prompts100-015.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="画像生成を使いこなす（11〜18）">
   <div class="ih"><span class="num">016</span><span class="ititle">ゲーム用のスプライト画像を作る</span></div>
   <p class="imeta"><span class="nb">簡単なゲーム開発の下準備をする</span></p>
   <pre class="prompt" id="b16">簡単な2Dゲームを作る前段階として、主人公キャラクターのドット絵スプライトを画像生成で作って。横向き・正面・後ろ向きの3方向分お願いします。</pre>
@@ -182,7 +187,7 @@
     <button class="btn ghost sm" data-save="b16" data-name="codex-prompts100-016.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="画像生成を使いこなす（11〜18）">
   <div class="ih"><span class="num">017</span><span class="ititle">画像生成の結果をレビューさせる</span></div>
   <p class="imeta"><span class="nb">生成後にAI自身へ改善点を確認させる</span></p>
   <pre class="prompt" id="b17">さっき生成した画像を見て、文字のかすれや不自然な部分がないか自己レビューして、あれば修正案を教えて。</pre>
@@ -191,7 +196,7 @@
     <button class="btn ghost sm" data-save="b17" data-name="codex-prompts100-017.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="画像生成を使いこなす（11〜18）">
   <div class="ih"><span class="num">018</span><span class="ititle">資料の図解だけ画像で差し替える</span></div>
   <p class="imeta"><span class="nb">文章中心の資料に図解を後付けする</span></p>
   <pre class="prompt" id="b18">今あるこの資料のうち、文章だけで分かりにくい部分を1箇所選んで、そこだけ説明用の図解画像を生成して差し込んで。</pre>
@@ -200,8 +205,8 @@
     <button class="btn ghost sm" data-save="b18" data-name="codex-prompts100-018.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">スキルを作る・呼び出す（19〜30）</h2>
-<div class="icard">
+<h2 class="cat" data-cat="スキルを作る・呼び出す（19〜30）">スキルを作る・呼び出す（19〜30）</h2>
+<div class="icard" data-cat="スキルを作る・呼び出す（19〜30）">
   <div class="ih"><span class="num">019</span><span class="ititle">スキルクリエイターでゼロから作る</span></div>
   <p class="imeta"><span class="nb">繰り返す作業をスキル化する入り口</span></p>
   <pre class="prompt" id="b19">スキルクリエイターを使ってスキルを作りたいです。やりたいことは「YouTube用の企画メモをもらったら、3行要約と改善案をセットで返す」です。</pre>
@@ -210,7 +215,7 @@
     <button class="btn ghost sm" data-save="b19" data-name="codex-prompts100-019.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="スキルを作る・呼び出す（19〜30）">
   <div class="ih"><span class="num">020</span><span class="ititle">マニュアル作成スキルを作る</span></div>
   <p class="imeta"><span class="nb">操作の様子を録画してマニュアル化する</span></p>
   <pre class="prompt" id="b20">今から画面録画で操作手順を見せます。それをもとに、画像付きの手順書をNotion上に新規ページとして保存するスキルを作って。</pre>
@@ -219,7 +224,7 @@
     <button class="btn ghost sm" data-save="b20" data-name="codex-prompts100-020.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="スキルを作る・呼び出す（19〜30）">
   <div class="ih"><span class="num">021</span><span class="ititle">要件を壁打ちしてくれるスキルを使う</span></div>
   <p class="imeta"><span class="nb">曖昧な依頼を対話で具体化する</span></p>
   <pre class="prompt" id="b21">まだ何を作るか固まっていません。要件を1つずつ質問しながら固めていくやり方で、対象・目的・完成条件を明確にしてください。</pre>
@@ -228,7 +233,7 @@
     <button class="btn ghost sm" data-save="b21" data-name="codex-prompts100-021.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="スキルを作る・呼び出す（19〜30）">
   <div class="ih"><span class="num">022</span><span class="ititle">スキルの中身を確認する</span></div>
   <p class="imeta"><span class="nb">既存スキルのSKILL.mdを読んで</span><span class="nb">理解する</span></p>
   <pre class="prompt" id="b22">今使えるスキル一覧の中から1つ選んで、そのSKILL.mdの中身を見せて、どういう手順で動くスキルか説明して。</pre>
@@ -237,7 +242,7 @@
     <button class="btn ghost sm" data-save="b22" data-name="codex-prompts100-022.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="スキルを作る・呼び出す（19〜30）">
   <div class="ih"><span class="num">023</span><span class="ititle">スキルを軽量に保つよう頼む</span></div>
   <p class="imeta"><span class="nb">SKILL.mdが長くなりすぎるのを</span><span class="nb">防ぐ</span></p>
   <pre class="prompt" id="b23">今作っているスキルのSKILL.mdが長くなってきていませんか？もし長ければ、指示の核となる部分だけ残してコンパクトにまとめ直して。</pre>
@@ -246,7 +251,7 @@
     <button class="btn ghost sm" data-save="b23" data-name="codex-prompts100-023.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="スキルを作る・呼び出す（19〜30）">
   <div class="ih"><span class="num">024</span><span class="ititle">既存のスキルを別プロジェクトに移す</span></div>
   <p class="imeta"><span class="nb">フォルダをまたいでスキルを使い回す</span></p>
   <pre class="prompt" id="b24">このスキルを、別のプロジェクトフォルダでも使えるように、共有できる形式で書き出して。</pre>
@@ -255,7 +260,7 @@
     <button class="btn ghost sm" data-save="b24" data-name="codex-prompts100-024.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="スキルを作る・呼び出す（19〜30）">
   <div class="ih"><span class="num">025</span><span class="ititle">イベント告知バナー生成スキルを作る</span></div>
   <p class="imeta"><span class="nb">画像+概要文+SNS投稿文を1発で</span><span class="nb">作る</span></p>
   <pre class="prompt" id="b25">セミナー名・料金・開催日を伝えたら、告知用バナー画像・概要文・SNS投稿文の3点を同時に作ってくれるスキルを作って。背景画像とロゴは固定で使い回したいです。</pre>
@@ -264,7 +269,7 @@
     <button class="btn ghost sm" data-save="b25" data-name="codex-prompts100-025.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="スキルを作る・呼び出す（19〜30）">
   <div class="ih"><span class="num">026</span><span class="ititle">定型レポート作成スキルを作る</span></div>
   <p class="imeta"><span class="nb">決まったフォーマットの資料を型化する</span></p>
   <pre class="prompt" id="b26">週次の営業レポートを、決まった見出し構成(概要・数字・課題・来週の予定)で毎回同じ形式で作れるスキルにして。</pre>
@@ -273,7 +278,7 @@
     <button class="btn ghost sm" data-save="b26" data-name="codex-prompts100-026.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="スキルを作る・呼び出す（19〜30）">
   <div class="ih"><span class="num">027</span><span class="ititle">スキル同士を組み合わせて使う</span></div>
   <p class="imeta"><span class="nb">複数スキルを1つの依頼でまと</span><span class="nb">めて呼び出す</span></p>
   <pre class="prompt" id="b27">スキルAで下調べをして、その結果をスキルBの資料作成に渡す、という2段階の流れで一気に進めて。</pre>
@@ -282,7 +287,7 @@
     <button class="btn ghost sm" data-save="b27" data-name="codex-prompts100-027.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="スキルを作る・呼び出す（19〜30）">
   <div class="ih"><span class="num">028</span><span class="ititle">スキルの動作をテストする</span></div>
   <p class="imeta"><span class="nb">作ったスキルが期待通りか確認する</span></p>
   <pre class="prompt" id="b28">さっき作ったスキルを、実際のサンプルデータで一度動かしてみて、想定外の挙動がないか確認して。</pre>
@@ -291,7 +296,7 @@
     <button class="btn ghost sm" data-save="b28" data-name="codex-prompts100-028.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="スキルを作る・呼び出す（19〜30）">
   <div class="ih"><span class="num">029</span><span class="ititle">スキルを受け取ってセットアップする</span></div>
   <p class="imeta"><span class="nb">他人から共有されたスキルを導入する</span></p>
   <pre class="prompt" id="b29">このZIPファイルは知人から受け取ったCodexのスキルです。私のCodex環境にセットアップしてください。</pre>
@@ -300,7 +305,7 @@
     <button class="btn ghost sm" data-save="b29" data-name="codex-prompts100-029.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="スキルを作る・呼び出す（19〜30）">
   <div class="ih"><span class="num">030</span><span class="ititle">スキルの棚卸しをする</span></div>
   <p class="imeta"><span class="nb">使っていないスキルを整理する</span></p>
   <pre class="prompt" id="b30">今登録されているスキルを一覧にして、それぞれ何をするものか一言で説明して。使っていなさそうなものがあれば教えて。</pre>
@@ -309,8 +314,8 @@
     <button class="btn ghost sm" data-save="b30" data-name="codex-prompts100-030.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">プラグイン・MCP連携（31〜42）</h2>
-<div class="icard">
+<h2 class="cat" data-cat="プラグイン・MCP連携（31〜42）">プラグイン・MCP連携（31〜42）</h2>
+<div class="icard" data-cat="プラグイン・MCP連携（31〜42）">
   <div class="ih"><span class="num">031</span><span class="ititle">Notionと接続してテスト投稿する</span></div>
   <p class="imeta"><span class="nb">プラグイン接続の動作確認をする</span></p>
   <pre class="prompt" id="b31">Notionのプラグインを接続してください。接続できたら、指定したページの配下に「テスト投稿」というタイトルのページを1つ作って動作確認して。</pre>
@@ -319,7 +324,7 @@
     <button class="btn ghost sm" data-save="b31" data-name="codex-prompts100-031.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="プラグイン・MCP連携（31〜42）">
   <div class="ih"><span class="num">032</span><span class="ititle">最新ドキュメントを参照させる</span></div>
   <p class="imeta"><span class="nb">Context7で古い知識のズレを</span><span class="nb">防ぐ</span></p>
   <pre class="prompt" id="b32">このライブラリを使った実装をする前に、最新の公式ドキュメントを参照してから進めて。学習データが古い可能性があるので、バージョンのズレがないか確認して。</pre>
@@ -328,7 +333,7 @@
     <button class="btn ghost sm" data-save="b32" data-name="codex-prompts100-032.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="プラグイン・MCP連携（31〜42）">
   <div class="ih"><span class="num">033</span><span class="ititle">Webページを構造化データとして取得する</span></div>
   <p class="imeta"><span class="nb">Firecrawlでスクレイピングを</span><span class="nb">丸投げする</span></p>
   <pre class="prompt" id="b33">このURLのページ内容を、AIが読みやすい構造化された形式(見出し・本文・リンク)で取得して、要点を教えて。</pre>
@@ -337,7 +342,7 @@
     <button class="btn ghost sm" data-save="b33" data-name="codex-prompts100-033.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="プラグイン・MCP連携（31〜42）">
   <div class="ih"><span class="num">034</span><span class="ititle">アプリをワンコマンドでデプロイする</span></div>
   <p class="imeta"><span class="nb">Vercelプラグインで公開まで</span><span class="nb">任せる</span></p>
   <pre class="prompt" id="b34">今手元で動いているこのWebアプリを、Vercelにデプロイして、誰でも見られるURLを発行して。</pre>
@@ -346,7 +351,7 @@
     <button class="btn ghost sm" data-save="b34" data-name="codex-prompts100-034.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="プラグイン・MCP連携（31〜42）">
   <div class="ih"><span class="num">035</span><span class="ititle">操作を録画してスキル化する</span></div>
   <p class="imeta"><span class="nb">Record &amp; Replayで</span><span class="nb">繰り返し作業を自動化する</span></p>
   <pre class="prompt" id="b35">今から30分以内でこの一連の操作を録画します。録画が終わったら、その内容から再利用できるスキルを作成して。</pre>
@@ -355,7 +360,7 @@
     <button class="btn ghost sm" data-save="b35" data-name="codex-prompts100-035.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="プラグイン・MCP連携（31〜42）">
   <div class="ih"><span class="num">036</span><span class="ititle">開いている画面をそのまま渡す</span></div>
   <p class="imeta"><span class="nb">アップショットで説明の手間を省く</span></p>
   <pre class="prompt" id="b36">今開いているこの画面を見て、どこにエラーが出ているか教えて。画面はそのまま渡すので、状況を説明する必要はありません。</pre>
@@ -364,7 +369,7 @@
     <button class="btn ghost sm" data-save="b36" data-name="codex-prompts100-036.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="プラグイン・MCP連携（31〜42）">
   <div class="ih"><span class="num">037</span><span class="ititle">アプリ内ブラウザで自分のサイトを操作する</span></div>
   <p class="imeta"><span class="nb">インアップブラウザで</span><span class="nb">直接フィードバックする</span></p>
   <pre class="prompt" id="b37">アプリ内ブラウザでこのURLを開いて、お問い合わせフォームの入力テストをしてください。名前とメールアドレスは適当なテストデータで構いません。</pre>
@@ -373,7 +378,7 @@
     <button class="btn ghost sm" data-save="b37" data-name="codex-prompts100-037.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="プラグイン・MCP連携（31〜42）">
   <div class="ih"><span class="num">038</span><span class="ititle">どのプラグインを使うべきか相談する</span></div>
   <p class="imeta"><span class="nb">目的からプラグイン選びを任せる</span></p>
   <pre class="prompt" id="b38">Googleカレンダーの予定を確認して、関連資料をドライブから探して準備リストを作りたいです。どのプラグインを組み合わせればいいか教えて、そのまま進めて。</pre>
@@ -382,7 +387,7 @@
     <button class="btn ghost sm" data-save="b38" data-name="codex-prompts100-038.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="プラグイン・MCP連携（31〜42）">
   <div class="ih"><span class="num">039</span><span class="ititle">新しいプラグインを探して提案してもらう</span></div>
   <p class="imeta"><span class="nb">プラグイン一覧から目的に合うものを</span><span class="nb">探す</span></p>
   <pre class="prompt" id="b39">プラグイン一覧を確認して、スプレッドシートの自動更新に使えそうなものがあれば教えて。</pre>
@@ -391,7 +396,7 @@
     <button class="btn ghost sm" data-save="b39" data-name="codex-prompts100-039.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="プラグイン・MCP連携（31〜42）">
   <div class="ih"><span class="num">040</span><span class="ititle">MCPサーバーを自作するか判断してもらう</span></div>
   <p class="imeta"><span class="nb">既存プラグインで足りるかを見極める</span></p>
   <pre class="prompt" id="b40">社内の独自システムと連携したいのですが、既存のプラグインで対応できますか？できない場合、MCPサーバーを自作する必要があるか教えて。</pre>
@@ -400,7 +405,7 @@
     <button class="btn ghost sm" data-save="b40" data-name="codex-prompts100-040.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="プラグイン・MCP連携（31〜42）">
   <div class="ih"><span class="num">041</span><span class="ititle">プラグインの権限を最小限に絞る</span></div>
   <p class="imeta"><span class="nb">必要な処理だけに権限を付与する</span></p>
   <pre class="prompt" id="b41">このプラグインに与える権限を確認して、今回の用途(閲覧のみ)に対して権限が広すぎないか教えて。広すぎる場合は絞り込んで。</pre>
@@ -409,7 +414,7 @@
     <button class="btn ghost sm" data-save="b41" data-name="codex-prompts100-041.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="プラグイン・MCP連携（31〜42）">
   <div class="ih"><span class="num">042</span><span class="ititle">複数プラグインの動作を一括確認する</span></div>
   <p class="imeta"><span class="nb">接続済みプラグインの棚卸しをする</span></p>
   <pre class="prompt" id="b42">今接続しているプラグインを一覧にして、それぞれ最後に使ったのがいつか分かる範囲で教えて。使っていないものがあれば教えて。</pre>
@@ -418,8 +423,8 @@
     <button class="btn ghost sm" data-save="b42" data-name="codex-prompts100-042.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">サブエージェントで分担する（43〜52）</h2>
-<div class="icard">
+<h2 class="cat" data-cat="サブエージェントで分担する（43〜52）">サブエージェントで分担する（43〜52）</h2>
+<div class="icard" data-cat="サブエージェントで分担する（43〜52）">
   <div class="ih"><span class="num">043</span><span class="ititle">レビュー専門のサブエージェントを立てる</span></div>
   <p class="imeta"><span class="nb">品質チェックだけを任せる担当を作る</span></p>
   <pre class="prompt" id="b43">この実装が終わったら、セキュリティとバグの観点だけをチェックする専門のサブエージェントを立てて、レビューさせて。</pre>
@@ -428,7 +433,7 @@
     <button class="btn ghost sm" data-save="b43" data-name="codex-prompts100-043.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="サブエージェントで分担する（43〜52）">
   <div class="ih"><span class="num">044</span><span class="ititle">調査・構成・執筆を役割分担させる</span></div>
   <p class="imeta"><span class="nb">ライティング作業をチーム制にする</span></p>
   <pre class="prompt" id="b44">この記事を書くにあたって、リサーチ担当・構成担当・執筆担当・レビュー担当の4役に分けて、それぞれサブエージェントとして並列に動かして。</pre>
@@ -437,7 +442,7 @@
     <button class="btn ghost sm" data-save="b44" data-name="codex-prompts100-044.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="サブエージェントで分担する（43〜52）">
   <div class="ih"><span class="num">045</span><span class="ititle">並列でA案・B案を作らせて比較する</span></div>
   <p class="imeta"><span class="nb">選択肢を同時に作らせて見比べる</span></p>
   <pre class="prompt" id="b45">デザイン案をA案とB案の2パターン、それぞれ別のサブエージェントに並列で作らせて、できたら両方を並べて見せて。</pre>
@@ -446,7 +451,7 @@
     <button class="btn ghost sm" data-save="b45" data-name="codex-prompts100-045.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="サブエージェントで分担する（43〜52）">
   <div class="ih"><span class="num">046</span><span class="ititle">サブエージェントの数を絞って使う</span></div>
   <p class="imeta"><span class="nb">トークン消費を抑えつつ分担する</span></p>
   <pre class="prompt" id="b46">今回はそこまで複雑ではないので、サブエージェントは最大2体までに絞って進めて。</pre>
@@ -455,7 +460,7 @@
     <button class="btn ghost sm" data-save="b46" data-name="codex-prompts100-046.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="サブエージェントで分担する（43〜52）">
   <div class="ih"><span class="num">047</span><span class="ititle">サブエージェントごとにチャットを分けて確認する</span></div>
   <p class="imeta"><span class="nb">何が起きているか個別に見えるように</span><span class="nb">する</span></p>
   <pre class="prompt" id="b47">今動いている各サブエージェントの進捗を、それぞれ別のチャットとして見られるようにして、今どこまで進んだか教えて。</pre>
@@ -464,7 +469,7 @@
     <button class="btn ghost sm" data-save="b47" data-name="codex-prompts100-047.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="サブエージェントで分担する（43〜52）">
   <div class="ih"><span class="num">048</span><span class="ititle">最終的な結果だけメインにまとめさせる</span></div>
   <p class="imeta"><span class="nb">各担当の途中経過はノイズにしない</span></p>
   <pre class="prompt" id="b48">各サブエージェントの調査結果は、途中の試行錯誤は省いて、結論だけをメインのエージェントにまとめて報告させて。</pre>
@@ -473,7 +478,7 @@
     <button class="btn ghost sm" data-save="b48" data-name="codex-prompts100-048.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="サブエージェントで分担する（43〜52）">
   <div class="ih"><span class="num">049</span><span class="ititle">探索作業をサブエージェントに任せる</span></div>
   <p class="imeta"><span class="nb">読み込み中心のタスクを並列化する</span></p>
   <pre class="prompt" id="b49">このコードベース全体を確認して、〇〇に関連するファイルをすべて洗い出す作業をサブエージェントに任せて、私はその間別の作業をします。</pre>
@@ -482,7 +487,7 @@
     <button class="btn ghost sm" data-save="b49" data-name="codex-prompts100-049.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="サブエージェントで分担する（43〜52）">
   <div class="ih"><span class="num">050</span><span class="ititle">サブエージェントの推論レベルを個別に設定する</span></div>
   <p class="imeta"><span class="nb">担当ごとに賢さと速度のバランスを</span><span class="nb">変える</span></p>
   <pre class="prompt" id="b50">バグ調査担当のサブエージェントだけ推論レベルを高めにして、他の軽い作業担当は標準のままにして。</pre>
@@ -491,7 +496,7 @@
     <button class="btn ghost sm" data-save="b50" data-name="codex-prompts100-050.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="サブエージェントで分担する（43〜52）">
   <div class="ih"><span class="num">051</span><span class="ititle">人間チームの分担をそのままAIに当てはめる</span></div>
   <p class="imeta"><span class="nb">会議の役割分担の考え方を応用する</span></p>
   <pre class="prompt" id="b51">会議でよくやるように、議題ごとに担当を分けるやり方で、この作業も分野ごとにサブエージェントへ振り分けて進めて。</pre>
@@ -500,7 +505,7 @@
     <button class="btn ghost sm" data-save="b51" data-name="codex-prompts100-051.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="サブエージェントで分担する（43〜52）">
   <div class="ih"><span class="num">052</span><span class="ititle">サブエージェントの結果に矛盾がないか確認する</span></div>
   <p class="imeta"><span class="nb">分担後の整合性チェックを忘れない</span></p>
   <pre class="prompt" id="b52">複数のサブエージェントが出した結果に、矛盾している部分がないか最後に確認して、あれば指摘して。</pre>
@@ -509,8 +514,8 @@
     <button class="btn ghost sm" data-save="b52" data-name="codex-prompts100-052.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">オートメーション(自動化)を組む（53〜64）</h2>
-<div class="icard">
+<h2 class="cat" data-cat="オートメーション(自動化)を組む（53〜64）">オートメーション(自動化)を組む（53〜64）</h2>
+<div class="icard" data-cat="オートメーション(自動化)を組む（53〜64）">
   <div class="ih"><span class="num">053</span><span class="ititle">チャットで自動化を設定する</span></div>
   <p class="imeta"><span class="nb">対話しながらオートメーションを組む</span></p>
   <pre class="prompt" id="b53">自動化を設定したいです。まずCodexの自動化の仕組みを説明してから、私がいつ何をしてほしいか答えるので、質問してください。</pre>
@@ -519,7 +524,7 @@
     <button class="btn ghost sm" data-save="b53" data-name="codex-prompts100-053.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="オートメーション(自動化)を組む（53〜64）">
   <div class="ih"><span class="num">054</span><span class="ititle">毎朝のニュースまとめを自動化する</span></div>
   <p class="imeta"><span class="nb">定期実行の入り口と</span><span class="nb">して一番使いやすい例</span></p>
   <pre class="prompt" id="b54">毎朝8時に、AI関連の最新ニュースを5件集めて、初心者にもわかるように要約したものを教えてください。この作業を自動化して。</pre>
@@ -528,7 +533,7 @@
     <button class="btn ghost sm" data-save="b54" data-name="codex-prompts100-054.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="オートメーション(自動化)を組む（53〜64）">
   <div class="ih"><span class="num">055</span><span class="ititle">未返信メールの優先度リストを作る</span></div>
   <p class="imeta"><span class="nb">見落としを防ぐ自動チェック</span></p>
   <pre class="prompt" id="b55">毎日夕方、その日届いたメールの中で返信が必要なのに返信していないものを優先度付きでリストにして教えて。この確認を自動化して。</pre>
@@ -537,7 +542,7 @@
     <button class="btn ghost sm" data-save="b55" data-name="codex-prompts100-055.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="オートメーション(自動化)を組む（53〜64）">
   <div class="ih"><span class="num">056</span><span class="ititle">週次レポートをスラック/チャットに送る</span></div>
   <p class="imeta"><span class="nb">情報整理の型を仕組み化する</span></p>
   <pre class="prompt" id="b56">毎週月曜9時に、先週のスラックで自分宛のメンションと重要な決定事項をまとめて、カテゴリー別に整理したレポートを送って。これを自動化して。</pre>
@@ -546,7 +551,7 @@
     <button class="btn ghost sm" data-save="b56" data-name="codex-prompts100-056.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="オートメーション(自動化)を組む（53〜64）">
   <div class="ih"><span class="num">057</span><span class="ititle">自動化の実行環境を指定する</span></div>
   <p class="imeta"><span class="nb">ローカル/クラウドどちらで</span><span class="nb">動かすか意識する</span></p>
   <pre class="prompt" id="b57">この自動化は、パソコンを閉じていても動いてほしいです。ローカル実行とクラウド実行、どちらが適しているか教えて、適した方で設定して。</pre>
@@ -555,7 +560,7 @@
     <button class="btn ghost sm" data-save="b57" data-name="codex-prompts100-057.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="オートメーション(自動化)を組む（53〜64）">
   <div class="ih"><span class="num">058</span><span class="ititle">自動化前にまず手動で1回試す</span></div>
   <p class="imeta"><span class="nb">いきなり丸投げにしない安全な進め方</span></p>
   <pre class="prompt" id="b58">この作業を自動化する前に、まず今すぐ1回だけ手動で実行してみて、結果に問題がないか確認させて。</pre>
@@ -564,7 +569,7 @@
     <button class="btn ghost sm" data-save="b58" data-name="codex-prompts100-058.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="オートメーション(自動化)を組む（53〜64）">
   <div class="ih"><span class="num">059</span><span class="ititle">出力形式を明確に指定して自動化する</span></div>
   <p class="imeta"><span class="nb">平均的な結果に収束させないための一言</span></p>
   <pre class="prompt" id="b59">自動化するレポートの出力形式は、マークダウンではなくWebページ(URL)として届けてほしいです。この前提で設定して。</pre>
@@ -573,7 +578,7 @@
     <button class="btn ghost sm" data-save="b59" data-name="codex-prompts100-059.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="オートメーション(自動化)を組む（53〜64）">
   <div class="ih"><span class="num">060</span><span class="ititle">自動化の実行結果に通知を付ける</span></div>
   <p class="imeta"><span class="nb">終わったことに気づけるようにする</span></p>
   <pre class="prompt" id="b60">この定期実行が完了したら、必ず完了通知を送るように設定して。</pre>
@@ -582,7 +587,7 @@
     <button class="btn ghost sm" data-save="b60" data-name="codex-prompts100-060.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="オートメーション(自動化)を組む（53〜64）">
   <div class="ih"><span class="num">061</span><span class="ititle">自動化の権限を必要最小限にする</span></div>
   <p class="imeta"><span class="nb">裏で動く処理だからこそ慎重に</span></p>
   <pre class="prompt" id="b61">この自動化は裏で動くので、ファイルの削除など取り返しのつかない操作は含めないでください。読み取りと通知だけに限定して。</pre>
@@ -591,7 +596,7 @@
     <button class="btn ghost sm" data-save="b61" data-name="codex-prompts100-061.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="オートメーション(自動化)を組む（53〜64）">
   <div class="ih"><span class="num">062</span><span class="ititle">既存の自動化を一覧で確認する</span></div>
   <p class="imeta"><span class="nb">増えてきた自動化を棚卸しする</span></p>
   <pre class="prompt" id="b62">今設定されている自動化(オートメーション)を一覧にして、それぞれいつ何をしているか教えて。</pre>
@@ -600,7 +605,7 @@
     <button class="btn ghost sm" data-save="b62" data-name="codex-prompts100-062.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="オートメーション(自動化)を組む（53〜64）">
   <div class="ih"><span class="num">063</span><span class="ititle">自動化をクラウド実行に切り替える</span></div>
   <p class="imeta"><span class="nb">ローカル起動必須の制約を</span><span class="nb">回避する選択肢を検討する</span></p>
   <pre class="prompt" id="b63">この自動化はローカルのパソコンが起動している必要がありますか？もしそうなら、クラウド実行や外部サービス連携で代替できないか、選択肢とコスト感を教えて。</pre>
@@ -609,7 +614,7 @@
     <button class="btn ghost sm" data-save="b63" data-name="codex-prompts100-063.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="オートメーション(自動化)を組む（53〜64）">
   <div class="ih"><span class="num">064</span><span class="ititle">自動化の頻度を調整する</span></div>
   <p class="imeta"><span class="nb">多すぎる通知を整理する</span></p>
   <pre class="prompt" id="b64">この自動化、毎日実行だと通知が多すぎるので、平日だけに変更して。</pre>
@@ -618,8 +623,8 @@
     <button class="btn ghost sm" data-save="b64" data-name="codex-prompts100-064.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">資料・ドキュメント作成（65〜74）</h2>
-<div class="icard">
+<h2 class="cat" data-cat="資料・ドキュメント作成（65〜74）">資料・ドキュメント作成（65〜74）</h2>
+<div class="icard" data-cat="資料・ドキュメント作成（65〜74）">
   <div class="ih"><span class="num">065</span><span class="ititle">文字起こしから複数のアウトプットを作る</span></div>
   <p class="imeta"><span class="nb">1つの素材から要約・</span><span class="nb">記事・</span><span class="nb">投稿文を量産する</span></p>
   <pre class="prompt" id="b65">この文字起こしを元に、要約・note記事・X投稿案(5本)の3種類のアウトプットを作って。</pre>
@@ -628,7 +633,7 @@
     <button class="btn ghost sm" data-save="b65" data-name="codex-prompts100-065.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="資料・ドキュメント作成（65〜74）">
   <div class="ih"><span class="num">066</span><span class="ititle">Excelから報告スライドを自動生成する</span></div>
   <p class="imeta"><span class="nb">数字を渡すだけでプレゼン資料にする</span></p>
   <pre class="prompt" id="b66">このExcelの売上データを分析して、グラフ付きの報告スライドを作って。デザインは整えて、来週の会議でそのまま使える形にして。</pre>
@@ -637,7 +642,7 @@
     <button class="btn ghost sm" data-save="b66" data-name="codex-prompts100-066.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="資料・ドキュメント作成（65〜74）">
   <div class="ih"><span class="num">067</span><span class="ititle">動画URLからブログ記事を作る</span></div>
   <p class="imeta"><span class="nb">動画コンテンツをテキスト資産に</span><span class="nb">変換する</span></p>
   <pre class="prompt" id="b67">このYouTube動画のURLを渡すので、内容を確認して、最適な構成でブログ記事を作って。必要な図解や画像も適宜入れて。</pre>
@@ -646,7 +651,7 @@
     <button class="btn ghost sm" data-save="b67" data-name="codex-prompts100-067.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="資料・ドキュメント作成（65〜74）">
   <div class="ih"><span class="num">068</span><span class="ititle">資料をテンプレート化する</span></div>
   <p class="imeta"><span class="nb">毎回同じデザインで作れるようにする</span></p>
   <pre class="prompt" id="b68">このデザインシステム(配色・ロゴ)を使って、Word・PowerPoint・Excelそれぞれのテンプレートを作って。次からはこのテンプレートを使い回したいです。</pre>
@@ -655,7 +660,7 @@
     <button class="btn ghost sm" data-save="b68" data-name="codex-prompts100-068.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="資料・ドキュメント作成（65〜74）">
   <div class="ih"><span class="num">069</span><span class="ititle">議事録から次のアクションを抽出する</span></div>
   <p class="imeta"><span class="nb">会議メモをそのまま放置しない</span></p>
   <pre class="prompt" id="b69">この打ち合わせメモを読んで、誰が・いつまでに・何をするかのアクションリストを作って。</pre>
@@ -664,7 +669,7 @@
     <button class="btn ghost sm" data-save="b69" data-name="codex-prompts100-069.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="資料・ドキュメント作成（65〜74）">
   <div class="ih"><span class="num">070</span><span class="ititle">読みやすさ優先で専門用語をかみ砕く</span></div>
   <p class="imeta"><span class="nb">初心者向けに文章を書き直させる</span></p>
   <pre class="prompt" id="b70">この文章、専門用語が多くて分かりにくいので、AI初心者でも読めるように、たとえ話を交えて書き直して。</pre>
@@ -673,7 +678,7 @@
     <button class="btn ghost sm" data-save="b70" data-name="codex-prompts100-070.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="資料・ドキュメント作成（65〜74）">
   <div class="ih"><span class="num">071</span><span class="ititle">資料の一部だけ図解に差し替える</span></div>
   <p class="imeta"><span class="nb">文章だらけの資料にメリハリをつける</span></p>
   <pre class="prompt" id="b71">この資料のうち、比較の部分を表に、流れの部分をステップ図に変えて、視覚的にわかりやすくして。</pre>
@@ -682,7 +687,7 @@
     <button class="btn ghost sm" data-save="b71" data-name="codex-prompts100-071.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="資料・ドキュメント作成（65〜74）">
   <div class="ih"><span class="num">072</span><span class="ititle">出典・確度を明記させる</span></div>
   <p class="imeta"><span class="nb">断定と推測を区別してもらう</span></p>
   <pre class="prompt" id="b72">この資料に書かれている数字や主張について、公式で確認できるもの・一次情報はあるが未確定のもの・推測にすぎないものを分けて、印を付けて。</pre>
@@ -691,7 +696,7 @@
     <button class="btn ghost sm" data-save="b72" data-name="codex-prompts100-072.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="資料・ドキュメント作成（65〜74）">
   <div class="ih"><span class="num">073</span><span class="ititle">資料のTL;DRを作る</span></div>
   <p class="imeta"><span class="nb">最初に3行で結論を伝える</span></p>
   <pre class="prompt" id="b73">この資料を最初に読む人のために、冒頭に「まず3行で分かる結論」を追加して。</pre>
@@ -700,7 +705,7 @@
     <button class="btn ghost sm" data-save="b73" data-name="codex-prompts100-073.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="資料・ドキュメント作成（65〜74）">
   <div class="ih"><span class="num">074</span><span class="ititle">複数資料を1つに統合する</span></div>
   <p class="imeta"><span class="nb">バラバラの資料をまとめ直す</span></p>
   <pre class="prompt" id="b74">この3つの資料は内容が重複しています。重複を整理して、1つの資料にまとめ直して。</pre>
@@ -709,8 +714,8 @@
     <button class="btn ghost sm" data-save="b74" data-name="codex-prompts100-074.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">アプリ・Web開発（75〜86）</h2>
-<div class="icard">
+<h2 class="cat" data-cat="アプリ・Web開発（75〜86）">アプリ・Web開発（75〜86）</h2>
+<div class="icard" data-cat="アプリ・Web開発（75〜86）">
   <div class="ih"><span class="num">075</span><span class="ititle">アイデアだけでアプリを作り始める</span></div>
   <p class="imeta"><span class="nb">要件を対話で詰めながら作る</span></p>
   <pre class="prompt" id="b75">文字起こしを貼ったら要約・記事・SNS投稿を自動生成してくれるWebアプリを作りたいです。要件が曖昧な部分は質問してください。</pre>
@@ -719,7 +724,7 @@
     <button class="btn ghost sm" data-save="b75" data-name="codex-prompts100-075.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="アプリ・Web開発（75〜86）">
   <div class="ih"><span class="num">076</span><span class="ititle">業務自動化のスキルをアプリ化する</span></div>
   <p class="imeta"><span class="nb">繰り返し作業をアプリの形で</span><span class="nb">仕組み化する</span></p>
   <pre class="prompt" id="b76">週次のAIニュースをまとめてスラックに送る一連の流れを、スキルとオートメーションを使って仕組み化して。</pre>
@@ -728,7 +733,7 @@
     <button class="btn ghost sm" data-save="b76" data-name="codex-prompts100-076.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="アプリ・Web開発（75〜86）">
   <div class="ih"><span class="num">077</span><span class="ititle">自作アプリにCodexの体験を埋め込む</span></div>
   <p class="imeta"><span class="nb">App Serverで</span><span class="nb">サブスク課金内に収める</span></p>
   <pre class="prompt" id="b77">このアプリの中に、Codexのようなチャット型のAI体験を埋め込みたいです。API課金ではなく契約中のプラン内で収まる方法を教えて。</pre>
@@ -737,7 +742,7 @@
     <button class="btn ghost sm" data-save="b77" data-name="codex-prompts100-077.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="アプリ・Web開発（75〜86）">
   <div class="ih"><span class="num">078</span><span class="ititle">作りかけの画面をその場で直す</span></div>
   <p class="imeta"><span class="nb">インアップブラウザで見ながら修正する</span></p>
   <pre class="prompt" id="b78">今作っているこのページを開いて、ボタンの配置が崩れている部分を直接見ながら直して。</pre>
@@ -746,7 +751,7 @@
     <button class="btn ghost sm" data-save="b78" data-name="codex-prompts100-078.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="アプリ・Web開発（75〜86）">
   <div class="ih"><span class="num">079</span><span class="ititle">動作確認をブラウザ操作で自動化する</span></div>
   <p class="imeta"><span class="nb">E2Eテストをブラウザユーズに任せる</span></p>
   <pre class="prompt" id="b79">このWebアプリのフォーム入力からエラー表示までの一連の動作を、実際にブラウザを操作して確認して、崩れがあれば直して。</pre>
@@ -755,7 +760,7 @@
     <button class="btn ghost sm" data-save="b79" data-name="codex-prompts100-079.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="アプリ・Web開発（75〜86）">
   <div class="ih"><span class="num">080</span><span class="ititle">デプロイ後にログを確認させる</span></div>
   <p class="imeta"><span class="nb">公開後の不具合にすぐ気づけるように</span><span class="nb">する</span></p>
   <pre class="prompt" id="b80">このアプリをデプロイした後、エラーログが出ていないか確認して、問題があれば教えて。</pre>
@@ -764,7 +769,7 @@
     <button class="btn ghost sm" data-save="b80" data-name="codex-prompts100-080.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="アプリ・Web開発（75〜86）">
   <div class="ih"><span class="num">081</span><span class="ititle">簡単なゲームを作ってみる</span></div>
   <p class="imeta"><span class="nb">画像生成と組み合わせて遊びで作る</span></p>
   <pre class="prompt" id="b81">簡単なミニゲームを1つ作ってみたいです。ジャンルは何でもいいので、まずどんなゲームが作りやすいか3つ提案して。</pre>
@@ -773,7 +778,7 @@
     <button class="btn ghost sm" data-save="b81" data-name="codex-prompts100-081.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="アプリ・Web開発（75〜86）">
   <div class="ih"><span class="num">082</span><span class="ititle">アプリの環境変数を安全に設定する</span></div>
   <p class="imeta"><span class="nb">APIキー等を画面越しに直接見せずに</span><span class="nb">扱う</span></p>
   <pre class="prompt" id="b82">このアプリに必要なAPIキーの設定方法を教えてください。私が値を入力する場所だけ案内して、値自体は表示しないでください。</pre>
@@ -782,7 +787,7 @@
     <button class="btn ghost sm" data-save="b82" data-name="codex-prompts100-082.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="アプリ・Web開発（75〜86）">
   <div class="ih"><span class="num">083</span><span class="ititle">既存アプリのUIだけ改善する</span></div>
   <p class="imeta"><span class="nb">ロジックはそのままに見た目だけ整える</span></p>
   <pre class="prompt" id="b83">このアプリの機能は変えずに、見た目だけもう少し洗練された印象にしてください。</pre>
@@ -791,7 +796,7 @@
     <button class="btn ghost sm" data-save="b83" data-name="codex-prompts100-083.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="アプリ・Web開発（75〜86）">
   <div class="ih"><span class="num">084</span><span class="ititle">モバイル表示を確認して直す</span></div>
   <p class="imeta"><span class="nb">スマホでの見え方をチェックする</span></p>
   <pre class="prompt" id="b84">このページをスマホの画面幅で見たときに崩れている箇所がないか確認して、あれば直して。</pre>
@@ -800,7 +805,7 @@
     <button class="btn ghost sm" data-save="b84" data-name="codex-prompts100-084.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="アプリ・Web開発（75〜86）">
   <div class="ih"><span class="num">085</span><span class="ititle">複数チャットで並列開発する</span></div>
   <p class="imeta"><span class="nb">独立した機能を同時並行で作る</span></p>
   <pre class="prompt" id="b85">このプロジェクトの中で、記事Aを作るチャットと記事Bを作るチャットを分けて、それぞれ独立して並行で進めて。</pre>
@@ -809,7 +814,7 @@
     <button class="btn ghost sm" data-save="b85" data-name="codex-prompts100-085.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="アプリ・Web開発（75〜86）">
   <div class="ih"><span class="num">086</span><span class="ititle">アプリ完成後にREADMEを作る</span></div>
   <p class="imeta"><span class="nb">後から見返せるように</span><span class="nb">ドキュメント化する</span></p>
   <pre class="prompt" id="b86">このアプリが完成したので、何を作ったか・使い方・注意点をまとめたREADMEを作って。</pre>
@@ -818,8 +823,8 @@
     <button class="btn ghost sm" data-save="b86" data-name="codex-prompts100-086.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">音声入力・リモート操作（87〜94）</h2>
-<div class="icard">
+<h2 class="cat" data-cat="音声入力・リモート操作（87〜94）">音声入力・リモート操作（87〜94）</h2>
+<div class="icard" data-cat="音声入力・リモート操作（87〜94）">
   <div class="ih"><span class="num">087</span><span class="ititle">音声入力でざっくり指示を出す</span></div>
   <p class="imeta"><span class="nb">タイピングより速く要件を伝える</span></p>
   <pre class="prompt" id="b87">今から音声入力で要件を話すので、聞き取った内容を整理して、要件定義としてまとめ直して。</pre>
@@ -828,7 +833,7 @@
     <button class="btn ghost sm" data-save="b87" data-name="codex-prompts100-087.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="音声入力・リモート操作（87〜94）">
   <div class="ih"><span class="num">088</span><span class="ititle">辞書登録で専門用語の誤変換を防ぐ</span></div>
   <p class="imeta"><span class="nb">よく使う固有名詞を正しく認識させる</span></p>
   <pre class="prompt" id="b88">音声入力でよく誤変換される単語(サービス名・固有名詞)を辞書登録したいので、登録の仕方を教えて。</pre>
@@ -837,7 +842,7 @@
     <button class="btn ghost sm" data-save="b88" data-name="codex-prompts100-088.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="音声入力・リモート操作（87〜94）">
   <div class="ih"><span class="num">089</span><span class="ititle">スマホから作業の続きを確認する</span></div>
   <p class="imeta"><span class="nb">リモートコネクションズで外出先から</span><span class="nb">見る</span></p>
   <pre class="prompt" id="b89">今パソコンで進めている作業の進捗を、外出先のスマホから確認したいです。設定方法を教えて。</pre>
@@ -846,7 +851,7 @@
     <button class="btn ghost sm" data-save="b89" data-name="codex-prompts100-089.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="音声入力・リモート操作（87〜94）">
   <div class="ih"><span class="num">090</span><span class="ititle">スマホから新しいチャットを始める</span></div>
   <p class="imeta"><span class="nb">外出先で思いついたことをすぐ頼む</span></p>
   <pre class="prompt" id="b90">スマホから新しいチャットを開いて、さっき思いついた〇〇の調査を今から頼みたいです。</pre>
@@ -855,7 +860,7 @@
     <button class="btn ghost sm" data-save="b90" data-name="codex-prompts100-090.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="音声入力・リモート操作（87〜94）">
   <div class="ih"><span class="num">091</span><span class="ititle">常時起動マシンとの接続を確認する</span></div>
   <p class="imeta"><span class="nb">リモート運用の前提を点検する</span></p>
   <pre class="prompt" id="b91">自宅の常時起動しているパソコンとの接続状態を確認して、今すぐ作業を投げられる状態か教えて。</pre>
@@ -864,7 +869,7 @@
     <button class="btn ghost sm" data-save="b91" data-name="codex-prompts100-091.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="音声入力・リモート操作（87〜94）">
   <div class="ih"><span class="num">092</span><span class="ititle">通知設定を最適化する</span></div>
   <p class="imeta"><span class="nb">見逃しなく、</span><span class="nb">かつ通知過多にならないようにする</span></p>
   <pre class="prompt" id="b92">作業が完了したタイミングだけ通知が来るように、通知の設定を整理して。</pre>
@@ -873,7 +878,7 @@
     <button class="btn ghost sm" data-save="b92" data-name="codex-prompts100-092.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="音声入力・リモート操作（87〜94）">
   <div class="ih"><span class="num">093</span><span class="ititle">どの端末からでも続けられる作業を選ぶ</span></div>
   <p class="imeta"><span class="nb">リモート向きの作業とそうでない作業を</span><span class="nb">切り分ける</span></p>
   <pre class="prompt" id="b93">今頼んでいる一連の作業のうち、リモートから続けやすいものとパソコンの前でやった方がいいものを分けて教えて。</pre>
@@ -882,7 +887,7 @@
     <button class="btn ghost sm" data-save="b93" data-name="codex-prompts100-093.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="音声入力・リモート操作（87〜94）">
   <div class="ih"><span class="num">094</span><span class="ititle">音声入力とプランモードを組み合わせる</span></div>
   <p class="imeta"><span class="nb">話しながら要件を固めていく</span></p>
   <pre class="prompt" id="b94">音声入力で要望を話すので、それをプランモードの要件としてまとめて、足りない情報があれば質問して。</pre>
@@ -891,8 +896,8 @@
     <button class="btn ghost sm" data-save="b94" data-name="codex-prompts100-094.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">Claude Codeからの移行（95〜100）</h2>
-<div class="icard">
+<h2 class="cat" data-cat="Claude Codeからの移行（95〜100）">Claude Codeからの移行（95〜100）</h2>
+<div class="icard" data-cat="Claude Codeからの移行（95〜100）">
   <div class="ih"><span class="num">095</span><span class="ititle">Claude Codeの設定をそのまま持ってくる</span></div>
   <p class="imeta"><span class="nb">0から作り直さず移行する</span></p>
   <pre class="prompt" id="b95">Claude Codeで使っていた設定・MCPサーバー・コマンドをそのままCodexにインポートしたいです。手順を教えて、進めて。</pre>
@@ -901,7 +906,7 @@
     <button class="btn ghost sm" data-save="b95" data-name="codex-prompts100-095.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Claude Codeからの移行（95〜100）">
   <div class="ih"><span class="num">096</span><span class="ititle">CLAUDE.mdの内容をAGENTS.mdに移す</span></div>
   <p class="imeta"><span class="nb">同じ役割のファイルに置き換える</span></p>
   <pre class="prompt" id="b96">このCLAUDE.mdの内容を、Codex用のAGENTS.mdとして同じ意味を保ったまま書き直して。</pre>
@@ -910,7 +915,7 @@
     <button class="btn ghost sm" data-save="b96" data-name="codex-prompts100-096.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Claude Codeからの移行（95〜100）">
   <div class="ih"><span class="num">097</span><span class="ititle">同じ作業を両方で試して比較する</span></div>
   <p class="imeta"><span class="nb">乗り換え判断のための実地比較</span></p>
   <pre class="prompt" id="b97">この同じ作業を、Claude CodeとCodexの両方で試して、スピード・出力の質・使いやすさを比較して教えて。</pre>
@@ -919,7 +924,7 @@
     <button class="btn ghost sm" data-save="b97" data-name="codex-prompts100-097.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Claude Codeからの移行（95〜100）">
   <div class="ih"><span class="num">098</span><span class="ititle">使い分けの基準を整理してもらう</span></div>
   <p class="imeta"><span class="nb">全部乗り換えず併用する前提で考える</span></p>
   <pre class="prompt" id="b98">自分の作業内容を伝えるので、Claude CodeとCodex、どちらを使うべきか、使い分けの基準を提案して。</pre>
@@ -928,7 +933,7 @@
     <button class="btn ghost sm" data-save="b98" data-name="codex-prompts100-098.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Claude Codeからの移行（95〜100）">
   <div class="ih"><span class="num">099</span><span class="ititle">移行後に困った点を洗い出す</span></div>
   <p class="imeta"><span class="nb">乗り換え直後のつまずきを早めに</span><span class="nb">解消する</span></p>
   <pre class="prompt" id="b99">Codexに乗り換えてみて、Claude Codeと勝手が違って戸惑っている点があるので、それぞれの解決方法を教えて。</pre>
@@ -937,7 +942,7 @@
     <button class="btn ghost sm" data-save="b99" data-name="codex-prompts100-099.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Claude Codeからの移行（95〜100）">
   <div class="ih"><span class="num">100</span><span class="ititle">両方のいいとこ取りの運用を考える</span></div>
   <p class="imeta"><span class="nb">1つのプロジェクトで両方動かす</span></p>
   <pre class="prompt" id="b100">同じフォルダの中で、Claude CodeとCodexの両方を状況に応じて使い分けたいです。運用ルールの叩き台を作って。</pre>
@@ -1588,6 +1593,57 @@ Codexに乗り換えてみて、Claude Codeと勝手が違って戸惑ってい�
 以上、100個です。内訳：まずはチャットで試す・基本操作10／画像生成を使いこなす8／スキルを作る・呼び出す12／プラグイン・MCP連携12／サブエージェントで分担する10／オートメーション(自動化)を組む12／資料・ドキュメント作成10／アプリ・Web開発12／音声入力・リモート操作8／Claude Codeからの移行6。
 </pre>
 <script>
+// 項目の多いキットで、目的の1件に辿り着けるようにする絞り込み。
+// 検索はタイトル・説明だけでなく本文も対象にする（「あの文言が入っていた項目」で探せるように）。
+(function(){
+  var q = document.getElementById('kq');
+  if (!q) return;
+  var hit = document.getElementById('khit');
+  var cards = [].slice.call(document.querySelectorAll('.kwrap .icard'));
+  var heads = [].slice.call(document.querySelectorAll('.kwrap h2.cat'));
+  var chips = [].slice.call(document.querySelectorAll('.kcat'));
+  var cat = '';
+
+  // ひらがな・カタカナの違いで取りこぼさないようにする（ハブ側の検索と同じ扱い）
+  function norm(s){
+    return (s || '').toLowerCase().replace(/[ぁ-ん]/g, function(c){
+      return String.fromCharCode(c.charCodeAt(0) + 0x60);
+    });
+  }
+
+  // カード全体の textContent だとボタンの「コピー」まで拾ってしまうため、中身を選んで集める
+  cards.forEach(function(c){
+    var t = c.querySelector('.ititle'), d = c.querySelector('.imeta'), p = c.querySelector('.prompt');
+    c._t = norm((t ? t.textContent : '') + ' ' + (d ? d.textContent : '') + ' ' + (p ? p.textContent : ''));
+  });
+
+  function apply(){
+    var kw = norm(q.value.trim()), n = 0, shown = {};
+    cards.forEach(function(c){
+      var ok = (!cat || c.getAttribute('data-cat') === cat)
+            && (!kw || c._t.indexOf(kw) !== -1);
+      c.classList.toggle('hide', !ok);
+      if (ok){ n++; shown[c.getAttribute('data-cat')] = 1; }
+    });
+    // 残った項目が1件も無いカテゴリの見出しは隠す
+    heads.forEach(function(h){
+      h.classList.toggle('hide', !shown[h.getAttribute('data-cat')]);
+    });
+    hit.textContent = (kw || cat)
+      ? (n ? n + '件を表示中' : '該当する項目がありません')
+      : '';
+  }
+
+  q.addEventListener('input', apply);
+  chips.forEach(function(b){
+    b.addEventListener('click', function(){
+      cat = b.getAttribute('data-cat');
+      chips.forEach(function(x){ x.classList.toggle('on', x === b); });
+      apply();
+    });
+  });
+})();
+
 function flash(btn, label){
   const old = btn.textContent, cls = btn.className;
   btn.textContent = label; btn.classList.add('ok');
@@ -1657,7 +1713,22 @@ document.addEventListener('click', e => {
     el.classList.remove('show');
     sessionStorage.setItem('promoClosed', '1');
   }
-  setTimeout(function(){ el.classList.add('show'); }, 1600);
+  // 動画の概要欄から来た人が、自分のプレゼントを探し始める瞬間に被らないようにする。
+  // 以前は読み込み1.6秒後に無条件で出しており、いちばん目的意識の高い時間を塞いでいた。
+  // 中身を見に行った（＝目当てのものに辿り着いた）ころに出す。
+  var shown = false;
+  function show(){
+    if (shown) return;
+    shown = true;
+    el.classList.add('show');
+    removeEventListener('scroll', onScroll);
+  }
+  function onScroll(){
+    if (scrollY > innerHeight * 0.8) show();
+  }
+  addEventListener('scroll', onScroll, {passive:true});
+  // まったくスクロールしない人にも最後には出す（ただし十分に間を置いてから）
+  setTimeout(show, 45000);
   document.getElementById('promoClose').addEventListener('click', function(e){ e.preventDefault(); close(); });
   el.addEventListener('click', function(e){ if (e.target === el) close(); });
 })();

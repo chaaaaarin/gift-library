@@ -36,8 +36,13 @@
     <div class="pnote"><span class="nb">下のカードから、</span><span class="nb">1件ずつコピー、</span><span class="nb">または個別にダウンロードできます。</span><span class="nb">まとめて欲しいときは、</span><span class="nb">上の</span><span class="nb">「全件ダウンロード」を</span><span class="nb">お使いください。</span></div>
   </section>
 
-  <h2 class="cat">開発・実行環境</h2>
-<div class="icard">
+  <div class="ktools">
+  <input type="search" id="kq" placeholder="この中から探す" autocomplete="off" aria-label="この中から探す">
+  <div class="kcats"><button type="button" class="kcat on" data-cat="">すべて<span class="n">100</span></button><button type="button" class="kcat" data-cat="開発・実行環境">開発・実行環境<span class="n">6</span></button><button type="button" class="kcat" data-cat="検索・Web">検索・Web<span class="n">9</span></button><button type="button" class="kcat" data-cat="データベース">データベース<span class="n">13</span></button><button type="button" class="kcat" data-cat="クラウド・インフラ">クラウド・インフラ<span class="n">11</span></button><button type="button" class="kcat" data-cat="コミュニケーション">コミュニケーション<span class="n">6</span></button><button type="button" class="kcat" data-cat="デザイン・コンテンツ生成">デザイン・コンテンツ生成<span class="n">8</span></button><button type="button" class="kcat" data-cat="ビジネス・生産性">ビジネス・生産性<span class="n">10</span></button><button type="button" class="kcat" data-cat="財務・決済">財務・決済<span class="n">9</span></button><button type="button" class="kcat" data-cat="マーケティング・分析">マーケティング・分析<span class="n">6</span></button><button type="button" class="kcat" data-cat="セキュリティ・監視">セキュリティ・監視<span class="n">6</span></button><button type="button" class="kcat" data-cat="DevOps・CI/CD">DevOps・CI/CD<span class="n">3</span></button><button type="button" class="kcat" data-cat="その他ユーティリティ">その他ユーティリティ<span class="n">12</span></button></div>
+  <p class="khit" id="khit" role="status"></p>
+</div>
+<h2 class="cat" data-cat="開発・実行環境">開発・実行環境</h2>
+<div class="icard" data-cat="開発・実行環境">
   <div class="ih"><span class="num">001</span><span class="ititle">**Playwright**（Microsoft） — ブラウザを自動操作してWeb…</span></div>
   
   <pre class="prompt" id="b1">**Playwright**（Microsoft） — ブラウザを自動操作してWebページの操作・スクレイピングを行う
@@ -47,7 +52,7 @@
     <button class="btn ghost sm" data-save="b1" data-name="mcp-servers-100-001.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="開発・実行環境">
   <div class="ih"><span class="num">002</span><span class="ititle">**E2B**（E2B Dev） — セキュアなサンドボックス環境でコードを実行する</span></div>
   
   <pre class="prompt" id="b2">**E2B**（E2B Dev） — セキュアなサンドボックス環境でコードを実行する
@@ -57,7 +62,7 @@
     <button class="btn ghost sm" data-save="b2" data-name="mcp-servers-100-002.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="開発・実行環境">
   <div class="ih"><span class="num">003</span><span class="ititle">**Riza**（Riza.io） — LLMが書いたコードを安全な環境で実行するプ…</span></div>
   
   <pre class="prompt" id="b3">**Riza**（Riza.io） — LLMが書いたコードを安全な環境で実行するプラットフォーム
@@ -67,7 +72,7 @@
     <button class="btn ghost sm" data-save="b3" data-name="mcp-servers-100-003.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="開発・実行環境">
   <div class="ih"><span class="num">004</span><span class="ititle">**YepCode**（YepCode） — JavaScript</span></div>
   
   <pre class="prompt" id="b4">**YepCode**（YepCode） — JavaScript/Pythonコードを安全に実行できる環境を提供する
@@ -77,7 +82,7 @@
     <button class="btn ghost sm" data-save="b4" data-name="mcp-servers-100-004.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="開発・実行環境">
   <div class="ih"><span class="num">005</span><span class="ititle">**Semgrep**（Semgrep） — コードの静的解析で品質チェック・脆弱性…</span></div>
   
   <pre class="prompt" id="b5">**Semgrep**（Semgrep） — コードの静的解析で品質チェック・脆弱性検出を行う
@@ -87,7 +92,7 @@
     <button class="btn ghost sm" data-save="b5" data-name="mcp-servers-100-005.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="開発・実行環境">
   <div class="ih"><span class="num">006</span><span class="ititle">**Docker**（コミュニティ） — DockerコンテナやDocker Com…</span></div>
   
   <pre class="prompt" id="b6">**Docker**（コミュニティ） — DockerコンテナやDocker Composeをそのまま操作する
@@ -97,8 +102,8 @@
     <button class="btn ghost sm" data-save="b6" data-name="mcp-servers-100-006.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">検索・Web</h2>
-<div class="icard">
+<h2 class="cat" data-cat="検索・Web">検索・Web</h2>
+<div class="icard" data-cat="検索・Web">
   <div class="ih"><span class="num">007</span><span class="ititle">**Exa**（Exa） — AIエージェント向けに最適化された検索エンジンを使う</span></div>
   
   <pre class="prompt" id="b7">**Exa**（Exa） — AIエージェント向けに最適化された検索エンジンを使う
@@ -108,7 +113,7 @@
     <button class="btn ghost sm" data-save="b7" data-name="mcp-servers-100-007.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="検索・Web">
   <div class="ih"><span class="num">008</span><span class="ititle">**Tavily**（Tavily） — AIエージェント向けのリアルタイムWeb検…</span></div>
   
   <pre class="prompt" id="b8">**Tavily**（Tavily） — AIエージェント向けのリアルタイムWeb検索を行う
@@ -118,7 +123,7 @@
     <button class="btn ghost sm" data-save="b8" data-name="mcp-servers-100-008.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="検索・Web">
   <div class="ih"><span class="num">009</span><span class="ititle">**Firecrawl**（Mendable） — Webページをクロールしてクリー…</span></div>
   
   <pre class="prompt" id="b9">**Firecrawl**（Mendable） — Webページをクロールしてクリーンなデータとして抽出する
@@ -128,7 +133,7 @@
     <button class="btn ghost sm" data-save="b9" data-name="mcp-servers-100-009.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="検索・Web">
   <div class="ih"><span class="num">010</span><span class="ititle">**Jina Reader**（コミュニティ） — 任意のURLをMarkdown形…</span></div>
   
   <pre class="prompt" id="b10">**Jina Reader**（コミュニティ） — 任意のURLをMarkdown形式に変換して読み込む
@@ -138,7 +143,7 @@
     <button class="btn ghost sm" data-save="b10" data-name="mcp-servers-100-010.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="検索・Web">
   <div class="ih"><span class="num">011</span><span class="ititle">**Browserbase**（Browserbase） — クラウド上のブラウザを…</span></div>
   
   <pre class="prompt" id="b11">**Browserbase**（Browserbase） — クラウド上のブラウザを自動操作する
@@ -148,7 +153,7 @@
     <button class="btn ghost sm" data-save="b11" data-name="mcp-servers-100-011.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="検索・Web">
   <div class="ih"><span class="num">012</span><span class="ititle">**Bright Data**（Bright Data） — 大規模なWebデータの…</span></div>
   
   <pre class="prompt" id="b12">**Bright Data**（Bright Data） — 大規模なWebデータの探索・抽出を行う
@@ -158,7 +163,7 @@
     <button class="btn ghost sm" data-save="b12" data-name="mcp-servers-100-012.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="検索・Web">
   <div class="ih"><span class="num">013</span><span class="ititle">**Oxylabs**（Oxylabs） — 動的レンダリングにも対応したWebスク…</span></div>
   
   <pre class="prompt" id="b13">**Oxylabs**（Oxylabs） — 動的レンダリングにも対応したWebスクレイピングを行う
@@ -168,8 +173,8 @@
     <button class="btn ghost sm" data-save="b13" data-name="mcp-servers-100-013.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">データベース</h2>
-<div class="icard">
+<h2 class="cat" data-cat="データベース">データベース</h2>
+<div class="icard" data-cat="データベース">
   <div class="ih"><span class="num">014</span><span class="ititle">**Neon Postgres**（Neon） — サーバーレスPostgres（N…</span></div>
   
   <pre class="prompt" id="b14">**Neon Postgres**（Neon） — サーバーレスPostgres（Neon）をAIから直接操作する
@@ -179,7 +184,7 @@
     <button class="btn ghost sm" data-save="b14" data-name="mcp-servers-100-014.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="データベース">
   <div class="ih"><span class="num">015</span><span class="ititle">**MongoDB**（コミュニティ） — MongoDBのコレクションを直接操作す…</span></div>
   
   <pre class="prompt" id="b15">**MongoDB**（コミュニティ） — MongoDBのコレクションを直接操作する
@@ -189,7 +194,7 @@
     <button class="btn ghost sm" data-save="b15" data-name="mcp-servers-100-015.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="データベース">
   <div class="ih"><span class="num">016</span><span class="ititle">**ClickHouse**（ClickHouse） — ClickHouseデータ…</span></div>
   
   <pre class="prompt" id="b16">**ClickHouse**（ClickHouse） — ClickHouseデータベースへのクエリ実行を行う
@@ -199,7 +204,7 @@
     <button class="btn ghost sm" data-save="b16" data-name="mcp-servers-100-016.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="データベース">
   <div class="ih"><span class="num">017</span><span class="ititle">**MotherDuck</span></div>
   
   <pre class="prompt" id="b17">**MotherDuck / DuckDB**（MotherDuck） — DuckDBとMotherDuckのデータ分析クエリを実行する
@@ -209,7 +214,7 @@
     <button class="btn ghost sm" data-save="b17" data-name="mcp-servers-100-017.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="データベース">
   <div class="ih"><span class="num">018</span><span class="ititle">**Neo4j**（Neo4j） — グラフデータベースの操作とメモリシステムとして…</span></div>
   
   <pre class="prompt" id="b18">**Neo4j**（Neo4j） — グラフデータベースの操作とメモリシステムとして使う
@@ -219,7 +224,7 @@
     <button class="btn ghost sm" data-save="b18" data-name="mcp-servers-100-018.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="データベース">
   <div class="ih"><span class="num">019</span><span class="ititle">**Supabase**（Supabase Community） — Supabas…</span></div>
   
   <pre class="prompt" id="b19">**Supabase**（Supabase Community） — Supabaseのテーブル・認証設定などを操作する
@@ -229,7 +234,7 @@
     <button class="btn ghost sm" data-save="b19" data-name="mcp-servers-100-019.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="データベース">
   <div class="ih"><span class="num">020</span><span class="ititle">**Qdrant**（Qdrant） — ベクトル検索エンジンQdrantに埋め込み…</span></div>
   
   <pre class="prompt" id="b20">**Qdrant**（Qdrant） — ベクトル検索エンジンQdrantに埋め込みを保存・検索する
@@ -239,7 +244,7 @@
     <button class="btn ghost sm" data-save="b20" data-name="mcp-servers-100-020.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="データベース">
   <div class="ih"><span class="num">021</span><span class="ititle">**Chroma**（Chroma） — 埋め込み・ベクトル検索・ドキュメント保存を…</span></div>
   
   <pre class="prompt" id="b21">**Chroma**（Chroma） — 埋め込み・ベクトル検索・ドキュメント保存を行う
@@ -249,8 +254,8 @@
     <button class="btn ghost sm" data-save="b21" data-name="mcp-servers-100-021.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">クラウド・インフラ</h2>
-<div class="icard">
+<h2 class="cat" data-cat="クラウド・インフラ">クラウド・インフラ</h2>
+<div class="icard" data-cat="クラウド・インフラ">
   <div class="ih"><span class="num">022</span><span class="ititle">**AWS Documentation**（AWS Labs） — AWS公式ドキュ…</span></div>
   
   <pre class="prompt" id="b22">**AWS Documentation**（AWS Labs） — AWS公式ドキュメントを検索して正確な情報を取得する
@@ -260,7 +265,7 @@
     <button class="btn ghost sm" data-save="b22" data-name="mcp-servers-100-022.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="クラウド・インフラ">
   <div class="ih"><span class="num">023</span><span class="ititle">**AWS Cost Analysis**（AWS Labs） — AWSのコスト分…</span></div>
   
   <pre class="prompt" id="b23">**AWS Cost Analysis**（AWS Labs） — AWSのコスト分析・料金情報を取得する
@@ -270,7 +275,7 @@
     <button class="btn ghost sm" data-save="b23" data-name="mcp-servers-100-023.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="クラウド・インフラ">
   <div class="ih"><span class="num">024</span><span class="ititle">**Google Cloud Run**（Google Cloud） — Cloud…</span></div>
   
   <pre class="prompt" id="b24">**Google Cloud Run**（Google Cloud） — Cloud Runへアプリケーションをデプロイする
@@ -280,7 +285,7 @@
     <button class="btn ghost sm" data-save="b24" data-name="mcp-servers-100-024.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="クラウド・インフラ">
   <div class="ih"><span class="num">025</span><span class="ititle">**DigitalOcean**（コミュニティ） — DigitalOceanのリソ…</span></div>
   
   <pre class="prompt" id="b25">**DigitalOcean**（コミュニティ） — DigitalOceanのリソースをAPI経由で操作する
@@ -290,7 +295,7 @@
     <button class="btn ghost sm" data-save="b25" data-name="mcp-servers-100-025.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="クラウド・インフラ">
   <div class="ih"><span class="num">026</span><span class="ititle">**Kubernetes**（コミュニティ） — Kubernetesのポッド・デプ…</span></div>
   
   <pre class="prompt" id="b26">**Kubernetes**（コミュニティ） — Kubernetesのポッド・デプロイメントを管理する
@@ -300,7 +305,7 @@
     <button class="btn ghost sm" data-save="b26" data-name="mcp-servers-100-026.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="クラウド・インフラ">
   <div class="ih"><span class="num">027</span><span class="ititle">**Azure DevOps**（Microsoft） — Azure DevOps…</span></div>
   
   <pre class="prompt" id="b27">**Azure DevOps**（Microsoft） — Azure DevOpsのパイプライン・作業項目を操作する
@@ -310,7 +315,7 @@
     <button class="btn ghost sm" data-save="b27" data-name="mcp-servers-100-027.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="クラウド・インフラ">
   <div class="ih"><span class="num">028</span><span class="ititle">**Cloudflare**（Cloudflare） — Workers・KV・R2…</span></div>
   
   <pre class="prompt" id="b28">**Cloudflare**（Cloudflare） — Workers・KV・R2・D1などCloudflareのリソースを操作する
@@ -320,8 +325,8 @@
     <button class="btn ghost sm" data-save="b28" data-name="mcp-servers-100-028.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">コミュニケーション</h2>
-<div class="icard">
+<h2 class="cat" data-cat="コミュニケーション">コミュニケーション</h2>
+<div class="icard" data-cat="コミュニケーション">
   <div class="ih"><span class="num">029</span><span class="ititle">**Slack**（コミュニティ） — Slackワークスペースのメッセージ送受信・…</span></div>
   
   <pre class="prompt" id="b29">**Slack**（コミュニティ） — Slackワークスペースのメッセージ送受信・検索を行う
@@ -331,7 +336,7 @@
     <button class="btn ghost sm" data-save="b29" data-name="mcp-servers-100-029.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="コミュニケーション">
   <div class="ih"><span class="num">030</span><span class="ititle">**Twilio**（Twilio Labs） — SMS送信・通話・電話番号管理を…</span></div>
   
   <pre class="prompt" id="b30">**Twilio**（Twilio Labs） — SMS送信・通話・電話番号管理を行う
@@ -341,7 +346,7 @@
     <button class="btn ghost sm" data-save="b30" data-name="mcp-servers-100-030.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="コミュニケーション">
   <div class="ih"><span class="num">031</span><span class="ititle">**LINE公式アカウント**（LINE） — LINE Messaging API…</span></div>
   
   <pre class="prompt" id="b31">**LINE公式アカウント**（LINE） — LINE Messaging APIでの配信・応答を行う
@@ -351,7 +356,7 @@
     <button class="btn ghost sm" data-save="b31" data-name="mcp-servers-100-031.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="コミュニケーション">
   <div class="ih"><span class="num">032</span><span class="ititle">**Ntfy**（コミュニティ） — ntfy経由でプッシュ通知を送受信する</span></div>
   
   <pre class="prompt" id="b32">**Ntfy**（コミュニティ） — ntfy経由でプッシュ通知を送受信する
@@ -361,8 +366,8 @@
     <button class="btn ghost sm" data-save="b32" data-name="mcp-servers-100-032.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">デザイン・コンテンツ生成</h2>
-<div class="icard">
+<h2 class="cat" data-cat="デザイン・コンテンツ生成">デザイン・コンテンツ生成</h2>
+<div class="icard" data-cat="デザイン・コンテンツ生成">
   <div class="ih"><span class="num">033</span><span class="ititle">**ElevenLabs**（ElevenLabs） — テキストを自然な音声に変換…</span></div>
   
   <pre class="prompt" id="b33">**ElevenLabs**（ElevenLabs） — テキストを自然な音声に変換する
@@ -372,7 +377,7 @@
     <button class="btn ghost sm" data-save="b33" data-name="mcp-servers-100-033.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="デザイン・コンテンツ生成">
   <div class="ih"><span class="num">034</span><span class="ititle">**SlideSpeak**（SlideSpeak） — テキストからプレゼンテーシ…</span></div>
   
   <pre class="prompt" id="b34">**SlideSpeak**（SlideSpeak） — テキストからプレゼンテーションスライドを自動生成する
@@ -382,7 +387,7 @@
     <button class="btn ghost sm" data-save="b34" data-name="mcp-servers-100-034.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="デザイン・コンテンツ生成">
   <div class="ih"><span class="num">035</span><span class="ititle">**Mermaid**（コミュニティ） — Mermaid記法から図・チャートを生成…</span></div>
   
   <pre class="prompt" id="b35">**Mermaid**（コミュニティ） — Mermaid記法から図・チャートを生成する
@@ -392,7 +397,7 @@
     <button class="btn ghost sm" data-save="b35" data-name="mcp-servers-100-035.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="デザイン・コンテンツ生成">
   <div class="ih"><span class="num">036</span><span class="ititle">**AntV Chart**（Antvis） — AntVエンジンで各種ビジュアルチ…</span></div>
   
   <pre class="prompt" id="b36">**AntV Chart**（Antvis） — AntVエンジンで各種ビジュアルチャートを生成する
@@ -402,8 +407,8 @@
     <button class="btn ghost sm" data-save="b36" data-name="mcp-servers-100-036.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">ビジネス・生産性</h2>
-<div class="icard">
+<h2 class="cat" data-cat="ビジネス・生産性">ビジネス・生産性</h2>
+<div class="icard" data-cat="ビジネス・生産性">
   <div class="ih"><span class="num">037</span><span class="ititle">**Notion**（Notion） — Notionのページ・データベースを読み書…</span></div>
   
   <pre class="prompt" id="b37">**Notion**（Notion） — Notionのページ・データベースを読み書きする
@@ -413,7 +418,7 @@
     <button class="btn ghost sm" data-save="b37" data-name="mcp-servers-100-037.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="ビジネス・生産性">
   <div class="ih"><span class="num">038</span><span class="ititle">**Taskade**（Taskade） — タスク・プロジェクト・ワークフローを管…</span></div>
   
   <pre class="prompt" id="b38">**Taskade**（Taskade） — タスク・プロジェクト・ワークフローを管理する
@@ -423,7 +428,7 @@
     <button class="btn ghost sm" data-save="b38" data-name="mcp-servers-100-038.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="ビジネス・生産性">
   <div class="ih"><span class="num">039</span><span class="ititle">**Linear**（コミュニティ） — Linearのプロジェクト・課題を操作する</span></div>
   
   <pre class="prompt" id="b39">**Linear**（コミュニティ） — Linearのプロジェクト・課題を操作する
@@ -433,7 +438,7 @@
     <button class="btn ghost sm" data-save="b39" data-name="mcp-servers-100-039.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="ビジネス・生産性">
   <div class="ih"><span class="num">040</span><span class="ititle">**Jira**（コミュニティ） — Jiraのボード・課題・担当者を管理する</span></div>
   
   <pre class="prompt" id="b40">**Jira**（コミュニティ） — Jiraのボード・課題・担当者を管理する
@@ -443,7 +448,7 @@
     <button class="btn ghost sm" data-save="b40" data-name="mcp-servers-100-040.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="ビジネス・生産性">
   <div class="ih"><span class="num">041</span><span class="ititle">**Airtable**（コミュニティ） — Airtableのデータベースを読み書…</span></div>
   
   <pre class="prompt" id="b41">**Airtable**（コミュニティ） — Airtableのデータベースを読み書きする
@@ -453,7 +458,7 @@
     <button class="btn ghost sm" data-save="b41" data-name="mcp-servers-100-041.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="ビジネス・生産性">
   <div class="ih"><span class="num">042</span><span class="ititle">**Obsidian**（コミュニティ） — ObsidianのノートをREST A…</span></div>
   
   <pre class="prompt" id="b42">**Obsidian**（コミュニティ） — ObsidianのノートをREST API経由で操作する
@@ -463,8 +468,8 @@
     <button class="btn ghost sm" data-save="b42" data-name="mcp-servers-100-042.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">財務・決済</h2>
-<div class="icard">
+<h2 class="cat" data-cat="財務・決済">財務・決済</h2>
+<div class="icard" data-cat="財務・決済">
   <div class="ih"><span class="num">043</span><span class="ititle">**Stripe**（Stripe） — Stripeの決済・顧客情報をAPI経由で…</span></div>
   
   <pre class="prompt" id="b43">**Stripe**（Stripe） — Stripeの決済・顧客情報をAPI経由で操作する
@@ -474,7 +479,7 @@
     <button class="btn ghost sm" data-save="b43" data-name="mcp-servers-100-043.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="財務・決済">
   <div class="ih"><span class="num">044</span><span class="ititle">**PayPal**（PayPal） — PayPalの取引・アカウント情報を操作す…</span></div>
   
   <pre class="prompt" id="b44">**PayPal**（PayPal） — PayPalの取引・アカウント情報を操作する
@@ -484,7 +489,7 @@
     <button class="btn ghost sm" data-save="b44" data-name="mcp-servers-100-044.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="財務・決済">
   <div class="ih"><span class="num">045</span><span class="ititle">**Square**（Square） — Square決済プラットフォームの情報を取…</span></div>
   
   <pre class="prompt" id="b45">**Square**（Square） — Square決済プラットフォームの情報を取得・操作する
@@ -494,7 +499,7 @@
     <button class="btn ghost sm" data-save="b45" data-name="mcp-servers-100-045.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="財務・決済">
   <div class="ih"><span class="num">046</span><span class="ititle">**Xero**（Xero） — Xeroの会計データ（請求書・仕訳等）を操作する</span></div>
   
   <pre class="prompt" id="b46">**Xero**（Xero） — Xeroの会計データ（請求書・仕訳等）を操作する
@@ -504,8 +509,8 @@
     <button class="btn ghost sm" data-save="b46" data-name="mcp-servers-100-046.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">マーケティング・分析</h2>
-<div class="icard">
+<h2 class="cat" data-cat="マーケティング・分析">マーケティング・分析</h2>
+<div class="icard" data-cat="マーケティング・分析">
   <div class="ih"><span class="num">047</span><span class="ititle">**Google Search Console**（コミュニティ） — Search…</span></div>
   
   <pre class="prompt" id="b47">**Google Search Console**（コミュニティ） — Search Consoleの検索パフォーマンスデータを取得する
@@ -515,7 +520,7 @@
     <button class="btn ghost sm" data-save="b47" data-name="mcp-servers-100-047.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="マーケティング・分析">
   <div class="ih"><span class="num">048</span><span class="ititle">**Google Ads**（コミュニティ） — Google広告の配信・レポートを…</span></div>
   
   <pre class="prompt" id="b48">**Google Ads**（コミュニティ） — Google広告の配信・レポートを管理する
@@ -525,7 +530,7 @@
     <button class="btn ghost sm" data-save="b48" data-name="mcp-servers-100-048.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="マーケティング・分析">
   <div class="ih"><span class="num">049</span><span class="ititle">**Facebook Ads**（コミュニティ） — Facebook広告の配信・レ…</span></div>
   
   <pre class="prompt" id="b49">**Facebook Ads**（コミュニティ） — Facebook広告の配信・レポートを管理する
@@ -535,8 +540,8 @@
     <button class="btn ghost sm" data-save="b49" data-name="mcp-servers-100-049.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">セキュリティ・監視</h2>
-<div class="icard">
+<h2 class="cat" data-cat="セキュリティ・監視">セキュリティ・監視</h2>
+<div class="icard" data-cat="セキュリティ・監視">
   <div class="ih"><span class="num">050</span><span class="ititle">**Sentry**（Sentry） — アプリのクラッシュレポート・エラー監視を確…</span></div>
   
   <pre class="prompt" id="b50">**Sentry**（Sentry） — アプリのクラッシュレポート・エラー監視を確認する
@@ -546,7 +551,7 @@
     <button class="btn ghost sm" data-save="b50" data-name="mcp-servers-100-050.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="セキュリティ・監視">
   <div class="ih"><span class="num">051</span><span class="ititle">**Grafana**（Grafana） — Grafanaダッシュボード・インシデ…</span></div>
   
   <pre class="prompt" id="b51">**Grafana**（Grafana） — Grafanaダッシュボード・インシデントを調査する
@@ -556,7 +561,7 @@
     <button class="btn ghost sm" data-save="b51" data-name="mcp-servers-100-051.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="セキュリティ・監視">
   <div class="ih"><span class="num">052</span><span class="ititle">**SonarQube**（SonarSource） — コード品質・脆弱性の分析結…</span></div>
   
   <pre class="prompt" id="b52">**SonarQube**（SonarSource） — コード品質・脆弱性の分析結果を取得する
@@ -566,8 +571,8 @@
     <button class="btn ghost sm" data-save="b52" data-name="mcp-servers-100-052.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">DevOps・CI/CD</h2>
-<div class="icard">
+<h2 class="cat" data-cat="DevOps・CI/CD">DevOps・CI/CD</h2>
+<div class="icard" data-cat="DevOps・CI/CD">
   <div class="ih"><span class="num">053</span><span class="ititle">**GitHub**（GitHub） — GitHubのIssue・PR・リポジトリ…</span></div>
   
   <pre class="prompt" id="b53">**GitHub**（GitHub） — GitHubのIssue・PR・リポジトリ操作を行う公式サーバー
@@ -577,7 +582,7 @@
     <button class="btn ghost sm" data-save="b53" data-name="mcp-servers-100-053.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="DevOps・CI/CD">
   <div class="ih"><span class="num">054</span><span class="ititle">**Buildkite**（Buildkite） — Buildkiteのパイプライ…</span></div>
   
   <pre class="prompt" id="b54">**Buildkite**（Buildkite） — Buildkiteのパイプライン・ビルド状況を管理する
@@ -587,7 +592,7 @@
     <button class="btn ghost sm" data-save="b54" data-name="mcp-servers-100-054.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="DevOps・CI/CD">
   <div class="ih"><span class="num">055</span><span class="ititle">**CircleCI**（CircleCI） — CircleCIのビルド失敗の調査…</span></div>
   
   <pre class="prompt" id="b55">**CircleCI**（CircleCI） — CircleCIのビルド失敗の調査・修正を支援する
@@ -597,8 +602,8 @@
     <button class="btn ghost sm" data-save="b55" data-name="mcp-servers-100-055.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">その他ユーティリティ</h2>
-<div class="icard">
+<h2 class="cat" data-cat="その他ユーティリティ">その他ユーティリティ</h2>
+<div class="icard" data-cat="その他ユーティリティ">
   <div class="ih"><span class="num">056</span><span class="ititle">**Memory**（MCP公式リファレンス） — ナレッジグラフ形式の永続メモリを…</span></div>
   
   <pre class="prompt" id="b56">**Memory**（MCP公式リファレンス） — ナレッジグラフ形式の永続メモリを保持する
@@ -608,7 +613,7 @@
     <button class="btn ghost sm" data-save="b56" data-name="mcp-servers-100-056.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="その他ユーティリティ">
   <div class="ih"><span class="num">057</span><span class="ititle">**Sequential Thinking**（MCP公式リファレンス） — 段階的…</span></div>
   
   <pre class="prompt" id="b57">**Sequential Thinking**（MCP公式リファレンス） — 段階的な思考プロセスを記録しながら問題を解く
@@ -618,7 +623,7 @@
     <button class="btn ghost sm" data-save="b57" data-name="mcp-servers-100-057.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="その他ユーティリティ">
   <div class="ih"><span class="num">058</span><span class="ititle">**Time**（MCP公式リファレンス） — 現在時刻の取得とタイムゾーン変換を行…</span></div>
   
   <pre class="prompt" id="b58">**Time**（MCP公式リファレンス） — 現在時刻の取得とタイムゾーン変換を行う
@@ -628,7 +633,7 @@
     <button class="btn ghost sm" data-save="b58" data-name="mcp-servers-100-058.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="その他ユーティリティ">
   <div class="ih"><span class="num">059</span><span class="ititle">**Fetch**（MCP公式リファレンス） — Webコンテンツを取得してMark…</span></div>
   
   <pre class="prompt" id="b59">**Fetch**（MCP公式リファレンス） — Webコンテンツを取得してMarkdown等に変換する
@@ -638,7 +643,7 @@
     <button class="btn ghost sm" data-save="b59" data-name="mcp-servers-100-059.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="その他ユーティリティ">
   <div class="ih"><span class="num">060</span><span class="ititle">**Filesystem**（MCP公式リファレンス） — 許可した範囲のローカルフ…</span></div>
   
   <pre class="prompt" id="b60">**Filesystem**（MCP公式リファレンス） — 許可した範囲のローカルファイルを読み書きする
@@ -648,7 +653,7 @@
     <button class="btn ghost sm" data-save="b60" data-name="mcp-servers-100-060.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="その他ユーティリティ">
   <div class="ih"><span class="num">061</span><span class="ititle">**Git**（MCP公式リファレンス） — Gitリポジトリの履歴・差分を読み取り…</span></div>
   
   <pre class="prompt" id="b61">**Git**（MCP公式リファレンス） — Gitリポジトリの履歴・差分を読み取り操作する
@@ -658,7 +663,7 @@
     <button class="btn ghost sm" data-save="b61" data-name="mcp-servers-100-061.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="その他ユーティリティ">
   <div class="ih"><span class="num">062</span><span class="ititle">**Everything**（MCP公式リファレンス） — プロンプト・リソース・ツ…</span></div>
   
   <pre class="prompt" id="b62">**Everything**（MCP公式リファレンス） — プロンプト・リソース・ツール機能のデモ用サーバー
@@ -668,7 +673,7 @@
     <button class="btn ghost sm" data-save="b62" data-name="mcp-servers-100-062.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="その他ユーティリティ">
   <div class="ih"><span class="num">063</span><span class="ititle">**Calculator**（コミュニティ） — 誤差のない精密な数値計算を行う</span></div>
   
   <pre class="prompt" id="b63">**Calculator**（コミュニティ） — 誤差のない精密な数値計算を行う
@@ -678,7 +683,7 @@
     <button class="btn ghost sm" data-save="b63" data-name="mcp-servers-100-063.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="その他ユーティリティ">
   <div class="ih"><span class="num">064</span><span class="ititle">**Home Assistant**（コミュニティ） — スマートホーム機器（照明・…</span></div>
   
   <pre class="prompt" id="b64">**Home Assistant**（コミュニティ） — スマートホーム機器（照明・家電等）を制御する
@@ -688,8 +693,8 @@
     <button class="btn ghost sm" data-save="b64" data-name="mcp-servers-100-064.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">検索・Web</h2>
-<div class="icard">
+<h2 class="cat" data-cat="検索・Web">検索・Web</h2>
+<div class="icard" data-cat="検索・Web">
   <div class="ih"><span class="num">065</span><span class="ititle">**WebScraping.AI**（WebScraping.AI） — 各種Web…</span></div>
   
   <pre class="prompt" id="b65">**WebScraping.AI**（WebScraping.AI） — 各種Webデータ抽出サービスを統合的に呼び出す
@@ -699,7 +704,7 @@
     <button class="btn ghost sm" data-save="b65" data-name="mcp-servers-100-065.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="検索・Web">
   <div class="ih"><span class="num">066</span><span class="ititle">**Scrapeless**（Scrapeless） — Google検索結果（SE…</span></div>
   
   <pre class="prompt" id="b66">**Scrapeless**（Scrapeless） — Google検索結果（SERP）を取得する
@@ -709,8 +714,8 @@
     <button class="btn ghost sm" data-save="b66" data-name="mcp-servers-100-066.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">データベース</h2>
-<div class="icard">
+<h2 class="cat" data-cat="データベース">データベース</h2>
+<div class="icard" data-cat="データベース">
   <div class="ih"><span class="num">067</span><span class="ititle">**Couchbase**（Couchbase） — Couchbaseへのクエリ実…</span></div>
   
   <pre class="prompt" id="b67">**Couchbase**（Couchbase） — Couchbaseへのクエリ実行を行う
@@ -720,7 +725,7 @@
     <button class="btn ghost sm" data-save="b67" data-name="mcp-servers-100-067.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="データベース">
   <div class="ih"><span class="num">068</span><span class="ititle">**CockroachDB**（コミュニティ） — CockroachDBの管理・操…</span></div>
   
   <pre class="prompt" id="b68">**CockroachDB**（コミュニティ） — CockroachDBの管理・操作を行う
@@ -730,7 +735,7 @@
     <button class="btn ghost sm" data-save="b68" data-name="mcp-servers-100-068.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="データベース">
   <div class="ih"><span class="num">069</span><span class="ititle">**Milvus**（Zilliz） — 大規模ベクトルデータベースの検索を行う</span></div>
   
   <pre class="prompt" id="b69">**Milvus**（Zilliz） — 大規模ベクトルデータベースの検索を行う
@@ -740,7 +745,7 @@
     <button class="btn ghost sm" data-save="b69" data-name="mcp-servers-100-069.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="データベース">
   <div class="ih"><span class="num">070</span><span class="ititle">**Fireproof**（Fireproof） — 改ざん検知可能な不変台帳データ…</span></div>
   
   <pre class="prompt" id="b70">**Fireproof**（Fireproof） — 改ざん検知可能な不変台帳データベースを操作する
@@ -750,7 +755,7 @@
     <button class="btn ghost sm" data-save="b70" data-name="mcp-servers-100-070.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="データベース">
   <div class="ih"><span class="num">071</span><span class="ititle">**SQLite**（コミュニティ） — ローカルのSQLiteファイルを直接操作す…</span></div>
   
   <pre class="prompt" id="b71">**SQLite**（コミュニティ） — ローカルのSQLiteファイルを直接操作する
@@ -760,8 +765,8 @@
     <button class="btn ghost sm" data-save="b71" data-name="mcp-servers-100-071.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">クラウド・インフラ</h2>
-<div class="icard">
+<h2 class="cat" data-cat="クラウド・インフラ">クラウド・インフラ</h2>
+<div class="icard" data-cat="クラウド・インフラ">
   <div class="ih"><span class="num">072</span><span class="ititle">**AWS Bedrock KB**（AWS Labs） — Amazon Bedr…</span></div>
   
   <pre class="prompt" id="b72">**AWS Bedrock KB**（AWS Labs） — Amazon Bedrockのナレッジベースを検索する
@@ -771,7 +776,7 @@
     <button class="btn ghost sm" data-save="b72" data-name="mcp-servers-100-072.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="クラウド・インフラ">
   <div class="ih"><span class="num">073</span><span class="ititle">**AWS CDK**（AWS Labs） — AWS CDKのコードレビュー・アド…</span></div>
   
   <pre class="prompt" id="b73">**AWS CDK**（AWS Labs） — AWS CDKのコードレビュー・アドバイスを受ける
@@ -781,7 +786,7 @@
     <button class="btn ghost sm" data-save="b73" data-name="mcp-servers-100-073.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="クラウド・インフラ">
   <div class="ih"><span class="num">074</span><span class="ititle">**Render**（Render） — Renderのサービス管理・ログ確認を行う</span></div>
   
   <pre class="prompt" id="b74">**Render**（Render） — Renderのサービス管理・ログ確認を行う
@@ -791,7 +796,7 @@
     <button class="btn ghost sm" data-save="b74" data-name="mcp-servers-100-074.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="クラウド・インフラ">
   <div class="ih"><span class="num">075</span><span class="ititle">**Hetzner Cloud**（コミュニティ） — Hetzner Cloudの…</span></div>
   
   <pre class="prompt" id="b75">**Hetzner Cloud**（コミュニティ） — Hetzner Cloudのサーバーリソースを管理する
@@ -801,8 +806,8 @@
     <button class="btn ghost sm" data-save="b75" data-name="mcp-servers-100-075.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">コミュニケーション</h2>
-<div class="icard">
+<h2 class="cat" data-cat="コミュニケーション">コミュニケーション</h2>
+<div class="icard" data-cat="コミュニケーション">
   <div class="ih"><span class="num">076</span><span class="ititle">**Email**（コミュニティ） — 複数のメールプロバイダ経由でメールを送信する</span></div>
   
   <pre class="prompt" id="b76">**Email**（コミュニティ） — 複数のメールプロバイダ経由でメールを送信する
@@ -812,7 +817,7 @@
     <button class="btn ghost sm" data-save="b76" data-name="mcp-servers-100-076.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="コミュニケーション">
   <div class="ih"><span class="num">077</span><span class="ititle">**Google Keep**（コミュニティ） — Google Keepのメモを作…</span></div>
   
   <pre class="prompt" id="b77">**Google Keep**（コミュニティ） — Google Keepのメモを作成・検索する
@@ -822,8 +827,8 @@
     <button class="btn ghost sm" data-save="b77" data-name="mcp-servers-100-077.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">デザイン・コンテンツ生成</h2>
-<div class="icard">
+<h2 class="cat" data-cat="デザイン・コンテンツ生成">デザイン・コンテンツ生成</h2>
+<div class="icard" data-cat="デザイン・コンテンツ生成">
   <div class="ih"><span class="num">078</span><span class="ititle">**Pollinations**（Pollinations） — 画像・音声・テキス…</span></div>
   
   <pre class="prompt" id="b78">**Pollinations**（Pollinations） — 画像・音声・テキストを無料で生成する
@@ -833,7 +838,7 @@
     <button class="btn ghost sm" data-save="b78" data-name="mcp-servers-100-078.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="デザイン・コンテンツ生成">
   <div class="ih"><span class="num">079</span><span class="ititle">**AWS Nova Canvas**（AWS Labs） — Amazon Nov…</span></div>
   
   <pre class="prompt" id="b79">**AWS Nova Canvas**（AWS Labs） — Amazon Nova Canvasで画像を生成する
@@ -843,7 +848,7 @@
     <button class="btn ghost sm" data-save="b79" data-name="mcp-servers-100-079.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="デザイン・コンテンツ生成">
   <div class="ih"><span class="num">080</span><span class="ititle">**Mux**（Mux） — 動画のアップロード・管理・字幕生成を行う</span></div>
   
   <pre class="prompt" id="b80">**Mux**（Mux） — 動画のアップロード・管理・字幕生成を行う
@@ -853,7 +858,7 @@
     <button class="btn ghost sm" data-save="b80" data-name="mcp-servers-100-080.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="デザイン・コンテンツ生成">
   <div class="ih"><span class="num">081</span><span class="ititle">**ECharts**（コミュニティ） — EChartsエンジンでビジュアルチャー…</span></div>
   
   <pre class="prompt" id="b81">**ECharts**（コミュニティ） — EChartsエンジンでビジュアルチャートを生成する
@@ -863,8 +868,8 @@
     <button class="btn ghost sm" data-save="b81" data-name="mcp-servers-100-081.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">ビジネス・生産性</h2>
-<div class="icard">
+<h2 class="cat" data-cat="ビジネス・生産性">ビジネス・生産性</h2>
+<div class="icard" data-cat="ビジネス・生産性">
   <div class="ih"><span class="num">082</span><span class="ititle">**Fibery**（Fibery） — Fiberyワークスペースのデータを操作す…</span></div>
   
   <pre class="prompt" id="b82">**Fibery**（Fibery） — Fiberyワークスペースのデータを操作する
@@ -874,7 +879,7 @@
     <button class="btn ghost sm" data-save="b82" data-name="mcp-servers-100-082.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="ビジネス・生産性">
   <div class="ih"><span class="num">083</span><span class="ititle">**Plane**（Plane） — Planeのプロジェクト・課題を管理する</span></div>
   
   <pre class="prompt" id="b83">**Plane**（Plane） — Planeのプロジェクト・課題を管理する
@@ -884,7 +889,7 @@
     <button class="btn ghost sm" data-save="b83" data-name="mcp-servers-100-083.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="ビジネス・生産性">
   <div class="ih"><span class="num">084</span><span class="ititle">**NocoDB**（コミュニティ） — NocoDBのテーブルを読み書きする</span></div>
   
   <pre class="prompt" id="b84">**NocoDB**（コミュニティ） — NocoDBのテーブルを読み書きする
@@ -894,7 +899,7 @@
     <button class="btn ghost sm" data-save="b84" data-name="mcp-servers-100-084.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="ビジネス・生産性">
   <div class="ih"><span class="num">085</span><span class="ititle">**Baserow**（Baserow） — Baserowのテーブル操作を行う</span></div>
   
   <pre class="prompt" id="b85">**Baserow**（Baserow） — Baserowのテーブル操作を行う
@@ -904,8 +909,8 @@
     <button class="btn ghost sm" data-save="b85" data-name="mcp-servers-100-085.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">財務・決済</h2>
-<div class="icard">
+<h2 class="cat" data-cat="財務・決済">財務・決済</h2>
+<div class="icard" data-cat="財務・決済">
   <div class="ih"><span class="num">086</span><span class="ititle">**Ramp**（Ramp） — 企業カードの支出分析・インサイトを取得する</span></div>
   
   <pre class="prompt" id="b86">**Ramp**（Ramp） — 企業カードの支出分析・インサイトを取得する
@@ -915,7 +920,7 @@
     <button class="btn ghost sm" data-save="b86" data-name="mcp-servers-100-086.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="財務・決済">
   <div class="ih"><span class="num">087</span><span class="ititle">**Chargebee**（Chargebee） — サブスクリプション課金・請求管…</span></div>
   
   <pre class="prompt" id="b87">**Chargebee**（Chargebee） — サブスクリプション課金・請求管理を行う
@@ -925,7 +930,7 @@
     <button class="btn ghost sm" data-save="b87" data-name="mcp-servers-100-087.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="財務・決済">
   <div class="ih"><span class="num">088</span><span class="ititle">**LunchMoney**（コミュニティ） — 個人の財務・予算管理データを操作す…</span></div>
   
   <pre class="prompt" id="b88">**LunchMoney**（コミュニティ） — 個人の財務・予算管理データを操作する
@@ -935,7 +940,7 @@
     <button class="btn ghost sm" data-save="b88" data-name="mcp-servers-100-088.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="財務・決済">
   <div class="ih"><span class="num">089</span><span class="ititle">**CoinGecko**（CoinGecko） — 暗号資産の価格・市場データを取…</span></div>
   
   <pre class="prompt" id="b89">**CoinGecko**（CoinGecko） — 暗号資産の価格・市場データを取得する
@@ -945,7 +950,7 @@
     <button class="btn ghost sm" data-save="b89" data-name="mcp-servers-100-089.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="財務・決済">
   <div class="ih"><span class="num">090</span><span class="ititle">**Alpha Vantage**（Alpha Vantage） — 株式等の金融市…</span></div>
   
   <pre class="prompt" id="b90">**Alpha Vantage**（Alpha Vantage） — 株式等の金融市場データを取得する
@@ -955,8 +960,8 @@
     <button class="btn ghost sm" data-save="b90" data-name="mcp-servers-100-090.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">マーケティング・分析</h2>
-<div class="icard">
+<h2 class="cat" data-cat="マーケティング・分析">マーケティング・分析</h2>
+<div class="icard" data-cat="マーケティング・分析">
   <div class="ih"><span class="num">091</span><span class="ititle">**Fathom Analytics**（コミュニティ） — Fathomのアクセス…</span></div>
   
   <pre class="prompt" id="b91">**Fathom Analytics**（コミュニティ） — Fathomのアクセス解析データを取得する
@@ -966,7 +971,7 @@
     <button class="btn ghost sm" data-save="b91" data-name="mcp-servers-100-091.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="マーケティング・分析">
   <div class="ih"><span class="num">092</span><span class="ititle">**PlainSignal**（PlainSignal） — リアルタイムのWebサ…</span></div>
   
   <pre class="prompt" id="b92">**PlainSignal**（PlainSignal） — リアルタイムのWebサイト分析データを取得する
@@ -976,7 +981,7 @@
     <button class="btn ghost sm" data-save="b92" data-name="mcp-servers-100-092.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="マーケティング・分析">
   <div class="ih"><span class="num">093</span><span class="ititle">**Audiense Insights**（Audiense） — オーディエンス分…</span></div>
   
   <pre class="prompt" id="b93">**Audiense Insights**（Audiense） — オーディエンス分析・マーケティングインサイトを取得する
@@ -986,8 +991,8 @@
     <button class="btn ghost sm" data-save="b93" data-name="mcp-servers-100-093.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">セキュリティ・監視</h2>
-<div class="icard">
+<h2 class="cat" data-cat="セキュリティ・監視">セキュリティ・監視</h2>
+<div class="icard" data-cat="セキュリティ・監視">
   <div class="ih"><span class="num">094</span><span class="ititle">**Axiom**（Axiom） — ログ・トレース・イベントデータを分析する</span></div>
   
   <pre class="prompt" id="b94">**Axiom**（Axiom） — ログ・トレース・イベントデータを分析する
@@ -997,7 +1002,7 @@
     <button class="btn ghost sm" data-save="b94" data-name="mcp-servers-100-094.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="セキュリティ・監視">
   <div class="ih"><span class="num">095</span><span class="ititle">**Raygun**（Mindscape） — クラッシュ・パフォーマンス監視データ…</span></div>
   
   <pre class="prompt" id="b95">**Raygun**（Mindscape） — クラッシュ・パフォーマンス監視データを確認する
@@ -1007,7 +1012,7 @@
     <button class="btn ghost sm" data-save="b95" data-name="mcp-servers-100-095.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="セキュリティ・監視">
   <div class="ih"><span class="num">096</span><span class="ititle">**Cycode**（Cycode） — SAST・SCA・シークレット漏洩の検査を…</span></div>
   
   <pre class="prompt" id="b96">**Cycode**（Cycode） — SAST・SCA・シークレット漏洩の検査を行う
@@ -1017,7 +1022,7 @@
     <button class="btn ghost sm" data-save="b96" data-name="mcp-servers-100-096.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">097</span><span class="ititle">DevOps・CI/CD</span></div>
   
   <pre class="prompt" id="b97">97. **Currents**（Currents） — Playwrightのテスト失敗結果を分析する
@@ -1027,8 +1032,8 @@
     <button class="btn ghost sm" data-save="b97" data-name="mcp-servers-100-097.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">その他ユーティリティ</h2>
-<div class="icard">
+<h2 class="cat" data-cat="その他ユーティリティ">その他ユーティリティ</h2>
+<div class="icard" data-cat="その他ユーティリティ">
   <div class="ih"><span class="num">098</span><span class="ititle">**Dolt**（DoltHub） — バージョン管理付きデータベースDoltを操作…</span></div>
   
   <pre class="prompt" id="b98">**Dolt**（DoltHub） — バージョン管理付きデータベースDoltを操作する
@@ -1038,7 +1043,7 @@
     <button class="btn ghost sm" data-save="b98" data-name="mcp-servers-100-098.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="その他ユーティリティ">
   <div class="ih"><span class="num">099</span><span class="ititle">**Browser MCP**（コミュニティ） — ローカルブラウザを自動操作する</span></div>
   
   <pre class="prompt" id="b99">**Browser MCP**（コミュニティ） — ローカルブラウザを自動操作する
@@ -1048,7 +1053,7 @@
     <button class="btn ghost sm" data-save="b99" data-name="mcp-servers-100-099.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="その他ユーティリティ">
   <div class="ih"><span class="num">100</span><span class="ititle">**Zapier**（Zapier） — 8000以上のアプリ連携をワークフローとし…</span></div>
   
   <pre class="prompt" id="b100">**Zapier**（Zapier） — 8000以上のアプリ連携をワークフローとして呼び出す
@@ -1360,6 +1365,57 @@
 **ポイント**: パッケージ名・コマンドは変更される場合があります。使う前に提供元のREADMEで最新情報を確認してください。
 </pre>
 <script>
+// 項目の多いキットで、目的の1件に辿り着けるようにする絞り込み。
+// 検索はタイトル・説明だけでなく本文も対象にする（「あの文言が入っていた項目」で探せるように）。
+(function(){
+  var q = document.getElementById('kq');
+  if (!q) return;
+  var hit = document.getElementById('khit');
+  var cards = [].slice.call(document.querySelectorAll('.kwrap .icard'));
+  var heads = [].slice.call(document.querySelectorAll('.kwrap h2.cat'));
+  var chips = [].slice.call(document.querySelectorAll('.kcat'));
+  var cat = '';
+
+  // ひらがな・カタカナの違いで取りこぼさないようにする（ハブ側の検索と同じ扱い）
+  function norm(s){
+    return (s || '').toLowerCase().replace(/[ぁ-ん]/g, function(c){
+      return String.fromCharCode(c.charCodeAt(0) + 0x60);
+    });
+  }
+
+  // カード全体の textContent だとボタンの「コピー」まで拾ってしまうため、中身を選んで集める
+  cards.forEach(function(c){
+    var t = c.querySelector('.ititle'), d = c.querySelector('.imeta'), p = c.querySelector('.prompt');
+    c._t = norm((t ? t.textContent : '') + ' ' + (d ? d.textContent : '') + ' ' + (p ? p.textContent : ''));
+  });
+
+  function apply(){
+    var kw = norm(q.value.trim()), n = 0, shown = {};
+    cards.forEach(function(c){
+      var ok = (!cat || c.getAttribute('data-cat') === cat)
+            && (!kw || c._t.indexOf(kw) !== -1);
+      c.classList.toggle('hide', !ok);
+      if (ok){ n++; shown[c.getAttribute('data-cat')] = 1; }
+    });
+    // 残った項目が1件も無いカテゴリの見出しは隠す
+    heads.forEach(function(h){
+      h.classList.toggle('hide', !shown[h.getAttribute('data-cat')]);
+    });
+    hit.textContent = (kw || cat)
+      ? (n ? n + '件を表示中' : '該当する項目がありません')
+      : '';
+  }
+
+  q.addEventListener('input', apply);
+  chips.forEach(function(b){
+    b.addEventListener('click', function(){
+      cat = b.getAttribute('data-cat');
+      chips.forEach(function(x){ x.classList.toggle('on', x === b); });
+      apply();
+    });
+  });
+})();
+
 function flash(btn, label){
   const old = btn.textContent, cls = btn.className;
   btn.textContent = label; btn.classList.add('ok');
@@ -1429,7 +1485,22 @@ document.addEventListener('click', e => {
     el.classList.remove('show');
     sessionStorage.setItem('promoClosed', '1');
   }
-  setTimeout(function(){ el.classList.add('show'); }, 1600);
+  // 動画の概要欄から来た人が、自分のプレゼントを探し始める瞬間に被らないようにする。
+  // 以前は読み込み1.6秒後に無条件で出しており、いちばん目的意識の高い時間を塞いでいた。
+  // 中身を見に行った（＝目当てのものに辿り着いた）ころに出す。
+  var shown = false;
+  function show(){
+    if (shown) return;
+    shown = true;
+    el.classList.add('show');
+    removeEventListener('scroll', onScroll);
+  }
+  function onScroll(){
+    if (scrollY > innerHeight * 0.8) show();
+  }
+  addEventListener('scroll', onScroll, {passive:true});
+  // まったくスクロールしない人にも最後には出す（ただし十分に間を置いてから）
+  setTimeout(show, 45000);
   document.getElementById('promoClose').addEventListener('click', function(e){ e.preventDefault(); close(); });
   el.addEventListener('click', function(e){ if (e.target === el) close(); });
 })();

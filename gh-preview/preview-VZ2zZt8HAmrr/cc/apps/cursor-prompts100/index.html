@@ -36,8 +36,13 @@
     <div class="pnote"><span class="nb">下のカードから、</span><span class="nb">1件ずつコピー、</span><span class="nb">または個別にダウンロードできます。</span><span class="nb">まとめて欲しいときは、</span><span class="nb">上の</span><span class="nb">「全件ダウンロード」を</span><span class="nb">お使いください。</span></div>
   </section>
 
-  <h2 class="cat">Router活用・モード指定系</h2>
-<div class="icard">
+  <div class="ktools">
+  <input type="search" id="kq" placeholder="この中から探す" autocomplete="off" aria-label="この中から探す">
+  <div class="kcats"><button type="button" class="kcat on" data-cat="">すべて<span class="n">100</span></button><button type="button" class="kcat" data-cat="Router活用・モード指定系">Router活用・モード指定系<span class="n">10</span></button><button type="button" class="kcat" data-cat="Grok4.5・Composer活用系">Grok4.5・Composer活用系<span class="n">10</span></button><button type="button" class="kcat" data-cat="Claude Code資産の移行系">Claude Code資産の移行系<span class="n">10</span></button><button type="button" class="kcat" data-cat="コスト最適化・検証系">コスト最適化・検証系<span class="n">10</span></button><button type="button" class="kcat" data-cat="UI・フロントエンド実装系">UI・フロントエンド実装系<span class="n">10</span></button><button type="button" class="kcat" data-cat="リファクタ・コードレビュー系">リファクタ・コードレビュー系<span class="n">10</span></button><button type="button" class="kcat" data-cat="デバッグ・調査系">デバッグ・調査系<span class="n">10</span></button><button type="button" class="kcat" data-cat="テスト・品質保証系">テスト・品質保証系<span class="n">10</span></button><button type="button" class="kcat" data-cat="ドキュメント・README生成系">ドキュメント・README生成系<span class="n">10</span></button><button type="button" class="kcat" data-cat="チーム運用・設定系">チーム運用・設定系<span class="n">10</span></button></div>
+  <p class="khit" id="khit" role="status"></p>
+</div>
+<h2 class="cat" data-cat="Router活用・モード指定系">Router活用・モード指定系</h2>
+<div class="icard" data-cat="Router活用・モード指定系">
   <div class="ih"><span class="num">001</span><span class="ititle">最上位モデル固定で設計相談</span></div>
   
   <pre class="prompt" id="b1">この設計判断は重要なので、Cursor RouterのIntelligenceモードを使って最上位モデルで検討してください。トレードオフを3つ挙げてから推奨案を1つ提示して。</pre>
@@ -46,7 +51,7 @@
     <button class="btn ghost sm" data-save="b1" data-name="cursor-prompts100-001.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Router活用・モード指定系">
   <div class="ih"><span class="num">002</span><span class="ititle">コスト優先で単純作業を依頼</span></div>
   
   <pre class="prompt" id="b2">これは単純な作業なのでCostモードで実行してください。変数名の一括リネームを、既存の命名規則に合わせて行って。</pre>
@@ -55,7 +60,7 @@
     <button class="btn ghost sm" data-save="b2" data-name="cursor-prompts100-002.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Router活用・モード指定系">
   <div class="ih"><span class="num">003</span><span class="ititle">Balanceモードでの日常タスク依頼テンプレ</span></div>
   
   <pre class="prompt" id="b3">Balanceモードで進めてください。このコンポーネントに入力バリデーションを追加して。エラーメッセージは日本語で。</pre>
@@ -64,7 +69,7 @@
     <button class="btn ghost sm" data-save="b3" data-name="cursor-prompts100-003.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Router活用・モード指定系">
   <div class="ih"><span class="num">004</span><span class="ititle">Router判定の理由を確認する</span></div>
   
   <pre class="prompt" id="b4">直前のタスクでRouterがどのモデルを選んだか、その判断理由と一緒に教えてください。</pre>
@@ -73,7 +78,7 @@
     <button class="btn ghost sm" data-save="b4" data-name="cursor-prompts100-004.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Router活用・モード指定系">
   <div class="ih"><span class="num">005</span><span class="ititle">モデル固定と自動振り分けの使い分け相談</span></div>
   
   <pre class="prompt" id="b5">このタスクの複雑さを踏まえて、Router自動振り分けと特定モデル固定のどちらが適切か、理由付きで提案してください。</pre>
@@ -82,7 +87,7 @@
     <button class="btn ghost sm" data-save="b5" data-name="cursor-prompts100-005.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Router活用・モード指定系">
   <div class="ih"><span class="num">006</span><span class="ititle">UI実装だけ高品質モデルに寄せる</span></div>
   
   <pre class="prompt" id="b6">UIコンポーネントの実装なので、Router設定上は高品質寄りのモデルで進めてください。アクセシビリティ属性も漏れなく付けて。</pre>
@@ -91,7 +96,7 @@
     <button class="btn ghost sm" data-save="b6" data-name="cursor-prompts100-006.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Router活用・モード指定系">
   <div class="ih"><span class="num">007</span><span class="ititle">複雑なバグ調査を最上位モデルで</span></div>
   
   <pre class="prompt" id="b7">この不具合の原因調査は複雑なので、Intelligenceモード相当の推論力で仮説を3つ立て、それぞれの検証方法を提示して。</pre>
@@ -100,7 +105,7 @@
     <button class="btn ghost sm" data-save="b7" data-name="cursor-prompts100-007.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Router活用・モード指定系">
   <div class="ih"><span class="num">008</span><span class="ititle">Router導入前後のコスト比較記録を依頼</span></div>
   
   <pre class="prompt" id="b8">直近1週間のコミットログをもとに、Router導入前後でのコスト感の違いを表にまとめてください。</pre>
@@ -109,7 +114,7 @@
     <button class="btn ghost sm" data-save="b8" data-name="cursor-prompts100-008.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Router活用・モード指定系">
   <div class="ih"><span class="num">009</span><span class="ititle">タスク難易度の自己申告テンプレ</span></div>
   
   <pre class="prompt" id="b9">このタスクの難易度は「低」です。Costモード相当で構わないので、テストの雛形だけ先に作って。</pre>
@@ -118,7 +123,7 @@
     <button class="btn ghost sm" data-save="b9" data-name="cursor-prompts100-009.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Router活用・モード指定系">
   <div class="ih"><span class="num">010</span><span class="ititle">週次のモード使い分けレビュー依頼</span></div>
   
   <pre class="prompt" id="b10">今週使ったタスクとモードの組み合わせを一覧にして、次週以降の使い分け方針を提案してください。</pre>
@@ -127,8 +132,8 @@
     <button class="btn ghost sm" data-save="b10" data-name="cursor-prompts100-010.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">Grok4.5・Composer活用系</h2>
-<div class="icard">
+<h2 class="cat" data-cat="Grok4.5・Composer活用系">Grok4.5・Composer活用系</h2>
+<div class="icard" data-cat="Grok4.5・Composer活用系">
   <div class="ih"><span class="num">011</span><span class="ititle">Grok4.5にUI実装を任せる</span></div>
   
   <pre class="prompt" id="b11">新しいカードコンポーネントを作成してください。まずレイアウト案を2つ提示し、選んだ方をコード化して。</pre>
@@ -137,7 +142,7 @@
     <button class="btn ghost sm" data-save="b11" data-name="cursor-prompts100-011.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Grok4.5・Composer活用系">
   <div class="ih"><span class="num">012</span><span class="ititle">Composerでの複数ファイル一括編集</span></div>
   
   <pre class="prompt" id="b12">この機能追加に必要な変更を関係する全ファイルに対してまとめて適用してください。変更箇所ごとに理由を一言添えて。</pre>
@@ -146,7 +151,7 @@
     <button class="btn ghost sm" data-save="b12" data-name="cursor-prompts100-012.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Grok4.5・Composer活用系">
   <div class="ih"><span class="num">013</span><span class="ititle">Grok4.5にコード生成のみ依頼しレビューは別モデルで</span></div>
   
   <pre class="prompt" id="b13">この関数の実装案をまず1つ生成してください。実装が終わったら、その後のレビューは別途依頼します。</pre>
@@ -155,7 +160,7 @@
     <button class="btn ghost sm" data-save="b13" data-name="cursor-prompts100-013.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Grok4.5・Composer活用系">
   <div class="ih"><span class="num">014</span><span class="ititle">Composerでのリファクタ一括適用</span></div>
   
   <pre class="prompt" id="b14">同じロジックが繰り返されている箇所をComposerでまとめて共通化してください。変更前後の差分一覧も出して。</pre>
@@ -164,7 +169,7 @@
     <button class="btn ghost sm" data-save="b14" data-name="cursor-prompts100-014.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Grok4.5・Composer活用系">
   <div class="ih"><span class="num">015</span><span class="ititle">Grok系モデルへの得意分野ヒアリング</span></div>
   
   <pre class="prompt" id="b15">Grok 4.5が得意とされるタスクの傾向を踏まえて、今のプロジェクトでどの作業を任せると良いか提案して。</pre>
@@ -173,7 +178,7 @@
     <button class="btn ghost sm" data-save="b15" data-name="cursor-prompts100-015.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Grok4.5・Composer活用系">
   <div class="ih"><span class="num">016</span><span class="ititle">Composerでのマイグレーション作業</span></div>
   
   <pre class="prompt" id="b16">このスキーマ変更に伴う移行処理を、関連ファイルすべてに一括で反映してください。ロールバック手順も添えて。</pre>
@@ -182,7 +187,7 @@
     <button class="btn ghost sm" data-save="b16" data-name="cursor-prompts100-016.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Grok4.5・Composer活用系">
   <div class="ih"><span class="num">017</span><span class="ititle">新規UI→自動ルーティングの確認依頼</span></div>
   
   <pre class="prompt" id="b17">新規UIコンポーネントの作成を依頼するので、Routerがどのモデルに振り分けたか結果と一緒に教えてください。</pre>
@@ -191,7 +196,7 @@
     <button class="btn ghost sm" data-save="b17" data-name="cursor-prompts100-017.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Grok4.5・Composer活用系">
   <div class="ih"><span class="num">018</span><span class="ititle">Composerでのテスト一括追加</span></div>
   
   <pre class="prompt" id="b18">テストが無いファイルを洗い出して、Composerで一括してユニットテストを追加してください。</pre>
@@ -200,7 +205,7 @@
     <button class="btn ghost sm" data-save="b18" data-name="cursor-prompts100-018.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Grok4.5・Composer活用系">
   <div class="ih"><span class="num">019</span><span class="ititle">Grok4.5とOpus系の出力比較依頼</span></div>
   
   <pre class="prompt" id="b19">この実装案について、Grok系モデルと最上位モデルそれぞれの出力を比較できるように、両方の案を並べて提示して。</pre>
@@ -209,7 +214,7 @@
     <button class="btn ghost sm" data-save="b19" data-name="cursor-prompts100-019.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Grok4.5・Composer活用系">
   <div class="ih"><span class="num">020</span><span class="ititle">Composer作業のコミット粒度確認</span></div>
   
   <pre class="prompt" id="b20">今回の一括変更を、レビューしやすいコミット単位に分割する案を提案してください。</pre>
@@ -218,8 +223,8 @@
     <button class="btn ghost sm" data-save="b20" data-name="cursor-prompts100-020.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">Claude Code資産の移行系</h2>
-<div class="icard">
+<h2 class="cat" data-cat="Claude Code資産の移行系">Claude Code資産の移行系</h2>
+<div class="icard" data-cat="Claude Code資産の移行系">
   <div class="ih"><span class="num">021</span><span class="ititle">CLAUDE.mdの内容をCursorルールに変換</span></div>
   
   <pre class="prompt" id="b21">このCLAUDE.mdの内容を、Cursorのプロジェクトルール形式に変換してください。抜け漏れがないか一覧で確認させて。</pre>
@@ -228,7 +233,7 @@
     <button class="btn ghost sm" data-save="b21" data-name="cursor-prompts100-021.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Claude Code資産の移行系">
   <div class="ih"><span class="num">022</span><span class="ititle">Skill定義の移行可否を判定</span></div>
   
   <pre class="prompt" id="b22">このSKILL.mdの内容のうち、Cursor側で同等に再現できる部分とできない部分を分けて説明してください。</pre>
@@ -237,7 +242,7 @@
     <button class="btn ghost sm" data-save="b22" data-name="cursor-prompts100-022.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Claude Code資産の移行系">
   <div class="ih"><span class="num">023</span><span class="ititle">MCP設定の移行手順を確認</span></div>
   
   <pre class="prompt" id="b23">現在のMCPサーバー設定をCursorでも使えるようにする手順を、ステップごとに教えてください。</pre>
@@ -246,7 +251,7 @@
     <button class="btn ghost sm" data-save="b23" data-name="cursor-prompts100-023.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Claude Code資産の移行系">
   <div class="ih"><span class="num">024</span><span class="ititle">サブエージェント定義の代替案を相談</span></div>
   
   <pre class="prompt" id="b24">このサブエージェント定義と近い動きを、Cursor側の機能でどう再現できるか提案してください。</pre>
@@ -255,7 +260,7 @@
     <button class="btn ghost sm" data-save="b24" data-name="cursor-prompts100-024.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Claude Code資産の移行系">
   <div class="ih"><span class="num">025</span><span class="ititle">プロジェクト設定の差分チェックリスト作成</span></div>
   
   <pre class="prompt" id="b25">Claude CodeとCursorのプロジェクト設定の違いを、見落としやすい項目を中心にチェックリストにして。</pre>
@@ -264,7 +269,7 @@
     <button class="btn ghost sm" data-save="b25" data-name="cursor-prompts100-025.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Claude Code資産の移行系">
   <div class="ih"><span class="num">026</span><span class="ititle">既存プロンプト資産の再利用可否を仕分け</span></div>
   
   <pre class="prompt" id="b26">普段使っているこのプロンプト集を、Cursorでもそのまま使えるものと調整が必要なものに仕分けしてください。</pre>
@@ -273,7 +278,7 @@
     <button class="btn ghost sm" data-save="b26" data-name="cursor-prompts100-026.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Claude Code資産の移行系">
   <div class="ih"><span class="num">027</span><span class="ititle">併用期間中のツール使い分けルール作成</span></div>
   
   <pre class="prompt" id="b27">移行期間中、どんな条件でClaude CodeとCursorを使い分けるべきか、簡単なルールを箇条書きで作って。</pre>
@@ -282,7 +287,7 @@
     <button class="btn ghost sm" data-save="b27" data-name="cursor-prompts100-027.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Claude Code資産の移行系">
   <div class="ih"><span class="num">028</span><span class="ititle">移行後の動作確認チェックリスト作成</span></div>
   
   <pre class="prompt" id="b28">移行作業が完了したことを確認するためのチェックリストを、機能ごとに作成してください。</pre>
@@ -291,7 +296,7 @@
     <button class="btn ghost sm" data-save="b28" data-name="cursor-prompts100-028.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Claude Code資産の移行系">
   <div class="ih"><span class="num">029</span><span class="ititle">チームへの移行アナウンス文の下書き</span></div>
   
   <pre class="prompt" id="b29">チームメンバーに向けて、CursorへのCLI移行を知らせる短いアナウンス文を作ってください。</pre>
@@ -300,7 +305,7 @@
     <button class="btn ghost sm" data-save="b29" data-name="cursor-prompts100-029.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Claude Code資産の移行系">
   <div class="ih"><span class="num">030</span><span class="ititle">移行のロールバック手順を確認</span></div>
   
   <pre class="prompt" id="b30">万が一Cursorへの移行がうまくいかなかった場合の、Claude Codeへの切り戻し手順を整理して。</pre>
@@ -309,8 +314,8 @@
     <button class="btn ghost sm" data-save="b30" data-name="cursor-prompts100-030.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">コスト最適化・検証系</h2>
-<div class="icard">
+<h2 class="cat" data-cat="コスト最適化・検証系">コスト最適化・検証系</h2>
+<div class="icard" data-cat="コスト最適化・検証系">
   <div class="ih"><span class="num">031</span><span class="ititle">1週間分のコスト比較レポート依頼</span></div>
   
   <pre class="prompt" id="b31">この1週間の利用ログをもとに、Claude CodeとCursorそれぞれのコストを比較したレポートを作って。</pre>
@@ -319,7 +324,7 @@
     <button class="btn ghost sm" data-save="b31" data-name="cursor-prompts100-031.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="コスト最適化・検証系">
   <div class="ih"><span class="num">032</span><span class="ititle">Costモードの精度劣化チェック</span></div>
   
   <pre class="prompt" id="b32">Costモードで実装した箇所について、品質面で妥協していないか改めてレビューしてください。</pre>
@@ -328,7 +333,7 @@
     <button class="btn ghost sm" data-save="b32" data-name="cursor-prompts100-032.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="コスト最適化・検証系">
   <div class="ih"><span class="num">033</span><span class="ititle">タスク難易度別のモード選定基準を文書化</span></div>
   
   <pre class="prompt" id="b33">これまでの作業実績をもとに、タスクの難易度別にどのRouterモードを使うべきかの基準表を作成して。</pre>
@@ -337,7 +342,7 @@
     <button class="btn ghost sm" data-save="b33" data-name="cursor-prompts100-033.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="コスト最適化・検証系">
   <div class="ih"><span class="num">034</span><span class="ititle">月次コスト見込みのシミュレーション</span></div>
   
   <pre class="prompt" id="b34">現在のペースで作業を続けた場合の月間コストを、モード別の単価をもとに試算してください。</pre>
@@ -346,7 +351,7 @@
     <button class="btn ghost sm" data-save="b34" data-name="cursor-prompts100-034.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="コスト最適化・検証系">
   <div class="ih"><span class="num">035</span><span class="ititle">高コストタスクの洗い出し</span></div>
   
   <pre class="prompt" id="b35">直近のログから、特にコストがかさんでいるタスクの種類を洗い出して、原因を分析してください。</pre>
@@ -355,7 +360,7 @@
     <button class="btn ghost sm" data-save="b35" data-name="cursor-prompts100-035.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="コスト最適化・検証系">
   <div class="ih"><span class="num">036</span><span class="ititle">チーム全体の利用状況サマリ作成</span></div>
   
   <pre class="prompt" id="b36">チーム全体の利用ログをもとに、誰がどのモードをどれくらい使っているかのサマリを作成して。</pre>
@@ -364,7 +369,7 @@
     <button class="btn ghost sm" data-save="b36" data-name="cursor-prompts100-036.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="コスト最適化・検証系">
   <div class="ih"><span class="num">037</span><span class="ititle">コスト削減の余地を提案</span></div>
   
   <pre class="prompt" id="b37">現在の作業フローを見て、さらにコストを削減できそうなポイントを3つ提案してください。</pre>
@@ -373,7 +378,7 @@
     <button class="btn ghost sm" data-save="b37" data-name="cursor-prompts100-037.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="コスト最適化・検証系">
   <div class="ih"><span class="num">038</span><span class="ititle">Enterprise/Teams向け設定の確認</span></div>
   
   <pre class="prompt" id="b38">Teams/Enterpriseプランで管理者が設定できるRouter関連の項目を一覧にして教えてください。</pre>
@@ -382,7 +387,7 @@
     <button class="btn ghost sm" data-save="b38" data-name="cursor-prompts100-038.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="コスト最適化・検証系">
   <div class="ih"><span class="num">039</span><span class="ititle">Autoモードのしきい値相談</span></div>
   
   <pre class="prompt" id="b39">Routerの自動判定が思ったより高コストなモデルを選びがちな場合、どう調整すべきか教えてください。</pre>
@@ -391,7 +396,7 @@
     <button class="btn ghost sm" data-save="b39" data-name="cursor-prompts100-039.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="コスト最適化・検証系">
   <div class="ih"><span class="num">040</span><span class="ititle">コスト超過時のアラート運用案</span></div>
   
   <pre class="prompt" id="b40">月間コストが想定を超えそうな場合に、どのタイミングで誰に知らせるべきか運用ルール案を作って。</pre>
@@ -400,8 +405,8 @@
     <button class="btn ghost sm" data-save="b40" data-name="cursor-prompts100-040.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">UI・フロントエンド実装系</h2>
-<div class="icard">
+<h2 class="cat" data-cat="UI・フロントエンド実装系">UI・フロントエンド実装系</h2>
+<div class="icard" data-cat="UI・フロントエンド実装系">
   <div class="ih"><span class="num">041</span><span class="ititle">新規コンポーネントの叩き台作成</span></div>
   
   <pre class="prompt" id="b41">新しい通知バナーコンポーネントの叩き台を作ってください。既存のデザイントークンに合わせて。</pre>
@@ -410,7 +415,7 @@
     <button class="btn ghost sm" data-save="b41" data-name="cursor-prompts100-041.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="UI・フロントエンド実装系">
   <div class="ih"><span class="num">042</span><span class="ititle">レスポンシブ対応の一括チェック</span></div>
   
   <pre class="prompt" id="b42">主要画面についてレスポンシブ対応が漏れている箇所を洗い出して、修正案を提示してください。</pre>
@@ -419,7 +424,7 @@
     <button class="btn ghost sm" data-save="b42" data-name="cursor-prompts100-042.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="UI・フロントエンド実装系">
   <div class="ih"><span class="num">043</span><span class="ititle">アクセシビリティ属性の追加</span></div>
   
   <pre class="prompt" id="b43">このフォームにaria属性・ラベル関連付けなどのアクセシビリティ対応を追加してください。</pre>
@@ -428,7 +433,7 @@
     <button class="btn ghost sm" data-save="b43" data-name="cursor-prompts100-043.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="UI・フロントエンド実装系">
   <div class="ih"><span class="num">044</span><span class="ititle">ダークモード対応の確認</span></div>
   
   <pre class="prompt" id="b44">このコンポーネント群がダークモードでも崩れないか確認し、必要な修正を加えてください。</pre>
@@ -437,7 +442,7 @@
     <button class="btn ghost sm" data-save="b44" data-name="cursor-prompts100-044.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="UI・フロントエンド実装系">
   <div class="ih"><span class="num">045</span><span class="ititle">アニメーション追加の相談</span></div>
   
   <pre class="prompt" id="b45">このボタンのクリック時に、控えめなアニメーションを追加する案を2つ提案してください。</pre>
@@ -446,7 +451,7 @@
     <button class="btn ghost sm" data-save="b45" data-name="cursor-prompts100-045.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="UI・フロントエンド実装系">
   <div class="ih"><span class="num">046</span><span class="ititle">フォームバリデーションの実装</span></div>
   
   <pre class="prompt" id="b46">このフォームに、必須項目チェックと形式チェックのバリデーションを追加してください。</pre>
@@ -455,7 +460,7 @@
     <button class="btn ghost sm" data-save="b46" data-name="cursor-prompts100-046.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="UI・フロントエンド実装系">
   <div class="ih"><span class="num">047</span><span class="ititle">既存デザインシステムへの準拠チェック</span></div>
   
   <pre class="prompt" id="b47">この新しいコンポーネントが、既存のデザインシステムのルールに沿っているか確認してください。</pre>
@@ -464,7 +469,7 @@
     <button class="btn ghost sm" data-save="b47" data-name="cursor-prompts100-047.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="UI・フロントエンド実装系">
   <div class="ih"><span class="num">048</span><span class="ititle">パフォーマンス改善の提案</span></div>
   
   <pre class="prompt" id="b48">この画面の描画が重い原因を調査し、パフォーマンス改善の提案を出してください。</pre>
@@ -473,7 +478,7 @@
     <button class="btn ghost sm" data-save="b48" data-name="cursor-prompts100-048.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="UI・フロントエンド実装系">
   <div class="ih"><span class="num">049</span><span class="ititle">多言語対応の下準備</span></div>
   
   <pre class="prompt" id="b49">このUIの文言をハードコードせず、多言語対応しやすい形に整理してください。</pre>
@@ -482,7 +487,7 @@
     <button class="btn ghost sm" data-save="b49" data-name="cursor-prompts100-049.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="UI・フロントエンド実装系">
   <div class="ih"><span class="num">050</span><span class="ititle">UIコンポーネントのStorybook化</span></div>
   
   <pre class="prompt" id="b50">このコンポーネントのStorybookストーリーを、代表的な状態ごとに作成してください。</pre>
@@ -491,8 +496,8 @@
     <button class="btn ghost sm" data-save="b50" data-name="cursor-prompts100-050.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">リファクタ・コードレビュー系</h2>
-<div class="icard">
+<h2 class="cat" data-cat="リファクタ・コードレビュー系">リファクタ・コードレビュー系</h2>
+<div class="icard" data-cat="リファクタ・コードレビュー系">
   <div class="ih"><span class="num">051</span><span class="ititle">重複コードの共通化提案</span></div>
   
   <pre class="prompt" id="b51">同じような処理が複数のファイルに散らばっています。共通化する案を提示してから実装して。</pre>
@@ -501,7 +506,7 @@
     <button class="btn ghost sm" data-save="b51" data-name="cursor-prompts100-051.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="リファクタ・コードレビュー系">
   <div class="ih"><span class="num">052</span><span class="ititle">命名の一貫性チェック</span></div>
   
   <pre class="prompt" id="b52">このモジュール内の命名が既存の規則と一致しているか確認し、ズレがあれば修正案を出して。</pre>
@@ -510,7 +515,7 @@
     <button class="btn ghost sm" data-save="b52" data-name="cursor-prompts100-052.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="リファクタ・コードレビュー系">
   <div class="ih"><span class="num">053</span><span class="ititle">大きすぎる関数の分割提案</span></div>
   
   <pre class="prompt" id="b53">この関数は責務が大きくなりすぎています。責務ごとに分割する案を提示してください。</pre>
@@ -519,7 +524,7 @@
     <button class="btn ghost sm" data-save="b53" data-name="cursor-prompts100-053.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="リファクタ・コードレビュー系">
   <div class="ih"><span class="num">054</span><span class="ititle">PRレビューの観点出し</span></div>
   
   <pre class="prompt" id="b54">このPRの差分について、レビューで指摘されそうな観点を先回りして洗い出してください。</pre>
@@ -528,7 +533,7 @@
     <button class="btn ghost sm" data-save="b54" data-name="cursor-prompts100-054.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="リファクタ・コードレビュー系">
   <div class="ih"><span class="num">055</span><span class="ititle">型安全性の底上げ提案</span></div>
   
   <pre class="prompt" id="b55">このファイル内で型が緩くなっている箇所を洗い出し、より厳密な型に直す案を出してください。</pre>
@@ -537,7 +542,7 @@
     <button class="btn ghost sm" data-save="b55" data-name="cursor-prompts100-055.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="リファクタ・コードレビュー系">
   <div class="ih"><span class="num">056</span><span class="ititle">エラーハンドリングの漏れチェック</span></div>
   
   <pre class="prompt" id="b56">このモジュールでエラーハンドリングが不足している箇所を洗い出して、対応方針を提案してください。</pre>
@@ -546,7 +551,7 @@
     <button class="btn ghost sm" data-save="b56" data-name="cursor-prompts100-056.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="リファクタ・コードレビュー系">
   <div class="ih"><span class="num">057</span><span class="ititle">依存関係の整理提案</span></div>
   
   <pre class="prompt" id="b57">このモジュール間の依存関係を整理し、不要な依存や循環依存があれば指摘してください。</pre>
@@ -555,7 +560,7 @@
     <button class="btn ghost sm" data-save="b57" data-name="cursor-prompts100-057.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="リファクタ・コードレビュー系">
   <div class="ih"><span class="num">058</span><span class="ititle">コメントの過不足チェック</span></div>
   
   <pre class="prompt" id="b58">このファイルのコメントについて、説明不足または冗長になっている箇所を指摘してください。</pre>
@@ -564,7 +569,7 @@
     <button class="btn ghost sm" data-save="b58" data-name="cursor-prompts100-058.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="リファクタ・コードレビュー系">
   <div class="ih"><span class="num">059</span><span class="ititle">破壊的変更の影響範囲調査</span></div>
   
   <pre class="prompt" id="b59">この関数のシグネチャ変更が、呼び出し元にどの程度影響するか調査してください。</pre>
@@ -573,7 +578,7 @@
     <button class="btn ghost sm" data-save="b59" data-name="cursor-prompts100-059.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="リファクタ・コードレビュー系">
   <div class="ih"><span class="num">060</span><span class="ititle">段階的リファクタ計画の作成</span></div>
   
   <pre class="prompt" id="b60">この大規模リファクタを、安全に進められる小さなステップに分解した計画を作成してください。</pre>
@@ -582,8 +587,8 @@
     <button class="btn ghost sm" data-save="b60" data-name="cursor-prompts100-060.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">デバッグ・調査系</h2>
-<div class="icard">
+<h2 class="cat" data-cat="デバッグ・調査系">デバッグ・調査系</h2>
+<div class="icard" data-cat="デバッグ・調査系">
   <div class="ih"><span class="num">061</span><span class="ititle">再現手順の整理依頼</span></div>
   
   <pre class="prompt" id="b61">このバグ報告から、再現手順を明確なステップに整理してください。</pre>
@@ -592,7 +597,7 @@
     <button class="btn ghost sm" data-save="b61" data-name="cursor-prompts100-061.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="デバッグ・調査系">
   <div class="ih"><span class="num">062</span><span class="ititle">ログからの原因仮説出し</span></div>
   
   <pre class="prompt" id="b62">このエラーログをもとに、考えられる原因を3つ挙げて、それぞれの確認方法も教えてください。</pre>
@@ -601,7 +606,7 @@
     <button class="btn ghost sm" data-save="b62" data-name="cursor-prompts100-062.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="デバッグ・調査系">
   <div class="ih"><span class="num">063</span><span class="ititle">差分から怪しい箇所を特定</span></div>
   
   <pre class="prompt" id="b63">直近のこの差分の中で、今回の不具合に関係していそうな箇所を絞り込んでください。</pre>
@@ -610,7 +615,7 @@
     <button class="btn ghost sm" data-save="b63" data-name="cursor-prompts100-063.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="デバッグ・調査系">
   <div class="ih"><span class="num">064</span><span class="ititle">パフォーマンス低下の切り分け</span></div>
   
   <pre class="prompt" id="b64">この処理が遅くなっている原因を、ネットワーク・DB・ロジックの観点で切り分けて調査してください。</pre>
@@ -619,7 +624,7 @@
     <button class="btn ghost sm" data-save="b64" data-name="cursor-prompts100-064.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="デバッグ・調査系">
   <div class="ih"><span class="num">065</span><span class="ititle">メモリリークの疑いを調査</span></div>
   
   <pre class="prompt" id="b65">このプロセスのメモリ使用量が増え続けています。リークの疑いがある箇所を洗い出してください。</pre>
@@ -628,7 +633,7 @@
     <button class="btn ghost sm" data-save="b65" data-name="cursor-prompts100-065.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="デバッグ・調査系">
   <div class="ih"><span class="num">066</span><span class="ititle">環境差分の切り分け</span></div>
   
   <pre class="prompt" id="b66">本番環境と開発環境で挙動が異なる原因になりそうな設定・環境変数の差分を洗い出してください。</pre>
@@ -637,7 +642,7 @@
     <button class="btn ghost sm" data-save="b66" data-name="cursor-prompts100-066.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="デバッグ・調査系">
   <div class="ih"><span class="num">067</span><span class="ititle">第三者ライブラリ起因の切り分け</span></div>
   
   <pre class="prompt" id="b67">このエラーが自前のコードとライブラリ、どちらに起因するか切り分ける手順を教えてください。</pre>
@@ -646,7 +651,7 @@
     <button class="btn ghost sm" data-save="b67" data-name="cursor-prompts100-067.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="デバッグ・調査系">
   <div class="ih"><span class="num">068</span><span class="ititle">再発防止策の提案</span></div>
   
   <pre class="prompt" id="b68">この不具合の原因が分かったので、同種の問題を再発させないための対策を提案してください。</pre>
@@ -655,7 +660,7 @@
     <button class="btn ghost sm" data-save="b68" data-name="cursor-prompts100-068.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="デバッグ・調査系">
   <div class="ih"><span class="num">069</span><span class="ititle">調査ログの引き継ぎメモ作成</span></div>
   
   <pre class="prompt" id="b69">ここまでの調査状況を、別の担当者に引き継げるようメモとして整理してください。</pre>
@@ -664,7 +669,7 @@
     <button class="btn ghost sm" data-save="b69" data-name="cursor-prompts100-069.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="デバッグ・調査系">
   <div class="ih"><span class="num">070</span><span class="ititle">インシデント報告の下書き作成</span></div>
   
   <pre class="prompt" id="b70">今回のインシデントについて、発生時刻・影響範囲・原因・対応を含む報告書の下書きを作って。</pre>
@@ -673,8 +678,8 @@
     <button class="btn ghost sm" data-save="b70" data-name="cursor-prompts100-070.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">テスト・品質保証系</h2>
-<div class="icard">
+<h2 class="cat" data-cat="テスト・品質保証系">テスト・品質保証系</h2>
+<div class="icard" data-cat="テスト・品質保証系">
   <div class="ih"><span class="num">071</span><span class="ititle">未テスト箇所の洗い出し</span></div>
   
   <pre class="prompt" id="b71">このモジュールの中でテストが不足している関数を洗い出し、優先度を付けてください。</pre>
@@ -683,7 +688,7 @@
     <button class="btn ghost sm" data-save="b71" data-name="cursor-prompts100-071.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="テスト・品質保証系">
   <div class="ih"><span class="num">072</span><span class="ititle">境界値テストの追加</span></div>
   
   <pre class="prompt" id="b72">この関数について、境界値のテストケースが漏れていないか確認し、不足分を追加してください。</pre>
@@ -692,7 +697,7 @@
     <button class="btn ghost sm" data-save="b72" data-name="cursor-prompts100-072.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="テスト・品質保証系">
   <div class="ih"><span class="num">073</span><span class="ititle">フレーキーテストの調査</span></div>
   
   <pre class="prompt" id="b73">このテストがたまに失敗します。フレーキーになっている原因を調査してください。</pre>
@@ -701,7 +706,7 @@
     <button class="btn ghost sm" data-save="b73" data-name="cursor-prompts100-073.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="テスト・品質保証系">
   <div class="ih"><span class="num">074</span><span class="ititle">E2Eテストシナリオの作成</span></div>
   
   <pre class="prompt" id="b74">この機能の主要な操作フローについて、E2Eテストのシナリオを作成してください。</pre>
@@ -710,7 +715,7 @@
     <button class="btn ghost sm" data-save="b74" data-name="cursor-prompts100-074.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="テスト・品質保証系">
   <div class="ih"><span class="num">075</span><span class="ititle">テストダブルの整理</span></div>
   
   <pre class="prompt" id="b75">このテストファイルのモック・スタブの使い方が適切か確認し、改善案があれば教えてください。</pre>
@@ -719,7 +724,7 @@
     <button class="btn ghost sm" data-save="b75" data-name="cursor-prompts100-075.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="テスト・品質保証系">
   <div class="ih"><span class="num">076</span><span class="ititle">カバレッジの低い箇所の対応方針</span></div>
   
   <pre class="prompt" id="b76">カバレッジレポートをもとに、優先して手を入れるべき箇所を提案してください。</pre>
@@ -728,7 +733,7 @@
     <button class="btn ghost sm" data-save="b76" data-name="cursor-prompts100-076.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="テスト・品質保証系">
   <div class="ih"><span class="num">077</span><span class="ititle">回帰テストの追加提案</span></div>
   
   <pre class="prompt" id="b77">過去に発生したこの不具合について、再発を検知できる回帰テストを追加してください。</pre>
@@ -737,7 +742,7 @@
     <button class="btn ghost sm" data-save="b77" data-name="cursor-prompts100-077.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="テスト・品質保証系">
   <div class="ih"><span class="num">078</span><span class="ititle">テストデータの整理</span></div>
   
   <pre class="prompt" id="b78">各テストで使っているダミーデータを整理し、共通化できるものをまとめてください。</pre>
@@ -746,7 +751,7 @@
     <button class="btn ghost sm" data-save="b78" data-name="cursor-prompts100-078.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="テスト・品質保証系">
   <div class="ih"><span class="num">079</span><span class="ititle">CI失敗時の原因切り分け</span></div>
   
   <pre class="prompt" id="b79">このCI失敗ログから、環境起因かコード起因かを切り分けてください。</pre>
@@ -755,7 +760,7 @@
     <button class="btn ghost sm" data-save="b79" data-name="cursor-prompts100-079.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="テスト・品質保証系">
   <div class="ih"><span class="num">080</span><span class="ititle">リリース前チェックリスト作成</span></div>
   
   <pre class="prompt" id="b80">今回のリリース前に確認すべき項目を、機能・非機能の両面からチェックリストにして。</pre>
@@ -764,8 +769,8 @@
     <button class="btn ghost sm" data-save="b80" data-name="cursor-prompts100-080.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">ドキュメント・README生成系</h2>
-<div class="icard">
+<h2 class="cat" data-cat="ドキュメント・README生成系">ドキュメント・README生成系</h2>
+<div class="icard" data-cat="ドキュメント・README生成系">
   <div class="ih"><span class="num">081</span><span class="ititle">README冒頭の要約作成</span></div>
   
   <pre class="prompt" id="b81">このプロジェクトの概要を、README冒頭に置ける3行程度の要約にまとめてください。</pre>
@@ -774,7 +779,7 @@
     <button class="btn ghost sm" data-save="b81" data-name="cursor-prompts100-081.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="ドキュメント・README生成系">
   <div class="ih"><span class="num">082</span><span class="ititle">セットアップ手順の文書化</span></div>
   
   <pre class="prompt" id="b82">このプロジェクトのセットアップ手順を、初めての人でも迷わないよう順番に文書化してください。</pre>
@@ -783,7 +788,7 @@
     <button class="btn ghost sm" data-save="b82" data-name="cursor-prompts100-082.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="ドキュメント・README生成系">
   <div class="ih"><span class="num">083</span><span class="ititle">API仕様の説明文作成</span></div>
   
   <pre class="prompt" id="b83">このAPIエンドポイントの入出力について、利用者向けの説明文を作成してください。</pre>
@@ -792,7 +797,7 @@
     <button class="btn ghost sm" data-save="b83" data-name="cursor-prompts100-083.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="ドキュメント・README生成系">
   <div class="ih"><span class="num">084</span><span class="ititle">変更履歴（CHANGELOG）の下書き</span></div>
   
   <pre class="prompt" id="b84">直近のコミット履歴をもとに、CHANGELOG形式で変更点をまとめてください。</pre>
@@ -801,7 +806,7 @@
     <button class="btn ghost sm" data-save="b84" data-name="cursor-prompts100-084.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="ドキュメント・README生成系">
   <div class="ih"><span class="num">085</span><span class="ititle">コントリビューションガイドの作成</span></div>
   
   <pre class="prompt" id="b85">このプロジェクトへのコントリビューションガイドを、ルールと手順を含めて作成してください。</pre>
@@ -810,7 +815,7 @@
     <button class="btn ghost sm" data-save="b85" data-name="cursor-prompts100-085.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="ドキュメント・README生成系">
   <div class="ih"><span class="num">086</span><span class="ititle">アーキテクチャ図の説明文作成</span></div>
   
   <pre class="prompt" id="b86">この構成図について、初見の人にも伝わる説明文を作成してください。</pre>
@@ -819,7 +824,7 @@
     <button class="btn ghost sm" data-save="b86" data-name="cursor-prompts100-086.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="ドキュメント・README生成系">
   <div class="ih"><span class="num">087</span><span class="ititle">FAQセクションの作成</span></div>
   
   <pre class="prompt" id="b87">これまでに来た質問をもとに、README用のFAQセクションを作成してください。</pre>
@@ -828,7 +833,7 @@
     <button class="btn ghost sm" data-save="b87" data-name="cursor-prompts100-087.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="ドキュメント・README生成系">
   <div class="ih"><span class="num">088</span><span class="ititle">トラブルシューティングガイド作成</span></div>
   
   <pre class="prompt" id="b88">セットアップ時によく起きるエラーと、その対処法をまとめたガイドを作成してください。</pre>
@@ -837,7 +842,7 @@
     <button class="btn ghost sm" data-save="b88" data-name="cursor-prompts100-088.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="ドキュメント・README生成系">
   <div class="ih"><span class="num">089</span><span class="ititle">用語集の作成</span></div>
   
   <pre class="prompt" id="b89">このプロジェクトで使われる固有の用語をまとめた用語集を作成してください。</pre>
@@ -846,7 +851,7 @@
     <button class="btn ghost sm" data-save="b89" data-name="cursor-prompts100-089.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="ドキュメント・README生成系">
   <div class="ih"><span class="num">090</span><span class="ititle">移行ガイドの作成</span></div>
   
   <pre class="prompt" id="b90">旧バージョンから今回のバージョンへの移行ガイドを、変更点ごとに整理して作成してください。</pre>
@@ -855,8 +860,8 @@
     <button class="btn ghost sm" data-save="b90" data-name="cursor-prompts100-090.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">チーム運用・設定系</h2>
-<div class="icard">
+<h2 class="cat" data-cat="チーム運用・設定系">チーム運用・設定系</h2>
+<div class="icard" data-cat="チーム運用・設定系">
   <div class="ih"><span class="num">091</span><span class="ititle">プロジェクトルールの雛形作成</span></div>
   
   <pre class="prompt" id="b91">このプロジェクト向けのルールファイルの雛形を、コーディング規約を反映して作成してください。</pre>
@@ -865,7 +870,7 @@
     <button class="btn ghost sm" data-save="b91" data-name="cursor-prompts100-091.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="チーム運用・設定系">
   <div class="ih"><span class="num">092</span><span class="ititle">チームでのモード運用ルール作成</span></div>
   
   <pre class="prompt" id="b92">チームで統一するRouterモードの運用ルールを、タスク種別ごとに整理してください。</pre>
@@ -874,7 +879,7 @@
     <button class="btn ghost sm" data-save="b92" data-name="cursor-prompts100-092.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="チーム運用・設定系">
   <div class="ih"><span class="num">093</span><span class="ititle">オンボーディング資料の作成</span></div>
   
   <pre class="prompt" id="b93">新しく加わるメンバー向けに、Cursorの基本的な使い方をまとめたオンボーディング資料を作成してください。</pre>
@@ -883,7 +888,7 @@
     <button class="btn ghost sm" data-save="b93" data-name="cursor-prompts100-093.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="チーム運用・設定系">
   <div class="ih"><span class="num">094</span><span class="ititle">権限・アクセス設定の確認</span></div>
   
   <pre class="prompt" id="b94">Teamsプランでのメンバー権限・モデルアクセス設定について、現状を確認し改善点を提案してください。</pre>
@@ -892,7 +897,7 @@
     <button class="btn ghost sm" data-save="b94" data-name="cursor-prompts100-094.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="チーム運用・設定系">
   <div class="ih"><span class="num">095</span><span class="ititle">週次ふりかえりテンプレの作成</span></div>
   
   <pre class="prompt" id="b95">Cursorの活用状況を週次でふりかえるための簡単なテンプレートを作成してください。</pre>
@@ -901,7 +906,7 @@
     <button class="btn ghost sm" data-save="b95" data-name="cursor-prompts100-095.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="チーム運用・設定系">
   <div class="ih"><span class="num">096</span><span class="ititle">ツール併用ポリシーの文書化</span></div>
   
   <pre class="prompt" id="b96">チームでのClaude CodeとCursorの使い分けポリシーを、具体例を交えて文書化してください。</pre>
@@ -910,7 +915,7 @@
     <button class="btn ghost sm" data-save="b96" data-name="cursor-prompts100-096.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="チーム運用・設定系">
   <div class="ih"><span class="num">097</span><span class="ititle">コスト管理者向けレポート雛形</span></div>
   
   <pre class="prompt" id="b97">チームのコストを管理者に報告するためのレポート雛形を作成してください。</pre>
@@ -919,7 +924,7 @@
     <button class="btn ghost sm" data-save="b97" data-name="cursor-prompts100-097.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="チーム運用・設定系">
   <div class="ih"><span class="num">098</span><span class="ititle">セキュリティ設定チェックリスト</span></div>
   
   <pre class="prompt" id="b98">組織でCursorを利用する際に確認すべきセキュリティ関連設定をチェックリストにしてください。</pre>
@@ -928,7 +933,7 @@
     <button class="btn ghost sm" data-save="b98" data-name="cursor-prompts100-098.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="チーム運用・設定系">
   <div class="ih"><span class="num">099</span><span class="ititle">導入効果の振り返りレポート</span></div>
   
   <pre class="prompt" id="b99">導入から1ヶ月経過した時点での効果（コスト・速度・満足度）を振り返るレポート雛形を作成してください。</pre>
@@ -937,7 +942,7 @@
     <button class="btn ghost sm" data-save="b99" data-name="cursor-prompts100-099.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="チーム運用・設定系">
   <div class="ih"><span class="num">100</span><span class="ititle">社内共有用の要点まとめ</span></div>
   
   <pre class="prompt" id="b100">他チームにも展開できるよう、Cursor活用の要点を1ページにまとめてください。</pre>
@@ -1683,6 +1688,57 @@ Claude CodeとCursorの併用ポリシーを文書化する依頼。
 
 以上、100個です。内訳は「Router活用・モード指定系」から「チーム運用・設定系」まで、10カテゴリ×各10個です。</pre>
 <script>
+// 項目の多いキットで、目的の1件に辿り着けるようにする絞り込み。
+// 検索はタイトル・説明だけでなく本文も対象にする（「あの文言が入っていた項目」で探せるように）。
+(function(){
+  var q = document.getElementById('kq');
+  if (!q) return;
+  var hit = document.getElementById('khit');
+  var cards = [].slice.call(document.querySelectorAll('.kwrap .icard'));
+  var heads = [].slice.call(document.querySelectorAll('.kwrap h2.cat'));
+  var chips = [].slice.call(document.querySelectorAll('.kcat'));
+  var cat = '';
+
+  // ひらがな・カタカナの違いで取りこぼさないようにする（ハブ側の検索と同じ扱い）
+  function norm(s){
+    return (s || '').toLowerCase().replace(/[ぁ-ん]/g, function(c){
+      return String.fromCharCode(c.charCodeAt(0) + 0x60);
+    });
+  }
+
+  // カード全体の textContent だとボタンの「コピー」まで拾ってしまうため、中身を選んで集める
+  cards.forEach(function(c){
+    var t = c.querySelector('.ititle'), d = c.querySelector('.imeta'), p = c.querySelector('.prompt');
+    c._t = norm((t ? t.textContent : '') + ' ' + (d ? d.textContent : '') + ' ' + (p ? p.textContent : ''));
+  });
+
+  function apply(){
+    var kw = norm(q.value.trim()), n = 0, shown = {};
+    cards.forEach(function(c){
+      var ok = (!cat || c.getAttribute('data-cat') === cat)
+            && (!kw || c._t.indexOf(kw) !== -1);
+      c.classList.toggle('hide', !ok);
+      if (ok){ n++; shown[c.getAttribute('data-cat')] = 1; }
+    });
+    // 残った項目が1件も無いカテゴリの見出しは隠す
+    heads.forEach(function(h){
+      h.classList.toggle('hide', !shown[h.getAttribute('data-cat')]);
+    });
+    hit.textContent = (kw || cat)
+      ? (n ? n + '件を表示中' : '該当する項目がありません')
+      : '';
+  }
+
+  q.addEventListener('input', apply);
+  chips.forEach(function(b){
+    b.addEventListener('click', function(){
+      cat = b.getAttribute('data-cat');
+      chips.forEach(function(x){ x.classList.toggle('on', x === b); });
+      apply();
+    });
+  });
+})();
+
 function flash(btn, label){
   const old = btn.textContent, cls = btn.className;
   btn.textContent = label; btn.classList.add('ok');
@@ -1752,7 +1808,22 @@ document.addEventListener('click', e => {
     el.classList.remove('show');
     sessionStorage.setItem('promoClosed', '1');
   }
-  setTimeout(function(){ el.classList.add('show'); }, 1600);
+  // 動画の概要欄から来た人が、自分のプレゼントを探し始める瞬間に被らないようにする。
+  // 以前は読み込み1.6秒後に無条件で出しており、いちばん目的意識の高い時間を塞いでいた。
+  // 中身を見に行った（＝目当てのものに辿り着いた）ころに出す。
+  var shown = false;
+  function show(){
+    if (shown) return;
+    shown = true;
+    el.classList.add('show');
+    removeEventListener('scroll', onScroll);
+  }
+  function onScroll(){
+    if (scrollY > innerHeight * 0.8) show();
+  }
+  addEventListener('scroll', onScroll, {passive:true});
+  // まったくスクロールしない人にも最後には出す（ただし十分に間を置いてから）
+  setTimeout(show, 45000);
   document.getElementById('promoClose').addEventListener('click', function(e){ e.preventDefault(); close(); });
   el.addEventListener('click', function(e){ if (e.target === el) close(); });
 })();

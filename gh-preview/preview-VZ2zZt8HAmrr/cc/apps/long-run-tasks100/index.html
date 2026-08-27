@@ -36,7 +36,12 @@
     <div class="pnote"><span class="nb">下のカードから、</span><span class="nb">1件ずつコピー、</span><span class="nb">または個別にダウンロードできます。</span><span class="nb">まとめて欲しいときは、</span><span class="nb">上の</span><span class="nb">「全件ダウンロード」を</span><span class="nb">お使いください。</span></div>
   </section>
 
-  <div class="icard">
+  <div class="ktools">
+  <input type="search" id="kq" placeholder="この中から探す" autocomplete="off" aria-label="この中から探す">
+  
+  <p class="khit" id="khit" role="status"></p>
+</div>
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">001</span><span class="ititle">前提: 大きめのモジュールを段階的に整理したい長時間タスク。</span></div>
   
   <pre class="prompt" id="b1">前提: 大きめのモジュールを段階的に整理したい長時間タスク。
@@ -47,7 +52,7 @@
     <button class="btn ghost sm" data-save="b1" data-name="long-run-tasks100-001.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">002</span><span class="ititle">前提: 命名規則が統一されていない古いコードベースの整理。</span></div>
   
   <pre class="prompt" id="b2">前提: 命名規則が統一されていない古いコードベースの整理。
@@ -58,7 +63,7 @@
     <button class="btn ghost sm" data-save="b2" data-name="long-run-tasks100-002.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">003</span><span class="ititle">前提: 非推奨APIが複数箇所に残っているプロジェクトの移行。</span></div>
   
   <pre class="prompt" id="b3">前提: 非推奨APIが複数箇所に残っているプロジェクトの移行。
@@ -69,7 +74,7 @@
     <button class="btn ghost sm" data-save="b3" data-name="long-run-tasks100-003.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">004</span><span class="ititle">前提: 型注釈が不足しているコードベースの型安全性向上。</span></div>
   
   <pre class="prompt" id="b4">前提: 型注釈が不足しているコードベースの型安全性向上。
@@ -80,7 +85,7 @@
     <button class="btn ghost sm" data-save="b4" data-name="long-run-tasks100-004.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">005</span><span class="ititle">前提: 依存が循環しているモジュール構成の整理。</span></div>
   
   <pre class="prompt" id="b5">前提: 依存が循環しているモジュール構成の整理。
@@ -91,7 +96,7 @@
     <button class="btn ghost sm" data-save="b5" data-name="long-run-tasks100-005.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">006</span><span class="ititle">前提: 巨大な関数・クラスの分割によるメンテナンス性向上。</span></div>
   
   <pre class="prompt" id="b6">前提: 巨大な関数・クラスの分割によるメンテナンス性向上。
@@ -102,7 +107,7 @@
     <button class="btn ghost sm" data-save="b6" data-name="long-run-tasks100-006.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">007</span><span class="ititle">前提: 古いフレームワークバージョンの書き方が混在するコード整理。</span></div>
   
   <pre class="prompt" id="b7">前提: 古いフレームワークバージョンの書き方が混在するコード整理。
@@ -113,7 +118,7 @@
     <button class="btn ghost sm" data-save="b7" data-name="long-run-tasks100-007.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">008</span><span class="ititle">前提: エラーハンドリングの書き方がバラバラなプロジェクトの統一。</span></div>
   
   <pre class="prompt" id="b8">前提: エラーハンドリングの書き方がバラバラなプロジェクトの統一。
@@ -124,7 +129,7 @@
     <button class="btn ghost sm" data-save="b8" data-name="long-run-tasks100-008.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">009</span><span class="ititle">前提: コメントアウトされた古いコードの整理。</span></div>
   
   <pre class="prompt" id="b9">前提: コメントアウトされた古いコードの整理。
@@ -136,7 +141,7 @@
     <button class="btn ghost sm" data-save="b9" data-name="long-run-tasks100-009.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">010</span><span class="ititle">前提: パッケージのバージョン固定・整理。</span></div>
   
   <pre class="prompt" id="b10">前提: パッケージのバージョン固定・整理。
@@ -149,7 +154,7 @@
     <button class="btn ghost sm" data-save="b10" data-name="long-run-tasks100-010.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">011</span><span class="ititle">前提: テストカバレッジが低いモジュールの底上げ。</span></div>
   
   <pre class="prompt" id="b11">前提: テストカバレッジが低いモジュールの底上げ。
@@ -160,7 +165,7 @@
     <button class="btn ghost sm" data-save="b11" data-name="long-run-tasks100-011.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">012</span><span class="ititle">前提: 壊れているテスト（flaky test）の調査と修正。</span></div>
   
   <pre class="prompt" id="b12">前提: 壊れているテスト（flaky test）の調査と修正。
@@ -171,7 +176,7 @@
     <button class="btn ghost sm" data-save="b12" data-name="long-run-tasks100-012.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">013</span><span class="ititle">前提: 統合テストが不足している主要フローの補完。</span></div>
   
   <pre class="prompt" id="b13">前提: 統合テストが不足している主要フローの補完。
@@ -182,7 +187,7 @@
     <button class="btn ghost sm" data-save="b13" data-name="long-run-tasks100-013.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">014</span><span class="ititle">前提: スナップショットテストの陳腐化した内容の整理。</span></div>
   
   <pre class="prompt" id="b14">前提: スナップショットテストの陳腐化した内容の整理。
@@ -193,7 +198,7 @@
     <button class="btn ghost sm" data-save="b14" data-name="long-run-tasks100-014.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">015</span><span class="ititle">前提: テストの実行時間が長くなっているスイートの高速化。</span></div>
   
   <pre class="prompt" id="b15">前提: テストの実行時間が長くなっているスイートの高速化。
@@ -204,7 +209,7 @@
     <button class="btn ghost sm" data-save="b15" data-name="long-run-tasks100-015.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">016</span><span class="ititle">前提: モックの使い方が古いテストコードの現代化。</span></div>
   
   <pre class="prompt" id="b16">前提: モックの使い方が古いテストコードの現代化。
@@ -215,7 +220,7 @@
     <button class="btn ghost sm" data-save="b16" data-name="long-run-tasks100-016.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">017</span><span class="ititle">前提: E2Eテストのシナリオ追加。</span></div>
   
   <pre class="prompt" id="b17">前提: E2Eテストのシナリオ追加。
@@ -226,7 +231,7 @@
     <button class="btn ghost sm" data-save="b17" data-name="long-run-tasks100-017.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">018</span><span class="ititle">前提: エッジケースのテスト漏れ調査。</span></div>
   
   <pre class="prompt" id="b18">前提: エッジケースのテスト漏れ調査。
@@ -237,7 +242,7 @@
     <button class="btn ghost sm" data-save="b18" data-name="long-run-tasks100-018.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">019</span><span class="ititle">前提: テストデータ（フィクスチャ）の整理と共通化。</span></div>
   
   <pre class="prompt" id="b19">前提: テストデータ（フィクスチャ）の整理と共通化。
@@ -248,7 +253,7 @@
     <button class="btn ghost sm" data-save="b19" data-name="long-run-tasks100-019.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">020</span><span class="ititle">前提: リグレッションテストの自動化整備。</span></div>
   
   <pre class="prompt" id="b20">前提: リグレッションテストの自動化整備。
@@ -261,7 +266,7 @@
     <button class="btn ghost sm" data-save="b20" data-name="long-run-tasks100-020.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">021</span><span class="ititle">前提: READMEやdocsが古いままのプロジェクトの更新。</span></div>
   
   <pre class="prompt" id="b21">前提: READMEやdocsが古いままのプロジェクトの更新。
@@ -272,7 +277,7 @@
     <button class="btn ghost sm" data-save="b21" data-name="long-run-tasks100-021.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">022</span><span class="ititle">前提: API仕様書がコードと同期していない状態の解消。</span></div>
   
   <pre class="prompt" id="b22">前提: API仕様書がコードと同期していない状態の解消。
@@ -283,7 +288,7 @@
     <button class="btn ghost sm" data-save="b22" data-name="long-run-tasks100-022.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">023</span><span class="ititle">前提: 関数・クラスのdocstring不足の解消。</span></div>
   
   <pre class="prompt" id="b23">前提: 関数・クラスのdocstring不足の解消。
@@ -294,7 +299,7 @@
     <button class="btn ghost sm" data-save="b23" data-name="long-run-tasks100-023.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">024</span><span class="ititle">前提: セットアップ手順書の実機検証と更新。</span></div>
   
   <pre class="prompt" id="b24">前提: セットアップ手順書の実機検証と更新。
@@ -305,7 +310,7 @@
     <button class="btn ghost sm" data-save="b24" data-name="long-run-tasks100-024.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">025</span><span class="ititle">前提: 変更履歴（CHANGELOG）の整備。</span></div>
   
   <pre class="prompt" id="b25">前提: 変更履歴（CHANGELOG）の整備。
@@ -316,7 +321,7 @@
     <button class="btn ghost sm" data-save="b25" data-name="long-run-tasks100-025.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">026</span><span class="ititle">前提: アーキテクチャ図と実際の構成のズレの解消。</span></div>
   
   <pre class="prompt" id="b26">前提: アーキテクチャ図と実際の構成のズレの解消。
@@ -327,7 +332,7 @@
     <button class="btn ghost sm" data-save="b26" data-name="long-run-tasks100-026.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">027</span><span class="ititle">前提: 用語集（Glossary）の整備。</span></div>
   
   <pre class="prompt" id="b27">前提: 用語集（Glossary）の整備。
@@ -338,7 +343,7 @@
     <button class="btn ghost sm" data-save="b27" data-name="long-run-tasks100-027.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">028</span><span class="ititle">前提: トラブルシューティングガイドの拡充。</span></div>
   
   <pre class="prompt" id="b28">前提: トラブルシューティングガイドの拡充。
@@ -349,7 +354,7 @@
     <button class="btn ghost sm" data-save="b28" data-name="long-run-tasks100-028.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">029</span><span class="ititle">前提: コードコメントの品質底上げ。</span></div>
   
   <pre class="prompt" id="b29">前提: コードコメントの品質底上げ。
@@ -360,7 +365,7 @@
     <button class="btn ghost sm" data-save="b29" data-name="long-run-tasks100-029.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">030</span><span class="ititle">前提: 移行ガイド・アップグレードガイドの作成。</span></div>
   
   <pre class="prompt" id="b30">前提: 移行ガイド・アップグレードガイドの作成。
@@ -373,7 +378,7 @@
     <button class="btn ghost sm" data-save="b30" data-name="long-run-tasks100-030.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">031</span><span class="ititle">前提: 使われていない依存パッケージの整理。</span></div>
   
   <pre class="prompt" id="b31">前提: 使われていない依存パッケージの整理。
@@ -384,7 +389,7 @@
     <button class="btn ghost sm" data-save="b31" data-name="long-run-tasks100-031.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">032</span><span class="ititle">前提: 脆弱性のある依存パッケージの棚卸し。</span></div>
   
   <pre class="prompt" id="b32">前提: 脆弱性のある依存パッケージの棚卸し。
@@ -395,7 +400,7 @@
     <button class="btn ghost sm" data-save="b32" data-name="long-run-tasks100-032.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">033</span><span class="ititle">前提: ライセンス互換性の確認。</span></div>
   
   <pre class="prompt" id="b33">前提: ライセンス互換性の確認。
@@ -406,7 +411,7 @@
     <button class="btn ghost sm" data-save="b33" data-name="long-run-tasks100-033.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">034</span><span class="ititle">前提: 型定義ファイル（型スタブ）の不足解消。</span></div>
   
   <pre class="prompt" id="b34">前提: 型定義ファイル（型スタブ）の不足解消。
@@ -417,7 +422,7 @@
     <button class="btn ghost sm" data-save="b34" data-name="long-run-tasks100-034.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">035</span><span class="ititle">前提: モノレポ内のパッケージ間バージョン不整合の解消。</span></div>
   
   <pre class="prompt" id="b35">前提: モノレポ内のパッケージ間バージョン不整合の解消。
@@ -428,7 +433,7 @@
     <button class="btn ghost sm" data-save="b35" data-name="long-run-tasks100-035.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">036</span><span class="ititle">前提: ビルド設定ファイルの重複・肥大化の整理。</span></div>
   
   <pre class="prompt" id="b36">前提: ビルド設定ファイルの重複・肥大化の整理。
@@ -439,7 +444,7 @@
     <button class="btn ghost sm" data-save="b36" data-name="long-run-tasks100-036.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">037</span><span class="ititle">前提: 環境変数の一覧化と説明の整備。</span></div>
   
   <pre class="prompt" id="b37">前提: 環境変数の一覧化と説明の整備。
@@ -450,7 +455,7 @@
     <button class="btn ghost sm" data-save="b37" data-name="long-run-tasks100-037.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">038</span><span class="ititle">前提: CI設定ファイルの重複ジョブの整理。</span></div>
   
   <pre class="prompt" id="b38">前提: CI設定ファイルの重複ジョブの整理。
@@ -461,7 +466,7 @@
     <button class="btn ghost sm" data-save="b38" data-name="long-run-tasks100-038.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">039</span><span class="ititle">前提: Dockerイメージのビルド時間短縮。</span></div>
   
   <pre class="prompt" id="b39">前提: Dockerイメージのビルド時間短縮。
@@ -472,7 +477,7 @@
     <button class="btn ghost sm" data-save="b39" data-name="long-run-tasks100-039.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">040</span><span class="ititle">前提: 設定ファイルのスキーマ検証追加。</span></div>
   
   <pre class="prompt" id="b40">前提: 設定ファイルのスキーマ検証追加。
@@ -485,7 +490,7 @@
     <button class="btn ghost sm" data-save="b40" data-name="long-run-tasks100-040.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">041</span><span class="ititle">前提: 再現条件が不明瞭な不具合報告の切り分け。</span></div>
   
   <pre class="prompt" id="b41">前提: 再現条件が不明瞭な不具合報告の切り分け。
@@ -496,7 +501,7 @@
     <button class="btn ghost sm" data-save="b41" data-name="long-run-tasks100-041.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">042</span><span class="ititle">前提: ログに残るエラーメッセージの原因調査。</span></div>
   
   <pre class="prompt" id="b42">前提: ログに残るエラーメッセージの原因調査。
@@ -507,7 +512,7 @@
     <button class="btn ghost sm" data-save="b42" data-name="long-run-tasks100-042.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">043</span><span class="ititle">前提: パフォーマンス劣化が疑われる箇所の調査。</span></div>
   
   <pre class="prompt" id="b43">前提: パフォーマンス劣化が疑われる箇所の調査。
@@ -518,7 +523,7 @@
     <button class="btn ghost sm" data-save="b43" data-name="long-run-tasks100-043.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">044</span><span class="ititle">前提: メモリリークの疑いがある長時間稼働プロセスの調査。</span></div>
   
   <pre class="prompt" id="b44">前提: メモリリークの疑いがある長時間稼働プロセスの調査。
@@ -529,7 +534,7 @@
     <button class="btn ghost sm" data-save="b44" data-name="long-run-tasks100-044.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">045</span><span class="ititle">前提: 特定条件でのみ発生する競合状態（レースコンディション）の調査。</span></div>
   
   <pre class="prompt" id="b45">前提: 特定条件でのみ発生する競合状態（レースコンディション）の調査。
@@ -540,7 +545,7 @@
     <button class="btn ghost sm" data-save="b45" data-name="long-run-tasks100-045.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">046</span><span class="ititle">前提: 文字化け・エンコーディング不具合の調査。</span></div>
   
   <pre class="prompt" id="b46">前提: 文字化け・エンコーディング不具合の調査。
@@ -551,7 +556,7 @@
     <button class="btn ghost sm" data-save="b46" data-name="long-run-tasks100-046.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">047</span><span class="ititle">前提: タイムゾーン起因の日時ずれの調査。</span></div>
   
   <pre class="prompt" id="b47">前提: タイムゾーン起因の日時ずれの調査。
@@ -562,7 +567,7 @@
     <button class="btn ghost sm" data-save="b47" data-name="long-run-tasks100-047.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">048</span><span class="ititle">前提: 権限・アクセス制御の不具合調査。</span></div>
   
   <pre class="prompt" id="b48">前提: 権限・アクセス制御の不具合調査。
@@ -573,7 +578,7 @@
     <button class="btn ghost sm" data-save="b48" data-name="long-run-tasks100-048.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">049</span><span class="ititle">前提: 外部API連携のエラーハンドリング漏れ調査。</span></div>
   
   <pre class="prompt" id="b49">前提: 外部API連携のエラーハンドリング漏れ調査。
@@ -584,7 +589,7 @@
     <button class="btn ghost sm" data-save="b49" data-name="long-run-tasks100-049.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">050</span><span class="ititle">前提: 大量データ処理時のみ発生する不具合の調査。</span></div>
   
   <pre class="prompt" id="b50">前提: 大量データ処理時のみ発生する不具合の調査。
@@ -597,7 +602,7 @@
     <button class="btn ghost sm" data-save="b50" data-name="long-run-tasks100-050.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">051</span><span class="ititle">前提: 古いデータ形式から新形式への段階的な変換。</span></div>
   
   <pre class="prompt" id="b51">前提: 古いデータ形式から新形式への段階的な変換。
@@ -608,7 +613,7 @@
     <button class="btn ghost sm" data-save="b51" data-name="long-run-tasks100-051.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">052</span><span class="ititle">前提: 重複データの検出と統合案の作成。</span></div>
   
   <pre class="prompt" id="b52">前提: 重複データの検出と統合案の作成。
@@ -619,7 +624,7 @@
     <button class="btn ghost sm" data-save="b52" data-name="long-run-tasks100-052.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">053</span><span class="ititle">前提: データ整合性チェックの実施。</span></div>
   
   <pre class="prompt" id="b53">前提: データ整合性チェックの実施。
@@ -630,7 +635,7 @@
     <button class="btn ghost sm" data-save="b53" data-name="long-run-tasks100-053.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">054</span><span class="ititle">前提: CSVやログファイルからの情報抽出・集計。</span></div>
   
   <pre class="prompt" id="b54">前提: CSVやログファイルからの情報抽出・集計。
@@ -641,7 +646,7 @@
     <button class="btn ghost sm" data-save="b54" data-name="long-run-tasks100-054.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">055</span><span class="ititle">前提: 個人情報・機密情報のマスキング対象調査。</span></div>
   
   <pre class="prompt" id="b55">前提: 個人情報・機密情報のマスキング対象調査。
@@ -652,7 +657,7 @@
     <button class="btn ghost sm" data-save="b55" data-name="long-run-tasks100-055.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">056</span><span class="ititle">前提: バッチ処理のリトライ・冪等性の確認。</span></div>
   
   <pre class="prompt" id="b56">前提: バッチ処理のリトライ・冪等性の確認。
@@ -663,7 +668,7 @@
     <button class="btn ghost sm" data-save="b56" data-name="long-run-tasks100-056.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">057</span><span class="ititle">前提: データ移行前後の件数・整合性検証スクリプトの作成。</span></div>
   
   <pre class="prompt" id="b57">前提: データ移行前後の件数・整合性検証スクリプトの作成。
@@ -674,7 +679,7 @@
     <button class="btn ghost sm" data-save="b57" data-name="long-run-tasks100-057.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">058</span><span class="ititle">前提: 古いバッチジョブのスケジュール整理。</span></div>
   
   <pre class="prompt" id="b58">前提: 古いバッチジョブのスケジュール整理。
@@ -685,7 +690,7 @@
     <button class="btn ghost sm" data-save="b58" data-name="long-run-tasks100-058.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">059</span><span class="ititle">前提: 大量データのアーカイブ対象洗い出し。</span></div>
   
   <pre class="prompt" id="b59">前提: 大量データのアーカイブ対象洗い出し。
@@ -696,7 +701,7 @@
     <button class="btn ghost sm" data-save="b59" data-name="long-run-tasks100-059.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">060</span><span class="ititle">前提: データパイプラインのエラー処理強化。</span></div>
   
   <pre class="prompt" id="b60">前提: データパイプラインのエラー処理強化。
@@ -709,7 +714,7 @@
     <button class="btn ghost sm" data-save="b60" data-name="long-run-tasks100-060.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">061</span><span class="ititle">前提: ページ読み込み速度の改善調査。</span></div>
   
   <pre class="prompt" id="b61">前提: ページ読み込み速度の改善調査。
@@ -720,7 +725,7 @@
     <button class="btn ghost sm" data-save="b61" data-name="long-run-tasks100-061.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">062</span><span class="ititle">前提: データベースクエリの遅延調査。</span></div>
   
   <pre class="prompt" id="b62">前提: データベースクエリの遅延調査。
@@ -731,7 +736,7 @@
     <button class="btn ghost sm" data-save="b62" data-name="long-run-tasks100-062.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">063</span><span class="ititle">前提: 画像・アセットの最適化候補の洗い出し。</span></div>
   
   <pre class="prompt" id="b63">前提: 画像・アセットの最適化候補の洗い出し。
@@ -742,7 +747,7 @@
     <button class="btn ghost sm" data-save="b63" data-name="long-run-tasks100-063.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">064</span><span class="ititle">前提: バンドルサイズ肥大化の原因調査。</span></div>
   
   <pre class="prompt" id="b64">前提: バンドルサイズ肥大化の原因調査。
@@ -753,7 +758,7 @@
     <button class="btn ghost sm" data-save="b64" data-name="long-run-tasks100-064.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">065</span><span class="ititle">前提: APIレスポンスタイムの改善調査。</span></div>
   
   <pre class="prompt" id="b65">前提: APIレスポンスタイムの改善調査。
@@ -764,7 +769,7 @@
     <button class="btn ghost sm" data-save="b65" data-name="long-run-tasks100-065.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">066</span><span class="ititle">前提: キャッシュ戦略の見直し。</span></div>
   
   <pre class="prompt" id="b66">前提: キャッシュ戦略の見直し。
@@ -775,7 +780,7 @@
     <button class="btn ghost sm" data-save="b66" data-name="long-run-tasks100-066.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">067</span><span class="ititle">前提: 不要な再レンダリング・再計算の調査（フロントエンド）。</span></div>
   
   <pre class="prompt" id="b67">前提: 不要な再レンダリング・再計算の調査（フロントエンド）。
@@ -786,7 +791,7 @@
     <button class="btn ghost sm" data-save="b67" data-name="long-run-tasks100-067.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">068</span><span class="ititle">前提: 並列化できるのに直列処理になっている箇所の調査。</span></div>
   
   <pre class="prompt" id="b68">前提: 並列化できるのに直列処理になっている箇所の調査。
@@ -797,7 +802,7 @@
     <button class="btn ghost sm" data-save="b68" data-name="long-run-tasks100-068.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">069</span><span class="ititle">前提: メモリ使用量削減の候補調査。</span></div>
   
   <pre class="prompt" id="b69">前提: メモリ使用量削減の候補調査。
@@ -808,7 +813,7 @@
     <button class="btn ghost sm" data-save="b69" data-name="long-run-tasks100-069.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">070</span><span class="ititle">前提: 起動時間短縮の調査。</span></div>
   
   <pre class="prompt" id="b70">前提: 起動時間短縮の調査。
@@ -821,7 +826,7 @@
     <button class="btn ghost sm" data-save="b70" data-name="long-run-tasks100-070.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">071</span><span class="ititle">前提: 入力値検証（バリデーション）の抜け漏れ調査。</span></div>
   
   <pre class="prompt" id="b71">前提: 入力値検証（バリデーション）の抜け漏れ調査。
@@ -832,7 +837,7 @@
     <button class="btn ghost sm" data-save="b71" data-name="long-run-tasks100-071.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">072</span><span class="ititle">前提: シークレット情報のハードコード調査。</span></div>
   
   <pre class="prompt" id="b72">前提: シークレット情報のハードコード調査。
@@ -843,7 +848,7 @@
     <button class="btn ghost sm" data-save="b72" data-name="long-run-tasks100-072.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">073</span><span class="ititle">前提: 依存パッケージの既知の脆弱性調査。</span></div>
   
   <pre class="prompt" id="b73">前提: 依存パッケージの既知の脆弱性調査。
@@ -854,7 +859,7 @@
     <button class="btn ghost sm" data-save="b73" data-name="long-run-tasks100-073.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">074</span><span class="ititle">前提: SQLインジェクション等の入力起因の脆弱性調査。</span></div>
   
   <pre class="prompt" id="b74">前提: SQLインジェクション等の入力起因の脆弱性調査。
@@ -865,7 +870,7 @@
     <button class="btn ghost sm" data-save="b74" data-name="long-run-tasks100-074.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">075</span><span class="ititle">前提: CORS設定・アクセス制御ヘッダの点検。</span></div>
   
   <pre class="prompt" id="b75">前提: CORS設定・アクセス制御ヘッダの点検。
@@ -876,7 +881,7 @@
     <button class="btn ghost sm" data-save="b75" data-name="long-run-tasks100-075.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">076</span><span class="ititle">前提: ログに機密情報が出力されていないかの点検。</span></div>
   
   <pre class="prompt" id="b76">前提: ログに機密情報が出力されていないかの点検。
@@ -887,7 +892,7 @@
     <button class="btn ghost sm" data-save="b76" data-name="long-run-tasks100-076.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">077</span><span class="ititle">前提: 認証トークンの有効期限・失効処理の点検。</span></div>
   
   <pre class="prompt" id="b77">前提: 認証トークンの有効期限・失効処理の点検。
@@ -898,7 +903,7 @@
     <button class="btn ghost sm" data-save="b77" data-name="long-run-tasks100-077.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">078</span><span class="ititle">前提: ファイルアップロード機能の安全性点検。</span></div>
   
   <pre class="prompt" id="b78">前提: ファイルアップロード機能の安全性点検。
@@ -909,7 +914,7 @@
     <button class="btn ghost sm" data-save="b78" data-name="long-run-tasks100-078.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">079</span><span class="ititle">前提: 権限昇格の抜け道調査。</span></div>
   
   <pre class="prompt" id="b79">前提: 権限昇格の抜け道調査。
@@ -920,7 +925,7 @@
     <button class="btn ghost sm" data-save="b79" data-name="long-run-tasks100-079.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">080</span><span class="ititle">前提: 古い暗号化方式の使用箇所調査。</span></div>
   
   <pre class="prompt" id="b80">前提: 古い暗号化方式の使用箇所調査。
@@ -933,7 +938,7 @@
     <button class="btn ghost sm" data-save="b80" data-name="long-run-tasks100-080.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">081</span><span class="ititle">前提: プルリクエスト群の未マージ状態の棚卸し。</span></div>
   
   <pre class="prompt" id="b81">前提: プルリクエスト群の未マージ状態の棚卸し。
@@ -944,7 +949,7 @@
     <button class="btn ghost sm" data-save="b81" data-name="long-run-tasks100-081.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">082</span><span class="ititle">前提: コーディング規約からの逸脱箇所の洗い出し。</span></div>
   
   <pre class="prompt" id="b82">前提: コーディング規約からの逸脱箇所の洗い出し。
@@ -955,7 +960,7 @@
     <button class="btn ghost sm" data-save="b82" data-name="long-run-tasks100-082.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">083</span><span class="ititle">前提: デッドコード（呼ばれていない関数・未使用変数）の調査。</span></div>
   
   <pre class="prompt" id="b83">前提: デッドコード（呼ばれていない関数・未使用変数）の調査。
@@ -966,7 +971,7 @@
     <button class="btn ghost sm" data-save="b83" data-name="long-run-tasks100-083.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">084</span><span class="ititle">前提: 複雑度が高い関数の洗い出し。</span></div>
   
   <pre class="prompt" id="b84">前提: 複雑度が高い関数の洗い出し。
@@ -977,7 +982,7 @@
     <button class="btn ghost sm" data-save="b84" data-name="long-run-tasks100-084.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">085</span><span class="ititle">前提: 一貫性のないエラーメッセージの整理。</span></div>
   
   <pre class="prompt" id="b85">前提: 一貫性のないエラーメッセージの整理。
@@ -988,7 +993,7 @@
     <button class="btn ghost sm" data-save="b85" data-name="long-run-tasks100-085.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">086</span><span class="ititle">前提: アクセシビリティ観点でのUIチェック（フロントエンド）。</span></div>
   
   <pre class="prompt" id="b86">前提: アクセシビリティ観点でのUIチェック（フロントエンド）。
@@ -999,7 +1004,7 @@
     <button class="btn ghost sm" data-save="b86" data-name="long-run-tasks100-086.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">087</span><span class="ititle">前提: 国際化（i18n）対応漏れの調査。</span></div>
   
   <pre class="prompt" id="b87">前提: 国際化（i18n）対応漏れの調査。
@@ -1010,7 +1015,7 @@
     <button class="btn ghost sm" data-save="b87" data-name="long-run-tasks100-087.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">088</span><span class="ititle">前提: APIの後方互換性チェック。</span></div>
   
   <pre class="prompt" id="b88">前提: APIの後方互換性チェック。
@@ -1021,7 +1026,7 @@
     <button class="btn ghost sm" data-save="b88" data-name="long-run-tasks100-088.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">089</span><span class="ititle">前提: 静的解析ツールの警告の棚卸し。</span></div>
   
   <pre class="prompt" id="b89">前提: 静的解析ツールの警告の棚卸し。
@@ -1032,7 +1037,7 @@
     <button class="btn ghost sm" data-save="b89" data-name="long-run-tasks100-089.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">090</span><span class="ititle">前提: コミットメッセージ・変更履歴の品質チェック。</span></div>
   
   <pre class="prompt" id="b90">前提: コミットメッセージ・変更履歴の品質チェック。
@@ -1045,7 +1050,7 @@
     <button class="btn ghost sm" data-save="b90" data-name="long-run-tasks100-090.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">091</span><span class="ititle">前提: ヘルスチェックスクリプトの整備。</span></div>
   
   <pre class="prompt" id="b91">前提: ヘルスチェックスクリプトの整備。
@@ -1056,7 +1061,7 @@
     <button class="btn ghost sm" data-save="b91" data-name="long-run-tasks100-091.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">092</span><span class="ititle">前提: アラート条件の見直し。</span></div>
   
   <pre class="prompt" id="b92">前提: アラート条件の見直し。
@@ -1067,7 +1072,7 @@
     <button class="btn ghost sm" data-save="b92" data-name="long-run-tasks100-092.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">093</span><span class="ititle">前提: ダッシュボード表示項目の整理。</span></div>
   
   <pre class="prompt" id="b93">前提: ダッシュボード表示項目の整理。
@@ -1078,7 +1083,7 @@
     <button class="btn ghost sm" data-save="b93" data-name="long-run-tasks100-093.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">094</span><span class="ititle">前提: バックアップ・リストア手順の検証。</span></div>
   
   <pre class="prompt" id="b94">前提: バックアップ・リストア手順の検証。
@@ -1089,7 +1094,7 @@
     <button class="btn ghost sm" data-save="b94" data-name="long-run-tasks100-094.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">095</span><span class="ititle">前提: 定期実行タスクの失敗時通知の整備。</span></div>
   
   <pre class="prompt" id="b95">前提: 定期実行タスクの失敗時通知の整備。
@@ -1100,7 +1105,7 @@
     <button class="btn ghost sm" data-save="b95" data-name="long-run-tasks100-095.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">096</span><span class="ititle">前提: ログローテーション設定の点検。</span></div>
   
   <pre class="prompt" id="b96">前提: ログローテーション設定の点検。
@@ -1111,7 +1116,7 @@
     <button class="btn ghost sm" data-save="b96" data-name="long-run-tasks100-096.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">097</span><span class="ititle">前提: デプロイスクリプトのロールバック手順整備。</span></div>
   
   <pre class="prompt" id="b97">前提: デプロイスクリプトのロールバック手順整備。
@@ -1122,7 +1127,7 @@
     <button class="btn ghost sm" data-save="b97" data-name="long-run-tasks100-097.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">098</span><span class="ititle">前提: リソース使用量（CPU・メモリ・ディスク）の傾向調査。</span></div>
   
   <pre class="prompt" id="b98">前提: リソース使用量（CPU・メモリ・ディスク）の傾向調査。
@@ -1133,7 +1138,7 @@
     <button class="btn ghost sm" data-save="b98" data-name="long-run-tasks100-098.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">099</span><span class="ititle">前提: 障害対応手順書（Runbook）の整備。</span></div>
   
   <pre class="prompt" id="b99">前提: 障害対応手順書（Runbook）の整備。
@@ -1144,7 +1149,7 @@
     <button class="btn ghost sm" data-save="b99" data-name="long-run-tasks100-099.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">100</span><span class="ititle">前提: 定期実行ジョブの実行時間の推移調査。</span></div>
   
   <pre class="prompt" id="b100">前提: 定期実行ジョブの実行時間の推移調査。
@@ -1598,6 +1603,57 @@
 **ポイント**: どのテンプレートも「完了条件」と「途中経過の報告形式」をセットにしています。これにより、制限に達して自動再開したあとも、どこまで進んだかが一目で分かります。出力結果は必ずレビューしてから確定してください。
 </pre>
 <script>
+// 項目の多いキットで、目的の1件に辿り着けるようにする絞り込み。
+// 検索はタイトル・説明だけでなく本文も対象にする（「あの文言が入っていた項目」で探せるように）。
+(function(){
+  var q = document.getElementById('kq');
+  if (!q) return;
+  var hit = document.getElementById('khit');
+  var cards = [].slice.call(document.querySelectorAll('.kwrap .icard'));
+  var heads = [].slice.call(document.querySelectorAll('.kwrap h2.cat'));
+  var chips = [].slice.call(document.querySelectorAll('.kcat'));
+  var cat = '';
+
+  // ひらがな・カタカナの違いで取りこぼさないようにする（ハブ側の検索と同じ扱い）
+  function norm(s){
+    return (s || '').toLowerCase().replace(/[ぁ-ん]/g, function(c){
+      return String.fromCharCode(c.charCodeAt(0) + 0x60);
+    });
+  }
+
+  // カード全体の textContent だとボタンの「コピー」まで拾ってしまうため、中身を選んで集める
+  cards.forEach(function(c){
+    var t = c.querySelector('.ititle'), d = c.querySelector('.imeta'), p = c.querySelector('.prompt');
+    c._t = norm((t ? t.textContent : '') + ' ' + (d ? d.textContent : '') + ' ' + (p ? p.textContent : ''));
+  });
+
+  function apply(){
+    var kw = norm(q.value.trim()), n = 0, shown = {};
+    cards.forEach(function(c){
+      var ok = (!cat || c.getAttribute('data-cat') === cat)
+            && (!kw || c._t.indexOf(kw) !== -1);
+      c.classList.toggle('hide', !ok);
+      if (ok){ n++; shown[c.getAttribute('data-cat')] = 1; }
+    });
+    // 残った項目が1件も無いカテゴリの見出しは隠す
+    heads.forEach(function(h){
+      h.classList.toggle('hide', !shown[h.getAttribute('data-cat')]);
+    });
+    hit.textContent = (kw || cat)
+      ? (n ? n + '件を表示中' : '該当する項目がありません')
+      : '';
+  }
+
+  q.addEventListener('input', apply);
+  chips.forEach(function(b){
+    b.addEventListener('click', function(){
+      cat = b.getAttribute('data-cat');
+      chips.forEach(function(x){ x.classList.toggle('on', x === b); });
+      apply();
+    });
+  });
+})();
+
 function flash(btn, label){
   const old = btn.textContent, cls = btn.className;
   btn.textContent = label; btn.classList.add('ok');
@@ -1667,7 +1723,22 @@ document.addEventListener('click', e => {
     el.classList.remove('show');
     sessionStorage.setItem('promoClosed', '1');
   }
-  setTimeout(function(){ el.classList.add('show'); }, 1600);
+  // 動画の概要欄から来た人が、自分のプレゼントを探し始める瞬間に被らないようにする。
+  // 以前は読み込み1.6秒後に無条件で出しており、いちばん目的意識の高い時間を塞いでいた。
+  // 中身を見に行った（＝目当てのものに辿り着いた）ころに出す。
+  var shown = false;
+  function show(){
+    if (shown) return;
+    shown = true;
+    el.classList.add('show');
+    removeEventListener('scroll', onScroll);
+  }
+  function onScroll(){
+    if (scrollY > innerHeight * 0.8) show();
+  }
+  addEventListener('scroll', onScroll, {passive:true});
+  // まったくスクロールしない人にも最後には出す（ただし十分に間を置いてから）
+  setTimeout(show, 45000);
   document.getElementById('promoClose').addEventListener('click', function(e){ e.preventDefault(); close(); });
   el.addEventListener('click', function(e){ if (e.target === el) close(); });
 })();

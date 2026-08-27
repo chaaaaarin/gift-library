@@ -36,7 +36,7 @@
     <div class="pnote"><span class="nb">下のカードから、</span><span class="nb">1件ずつコピー、</span><span class="nb">または個別にダウンロードできます。</span><span class="nb">まとめて欲しいときは、</span><span class="nb">上の</span><span class="nb">「全件ダウンロード」を</span><span class="nb">お使いください。</span></div>
   </section>
 
-  <div class="icard">
+  <div class="icard" data-cat="">
   <div class="ih"><span class="num">001</span><span class="ititle">ステップ1：対象の業務を1つに絞る</span></div>
   
   <pre class="prompt" id="b1">前提: 複数の候補があると迷って進まなくなるため、最初は必ず1つに絞る。
@@ -50,7 +50,7 @@
     <button class="btn ghost sm" data-save="b1" data-name="weekly-handoff-7steps-001.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">002</span><span class="ititle">ステップ2：理想の完成形を自分で1つ書く</span></div>
   
   <pre class="prompt" id="b2">前提: Claudeに丸投げすると「それらしいが的外れ」な出力になりやすい。自分で1つ手本を書くことで、Claudeが目指す完成形を具体的に伝えられる。
@@ -64,7 +64,7 @@
     <button class="btn ghost sm" data-save="b2" data-name="weekly-handoff-7steps-002.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">003</span><span class="ititle">ステップ3：データの置き場所を伝える</span></div>
   
   <pre class="prompt" id="b3">前提: Claudeは指定された場所にあるデータしか見えない。どこに何があるかを最初に明示する。
@@ -78,7 +78,7 @@
     <button class="btn ghost sm" data-save="b3" data-name="weekly-handoff-7steps-003.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">004</span><span class="ititle">ステップ4：捏造防止のハードルールを先に入れる</span></div>
   
   <pre class="prompt" id="b4">前提: AIは情報が欠けている箇所を、もっともらしい内容で埋めてしまうことがある。事故が起きる前に禁止事項を先に入れておく。
@@ -92,7 +92,7 @@
     <button class="btn ghost sm" data-save="b4" data-name="weekly-handoff-7steps-004.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">005</span><span class="ititle">ステップ5：少人数で試す</span></div>
   
   <pre class="prompt" id="b5">前提: いきなり全員に配ると、エラー発生時の影響が大きい。
@@ -106,7 +106,7 @@
     <button class="btn ghost sm" data-save="b5" data-name="weekly-handoff-7steps-005.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">006</span><span class="ititle">ステップ6：出たフィードバックを全部ルール化する</span></div>
   
   <pre class="prompt" id="b6">前提: 修正のたびに手直しするのではなく、ルールとして蓄積すると同じ間違いが起きなくなる。
@@ -120,7 +120,7 @@
     <button class="btn ghost sm" data-save="b6" data-name="weekly-handoff-7steps-006.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">007</span><span class="ititle">ステップ7：横展開する</span></div>
   
   <pre class="prompt" id="b7">前提: 1つの業務で仕組みが安定したら、似た業務にも同じ骨格を使い回せる。
@@ -214,6 +214,57 @@
 **ポイント**: 生成された内容は、配布・送信する前に必ず自分の目で確認してから使う。
 </pre>
 <script>
+// 項目の多いキットで、目的の1件に辿り着けるようにする絞り込み。
+// 検索はタイトル・説明だけでなく本文も対象にする（「あの文言が入っていた項目」で探せるように）。
+(function(){
+  var q = document.getElementById('kq');
+  if (!q) return;
+  var hit = document.getElementById('khit');
+  var cards = [].slice.call(document.querySelectorAll('.kwrap .icard'));
+  var heads = [].slice.call(document.querySelectorAll('.kwrap h2.cat'));
+  var chips = [].slice.call(document.querySelectorAll('.kcat'));
+  var cat = '';
+
+  // ひらがな・カタカナの違いで取りこぼさないようにする（ハブ側の検索と同じ扱い）
+  function norm(s){
+    return (s || '').toLowerCase().replace(/[ぁ-ん]/g, function(c){
+      return String.fromCharCode(c.charCodeAt(0) + 0x60);
+    });
+  }
+
+  // カード全体の textContent だとボタンの「コピー」まで拾ってしまうため、中身を選んで集める
+  cards.forEach(function(c){
+    var t = c.querySelector('.ititle'), d = c.querySelector('.imeta'), p = c.querySelector('.prompt');
+    c._t = norm((t ? t.textContent : '') + ' ' + (d ? d.textContent : '') + ' ' + (p ? p.textContent : ''));
+  });
+
+  function apply(){
+    var kw = norm(q.value.trim()), n = 0, shown = {};
+    cards.forEach(function(c){
+      var ok = (!cat || c.getAttribute('data-cat') === cat)
+            && (!kw || c._t.indexOf(kw) !== -1);
+      c.classList.toggle('hide', !ok);
+      if (ok){ n++; shown[c.getAttribute('data-cat')] = 1; }
+    });
+    // 残った項目が1件も無いカテゴリの見出しは隠す
+    heads.forEach(function(h){
+      h.classList.toggle('hide', !shown[h.getAttribute('data-cat')]);
+    });
+    hit.textContent = (kw || cat)
+      ? (n ? n + '件を表示中' : '該当する項目がありません')
+      : '';
+  }
+
+  q.addEventListener('input', apply);
+  chips.forEach(function(b){
+    b.addEventListener('click', function(){
+      cat = b.getAttribute('data-cat');
+      chips.forEach(function(x){ x.classList.toggle('on', x === b); });
+      apply();
+    });
+  });
+})();
+
 function flash(btn, label){
   const old = btn.textContent, cls = btn.className;
   btn.textContent = label; btn.classList.add('ok');
@@ -283,7 +334,22 @@ document.addEventListener('click', e => {
     el.classList.remove('show');
     sessionStorage.setItem('promoClosed', '1');
   }
-  setTimeout(function(){ el.classList.add('show'); }, 1600);
+  // 動画の概要欄から来た人が、自分のプレゼントを探し始める瞬間に被らないようにする。
+  // 以前は読み込み1.6秒後に無条件で出しており、いちばん目的意識の高い時間を塞いでいた。
+  // 中身を見に行った（＝目当てのものに辿り着いた）ころに出す。
+  var shown = false;
+  function show(){
+    if (shown) return;
+    shown = true;
+    el.classList.add('show');
+    removeEventListener('scroll', onScroll);
+  }
+  function onScroll(){
+    if (scrollY > innerHeight * 0.8) show();
+  }
+  addEventListener('scroll', onScroll, {passive:true});
+  // まったくスクロールしない人にも最後には出す（ただし十分に間を置いてから）
+  setTimeout(show, 45000);
   document.getElementById('promoClose').addEventListener('click', function(e){ e.preventDefault(); close(); });
   el.addEventListener('click', function(e){ if (e.target === el) close(); });
 })();

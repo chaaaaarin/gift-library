@@ -36,8 +36,13 @@
     <div class="pnote"><span class="nb">下のカードから、</span><span class="nb">1件ずつコピー、</span><span class="nb">または個別にダウンロードできます。</span><span class="nb">まとめて欲しいときは、</span><span class="nb">上の</span><span class="nb">「全件ダウンロード」を</span><span class="nb">お使いください。</span></div>
   </section>
 
-  <h2 class="cat">文書・資料をつくる</h2>
-<div class="icard">
+  <div class="ktools">
+  <input type="search" id="kq" placeholder="この中から探す" autocomplete="off" aria-label="この中から探す">
+  <div class="kcats"><button type="button" class="kcat on" data-cat="">すべて<span class="n">60</span></button><button type="button" class="kcat" data-cat="文書・資料をつくる">文書・資料をつくる<span class="n">1</span></button><button type="button" class="kcat" data-cat="注意">注意<span class="n">53</span></button><button type="button" class="kcat" data-cat="出力">出力<span class="n">1</span></button><button type="button" class="kcat" data-cat="調べる・確かめる">調べる・確かめる<span class="n">1</span></button><button type="button" class="kcat" data-cat="コードを扱う">コードを扱う<span class="n">1</span></button><button type="button" class="kcat" data-cat="チームで使う">チームで使う<span class="n">1</span></button><button type="button" class="kcat" data-cat="運用と品質を守る">運用と品質を守る<span class="n">1</span></button><button type="button" class="kcat" data-cat="MCPと配布に効く">MCPと配布に効く<span class="n">1</span></button></div>
+  <p class="khit" id="khit" role="status"></p>
+</div>
+<h2 class="cat" data-cat="文書・資料をつくる">文書・資料をつくる</h2>
+<div class="icard" data-cat="文書・資料をつくる">
   <div class="ih"><span class="num">001</span><span class="ititle">議事録を決定事項ベースで整える</span></div>
   
   <pre class="prompt" id="b1">会議メモを、後から読める議事録に直す。
@@ -56,8 +61,8 @@ description: 会議のメモや文字起こしを議事録に整えるとき、�
     <button class="btn ghost sm" data-save="b1" data-name="skill-templates-60-001.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">注意</h2>
-<div class="icard">
+<h2 class="cat" data-cat="注意">注意</h2>
+<div class="icard" data-cat="注意">
   <div class="ih"><span class="num">002</span><span class="ititle">提案書の骨組みを作る</span></div>
   
   <pre class="prompt" id="b2">白紙から書き始めずに、構成から埋める。
@@ -76,7 +81,7 @@ description: 提案書・企画書を作るとき、または「提案の構成�
     <button class="btn ghost sm" data-save="b2" data-name="skill-templates-60-002.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="注意">
   <div class="ih"><span class="num">003</span><span class="ititle">長文を構造化して要約する</span></div>
   
   <pre class="prompt" id="b3">読まずに済ませるのではなく、読む場所を絞る。
@@ -93,7 +98,7 @@ description: 長い記事・資料・報告書を要約するとき、または�
     <button class="btn ghost sm" data-save="b3" data-name="skill-templates-60-003.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="注意">
   <div class="ih"><span class="num">004</span><span class="ititle">報告書の初稿を書く</span></div>
   
   <pre class="prompt" id="b4">定型の報告を、埋めるだけの作業にする。
@@ -110,7 +115,7 @@ description: 定例の報告書・週報・月報を作るとき、または「�
     <button class="btn ghost sm" data-save="b4" data-name="skill-templates-60-004.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="注意">
   <div class="ih"><span class="num">005</span><span class="ititle">メールの下書きを作る</span></div>
   
   <pre class="prompt" id="b5">送信はしない。文面だけを整える。
@@ -127,7 +132,7 @@ description: 取引先や社内向けのメール文面を作るとき、また�
     <button class="btn ghost sm" data-save="b5" data-name="skill-templates-60-005.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="注意">
   <div class="ih"><span class="num">006</span><span class="ititle">スライドの流れを設計する</span></div>
   
   <pre class="prompt" id="b6">枚数を埋める前に、順番を決める。
@@ -144,7 +149,7 @@ description: プレゼン資料の構成を考えるとき、または「スラ�
     <button class="btn ghost sm" data-save="b6" data-name="skill-templates-60-006.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="注意">
   <div class="ih"><span class="num">007</span><span class="ititle">文章の表記ゆれを直す</span></div>
   
   <pre class="prompt" id="b7">細かい直しを、目視から外す。
@@ -161,7 +166,7 @@ description: 文章の表記を統一するとき、または「表記を揃え�
     <button class="btn ghost sm" data-save="b7" data-name="skill-templates-60-007.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="注意">
   <div class="ih"><span class="num">008</span><span class="ititle">FAQを作る</span></div>
   
   <pre class="prompt" id="b8">同じ質問への答えを1か所にまとめる。
@@ -178,7 +183,7 @@ description: 問い合わせ履歴やマニュアルからFAQを作るとき、�
     <button class="btn ghost sm" data-save="b8" data-name="skill-templates-60-008.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="注意">
   <div class="ih"><span class="num">009</span><span class="ititle">文章を短くする</span></div>
   
   <pre class="prompt" id="b9">削る基準を、感覚から言語化する。
@@ -195,8 +200,8 @@ description: 文章を短くするとき、または「もっと短く」「文�
     <button class="btn ghost sm" data-save="b9" data-name="skill-templates-60-009.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">出力</h2>
-<div class="icard">
+<h2 class="cat" data-cat="出力">出力</h2>
+<div class="icard" data-cat="出力">
   <div class="ih"><span class="num">010</span><span class="ititle">見出しだけで通じるか点検する</span></div>
   
   <pre class="prompt" id="b10">読み飛ばされる前提で資料を点検する。
@@ -213,8 +218,8 @@ description: 資料やドキュメントの見出しを点検するとき、ま�
     <button class="btn ghost sm" data-save="b10" data-name="skill-templates-60-010.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">調べる・確かめる</h2>
-<div class="icard">
+<h2 class="cat" data-cat="調べる・確かめる">調べる・確かめる</h2>
+<div class="icard" data-cat="調べる・確かめる">
   <div class="ih"><span class="num">011</span><span class="ititle">情報の出典を確かめる</span></div>
   
   <pre class="prompt" id="b11">書いてあることの根拠を、いつも辿れるようにする。
@@ -231,8 +236,8 @@ description: 調べた内容の裏取りをするとき、または「出典を�
     <button class="btn ghost sm" data-save="b11" data-name="skill-templates-60-011.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">注意</h2>
-<div class="icard">
+<h2 class="cat" data-cat="注意">注意</h2>
+<div class="icard" data-cat="注意">
   <div class="ih"><span class="num">012</span><span class="ititle">数字の出どころを追う</span></div>
   
   <pre class="prompt" id="b12">説得力のある数字ほど、出どころが怪しい。
@@ -249,7 +254,7 @@ description: 資料や記事に出てくる数値の根拠を調べるとき、�
     <button class="btn ghost sm" data-save="b12" data-name="skill-templates-60-012.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="注意">
   <div class="ih"><span class="num">013</span><span class="ititle">反対意見を先に集める</span></div>
   
   <pre class="prompt" id="b13">都合のいい情報だけで結論を出さない。
@@ -266,7 +271,7 @@ description: 何かを推す・導入する判断をするとき、または「�
     <button class="btn ghost sm" data-save="b13" data-name="skill-templates-60-013.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="注意">
   <div class="ih"><span class="num">014</span><span class="ititle">競合を横並びで比べる</span></div>
   
   <pre class="prompt" id="b14">印象ではなく、同じ物差しで並べる。
@@ -283,7 +288,7 @@ description: 複数の選択肢を比較するとき、または「どれがい�
     <button class="btn ghost sm" data-save="b14" data-name="skill-templates-60-014.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="注意">
   <div class="ih"><span class="num">015</span><span class="ititle">調査の抜けを自分で点検する</span></div>
   
   <pre class="prompt" id="b15">調べ終わったつもりを、点検で潰す。
@@ -300,7 +305,7 @@ description: 調査や下調べが一段落したときに使う。何を調べ�
     <button class="btn ghost sm" data-save="b15" data-name="skill-templates-60-015.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="注意">
   <div class="ih"><span class="num">016</span><span class="ititle">用語の定義を揃える</span></div>
   
   <pre class="prompt" id="b16">同じ言葉を違う意味で使っている状態を検出する。
@@ -317,7 +322,7 @@ description: 資料や議論の中で用語の意味がずれているか確認�
     <button class="btn ghost sm" data-save="b16" data-name="skill-templates-60-016.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="注意">
   <div class="ih"><span class="num">017</span><span class="ititle">参考にした情報を記録する</span></div>
   
   <pre class="prompt" id="b17">後から辿れる形で残す。
@@ -334,7 +339,7 @@ description: 調査の過程で見た情報を記録するとき、または「�
     <button class="btn ghost sm" data-save="b17" data-name="skill-templates-60-017.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="注意">
   <div class="ih"><span class="num">018</span><span class="ititle">最新かどうかを判定する</span></div>
   
   <pre class="prompt" id="b18">古い情報を掴んだまま進めない。
@@ -351,7 +356,7 @@ description: 調べた情報が今も有効か確認するとき、または「�
     <button class="btn ghost sm" data-save="b18" data-name="skill-templates-60-018.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="注意">
   <div class="ih"><span class="num">019</span><span class="ititle">海外の情報を日本語で押さえる</span></div>
   
   <pre class="prompt" id="b19">翻訳の過程で意味が変わるのを防ぐ。
@@ -368,7 +373,7 @@ description: 英語などの海外の情報源を扱うとき、または「英�
     <button class="btn ghost sm" data-save="b19" data-name="skill-templates-60-019.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="注意">
   <div class="ih"><span class="num">020</span><span class="ititle">推測と事実を分けて書く</span></div>
   
   <pre class="prompt" id="b20">自分の考えを、事実に混ぜない。
@@ -385,8 +390,8 @@ description: 調査結果や分析をまとめるとき、または「事実と�
     <button class="btn ghost sm" data-save="b20" data-name="skill-templates-60-020.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">コードを扱う</h2>
-<div class="icard">
+<h2 class="cat" data-cat="コードを扱う">コードを扱う</h2>
+<div class="icard" data-cat="コードを扱う">
   <div class="ih"><span class="num">021</span><span class="ititle">変更前に影響範囲を洗う</span></div>
   
   <pre class="prompt" id="b21">触る前に、壊れる場所を知る。
@@ -403,8 +408,8 @@ description: コードを変更する前に影響範囲を調べるとき、ま�
     <button class="btn ghost sm" data-save="b21" data-name="skill-templates-60-021.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">注意</h2>
-<div class="icard">
+<h2 class="cat" data-cat="注意">注意</h2>
+<div class="icard" data-cat="注意">
   <div class="ih"><span class="num">022</span><span class="ititle">テストを先に足す</span></div>
   
   <pre class="prompt" id="b22">直す前に、壊れたことが分かる状態にする。
@@ -421,7 +426,7 @@ description: バグ修正や仕様変更の前にテストを追加するとき�
     <button class="btn ghost sm" data-save="b22" data-name="skill-templates-60-022.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="注意">
   <div class="ih"><span class="num">023</span><span class="ititle">エラーメッセージから原因を絞る</span></div>
   
   <pre class="prompt" id="b23">推測で直さず、証拠から辿る。
@@ -438,7 +443,7 @@ description: エラーが出て原因を調べるとき、または「エラー�
     <button class="btn ghost sm" data-save="b23" data-name="skill-templates-60-023.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="注意">
   <div class="ih"><span class="num">024</span><span class="ititle">レビューの観点を揃える</span></div>
   
   <pre class="prompt" id="b24">人によって指摘が変わる状態をなくす。
@@ -455,7 +460,7 @@ description: コードレビューをするとき、または「レビューし�
     <button class="btn ghost sm" data-save="b24" data-name="skill-templates-60-024.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="注意">
   <div class="ih"><span class="num">025</span><span class="ititle">コミット単位を整える</span></div>
   
   <pre class="prompt" id="b25">後から読める履歴にする。
@@ -472,7 +477,7 @@ description: 変更をコミットする前に整理するとき、または「�
     <button class="btn ghost sm" data-save="b25" data-name="skill-templates-60-025.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="注意">
   <div class="ih"><span class="num">026</span><span class="ititle">設定を環境変数に追い出す</span></div>
   
   <pre class="prompt" id="b26">秘密情報をコードから消す。
@@ -489,7 +494,7 @@ description: 設定値や秘密情報をコードから外に出すとき、ま�
     <button class="btn ghost sm" data-save="b26" data-name="skill-templates-60-026.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="注意">
   <div class="ih"><span class="num">027</span><span class="ititle">依存を足す前に判断する</span></div>
   
   <pre class="prompt" id="b27">気軽に増やして、後で困らない。
@@ -506,7 +511,7 @@ description: 新しいライブラリを追加するか判断するとき、ま�
     <button class="btn ghost sm" data-save="b27" data-name="skill-templates-60-027.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="注意">
   <div class="ih"><span class="num">028</span><span class="ititle">動かなくなったときに戻す</span></div>
   
   <pre class="prompt" id="b28">前に進む前に、戻り道を作る。
@@ -523,7 +528,7 @@ description: 本番に影響する変更を入れる前に使う。または「�
     <button class="btn ghost sm" data-save="b28" data-name="skill-templates-60-028.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="注意">
   <div class="ih"><span class="num">029</span><span class="ititle">ログの出し方を揃える</span></div>
   
   <pre class="prompt" id="b29">困ったときに読めるログにする。
@@ -540,7 +545,7 @@ description: ログ出力を追加・整理するとき、または「ログを�
     <button class="btn ghost sm" data-save="b29" data-name="skill-templates-60-029.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="注意">
   <div class="ih"><span class="num">030</span><span class="ititle">作業を引き継げる状態にする</span></div>
   
   <pre class="prompt" id="b30">自分がいなくても進む状態にする。
@@ -557,8 +562,8 @@ description: 作業を中断・引き継ぐとき、または「引き継ぎメ�
     <button class="btn ghost sm" data-save="b30" data-name="skill-templates-60-030.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">チームで使う</h2>
-<div class="icard">
+<h2 class="cat" data-cat="チームで使う">チームで使う</h2>
+<div class="icard" data-cat="チームで使う">
   <div class="ih"><span class="num">031</span><span class="ititle">新しく入った人に環境を渡す</span></div>
   
   <pre class="prompt" id="b31">初日の「動かない」を、手順で潰す。
@@ -575,8 +580,8 @@ description: 新しくチームに入った人の環境構築を案内すると�
     <button class="btn ghost sm" data-save="b31" data-name="skill-templates-60-031.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">注意</h2>
-<div class="icard">
+<h2 class="cat" data-cat="注意">注意</h2>
+<div class="icard" data-cat="注意">
   <div class="ih"><span class="num">032</span><span class="ititle">作業の進め方を揃える</span></div>
   
   <pre class="prompt" id="b32">人によってやり方が違う状態をなくす。
@@ -593,7 +598,7 @@ description: チームの作業手順を標準化するとき、または「進�
     <button class="btn ghost sm" data-save="b32" data-name="skill-templates-60-032.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="注意">
   <div class="ih"><span class="num">033</span><span class="ititle">定例の議題を用意する</span></div>
   
   <pre class="prompt" id="b33">集まってから考えない。
@@ -610,7 +615,7 @@ description: 定例会議の議題を用意するとき、または「アジェ�
     <button class="btn ghost sm" data-save="b33" data-name="skill-templates-60-033.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="注意">
   <div class="ih"><span class="num">034</span><span class="ititle">タスクを渡せる大きさに割る</span></div>
   
   <pre class="prompt" id="b34">抱え込みを、分割で防ぐ。
@@ -627,7 +632,7 @@ description: 大きな作業を分割するとき、または「タスクを分�
     <button class="btn ghost sm" data-save="b34" data-name="skill-templates-60-034.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="注意">
   <div class="ih"><span class="num">035</span><span class="ititle">困りごとを聞き出す</span></div>
   
   <pre class="prompt" id="b35">「特にありません」の先を聞く。
@@ -644,7 +649,7 @@ description: チームメンバーの詰まりを聞き出すとき、または1
     <button class="btn ghost sm" data-save="b35" data-name="skill-templates-60-035.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="注意">
   <div class="ih"><span class="num">036</span><span class="ititle">決めたことを記録に残す</span></div>
   
   <pre class="prompt" id="b36">決定が空中分解しないようにする。
@@ -661,7 +666,7 @@ description: 何かを決めたときに記録するために使う。または�
     <button class="btn ghost sm" data-save="b36" data-name="skill-templates-60-036.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="注意">
   <div class="ih"><span class="num">037</span><span class="ititle">レビュー依頼を出す</span></div>
   
   <pre class="prompt" id="b37">見てもらう側の負担を先に減らす。
@@ -678,7 +683,7 @@ description: レビューを依頼するとき、または「レビュー依頼�
     <button class="btn ghost sm" data-save="b37" data-name="skill-templates-60-037.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="注意">
   <div class="ih"><span class="num">038</span><span class="ititle">他部署に説明する</span></div>
   
   <pre class="prompt" id="b38">専門用語を、相手の言葉に置き換える。
@@ -695,7 +700,7 @@ description: 専門外の相手に技術的な内容を説明するとき、ま�
     <button class="btn ghost sm" data-save="b38" data-name="skill-templates-60-038.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="注意">
   <div class="ih"><span class="num">039</span><span class="ititle">属人化している作業を洗い出す</span></div>
   
   <pre class="prompt" id="b39">「あの人しかできない」を見つける。
@@ -712,7 +717,7 @@ description: 業務の属人化を点検するとき、または「引き継ぎ�
     <button class="btn ghost sm" data-save="b39" data-name="skill-templates-60-039.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="注意">
   <div class="ih"><span class="num">040</span><span class="ititle">作業のふりかえりをする</span></div>
   
   <pre class="prompt" id="b40">同じ失敗を、次に持ち込まない。
@@ -729,8 +734,8 @@ description: プロジェクトや期間の区切りでふりかえるとき、�
     <button class="btn ghost sm" data-save="b40" data-name="skill-templates-60-040.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">運用と品質を守る</h2>
-<div class="icard">
+<h2 class="cat" data-cat="運用と品質を守る">運用と品質を守る</h2>
+<div class="icard" data-cat="運用と品質を守る">
   <div class="ih"><span class="num">041</span><span class="ititle">公開前の最終点検をする</span></div>
   
   <pre class="prompt" id="b41">出したあとに直すのが一番高い。
@@ -747,8 +752,8 @@ description: 資料・記事・ページを公開する前に点検するとき�
     <button class="btn ghost sm" data-save="b41" data-name="skill-templates-60-041.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">注意</h2>
-<div class="icard">
+<h2 class="cat" data-cat="注意">注意</h2>
+<div class="icard" data-cat="注意">
   <div class="ih"><span class="num">042</span><span class="ititle">個人情報が混ざっていないか見る</span></div>
   
   <pre class="prompt" id="b42">配る前に、一度必ず通す。
@@ -765,7 +770,7 @@ description: 外部に出す文書やデータを点検するとき、または�
     <button class="btn ghost sm" data-save="b42" data-name="skill-templates-60-042.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="注意">
   <div class="ih"><span class="num">043</span><span class="ititle">誇張表現を洗い出す</span></div>
   
   <pre class="prompt" id="b43">言い過ぎを、公開前に削る。
@@ -782,7 +787,7 @@ description: 宣伝文・紹介文を点検するとき、または「誇張が�
     <button class="btn ghost sm" data-save="b43" data-name="skill-templates-60-043.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="注意">
   <div class="ih"><span class="num">044</span><span class="ititle">変更の影響を関係者に伝える</span></div>
   
   <pre class="prompt" id="b44">黙って変えて、あとで揉めない。
@@ -799,7 +804,7 @@ description: 仕様や運用の変更を関係者に伝えるとき、または�
     <button class="btn ghost sm" data-save="b44" data-name="skill-templates-60-044.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="注意">
   <div class="ih"><span class="num">045</span><span class="ititle">手順書が実際に動くか試す</span></div>
   
   <pre class="prompt" id="b45">書いた本人以外がやってみる。
@@ -816,7 +821,7 @@ description: 手順書を検証するとき、または「この手順で動く�
     <button class="btn ghost sm" data-save="b45" data-name="skill-templates-60-045.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="注意">
   <div class="ih"><span class="num">046</span><span class="ititle">障害の記録を残す</span></div>
   
   <pre class="prompt" id="b46">次に同じことが起きたときのために書く。
@@ -833,7 +838,7 @@ description: 障害やトラブルが収束したあとに記録するとき、�
     <button class="btn ghost sm" data-save="b46" data-name="skill-templates-60-046.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="注意">
   <div class="ih"><span class="num">047</span><span class="ititle">定期点検の項目を作る</span></div>
   
   <pre class="prompt" id="b47">見るべきものを、記憶に頼らない。
@@ -850,7 +855,7 @@ description: 定期点検の項目を整理するとき、または「毎月見�
     <button class="btn ghost sm" data-save="b47" data-name="skill-templates-60-047.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="注意">
   <div class="ih"><span class="num">048</span><span class="ititle">使われていないものを整理する</span></div>
   
   <pre class="prompt" id="b48">溜まった不要物を、定期的に落とす。
@@ -867,7 +872,7 @@ description: 使われていない資産を整理するとき、または「不�
     <button class="btn ghost sm" data-save="b48" data-name="skill-templates-60-048.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="注意">
   <div class="ih"><span class="num">049</span><span class="ititle">権限を最小限に絞る</span></div>
   
   <pre class="prompt" id="b49">持たせすぎた権限を、定期的に減らす。
@@ -884,7 +889,7 @@ description: 権限設定を見直すとき、または「権限を整理した�
     <button class="btn ghost sm" data-save="b49" data-name="skill-templates-60-049.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="注意">
   <div class="ih"><span class="num">050</span><span class="ititle">作ったものを止める判断をする</span></div>
   
   <pre class="prompt" id="b50">始めるより、やめるほうが難しい。
@@ -901,8 +906,8 @@ description: 仕組みやサービスの終了を判断するとき、または�
     <button class="btn ghost sm" data-save="b50" data-name="skill-templates-60-050.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">MCPと配布に効く</h2>
-<div class="icard">
+<h2 class="cat" data-cat="MCPと配布に効く">MCPと配布に効く</h2>
+<div class="icard" data-cat="MCPと配布に効く">
   <div class="ih"><span class="num">051</span><span class="ititle">配る前提でスキルを書き直す</span></div>
   
   <pre class="prompt" id="b51">自分用のメモを、他人が読める形にする。
@@ -919,8 +924,8 @@ description: 自分用に書いたスキルを他人に配れる形に直すと�
     <button class="btn ghost sm" data-save="b51" data-name="skill-templates-60-051.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">注意</h2>
-<div class="icard">
+<h2 class="cat" data-cat="注意">注意</h2>
+<div class="icard" data-cat="注意">
   <div class="ih"><span class="num">052</span><span class="ititle">descriptionを呼ばれる形に直す</span></div>
   
   <pre class="prompt" id="b52">呼び出されないスキルは、無いのと同じ。
@@ -937,7 +942,7 @@ description: スキルが意図した場面で呼び出されないとき、ま�
     <button class="btn ghost sm" data-save="b52" data-name="skill-templates-60-052.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="注意">
   <div class="ih"><span class="num">053</span><span class="ititle">MCPサーバーの仕様を決める</span></div>
   
   <pre class="prompt" id="b53">作り始める前に、境界を決める。
@@ -954,7 +959,7 @@ description: MCPサーバーを作る前に仕様を固めるとき、または�
     <button class="btn ghost sm" data-save="b53" data-name="skill-templates-60-053.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="注意">
   <div class="ih"><span class="num">054</span><span class="ititle">つながらないときを切り分ける</span></div>
   
   <pre class="prompt" id="b54">「動かない」を、原因ごとに分ける。
@@ -971,7 +976,7 @@ description: MCPサーバーにつながらないとき、または「MCPが動�
     <button class="btn ghost sm" data-save="b54" data-name="skill-templates-60-054.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="注意">
   <div class="ih"><span class="num">055</span><span class="ititle">配布物の受け取り方を書く</span></div>
   
   <pre class="prompt" id="b55">渡す側の説明が、そのまま使えるようにする。
@@ -988,7 +993,7 @@ description: 配布物の受け取り手順を書くとき、または「使い�
     <button class="btn ghost sm" data-save="b55" data-name="skill-templates-60-055.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="注意">
   <div class="ih"><span class="num">056</span><span class="ititle">スキルとMCPのどちらで作るか決める</span></div>
   
   <pre class="prompt" id="b56">作り始める前に、方式を選ぶ。
@@ -1005,7 +1010,7 @@ description: 新しく何かを作るとき、SkillとMCPのどちらにする�
     <button class="btn ghost sm" data-save="b56" data-name="skill-templates-60-056.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="注意">
   <div class="ih"><span class="num">057</span><span class="ititle">配布物の版を管理する</span></div>
   
   <pre class="prompt" id="b57">どれが最新かを、常に1つに保つ。
@@ -1022,7 +1027,7 @@ description: 配布物のバージョン管理方針を決めるとき、また�
     <button class="btn ghost sm" data-save="b57" data-name="skill-templates-60-057.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="注意">
   <div class="ih"><span class="num">058</span><span class="ititle">配布物の利用状況を読む</span></div>
   
   <pre class="prompt" id="b58">数字から、次に作るものを決める。
@@ -1039,7 +1044,7 @@ description: 配布物の利用ログを分析するとき、または「使わ�
     <button class="btn ghost sm" data-save="b58" data-name="skill-templates-60-058.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="注意">
   <div class="ih"><span class="num">059</span><span class="ititle">配布物の安全性を審査する</span></div>
   
   <pre class="prompt" id="b59">他人が作ったものを入れる前に見る。
@@ -1056,7 +1061,7 @@ description: 外部から入手したスキルやMCPサーバーを導入前に�
     <button class="btn ghost sm" data-save="b59" data-name="skill-templates-60-059.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="注意">
   <div class="ih"><span class="num">060</span><span class="ititle">自分の配布物を宣伝せずに紹介する</span></div>
   
   <pre class="prompt" id="b60">押し売りにならない伝え方をする。
@@ -2706,6 +2711,57 @@ description: 作った配布物を他の人に紹介するとき、または「�
 以上、60個です。内訳は「文書・資料をつくる」10本、「調べる・確かめる」10本、「コードを扱う」10本、「チームで使う」10本、「運用と品質を守る」10本、「MCPと配布に効く」10本の合計60本です。
 </pre>
 <script>
+// 項目の多いキットで、目的の1件に辿り着けるようにする絞り込み。
+// 検索はタイトル・説明だけでなく本文も対象にする（「あの文言が入っていた項目」で探せるように）。
+(function(){
+  var q = document.getElementById('kq');
+  if (!q) return;
+  var hit = document.getElementById('khit');
+  var cards = [].slice.call(document.querySelectorAll('.kwrap .icard'));
+  var heads = [].slice.call(document.querySelectorAll('.kwrap h2.cat'));
+  var chips = [].slice.call(document.querySelectorAll('.kcat'));
+  var cat = '';
+
+  // ひらがな・カタカナの違いで取りこぼさないようにする（ハブ側の検索と同じ扱い）
+  function norm(s){
+    return (s || '').toLowerCase().replace(/[ぁ-ん]/g, function(c){
+      return String.fromCharCode(c.charCodeAt(0) + 0x60);
+    });
+  }
+
+  // カード全体の textContent だとボタンの「コピー」まで拾ってしまうため、中身を選んで集める
+  cards.forEach(function(c){
+    var t = c.querySelector('.ititle'), d = c.querySelector('.imeta'), p = c.querySelector('.prompt');
+    c._t = norm((t ? t.textContent : '') + ' ' + (d ? d.textContent : '') + ' ' + (p ? p.textContent : ''));
+  });
+
+  function apply(){
+    var kw = norm(q.value.trim()), n = 0, shown = {};
+    cards.forEach(function(c){
+      var ok = (!cat || c.getAttribute('data-cat') === cat)
+            && (!kw || c._t.indexOf(kw) !== -1);
+      c.classList.toggle('hide', !ok);
+      if (ok){ n++; shown[c.getAttribute('data-cat')] = 1; }
+    });
+    // 残った項目が1件も無いカテゴリの見出しは隠す
+    heads.forEach(function(h){
+      h.classList.toggle('hide', !shown[h.getAttribute('data-cat')]);
+    });
+    hit.textContent = (kw || cat)
+      ? (n ? n + '件を表示中' : '該当する項目がありません')
+      : '';
+  }
+
+  q.addEventListener('input', apply);
+  chips.forEach(function(b){
+    b.addEventListener('click', function(){
+      cat = b.getAttribute('data-cat');
+      chips.forEach(function(x){ x.classList.toggle('on', x === b); });
+      apply();
+    });
+  });
+})();
+
 function flash(btn, label){
   const old = btn.textContent, cls = btn.className;
   btn.textContent = label; btn.classList.add('ok');
@@ -2775,7 +2831,22 @@ document.addEventListener('click', e => {
     el.classList.remove('show');
     sessionStorage.setItem('promoClosed', '1');
   }
-  setTimeout(function(){ el.classList.add('show'); }, 1600);
+  // 動画の概要欄から来た人が、自分のプレゼントを探し始める瞬間に被らないようにする。
+  // 以前は読み込み1.6秒後に無条件で出しており、いちばん目的意識の高い時間を塞いでいた。
+  // 中身を見に行った（＝目当てのものに辿り着いた）ころに出す。
+  var shown = false;
+  function show(){
+    if (shown) return;
+    shown = true;
+    el.classList.add('show');
+    removeEventListener('scroll', onScroll);
+  }
+  function onScroll(){
+    if (scrollY > innerHeight * 0.8) show();
+  }
+  addEventListener('scroll', onScroll, {passive:true});
+  // まったくスクロールしない人にも最後には出す（ただし十分に間を置いてから）
+  setTimeout(show, 45000);
   document.getElementById('promoClose').addEventListener('click', function(e){ e.preventDefault(); close(); });
   el.addEventListener('click', function(e){ if (e.target === el) close(); });
 })();

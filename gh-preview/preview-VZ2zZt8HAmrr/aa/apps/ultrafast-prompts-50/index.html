@@ -36,7 +36,12 @@
     <div class="pnote"><span class="nb">下のカードから、</span><span class="nb">1件ずつコピー、</span><span class="nb">または個別にダウンロードできます。</span><span class="nb">まとめて欲しいときは、</span><span class="nb">上の</span><span class="nb">「全件ダウンロード」を</span><span class="nb">お使いください。</span></div>
   </section>
 
-  <div class="icard">
+  <div class="ktools">
+  <input type="search" id="kq" placeholder="この中から探す" autocomplete="off" aria-label="この中から探す">
+  
+  <p class="khit" id="khit" role="status"></p>
+</div>
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">001</span><span class="ititle">前提: 本番システムでエラーが多発しており、対応チームが原因調査を急いでいる。</span></div>
   
   <pre class="prompt" id="b1">前提: 本番システムでエラーが多発しており、対応チームが原因調査を急いでいる。
@@ -47,7 +52,7 @@
     <button class="btn ghost sm" data-save="b1" data-name="ultrafast-prompts-50-001.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">002</span><span class="ititle">前提: 障害の影響範囲がまだ特定できておらず、優先度判断に時間をかけられない。</span></div>
   
   <pre class="prompt" id="b2">前提: 障害の影響範囲がまだ特定できておらず、優先度判断に時間をかけられない。
@@ -58,7 +63,7 @@
     <button class="btn ghost sm" data-save="b2" data-name="ultrafast-prompts-50-002.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">003</span><span class="ititle">前提: 複数の仮説が同時に浮かんでおり、どれから検証すべきか決めきれない。</span></div>
   
   <pre class="prompt" id="b3">前提: 複数の仮説が同時に浮かんでおり、どれから検証すべきか決めきれない。
@@ -69,7 +74,7 @@
     <button class="btn ghost sm" data-save="b3" data-name="ultrafast-prompts-50-003.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">004</span><span class="ititle">前提: 修正パッチを急いで用意する必要があるが、影響範囲の見落としが怖い。</span></div>
   
   <pre class="prompt" id="b4">前提: 修正パッチを急いで用意する必要があるが、影響範囲の見落としが怖い。
@@ -80,7 +85,7 @@
     <button class="btn ghost sm" data-save="b4" data-name="ultrafast-prompts-50-004.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">005</span><span class="ititle">前提: 障害対応の最中、関係者への状況報告文を素早く作る必要がある。</span></div>
   
   <pre class="prompt" id="b5">前提: 障害対応の最中、関係者への状況報告文を素早く作る必要がある。
@@ -91,7 +96,7 @@
     <button class="btn ghost sm" data-save="b5" data-name="ultrafast-prompts-50-005.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">006</span><span class="ititle">前提: ログの量が膨大で、人力では原因になりそうな箇所を絞り込めない。</span></div>
   
   <pre class="prompt" id="b6">前提: ログの量が膨大で、人力では原因になりそうな箇所を絞り込めない。
@@ -102,7 +107,7 @@
     <button class="btn ghost sm" data-save="b6" data-name="ultrafast-prompts-50-006.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">007</span><span class="ititle">前提: 障害の再現条件が分からず、再現テストのあたりをつけたい。</span></div>
   
   <pre class="prompt" id="b7">前提: 障害の再現条件が分からず、再現テストのあたりをつけたい。
@@ -113,7 +118,7 @@
     <button class="btn ghost sm" data-save="b7" data-name="ultrafast-prompts-50-007.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">008</span><span class="ititle">前提: 一時対応（ロールバック等）の判断を、根拠を示した上で即座に下したい。</span></div>
   
   <pre class="prompt" id="b8">前提: 一時対応（ロールバック等）の判断を、根拠を示した上で即座に下したい。
@@ -124,7 +129,7 @@
     <button class="btn ghost sm" data-save="b8" data-name="ultrafast-prompts-50-008.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">009</span><span class="ititle">前提: 対応後の再発防止策を、記憶が新しいうちにその場でまとめておきたい。</span></div>
   
   <pre class="prompt" id="b9">前提: 対応後の再発防止策を、記憶が新しいうちにその場でまとめておきたい。
@@ -135,7 +140,7 @@
     <button class="btn ghost sm" data-save="b9" data-name="ultrafast-prompts-50-009.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">010</span><span class="ititle">前提: 対応チーム内で情報が錯綜しており、状況を1枚で整理したい。</span></div>
   
   <pre class="prompt" id="b10">前提: 対応チーム内で情報が錯綜しており、状況を1枚で整理したい。
@@ -148,7 +153,7 @@
     <button class="btn ghost sm" data-save="b10" data-name="ultrafast-prompts-50-010.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">011</span><span class="ititle">前提: 市場が急変動しており、要因をすぐに把握して次の判断につなげたい。</span></div>
   
   <pre class="prompt" id="b11">前提: 市場が急変動しており、要因をすぐに把握して次の判断につなげたい。
@@ -159,7 +164,7 @@
     <button class="btn ghost sm" data-save="b11" data-name="ultrafast-prompts-50-011.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">012</span><span class="ititle">前提: 大量の取引データの中から、不審な取引がないか即座にスクリーニングしたい。</span></div>
   
   <pre class="prompt" id="b12">前提: 大量の取引データの中から、不審な取引がないか即座にスクリーニングしたい。
@@ -170,7 +175,7 @@
     <button class="btn ghost sm" data-save="b12" data-name="ultrafast-prompts-50-012.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">013</span><span class="ititle">前提: 決算発表直後で、資料の要点を素早く把握し次のアクションに移りたい。</span></div>
   
   <pre class="prompt" id="b13">前提: 決算発表直後で、資料の要点を素早く把握し次のアクションに移りたい。
@@ -181,7 +186,7 @@
     <button class="btn ghost sm" data-save="b13" data-name="ultrafast-prompts-50-013.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">014</span><span class="ititle">前提: 複数の情報源から矛盾する情報が出てきており、真偽を素早く見極めたい。</span></div>
   
   <pre class="prompt" id="b14">前提: 複数の情報源から矛盾する情報が出てきており、真偽を素早く見極めたい。
@@ -192,7 +197,7 @@
     <button class="btn ghost sm" data-save="b14" data-name="ultrafast-prompts-50-014.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">015</span><span class="ititle">前提: リスク管理のため、ポジションの状況を今すぐ把握したい。</span></div>
   
   <pre class="prompt" id="b15">前提: リスク管理のため、ポジションの状況を今すぐ把握したい。
@@ -203,7 +208,7 @@
     <button class="btn ghost sm" data-save="b15" data-name="ultrafast-prompts-50-015.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">016</span><span class="ititle">前提: 新しい規制・ガイドラインが発表され、自社への影響を急いで把握したい。</span></div>
   
   <pre class="prompt" id="b16">前提: 新しい規制・ガイドラインが発表され、自社への影響を急いで把握したい。
@@ -214,7 +219,7 @@
     <button class="btn ghost sm" data-save="b16" data-name="ultrafast-prompts-50-016.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">017</span><span class="ititle">前提: 取引先の信用状況に疑義が生じ、追加取引の可否を急いで判断したい。</span></div>
   
   <pre class="prompt" id="b17">前提: 取引先の信用状況に疑義が生じ、追加取引の可否を急いで判断したい。
@@ -225,7 +230,7 @@
     <button class="btn ghost sm" data-save="b17" data-name="ultrafast-prompts-50-017.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">018</span><span class="ititle">前提: 市場のボラティリティが高まっており、シナリオ別の対応方針を今すぐ整理したい。</span></div>
   
   <pre class="prompt" id="b18">前提: 市場のボラティリティが高まっており、シナリオ別の対応方針を今すぐ整理したい。
@@ -236,7 +241,7 @@
     <button class="btn ghost sm" data-save="b18" data-name="ultrafast-prompts-50-018.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">019</span><span class="ititle">前提: 会議直前に、最新の市場動向サマリーが急に必要になった。</span></div>
   
   <pre class="prompt" id="b19">前提: 会議直前に、最新の市場動向サマリーが急に必要になった。
@@ -247,7 +252,7 @@
     <button class="btn ghost sm" data-save="b19" data-name="ultrafast-prompts-50-019.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">020</span><span class="ititle">前提: 異常検知アラートが発報され、真の異常か誤検知かを即座に切り分けたい。</span></div>
   
   <pre class="prompt" id="b20">前提: 異常検知アラートが発報され、真の異常か誤検知かを即座に切り分けたい。
@@ -260,7 +265,7 @@
     <button class="btn ghost sm" data-save="b20" data-name="ultrafast-prompts-50-020.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">021</span><span class="ititle">前提: 顧客との会話中、過去の問い合わせ履歴を確認しながら対応する必要がある。</span></div>
   
   <pre class="prompt" id="b21">前提: 顧客との会話中、過去の問い合わせ履歴を確認しながら対応する必要がある。
@@ -271,7 +276,7 @@
     <button class="btn ghost sm" data-save="b21" data-name="ultrafast-prompts-50-021.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">022</span><span class="ititle">前提: 会話の途中で複数の解決策が考えられ、どれを提案すべきか即座に判断したい。</span></div>
   
   <pre class="prompt" id="b22">前提: 会話の途中で複数の解決策が考えられ、どれを提案すべきか即座に判断したい。
@@ -282,7 +287,7 @@
     <button class="btn ghost sm" data-save="b22" data-name="ultrafast-prompts-50-022.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">023</span><span class="ititle">前提: 専門的な質問を受けたが、担当者が即答できる知識を持っていない。</span></div>
   
   <pre class="prompt" id="b23">前提: 専門的な質問を受けたが、担当者が即答できる知識を持っていない。
@@ -293,7 +298,7 @@
     <button class="btn ghost sm" data-save="b23" data-name="ultrafast-prompts-50-023.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">024</span><span class="ititle">前提: クレーム対応中で、会話を止めずに次の返答を用意する必要がある。</span></div>
   
   <pre class="prompt" id="b24">前提: クレーム対応中で、会話を止めずに次の返答を用意する必要がある。
@@ -304,7 +309,7 @@
     <button class="btn ghost sm" data-save="b24" data-name="ultrafast-prompts-50-024.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">025</span><span class="ititle">前提: 複数手順が必要な手続きの案内を、会話のテンポを崩さず行いたい。</span></div>
   
   <pre class="prompt" id="b25">前提: 複数手順が必要な手続きの案内を、会話のテンポを崩さず行いたい。
@@ -315,7 +320,7 @@
     <button class="btn ghost sm" data-save="b25" data-name="ultrafast-prompts-50-025.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">026</span><span class="ititle">前提: 顧客の感情が高ぶっており、対応のトーンを慎重に選ぶ必要がある。</span></div>
   
   <pre class="prompt" id="b26">前提: 顧客の感情が高ぶっており、対応のトーンを慎重に選ぶ必要がある。
@@ -326,7 +331,7 @@
     <button class="btn ghost sm" data-save="b26" data-name="ultrafast-prompts-50-026.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">027</span><span class="ititle">前提: 対応履歴が長く、要点を見失いそうなので途中で整理したい。</span></div>
   
   <pre class="prompt" id="b27">前提: 対応履歴が長く、要点を見失いそうなので途中で整理したい。
@@ -337,7 +342,7 @@
     <button class="btn ghost sm" data-save="b27" data-name="ultrafast-prompts-50-027.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">028</span><span class="ititle">前提: 別の担当者に対応を引き継ぐ必要があり、急いで申し送りを用意したい。</span></div>
   
   <pre class="prompt" id="b28">前提: 別の担当者に対応を引き継ぐ必要があり、急いで申し送りを用意したい。
@@ -348,7 +353,7 @@
     <button class="btn ghost sm" data-save="b28" data-name="ultrafast-prompts-50-028.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">029</span><span class="ititle">前提: よくある質問と似ているが微妙に違う相談で、判断に迷っている。</span></div>
   
   <pre class="prompt" id="b29">前提: よくある質問と似ているが微妙に違う相談で、判断に迷っている。
@@ -359,7 +364,7 @@
     <button class="btn ghost sm" data-save="b29" data-name="ultrafast-prompts-50-029.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">030</span><span class="ititle">前提: 対応終了後、次の対応品質向上のためにフィードバックを急いで記録したい。</span></div>
   
   <pre class="prompt" id="b30">前提: 対応終了後、次の対応品質向上のためにフィードバックを急いで記録したい。
@@ -372,7 +377,7 @@
     <button class="btn ghost sm" data-save="b30" data-name="ultrafast-prompts-50-030.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">031</span><span class="ititle">前提: 購入を迷っている顧客からの質問に、その場で答える必要がある。</span></div>
   
   <pre class="prompt" id="b31">前提: 購入を迷っている顧客からの質問に、その場で答える必要がある。
@@ -383,7 +388,7 @@
     <button class="btn ghost sm" data-save="b31" data-name="ultrafast-prompts-50-031.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">032</span><span class="ititle">前提: 在庫状況を確認しながら、代替案を即座に提案する必要がある。</span></div>
   
   <pre class="prompt" id="b32">前提: 在庫状況を確認しながら、代替案を即座に提案する必要がある。
@@ -394,7 +399,7 @@
     <button class="btn ghost sm" data-save="b32" data-name="ultrafast-prompts-50-032.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">033</span><span class="ititle">前提: 決済トラブルが発生し、顧客を待たせずに原因を特定したい。</span></div>
   
   <pre class="prompt" id="b33">前提: 決済トラブルが発生し、顧客を待たせずに原因を特定したい。
@@ -405,7 +410,7 @@
     <button class="btn ghost sm" data-save="b33" data-name="ultrafast-prompts-50-033.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">034</span><span class="ititle">前提: 顧客の好みに合わせたレコメンドを、その場で組み立てたい。</span></div>
   
   <pre class="prompt" id="b34">前提: 顧客の好みに合わせたレコメンドを、その場で組み立てたい。
@@ -416,7 +421,7 @@
     <button class="btn ghost sm" data-save="b34" data-name="ultrafast-prompts-50-034.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">035</span><span class="ititle">前提: セール期間中でアクセスが集中しており、問い合わせにも即座に答えたい。</span></div>
   
   <pre class="prompt" id="b35">前提: セール期間中でアクセスが集中しており、問い合わせにも即座に答えたい。
@@ -427,7 +432,7 @@
     <button class="btn ghost sm" data-save="b35" data-name="ultrafast-prompts-50-035.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">036</span><span class="ititle">前提: 返品・交換の可否を、規約を確認しながらその場で案内したい。</span></div>
   
   <pre class="prompt" id="b36">前提: 返品・交換の可否を、規約を確認しながらその場で案内したい。
@@ -438,7 +443,7 @@
     <button class="btn ghost sm" data-save="b36" data-name="ultrafast-prompts-50-036.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">037</span><span class="ititle">前提: サイズ・仕様の違いで迷っている顧客に、比較情報を即座に提示したい。</span></div>
   
   <pre class="prompt" id="b37">前提: サイズ・仕様の違いで迷っている顧客に、比較情報を即座に提示したい。
@@ -449,7 +454,7 @@
     <button class="btn ghost sm" data-save="b37" data-name="ultrafast-prompts-50-037.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">038</span><span class="ititle">前提: カート放棄が起きそうなタイミングで、離脱を防ぐ一言を用意したい。</span></div>
   
   <pre class="prompt" id="b38">前提: カート放棄が起きそうなタイミングで、離脱を防ぐ一言を用意したい。
@@ -460,7 +465,7 @@
     <button class="btn ghost sm" data-save="b38" data-name="ultrafast-prompts-50-038.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">039</span><span class="ititle">前提: 配送状況の問い合わせに、リアルタイムで状況を確認して答えたい。</span></div>
   
   <pre class="prompt" id="b39">前提: 配送状況の問い合わせに、リアルタイムで状況を確認して答えたい。
@@ -471,7 +476,7 @@
     <button class="btn ghost sm" data-save="b39" data-name="ultrafast-prompts-50-039.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">040</span><span class="ititle">前提: クーポン・割引の適用可否について、条件を即座に確認したい。</span></div>
   
   <pre class="prompt" id="b40">前提: クーポン・割引の適用可否について、条件を即座に確認したい。
@@ -484,7 +489,7 @@
     <button class="btn ghost sm" data-save="b40" data-name="ultrafast-prompts-50-040.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">041</span><span class="ititle">前提: 実験の初期結果が出たところで、次の試行方針をすぐ決めたい。</span></div>
   
   <pre class="prompt" id="b41">前提: 実験の初期結果が出たところで、次の試行方針をすぐ決めたい。
@@ -495,7 +500,7 @@
     <button class="btn ghost sm" data-save="b41" data-name="ultrafast-prompts-50-041.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">042</span><span class="ititle">前提: 複数の資料を同時に検索し、必要な情報をその場で要約したい。</span></div>
   
   <pre class="prompt" id="b42">前提: 複数の資料を同時に検索し、必要な情報をその場で要約したい。
@@ -506,7 +511,7 @@
     <button class="btn ghost sm" data-save="b42" data-name="ultrafast-prompts-50-042.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">043</span><span class="ititle">前提: 議論しながら、その場で仮説の妥当性を検証したい。</span></div>
   
   <pre class="prompt" id="b43">前提: 議論しながら、その場で仮説の妥当性を検証したい。
@@ -517,7 +522,7 @@
     <button class="btn ghost sm" data-save="b43" data-name="ultrafast-prompts-50-043.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">044</span><span class="ititle">前提: 試作したアイデアを、その場ですぐにフィードバックしてほしい。</span></div>
   
   <pre class="prompt" id="b44">前提: 試作したアイデアを、その場ですぐにフィードバックしてほしい。
@@ -528,7 +533,7 @@
     <button class="btn ghost sm" data-save="b44" data-name="ultrafast-prompts-50-044.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">045</span><span class="ititle">前提: 会議中に出た疑問を、その場で調べて共有したい。</span></div>
   
   <pre class="prompt" id="b45">前提: 会議中に出た疑問を、その場で調べて共有したい。
@@ -539,7 +544,7 @@
     <button class="btn ghost sm" data-save="b45" data-name="ultrafast-prompts-50-045.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">046</span><span class="ititle">前提: 複数の実験パターンを並行して試し、途中経過を素早く比較したい。</span></div>
   
   <pre class="prompt" id="b46">前提: 複数の実験パターンを並行して試し、途中経過を素早く比較したい。
@@ -550,7 +555,7 @@
     <button class="btn ghost sm" data-save="b46" data-name="ultrafast-prompts-50-046.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">047</span><span class="ititle">前提: 対話しながらアイデアを広げていきたく、その場で関連案を出してほしい。</span></div>
   
   <pre class="prompt" id="b47">前提: 対話しながらアイデアを広げていきたく、その場で関連案を出してほしい。
@@ -561,7 +566,7 @@
     <button class="btn ghost sm" data-save="b47" data-name="ultrafast-prompts-50-047.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">048</span><span class="ititle">前提: プロトタイプの動作確認をしながら、その場で改善点を洗い出したい。</span></div>
   
   <pre class="prompt" id="b48">前提: プロトタイプの動作確認をしながら、その場で改善点を洗い出したい。
@@ -572,7 +577,7 @@
     <button class="btn ghost sm" data-save="b48" data-name="ultrafast-prompts-50-048.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">049</span><span class="ititle">前提: リサーチの途中で方向転換が必要か、その場で判断したい。</span></div>
   
   <pre class="prompt" id="b49">前提: リサーチの途中で方向転換が必要か、その場で判断したい。
@@ -583,7 +588,7 @@
     <button class="btn ghost sm" data-save="b49" data-name="ultrafast-prompts-50-049.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">050</span><span class="ititle">前提: 一晩かかっていた検証作業を、日中のセッション内で終わらせたい。</span></div>
   
   <pre class="prompt" id="b50">前提: 一晩かかっていた検証作業を、日中のセッション内で終わらせたい。
@@ -830,6 +835,57 @@
 **ポイント**: これらは「速さが価値になる場面」の発注テンプレートです。通常速度の環境で使う場合は、依頼の粒度をこのまま流用しつつ、応答を待つ前提で使ってください。
 </pre>
 <script>
+// 項目の多いキットで、目的の1件に辿り着けるようにする絞り込み。
+// 検索はタイトル・説明だけでなく本文も対象にする（「あの文言が入っていた項目」で探せるように）。
+(function(){
+  var q = document.getElementById('kq');
+  if (!q) return;
+  var hit = document.getElementById('khit');
+  var cards = [].slice.call(document.querySelectorAll('.kwrap .icard'));
+  var heads = [].slice.call(document.querySelectorAll('.kwrap h2.cat'));
+  var chips = [].slice.call(document.querySelectorAll('.kcat'));
+  var cat = '';
+
+  // ひらがな・カタカナの違いで取りこぼさないようにする（ハブ側の検索と同じ扱い）
+  function norm(s){
+    return (s || '').toLowerCase().replace(/[ぁ-ん]/g, function(c){
+      return String.fromCharCode(c.charCodeAt(0) + 0x60);
+    });
+  }
+
+  // カード全体の textContent だとボタンの「コピー」まで拾ってしまうため、中身を選んで集める
+  cards.forEach(function(c){
+    var t = c.querySelector('.ititle'), d = c.querySelector('.imeta'), p = c.querySelector('.prompt');
+    c._t = norm((t ? t.textContent : '') + ' ' + (d ? d.textContent : '') + ' ' + (p ? p.textContent : ''));
+  });
+
+  function apply(){
+    var kw = norm(q.value.trim()), n = 0, shown = {};
+    cards.forEach(function(c){
+      var ok = (!cat || c.getAttribute('data-cat') === cat)
+            && (!kw || c._t.indexOf(kw) !== -1);
+      c.classList.toggle('hide', !ok);
+      if (ok){ n++; shown[c.getAttribute('data-cat')] = 1; }
+    });
+    // 残った項目が1件も無いカテゴリの見出しは隠す
+    heads.forEach(function(h){
+      h.classList.toggle('hide', !shown[h.getAttribute('data-cat')]);
+    });
+    hit.textContent = (kw || cat)
+      ? (n ? n + '件を表示中' : '該当する項目がありません')
+      : '';
+  }
+
+  q.addEventListener('input', apply);
+  chips.forEach(function(b){
+    b.addEventListener('click', function(){
+      cat = b.getAttribute('data-cat');
+      chips.forEach(function(x){ x.classList.toggle('on', x === b); });
+      apply();
+    });
+  });
+})();
+
 function flash(btn, label){
   const old = btn.textContent, cls = btn.className;
   btn.textContent = label; btn.classList.add('ok');
@@ -899,7 +955,22 @@ document.addEventListener('click', e => {
     el.classList.remove('show');
     sessionStorage.setItem('promoClosed', '1');
   }
-  setTimeout(function(){ el.classList.add('show'); }, 1600);
+  // 動画の概要欄から来た人が、自分のプレゼントを探し始める瞬間に被らないようにする。
+  // 以前は読み込み1.6秒後に無条件で出しており、いちばん目的意識の高い時間を塞いでいた。
+  // 中身を見に行った（＝目当てのものに辿り着いた）ころに出す。
+  var shown = false;
+  function show(){
+    if (shown) return;
+    shown = true;
+    el.classList.add('show');
+    removeEventListener('scroll', onScroll);
+  }
+  function onScroll(){
+    if (scrollY > innerHeight * 0.8) show();
+  }
+  addEventListener('scroll', onScroll, {passive:true});
+  // まったくスクロールしない人にも最後には出す（ただし十分に間を置いてから）
+  setTimeout(show, 45000);
   document.getElementById('promoClose').addEventListener('click', function(e){ e.preventDefault(); close(); });
   el.addEventListener('click', function(e){ if (e.target === el) close(); });
 })();

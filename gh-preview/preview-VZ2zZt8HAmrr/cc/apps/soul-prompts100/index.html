@@ -36,8 +36,13 @@
     <div class="pnote"><span class="nb">下のカードから、</span><span class="nb">1件ずつコピー、</span><span class="nb">または個別にダウンロードできます。</span><span class="nb">まとめて欲しいときは、</span><span class="nb">上の</span><span class="nb">「全件ダウンロード」を</span><span class="nb">お使いください。</span></div>
   </section>
 
-  <h2 class="cat">リサーチ・情報収集</h2>
-<div class="icard">
+  <div class="ktools">
+  <input type="search" id="kq" placeholder="この中から探す" autocomplete="off" aria-label="この中から探す">
+  <div class="kcats"><button type="button" class="kcat on" data-cat="">すべて<span class="n">100</span></button><button type="button" class="kcat" data-cat="リサーチ・情報収集">リサーチ・情報収集<span class="n">10</span></button><button type="button" class="kcat" data-cat="ライティング・編集">ライティング・編集<span class="n">10</span></button><button type="button" class="kcat" data-cat="QA・品質チェック">QA・品質チェック<span class="n">10</span></button><button type="button" class="kcat" data-cat="翻訳・多言語対応">翻訳・多言語対応<span class="n">10</span></button><button type="button" class="kcat" data-cat="スケジュール・進行管理">スケジュール・進行管理<span class="n">10</span></button><button type="button" class="kcat" data-cat="カスタマーサポート・問い合わせ対応">カスタマーサポート・問い合わせ対応<span class="n">10</span></button><button type="button" class="kcat" data-cat="コーディング・開発支援">コーディング・開発支援<span class="n">10</span></button><button type="button" class="kcat" data-cat="マーケティング・SNS運用">マーケティング・SNS運用<span class="n">10</span></button><button type="button" class="kcat" data-cat="データ分析・レポート">データ分析・レポート<span class="n">10</span></button><button type="button" class="kcat" data-cat="バックオフィス・事務">バックオフィス・事務<span class="n">10</span></button></div>
+  <p class="khit" id="khit" role="status"></p>
+</div>
+<h2 class="cat" data-cat="リサーチ・情報収集">リサーチ・情報収集</h2>
+<div class="icard" data-cat="リサーチ・情報収集">
   <div class="ih"><span class="num">001</span><span class="ititle">一次情報リサーチャーBot</span></div>
   
   <pre class="prompt" id="b1">公式発表・公式ドキュメントだけを裏取りし、確度つきで報告する
@@ -50,7 +55,7 @@
     <button class="btn ghost sm" data-save="b1" data-name="soul-prompts100-001.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="リサーチ・情報収集">
   <div class="ih"><span class="num">002</span><span class="ititle">競合ウォッチャーBot</span></div>
   
   <pre class="prompt" id="b2">指定した競合サービスの更新情報だけを毎回拾ってくる
@@ -63,7 +68,7 @@
     <button class="btn ghost sm" data-save="b2" data-name="soul-prompts100-002.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="リサーチ・情報収集">
   <div class="ih"><span class="num">003</span><span class="ititle">学術論文サマライザーBot</span></div>
   
   <pre class="prompt" id="b3">専門用語を平易な言葉に置き換えて論文の要点を伝える
@@ -76,7 +81,7 @@
     <button class="btn ghost sm" data-save="b3" data-name="soul-prompts100-003.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="リサーチ・情報収集">
   <div class="ih"><span class="num">004</span><span class="ititle">市場規模リサーチBot</span></div>
   
   <pre class="prompt" id="b4">業界レポート・統計データから数字の裏取りをする
@@ -89,7 +94,7 @@
     <button class="btn ghost sm" data-save="b4" data-name="soul-prompts100-004.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="リサーチ・情報収集">
   <div class="ih"><span class="num">005</span><span class="ititle">SNSトレンド観測Bot</span></div>
   
   <pre class="prompt" id="b5">特定ハッシュタグ・キーワードの話題の温度感を報告する
@@ -102,7 +107,7 @@
     <button class="btn ghost sm" data-save="b5" data-name="soul-prompts100-005.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="リサーチ・情報収集">
   <div class="ih"><span class="num">006</span><span class="ititle">特許・商標ウォッチBot</span></div>
   
   <pre class="prompt" id="b6">自社領域に関わる新規出願を定期的にチェックする
@@ -115,7 +120,7 @@
     <button class="btn ghost sm" data-save="b6" data-name="soul-prompts100-006.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="リサーチ・情報収集">
   <div class="ih"><span class="num">007</span><span class="ititle">読者コメント傾向分析Bot</span></div>
   
   <pre class="prompt" id="b7">動画・記事のコメント欄から改善点を抽出する
@@ -128,7 +133,7 @@
     <button class="btn ghost sm" data-save="b7" data-name="soul-prompts100-007.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="リサーチ・情報収集">
   <div class="ih"><span class="num">008</span><span class="ititle">業界ニュース定点観測Bot</span></div>
   
   <pre class="prompt" id="b8">毎朝、指定した業界の主要ニュースだけを拾ってくる
@@ -141,7 +146,7 @@
     <button class="btn ghost sm" data-save="b8" data-name="soul-prompts100-008.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="リサーチ・情報収集">
   <div class="ih"><span class="num">009</span><span class="ititle">イベント・カンファレンス情報Bot</span></div>
   
   <pre class="prompt" id="b9">業界の登壇情報やカンファレンス日程を先回りで教える
@@ -154,7 +159,7 @@
     <button class="btn ghost sm" data-save="b9" data-name="soul-prompts100-009.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="リサーチ・情報収集">
   <div class="ih"><span class="num">010</span><span class="ititle">読み比べレビューBot</span></div>
   
   <pre class="prompt" id="b10">同じテーマを扱う複数記事を横断して要点を比較する
@@ -167,8 +172,8 @@
     <button class="btn ghost sm" data-save="b10" data-name="soul-prompts100-010.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">ライティング・編集</h2>
-<div class="icard">
+<h2 class="cat" data-cat="ライティング・編集">ライティング・編集</h2>
+<div class="icard" data-cat="ライティング・編集">
   <div class="ih"><span class="num">011</span><span class="ititle">構成たたき台作成Bot</span></div>
   
   <pre class="prompt" id="b11">動画の構成案をたたき台として提示する
@@ -181,7 +186,7 @@
     <button class="btn ghost sm" data-save="b11" data-name="soul-prompts100-011.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="ライティング・編集">
   <div class="ih"><span class="num">012</span><span class="ititle">見出しリライトBot</span></div>
   
   <pre class="prompt" id="b12">冗長な見出しを簡潔で分かりやすい表現に直す
@@ -194,7 +199,7 @@
     <button class="btn ghost sm" data-save="b12" data-name="soul-prompts100-012.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="ライティング・編集">
   <div class="ih"><span class="num">013</span><span class="ititle">文体統一チェックBot</span></div>
   
   <pre class="prompt" id="b13">文書内の「です・ます」「である」調の混在を検出する
@@ -207,7 +212,7 @@
     <button class="btn ghost sm" data-save="b13" data-name="soul-prompts100-013.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="ライティング・編集">
   <div class="ih"><span class="num">014</span><span class="ititle">要約圧縮Bot</span></div>
   
   <pre class="prompt" id="b14">長文を指定した文字数にきっちり収める
@@ -220,7 +225,7 @@
     <button class="btn ghost sm" data-save="b14" data-name="soul-prompts100-014.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="ライティング・編集">
   <div class="ih"><span class="num">015</span><span class="ititle">キャッチコピー壁打ちBot</span></div>
   
   <pre class="prompt" id="b15">1つの訴求軸から複数のコピー案を出す
@@ -233,7 +238,7 @@
     <button class="btn ghost sm" data-save="b15" data-name="soul-prompts100-015.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="ライティング・編集">
   <div class="ih"><span class="num">016</span><span class="ititle">誤字脱字・事実整合チェックBot</span></div>
   
   <pre class="prompt" id="b16">原稿の誤字と、既出情報との矛盾を同時に洗い出す
@@ -246,7 +251,7 @@
     <button class="btn ghost sm" data-save="b16" data-name="soul-prompts100-016.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="ライティング・編集">
   <div class="ih"><span class="num">017</span><span class="ititle">台詞・言い回しトーン調整Bot</span></div>
   
   <pre class="prompt" id="b17">資料の文章を指定したトーン(硬め・柔らかめ)に統一する
@@ -259,7 +264,7 @@
     <button class="btn ghost sm" data-save="b17" data-name="soul-prompts100-017.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="ライティング・編集">
   <div class="ih"><span class="num">018</span><span class="ititle">ふりがな付与Bot</span></div>
   
   <pre class="prompt" id="b18">海外人名・海外製品名に初出ふりがなを機械的に付ける
@@ -272,7 +277,7 @@
     <button class="btn ghost sm" data-save="b18" data-name="soul-prompts100-018.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="ライティング・編集">
   <div class="ih"><span class="num">019</span><span class="ititle">箇条書き→表変換Bot</span></div>
   
   <pre class="prompt" id="b19">比較情報の箇条書きを見やすい表組みに変換する
@@ -285,7 +290,7 @@
     <button class="btn ghost sm" data-save="b19" data-name="soul-prompts100-019.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="ライティング・編集">
   <div class="ih"><span class="num">020</span><span class="ititle">引用・出典整形Bot</span></div>
   
   <pre class="prompt" id="b20">本文中の出典表記を統一フォーマットに揃える
@@ -298,8 +303,8 @@
     <button class="btn ghost sm" data-save="b20" data-name="soul-prompts100-020.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">QA・品質チェック</h2>
-<div class="icard">
+<h2 class="cat" data-cat="QA・品質チェック">QA・品質チェック</h2>
+<div class="icard" data-cat="QA・品質チェック">
   <div class="ih"><span class="num">021</span><span class="ititle">事実確認QA Bot</span></div>
   
   <pre class="prompt" id="b21">資料内の主張が出典と一致しているかを突き合わせる
@@ -312,7 +317,7 @@
     <button class="btn ghost sm" data-save="b21" data-name="soul-prompts100-021.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="QA・品質チェック">
   <div class="ih"><span class="num">022</span><span class="ititle">矛盾検出Bot</span></div>
   
   <pre class="prompt" id="b22">資料内で前後に矛盾する記述がないか確認する
@@ -325,7 +330,7 @@
     <button class="btn ghost sm" data-save="b22" data-name="soul-prompts100-022.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="QA・品質チェック">
   <div class="ih"><span class="num">023</span><span class="ititle">誇張表現チェックBot</span></div>
   
   <pre class="prompt" id="b23">断定・保証にあたる表現を洗い出す
@@ -338,7 +343,7 @@
     <button class="btn ghost sm" data-save="b23" data-name="soul-prompts100-023.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="QA・品質チェック">
   <div class="ih"><span class="num">024</span><span class="ititle">リンク切れ・アンカーチェックBot</span></div>
   
   <pre class="prompt" id="b24">資料内のリンク先が正しく機能するか確認する
@@ -351,7 +356,7 @@
     <button class="btn ghost sm" data-save="b24" data-name="soul-prompts100-024.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="QA・品質チェック">
   <div class="ih"><span class="num">025</span><span class="ititle">表記ゆれチェックBot</span></div>
   
   <pre class="prompt" id="b25">固有名詞や製品名の表記が資料内で揺れていないか確認する
@@ -364,7 +369,7 @@
     <button class="btn ghost sm" data-save="b25" data-name="soul-prompts100-025.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="QA・品質チェック">
   <div class="ih"><span class="num">026</span><span class="ititle">数値の桁・単位チェックBot</span></div>
   
   <pre class="prompt" id="b26">資料内の数字の桁数・単位の誤りを検出する
@@ -377,7 +382,7 @@
     <button class="btn ghost sm" data-save="b26" data-name="soul-prompts100-026.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="QA・品質チェック">
   <div class="ih"><span class="num">027</span><span class="ititle">画像・図解の説明整合チェックBot</span></div>
   
   <pre class="prompt" id="b27">図解のキャプションと本文の説明が一致しているか確認する
@@ -390,7 +395,7 @@
     <button class="btn ghost sm" data-save="b27" data-name="soul-prompts100-027.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="QA・品質チェック">
   <div class="ih"><span class="num">028</span><span class="ititle">公開前チェックリスト実行Bot</span></div>
   
   <pre class="prompt" id="b28">決められたチェック項目を順番に実行して結果を報告する
@@ -403,7 +408,7 @@
     <button class="btn ghost sm" data-save="b28" data-name="soul-prompts100-028.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="QA・品質チェック">
   <div class="ih"><span class="num">029</span><span class="ititle">読者視点レビューBot</span></div>
   
   <pre class="prompt" id="b29">初心者読者の視点で分かりにくい箇所を指摘する
@@ -416,7 +421,7 @@
     <button class="btn ghost sm" data-save="b29" data-name="soul-prompts100-029.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="QA・品質チェック">
   <div class="ih"><span class="num">030</span><span class="ititle">スタイルガイド準拠チェックBot</span></div>
   
   <pre class="prompt" id="b30">社内の表記ルールに沿っているか確認する
@@ -429,8 +434,8 @@
     <button class="btn ghost sm" data-save="b30" data-name="soul-prompts100-030.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">翻訳・多言語対応</h2>
-<div class="icard">
+<h2 class="cat" data-cat="翻訳・多言語対応">翻訳・多言語対応</h2>
+<div class="icard" data-cat="翻訳・多言語対応">
   <div class="ih"><span class="num">031</span><span class="ititle">英語記事和訳Bot</span></div>
   
   <pre class="prompt" id="b31">海外の公式発表を自然な日本語に翻訳する
@@ -443,7 +448,7 @@
     <button class="btn ghost sm" data-save="b31" data-name="soul-prompts100-031.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="翻訳・多言語対応">
   <div class="ih"><span class="num">032</span><span class="ititle">固有名詞読み方調査Bot</span></div>
   
   <pre class="prompt" id="b32">海外の人名・製品名の正しいカタカナ読みを調べる
@@ -456,7 +461,7 @@
     <button class="btn ghost sm" data-save="b32" data-name="soul-prompts100-032.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="翻訳・多言語対応">
   <div class="ih"><span class="num">033</span><span class="ititle">多言語コメント要約Bot</span></div>
   
   <pre class="prompt" id="b33">外国語のコメント・レビューを日本語で要約する
@@ -469,7 +474,7 @@
     <button class="btn ghost sm" data-save="b33" data-name="soul-prompts100-033.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="翻訳・多言語対応">
   <div class="ih"><span class="num">034</span><span class="ititle">英語UI用語対訳Bot</span></div>
   
   <pre class="prompt" id="b34">海外アプリのUI文言に対応する日本語訳を整理する
@@ -482,7 +487,7 @@
     <button class="btn ghost sm" data-save="b34" data-name="soul-prompts100-034.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="翻訳・多言語対応">
   <div class="ih"><span class="num">035</span><span class="ititle">海外レビュー動画要約Bot</span></div>
   
   <pre class="prompt" id="b35">英語圏のレビュー動画の主張を日本語でかいつまんで伝える
@@ -495,7 +500,7 @@
     <button class="btn ghost sm" data-save="b35" data-name="soul-prompts100-035.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="翻訳・多言語対応">
   <div class="ih"><span class="num">036</span><span class="ititle">公式ドキュメント逐語チェックBot</span></div>
   
   <pre class="prompt" id="b36">和訳と原文の意味がズレていないか照合する
@@ -508,7 +513,7 @@
     <button class="btn ghost sm" data-save="b36" data-name="soul-prompts100-036.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="翻訳・多言語対応">
   <div class="ih"><span class="num">037</span><span class="ititle">多言語FAQ整理Bot</span></div>
   
   <pre class="prompt" id="b37">海外公式サイトのFAQを日本語話者向けに再構成する
@@ -521,7 +526,7 @@
     <button class="btn ghost sm" data-save="b37" data-name="soul-prompts100-037.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="翻訳・多言語対応">
   <div class="ih"><span class="num">038</span><span class="ititle">英語プレスリリース要点抽出Bot</span></div>
   
   <pre class="prompt" id="b38">長いプレスリリースから数字と発表事実だけを抜き出す
@@ -534,7 +539,7 @@
     <button class="btn ghost sm" data-save="b38" data-name="soul-prompts100-038.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="翻訳・多言語対応">
   <div class="ih"><span class="num">039</span><span class="ititle">海外SNS投稿の文脈補足Bot</span></div>
   
   <pre class="prompt" id="b39">海外の投稿の背景・文脈を日本の読者向けに補足する
@@ -547,7 +552,7 @@
     <button class="btn ghost sm" data-save="b39" data-name="soul-prompts100-039.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="翻訳・多言語対応">
   <div class="ih"><span class="num">040</span><span class="ititle">和文英訳(概要欄用)Bot</span></div>
   
   <pre class="prompt" id="b40">日本語の動画概要欄を英語話者にも伝わる文章にする
@@ -560,8 +565,8 @@
     <button class="btn ghost sm" data-save="b40" data-name="soul-prompts100-040.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">スケジュール・進行管理</h2>
-<div class="icard">
+<h2 class="cat" data-cat="スケジュール・進行管理">スケジュール・進行管理</h2>
+<div class="icard" data-cat="スケジュール・進行管理">
   <div class="ih"><span class="num">041</span><span class="ititle">日程調整Bot</span></div>
   
   <pre class="prompt" id="b41">複数の予定を突き合わせて空き時間を提案する
@@ -574,7 +579,7 @@
     <button class="btn ghost sm" data-save="b41" data-name="soul-prompts100-041.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="スケジュール・進行管理">
   <div class="ih"><span class="num">042</span><span class="ititle">進行チェックリストBot</span></div>
   
   <pre class="prompt" id="b42">決まった手順の抜け漏れを毎回確認する
@@ -587,7 +592,7 @@
     <button class="btn ghost sm" data-save="b42" data-name="soul-prompts100-042.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="スケジュール・進行管理">
   <div class="ih"><span class="num">043</span><span class="ititle">締切逆算Bot</span></div>
   
   <pre class="prompt" id="b43">公開日から逆算して各工程の締切を算出する
@@ -600,7 +605,7 @@
     <button class="btn ghost sm" data-save="b43" data-name="soul-prompts100-043.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="スケジュール・進行管理">
   <div class="ih"><span class="num">044</span><span class="ititle">進捗報告フォーマットBot</span></div>
   
   <pre class="prompt" id="b44">毎回の進捗報告を決まった型に整える
@@ -613,7 +618,7 @@
     <button class="btn ghost sm" data-save="b44" data-name="soul-prompts100-044.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="スケジュール・進行管理">
   <div class="ih"><span class="num">045</span><span class="ititle">タスク優先順位付けBot</span></div>
   
   <pre class="prompt" id="b45">複数タスクを緊急度・重要度で並べ替える
@@ -626,7 +631,7 @@
     <button class="btn ghost sm" data-save="b45" data-name="soul-prompts100-045.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="スケジュール・進行管理">
   <div class="ih"><span class="num">046</span><span class="ititle">会議アジェンダ作成Bot</span></div>
   
   <pre class="prompt" id="b46">議題リストから時間配分つきのアジェンダを組む
@@ -639,7 +644,7 @@
     <button class="btn ghost sm" data-save="b46" data-name="soul-prompts100-046.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="スケジュール・進行管理">
   <div class="ih"><span class="num">047</span><span class="ititle">振り返りメモ作成Bot</span></div>
   
   <pre class="prompt" id="b47">完了したプロジェクトの良かった点・改善点を整理する
@@ -652,7 +657,7 @@
     <button class="btn ghost sm" data-save="b47" data-name="soul-prompts100-047.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="スケジュール・進行管理">
   <div class="ih"><span class="num">048</span><span class="ititle">素材リスト管理Bot</span></div>
   
   <pre class="prompt" id="b48">必要な素材と、揃っている素材の差分を管理する
@@ -665,7 +670,7 @@
     <button class="btn ghost sm" data-save="b48" data-name="soul-prompts100-048.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="スケジュール・進行管理">
   <div class="ih"><span class="num">049</span><span class="ititle">リマインダー文面作成Bot</span></div>
   
   <pre class="prompt" id="b49">相手に角が立たない催促・確認の文面を作る
@@ -678,7 +683,7 @@
     <button class="btn ghost sm" data-save="b49" data-name="soul-prompts100-049.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="スケジュール・進行管理">
   <div class="ih"><span class="num">050</span><span class="ititle">週次サマリー作成Bot</span></div>
   
   <pre class="prompt" id="b50">1週間分の作業ログをまとめて週報にする
@@ -691,8 +696,8 @@
     <button class="btn ghost sm" data-save="b50" data-name="soul-prompts100-050.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">カスタマーサポート・問い合わせ対応</h2>
-<div class="icard">
+<h2 class="cat" data-cat="カスタマーサポート・問い合わせ対応">カスタマーサポート・問い合わせ対応</h2>
+<div class="icard" data-cat="カスタマーサポート・問い合わせ対応">
   <div class="ih"><span class="num">051</span><span class="ititle">よくある質問対応Bot</span></div>
   
   <pre class="prompt" id="b51">過去のFAQをもとに定型的な問い合わせに回答する
@@ -705,7 +710,7 @@
     <button class="btn ghost sm" data-save="b51" data-name="soul-prompts100-051.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="カスタマーサポート・問い合わせ対応">
   <div class="ih"><span class="num">052</span><span class="ititle">問い合わせ内容分類Bot</span></div>
   
   <pre class="prompt" id="b52">届いた問い合わせを種類ごとに仕分ける
@@ -718,7 +723,7 @@
     <button class="btn ghost sm" data-save="b52" data-name="soul-prompts100-052.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="カスタマーサポート・問い合わせ対応">
   <div class="ih"><span class="num">053</span><span class="ititle">クレーム一次対応文面作成Bot</span></div>
   
   <pre class="prompt" id="b53">感情的にならない丁寧な一次返信の下書きを作る
@@ -731,7 +736,7 @@
     <button class="btn ghost sm" data-save="b53" data-name="soul-prompts100-053.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="カスタマーサポート・問い合わせ対応">
   <div class="ih"><span class="num">054</span><span class="ititle">解約引き止め防止分析Bot</span></div>
   
   <pre class="prompt" id="b54">解約理由の傾向を分析し、対応すべき優先課題を出す
@@ -744,7 +749,7 @@
     <button class="btn ghost sm" data-save="b54" data-name="soul-prompts100-054.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="カスタマーサポート・問い合わせ対応">
   <div class="ih"><span class="num">055</span><span class="ititle">問い合わせ対応品質チェックBot</span></div>
   
   <pre class="prompt" id="b55">自分が書いた返信文が失礼な表現になっていないか確認する
@@ -757,7 +762,7 @@
     <button class="btn ghost sm" data-save="b55" data-name="soul-prompts100-055.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="カスタマーサポート・問い合わせ対応">
   <div class="ih"><span class="num">056</span><span class="ititle">多店舗・多窓口問い合わせ集約Bot</span></div>
   
   <pre class="prompt" id="b56">複数窓口に届いた問い合わせを1つのリストにまとめる
@@ -770,7 +775,7 @@
     <button class="btn ghost sm" data-save="b56" data-name="soul-prompts100-056.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="カスタマーサポート・問い合わせ対応">
   <div class="ih"><span class="num">057</span><span class="ititle">お詫び文面テンプレート作成Bot</span></div>
   
   <pre class="prompt" id="b57">不具合発生時のお詫び文をテンプレート化する
@@ -783,7 +788,7 @@
     <button class="btn ghost sm" data-save="b57" data-name="soul-prompts100-057.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="カスタマーサポート・問い合わせ対応">
   <div class="ih"><span class="num">058</span><span class="ititle">サポート対応履歴要約Bot</span></div>
   
   <pre class="prompt" id="b58">1人の顧客とのやり取り履歴を要約して次の担当者に引き継ぐ
@@ -796,7 +801,7 @@
     <button class="btn ghost sm" data-save="b58" data-name="soul-prompts100-058.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="カスタマーサポート・問い合わせ対応">
   <div class="ih"><span class="num">059</span><span class="ititle">FAQページ改善提案Bot</span></div>
   
   <pre class="prompt" id="b59">問い合わせ内容からFAQページに足すべき項目を提案する
@@ -809,7 +814,7 @@
     <button class="btn ghost sm" data-save="b59" data-name="soul-prompts100-059.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="カスタマーサポート・問い合わせ対応">
   <div class="ih"><span class="num">060</span><span class="ititle">多言語問い合わせ一次仕分けBot</span></div>
   
   <pre class="prompt" id="b60">外国語で届いた問い合わせの内容と緊急度を把握する
@@ -822,8 +827,8 @@
     <button class="btn ghost sm" data-save="b60" data-name="soul-prompts100-060.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">コーディング・開発支援</h2>
-<div class="icard">
+<h2 class="cat" data-cat="コーディング・開発支援">コーディング・開発支援</h2>
+<div class="icard" data-cat="コーディング・開発支援">
   <div class="ih"><span class="num">061</span><span class="ititle">コミットメッセージ整形Bot</span></div>
   
   <pre class="prompt" id="b61">変更内容から規約に沿ったコミットメッセージを作る
@@ -836,7 +841,7 @@
     <button class="btn ghost sm" data-save="b61" data-name="soul-prompts100-061.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="コーディング・開発支援">
   <div class="ih"><span class="num">062</span><span class="ititle">エラーメッセージ翻訳Bot</span></div>
   
   <pre class="prompt" id="b62">英語のエラーログを日本語で分かりやすく説明する
@@ -849,7 +854,7 @@
     <button class="btn ghost sm" data-save="b62" data-name="soul-prompts100-062.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="コーディング・開発支援">
   <div class="ih"><span class="num">063</span><span class="ititle">READMEたたき台作成Bot</span></div>
   
   <pre class="prompt" id="b63">プロジェクトの概要からREADMEの骨格を作る
@@ -862,7 +867,7 @@
     <button class="btn ghost sm" data-save="b63" data-name="soul-prompts100-063.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="コーディング・開発支援">
   <div class="ih"><span class="num">064</span><span class="ititle">設定ファイルレビューBot</span></div>
   
   <pre class="prompt" id="b64">設定ファイルの記述ミス・危険な設定を指摘する
@@ -875,7 +880,7 @@
     <button class="btn ghost sm" data-save="b64" data-name="soul-prompts100-064.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="コーディング・開発支援">
   <div class="ih"><span class="num">065</span><span class="ititle">APIドキュメント要約Bot</span></div>
   
   <pre class="prompt" id="b65">長いAPIドキュメントから必要な部分だけ抜き出す
@@ -888,7 +893,7 @@
     <button class="btn ghost sm" data-save="b65" data-name="soul-prompts100-065.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="コーディング・開発支援">
   <div class="ih"><span class="num">066</span><span class="ititle">バグ報告テンプレート整形Bot</span></div>
   
   <pre class="prompt" id="b66">曖昧なバグ報告を再現手順つきの形式に整える
@@ -901,7 +906,7 @@
     <button class="btn ghost sm" data-save="b66" data-name="soul-prompts100-066.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="コーディング・開発支援">
   <div class="ih"><span class="num">067</span><span class="ititle">依存パッケージ更新影響チェックBot</span></div>
   
   <pre class="prompt" id="b67">パッケージ更新の変更点から影響範囲を確認する
@@ -914,7 +919,7 @@
     <button class="btn ghost sm" data-save="b67" data-name="soul-prompts100-067.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="コーディング・開発支援">
   <div class="ih"><span class="num">068</span><span class="ititle">コードコメント補完Bot</span></div>
   
   <pre class="prompt" id="b68">コメントのないコードに、なぜそう書いたかの説明を加える
@@ -927,7 +932,7 @@
     <button class="btn ghost sm" data-save="b68" data-name="soul-prompts100-068.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="コーディング・開発支援">
   <div class="ih"><span class="num">069</span><span class="ititle">環境構築手順書作成Bot</span></div>
   
   <pre class="prompt" id="b69">口頭で伝えていたセットアップ手順を文書化する
@@ -940,7 +945,7 @@
     <button class="btn ghost sm" data-save="b69" data-name="soul-prompts100-069.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="コーディング・開発支援">
   <div class="ih"><span class="num">070</span><span class="ititle">小さなリファクタ提案Bot</span></div>
   
   <pre class="prompt" id="b70">壊さない範囲で可読性を上げる提案だけを行う
@@ -953,8 +958,8 @@
     <button class="btn ghost sm" data-save="b70" data-name="soul-prompts100-070.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">マーケティング・SNS運用</h2>
-<div class="icard">
+<h2 class="cat" data-cat="マーケティング・SNS運用">マーケティング・SNS運用</h2>
+<div class="icard" data-cat="マーケティング・SNS運用">
   <div class="ih"><span class="num">071</span><span class="ititle">投稿文バリエーション作成Bot</span></div>
   
   <pre class="prompt" id="b71">1つの告知内容から複数のSNS投稿文を作る
@@ -967,7 +972,7 @@
     <button class="btn ghost sm" data-save="b71" data-name="soul-prompts100-071.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="マーケティング・SNS運用">
   <div class="ih"><span class="num">072</span><span class="ititle">ハッシュタグ選定Bot</span></div>
   
   <pre class="prompt" id="b72">投稿内容に合った適切なハッシュタグを提案する
@@ -980,7 +985,7 @@
     <button class="btn ghost sm" data-save="b72" data-name="soul-prompts100-072.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="マーケティング・SNS運用">
   <div class="ih"><span class="num">073</span><span class="ititle">投稿スケジュール提案Bot</span></div>
   
   <pre class="prompt" id="b73">曜日・時間帯ごとの投稿計画をたたき台として作る
@@ -993,7 +998,7 @@
     <button class="btn ghost sm" data-save="b73" data-name="soul-prompts100-073.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="マーケティング・SNS運用">
   <div class="ih"><span class="num">074</span><span class="ititle">炎上リスクチェックBot</span></div>
   
   <pre class="prompt" id="b74">投稿前の文章に誤解を招く表現がないか確認する
@@ -1006,7 +1011,7 @@
     <button class="btn ghost sm" data-save="b74" data-name="soul-prompts100-074.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="マーケティング・SNS運用">
   <div class="ih"><span class="num">075</span><span class="ititle">競合SNSアカウント傾向分析Bot</span></div>
   
   <pre class="prompt" id="b75">競合アカウントの投稿傾向を定期的に把握する
@@ -1019,7 +1024,7 @@
     <button class="btn ghost sm" data-save="b75" data-name="soul-prompts100-075.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="マーケティング・SNS運用">
   <div class="ih"><span class="num">076</span><span class="ititle">広告文コピーチェックBot</span></div>
   
   <pre class="prompt" id="b76">広告表現が景表法上リスクのある言い回しでないか確認する
@@ -1032,7 +1037,7 @@
     <button class="btn ghost sm" data-save="b76" data-name="soul-prompts100-076.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="マーケティング・SNS運用">
   <div class="ih"><span class="num">077</span><span class="ititle">フォロワー属性推測Bot</span></div>
   
   <pre class="prompt" id="b77">エンゲージメント傾向からフォロワー層の特徴を整理する
@@ -1045,7 +1050,7 @@
     <button class="btn ghost sm" data-save="b77" data-name="soul-prompts100-077.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="マーケティング・SNS運用">
   <div class="ih"><span class="num">078</span><span class="ititle">キャンペーン企画たたき台作成Bot</span></div>
   
   <pre class="prompt" id="b78">目的から逆算してキャンペーン案の骨子を作る
@@ -1058,7 +1063,7 @@
     <button class="btn ghost sm" data-save="b78" data-name="soul-prompts100-078.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="マーケティング・SNS運用">
   <div class="ih"><span class="num">079</span><span class="ititle">動画タイトルABテスト案作成Bot</span></div>
   
   <pre class="prompt" id="b79">1本の動画に対して複数のタイトル案を作る
@@ -1071,7 +1076,7 @@
     <button class="btn ghost sm" data-save="b79" data-name="soul-prompts100-079.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="マーケティング・SNS運用">
   <div class="ih"><span class="num">080</span><span class="ititle">問い合わせ導線分析Bot</span></div>
   
   <pre class="prompt" id="b80">SNSからの流入がどこで離脱しているかを整理する
@@ -1084,8 +1089,8 @@
     <button class="btn ghost sm" data-save="b80" data-name="soul-prompts100-080.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">データ分析・レポート</h2>
-<div class="icard">
+<h2 class="cat" data-cat="データ分析・レポート">データ分析・レポート</h2>
+<div class="icard" data-cat="データ分析・レポート">
   <div class="ih"><span class="num">081</span><span class="ititle">KPIダッシュボード要約Bot</span></div>
   
   <pre class="prompt" id="b81">複数指標をまとめて1段落のサマリーにする
@@ -1098,7 +1103,7 @@
     <button class="btn ghost sm" data-save="b81" data-name="soul-prompts100-081.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="データ分析・レポート">
   <div class="ih"><span class="num">082</span><span class="ititle">異常値検出Bot</span></div>
   
   <pre class="prompt" id="b82">過去の数値傾向と比べて不自然な数字を検出する
@@ -1111,7 +1116,7 @@
     <button class="btn ghost sm" data-save="b82" data-name="soul-prompts100-082.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="データ分析・レポート">
   <div class="ih"><span class="num">083</span><span class="ititle">A/Bテスト結果解釈Bot</span></div>
   
   <pre class="prompt" id="b83">テスト結果の数字が統計的に意味があるか整理する
@@ -1124,7 +1129,7 @@
     <button class="btn ghost sm" data-save="b83" data-name="soul-prompts100-083.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="データ分析・レポート">
   <div class="ih"><span class="num">084</span><span class="ititle">月次レポートたたき台作成Bot</span></div>
   
   <pre class="prompt" id="b84">生データから報告書の骨子を作る
@@ -1137,7 +1142,7 @@
     <button class="btn ghost sm" data-save="b84" data-name="soul-prompts100-084.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="データ分析・レポート">
   <div class="ih"><span class="num">085</span><span class="ititle">グラフ化データ整形Bot</span></div>
   
   <pre class="prompt" id="b85">生データをグラフに使いやすい形に整える
@@ -1150,7 +1155,7 @@
     <button class="btn ghost sm" data-save="b85" data-name="soul-prompts100-085.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="データ分析・レポート">
   <div class="ih"><span class="num">086</span><span class="ititle">ユーザーアンケート集計Bot</span></div>
   
   <pre class="prompt" id="b86">自由記述回答をカテゴリごとに集計する
@@ -1163,7 +1168,7 @@
     <button class="btn ghost sm" data-save="b86" data-name="soul-prompts100-086.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="データ分析・レポート">
   <div class="ih"><span class="num">087</span><span class="ititle">前年同月比分析Bot</span></div>
   
   <pre class="prompt" id="b87">今年と去年の同時期のデータを比較して変化を説明する
@@ -1176,7 +1181,7 @@
     <button class="btn ghost sm" data-save="b87" data-name="soul-prompts100-087.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="データ分析・レポート">
   <div class="ih"><span class="num">088</span><span class="ititle">コスト内訳分析Bot</span></div>
   
   <pre class="prompt" id="b88">支出データをカテゴリ別に整理して増減理由を推測する
@@ -1189,7 +1194,7 @@
     <button class="btn ghost sm" data-save="b88" data-name="soul-prompts100-088.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="データ分析・レポート">
   <div class="ih"><span class="num">089</span><span class="ititle">目標達成率トラッキングBot</span></div>
   
   <pre class="prompt" id="b89">現在の進捗が目標に対してどの水準かを可視化する
@@ -1202,7 +1207,7 @@
     <button class="btn ghost sm" data-save="b89" data-name="soul-prompts100-089.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="データ分析・レポート">
   <div class="ih"><span class="num">090</span><span class="ititle">レポート用平易言い換えBot</span></div>
   
   <pre class="prompt" id="b90">専門的な分析結果を非専門家向けの言葉に言い換える
@@ -1215,8 +1220,8 @@
     <button class="btn ghost sm" data-save="b90" data-name="soul-prompts100-090.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">バックオフィス・事務</h2>
-<div class="icard">
+<h2 class="cat" data-cat="バックオフィス・事務">バックオフィス・事務</h2>
+<div class="icard" data-cat="バックオフィス・事務">
   <div class="ih"><span class="num">091</span><span class="ititle">請求書チェックBot</span></div>
   
   <pre class="prompt" id="b91">請求書の記載内容に不備がないか確認する
@@ -1229,7 +1234,7 @@
     <button class="btn ghost sm" data-save="b91" data-name="soul-prompts100-091.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="バックオフィス・事務">
   <div class="ih"><span class="num">092</span><span class="ititle">経費精算メモ整形Bot</span></div>
   
   <pre class="prompt" id="b92">領収書の情報をメモから精算フォーマットに整える
@@ -1242,7 +1247,7 @@
     <button class="btn ghost sm" data-save="b92" data-name="soul-prompts100-092.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="バックオフィス・事務">
   <div class="ih"><span class="num">093</span><span class="ititle">契約書要点抽出Bot</span></div>
   
   <pre class="prompt" id="b93">長い契約書から確認すべき条項だけを抜き出す
@@ -1255,7 +1260,7 @@
     <button class="btn ghost sm" data-save="b93" data-name="soul-prompts100-093.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="バックオフィス・事務">
   <div class="ih"><span class="num">094</span><span class="ititle">備品発注リスト作成Bot</span></div>
   
   <pre class="prompt" id="b94">在庫メモから発注が必要な備品リストを作る
@@ -1268,7 +1273,7 @@
     <button class="btn ghost sm" data-save="b94" data-name="soul-prompts100-094.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="バックオフィス・事務">
   <div class="ih"><span class="num">095</span><span class="ititle">議事録たたき台作成Bot</span></div>
   
   <pre class="prompt" id="b95">会議の音声文字起こしから議事録の骨子を作る
@@ -1281,7 +1286,7 @@
     <button class="btn ghost sm" data-save="b95" data-name="soul-prompts100-095.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="バックオフィス・事務">
   <div class="ih"><span class="num">096</span><span class="ititle">社内規定Q&amp;A対応Bot</span></div>
   
   <pre class="prompt" id="b96">社内規定集を参照して質問に回答する
@@ -1294,7 +1299,7 @@
     <button class="btn ghost sm" data-save="b96" data-name="soul-prompts100-096.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="バックオフィス・事務">
   <div class="ih"><span class="num">097</span><span class="ititle">郵便物・書類分類Bot</span></div>
   
   <pre class="prompt" id="b97">届いた書類の種類を仕分けて優先度をつける
@@ -1307,7 +1312,7 @@
     <button class="btn ghost sm" data-save="b97" data-name="soul-prompts100-097.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="バックオフィス・事務">
   <div class="ih"><span class="num">098</span><span class="ititle">入退社手続きチェックリストBot</span></div>
   
   <pre class="prompt" id="b98">決まった手続きの抜け漏れを人ごとに管理する
@@ -1320,7 +1325,7 @@
     <button class="btn ghost sm" data-save="b98" data-name="soul-prompts100-098.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="バックオフィス・事務">
   <div class="ih"><span class="num">099</span><span class="ititle">社内向けお知らせ文面作成Bot</span></div>
   
   <pre class="prompt" id="b99">決定事項を分かりやすい社内告知文に整える
@@ -1333,7 +1338,7 @@
     <button class="btn ghost sm" data-save="b99" data-name="soul-prompts100-099.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="バックオフィス・事務">
   <div class="ih"><span class="num">100</span><span class="ititle">稟議書たたき台作成Bot</span></div>
   
   <pre class="prompt" id="b100">提案内容から稟議書に必要な項目を整理する
@@ -2086,6 +2091,57 @@ SNSからの流入がどこで離脱しているかを整理する
 以上、100個です。内訳: リサーチ・情報収集10個、ライティング・編集10個、QA・品質チェック10個、翻訳・多言語対応10個、スケジュール・進行管理10個、カスタマーサポート・問い合わせ対応10個、コーディング・開発支援10個、マーケティング・SNS運用10個、データ分析・レポート10個、バックオフィス・事務10個。
 </pre>
 <script>
+// 項目の多いキットで、目的の1件に辿り着けるようにする絞り込み。
+// 検索はタイトル・説明だけでなく本文も対象にする（「あの文言が入っていた項目」で探せるように）。
+(function(){
+  var q = document.getElementById('kq');
+  if (!q) return;
+  var hit = document.getElementById('khit');
+  var cards = [].slice.call(document.querySelectorAll('.kwrap .icard'));
+  var heads = [].slice.call(document.querySelectorAll('.kwrap h2.cat'));
+  var chips = [].slice.call(document.querySelectorAll('.kcat'));
+  var cat = '';
+
+  // ひらがな・カタカナの違いで取りこぼさないようにする（ハブ側の検索と同じ扱い）
+  function norm(s){
+    return (s || '').toLowerCase().replace(/[ぁ-ん]/g, function(c){
+      return String.fromCharCode(c.charCodeAt(0) + 0x60);
+    });
+  }
+
+  // カード全体の textContent だとボタンの「コピー」まで拾ってしまうため、中身を選んで集める
+  cards.forEach(function(c){
+    var t = c.querySelector('.ititle'), d = c.querySelector('.imeta'), p = c.querySelector('.prompt');
+    c._t = norm((t ? t.textContent : '') + ' ' + (d ? d.textContent : '') + ' ' + (p ? p.textContent : ''));
+  });
+
+  function apply(){
+    var kw = norm(q.value.trim()), n = 0, shown = {};
+    cards.forEach(function(c){
+      var ok = (!cat || c.getAttribute('data-cat') === cat)
+            && (!kw || c._t.indexOf(kw) !== -1);
+      c.classList.toggle('hide', !ok);
+      if (ok){ n++; shown[c.getAttribute('data-cat')] = 1; }
+    });
+    // 残った項目が1件も無いカテゴリの見出しは隠す
+    heads.forEach(function(h){
+      h.classList.toggle('hide', !shown[h.getAttribute('data-cat')]);
+    });
+    hit.textContent = (kw || cat)
+      ? (n ? n + '件を表示中' : '該当する項目がありません')
+      : '';
+  }
+
+  q.addEventListener('input', apply);
+  chips.forEach(function(b){
+    b.addEventListener('click', function(){
+      cat = b.getAttribute('data-cat');
+      chips.forEach(function(x){ x.classList.toggle('on', x === b); });
+      apply();
+    });
+  });
+})();
+
 function flash(btn, label){
   const old = btn.textContent, cls = btn.className;
   btn.textContent = label; btn.classList.add('ok');
@@ -2155,7 +2211,22 @@ document.addEventListener('click', e => {
     el.classList.remove('show');
     sessionStorage.setItem('promoClosed', '1');
   }
-  setTimeout(function(){ el.classList.add('show'); }, 1600);
+  // 動画の概要欄から来た人が、自分のプレゼントを探し始める瞬間に被らないようにする。
+  // 以前は読み込み1.6秒後に無条件で出しており、いちばん目的意識の高い時間を塞いでいた。
+  // 中身を見に行った（＝目当てのものに辿り着いた）ころに出す。
+  var shown = false;
+  function show(){
+    if (shown) return;
+    shown = true;
+    el.classList.add('show');
+    removeEventListener('scroll', onScroll);
+  }
+  function onScroll(){
+    if (scrollY > innerHeight * 0.8) show();
+  }
+  addEventListener('scroll', onScroll, {passive:true});
+  // まったくスクロールしない人にも最後には出す（ただし十分に間を置いてから）
+  setTimeout(show, 45000);
   document.getElementById('promoClose').addEventListener('click', function(e){ e.preventDefault(); close(); });
   el.addEventListener('click', function(e){ if (e.target === el) close(); });
 })();

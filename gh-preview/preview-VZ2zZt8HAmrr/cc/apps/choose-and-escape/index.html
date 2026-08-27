@@ -36,8 +36,13 @@
     <div class="pnote"><span class="nb">下のカードから、</span><span class="nb">1件ずつコピー、</span><span class="nb">または個別にダウンロードできます。</span><span class="nb">まとめて欲しいときは、</span><span class="nb">上の</span><span class="nb">「全件ダウンロード」を</span><span class="nb">お使いください。</span></div>
   </section>
 
-  <h2 class="cat">使い分け判断シート</h2>
-<div class="icard">
+  <div class="ktools">
+  <input type="search" id="kq" placeholder="この中から探す" autocomplete="off" aria-label="この中から探す">
+  <div class="kcats"><button type="button" class="kcat on" data-cat="">すべて<span class="n">31</span></button><button type="button" class="kcat" data-cat="使い分け判断シート">使い分け判断シート<span class="n">1</span></button><button type="button" class="kcat" data-cat="作る前に詰まったとき">作る前に詰まったとき<span class="n">8</span></button><button type="button" class="kcat" data-cat="作っている最中に詰まったとき">作っている最中に詰まったとき<span class="n">12</span></button><button type="button" class="kcat" data-cat="配った後に詰まったとき">配った後に詰まったとき<span class="n">10</span></button></div>
+  <p class="khit" id="khit" role="status"></p>
+</div>
+<h2 class="cat" data-cat="使い分け判断シート">使い分け判断シート</h2>
+<div class="icard" data-cat="使い分け判断シート">
   <div class="ih"><span class="num">001</span><span class="ititle">Skills / MCP / Plugin / CLI 使い分け判断シート</span></div>
   
   <pre class="prompt" id="b1">【Skills / MCP / Plugin / CLI 使い分け判断シート】
@@ -143,8 +148,8 @@ AIに何かをやらせたいとき、作る手段は4つあります。
     <button class="btn ghost sm" data-save="b1" data-name="choose-and-escape-001.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">作る前に詰まったとき</h2>
-<div class="icard">
+<h2 class="cat" data-cat="作る前に詰まったとき">作る前に詰まったとき</h2>
+<div class="icard" data-cat="作る前に詰まったとき">
   <div class="ih"><span class="num">002</span><span class="ititle">何を作るべきか決まらない</span></div>
   
   <pre class="prompt" id="b2">前提: AIに任せたい作業がいくつかあるが、どれから手をつけるべきか決められない。
@@ -155,7 +160,7 @@ AIに何かをやらせたいとき、作る手段は4つあります。
     <button class="btn ghost sm" data-save="b2" data-name="choose-and-escape-002.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="作る前に詰まったとき">
   <div class="ih"><span class="num">003</span><span class="ititle">SkillsとMCPのどちらか決まらない</span></div>
   
   <pre class="prompt" id="b3">前提: 作りたいものは決まったが、SkillsとMCPのどちらで作るべきか判断できない。
@@ -166,7 +171,7 @@ AIに何かをやらせたいとき、作る手段は4つあります。
     <button class="btn ghost sm" data-save="b3" data-name="choose-and-escape-003.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="作る前に詰まったとき">
   <div class="ih"><span class="num">004</span><span class="ititle">作る範囲が広がりすぎる</span></div>
   
   <pre class="prompt" id="b4">前提: 作りたい機能を挙げていたら数が増えすぎて、いつまでも着手できない。
@@ -177,7 +182,7 @@ AIに何かをやらせたいとき、作る手段は4つあります。
     <button class="btn ghost sm" data-save="b4" data-name="choose-and-escape-004.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="作る前に詰まったとき">
   <div class="ih"><span class="num">005</span><span class="ititle">誰に配るか決まっていない</span></div>
   
   <pre class="prompt" id="b5">前提: 作ろうとしているが、誰にどう渡すかを考えていなかった。
@@ -188,7 +193,7 @@ AIに何かをやらせたいとき、作る手段は4つあります。
     <button class="btn ghost sm" data-save="b5" data-name="choose-and-escape-005.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="作る前に詰まったとき">
   <div class="ih"><span class="num">006</span><span class="ititle">既に似たものがあるか分からない</span></div>
   
   <pre class="prompt" id="b6">前提: 作ろうとしている機能が、既存のツールやサービスで実現できる可能性がある。
@@ -199,7 +204,7 @@ AIに何かをやらせたいとき、作る手段は4つあります。
     <button class="btn ghost sm" data-save="b6" data-name="choose-and-escape-006.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="作る前に詰まったとき">
   <div class="ih"><span class="num">007</span><span class="ititle">止め方を決めていない</span></div>
   
   <pre class="prompt" id="b7">前提: 仕組みを作ろうとしているが、将来止めるときのことを考えていない。
@@ -210,7 +215,7 @@ AIに何かをやらせたいとき、作る手段は4つあります。
     <button class="btn ghost sm" data-save="b7" data-name="choose-and-escape-007.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="作る前に詰まったとき">
   <div class="ih"><span class="num">008</span><span class="ititle">秘密情報の扱いが不安</span></div>
   
   <pre class="prompt" id="b8">前提: 配布したい内容に、社外秘や個人情報が混ざっている可能性がある。
@@ -221,7 +226,7 @@ AIに何かをやらせたいとき、作る手段は4つあります。
     <button class="btn ghost sm" data-save="b8" data-name="choose-and-escape-008.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="作る前に詰まったとき">
   <div class="ih"><span class="num">009</span><span class="ititle">費用が読めない</span></div>
   
   <pre class="prompt" id="b9">前提: MCPサーバーを立てたいが、どれくらい費用がかかるか見当がつかない。
@@ -232,8 +237,8 @@ AIに何かをやらせたいとき、作る手段は4つあります。
     <button class="btn ghost sm" data-save="b9" data-name="choose-and-escape-009.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">作っている最中に詰まったとき</h2>
-<div class="icard">
+<h2 class="cat" data-cat="作っている最中に詰まったとき">作っている最中に詰まったとき</h2>
+<div class="icard" data-cat="作っている最中に詰まったとき">
   <div class="ih"><span class="num">010</span><span class="ititle">つながらない</span></div>
   
   <pre class="prompt" id="b10">前提: MCPサーバーを登録したが、クライアントから接続できない。
@@ -244,7 +249,7 @@ AIに何かをやらせたいとき、作る手段は4つあります。
     <button class="btn ghost sm" data-save="b10" data-name="choose-and-escape-010.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="作っている最中に詰まったとき">
   <div class="ih"><span class="num">011</span><span class="ititle">つながったのに呼ばれない</span></div>
   
   <pre class="prompt" id="b11">前提: MCPサーバーへの接続は成功しているが、AIがそれを使ってくれない。
@@ -255,7 +260,7 @@ AIに何かをやらせたいとき、作る手段は4つあります。
     <button class="btn ghost sm" data-save="b11" data-name="choose-and-escape-011.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="作っている最中に詰まったとき">
   <div class="ih"><span class="num">012</span><span class="ititle">スキルが意図しない場面で呼ばれる</span></div>
   
   <pre class="prompt" id="b12">前提: 作ったスキルが、関係ない場面でも呼び出されてしまう。
@@ -266,7 +271,7 @@ AIに何かをやらせたいとき、作る手段は4つあります。
     <button class="btn ghost sm" data-save="b12" data-name="choose-and-escape-012.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="作っている最中に詰まったとき">
   <div class="ih"><span class="num">013</span><span class="ititle">重くなった</span></div>
   
   <pre class="prompt" id="b13">前提: MCPサーバーをつないでから、やりとりが重くなった気がする。
@@ -277,7 +282,7 @@ AIに何かをやらせたいとき、作る手段は4つあります。
     <button class="btn ghost sm" data-save="b13" data-name="choose-and-escape-013.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="作っている最中に詰まったとき">
   <div class="ih"><span class="num">014</span><span class="ititle">更新が反映されない</span></div>
   
   <pre class="prompt" id="b14">前提: スキルの本文を直したのに、呼び出すと古い内容が返ってくる。
@@ -288,7 +293,7 @@ AIに何かをやらせたいとき、作る手段は4つあります。
     <button class="btn ghost sm" data-save="b14" data-name="choose-and-escape-014.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="作っている最中に詰まったとき">
   <div class="ih"><span class="num">015</span><span class="ititle">認証で弾かれる</span></div>
   
   <pre class="prompt" id="b15">前提: 認証トークンを設定したはずだが、接続が拒否される。
@@ -299,7 +304,7 @@ AIに何かをやらせたいとき、作る手段は4つあります。
     <button class="btn ghost sm" data-save="b15" data-name="choose-and-escape-015.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="作っている最中に詰まったとき">
   <div class="ih"><span class="num">016</span><span class="ititle">エラーの意味が分からない</span></div>
   
   <pre class="prompt" id="b16">前提: エラーメッセージが出ているが、何を言っているのか分からない。
@@ -310,7 +315,7 @@ AIに何かをやらせたいとき、作る手段は4つあります。
     <button class="btn ghost sm" data-save="b16" data-name="choose-and-escape-016.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="作っている最中に詰まったとき">
   <div class="ih"><span class="num">017</span><span class="ititle">コードが長くなりすぎた</span></div>
   
   <pre class="prompt" id="b17">前提: MCPサーバーの実装が1ファイルに膨らみ、どこを直せばいいか分からなくなった。
@@ -321,7 +326,7 @@ AIに何かをやらせたいとき、作る手段は4つあります。
     <button class="btn ghost sm" data-save="b17" data-name="choose-and-escape-017.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="作っている最中に詰まったとき">
   <div class="ih"><span class="num">018</span><span class="ititle">テストの書き方が分からない</span></div>
   
   <pre class="prompt" id="b18">前提: MCPサーバーの動作確認を毎回手で行っていて、変更のたびに時間がかかる。
@@ -332,7 +337,7 @@ AIに何かをやらせたいとき、作る手段は4つあります。
     <button class="btn ghost sm" data-save="b18" data-name="choose-and-escape-018.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="作っている最中に詰まったとき">
   <div class="ih"><span class="num">019</span><span class="ititle">秘密情報がコードに残っている</span></div>
   
   <pre class="prompt" id="b19">前提: 開発中にAPIキーをコードに直接書いてしまい、そのままになっている。
@@ -343,7 +348,7 @@ AIに何かをやらせたいとき、作る手段は4つあります。
     <button class="btn ghost sm" data-save="b19" data-name="choose-and-escape-019.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="作っている最中に詰まったとき">
   <div class="ih"><span class="num">020</span><span class="ititle">どこまで作ったか分からなくなった</span></div>
   
   <pre class="prompt" id="b20">前提: 作りかけで数日空けてしまい、どこまでできているか分からない。
@@ -354,7 +359,7 @@ AIに何かをやらせたいとき、作る手段は4つあります。
     <button class="btn ghost sm" data-save="b20" data-name="choose-and-escape-020.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="作っている最中に詰まったとき">
   <div class="ih"><span class="num">021</span><span class="ititle">作り込みすぎて進まない</span></div>
   
   <pre class="prompt" id="b21">前提: 細部が気になって、いつまでも公開できずにいる。
@@ -365,8 +370,8 @@ AIに何かをやらせたいとき、作る手段は4つあります。
     <button class="btn ghost sm" data-save="b21" data-name="choose-and-escape-021.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">配った後に詰まったとき</h2>
-<div class="icard">
+<h2 class="cat" data-cat="配った後に詰まったとき">配った後に詰まったとき</h2>
+<div class="icard" data-cat="配った後に詰まったとき">
   <div class="ih"><span class="num">022</span><span class="ititle">使われていない</span></div>
   
   <pre class="prompt" id="b22">前提: スキルを配ったが、利用ログを見るとほとんど呼ばれていない。
@@ -377,7 +382,7 @@ AIに何かをやらせたいとき、作る手段は4つあります。
     <button class="btn ghost sm" data-save="b22" data-name="choose-and-escape-022.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="配った後に詰まったとき">
   <div class="ih"><span class="num">023</span><span class="ititle">受け取り側が設定でつまずく</span></div>
   
   <pre class="prompt" id="b23">前提: 配布した相手から接続できないという連絡が繰り返し来る。
@@ -388,7 +393,7 @@ AIに何かをやらせたいとき、作る手段は4つあります。
     <button class="btn ghost sm" data-save="b23" data-name="choose-and-escape-023.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="配った後に詰まったとき">
   <div class="ih"><span class="num">024</span><span class="ititle">更新を伝えたい</span></div>
   
   <pre class="prompt" id="b24">前提: 配信中のスキルを大きく変更したので、使っている人に伝えたい。
@@ -399,7 +404,7 @@ AIに何かをやらせたいとき、作る手段は4つあります。
     <button class="btn ghost sm" data-save="b24" data-name="choose-and-escape-024.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="配った後に詰まったとき">
   <div class="ih"><span class="num">025</span><span class="ititle">特定の人だけ止めたい</span></div>
   
   <pre class="prompt" id="b25">前提: 受講が終わった人がいるので、その人だけ配信を止めたい。
@@ -410,7 +415,7 @@ AIに何かをやらせたいとき、作る手段は4つあります。
     <button class="btn ghost sm" data-save="b25" data-name="choose-and-escape-025.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="配った後に詰まったとき">
   <div class="ih"><span class="num">026</span><span class="ititle">内容が古くなった</span></div>
   
   <pre class="prompt" id="b26">前提: 配信しているスキルの中に、しばらく更新していないものがある。
@@ -421,7 +426,7 @@ AIに何かをやらせたいとき、作る手段は4つあります。
     <button class="btn ghost sm" data-save="b26" data-name="choose-and-escape-026.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="配った後に詰まったとき">
   <div class="ih"><span class="num">027</span><span class="ititle">似たスキルが増えて選ばれない</span></div>
   
   <pre class="prompt" id="b27">前提: 配信しているスキルが増え、AIが正しいものを選べなくなってきた。
@@ -432,7 +437,7 @@ AIに何かをやらせたいとき、作る手段は4つあります。
     <button class="btn ghost sm" data-save="b27" data-name="choose-and-escape-027.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="配った後に詰まったとき">
   <div class="ih"><span class="num">028</span><span class="ititle">何を次に作るか分からない</span></div>
   
   <pre class="prompt" id="b28">前提: 利用ログは溜まっているが、次に何を作るべきか判断できていない。
@@ -443,7 +448,7 @@ AIに何かをやらせたいとき、作る手段は4つあります。
     <button class="btn ghost sm" data-save="b28" data-name="choose-and-escape-028.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="配った後に詰まったとき">
   <div class="ih"><span class="num">029</span><span class="ititle">運用が自分に集中している</span></div>
   
   <pre class="prompt" id="b29">前提: 配信の運用を全部自分でやっていて、休めない状態になっている。
@@ -454,7 +459,7 @@ AIに何かをやらせたいとき、作る手段は4つあります。
     <button class="btn ghost sm" data-save="b29" data-name="choose-and-escape-029.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="配った後に詰まったとき">
   <div class="ih"><span class="num">030</span><span class="ititle">サーバーを止めるか迷う</span></div>
   
   <pre class="prompt" id="b30">前提: 配信サーバーの維持に手間がかかっており、続けるべきか迷っている。
@@ -465,7 +470,7 @@ AIに何かをやらせたいとき、作る手段は4つあります。
     <button class="btn ghost sm" data-save="b30" data-name="choose-and-escape-030.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="配った後に詰まったとき">
   <div class="ih"><span class="num">031</span><span class="ititle">引き継ぎたい</span></div>
   
   <pre class="prompt" id="b31">前提: 自分が作った配信サーバーを、別の担当者に引き継ぐことになった。
@@ -911,6 +916,57 @@ AIに何かをやらせたいとき、作る手段は4つあります。
 以上、判断シート1枚＋プロンプト30本です。内訳は「作る前に詰まったとき」8本、「作っている最中に詰まったとき」12本、「配った後に詰まったとき」10本の合計30本です。
 </pre>
 <script>
+// 項目の多いキットで、目的の1件に辿り着けるようにする絞り込み。
+// 検索はタイトル・説明だけでなく本文も対象にする（「あの文言が入っていた項目」で探せるように）。
+(function(){
+  var q = document.getElementById('kq');
+  if (!q) return;
+  var hit = document.getElementById('khit');
+  var cards = [].slice.call(document.querySelectorAll('.kwrap .icard'));
+  var heads = [].slice.call(document.querySelectorAll('.kwrap h2.cat'));
+  var chips = [].slice.call(document.querySelectorAll('.kcat'));
+  var cat = '';
+
+  // ひらがな・カタカナの違いで取りこぼさないようにする（ハブ側の検索と同じ扱い）
+  function norm(s){
+    return (s || '').toLowerCase().replace(/[ぁ-ん]/g, function(c){
+      return String.fromCharCode(c.charCodeAt(0) + 0x60);
+    });
+  }
+
+  // カード全体の textContent だとボタンの「コピー」まで拾ってしまうため、中身を選んで集める
+  cards.forEach(function(c){
+    var t = c.querySelector('.ititle'), d = c.querySelector('.imeta'), p = c.querySelector('.prompt');
+    c._t = norm((t ? t.textContent : '') + ' ' + (d ? d.textContent : '') + ' ' + (p ? p.textContent : ''));
+  });
+
+  function apply(){
+    var kw = norm(q.value.trim()), n = 0, shown = {};
+    cards.forEach(function(c){
+      var ok = (!cat || c.getAttribute('data-cat') === cat)
+            && (!kw || c._t.indexOf(kw) !== -1);
+      c.classList.toggle('hide', !ok);
+      if (ok){ n++; shown[c.getAttribute('data-cat')] = 1; }
+    });
+    // 残った項目が1件も無いカテゴリの見出しは隠す
+    heads.forEach(function(h){
+      h.classList.toggle('hide', !shown[h.getAttribute('data-cat')]);
+    });
+    hit.textContent = (kw || cat)
+      ? (n ? n + '件を表示中' : '該当する項目がありません')
+      : '';
+  }
+
+  q.addEventListener('input', apply);
+  chips.forEach(function(b){
+    b.addEventListener('click', function(){
+      cat = b.getAttribute('data-cat');
+      chips.forEach(function(x){ x.classList.toggle('on', x === b); });
+      apply();
+    });
+  });
+})();
+
 function flash(btn, label){
   const old = btn.textContent, cls = btn.className;
   btn.textContent = label; btn.classList.add('ok');
@@ -980,7 +1036,22 @@ document.addEventListener('click', e => {
     el.classList.remove('show');
     sessionStorage.setItem('promoClosed', '1');
   }
-  setTimeout(function(){ el.classList.add('show'); }, 1600);
+  // 動画の概要欄から来た人が、自分のプレゼントを探し始める瞬間に被らないようにする。
+  // 以前は読み込み1.6秒後に無条件で出しており、いちばん目的意識の高い時間を塞いでいた。
+  // 中身を見に行った（＝目当てのものに辿り着いた）ころに出す。
+  var shown = false;
+  function show(){
+    if (shown) return;
+    shown = true;
+    el.classList.add('show');
+    removeEventListener('scroll', onScroll);
+  }
+  function onScroll(){
+    if (scrollY > innerHeight * 0.8) show();
+  }
+  addEventListener('scroll', onScroll, {passive:true});
+  // まったくスクロールしない人にも最後には出す（ただし十分に間を置いてから）
+  setTimeout(show, 45000);
   document.getElementById('promoClose').addEventListener('click', function(e){ e.preventDefault(); close(); });
   el.addEventListener('click', function(e){ if (e.target === el) close(); });
 })();

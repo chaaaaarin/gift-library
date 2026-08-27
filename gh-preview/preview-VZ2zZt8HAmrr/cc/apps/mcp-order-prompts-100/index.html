@@ -36,8 +36,13 @@
     <div class="pnote"><span class="nb">下のカードから、</span><span class="nb">1件ずつコピー、</span><span class="nb">または個別にダウンロードできます。</span><span class="nb">まとめて欲しいときは、</span><span class="nb">上の</span><span class="nb">「全件ダウンロード」を</span><span class="nb">お使いください。</span></div>
   </section>
 
-  <h2 class="cat">スキルを配る</h2>
-<div class="icard">
+  <div class="ktools">
+  <input type="search" id="kq" placeholder="この中から探す" autocomplete="off" aria-label="この中から探す">
+  <div class="kcats"><button type="button" class="kcat on" data-cat="">すべて<span class="n">100</span></button><button type="button" class="kcat" data-cat="スキルを配る">スキルを配る<span class="n">18</span></button><button type="button" class="kcat" data-cat="社内ナレッジを配る">社内ナレッジを配る<span class="n">17</span></button><button type="button" class="kcat" data-cat="データにつなぐ">データにつなぐ<span class="n">17</span></button><button type="button" class="kcat" data-cat="業務を自動で回す">業務を自動で回す<span class="n">17</span></button><button type="button" class="kcat" data-cat="チームで安全に運用する">チームで安全に運用する<span class="n">16</span></button><button type="button" class="kcat" data-cat="個人で試す・広げる">個人で試す・広げる<span class="n">15</span></button></div>
+  <p class="khit" id="khit" role="status"></p>
+</div>
+<h2 class="cat" data-cat="スキルを配る">スキルを配る</h2>
+<div class="icard" data-cat="スキルを配る">
   <div class="ih"><span class="num">001</span><span class="ititle">手元のスキル1本を配信サーバーにする</span></div>
   
   <pre class="prompt" id="b1">前提: 手元の .claude/skills/ にあるSKILL.mdを1本、他の人にも使ってもらいたい。ファイルは渡したくない。
@@ -48,7 +53,7 @@
     <button class="btn ghost sm" data-save="b1" data-name="mcp-order-prompts-100-001.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="スキルを配る">
   <div class="ih"><span class="num">002</span><span class="ititle">複数スキルをまとめて配信する</span></div>
   
   <pre class="prompt" id="b2">前提: skills/ フォルダの下にスキルが複数あり、今後も増やしていく予定。増えるたびにサーバーを直したくない。
@@ -59,7 +64,7 @@
     <button class="btn ghost sm" data-save="b2" data-name="mcp-order-prompts-100-002.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="スキルを配る">
   <div class="ih"><span class="num">003</span><span class="ititle">GitHubリポジトリを配信元にする</span></div>
   
   <pre class="prompt" id="b3">前提: スキルの正本をGitHubの公開リポジトリで管理していて、pushしたら配信内容も切り替わってほしい。
@@ -70,7 +75,7 @@
     <button class="btn ghost sm" data-save="b3" data-name="mcp-order-prompts-100-003.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="スキルを配る">
   <div class="ih"><span class="num">004</span><span class="ititle">受け取る人ごとに配るスキルを変える</span></div>
   
   <pre class="prompt" id="b4">前提: 受講者のコースによって配りたいスキルが違う。URLは同じにしたいが、中身は人によって変えたい。
@@ -81,7 +86,7 @@
     <button class="btn ghost sm" data-save="b4" data-name="mcp-order-prompts-100-004.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="スキルを配る">
   <div class="ih"><span class="num">005</span><span class="ititle">スキルの更新履歴を持たせる</span></div>
   
   <pre class="prompt" id="b5">前提: スキルを頻繁に直すので、受け取る側が「何が変わったか」を確認できるようにしたい。
@@ -92,7 +97,7 @@
     <button class="btn ghost sm" data-save="b5" data-name="mcp-order-prompts-100-005.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="スキルを配る">
   <div class="ih"><span class="num">006</span><span class="ititle">配布用スキルの棚卸しツールを作る</span></div>
   
   <pre class="prompt" id="b6">前提: 配布予定のスキルが増えてきて、説明文が似ていて呼び分けられない懸念がある。
@@ -103,7 +108,7 @@
     <button class="btn ghost sm" data-save="b6" data-name="mcp-order-prompts-100-006.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="スキルを配る">
   <div class="ih"><span class="num">007</span><span class="ititle">スキルの説明文だけを一覧で返す</span></div>
   
   <pre class="prompt" id="b7">前提: 受け取る側が「今どんなスキルが配られているか」だけをさっと見たい。本文は必要なときだけでいい。
@@ -114,7 +119,7 @@
     <button class="btn ghost sm" data-save="b7" data-name="mcp-order-prompts-100-007.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="スキルを配る">
   <div class="ih"><span class="num">008</span><span class="ititle">旧版に固定できるようにする</span></div>
   
   <pre class="prompt" id="b8">前提: スキルを更新したら一部の人の手順が合わなくなった。全員を最新に強制したくない。
@@ -125,7 +130,7 @@
     <button class="btn ghost sm" data-save="b8" data-name="mcp-order-prompts-100-008.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="スキルを配る">
   <div class="ih"><span class="num">009</span><span class="ititle">配信をやめる手順まで作る</span></div>
   
   <pre class="prompt" id="b9">前提: 一度配り始めたスキルを、将来きれいに止められる状態にしておきたい。
@@ -136,7 +141,7 @@
     <button class="btn ghost sm" data-save="b9" data-name="mcp-order-prompts-100-009.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="スキルを配る">
   <div class="ih"><span class="num">010</span><span class="ititle">配布物の中身を検査してから出す</span></div>
   
   <pre class="prompt" id="b10">前提: 配布するSKILL.mdに、うっかりAPIキーや個人名を書き残したまま出すのが怖い。
@@ -147,7 +152,7 @@
     <button class="btn ghost sm" data-save="b10" data-name="mcp-order-prompts-100-010.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="スキルを配る">
   <div class="ih"><span class="num">011</span><span class="ititle">スキルに使い方の例を同梱する</span></div>
   
   <pre class="prompt" id="b11">前提: 受け取った人が「どう呼べばいいか分からない」と言う。説明文だけでは足りていない。
@@ -158,7 +163,7 @@
     <button class="btn ghost sm" data-save="b11" data-name="mcp-order-prompts-100-011.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="スキルを配る">
   <div class="ih"><span class="num">012</span><span class="ititle">配る前にAIに読ませて品質を見る</span></div>
   
   <pre class="prompt" id="b12">前提: スキルを作ったが、意図した場面でちゃんと呼び出されるか自信がない。
@@ -169,7 +174,7 @@
     <button class="btn ghost sm" data-save="b12" data-name="mcp-order-prompts-100-012.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="スキルを配る">
   <div class="ih"><span class="num">013</span><span class="ititle">スキルを日本語と英語で出し分ける</span></div>
   
   <pre class="prompt" id="b13">前提: 日本語圏と英語圏の両方にスキルを配りたいが、2重管理はしたくない。
@@ -180,7 +185,7 @@
     <button class="btn ghost sm" data-save="b13" data-name="mcp-order-prompts-100-013.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="スキルを配る">
   <div class="ih"><span class="num">014</span><span class="ititle">配信内容をそのままファイルにも書き出す</span></div>
   
   <pre class="prompt" id="b14">前提: 配信に一本化したいが、サーバーが落ちたときに何も使えなくなるのは避けたい。
@@ -191,7 +196,7 @@
     <button class="btn ghost sm" data-save="b14" data-name="mcp-order-prompts-100-014.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="スキルを配る">
   <div class="ih"><span class="num">015</span><span class="ititle">スキルの本文をテンプレートから組み立てる</span></div>
   
   <pre class="prompt" id="b15">前提: 業務ごとにほぼ同じ形のスキルを量産したいが、人によって書き方がバラバラになる。
@@ -202,7 +207,7 @@
     <button class="btn ghost sm" data-save="b15" data-name="mcp-order-prompts-100-015.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="スキルを配る">
   <div class="ih"><span class="num">016</span><span class="ititle">配布スキルの読了状況を測る</span></div>
   
   <pre class="prompt" id="b16">前提: 配ったスキルが実際に呼び出されているのか分からず、改善の当てがつかない。
@@ -213,7 +218,7 @@
     <button class="btn ghost sm" data-save="b16" data-name="mcp-order-prompts-100-016.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="スキルを配る">
   <div class="ih"><span class="num">017</span><span class="ititle">人気スキルの順位を返す</span></div>
   
   <pre class="prompt" id="b17">前提: 利用ログはあるが、そこから次に何を作るかの判断につながっていない。
@@ -224,7 +229,7 @@
     <button class="btn ghost sm" data-save="b17" data-name="mcp-order-prompts-100-017.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="スキルを配る">
   <div class="ih"><span class="num">018</span><span class="ititle">配信サーバーの健康状態を返す</span></div>
   
   <pre class="prompt" id="b18">前提: 配信サーバーが不調でも、受け取る側から見ると「AIが賢くない」に見えてしまい原因が分からない。
@@ -235,8 +240,8 @@
     <button class="btn ghost sm" data-save="b18" data-name="mcp-order-prompts-100-018.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">社内ナレッジを配る</h2>
-<div class="icard">
+<h2 class="cat" data-cat="社内ナレッジを配る">社内ナレッジを配る</h2>
+<div class="icard" data-cat="社内ナレッジを配る">
   <div class="ih"><span class="num">019</span><span class="ititle">社内規定をAIに読ませる形で配る</span></div>
   
   <pre class="prompt" id="b19">前提: 経費規定・就業規則などのPDFやWord文書があり、社員が毎回探すのに時間がかかっている。
@@ -247,7 +252,7 @@
     <button class="btn ghost sm" data-save="b19" data-name="mcp-order-prompts-100-019.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="社内ナレッジを配る">
   <div class="ih"><span class="num">020</span><span class="ititle">手順書を「今どこか」つきで返す</span></div>
   
   <pre class="prompt" id="b20">前提: 業務手順書が長く、途中まで進めた人が「次に何をするか」を毎回探し直している。
@@ -258,7 +263,7 @@
     <button class="btn ghost sm" data-save="b20" data-name="mcp-order-prompts-100-020.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="社内ナレッジを配る">
   <div class="ih"><span class="num">021</span><span class="ititle">議事録から決定事項だけを配る</span></div>
   
   <pre class="prompt" id="b21">前提: 会議の議事録が溜まっているが、決定事項だけを後から探すのが大変。
@@ -269,7 +274,7 @@
     <button class="btn ghost sm" data-save="b21" data-name="mcp-order-prompts-100-021.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="社内ナレッジを配る">
   <div class="ih"><span class="num">022</span><span class="ititle">用語集を全社に配信する</span></div>
   
   <pre class="prompt" id="b22">前提: 社内でしか通じない略語が多く、新入社員が毎回聞いて回っている。
@@ -280,7 +285,7 @@
     <button class="btn ghost sm" data-save="b22" data-name="mcp-order-prompts-100-022.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="社内ナレッジを配る">
   <div class="ih"><span class="num">023</span><span class="ititle">過去のトラブル対応を検索できるようにする</span></div>
   
   <pre class="prompt" id="b23">前提: 過去のインシデント対応記録が散らばっていて、似た事象が起きても活かせていない。
@@ -291,7 +296,7 @@
     <button class="btn ghost sm" data-save="b23" data-name="mcp-order-prompts-100-023.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="社内ナレッジを配る">
   <div class="ih"><span class="num">024</span><span class="ititle">書類のひな型を配信する</span></div>
   
   <pre class="prompt" id="b24">前提: 見積書・提案書・報告書のひな型がフォルダに散らばっていて、最新版がどれか分からない。
@@ -302,7 +307,7 @@
     <button class="btn ghost sm" data-save="b24" data-name="mcp-order-prompts-100-024.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="社内ナレッジを配る">
   <div class="ih"><span class="num">025</span><span class="ititle">承認フローの判断基準を配る</span></div>
   
   <pre class="prompt" id="b25">前提: 金額や種類によって承認者が変わるルールがあり、担当者が毎回上長に確認している。
@@ -313,7 +318,7 @@
     <button class="btn ghost sm" data-save="b25" data-name="mcp-order-prompts-100-025.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="社内ナレッジを配る">
   <div class="ih"><span class="num">026</span><span class="ititle">教育コンテンツを段階順に配る</span></div>
   
   <pre class="prompt" id="b26">前提: 研修教材があるが、全部まとめて渡すと受講者が最初の1つで止まってしまう。
@@ -324,7 +329,7 @@
     <button class="btn ghost sm" data-save="b26" data-name="mcp-order-prompts-100-026.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="社内ナレッジを配る">
   <div class="ih"><span class="num">027</span><span class="ititle">よくある質問を配信する</span></div>
   
   <pre class="prompt" id="b27">前提: 顧客からの同じ質問に、担当者ごとに違う答え方をしてしまっている。
@@ -335,7 +340,7 @@
     <button class="btn ghost sm" data-save="b27" data-name="mcp-order-prompts-100-027.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="社内ナレッジを配る">
   <div class="ih"><span class="num">028</span><span class="ititle">文書の禁止表現チェックを配る</span></div>
   
   <pre class="prompt" id="b28">前提: 資料や広告で使ってはいけない表現があるが、担当者ごとに把握度が違う。
@@ -346,7 +351,7 @@
     <button class="btn ghost sm" data-save="b28" data-name="mcp-order-prompts-100-028.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="社内ナレッジを配る">
   <div class="ih"><span class="num">029</span><span class="ititle">部署ごとに見える範囲を変える</span></div>
   
   <pre class="prompt" id="b29">前提: 同じ配信サーバーで、部署によって見せていい文書と見せられない文書がある。
@@ -357,7 +362,7 @@
     <button class="btn ghost sm" data-save="b29" data-name="mcp-order-prompts-100-029.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="社内ナレッジを配る">
   <div class="ih"><span class="num">030</span><span class="ititle">変更があった文書だけを知らせる</span></div>
   
   <pre class="prompt" id="b30">前提: 規定や手順が更新されても、現場が気づかず古いやり方を続けてしまう。
@@ -368,7 +373,7 @@
     <button class="btn ghost sm" data-save="b30" data-name="mcp-order-prompts-100-030.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="社内ナレッジを配る">
   <div class="ih"><span class="num">031</span><span class="ititle">顧客ごとの取り決めを配る</span></div>
   
   <pre class="prompt" id="b31">前提: 顧客ごとに納期・請求条件・連絡ルールが違い、担当が代わるたびに事故が起きる。
@@ -379,7 +384,7 @@
     <button class="btn ghost sm" data-save="b31" data-name="mcp-order-prompts-100-031.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="社内ナレッジを配る">
   <div class="ih"><span class="num">032</span><span class="ititle">社内の連絡先と役割を配る</span></div>
   
   <pre class="prompt" id="b32">前提: 誰が何の担当か分からず、社内で聞いて回る時間が無駄になっている。
@@ -390,7 +395,7 @@
     <button class="btn ghost sm" data-save="b32" data-name="mcp-order-prompts-100-032.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="社内ナレッジを配る">
   <div class="ih"><span class="num">033</span><span class="ititle">業界の法令・規約要点を配る</span></div>
   
   <pre class="prompt" id="b33">前提: 広告表現や商品説明で守るべき法令・規約があり、担当者ごとに確認レベルが違う。
@@ -401,7 +406,7 @@
     <button class="btn ghost sm" data-save="b33" data-name="mcp-order-prompts-100-033.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="社内ナレッジを配る">
   <div class="ih"><span class="num">034</span><span class="ititle">過去の提案書から勝ちパターンを配る</span></div>
   
   <pre class="prompt" id="b34">前提: 受注した提案書は残っているが、なぜ勝てたのかが個人の頭の中にしかない。
@@ -412,7 +417,7 @@
     <button class="btn ghost sm" data-save="b34" data-name="mcp-order-prompts-100-034.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="社内ナレッジを配る">
   <div class="ih"><span class="num">035</span><span class="ititle">現場からの改善要望を集める口を作る</span></div>
   
   <pre class="prompt" id="b35">前提: 配ったスキルや手順への不満が、こちらまで届かないまま放置されている。
@@ -423,8 +428,8 @@
     <button class="btn ghost sm" data-save="b35" data-name="mcp-order-prompts-100-035.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">データにつなぐ</h2>
-<div class="icard">
+<h2 class="cat" data-cat="データにつなぐ">データにつなぐ</h2>
+<div class="icard" data-cat="データにつなぐ">
   <div class="ih"><span class="num">036</span><span class="ititle">スプレッドシートを読み取り専用でつなぐ</span></div>
   
   <pre class="prompt" id="b36">前提: 売上や在庫の管理をスプレッドシートでしており、AIに聞くたびに手でコピーしている。
@@ -435,7 +440,7 @@
     <button class="btn ghost sm" data-save="b36" data-name="mcp-order-prompts-100-036.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="データにつなぐ">
   <div class="ih"><span class="num">037</span><span class="ititle">社内データベースに安全に問い合わせる</span></div>
   
   <pre class="prompt" id="b37">前提: 社内データベースの数字をAIに集計させたいが、更新や削除は絶対にさせたくない。
@@ -446,7 +451,7 @@
     <button class="btn ghost sm" data-save="b37" data-name="mcp-order-prompts-100-037.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="データにつなぐ">
   <div class="ih"><span class="num">038</span><span class="ititle">CSVの山を検索できるようにする</span></div>
   
   <pre class="prompt" id="b38">前提: 過去の実績CSVが大量にあり、必要な行を探すのに毎回表計算ソフトで開いている。
@@ -457,7 +462,7 @@
     <button class="btn ghost sm" data-save="b38" data-name="mcp-order-prompts-100-038.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="データにつなぐ">
   <div class="ih"><span class="num">039</span><span class="ititle">問い合わせ履歴を読み込む</span></div>
   
   <pre class="prompt" id="b39">前提: 顧客からの問い合わせ履歴が別システムにあり、対応のたびに探しに行っている。
@@ -468,7 +473,7 @@
     <button class="btn ghost sm" data-save="b39" data-name="mcp-order-prompts-100-039.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="データにつなぐ">
   <div class="ih"><span class="num">040</span><span class="ititle">予定表を読み取って空き時間を返す</span></div>
   
   <pre class="prompt" id="b40">前提: 打ち合わせの日程調整で、空き時間を毎回手で探して伝えている。
@@ -479,7 +484,7 @@
     <button class="btn ghost sm" data-save="b40" data-name="mcp-order-prompts-100-040.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="データにつなぐ">
   <div class="ih"><span class="num">041</span><span class="ititle">課題管理ツールの状況を読む</span></div>
   
   <pre class="prompt" id="b41">前提: 課題管理ツールを見ないと進捗が分からず、毎朝の確認に時間がかかっている。
@@ -490,7 +495,7 @@
     <button class="btn ghost sm" data-save="b41" data-name="mcp-order-prompts-100-041.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="データにつなぐ">
   <div class="ih"><span class="num">042</span><span class="ititle">アクセス解析の要点だけを返す</span></div>
   
   <pre class="prompt" id="b42">前提: サイトの数字を見るために毎回管理画面を開いていて、見る項目もその場の気分で変わる。
@@ -501,7 +506,7 @@
     <button class="btn ghost sm" data-save="b42" data-name="mcp-order-prompts-100-042.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="データにつなぐ">
   <div class="ih"><span class="num">043</span><span class="ititle">在庫と発注点をつなぐ</span></div>
   
   <pre class="prompt" id="b43">前提: 在庫データはあるが、発注が必要かどうかの判断が担当者の勘に頼っている。
@@ -512,7 +517,7 @@
     <button class="btn ghost sm" data-save="b43" data-name="mcp-order-prompts-100-043.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="データにつなぐ">
   <div class="ih"><span class="num">044</span><span class="ititle">経費データを科目別にまとめる</span></div>
   
   <pre class="prompt" id="b44">前提: 経費の明細はあるが、科目ごとの集計を毎月手作業でやっている。
@@ -523,7 +528,7 @@
     <button class="btn ghost sm" data-save="b44" data-name="mcp-order-prompts-100-044.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="データにつなぐ">
   <div class="ih"><span class="num">045</span><span class="ititle">受注データから納期リスクを返す</span></div>
   
   <pre class="prompt" id="b45">前提: 受注案件の納期が守れないことがあるが、危ないものを事前に把握できていない。
@@ -534,7 +539,7 @@
     <button class="btn ghost sm" data-save="b45" data-name="mcp-order-prompts-100-045.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="データにつなぐ">
   <div class="ih"><span class="num">046</span><span class="ititle">社内Wikiを横断して引く</span></div>
   
   <pre class="prompt" id="b46">前提: 社内Wikiの情報が多すぎて、キーワード検索では目的のページにたどり着けない。
@@ -545,7 +550,7 @@
     <button class="btn ghost sm" data-save="b46" data-name="mcp-order-prompts-100-046.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="データにつなぐ">
   <div class="ih"><span class="num">047</span><span class="ititle">メールの下書きだけを作る</span></div>
   
   <pre class="prompt" id="b47">前提: 定型的なメールの作成に時間がかかるが、AIに送信までさせるのは怖い。
@@ -556,7 +561,7 @@
     <button class="btn ghost sm" data-save="b47" data-name="mcp-order-prompts-100-047.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="データにつなぐ">
   <div class="ih"><span class="num">048</span><span class="ititle">ファイル置き場から最新版だけを返す</span></div>
   
   <pre class="prompt" id="b48">前提: 共有フォルダに同じ資料の版が複数あり、どれが最新か毎回迷う。
@@ -567,7 +572,7 @@
     <button class="btn ghost sm" data-save="b48" data-name="mcp-order-prompts-100-048.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="データにつなぐ">
   <div class="ih"><span class="num">049</span><span class="ititle">外部APIの結果を整形して返す</span></div>
   
   <pre class="prompt" id="b49">前提: 外部サービスのAPIをそのまま呼ぶと、返ってくるデータが冗長でAIが読み切れない。
@@ -578,7 +583,7 @@
     <button class="btn ghost sm" data-save="b49" data-name="mcp-order-prompts-100-049.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="データにつなぐ">
   <div class="ih"><span class="num">050</span><span class="ititle">複数サービスの数字を1つにまとめる</span></div>
   
   <pre class="prompt" id="b50">前提: 売上・広告費・問い合わせ数が別々のサービスにあり、まとめて見るのに手間がかかる。
@@ -589,7 +594,7 @@
     <button class="btn ghost sm" data-save="b50" data-name="mcp-order-prompts-100-050.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="データにつなぐ">
   <div class="ih"><span class="num">051</span><span class="ititle">検索結果の鮮度を明示する</span></div>
   
   <pre class="prompt" id="b51">前提: 取得したデータがいつ時点のものか分からず、古い数字で判断してしまうことがある。
@@ -600,7 +605,7 @@
     <button class="btn ghost sm" data-save="b51" data-name="mcp-order-prompts-100-051.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="データにつなぐ">
   <div class="ih"><span class="num">052</span><span class="ititle">取得できる範囲を先に宣言させる</span></div>
   
   <pre class="prompt" id="b52">前提: AIが取得できないデータについて、それらしい答えを作ってしまうことがある。
@@ -611,8 +616,8 @@
     <button class="btn ghost sm" data-save="b52" data-name="mcp-order-prompts-100-052.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">業務を自動で回す</h2>
-<div class="icard">
+<h2 class="cat" data-cat="業務を自動で回す">業務を自動で回す</h2>
+<div class="icard" data-cat="業務を自動で回す">
   <div class="ih"><span class="num">053</span><span class="ititle">定型レポートを毎朝作らせる</span></div>
   
   <pre class="prompt" id="b53">前提: 毎朝、前日の数字を集めて報告用にまとめる作業に30分かかっている。
@@ -623,7 +628,7 @@
     <button class="btn ghost sm" data-save="b53" data-name="mcp-order-prompts-100-053.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="業務を自動で回す">
   <div class="ih"><span class="num">054</span><span class="ititle">会議前の下調べをまとめる</span></div>
   
   <pre class="prompt" id="b54">前提: 打ち合わせ前に相手先の情報や過去のやり取りを調べる時間が取れていない。
@@ -634,7 +639,7 @@
     <button class="btn ghost sm" data-save="b54" data-name="mcp-order-prompts-100-054.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="業務を自動で回す">
   <div class="ih"><span class="num">055</span><span class="ititle">請求書の突合を自動化する</span></div>
   
   <pre class="prompt" id="b55">前提: 請求書と発注データの突合を目視でやっており、月末に時間を取られている。
@@ -645,7 +650,7 @@
     <button class="btn ghost sm" data-save="b55" data-name="mcp-order-prompts-100-055.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="業務を自動で回す">
   <div class="ih"><span class="num">056</span><span class="ititle">問い合わせを振り分ける</span></div>
   
   <pre class="prompt" id="b56">前提: 問い合わせの内容によって担当が変わるが、振り分けを人が毎回判断している。
@@ -656,7 +661,7 @@
     <button class="btn ghost sm" data-save="b56" data-name="mcp-order-prompts-100-056.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="業務を自動で回す">
   <div class="ih"><span class="num">057</span><span class="ititle">議事録から次アクションを切り出す</span></div>
   
   <pre class="prompt" id="b57">前提: 会議は活発だが、決まったことが実行に移らない。
@@ -667,7 +672,7 @@
     <button class="btn ghost sm" data-save="b57" data-name="mcp-order-prompts-100-057.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="業務を自動で回す">
   <div class="ih"><span class="num">058</span><span class="ititle">見積の妥当性をチェックする</span></div>
   
   <pre class="prompt" id="b58">前提: 見積を作るとき、過去実績や社内の基準単価との整合を確認しきれていない。
@@ -678,7 +683,7 @@
     <button class="btn ghost sm" data-save="b58" data-name="mcp-order-prompts-100-058.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="業務を自動で回す">
   <div class="ih"><span class="num">059</span><span class="ititle">資料の体裁を機械的に整える</span></div>
   
   <pre class="prompt" id="b59">前提: 資料の表記ゆれ（半角全角・数字の書き方・敬称）を毎回手で直している。
@@ -689,7 +694,7 @@
     <button class="btn ghost sm" data-save="b59" data-name="mcp-order-prompts-100-059.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="業務を自動で回す">
   <div class="ih"><span class="num">060</span><span class="ititle">採用応募の一次整理をする</span></div>
   
   <pre class="prompt" id="b60">前提: 応募書類が多く、担当者によって見る観点がバラついている。
@@ -700,7 +705,7 @@
     <button class="btn ghost sm" data-save="b60" data-name="mcp-order-prompts-100-060.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="業務を自動で回す">
   <div class="ih"><span class="num">061</span><span class="ititle">契約書の確認ポイントを洗い出す</span></div>
   
   <pre class="prompt" id="b61">前提: 契約書のレビューで見るべき条項が担当者の経験に依存している。
@@ -711,7 +716,7 @@
     <button class="btn ghost sm" data-save="b61" data-name="mcp-order-prompts-100-061.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="業務を自動で回す">
   <div class="ih"><span class="num">062</span><span class="ititle">日報から詰まりを見つける</span></div>
   
   <pre class="prompt" id="b62">前提: 日報は集まっているが、読み流しているだけで改善につながっていない。
@@ -722,7 +727,7 @@
     <button class="btn ghost sm" data-save="b62" data-name="mcp-order-prompts-100-062.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="業務を自動で回す">
   <div class="ih"><span class="num">063</span><span class="ititle">定期タスクの抜けを見つける</span></div>
   
   <pre class="prompt" id="b63">前提: 月次・週次の定型作業に抜けが出ることがあるが、気づくのが遅い。
@@ -733,7 +738,7 @@
     <button class="btn ghost sm" data-save="b63" data-name="mcp-order-prompts-100-063.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="業務を自動で回す">
   <div class="ih"><span class="num">064</span><span class="ititle">顧客への定期連絡を組み立てる</span></div>
   
   <pre class="prompt" id="b64">前提: 顧客への定期連絡が担当者任せで、忙しい月は抜けてしまう。
@@ -744,7 +749,7 @@
     <button class="btn ghost sm" data-save="b64" data-name="mcp-order-prompts-100-064.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="業務を自動で回す">
   <div class="ih"><span class="num">065</span><span class="ititle">作業ログから所要時間の目安を返す</span></div>
   
   <pre class="prompt" id="b65">前提: 作業時間の見積が担当者の感覚で、実績と乖離することが多い。
@@ -755,7 +760,7 @@
     <button class="btn ghost sm" data-save="b65" data-name="mcp-order-prompts-100-065.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="業務を自動で回す">
   <div class="ih"><span class="num">066</span><span class="ititle">翻訳と用語統一を同時にやる</span></div>
   
   <pre class="prompt" id="b66">前提: 海外向け資料を作るとき、担当者ごとに訳語が変わってしまう。
@@ -766,7 +771,7 @@
     <button class="btn ghost sm" data-save="b66" data-name="mcp-order-prompts-100-066.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="業務を自動で回す">
   <div class="ih"><span class="num">067</span><span class="ititle">アンケート結果を分類する</span></div>
   
   <pre class="prompt" id="b67">前提: アンケートの自由記述が大量にあり、読むだけで終わってしまう。
@@ -777,7 +782,7 @@
     <button class="btn ghost sm" data-save="b67" data-name="mcp-order-prompts-100-067.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="業務を自動で回す">
   <div class="ih"><span class="num">068</span><span class="ititle">作業手順を実行順に並べ替える</span></div>
   
   <pre class="prompt" id="b68">前提: 手順書に書いてある順番と、実際にやるべき順番がずれていることがある。
@@ -788,7 +793,7 @@
     <button class="btn ghost sm" data-save="b68" data-name="mcp-order-prompts-100-068.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="業務を自動で回す">
   <div class="ih"><span class="num">069</span><span class="ititle">月次の締め作業をチェックリスト化する</span></div>
   
   <pre class="prompt" id="b69">前提: 月次の締め作業の手順が長く、その月に不要な項目も混ざっている。
@@ -799,8 +804,8 @@
     <button class="btn ghost sm" data-save="b69" data-name="mcp-order-prompts-100-069.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">チームで安全に運用する</h2>
-<div class="icard">
+<h2 class="cat" data-cat="チームで安全に運用する">チームで安全に運用する</h2>
+<div class="icard" data-cat="チームで安全に運用する">
   <div class="ih"><span class="num">070</span><span class="ititle">個人ごとの接続URLを発行する</span></div>
   
   <pre class="prompt" id="b70">前提: 同じURLを全員に配ると、退会した人の分だけ止めることができない。
@@ -811,7 +816,7 @@
     <button class="btn ghost sm" data-save="b70" data-name="mcp-order-prompts-100-070.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="チームで安全に運用する">
   <div class="ih"><span class="num">071</span><span class="ititle">利用ログを追記専用で残す</span></div>
   
   <pre class="prompt" id="b71">前提: 誰がいつ何を使ったかの記録が必要だが、改ざんできる形では意味がない。
@@ -822,7 +827,7 @@
     <button class="btn ghost sm" data-save="b71" data-name="mcp-order-prompts-100-071.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="チームで安全に運用する">
   <div class="ih"><span class="num">072</span><span class="ititle">1人あたりの呼び出し回数を制限する</span></div>
   
   <pre class="prompt" id="b72">前提: 配信サーバーが従量課金の基盤に乗る予定で、使われ方によっては費用が読めない。
@@ -833,7 +838,7 @@
     <button class="btn ghost sm" data-save="b72" data-name="mcp-order-prompts-100-072.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="チームで安全に運用する">
   <div class="ih"><span class="num">073</span><span class="ititle">管理画面から配信を止める</span></div>
   
   <pre class="prompt" id="b73">前提: 配信内容に誤りが見つかったとき、修正が終わるまで一時的に止めたい。
@@ -844,7 +849,7 @@
     <button class="btn ghost sm" data-save="b73" data-name="mcp-order-prompts-100-073.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="チームで安全に運用する">
   <div class="ih"><span class="num">074</span><span class="ititle">誰が何を見られるかを一覧で出す</span></div>
   
   <pre class="prompt" id="b74">前提: 権限の設定が増えてきて、誰が何にアクセスできるのか全体像が見えない。
@@ -855,7 +860,7 @@
     <button class="btn ghost sm" data-save="b74" data-name="mcp-order-prompts-100-074.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="チームで安全に運用する">
   <div class="ih"><span class="num">075</span><span class="ititle">本番と検証を分ける</span></div>
   
   <pre class="prompt" id="b75">前提: スキルを直している最中の内容が、そのまま全員に届いてしまうのが怖い。
@@ -866,7 +871,7 @@
     <button class="btn ghost sm" data-save="b75" data-name="mcp-order-prompts-100-075.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="チームで安全に運用する">
   <div class="ih"><span class="num">076</span><span class="ititle">外部に出してはいけない内容を検知する</span></div>
   
   <pre class="prompt" id="b76">前提: 社外秘の内容が、配信対象のフォルダに紛れ込む可能性がある。
@@ -877,7 +882,7 @@
     <button class="btn ghost sm" data-save="b76" data-name="mcp-order-prompts-100-076.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="チームで安全に運用する">
   <div class="ih"><span class="num">077</span><span class="ititle">接続元を制限する</span></div>
   
   <pre class="prompt" id="b77">前提: 社内からのみ使う配信サーバーなのに、URLさえ知っていれば外から叩ける状態になっている。
@@ -888,7 +893,7 @@
     <button class="btn ghost sm" data-save="b77" data-name="mcp-order-prompts-100-077.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="チームで安全に運用する">
   <div class="ih"><span class="num">078</span><span class="ititle">秘密情報を環境変数だけで扱う</span></div>
   
   <pre class="prompt" id="b78">前提: 過去にAPIキーをリポジトリに含めてしまった経験があり、同じ事故を避けたい。
@@ -899,7 +904,7 @@
     <button class="btn ghost sm" data-save="b78" data-name="mcp-order-prompts-100-078.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="チームで安全に運用する">
   <div class="ih"><span class="num">079</span><span class="ititle">配信内容の差分を承認制にする</span></div>
   
   <pre class="prompt" id="b79">前提: 複数人でスキルを編集していて、確認なしに配信内容が変わるのを避けたい。
@@ -910,7 +915,7 @@
     <button class="btn ghost sm" data-save="b79" data-name="mcp-order-prompts-100-079.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="チームで安全に運用する">
   <div class="ih"><span class="num">080</span><span class="ititle">エラーを人が読める形で返す</span></div>
   
   <pre class="prompt" id="b80">前提: 接続に失敗したとき、受け取る側にはエラーの理由が伝わらず問い合わせが来る。
@@ -921,7 +926,7 @@
     <button class="btn ghost sm" data-save="b80" data-name="mcp-order-prompts-100-080.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="チームで安全に運用する">
   <div class="ih"><span class="num">081</span><span class="ititle">設定の変更履歴を残す</span></div>
   
   <pre class="prompt" id="b81">前提: 権限や配信設定を複数人でいじっており、変更の経緯が分からなくなっている。
@@ -932,7 +937,7 @@
     <button class="btn ghost sm" data-save="b81" data-name="mcp-order-prompts-100-081.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="チームで安全に運用する">
   <div class="ih"><span class="num">082</span><span class="ititle">退会処理を1手順にまとめる</span></div>
   
   <pre class="prompt" id="b82">前提: 受講終了や退職のたびに、複数の場所で権限を消す必要があり漏れが起きる。
@@ -943,7 +948,7 @@
     <button class="btn ghost sm" data-save="b82" data-name="mcp-order-prompts-100-082.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="チームで安全に運用する">
   <div class="ih"><span class="num">083</span><span class="ititle">バックアップを自動で取る</span></div>
   
   <pre class="prompt" id="b83">前提: 配信しているスキルの原本が消えたら、業務が止まる。
@@ -954,7 +959,7 @@
     <button class="btn ghost sm" data-save="b83" data-name="mcp-order-prompts-100-083.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="チームで安全に運用する">
   <div class="ih"><span class="num">084</span><span class="ititle">利用規約への同意を記録する</span></div>
   
   <pre class="prompt" id="b84">前提: 配布物の利用条件を伝えているが、同意した記録が残っていない。
@@ -965,7 +970,7 @@
     <button class="btn ghost sm" data-save="b84" data-name="mcp-order-prompts-100-084.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="チームで安全に運用する">
   <div class="ih"><span class="num">085</span><span class="ititle">監査用のまとめを月次で出す</span></div>
   
   <pre class="prompt" id="b85">前提: 配信の運用状況を、上長や監査に説明できる形で残しておきたい。
@@ -976,8 +981,8 @@
     <button class="btn ghost sm" data-save="b85" data-name="mcp-order-prompts-100-085.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">個人で試す・広げる</h2>
-<div class="icard">
+<h2 class="cat" data-cat="個人で試す・広げる">個人で試す・広げる</h2>
+<div class="icard" data-cat="個人で試す・広げる">
   <div class="ih"><span class="num">086</span><span class="ititle">まず動く最小のMCPサーバーを作る</span></div>
   
   <pre class="prompt" id="b86">前提: MCPサーバーを作ったことがなく、まず「つながった」を体験したい。
@@ -988,7 +993,7 @@
     <button class="btn ghost sm" data-save="b86" data-name="mcp-order-prompts-100-086.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="個人で試す・広げる">
   <div class="ih"><span class="num">087</span><span class="ititle">手元の作業メモを読ませる</span></div>
   
   <pre class="prompt" id="b87">前提: 自分の作業メモが増えてきて、AIに毎回状況を説明するのが面倒。
@@ -999,7 +1004,7 @@
     <button class="btn ghost sm" data-save="b87" data-name="mcp-order-prompts-100-087.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="個人で試す・広げる">
   <div class="ih"><span class="num">088</span><span class="ititle">読書メモから引用を引く</span></div>
   
   <pre class="prompt" id="b88">前提: 本を読んでメモは取っているが、必要なときに該当箇所を思い出せない。
@@ -1010,7 +1015,7 @@
     <button class="btn ghost sm" data-save="b88" data-name="mcp-order-prompts-100-088.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="個人で試す・広げる">
   <div class="ih"><span class="num">089</span><span class="ititle">家計データを月ごとにまとめる</span></div>
   
   <pre class="prompt" id="b89">前提: 家計の記録はあるが、月ごとの傾向を見返す習慣がない。
@@ -1021,7 +1026,7 @@
     <button class="btn ghost sm" data-save="b89" data-name="mcp-order-prompts-100-089.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="個人で試す・広げる">
   <div class="ih"><span class="num">090</span><span class="ititle">書きかけの原稿の続きを探す</span></div>
   
   <pre class="prompt" id="b90">前提: 複数の原稿を並行して書いていて、どれが途中でどこで止まっているか分からない。
@@ -1032,7 +1037,7 @@
     <button class="btn ghost sm" data-save="b90" data-name="mcp-order-prompts-100-090.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="個人で試す・広げる">
   <div class="ih"><span class="num">091</span><span class="ititle">写真の整理状況を返す</span></div>
   
   <pre class="prompt" id="b91">前提: 写真フォルダが整理できておらず、どこから手をつけるべきか分からない。
@@ -1043,7 +1048,7 @@
     <button class="btn ghost sm" data-save="b91" data-name="mcp-order-prompts-100-091.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="個人で試す・広げる">
   <div class="ih"><span class="num">092</span><span class="ititle">学習の進み具合を記録する</span></div>
   
   <pre class="prompt" id="b92">前提: 学習を続けたいが、どこまでやったかの記録が続かない。
@@ -1054,7 +1059,7 @@
     <button class="btn ghost sm" data-save="b92" data-name="mcp-order-prompts-100-092.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="個人で試す・広げる">
   <div class="ih"><span class="num">093</span><span class="ititle">ブックマークを検索できるようにする</span></div>
   
   <pre class="prompt" id="b93">前提: 保存したリンクが大量にあるが、後から探せず結局使っていない。
@@ -1065,7 +1070,7 @@
     <button class="btn ghost sm" data-save="b93" data-name="mcp-order-prompts-100-093.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="個人で試す・広げる">
   <div class="ih"><span class="num">094</span><span class="ititle">自分の書き癖を教える</span></div>
   
   <pre class="prompt" id="b94">前提: AIに文章を書かせると、自分の書き方とかけ離れたものが出てくる。
@@ -1076,7 +1081,7 @@
     <button class="btn ghost sm" data-save="b94" data-name="mcp-order-prompts-100-094.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="個人で試す・広げる">
   <div class="ih"><span class="num">095</span><span class="ititle">作りかけのアイデアを寝かせる</span></div>
   
   <pre class="prompt" id="b95">前提: 思いついたアイデアをメモしても、そのまま埋もれてしまう。
@@ -1087,7 +1092,7 @@
     <button class="btn ghost sm" data-save="b95" data-name="mcp-order-prompts-100-095.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="個人で試す・広げる">
   <div class="ih"><span class="num">096</span><span class="ititle">旅行の下調べをまとめる</span></div>
   
   <pre class="prompt" id="b96">前提: 旅行の計画で、移動・宿・行きたい場所の情報がバラバラに散らばっている。
@@ -1098,7 +1103,7 @@
     <button class="btn ghost sm" data-save="b96" data-name="mcp-order-prompts-100-096.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="個人で試す・広げる">
   <div class="ih"><span class="num">097</span><span class="ititle">健康記録の傾向を返す</span></div>
   
   <pre class="prompt" id="b97">前提: 体重や睡眠時間を記録しているが、見返しても傾向が分からない。
@@ -1109,7 +1114,7 @@
     <button class="btn ghost sm" data-save="b97" data-name="mcp-order-prompts-100-097.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="個人で試す・広げる">
   <div class="ih"><span class="num">098</span><span class="ititle">作ったスキルを友人に配ってみる</span></div>
   
   <pre class="prompt" id="b98">前提: 自分用に作ったスキルを、まず1人に渡して反応を見たい。
@@ -1120,7 +1125,7 @@
     <button class="btn ghost sm" data-save="b98" data-name="mcp-order-prompts-100-098.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="個人で試す・広げる">
   <div class="ih"><span class="num">099</span><span class="ititle">配信サーバーを無料枠で動かす</span></div>
   
   <pre class="prompt" id="b99">前提: 自作したMCPサーバーを公開したいが、費用をかけたくない。
@@ -1131,7 +1136,7 @@
     <button class="btn ghost sm" data-save="b99" data-name="mcp-order-prompts-100-099.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="個人で試す・広げる">
   <div class="ih"><span class="num">100</span><span class="ititle">自分の配信サーバーを他人に引き継ぐ</span></div>
   
   <pre class="prompt" id="b100">前提: 自分が作った配信サーバーを、将来ほかの人に引き継ぐ可能性がある。
@@ -2176,6 +2181,57 @@ AIの出力を、自分の文体に寄せる。
 以上、100個です。内訳は「スキルを配る」18本、「社内ナレッジを配る」17本、「データにつなぐ」17本、「業務を自動で回す」17本、「チームで安全に運用する」16本、「個人で試す・広げる」15本の合計100本です。
 </pre>
 <script>
+// 項目の多いキットで、目的の1件に辿り着けるようにする絞り込み。
+// 検索はタイトル・説明だけでなく本文も対象にする（「あの文言が入っていた項目」で探せるように）。
+(function(){
+  var q = document.getElementById('kq');
+  if (!q) return;
+  var hit = document.getElementById('khit');
+  var cards = [].slice.call(document.querySelectorAll('.kwrap .icard'));
+  var heads = [].slice.call(document.querySelectorAll('.kwrap h2.cat'));
+  var chips = [].slice.call(document.querySelectorAll('.kcat'));
+  var cat = '';
+
+  // ひらがな・カタカナの違いで取りこぼさないようにする（ハブ側の検索と同じ扱い）
+  function norm(s){
+    return (s || '').toLowerCase().replace(/[ぁ-ん]/g, function(c){
+      return String.fromCharCode(c.charCodeAt(0) + 0x60);
+    });
+  }
+
+  // カード全体の textContent だとボタンの「コピー」まで拾ってしまうため、中身を選んで集める
+  cards.forEach(function(c){
+    var t = c.querySelector('.ititle'), d = c.querySelector('.imeta'), p = c.querySelector('.prompt');
+    c._t = norm((t ? t.textContent : '') + ' ' + (d ? d.textContent : '') + ' ' + (p ? p.textContent : ''));
+  });
+
+  function apply(){
+    var kw = norm(q.value.trim()), n = 0, shown = {};
+    cards.forEach(function(c){
+      var ok = (!cat || c.getAttribute('data-cat') === cat)
+            && (!kw || c._t.indexOf(kw) !== -1);
+      c.classList.toggle('hide', !ok);
+      if (ok){ n++; shown[c.getAttribute('data-cat')] = 1; }
+    });
+    // 残った項目が1件も無いカテゴリの見出しは隠す
+    heads.forEach(function(h){
+      h.classList.toggle('hide', !shown[h.getAttribute('data-cat')]);
+    });
+    hit.textContent = (kw || cat)
+      ? (n ? n + '件を表示中' : '該当する項目がありません')
+      : '';
+  }
+
+  q.addEventListener('input', apply);
+  chips.forEach(function(b){
+    b.addEventListener('click', function(){
+      cat = b.getAttribute('data-cat');
+      chips.forEach(function(x){ x.classList.toggle('on', x === b); });
+      apply();
+    });
+  });
+})();
+
 function flash(btn, label){
   const old = btn.textContent, cls = btn.className;
   btn.textContent = label; btn.classList.add('ok');
@@ -2245,7 +2301,22 @@ document.addEventListener('click', e => {
     el.classList.remove('show');
     sessionStorage.setItem('promoClosed', '1');
   }
-  setTimeout(function(){ el.classList.add('show'); }, 1600);
+  // 動画の概要欄から来た人が、自分のプレゼントを探し始める瞬間に被らないようにする。
+  // 以前は読み込み1.6秒後に無条件で出しており、いちばん目的意識の高い時間を塞いでいた。
+  // 中身を見に行った（＝目当てのものに辿り着いた）ころに出す。
+  var shown = false;
+  function show(){
+    if (shown) return;
+    shown = true;
+    el.classList.add('show');
+    removeEventListener('scroll', onScroll);
+  }
+  function onScroll(){
+    if (scrollY > innerHeight * 0.8) show();
+  }
+  addEventListener('scroll', onScroll, {passive:true});
+  // まったくスクロールしない人にも最後には出す（ただし十分に間を置いてから）
+  setTimeout(show, 45000);
   document.getElementById('promoClose').addEventListener('click', function(e){ e.preventDefault(); close(); });
   el.addEventListener('click', function(e){ if (e.target === el) close(); });
 })();

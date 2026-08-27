@@ -36,8 +36,13 @@
     <div class="pnote"><span class="nb">下のカードから、</span><span class="nb">1件ずつコピー、</span><span class="nb">または個別にダウンロードできます。</span><span class="nb">まとめて欲しいときは、</span><span class="nb">上の</span><span class="nb">「全件ダウンロード」を</span><span class="nb">お使いください。</span></div>
   </section>
 
-  <h2 class="cat">診断編：本当に劣化しているか切り分ける</h2>
-<div class="icard">
+  <div class="ktools">
+  <input type="search" id="kq" placeholder="この中から探す" autocomplete="off" aria-label="この中から探す">
+  <div class="kcats"><button type="button" class="kcat on" data-cat="">すべて<span class="n">100</span></button><button type="button" class="kcat" data-cat="診断編：本当に劣化しているか切り分ける">診断編：本当に劣化しているか切り分ける<span class="n">17</span></button><button type="button" class="kcat" data-cat="代替ルーティング編：不調時にどう逃がすか">代替ルーティング編：不調時にどう逃がすか<span class="n">17</span></button><button type="button" class="kcat" data-cat="記録・報告編：状況を正しく残す">記録・報告編：状況を正しく残す<span class="n">16</span></button><button type="button" class="kcat" data-cat="比較・検証編：数字で確かめる">比較・検証編：数字で確かめる<span class="n">17</span></button><button type="button" class="kcat" data-cat="周知・共有編：伝え方を整える">周知・共有編：伝え方を整える<span class="n">16</span></button><button type="button" class="kcat" data-cat="予防・監視編：次に備える習慣">予防・監視編：次に備える習慣<span class="n">17</span></button></div>
+  <p class="khit" id="khit" role="status"></p>
+</div>
+<h2 class="cat" data-cat="診断編：本当に劣化しているか切り分ける">診断編：本当に劣化しているか切り分ける</h2>
+<div class="icard" data-cat="診断編：本当に劣化しているか切り分ける">
   <div class="ih"><span class="num">001</span><span class="ititle">いつもの依頼で解像度チェック</span></div>
   
   <pre class="prompt" id="b1">前提: 普段Claudeにお願いしている定型タスク（要約・コード修正・企画出し等）が、最近なんとなく雑に感じる。
@@ -48,7 +53,7 @@
     <button class="btn ghost sm" data-save="b1" data-name="degradation-diagnosis-prompts100-001.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="診断編：本当に劣化しているか切り分ける">
   <div class="ih"><span class="num">002</span><span class="ititle">同一プロンプトの3回リトライ比較</span></div>
   
   <pre class="prompt" id="b2">前提: 1回の応答だけでは、たまたま調子が悪かったのか毎回そうなのか判断がつかない。
@@ -59,7 +64,7 @@
     <button class="btn ghost sm" data-save="b2" data-name="degradation-diagnosis-prompts100-002.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="診断編：本当に劣化しているか切り分ける">
   <div class="ih"><span class="num">003</span><span class="ititle">誤検出っぽい拒否の再現依頼</span></div>
   
   <pre class="prompt" id="b3">前提: 無害なはずのコーディング依頼が、なぜか安全機能に引っかかって別モデルに回されたように見える。
@@ -70,7 +75,7 @@
     <button class="btn ghost sm" data-save="b3" data-name="degradation-diagnosis-prompts100-003.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="診断編：本当に劣化しているか切り分ける">
   <div class="ih"><span class="num">004</span><span class="ititle">モデル名の確認だけをまず取る</span></div>
   
   <pre class="prompt" id="b4">前提: 体感の劣化を語る前に、そもそも今どのモデルで応答しているかを毎回確認できていない。
@@ -81,7 +86,7 @@
     <button class="btn ghost sm" data-save="b4" data-name="degradation-diagnosis-prompts100-004.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="診断編：本当に劣化しているか切り分ける">
   <div class="ih"><span class="num">005</span><span class="ititle">公式ステータスページの見方を要約させる</span></div>
   
   <pre class="prompt" id="b5">前提: 障害情報がどこに出るのか分からず、体感の劣化と実際の障害を混同しがち。
@@ -92,7 +97,7 @@
     <button class="btn ghost sm" data-save="b5" data-name="degradation-diagnosis-prompts100-005.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="診断編：本当に劣化しているか切り分ける">
   <div class="ih"><span class="num">006</span><span class="ititle">体感劣化を数値化するための質問票を作る</span></div>
   
   <pre class="prompt" id="b6">前提: 『なんとなく悪い』を人に説明しても伝わらず、感覚論で終わってしまう。
@@ -103,7 +108,7 @@
     <button class="btn ghost sm" data-save="b6" data-name="degradation-diagnosis-prompts100-006.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="診断編：本当に劣化しているか切り分ける">
   <div class="ih"><span class="num">007</span><span class="ititle">誤ルーティングの可能性を仮説立てる</span></div>
   
   <pre class="prompt" id="b7">前提: BridgeBenchの記事で『安全分類器が誤検出して別モデルに回す』仕組みがあると知った。
@@ -114,7 +119,7 @@
     <button class="btn ghost sm" data-save="b7" data-name="degradation-diagnosis-prompts100-007.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="診断編：本当に劣化しているか切り分ける">
   <div class="ih"><span class="num">008</span><span class="ititle">プロンプト側の劣化を先に疑う</span></div>
   
   <pre class="prompt" id="b8">前提: モデル側でなく、自分の依頼文が長期間で冗長化・複雑化して精度が落ちている可能性もある。
@@ -125,7 +130,7 @@
     <button class="btn ghost sm" data-save="b8" data-name="degradation-diagnosis-prompts100-008.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="診断編：本当に劣化しているか切り分ける">
   <div class="ih"><span class="num">009</span><span class="ititle">時間帯による差の記録</span></div>
   
   <pre class="prompt" id="b9">前提: 混雑する時間帯にだけ応答が雑になっている可能性があり、モデルの実力とは別問題かもしれない。
@@ -136,7 +141,7 @@
     <button class="btn ghost sm" data-save="b9" data-name="degradation-diagnosis-prompts100-009.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="診断編：本当に劣化しているか切り分ける">
   <div class="ih"><span class="num">010</span><span class="ititle">エラー表示の意味を翻訳させる</span></div>
   
   <pre class="prompt" id="b10">前提: 応答が変になったときに出るエラーメッセージや注記の意味が分からないまま流している。
@@ -147,7 +152,7 @@
     <button class="btn ghost sm" data-save="b10" data-name="degradation-diagnosis-prompts100-010.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="診断編：本当に劣化しているか切り分ける">
   <div class="ih"><span class="num">011</span><span class="ititle">長文タスクでの息切れ確認</span></div>
   
   <pre class="prompt" id="b11">前提: 短い質問では問題ないのに、長文・複数ステップのタスクだけ精度が落ちている気がする。
@@ -158,7 +163,7 @@
     <button class="btn ghost sm" data-save="b11" data-name="degradation-diagnosis-prompts100-011.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="診断編：本当に劣化しているか切り分ける">
   <div class="ih"><span class="num">012</span><span class="ititle">比較対象なしの体感を疑う</span></div>
   
   <pre class="prompt" id="b12">前提: 『前は全能感があった』という記憶自体が、実は美化されている可能性もある。
@@ -169,7 +174,7 @@
     <button class="btn ghost sm" data-save="b12" data-name="degradation-diagnosis-prompts100-012.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="診断編：本当に劣化しているか切り分ける">
   <div class="ih"><span class="num">013</span><span class="ititle">課金プラン・上限との切り分け</span></div>
   
   <pre class="prompt" id="b13">前提: 応答が急に短くなったのが、モデル劣化ではなく利用上限・クォータ超過による省略の可能性がある。
@@ -180,7 +185,7 @@
     <button class="btn ghost sm" data-save="b13" data-name="degradation-diagnosis-prompts100-013.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="診断編：本当に劣化しているか切り分ける">
   <div class="ih"><span class="num">014</span><span class="ititle">同義プロンプトでの再現テスト</span></div>
   
   <pre class="prompt" id="b14">前提: 特定の言い回しだけがうまく通らず、他の言い回しなら普通に動く可能性がある。
@@ -191,7 +196,7 @@
     <button class="btn ghost sm" data-save="b14" data-name="degradation-diagnosis-prompts100-014.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="診断編：本当に劣化しているか切り分ける">
   <div class="ih"><span class="num">015</span><span class="ititle">『前は良かった』の記憶を裏取りする</span></div>
   
   <pre class="prompt" id="b15">前提: SNSで『劣化した』という投稿を見て自分もそう感じ始めたが、確証バイアスの可能性を排除したい。
@@ -202,7 +207,7 @@
     <button class="btn ghost sm" data-save="b15" data-name="degradation-diagnosis-prompts100-015.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="診断編：本当に劣化しているか切り分ける">
   <div class="ih"><span class="num">016</span><span class="ititle">複数ツール同時比較のセットアップ</span></div>
   
   <pre class="prompt" id="b16">前提: 同じ依頼を複数のAIサービスに同時に投げて比較したいが、条件を揃える方法が分からない。
@@ -213,7 +218,7 @@
     <button class="btn ghost sm" data-save="b16" data-name="degradation-diagnosis-prompts100-016.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="診断編：本当に劣化しているか切り分ける">
   <div class="ih"><span class="num">017</span><span class="ititle">感情を抜いた報告文への変換</span></div>
   
   <pre class="prompt" id="b17">前提: フラストレーションが溜まった状態で書いた報告文は、感情的すぎて周囲に状況が伝わりにくい。
@@ -224,8 +229,8 @@
     <button class="btn ghost sm" data-save="b17" data-name="degradation-diagnosis-prompts100-017.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">代替ルーティング編：不調時にどう逃がすか</h2>
-<div class="icard">
+<h2 class="cat" data-cat="代替ルーティング編：不調時にどう逃がすか">代替ルーティング編：不調時にどう逃がすか</h2>
+<div class="icard" data-cat="代替ルーティング編：不調時にどう逃がすか">
   <div class="ih"><span class="num">018</span><span class="ititle">同タスクを複数モデルへ横流し</span></div>
   
   <pre class="prompt" id="b18">前提: 目の前のタスクは急ぎで、原因究明より先にとにかく終わらせたい。
@@ -236,7 +241,7 @@
     <button class="btn ghost sm" data-save="b18" data-name="degradation-diagnosis-prompts100-018.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="代替ルーティング編：不調時にどう逃がすか">
   <div class="ih"><span class="num">019</span><span class="ititle">重い処理は分割して逃がす</span></div>
   
   <pre class="prompt" id="b19">前提: 1回の依頼が重すぎて、安全機能や分類器に引っかかっているかもしれない。
@@ -247,7 +252,7 @@
     <button class="btn ghost sm" data-save="b19" data-name="degradation-diagnosis-prompts100-019.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="代替ルーティング編：不調時にどう逃がすか">
   <div class="ih"><span class="num">020</span><span class="ititle">軽量モデルへの格下げ依頼を明示</span></div>
   
   <pre class="prompt" id="b20">前提: 複雑な指示より、まず軽いモデルで下書きだけ作って、仕上げだけ強いモデルに頼みたい。
@@ -258,7 +263,7 @@
     <button class="btn ghost sm" data-save="b20" data-name="degradation-diagnosis-prompts100-020.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="代替ルーティング編：不調時にどう逃がすか">
   <div class="ih"><span class="num">021</span><span class="ititle">代替モデルへの引き継ぎメモ作成</span></div>
   
   <pre class="prompt" id="b21">前提: 今まで積み上げてきた会話の文脈を、別のAIサービスに移すときにゼロから説明し直すのが面倒。
@@ -269,7 +274,7 @@
     <button class="btn ghost sm" data-save="b21" data-name="degradation-diagnosis-prompts100-021.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="代替ルーティング編：不調時にどう逃がすか">
   <div class="ih"><span class="num">022</span><span class="ititle">誤検出ワードの言い換え辞書作成</span></div>
   
   <pre class="prompt" id="b22">前提: 特定の業界用語（セキュリティ・脆弱性診断など）を使う仕事柄、毎回誤検出に引っかかりやすい。
@@ -280,7 +285,7 @@
     <button class="btn ghost sm" data-save="b22" data-name="degradation-diagnosis-prompts100-022.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="代替ルーティング編：不調時にどう逃がすか">
   <div class="ih"><span class="num">023</span><span class="ititle">複数チャットの並行運用フロー</span></div>
   
   <pre class="prompt" id="b23">前提: 1つのモデルが不調な間、複数のチャットセッションを並行運用して業務を止めたくない。
@@ -291,7 +296,7 @@
     <button class="btn ghost sm" data-save="b23" data-name="degradation-diagnosis-prompts100-023.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="代替ルーティング編：不調時にどう逃がすか">
   <div class="ih"><span class="num">024</span><span class="ititle">音声・画像タスクの逃がし先を整理</span></div>
   
   <pre class="prompt" id="b24">前提: テキスト以外（画像生成・文字起こし等）のタスクでも同様の不調がありうる。
@@ -302,7 +307,7 @@
     <button class="btn ghost sm" data-save="b24" data-name="degradation-diagnosis-prompts100-024.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="代替ルーティング編：不調時にどう逃がすか">
   <div class="ih"><span class="num">025</span><span class="ititle">重要タスクの二重チェック依頼</span></div>
   
   <pre class="prompt" id="b25">前提: 出力の質にばらつきを感じるので、重要な成果物だけは別モデルにダブルチェックさせたい。
@@ -313,7 +318,7 @@
     <button class="btn ghost sm" data-save="b25" data-name="degradation-diagnosis-prompts100-025.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="代替ルーティング編：不調時にどう逃がすか">
   <div class="ih"><span class="num">026</span><span class="ititle">会話の要約引き継ぎテンプレ</span></div>
   
   <pre class="prompt" id="b26">前提: 長い会話をリセットして別モデルに移すたびに、毎回同じ手順で要約を作るのが面倒。
@@ -324,7 +329,7 @@
     <button class="btn ghost sm" data-save="b26" data-name="degradation-diagnosis-prompts100-026.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="代替ルーティング編：不調時にどう逃がすか">
   <div class="ih"><span class="num">027</span><span class="ititle">依頼の優先度で振り分けるルール</span></div>
   
   <pre class="prompt" id="b27">前提: すべてのタスクを同じ重さで扱うのではなく、重要度に応じて振り分け先を変えたい。
@@ -335,7 +340,7 @@
     <button class="btn ghost sm" data-save="b27" data-name="degradation-diagnosis-prompts100-027.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="代替ルーティング編：不調時にどう逃がすか">
   <div class="ih"><span class="num">028</span><span class="ititle">代替先での再現性テスト依頼</span></div>
   
   <pre class="prompt" id="b28">前提: 別モデルに移した結果が、本当に元の依頼の意図通りかを確認したい。
@@ -346,7 +351,7 @@
     <button class="btn ghost sm" data-save="b28" data-name="degradation-diagnosis-prompts100-028.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="代替ルーティング編：不調時にどう逃がすか">
   <div class="ih"><span class="num">029</span><span class="ititle">チーム内への切り替え連絡文</span></div>
   
   <pre class="prompt" id="b29">前提: 自分だけでなくチームメンバーも同じ不調に気づいており、対応方針を共有したい。
@@ -357,7 +362,7 @@
     <button class="btn ghost sm" data-save="b29" data-name="degradation-diagnosis-prompts100-029.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="代替ルーティング編：不調時にどう逃がすか">
   <div class="ih"><span class="num">030</span><span class="ititle">料金比較を踏まえた乗り換え判断メモ</span></div>
   
   <pre class="prompt" id="b30">前提: 代替モデルに切り替えるかどうかを、感情ではなくコストも含めて判断したい。
@@ -368,7 +373,7 @@
     <button class="btn ghost sm" data-save="b30" data-name="degradation-diagnosis-prompts100-030.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="代替ルーティング編：不調時にどう逃がすか">
   <div class="ih"><span class="num">031</span><span class="ititle">一時的な運用と恒久対応の切り分け</span></div>
   
   <pre class="prompt" id="b31">前提: 今回の不調が一時的なものか、今後も続く前提で運用を変えるべきか判断がつかない。
@@ -379,7 +384,7 @@
     <button class="btn ghost sm" data-save="b31" data-name="degradation-diagnosis-prompts100-031.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="代替ルーティング編：不調時にどう逃がすか">
   <div class="ih"><span class="num">032</span><span class="ititle">依頼文のフォールバック版を常備する</span></div>
   
   <pre class="prompt" id="b32">前提: メインの依頼文が誤検出に引っかかった場合に備えて、代替版をあらかじめ用意しておきたい。
@@ -390,7 +395,7 @@
     <button class="btn ghost sm" data-save="b32" data-name="degradation-diagnosis-prompts100-032.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="代替ルーティング編：不調時にどう逃がすか">
   <div class="ih"><span class="num">033</span><span class="ititle">復旧を待つ間の代替作業リスト</span></div>
   
   <pre class="prompt" id="b33">前提: 障害情報が出ていて復旧を待つしかない状況で、その間に手を止めたくない。
@@ -401,7 +406,7 @@
     <button class="btn ghost sm" data-save="b33" data-name="degradation-diagnosis-prompts100-033.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="代替ルーティング編：不調時にどう逃がすか">
   <div class="ih"><span class="num">034</span><span class="ititle">複数アカウント・複数契約での分散</span></div>
   
   <pre class="prompt" id="b34">前提: 個人契約1つに依存していると、その契約固有の不調に丸ごと巻き込まれる。
@@ -412,8 +417,8 @@
     <button class="btn ghost sm" data-save="b34" data-name="degradation-diagnosis-prompts100-034.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">記録・報告編：状況を正しく残す</h2>
-<div class="icard">
+<h2 class="cat" data-cat="記録・報告編：状況を正しく残す">記録・報告編：状況を正しく残す</h2>
+<div class="icard" data-cat="記録・報告編：状況を正しく残す">
   <div class="ih"><span class="num">035</span><span class="ititle">不具合ログの定型フォーマット作成</span></div>
   
   <pre class="prompt" id="b35">前提: 不調を感じるたびにメモがバラバラで、後から振り返れない。
@@ -424,7 +429,7 @@
     <button class="btn ghost sm" data-save="b35" data-name="degradation-diagnosis-prompts100-035.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="記録・報告編：状況を正しく残す">
   <div class="ih"><span class="num">036</span><span class="ititle">スクリーンショット添付用の説明文生成</span></div>
   
   <pre class="prompt" id="b36">前提: 不具合の様子をスクリーンショットで残しているが、後で見返すときに文脈が分からなくなる。
@@ -435,7 +440,7 @@
     <button class="btn ghost sm" data-save="b36" data-name="degradation-diagnosis-prompts100-036.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="記録・報告編：状況を正しく残す">
   <div class="ih"><span class="num">037</span><span class="ititle">週次の体感サマリー作成</span></div>
   
   <pre class="prompt" id="b37">前提: 日々のログは取っているが、それを週単位でまとめて傾向を見る作業をしていない。
@@ -446,7 +451,7 @@
     <button class="btn ghost sm" data-save="b37" data-name="degradation-diagnosis-prompts100-037.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="記録・報告編：状況を正しく残す">
   <div class="ih"><span class="num">038</span><span class="ititle">再現手順の言語化</span></div>
   
   <pre class="prompt" id="b38">前提: 不具合を人に説明するとき、再現手順があいまいで伝わらない。
@@ -457,7 +462,7 @@
     <button class="btn ghost sm" data-save="b38" data-name="degradation-diagnosis-prompts100-038.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="記録・報告編：状況を正しく残す">
   <div class="ih"><span class="num">039</span><span class="ititle">複数人の体感を集約するアンケート項目</span></div>
   
   <pre class="prompt" id="b39">前提: 自分だけでなくチームや周囲の体感も集めて、個人の思い込みかどうかを確かめたい。
@@ -468,7 +473,7 @@
     <button class="btn ghost sm" data-save="b39" data-name="degradation-diagnosis-prompts100-039.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="記録・報告編：状況を正しく残す">
   <div class="ih"><span class="num">040</span><span class="ititle">公式サポートへの問い合わせ下書き</span></div>
   
   <pre class="prompt" id="b40">前提: 個人の契約プランで再現性のある不具合に遭遇し、サポートに問い合わせたい。
@@ -479,7 +484,7 @@
     <button class="btn ghost sm" data-save="b40" data-name="degradation-diagnosis-prompts100-040.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="記録・報告編：状況を正しく残す">
   <div class="ih"><span class="num">041</span><span class="ititle">SNS投稿前のファクトチェック依頼</span></div>
   
   <pre class="prompt" id="b41">前提: 不満をSNSに投稿する前に、事実誤認や過度な決めつけがないか確認したい。
@@ -490,7 +495,7 @@
     <button class="btn ghost sm" data-save="b41" data-name="degradation-diagnosis-prompts100-041.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="記録・報告編：状況を正しく残す">
   <div class="ih"><span class="num">042</span><span class="ititle">影響範囲の自己申告フォーム</span></div>
   
   <pre class="prompt" id="b42">前提: 不具合がどの業務にどれだけ影響したかを、後で振り返れる形で残しておきたい。
@@ -501,7 +506,7 @@
     <button class="btn ghost sm" data-save="b42" data-name="degradation-diagnosis-prompts100-042.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="記録・報告編：状況を正しく残す">
   <div class="ih"><span class="num">043</span><span class="ititle">月次の振り返りレポート雛形</span></div>
   
   <pre class="prompt" id="b43">前提: 毎月の運用改善のために、AI利用の不調・良好だった点を定期的に振り返りたい。
@@ -512,7 +517,7 @@
     <button class="btn ghost sm" data-save="b43" data-name="degradation-diagnosis-prompts100-043.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="記録・報告編：状況を正しく残す">
   <div class="ih"><span class="num">044</span><span class="ititle">チーム共有用の障害タイムライン</span></div>
   
   <pre class="prompt" id="b44">前提: チームメンバーがそれぞれ別々に不調に気づいており、情報が散らばっている。
@@ -523,7 +528,7 @@
     <button class="btn ghost sm" data-save="b44" data-name="degradation-diagnosis-prompts100-044.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="記録・報告編：状況を正しく残す">
   <div class="ih"><span class="num">045</span><span class="ititle">再現しなかった場合の記録も残す</span></div>
   
   <pre class="prompt" id="b45">前提: 不調を疑って確認したが、実際には再現しなかったケースも今後の判断材料として残したい。
@@ -534,7 +539,7 @@
     <button class="btn ghost sm" data-save="b45" data-name="degradation-diagnosis-prompts100-045.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="記録・報告編：状況を正しく残す">
   <div class="ih"><span class="num">046</span><span class="ititle">契約プラン変更時の判断材料まとめ</span></div>
   
   <pre class="prompt" id="b46">前提: 不調が続く場合にプラン変更を検討しているが、まだ判断材料が揃っていない。
@@ -545,7 +550,7 @@
     <button class="btn ghost sm" data-save="b46" data-name="degradation-diagnosis-prompts100-046.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="記録・報告編：状況を正しく残す">
   <div class="ih"><span class="num">047</span><span class="ititle">社内向け状況説明スライドの骨子</span></div>
   
   <pre class="prompt" id="b47">前提: 上司やチームに現状を説明する必要があるが、資料を1から作る時間がない。
@@ -556,7 +561,7 @@
     <button class="btn ghost sm" data-save="b47" data-name="degradation-diagnosis-prompts100-047.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="記録・報告編：状況を正しく残す">
   <div class="ih"><span class="num">048</span><span class="ititle">記録の棚卸しと重複整理</span></div>
   
   <pre class="prompt" id="b48">前提: バラバラに取ってきたメモが溜まってきて、重複や矛盾が出てきている。
@@ -567,7 +572,7 @@
     <button class="btn ghost sm" data-save="b48" data-name="degradation-diagnosis-prompts100-048.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="記録・報告編：状況を正しく残す">
   <div class="ih"><span class="num">049</span><span class="ititle">第三者にも伝わる要約への圧縮</span></div>
   
   <pre class="prompt" id="b49">前提: 詳細なログはあるが、事情を知らない人に一から説明する時間がない。
@@ -578,7 +583,7 @@
     <button class="btn ghost sm" data-save="b49" data-name="degradation-diagnosis-prompts100-049.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="記録・報告編：状況を正しく残す">
   <div class="ih"><span class="num">050</span><span class="ititle">次回のための備えチェックリスト</span></div>
   
   <pre class="prompt" id="b50">前提: 今回の対応を通じて学んだことを、次に同じことが起きたときすぐ動けるように残しておきたい。
@@ -589,8 +594,8 @@
     <button class="btn ghost sm" data-save="b50" data-name="degradation-diagnosis-prompts100-050.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">比較・検証編：数字で確かめる</h2>
-<div class="icard">
+<h2 class="cat" data-cat="比較・検証編：数字で確かめる">比較・検証編：数字で確かめる</h2>
+<div class="icard" data-cat="比較・検証編：数字で確かめる">
   <div class="ih"><span class="num">051</span><span class="ititle">簡易ベンチマークタスクの自作</span></div>
   
   <pre class="prompt" id="b51">前提: 公開されているベンチマークは自分の業務と噛み合わず、参考にしづらい。
@@ -601,7 +606,7 @@
     <button class="btn ghost sm" data-save="b51" data-name="degradation-diagnosis-prompts100-051.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="比較・検証編：数字で確かめる">
   <div class="ih"><span class="num">052</span><span class="ititle">同一条件での応答速度メモ</span></div>
   
   <pre class="prompt" id="b52">前提: 遅くなった気がするが、体感だけで速度低下を語ってしまっている。
@@ -612,7 +617,7 @@
     <button class="btn ghost sm" data-save="b52" data-name="degradation-diagnosis-prompts100-052.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="比較・検証編：数字で確かめる">
   <div class="ih"><span class="num">053</span><span class="ititle">正答率チェック用のミニクイズ作成</span></div>
   
   <pre class="prompt" id="b53">前提: 事実関係を問う簡単な質問で正答率が落ちていないか確かめたい。
@@ -623,7 +628,7 @@
     <button class="btn ghost sm" data-save="b53" data-name="degradation-diagnosis-prompts100-053.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="比較・検証編：数字で確かめる">
   <div class="ih"><span class="num">054</span><span class="ititle">ハルシネーション検出用の裏取り依頼</span></div>
   
   <pre class="prompt" id="b54">前提: 出力に含まれる固有名詞や数字が、実際には存在しない・不正確な可能性がある。
@@ -634,7 +639,7 @@
     <button class="btn ghost sm" data-save="b54" data-name="degradation-diagnosis-prompts100-054.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="比較・検証編：数字で確かめる">
   <div class="ih"><span class="num">055</span><span class="ititle">他モデルとの横並び比較表の作成</span></div>
   
   <pre class="prompt" id="b55">前提: 感覚的な優劣ではなく、同じ条件での横並び比較をしたい。
@@ -645,7 +650,7 @@
     <button class="btn ghost sm" data-save="b55" data-name="degradation-diagnosis-prompts100-055.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="比較・検証編：数字で確かめる">
   <div class="ih"><span class="num">056</span><span class="ititle">公開ベンチマーク記事の読み解き補助</span></div>
   
   <pre class="prompt" id="b56">前提: BridgeBenchやArena.aiのような専門的なベンチマーク記事の数字の意味が分かりにくい。
@@ -656,7 +661,7 @@
     <button class="btn ghost sm" data-save="b56" data-name="degradation-diagnosis-prompts100-056.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="比較・検証編：数字で確かめる">
   <div class="ih"><span class="num">057</span><span class="ititle">自分の業務特化の重み付け評価</span></div>
   
   <pre class="prompt" id="b57">前提: 一般的なベンチマークと自分の実際の業務での重要度は違う。
@@ -667,7 +672,7 @@
     <button class="btn ghost sm" data-save="b57" data-name="degradation-diagnosis-prompts100-057.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="比較・検証編：数字で確かめる">
   <div class="ih"><span class="num">058</span><span class="ititle">長期トレンドの記録テンプレ</span></div>
   
   <pre class="prompt" id="b58">前提: 1回きりの比較ではなく、数週間かけて傾向を追いたい。
@@ -678,7 +683,7 @@
     <button class="btn ghost sm" data-save="b58" data-name="degradation-diagnosis-prompts100-058.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="比較・検証編：数字で確かめる">
   <div class="ih"><span class="num">059</span><span class="ititle">複数指標の総合スコア化</span></div>
   
   <pre class="prompt" id="b59">前提: 速さ・正確さ・使いやすさなど複数の観点をバラバラに見ていて、全体像がつかめない。
@@ -689,7 +694,7 @@
     <button class="btn ghost sm" data-save="b59" data-name="degradation-diagnosis-prompts100-059.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="比較・検証編：数字で確かめる">
   <div class="ih"><span class="num">060</span><span class="ititle">比較結果を共有する際の注意書き</span></div>
   
   <pre class="prompt" id="b60">前提: 個人の比較結果をチームや外部に共有するときに、断定的すぎる表現でトラブルになりたくない。
@@ -700,7 +705,7 @@
     <button class="btn ghost sm" data-save="b60" data-name="degradation-diagnosis-prompts100-060.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="比較・検証編：数字で確かめる">
   <div class="ih"><span class="num">061</span><span class="ititle">再現性のあるテストセットの保存</span></div>
   
   <pre class="prompt" id="b61">前提: 毎回違うテストをしていると、過去との比較ができない。
@@ -711,7 +716,7 @@
     <button class="btn ghost sm" data-save="b61" data-name="degradation-diagnosis-prompts100-061.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="比較・検証編：数字で確かめる">
   <div class="ih"><span class="num">062</span><span class="ititle">価格あたりの価値を試算する</span></div>
   
   <pre class="prompt" id="b62">前提: 性能だけでなく、支払っている料金に見合っているかも判断材料にしたい。
@@ -722,7 +727,7 @@
     <button class="btn ghost sm" data-save="b62" data-name="degradation-diagnosis-prompts100-062.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="比較・検証編：数字で確かめる">
   <div class="ih"><span class="num">063</span><span class="ititle">同業他社・同職種の声の集め方</span></div>
   
   <pre class="prompt" id="b63">前提: 自分の業界特有の使い方で、一般的な評判と体感がずれている可能性がある。
@@ -733,7 +738,7 @@
     <button class="btn ghost sm" data-save="b63" data-name="degradation-diagnosis-prompts100-063.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="比較・検証編：数字で確かめる">
   <div class="ih"><span class="num">064</span><span class="ititle">比較結果からの次アクション決定</span></div>
   
   <pre class="prompt" id="b64">前提: 比較はしたものの、その結果からどう行動すべきかまで落とし込めていない。
@@ -744,7 +749,7 @@
     <button class="btn ghost sm" data-save="b64" data-name="degradation-diagnosis-prompts100-064.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="比較・検証編：数字で確かめる">
   <div class="ih"><span class="num">065</span><span class="ititle">スコアの経時変化グラフ用データ整理</span></div>
   
   <pre class="prompt" id="b65">前提: 記録が溜まってきたので、グラフにして視覚的に傾向を見たい。
@@ -755,7 +760,7 @@
     <button class="btn ghost sm" data-save="b65" data-name="degradation-diagnosis-prompts100-065.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="比較・検証編：数字で確かめる">
   <div class="ih"><span class="num">066</span><span class="ititle">第三者による盲検テストの設計</span></div>
   
   <pre class="prompt" id="b66">前提: 自分の期待や先入観がテスト結果に影響していないか確かめたい。
@@ -766,7 +771,7 @@
     <button class="btn ghost sm" data-save="b66" data-name="degradation-diagnosis-prompts100-066.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="比較・検証編：数字で確かめる">
   <div class="ih"><span class="num">067</span><span class="ititle">結論を急がないための保留リスト</span></div>
   
   <pre class="prompt" id="b67">前提: 一度の比較結果だけで『やっぱり劣化している』と結論づけてしまいがち。
@@ -777,8 +782,8 @@
     <button class="btn ghost sm" data-save="b67" data-name="degradation-diagnosis-prompts100-067.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">周知・共有編：伝え方を整える</h2>
-<div class="icard">
+<h2 class="cat" data-cat="周知・共有編：伝え方を整える">周知・共有編：伝え方を整える</h2>
+<div class="icard" data-cat="周知・共有編：伝え方を整える">
   <div class="ih"><span class="num">068</span><span class="ititle">チーム向け一次周知テンプレ</span></div>
   
   <pre class="prompt" id="b68">前提: 不調に気づいた直後、まずチームに一報を入れる必要がある。
@@ -789,7 +794,7 @@
     <button class="btn ghost sm" data-save="b68" data-name="degradation-diagnosis-prompts100-068.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="周知・共有編：伝え方を整える">
   <div class="ih"><span class="num">069</span><span class="ititle">お客様向け影響説明の下書き</span></div>
   
   <pre class="prompt" id="b69">前提: AIを使った業務に一時的な遅延・品質低下の可能性があり、顧客への説明が必要かもしれない。
@@ -800,7 +805,7 @@
     <button class="btn ghost sm" data-save="b69" data-name="degradation-diagnosis-prompts100-069.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="周知・共有編：伝え方を整える">
   <div class="ih"><span class="num">070</span><span class="ititle">誤解を招かない社内FAQ作成</span></div>
   
   <pre class="prompt" id="b70">前提: 『AIが壊れた』という噂だけが独り歩きして、正確な状況が伝わっていない。
@@ -811,7 +816,7 @@
     <button class="btn ghost sm" data-save="b70" data-name="degradation-diagnosis-prompts100-070.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="周知・共有編：伝え方を整える">
   <div class="ih"><span class="num">071</span><span class="ititle">経営層向け1分説明の準備</span></div>
   
   <pre class="prompt" id="b71">前提: 上司から『最近のAI、大丈夫なの』と聞かれたときに、要領よく答えられるようにしたい。
@@ -822,7 +827,7 @@
     <button class="btn ghost sm" data-save="b71" data-name="degradation-diagnosis-prompts100-071.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="周知・共有編：伝え方を整える">
   <div class="ih"><span class="num">072</span><span class="ititle">SNS向け中立的な発信文の作成</span></div>
   
   <pre class="prompt" id="b72">前提: 自分の体験をSNSで共有したいが、感情的な批判にはしたくない。
@@ -833,7 +838,7 @@
     <button class="btn ghost sm" data-save="b72" data-name="degradation-diagnosis-prompts100-072.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="周知・共有編：伝え方を整える">
   <div class="ih"><span class="num">073</span><span class="ititle">後輩・新人への説明用の平易な解説</span></div>
   
   <pre class="prompt" id="b73">前提: チームの若手メンバーがAIの不調に戸惑っており、専門用語なしで説明したい。
@@ -844,7 +849,7 @@
     <button class="btn ghost sm" data-save="b73" data-name="degradation-diagnosis-prompts100-073.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="周知・共有編：伝え方を整える">
   <div class="ih"><span class="num">074</span><span class="ititle">問い合わせ窓口向けの一括共有文</span></div>
   
   <pre class="prompt" id="b74">前提: 複数の関係者から同じ質問が来ており、まとめて一度に周知したい。
@@ -855,7 +860,7 @@
     <button class="btn ghost sm" data-save="b74" data-name="degradation-diagnosis-prompts100-074.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="周知・共有編：伝え方を整える">
   <div class="ih"><span class="num">075</span><span class="ititle">落ち着いて対応するための自分向けメモ</span></div>
   
   <pre class="prompt" id="b75">前提: 不調が続くとイライラして冷静な判断ができなくなる。
@@ -866,7 +871,7 @@
     <button class="btn ghost sm" data-save="b75" data-name="degradation-diagnosis-prompts100-075.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="周知・共有編：伝え方を整える">
   <div class="ih"><span class="num">076</span><span class="ititle">他部署との情報共有フォーマット</span></div>
   
   <pre class="prompt" id="b76">前提: 同じ会社の別部署でも同様の体感があるかもしれず、情報を集約したい。
@@ -877,7 +882,7 @@
     <button class="btn ghost sm" data-save="b76" data-name="degradation-diagnosis-prompts100-076.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="周知・共有編：伝え方を整える">
   <div class="ih"><span class="num">077</span><span class="ititle">週次定例での共有アジェンダ化</span></div>
   
   <pre class="prompt" id="b77">前提: 毎週の定例会議で、AI利用状況の共有を定例化したい。
@@ -888,7 +893,7 @@
     <button class="btn ghost sm" data-save="b77" data-name="degradation-diagnosis-prompts100-077.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="周知・共有編：伝え方を整える">
   <div class="ih"><span class="num">078</span><span class="ititle">落ち着いた語り口への言い換え</span></div>
   
   <pre class="prompt" id="b78">前提: 苛立ちが文面に出てしまい、感情的な報告になってしまう。
@@ -899,7 +904,7 @@
     <button class="btn ghost sm" data-save="b78" data-name="degradation-diagnosis-prompts100-078.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="周知・共有編：伝え方を整える">
   <div class="ih"><span class="num">079</span><span class="ititle">誤情報の訂正投稿の作り方</span></div>
   
   <pre class="prompt" id="b79">前提: 自分や周囲が過去に投稿した内容が、後から見ると不正確だった可能性がある。
@@ -910,7 +915,7 @@
     <button class="btn ghost sm" data-save="b79" data-name="degradation-diagnosis-prompts100-079.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="周知・共有編：伝え方を整える">
   <div class="ih"><span class="num">080</span><span class="ititle">状況が落ち着いた後の総括共有</span></div>
   
   <pre class="prompt" id="b80">前提: 一連の騒動が落ち着いたら、関係者に振り返りを共有したい。
@@ -921,7 +926,7 @@
     <button class="btn ghost sm" data-save="b80" data-name="degradation-diagnosis-prompts100-080.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="周知・共有編：伝え方を整える">
   <div class="ih"><span class="num">081</span><span class="ititle">外部パートナー向けの説明メール</span></div>
   
   <pre class="prompt" id="b81">前提: 取引先にも影響が及ぶ可能性があり、先回りして状況を伝えておきたい。
@@ -932,7 +937,7 @@
     <button class="btn ghost sm" data-save="b81" data-name="degradation-diagnosis-prompts100-081.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="周知・共有編：伝え方を整える">
   <div class="ih"><span class="num">082</span><span class="ititle">勉強会・共有会用のスライド台本</span></div>
   
   <pre class="prompt" id="b82">前提: チーム内勉強会で『最近のAI事情』として今回の件を共有する時間がある。
@@ -943,7 +948,7 @@
     <button class="btn ghost sm" data-save="b82" data-name="degradation-diagnosis-prompts100-082.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="周知・共有編：伝え方を整える">
   <div class="ih"><span class="num">083</span><span class="ititle">問い合わせの一次受け対応マニュアル</span></div>
   
   <pre class="prompt" id="b83">前提: 窓口担当者が同じ質問に何度も個別対応していて負担になっている。
@@ -954,8 +959,8 @@
     <button class="btn ghost sm" data-save="b83" data-name="degradation-diagnosis-prompts100-083.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">予防・監視編：次に備える習慣</h2>
-<div class="icard">
+<h2 class="cat" data-cat="予防・監視編：次に備える習慣">予防・監視編：次に備える習慣</h2>
+<div class="icard" data-cat="予防・監視編：次に備える習慣">
   <div class="ih"><span class="num">084</span><span class="ititle">定点観測タスクの固定化</span></div>
   
   <pre class="prompt" id="b84">前提: 毎回違うタスクで様子を見ていて、比較の軸がぶれる。
@@ -966,7 +971,7 @@
     <button class="btn ghost sm" data-save="b84" data-name="degradation-diagnosis-prompts100-084.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="予防・監視編：次に備える習慣">
   <div class="ih"><span class="num">085</span><span class="ititle">公式アナウンス確認の習慣化</span></div>
   
   <pre class="prompt" id="b85">前提: 公式の発表やステータス更新を見落としがちで、噂に振り回されやすい。
@@ -977,7 +982,7 @@
     <button class="btn ghost sm" data-save="b85" data-name="degradation-diagnosis-prompts100-085.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="予防・監視編：次に備える習慣">
   <div class="ih"><span class="num">086</span><span class="ititle">依頼文テンプレのバージョン管理</span></div>
   
   <pre class="prompt" id="b86">前提: よく使う依頼文を更新するたびに前のバージョンが分からなくなる。
@@ -988,7 +993,7 @@
     <button class="btn ghost sm" data-save="b86" data-name="degradation-diagnosis-prompts100-086.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="予防・監視編：次に備える習慣">
   <div class="ih"><span class="num">087</span><span class="ititle">複数チャネルの分散運用ルール</span></div>
   
   <pre class="prompt" id="b87">前提: 1つのサービスに依存しすぎると、不調時に業務が完全に止まってしまう。
@@ -999,7 +1004,7 @@
     <button class="btn ghost sm" data-save="b87" data-name="degradation-diagnosis-prompts100-087.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="予防・監視編：次に備える習慣">
   <div class="ih"><span class="num">088</span><span class="ititle">月初の健康チェックルーティン</span></div>
   
   <pre class="prompt" id="b88">前提: 月初にまとめて先月の傾向を振り返る時間を作りたい。
@@ -1010,7 +1015,7 @@
     <button class="btn ghost sm" data-save="b88" data-name="degradation-diagnosis-prompts100-088.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="予防・監視編：次に備える習慣">
   <div class="ih"><span class="num">089</span><span class="ititle">異変の早期検知チェックポイント</span></div>
   
   <pre class="prompt" id="b89">前提: 大きな不満になる前に、小さな異変の段階で気づけるようにしたい。
@@ -1021,7 +1026,7 @@
     <button class="btn ghost sm" data-save="b89" data-name="degradation-diagnosis-prompts100-089.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="予防・監視編：次に備える習慣">
   <div class="ih"><span class="num">090</span><span class="ititle">代替手段の定期リハーサル</span></div>
   
   <pre class="prompt" id="b90">前提: いざというときに慌てないよう、代替手段を事前に試しておきたい。
@@ -1032,7 +1037,7 @@
     <button class="btn ghost sm" data-save="b90" data-name="degradation-diagnosis-prompts100-090.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="予防・監視編：次に備える習慣">
   <div class="ih"><span class="num">091</span><span class="ititle">依頼文の定期棚卸し</span></div>
   
   <pre class="prompt" id="b91">前提: 長年使い続けている依頼文が、現状に合わなくなっている可能性がある。
@@ -1043,7 +1048,7 @@
     <button class="btn ghost sm" data-save="b91" data-name="degradation-diagnosis-prompts100-091.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="予防・監視編：次に備える習慣">
   <div class="ih"><span class="num">092</span><span class="ititle">学習リソースのブックマーク整理</span></div>
   
   <pre class="prompt" id="b92">前提: 良い記事や公式情報を見つけても、その場限りで後から探せなくなる。
@@ -1054,7 +1059,7 @@
     <button class="btn ghost sm" data-save="b92" data-name="degradation-diagnosis-prompts100-092.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="予防・監視編：次に備える習慣">
   <div class="ih"><span class="num">093</span><span class="ititle">チームの情報共有窓口を1本化</span></div>
   
   <pre class="prompt" id="b93">前提: 情報がチャットのあちこちに散らばって、後から探しづらい。
@@ -1065,7 +1070,7 @@
     <button class="btn ghost sm" data-save="b93" data-name="degradation-diagnosis-prompts100-093.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="予防・監視編：次に備える習慣">
   <div class="ih"><span class="num">094</span><span class="ititle">依頼の複雑さを普段から抑える工夫</span></div>
   
   <pre class="prompt" id="b94">前提: 依頼が複雑になるほど誤検出や品質低下の影響を受けやすい。
@@ -1076,7 +1081,7 @@
     <button class="btn ghost sm" data-save="b94" data-name="degradation-diagnosis-prompts100-094.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="予防・監視編：次に備える習慣">
   <div class="ih"><span class="num">095</span><span class="ititle">新機能・仕様変更のキャッチアップ手順</span></div>
   
   <pre class="prompt" id="b95">前提: 仕様変更が知らないうちに行われ、後から『そういえば』と気づくことが多い。
@@ -1087,7 +1092,7 @@
     <button class="btn ghost sm" data-save="b95" data-name="degradation-diagnosis-prompts100-095.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="予防・監視編：次に備える習慣">
   <div class="ih"><span class="num">096</span><span class="ititle">冷静に判断するための自分ルール</span></div>
   
   <pre class="prompt" id="b96">前提: 不調のたびに一喜一憂して、大きな決断（乗り換え等）を焦ってしまう。
@@ -1098,7 +1103,7 @@
     <button class="btn ghost sm" data-save="b96" data-name="degradation-diagnosis-prompts100-096.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="予防・監視編：次に備える習慣">
   <div class="ih"><span class="num">097</span><span class="ititle">同業者ネットワークとの情報交換ルール</span></div>
   
   <pre class="prompt" id="b97">前提: 一人で判断するより、同業者と情報交換した方が精度が上がる。
@@ -1109,7 +1114,7 @@
     <button class="btn ghost sm" data-save="b97" data-name="degradation-diagnosis-prompts100-097.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="予防・監視編：次に備える習慣">
   <div class="ih"><span class="num">098</span><span class="ititle">バックアップ体制の年次見直し</span></div>
   
   <pre class="prompt" id="b98">前提: 一度作った代替体制も、時間が経つと形骸化しやすい。
@@ -1120,7 +1125,7 @@
     <button class="btn ghost sm" data-save="b98" data-name="degradation-diagnosis-prompts100-098.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="予防・監視編：次に備える習慣">
   <div class="ih"><span class="num">099</span><span class="ititle">次の炎上に備えた心構えメモ</span></div>
   
   <pre class="prompt" id="b99">前提: 今回のような騒動は今後も起こりうるという前提で心構えをしておきたい。
@@ -1131,7 +1136,7 @@
     <button class="btn ghost sm" data-save="b99" data-name="degradation-diagnosis-prompts100-099.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="予防・監視編：次に備える習慣">
   <div class="ih"><span class="num">100</span><span class="ititle">この一件からの学びの言語化</span></div>
   
   <pre class="prompt" id="b100">前提: 一連の対応が終わった後、学びを次に活かせる形で残しておきたい。
@@ -1973,6 +1978,57 @@
 
 以上、100個です。内訳は「診断編」17・「代替ルーティング編」17・「記録・報告編」16・「比較・検証編」17・「周知・共有編」16・「予防・監視編」17。</pre>
 <script>
+// 項目の多いキットで、目的の1件に辿り着けるようにする絞り込み。
+// 検索はタイトル・説明だけでなく本文も対象にする（「あの文言が入っていた項目」で探せるように）。
+(function(){
+  var q = document.getElementById('kq');
+  if (!q) return;
+  var hit = document.getElementById('khit');
+  var cards = [].slice.call(document.querySelectorAll('.kwrap .icard'));
+  var heads = [].slice.call(document.querySelectorAll('.kwrap h2.cat'));
+  var chips = [].slice.call(document.querySelectorAll('.kcat'));
+  var cat = '';
+
+  // ひらがな・カタカナの違いで取りこぼさないようにする（ハブ側の検索と同じ扱い）
+  function norm(s){
+    return (s || '').toLowerCase().replace(/[ぁ-ん]/g, function(c){
+      return String.fromCharCode(c.charCodeAt(0) + 0x60);
+    });
+  }
+
+  // カード全体の textContent だとボタンの「コピー」まで拾ってしまうため、中身を選んで集める
+  cards.forEach(function(c){
+    var t = c.querySelector('.ititle'), d = c.querySelector('.imeta'), p = c.querySelector('.prompt');
+    c._t = norm((t ? t.textContent : '') + ' ' + (d ? d.textContent : '') + ' ' + (p ? p.textContent : ''));
+  });
+
+  function apply(){
+    var kw = norm(q.value.trim()), n = 0, shown = {};
+    cards.forEach(function(c){
+      var ok = (!cat || c.getAttribute('data-cat') === cat)
+            && (!kw || c._t.indexOf(kw) !== -1);
+      c.classList.toggle('hide', !ok);
+      if (ok){ n++; shown[c.getAttribute('data-cat')] = 1; }
+    });
+    // 残った項目が1件も無いカテゴリの見出しは隠す
+    heads.forEach(function(h){
+      h.classList.toggle('hide', !shown[h.getAttribute('data-cat')]);
+    });
+    hit.textContent = (kw || cat)
+      ? (n ? n + '件を表示中' : '該当する項目がありません')
+      : '';
+  }
+
+  q.addEventListener('input', apply);
+  chips.forEach(function(b){
+    b.addEventListener('click', function(){
+      cat = b.getAttribute('data-cat');
+      chips.forEach(function(x){ x.classList.toggle('on', x === b); });
+      apply();
+    });
+  });
+})();
+
 function flash(btn, label){
   const old = btn.textContent, cls = btn.className;
   btn.textContent = label; btn.classList.add('ok');
@@ -2042,7 +2098,22 @@ document.addEventListener('click', e => {
     el.classList.remove('show');
     sessionStorage.setItem('promoClosed', '1');
   }
-  setTimeout(function(){ el.classList.add('show'); }, 1600);
+  // 動画の概要欄から来た人が、自分のプレゼントを探し始める瞬間に被らないようにする。
+  // 以前は読み込み1.6秒後に無条件で出しており、いちばん目的意識の高い時間を塞いでいた。
+  // 中身を見に行った（＝目当てのものに辿り着いた）ころに出す。
+  var shown = false;
+  function show(){
+    if (shown) return;
+    shown = true;
+    el.classList.add('show');
+    removeEventListener('scroll', onScroll);
+  }
+  function onScroll(){
+    if (scrollY > innerHeight * 0.8) show();
+  }
+  addEventListener('scroll', onScroll, {passive:true});
+  // まったくスクロールしない人にも最後には出す（ただし十分に間を置いてから）
+  setTimeout(show, 45000);
   document.getElementById('promoClose').addEventListener('click', function(e){ e.preventDefault(); close(); });
   el.addEventListener('click', function(e){ if (e.target === el) close(); });
 })();
