@@ -165,7 +165,10 @@
     if (!location.hash) return;
     var el = document.querySelector(location.hash);
     if (!el || !el.classList.contains('icard')) return;
-    el.scrollIntoView({block: 'start', behavior: 'auto'});
+    // behavior:'auto' は CSS の scroll-behavior:smooth に従うため、
+    // 数万px 離れた項目へは滑らかに移動しようとして事実上たどり着かない。
+    // 名指しリンクは「開いたらそこにいる」のが正しいので即時で飛ばす。
+    el.scrollIntoView({block: 'start', behavior: 'instant'});
     el.classList.add('flashme');
     setTimeout(function(){ el.classList.remove('flashme'); }, 2400);
   }
