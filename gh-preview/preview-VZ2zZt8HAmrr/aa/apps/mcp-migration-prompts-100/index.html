@@ -1987,7 +1987,7 @@ addEventListener('keydown', e => {
   }
   addEventListener('scroll', onScroll, {passive:true});
   // まったくスクロールしない人にも最後には出す
-  setTimeout(show, 20000);
+  setTimeout(show, 10000);
   document.getElementById('promoClose').addEventListener('click', function(e){ e.preventDefault(); close(); });
   el.addEventListener('click', function(e){ if (e.target === el) close(); });
 })();
