@@ -226,6 +226,18 @@ border-radius:999px;padding:2px 10px;flex-shrink:0;}
 .ititle{font-family:var(--head);font-weight:900;font-size:16px;color:var(--ink);
 line-height:1.5;word-break:auto-phrase;line-break:strict;}
 .imeta{font-size:13px;color:var(--ink-mid);margin-bottom:12px;line-height:1.75;}
+/* チェックリストの行。押すと済みになる（コピー内容は変えていない） */
+.cline{display:inline-block;cursor:pointer;border-radius:6px;padding:0 4px;margin:0 -4px;
+transition:.12s;}
+.cline:hover{background:rgba(255,255,255,.10);}
+.cline .cbx{font-weight:700;}
+.cline.on{opacity:.45;text-decoration:line-through;text-decoration-thickness:1px;}
+.cline.on .cbx{text-decoration:none;display:inline-block;}
+.cprog{display:flex;align-items:center;gap:12px;font-family:var(--head);font-weight:900;
+font-size:12px;color:var(--brand-deep);margin-bottom:10px;}
+.creset{font-family:inherit;font-size:11px;font-weight:700;color:var(--ink-mid);
+background:none;border:none;cursor:pointer;text-decoration:underline;padding:0;}
+.creset:hover{color:var(--brand-deep);}
 pre.prompt{background:var(--ink);color:#ECECEA;border-radius:14px;padding:15px 17px;
 white-space:pre-wrap;word-break:break-word;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
 font-size:12.5px;line-height:1.7;max-height:340px;overflow-y:auto;margin-bottom:12px;
