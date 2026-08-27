@@ -252,6 +252,10 @@ transform:scale(.88) translateY(10px);transition:transform .4s cubic-bezier(.2,.
 border-radius:50%;background:#fff;color:#2A3444;font-size:22px;line-height:1;cursor:pointer;
 box-shadow:0 6px 18px rgba(0,0,0,.28);display:grid;place-items:center;font-weight:700;}
 .promo-x:hover{background:#F3F4F6;color:#000;}
+/* 画像があるクリエイティブ用の横長枠。動画はサムネイル、LPはog:imageが入る。
+   丸アイコンだけだとどれも同じ広告に見えるため、絵で見分けられるようにした。 */
+.promo-banner{display:none;width:100%;aspect-ratio:16/9;object-fit:cover;
+border-radius:16px;margin:0 0 16px;background:rgba(20,20,35,.06);}
 .promo-icon{width:68px;height:68px;border-radius:20px;object-fit:cover;margin:0 auto 16px;
 box-shadow:0 8px 20px rgba(28,52,97,.25);display:block;}
 .promo-tag{margin:0 0 8px;font-weight:800;font-size:11px;letter-spacing:.03em;color:#2C7A93;
