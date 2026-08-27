@@ -35,8 +35,13 @@
     <div class="pnote"><span class="nb">下のカードから、</span><span class="nb">1件ずつコピー、</span><span class="nb">または個別にダウンロードできます。</span><span class="nb">まとめて欲しいときは、</span><span class="nb">上の</span><span class="nb">「全件ダウンロード」を</span><span class="nb">お使いください。</span></div>
   </section>
 
-  <h2 class="cat">指示の具体性チェック</h2>
-<div class="icard">
+  <div class="ktools">
+  <input type="search" id="kq" placeholder="この中から探す" autocomplete="off" aria-label="この中から探す">
+  <div class="kcats"><button type="button" class="kcat on" data-cat="">すべて<span class="n">100</span></button><button type="button" class="kcat" data-cat="指示の具体性チェック">指示の具体性チェック<span class="n">5</span></button><button type="button" class="kcat" data-cat="役割・トーン設定チェック">役割・トーン設定チェック<span class="n">5</span></button><button type="button" class="kcat" data-cat="出力形式チェック">出力形式チェック<span class="n">5</span></button><button type="button" class="kcat" data-cat="曖昧語の検出">曖昧語の検出<span class="n">5</span></button><button type="button" class="kcat" data-cat="情報の過不足チェック">情報の過不足チェック<span class="n">5</span></button><button type="button" class="kcat" data-cat="会話履歴・記憶の整理">会話履歴・記憶の整理<span class="n">5</span></button><button type="button" class="kcat" data-cat="参照資料の設計">参照資料の設計<span class="n">5</span></button><button type="button" class="kcat" data-cat="RAG・検索設計">RAG・検索設計<span class="n">5</span></button><button type="button" class="kcat" data-cat="権限・ツール設計">権限・ツール設計<span class="n">5</span></button><button type="button" class="kcat" data-cat="ルールファイルの整備">ルールファイルの整備<span class="n">5</span></button><button type="button" class="kcat" data-cat="検証・テスト体制">検証・テスト体制<span class="n">5</span></button><button type="button" class="kcat" data-cat="事故防止・ガードレール">事故防止・ガードレール<span class="n">5</span></button><button type="button" class="kcat" data-cat="停止条件の設計">停止条件の設計<span class="n">5</span></button><button type="button" class="kcat" data-cat="検証役の分離">検証役の分離<span class="n">5</span></button><button type="button" class="kcat" data-cat="ループ種類の選定">ループ種類の選定<span class="n">5</span></button><button type="button" class="kcat" data-cat="コスト管理">コスト管理<span class="n">5</span></button><button type="button" class="kcat" data-cat="分業設計">分業設計<span class="n">5</span></button><button type="button" class="kcat" data-cat="並列化の判断">並列化の判断<span class="n">5</span></button><button type="button" class="kcat" data-cat="戻り先・エスカレーション設計">戻り先・エスカレーション設計<span class="n">5</span></button><button type="button" class="kcat" data-cat="全体統合">全体統合<span class="n">5</span></button></div>
+  <p class="khit" id="khit" role="status"></p>
+</div>
+<h2 class="cat" data-cat="指示の具体性チェック">指示の具体性チェック</h2>
+<div class="icard" data-cat="指示の具体性チェック">
   <div class="ih"><span class="num">001</span><span class="ititle">前提: AIへの指示が曖昧で、意図と違う結果が返ってくることが多いと感じている人向け…</span></div>
   
   <pre class="prompt" id="b1">前提: AIへの指示が曖昧で、意図と違う結果が返ってくることが多いと感じている人向けの診断。指示: 直近で自分がAIに送った指示文を1つ貼り付け、「役割」「具体的な条件」「期待する出力形式」の3要素が含まれているかを診断して、欠けている要素を指摘し、改善版の指示文を書き直して。出力形式: 診断結果(◯/△/×)・欠けている要素・改善版指示文の3点を、この順の箇条書きで返して。</pre>
@@ -45,7 +50,7 @@
     <button class="btn ghost sm" data-save="b1" data-name="diagnosis-prompts100-001.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="指示の具体性チェック">
   <div class="ih"><span class="num">002</span><span class="ititle">前提: 「いい感じにまとめて」のような曖昧な指示を出しがちな人向けの診断。指示: 自…</span></div>
   
   <pre class="prompt" id="b2">前提: 「いい感じにまとめて」のような曖昧な指示を出しがちな人向けの診断。指示: 自分がよく使う指示文を3つ挙げてもらい、それぞれに含まれる曖昧語(「いい感じ」「うまく」「適当に」等)を洗い出し、各曖昧語を具体的な基準に置き換えた文に書き直して。出力形式: 元の文・検出した曖昧語・置き換え後の文を表形式で、行を3つ並べて返して。</pre>
@@ -54,7 +59,7 @@
     <button class="btn ghost sm" data-save="b2" data-name="diagnosis-prompts100-002.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="指示の具体性チェック">
   <div class="ih"><span class="num">003</span><span class="ititle">前提: 指示は具体的なのに、期待と違う形式で返ってくることが多い人向けの診断。指示:…</span></div>
   
   <pre class="prompt" id="b3">前提: 指示は具体的なのに、期待と違う形式で返ってくることが多い人向けの診断。指示: 直近のAIとのやり取りを1件貼り付け、出力形式(文字数・箇条書きか散文か・見出しの有無)を事前に指定していたかを診断し、指定していなければ次回から使える「出力形式テンプレート」を1つ作って。出力形式: 診断結果と、そのままコピペで使える出力形式テンプレート(3行以内)を返して。</pre>
@@ -63,7 +68,7 @@
     <button class="btn ghost sm" data-save="b3" data-name="diagnosis-prompts100-003.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="指示の具体性チェック">
   <div class="ih"><span class="num">004</span><span class="ititle">前提: AIへの指示に「役割」を与えているかどうかが分からない人向けの診断。指示: …</span></div>
   
   <pre class="prompt" id="b4">前提: AIへの指示に「役割」を与えているかどうかが分からない人向けの診断。指示: 自分の直近の指示文を1つ貼り付け、そこに役割(「あなたは◯◯の専門家として」等)が明示されているか診断して、役割を与えた場合と与えない場合で出力がどう変わりそうかを、想定される違いとして2〜3点で説明して。出力形式: 診断結果・役割の有無による違いの想定・役割を追加した改善版指示文、の3段落構成で返して。</pre>
@@ -72,7 +77,7 @@
     <button class="btn ghost sm" data-save="b4" data-name="diagnosis-prompts100-004.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="指示の具体性チェック">
   <div class="ih"><span class="num">005</span><span class="ititle">前提: 複数の条件を一度に伝えようとして指示が長くなりすぎる人向けの診断。指示: 自…</span></div>
   
   <pre class="prompt" id="b5">前提: 複数の条件を一度に伝えようとして指示が長くなりすぎる人向けの診断。指示: 自分が最近書いた長い指示文を1つ貼り付け、それを「絶対条件」「あると良い条件」「除外条件」の3グループに分類し直して、AIが読みやすい優先順位付きの指示文として再構成して。出力形式: 3グループへの分類結果と、再構成した指示文を、この順で返して。</pre>
@@ -81,8 +86,8 @@
     <button class="btn ghost sm" data-save="b5" data-name="diagnosis-prompts100-005.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">役割・トーン設定チェック</h2>
-<div class="icard">
+<h2 class="cat" data-cat="役割・トーン設定チェック">役割・トーン設定チェック</h2>
+<div class="icard" data-cat="役割・トーン設定チェック">
   <div class="ih"><span class="num">006</span><span class="ititle">前提: 毎回同じトーンで統一した文章を出したいのに、AIの返答のトーンがばらつく人向…</span></div>
   
   <pre class="prompt" id="b6">前提: 毎回同じトーンで統一した文章を出したいのに、AIの返答のトーンがばらつく人向けの診断。指示: 自分が求めているトーン(硬め・柔らかめ・専門的・カジュアル等)を3つのキーワードで言語化してもらい、それを反映した「トーン指定テンプレート」の一文を作って。出力形式: トーンのキーワード3つと、そのままコピペできるトーン指定の一文を返して。</pre>
@@ -91,7 +96,7 @@
     <button class="btn ghost sm" data-save="b6" data-name="diagnosis-prompts100-006.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="役割・トーン設定チェック">
   <div class="ih"><span class="num">007</span><span class="ititle">前提: AIに「専門家として」振る舞ってほしいのに一般的な回答しか返ってこない人向け…</span></div>
   
   <pre class="prompt" id="b7">前提: AIに「専門家として」振る舞ってほしいのに一般的な回答しか返ってこない人向けの診断。指示: 自分が求めている専門性のレベル(初心者向け解説者・中級実務者・その道のプロ)を1つ選んでもらい、そのレベルに合わせた役割設定の書き方を、実例つきで3パターン提示して。出力形式: 選ばれたレベルに対応する役割設定文を3パターン、番号付きで返して。</pre>
@@ -100,7 +105,7 @@
     <button class="btn ghost sm" data-save="b7" data-name="diagnosis-prompts100-007.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="役割・トーン設定チェック">
   <div class="ih"><span class="num">008</span><span class="ititle">前提: 想定読者を指定せずに文章を依頼してしまう人向けの診断。指示: 直近で依頼した…</span></div>
   
   <pre class="prompt" id="b8">前提: 想定読者を指定せずに文章を依頼してしまう人向けの診断。指示: 直近で依頼した文章生成タスクを1つ挙げてもらい、想定読者(年齢層・知識レベル・立場)が指示文に含まれていたかを診断して、含まれていない場合は想定読者を明記した改善版指示文を書いて。出力形式: 診断結果・想定読者の項目リスト・改善版指示文、の3点を返して。</pre>
@@ -109,7 +114,7 @@
     <button class="btn ghost sm" data-save="b8" data-name="diagnosis-prompts100-008.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="役割・トーン設定チェック">
   <div class="ih"><span class="num">009</span><span class="ititle">前提: AIとの対話で毎回役割設定をゼロから書き直すのが面倒な人向けの診断。指示: …</span></div>
   
   <pre class="prompt" id="b9">前提: AIとの対話で毎回役割設定をゼロから書き直すのが面倒な人向けの診断。指示: 自分がよく使う役割設定を3つ聞き出し、それぞれをテンプレート化して、変数部分(業界名・目的等)を{{ }}で囲んだ再利用可能な形にして。出力形式: 3つのテンプレートを番号付きリストで、変数部分がひと目で分かる形で返して。</pre>
@@ -118,7 +123,7 @@
     <button class="btn ghost sm" data-save="b9" data-name="diagnosis-prompts100-009.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="役割・トーン設定チェック">
   <div class="ih"><span class="num">010</span><span class="ititle">前提: 一人称・敬語レベルなど細かいトーンまで指定していない人向けの診断。指示: 直…</span></div>
   
   <pre class="prompt" id="b10">前提: 一人称・敬語レベルなど細かいトーンまで指定していない人向けの診断。指示: 直近のAI生成文を1つ貼り付け、一人称・敬語レベル・文末表現の一貫性をチェックして、崩れている箇所を指摘し、次回から使える文体指定の一文を作って。出力形式: チェック結果(崩れている箇所)と、文体指定の一文を返して。</pre>
@@ -127,8 +132,8 @@
     <button class="btn ghost sm" data-save="b10" data-name="diagnosis-prompts100-010.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">出力形式チェック</h2>
-<div class="icard">
+<h2 class="cat" data-cat="出力形式チェック">出力形式チェック</h2>
+<div class="icard" data-cat="出力形式チェック">
   <div class="ih"><span class="num">011</span><span class="ititle">前提: 表で欲しいのに散文で返ってくることが多い人向けの診断。指示: 自分が最近欲し…</span></div>
   
   <pre class="prompt" id="b11">前提: 表で欲しいのに散文で返ってくることが多い人向けの診断。指示: 自分が最近欲しかった出力形式(表・箇条書き・見出し付き文書等)を3つ挙げてもらい、それぞれに対応する「出力形式の指定フレーズ」をテンプレート化して。出力形式: 3つの出力形式それぞれに対応する指定フレーズを、コピペしやすい一文ずつで返して。</pre>
@@ -137,7 +142,7 @@
     <button class="btn ghost sm" data-save="b11" data-name="diagnosis-prompts100-011.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="出力形式チェック">
   <div class="ih"><span class="num">012</span><span class="ititle">前提: 文字数指定をしていないため、毎回長すぎる・短すぎる出力になる人向けの診断。指…</span></div>
   
   <pre class="prompt" id="b12">前提: 文字数指定をしていないため、毎回長すぎる・短すぎる出力になる人向けの診断。指示: 用途別(SNS投稿・社内報告・詳細レポート)に適した文字数の目安を聞き出し、それぞれに対応する文字数指定の書き方を提示して。出力形式: 用途・目安文字数・指定フレーズの3列表で返して。</pre>
@@ -146,7 +151,7 @@
     <button class="btn ghost sm" data-save="b12" data-name="diagnosis-prompts100-012.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="出力形式チェック">
   <div class="ih"><span class="num">013</span><span class="ititle">前提: 除外条件(「〜は書かないで」)を伝え忘れて余計な内容が混ざる人向けの診断。指…</span></div>
   
   <pre class="prompt" id="b13">前提: 除外条件(「〜は書かないで」)を伝え忘れて余計な内容が混ざる人向けの診断。指示: 直近でAIの出力に余計だと感じた要素を1つ挙げてもらい、それを事前に除外する指示文の書き方を、実例つきで示して。出力形式: 除外したい要素・除外指示の書き方の実例、を2行で返して。</pre>
@@ -155,7 +160,7 @@
     <button class="btn ghost sm" data-save="b13" data-name="diagnosis-prompts100-013.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="出力形式チェック">
   <div class="ih"><span class="num">014</span><span class="ititle">前提: 出力言語やフォーマット(Markdown</span></div>
   
   <pre class="prompt" id="b14">前提: 出力言語やフォーマット(Markdown/プレーンテキスト)を指定していない人向けの診断。指示: 直近の用途(ブログ・社内資料・SNS)を1つ選んでもらい、その用途に最適な言語・フォーマットの組み合わせを提案し、指定文として書いて。出力形式: 提案理由(1行)と指定文(1行)を返して。</pre>
@@ -164,7 +169,7 @@
     <button class="btn ghost sm" data-save="b14" data-name="diagnosis-prompts100-014.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="出力形式チェック">
   <div class="ih"><span class="num">015</span><span class="ititle">前提: 「箇条書きで」とだけ指示して階層構造が意図と違う人向けの診断。指示: 欲しい…</span></div>
   
   <pre class="prompt" id="b15">前提: 「箇条書きで」とだけ指示して階層構造が意図と違う人向けの診断。指示: 欲しい階層の深さ(単純な一覧か、大項目・中項目・小項目まで分けたいか)を確認し、それぞれに対応する指示フレーズを提示して。出力形式: 階層パターンごとの指示フレーズを2つ、番号付きで返して。</pre>
@@ -173,8 +178,8 @@
     <button class="btn ghost sm" data-save="b15" data-name="diagnosis-prompts100-015.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">曖昧語の検出</h2>
-<div class="icard">
+<h2 class="cat" data-cat="曖昧語の検出">曖昧語の検出</h2>
+<div class="icard" data-cat="曖昧語の検出">
   <div class="ih"><span class="num">016</span><span class="ititle">前提: 自分の指示文に曖昧語がどれくらい含まれているか把握していない人向けの診断。指…</span></div>
   
   <pre class="prompt" id="b16">前提: 自分の指示文に曖昧語がどれくらい含まれているか把握していない人向けの診断。指示: 直近1週間で送った指示文を3つ貼り付け、それぞれに含まれる曖昧語の数をカウントして、最も改善余地が大きい1文を特定し、書き直して。出力形式: 3文それぞれの曖昧語カウントと、最重要1文の改善版を返して。</pre>
@@ -183,7 +188,7 @@
     <button class="btn ghost sm" data-save="b16" data-name="diagnosis-prompts100-016.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="曖昧語の検出">
   <div class="ih"><span class="num">017</span><span class="ititle">前提: 「うまく」「適切に」「いい感じに」を無意識に使ってしまう人向けの診断。指示:…</span></div>
   
   <pre class="prompt" id="b17">前提: 「うまく」「適切に」「いい感じに」を無意識に使ってしまう人向けの診断。指示: 自分がよく使う曖昧語ベスト3を教えてもらい、それぞれに対応する「具体化のための質問リスト」(その曖昧語を使うときに自問すべきこと)を作って。出力形式: 曖昧語・具体化のための質問、の対応表を3行で返して。</pre>
@@ -192,7 +197,7 @@
     <button class="btn ghost sm" data-save="b17" data-name="diagnosis-prompts100-017.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="曖昧語の検出">
   <div class="ih"><span class="num">018</span><span class="ititle">前提: 期限や優先順位を曖昧にしたまま依頼している人向けの診断。指示: 直近の依頼で…</span></div>
   
   <pre class="prompt" id="b18">前提: 期限や優先順位を曖昧にしたまま依頼している人向けの診断。指示: 直近の依頼で期限・優先順位を明記していたかを確認し、していなければ、次回から使える「期限・優先順位テンプレート」を1行で作って。出力形式: 診断結果とテンプレート文を2行で返して。</pre>
@@ -201,7 +206,7 @@
     <button class="btn ghost sm" data-save="b18" data-name="diagnosis-prompts100-018.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="曖昧語の検出">
   <div class="ih"><span class="num">019</span><span class="ititle">前提: 「みたいな感じ」で参考例を伝えるだけで終わらせてしまう人向けの診断。指示: …</span></div>
   
   <pre class="prompt" id="b19">前提: 「みたいな感じ」で参考例を伝えるだけで終わらせてしまう人向けの診断。指示: 参考にしたい実例(URLや過去の成果物)がある場合、それのどの要素を模倣したいのかを言語化する質問リストを作って。出力形式: 3つの質問からなるチェックリストを返して。</pre>
@@ -210,7 +215,7 @@
     <button class="btn ghost sm" data-save="b19" data-name="diagnosis-prompts100-019.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="曖昧語の検出">
   <div class="ih"><span class="num">020</span><span class="ititle">前提: プロンプトエンジニアリングの基本ができているか総合的に確認したい人向けの診断…</span></div>
   
   <pre class="prompt" id="b20">前提: プロンプトエンジニアリングの基本ができているか総合的に確認したい人向けの診断。指示: これまでの19問の内容を踏まえ、「役割」「条件」「出力形式」「除外条件」「曖昧語の有無」の5項目からなる自己診断チェックリストを作り、5点満点で採点する基準も添えて。出力形式: チェックリスト(5項目・各項目の判定基準)を返して。
@@ -221,8 +226,8 @@
     <button class="btn ghost sm" data-save="b20" data-name="diagnosis-prompts100-020.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">情報の過不足チェック</h2>
-<div class="icard">
+<h2 class="cat" data-cat="情報の過不足チェック">情報の過不足チェック</h2>
+<div class="icard" data-cat="情報の過不足チェック">
   <div class="ih"><span class="num">021</span><span class="ititle">前提: AIに渡す情報が多すぎて重要な部分が埋もれていると感じる人向けの診断。指示:…</span></div>
   
   <pre class="prompt" id="b21">前提: AIに渡す情報が多すぎて重要な部分が埋もれていると感じる人向けの診断。指示: 直近でAIに渡した資料・会話履歴の分量を教えてもらい、その中で本当に必要だった情報の割合を推定してもらった上で、削れる情報の見分け方を3つのルールとして提示して。出力形式: 推定割合と、削減ルール3点を箇条書きで返して。</pre>
@@ -231,7 +236,7 @@
     <button class="btn ghost sm" data-save="b21" data-name="diagnosis-prompts100-021.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="情報の過不足チェック">
   <div class="ih"><span class="num">022</span><span class="ititle">前提: 情報が少なすぎて前提知識不足の的外れな回答が返ってくる人向けの診断。指示: …</span></div>
   
   <pre class="prompt" id="b22">前提: 情報が少なすぎて前提知識不足の的外れな回答が返ってくる人向けの診断。指示: 直近で前提知識不足による失敗があったタスクを1つ挙げてもらい、そのとき渡すべきだった情報の種類(用語集・過去の決定事項・業界知識等)を診断して、次回からのチェックリストにして。出力形式: 失敗の原因分析と、不足しやすい情報のチェックリストを返して。</pre>
@@ -240,7 +245,7 @@
     <button class="btn ghost sm" data-save="b22" data-name="diagnosis-prompts100-022.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="情報の過不足チェック">
   <div class="ih"><span class="num">023</span><span class="ititle">前提: 「何を、いつ、どれだけ読ませるか」を意識せず情報を渡している人向けの診断。指…</span></div>
   
   <pre class="prompt" id="b23">前提: 「何を、いつ、どれだけ読ませるか」を意識せず情報を渡している人向けの診断。指示: 直近のタスクを1つ選び、そのタスクに必要な情報を「常に必要」「このタスクだけ必要」「不要」の3分類に仕分けして。出力形式: 3分類それぞれに該当する情報項目をリストで返して。</pre>
@@ -249,7 +254,7 @@
     <button class="btn ghost sm" data-save="b23" data-name="diagnosis-prompts100-023.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="情報の過不足チェック">
   <div class="ih"><span class="num">024</span><span class="ititle">前提: 情報量とタスクの複雑さのバランスが取れているか分からない人向けの診断。指示:…</span></div>
   
   <pre class="prompt" id="b24">前提: 情報量とタスクの複雑さのバランスが取れているか分からない人向けの診断。指示: 直近のタスクの複雑さ(単純作業〜高度な判断が必要)を5段階で自己評価してもらい、その段階に見合った情報量の目安(文字数・ファイル数)を提示して。出力形式: 複雑さの段階と、対応する情報量の目安を1行で返して。</pre>
@@ -258,7 +263,7 @@
     <button class="btn ghost sm" data-save="b24" data-name="diagnosis-prompts100-024.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="情報の過不足チェック">
   <div class="ih"><span class="num">025</span><span class="ititle">前提: 情報を渡しすぎて処理が遅い・精度が落ちると感じる人向けの診断。指示: 直近で…</span></div>
   
   <pre class="prompt" id="b25">前提: 情報を渡しすぎて処理が遅い・精度が落ちると感じる人向けの診断。指示: 直近で渡した情報の中から「実は不要だった」と後から気づいたものを1つ挙げてもらい、次回から事前に見極めるための質問を1つ作って。出力形式: 不要だった情報の例と、見極め用の質問を2行で返して。</pre>
@@ -267,8 +272,8 @@
     <button class="btn ghost sm" data-save="b25" data-name="diagnosis-prompts100-025.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">会話履歴・記憶の整理</h2>
-<div class="icard">
+<h2 class="cat" data-cat="会話履歴・記憶の整理">会話履歴・記憶の整理</h2>
+<div class="icard" data-cat="会話履歴・記憶の整理">
   <div class="ih"><span class="num">026</span><span class="ititle">前提: 長い会話の途中で前提が食い違ってきていると感じる人向けの診断。指示: 直近の…</span></div>
   
   <pre class="prompt" id="b26">前提: 長い会話の途中で前提が食い違ってきていると感じる人向けの診断。指示: 直近の長い会話セッションの要点を3行で要約してもらい、その要約と実際の会話内容にズレがないかをチェックして。出力形式: 3行要約と、ズレがあった場合の指摘箇所を返して。</pre>
@@ -277,7 +282,7 @@
     <button class="btn ghost sm" data-save="b26" data-name="diagnosis-prompts100-026.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="会話履歴・記憶の整理">
   <div class="ih"><span class="num">027</span><span class="ititle">前提: 過去の決定事項をAIが覚えていないため毎回説明し直している人向けの診断。指示…</span></div>
   
   <pre class="prompt" id="b27">前提: 過去の決定事項をAIが覚えていないため毎回説明し直している人向けの診断。指示: 繰り返し説明している前提を1つ挙げてもらい、それを「記憶ファイル」や「CLAUDE.md」的な場所に固定する書き方の例を示して。出力形式: 繰り返し説明している前提と、固定用の記述例を返して。</pre>
@@ -286,7 +291,7 @@
     <button class="btn ghost sm" data-save="b27" data-name="diagnosis-prompts100-027.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="会話履歴・記憶の整理">
   <div class="ih"><span class="num">028</span><span class="ititle">前提: 会話履歴が長くなりすぎて古い情報が優先されなくなっていると感じる人向けの診断…</span></div>
   
   <pre class="prompt" id="b28">前提: 会話履歴が長くなりすぎて古い情報が優先されなくなっていると感じる人向けの診断。指示: 直近のセッションが何ターン続いているかを確認してもらい、目安として何ターンを超えたら要約・仕切り直しをすべきかの基準を提示して。出力形式: 目安ターン数と、仕切り直しの手順を3行で返して。</pre>
@@ -295,7 +300,7 @@
     <button class="btn ghost sm" data-save="b28" data-name="diagnosis-prompts100-028.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="会話履歴・記憶の整理">
   <div class="ih"><span class="num">029</span><span class="ititle">前提: 記憶させたい情報とその場限りの情報を区別せず渡している人向けの診断。指示: …</span></div>
   
   <pre class="prompt" id="b29">前提: 記憶させたい情報とその場限りの情報を区別せず渡している人向けの診断。指示: 直近渡した情報の中から「今後も使う情報」と「今回限りの情報」を仕分けして、前者をどこに保存すべきかを提案して。出力形式: 2分類の仕分け結果と、保存先の提案を返して。</pre>
@@ -304,7 +309,7 @@
     <button class="btn ghost sm" data-save="b29" data-name="diagnosis-prompts100-029.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="会話履歴・記憶の整理">
   <div class="ih"><span class="num">030</span><span class="ititle">前提: セッションをまたぐと前提がリセットされて困っている人向けの診断。指示: セッ…</span></div>
   
   <pre class="prompt" id="b30">前提: セッションをまたぐと前提がリセットされて困っている人向けの診断。指示: セッションをまたいで引き継ぎたい情報を3つ挙げてもらい、それをコンパクトな「引き継ぎメモ」の形式にまとめて。出力形式: 3項目からなる引き継ぎメモのテンプレートを返して。</pre>
@@ -313,8 +318,8 @@
     <button class="btn ghost sm" data-save="b30" data-name="diagnosis-prompts100-030.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">参照資料の設計</h2>
-<div class="icard">
+<h2 class="cat" data-cat="参照資料の設計">参照資料の設計</h2>
+<div class="icard" data-cat="参照資料の設計">
   <div class="ih"><span class="num">031</span><span class="ititle">前提: 参照資料をどこまで詳しく渡すべきか分からない人向けの診断。指示: 直近のタス…</span></div>
   
   <pre class="prompt" id="b31">前提: 参照資料をどこまで詳しく渡すべきか分からない人向けの診断。指示: 直近のタスクで参照した資料の詳細度(要約・抜粋・全文)を確認し、タスクの性質に対して詳細度が適切だったかを診断して。出力形式: 診断結果と、次回からの詳細度の選び方の基準を返して。</pre>
@@ -323,7 +328,7 @@
     <button class="btn ghost sm" data-save="b31" data-name="diagnosis-prompts100-031.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="参照資料の設計">
   <div class="ih"><span class="num">032</span><span class="ititle">前提: 複数の参照資料を渡すときに優先順位を示していない人向けの診断。指示: 直近で…</span></div>
   
   <pre class="prompt" id="b32">前提: 複数の参照資料を渡すときに優先順位を示していない人向けの診断。指示: 直近で複数資料を渡したケースを1つ挙げてもらい、それぞれの資料に優先順位ラベル(最優先/参考程度等)をつける書き方を提示して。出力形式: ラベル付けの実例を返して。</pre>
@@ -332,7 +337,7 @@
     <button class="btn ghost sm" data-save="b32" data-name="diagnosis-prompts100-032.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="参照資料の設計">
   <div class="ih"><span class="num">033</span><span class="ititle">前提: 古い資料と最新の資料が混在して矛盾が起きている人向けの診断。指示: 参照資料…</span></div>
   
   <pre class="prompt" id="b33">前提: 古い資料と最新の資料が混在して矛盾が起きている人向けの診断。指示: 参照資料に更新日を明記する習慣があるか確認し、なければ「更新日を明記するルール」を1行のテンプレートとして提示して。出力形式: 診断結果とテンプレート文を返して。</pre>
@@ -341,7 +346,7 @@
     <button class="btn ghost sm" data-save="b33" data-name="diagnosis-prompts100-033.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="参照資料の設計">
   <div class="ih"><span class="num">034</span><span class="ititle">前提: 参照資料の形式(PDF・スクショ・テキスト)がバラバラで扱いにくい人向けの診…</span></div>
   
   <pre class="prompt" id="b34">前提: 参照資料の形式(PDF・スクショ・テキスト)がバラバラで扱いにくい人向けの診断。指示: 自分がよく使う資料形式を教えてもらい、AIが最も扱いやすい形式への変換方法を提案して。出力形式: 現状の形式と、推奨される変換方法を返して。</pre>
@@ -350,7 +355,7 @@
     <button class="btn ghost sm" data-save="b34" data-name="diagnosis-prompts100-034.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="参照資料の設計">
   <div class="ih"><span class="num">035</span><span class="ititle">前提: 資料のどの部分を見てほしいかを指定せず全文を渡している人向けの診断。指示: …</span></div>
   
   <pre class="prompt" id="b35">前提: 資料のどの部分を見てほしいかを指定せず全文を渡している人向けの診断。指示: 直近渡した資料の中から、実際に使ってほしかった箇所を特定してもらい、次回から該当箇所を指定する書き方(ページ番号・見出し名等)を提示して。出力形式: 指定方法の実例を1つ返して。</pre>
@@ -359,8 +364,8 @@
     <button class="btn ghost sm" data-save="b35" data-name="diagnosis-prompts100-035.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">RAG・検索設計</h2>
-<div class="icard">
+<h2 class="cat" data-cat="RAG・検索設計">RAG・検索設計</h2>
+<div class="icard" data-cat="RAG・検索設計">
   <div class="ih"><span class="num">036</span><span class="ititle">前提: AIにWeb検索させる際の検索クエリが曖昧な人向けの診断。指示: 直近でAI…</span></div>
   
   <pre class="prompt" id="b36">前提: AIにWeb検索させる際の検索クエリが曖昧な人向けの診断。指示: 直近でAIに検索してもらったクエリを1つ挙げてもらい、そのクエリが具体的すぎず曖昧すぎないかを診断して、改善版クエリを3パターン提示して。出力形式: 診断結果と改善版クエリ3パターンを返して。</pre>
@@ -369,7 +374,7 @@
     <button class="btn ghost sm" data-save="b36" data-name="diagnosis-prompts100-036.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="RAG・検索設計">
   <div class="ih"><span class="num">037</span><span class="ititle">前提: 検索結果の信頼性をAIにどう判断させるか指定していない人向けの診断。指示: …</span></div>
   
   <pre class="prompt" id="b37">前提: 検索結果の信頼性をAIにどう判断させるか指定していない人向けの診断。指示: 自分が重視する情報源の種類(公式サイト・一次情報・専門家の見解等)を3つ挙げてもらい、それを検索時の優先順位として指定する書き方を提示して。出力形式: 優先順位付きの情報源リストと、指定文の例を返して。</pre>
@@ -378,7 +383,7 @@
     <button class="btn ghost sm" data-save="b37" data-name="diagnosis-prompts100-037.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="RAG・検索設計">
   <div class="ih"><span class="num">038</span><span class="ititle">前提: 社内文書など独自の知識ベースをAIに参照させたいが方法が分からない人向けの診…</span></div>
   
   <pre class="prompt" id="b38">前提: 社内文書など独自の知識ベースをAIに参照させたいが方法が分からない人向けの診断。指示: 参照させたい知識ベースの種類(社内Wiki・過去の議事録等)を教えてもらい、それをコンテキストとして渡す3つの方法(要約・抜粋・全文添付)のメリット・デメリットを整理して。出力形式: 3つの方法の比較表を返して。</pre>
@@ -387,7 +392,7 @@
     <button class="btn ghost sm" data-save="b38" data-name="diagnosis-prompts100-038.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="RAG・検索設計">
   <div class="ih"><span class="num">039</span><span class="ititle">前提: 検索結果を鵜呑みにせず裏取りする習慣があるか自己確認したい人向けの診断。指示…</span></div>
   
   <pre class="prompt" id="b39">前提: 検索結果を鵜呑みにせず裏取りする習慣があるか自己確認したい人向けの診断。指示: 直近でAIの検索結果をそのまま信じて使ってしまった場面があったか振り返ってもらい、裏取りのための3ステップのチェックリストを作って。出力形式: 3ステップのチェックリストを返して。</pre>
@@ -396,7 +401,7 @@
     <button class="btn ghost sm" data-save="b39" data-name="diagnosis-prompts100-039.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="RAG・検索設計">
   <div class="ih"><span class="num">040</span><span class="ititle">前提: コンテキストエンジニアリングの基本ができているか総合的に確認したい人向けの診…</span></div>
   
   <pre class="prompt" id="b40">前提: コンテキストエンジニアリングの基本ができているか総合的に確認したい人向けの診断。指示: これまでの19問の内容を踏まえ、「情報量」「履歴管理」「参照資料の質」「検索設計」の4項目からなる自己診断チェックリストを、判定基準つきで作って。出力形式: 4項目のチェックリストを返して。
@@ -407,8 +412,8 @@
     <button class="btn ghost sm" data-save="b40" data-name="diagnosis-prompts100-040.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">権限・ツール設計</h2>
-<div class="icard">
+<h2 class="cat" data-cat="権限・ツール設計">権限・ツール設計</h2>
+<div class="icard" data-cat="権限・ツール設計">
   <div class="ih"><span class="num">041</span><span class="ititle">前提: AIにどこまでの操作権限を与えているか把握していない人向けの診断。指示: 現…</span></div>
   
   <pre class="prompt" id="b41">前提: AIにどこまでの操作権限を与えているか把握していない人向けの診断。指示: 現在AIに許可している操作(ファイル読み書き・コマンド実行・外部送信等)を洗い出し、それぞれのリスクレベルを高中低で評価して。出力形式: 操作項目・リスクレベルの対応表を返して。</pre>
@@ -417,7 +422,7 @@
     <button class="btn ghost sm" data-save="b41" data-name="diagnosis-prompts100-041.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="権限・ツール設計">
   <div class="ih"><span class="num">042</span><span class="ititle">前提: 危険な操作(削除・外部送信)に承認フローを設けていない人向けの診断。指示: …</span></div>
   
   <pre class="prompt" id="b42">前提: 危険な操作(削除・外部送信)に承認フローを設けていない人向けの診断。指示: 自分の環境で「絶対に自動実行させたくない操作」を3つ挙げてもらい、それぞれに承認フローを追加する設定例を提示して。出力形式: 3つの操作と、承認フロー設定の例を返して。</pre>
@@ -426,7 +431,7 @@
     <button class="btn ghost sm" data-save="b42" data-name="diagnosis-prompts100-042.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="権限・ツール設計">
   <div class="ih"><span class="num">043</span><span class="ititle">前提: AIが接続できるツール・アプリの範囲を意識していない人向けの診断。指示: 現…</span></div>
   
   <pre class="prompt" id="b43">前提: AIが接続できるツール・アプリの範囲を意識していない人向けの診断。指示: 現在接続しているツール(MCP等)を一覧化してもらい、業務上不要なものが含まれていないかを診断して。出力形式: ツール一覧と、不要と判断されたものへの指摘を返して。</pre>
@@ -435,7 +440,7 @@
     <button class="btn ghost sm" data-save="b43" data-name="diagnosis-prompts100-043.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="権限・ツール設計">
   <div class="ih"><span class="num">044</span><span class="ititle">前提: 読み込み・書き込み可能な領域を制限していない人向けの診断。指示: AIに触っ…</span></div>
   
   <pre class="prompt" id="b44">前提: 読み込み・書き込み可能な領域を制限していない人向けの診断。指示: AIに触ってほしくないファイル・フォルダを3つ挙げてもらい、それらを保護する権限設定の書き方を提示して。出力形式: 保護対象と、設定例を返して。</pre>
@@ -444,7 +449,7 @@
     <button class="btn ghost sm" data-save="b44" data-name="diagnosis-prompts100-044.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="権限・ツール設計">
   <div class="ih"><span class="num">045</span><span class="ititle">前提: 「完全自動」と「承認必須」の線引きが曖昧な人向けの診断。指示: 自分のタスク…</span></div>
   
   <pre class="prompt" id="b45">前提: 「完全自動」と「承認必須」の線引きが曖昧な人向けの診断。指示: 自分のタスクを3つ挙げてもらい、それぞれを「完全自動でよい」「承認を挟むべき」に分類する基準を提示して。出力形式: 分類基準と、3タスクの分類結果を返して。</pre>
@@ -453,8 +458,8 @@
     <button class="btn ghost sm" data-save="b45" data-name="diagnosis-prompts100-045.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">ルールファイルの整備</h2>
-<div class="icard">
+<h2 class="cat" data-cat="ルールファイルの整備">ルールファイルの整備</h2>
+<div class="icard" data-cat="ルールファイルの整備">
   <div class="ih"><span class="num">046</span><span class="ititle">前提: CLAUDE.mdやAGENTS.mdを整備していない、または内容が薄い人向…</span></div>
   
   <pre class="prompt" id="b46">前提: CLAUDE.mdやAGENTS.mdを整備していない、または内容が薄い人向けの診断。指示: 現在のルールファイルの内容(なければ「なし」)を教えてもらい、最低限含めるべき5項目(ビルドコマンド・構成・規約・禁止事項・連絡先)との過不足を診断して。出力形式: 過不足の診断結果と、不足項目の追記案を返して。</pre>
@@ -463,7 +468,7 @@
     <button class="btn ghost sm" data-save="b46" data-name="diagnosis-prompts100-046.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="ルールファイルの整備">
   <div class="ih"><span class="num">047</span><span class="ititle">前提: 過去にAIが起こした間違いを記録せず、同じミスが繰り返される人向けの診断。指…</span></div>
   
   <pre class="prompt" id="b47">前提: 過去にAIが起こした間違いを記録せず、同じミスが繰り返される人向けの診断。指示: 直近でAIが起こした間違いを1つ挙げてもらい、それを「二度と起きないルール」としてAGENTS.mdに書く形に変換して。出力形式: 変換後のルール文(1〜3行)を返して。</pre>
@@ -472,7 +477,7 @@
     <button class="btn ghost sm" data-save="b47" data-name="diagnosis-prompts100-047.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="ルールファイルの整備">
   <div class="ih"><span class="num">048</span><span class="ititle">前提: ルールファイルが長すぎて読み込みコストが高くなっている人向けの診断。指示: …</span></div>
   
   <pre class="prompt" id="b48">前提: ルールファイルが長すぎて読み込みコストが高くなっている人向けの診断。指示: 現在のルールファイルの行数を教えてもらい、200行を超えている場合は削減・分割の方針を提案して。出力形式: 診断結果(超過の有無)と、削減・分割の方針を返して。</pre>
@@ -481,7 +486,7 @@
     <button class="btn ghost sm" data-save="b48" data-name="diagnosis-prompts100-048.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="ルールファイルの整備">
   <div class="ih"><span class="num">049</span><span class="ititle">前提: ルールファイルとSkillsの使い分けができていない人向けの診断。指示: 現…</span></div>
   
   <pre class="prompt" id="b49">前提: ルールファイルとSkillsの使い分けができていない人向けの診断。指示: 現在ルールファイルに書いている内容を1つ挙げてもらい、それが「常に必要な事実」か「30行を超える手順」かを判定し、後者ならSkill化を提案して。出力形式: 判定結果と、Skill化の提案を返して。</pre>
@@ -490,7 +495,7 @@
     <button class="btn ghost sm" data-save="b49" data-name="diagnosis-prompts100-049.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="ルールファイルの整備">
   <div class="ih"><span class="num">050</span><span class="ititle">前提: パス限定のルール(特定フォルダだけの制約)を使い分けていない人向けの診断。指…</span></div>
   
   <pre class="prompt" id="b50">前提: パス限定のルール(特定フォルダだけの制約)を使い分けていない人向けの診断。指示: プロジェクト内で特定のフォルダ・ファイルにだけ適用したい制約があるか確認し、あればパス限定ルールの書き方を提示して。出力形式: 制約の内容と、パス限定ルールの記述例を返して。</pre>
@@ -499,8 +504,8 @@
     <button class="btn ghost sm" data-save="b50" data-name="diagnosis-prompts100-050.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">検証・テスト体制</h2>
-<div class="icard">
+<h2 class="cat" data-cat="検証・テスト体制">検証・テスト体制</h2>
+<div class="icard" data-cat="検証・テスト体制">
   <div class="ih"><span class="num">051</span><span class="ititle">前提: AIの成果物を人間がレビューする前提でしか使えていない人向けの診断。指示: …</span></div>
   
   <pre class="prompt" id="b51">前提: AIの成果物を人間がレビューする前提でしか使えていない人向けの診断。指示: 直近のタスクで機械的に検証できる基準(テスト・リンター等)があったか確認し、なければ導入できる検証手段を1つ提案して。出力形式: 診断結果と、提案する検証手段を返して。</pre>
@@ -509,7 +514,7 @@
     <button class="btn ghost sm" data-save="b51" data-name="diagnosis-prompts100-051.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="検証・テスト体制">
   <div class="ih"><span class="num">052</span><span class="ititle">前提: テストが通ってもレビューなしでマージすることに不安がある人向けの診断。指示:…</span></div>
   
   <pre class="prompt" id="b52">前提: テストが通ってもレビューなしでマージすることに不安がある人向けの診断。指示: 自動マージしてよい条件(テスト全通過・特定ファイルのみの変更等)を3つ挙げてもらい、それを満たさない場合は人間レビューを必須にするルールとして整理して。出力形式: 自動マージ条件と、人間レビュー必須条件の2リストを返して。</pre>
@@ -518,7 +523,7 @@
     <button class="btn ghost sm" data-save="b52" data-name="diagnosis-prompts100-052.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="検証・テスト体制">
   <div class="ih"><span class="num">053</span><span class="ititle">前提: エラー発生時にAIがどう振る舞うべきか決めていない人向けの診断。指示: 直近…</span></div>
   
   <pre class="prompt" id="b53">前提: エラー発生時にAIがどう振る舞うべきか決めていない人向けの診断。指示: 直近でエラーが起きたときにAIがどう対応したかを教えてもらい、望ましい対応(即座に停止・自動リトライ・人間に確認等)との差を診断して。出力形式: 実際の対応と、望ましい対応の比較を返して。</pre>
@@ -527,7 +532,7 @@
     <button class="btn ghost sm" data-save="b53" data-name="diagnosis-prompts100-053.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="検証・テスト体制">
   <div class="ih"><span class="num">054</span><span class="ititle">前提: 「検証が定量的か」を意識していない人向けの診断。指示: 直近のタスクの完了基…</span></div>
   
   <pre class="prompt" id="b54">前提: 「検証が定量的か」を意識していない人向けの診断。指示: 直近のタスクの完了基準を教えてもらい、それが「なんとなく良さそう」なのか「機械的に判定できる」のかを診断して、後者に近づける言い換えを提案して。出力形式: 診断結果と、言い換え案を返して。</pre>
@@ -536,7 +541,7 @@
     <button class="btn ghost sm" data-save="b54" data-name="diagnosis-prompts100-054.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="検証・テスト体制">
   <div class="ih"><span class="num">055</span><span class="ititle">前提: 検証を実行役と同じAIにやらせて自己採点バイアスが起きている人向けの診断。指…</span></div>
   
   <pre class="prompt" id="b55">前提: 検証を実行役と同じAIにやらせて自己採点バイアスが起きている人向けの診断。指示: 直近のタスクで検証者が実行者と同じだったかを確認し、別の検証役(サブエージェント等)に分離するとしたらどう設計するかを提案して。出力形式: 現状の診断と、分離後の設計案を返して。</pre>
@@ -545,8 +550,8 @@
     <button class="btn ghost sm" data-save="b55" data-name="diagnosis-prompts100-055.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">事故防止・ガードレール</h2>
-<div class="icard">
+<h2 class="cat" data-cat="事故防止・ガードレール">事故防止・ガードレール</h2>
+<div class="icard" data-cat="事故防止・ガードレール">
   <div class="ih"><span class="num">056</span><span class="ititle">前提: 「絶対にやってほしくないこと」を口頭指示だけで済ませている人向けの診断。指示…</span></div>
   
   <pre class="prompt" id="b56">前提: 「絶対にやってほしくないこと」を口頭指示だけで済ませている人向けの診断。指示: 「絶対にやってほしくないこと」を3つ挙げてもらい、それぞれを指示ではなくHookや権限設定で止める方法に置き換えて。出力形式: 3項目それぞれの、指示からHook/権限設定への置き換え案を返して。</pre>
@@ -555,7 +560,7 @@
     <button class="btn ghost sm" data-save="b56" data-name="diagnosis-prompts100-056.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="事故防止・ガードレール">
   <div class="ih"><span class="num">057</span><span class="ititle">前提: 機密情報が誤ってAIに渡っていないか不安な人向けの診断。指示: 直近でAIに…</span></div>
   
   <pre class="prompt" id="b57">前提: 機密情報が誤ってAIに渡っていないか不安な人向けの診断。指示: 直近でAIに渡した情報の中に、機密扱いすべきもの(個人情報・パスワード等)が含まれていなかったかを振り返ってもらい、混入を防ぐ事前チェックの手順を3ステップで作って。出力形式: 3ステップのチェック手順を返して。</pre>
@@ -564,7 +569,7 @@
     <button class="btn ghost sm" data-save="b57" data-name="diagnosis-prompts100-057.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="事故防止・ガードレール">
   <div class="ih"><span class="num">058</span><span class="ititle">前提: 外部送信を伴う操作にブレーキがかかっていない人向けの診断。指示: 外部にデー…</span></div>
   
   <pre class="prompt" id="b58">前提: 外部送信を伴う操作にブレーキがかかっていない人向けの診断。指示: 外部にデータを送信する可能性がある操作(メール送信・API呼び出し等)を洗い出し、それぞれに承認ステップが必要かを判定して。出力形式: 操作一覧と承認要否の判定結果を返して。</pre>
@@ -573,7 +578,7 @@
     <button class="btn ghost sm" data-save="b58" data-name="diagnosis-prompts100-058.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="事故防止・ガードレール">
   <div class="ih"><span class="num">059</span><span class="ititle">前提: プロンプトインジェクション(外部データに紛れ込んだ指示)への対策をしていない…</span></div>
   
   <pre class="prompt" id="b59">前提: プロンプトインジェクション(外部データに紛れ込んだ指示)への対策をしていない人向けの診断。指示: 外部から取得したデータ(Webページ・ファイル等)をAIに渡す機会があるか確認し、その中に不審な指示文が紛れていた場合の対処方針を提案して。出力形式: 診断結果と対処方針を返して。</pre>
@@ -582,7 +587,7 @@
     <button class="btn ghost sm" data-save="b59" data-name="diagnosis-prompts100-059.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="事故防止・ガードレール">
   <div class="ih"><span class="num">060</span><span class="ititle">前提: ハーネスエンジニアリングの基本ができているか総合的に確認したい人向けの診断。…</span></div>
   
   <pre class="prompt" id="b60">前提: ハーネスエンジニアリングの基本ができているか総合的に確認したい人向けの診断。指示: これまでの19問の内容を踏まえ、「権限」「ルールファイル」「検証体制」「ガードレール」の4項目からなる自己診断チェックリストを、判定基準つきで作って。出力形式: 4項目のチェックリストを返して。
@@ -593,8 +598,8 @@
     <button class="btn ghost sm" data-save="b60" data-name="diagnosis-prompts100-060.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">停止条件の設計</h2>
-<div class="icard">
+<h2 class="cat" data-cat="停止条件の設計">停止条件の設計</h2>
+<div class="icard" data-cat="停止条件の設計">
   <div class="ih"><span class="num">061</span><span class="ititle">前提: タスクの停止条件を曖昧にしたままループを回している人向けの診断。指示: 直近…</span></div>
   
   <pre class="prompt" id="b61">前提: タスクの停止条件を曖昧にしたままループを回している人向けの診断。指示: 直近で自動化・繰り返し実行させたタスクを1つ挙げてもらい、その停止条件が機械的に判定可能かを診断し、判定不能なら数値化した基準に書き直して。出力形式: 診断結果と、数値化した停止条件を返して。</pre>
@@ -603,7 +608,7 @@
     <button class="btn ghost sm" data-save="b61" data-name="diagnosis-prompts100-061.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="停止条件の設計">
   <div class="ih"><span class="num">062</span><span class="ititle">前提: 最大試行回数を設定せず無限ループのリスクがある人向けの診断。指示: 直近のル…</span></div>
   
   <pre class="prompt" id="b62">前提: 最大試行回数を設定せず無限ループのリスクがある人向けの診断。指示: 直近のループ処理に最大試行回数の上限があったかを確認し、なければ妥当な上限回数とその理由を提案して。出力形式: 診断結果と、提案する上限回数・理由を返して。</pre>
@@ -612,7 +617,7 @@
     <button class="btn ghost sm" data-save="b62" data-name="diagnosis-prompts100-062.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="停止条件の設計">
   <div class="ih"><span class="num">063</span><span class="ititle">前提: 「完了」の定義がAIと人間でズレている可能性がある人向けの診断。指示: 直近…</span></div>
   
   <pre class="prompt" id="b63">前提: 「完了」の定義がAIと人間でズレている可能性がある人向けの診断。指示: 直近のタスクで自分が思う「完了」の定義を書き出してもらい、それがAIにも明確に伝わる形になっているかを診断して。出力形式: 完了の定義と、AI向けに明確化した書き方を返して。</pre>
@@ -621,7 +626,7 @@
     <button class="btn ghost sm" data-save="b63" data-name="diagnosis-prompts100-063.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="停止条件の設計">
   <div class="ih"><span class="num">064</span><span class="ititle">前提: センスや感性で良し悪しが決まるタスクをループ化しようとして苦戦している人向け…</span></div>
   
   <pre class="prompt" id="b64">前提: センスや感性で良し悪しが決まるタスクをループ化しようとして苦戦している人向けの診断。指示: 対象タスクが機械的に判定できる性質か、感性的判断が必要な性質かを診断してもらい、後者の場合はループ化の代替案(人間レビューを組み込む等)を提案して。出力形式: 診断結果と代替案を返して。</pre>
@@ -630,7 +635,7 @@
     <button class="btn ghost sm" data-save="b64" data-name="diagnosis-prompts100-064.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="停止条件の設計">
   <div class="ih"><span class="num">065</span><span class="ititle">前提: 停止条件を途中で変更できず、状況が変わっても止められない人向けの診断。指示:…</span></div>
   
   <pre class="prompt" id="b65">前提: 停止条件を途中で変更できず、状況が変わっても止められない人向けの診断。指示: 直近のループ処理で、途中で停止条件を見直す必要が生じたケースがあったか振り返ってもらい、柔軟に見直すための仕組み(定期チェックポイント等)を提案して。出力形式: 振り返り結果と提案を返して。</pre>
@@ -639,8 +644,8 @@
     <button class="btn ghost sm" data-save="b65" data-name="diagnosis-prompts100-065.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">検証役の分離</h2>
-<div class="icard">
+<h2 class="cat" data-cat="検証役の分離">検証役の分離</h2>
+<div class="icard" data-cat="検証役の分離">
   <div class="ih"><span class="num">066</span><span class="ititle">前提: 自分の成果物を自分で採点していて客観性に欠けると感じる人向けの診断。指示: …</span></div>
   
   <pre class="prompt" id="b66">前提: 自分の成果物を自分で採点していて客観性に欠けると感じる人向けの診断。指示: 直近の成果物を1つ挙げてもらい、実行役と検証役を分離するとしたら、検証役にどんな基準で採点させるべきかを提案して。出力形式: 分離設計案と、検証基準の提案を返して。</pre>
@@ -649,7 +654,7 @@
     <button class="btn ghost sm" data-save="b66" data-name="diagnosis-prompts100-066.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="検証役の分離">
   <div class="ih"><span class="num">067</span><span class="ititle">前提: `</span></div>
   
   <pre class="prompt" id="b67">前提: `/goal`のような別モデルによる完了判定の仕組みを使ったことがない人向けの診断。指示: 直近の繰り返しタスクを1つ挙げてもらい、それを`/goal`形式(ゴール+最大試行回数)の指示文に書き換えて。出力形式: 書き換え後の指示文を1つ返して。</pre>
@@ -658,7 +663,7 @@
     <button class="btn ghost sm" data-save="b67" data-name="diagnosis-prompts100-067.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="検証役の分離">
   <div class="ih"><span class="num">068</span><span class="ititle">前提: コードレビューを同じ文脈で書いた本人がやっていて見落としが多い人向けの診断。…</span></div>
   
   <pre class="prompt" id="b68">前提: コードレビューを同じ文脈で書いた本人がやっていて見落としが多い人向けの診断。指示: 直近のレビュー体制を教えてもらい、新しい文脈の別エージェントにレビューさせる設計に変えるとしたらどうなるかを提案して。出力形式: 現状の診断と、改善案を返して。</pre>
@@ -667,7 +672,7 @@
     <button class="btn ghost sm" data-save="b68" data-name="diagnosis-prompts100-068.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="検証役の分離">
   <div class="ih"><span class="num">069</span><span class="ititle">前提: 週次で「教訓と失敗」を振り返る仕組みがない人向けの診断。指示: 直近1ヶ月で…</span></div>
   
   <pre class="prompt" id="b69">前提: 週次で「教訓と失敗」を振り返る仕組みがない人向けの診断。指示: 直近1ヶ月で繰り返された失敗パターンを1つ挙げてもらい、それを週次レビューの記録フォーマットに落とし込んで。出力形式: 記録フォーマット(3項目程度)を返して。</pre>
@@ -676,7 +681,7 @@
     <button class="btn ghost sm" data-save="b69" data-name="diagnosis-prompts100-069.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="検証役の分離">
   <div class="ih"><span class="num">070</span><span class="ititle">前提: 検証役の判定基準が曖昧で毎回結果がぶれる人向けの診断。指示: 直近の検証結果…</span></div>
   
   <pre class="prompt" id="b70">前提: 検証役の判定基準が曖昧で毎回結果がぶれる人向けの診断。指示: 直近の検証結果がぶれた事例を1つ挙げてもらい、判定基準を数値化・明文化する方法を提案して。出力形式: ぶれの原因分析と、明文化した基準を返して。</pre>
@@ -685,8 +690,8 @@
     <button class="btn ghost sm" data-save="b70" data-name="diagnosis-prompts100-070.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">ループ種類の選定</h2>
-<div class="icard">
+<h2 class="cat" data-cat="ループ種類の選定">ループ種類の選定</h2>
+<div class="icard" data-cat="ループ種類の選定">
   <div class="ih"><span class="num">071</span><span class="ititle">前提: 4種類のループ(ターン・ゴール・タイム・プロアクティブ)のどれが自分のタスク…</span></div>
   
   <pre class="prompt" id="b71">前提: 4種類のループ(ターン・ゴール・タイム・プロアクティブ)のどれが自分のタスクに合うか分からない人向けの診断。指示: 直近のタスクを1つ挙げてもらい、そのきっかけと止まる条件を確認した上で、4種類のうちどれに最も近いかを診断して。出力形式: 診断結果と、その理由を返して。</pre>
@@ -695,7 +700,7 @@
     <button class="btn ghost sm" data-save="b71" data-name="diagnosis-prompts100-071.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="ループ種類の選定">
   <div class="ih"><span class="num">072</span><span class="ititle">前提: ターンベースで手動対応しているが、実は自動化できるタスクがある人向けの診断。…</span></div>
   
   <pre class="prompt" id="b72">前提: ターンベースで手動対応しているが、実は自動化できるタスクがある人向けの診断。指示: 毎回手動でやっている繰り返し作業を1つ挙げてもらい、それをゴールベース(`/goal`)かタイムベース(`/loop`・`/schedule`)のどちらに移行すべきかを提案して。出力形式: 現状の作業内容と、移行先の提案を返して。</pre>
@@ -704,7 +709,7 @@
     <button class="btn ghost sm" data-save="b72" data-name="diagnosis-prompts100-072.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="ループ種類の選定">
   <div class="ih"><span class="num">073</span><span class="ititle">前提: `</span></div>
   
   <pre class="prompt" id="b73">前提: `/loop`と`/schedule`の使い分けが分からない人向けの診断。指示: 自動化したいタスクが「手元のPCで完結してよいか」「PCを閉じても続けたいか」を確認し、`/loop`と`/schedule`のどちらが適するかを診断して。出力形式: 診断結果とその理由を返して。</pre>
@@ -713,7 +718,7 @@
     <button class="btn ghost sm" data-save="b73" data-name="diagnosis-prompts100-073.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="ループ種類の選定">
   <div class="ih"><span class="num">074</span><span class="ititle">前提: プロアクティブループ(人が介在しないルーティン)を導入すべきか判断できない人…</span></div>
   
   <pre class="prompt" id="b74">前提: プロアクティブループ(人が介在しないルーティン)を導入すべきか判断できない人向けの診断。指示: 対象タスクの発生頻度と内容の明確さを確認し、プロアクティブループ導入の可否を診断して。出力形式: 診断結果(導入可否)と理由を返して。</pre>
@@ -722,7 +727,7 @@
     <button class="btn ghost sm" data-save="b74" data-name="diagnosis-prompts100-074.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="ループ種類の選定">
   <div class="ih"><span class="num">075</span><span class="ititle">前提: 内側のループと外側のループの区別がついていない人向けの診断。指示: 直近の自…</span></div>
   
   <pre class="prompt" id="b75">前提: 内側のループと外側のループの区別がついていない人向けの診断。指示: 直近の自動化構成を教えてもらい、どこまでが「1つの作業を検証しながら回す内側」で、どこからが「次のトリガーを待つ外側」かを整理して。出力形式: 内側・外側の切り分け結果を返して。</pre>
@@ -731,8 +736,8 @@
     <button class="btn ghost sm" data-save="b75" data-name="diagnosis-prompts100-075.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">コスト管理</h2>
-<div class="icard">
+<h2 class="cat" data-cat="コスト管理">コスト管理</h2>
+<div class="icard" data-cat="コスト管理">
   <div class="ih"><span class="num">076</span><span class="ititle">前提: ループを回すコスト(トークン消費・時間)を把握していない人向けの診断。指示:…</span></div>
   
   <pre class="prompt" id="b76">前提: ループを回すコスト(トークン消費・時間)を把握していない人向けの診断。指示: 直近1週間でループ・自動化に使ったコストの目安を教えてもらい、それが妥当な範囲かを診断して、削減できるポイントを1つ提案して。出力形式: 診断結果と削減ポイントを返して。</pre>
@@ -741,7 +746,7 @@
     <button class="btn ghost sm" data-save="b76" data-name="diagnosis-prompts100-076.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="コスト管理">
   <div class="ih"><span class="num">077</span><span class="ititle">前提: 小さいタスクに複数エージェント・複雑なループを使いすぎている人向けの診断。指…</span></div>
   
   <pre class="prompt" id="b77">前提: 小さいタスクに複数エージェント・複雑なループを使いすぎている人向けの診断。指示: 直近使った自動化の複雑さと、タスクの実際の複雑さを比較してもらい、過剰投入になっていないかを診断して。出力形式: 比較結果と、簡素化の提案を返して。</pre>
@@ -750,7 +755,7 @@
     <button class="btn ghost sm" data-save="b77" data-name="diagnosis-prompts100-077.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="コスト管理">
   <div class="ih"><span class="num">078</span><span class="ititle">前提: 高価なモデルを常用していてコストが膨らんでいる人向けの診断。指示: 直近使っ…</span></div>
   
   <pre class="prompt" id="b78">前提: 高価なモデルを常用していてコストが膨らんでいる人向けの診断。指示: 直近使っているタスクを難易度別に分類してもらい、簡単なタスクに安価なモデルを割り当てる余地があるかを診断して。出力形式: 分類結果とモデル割り当ての提案を返して。</pre>
@@ -759,7 +764,7 @@
     <button class="btn ghost sm" data-save="b78" data-name="diagnosis-prompts100-078.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="コスト管理">
   <div class="ih"><span class="num">079</span><span class="ititle">前提: ループを隔離環境(worktree等)で回さず、本番環境に直接影響が出るリス…</span></div>
   
   <pre class="prompt" id="b79">前提: ループを隔離環境(worktree等)で回さず、本番環境に直接影響が出るリスクがある人向けの診断。指示: 直近のループ処理が隔離環境で実行されていたかを確認し、されていなければ隔離環境への移行手順を提案して。出力形式: 診断結果と移行手順の概要を返して。</pre>
@@ -768,7 +773,7 @@
     <button class="btn ghost sm" data-save="b79" data-name="diagnosis-prompts100-079.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="コスト管理">
   <div class="ih"><span class="num">080</span><span class="ititle">前提: ループエンジニアリングの基本ができているか総合的に確認したい人向けの診断。指…</span></div>
   
   <pre class="prompt" id="b80">前提: ループエンジニアリングの基本ができているか総合的に確認したい人向けの診断。指示: これまでの19問の内容を踏まえ、「停止条件」「検証役の分離」「ループ種類の選定」「コスト管理」の4項目からなる自己診断チェックリストを、判定基準つきで作って。出力形式: 4項目のチェックリストを返して。
@@ -779,8 +784,8 @@
     <button class="btn ghost sm" data-save="b80" data-name="diagnosis-prompts100-080.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">分業設計</h2>
-<div class="icard">
+<h2 class="cat" data-cat="分業設計">分業設計</h2>
+<div class="icard" data-cat="分業設計">
   <div class="ih"><span class="num">081</span><span class="ititle">前提: 1つのAIに全工程を任せていてタスクが大きくなると崩れる人向けの診断。指示:…</span></div>
   
   <pre class="prompt" id="b81">前提: 1つのAIに全工程を任せていてタスクが大きくなると崩れる人向けの診断。指示: 直近で崩れたタスクを1つ挙げてもらい、それを複数の役割(調査・実装・検証等)に分業するとしたらどう分割できるかを提案して。出力形式: 崩れた原因の診断と、分業設計案を返して。</pre>
@@ -789,7 +794,7 @@
     <button class="btn ghost sm" data-save="b81" data-name="diagnosis-prompts100-081.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="分業設計">
   <div class="ih"><span class="num">082</span><span class="ititle">前提: 役割分担の境界が曖昧でどこまで誰がやるか決まっていない人向けの診断。指示: …</span></div>
   
   <pre class="prompt" id="b82">前提: 役割分担の境界が曖昧でどこまで誰がやるか決まっていない人向けの診断。指示: 直近の複数人・複数エージェントタスクを1つ挙げてもらい、境界が曖昧だった箇所を特定して、明確な役割分担表に整理して。出力形式: 曖昧だった箇所と、整理後の役割分担表を返して。</pre>
@@ -798,7 +803,7 @@
     <button class="btn ghost sm" data-save="b82" data-name="diagnosis-prompts100-082.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="分業設計">
   <div class="ih"><span class="num">083</span><span class="ititle">前提: グラフ化が本当に必要かどうか判断基準を持っていない人向けの診断。指示: 対象…</span></div>
   
   <pre class="prompt" id="b83">前提: グラフ化が本当に必要かどうか判断基準を持っていない人向けの診断。指示: 対象タスクについて「視点を分けられるか」「並列化の余地があるか」「制御フローを書き出せるか」「完了の基準が変わったか」の4条件を確認し、2つ以上該当するかを診断して。出力形式: 4条件の該当有無と、総合診断(グラフ化を検討すべきか)を返して。</pre>
@@ -807,7 +812,7 @@
     <button class="btn ghost sm" data-save="b83" data-name="diagnosis-prompts100-083.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="分業設計">
   <div class="ih"><span class="num">084</span><span class="ititle">前提: 1つのループで無理に全部をこなそうとして詰め込みすぎている人向けの診断。指示…</span></div>
   
   <pre class="prompt" id="b84">前提: 1つのループで無理に全部をこなそうとして詰め込みすぎている人向けの診断。指示: 直近のループ処理に含まれる作業内容を洗い出し、性質の異なる作業(調査系・実装系・レビュー系)が混在していないかを診断して。出力形式: 作業内容の洗い出しと、混在の診断結果を返して。</pre>
@@ -816,7 +821,7 @@
     <button class="btn ghost sm" data-save="b84" data-name="diagnosis-prompts100-084.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="分業設計">
   <div class="ih"><span class="num">085</span><span class="ititle">前提: 分業した後の「束ね方」を設計していない人向けの診断。指示: 直近で分業したタ…</span></div>
   
   <pre class="prompt" id="b85">前提: 分業した後の「束ね方」を設計していない人向けの診断。指示: 直近で分業したタスクを1つ挙げてもらい、各担当の成果物をどう統合・最終チェックするかの手順を提案して。出力形式: 統合・最終チェックの手順を3ステップで返して。</pre>
@@ -825,8 +830,8 @@
     <button class="btn ghost sm" data-save="b85" data-name="diagnosis-prompts100-085.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">並列化の判断</h2>
-<div class="icard">
+<h2 class="cat" data-cat="並列化の判断">並列化の判断</h2>
+<div class="icard" data-cat="並列化の判断">
   <div class="ih"><span class="num">086</span><span class="ititle">前提: 並列化できるタスクを直列で処理していて時間がかかっている人向けの診断。指示:…</span></div>
   
   <pre class="prompt" id="b86">前提: 並列化できるタスクを直列で処理していて時間がかかっている人向けの診断。指示: 直近のタスクの各工程が互いに依存しているかを確認し、依存関係のない工程を並列化する余地があるかを診断して。出力形式: 依存関係の整理と、並列化できる工程のリストを返して。</pre>
@@ -835,7 +840,7 @@
     <button class="btn ghost sm" data-save="b86" data-name="diagnosis-prompts100-086.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="並列化の判断">
   <div class="ih"><span class="num">087</span><span class="ititle">前提: 並列実行数の上限を意識せずタスクを投げている人向けの診断。指示: 直近で並列…</span></div>
   
   <pre class="prompt" id="b87">前提: 並列実行数の上限を意識せずタスクを投げている人向けの診断。指示: 直近で並列実行したタスク数を教えてもらい、同時実行数・累計実行数が妥当な範囲だったかを診断して。出力形式: 診断結果と、妥当な上限の目安を返して。</pre>
@@ -844,7 +849,7 @@
     <button class="btn ghost sm" data-save="b87" data-name="diagnosis-prompts100-087.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="並列化の判断">
   <div class="ih"><span class="num">088</span><span class="ititle">前提: 並列実行したタスクの結果をどう待ち合わせるか(バリア)設計していない人向けの…</span></div>
   
   <pre class="prompt" id="b88">前提: 並列実行したタスクの結果をどう待ち合わせるか(バリア)設計していない人向けの診断。指示: 直近の並列タスクで、全部の完了を待つ必要があったか、一部完了で先に進めてよかったかを確認し、適した待ち合わせ方式を提案して。出力形式: 診断結果と、方式の提案を返して。</pre>
@@ -853,7 +858,7 @@
     <button class="btn ghost sm" data-save="b88" data-name="diagnosis-prompts100-088.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="並列化の判断">
   <div class="ih"><span class="num">089</span><span class="ititle">前提: worktree等の隔離環境を使わず並列作業で衝突が起きている人向けの診断。…</span></div>
   
   <pre class="prompt" id="b89">前提: worktree等の隔離環境を使わず並列作業で衝突が起きている人向けの診断。指示: 直近で並列作業による衝突(ファイル競合等)が起きたことがあるか振り返ってもらい、隔離環境の導入余地を診断して。出力形式: 振り返り結果と導入余地の診断を返して。</pre>
@@ -862,7 +867,7 @@
     <button class="btn ghost sm" data-save="b89" data-name="diagnosis-prompts100-089.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="並列化の判断">
   <div class="ih"><span class="num">090</span><span class="ititle">前提: 並列化によるコスト増を把握せずに投入している人向けの診断。指示: 直近の並列…</span></div>
   
   <pre class="prompt" id="b90">前提: 並列化によるコスト増を把握せずに投入している人向けの診断。指示: 直近の並列タスクにかかったコスト(トークン・時間)を教えてもらい、直列処理と比較して割に合っていたかを診断して。出力形式: コスト比較と、妥当性の診断結果を返して。</pre>
@@ -871,8 +876,8 @@
     <button class="btn ghost sm" data-save="b90" data-name="diagnosis-prompts100-090.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">戻り先・エスカレーション設計</h2>
-<div class="icard">
+<h2 class="cat" data-cat="戻り先・エスカレーション設計">戻り先・エスカレーション設計</h2>
+<div class="icard" data-cat="戻り先・エスカレーション設計">
   <div class="ih"><span class="num">091</span><span class="ititle">前提: 検証で問題が見つかったときの「差し戻し先」を1つしか用意していない人向けの診…</span></div>
   
   <pre class="prompt" id="b91">前提: 検証で問題が見つかったときの「差し戻し先」を1つしか用意していない人向けの診断。指示: 直近のレビューで指摘された問題の種類を3つ挙げてもらい、それぞれに適した戻り先(調査からやり直す・その場で直す・人間に確認する等)を割り当てて。出力形式: 問題の種類と戻り先の対応表を返して。</pre>
@@ -881,7 +886,7 @@
     <button class="btn ghost sm" data-save="b91" data-name="diagnosis-prompts100-091.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="戻り先・エスカレーション設計">
   <div class="ih"><span class="num">092</span><span class="ititle">前提: 人間へのエスカレーション基準を決めていない人向けの診断。指示: 直近で人間が…</span></div>
   
   <pre class="prompt" id="b92">前提: 人間へのエスカレーション基準を決めていない人向けの診断。指示: 直近で人間が介入すべきだったのに介入しなかった場面を1つ挙げてもらい、エスカレーションすべき基準を3つ言語化して。出力形式: 振り返り結果と、エスカレーション基準3点を返して。</pre>
@@ -890,7 +895,7 @@
     <button class="btn ghost sm" data-save="b92" data-name="diagnosis-prompts100-092.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="戻り先・エスカレーション設計">
   <div class="ih"><span class="num">093</span><span class="ititle">前提: 「未収束」の宣言基準がなく、いつまでもループが終わらない人向けの診断。指示:…</span></div>
   
   <pre class="prompt" id="b93">前提: 「未収束」の宣言基準がなく、いつまでもループが終わらない人向けの診断。指示: 直近のレビューループが何ラウンドで収束したか、または収束しなかったかを確認し、未収束を宣言すべきラウンド数の目安を提案して。出力形式: 診断結果と、目安ラウンド数を返して。</pre>
@@ -899,7 +904,7 @@
     <button class="btn ghost sm" data-save="b93" data-name="diagnosis-prompts100-093.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="戻り先・エスカレーション設計">
   <div class="ih"><span class="num">094</span><span class="ititle">前提: 指摘の重大度を区別せず一律に扱っている人向けの診断。指示: 直近の指摘事項を…</span></div>
   
   <pre class="prompt" id="b94">前提: 指摘の重大度を区別せず一律に扱っている人向けの診断。指示: 直近の指摘事項を重大・中程度・軽微の3段階に分類してもらい、それぞれに対応する戻り先・対応スピードの違いを整理して。出力形式: 3段階の分類と、対応の違いの表を返して。</pre>
@@ -908,7 +913,7 @@
     <button class="btn ghost sm" data-save="b94" data-name="diagnosis-prompts100-094.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="戻り先・エスカレーション設計">
   <div class="ih"><span class="num">095</span><span class="ititle">前提: グラフの配線(戻り先)を設計せず、その場の判断で処理している人向けの診断。指…</span></div>
   
   <pre class="prompt" id="b95">前提: グラフの配線(戻り先)を設計せず、その場の判断で処理している人向けの診断。指示: 直近のタスクにおける「ダメだった場合の戻り先」を書き出してもらい、それを配線図(テキストのフローで可)として整理して。出力形式: 戻り先の書き出しと、簡易フロー図(テキスト矢印表現)を返して。</pre>
@@ -917,8 +922,8 @@
     <button class="btn ghost sm" data-save="b95" data-name="diagnosis-prompts100-095.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">全体統合</h2>
-<div class="icard">
+<h2 class="cat" data-cat="全体統合">全体統合</h2>
+<div class="icard" data-cat="全体統合">
   <div class="ih"><span class="num">096</span><span class="ititle">前提: 5段階すべてを使いこなせているか総合的に確認したい人向けの診断。指示: これ…</span></div>
   
   <pre class="prompt" id="b96">前提: 5段階すべてを使いこなせているか総合的に確認したい人向けの診断。指示: これまでの自己診断結果(プロンプト・コンテキスト・ハーネス・ループ・グラフ)を振り返ってもらい、最も弱い段階を1つ特定して、そこから着手すべき理由を説明して。出力形式: 5段階の弱点診断と、着手すべき段階の提案を返して。</pre>
@@ -927,7 +932,7 @@
     <button class="btn ghost sm" data-save="b96" data-name="diagnosis-prompts100-096.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="全体統合">
   <div class="ih"><span class="num">097</span><span class="ititle">前提: グラフの中のノードもループで動いているという入れ子構造を理解できているか確認…</span></div>
   
   <pre class="prompt" id="b97">前提: グラフの中のノードもループで動いているという入れ子構造を理解できているか確認したい人向けの診断。指示: 自分の分業設計の中で、各ノード(担当)がそれぞれ検証ループを持っているかを確認し、持っていないノードがあれば追加を提案して。出力形式: 各ノードの検証ループ有無の一覧と、追加提案を返して。</pre>
@@ -936,7 +941,7 @@
     <button class="btn ghost sm" data-save="b97" data-name="diagnosis-prompts100-097.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="全体統合">
   <div class="ih"><span class="num">098</span><span class="ititle">前提: グラフ化にかかるコストと得られる効果が見合っているか判断したい人向けの診断。…</span></div>
   
   <pre class="prompt" id="b98">前提: グラフ化にかかるコストと得られる効果が見合っているか判断したい人向けの診断。指示: グラフ化を検討しているタスクについて、導入コスト(設計・実装の手間)と期待効果(時間短縮・品質向上)を比較して、投資対効果を診断して。出力形式: コストと効果の比較、投資対効果の診断結果を返して。</pre>
@@ -945,7 +950,7 @@
     <button class="btn ghost sm" data-save="b98" data-name="diagnosis-prompts100-098.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="全体統合">
   <div class="ih"><span class="num">099</span><span class="ititle">前提: 全体を通して自分がどの段階を飛ばして次に進もうとしているか把握したい人向けの…</span></div>
   
   <pre class="prompt" id="b99">前提: 全体を通して自分がどの段階を飛ばして次に進もうとしているか把握したい人向けの診断。指示: 現在着手しようとしている段階を教えてもらい、その手前の段階(土台)が十分に整っているかを確認して、飛ばしている箇所があれば警告して。出力形式: 現在の段階と、土台の充足診断を返して。</pre>
@@ -954,7 +959,7 @@
     <button class="btn ghost sm" data-save="b99" data-name="diagnosis-prompts100-099.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="全体統合">
   <div class="ih"><span class="num">100</span><span class="ititle">前提: この100問の総まとめとして、次に何をすべきかを1つに絞りたい人向けの診断。…</span></div>
   
   <pre class="prompt" id="b100">前提: この100問の総まとめとして、次に何をすべきかを1つに絞りたい人向けの診断。指示: これまでの自己診断結果を総合し、今日から着手すべき最優先アクションを1つだけ提案して、その理由と最初の一歩を具体的に示して。出力形式: 最優先アクション・理由・最初の一歩、の3行で返して。</pre>
@@ -1215,6 +1220,57 @@
 **ポイント**: AIの出力はそのまま確定せず、必ず人間がレビューしてから使ってください。診断結果は目安であり、断定的な評価ではありません。
 </pre>
 <script>
+// 項目の多いキットで、目的の1件に辿り着けるようにする絞り込み。
+// 検索はタイトル・説明だけでなく本文も対象にする（「あの文言が入っていた項目」で探せるように）。
+(function(){
+  var q = document.getElementById('kq');
+  if (!q) return;
+  var hit = document.getElementById('khit');
+  var cards = [].slice.call(document.querySelectorAll('.kwrap .icard'));
+  var heads = [].slice.call(document.querySelectorAll('.kwrap h2.cat'));
+  var chips = [].slice.call(document.querySelectorAll('.kcat'));
+  var cat = '';
+
+  // ひらがな・カタカナの違いで取りこぼさないようにする（ハブ側の検索と同じ扱い）
+  function norm(s){
+    return (s || '').toLowerCase().replace(/[ぁ-ん]/g, function(c){
+      return String.fromCharCode(c.charCodeAt(0) + 0x60);
+    });
+  }
+
+  // カード全体の textContent だとボタンの「コピー」まで拾ってしまうため、中身を選んで集める
+  cards.forEach(function(c){
+    var t = c.querySelector('.ititle'), d = c.querySelector('.imeta'), p = c.querySelector('.prompt');
+    c._t = norm((t ? t.textContent : '') + ' ' + (d ? d.textContent : '') + ' ' + (p ? p.textContent : ''));
+  });
+
+  function apply(){
+    var kw = norm(q.value.trim()), n = 0, shown = {};
+    cards.forEach(function(c){
+      var ok = (!cat || c.getAttribute('data-cat') === cat)
+            && (!kw || c._t.indexOf(kw) !== -1);
+      c.classList.toggle('hide', !ok);
+      if (ok){ n++; shown[c.getAttribute('data-cat')] = 1; }
+    });
+    // 残った項目が1件も無いカテゴリの見出しは隠す
+    heads.forEach(function(h){
+      h.classList.toggle('hide', !shown[h.getAttribute('data-cat')]);
+    });
+    hit.textContent = (kw || cat)
+      ? (n ? n + '件を表示中' : '該当する項目がありません')
+      : '';
+  }
+
+  q.addEventListener('input', apply);
+  chips.forEach(function(b){
+    b.addEventListener('click', function(){
+      cat = b.getAttribute('data-cat');
+      chips.forEach(function(x){ x.classList.toggle('on', x === b); });
+      apply();
+    });
+  });
+})();
+
 function flash(btn, label){
   const old = btn.textContent, cls = btn.className;
   btn.textContent = label; btn.classList.add('ok');
@@ -1284,7 +1340,22 @@ document.addEventListener('click', e => {
     el.classList.remove('show');
     sessionStorage.setItem('promoClosed', '1');
   }
-  setTimeout(function(){ el.classList.add('show'); }, 1600);
+  // 動画の概要欄から来た人が、自分のプレゼントを探し始める瞬間に被らないようにする。
+  // 以前は読み込み1.6秒後に無条件で出しており、いちばん目的意識の高い時間を塞いでいた。
+  // 中身を見に行った（＝目当てのものに辿り着いた）ころに出す。
+  var shown = false;
+  function show(){
+    if (shown) return;
+    shown = true;
+    el.classList.add('show');
+    removeEventListener('scroll', onScroll);
+  }
+  function onScroll(){
+    if (scrollY > innerHeight * 0.8) show();
+  }
+  addEventListener('scroll', onScroll, {passive:true});
+  // まったくスクロールしない人にも最後には出す（ただし十分に間を置いてから）
+  setTimeout(show, 45000);
   document.getElementById('promoClose').addEventListener('click', function(e){ e.preventDefault(); close(); });
   el.addEventListener('click', function(e){ if (e.target === el) close(); });
 })();

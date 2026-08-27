@@ -35,7 +35,7 @@
     <div class="pnote"><span class="nb">下のカードから、</span><span class="nb">1件ずつコピー、</span><span class="nb">または個別にダウンロードできます。</span><span class="nb">まとめて欲しいときは、</span><span class="nb">上の</span><span class="nb">「全件ダウンロード」を</span><span class="nb">お使いください。</span></div>
   </section>
 
-  <div class="icard">
+  <div class="icard" data-cat="">
   <div class="ih"><span class="num">001</span><span class="ititle">ステップ1：現在の月間タスク量を棚卸しする</span></div>
   
   <pre class="prompt" id="b1">□ Claude Codeで処理している月間タスク数を把握しているか
@@ -48,7 +48,7 @@
     <button class="btn ghost sm" data-save="b1" data-name="cost-simulation-2027-001.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">002</span><span class="ititle">ステップ2：分業できるタスクを仕分ける</span></div>
   
   <pre class="prompt" id="b2">□ そのタスクは「量が多く、単純な処理（抽出・変換・整形等）」か
@@ -61,7 +61,7 @@
     <button class="btn ghost sm" data-save="b2" data-name="cost-simulation-2027-002.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">003</span><span class="ititle">ステップ3：現状コストを試算する（2026年内・導入価格ベース）</span></div>
   
   <pre class="prompt" id="b3">□ Claude Sonnet 5のみで全タスクを処理した場合の月額を計算したか
@@ -72,7 +72,7 @@
     <button class="btn ghost sm" data-save="b3" data-name="cost-simulation-2027-003.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">004</span><span class="ititle">ステップ4：分業後のコストを試算する（2026年内・導入価格ベース）</span></div>
   
   <pre class="prompt" id="b4">□ Gemini向きタスクをGemini 3.7 Flash（入力$0.75/出力$3.75 per 1M）に置き換えた場合の月額を計算したか
@@ -83,7 +83,7 @@
     <button class="btn ghost sm" data-save="b4" data-name="cost-simulation-2027-004.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">005</span><span class="ititle">ステップ5：2027年1月以降の価格改定を織り込む</span></div>
   
   <pre class="prompt" id="b5">□ Gemini 3.7 Flashの通常価格（入力$1.50/出力$7.50 per 1M、2027年1月1日〜）で再計算したか
@@ -94,7 +94,7 @@
     <button class="btn ghost sm" data-save="b5" data-name="cost-simulation-2027-005.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">006</span><span class="ititle">ステップ6：損益分岐点を確認する</span></div>
   
   <pre class="prompt" id="b6">□ 2027年以降の分業コストが、Claude単独運用コストを上回っていないか
@@ -106,7 +106,7 @@
     <button class="btn ghost sm" data-save="b6" data-name="cost-simulation-2027-006.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">007</span><span class="ititle">ステップ7：定期的な見直しサイクルを決める</span></div>
   
   <pre class="prompt" id="b7">□ この試算を毎月／四半期ごとなど、定期的に見直す頻度を決めたか
@@ -179,6 +179,57 @@ Gemini 3.7 Flashへの分業で、月々のAI活用コストがどれだけ変�
 ```
 </pre>
 <script>
+// 項目の多いキットで、目的の1件に辿り着けるようにする絞り込み。
+// 検索はタイトル・説明だけでなく本文も対象にする（「あの文言が入っていた項目」で探せるように）。
+(function(){
+  var q = document.getElementById('kq');
+  if (!q) return;
+  var hit = document.getElementById('khit');
+  var cards = [].slice.call(document.querySelectorAll('.kwrap .icard'));
+  var heads = [].slice.call(document.querySelectorAll('.kwrap h2.cat'));
+  var chips = [].slice.call(document.querySelectorAll('.kcat'));
+  var cat = '';
+
+  // ひらがな・カタカナの違いで取りこぼさないようにする（ハブ側の検索と同じ扱い）
+  function norm(s){
+    return (s || '').toLowerCase().replace(/[ぁ-ん]/g, function(c){
+      return String.fromCharCode(c.charCodeAt(0) + 0x60);
+    });
+  }
+
+  // カード全体の textContent だとボタンの「コピー」まで拾ってしまうため、中身を選んで集める
+  cards.forEach(function(c){
+    var t = c.querySelector('.ititle'), d = c.querySelector('.imeta'), p = c.querySelector('.prompt');
+    c._t = norm((t ? t.textContent : '') + ' ' + (d ? d.textContent : '') + ' ' + (p ? p.textContent : ''));
+  });
+
+  function apply(){
+    var kw = norm(q.value.trim()), n = 0, shown = {};
+    cards.forEach(function(c){
+      var ok = (!cat || c.getAttribute('data-cat') === cat)
+            && (!kw || c._t.indexOf(kw) !== -1);
+      c.classList.toggle('hide', !ok);
+      if (ok){ n++; shown[c.getAttribute('data-cat')] = 1; }
+    });
+    // 残った項目が1件も無いカテゴリの見出しは隠す
+    heads.forEach(function(h){
+      h.classList.toggle('hide', !shown[h.getAttribute('data-cat')]);
+    });
+    hit.textContent = (kw || cat)
+      ? (n ? n + '件を表示中' : '該当する項目がありません')
+      : '';
+  }
+
+  q.addEventListener('input', apply);
+  chips.forEach(function(b){
+    b.addEventListener('click', function(){
+      cat = b.getAttribute('data-cat');
+      chips.forEach(function(x){ x.classList.toggle('on', x === b); });
+      apply();
+    });
+  });
+})();
+
 function flash(btn, label){
   const old = btn.textContent, cls = btn.className;
   btn.textContent = label; btn.classList.add('ok');
@@ -248,7 +299,22 @@ document.addEventListener('click', e => {
     el.classList.remove('show');
     sessionStorage.setItem('promoClosed', '1');
   }
-  setTimeout(function(){ el.classList.add('show'); }, 1600);
+  // 動画の概要欄から来た人が、自分のプレゼントを探し始める瞬間に被らないようにする。
+  // 以前は読み込み1.6秒後に無条件で出しており、いちばん目的意識の高い時間を塞いでいた。
+  // 中身を見に行った（＝目当てのものに辿り着いた）ころに出す。
+  var shown = false;
+  function show(){
+    if (shown) return;
+    shown = true;
+    el.classList.add('show');
+    removeEventListener('scroll', onScroll);
+  }
+  function onScroll(){
+    if (scrollY > innerHeight * 0.8) show();
+  }
+  addEventListener('scroll', onScroll, {passive:true});
+  // まったくスクロールしない人にも最後には出す（ただし十分に間を置いてから）
+  setTimeout(show, 45000);
   document.getElementById('promoClose').addEventListener('click', function(e){ e.preventDefault(); close(); });
   el.addEventListener('click', function(e){ if (e.target === el) close(); });
 })();

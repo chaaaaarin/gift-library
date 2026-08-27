@@ -35,8 +35,13 @@
     <div class="pnote"><span class="nb">下のカードから、</span><span class="nb">1件ずつコピー、</span><span class="nb">または個別にダウンロードできます。</span><span class="nb">まとめて欲しいときは、</span><span class="nb">上の</span><span class="nb">「全件ダウンロード」を</span><span class="nb">お使いください。</span></div>
   </section>
 
-  <h2 class="cat">開発・実装を助ける機能（1〜7）</h2>
-<div class="icard">
+  <div class="ktools">
+  <input type="search" id="kq" placeholder="この中から探す" autocomplete="off" aria-label="この中から探す">
+  <div class="kcats"><button type="button" class="kcat on" data-cat="">すべて<span class="n">25</span></button><button type="button" class="kcat" data-cat="開発・実装を助ける機能（1〜7）">開発・実装を助ける機能（1〜7）<span class="n">7</span></button><button type="button" class="kcat" data-cat="繰り返し作業を任せる機能（8〜14）">繰り返し作業を任せる機能（8〜14）<span class="n">7</span></button><button type="button" class="kcat" data-cat="情報収集・整理を助ける機能（15〜19）">情報収集・整理を助ける機能（15〜19）<span class="n">5</span></button><button type="button" class="kcat" data-cat="コンテンツ・資料制作を助ける機能（20〜25）">コンテンツ・資料制作を助ける機能（20〜25）<span class="n">6</span></button></div>
+  <p class="khit" id="khit" role="status"></p>
+</div>
+<h2 class="cat" data-cat="開発・実装を助ける機能（1〜7）">開発・実装を助ける機能（1〜7）</h2>
+<div class="icard" data-cat="開発・実装を助ける機能（1〜7）">
   <div class="ih"><span class="num">001</span><span class="ititle">開発の進め方そのものが分からない時</span></div>
   <p class="imeta"><span class="nb">エンジニアの型を借りて開発を進める</span></p>
   <pre class="prompt" id="b1">このプロジェクトを、経験豊富なエンジニアの標準的な進め方(要件確認→設計→実装→テスト)で進めてほしいです。関連するスキルがあれば使って進めて。</pre>
@@ -45,7 +50,7 @@
     <button class="btn ghost sm" data-save="b1" data-name="codex-plugin-guide-001.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="開発・実装を助ける機能（1〜7）">
   <div class="ih"><span class="num">002</span><span class="ititle">ライブラリのバージョンが古いかもしれない時</span></div>
   <p class="imeta"><span class="nb">Context7で最新ドキュメントを</span><span class="nb">参照する</span></p>
   <pre class="prompt" id="b2">このライブラリを使う前に、最新の公式ドキュメントを参照して、私が知っている情報と食い違いがないか確認してから実装を進めて。</pre>
@@ -54,7 +59,7 @@
     <button class="btn ghost sm" data-save="b2" data-name="codex-plugin-guide-002.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="開発・実装を助ける機能（1〜7）">
   <div class="ih"><span class="num">003</span><span class="ititle">要件をうまく言葉にできない時</span></div>
   <p class="imeta"><span class="nb">壁打ち系スキルにインタビューしても</span><span class="nb">らう</span></p>
   <pre class="prompt" id="b3">作りたいものはあるのですが、うまく言葉にできません。1つずつ質問しながら要件を明確にしていくやり方で進めて。</pre>
@@ -63,7 +68,7 @@
     <button class="btn ghost sm" data-save="b3" data-name="codex-plugin-guide-003.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="開発・実装を助ける機能（1〜7）">
   <div class="ih"><span class="num">004</span><span class="ititle">コードを直接触らずWebページの中身を見たい時</span></div>
   <p class="imeta"><span class="nb">Firecrawlでページを</span><span class="nb">構造化データ化する</span></p>
   <pre class="prompt" id="b4">このURLの内容を、AIが読みやすい構造化された形式で取得して、要点を教えて。</pre>
@@ -72,7 +77,7 @@
     <button class="btn ghost sm" data-save="b4" data-name="codex-plugin-guide-004.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="開発・実装を助ける機能（1〜7）">
   <div class="ih"><span class="num">005</span><span class="ititle">作ったアプリをすぐ公開したい時</span></div>
   <p class="imeta"><span class="nb">Vercelプラグインで</span><span class="nb">ワンコマンドデプロイ</span></p>
   <pre class="prompt" id="b5">このWebアプリをインターネット上に公開したいです。デプロイして、共有できるURLを発行して。</pre>
@@ -81,7 +86,7 @@
     <button class="btn ghost sm" data-save="b5" data-name="codex-plugin-guide-005.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="開発・実装を助ける機能（1〜7）">
   <div class="ih"><span class="num">006</span><span class="ititle">手元でしか動かないアプリを人に見せたい時</span></div>
   <p class="imeta"><span class="nb">ローカル/公開の違いを整理してもらう</span></p>
   <pre class="prompt" id="b6">今このアプリは自分のパソコンの中でしか見られない状態ですか？もしそうなら、誰でも見られる状態にする方法を教えて、進めて。</pre>
@@ -90,7 +95,7 @@
     <button class="btn ghost sm" data-save="b6" data-name="codex-plugin-guide-006.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="開発・実装を助ける機能（1〜7）">
   <div class="ih"><span class="num">007</span><span class="ititle">開発とは違う、自分のアプリにAI機能を足したい時</span></div>
   <p class="imeta"><span class="nb">App Server/SDKの違いを</span><span class="nb">判断してもらう</span></p>
   <pre class="prompt" id="b7">自作アプリにAIチャットのような機能を組み込みたいです。契約中のプラン内で収める方法と、別途API課金が必要な方法、それぞれのメリット・デメリットを教えて。</pre>
@@ -99,8 +104,8 @@
     <button class="btn ghost sm" data-save="b7" data-name="codex-plugin-guide-007.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">繰り返し作業を任せる機能（8〜14）</h2>
-<div class="icard">
+<h2 class="cat" data-cat="繰り返し作業を任せる機能（8〜14）">繰り返し作業を任せる機能（8〜14）</h2>
+<div class="icard" data-cat="繰り返し作業を任せる機能（8〜14）">
   <div class="ih"><span class="num">008</span><span class="ititle">同じ操作を何度も手作業でやっている時</span></div>
   <p class="imeta"><span class="nb">Record &amp; Replayで</span><span class="nb">操作を録画してスキル化する</span></p>
   <pre class="prompt" id="b8">今から手順を録画で見せます。この後同じ作業を頼むときは、録画した内容を再現できるスキルとして作成して。</pre>
@@ -109,7 +114,7 @@
     <button class="btn ghost sm" data-save="b8" data-name="codex-plugin-guide-008.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="繰り返し作業を任せる機能（8〜14）">
   <div class="ih"><span class="num">009</span><span class="ititle">毎日・毎週決まった時間にやっていることがある時</span></div>
   <p class="imeta"><span class="nb">オートメーションズで定期実行を組む</span></p>
   <pre class="prompt" id="b9">この作業を毎週月曜の朝に自動で実行してほしいです。まず仕組みを説明してから、実行内容を質問して設定して。</pre>
@@ -118,7 +123,7 @@
     <button class="btn ghost sm" data-save="b9" data-name="codex-plugin-guide-009.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="繰り返し作業を任せる機能（8〜14）">
   <div class="ih"><span class="num">010</span><span class="ititle">複雑な作業を1人に丸投げすると質が落ちる時</span></div>
   <p class="imeta"><span class="nb">サブエージェントで役割分担する</span></p>
   <pre class="prompt" id="b10">この作業は、調査担当・実装担当・レビュー担当に分けて、それぞれサブエージェントとして並列に進めて。</pre>
@@ -127,7 +132,7 @@
     <button class="btn ghost sm" data-save="b10" data-name="codex-plugin-guide-010.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="繰り返し作業を任せる機能（8〜14）">
   <div class="ih"><span class="num">011</span><span class="ititle">画面の状態をいちいち言葉で説明するのが面倒な時</span></div>
   <p class="imeta"><span class="nb">アップショットで画面ごと渡す</span></p>
   <pre class="prompt" id="b11">今開いているこの画面を見て、状況を判断して次の対応を教えて。説明は省略します。</pre>
@@ -136,7 +141,7 @@
     <button class="btn ghost sm" data-save="b11" data-name="codex-plugin-guide-011.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="繰り返し作業を任せる機能（8〜14）">
   <div class="ih"><span class="num">012</span><span class="ititle">自分のWebサイトの動作確認を手作業でしている時</span></div>
   <p class="imeta"><span class="nb">ブラウザユーズでE2E的に</span><span class="nb">自動確認する</span></p>
   <pre class="prompt" id="b12">このサイトのお問い合わせフォームを、実際に入力から送信まで操作して、正しく動くか確認して。</pre>
@@ -145,7 +150,7 @@
     <button class="btn ghost sm" data-save="b12" data-name="codex-plugin-guide-012.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="繰り返し作業を任せる機能（8〜14）">
   <div class="ih"><span class="num">013</span><span class="ititle">パソコンの中の単純作業を任せたい時</span></div>
   <p class="imeta"><span class="nb">コンピューターユーズで</span><span class="nb">画面操作そのものを任せる</span></p>
   <pre class="prompt" id="b13">このアプリの中の不要な項目を、実際に画面を操作して削除して。手順は任せます。</pre>
@@ -154,7 +159,7 @@
     <button class="btn ghost sm" data-save="b13" data-name="codex-plugin-guide-013.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="繰り返し作業を任せる機能（8〜14）">
   <div class="ih"><span class="num">014</span><span class="ititle">定期実行が思ったタイミングで動かない時</span></div>
   <p class="imeta"><span class="nb">ローカル起動必須という制約を疑う</span></p>
   <pre class="prompt" id="b14">設定したはずの定期実行が動いていません。パソコンがスリープしていた可能性はありますか？原因と対策を教えて。</pre>
@@ -163,8 +168,8 @@
     <button class="btn ghost sm" data-save="b14" data-name="codex-plugin-guide-014.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">情報収集・整理を助ける機能（15〜19）</h2>
-<div class="icard">
+<h2 class="cat" data-cat="情報収集・整理を助ける機能（15〜19）">情報収集・整理を助ける機能（15〜19）</h2>
+<div class="icard" data-cat="情報収集・整理を助ける機能（15〜19）">
   <div class="ih"><span class="num">015</span><span class="ititle">最新ニュースを毎回自分で探すのが面倒な時</span></div>
   <p class="imeta"><span class="nb">オートメーション+Web検索で</span><span class="nb">自動収集する</span></p>
   <pre class="prompt" id="b15">毎朝、AI関連の最新ニュースを5件集めて要約する作業を自動化して。</pre>
@@ -173,7 +178,7 @@
     <button class="btn ghost sm" data-save="b15" data-name="codex-plugin-guide-015.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="情報収集・整理を助ける機能（15〜19）">
   <div class="ih"><span class="num">016</span><span class="ititle">たくさんのメールやチャットを見落としがちな時</span></div>
   <p class="imeta"><span class="nb">プラグイン連携で優先度を自動判定する</span></p>
   <pre class="prompt" id="b16">未読のメッセージの中から、返信が必要なものだけを優先度順にリストにして教えて。</pre>
@@ -182,7 +187,7 @@
     <button class="btn ghost sm" data-save="b16" data-name="codex-plugin-guide-016.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="情報収集・整理を助ける機能（15〜19）">
   <div class="ih"><span class="num">017</span><span class="ititle">会議前に関連資料を探す時間がない時</span></div>
   <p class="imeta"><span class="nb">カレンダー+ドライブ連携で</span><span class="nb">準備リストを作る</span></p>
   <pre class="prompt" id="b17">今週の予定を確認して、それぞれの会議に必要そうな関連資料をドライブから探して、準備リストにして。</pre>
@@ -191,7 +196,7 @@
     <button class="btn ghost sm" data-save="b17" data-name="codex-plugin-guide-017.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="情報収集・整理を助ける機能（15〜19）">
   <div class="ih"><span class="num">018</span><span class="ititle">社内特有のツールと連携したい時</span></div>
   <p class="imeta"><span class="nb">既存プラグインで足りるか、</span><span class="nb">MCP自作が必要か判断する</span></p>
   <pre class="prompt" id="b18">社内独自のシステムと連携したいのですが、既存のプラグインで対応できますか？できなければ、必要な対応方法を教えて。</pre>
@@ -200,7 +205,7 @@
     <button class="btn ghost sm" data-save="b18" data-name="codex-plugin-guide-018.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="情報収集・整理を助ける機能（15〜19）">
   <div class="ih"><span class="num">019</span><span class="ititle">情報源が信頼できるか不安な時</span></div>
   <p class="imeta"><span class="nb">確度を分けて報告させる</span></p>
   <pre class="prompt" id="b19">この情報について、公式で確認できるもの、一次情報はあるが未確定のもの、推測にすぎないものを分けて教えて。</pre>
@@ -209,8 +214,8 @@
     <button class="btn ghost sm" data-save="b19" data-name="codex-plugin-guide-019.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">コンテンツ・資料制作を助ける機能（20〜25）</h2>
-<div class="icard">
+<h2 class="cat" data-cat="コンテンツ・資料制作を助ける機能（20〜25）">コンテンツ・資料制作を助ける機能（20〜25）</h2>
+<div class="icard" data-cat="コンテンツ・資料制作を助ける機能（20〜25）">
   <div class="ih"><span class="num">020</span><span class="ititle">文字起こしをうまく活用できていない時</span></div>
   <p class="imeta"><span class="nb">1つの素材から複数アウトプットを作る</span></p>
   <pre class="prompt" id="b20">この文字起こしを元に、要約・記事・SNS投稿案の3種類を一気に作って。</pre>
@@ -219,7 +224,7 @@
     <button class="btn ghost sm" data-save="b20" data-name="codex-plugin-guide-020.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="コンテンツ・資料制作を助ける機能（20〜25）">
   <div class="ih"><span class="num">021</span><span class="ititle">スライドや資料のデザインを毎回イチから考えている時</span></div>
   <p class="imeta"><span class="nb">テンプレートクリエイターで型を作る</span></p>
   <pre class="prompt" id="b21">このデザインシステムを使って、パワーポイント・ワード・エクセルのテンプレートをそれぞれ作って。次からはこれを使い回したいです。</pre>
@@ -228,7 +233,7 @@
     <button class="btn ghost sm" data-save="b21" data-name="codex-plugin-guide-021.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="コンテンツ・資料制作を助ける機能（20〜25）">
   <div class="ih"><span class="num">022</span><span class="ititle">画像を使った資料が作れないと思っている時</span></div>
   <p class="imeta"><span class="nb">画像生成込みで資料そのものを作らせる</span></p>
   <pre class="prompt" id="b22">このテーマについて、画像生成を使ったインフォグラフィック中心のスライドを2ページ作って。</pre>
@@ -237,7 +242,7 @@
     <button class="btn ghost sm" data-save="b22" data-name="codex-plugin-guide-022.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="コンテンツ・資料制作を助ける機能（20〜25）">
   <div class="ih"><span class="num">023</span><span class="ititle">動画の内容を文章資産にしたい時</span></div>
   <p class="imeta"><span class="nb">動画URLからブログ記事化する</span></p>
   <pre class="prompt" id="b23">このYouTube動画のURLを渡すので、内容を確認して最適な構成でブログ記事を作って。</pre>
@@ -246,7 +251,7 @@
     <button class="btn ghost sm" data-save="b23" data-name="codex-plugin-guide-023.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="コンテンツ・資料制作を助ける機能（20〜25）">
   <div class="ih"><span class="num">024</span><span class="ititle">SNS投稿までまとめて任せたい時</span></div>
   <p class="imeta"><span class="nb">アプリ内ブラウザでログイン済みの</span><span class="nb">まま投稿する</span></p>
   <pre class="prompt" id="b24">このテーマについて図付きの投稿文を作って、アプリ内ブラウザでログイン済みのアカウントからそのまま投稿して。</pre>
@@ -255,7 +260,7 @@
     <button class="btn ghost sm" data-save="b24" data-name="codex-plugin-guide-024.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="コンテンツ・資料制作を助ける機能（20〜25）">
   <div class="ih"><span class="num">025</span><span class="ititle">どの機能を使えばいいか、そもそも迷った時</span></div>
   <p class="imeta"><span class="nb">目的だけ伝えて機能選定ごと任せる</span></p>
   <pre class="prompt" id="b25">やりたいことは〇〇です。ここまでのCodexの機能の中で、どれを組み合わせるのが最適か提案して、そのまま進めて。</pre>
@@ -444,6 +449,57 @@
 以上、25項目です。内訳：開発・実装を助ける機能7／繰り返し作業を任せる機能7／情報収集・整理を助ける機能5／コンテンツ・資料制作を助ける機能6。
 </pre>
 <script>
+// 項目の多いキットで、目的の1件に辿り着けるようにする絞り込み。
+// 検索はタイトル・説明だけでなく本文も対象にする（「あの文言が入っていた項目」で探せるように）。
+(function(){
+  var q = document.getElementById('kq');
+  if (!q) return;
+  var hit = document.getElementById('khit');
+  var cards = [].slice.call(document.querySelectorAll('.kwrap .icard'));
+  var heads = [].slice.call(document.querySelectorAll('.kwrap h2.cat'));
+  var chips = [].slice.call(document.querySelectorAll('.kcat'));
+  var cat = '';
+
+  // ひらがな・カタカナの違いで取りこぼさないようにする（ハブ側の検索と同じ扱い）
+  function norm(s){
+    return (s || '').toLowerCase().replace(/[ぁ-ん]/g, function(c){
+      return String.fromCharCode(c.charCodeAt(0) + 0x60);
+    });
+  }
+
+  // カード全体の textContent だとボタンの「コピー」まで拾ってしまうため、中身を選んで集める
+  cards.forEach(function(c){
+    var t = c.querySelector('.ititle'), d = c.querySelector('.imeta'), p = c.querySelector('.prompt');
+    c._t = norm((t ? t.textContent : '') + ' ' + (d ? d.textContent : '') + ' ' + (p ? p.textContent : ''));
+  });
+
+  function apply(){
+    var kw = norm(q.value.trim()), n = 0, shown = {};
+    cards.forEach(function(c){
+      var ok = (!cat || c.getAttribute('data-cat') === cat)
+            && (!kw || c._t.indexOf(kw) !== -1);
+      c.classList.toggle('hide', !ok);
+      if (ok){ n++; shown[c.getAttribute('data-cat')] = 1; }
+    });
+    // 残った項目が1件も無いカテゴリの見出しは隠す
+    heads.forEach(function(h){
+      h.classList.toggle('hide', !shown[h.getAttribute('data-cat')]);
+    });
+    hit.textContent = (kw || cat)
+      ? (n ? n + '件を表示中' : '該当する項目がありません')
+      : '';
+  }
+
+  q.addEventListener('input', apply);
+  chips.forEach(function(b){
+    b.addEventListener('click', function(){
+      cat = b.getAttribute('data-cat');
+      chips.forEach(function(x){ x.classList.toggle('on', x === b); });
+      apply();
+    });
+  });
+})();
+
 function flash(btn, label){
   const old = btn.textContent, cls = btn.className;
   btn.textContent = label; btn.classList.add('ok');
@@ -513,7 +569,22 @@ document.addEventListener('click', e => {
     el.classList.remove('show');
     sessionStorage.setItem('promoClosed', '1');
   }
-  setTimeout(function(){ el.classList.add('show'); }, 1600);
+  // 動画の概要欄から来た人が、自分のプレゼントを探し始める瞬間に被らないようにする。
+  // 以前は読み込み1.6秒後に無条件で出しており、いちばん目的意識の高い時間を塞いでいた。
+  // 中身を見に行った（＝目当てのものに辿り着いた）ころに出す。
+  var shown = false;
+  function show(){
+    if (shown) return;
+    shown = true;
+    el.classList.add('show');
+    removeEventListener('scroll', onScroll);
+  }
+  function onScroll(){
+    if (scrollY > innerHeight * 0.8) show();
+  }
+  addEventListener('scroll', onScroll, {passive:true});
+  // まったくスクロールしない人にも最後には出す（ただし十分に間を置いてから）
+  setTimeout(show, 45000);
   document.getElementById('promoClose').addEventListener('click', function(e){ e.preventDefault(); close(); });
   el.addEventListener('click', function(e){ if (e.target === el) close(); });
 })();

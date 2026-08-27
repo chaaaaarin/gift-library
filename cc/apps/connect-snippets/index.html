@@ -35,8 +35,13 @@
     <div class="pnote"><span class="nb">下のカードから、</span><span class="nb">1件ずつコピー、</span><span class="nb">または個別にダウンロードできます。</span><span class="nb">まとめて欲しいときは、</span><span class="nb">上の</span><span class="nb">「全件ダウンロード」を</span><span class="nb">お使いください。</span></div>
   </section>
 
-  <h2 class="cat">MiniMax M3 接続設定</h2>
-<div class="icard">
+  <div class="ktools">
+  <input type="search" id="kq" placeholder="この中から探す" autocomplete="off" aria-label="この中から探す">
+  <div class="kcats"><button type="button" class="kcat on" data-cat="">すべて<span class="n">38</span></button><button type="button" class="kcat" data-cat="MiniMax M3 接続設定">MiniMax M3 接続設定<span class="n">5</span></button><button type="button" class="kcat" data-cat="Qwen3.8-Max 接続設定">Qwen3.8-Max 接続設定<span class="n">3</span></button><button type="button" class="kcat" data-cat="タスク別 モデル使い分け指示文">タスク別 モデル使い分け指示文<span class="n">30</span></button></div>
+  <p class="khit" id="khit" role="status"></p>
+</div>
+<h2 class="cat" data-cat="MiniMax M3 接続設定">MiniMax M3 接続設定</h2>
+<div class="icard" data-cat="MiniMax M3 接続設定">
   <div class="ih"><span class="num">001</span><span class="ititle">MiniMax M3 基本の接続設定(国際版)</span></div>
   
   <pre class="prompt" id="b1">{
@@ -51,7 +56,7 @@
     <button class="btn ghost sm" data-save="b1" data-name="connect-snippets-001.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="MiniMax M3 接続設定">
   <div class="ih"><span class="num">002</span><span class="ititle">MiniMax M3 コンテキスト窓を実値に合わせる設定</span></div>
   
   <pre class="prompt" id="b2">{
@@ -67,7 +72,7 @@
     <button class="btn ghost sm" data-save="b2" data-name="connect-snippets-002.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="MiniMax M3 接続設定">
   <div class="ih"><span class="num">003</span><span class="ititle">MiniMax M3 プロジェクト単位の個別設定</span></div>
   
   <pre class="prompt" id="b3">{
@@ -82,7 +87,7 @@
     <button class="btn ghost sm" data-save="b3" data-name="connect-snippets-003.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="MiniMax M3 接続設定">
   <div class="ih"><span class="num">004</span><span class="ititle">MiniMax M3 Extended thinkingをオフにする設定</span></div>
   
   <pre class="prompt" id="b4">{
@@ -98,7 +103,7 @@
     <button class="btn ghost sm" data-save="b4" data-name="connect-snippets-004.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="MiniMax M3 接続設定">
   <div class="ih"><span class="num">005</span><span class="ititle">MiniMax/Qwen接続後にOpusへ即座に戻す設定</span></div>
   
   <pre class="prompt" id="b5">{
@@ -110,8 +115,8 @@
     <button class="btn ghost sm" data-save="b5" data-name="connect-snippets-005.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">Qwen3.8-Max 接続設定</h2>
-<div class="icard">
+<h2 class="cat" data-cat="Qwen3.8-Max 接続設定">Qwen3.8-Max 接続設定</h2>
+<div class="icard" data-cat="Qwen3.8-Max 接続設定">
   <div class="ih"><span class="num">006</span><span class="ititle">Qwen3.8-Max 基本の接続設定</span></div>
   
   <pre class="prompt" id="b6">{
@@ -126,7 +131,7 @@
     <button class="btn ghost sm" data-save="b6" data-name="connect-snippets-006.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Qwen3.8-Max 接続設定">
   <div class="ih"><span class="num">007</span><span class="ititle">Qwen3.8-Max プロジェクト単位の個別設定</span></div>
   
   <pre class="prompt" id="b7">{
@@ -141,7 +146,7 @@
     <button class="btn ghost sm" data-save="b7" data-name="connect-snippets-007.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="Qwen3.8-Max 接続設定">
   <div class="ih"><span class="num">008</span><span class="ititle">APIキー漏洩防止の設定ファイル管理</span></div>
   
   <pre class="prompt" id="b8"># .gitignoreに追記
@@ -154,8 +159,8 @@ chmod 600 ~/.claude/settings.json</pre>
     <button class="btn ghost sm" data-save="b8" data-name="connect-snippets-008.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">タスク別 モデル使い分け指示文</h2>
-<div class="icard">
+<h2 class="cat" data-cat="タスク別 モデル使い分け指示文">タスク別 モデル使い分け指示文</h2>
+<div class="icard" data-cat="タスク別 モデル使い分け指示文">
   <div class="ih"><span class="num">009</span><span class="ititle">フルスタックアプリの土台作り</span></div>
   
   <pre class="prompt" id="b9">前提: 新規プロジェクトで、React等のフロントとExpress等のバックエンドを一気に立ち上げたいとき。
@@ -166,7 +171,7 @@ chmod 600 ~/.claude/settings.json</pre>
     <button class="btn ghost sm" data-save="b9" data-name="connect-snippets-009.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="タスク別 モデル使い分け指示文">
   <div class="ih"><span class="num">010</span><span class="ititle">大規模コードベースのアーキテクチャ把握</span></div>
   
   <pre class="prompt" id="b10">前提: 触ったことのない大きなリポジトリの全体像を短時間でつかみたいとき。
@@ -177,7 +182,7 @@ chmod 600 ~/.claude/settings.json</pre>
     <button class="btn ghost sm" data-save="b10" data-name="connect-snippets-010.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="タスク別 モデル使い分け指示文">
   <div class="ih"><span class="num">011</span><span class="ititle">スクリーンショットからのUI起こし</span></div>
   
   <pre class="prompt" id="b11">前提: 参考にしたいデザインの画像はあるが、仕様書やコードが手元にないとき。
@@ -188,7 +193,7 @@ chmod 600 ~/.claude/settings.json</pre>
     <button class="btn ghost sm" data-save="b11" data-name="connect-snippets-011.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="タスク別 モデル使い分け指示文">
   <div class="ih"><span class="num">012</span><span class="ititle">大量の単体テストひな形作成</span></div>
   
   <pre class="prompt" id="b12">前提: 既存コードにテストがほとんど無く、まず土台を大量に用意したいとき。
@@ -199,7 +204,7 @@ chmod 600 ~/.claude/settings.json</pre>
     <button class="btn ghost sm" data-save="b12" data-name="connect-snippets-012.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="タスク別 モデル使い分け指示文">
   <div class="ih"><span class="num">013</span><span class="ititle">軽微なリファクタの一括処理</span></div>
   
   <pre class="prompt" id="b13">前提: 命名の統一・重複コードの共通化など、判断が要らない軽微な直しがまとまって溜まっているとき。
@@ -210,7 +215,7 @@ chmod 600 ~/.claude/settings.json</pre>
     <button class="btn ghost sm" data-save="b13" data-name="connect-snippets-013.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="タスク別 モデル使い分け指示文">
   <div class="ih"><span class="num">014</span><span class="ititle">ドキュメントコメントの一括生成</span></div>
   
   <pre class="prompt" id="b14">前提: 関数・クラスにコメントがほとんど付いていないとき。
@@ -221,7 +226,7 @@ chmod 600 ~/.claude/settings.json</pre>
     <button class="btn ghost sm" data-save="b14" data-name="connect-snippets-014.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="タスク別 モデル使い分け指示文">
   <div class="ih"><span class="num">015</span><span class="ititle">設定ファイルの雛形量産</span></div>
   
   <pre class="prompt" id="b15">前提: 複数の似た環境向けに設定ファイルをまとめて用意したいとき。
@@ -232,7 +237,7 @@ chmod 600 ~/.claude/settings.json</pre>
     <button class="btn ghost sm" data-save="b15" data-name="connect-snippets-015.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="タスク別 モデル使い分け指示文">
   <div class="ih"><span class="num">016</span><span class="ititle">APIエンドポイントの雛形量産</span></div>
   
   <pre class="prompt" id="b16">前提: 似た構造のCRUD APIを複数まとめて用意したいとき。
@@ -243,7 +248,7 @@ chmod 600 ~/.claude/settings.json</pre>
     <button class="btn ghost sm" data-save="b16" data-name="connect-snippets-016.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="タスク別 モデル使い分け指示文">
   <div class="ih"><span class="num">017</span><span class="ititle">ログ出力の統一化</span></div>
   
   <pre class="prompt" id="b17">前提: プロジェクト内でログの書き方がバラバラになっているとき。
@@ -254,7 +259,7 @@ chmod 600 ~/.claude/settings.json</pre>
     <button class="btn ghost sm" data-save="b17" data-name="connect-snippets-017.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="タスク別 モデル使い分け指示文">
   <div class="ih"><span class="num">018</span><span class="ititle">エラーハンドリングの底上げ</span></div>
   
   <pre class="prompt" id="b18">前提: try/catchが抜けている箇所が多く、まとめて底上げしたいとき。
@@ -265,7 +270,7 @@ chmod 600 ~/.claude/settings.json</pre>
     <button class="btn ghost sm" data-save="b18" data-name="connect-snippets-018.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="タスク別 モデル使い分け指示文">
   <div class="ih"><span class="num">019</span><span class="ititle">競合モデルとの回答比較(裏取り用)</span></div>
   
   <pre class="prompt" id="b19">前提: Claude Opusの回答が正しいか、別モデルの視点でも確認したいとき。
@@ -276,7 +281,7 @@ chmod 600 ~/.claude/settings.json</pre>
     <button class="btn ghost sm" data-save="b19" data-name="connect-snippets-019.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="タスク別 モデル使い分け指示文">
   <div class="ih"><span class="num">020</span><span class="ititle">長文資料の要約下読み</span></div>
   
   <pre class="prompt" id="b20">前提: 長い英語記事や仕様書を読む前に、要点だけ先につかみたいとき。
@@ -287,7 +292,7 @@ chmod 600 ~/.claude/settings.json</pre>
     <button class="btn ghost sm" data-save="b20" data-name="connect-snippets-020.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="タスク別 モデル使い分け指示文">
   <div class="ih"><span class="num">021</span><span class="ititle">複数案の下書き比較</span></div>
   
   <pre class="prompt" id="b21">前提: メールやSNS投稿など、複数の言い回し案を手早く見比べたいとき。
@@ -298,7 +303,7 @@ chmod 600 ~/.claude/settings.json</pre>
     <button class="btn ghost sm" data-save="b21" data-name="connect-snippets-021.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="タスク別 モデル使い分け指示文">
   <div class="ih"><span class="num">022</span><span class="ititle">大量データの一次整形</span></div>
   
   <pre class="prompt" id="b22">前提: CSVやログなど、雑然としたデータを扱いやすい形にまず整えたいとき。
@@ -309,7 +314,7 @@ chmod 600 ~/.claude/settings.json</pre>
     <button class="btn ghost sm" data-save="b22" data-name="connect-snippets-022.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="タスク別 モデル使い分け指示文">
   <div class="ih"><span class="num">023</span><span class="ititle">翻訳の下訳作成</span></div>
   
   <pre class="prompt" id="b23">前提: 英語ドキュメントを日本語化する前に、まず下訳がほしいとき。
@@ -320,7 +325,7 @@ chmod 600 ~/.claude/settings.json</pre>
     <button class="btn ghost sm" data-save="b23" data-name="connect-snippets-023.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="タスク別 モデル使い分け指示文">
   <div class="ih"><span class="num">024</span><span class="ititle">チェックリストの叩き台作成</span></div>
   
   <pre class="prompt" id="b24">前提: 新しい作業手順のチェックリストを、まず叩き台として作りたいとき。
@@ -331,7 +336,7 @@ chmod 600 ~/.claude/settings.json</pre>
     <button class="btn ghost sm" data-save="b24" data-name="connect-snippets-024.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="タスク別 モデル使い分け指示文">
   <div class="ih"><span class="num">025</span><span class="ititle">コミットメッセージの一括整形</span></div>
   
   <pre class="prompt" id="b25">前提: 過去のコミットメッセージの書式がバラバラで揃えたいとき。
@@ -342,7 +347,7 @@ chmod 600 ~/.claude/settings.json</pre>
     <button class="btn ghost sm" data-save="b25" data-name="connect-snippets-025.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="タスク別 モデル使い分け指示文">
   <div class="ih"><span class="num">026</span><span class="ititle">READMEの叩き台作成</span></div>
   
   <pre class="prompt" id="b26">前提: 新しいリポジトリにREADMEがまだ無いとき。
@@ -353,7 +358,7 @@ chmod 600 ~/.claude/settings.json</pre>
     <button class="btn ghost sm" data-save="b26" data-name="connect-snippets-026.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="タスク別 モデル使い分け指示文">
   <div class="ih"><span class="num">027</span><span class="ititle">マイグレーションスクリプトの下書き</span></div>
   
   <pre class="prompt" id="b27">前提: データベースのスキーマ変更用スクリプトの下書きがほしいとき。
@@ -364,7 +369,7 @@ chmod 600 ~/.claude/settings.json</pre>
     <button class="btn ghost sm" data-save="b27" data-name="connect-snippets-027.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="タスク別 モデル使い分け指示文">
   <div class="ih"><span class="num">028</span><span class="ititle">コスト試算の下書き</span></div>
   
   <pre class="prompt" id="b28">前提: どのモデルを使うとどれくらいコストが変わるか、ざっくり試算したいとき。
@@ -375,7 +380,7 @@ chmod 600 ~/.claude/settings.json</pre>
     <button class="btn ghost sm" data-save="b28" data-name="connect-snippets-028.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="タスク別 モデル使い分け指示文">
   <div class="ih"><span class="num">029</span><span class="ititle">複数モデルへの相見積もり質問</span></div>
   
   <pre class="prompt" id="b29">前提: 技術選定など、1つのモデルの意見だけで決めたくないとき。
@@ -386,7 +391,7 @@ chmod 600 ~/.claude/settings.json</pre>
     <button class="btn ghost sm" data-save="b29" data-name="connect-snippets-029.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="タスク別 モデル使い分け指示文">
   <div class="ih"><span class="num">030</span><span class="ititle">低リスクタスクの振り分けルール作成</span></div>
   
   <pre class="prompt" id="b30">前提: どの作業を安いモデルに任せてよいか、自分なりの基準をまだ決めていないとき。
@@ -397,7 +402,7 @@ chmod 600 ~/.claude/settings.json</pre>
     <button class="btn ghost sm" data-save="b30" data-name="connect-snippets-030.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="タスク別 モデル使い分け指示文">
   <div class="ih"><span class="num">031</span><span class="ititle">画像を使った仕様確認</span></div>
   
   <pre class="prompt" id="b31">前提: 手元にUIのスクリーンショットがあり、実装との差分を確認したいとき。
@@ -408,7 +413,7 @@ chmod 600 ~/.claude/settings.json</pre>
     <button class="btn ghost sm" data-save="b31" data-name="connect-snippets-031.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="タスク別 モデル使い分け指示文">
   <div class="ih"><span class="num">032</span><span class="ititle">大量ファイルの一括リネーム案</span></div>
   
   <pre class="prompt" id="b32">前提: 命名規則を統一したいファイルが大量にあるとき。
@@ -419,7 +424,7 @@ chmod 600 ~/.claude/settings.json</pre>
     <button class="btn ghost sm" data-save="b32" data-name="connect-snippets-032.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="タスク別 モデル使い分け指示文">
   <div class="ih"><span class="num">033</span><span class="ititle">障害調査の一次切り分け</span></div>
   
   <pre class="prompt" id="b33">前提: エラーログは大量にあるが、原因の見当がまだ付いていないとき。
@@ -430,7 +435,7 @@ chmod 600 ~/.claude/settings.json</pre>
     <button class="btn ghost sm" data-save="b33" data-name="connect-snippets-033.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="タスク別 モデル使い分け指示文">
   <div class="ih"><span class="num">034</span><span class="ititle">設定変更のリバートスクリプト作成</span></div>
   
   <pre class="prompt" id="b34">前提: 何か試した設定変更を、いつでも元に戻せるようにしておきたいとき。
@@ -441,7 +446,7 @@ chmod 600 ~/.claude/settings.json</pre>
     <button class="btn ghost sm" data-save="b34" data-name="connect-snippets-034.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="タスク別 モデル使い分け指示文">
   <div class="ih"><span class="num">035</span><span class="ititle">プロンプトのタスク別テンプレ化</span></div>
   
   <pre class="prompt" id="b35">前提: 毎回似たようなお願いをゼロから書くのが面倒なとき。
@@ -452,7 +457,7 @@ chmod 600 ~/.claude/settings.json</pre>
     <button class="btn ghost sm" data-save="b35" data-name="connect-snippets-035.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="タスク別 モデル使い分け指示文">
   <div class="ih"><span class="num">036</span><span class="ititle">小規模スクリプトの量産</span></div>
   
   <pre class="prompt" id="b36">前提: 似た処理をする小さなスクリプトを何本もまとめて作りたいとき。
@@ -463,7 +468,7 @@ chmod 600 ~/.claude/settings.json</pre>
     <button class="btn ghost sm" data-save="b36" data-name="connect-snippets-036.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="タスク別 モデル使い分け指示文">
   <div class="ih"><span class="num">037</span><span class="ititle">導入判断の材料集め</span></div>
   
   <pre class="prompt" id="b37">前提: 新しいモデルを導入すべきか、判断材料をまず集めたいとき。
@@ -474,7 +479,7 @@ chmod 600 ~/.claude/settings.json</pre>
     <button class="btn ghost sm" data-save="b37" data-name="connect-snippets-037.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="タスク別 モデル使い分け指示文">
   <div class="ih"><span class="num">038</span><span class="ititle">定型メールの下書き量産</span></div>
   
   <pre class="prompt" id="b38">前提: 似た内容だが宛先ごとに微調整が要る定型メールを何通も送るとき。
@@ -901,6 +906,57 @@ chmod 600 ~/.claude/settings.json
 **ポイント**: 設定を戻したいときは「Opusへ即座に戻す設定」を使うか、`env`ブロックを削除してください。
 </pre>
 <script>
+// 項目の多いキットで、目的の1件に辿り着けるようにする絞り込み。
+// 検索はタイトル・説明だけでなく本文も対象にする（「あの文言が入っていた項目」で探せるように）。
+(function(){
+  var q = document.getElementById('kq');
+  if (!q) return;
+  var hit = document.getElementById('khit');
+  var cards = [].slice.call(document.querySelectorAll('.kwrap .icard'));
+  var heads = [].slice.call(document.querySelectorAll('.kwrap h2.cat'));
+  var chips = [].slice.call(document.querySelectorAll('.kcat'));
+  var cat = '';
+
+  // ひらがな・カタカナの違いで取りこぼさないようにする（ハブ側の検索と同じ扱い）
+  function norm(s){
+    return (s || '').toLowerCase().replace(/[ぁ-ん]/g, function(c){
+      return String.fromCharCode(c.charCodeAt(0) + 0x60);
+    });
+  }
+
+  // カード全体の textContent だとボタンの「コピー」まで拾ってしまうため、中身を選んで集める
+  cards.forEach(function(c){
+    var t = c.querySelector('.ititle'), d = c.querySelector('.imeta'), p = c.querySelector('.prompt');
+    c._t = norm((t ? t.textContent : '') + ' ' + (d ? d.textContent : '') + ' ' + (p ? p.textContent : ''));
+  });
+
+  function apply(){
+    var kw = norm(q.value.trim()), n = 0, shown = {};
+    cards.forEach(function(c){
+      var ok = (!cat || c.getAttribute('data-cat') === cat)
+            && (!kw || c._t.indexOf(kw) !== -1);
+      c.classList.toggle('hide', !ok);
+      if (ok){ n++; shown[c.getAttribute('data-cat')] = 1; }
+    });
+    // 残った項目が1件も無いカテゴリの見出しは隠す
+    heads.forEach(function(h){
+      h.classList.toggle('hide', !shown[h.getAttribute('data-cat')]);
+    });
+    hit.textContent = (kw || cat)
+      ? (n ? n + '件を表示中' : '該当する項目がありません')
+      : '';
+  }
+
+  q.addEventListener('input', apply);
+  chips.forEach(function(b){
+    b.addEventListener('click', function(){
+      cat = b.getAttribute('data-cat');
+      chips.forEach(function(x){ x.classList.toggle('on', x === b); });
+      apply();
+    });
+  });
+})();
+
 function flash(btn, label){
   const old = btn.textContent, cls = btn.className;
   btn.textContent = label; btn.classList.add('ok');
@@ -970,7 +1026,22 @@ document.addEventListener('click', e => {
     el.classList.remove('show');
     sessionStorage.setItem('promoClosed', '1');
   }
-  setTimeout(function(){ el.classList.add('show'); }, 1600);
+  // 動画の概要欄から来た人が、自分のプレゼントを探し始める瞬間に被らないようにする。
+  // 以前は読み込み1.6秒後に無条件で出しており、いちばん目的意識の高い時間を塞いでいた。
+  // 中身を見に行った（＝目当てのものに辿り着いた）ころに出す。
+  var shown = false;
+  function show(){
+    if (shown) return;
+    shown = true;
+    el.classList.add('show');
+    removeEventListener('scroll', onScroll);
+  }
+  function onScroll(){
+    if (scrollY > innerHeight * 0.8) show();
+  }
+  addEventListener('scroll', onScroll, {passive:true});
+  // まったくスクロールしない人にも最後には出す（ただし十分に間を置いてから）
+  setTimeout(show, 45000);
   document.getElementById('promoClose').addEventListener('click', function(e){ e.preventDefault(); close(); });
   el.addEventListener('click', function(e){ if (e.target === el) close(); });
 })();

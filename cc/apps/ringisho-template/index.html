@@ -35,7 +35,7 @@
     <div class="pnote"><span class="nb">下のカードから、</span><span class="nb">1件ずつコピー、</span><span class="nb">または個別にダウンロードできます。</span><span class="nb">まとめて欲しいときは、</span><span class="nb">上の</span><span class="nb">「全件ダウンロード」を</span><span class="nb">お使いください。</span></div>
   </section>
 
-  <div class="icard">
+  <div class="icard" data-cat="">
   <div class="ih"><span class="num">001</span><span class="ititle">件名</span></div>
   
   <pre class="prompt" id="b1">AI（Claude Code）導入に関する稟議</pre>
@@ -44,7 +44,7 @@
     <button class="btn ghost sm" data-save="b1" data-name="ringisho-template-001.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">002</span><span class="ititle">背景・現状の課題</span></div>
   
   <pre class="prompt" id="b2">- 一部メンバーが個人的にAIエージェントを試用し、効果を実感している
@@ -55,7 +55,7 @@
     <button class="btn ghost sm" data-save="b2" data-name="ringisho-template-002.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">003</span><span class="ititle">提案内容</span></div>
   
   <pre class="prompt" id="b3">- Step[現在の番号] → Step[次の番号] への移行を、[期間]以内に目指す
@@ -65,7 +65,7 @@
     <button class="btn ghost sm" data-save="b3" data-name="ringisho-template-003.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">004</span><span class="ititle">期待される効果</span></div>
   
   <pre class="prompt" id="b4">- 定量効果: [確証のある数字のみ記入。景表法に注意し、裏付けのない数字は書かない]
@@ -75,7 +75,7 @@
     <button class="btn ghost sm" data-save="b4" data-name="ringisho-template-004.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">005</span><span class="ititle">リスクと対応策（両論併記）</span></div>
   
   <pre class="prompt" id="b5">□ 情報漏洩リスク
@@ -91,7 +91,7 @@
     <button class="btn ghost sm" data-save="b5" data-name="ringisho-template-005.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">006</span><span class="ititle">導入前に整備するガードレール</span></div>
   
   <pre class="prompt" id="b6">□ SSO/SCIMによるロールベースアクセス
@@ -103,7 +103,7 @@
     <button class="btn ghost sm" data-save="b6" data-name="ringisho-template-006.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">007</span><span class="ititle">費用感</span></div>
   
   <pre class="prompt" id="b7">- [ツール利用料・API利用料・想定人数を記入]</pre>
@@ -112,7 +112,7 @@
     <button class="btn ghost sm" data-save="b7" data-name="ringisho-template-007.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">008</span><span class="ititle">スケジュール</span></div>
   
   <pre class="prompt" id="b8">- 承認後[期間]でパイロットチームによる試験運用を開始
@@ -122,7 +122,7 @@
     <button class="btn ghost sm" data-save="b8" data-name="ringisho-template-008.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">009</span><span class="ititle">承認者記入欄</span></div>
   
   <pre class="prompt" id="b9">判定: 承認 ／ 条件付き承認 ／ 却下
@@ -199,6 +199,57 @@ AI（Claude Code）導入に関する稟議
 **ポイント**: 数字を盛りすぎず、裏付けのある効果だけを書くと稟議が通りやすくなります。リスク欄を削らず両論併記のまま出すと、決裁者の信頼を得やすいです。
 </pre>
 <script>
+// 項目の多いキットで、目的の1件に辿り着けるようにする絞り込み。
+// 検索はタイトル・説明だけでなく本文も対象にする（「あの文言が入っていた項目」で探せるように）。
+(function(){
+  var q = document.getElementById('kq');
+  if (!q) return;
+  var hit = document.getElementById('khit');
+  var cards = [].slice.call(document.querySelectorAll('.kwrap .icard'));
+  var heads = [].slice.call(document.querySelectorAll('.kwrap h2.cat'));
+  var chips = [].slice.call(document.querySelectorAll('.kcat'));
+  var cat = '';
+
+  // ひらがな・カタカナの違いで取りこぼさないようにする（ハブ側の検索と同じ扱い）
+  function norm(s){
+    return (s || '').toLowerCase().replace(/[ぁ-ん]/g, function(c){
+      return String.fromCharCode(c.charCodeAt(0) + 0x60);
+    });
+  }
+
+  // カード全体の textContent だとボタンの「コピー」まで拾ってしまうため、中身を選んで集める
+  cards.forEach(function(c){
+    var t = c.querySelector('.ititle'), d = c.querySelector('.imeta'), p = c.querySelector('.prompt');
+    c._t = norm((t ? t.textContent : '') + ' ' + (d ? d.textContent : '') + ' ' + (p ? p.textContent : ''));
+  });
+
+  function apply(){
+    var kw = norm(q.value.trim()), n = 0, shown = {};
+    cards.forEach(function(c){
+      var ok = (!cat || c.getAttribute('data-cat') === cat)
+            && (!kw || c._t.indexOf(kw) !== -1);
+      c.classList.toggle('hide', !ok);
+      if (ok){ n++; shown[c.getAttribute('data-cat')] = 1; }
+    });
+    // 残った項目が1件も無いカテゴリの見出しは隠す
+    heads.forEach(function(h){
+      h.classList.toggle('hide', !shown[h.getAttribute('data-cat')]);
+    });
+    hit.textContent = (kw || cat)
+      ? (n ? n + '件を表示中' : '該当する項目がありません')
+      : '';
+  }
+
+  q.addEventListener('input', apply);
+  chips.forEach(function(b){
+    b.addEventListener('click', function(){
+      cat = b.getAttribute('data-cat');
+      chips.forEach(function(x){ x.classList.toggle('on', x === b); });
+      apply();
+    });
+  });
+})();
+
 function flash(btn, label){
   const old = btn.textContent, cls = btn.className;
   btn.textContent = label; btn.classList.add('ok');
@@ -268,7 +319,22 @@ document.addEventListener('click', e => {
     el.classList.remove('show');
     sessionStorage.setItem('promoClosed', '1');
   }
-  setTimeout(function(){ el.classList.add('show'); }, 1600);
+  // 動画の概要欄から来た人が、自分のプレゼントを探し始める瞬間に被らないようにする。
+  // 以前は読み込み1.6秒後に無条件で出しており、いちばん目的意識の高い時間を塞いでいた。
+  // 中身を見に行った（＝目当てのものに辿り着いた）ころに出す。
+  var shown = false;
+  function show(){
+    if (shown) return;
+    shown = true;
+    el.classList.add('show');
+    removeEventListener('scroll', onScroll);
+  }
+  function onScroll(){
+    if (scrollY > innerHeight * 0.8) show();
+  }
+  addEventListener('scroll', onScroll, {passive:true});
+  // まったくスクロールしない人にも最後には出す（ただし十分に間を置いてから）
+  setTimeout(show, 45000);
   document.getElementById('promoClose').addEventListener('click', function(e){ e.preventDefault(); close(); });
   el.addEventListener('click', function(e){ if (e.target === el) close(); });
 })();

@@ -35,8 +35,13 @@
     <div class="pnote"><span class="nb">下のカードから、</span><span class="nb">1件ずつコピー、</span><span class="nb">または個別にダウンロードできます。</span><span class="nb">まとめて欲しいときは、</span><span class="nb">上の</span><span class="nb">「全件ダウンロード」を</span><span class="nb">お使いください。</span></div>
   </section>
 
-  <h2 class="cat">日常生活の相談</h2>
-<div class="icard">
+  <div class="ktools">
+  <input type="search" id="kq" placeholder="この中から探す" autocomplete="off" aria-label="この中から探す">
+  <div class="kcats"><button type="button" class="kcat on" data-cat="">すべて<span class="n">100</span></button><button type="button" class="kcat" data-cat="日常生活の相談">日常生活の相談<span class="n">20</span></button><button type="button" class="kcat" data-cat="仕事の下書き・文章づくり">仕事の下書き・文章づくり<span class="n">20</span></button><button type="button" class="kcat" data-cat="学び・調べもの">学び・調べもの<span class="n">20</span></button><button type="button" class="kcat" data-cat="企画・アイデア出し">企画・アイデア出し<span class="n">20</span></button><button type="button" class="kcat" data-cat="家計・健康・生活管理">家計・健康・生活管理<span class="n">20</span></button></div>
+  <p class="khit" id="khit" role="status"></p>
+</div>
+<h2 class="cat" data-cat="日常生活の相談">日常生活の相談</h2>
+<div class="icard" data-cat="日常生活の相談">
   <div class="ih"><span class="num">001</span><span class="ititle">引っ越し準備の抜け漏れチェック</span></div>
   
   <pre class="prompt" id="b1">前提: 来月引っ越しを控えていて、何から手をつければいいか整理できていない状態。
@@ -47,7 +52,7 @@
     <button class="btn ghost sm" data-save="b1" data-name="free-luna-prompts100-001.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="日常生活の相談">
   <div class="ih"><span class="num">002</span><span class="ititle">家族への誕生日プレゼント選び</span></div>
   
   <pre class="prompt" id="b2">前提: 60代の親の誕生日プレゼントを何にするか決めかねている。
@@ -58,7 +63,7 @@
     <button class="btn ghost sm" data-save="b2" data-name="free-luna-prompts100-002.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="日常生活の相談">
   <div class="ih"><span class="num">003</span><span class="ititle">ご近所トラブルの相談文づくり</span></div>
   
   <pre class="prompt" id="b3">前提: 隣家の物音について、角を立てずに伝えたいが言い方に悩んでいる。
@@ -69,7 +74,7 @@
     <button class="btn ghost sm" data-save="b3" data-name="free-luna-prompts100-003.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="日常生活の相談">
   <div class="ih"><span class="num">004</span><span class="ititle">急な冠婚葬祭のマナー確認</span></div>
   
   <pre class="prompt" id="b4">前提: 急にお通夜に参列することになり、香典の相場やマナーが分からない。
@@ -80,7 +85,7 @@
     <button class="btn ghost sm" data-save="b4" data-name="free-luna-prompts100-004.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="日常生活の相談">
   <div class="ih"><span class="num">005</span><span class="ititle">旅行の持ち物リスト作成</span></div>
   
   <pre class="prompt" id="b5">前提: 3泊4日の国内旅行(温泉地・冬)に行く予定で、荷造りに漏れがないか不安。
@@ -91,7 +96,7 @@
     <button class="btn ghost sm" data-save="b5" data-name="free-luna-prompts100-005.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="日常生活の相談">
   <div class="ih"><span class="num">006</span><span class="ititle">子どもの習い事の選び方相談</span></div>
   
   <pre class="prompt" id="b6">前提: 小学2年生の子どもに何か習い事をさせたいが、選択肢が多くて決められない。
@@ -102,7 +107,7 @@
     <button class="btn ghost sm" data-save="b6" data-name="free-luna-prompts100-006.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="日常生活の相談">
   <div class="ih"><span class="num">007</span><span class="ititle">ペットの体調不良の初期対応</span></div>
   
   <pre class="prompt" id="b7">前提: 飼っている犬の元気がなく、病院に行くべきか判断に迷っている。
@@ -113,7 +118,7 @@
     <button class="btn ghost sm" data-save="b7" data-name="free-luna-prompts100-007.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="日常生活の相談">
   <div class="ih"><span class="num">008</span><span class="ititle">近所のおすすめスポット探しの壁打ち</span></div>
   
   <pre class="prompt" id="b8">前提: 休日に家族で出かけたいが、行き先のアイデアが浮かばない。
@@ -124,7 +129,7 @@
     <button class="btn ghost sm" data-save="b8" data-name="free-luna-prompts100-008.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="日常生活の相談">
   <div class="ih"><span class="num">009</span><span class="ititle">苦手な人との会話ネタ探し</span></div>
   
   <pre class="prompt" id="b9">前提: 職場の飲み会で、あまり話したことのない人の隣になりそうで気まずい。
@@ -135,7 +140,7 @@
     <button class="btn ghost sm" data-save="b9" data-name="free-luna-prompts100-009.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="日常生活の相談">
   <div class="ih"><span class="num">010</span><span class="ititle">引っ越し後の近隣挨拶の文面</span></div>
   
   <pre class="prompt" id="b10">前提: 引っ越したばかりで、両隣・上下階への挨拶をどう伝えればいいか分からない。
@@ -146,7 +151,7 @@
     <button class="btn ghost sm" data-save="b10" data-name="free-luna-prompts100-010.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="日常生活の相談">
   <div class="ih"><span class="num">011</span><span class="ititle">生活音トラブルの予防チェック</span></div>
   
   <pre class="prompt" id="b11">前提: 集合住宅に住んでいて、自分の生活音が迷惑になっていないか気になっている。
@@ -157,7 +162,7 @@
     <button class="btn ghost sm" data-save="b11" data-name="free-luna-prompts100-011.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="日常生活の相談">
   <div class="ih"><span class="num">012</span><span class="ititle">親の介護についての相談整理</span></div>
   
   <pre class="prompt" id="b12">前提: 離れて暮らす親の介護が心配になってきたが、何から調べればいいか分からない。
@@ -168,7 +173,7 @@
     <button class="btn ghost sm" data-save="b12" data-name="free-luna-prompts100-012.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="日常生活の相談">
   <div class="ih"><span class="num">013</span><span class="ititle">子どもの反抗期への向き合い方相談</span></div>
   
   <pre class="prompt" id="b13">前提: 思春期の子どもとの会話が減り、どう接すればいいか悩んでいる。
@@ -179,7 +184,7 @@
     <button class="btn ghost sm" data-save="b13" data-name="free-luna-prompts100-013.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="日常生活の相談">
   <div class="ih"><span class="num">014</span><span class="ititle">災害への備えチェック</span></div>
   
   <pre class="prompt" id="b14">前提: 最近地震のニュースが多く、自宅の備えが十分か不安になっている。
@@ -190,7 +195,7 @@
     <button class="btn ghost sm" data-save="b14" data-name="free-luna-prompts100-014.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="日常生活の相談">
   <div class="ih"><span class="num">015</span><span class="ititle">スマホの機種変更で失うデータの確認</span></div>
   
   <pre class="prompt" id="b15">前提: スマホの機種変更を予定しているが、データ移行で失敗しないか不安。
@@ -201,7 +206,7 @@
     <button class="btn ghost sm" data-save="b15" data-name="free-luna-prompts100-015.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="日常生活の相談">
   <div class="ih"><span class="num">016</span><span class="ititle">友人への謝罪メッセージづくり</span></div>
   
   <pre class="prompt" id="b16">前提: うっかり約束をすっぽかしてしまい、友人にきちんと謝りたい。
@@ -212,7 +217,7 @@
     <button class="btn ghost sm" data-save="b16" data-name="free-luna-prompts100-016.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="日常生活の相談">
   <div class="ih"><span class="num">017</span><span class="ititle">初めての一人暮らしの準備リスト</span></div>
   
   <pre class="prompt" id="b17">前提: 来月から初めて一人暮らしを始める予定で、何を揃えればいいか分からない。
@@ -223,7 +228,7 @@
     <button class="btn ghost sm" data-save="b17" data-name="free-luna-prompts100-017.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="日常生活の相談">
   <div class="ih"><span class="num">018</span><span class="ititle">近所付き合いの距離感相談</span></div>
   
   <pre class="prompt" id="b18">前提: 隣人から頻繁に立ち話に誘われ、正直少し負担に感じている。
@@ -234,7 +239,7 @@
     <button class="btn ghost sm" data-save="b18" data-name="free-luna-prompts100-018.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="日常生活の相談">
   <div class="ih"><span class="num">019</span><span class="ititle">親戚づきあいの相談整理</span></div>
   
   <pre class="prompt" id="b19">前提: お盆や正月に集まる親戚づきあいが負担で、程よい関わり方を模索している。
@@ -245,7 +250,7 @@
     <button class="btn ghost sm" data-save="b19" data-name="free-luna-prompts100-019.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="日常生活の相談">
   <div class="ih"><span class="num">020</span><span class="ititle">休日の過ごし方マンネリ解消</span></div>
   
   <pre class="prompt" id="b20">前提: 毎週末が同じような過ごし方になってしまい、マンネリを感じている。
@@ -256,8 +261,8 @@
     <button class="btn ghost sm" data-save="b20" data-name="free-luna-prompts100-020.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">仕事の下書き・文章づくり</h2>
-<div class="icard">
+<h2 class="cat" data-cat="仕事の下書き・文章づくり">仕事の下書き・文章づくり</h2>
+<div class="icard" data-cat="仕事の下書き・文章づくり">
   <div class="ih"><span class="num">021</span><span class="ititle">お詫びメールの下書き</span></div>
   
   <pre class="prompt" id="b21">前提: 納期に遅れが生じてしまい、取引先へお詫びの連絡をしなければならない。
@@ -268,7 +273,7 @@
     <button class="btn ghost sm" data-save="b21" data-name="free-luna-prompts100-021.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="仕事の下書き・文章づくり">
   <div class="ih"><span class="num">022</span><span class="ititle">会議の議事録整理</span></div>
   
   <pre class="prompt" id="b22">前提: 会議のメモ書き(こちらが貼り付ける)が箇条書きで散らかっていて、共有しづらい。
@@ -279,7 +284,7 @@
     <button class="btn ghost sm" data-save="b22" data-name="free-luna-prompts100-022.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="仕事の下書き・文章づくり">
   <div class="ih"><span class="num">023</span><span class="ititle">社内向け告知文の作成</span></div>
   
   <pre class="prompt" id="b23">前提: オフィスのレイアウト変更を全社員に告知する必要がある。
@@ -290,7 +295,7 @@
     <button class="btn ghost sm" data-save="b23" data-name="free-luna-prompts100-023.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="仕事の下書き・文章づくり">
   <div class="ih"><span class="num">024</span><span class="ititle">自己紹介文のブラッシュアップ</span></div>
   
   <pre class="prompt" id="b24">前提: 異動先の自己紹介で使う文章(こちらが下書きを貼る)が硬すぎる気がしている。
@@ -301,7 +306,7 @@
     <button class="btn ghost sm" data-save="b24" data-name="free-luna-prompts100-024.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="仕事の下書き・文章づくり">
   <div class="ih"><span class="num">025</span><span class="ititle">プレゼン資料の構成案作成</span></div>
   
   <pre class="prompt" id="b25">前提: 新企画の社内プレゼンをすることになったが、構成の組み立て方に悩んでいる。
@@ -312,7 +317,7 @@
     <button class="btn ghost sm" data-save="b25" data-name="free-luna-prompts100-025.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="仕事の下書き・文章づくり">
   <div class="ih"><span class="num">026</span><span class="ititle">クレーム対応メールの下書き</span></div>
   
   <pre class="prompt" id="b26">前提: 顧客から届いたクレーム(こちらが貼り付ける)への返信文を考えなければならない。
@@ -323,7 +328,7 @@
     <button class="btn ghost sm" data-save="b26" data-name="free-luna-prompts100-026.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="仕事の下書き・文章づくり">
   <div class="ih"><span class="num">027</span><span class="ititle">求人応募用の志望動機の壁打ち</span></div>
   
   <pre class="prompt" id="b27">前提: 転職活動中で、志望動機の文章がありきたりになってしまう。
@@ -334,7 +339,7 @@
     <button class="btn ghost sm" data-save="b27" data-name="free-luna-prompts100-027.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="仕事の下書き・文章づくり">
   <div class="ih"><span class="num">028</span><span class="ititle">業務マニュアルの下書き整理</span></div>
   
   <pre class="prompt" id="b28">前提: 新人向けの業務手順(こちらが箇条書きで貼る)を、読みやすいマニュアル形式にしたい。
@@ -345,7 +350,7 @@
     <button class="btn ghost sm" data-save="b28" data-name="free-luna-prompts100-028.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="仕事の下書き・文章づくり">
   <div class="ih"><span class="num">029</span><span class="ititle">見積書送付時の添え状文面</span></div>
   
   <pre class="prompt" id="b29">前提: 見積書を送る際のメール本文をどう書けばいいか悩んでいる。
@@ -356,7 +361,7 @@
     <button class="btn ghost sm" data-save="b29" data-name="free-luna-prompts100-029.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="仕事の下書き・文章づくり">
   <div class="ih"><span class="num">030</span><span class="ititle">社内アンケートの質問項目づくり</span></div>
   
   <pre class="prompt" id="b30">前提: 働き方に関する社内アンケートを実施したいが、質問項目が思いつかない。
@@ -367,7 +372,7 @@
     <button class="btn ghost sm" data-save="b30" data-name="free-luna-prompts100-030.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="仕事の下書き・文章づくり">
   <div class="ih"><span class="num">031</span><span class="ititle">上司への相談メッセージの整理</span></div>
   
   <pre class="prompt" id="b31">前提: 業務量について上司に相談したいが、愚痴っぽくならない伝え方が分からない。
@@ -378,7 +383,7 @@
     <button class="btn ghost sm" data-save="b31" data-name="free-luna-prompts100-031.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="仕事の下書き・文章づくり">
   <div class="ih"><span class="num">032</span><span class="ititle">退職の意思を伝える文面の壁打ち</span></div>
   
   <pre class="prompt" id="b32">前提: 近く退職を考えており、上司にどう切り出すか整理したい。
@@ -389,7 +394,7 @@
     <button class="btn ghost sm" data-save="b32" data-name="free-luna-prompts100-032.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="仕事の下書き・文章づくり">
   <div class="ih"><span class="num">033</span><span class="ititle">イベント案内文の作成</span></div>
   
   <pre class="prompt" id="b33">前提: 社内交流イベントの案内をチャットで送る必要がある。
@@ -400,7 +405,7 @@
     <button class="btn ghost sm" data-save="b33" data-name="free-luna-prompts100-033.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="仕事の下書き・文章づくり">
   <div class="ih"><span class="num">034</span><span class="ititle">お礼メールの下書き</span></div>
   
   <pre class="prompt" id="b34">前提: 取引先に会食のお礼を伝えるメールを送りたいが、定型文っぽくなってしまう。
@@ -411,7 +416,7 @@
     <button class="btn ghost sm" data-save="b34" data-name="free-luna-prompts100-034.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="仕事の下書き・文章づくり">
   <div class="ih"><span class="num">035</span><span class="ititle">問い合わせ対応テンプレの整理</span></div>
   
   <pre class="prompt" id="b35">前提: よくある問い合わせ(こちらが箇条書きで貼る)への回答をテンプレ化したい。
@@ -422,7 +427,7 @@
     <button class="btn ghost sm" data-save="b35" data-name="free-luna-prompts100-035.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="仕事の下書き・文章づくり">
   <div class="ih"><span class="num">036</span><span class="ititle">チームへの進捗共有文の作成</span></div>
   
   <pre class="prompt" id="b36">前提: プロジェクトの進捗をチームチャットで共有したいが、まとめ方に悩んでいる。
@@ -433,7 +438,7 @@
     <button class="btn ghost sm" data-save="b36" data-name="free-luna-prompts100-036.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="仕事の下書き・文章づくり">
   <div class="ih"><span class="num">037</span><span class="ititle">採用面接での逆質問リスト作成</span></div>
   
   <pre class="prompt" id="b37">前提: 転職の面接で、企業への逆質問を何にするか考えられていない。
@@ -444,7 +449,7 @@
     <button class="btn ghost sm" data-save="b37" data-name="free-luna-prompts100-037.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="仕事の下書き・文章づくり">
   <div class="ih"><span class="num">038</span><span class="ititle">契約更新のお願いメール文面</span></div>
   
   <pre class="prompt" id="b38">前提: 取引先との契約更新について打診するメールを送りたい。
@@ -455,7 +460,7 @@
     <button class="btn ghost sm" data-save="b38" data-name="free-luna-prompts100-038.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="仕事の下書き・文章づくり">
   <div class="ih"><span class="num">039</span><span class="ititle">研修レポートの下書き整理</span></div>
   
   <pre class="prompt" id="b39">前提: 参加した研修の感想メモ(こちらが箇条書きで貼る)を、提出用レポートに整えたい。
@@ -466,7 +471,7 @@
     <button class="btn ghost sm" data-save="b39" data-name="free-luna-prompts100-039.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="仕事の下書き・文章づくり">
   <div class="ih"><span class="num">040</span><span class="ititle">プロジェクト振り返り文の作成</span></div>
   
   <pre class="prompt" id="b40">前提: 終わったプロジェクトの振り返りを文章にまとめる必要がある。
@@ -477,8 +482,8 @@
     <button class="btn ghost sm" data-save="b40" data-name="free-luna-prompts100-040.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">学び・調べもの</h2>
-<div class="icard">
+<h2 class="cat" data-cat="学び・調べもの">学び・調べもの</h2>
+<div class="icard" data-cat="学び・調べもの">
   <div class="ih"><span class="num">041</span><span class="ititle">難しい専門用語のかみ砕き</span></div>
   
   <pre class="prompt" id="b41">前提: ニュースで出てきた専門用語(こちらが伝える)の意味がよく分からない。
@@ -489,7 +494,7 @@
     <button class="btn ghost sm" data-save="b41" data-name="free-luna-prompts100-041.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="学び・調べもの">
   <div class="ih"><span class="num">042</span><span class="ititle">資格試験の学習計画づくり</span></div>
   
   <pre class="prompt" id="b42">前提: 3ヶ月後に資格試験を控えていて、学習計画が立てられていない。
@@ -500,7 +505,7 @@
     <button class="btn ghost sm" data-save="b42" data-name="free-luna-prompts100-042.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="学び・調べもの">
   <div class="ih"><span class="num">043</span><span class="ititle">読んだ本の内容整理</span></div>
   
   <pre class="prompt" id="b43">前提: 読んだ本の内容(こちらが要点を貼り付ける)を、後で見返しやすい形にまとめたい。
@@ -511,7 +516,7 @@
     <button class="btn ghost sm" data-save="b43" data-name="free-luna-prompts100-043.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="学び・調べもの">
   <div class="ih"><span class="num">044</span><span class="ititle">子どもの宿題の教え方相談</span></div>
   
   <pre class="prompt" id="b44">前提: 子どもの算数の宿題(こちらが問題を伝える)をどう教えればいいか分からない。
@@ -522,7 +527,7 @@
     <button class="btn ghost sm" data-save="b44" data-name="free-luna-prompts100-044.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="学び・調べもの">
   <div class="ih"><span class="num">045</span><span class="ititle">英語学習の壁打ち相手</span></div>
   
   <pre class="prompt" id="b45">前提: 英語の日常会話フレーズ(こちらが伝えるテーマ)を練習したい。
@@ -533,7 +538,7 @@
     <button class="btn ghost sm" data-save="b45" data-name="free-luna-prompts100-045.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="学び・調べもの">
   <div class="ih"><span class="num">046</span><span class="ititle">ニュースの背景理解</span></div>
   
   <pre class="prompt" id="b46">前提: 気になったニュース(こちらが伝える)の背景がよく分からず、表面的にしか理解できていない。
@@ -544,7 +549,7 @@
     <button class="btn ghost sm" data-save="b46" data-name="free-luna-prompts100-046.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="学び・調べもの">
   <div class="ih"><span class="num">047</span><span class="ititle">苦手科目の克服方法相談</span></div>
   
   <pre class="prompt" id="b47">前提: 特定の科目(こちらが伝える)が苦手で、勉強のやり方が分からない。
@@ -555,7 +560,7 @@
     <button class="btn ghost sm" data-save="b47" data-name="free-luna-prompts100-047.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="学び・調べもの">
   <div class="ih"><span class="num">048</span><span class="ititle">料理レシピの手順整理</span></div>
   
   <pre class="prompt" id="b48">前提: 作りたい料理(こちらが伝える)のレシピを、初心者向けに分かりやすくまとめたい。
@@ -566,7 +571,7 @@
     <button class="btn ghost sm" data-save="b48" data-name="free-luna-prompts100-048.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="学び・調べもの">
   <div class="ih"><span class="num">049</span><span class="ititle">家庭菜園の育て方相談</span></div>
   
   <pre class="prompt" id="b49">前提: 初めて育てる野菜(こちらが伝える)の育て方が分からず不安(ベランダなど限られたスペースでの栽培を想定)。
@@ -577,7 +582,7 @@
     <button class="btn ghost sm" data-save="b49" data-name="free-luna-prompts100-049.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="学び・調べもの">
   <div class="ih"><span class="num">050</span><span class="ititle">プログラミング学習の最初の一歩</span></div>
   
   <pre class="prompt" id="b50">前提: プログラミングに興味があるが、何から始めればいいか分からない(非エンジニア)。
@@ -588,7 +593,7 @@
     <button class="btn ghost sm" data-save="b50" data-name="free-luna-prompts100-050.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="学び・調べもの">
   <div class="ih"><span class="num">051</span><span class="ititle">歴史の出来事の因果関係整理</span></div>
   
   <pre class="prompt" id="b51">前提: 歴史の授業で習った出来事(こちらが伝える)の因果関係がよく分からない。
@@ -599,7 +604,7 @@
     <button class="btn ghost sm" data-save="b51" data-name="free-luna-prompts100-051.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="学び・調べもの">
   <div class="ih"><span class="num">052</span><span class="ititle">金融・投資の基礎用語理解</span></div>
   
   <pre class="prompt" id="b52">前提: ニュースでよく出る投資用語(こちらが伝える)の意味を知りたい(具体的な投資助言は不要)。
@@ -610,7 +615,7 @@
     <button class="btn ghost sm" data-save="b52" data-name="free-luna-prompts100-052.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="学び・調べもの">
   <div class="ih"><span class="num">053</span><span class="ititle">楽器の練習メニュー作成</span></div>
   
   <pre class="prompt" id="b53">前提: 楽器(こちらが伝える)の練習を始めたが、何を練習すればいいか分からない。
@@ -621,7 +626,7 @@
     <button class="btn ghost sm" data-save="b53" data-name="free-luna-prompts100-053.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="学び・調べもの">
   <div class="ih"><span class="num">054</span><span class="ititle">プレゼン練習のフィードバック相手</span></div>
   
   <pre class="prompt" id="b54">前提: プレゼンの台本(こちらが貼り付ける)を、話す前に確認してほしい。
@@ -632,7 +637,7 @@
     <button class="btn ghost sm" data-save="b54" data-name="free-luna-prompts100-054.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="学び・調べもの">
   <div class="ih"><span class="num">055</span><span class="ititle">統計・データの読み方相談</span></div>
   
   <pre class="prompt" id="b55">前提: 見かけたグラフやデータ(こちらが伝える内容)の意味を正しく理解できているか不安。
@@ -643,7 +648,7 @@
     <button class="btn ghost sm" data-save="b55" data-name="free-luna-prompts100-055.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="学び・調べもの">
   <div class="ih"><span class="num">056</span><span class="ititle">面接練習の想定質問リスト</span></div>
   
   <pre class="prompt" id="b56">前提: 近く面接を控えていて、想定される質問を整理しておきたい(職種は転職先の業界を想定して考える)。
@@ -654,7 +659,7 @@
     <button class="btn ghost sm" data-save="b56" data-name="free-luna-prompts100-056.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="学び・調べもの">
   <div class="ih"><span class="num">057</span><span class="ititle">要約力を鍛える練習相手</span></div>
   
   <pre class="prompt" id="b57">前提: 長い文章(こちらが貼り付ける)を短くまとめる練習をしたい(仕事のメール・記事など何でもよい)。
@@ -665,7 +670,7 @@
     <button class="btn ghost sm" data-save="b57" data-name="free-luna-prompts100-057.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="学び・調べもの">
   <div class="ih"><span class="num">058</span><span class="ititle">旅行先の歴史・文化の下調べ</span></div>
   
   <pre class="prompt" id="b58">前提: 旅行先(こちらが伝える)について、行く前に知っておくと楽しめる背景を知りたい。
@@ -676,7 +681,7 @@
     <button class="btn ghost sm" data-save="b58" data-name="free-luna-prompts100-058.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="学び・調べもの">
   <div class="ih"><span class="num">059</span><span class="ititle">自由研究のテーマ探し相談</span></div>
   
   <pre class="prompt" id="b59">前提: 子どもの自由研究のテーマが決まらず困っている。
@@ -687,7 +692,7 @@
     <button class="btn ghost sm" data-save="b59" data-name="free-luna-prompts100-059.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="学び・調べもの">
   <div class="ih"><span class="num">060</span><span class="ititle">難しい契約書用語の理解補助</span></div>
   
   <pre class="prompt" id="b60">前提: 契約書に出てくる用語(こちらが伝える)の意味が分からず不安(法的助言ではなく一般的な意味の確認)。
@@ -698,8 +703,8 @@
     <button class="btn ghost sm" data-save="b60" data-name="free-luna-prompts100-060.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">企画・アイデア出し</h2>
-<div class="icard">
+<h2 class="cat" data-cat="企画・アイデア出し">企画・アイデア出し</h2>
+<div class="icard" data-cat="企画・アイデア出し">
   <div class="ih"><span class="num">061</span><span class="ititle">誕生日会の企画案作成</span></div>
   
   <pre class="prompt" id="b61">前提: 家族の誕生日会を企画したいが、いつもと同じ内容になりがち(自宅で開催する想定)。
@@ -710,7 +715,7 @@
     <button class="btn ghost sm" data-save="b61" data-name="free-luna-prompts100-061.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="企画・アイデア出し">
   <div class="ih"><span class="num">062</span><span class="ititle">地域イベントの企画壁打ち</span></div>
   
   <pre class="prompt" id="b62">前提: 町内会のイベント企画を任されたが、アイデアが出てこない(子どもから高齢者まで幅広い参加を想定)。
@@ -721,7 +726,7 @@
     <button class="btn ghost sm" data-save="b62" data-name="free-luna-prompts100-062.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="企画・アイデア出し">
   <div class="ih"><span class="num">063</span><span class="ititle">ブログ記事のネタ出し</span></div>
   
   <pre class="prompt" id="b63">前提: 個人ブログ(こちらが伝えるジャンル)のネタが尽きてきた。週1本更新を目標にしているが、専門知識を前提としない読者向けに書きたい。
@@ -732,7 +737,7 @@
     <button class="btn ghost sm" data-save="b63" data-name="free-luna-prompts100-063.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="企画・アイデア出し">
   <div class="ih"><span class="num">064</span><span class="ititle">新商品のネーミング案出し</span></div>
   
   <pre class="prompt" id="b64">前提: 自作の商品・作品(こちらが伝える特徴)の名前を考えている(個人の副業・趣味レベルの規模感を想定)。
@@ -743,7 +748,7 @@
     <button class="btn ghost sm" data-save="b64" data-name="free-luna-prompts100-064.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="企画・アイデア出し">
   <div class="ih"><span class="num">065</span><span class="ititle">週末の家族イベント企画</span></div>
   
   <pre class="prompt" id="b65">前提: マンネリ気味の週末を変えたく、家族で楽しめる企画を考えたい(小さな子どもがいる家庭を想定)。
@@ -754,7 +759,7 @@
     <button class="btn ghost sm" data-save="b65" data-name="free-luna-prompts100-065.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="企画・アイデア出し">
   <div class="ih"><span class="num">066</span><span class="ititle">フリマ出品文の作成</span></div>
   
   <pre class="prompt" id="b66">前提: フリマアプリに出品する商品(こちらが伝える特徴)の説明文を書きたい。
@@ -765,7 +770,7 @@
     <button class="btn ghost sm" data-save="b66" data-name="free-luna-prompts100-066.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="企画・アイデア出し">
   <div class="ih"><span class="num">067</span><span class="ititle">プレゼント企画のサプライズ演出</span></div>
   
   <pre class="prompt" id="b67">前提: 大切な人への誕生日サプライズを企画したいが、演出のアイデアが浮かばない。
@@ -776,7 +781,7 @@
     <button class="btn ghost sm" data-save="b67" data-name="free-luna-prompts100-067.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="企画・アイデア出し">
   <div class="ih"><span class="num">068</span><span class="ititle">SNS投稿のアイデア出し</span></div>
   
   <pre class="prompt" id="b68">前提: 個人のSNSアカウント(こちらが伝えるテーマ)で、投稿ネタが尽きてきた(フォロワー数はまだ少ない段階)。
@@ -787,7 +792,7 @@
     <button class="btn ghost sm" data-save="b68" data-name="free-luna-prompts100-068.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="企画・アイデア出し">
   <div class="ih"><span class="num">069</span><span class="ititle">手作りギフトのアイデア相談</span></div>
   
   <pre class="prompt" id="b69">前提: 手作りでプレゼントを用意したいが、何を作ればいいか思いつかない(不器用でも取り組める前提で考えたい)。
@@ -798,7 +803,7 @@
     <button class="btn ghost sm" data-save="b69" data-name="free-luna-prompts100-069.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="企画・アイデア出し">
   <div class="ih"><span class="num">070</span><span class="ititle">読書会の議題づくり</span></div>
   
   <pre class="prompt" id="b70">前提: 読書会を主催することになったが、話し合う議題が決められない(参加者は初対面同士が多い)。
@@ -809,7 +814,7 @@
     <button class="btn ghost sm" data-save="b70" data-name="free-luna-prompts100-070.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="企画・アイデア出し">
   <div class="ih"><span class="num">071</span><span class="ititle">自宅カフェ風の空間づくりアイデア</span></div>
   
   <pre class="prompt" id="b71">前提: 自宅の一角をカフェ風にしたいが、何から手をつければいいか分からない(賃貸で原状回復が必要な物件を想定)。
@@ -820,7 +825,7 @@
     <button class="btn ghost sm" data-save="b71" data-name="free-luna-prompts100-071.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="企画・アイデア出し">
   <div class="ih"><span class="num">072</span><span class="ititle">子どもの誕生日パーティー企画</span></div>
   
   <pre class="prompt" id="b72">前提: 子どもの誕生日パーティーを企画したいが、ありきたりになりがち(自宅開催・参加者は同学年の友達数人を想定)。
@@ -831,7 +836,7 @@
     <button class="btn ghost sm" data-save="b72" data-name="free-luna-prompts100-072.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="企画・アイデア出し">
   <div class="ih"><span class="num">073</span><span class="ititle">動画配信のコンテンツ企画</span></div>
   
   <pre class="prompt" id="b73">前提: 趣味で動画配信を始めたいが、企画の方向性が定まらない(週1本の更新ペースを想定している)。
@@ -842,7 +847,7 @@
     <button class="btn ghost sm" data-save="b73" data-name="free-luna-prompts100-073.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="企画・アイデア出し">
   <div class="ih"><span class="num">074</span><span class="ititle">お弁当のレパートリー拡充</span></div>
   
   <pre class="prompt" id="b74">前提: 毎日のお弁当がマンネリで、レパートリーを増やしたい。冷凍食品はなるべく使わず、朝の調理時間は15分以内にしたい。
@@ -853,7 +858,7 @@
     <button class="btn ghost sm" data-save="b74" data-name="free-luna-prompts100-074.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="企画・アイデア出し">
   <div class="ih"><span class="num">075</span><span class="ititle">ハンドメイド作品の販売企画</span></div>
   
   <pre class="prompt" id="b75">前提: 趣味のハンドメイド作品を販売してみたいが、始め方が分からない(まずは小規模に試してみたい段階)。
@@ -864,7 +869,7 @@
     <button class="btn ghost sm" data-save="b75" data-name="free-luna-prompts100-075.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="企画・アイデア出し">
   <div class="ih"><span class="num">076</span><span class="ititle">引っ越し祝いのアイデア出し</span></div>
   
   <pre class="prompt" id="b76">前提: 友人の引っ越し祝いに何を贈ればいいか思いつかない(相手は一人暮らしを始める友人)。
@@ -875,7 +880,7 @@
     <button class="btn ghost sm" data-save="b76" data-name="free-luna-prompts100-076.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="企画・アイデア出し">
   <div class="ih"><span class="num">077</span><span class="ititle">職場の懇親会企画</span></div>
   
   <pre class="prompt" id="b77">前提: 職場の懇親会の幹事を任されたが、企画がマンネリ化している(部署異動があったばかりで初対面同士も多い)。
@@ -886,7 +891,7 @@
     <button class="btn ghost sm" data-save="b77" data-name="free-luna-prompts100-077.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="企画・アイデア出し">
   <div class="ih"><span class="num">078</span><span class="ititle">記念日の過ごし方アイデア</span></div>
   
   <pre class="prompt" id="b78">前提: 結婚記念日など大切な記念日の過ごし方を考えたいが、マンネリ気味(小さな子どもがいるため遠出はしにくい)。
@@ -897,7 +902,7 @@
     <button class="btn ghost sm" data-save="b78" data-name="free-luna-prompts100-078.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="企画・アイデア出し">
   <div class="ih"><span class="num">079</span><span class="ititle">自由な工作アイデア出し</span></div>
   
   <pre class="prompt" id="b79">前提: 子どもと一緒にできる簡単な工作のアイデアが欲しい(未就学児と取り組める内容を想定)。
@@ -908,7 +913,7 @@
     <button class="btn ghost sm" data-save="b79" data-name="free-luna-prompts100-079.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="企画・アイデア出し">
   <div class="ih"><span class="num">080</span><span class="ititle">小さな習慣づくりのアイデア</span></div>
   
   <pre class="prompt" id="b80">前提: 何か新しい良い習慣を始めたいが、続けられるか不安(三日坊主になりがちな性格という前提)。
@@ -919,8 +924,8 @@
     <button class="btn ghost sm" data-save="b80" data-name="free-luna-prompts100-080.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">家計・健康・生活管理</h2>
-<div class="icard">
+<h2 class="cat" data-cat="家計・健康・生活管理">家計・健康・生活管理</h2>
+<div class="icard" data-cat="家計・健康・生活管理">
   <div class="ih"><span class="num">081</span><span class="ititle">家計の固定費見直し相談</span></div>
   
   <pre class="prompt" id="b81">前提: 毎月の固定費(こちらが伝える内訳)を見直したいが、どこから手をつければいいか分からない。
@@ -931,7 +936,7 @@
     <button class="btn ghost sm" data-save="b81" data-name="free-luna-prompts100-081.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="家計・健康・生活管理">
   <div class="ih"><span class="num">082</span><span class="ititle">1週間の献立づくり</span></div>
   
   <pre class="prompt" id="b82">前提: 1週間分の献立を考えるのが毎回大変で、マンネリにもなりがち。
@@ -942,7 +947,7 @@
     <button class="btn ghost sm" data-save="b82" data-name="free-luna-prompts100-082.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="家計・健康・生活管理">
   <div class="ih"><span class="num">083</span><span class="ititle">運動習慣を始める計画づくり</span></div>
   
   <pre class="prompt" id="b83">前提: 運動不足を感じているが、続けられる自信がない。
@@ -953,7 +958,7 @@
     <button class="btn ghost sm" data-save="b83" data-name="free-luna-prompts100-083.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="家計・健康・生活管理">
   <div class="ih"><span class="num">084</span><span class="ititle">睡眠の質を改善する相談</span></div>
   
   <pre class="prompt" id="b84">前提: 最近寝つきが悪く、日中も眠気を感じている(病気の診断は不要、生活習慣の見直し相談)。
@@ -964,7 +969,7 @@
     <button class="btn ghost sm" data-save="b84" data-name="free-luna-prompts100-084.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="家計・健康・生活管理">
   <div class="ih"><span class="num">085</span><span class="ititle">ふるさと納税の使い方整理</span></div>
   
   <pre class="prompt" id="b85">前提: ふるさと納税を使いたいが、仕組みがよく分からない(会社員で年末調整を利用する想定)。
@@ -975,7 +980,7 @@
     <button class="btn ghost sm" data-save="b85" data-name="free-luna-prompts100-085.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="家計・健康・生活管理">
   <div class="ih"><span class="num">086</span><span class="ititle">節約レシピのアイデア出し</span></div>
   
   <pre class="prompt" id="b86">前提: 食費を抑えたいが、レシピのバリエーションが尽きてきた。
@@ -986,7 +991,7 @@
     <button class="btn ghost sm" data-save="b86" data-name="free-luna-prompts100-086.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="家計・健康・生活管理">
   <div class="ih"><span class="num">087</span><span class="ititle">家計簿の項目分けの相談</span></div>
   
   <pre class="prompt" id="b87">前提: 家計簿をつけ始めたいが、項目の分け方に迷っている(夫婦共働きで家計は一部共有の想定)。
@@ -997,7 +1002,7 @@
     <button class="btn ghost sm" data-save="b87" data-name="free-luna-prompts100-087.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="家計・健康・生活管理">
   <div class="ih"><span class="num">088</span><span class="ititle">在宅ワークの姿勢・環境見直し</span></div>
   
   <pre class="prompt" id="b88">前提: 在宅ワークで肩こり・腰痛が気になっている。
@@ -1008,7 +1013,7 @@
     <button class="btn ghost sm" data-save="b88" data-name="free-luna-prompts100-088.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="家計・健康・生活管理">
   <div class="ih"><span class="num">089</span><span class="ititle">水道光熱費の節約アイデア</span></div>
   
   <pre class="prompt" id="b89">前提: 光熱費が高くなってきており、無理なく節約できる方法を知りたい。
@@ -1019,7 +1024,7 @@
     <button class="btn ghost sm" data-save="b89" data-name="free-luna-prompts100-089.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="家計・健康・生活管理">
   <div class="ih"><span class="num">090</span><span class="ititle">健康診断結果の読み方相談</span></div>
   
   <pre class="prompt" id="b90">前提: 健康診断の結果(こちらが伝える数値)の意味がよく分からない(診断や治療の助言ではなく一般知識の確認)。
@@ -1030,7 +1035,7 @@
     <button class="btn ghost sm" data-save="b90" data-name="free-luna-prompts100-090.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="家計・健康・生活管理">
   <div class="ih"><span class="num">091</span><span class="ititle">子どもの食育アイデア</span></div>
   
   <pre class="prompt" id="b91">前提: 子どもの好き嫌いが多く、食育の工夫をしたい(未就学児で野菜嫌いが強い想定)。
@@ -1041,7 +1046,7 @@
     <button class="btn ghost sm" data-save="b91" data-name="free-luna-prompts100-091.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="家計・健康・生活管理">
   <div class="ih"><span class="num">092</span><span class="ititle">防犯対策の見直し</span></div>
   
   <pre class="prompt" id="b92">前提: 自宅の防犯面が心配になってきたが、何を対策すればいいか分からない。
@@ -1052,7 +1057,7 @@
     <button class="btn ghost sm" data-save="b92" data-name="free-luna-prompts100-092.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="家計・健康・生活管理">
   <div class="ih"><span class="num">093</span><span class="ititle">ダイエット計画の壁打ち</span></div>
   
   <pre class="prompt" id="b93">前提: 健康的に体重を落としたいが、無理な計画にならないか不安。
@@ -1063,7 +1068,7 @@
     <button class="btn ghost sm" data-save="b93" data-name="free-luna-prompts100-093.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="家計・健康・生活管理">
   <div class="ih"><span class="num">094</span><span class="ititle">お小遣い帳を子どもに教える方法</span></div>
   
   <pre class="prompt" id="b94">前提: 子どもにお金の管理を教えたいが、どう教えればいいか分からない。
@@ -1074,7 +1079,7 @@
     <button class="btn ghost sm" data-save="b94" data-name="free-luna-prompts100-094.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="家計・健康・生活管理">
   <div class="ih"><span class="num">095</span><span class="ititle">冷蔵庫の整理・食品ロス削減</span></div>
   
   <pre class="prompt" id="b95">前提: 冷蔵庫の中身を把握しきれず、食品を無駄にしてしまうことが多い。
@@ -1085,7 +1090,7 @@
     <button class="btn ghost sm" data-save="b95" data-name="free-luna-prompts100-095.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="家計・健康・生活管理">
   <div class="ih"><span class="num">096</span><span class="ititle">ストレス解消法の相談</span></div>
   
   <pre class="prompt" id="b96">前提: 最近ストレスを感じることが多く、発散方法を知りたい。
@@ -1096,7 +1101,7 @@
     <button class="btn ghost sm" data-save="b96" data-name="free-luna-prompts100-096.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="家計・健康・生活管理">
   <div class="ih"><span class="num">097</span><span class="ititle">保険の見直しポイント整理</span></div>
   
   <pre class="prompt" id="b97">前提: 加入している保険(こちらが伝える内容)が今の生活に合っているか不安(具体的な商品の推奨は不要)。
@@ -1107,7 +1112,7 @@
     <button class="btn ghost sm" data-save="b97" data-name="free-luna-prompts100-097.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="家計・健康・生活管理">
   <div class="ih"><span class="num">098</span><span class="ititle">引き出物・お返しの相場確認</span></div>
   
   <pre class="prompt" id="b98">前提: お祝いをいただいた際のお返しの相場やマナーが分からない(職場の同僚からお祝いをもらった想定)。
@@ -1118,7 +1123,7 @@
     <button class="btn ghost sm" data-save="b98" data-name="free-luna-prompts100-098.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="家計・健康・生活管理">
   <div class="ih"><span class="num">099</span><span class="ititle">在宅時間の家事分担の相談</span></div>
   
   <pre class="prompt" id="b99">前提: 家族内での家事分担がうまくいっておらず、見直したい。
@@ -1129,7 +1134,7 @@
     <button class="btn ghost sm" data-save="b99" data-name="free-luna-prompts100-099.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="家計・健康・生活管理">
   <div class="ih"><span class="num">100</span><span class="ititle">防災用品の消費期限チェック習慣</span></div>
   
   <pre class="prompt" id="b100">前提: 備蓄している防災用品の期限管理ができていない(家族4人分の備蓄を管理している想定)。
@@ -1971,6 +1976,57 @@
 
 以上、100個です。内訳: 日常生活の相談20個／仕事の下書き・文章づくり20個／学び・調べもの20個／企画・アイデア出し20個／家計・健康・生活管理20個。</pre>
 <script>
+// 項目の多いキットで、目的の1件に辿り着けるようにする絞り込み。
+// 検索はタイトル・説明だけでなく本文も対象にする（「あの文言が入っていた項目」で探せるように）。
+(function(){
+  var q = document.getElementById('kq');
+  if (!q) return;
+  var hit = document.getElementById('khit');
+  var cards = [].slice.call(document.querySelectorAll('.kwrap .icard'));
+  var heads = [].slice.call(document.querySelectorAll('.kwrap h2.cat'));
+  var chips = [].slice.call(document.querySelectorAll('.kcat'));
+  var cat = '';
+
+  // ひらがな・カタカナの違いで取りこぼさないようにする（ハブ側の検索と同じ扱い）
+  function norm(s){
+    return (s || '').toLowerCase().replace(/[ぁ-ん]/g, function(c){
+      return String.fromCharCode(c.charCodeAt(0) + 0x60);
+    });
+  }
+
+  // カード全体の textContent だとボタンの「コピー」まで拾ってしまうため、中身を選んで集める
+  cards.forEach(function(c){
+    var t = c.querySelector('.ititle'), d = c.querySelector('.imeta'), p = c.querySelector('.prompt');
+    c._t = norm((t ? t.textContent : '') + ' ' + (d ? d.textContent : '') + ' ' + (p ? p.textContent : ''));
+  });
+
+  function apply(){
+    var kw = norm(q.value.trim()), n = 0, shown = {};
+    cards.forEach(function(c){
+      var ok = (!cat || c.getAttribute('data-cat') === cat)
+            && (!kw || c._t.indexOf(kw) !== -1);
+      c.classList.toggle('hide', !ok);
+      if (ok){ n++; shown[c.getAttribute('data-cat')] = 1; }
+    });
+    // 残った項目が1件も無いカテゴリの見出しは隠す
+    heads.forEach(function(h){
+      h.classList.toggle('hide', !shown[h.getAttribute('data-cat')]);
+    });
+    hit.textContent = (kw || cat)
+      ? (n ? n + '件を表示中' : '該当する項目がありません')
+      : '';
+  }
+
+  q.addEventListener('input', apply);
+  chips.forEach(function(b){
+    b.addEventListener('click', function(){
+      cat = b.getAttribute('data-cat');
+      chips.forEach(function(x){ x.classList.toggle('on', x === b); });
+      apply();
+    });
+  });
+})();
+
 function flash(btn, label){
   const old = btn.textContent, cls = btn.className;
   btn.textContent = label; btn.classList.add('ok');
@@ -2040,7 +2096,22 @@ document.addEventListener('click', e => {
     el.classList.remove('show');
     sessionStorage.setItem('promoClosed', '1');
   }
-  setTimeout(function(){ el.classList.add('show'); }, 1600);
+  // 動画の概要欄から来た人が、自分のプレゼントを探し始める瞬間に被らないようにする。
+  // 以前は読み込み1.6秒後に無条件で出しており、いちばん目的意識の高い時間を塞いでいた。
+  // 中身を見に行った（＝目当てのものに辿り着いた）ころに出す。
+  var shown = false;
+  function show(){
+    if (shown) return;
+    shown = true;
+    el.classList.add('show');
+    removeEventListener('scroll', onScroll);
+  }
+  function onScroll(){
+    if (scrollY > innerHeight * 0.8) show();
+  }
+  addEventListener('scroll', onScroll, {passive:true});
+  // まったくスクロールしない人にも最後には出す（ただし十分に間を置いてから）
+  setTimeout(show, 45000);
   document.getElementById('promoClose').addEventListener('click', function(e){ e.preventDefault(); close(); });
   el.addEventListener('click', function(e){ if (e.target === el) close(); });
 })();

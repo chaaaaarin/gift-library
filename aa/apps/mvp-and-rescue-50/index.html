@@ -35,7 +35,12 @@
     <div class="pnote"><span class="nb">下のカードから、</span><span class="nb">1件ずつコピー、</span><span class="nb">または個別にダウンロードできます。</span><span class="nb">まとめて欲しいときは、</span><span class="nb">上の</span><span class="nb">「全件ダウンロード」を</span><span class="nb">お使いください。</span></div>
   </section>
 
-  <div class="icard">
+  <div class="ktools">
+  <input type="search" id="kq" placeholder="この中から探す" autocomplete="off" aria-label="この中から探す">
+  <div class="kcats"><button type="button" class="kcat on" data-cat="">すべて<span class="n">55</span></button><button type="button" class="kcat" data-cat="作りたいものが定まらないとき">作りたいものが定まらないとき<span class="n">10</span></button><button type="button" class="kcat" data-cat="作り始めで止まったとき">作り始めで止まったとき<span class="n">10</span></button><button type="button" class="kcat" data-cat="エラー・不具合が出たとき">エラー・不具合が出たとき<span class="n">10</span></button><button type="button" class="kcat" data-cat="使いにくさを直すとき">使いにくさを直すとき<span class="n">10</span></button><button type="button" class="kcat" data-cat="最後の2割と公開">最後の2割と公開<span class="n">10</span></button></div>
+  <p class="khit" id="khit" role="status"></p>
+</div>
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">001</span><span class="ititle">ステップ1：題材が自作に向いているか</span></div>
   
   <pre class="prompt" id="b1">□ その作業を、先月10回以上やったか
@@ -51,7 +56,7 @@
     <button class="btn ghost sm" data-save="b1" data-name="mvp-and-rescue-50-001.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">002</span><span class="ititle">ステップ2：機能を1つに削る</span></div>
   
   <pre class="prompt" id="b2">□ 返ってきた計画に、機能が4つ以上並んでいないか
@@ -66,7 +71,7 @@
     <button class="btn ghost sm" data-save="b2" data-name="mvp-and-rescue-50-002.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">003</span><span class="ititle">ステップ3：完成の線を先に引く</span></div>
   
   <pre class="prompt" id="b3">□ 「これができたら仮縫い完成」と1文で言えるか
@@ -80,7 +85,7 @@
     <button class="btn ghost sm" data-save="b3" data-name="mvp-and-rescue-50-003.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">004</span><span class="ititle">ステップ4：作らせる前の最終確認</span></div>
   
   <pre class="prompt" id="b4">□ 自分の環境（パソコンの種類・使えるメモリ・追加課金の可否）を伝えたか
@@ -95,7 +100,7 @@
     <button class="btn ghost sm" data-save="b4" data-name="mvp-and-rescue-50-004.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">005</span><span class="ititle">ステップ5：動いた後にやること</span></div>
   
   <pre class="prompt" id="b5">□ 自分で1週間、毎日使ったか
@@ -111,8 +116,8 @@
     <button class="btn ghost sm" data-save="b5" data-name="mvp-and-rescue-50-005.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">作りたいものが定まらないとき</h2>
-<div class="icard">
+<h2 class="cat" data-cat="作りたいものが定まらないとき">作りたいものが定まらないとき</h2>
+<div class="icard" data-cat="作りたいものが定まらないとき">
   <div class="ih"><span class="num">006</span><span class="ititle">頭の中の不満を作業の名前にする</span></div>
   
   <pre class="prompt" id="b6">頭の中の不満を作業の名前にする
@@ -125,7 +130,7 @@
     <button class="btn ghost sm" data-save="b6" data-name="mvp-and-rescue-50-006.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="作りたいものが定まらないとき">
   <div class="ih"><span class="num">007</span><span class="ititle">似ているサービスから仕様を起こす</span></div>
   
   <pre class="prompt" id="b7">似ているサービスから仕様を起こす
@@ -138,7 +143,7 @@
     <button class="btn ghost sm" data-save="b7" data-name="mvp-and-rescue-50-007.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="作りたいものが定まらないとき">
   <div class="ih"><span class="num">008</span><span class="ititle">使う人を1人に決める</span></div>
   
   <pre class="prompt" id="b8">使う人を1人に決める
@@ -151,7 +156,7 @@
     <button class="btn ghost sm" data-save="b8" data-name="mvp-and-rescue-50-008.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="作りたいものが定まらないとき">
   <div class="ih"><span class="num">009</span><span class="ititle">要件の抜けを質問で埋めさせる</span></div>
   
   <pre class="prompt" id="b9">要件の抜けを質問で埋めさせる
@@ -164,7 +169,7 @@
     <button class="btn ghost sm" data-save="b9" data-name="mvp-and-rescue-50-009.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="作りたいものが定まらないとき">
   <div class="ih"><span class="num">010</span><span class="ititle">2回目の調査で情報を更新する</span></div>
   
   <pre class="prompt" id="b10">2回目の調査で情報を更新する
@@ -177,7 +182,7 @@
     <button class="btn ghost sm" data-save="b10" data-name="mvp-and-rescue-50-010.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="作りたいものが定まらないとき">
   <div class="ih"><span class="num">011</span><span class="ititle">自分の環境を前提に置き直す</span></div>
   
   <pre class="prompt" id="b11">自分の環境を前提に置き直す
@@ -190,7 +195,7 @@
     <button class="btn ghost sm" data-save="b11" data-name="mvp-and-rescue-50-011.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="作りたいものが定まらないとき">
   <div class="ih"><span class="num">012</span><span class="ititle">作らないものを先に決める</span></div>
   
   <pre class="prompt" id="b12">作らないものを先に決める
@@ -203,7 +208,7 @@
     <button class="btn ghost sm" data-save="b12" data-name="mvp-and-rescue-50-012.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="作りたいものが定まらないとき">
   <div class="ih"><span class="num">013</span><span class="ititle">完成条件を自分で確認できる形にする</span></div>
   
   <pre class="prompt" id="b13">完成条件を自分で確認できる形にする
@@ -216,7 +221,7 @@
     <button class="btn ghost sm" data-save="b13" data-name="mvp-and-rescue-50-013.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="作りたいものが定まらないとき">
   <div class="ih"><span class="num">014</span><span class="ititle">先に権利と規約を確認する</span></div>
   
   <pre class="prompt" id="b14">先に権利と規約を確認する
@@ -229,7 +234,7 @@
     <button class="btn ghost sm" data-save="b14" data-name="mvp-and-rescue-50-014.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="作りたいものが定まらないとき">
   <div class="ih"><span class="num">015</span><span class="ititle">既にあるなら作らない判断をする</span></div>
   
   <pre class="prompt" id="b15">既にあるなら作らない判断をする
@@ -242,8 +247,8 @@
     <button class="btn ghost sm" data-save="b15" data-name="mvp-and-rescue-50-015.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">作り始めで止まったとき</h2>
-<div class="icard">
+<h2 class="cat" data-cat="作り始めで止まったとき">作り始めで止まったとき</h2>
+<div class="icard" data-cat="作り始めで止まったとき">
   <div class="ih"><span class="num">016</span><span class="ititle">計画から先に進まないとき</span></div>
   
   <pre class="prompt" id="b16">計画から先に進まないとき
@@ -256,7 +261,7 @@
     <button class="btn ghost sm" data-save="b16" data-name="mvp-and-rescue-50-016.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="作り始めで止まったとき">
   <div class="ih"><span class="num">017</span><span class="ititle">何をされているか分からないとき</span></div>
   
   <pre class="prompt" id="b17">何をされているか分からないとき
@@ -269,7 +274,7 @@
     <button class="btn ghost sm" data-save="b17" data-name="mvp-and-rescue-50-017.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="作り始めで止まったとき">
   <div class="ih"><span class="num">018</span><span class="ititle">知らない言葉が出てきたとき</span></div>
   
   <pre class="prompt" id="b18">知らない言葉が出てきたとき
@@ -282,7 +287,7 @@
     <button class="btn ghost sm" data-save="b18" data-name="mvp-and-rescue-50-018.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="作り始めで止まったとき">
   <div class="ih"><span class="num">019</span><span class="ititle">提案された技術が不安なとき</span></div>
   
   <pre class="prompt" id="b19">提案された技術が不安なとき
@@ -295,7 +300,7 @@
     <button class="btn ghost sm" data-save="b19" data-name="mvp-and-rescue-50-019.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="作り始めで止まったとき">
   <div class="ih"><span class="num">020</span><span class="ititle">動いたか分からないとき</span></div>
   
   <pre class="prompt" id="b20">動いたか分からないとき
@@ -308,7 +313,7 @@
     <button class="btn ghost sm" data-save="b20" data-name="mvp-and-rescue-50-020.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="作り始めで止まったとき">
   <div class="ih"><span class="num">021</span><span class="ititle">途中で方向がずれたとき</span></div>
   
   <pre class="prompt" id="b21">途中で方向がずれたとき
@@ -321,7 +326,7 @@
     <button class="btn ghost sm" data-save="b21" data-name="mvp-and-rescue-50-021.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="作り始めで止まったとき">
   <div class="ih"><span class="num">022</span><span class="ititle">作業が長時間終わらないとき</span></div>
   
   <pre class="prompt" id="b22">作業が長時間終わらないとき
@@ -334,7 +339,7 @@
     <button class="btn ghost sm" data-save="b22" data-name="mvp-and-rescue-50-022.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="作り始めで止まったとき">
   <div class="ih"><span class="num">023</span><span class="ititle">成果物の置き場所が分からないとき</span></div>
   
   <pre class="prompt" id="b23">成果物の置き場所が分からないとき
@@ -347,7 +352,7 @@
     <button class="btn ghost sm" data-save="b23" data-name="mvp-and-rescue-50-023.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="作り始めで止まったとき">
   <div class="ih"><span class="num">024</span><span class="ititle">最初から作り直したいとき</span></div>
   
   <pre class="prompt" id="b24">最初から作り直したいとき
@@ -360,7 +365,7 @@
     <button class="btn ghost sm" data-save="b24" data-name="mvp-and-rescue-50-024.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="作り始めで止まったとき">
   <div class="ih"><span class="num">025</span><span class="ititle">依頼の粒度が分からないとき</span></div>
   
   <pre class="prompt" id="b25">依頼の粒度が分からないとき
@@ -373,8 +378,8 @@
     <button class="btn ghost sm" data-save="b25" data-name="mvp-and-rescue-50-025.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">エラー・不具合が出たとき</h2>
-<div class="icard">
+<h2 class="cat" data-cat="エラー・不具合が出たとき">エラー・不具合が出たとき</h2>
+<div class="icard" data-cat="エラー・不具合が出たとき">
   <div class="ih"><span class="num">026</span><span class="ititle">エラーを丸ごと渡す</span></div>
   
   <pre class="prompt" id="b26">エラーを丸ごと渡す
@@ -387,7 +392,7 @@
     <button class="btn ghost sm" data-save="b26" data-name="mvp-and-rescue-50-026.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="エラー・不具合が出たとき">
   <div class="ih"><span class="num">027</span><span class="ititle">同じエラーが繰り返すとき</span></div>
   
   <pre class="prompt" id="b27">同じエラーが繰り返すとき
@@ -400,7 +405,7 @@
     <button class="btn ghost sm" data-save="b27" data-name="mvp-and-rescue-50-027.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="エラー・不具合が出たとき">
   <div class="ih"><span class="num">028</span><span class="ititle">画面が思った通りにならないとき</span></div>
   
   <pre class="prompt" id="b28">画面が思った通りにならないとき
@@ -413,7 +418,7 @@
     <button class="btn ghost sm" data-save="b28" data-name="mvp-and-rescue-50-028.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="エラー・不具合が出たとき">
   <div class="ih"><span class="num">029</span><span class="ititle">動くけど結果が違うとき</span></div>
   
   <pre class="prompt" id="b29">動くけど結果が違うとき
@@ -426,7 +431,7 @@
     <button class="btn ghost sm" data-save="b29" data-name="mvp-and-rescue-50-029.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="エラー・不具合が出たとき">
   <div class="ih"><span class="num">030</span><span class="ititle">直したら別の場所が壊れたとき</span></div>
   
   <pre class="prompt" id="b30">直したら別の場所が壊れたとき
@@ -439,7 +444,7 @@
     <button class="btn ghost sm" data-save="b30" data-name="mvp-and-rescue-50-030.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="エラー・不具合が出たとき">
   <div class="ih"><span class="num">031</span><span class="ititle">環境の違いで動かないとき</span></div>
   
   <pre class="prompt" id="b31">環境の違いで動かないとき
@@ -452,7 +457,7 @@
     <button class="btn ghost sm" data-save="b31" data-name="mvp-and-rescue-50-031.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="エラー・不具合が出たとき">
   <div class="ih"><span class="num">032</span><span class="ititle">時々しか起きないとき</span></div>
   
   <pre class="prompt" id="b32">時々しか起きないとき
@@ -465,7 +470,7 @@
     <button class="btn ghost sm" data-save="b32" data-name="mvp-and-rescue-50-032.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="エラー・不具合が出たとき">
   <div class="ih"><span class="num">033</span><span class="ititle">遅くて使えないとき</span></div>
   
   <pre class="prompt" id="b33">遅くて使えないとき
@@ -478,7 +483,7 @@
     <button class="btn ghost sm" data-save="b33" data-name="mvp-and-rescue-50-033.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="エラー・不具合が出たとき">
   <div class="ih"><span class="num">034</span><span class="ititle">外部サービスが原因のとき</span></div>
   
   <pre class="prompt" id="b34">外部サービスが原因のとき
@@ -491,7 +496,7 @@
     <button class="btn ghost sm" data-save="b34" data-name="mvp-and-rescue-50-034.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="エラー・不具合が出たとき">
   <div class="ih"><span class="num">035</span><span class="ititle">何を直したか分からなくなったとき</span></div>
   
   <pre class="prompt" id="b35">何を直したか分からなくなったとき
@@ -504,8 +509,8 @@
     <button class="btn ghost sm" data-save="b35" data-name="mvp-and-rescue-50-035.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">使いにくさを直すとき</h2>
-<div class="icard">
+<h2 class="cat" data-cat="使いにくさを直すとき">使いにくさを直すとき</h2>
+<div class="icard" data-cat="使いにくさを直すとき">
   <div class="ih"><span class="num">036</span><span class="ititle">毎回引っかかる場所を直す</span></div>
   
   <pre class="prompt" id="b36">毎回引っかかる場所を直す
@@ -518,7 +523,7 @@
     <button class="btn ghost sm" data-save="b36" data-name="mvp-and-rescue-50-036.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="使いにくさを直すとき">
   <div class="ih"><span class="num">037</span><span class="ititle">操作の手数を減らす</span></div>
   
   <pre class="prompt" id="b37">操作の手数を減らす
@@ -531,7 +536,7 @@
     <button class="btn ghost sm" data-save="b37" data-name="mvp-and-rescue-50-037.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="使いにくさを直すとき">
   <div class="ih"><span class="num">038</span><span class="ititle">見た目を整える</span></div>
   
   <pre class="prompt" id="b38">見た目を整える
@@ -544,7 +549,7 @@
     <button class="btn ghost sm" data-save="b38" data-name="mvp-and-rescue-50-038.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="使いにくさを直すとき">
   <div class="ih"><span class="num">039</span><span class="ititle">入力の手間を減らす</span></div>
   
   <pre class="prompt" id="b39">入力の手間を減らす
@@ -557,7 +562,7 @@
     <button class="btn ghost sm" data-save="b39" data-name="mvp-and-rescue-50-039.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="使いにくさを直すとき">
   <div class="ih"><span class="num">040</span><span class="ititle">間違いを防ぐ</span></div>
   
   <pre class="prompt" id="b40">間違いを防ぐ
@@ -570,7 +575,7 @@
     <button class="btn ghost sm" data-save="b40" data-name="mvp-and-rescue-50-040.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="使いにくさを直すとき">
   <div class="ih"><span class="num">041</span><span class="ititle">表示件数が多すぎるとき</span></div>
   
   <pre class="prompt" id="b41">表示件数が多すぎるとき
@@ -583,7 +588,7 @@
     <button class="btn ghost sm" data-save="b41" data-name="mvp-and-rescue-50-041.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="使いにくさを直すとき">
   <div class="ih"><span class="num">042</span><span class="ititle">スマホで使いにくいとき</span></div>
   
   <pre class="prompt" id="b42">スマホで使いにくいとき
@@ -596,7 +601,7 @@
     <button class="btn ghost sm" data-save="b42" data-name="mvp-and-rescue-50-042.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="使いにくさを直すとき">
   <div class="ih"><span class="num">043</span><span class="ititle">説明がないと使えないとき</span></div>
   
   <pre class="prompt" id="b43">説明がないと使えないとき
@@ -609,7 +614,7 @@
     <button class="btn ghost sm" data-save="b43" data-name="mvp-and-rescue-50-043.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="使いにくさを直すとき">
   <div class="ih"><span class="num">044</span><span class="ititle">使わない機能があるとき</span></div>
   
   <pre class="prompt" id="b44">使わない機能があるとき
@@ -622,7 +627,7 @@
     <button class="btn ghost sm" data-save="b44" data-name="mvp-and-rescue-50-044.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="使いにくさを直すとき">
   <div class="ih"><span class="num">045</span><span class="ititle">データが増えて重いとき</span></div>
   
   <pre class="prompt" id="b45">データが増えて重いとき
@@ -635,8 +640,8 @@
     <button class="btn ghost sm" data-save="b45" data-name="mvp-and-rescue-50-045.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">最後の2割と公開</h2>
-<div class="icard">
+<h2 class="cat" data-cat="最後の2割と公開">最後の2割と公開</h2>
+<div class="icard" data-cat="最後の2割と公開">
   <div class="ih"><span class="num">046</span><span class="ititle">どこで完成にするか決める</span></div>
   
   <pre class="prompt" id="b46">どこで完成にするか決める
@@ -649,7 +654,7 @@
     <button class="btn ghost sm" data-save="b46" data-name="mvp-and-rescue-50-046.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="最後の2割と公開">
   <div class="ih"><span class="num">047</span><span class="ititle">精度を上げる前に測る</span></div>
   
   <pre class="prompt" id="b47">精度を上げる前に測る
@@ -662,7 +667,7 @@
     <button class="btn ghost sm" data-save="b47" data-name="mvp-and-rescue-50-047.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="最後の2割と公開">
   <div class="ih"><span class="num">048</span><span class="ititle">後処理で弱点を補う</span></div>
   
   <pre class="prompt" id="b48">後処理で弱点を補う
@@ -675,7 +680,7 @@
     <button class="btn ghost sm" data-save="b48" data-name="mvp-and-rescue-50-048.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="最後の2割と公開">
   <div class="ih"><span class="num">049</span><span class="ititle">秘密の情報を分ける</span></div>
   
   <pre class="prompt" id="b49">秘密の情報を分ける
@@ -688,7 +693,7 @@
     <button class="btn ghost sm" data-save="b49" data-name="mvp-and-rescue-50-049.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="最後の2割と公開">
   <div class="ih"><span class="num">050</span><span class="ititle">公開の条件を確認する</span></div>
   
   <pre class="prompt" id="b50">公開の条件を確認する
@@ -701,7 +706,7 @@
     <button class="btn ghost sm" data-save="b50" data-name="mvp-and-rescue-50-050.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="最後の2割と公開">
   <div class="ih"><span class="num">051</span><span class="ititle">他人が使える状態にする</span></div>
   
   <pre class="prompt" id="b51">他人が使える状態にする
@@ -714,7 +719,7 @@
     <button class="btn ghost sm" data-save="b51" data-name="mvp-and-rescue-50-051.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="最後の2割と公開">
   <div class="ih"><span class="num">052</span><span class="ititle">使われ方を見られるようにする</span></div>
   
   <pre class="prompt" id="b52">使われ方を見られるようにする
@@ -727,7 +732,7 @@
     <button class="btn ghost sm" data-save="b52" data-name="mvp-and-rescue-50-052.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="最後の2割と公開">
   <div class="ih"><span class="num">053</span><span class="ititle">決め事を残して次に活かす</span></div>
   
   <pre class="prompt" id="b53">決め事を残して次に活かす
@@ -740,7 +745,7 @@
     <button class="btn ghost sm" data-save="b53" data-name="mvp-and-rescue-50-053.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="最後の2割と公開">
   <div class="ih"><span class="num">054</span><span class="ititle">引き継げる形にする</span></div>
   
   <pre class="prompt" id="b54">引き継げる形にする
@@ -753,7 +758,7 @@
     <button class="btn ghost sm" data-save="b54" data-name="mvp-and-rescue-50-054.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="最後の2割と公開">
   <div class="ih"><span class="num">055</span><span class="ititle">次に作るものを決める</span></div>
   
   <pre class="prompt" id="b55">次に作るものを決める
@@ -1149,6 +1154,57 @@
 
 **ポイント**: 詰まったときは、状況を自分で要約せずそのまま渡すのがいちばん速いです。エラー文は省略せず全部貼ってください。</pre>
 <script>
+// 項目の多いキットで、目的の1件に辿り着けるようにする絞り込み。
+// 検索はタイトル・説明だけでなく本文も対象にする（「あの文言が入っていた項目」で探せるように）。
+(function(){
+  var q = document.getElementById('kq');
+  if (!q) return;
+  var hit = document.getElementById('khit');
+  var cards = [].slice.call(document.querySelectorAll('.kwrap .icard'));
+  var heads = [].slice.call(document.querySelectorAll('.kwrap h2.cat'));
+  var chips = [].slice.call(document.querySelectorAll('.kcat'));
+  var cat = '';
+
+  // ひらがな・カタカナの違いで取りこぼさないようにする（ハブ側の検索と同じ扱い）
+  function norm(s){
+    return (s || '').toLowerCase().replace(/[ぁ-ん]/g, function(c){
+      return String.fromCharCode(c.charCodeAt(0) + 0x60);
+    });
+  }
+
+  // カード全体の textContent だとボタンの「コピー」まで拾ってしまうため、中身を選んで集める
+  cards.forEach(function(c){
+    var t = c.querySelector('.ititle'), d = c.querySelector('.imeta'), p = c.querySelector('.prompt');
+    c._t = norm((t ? t.textContent : '') + ' ' + (d ? d.textContent : '') + ' ' + (p ? p.textContent : ''));
+  });
+
+  function apply(){
+    var kw = norm(q.value.trim()), n = 0, shown = {};
+    cards.forEach(function(c){
+      var ok = (!cat || c.getAttribute('data-cat') === cat)
+            && (!kw || c._t.indexOf(kw) !== -1);
+      c.classList.toggle('hide', !ok);
+      if (ok){ n++; shown[c.getAttribute('data-cat')] = 1; }
+    });
+    // 残った項目が1件も無いカテゴリの見出しは隠す
+    heads.forEach(function(h){
+      h.classList.toggle('hide', !shown[h.getAttribute('data-cat')]);
+    });
+    hit.textContent = (kw || cat)
+      ? (n ? n + '件を表示中' : '該当する項目がありません')
+      : '';
+  }
+
+  q.addEventListener('input', apply);
+  chips.forEach(function(b){
+    b.addEventListener('click', function(){
+      cat = b.getAttribute('data-cat');
+      chips.forEach(function(x){ x.classList.toggle('on', x === b); });
+      apply();
+    });
+  });
+})();
+
 function flash(btn, label){
   const old = btn.textContent, cls = btn.className;
   btn.textContent = label; btn.classList.add('ok');
@@ -1218,7 +1274,22 @@ document.addEventListener('click', e => {
     el.classList.remove('show');
     sessionStorage.setItem('promoClosed', '1');
   }
-  setTimeout(function(){ el.classList.add('show'); }, 1600);
+  // 動画の概要欄から来た人が、自分のプレゼントを探し始める瞬間に被らないようにする。
+  // 以前は読み込み1.6秒後に無条件で出しており、いちばん目的意識の高い時間を塞いでいた。
+  // 中身を見に行った（＝目当てのものに辿り着いた）ころに出す。
+  var shown = false;
+  function show(){
+    if (shown) return;
+    shown = true;
+    el.classList.add('show');
+    removeEventListener('scroll', onScroll);
+  }
+  function onScroll(){
+    if (scrollY > innerHeight * 0.8) show();
+  }
+  addEventListener('scroll', onScroll, {passive:true});
+  // まったくスクロールしない人にも最後には出す（ただし十分に間を置いてから）
+  setTimeout(show, 45000);
   document.getElementById('promoClose').addEventListener('click', function(e){ e.preventDefault(); close(); });
   el.addEventListener('click', function(e){ if (e.target === el) close(); });
 })();

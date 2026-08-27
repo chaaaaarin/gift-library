@@ -35,7 +35,12 @@
     <div class="pnote"><span class="nb">下のカードから、</span><span class="nb">1件ずつコピー、</span><span class="nb">または個別にダウンロードできます。</span><span class="nb">まとめて欲しいときは、</span><span class="nb">上の</span><span class="nb">「全件ダウンロード」を</span><span class="nb">お使いください。</span></div>
   </section>
 
-  <div class="icard">
+  <div class="ktools">
+  <input type="search" id="kq" placeholder="この中から探す" autocomplete="off" aria-label="この中から探す">
+  <div class="kcats"><button type="button" class="kcat on" data-cat="">すべて<span class="n">24</span></button><button type="button" class="kcat" data-cat="起動のしかた">起動のしかた<span class="n">5</span></button><button type="button" class="kcat" data-cat="スキルにすると効くもの12選">スキルにすると効くもの12選<span class="n">12</span></button></div>
+  <p class="khit" id="khit" role="status"></p>
+</div>
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">001</span><span class="ititle">Record &amp; Replayとは何か</span></div>
   
   <pre class="prompt" id="b1">自分がPCで実際にやった操作を録画すると、Codexがその流れを読み取って、あとから同じことを再現できる手順書に変えてくれる機能です。この手順書のことをスキルと呼びます。
@@ -45,7 +50,7 @@
     <button class="btn ghost sm" data-save="b1" data-name="record-replay-guide-001.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">002</span><span class="ititle">何が嬉しいのか</span></div>
   
   <pre class="prompt" id="b2">□ 指示の文章を書けなくても自動化できる
@@ -61,8 +66,8 @@
     <button class="btn ghost sm" data-save="b2" data-name="record-replay-guide-002.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">起動のしかた</h2>
-<div class="icard">
+<h2 class="cat" data-cat="起動のしかた">起動のしかた</h2>
+<div class="icard" data-cat="起動のしかた">
   <div class="ih"><span class="num">003</span><span class="ititle">PCでCodexを開き、いつも指示を書いているチャット欄にカーソルを置きます。</span></div>
   
   <pre class="prompt" id="b3">PCでCodexを開き、いつも指示を書いているチャット欄にカーソルを置きます。</pre>
@@ -71,7 +76,7 @@
     <button class="btn ghost sm" data-save="b3" data-name="record-replay-guide-003.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="起動のしかた">
   <div class="ih"><span class="num">004</span><span class="ititle">半角のスラッシュを1つ入力します。使えるコマンドの一覧が出てきます。</span></div>
   
   <pre class="prompt" id="b4">半角のスラッシュを1つ入力します。使えるコマンドの一覧が出てきます。</pre>
@@ -80,7 +85,7 @@
     <button class="btn ghost sm" data-save="b4" data-name="record-replay-guide-004.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="起動のしかた">
   <div class="ih"><span class="num">005</span><span class="ititle">その中から Record &amp; Replay を選びます。</span></div>
   
   <pre class="prompt" id="b5">その中から Record &amp; Replay を選びます。</pre>
@@ -89,7 +94,7 @@
     <button class="btn ghost sm" data-save="b5" data-name="record-replay-guide-005.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="起動のしかた">
   <div class="ih"><span class="num">006</span><span class="ititle">一覧に出てこない場合は、プラグインの設定画面を開き、Record &amp; Replay …</span></div>
   
   <pre class="prompt" id="b6">一覧に出てこない場合は、プラグインの設定画面を開き、Record &amp; Replay を追加してからもう一度スラッシュを入力してください。</pre>
@@ -98,7 +103,7 @@
     <button class="btn ghost sm" data-save="b6" data-name="record-replay-guide-006.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="起動のしかた">
   <div class="ih"><span class="num">007</span><span class="ititle">録画開始を押したら、あとはいつもどおりに作業するだけです。終わったら停止を押します。</span></div>
   
   <pre class="prompt" id="b7">録画開始を押したら、あとはいつもどおりに作業するだけです。終わったら停止を押します。</pre>
@@ -107,7 +112,7 @@
     <button class="btn ghost sm" data-save="b7" data-name="record-replay-guide-007.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">008</span><span class="ititle">録画する前の準備（ここで9割決まる）</span></div>
   
   <pre class="prompt" id="b8">□ 関係ないウィンドウをすべて閉じる
@@ -132,7 +137,7 @@
     <button class="btn ghost sm" data-save="b8" data-name="record-replay-guide-008.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">009</span><span class="ititle">録画中のコツ</span></div>
   
   <pre class="prompt" id="b9">□ 迷わず一本道でやる
@@ -157,7 +162,7 @@
     <button class="btn ghost sm" data-save="b9" data-name="record-replay-guide-009.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">010</span><span class="ititle">録画のあとにやること（ここを飛ばすと使えないスキルになる）</span></div>
   
   <pre class="prompt" id="b10">□ 生成されたスキルを最後まで読む
@@ -184,8 +189,8 @@
     <button class="btn ghost sm" data-save="b10" data-name="record-replay-guide-010.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">スキルにすると効くもの12選</h2>
-<div class="icard">
+<h2 class="cat" data-cat="スキルにすると効くもの12選">スキルにすると効くもの12選</h2>
+<div class="icard" data-cat="スキルにすると効くもの12選">
   <div class="ih"><span class="num">011</span><span class="ititle">カメラ素材の取り込みとリネーム</span></div>
   
   <pre class="prompt" id="b11">カメラ素材の取り込みとリネーム
@@ -195,7 +200,7 @@
     <button class="btn ghost sm" data-save="b11" data-name="record-replay-guide-011.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="スキルにすると効くもの12選">
   <div class="ih"><span class="num">012</span><span class="ititle">動画の無音カットと書き出し</span></div>
   
   <pre class="prompt" id="b12">動画の無音カットと書き出し
@@ -205,7 +210,7 @@
     <button class="btn ghost sm" data-save="b12" data-name="record-replay-guide-012.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="スキルにすると効くもの12選">
   <div class="ih"><span class="num">013</span><span class="ititle">字幕の下書き作成と流し込み</span></div>
   
   <pre class="prompt" id="b13">字幕の下書き作成と流し込み
@@ -215,7 +220,7 @@
     <button class="btn ghost sm" data-save="b13" data-name="record-replay-guide-013.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="スキルにすると効くもの12選">
   <div class="ih"><span class="num">014</span><span class="ititle">請求書の作成と保存</span></div>
   
   <pre class="prompt" id="b14">請求書の作成と保存
@@ -225,7 +230,7 @@
     <button class="btn ghost sm" data-save="b14" data-name="record-replay-guide-014.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="スキルにすると効くもの12選">
   <div class="ih"><span class="num">015</span><span class="ititle">経費レシートの仕分けと集計</span></div>
   
   <pre class="prompt" id="b15">経費レシートの仕分けと集計
@@ -235,7 +240,7 @@
     <button class="btn ghost sm" data-save="b15" data-name="record-replay-guide-015.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="スキルにすると効くもの12選">
   <div class="ih"><span class="num">016</span><span class="ititle">会議の議事録の整形と保存</span></div>
   
   <pre class="prompt" id="b16">会議の議事録の整形と保存
@@ -245,7 +250,7 @@
     <button class="btn ghost sm" data-save="b16" data-name="record-replay-guide-016.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="スキルにすると効くもの12選">
   <div class="ih"><span class="num">017</span><span class="ititle">日報や週報の作成</span></div>
   
   <pre class="prompt" id="b17">日報や週報の作成
@@ -255,7 +260,7 @@
     <button class="btn ghost sm" data-save="b17" data-name="record-replay-guide-017.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="スキルにすると効くもの12選">
   <div class="ih"><span class="num">018</span><span class="ititle">問い合わせへの一次返信の下書き</span></div>
   
   <pre class="prompt" id="b18">問い合わせへの一次返信の下書き
@@ -265,7 +270,7 @@
     <button class="btn ghost sm" data-save="b18" data-name="record-replay-guide-018.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="スキルにすると効くもの12選">
   <div class="ih"><span class="num">019</span><span class="ititle">見積書の作成と履歴の記録</span></div>
   
   <pre class="prompt" id="b19">見積書の作成と履歴の記録
@@ -275,7 +280,7 @@
     <button class="btn ghost sm" data-save="b19" data-name="record-replay-guide-019.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="スキルにすると効くもの12選">
   <div class="ih"><span class="num">020</span><span class="ititle">広告や販売の数値の集計とレポート化</span></div>
   
   <pre class="prompt" id="b20">広告や販売の数値の集計とレポート化
@@ -285,7 +290,7 @@
     <button class="btn ghost sm" data-save="b20" data-name="record-replay-guide-020.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="スキルにすると効くもの12選">
   <div class="ih"><span class="num">021</span><span class="ititle">競合や業界の新着チェックとまとめ</span></div>
   
   <pre class="prompt" id="b21">競合や業界の新着チェックとまとめ
@@ -295,7 +300,7 @@
     <button class="btn ghost sm" data-save="b21" data-name="record-replay-guide-021.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="スキルにすると効くもの12選">
   <div class="ih"><span class="num">022</span><span class="ititle">SNS投稿の下書きと素材そろえ</span></div>
   
   <pre class="prompt" id="b22">SNS投稿の下書きと素材そろえ
@@ -305,7 +310,7 @@
     <button class="btn ghost sm" data-save="b22" data-name="record-replay-guide-022.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">023</span><span class="ititle">うまくいかない時</span></div>
   
   <pre class="prompt" id="b23">□ 録画が長すぎて、途中から再現できない
@@ -333,7 +338,7 @@
     <button class="btn ghost sm" data-save="b23" data-name="record-replay-guide-023.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">024</span><span class="ititle">スマホから呼び出す時の書き方</span></div>
   
   <pre class="prompt" id="b24">ゴールは、スキル名を送るだけで走る状態にすることです。文章で手順を説明する必要はもうありません。
@@ -523,6 +528,57 @@
 **ポイント**: 最初の1本は、失敗しても困らない小さな作業で試してください。録画は数分でも、そのあとの手直しとテスト実行まで含めて初めて使えるスキルになります。
 </pre>
 <script>
+// 項目の多いキットで、目的の1件に辿り着けるようにする絞り込み。
+// 検索はタイトル・説明だけでなく本文も対象にする（「あの文言が入っていた項目」で探せるように）。
+(function(){
+  var q = document.getElementById('kq');
+  if (!q) return;
+  var hit = document.getElementById('khit');
+  var cards = [].slice.call(document.querySelectorAll('.kwrap .icard'));
+  var heads = [].slice.call(document.querySelectorAll('.kwrap h2.cat'));
+  var chips = [].slice.call(document.querySelectorAll('.kcat'));
+  var cat = '';
+
+  // ひらがな・カタカナの違いで取りこぼさないようにする（ハブ側の検索と同じ扱い）
+  function norm(s){
+    return (s || '').toLowerCase().replace(/[ぁ-ん]/g, function(c){
+      return String.fromCharCode(c.charCodeAt(0) + 0x60);
+    });
+  }
+
+  // カード全体の textContent だとボタンの「コピー」まで拾ってしまうため、中身を選んで集める
+  cards.forEach(function(c){
+    var t = c.querySelector('.ititle'), d = c.querySelector('.imeta'), p = c.querySelector('.prompt');
+    c._t = norm((t ? t.textContent : '') + ' ' + (d ? d.textContent : '') + ' ' + (p ? p.textContent : ''));
+  });
+
+  function apply(){
+    var kw = norm(q.value.trim()), n = 0, shown = {};
+    cards.forEach(function(c){
+      var ok = (!cat || c.getAttribute('data-cat') === cat)
+            && (!kw || c._t.indexOf(kw) !== -1);
+      c.classList.toggle('hide', !ok);
+      if (ok){ n++; shown[c.getAttribute('data-cat')] = 1; }
+    });
+    // 残った項目が1件も無いカテゴリの見出しは隠す
+    heads.forEach(function(h){
+      h.classList.toggle('hide', !shown[h.getAttribute('data-cat')]);
+    });
+    hit.textContent = (kw || cat)
+      ? (n ? n + '件を表示中' : '該当する項目がありません')
+      : '';
+  }
+
+  q.addEventListener('input', apply);
+  chips.forEach(function(b){
+    b.addEventListener('click', function(){
+      cat = b.getAttribute('data-cat');
+      chips.forEach(function(x){ x.classList.toggle('on', x === b); });
+      apply();
+    });
+  });
+})();
+
 function flash(btn, label){
   const old = btn.textContent, cls = btn.className;
   btn.textContent = label; btn.classList.add('ok');
@@ -592,7 +648,22 @@ document.addEventListener('click', e => {
     el.classList.remove('show');
     sessionStorage.setItem('promoClosed', '1');
   }
-  setTimeout(function(){ el.classList.add('show'); }, 1600);
+  // 動画の概要欄から来た人が、自分のプレゼントを探し始める瞬間に被らないようにする。
+  // 以前は読み込み1.6秒後に無条件で出しており、いちばん目的意識の高い時間を塞いでいた。
+  // 中身を見に行った（＝目当てのものに辿り着いた）ころに出す。
+  var shown = false;
+  function show(){
+    if (shown) return;
+    shown = true;
+    el.classList.add('show');
+    removeEventListener('scroll', onScroll);
+  }
+  function onScroll(){
+    if (scrollY > innerHeight * 0.8) show();
+  }
+  addEventListener('scroll', onScroll, {passive:true});
+  // まったくスクロールしない人にも最後には出す（ただし十分に間を置いてから）
+  setTimeout(show, 45000);
   document.getElementById('promoClose').addEventListener('click', function(e){ e.preventDefault(); close(); });
   el.addEventListener('click', function(e){ if (e.target === el) close(); });
 })();

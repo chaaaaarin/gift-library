@@ -35,8 +35,13 @@
     <div class="pnote"><span class="nb">下のカードから、</span><span class="nb">1件ずつコピー、</span><span class="nb">または個別にダウンロードできます。</span><span class="nb">まとめて欲しいときは、</span><span class="nb">上の</span><span class="nb">「全件ダウンロード」を</span><span class="nb">お使いください。</span></div>
   </section>
 
-  <h2 class="cat">公式定番</h2>
-<div class="icard">
+  <div class="ktools">
+  <input type="search" id="kq" placeholder="この中から探す" autocomplete="off" aria-label="この中から探す">
+  <div class="kcats"><button type="button" class="kcat on" data-cat="">すべて<span class="n">90</span></button><button type="button" class="kcat" data-cat="公式定番">公式定番<span class="n">24</span></button><button type="button" class="kcat" data-cat="職種特化">職種特化<span class="n">18</span></button><button type="button" class="kcat" data-cat="制作・自動化">制作・自動化<span class="n">18</span></button><button type="button" class="kcat" data-cat="コミュニティ精鋭">コミュニティ精鋭<span class="n">18</span></button><button type="button" class="kcat" data-cat="最新トレンド">最新トレンド<span class="n">12</span></button></div>
+  <p class="khit" id="khit" role="status"></p>
+</div>
+<h2 class="cat" data-cat="公式定番">公式定番</h2>
+<div class="icard" data-cat="公式定番">
   <div class="ih"><span class="num">001</span><span class="ititle">GitHub — 例1</span></div>
   
   <pre class="prompt" id="b1">このリポジトリの未マージのPRを一覧にして、レビュー待ちが長い順に並べて教えて。それぞれ、誰がレビュー待ちで止まっているか、放置されている日数も添えて。</pre>
@@ -45,7 +50,7 @@
     <button class="btn ghost sm" data-save="b1" data-name="plugin-prompts90-001.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="公式定番">
   <div class="ih"><span class="num">002</span><span class="ititle">GitHub — 例2</span></div>
   
   <pre class="prompt" id="b2">このPRの差分を確認して、バグの可能性や設計上の懸念があれば指摘して。良い変更であればそれも伝えつつ、そのままレビューコメントとして投稿できる文面案を作って。</pre>
@@ -54,7 +59,7 @@
     <button class="btn ghost sm" data-save="b2" data-name="plugin-prompts90-002.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="公式定番">
   <div class="ih"><span class="num">003</span><span class="ititle">GitHub — 例3</span></div>
   
   <pre class="prompt" id="b3">直近1週間にクローズされたIssueを一覧化して要約して。バグ報告と機能要望のどちらが多いか、対応に時間がかかった傾向があれば併せて教えて。</pre>
@@ -63,7 +68,7 @@
     <button class="btn ghost sm" data-save="b3" data-name="plugin-prompts90-003.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="公式定番">
   <div class="ih"><span class="num">004</span><span class="ititle">Slack — 例1</span></div>
   
   <pre class="prompt" id="b4">このチャンネルの今日のやり取りを要約して。決定事項と、まだ誰も対応していないタスクを分けてリストにし、タスクには関係してそうな担当者も添えて。</pre>
@@ -72,7 +77,7 @@
     <button class="btn ghost sm" data-save="b4" data-name="plugin-prompts90-004.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="公式定番">
   <div class="ih"><span class="num">005</span><span class="ititle">Slack — 例2</span></div>
   
   <pre class="prompt" id="b5">この質問に対する返信の下書きを、丁寧なトーン・簡潔なトーン・砕けたトーンの3パターンで作って。どれを送るか自分で選びたいので、それぞれ2〜3文程度でお願い。</pre>
@@ -81,7 +86,7 @@
     <button class="btn ghost sm" data-save="b5" data-name="plugin-prompts90-005.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="公式定番">
   <div class="ih"><span class="num">006</span><span class="ititle">Slack — 例3</span></div>
   
   <pre class="prompt" id="b6">自分宛のメンションのうち、まだ返信していないものだけを抽出してリストにして。緊急度が高そうなものには印をつけて、返信の優先順位も提案して。</pre>
@@ -90,7 +95,7 @@
     <button class="btn ghost sm" data-save="b6" data-name="plugin-prompts90-006.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="公式定番">
   <div class="ih"><span class="num">007</span><span class="ititle">Notion — 例1</span></div>
   
   <pre class="prompt" id="b7">この文字起こしをもとにミーティングメモをNotionのページとして整理して。決定事項・宿題（担当者と期限つき）・保留事項の3つに分けて、既存のミーティング議事録と同じ体裁で保存して。</pre>
@@ -99,7 +104,7 @@
     <button class="btn ghost sm" data-save="b7" data-name="plugin-prompts90-007.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="公式定番">
   <div class="ih"><span class="num">008</span><span class="ititle">Notion — 例2</span></div>
   
   <pre class="prompt" id="b8">Notion内で〇〇に関連するページを検索して一覧にして。似た内容が複数見つかった場合は、どれが最新か・重複していないかも確認して教えて。</pre>
@@ -108,7 +113,7 @@
     <button class="btn ghost sm" data-save="b8" data-name="plugin-prompts90-008.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="公式定番">
   <div class="ih"><span class="num">009</span><span class="ititle">Notion — 例3</span></div>
   
   <pre class="prompt" id="b9">このドキュメントの見出し構成を分析して、同じ種類の資料を毎回イチから作らなくていいようにNotionのテンプレートページとして保存して。差し替えが必要な箇所には案内コメントを入れておいて。</pre>
@@ -117,7 +122,7 @@
     <button class="btn ghost sm" data-save="b9" data-name="plugin-prompts90-009.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="公式定番">
   <div class="ih"><span class="num">010</span><span class="ititle">Gmail — 例1</span></div>
   
   <pre class="prompt" id="b10">今日届いたメールの中から、返信が必要なものだけを優先度順にまとめて。自動送信・お知らせメール等の返信不要なものは除外して、締切がありそうなものには理由も添えて。</pre>
@@ -126,7 +131,7 @@
     <button class="btn ghost sm" data-save="b10" data-name="plugin-prompts90-010.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="公式定番">
   <div class="ih"><span class="num">011</span><span class="ititle">Gmail — 例2</span></div>
   
   <pre class="prompt" id="b11">このメールへの返信案を、丁寧だが簡潔なトーンで作って。相手からの質問には全て答えつつ、長くなりすぎないように要点だけに絞って。</pre>
@@ -135,7 +140,7 @@
     <button class="btn ghost sm" data-save="b11" data-name="plugin-prompts90-011.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="公式定番">
   <div class="ih"><span class="num">012</span><span class="ititle">Gmail — 例3</span></div>
   
   <pre class="prompt" id="b12">先週届いたメールの中に、まだ対応できていない依頼が埋もれていないか洗い出して。見落としがあれば、いつ・誰から届いたものか教えて。</pre>
@@ -144,7 +149,7 @@
     <button class="btn ghost sm" data-save="b12" data-name="plugin-prompts90-012.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="公式定番">
   <div class="ih"><span class="num">013</span><span class="ititle">Google Drive — 例1</span></div>
   
   <pre class="prompt" id="b13">ドライブ内から〇〇に関連する資料を検索して候補を一覧にして。ファイルごとに最終更新日と、内容が使い回せそうかどうかの一言コメントも添えて。</pre>
@@ -153,7 +158,7 @@
     <button class="btn ghost sm" data-save="b13" data-name="plugin-prompts90-013.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="公式定番">
   <div class="ih"><span class="num">014</span><span class="ititle">Google Drive — 例2</span></div>
   
   <pre class="prompt" id="b14">このスプレッドシートの内容を要約して。前月・前週との比較で大きく動いている数字があれば指摘して、なぜ動いたか推測できる要因があれば併せて教えて。</pre>
@@ -162,7 +167,7 @@
     <button class="btn ghost sm" data-save="b14" data-name="plugin-prompts90-014.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="公式定番">
   <div class="ih"><span class="num">015</span><span class="ititle">Google Drive — 例3</span></div>
   
   <pre class="prompt" id="b15">この資料を社外・関係者以外に共有する前に、機密情報（金額・個人名・非公開の数字等）が含まれていないか確認して。見つかった場合は該当箇所を具体的に指摘して。</pre>
@@ -171,7 +176,7 @@
     <button class="btn ghost sm" data-save="b15" data-name="plugin-prompts90-015.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="公式定番">
   <div class="ih"><span class="num">016</span><span class="ititle">Google Calendar — 例1</span></div>
   
   <pre class="prompt" id="b16">来週、60分の打ち合わせ枠を3つ、午前中を優先して候補を探して。既存の予定と被らない時間帯を提案し、候補日はできれば分散させて。</pre>
@@ -180,7 +185,7 @@
     <button class="btn ghost sm" data-save="b16" data-name="plugin-prompts90-016.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="公式定番">
   <div class="ih"><span class="num">017</span><span class="ititle">Google Calendar — 例2</span></div>
   
   <pre class="prompt" id="b17">今日の予定を確認して、それぞれの打ち合わせに必要そうな資料や事前確認事項を教えて。準備が間に合わなそうなものがあれば先に教えてほしい。</pre>
@@ -189,7 +194,7 @@
     <button class="btn ghost sm" data-save="b17" data-name="plugin-prompts90-017.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="公式定番">
   <div class="ih"><span class="num">018</span><span class="ititle">Google Calendar — 例3</span></div>
   
   <pre class="prompt" id="b18">今週のスケジュールを見て、2時間以上まとまった集中作業の時間が取れる枠を探し、カレンダーに「集中作業」として確保して。既存の予定は動かさないで。</pre>
@@ -198,7 +203,7 @@
     <button class="btn ghost sm" data-save="b18" data-name="plugin-prompts90-018.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="公式定番">
   <div class="ih"><span class="num">019</span><span class="ititle">Linear — 例1</span></div>
   
   <pre class="prompt" id="b19">このチケットの内容を確認して、実装に着手する前に曖昧な点があれば箇条書きで質問して。全部明確であればそのまま実装方針を提案して。</pre>
@@ -207,7 +212,7 @@
     <button class="btn ghost sm" data-save="b19" data-name="plugin-prompts90-019.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="公式定番">
   <div class="ih"><span class="num">020</span><span class="ititle">Linear — 例2</span></div>
   
   <pre class="prompt" id="b20">このPRに対応するLinearのチケットを探して、レビュー中のステータスに更新して。マージが完了したら完了ステータスに変更するところまでお願い。</pre>
@@ -216,7 +221,7 @@
     <button class="btn ghost sm" data-save="b20" data-name="plugin-prompts90-020.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="公式定番">
   <div class="ih"><span class="num">021</span><span class="ititle">Linear — 例3</span></div>
   
   <pre class="prompt" id="b21">自分にアサインされているチケットを優先度順に一覧にして。締切が近いもの・ブロッカーになっているものが分かるように印をつけて。</pre>
@@ -225,7 +230,7 @@
     <button class="btn ghost sm" data-save="b21" data-name="plugin-prompts90-021.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="公式定番">
   <div class="ih"><span class="num">022</span><span class="ititle">Sentry — 例1</span></div>
   
   <pre class="prompt" id="b22">直近24時間で発生しているエラーを、影響を受けたユーザー数や発生頻度をもとに影響範囲が大きい順に並べて教えて。初めて発生したエラーには印をつけて。</pre>
@@ -234,7 +239,7 @@
     <button class="btn ghost sm" data-save="b22" data-name="plugin-prompts90-022.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="公式定番">
   <div class="ih"><span class="num">023</span><span class="ititle">Sentry — 例2</span></div>
   
   <pre class="prompt" id="b23">このエラーのスタックトレースを確認して、原因になっていそうなコード箇所を特定して。可能であれば修正案を出し、同様のエラーが他にも潜んでいないか併せて確認して。</pre>
@@ -243,7 +248,7 @@
     <button class="btn ghost sm" data-save="b23" data-name="plugin-prompts90-023.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="公式定番">
   <div class="ih"><span class="num">024</span><span class="ititle">Sentry — 例3</span></div>
   
   <pre class="prompt" id="b24">このエラーが、今回のリリース前から発生していたものか、リリース後に新しく増えたものか確認して。新しく増えたものであれば、リリースのどの変更が関係していそうか教えて。</pre>
@@ -252,8 +257,8 @@
     <button class="btn ghost sm" data-save="b24" data-name="plugin-prompts90-024.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">職種特化</h2>
-<div class="icard">
+<h2 class="cat" data-cat="職種特化">職種特化</h2>
+<div class="icard" data-cat="職種特化">
   <div class="ih"><span class="num">025</span><span class="ititle">データ分析 — 例1</span></div>
   
   <pre class="prompt" id="b25">この売上データを分析して、伸びた要因と落ちた要因を分けて教えて。可能であれば商品・チャネルなどの切り口別にも分解して、次にどこを見るべきか提案して。</pre>
@@ -262,7 +267,7 @@
     <button class="btn ghost sm" data-save="b25" data-name="plugin-prompts90-025.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="職種特化">
   <div class="ih"><span class="num">026</span><span class="ititle">データ分析 — 例2</span></div>
   
   <pre class="prompt" id="b26">主要KPI（売上・利用者数・継続率など）の週次ダッシュボードを作って。前週比が一目で分かるようにし、異常値があれば自動でハイライトされる形にして。</pre>
@@ -271,7 +276,7 @@
     <button class="btn ghost sm" data-save="b26" data-name="plugin-prompts90-026.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="職種特化">
   <div class="ih"><span class="num">027</span><span class="ititle">データ分析 — 例3</span></div>
   
   <pre class="prompt" id="b27">先月と比較して、数字が大きく動いた指標を洗い出して教えて。良い方向・悪い方向どちらの変化かも分けて、特に注視すべきものを1つ挙げて。</pre>
@@ -280,7 +285,7 @@
     <button class="btn ghost sm" data-save="b27" data-name="plugin-prompts90-027.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="職種特化">
   <div class="ih"><span class="num">028</span><span class="ititle">クリエイティブ制作 — 例1</span></div>
   
   <pre class="prompt" id="b28">このブリーフをもとに、方向性の異なるキャンペーンボードの案を3つ作って。それぞれどういうコンセプトなのか一言説明も添えて。</pre>
@@ -289,7 +294,7 @@
     <button class="btn ghost sm" data-save="b28" data-name="plugin-prompts90-028.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="職種特化">
   <div class="ih"><span class="num">029</span><span class="ititle">クリエイティブ制作 — 例2</span></div>
   
   <pre class="prompt" id="b29">この広告バナーを、SNS用の正方形・ストーリー用の縦長・バナー広告用の横長の3サイズでバリエーション展開して。文字が見切れないように調整して。</pre>
@@ -298,7 +303,7 @@
     <button class="btn ghost sm" data-save="b29" data-name="plugin-prompts90-029.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="職種特化">
   <div class="ih"><span class="num">030</span><span class="ititle">クリエイティブ制作 — 例3</span></div>
   
   <pre class="prompt" id="b30">この商品のライフスタイル写真を、ECサイトの商品ページでそのまま使える形に整えて。背景や色味を商品が映えるように調整し、複数カット分お願い。</pre>
@@ -307,7 +312,7 @@
     <button class="btn ghost sm" data-save="b30" data-name="plugin-prompts90-030.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="職種特化">
   <div class="ih"><span class="num">031</span><span class="ititle">営業 — 例1</span></div>
   
   <pre class="prompt" id="b31">今フォローすべき優先度の高いアカウントを教えて。直近の重要なシグナル（サイト訪問・メール開封・担当者の異動等）があれば、アカウントごとに添えて。</pre>
@@ -316,7 +321,7 @@
     <button class="btn ghost sm" data-save="b31" data-name="plugin-prompts90-031.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="職種特化">
   <div class="ih"><span class="num">032</span><span class="ititle">営業 — 例2</span></div>
   
   <pre class="prompt" id="b32">この商談の前に確認しておくべき顧客情報をまとめて。過去のやり取り履歴・懸念点・決裁者が誰かが分かるように整理して。</pre>
@@ -325,7 +330,7 @@
     <button class="btn ghost sm" data-save="b32" data-name="plugin-prompts90-032.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="職種特化">
   <div class="ih"><span class="num">033</span><span class="ititle">営業 — 例3</span></div>
   
   <pre class="prompt" id="b33">進行が止まっている、またはリスクのある商談を洗い出して。それぞれ何が原因で止まっていそうか、次にどうフォローすべきか提案して。</pre>
@@ -334,7 +339,7 @@
     <button class="btn ghost sm" data-save="b33" data-name="plugin-prompts90-033.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="職種特化">
   <div class="ih"><span class="num">034</span><span class="ititle">プロダクトデザイン — 例1</span></div>
   
   <pre class="prompt" id="b34">この機能のUI案を、実務で使えるレベルで複数パターン作って。それぞれのメリット・デメリットも一言添えて、比較しやすくして。</pre>
@@ -343,7 +348,7 @@
     <button class="btn ghost sm" data-save="b34" data-name="plugin-prompts90-034.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="職種特化">
   <div class="ih"><span class="num">035</span><span class="ititle">プロダクトデザイン — 例2</span></div>
   
   <pre class="prompt" id="b35">このURLの画面を確認して、ユーザーがゴールに到達するまでのフローを検証して。迷いそうな箇所や離脱しそうな箇所があれば具体的に指摘し、改善案も添えて。</pre>
@@ -352,7 +357,7 @@
     <button class="btn ghost sm" data-save="b35" data-name="plugin-prompts90-035.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="職種特化">
   <div class="ih"><span class="num">036</span><span class="ititle">プロダクトデザイン — 例3</span></div>
   
   <pre class="prompt" id="b36">この静的な画面イメージをもとに、実際にクリック操作できるプロトタイプを作って。主要な画面遷移（一覧→詳細→完了など）だけで構わないので、動きが分かる形にして。</pre>
@@ -361,7 +366,7 @@
     <button class="btn ghost sm" data-save="b36" data-name="plugin-prompts90-036.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="職種特化">
   <div class="ih"><span class="num">037</span><span class="ititle">上場株式投資 — 例1</span></div>
   
   <pre class="prompt" id="b37">この企業の最新決算情報を確認して、前四半期との違いを教えて。売上・利益だけでなく、経営陣のコメントに変化があればそれも教えて。</pre>
@@ -370,7 +375,7 @@
     <button class="btn ghost sm" data-save="b37" data-name="plugin-prompts90-037.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="職種特化">
   <div class="ih"><span class="num">038</span><span class="ititle">上場株式投資 — 例2</span></div>
   
   <pre class="prompt" id="b38">同業他社数社と比較して、この企業の強みと弱みを整理して。財務指標だけでなく、事業戦略上の違いがあれば併せて教えて。</pre>
@@ -379,7 +384,7 @@
     <button class="btn ghost sm" data-save="b38" data-name="plugin-prompts90-038.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="職種特化">
   <div class="ih"><span class="num">039</span><span class="ititle">上場株式投資 — 例3</span></div>
   
   <pre class="prompt" id="b39">この投資仮説について、直近の材料が仮説を裏付ける方向に増えているか、それとも反する材料が出てきているか評価して。根拠となる情報源も添えて。</pre>
@@ -388,7 +393,7 @@
     <button class="btn ghost sm" data-save="b39" data-name="plugin-prompts90-039.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="職種特化">
   <div class="ih"><span class="num">040</span><span class="ititle">投資銀行業務 — 例1</span></div>
   
   <pre class="prompt" id="b40">このディールに関連する類似取引の事例を集めて。取引規模・条件が近いものを優先し、それぞれの取引がどう評価されたかも分かれば添えて。</pre>
@@ -397,7 +402,7 @@
     <button class="btn ghost sm" data-save="b40" data-name="plugin-prompts90-040.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="職種特化">
   <div class="ih"><span class="num">041</span><span class="ititle">投資銀行業務 — 例2</span></div>
   
   <pre class="prompt" id="b41">このデューデリジェンスの結果を、提案資料に反映して。リスクとして指摘された点は、提案側でどう対応する想定かのコメントも添えて。</pre>
@@ -406,7 +411,7 @@
     <button class="btn ghost sm" data-save="b41" data-name="plugin-prompts90-041.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="職種特化">
   <div class="ih"><span class="num">042</span><span class="ititle">投資銀行業務 — 例3</span></div>
   
   <pre class="prompt" id="b42">このピッチ資料の構成案を作って。結論から入り、根拠となるデータ、想定される質問への回答まで一気通貫のストーリーになるようにして。</pre>
@@ -415,8 +420,8 @@
     <button class="btn ghost sm" data-save="b42" data-name="plugin-prompts90-042.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">制作・自動化</h2>
-<div class="icard">
+<h2 class="cat" data-cat="制作・自動化">制作・自動化</h2>
+<div class="icard" data-cat="制作・自動化">
   <div class="ih"><span class="num">043</span><span class="ititle">Figma — 例1</span></div>
   
   <pre class="prompt" id="b43">このFigmaのデザインを読み取って、Reactコンポーネントとして実装して。既存のコンポーネント命名規則があればそれに合わせ、レスポンシブ対応も含めて。</pre>
@@ -425,7 +430,7 @@
     <button class="btn ghost sm" data-save="b43" data-name="plugin-prompts90-043.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="制作・自動化">
   <div class="ih"><span class="num">044</span><span class="ititle">Figma — 例2</span></div>
   
   <pre class="prompt" id="b44">現在の実装がこのFigmaデザインとズレていないか確認して。差分があれば、色・余白・フォントサイズ等どこがズレているか具体的に指摘し、実装側を修正して。</pre>
@@ -434,7 +439,7 @@
     <button class="btn ghost sm" data-save="b44" data-name="plugin-prompts90-044.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="制作・自動化">
   <div class="ih"><span class="num">045</span><span class="ititle">Figma — 例3</span></div>
   
   <pre class="prompt" id="b45">このデザインをもとに、スマホ・タブレット・PCそれぞれで崩れないレスポンシブ対応の画面案を作って。どこがどう変わるかも簡単に説明して。</pre>
@@ -443,7 +448,7 @@
     <button class="btn ghost sm" data-save="b45" data-name="plugin-prompts90-045.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="制作・自動化">
   <div class="ih"><span class="num">046</span><span class="ititle">Vercel — 例1</span></div>
   
   <pre class="prompt" id="b46">このWebアプリをVercelにデプロイして、共有できるURLを発行して。デプロイが成功したかどうかと、実際にアクセスできることまで確認して教えて。</pre>
@@ -452,7 +457,7 @@
     <button class="btn ghost sm" data-save="b46" data-name="plugin-prompts90-046.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="制作・自動化">
   <div class="ih"><span class="num">047</span><span class="ititle">Vercel — 例2</span></div>
   
   <pre class="prompt" id="b47">デプロイ時に出たこのビルドエラーの原因を調べて。ローカルでは動いていたのになぜ失敗したのか、環境変数や依存関係の違いも含めて確認して。</pre>
@@ -461,7 +466,7 @@
     <button class="btn ghost sm" data-save="b47" data-name="plugin-prompts90-047.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="制作・自動化">
   <div class="ih"><span class="num">048</span><span class="ititle">Vercel — 例3</span></div>
   
   <pre class="prompt" id="b48">本番環境で必要な環境変数の設定方法を教えて、実際に設定まで進めて。値そのものは私が入力する場所だけ案内し、画面には表示しないで。</pre>
@@ -470,7 +475,7 @@
     <button class="btn ghost sm" data-save="b48" data-name="plugin-prompts90-048.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="制作・自動化">
   <div class="ih"><span class="num">049</span><span class="ititle">Wix — 例1</span></div>
   
   <pre class="prompt" id="b49">Wixで〇〇のサービスサイトを作って。トップページ・サービス紹介・料金・問い合わせページの4つを含め、スマホで見たときも崩れないか確認して。</pre>
@@ -479,7 +484,7 @@
     <button class="btn ghost sm" data-save="b49" data-name="plugin-prompts90-049.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="制作・自動化">
   <div class="ih"><span class="num">050</span><span class="ititle">Wix — 例2</span></div>
   
   <pre class="prompt" id="b50">このWixサイトに予約機能を追加して。予約可能な曜日・時間帯を設定できるようにし、予約が入ったら通知が来る形にして。</pre>
@@ -488,7 +493,7 @@
     <button class="btn ghost sm" data-save="b50" data-name="plugin-prompts90-050.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="制作・自動化">
   <div class="ih"><span class="num">051</span><span class="ititle">Wix — 例3</span></div>
   
   <pre class="prompt" id="b51">このWixサイトの配色を、このブランドカラーに合わせて調整して。ボタンや見出しなど目立たせたい箇所にはアクセントカラーを使って。</pre>
@@ -497,7 +502,7 @@
     <button class="btn ghost sm" data-save="b51" data-name="plugin-prompts90-051.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="制作・自動化">
   <div class="ih"><span class="num">052</span><span class="ititle">Netlify — 例1</span></div>
   
   <pre class="prompt" id="b52">このサイトをNetlifyに公開して。公開後のURLでちゃんと表示されるか確認し、もし表示崩れがあれば教えて。</pre>
@@ -506,7 +511,7 @@
     <button class="btn ghost sm" data-save="b52" data-name="plugin-prompts90-052.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="制作・自動化">
   <div class="ih"><span class="num">053</span><span class="ititle">Netlify — 例2</span></div>
   
   <pre class="prompt" id="b53">このお問い合わせフォームで入力された内容が、指定したメールアドレスに届くように設定して。送信完了後の画面表示もあわせて作って。</pre>
@@ -515,7 +520,7 @@
     <button class="btn ghost sm" data-save="b53" data-name="plugin-prompts90-053.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="制作・自動化">
   <div class="ih"><span class="num">054</span><span class="ititle">Netlify — 例3</span></div>
   
   <pre class="prompt" id="b54">この処理を行う簡単なAPIエンドポイントをNetlify Functionsとして作って。エラー時にも分かりやすいメッセージが返るようにして。</pre>
@@ -524,7 +529,7 @@
     <button class="btn ghost sm" data-save="b54" data-name="plugin-prompts90-054.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="制作・自動化">
   <div class="ih"><span class="num">055</span><span class="ititle">Codex Security — 例1</span></div>
   
   <pre class="prompt" id="b55">このコードを認証・入力検証・秘密情報の扱い・ログ出力の4つの観点でリスクを洗い出して。それぞれ深刻度と、そのまま使える修正例を添えて。</pre>
@@ -533,7 +538,7 @@
     <button class="btn ghost sm" data-save="b55" data-name="plugin-prompts90-055.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="制作・自動化">
   <div class="ih"><span class="num">056</span><span class="ititle">Codex Security — 例2</span></div>
   
   <pre class="prompt" id="b56">このPRをマージする前に、セキュリティ上の懸念が無いか確認して。問題なければその旨を、問題があれば具体的な箇所と対処法を教えて。</pre>
@@ -542,7 +547,7 @@
     <button class="btn ghost sm" data-save="b56" data-name="plugin-prompts90-056.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="制作・自動化">
   <div class="ih"><span class="num">057</span><span class="ititle">Codex Security — 例3</span></div>
   
   <pre class="prompt" id="b57">このコード内でのAPIキーの扱いが安全か確認して。ハードコーディングや誤って公開される危険な箇所があれば、環境変数化する形で直して。</pre>
@@ -551,7 +556,7 @@
     <button class="btn ghost sm" data-save="b57" data-name="plugin-prompts90-057.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="制作・自動化">
   <div class="ih"><span class="num">058</span><span class="ititle">Record &amp; Replay — 例1</span></div>
   
   <pre class="prompt" id="b58">今から手順を録画で見せます。関係ない画面は閉じ、通知もオフにしてから始めます。録画が終わったら、その内容を再現できる再利用可能なスキルとして作成して。</pre>
@@ -560,7 +565,7 @@
     <button class="btn ghost sm" data-save="b58" data-name="plugin-prompts90-058.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="制作・自動化">
   <div class="ih"><span class="num">059</span><span class="ititle">Record &amp; Replay — 例2</span></div>
   
   <pre class="prompt" id="b59">さっき録画から作ったスキルを、録画時とは別のデータを使って一度テスト実行して。想定通りの結果になったか、途中で止まった箇所がなかったか教えて。</pre>
@@ -569,7 +574,7 @@
     <button class="btn ghost sm" data-save="b59" data-name="plugin-prompts90-059.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="制作・自動化">
   <div class="ih"><span class="num">060</span><span class="ititle">Record &amp; Replay — 例3</span></div>
   
   <pre class="prompt" id="b60">このスキルの中身を確認して、録画時の日付やファイル名がそのまま固定値になっている箇所を、毎回実行時に指定できる項目に書き換えて。</pre>
@@ -578,8 +583,8 @@
     <button class="btn ghost sm" data-save="b60" data-name="plugin-prompts90-060.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">コミュニティ精鋭</h2>
-<div class="icard">
+<h2 class="cat" data-cat="コミュニティ精鋭">コミュニティ精鋭</h2>
+<div class="icard" data-cat="コミュニティ精鋭">
   <div class="ih"><span class="num">061</span><span class="ititle">Matt Pocock&#x27;s Skills — 例1</span></div>
   
   <pre class="prompt" id="b61">作りたいものはあるのですが、要件がまだ固まっていません。1つずつ質問しながら壁打ち形式で要件を明確にしていってください。対象ユーザー・解決したい課題・完成の条件が見えるまで進めて。</pre>
@@ -588,7 +593,7 @@
     <button class="btn ghost sm" data-save="b61" data-name="plugin-prompts90-061.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="コミュニティ精鋭">
   <div class="ih"><span class="num">062</span><span class="ititle">Matt Pocock&#x27;s Skills — 例2</span></div>
   
   <pre class="prompt" id="b62">このプロジェクトに新しい機能を追加します。テスト駆動開発(TDD)のやり方で、先にテストを書いてから実装を進めて。テストが通ることを確認してから完了報告して。</pre>
@@ -597,7 +602,7 @@
     <button class="btn ghost sm" data-save="b62" data-name="plugin-prompts90-062.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="コミュニティ精鋭">
   <div class="ih"><span class="num">063</span><span class="ititle">Matt Pocock&#x27;s Skills — 例3</span></div>
   
   <pre class="prompt" id="b63">この設計・計画案を見て、曖昧な部分やまだ詰め切れていない部分をインタビュー形式で質問して。より明確で鋭い計画になるまで、遠慮なく突っ込んで。</pre>
@@ -606,7 +611,7 @@
     <button class="btn ghost sm" data-save="b63" data-name="plugin-prompts90-063.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="コミュニティ精鋭">
   <div class="ih"><span class="num">064</span><span class="ititle">Superpowers — 例1</span></div>
   
   <pre class="prompt" id="b64">このタスクを、いきなり実装に入らずに計画→実装→レビュー→検証の流れで進めて。各段階が終わったら一度区切りを教えてから次に進んで。</pre>
@@ -615,7 +620,7 @@
     <button class="btn ghost sm" data-save="b64" data-name="plugin-prompts90-064.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="コミュニティ精鋭">
   <div class="ih"><span class="num">065</span><span class="ititle">Superpowers — 例2</span></div>
   
   <pre class="prompt" id="b65">この設計に対して、あえて反対の立場（この設計だとうまくいかない、という前提）からレビューして。見落としているリスクや弱点があれば洗い出して。</pre>
@@ -624,7 +629,7 @@
     <button class="btn ghost sm" data-save="b65" data-name="plugin-prompts90-065.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="コミュニティ精鋭">
   <div class="ih"><span class="num">066</span><span class="ititle">Superpowers — 例3</span></div>
   
   <pre class="prompt" id="b66">この実装を実際にブラウザで操作して動作確認して。見た目の崩れや操作時のエラーがあれば、その場で修正まで進めて。</pre>
@@ -633,7 +638,7 @@
     <button class="btn ghost sm" data-save="b66" data-name="plugin-prompts90-066.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="コミュニティ精鋭">
   <div class="ih"><span class="num">067</span><span class="ititle">Context7 — 例1</span></div>
   
   <pre class="prompt" id="b67">このライブラリを使う前に、Context7で最新の公式ドキュメントを参照して。学習データの古い情報と食い違いがないか確認し、バージョンが変わっていればその点も教えてから実装を進めて。</pre>
@@ -642,7 +647,7 @@
     <button class="btn ghost sm" data-save="b67" data-name="plugin-prompts90-067.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="コミュニティ精鋭">
   <div class="ih"><span class="num">068</span><span class="ititle">Context7 — 例2</span></div>
   
   <pre class="prompt" id="b68">このエラーが、使っているライブラリのバージョン違いによるものか確認して。最新ドキュメントと照らし合わせて、原因がバージョン差異でなければ他の可能性も探って。</pre>
@@ -651,7 +656,7 @@
     <button class="btn ghost sm" data-save="b68" data-name="plugin-prompts90-068.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="コミュニティ精鋭">
   <div class="ih"><span class="num">069</span><span class="ititle">Context7 — 例3</span></div>
   
   <pre class="prompt" id="b69">このコードで使われているAPIが、最新のドキュメント上で非推奨（deprecated）になっていないか確認して。なっていれば、推奨されている置き換え方法も教えて。</pre>
@@ -660,7 +665,7 @@
     <button class="btn ghost sm" data-save="b69" data-name="plugin-prompts90-069.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="コミュニティ精鋭">
   <div class="ih"><span class="num">070</span><span class="ititle">Firecrawl — 例1</span></div>
   
   <pre class="prompt" id="b70">このURLの内容を、AIが読みやすい構造化された形式（見出し・本文・リンク）で取得して。取得した内容から、要点を3〜5行で教えて。</pre>
@@ -669,7 +674,7 @@
     <button class="btn ghost sm" data-save="b70" data-name="plugin-prompts90-070.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="コミュニティ精鋭">
   <div class="ih"><span class="num">071</span><span class="ititle">Firecrawl — 例2</span></div>
   
   <pre class="prompt" id="b71">この競合数社の料金ページをスクレイピングして、プラン名・価格・主な機能が一目で分かる比較表にして。自社のプランも同じ表に並べて。</pre>
@@ -678,7 +683,7 @@
     <button class="btn ghost sm" data-save="b71" data-name="plugin-prompts90-071.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="コミュニティ精鋭">
   <div class="ih"><span class="num">072</span><span class="ititle">Firecrawl — 例3</span></div>
   
   <pre class="prompt" id="b72">このサイト内を検索して、〇〇に関連するページをすべて洗い出して。それぞれ何が書かれているか要約し、重複している情報があれば教えて。</pre>
@@ -687,7 +692,7 @@
     <button class="btn ghost sm" data-save="b72" data-name="plugin-prompts90-072.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="コミュニティ精鋭">
   <div class="ih"><span class="num">073</span><span class="ititle">Composio — 例1</span></div>
   
   <pre class="prompt" id="b73">この作業を進めるのに必要な外部サービス（複数ある想定）との連携を、Composio経由でまとめて設定して。認証が必要なものは、どの手順で進めればいいか案内して。</pre>
@@ -696,7 +701,7 @@
     <button class="btn ghost sm" data-save="b73" data-name="plugin-prompts90-073.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="コミュニティ精鋭">
   <div class="ih"><span class="num">074</span><span class="ititle">Composio — 例2</span></div>
   
   <pre class="prompt" id="b74">現在Composio経由で接続しているサービスの一覧を確認して。直近しばらく使っていなさそうなものがあれば教えて、外していいか判断材料も添えて。</pre>
@@ -705,7 +710,7 @@
     <button class="btn ghost sm" data-save="b74" data-name="plugin-prompts90-074.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="コミュニティ精鋭">
   <div class="ih"><span class="num">075</span><span class="ititle">Composio — 例3</span></div>
   
   <pre class="prompt" id="b75">このタスクを、複数のSaaSをまたいで自動化する方法を提案して。どのサービスのどの機能を、どんな順番でつなげば実現できるか、具体的な手順で示して。</pre>
@@ -714,7 +719,7 @@
     <button class="btn ghost sm" data-save="b75" data-name="plugin-prompts90-075.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="コミュニティ精鋭">
   <div class="ih"><span class="num">076</span><span class="ititle">GitNexus — 例1</span></div>
   
   <pre class="prompt" id="b76">このリポジトリ全体を知識グラフ化して。主要なモジュール同士がどう依存し合っているか教えて、特に依存が集中していて変更時にリスクが高そうな箇所があれば指摘して。</pre>
@@ -723,7 +728,7 @@
     <button class="btn ghost sm" data-save="b76" data-name="plugin-prompts90-076.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="コミュニティ精鋭">
   <div class="ih"><span class="num">077</span><span class="ititle">GitNexus — 例2</span></div>
   
   <pre class="prompt" id="b77">この関数を変更した場合、直接・間接的に影響が及ぶ範囲を洗い出して。テストを重点的に見ておくべき箇所があれば併せて教えて。</pre>
@@ -732,7 +737,7 @@
     <button class="btn ghost sm" data-save="b77" data-name="plugin-prompts90-077.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="コミュニティ精鋭">
   <div class="ih"><span class="num">078</span><span class="ititle">GitNexus — 例3</span></div>
   
   <pre class="prompt" id="b78">このコードベースの全体構造を、今日から参加するメンバー向けに説明して。どこから読み始めるとよいか、主要なディレクトリの役割も含めて教えて。</pre>
@@ -741,8 +746,8 @@
     <button class="btn ghost sm" data-save="b78" data-name="plugin-prompts90-078.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">最新トレンド</h2>
-<div class="icard">
+<h2 class="cat" data-cat="最新トレンド">最新トレンド</h2>
+<div class="icard" data-cat="最新トレンド">
   <div class="ih"><span class="num">079</span><span class="ititle">ChatCut — 例1</span></div>
   
   <pre class="prompt" id="b79">Codexをビデオエディターに変えて、読んで。導入できたら、この動画素材を読み込んで中身を確認してから、どう編集したいか聞いて。</pre>
@@ -751,7 +756,7 @@
     <button class="btn ghost sm" data-save="b79" data-name="plugin-prompts90-079.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="最新トレンド">
   <div class="ih"><span class="num">080</span><span class="ititle">ChatCut — 例2</span></div>
   
   <pre class="prompt" id="b80">この動画素材を確認して、しゃべっていない・間延びしている区間を検出して削り、テンポの良い状態で書き出して。カットしすぎて不自然にならないよう、前後に少し余白を残して。</pre>
@@ -760,7 +765,7 @@
     <button class="btn ghost sm" data-save="b80" data-name="plugin-prompts90-080.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="最新トレンド">
   <div class="ih"><span class="num">081</span><span class="ititle">ChatCut — 例3</span></div>
   
   <pre class="prompt" id="b81">この台本をもとに、字幕付きの短尺動画に編集して。台本の言葉と実際の音声がズレていないか確認しながら、読みやすい位置に字幕を配置して。</pre>
@@ -769,7 +774,7 @@
     <button class="btn ghost sm" data-save="b81" data-name="plugin-prompts90-081.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="最新トレンド">
   <div class="ih"><span class="num">082</span><span class="ititle">Build iOS Apps — 例1</span></div>
   
   <pre class="prompt" id="b82">このiOSアプリをアプリ内ブラウザで開いて、主要な画面を一通り操作して動作確認して。エラーや表示崩れがあれば、どの画面のどの操作で起きたか教えて。</pre>
@@ -778,7 +783,7 @@
     <button class="btn ghost sm" data-save="b82" data-name="plugin-prompts90-082.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="最新トレンド">
   <div class="ih"><span class="num">083</span><span class="ititle">Build iOS Apps — 例2</span></div>
   
   <pre class="prompt" id="b83">このSwiftUIの画面をプレビューして、端末サイズを変えたときにレイアウトが崩れないか確認して。崩れている箇所があれば、その場で修正まで進めて。</pre>
@@ -787,7 +792,7 @@
     <button class="btn ghost sm" data-save="b83" data-name="plugin-prompts90-083.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="最新トレンド">
   <div class="ih"><span class="num">084</span><span class="ititle">Build iOS Apps — 例3</span></div>
   
   <pre class="prompt" id="b84">この修正をホットリロードで反映して、変更前後でどう見た目が変わったか比較できる形で見せて。</pre>
@@ -796,7 +801,7 @@
     <button class="btn ghost sm" data-save="b84" data-name="plugin-prompts90-084.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="最新トレンド">
   <div class="ih"><span class="num">085</span><span class="ititle">codex-plugin-cc — 例1</span></div>
   
   <pre class="prompt" id="b85">/codex:review を使って、今Claude Codeで進めているこの実装をCodexにレビューさせて。指摘があれば、Claude Code側でどう直すべきか一緒に整理して。</pre>
@@ -805,7 +810,7 @@
     <button class="btn ghost sm" data-save="b85" data-name="plugin-prompts90-085.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="最新トレンド">
   <div class="ih"><span class="num">086</span><span class="ititle">codex-plugin-cc — 例2</span></div>
   
   <pre class="prompt" id="b86">/codex:rescue を使って、このバグの調査をCodexに任せて。調査が終わるまでの間、私はClaude Codeで別の作業を進めておく。</pre>
@@ -814,7 +819,7 @@
     <button class="btn ghost sm" data-save="b86" data-name="plugin-prompts90-086.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="最新トレンド">
   <div class="ih"><span class="num">087</span><span class="ititle">codex-plugin-cc — 例3</span></div>
   
   <pre class="prompt" id="b87">/codex:status で、バックグラウンドで動いているCodexのジョブの進捗を確認して。終わっていれば /codex:result で結果を受け取って。</pre>
@@ -823,7 +828,7 @@
     <button class="btn ghost sm" data-save="b87" data-name="plugin-prompts90-087.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="最新トレンド">
   <div class="ih"><span class="num">088</span><span class="ititle">Codex profiles — 例1</span></div>
   
   <pre class="prompt" id="b88">自分のCodexプロフィールを確認して、直近の活用状況（連続記録・トークン量・よく使っているプラグイン）を教えて。使い方に偏りがあれば指摘して。</pre>
@@ -832,7 +837,7 @@
     <button class="btn ghost sm" data-save="b88" data-name="plugin-prompts90-088.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="最新トレンド">
   <div class="ih"><span class="num">089</span><span class="ititle">Codex profiles — 例2</span></div>
   
   <pre class="prompt" id="b89">自分がよく使っているプラグインの傾向を教えて。その使い方から見て、他に試すと相性が良さそうなプラグインがあれば理由つきで提案して。</pre>
@@ -841,7 +846,7 @@
     <button class="btn ghost sm" data-save="b89" data-name="plugin-prompts90-089.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="最新トレンド">
   <div class="ih"><span class="num">090</span><span class="ititle">Codex profiles — 例3</span></div>
   
   <pre class="prompt" id="b90">このプロフィールカードを、チームに共有しても恥ずかしくない見た目に整えて。個人的すぎる情報が含まれていれば教えて。</pre>
@@ -1238,6 +1243,57 @@ Codexをビデオエディターに変えて、読んで。導入できたら、
 
 </pre>
 <script>
+// 項目の多いキットで、目的の1件に辿り着けるようにする絞り込み。
+// 検索はタイトル・説明だけでなく本文も対象にする（「あの文言が入っていた項目」で探せるように）。
+(function(){
+  var q = document.getElementById('kq');
+  if (!q) return;
+  var hit = document.getElementById('khit');
+  var cards = [].slice.call(document.querySelectorAll('.kwrap .icard'));
+  var heads = [].slice.call(document.querySelectorAll('.kwrap h2.cat'));
+  var chips = [].slice.call(document.querySelectorAll('.kcat'));
+  var cat = '';
+
+  // ひらがな・カタカナの違いで取りこぼさないようにする（ハブ側の検索と同じ扱い）
+  function norm(s){
+    return (s || '').toLowerCase().replace(/[ぁ-ん]/g, function(c){
+      return String.fromCharCode(c.charCodeAt(0) + 0x60);
+    });
+  }
+
+  // カード全体の textContent だとボタンの「コピー」まで拾ってしまうため、中身を選んで集める
+  cards.forEach(function(c){
+    var t = c.querySelector('.ititle'), d = c.querySelector('.imeta'), p = c.querySelector('.prompt');
+    c._t = norm((t ? t.textContent : '') + ' ' + (d ? d.textContent : '') + ' ' + (p ? p.textContent : ''));
+  });
+
+  function apply(){
+    var kw = norm(q.value.trim()), n = 0, shown = {};
+    cards.forEach(function(c){
+      var ok = (!cat || c.getAttribute('data-cat') === cat)
+            && (!kw || c._t.indexOf(kw) !== -1);
+      c.classList.toggle('hide', !ok);
+      if (ok){ n++; shown[c.getAttribute('data-cat')] = 1; }
+    });
+    // 残った項目が1件も無いカテゴリの見出しは隠す
+    heads.forEach(function(h){
+      h.classList.toggle('hide', !shown[h.getAttribute('data-cat')]);
+    });
+    hit.textContent = (kw || cat)
+      ? (n ? n + '件を表示中' : '該当する項目がありません')
+      : '';
+  }
+
+  q.addEventListener('input', apply);
+  chips.forEach(function(b){
+    b.addEventListener('click', function(){
+      cat = b.getAttribute('data-cat');
+      chips.forEach(function(x){ x.classList.toggle('on', x === b); });
+      apply();
+    });
+  });
+})();
+
 function flash(btn, label){
   const old = btn.textContent, cls = btn.className;
   btn.textContent = label; btn.classList.add('ok');
@@ -1307,7 +1363,22 @@ document.addEventListener('click', e => {
     el.classList.remove('show');
     sessionStorage.setItem('promoClosed', '1');
   }
-  setTimeout(function(){ el.classList.add('show'); }, 1600);
+  // 動画の概要欄から来た人が、自分のプレゼントを探し始める瞬間に被らないようにする。
+  // 以前は読み込み1.6秒後に無条件で出しており、いちばん目的意識の高い時間を塞いでいた。
+  // 中身を見に行った（＝目当てのものに辿り着いた）ころに出す。
+  var shown = false;
+  function show(){
+    if (shown) return;
+    shown = true;
+    el.classList.add('show');
+    removeEventListener('scroll', onScroll);
+  }
+  function onScroll(){
+    if (scrollY > innerHeight * 0.8) show();
+  }
+  addEventListener('scroll', onScroll, {passive:true});
+  // まったくスクロールしない人にも最後には出す（ただし十分に間を置いてから）
+  setTimeout(show, 45000);
   document.getElementById('promoClose').addEventListener('click', function(e){ e.preventDefault(); close(); });
   el.addEventListener('click', function(e){ if (e.target === el) close(); });
 })();

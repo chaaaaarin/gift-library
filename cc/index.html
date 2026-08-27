@@ -31,25 +31,8 @@
     <aside class="side">
       <div class="grp"><h3>キーワード検索</h3>
         <input id="q" type="search" placeholder="例: 動画タイトル、プロンプト、設定" autocomplete="off"></div>
-      <details class="grp type-grp" open><summary>種別でしぼる</summary>
-        <div class="grp-body"><label><input type="radio" name="type" value="" checked>すべて<span class="n">100</span></label><label><input type="radio" name="type" value="プロンプト集">プロンプト集<span class="n">30</span></label><label><input type="radio" name="type" value="設定・スニペット">設定・スニペット<span class="n">16</span></label><label><input type="radio" name="type" value="早見表・逆引き">早見表・逆引き<span class="n">11</span></label><label><input type="radio" name="type" value="テンプレート">テンプレート<span class="n">19</span></label><label><input type="radio" name="type" value="チェックリスト">チェックリスト<span class="n">17</span></label><label><input type="radio" name="type" value="判断シート">判断シート<span class="n">3</span></label><label><input type="radio" name="type" value="ワークフロー">ワークフロー<span class="n">4</span></label></div></details>
-      <script>
-      /* details は閉じている間、中身をCSSで display:block にしても描画されない
-         （要素の高さが summary のぶんだけになり、中身は枠外扱いで消える）。
-         2026-08-25にモバイル用の折りたたみを入れた際、広い画面では中身をCSSで
-         出すつもりが、この仕様のため種別しぼり込みが両チャンネルとも消えていた。
-         そこで「常に open で出し、狭い画面のときだけ閉じる」向きに変えている。
-         HTMLをopenで出しているのでJSが動かなくても広い画面では表示される。
-         畳む前に描画されないよう、要素の直後で実行する。 */
-      (function(){
-        var d = document.querySelector('.type-grp');
-        if (!d) return;
-        var mq = matchMedia('(max-width:900px)');
-        var apply = function(){ d.open = !mq.matches; };
-        apply();
-        mq.addEventListener('change', apply);
-      })();
-      </script>
+      <div class="grp type-grp"><h3>種別でしぼる</h3>
+        <div class="grp-body"><label><input type="radio" name="type" value="" checked>すべて<span class="n">100</span></label><label><input type="radio" name="type" value="プロンプト集">プロンプト集<span class="n">30</span></label><label><input type="radio" name="type" value="設定・スニペット">設定・スニペット<span class="n">16</span></label><label><input type="radio" name="type" value="早見表・逆引き">早見表・逆引き<span class="n">11</span></label><label><input type="radio" name="type" value="テンプレート">テンプレート<span class="n">19</span></label><label><input type="radio" name="type" value="チェックリスト">チェックリスト<span class="n">17</span></label><label><input type="radio" name="type" value="判断シート">判断シート<span class="n">3</span></label><label><input type="radio" name="type" value="ワークフロー">ワークフロー<span class="n">4</span></label></div></div>
       <div class="grp"><h3>並び順</h3>
         <div class="selwrap"><select id="sort">
           <option value="new">投稿が新しい順</option>
@@ -64,7 +47,7 @@
   <footer>ClaudeCodeチャンネル — プレゼント図書館</footer>
 </div>
 
-<script src="data.js?v=aab21c039edd"></script>
+<script src="data.js?v=0880f2e0d0ba"></script>
 <script>
 window.ICONS = {"プロンプト集": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M4 5h16v11H8l-4 4V5Z\"/><path d=\"M8 9h8M8 12.5h5\"/></svg>", "設定・スニペット": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M9 8l-4 4 4 4M15 8l4 4-4 4\"/><path d=\"M13 5.5l-2 13\"/></svg>", "早見表・逆引き": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M4 5h16v14H4z\"/><path d=\"M4 9.5h16M9.5 9.5V19M4 14.2h16\"/></svg>", "テンプレート": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M6 3h8l4 4v14H6z\"/><path d=\"M14 3v4h4\"/><path d=\"M9 12h6M9 15.5h4\"/></svg>", "チェックリスト": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M5 4h14v16H5z\"/><path d=\"M8.5 9.2l1.6 1.6 3.4-3.4M8.5 15.2l1.6 1.6 3.4-3.4\"/></svg>", "判断シート": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M12 3v5M12 3 6.5 8.5M12 3l5.5 5.5\"/><circle cx=\"12\" cy=\"13\" r=\"2.2\"/><path d=\"M6.5 21h11\"/></svg>", "ワークフロー": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M4 6h6v4H4zM14 14h6v4h-6z\"/><path d=\"M7 10v5a1.5 1.5 0 0 0 1.5 1.5H14\"/></svg>", "_play": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"3\" y=\"5\" width=\"18\" height=\"14\" rx=\"2.5\"/><path d=\"M10.5 9.2v5.6l4.8-2.8-4.8-2.8Z\" fill=\"currentColor\" stroke=\"none\"/></svg>"};
 </script>
@@ -75,6 +58,25 @@ const out = $('#out'), cnt = $('#shown');
 let f = {q:'', type:'', sort:'new'};
 
 function norm(s){ return (s||'').toLowerCase().replace(/[ぁ-ん]/g, c => String.fromCharCode(c.charCodeAt(0)+0x60)); }
+
+// 前回来たときより後に増えた回に NEW を出す。毎日増えるので、常連が新着を見分けられるように。
+// 同じ日に何度見てもバッジが消えないよう、基準（prev）は日付が変わったときだけ進める。
+const SINCE = (() => {
+  const KEY = 'giftVisit';
+  const d = new Date();
+  const today = d.getFullYear() + '-' + String(d.getMonth()+1).padStart(2,'0')
+              + '-' + String(d.getDate()).padStart(2,'0');
+  let st = {prev:null, cur:null};
+  try { st = JSON.parse(localStorage.getItem(KEY)) || st; } catch(e){}
+  if (st.cur !== today){
+    st.prev = st.cur;
+    st.cur = today;
+    try { localStorage.setItem(KEY, JSON.stringify(st)); } catch(e){}
+  }
+  return st.prev;   // 初回訪問（null）のときは何にも NEW を付けない
+})();
+
+function isNew(date){ return !!(SINCE && date && date > SINCE); }
 
 function fmtDate(d){
   if (!d) return '';
@@ -104,7 +106,7 @@ function epCard(e, kitsToShow){
       ${watchLink}
     </div>
     <div class="ep-body">
-      <div class="ep-date">${fmtDate(e.date) || '日付未定'}</div>
+      <div class="ep-date">${fmtDate(e.date) || '日付未定'}${isNew(e.date) ? '<span class="newbadge">NEW</span>' : ''}</div>
       <h2 class="ep-title">${e.th}</h2>
       <div class="ep-kits">${kitsToShow.map(g=>kitChip(g)).join('')}</div>
     </div>
@@ -148,16 +150,44 @@ function render(){
   out.innerHTML = `<div class="eplist">${list.map(({e,kits}) => epCard(e, kits)).join('')}</div>`;
 }
 
-$('#q').addEventListener('input', e => { f.q = e.target.value.trim(); render(); });
-$('#sort').addEventListener('change', e => { f.sort = e.target.value; render(); });
+// しぼり込みの状態をURLに残す。
+// 共有・ブックマーク・戻るボタンが効くようになり、
+// 動画の概要欄から「プロンプト集だけ」のような形で直接リンクできる。
+function readURL(){
+  const p = new URLSearchParams(location.search);
+  f.q = p.get('q') || '';
+  f.type = p.get('type') || '';
+  f.sort = p.get('sort') || 'new';
+  $('#q').value = f.q;
+  $('#sort').value = f.sort;
+  const r = document.querySelector(`input[name=type][value="${CSS.escape(f.type)}"]`);
+  if (r) r.checked = true; else f.type = '';
+}
+
+function writeURL(push){
+  const p = new URLSearchParams();
+  if (f.q) p.set('q', f.q);
+  if (f.type) p.set('type', f.type);
+  if (f.sort !== 'new') p.set('sort', f.sort);
+  const s = p.toString();
+  const url = s ? location.pathname + '?' + s : location.pathname;
+  // 入力のたびに履歴を積むと戻るボタンが使い物にならないので、検索欄だけ置き換えにする
+  history[push ? 'pushState' : 'replaceState'](null, '', url);
+}
+
+$('#q').addEventListener('input', e => { f.q = e.target.value.trim(); writeURL(false); render(); });
+$('#sort').addEventListener('change', e => { f.sort = e.target.value; writeURL(true); render(); });
 document.querySelectorAll('input[name=type]').forEach(r =>
-  r.addEventListener('change', e => { f.type = e.target.value; render(); }));
+  r.addEventListener('change', e => { f.type = e.target.value; writeURL(true); render(); }));
 $('#reset').addEventListener('click', () => {
   f = {q:'', type:'', sort:'new'};
   $('#q').value=''; $('#sort').value='new';
   document.querySelector('input[name=type][value=""]').checked = true;
-  render();
+  writeURL(true); render();
 });
+addEventListener('popstate', () => { readURL(); render(); });
+
+readURL();
 render();
 </script>
 <div id="promo" class="promo">
@@ -192,7 +222,22 @@ render();
     el.classList.remove('show');
     sessionStorage.setItem('promoClosed', '1');
   }
-  setTimeout(function(){ el.classList.add('show'); }, 1600);
+  // 動画の概要欄から来た人が、自分のプレゼントを探し始める瞬間に被らないようにする。
+  // 以前は読み込み1.6秒後に無条件で出しており、いちばん目的意識の高い時間を塞いでいた。
+  // 中身を見に行った（＝目当てのものに辿り着いた）ころに出す。
+  var shown = false;
+  function show(){
+    if (shown) return;
+    shown = true;
+    el.classList.add('show');
+    removeEventListener('scroll', onScroll);
+  }
+  function onScroll(){
+    if (scrollY > innerHeight * 0.8) show();
+  }
+  addEventListener('scroll', onScroll, {passive:true});
+  // まったくスクロールしない人にも最後には出す（ただし十分に間を置いてから）
+  setTimeout(show, 45000);
   document.getElementById('promoClose').addEventListener('click', function(e){ e.preventDefault(); close(); });
   el.addEventListener('click', function(e){ if (e.target === el) close(); });
 })();

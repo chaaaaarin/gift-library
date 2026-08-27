@@ -41,7 +41,7 @@ description: グラフ化の</span><span class="nb">設計</span><span class="nb
 
 # Dynamic Workflows実装ライター
 
-あなたは<span class="nb">Claude Codeの</span><span class="nb">Dynamic Workflowsの</span><span class="nb">公式仕様に従って、</span><span class="nb">オーケストレーションスクリプトを</span><span class="nb">書く担当です。</span></p><div class="icard">
+あなたは<span class="nb">Claude Codeの</span><span class="nb">Dynamic Workflowsの</span><span class="nb">公式仕様に従って、</span><span class="nb">オーケストレーションスクリプトを</span><span class="nb">書く担当です。</span></p><div class="icard" data-cat="">
   <div class="ih"><span class="num">001</span><span class="ititle">使えるプリミティブ</span></div>
   
   <pre class="prompt" id="b1">- `agent(prompt, opts)` — 単体のサブエージェントを1つ実行。`schema`オプションで構造化出力を強制できる
@@ -52,7 +52,7 @@ description: グラフ化の</span><span class="nb">設計</span><span class="nb
     <button class="btn ghost sm" data-save="b1" data-name="skill-dynamic-workflow-writer-001.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">002</span><span class="ititle">守るべき制約</span></div>
   
   <pre class="prompt" id="b2">- **非決定論的コードを書かない**：`Date.now()`・`Math.random()`・引数なしの`new Date()`は使わない（実行がジャーナリングされ再開可能にするため、実行時エラーになる設計）。日時が必要な場合は引数（`args`）で外から渡す
@@ -63,8 +63,8 @@ description: グラフ化の</span><span class="nb">設計</span><span class="nb
     <button class="btn ghost sm" data-save="b2" data-name="skill-dynamic-workflow-writer-002.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">書き方の手順</h2>
-<div class="icard">
+<h2 class="cat" data-cat="書き方の手順">書き方の手順</h2>
+<div class="icard" data-cat="書き方の手順">
   <div class="ih"><span class="num">003</span><span class="ititle">ユーザーの依頼から「並列化したい処理」「統合・集約の仕方」「最終的に欲しい出力」を確…</span></div>
   
   <pre class="prompt" id="b3">ユーザーの依頼から「並列化したい処理」「統合・集約の仕方」「最終的に欲しい出力」を確認する</pre>
@@ -73,7 +73,7 @@ description: グラフ化の</span><span class="nb">設計</span><span class="nb
     <button class="btn ghost sm" data-save="b3" data-name="skill-dynamic-workflow-writer-003.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="書き方の手順">
   <div class="ih"><span class="num">004</span><span class="ititle">`export const meta = { name, description }…</span></div>
   
   <pre class="prompt" id="b4">`export const meta = { name, description }` を先頭に書く</pre>
@@ -82,7 +82,7 @@ description: グラフ化の</span><span class="nb">設計</span><span class="nb
     <button class="btn ghost sm" data-save="b4" data-name="skill-dynamic-workflow-writer-004.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="書き方の手順">
   <div class="ih"><span class="num">005</span><span class="ititle">ファンアウト（`parallel`）→ リデュース（普通のJS処理）→ シンセサイズ…</span></div>
   
   <pre class="prompt" id="b5">ファンアウト（`parallel`）→ リデュース（普通のJS処理）→ シンセサイズ（最後に1回`agent()`で統合）の骨格を基本形にする</pre>
@@ -91,7 +91,7 @@ description: グラフ化の</span><span class="nb">設計</span><span class="nb
     <button class="btn ghost sm" data-save="b5" data-name="skill-dynamic-workflow-writer-005.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="書き方の手順">
   <div class="ih"><span class="num">006</span><span class="ititle">分岐が必要な場合は、ラベルに応じて呼び出す`agent()`のプロンプトを条件分岐で…</span></div>
   
   <pre class="prompt" id="b6">分岐が必要な場合は、ラベルに応じて呼び出す`agent()`のプロンプトを条件分岐で切り替える</pre>
@@ -100,7 +100,7 @@ description: グラフ化の</span><span class="nb">設計</span><span class="nb
     <button class="btn ghost sm" data-save="b6" data-name="skill-dynamic-workflow-writer-006.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="書き方の手順">
   <div class="ih"><span class="num">007</span><span class="ititle">書いたスクリプトの末尾に、想定される実行結果の形（返り値の例）を1行コメントで添える</span></div>
   
   <pre class="prompt" id="b7">書いたスクリプトの末尾に、想定される実行結果の形（返り値の例）を1行コメントで添える</pre>
@@ -109,7 +109,7 @@ description: グラフ化の</span><span class="nb">設計</span><span class="nb
     <button class="btn ghost sm" data-save="b7" data-name="skill-dynamic-workflow-writer-007.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">008</span><span class="ititle">注意点</span></div>
   
   <pre class="prompt" id="b8">- 検証パスが必要な場面（対立的検証・複数レンズ検証）では、作る役のプロンプトと検証する役のプロンプトを別の`agent()`呼び出しに分離し、検証役には作る役の思考過程を渡さない
@@ -168,6 +168,57 @@ description: グラフ化の設計（並列化したい処理・分岐条件）�
 ```
 </pre>
 <script>
+// 項目の多いキットで、目的の1件に辿り着けるようにする絞り込み。
+// 検索はタイトル・説明だけでなく本文も対象にする（「あの文言が入っていた項目」で探せるように）。
+(function(){
+  var q = document.getElementById('kq');
+  if (!q) return;
+  var hit = document.getElementById('khit');
+  var cards = [].slice.call(document.querySelectorAll('.kwrap .icard'));
+  var heads = [].slice.call(document.querySelectorAll('.kwrap h2.cat'));
+  var chips = [].slice.call(document.querySelectorAll('.kcat'));
+  var cat = '';
+
+  // ひらがな・カタカナの違いで取りこぼさないようにする（ハブ側の検索と同じ扱い）
+  function norm(s){
+    return (s || '').toLowerCase().replace(/[ぁ-ん]/g, function(c){
+      return String.fromCharCode(c.charCodeAt(0) + 0x60);
+    });
+  }
+
+  // カード全体の textContent だとボタンの「コピー」まで拾ってしまうため、中身を選んで集める
+  cards.forEach(function(c){
+    var t = c.querySelector('.ititle'), d = c.querySelector('.imeta'), p = c.querySelector('.prompt');
+    c._t = norm((t ? t.textContent : '') + ' ' + (d ? d.textContent : '') + ' ' + (p ? p.textContent : ''));
+  });
+
+  function apply(){
+    var kw = norm(q.value.trim()), n = 0, shown = {};
+    cards.forEach(function(c){
+      var ok = (!cat || c.getAttribute('data-cat') === cat)
+            && (!kw || c._t.indexOf(kw) !== -1);
+      c.classList.toggle('hide', !ok);
+      if (ok){ n++; shown[c.getAttribute('data-cat')] = 1; }
+    });
+    // 残った項目が1件も無いカテゴリの見出しは隠す
+    heads.forEach(function(h){
+      h.classList.toggle('hide', !shown[h.getAttribute('data-cat')]);
+    });
+    hit.textContent = (kw || cat)
+      ? (n ? n + '件を表示中' : '該当する項目がありません')
+      : '';
+  }
+
+  q.addEventListener('input', apply);
+  chips.forEach(function(b){
+    b.addEventListener('click', function(){
+      cat = b.getAttribute('data-cat');
+      chips.forEach(function(x){ x.classList.toggle('on', x === b); });
+      apply();
+    });
+  });
+})();
+
 function flash(btn, label){
   const old = btn.textContent, cls = btn.className;
   btn.textContent = label; btn.classList.add('ok');
@@ -237,7 +288,22 @@ document.addEventListener('click', e => {
     el.classList.remove('show');
     sessionStorage.setItem('promoClosed', '1');
   }
-  setTimeout(function(){ el.classList.add('show'); }, 1600);
+  // 動画の概要欄から来た人が、自分のプレゼントを探し始める瞬間に被らないようにする。
+  // 以前は読み込み1.6秒後に無条件で出しており、いちばん目的意識の高い時間を塞いでいた。
+  // 中身を見に行った（＝目当てのものに辿り着いた）ころに出す。
+  var shown = false;
+  function show(){
+    if (shown) return;
+    shown = true;
+    el.classList.add('show');
+    removeEventListener('scroll', onScroll);
+  }
+  function onScroll(){
+    if (scrollY > innerHeight * 0.8) show();
+  }
+  addEventListener('scroll', onScroll, {passive:true});
+  // まったくスクロールしない人にも最後には出す（ただし十分に間を置いてから）
+  setTimeout(show, 45000);
   document.getElementById('promoClose').addEventListener('click', function(e){ e.preventDefault(); close(); });
   el.addEventListener('click', function(e){ if (e.target === el) close(); });
 })();

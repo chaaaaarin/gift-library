@@ -35,7 +35,7 @@
     <div class="pnote"><span class="nb">下のカードから、</span><span class="nb">1件ずつコピー、</span><span class="nb">または個別にダウンロードできます。</span><span class="nb">まとめて欲しいときは、</span><span class="nb">上の</span><span class="nb">「全件ダウンロード」を</span><span class="nb">お使いください。</span></div>
   </section>
 
-  <div class="icard">
+  <div class="icard" data-cat="">
   <div class="ih"><span class="num">001</span><span class="ititle">ループの目的（Goal）</span></div>
   
   <pre class="prompt" id="b1">- 対象サイト / セクション:
@@ -46,7 +46,7 @@
     <button class="btn ghost sm" data-save="b1" data-name="loop-engineering-seo-template-001.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">002</span><span class="ititle">トリガー（いつ回すか）</span></div>
   
   <pre class="prompt" id="b2">- [ ] cron（例: 毎日 06:00）
@@ -58,8 +58,8 @@
     <button class="btn ghost sm" data-save="b2" data-name="loop-engineering-seo-template-002.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">ループ本体（Act -&gt; Observe）</h2>
-<div class="icard">
+<h2 class="cat" data-cat="ループ本体（Act -&gt; Observe）">ループ本体（Act -&gt; Observe）</h2>
+<div class="icard" data-cat="ループ本体（Act -&gt; Observe）">
   <div class="ih"><span class="num">003</span><span class="ititle">Research: 対象KWのSERP・競合上位を分析し、勝ち要件を出す</span></div>
   
   <pre class="prompt" id="b3">Research: 対象KWのSERP・競合上位を分析し、勝ち要件を出す</pre>
@@ -68,7 +68,7 @@
     <button class="btn ghost sm" data-save="b3" data-name="loop-engineering-seo-template-003.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="ループ本体（Act -&gt; Observe）">
   <div class="ih"><span class="num">004</span><span class="ititle">Writer: 要件に沿って新規作成 or 該当箇所を改稿</span></div>
   
   <pre class="prompt" id="b4">Writer: 要件に沿って新規作成 or 該当箇所を改稿</pre>
@@ -77,7 +77,7 @@
     <button class="btn ghost sm" data-save="b4" data-name="loop-engineering-seo-template-004.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="ループ本体（Act -&gt; Observe）">
   <div class="ih"><span class="num">005</span><span class="ititle">SEO Checker: SEO</span></div>
   
   <pre class="prompt" id="b5">SEO Checker: SEO/GEOスコア・内部リンク・構造化データを検査</pre>
@@ -86,7 +86,7 @@
     <button class="btn ghost sm" data-save="b5" data-name="loop-engineering-seo-template-005.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="ループ本体（Act -&gt; Observe）">
   <div class="ih"><span class="num">006</span><span class="ititle">Reviewer: 事実・E-E-A-T・読みやすさを点検</span></div>
   
   <pre class="prompt" id="b6">Reviewer: 事実・E-E-A-T・読みやすさを点検</pre>
@@ -95,7 +95,7 @@
     <button class="btn ghost sm" data-save="b6" data-name="loop-engineering-seo-template-006.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="ループ本体（Act -&gt; Observe）">
   <div class="ih"><span class="num">007</span><span class="ititle">Publisher: CMSへ反映（下書き</span></div>
   
   <pre class="prompt" id="b7">Publisher: CMSへ反映（下書き / 公開）</pre>
@@ -104,7 +104,7 @@
     <button class="btn ghost sm" data-save="b7" data-name="loop-engineering-seo-template-007.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">008</span><span class="ititle">停止条件（Stop condition）</span></div>
   
   <pre class="prompt" id="b8">- [ ] 品質スコア &gt;= (閾値)
@@ -115,7 +115,7 @@
     <button class="btn ghost sm" data-save="b8" data-name="loop-engineering-seo-template-008.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">009</span><span class="ititle">記録（Memory / Log）</span></div>
   
   <pre class="prompt" id="b9">- 実行日時・対象・変更点・結果指標を LOG に追記
@@ -125,7 +125,7 @@
     <button class="btn ghost sm" data-save="b9" data-name="loop-engineering-seo-template-009.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="">
   <div class="ih"><span class="num">010</span><span class="ititle">ガードレール</span></div>
   
   <pre class="prompt" id="b10">- 公開はレビュー後（人間の最終確認を挟む工程を明記）
@@ -190,6 +190,57 @@ SEOを「1回書いて終わり」ではなく、自律的に回り続けるル�
 **ポイント**: 停止条件を必ず数値で決めておくと、無限ループ・コスト暴走を防げる。
 </pre>
 <script>
+// 項目の多いキットで、目的の1件に辿り着けるようにする絞り込み。
+// 検索はタイトル・説明だけでなく本文も対象にする（「あの文言が入っていた項目」で探せるように）。
+(function(){
+  var q = document.getElementById('kq');
+  if (!q) return;
+  var hit = document.getElementById('khit');
+  var cards = [].slice.call(document.querySelectorAll('.kwrap .icard'));
+  var heads = [].slice.call(document.querySelectorAll('.kwrap h2.cat'));
+  var chips = [].slice.call(document.querySelectorAll('.kcat'));
+  var cat = '';
+
+  // ひらがな・カタカナの違いで取りこぼさないようにする（ハブ側の検索と同じ扱い）
+  function norm(s){
+    return (s || '').toLowerCase().replace(/[ぁ-ん]/g, function(c){
+      return String.fromCharCode(c.charCodeAt(0) + 0x60);
+    });
+  }
+
+  // カード全体の textContent だとボタンの「コピー」まで拾ってしまうため、中身を選んで集める
+  cards.forEach(function(c){
+    var t = c.querySelector('.ititle'), d = c.querySelector('.imeta'), p = c.querySelector('.prompt');
+    c._t = norm((t ? t.textContent : '') + ' ' + (d ? d.textContent : '') + ' ' + (p ? p.textContent : ''));
+  });
+
+  function apply(){
+    var kw = norm(q.value.trim()), n = 0, shown = {};
+    cards.forEach(function(c){
+      var ok = (!cat || c.getAttribute('data-cat') === cat)
+            && (!kw || c._t.indexOf(kw) !== -1);
+      c.classList.toggle('hide', !ok);
+      if (ok){ n++; shown[c.getAttribute('data-cat')] = 1; }
+    });
+    // 残った項目が1件も無いカテゴリの見出しは隠す
+    heads.forEach(function(h){
+      h.classList.toggle('hide', !shown[h.getAttribute('data-cat')]);
+    });
+    hit.textContent = (kw || cat)
+      ? (n ? n + '件を表示中' : '該当する項目がありません')
+      : '';
+  }
+
+  q.addEventListener('input', apply);
+  chips.forEach(function(b){
+    b.addEventListener('click', function(){
+      cat = b.getAttribute('data-cat');
+      chips.forEach(function(x){ x.classList.toggle('on', x === b); });
+      apply();
+    });
+  });
+})();
+
 function flash(btn, label){
   const old = btn.textContent, cls = btn.className;
   btn.textContent = label; btn.classList.add('ok');
@@ -259,7 +310,22 @@ document.addEventListener('click', e => {
     el.classList.remove('show');
     sessionStorage.setItem('promoClosed', '1');
   }
-  setTimeout(function(){ el.classList.add('show'); }, 1600);
+  // 動画の概要欄から来た人が、自分のプレゼントを探し始める瞬間に被らないようにする。
+  // 以前は読み込み1.6秒後に無条件で出しており、いちばん目的意識の高い時間を塞いでいた。
+  // 中身を見に行った（＝目当てのものに辿り着いた）ころに出す。
+  var shown = false;
+  function show(){
+    if (shown) return;
+    shown = true;
+    el.classList.add('show');
+    removeEventListener('scroll', onScroll);
+  }
+  function onScroll(){
+    if (scrollY > innerHeight * 0.8) show();
+  }
+  addEventListener('scroll', onScroll, {passive:true});
+  // まったくスクロールしない人にも最後には出す（ただし十分に間を置いてから）
+  setTimeout(show, 45000);
   document.getElementById('promoClose').addEventListener('click', function(e){ e.preventDefault(); close(); });
   el.addEventListener('click', function(e){ if (e.target === el) close(); });
 })();

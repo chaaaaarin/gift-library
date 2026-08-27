@@ -35,8 +35,13 @@
     <div class="pnote"><span class="nb">下のカードから、</span><span class="nb">1件ずつコピー、</span><span class="nb">または個別にダウンロードできます。</span><span class="nb">まとめて欲しいときは、</span><span class="nb">上の</span><span class="nb">「全件ダウンロード」を</span><span class="nb">お使いください。</span></div>
   </section>
 
-  <h2 class="cat">スラッシュコマンド60本</h2>
-<div class="icard">
+  <div class="ktools">
+  <input type="search" id="kq" placeholder="この中から探す" autocomplete="off" aria-label="この中から探す">
+  <div class="kcats"><button type="button" class="kcat on" data-cat="">すべて<span class="n">20</span></button><button type="button" class="kcat" data-cat="スラッシュコマンド60本">スラッシュコマンド60本<span class="n">12</span></button><button type="button" class="kcat" data-cat="サブエージェント40本">サブエージェント40本<span class="n">8</span></button></div>
+  <p class="khit" id="khit" role="status"></p>
+</div>
+<h2 class="cat" data-cat="スラッシュコマンド60本">スラッシュコマンド60本</h2>
+<div class="icard" data-cat="スラッシュコマンド60本">
   <div class="ih"><span class="num">001</span><span class="ititle">計画・設計</span></div>
   
   <pre class="prompt" id="b1">ここまでの会話で話した「作りたいもの」を、実装に入る前の計画書として整理して。
@@ -53,7 +58,7 @@
     <button class="btn ghost sm" data-save="b1" data-name="starter-commands-agents-100-001.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="スラッシュコマンド60本">
   <div class="ih"><span class="num">002</span><span class="ititle">実装</span></div>
   
   <pre class="prompt" id="b2">今日の作業は「{機能名}」の実装だけに絞る。
@@ -65,7 +70,7 @@
     <button class="btn ghost sm" data-save="b2" data-name="starter-commands-agents-100-002.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="スラッシュコマンド60本">
   <div class="ih"><span class="num">003</span><span class="ititle">テスト</span></div>
   
   <pre class="prompt" id="b3">「{機能名}」を実装する前に、最低限これだけは確認すべきというテスト観点を
@@ -76,7 +81,7 @@
     <button class="btn ghost sm" data-save="b3" data-name="starter-commands-agents-100-003.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="スラッシュコマンド60本">
   <div class="ih"><span class="num">004</span><span class="ititle">レビュー・品質</span></div>
   
   <pre class="prompt" id="b4">ここまでで動いている「{機能名}」のコードを、公開する前提で点検して。
@@ -89,7 +94,7 @@
     <button class="btn ghost sm" data-save="b4" data-name="starter-commands-agents-100-004.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="スラッシュコマンド60本">
   <div class="ih"><span class="num">005</span><span class="ititle">デバッグ</span></div>
   
   <pre class="prompt" id="b5">「{症状}」が何度も直しても再発する。表面的な対処ではなく、根本原因を
@@ -102,7 +107,7 @@
     <button class="btn ghost sm" data-save="b5" data-name="starter-commands-agents-100-005.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="スラッシュコマンド60本">
   <div class="ih"><span class="num">006</span><span class="ititle">リファクタリング</span></div>
   
   <pre class="prompt" id="b6">「{機能名}」のコードは動いているが、見た目が汚くなってきた。動作を一切変えずに、
@@ -115,7 +120,7 @@
     <button class="btn ghost sm" data-save="b6" data-name="starter-commands-agents-100-006.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="スラッシュコマンド60本">
   <div class="ih"><span class="num">007</span><span class="ititle">ドキュメント</span></div>
   
   <pre class="prompt" id="b7">ここまでの会話で決まった、このプロジェクト固有のルール・前提知識をCLAUDE.mdとして
@@ -128,7 +133,7 @@
     <button class="btn ghost sm" data-save="b7" data-name="starter-commands-agents-100-007.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="スラッシュコマンド60本">
   <div class="ih"><span class="num">008</span><span class="ititle">Git・PR</span></div>
   
   <pre class="prompt" id="b8">ここまでの変更内容を確認して、分かりやすいコミットメッセージを作って。
@@ -140,7 +145,7 @@
     <button class="btn ghost sm" data-save="b8" data-name="starter-commands-agents-100-008.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="スラッシュコマンド60本">
   <div class="ih"><span class="num">009</span><span class="ititle">デプロイ・公開</span></div>
   
   <pre class="prompt" id="b9">「{アプリ名}」を{Vercel等のサービス名}にデプロイする前の確認をして。
@@ -152,7 +157,7 @@
     <button class="btn ghost sm" data-save="b9" data-name="starter-commands-agents-100-009.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="スラッシュコマンド60本">
   <div class="ih"><span class="num">010</span><span class="ititle">セキュリティ</span></div>
   
   <pre class="prompt" id="b10">プロジェクト全体を確認して、APIキー・パスワードなどの鍵情報が
@@ -165,7 +170,7 @@
     <button class="btn ghost sm" data-save="b10" data-name="starter-commands-agents-100-010.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="スラッシュコマンド60本">
   <div class="ih"><span class="num">011</span><span class="ititle">パフォーマンス</span></div>
   
   <pre class="prompt" id="b11">「{アプリ名}」を開いてから最初の画面が表示されるまでが遅く感じる。
@@ -178,7 +183,7 @@
     <button class="btn ghost sm" data-save="b11" data-name="starter-commands-agents-100-011.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="スラッシュコマンド60本">
   <div class="ih"><span class="num">012</span><span class="ititle">学習・振り返り</span></div>
   
   <pre class="prompt" id="b12">今日の作業内容を、次に開いたときすぐ再開できるように記録して。
@@ -190,8 +195,8 @@ CLAUDE.mdか別のメモに残すか、こちらで選べるように両方の�
     <button class="btn ghost sm" data-save="b12" data-name="starter-commands-agents-100-012.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">サブエージェント40本</h2>
-<div class="icard">
+<h2 class="cat" data-cat="サブエージェント40本">サブエージェント40本</h2>
+<div class="icard" data-cat="サブエージェント40本">
   <div class="ih"><span class="num">013</span><span class="ititle">企画・要件定義</span></div>
   
   <pre class="prompt" id="b13">---
@@ -214,7 +219,7 @@ model: sonnet
     <button class="btn ghost sm" data-save="b13" data-name="starter-commands-agents-100-013.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="サブエージェント40本">
   <div class="ih"><span class="num">014</span><span class="ititle">アーキテクチャ設計</span></div>
   
   <pre class="prompt" id="b14">---
@@ -236,7 +241,7 @@ model: opus
     <button class="btn ghost sm" data-save="b14" data-name="starter-commands-agents-100-014.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="サブエージェント40本">
   <div class="ih"><span class="num">015</span><span class="ititle">フロントエンド専門</span></div>
   
   <pre class="prompt" id="b15">---
@@ -257,7 +262,7 @@ model: sonnet
     <button class="btn ghost sm" data-save="b15" data-name="starter-commands-agents-100-015.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="サブエージェント40本">
   <div class="ih"><span class="num">016</span><span class="ititle">バックエンド専門</span></div>
   
   <pre class="prompt" id="b16">---
@@ -279,7 +284,7 @@ model: sonnet
     <button class="btn ghost sm" data-save="b16" data-name="starter-commands-agents-100-016.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="サブエージェント40本">
   <div class="ih"><span class="num">017</span><span class="ititle">テスト専門</span></div>
   
   <pre class="prompt" id="b17">---
@@ -299,7 +304,7 @@ model: sonnet
     <button class="btn ghost sm" data-save="b17" data-name="starter-commands-agents-100-017.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="サブエージェント40本">
   <div class="ih"><span class="num">018</span><span class="ititle">セキュリティレビュー</span></div>
   
   <pre class="prompt" id="b18">---
@@ -320,7 +325,7 @@ model: opus
     <button class="btn ghost sm" data-save="b18" data-name="starter-commands-agents-100-018.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="サブエージェント40本">
   <div class="ih"><span class="num">019</span><span class="ititle">ドキュメント作成</span></div>
   
   <pre class="prompt" id="b19">---
@@ -341,7 +346,7 @@ model: haiku
     <button class="btn ghost sm" data-save="b19" data-name="starter-commands-agents-100-019.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="サブエージェント40本">
   <div class="ih"><span class="num">020</span><span class="ititle">運用・監視</span></div>
   
   <pre class="prompt" id="b20">---
@@ -1740,6 +1745,57 @@ model: sonnet
 以上、スラッシュコマンド60本・サブエージェント40本の合計100個です。内訳はスラッシュコマンドが12カテゴリ×5本、サブエージェントが8カテゴリ×5本です。
 </pre>
 <script>
+// 項目の多いキットで、目的の1件に辿り着けるようにする絞り込み。
+// 検索はタイトル・説明だけでなく本文も対象にする（「あの文言が入っていた項目」で探せるように）。
+(function(){
+  var q = document.getElementById('kq');
+  if (!q) return;
+  var hit = document.getElementById('khit');
+  var cards = [].slice.call(document.querySelectorAll('.kwrap .icard'));
+  var heads = [].slice.call(document.querySelectorAll('.kwrap h2.cat'));
+  var chips = [].slice.call(document.querySelectorAll('.kcat'));
+  var cat = '';
+
+  // ひらがな・カタカナの違いで取りこぼさないようにする（ハブ側の検索と同じ扱い）
+  function norm(s){
+    return (s || '').toLowerCase().replace(/[ぁ-ん]/g, function(c){
+      return String.fromCharCode(c.charCodeAt(0) + 0x60);
+    });
+  }
+
+  // カード全体の textContent だとボタンの「コピー」まで拾ってしまうため、中身を選んで集める
+  cards.forEach(function(c){
+    var t = c.querySelector('.ititle'), d = c.querySelector('.imeta'), p = c.querySelector('.prompt');
+    c._t = norm((t ? t.textContent : '') + ' ' + (d ? d.textContent : '') + ' ' + (p ? p.textContent : ''));
+  });
+
+  function apply(){
+    var kw = norm(q.value.trim()), n = 0, shown = {};
+    cards.forEach(function(c){
+      var ok = (!cat || c.getAttribute('data-cat') === cat)
+            && (!kw || c._t.indexOf(kw) !== -1);
+      c.classList.toggle('hide', !ok);
+      if (ok){ n++; shown[c.getAttribute('data-cat')] = 1; }
+    });
+    // 残った項目が1件も無いカテゴリの見出しは隠す
+    heads.forEach(function(h){
+      h.classList.toggle('hide', !shown[h.getAttribute('data-cat')]);
+    });
+    hit.textContent = (kw || cat)
+      ? (n ? n + '件を表示中' : '該当する項目がありません')
+      : '';
+  }
+
+  q.addEventListener('input', apply);
+  chips.forEach(function(b){
+    b.addEventListener('click', function(){
+      cat = b.getAttribute('data-cat');
+      chips.forEach(function(x){ x.classList.toggle('on', x === b); });
+      apply();
+    });
+  });
+})();
+
 function flash(btn, label){
   const old = btn.textContent, cls = btn.className;
   btn.textContent = label; btn.classList.add('ok');
@@ -1809,7 +1865,22 @@ document.addEventListener('click', e => {
     el.classList.remove('show');
     sessionStorage.setItem('promoClosed', '1');
   }
-  setTimeout(function(){ el.classList.add('show'); }, 1600);
+  // 動画の概要欄から来た人が、自分のプレゼントを探し始める瞬間に被らないようにする。
+  // 以前は読み込み1.6秒後に無条件で出しており、いちばん目的意識の高い時間を塞いでいた。
+  // 中身を見に行った（＝目当てのものに辿り着いた）ころに出す。
+  var shown = false;
+  function show(){
+    if (shown) return;
+    shown = true;
+    el.classList.add('show');
+    removeEventListener('scroll', onScroll);
+  }
+  function onScroll(){
+    if (scrollY > innerHeight * 0.8) show();
+  }
+  addEventListener('scroll', onScroll, {passive:true});
+  // まったくスクロールしない人にも最後には出す（ただし十分に間を置いてから）
+  setTimeout(show, 45000);
   document.getElementById('promoClose').addEventListener('click', function(e){ e.preventDefault(); close(); });
   el.addEventListener('click', function(e){ if (e.target === el) close(); });
 })();

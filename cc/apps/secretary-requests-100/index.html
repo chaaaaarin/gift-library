@@ -35,8 +35,13 @@
     <div class="pnote"><span class="nb">下のカードから、</span><span class="nb">1件ずつコピー、</span><span class="nb">または個別にダウンロードできます。</span><span class="nb">まとめて欲しいときは、</span><span class="nb">上の</span><span class="nb">「全件ダウンロード」を</span><span class="nb">お使いください。</span></div>
   </section>
 
-  <h2 class="cat">報告</h2>
-<div class="icard">
+  <div class="ktools">
+  <input type="search" id="kq" placeholder="この中から探す" autocomplete="off" aria-label="この中から探す">
+  <div class="kcats"><button type="button" class="kcat on" data-cat="">すべて<span class="n">100</span></button><button type="button" class="kcat" data-cat="報告">報告<span class="n">20</span></button><button type="button" class="kcat" data-cat="調査">調査<span class="n">20</span></button><button type="button" class="kcat" data-cat="下書き">下書き<span class="n">20</span></button><button type="button" class="kcat" data-cat="調整">調整<span class="n">20</span></button><button type="button" class="kcat" data-cat="整理">整理<span class="n">20</span></button></div>
+  <p class="khit" id="khit" role="status"></p>
+</div>
+<h2 class="cat" data-cat="報告">報告</h2>
+<div class="icard" data-cat="報告">
   <div class="ih"><span class="num">001</span><span class="ititle">朝の予定一括報告</span></div>
   
   <pre class="prompt" id="b1">前提: 毎朝、その日の予定を一目で把握したい会社員向けの依頼。
@@ -47,7 +52,7 @@
     <button class="btn ghost sm" data-save="b1" data-name="secretary-requests-100-001.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="報告">
   <div class="ih"><span class="num">002</span><span class="ititle">未読メールの要点報告</span></div>
   
   <pre class="prompt" id="b2">前提: 受信箱を開かずに重要度を判断したい人向けの依頼。
@@ -58,7 +63,7 @@
     <button class="btn ghost sm" data-save="b2" data-name="secretary-requests-100-002.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="報告">
   <div class="ih"><span class="num">003</span><span class="ititle">YouTube3チャンネル速報</span></div>
   
   <pre class="prompt" id="b3">前提: 複数チャンネルの動画進捗を毎回自分で確認するのが手間な運営者向け。
@@ -69,7 +74,7 @@
     <button class="btn ghost sm" data-save="b3" data-name="secretary-requests-100-003.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="報告">
   <div class="ih"><span class="num">004</span><span class="ititle">週次の進捗まとめ</span></div>
   
   <pre class="prompt" id="b4">前提: 毎週金曜に今週やったことを振り返りたい人向け。
@@ -80,7 +85,7 @@
     <button class="btn ghost sm" data-save="b4" data-name="secretary-requests-100-004.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="報告">
   <div class="ih"><span class="num">005</span><span class="ititle">競合動向の定点観測</span></div>
   
   <pre class="prompt" id="b5">前提: 同業チャンネル・企業の動きを追いたいが毎回検索するのが面倒な人向け。
@@ -91,7 +96,7 @@
     <button class="btn ghost sm" data-save="b5" data-name="secretary-requests-100-005.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="報告">
   <div class="ih"><span class="num">006</span><span class="ititle">経費・支出の月次まとめ</span></div>
   
   <pre class="prompt" id="b6">前提: 月末に経費をまとめて確認したい個人事業主向け。
@@ -102,7 +107,7 @@
     <button class="btn ghost sm" data-save="b6" data-name="secretary-requests-100-006.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="報告">
   <div class="ih"><span class="num">007</span><span class="ititle">SNS反応のダイジェスト</span></div>
   
   <pre class="prompt" id="b7">前提: 投稿への反応を毎回チェックするのが手間な発信者向け。
@@ -113,7 +118,7 @@
     <button class="btn ghost sm" data-save="b7" data-name="secretary-requests-100-007.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="報告">
   <div class="ih"><span class="num">008</span><span class="ititle">在庫・在庫切れ確認</span></div>
   
   <pre class="prompt" id="b8">前提: 小規模ショップ運営で在庫を毎回見に行くのが面倒な人向け。
@@ -124,7 +129,7 @@
     <button class="btn ghost sm" data-save="b8" data-name="secretary-requests-100-008.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="報告">
   <div class="ih"><span class="num">009</span><span class="ititle">案件の進行ステータス報告</span></div>
   
   <pre class="prompt" id="b9">前提: 複数案件を並行して抱えるフリーランス向け。
@@ -135,7 +140,7 @@
     <button class="btn ghost sm" data-save="b9" data-name="secretary-requests-100-009.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="報告">
   <div class="ih"><span class="num">010</span><span class="ititle">体調・活動ログの週次確認</span></div>
   
   <pre class="prompt" id="b10">前提: 生活リズムを振り返りたい人向け（記録済みメモがある前提）。
@@ -146,7 +151,7 @@
     <button class="btn ghost sm" data-save="b10" data-name="secretary-requests-100-010.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="報告">
   <div class="ih"><span class="num">011</span><span class="ititle">問い合わせ対応状況の報告</span></div>
   
   <pre class="prompt" id="b11">前提: 複数チャネルからの問い合わせを見落としたくない人向け。
@@ -157,7 +162,7 @@
     <button class="btn ghost sm" data-save="b11" data-name="secretary-requests-100-011.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="報告">
   <div class="ih"><span class="num">012</span><span class="ititle">読書・学習の進捗報告</span></div>
   
   <pre class="prompt" id="b12">前提: 並行して読んでいる本や教材の進捗を可視化したい人向け。
@@ -168,7 +173,7 @@
     <button class="btn ghost sm" data-save="b12" data-name="secretary-requests-100-012.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="報告">
   <div class="ih"><span class="num">013</span><span class="ititle">チームの稼働状況サマリー</span></div>
   
   <pre class="prompt" id="b13">前提: 少人数チームのリーダーが全員の状況を把握したい場面向け。
@@ -179,7 +184,7 @@
     <button class="btn ghost sm" data-save="b13" data-name="secretary-requests-100-013.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="報告">
   <div class="ih"><span class="num">014</span><span class="ititle">広告・キャンペーン成果の報告</span></div>
   
   <pre class="prompt" id="b14">前提: 運用中の広告の数字を毎回自分で見に行くのが手間な人向け。
@@ -190,7 +195,7 @@
     <button class="btn ghost sm" data-save="b14" data-name="secretary-requests-100-014.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="報告">
   <div class="ih"><span class="num">015</span><span class="ititle">週末までのタスク総ざらい</span></div>
   
   <pre class="prompt" id="b15">前提: 週の終わりに残タスクを見落としたくない人向け。
@@ -201,7 +206,7 @@
     <button class="btn ghost sm" data-save="b15" data-name="secretary-requests-100-015.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="報告">
   <div class="ih"><span class="num">016</span><span class="ititle">出張・訪問前の最終確認報告</span></div>
   
   <pre class="prompt" id="b16">前提: 外出前に持ち物・予定の抜け漏れを防ぎたい人向け。
@@ -212,7 +217,7 @@
     <button class="btn ghost sm" data-save="b16" data-name="secretary-requests-100-016.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="報告">
   <div class="ih"><span class="num">017</span><span class="ititle">月初の目標設定サマリー</span></div>
   
   <pre class="prompt" id="b17">前提: 月初に前月の振り返りと今月の目標を整理したい人向け。
@@ -223,7 +228,7 @@
     <button class="btn ghost sm" data-save="b17" data-name="secretary-requests-100-017.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="報告">
   <div class="ih"><span class="num">018</span><span class="ititle">納品物のチェック結果報告</span></div>
   
   <pre class="prompt" id="b18">前提: 外部に依頼した成果物を確認する手間を減らしたい人向け。
@@ -234,7 +239,7 @@
     <button class="btn ghost sm" data-save="b18" data-name="secretary-requests-100-018.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="報告">
   <div class="ih"><span class="num">019</span><span class="ititle">契約・更新期限の一覧報告</span></div>
   
   <pre class="prompt" id="b19">前提: サブスクや契約の更新忘れを防ぎたい人向け。
@@ -245,7 +250,7 @@
     <button class="btn ghost sm" data-save="b19" data-name="secretary-requests-100-019.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="報告">
   <div class="ih"><span class="num">020</span><span class="ititle">その日一番重要な1件の報告</span></div>
   
   <pre class="prompt" id="b20">前提: 情報量が多すぎて優先順位が分からなくなる人向け。
@@ -256,8 +261,8 @@
     <button class="btn ghost sm" data-save="b20" data-name="secretary-requests-100-020.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">調査</h2>
-<div class="icard">
+<h2 class="cat" data-cat="調査">調査</h2>
+<div class="icard" data-cat="調査">
   <div class="ih"><span class="num">021</span><span class="ititle">競合サービスの機能比較</span></div>
   
   <pre class="prompt" id="b21">前提: 新機能を検討する前に他社動向を把握したい人向け。
@@ -268,7 +273,7 @@
     <button class="btn ghost sm" data-save="b21" data-name="secretary-requests-100-021.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="調査">
   <div class="ih"><span class="num">022</span><span class="ititle">業界ニュースの朝刊まとめ</span></div>
   
   <pre class="prompt" id="b22">前提: 毎朝ニュースを1件ずつ追うのが大変な人向け。
@@ -279,7 +284,7 @@
     <button class="btn ghost sm" data-save="b22" data-name="secretary-requests-100-022.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="調査">
   <div class="ih"><span class="num">023</span><span class="ititle">引用・出典の裏取り</span></div>
   
   <pre class="prompt" id="b23">前提: 資料に載せたい数字が本当に正しいか確認したい人向け。
@@ -290,7 +295,7 @@
     <button class="btn ghost sm" data-save="b23" data-name="secretary-requests-100-023.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="調査">
   <div class="ih"><span class="num">024</span><span class="ititle">料金プランの最新確認</span></div>
   
   <pre class="prompt" id="b24">前提: サービスの料金が変わっていないか定期的に確認したい人向け。
@@ -301,7 +306,7 @@
     <button class="btn ghost sm" data-save="b24" data-name="secretary-requests-100-024.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="調査">
   <div class="ih"><span class="num">025</span><span class="ititle">採用市場の相場調査</span></div>
   
   <pre class="prompt" id="b25">前提: 新しく人を雇う前に相場感を掴みたい経営者向け。
@@ -312,7 +317,7 @@
     <button class="btn ghost sm" data-save="b25" data-name="secretary-requests-100-025.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="調査">
   <div class="ih"><span class="num">026</span><span class="ititle">イベント・カンファレンス情報収集</span></div>
   
   <pre class="prompt" id="b26">前提: 参加候補のイベントを見落としたくない人向け。
@@ -323,7 +328,7 @@
     <button class="btn ghost sm" data-save="b26" data-name="secretary-requests-100-026.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="調査">
   <div class="ih"><span class="num">027</span><span class="ititle">法改正・規約変更の確認</span></div>
   
   <pre class="prompt" id="b27">前提: 利用しているサービスの規約変更に気づきたい人向け。
@@ -334,7 +339,7 @@
     <button class="btn ghost sm" data-save="b27" data-name="secretary-requests-100-027.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="調査">
   <div class="ih"><span class="num">028</span><span class="ititle">類似ツールの選定比較</span></div>
   
   <pre class="prompt" id="b28">前提: 新しいツールを導入する前に選択肢を絞りたい人向け。
@@ -345,7 +350,7 @@
     <button class="btn ghost sm" data-save="b28" data-name="secretary-requests-100-028.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="調査">
   <div class="ih"><span class="num">029</span><span class="ititle">顧客・読者の声の傾向調査</span></div>
   
   <pre class="prompt" id="b29">前提: 反応を集計する手間を減らしたい発信者向け。
@@ -356,7 +361,7 @@
     <button class="btn ghost sm" data-save="b29" data-name="secretary-requests-100-029.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="調査">
   <div class="ih"><span class="num">030</span><span class="ititle">用語・専門知識の下調べ</span></div>
   
   <pre class="prompt" id="b30">前提: 新しいトピックを扱う前に基礎知識を整理したい人向け。
@@ -367,7 +372,7 @@
     <button class="btn ghost sm" data-save="b30" data-name="secretary-requests-100-030.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="調査">
   <div class="ih"><span class="num">031</span><span class="ititle">助成金・補助金の該当確認</span></div>
   
   <pre class="prompt" id="b31">前提: 使える制度を見落としたくない事業主向け。
@@ -378,7 +383,7 @@
     <button class="btn ghost sm" data-save="b31" data-name="secretary-requests-100-031.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="調査">
   <div class="ih"><span class="num">032</span><span class="ititle">競合の価格改定履歴調査</span></div>
   
   <pre class="prompt" id="b32">前提: 値付けの参考にしたい人向け。
@@ -389,7 +394,7 @@
     <button class="btn ghost sm" data-save="b32" data-name="secretary-requests-100-032.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="調査">
   <div class="ih"><span class="num">033</span><span class="ititle">海外の最新動向の翻訳要約</span></div>
   
   <pre class="prompt" id="b33">前提: 英語の一次情報を毎回自分で読むのが大変な人向け。
@@ -400,7 +405,7 @@
     <button class="btn ghost sm" data-save="b33" data-name="secretary-requests-100-033.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="調査">
   <div class="ih"><span class="num">034</span><span class="ititle">自社サービスの評判調査</span></div>
   
   <pre class="prompt" id="b34">前提: 外部の評判を定期的に把握したい人向け。
@@ -411,7 +416,7 @@
     <button class="btn ghost sm" data-save="b34" data-name="secretary-requests-100-034.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="調査">
   <div class="ih"><span class="num">035</span><span class="ititle">取引先の信用情報の下調べ</span></div>
   
   <pre class="prompt" id="b35">前提: 新しい取引先と契約する前の基礎確認をしたい人向け。
@@ -422,7 +427,7 @@
     <button class="btn ghost sm" data-save="b35" data-name="secretary-requests-100-035.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="調査">
   <div class="ih"><span class="num">036</span><span class="ititle">トレンドキーワードの把握</span></div>
   
   <pre class="prompt" id="b36">前提: 発信する話題のネタ探しに使いたい人向け。
@@ -433,7 +438,7 @@
     <button class="btn ghost sm" data-save="b36" data-name="secretary-requests-100-036.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="調査">
   <div class="ih"><span class="num">037</span><span class="ititle">既存契約の条件比較調査</span></div>
   
   <pre class="prompt" id="b37">前提: 乗り換えを検討する前に選択肢を洗い出したい人向け。
@@ -444,7 +449,7 @@
     <button class="btn ghost sm" data-save="b37" data-name="secretary-requests-100-037.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="調査">
   <div class="ih"><span class="num">038</span><span class="ititle">参考事例・成功事例の収集</span></div>
   
   <pre class="prompt" id="b38">前提: 施策を検討する前に他社事例を集めたい人向け。
@@ -455,7 +460,7 @@
     <button class="btn ghost sm" data-save="b38" data-name="secretary-requests-100-038.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="調査">
   <div class="ih"><span class="num">039</span><span class="ititle">公式発表の変更点まとめ</span></div>
   
   <pre class="prompt" id="b39">前提: 使っているツールのアップデート内容を把握したい人向け。
@@ -466,7 +471,7 @@
     <button class="btn ghost sm" data-save="b39" data-name="secretary-requests-100-039.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="調査">
   <div class="ih"><span class="num">040</span><span class="ititle">地域・拠点情報の下調べ</span></div>
   
   <pre class="prompt" id="b40">前提: 新拠点や出張先の基礎情報を調べたい人向け。
@@ -477,8 +482,8 @@
     <button class="btn ghost sm" data-save="b40" data-name="secretary-requests-100-040.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">下書き</h2>
-<div class="icard">
+<h2 class="cat" data-cat="下書き">下書き</h2>
+<div class="icard" data-cat="下書き">
   <div class="ih"><span class="num">041</span><span class="ititle">動画・記事から下書きを作る</span></div>
   
   <pre class="prompt" id="b41">前提: 完成済みの動画・記事の素材から告知文を作りたい発信者向け。
@@ -489,7 +494,7 @@
     <button class="btn ghost sm" data-save="b41" data-name="secretary-requests-100-041.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="下書き">
   <div class="ih"><span class="num">042</span><span class="ititle">メール返信の下書き</span></div>
   
   <pre class="prompt" id="b42">前提: 毎回一から文面を考えるのが手間な人向け。
@@ -500,7 +505,7 @@
     <button class="btn ghost sm" data-save="b42" data-name="secretary-requests-100-042.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="下書き">
   <div class="ih"><span class="num">043</span><span class="ititle">週報・日報の下書き</span></div>
   
   <pre class="prompt" id="b43">前提: 報告書を毎回書くのが面倒な人向け。
@@ -511,7 +516,7 @@
     <button class="btn ghost sm" data-save="b43" data-name="secretary-requests-100-043.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="下書き">
   <div class="ih"><span class="num">044</span><span class="ititle">お詫び・トラブル対応文の下書き</span></div>
   
   <pre class="prompt" id="b44">前提: トラブル時に冷静な文面をすぐ用意したい人向け。
@@ -522,7 +527,7 @@
     <button class="btn ghost sm" data-save="b44" data-name="secretary-requests-100-044.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="下書き">
   <div class="ih"><span class="num">045</span><span class="ititle">プレスリリース風の告知文</span></div>
   
   <pre class="prompt" id="b45">前提: 発表を形にする時間がない人向け。
@@ -533,7 +538,7 @@
     <button class="btn ghost sm" data-save="b45" data-name="secretary-requests-100-045.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="下書き">
   <div class="ih"><span class="num">046</span><span class="ititle">YouTube概要欄の下書き</span></div>
   
   <pre class="prompt" id="b46">前提: 毎回の概要欄作成が地味に時間を取る人向け。
@@ -544,7 +549,7 @@
     <button class="btn ghost sm" data-save="b46" data-name="secretary-requests-100-046.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="下書き">
   <div class="ih"><span class="num">047</span><span class="ititle">提案書・企画書の骨子</span></div>
   
   <pre class="prompt" id="b47">前提: ゼロから企画書を組み立てるのが大変な人向け。
@@ -555,7 +560,7 @@
     <button class="btn ghost sm" data-save="b47" data-name="secretary-requests-100-047.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="下書き">
   <div class="ih"><span class="num">048</span><span class="ititle">SNS用サムネ文言の下書き</span></div>
   
   <pre class="prompt" id="b48">前提: サムネ用の短い言葉を毎回考えるのが大変な人向け。
@@ -566,7 +571,7 @@
     <button class="btn ghost sm" data-save="b48" data-name="secretary-requests-100-048.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="下書き">
   <div class="ih"><span class="num">049</span><span class="ititle">お礼・フォローアップ文の下書き</span></div>
   
   <pre class="prompt" id="b49">前提: 打ち合わせ後の連絡を忘れずに出したい人向け。
@@ -577,7 +582,7 @@
     <button class="btn ghost sm" data-save="b49" data-name="secretary-requests-100-049.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="下書き">
   <div class="ih"><span class="num">050</span><span class="ititle">FAQページの下書き</span></div>
   
   <pre class="prompt" id="b50">前提: よくある質問をまとめる作業を効率化したい人向け。
@@ -588,7 +593,7 @@
     <button class="btn ghost sm" data-save="b50" data-name="secretary-requests-100-050.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="下書き">
   <div class="ih"><span class="num">051</span><span class="ititle">求人票の下書き</span></div>
   
   <pre class="prompt" id="b51">前提: 採用活動の文面作成に時間をかけたくない人向け。
@@ -599,7 +604,7 @@
     <button class="btn ghost sm" data-save="b51" data-name="secretary-requests-100-051.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="下書き">
   <div class="ih"><span class="num">052</span><span class="ititle">台本・進行表の下書き</span></div>
   
   <pre class="prompt" id="b52">前提: 配信や打ち合わせの進行案を毎回考えるのが大変な人向け。
@@ -610,7 +615,7 @@
     <button class="btn ghost sm" data-save="b52" data-name="secretary-requests-100-052.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="下書き">
   <div class="ih"><span class="num">053</span><span class="ititle">レビュー・感想文の下書き</span></div>
   
   <pre class="prompt" id="b53">前提: 商品・サービスの感想をまとめる時間がない人向け。
@@ -621,7 +626,7 @@
     <button class="btn ghost sm" data-save="b53" data-name="secretary-requests-100-053.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="下書き">
   <div class="ih"><span class="num">054</span><span class="ititle">社内ルール・マニュアルの下書き</span></div>
   
   <pre class="prompt" id="b54">前提: 属人化している手順を文書化したい人向け。
@@ -632,7 +637,7 @@
     <button class="btn ghost sm" data-save="b54" data-name="secretary-requests-100-054.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="下書き">
   <div class="ih"><span class="num">055</span><span class="ititle">ニュースレターの下書き</span></div>
   
   <pre class="prompt" id="b55">前提: 定期配信のたびに文章を組み立てるのが大変な人向け。
@@ -643,7 +648,7 @@
     <button class="btn ghost sm" data-save="b55" data-name="secretary-requests-100-055.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="下書き">
   <div class="ih"><span class="num">056</span><span class="ititle">スピーチ・挨拶文の下書き</span></div>
   
   <pre class="prompt" id="b56">前提: 人前で話す文章を用意する時間がない人向け。
@@ -654,7 +659,7 @@
     <button class="btn ghost sm" data-save="b56" data-name="secretary-requests-100-056.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="下書き">
   <div class="ih"><span class="num">057</span><span class="ititle">比較表・チェックリストの下書き</span></div>
   
   <pre class="prompt" id="b57">前提: 検討材料を整理する手間を省きたい人向け。
@@ -665,7 +670,7 @@
     <button class="btn ghost sm" data-save="b57" data-name="secretary-requests-100-057.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="下書き">
   <div class="ih"><span class="num">058</span><span class="ititle">お知らせ・案内文の下書き</span></div>
   
   <pre class="prompt" id="b58">前提: 変更事項を伝える文面を毎回考えるのが大変な人向け。
@@ -676,7 +681,7 @@
     <button class="btn ghost sm" data-save="b58" data-name="secretary-requests-100-058.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="下書き">
   <div class="ih"><span class="num">059</span><span class="ititle">自己紹介・プロフィール文の下書き</span></div>
   
   <pre class="prompt" id="b59">前提: 媒体ごとに文字数の違うプロフィールを作り分けたい人向け。
@@ -687,7 +692,7 @@
     <button class="btn ghost sm" data-save="b59" data-name="secretary-requests-100-059.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="下書き">
   <div class="ih"><span class="num">060</span><span class="ititle">議事録の下書き</span></div>
   
   <pre class="prompt" id="b60">前提: 打ち合わせの記録を整理する時間がない人向け。
@@ -698,8 +703,8 @@
     <button class="btn ghost sm" data-save="b60" data-name="secretary-requests-100-060.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">調整</h2>
-<div class="icard">
+<h2 class="cat" data-cat="調整">調整</h2>
+<div class="icard" data-cat="調整">
   <div class="ih"><span class="num">061</span><span class="ititle">会議日程の候補出し</span></div>
   
   <pre class="prompt" id="b61">前提: 複数人の予定を調整する手間を省きたい人向け。
@@ -710,7 +715,7 @@
     <button class="btn ghost sm" data-save="b61" data-name="secretary-requests-100-061.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="調整">
   <div class="ih"><span class="num">062</span><span class="ititle">納期・スケジュールの逆算</span></div>
   
   <pre class="prompt" id="b62">前提: 締め切りから逆算した作業計画を立てたい人向け。
@@ -721,7 +726,7 @@
     <button class="btn ghost sm" data-save="b62" data-name="secretary-requests-100-062.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="調整">
   <div class="ih"><span class="num">063</span><span class="ititle">複数タスクの優先順位付け</span></div>
   
   <pre class="prompt" id="b63">前提: 抱えているタスクの順番を決めきれない人向け。
@@ -732,7 +737,7 @@
     <button class="btn ghost sm" data-save="b63" data-name="secretary-requests-100-063.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="調整">
   <div class="ih"><span class="num">064</span><span class="ititle">外部連絡の返信タイミング調整</span></div>
   
   <pre class="prompt" id="b64">前提: 返信の優先順位を判断する手間を省きたい人向け。
@@ -743,7 +748,7 @@
     <button class="btn ghost sm" data-save="b64" data-name="secretary-requests-100-064.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="調整">
   <div class="ih"><span class="num">065</span><span class="ititle">出張・訪問ルートの調整</span></div>
   
   <pre class="prompt" id="b65">前提: 移動を伴う予定を効率よく組みたい人向け。
@@ -754,7 +759,7 @@
     <button class="btn ghost sm" data-save="b65" data-name="secretary-requests-100-065.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="調整">
   <div class="ih"><span class="num">066</span><span class="ititle">チームメンバーの役割分担案</span></div>
   
   <pre class="prompt" id="b66">前提: 誰に何を任せるか決めるのに時間がかかる人向け。
@@ -765,7 +770,7 @@
     <button class="btn ghost sm" data-save="b66" data-name="secretary-requests-100-066.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="調整">
   <div class="ih"><span class="num">067</span><span class="ititle">予定変更時の関係者連絡案</span></div>
   
   <pre class="prompt" id="b67">前提: 予定変更のたびに連絡文を考えるのが手間な人向け。
@@ -776,7 +781,7 @@
     <button class="btn ghost sm" data-save="b67" data-name="secretary-requests-100-067.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="調整">
   <div class="ih"><span class="num">068</span><span class="ititle">休暇・稼働調整の提案</span></div>
   
   <pre class="prompt" id="b68">前提: 繁忙期を避けて休みを取りたい人向け。
@@ -787,7 +792,7 @@
     <button class="btn ghost sm" data-save="b68" data-name="secretary-requests-100-068.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="調整">
   <div class="ih"><span class="num">069</span><span class="ititle">複数案件の並行スケジュール調整</span></div>
   
   <pre class="prompt" id="b69">前提: 案件がバッティングしそうで不安な人向け。
@@ -798,7 +803,7 @@
     <button class="btn ghost sm" data-save="b69" data-name="secretary-requests-100-069.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="調整">
   <div class="ih"><span class="num">070</span><span class="ititle">会食・打ち合わせ場所の提案</span></div>
   
   <pre class="prompt" id="b70">前提: 毎回場所選びに時間がかかる人向け。
@@ -809,7 +814,7 @@
     <button class="btn ghost sm" data-save="b70" data-name="secretary-requests-100-070.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="調整">
   <div class="ih"><span class="num">071</span><span class="ititle">繰り返しタスクの負荷分散提案</span></div>
   
   <pre class="prompt" id="b71">前提: 同じ作業が特定の曜日に偏っている人向け。
@@ -820,7 +825,7 @@
     <button class="btn ghost sm" data-save="b71" data-name="secretary-requests-100-071.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="調整">
   <div class="ih"><span class="num">072</span><span class="ititle">プロジェクトの全体マイルストーン調整</span></div>
   
   <pre class="prompt" id="b72">前提: 長期プロジェクトの節目を整理したい人向け。
@@ -831,7 +836,7 @@
     <button class="btn ghost sm" data-save="b72" data-name="secretary-requests-100-072.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="調整">
   <div class="ih"><span class="num">073</span><span class="ititle">急な予定変更へのリカバリー案</span></div>
   
   <pre class="prompt" id="b73">前提: 予定が崩れたときの立て直しに時間を取られる人向け。
@@ -842,7 +847,7 @@
     <button class="btn ghost sm" data-save="b73" data-name="secretary-requests-100-073.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="調整">
   <div class="ih"><span class="num">074</span><span class="ititle">複数窓口からの依頼の交通整理</span></div>
   
   <pre class="prompt" id="b74">前提: あちこちから依頼が来て収拾がつかない人向け。
@@ -853,7 +858,7 @@
     <button class="btn ghost sm" data-save="b74" data-name="secretary-requests-100-074.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="調整">
   <div class="ih"><span class="num">075</span><span class="ititle">定例会議のアジェンダ調整</span></div>
   
   <pre class="prompt" id="b75">前提: 毎回のアジェンダ作りが後手に回る人向け。
@@ -864,7 +869,7 @@
     <button class="btn ghost sm" data-save="b75" data-name="secretary-requests-100-075.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="調整">
   <div class="ih"><span class="num">076</span><span class="ititle">見積もり・提案の締切管理</span></div>
   
   <pre class="prompt" id="b76">前提: 複数の見積もり依頼の締切を見失いがちな人向け。
@@ -875,7 +880,7 @@
     <button class="btn ghost sm" data-save="b76" data-name="secretary-requests-100-076.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="調整">
   <div class="ih"><span class="num">077</span><span class="ititle">繁忙期の業務量調整提案</span></div>
   
   <pre class="prompt" id="b77">前提: 繁忙期に業務が集中しすぎていないか確認したい人向け。
@@ -886,7 +891,7 @@
     <button class="btn ghost sm" data-save="b77" data-name="secretary-requests-100-077.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="調整">
   <div class="ih"><span class="num">078</span><span class="ititle">複数拠点間のスケジュール調整</span></div>
   
   <pre class="prompt" id="b78">前提: 時差や拠点の違いを考慮した調整が面倒な人向け。
@@ -897,7 +902,7 @@
     <button class="btn ghost sm" data-save="b78" data-name="secretary-requests-100-078.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="調整">
   <div class="ih"><span class="num">079</span><span class="ititle">進行が遅れているタスクの立て直し案</span></div>
   
   <pre class="prompt" id="b79">前提: 遅延したタスクの対応を考える余裕がない人向け。
@@ -908,7 +913,7 @@
     <button class="btn ghost sm" data-save="b79" data-name="secretary-requests-100-079.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="調整">
   <div class="ih"><span class="num">080</span><span class="ititle">複数依頼の一括スケジューリング</span></div>
   
   <pre class="prompt" id="b80">前提: バラバラに来た依頼を一度に整理したい人向け。
@@ -919,8 +924,8 @@
     <button class="btn ghost sm" data-save="b80" data-name="secretary-requests-100-080.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<h2 class="cat">整理</h2>
-<div class="icard">
+<h2 class="cat" data-cat="整理">整理</h2>
+<div class="icard" data-cat="整理">
   <div class="ih"><span class="num">081</span><span class="ititle">フォルダ・ファイルの整理案</span></div>
   
   <pre class="prompt" id="b81">前提: 散らかったファイルを整理する時間がない人向け。
@@ -931,7 +936,7 @@
     <button class="btn ghost sm" data-save="b81" data-name="secretary-requests-100-081.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="整理">
   <div class="ih"><span class="num">082</span><span class="ititle">連絡先リストの重複整理</span></div>
   
   <pre class="prompt" id="b82">前提: 連絡先が重複・散在している人向け。
@@ -942,7 +947,7 @@
     <button class="btn ghost sm" data-save="b82" data-name="secretary-requests-100-082.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="整理">
   <div class="ih"><span class="num">083</span><span class="ititle">メモ・議事録の要点抽出</span></div>
   
   <pre class="prompt" id="b83">前提: 溜まったメモから重要な部分だけ取り出したい人向け。
@@ -953,7 +958,7 @@
     <button class="btn ghost sm" data-save="b83" data-name="secretary-requests-100-083.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="整理">
   <div class="ih"><span class="num">084</span><span class="ititle">タスク管理ツールの棚卸し</span></div>
   
   <pre class="prompt" id="b84">前提: タスク管理が放置されて溜まっている人向け。
@@ -964,7 +969,7 @@
     <button class="btn ghost sm" data-save="b84" data-name="secretary-requests-100-084.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="整理">
   <div class="ih"><span class="num">085</span><span class="ititle">領収書・請求書のカテゴリ分け</span></div>
   
   <pre class="prompt" id="b85">前提: 経理処理の前段階を効率化したい人向け。
@@ -975,7 +980,7 @@
     <button class="btn ghost sm" data-save="b85" data-name="secretary-requests-100-085.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="整理">
   <div class="ih"><span class="num">086</span><span class="ititle">読み返す価値のある記事の整理</span></div>
   
   <pre class="prompt" id="b86">前提: 保存だけして読み返していない記事が溜まっている人向け。
@@ -986,7 +991,7 @@
     <button class="btn ghost sm" data-save="b86" data-name="secretary-requests-100-086.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="整理">
   <div class="ih"><span class="num">087</span><span class="ititle">チャット履歴からの決定事項抽出</span></div>
   
   <pre class="prompt" id="b87">前提: 長いやり取りから結論だけ拾いたい人向け。
@@ -997,7 +1002,7 @@
     <button class="btn ghost sm" data-save="b87" data-name="secretary-requests-100-087.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="整理">
   <div class="ih"><span class="num">088</span><span class="ititle">写真・素材データの分類案</span></div>
   
   <pre class="prompt" id="b88">前提: 動画編集素材が整理されず溜まっている人向け。
@@ -1008,7 +1013,7 @@
     <button class="btn ghost sm" data-save="b88" data-name="secretary-requests-100-088.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="整理">
   <div class="ih"><span class="num">089</span><span class="ititle">契約書・重要書類の一覧化</span></div>
   
   <pre class="prompt" id="b89">前提: 重要書類がどこに何があるか把握できていない人向け。
@@ -1019,7 +1024,7 @@
     <button class="btn ghost sm" data-save="b89" data-name="secretary-requests-100-089.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="整理">
   <div class="ih"><span class="num">090</span><span class="ititle">定期購読・サブスクの棚卸し</span></div>
   
   <pre class="prompt" id="b90">前提: 使っていないサブスクを見直したい人向け。
@@ -1030,7 +1035,7 @@
     <button class="btn ghost sm" data-save="b90" data-name="secretary-requests-100-090.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="整理">
   <div class="ih"><span class="num">091</span><span class="ititle">プロジェクトのアーカイブ整理</span></div>
   
   <pre class="prompt" id="b91">前提: 終わったプロジェクトの資料が片付いていない人向け。
@@ -1041,7 +1046,7 @@
     <button class="btn ghost sm" data-save="b91" data-name="secretary-requests-100-091.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="整理">
   <div class="ih"><span class="num">092</span><span class="ititle">引き継ぎ資料の棚卸し</span></div>
   
   <pre class="prompt" id="b92">前提: 属人化した情報を引き継ぎ可能な形にしたい人向け。
@@ -1052,7 +1057,7 @@
     <button class="btn ghost sm" data-save="b92" data-name="secretary-requests-100-092.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="整理">
   <div class="ih"><span class="num">093</span><span class="ititle">問い合わせ履歴の傾向整理</span></div>
   
   <pre class="prompt" id="b93">前提: 同じ質問への対応を繰り返している人向け。
@@ -1063,7 +1068,7 @@
     <button class="btn ghost sm" data-save="b93" data-name="secretary-requests-100-093.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="整理">
   <div class="ih"><span class="num">094</span><span class="ititle">SNSアカウントの棚卸し</span></div>
   
   <pre class="prompt" id="b94">前提: 複数運用しているアカウントの状態を把握したい人向け。
@@ -1074,7 +1079,7 @@
     <button class="btn ghost sm" data-save="b94" data-name="secretary-requests-100-094.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="整理">
   <div class="ih"><span class="num">095</span><span class="ititle">備品・機材のリスト化</span></div>
   
   <pre class="prompt" id="b95">前提: 何を持っているか把握できていない人向け。
@@ -1085,7 +1090,7 @@
     <button class="btn ghost sm" data-save="b95" data-name="secretary-requests-100-095.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="整理">
   <div class="ih"><span class="num">096</span><span class="ititle">過去の企画・アイデアの棚卸し</span></div>
   
   <pre class="prompt" id="b96">前提: 過去に出したボツ案を見返して再利用したい人向け。
@@ -1096,7 +1101,7 @@
     <button class="btn ghost sm" data-save="b96" data-name="secretary-requests-100-096.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="整理">
   <div class="ih"><span class="num">097</span><span class="ititle">外部リンク・ブックマークの整理</span></div>
   
   <pre class="prompt" id="b97">前提: ブックマークが増えすぎて使いづらい人向け。
@@ -1107,7 +1112,7 @@
     <button class="btn ghost sm" data-save="b97" data-name="secretary-requests-100-097.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="整理">
   <div class="ih"><span class="num">098</span><span class="ititle">会員・顧客リストの整理</span></div>
   
   <pre class="prompt" id="b98">前提: 顧客情報が更新されず古くなっている人向け。
@@ -1118,7 +1123,7 @@
     <button class="btn ghost sm" data-save="b98" data-name="secretary-requests-100-098.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="整理">
   <div class="ih"><span class="num">099</span><span class="ititle">月次の振り返りメモの整理</span></div>
   
   <pre class="prompt" id="b99">前提: 毎月の振り返りが書きっぱなしで活用されていない人向け。
@@ -1129,7 +1134,7 @@
     <button class="btn ghost sm" data-save="b99" data-name="secretary-requests-100-099.txt">⬇ ダウンロード</button>
   </div>
 </div>
-<div class="icard">
+<div class="icard" data-cat="整理">
   <div class="ih"><span class="num">100</span><span class="ititle">デジタル資産の棚卸し</span></div>
   
   <pre class="prompt" id="b100">前提: ドメイン・アカウント等の管理が散らかっている人向け。
@@ -1969,6 +1974,57 @@ Telegram・DiscordからChannels経由で送るだけの依頼文です。「前
 
 **ポイント**: 依頼文はそのまま使ってもよいですが、（後述）の部分を具体的な情報に置き換えるほど、Claude Codeの返答の精度が上がります。</pre>
 <script>
+// 項目の多いキットで、目的の1件に辿り着けるようにする絞り込み。
+// 検索はタイトル・説明だけでなく本文も対象にする（「あの文言が入っていた項目」で探せるように）。
+(function(){
+  var q = document.getElementById('kq');
+  if (!q) return;
+  var hit = document.getElementById('khit');
+  var cards = [].slice.call(document.querySelectorAll('.kwrap .icard'));
+  var heads = [].slice.call(document.querySelectorAll('.kwrap h2.cat'));
+  var chips = [].slice.call(document.querySelectorAll('.kcat'));
+  var cat = '';
+
+  // ひらがな・カタカナの違いで取りこぼさないようにする（ハブ側の検索と同じ扱い）
+  function norm(s){
+    return (s || '').toLowerCase().replace(/[ぁ-ん]/g, function(c){
+      return String.fromCharCode(c.charCodeAt(0) + 0x60);
+    });
+  }
+
+  // カード全体の textContent だとボタンの「コピー」まで拾ってしまうため、中身を選んで集める
+  cards.forEach(function(c){
+    var t = c.querySelector('.ititle'), d = c.querySelector('.imeta'), p = c.querySelector('.prompt');
+    c._t = norm((t ? t.textContent : '') + ' ' + (d ? d.textContent : '') + ' ' + (p ? p.textContent : ''));
+  });
+
+  function apply(){
+    var kw = norm(q.value.trim()), n = 0, shown = {};
+    cards.forEach(function(c){
+      var ok = (!cat || c.getAttribute('data-cat') === cat)
+            && (!kw || c._t.indexOf(kw) !== -1);
+      c.classList.toggle('hide', !ok);
+      if (ok){ n++; shown[c.getAttribute('data-cat')] = 1; }
+    });
+    // 残った項目が1件も無いカテゴリの見出しは隠す
+    heads.forEach(function(h){
+      h.classList.toggle('hide', !shown[h.getAttribute('data-cat')]);
+    });
+    hit.textContent = (kw || cat)
+      ? (n ? n + '件を表示中' : '該当する項目がありません')
+      : '';
+  }
+
+  q.addEventListener('input', apply);
+  chips.forEach(function(b){
+    b.addEventListener('click', function(){
+      cat = b.getAttribute('data-cat');
+      chips.forEach(function(x){ x.classList.toggle('on', x === b); });
+      apply();
+    });
+  });
+})();
+
 function flash(btn, label){
   const old = btn.textContent, cls = btn.className;
   btn.textContent = label; btn.classList.add('ok');
@@ -2038,7 +2094,22 @@ document.addEventListener('click', e => {
     el.classList.remove('show');
     sessionStorage.setItem('promoClosed', '1');
   }
-  setTimeout(function(){ el.classList.add('show'); }, 1600);
+  // 動画の概要欄から来た人が、自分のプレゼントを探し始める瞬間に被らないようにする。
+  // 以前は読み込み1.6秒後に無条件で出しており、いちばん目的意識の高い時間を塞いでいた。
+  // 中身を見に行った（＝目当てのものに辿り着いた）ころに出す。
+  var shown = false;
+  function show(){
+    if (shown) return;
+    shown = true;
+    el.classList.add('show');
+    removeEventListener('scroll', onScroll);
+  }
+  function onScroll(){
+    if (scrollY > innerHeight * 0.8) show();
+  }
+  addEventListener('scroll', onScroll, {passive:true});
+  // まったくスクロールしない人にも最後には出す（ただし十分に間を置いてから）
+  setTimeout(show, 45000);
   document.getElementById('promoClose').addEventListener('click', function(e){ e.preventDefault(); close(); });
   el.addEventListener('click', function(e){ if (e.target === el) close(); });
 })();
