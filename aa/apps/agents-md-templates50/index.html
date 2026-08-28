@@ -1,0 +1,1750 @@
+<!doctype html>
+<html lang="ja"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AGENTS.mdナレッジベース設計テンプレート50選 — Kawaru Gifts</title>
+<meta name="description" content="AGENTS.mdを「取扱説明書」ではなく「目次」として設計するための、コピペで使えるMarkdownテンプレート集です。5カテゴリ×10本。">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Kawaru Gifts">
+<meta property="og:title" content="AGENTS.mdナレッジベース設計テンプレート50選 — Kawaru Gifts">
+<meta property="og:description" content="AGENTS.mdを「取扱説明書」ではなく「目次」として設計するための、コピペで使えるMarkdownテンプレート集です。5カテゴリ×10本。">
+<meta property="og:image" content="https://i.ytimg.com/vi/BdAjVmf3ruI/hqdefault.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://i.ytimg.com/vi/BdAjVmf3ruI/hqdefault.jpg">
+<meta name="twitter:title" content="AGENTS.mdナレッジベース設計テンプレート50選 — Kawaru Gifts">
+<meta name="twitter:description" content="AGENTS.mdを「取扱説明書」ではなく「目次」として設計するための、コピペで使えるMarkdownテンプレート集です。5カテゴリ×10本。">
+<link rel="icon" href="data:image/png;base64,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">
+<link rel="stylesheet" href="../../assets/site.css">
+</head><body>
+<header class="kh"><div class="top">
+  <a class="back" href="../../">← 一覧へ</a>
+  <img src="data:image/png;base64,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" alt="">
+  <h1>AGENTS.mdナレッジベース設計テンプレート50選</h1>
+  <span class="badge">50個</span>
+  <button class="btn ghost sm" style="margin-left:auto" data-copy="pfull">📋 全件コピー</button>
+  <button class="btn sm" data-save="pfull" data-name="agents-md-templates50.md">⬇ 全件ダウンロード</button>
+</div></header>
+
+<div class="kwrap">
+  <section class="epctx epctx-top">
+  <div class="ep-left">
+    <div class="ep-thumb epctx-thumb"><img src="https://i.ytimg.com/vi/BdAjVmf3ruI/hqdefault.jpg" alt=""></div>
+    <a class="watch" href="https://www.youtube.com/watch?v=BdAjVmf3ruI" target="_blank" rel="noopener">▶ 動画を見る</a>
+  </div>
+  <div>
+    <p class="epctx-label">この動画のプレゼントです</p>
+    <p class="epctx-title">【誰も知らない】OpenAIが発表した究極のエージェントを構築する方法を解説します</p>
+    <p class="epctx-date">2026-08-28</p>
+  </div>
+</section>
+
+  <section class="kintro">
+    <h2>AGENTS.mdナレッジベース設計テンプレート50選</h2>
+    <p><span class="nb">AGENTS.mdを</span><span class="nb">「取扱説明書」ではなく</span><span class="nb">「目次」として設計するための、</span><span class="nb">コピペで</span><span class="nb">使えるMarkdownテンプレート集で</span><span class="nb">す。</span><span class="nb">5カテゴリ×10本。</span></p>
+    <div class="kmeta"><span>設定・スニペット</span><span>収録 50個</span><span>No.100 Codexハーネス活用</span><span>2026-08-21 配布</span></div>
+    <div class="pnote"><span class="nb">下のカードから、</span><span class="nb">1件ずつコピー、</span><span class="nb">または個別にダウンロードできます。</span><span class="nb">まとめて欲しいときは、</span><span class="nb">上の</span><span class="nb">「全件ダウンロード」を</span><span class="nb">お使いください。</span></div>
+  </section>
+
+  <div class="ktools">
+  <input type="search" id="kq" placeholder="この中から探す" autocomplete="off" aria-label="この中から探す">
+  <div class="kcats"><button type="button" class="kcat on" data-cat="">すべて<span class="n">50</span></button><button type="button" class="kcat" data-cat="AGENTS.md本体（目次役）テンプレート">AGENTS.md本体（目次役）テンプレート<span class="n">1</span></button><button type="button" class="kcat" data-cat="詳細な参照先">詳細な参照先<span class="n">1</span></button><button type="button" class="kcat" data-cat="よく使うコマンド">よく使うコマンド<span class="n">1</span></button><button type="button" class="kcat" data-cat="制約・ガードレール">制約・ガードレール<span class="n">1</span></button><button type="button" class="kcat" data-cat="用語集（社内独自の呼び方）">用語集（社内独自の呼び方）<span class="n">1</span></button><button type="button" class="kcat" data-cat="PRを開く前に">PRを開く前に<span class="n">1</span></button><button type="button" class="kcat" data-cat="ディレクトリ構成（概要）">ディレクトリ構成（概要）<span class="n">1</span></button><button type="button" class="kcat" data-cat="詰まったときは">詰まったときは<span class="n">1</span></button><button type="button" class="kcat" data-cat="セルフレビューの観点">セルフレビューの観点<span class="n">1</span></button><button type="button" class="kcat" data-cat="このファイルの更新ルール">このファイルの更新ルール<span class="n">1</span></button><button type="button" class="kcat" data-cat="docs/design-docs/ 系テンプレート">docs/design-docs/ 系テンプレート<span class="n">3</span></button><button type="button" class="kcat" data-cat="未解決の懸念">未解決の懸念<span class="n">7</span></button><button type="button" class="kcat" data-cat="docs/exec-plans/ 系テンプレート">docs/exec-plans/ 系テンプレート<span class="n">1</span></button><button type="button" class="kcat" data-cat="完了条件">完了条件<span class="n">4</span></button><button type="button" class="kcat" data-cat="進捗ログ（ロールバック発生時）">進捗ログ（ロールバック発生時）<span class="n">1</span></button><button type="button" class="kcat" data-cat="並行作業の調整">並行作業の調整<span class="n">1</span></button><button type="button" class="kcat" data-cat="分割方針">分割方針<span class="n">1</span></button><button type="button" class="kcat" data-cat="レビューをお願いしたい点">レビューをお願いしたい点<span class="n">2</span></button><button type="button" class="kcat" data-cat="docs/product-specs/ 系テンプレート">docs/product-specs/ 系テンプレート<span class="n">2</span></button><button type="button" class="kcat" data-cat="対象外（スコープ外）">対象外（スコープ外）<span class="n">1</span></button><button type="button" class="kcat" data-cat="承認UIの要件">承認UIの要件<span class="n">1</span></button><button type="button" class="kcat" data-cat="承認要否">承認要否<span class="n">1</span></button><button type="button" class="kcat" data-cat="エラーケース">エラーケース<span class="n">1</span></button><button type="button" class="kcat" data-cat="非機能要件">非機能要件<span class="n">1</span></button><button type="button" class="kcat" data-cat="段階リリース計画">段階リリース計画<span class="n">1</span></button><button type="button" class="kcat" data-cat="移行時の注意点">移行時の注意点<span class="n">1</span></button><button type="button" class="kcat" data-cat="成功指標">成功指標<span class="n">1</span></button><button type="button" class="kcat" data-cat="黄金の原則・品質ドキュメント系テンプレート">黄金の原則・品質ドキュメント系テンプレート<span class="n">3</span></button><button type="button" class="kcat" data-cat="出力">出力<span class="n">5</span></button><button type="button" class="kcat" data-cat="自社での使用上の注意">自社での使用上の注意<span class="n">2</span></button></div>
+  <p class="khit" id="khit" role="status"></p>
+</div>
+<h2 class="cat" data-cat="AGENTS.md本体（目次役）テンプレート">AGENTS.md本体（目次役）テンプレート</h2>
+<div class="icard" id="i1" data-cat="AGENTS.md本体（目次役）テンプレート">
+  <div class="ih"><span class="num">001</span><span class="ititle">AGENTS.md 全体骨格</span></div>
+  
+  <pre class="prompt" id="b1">保存先: プロジェクトルート直下 ./AGENTS.md（約100行を目安に、詳細はdocs/へ逃がす）
+
+```text
+# AGENTS.md
+
+このファイルは目次です。詳細は各リンク先を参照してください。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b1">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b1" data-name="agents-md-templates50-001.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i1">🔗 リンク</button>
+  </div>
+</div>
+<h2 class="cat" data-cat="詳細な参照先">詳細な参照先</h2>
+<div class="icard" id="i2" data-cat="詳細な参照先">
+  <div class="ih"><span class="num">002</span><span class="ititle">よく使うコマンドセクション</span></div>
+  
+  <pre class="prompt" id="b2">保存先: AGENTS.md内の1セクション
+
+```text</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b2">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b2" data-name="agents-md-templates50-002.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i2">🔗 リンク</button>
+  </div>
+</div>
+<h2 class="cat" data-cat="よく使うコマンド">よく使うコマンド</h2>
+<div class="icard" id="i3" data-cat="よく使うコマンド">
+  <div class="ih"><span class="num">003</span><span class="ititle">制約・ガードレールセクション</span></div>
+  
+  <pre class="prompt" id="b3">保存先: AGENTS.md内の1セクション。承認が必要な操作の明文化
+
+```text</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b3">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b3" data-name="agents-md-templates50-003.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i3">🔗 リンク</button>
+  </div>
+</div>
+<h2 class="cat" data-cat="制約・ガードレール">制約・ガードレール</h2>
+<div class="icard" id="i4" data-cat="制約・ガードレール">
+  <div class="ih"><span class="num">004</span><span class="ititle">エージェント向けの用語集セクション</span></div>
+  
+  <pre class="prompt" id="b4">保存先: AGENTS.md内の1セクション。社内独自用語の説明
+
+```text</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b4">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b4" data-name="agents-md-templates50-004.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i4">🔗 リンク</button>
+  </div>
+</div>
+<h2 class="cat" data-cat="用語集（社内独自の呼び方）">用語集（社内独自の呼び方）</h2>
+<div class="icard" id="i5" data-cat="用語集（社内独自の呼び方）">
+  <div class="ih"><span class="num">005</span><span class="ititle">PRを開く前のチェックリストセクション</span></div>
+  
+  <pre class="prompt" id="b5">保存先: AGENTS.md内の1セクション
+
+```text</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b5">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b5" data-name="agents-md-templates50-005.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i5">🔗 リンク</button>
+  </div>
+</div>
+<h2 class="cat" data-cat="PRを開く前に">PRを開く前に</h2>
+<div class="icard" id="i6" data-cat="PRを開く前に">
+  <div class="ih"><span class="num">006</span><span class="ititle">ディレクトリ構成の案内セクション</span></div>
+  
+  <pre class="prompt" id="b6">保存先: AGENTS.md内の1セクション。詳細はARCHITECTURE.mdに逃がす前提の要約版
+
+```text</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b6">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b6" data-name="agents-md-templates50-006.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i6">🔗 リンク</button>
+  </div>
+</div>
+<h2 class="cat" data-cat="ディレクトリ構成（概要）">ディレクトリ構成（概要）</h2>
+<div class="icard" id="i7" data-cat="ディレクトリ構成（概要）">
+  <div class="ih"><span class="num">007</span><span class="ititle">エラー時のエスカレーション先セクション</span></div>
+  
+  <pre class="prompt" id="b7">保存先: AGENTS.md内の1セクション
+
+```text</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b7">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b7" data-name="agents-md-templates50-007.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i7">🔗 リンク</button>
+  </div>
+</div>
+<h2 class="cat" data-cat="詰まったときは">詰まったときは</h2>
+<div class="icard" id="i8" data-cat="詰まったときは">
+  <div class="ih"><span class="num">008</span><span class="ititle">レビュー観点セクション</span></div>
+  
+  <pre class="prompt" id="b8">保存先: AGENTS.md内の1セクション。エージェント自身によるセルフレビュー観点
+
+```text</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b8">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b8" data-name="agents-md-templates50-008.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i8">🔗 リンク</button>
+  </div>
+</div>
+<h2 class="cat" data-cat="セルフレビューの観点">セルフレビューの観点</h2>
+<div class="icard" id="i9" data-cat="セルフレビューの観点">
+  <div class="ih"><span class="num">009</span><span class="ititle">バージョン管理・変更履歴セクション</span></div>
+  
+  <pre class="prompt" id="b9">保存先: AGENTS.md内の1セクション。AGENTS.md自体の更新ルール
+
+```text</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b9">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b9" data-name="agents-md-templates50-009.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i9">🔗 リンク</button>
+  </div>
+</div>
+<h2 class="cat" data-cat="このファイルの更新ルール">このファイルの更新ルール</h2>
+<div class="icard" id="i10" data-cat="このファイルの更新ルール">
+  <div class="ih"><span class="num">010</span><span class="ititle">複数エージェント併存時の役割分担セクション</span></div>
+  
+  <pre class="prompt" id="b10">保存先: AGENTS.md内の1セクション。CodexやAardvark等、複数エージェントが同じリポジトリで動く場合
+
+```text</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b10">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b10" data-name="agents-md-templates50-010.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i10">🔗 リンク</button>
+  </div>
+</div>
+<h2 class="cat" data-cat="docs/design-docs/ 系テンプレート">docs/design-docs/ 系テンプレート</h2>
+<div class="icard" id="i11" data-cat="docs/design-docs/ 系テンプレート">
+  <div class="ih"><span class="num">011</span><span class="ititle">design-docs/index.md（目次）</span></div>
+  
+  <pre class="prompt" id="b11"># 設計ドキュメント索引
+
+| ドキュメント | ステータス | 最終確認日 |
+|---|---|---|
+| core-beliefs.md | 検証済み | &lt;YYYY-MM-DD&gt; |
+| &lt;ドキュメント名&gt; | &lt;ドラフト/検証済み/廃止&gt; | &lt;YYYY-MM-DD&gt; |
+
+新しい設計ドキュメントを追加したら、このテーブルに1行追加すること。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b11">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b11" data-name="agents-md-templates50-011.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i11">🔗 リンク</button>
+  </div>
+</div>
+<div class="icard" id="i12" data-cat="docs/design-docs/ 系テンプレート">
+  <div class="ih"><span class="num">012</span><span class="ititle">core-beliefs.md（譲れない原則）</span></div>
+  
+  <pre class="prompt" id="b12"># コアビリーフ（譲れない設計方針）
+
+1. &lt;原則1。例: 境界でデータ形状を検証する&gt;
+2. &lt;原則2。例: 副作用のある処理は明示的な関数名にする&gt;
+3. &lt;原則3&gt;
+
+これらはリンターや構造テストで機械的に強制される。違反する変更は原則マージしない。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b12">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b12" data-name="agents-md-templates50-012.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i12">🔗 リンク</button>
+  </div>
+</div>
+<div class="icard" id="i13" data-cat="docs/design-docs/ 系テンプレート">
+  <div class="ih"><span class="num">013</span><span class="ititle">設計ドキュメントの標準テンプレート</span></div>
+  
+  <pre class="prompt" id="b13">保存先: docs/design-docs/&lt;機能名&gt;.md
+
+```text
+# &lt;機能名&gt; 設計</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b13">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b13" data-name="agents-md-templates50-013.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i13">🔗 リンク</button>
+  </div>
+</div>
+<h2 class="cat" data-cat="未解決の懸念">未解決の懸念</h2>
+<div class="icard" id="i14" data-cat="未解決の懸念">
+  <div class="ih"><span class="num">014</span><span class="ititle">ステータス表記のルール</span></div>
+  
+  <pre class="prompt" id="b14">---
+status: draft | verified | deprecated
+last_verified: &lt;YYYY-MM-DD&gt;
+owner: &lt;担当チーム/個人&gt;
+---</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b14">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b14" data-name="agents-md-templates50-014.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i14">🔗 リンク</button>
+  </div>
+</div>
+<div class="icard" id="i15" data-cat="未解決の懸念">
+  <div class="ih"><span class="num">015</span><span class="ititle">アーキテクチャレイヤー定義テンプレート</span></div>
+  
+  <pre class="prompt" id="b15"># アーキテクチャレイヤー
+
+各ドメインは以下の固定レイヤーに分割し、依存は「前方」にのみ許可する。
+
+型 → 設定 → リポジトリ → サービス → ランタイム → UI
+
+横断的関心事（認証・テレメトリ・機能フラグ）は「プロバイダー」経由でのみアクセスする。
+それ以外の依存はリンターでブロックする。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b15">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b15" data-name="agents-md-templates50-015.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i15">🔗 リンク</button>
+  </div>
+</div>
+<div class="icard" id="i16" data-cat="未解決の懸念">
+  <div class="ih"><span class="num">016</span><span class="ititle">命名規則ドキュメントテンプレート</span></div>
+  
+  <pre class="prompt" id="b16"># 命名規則
+
+- 関数: 動詞+対象（例: `getShipment`）
+- boolean変数: is/has/can+状態（例: `isApproved`）
+- ファイル名: &lt;規則を記入&gt;
+- MCPツール名: 動詞+対象のスネークケース（例: `get_shipment`）</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b16">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b16" data-name="agents-md-templates50-016.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i16">🔗 リンク</button>
+  </div>
+</div>
+<div class="icard" id="i17" data-cat="未解決の懸念">
+  <div class="ih"><span class="num">017</span><span class="ititle">依存ライブラリ選定方針テンプレート</span></div>
+  
+  <pre class="prompt" id="b17"># 依存ライブラリ選定方針
+
+- 新規ライブラリ導入前に、自前実装との比較を1段落で残す
+- 「退屈」で構成可能性の高い技術を優先する（エージェントがモデル化しやすいため）
+- 小さな機能（例: 並行処理ヘルパー）は、上流の不透明な挙動を避けるため自前実装を検討する</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b17">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b17" data-name="agents-md-templates50-017.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i17">🔗 リンク</button>
+  </div>
+</div>
+<div class="icard" id="i18" data-cat="未解決の懸念">
+  <div class="ih"><span class="num">018</span><span class="ititle">エラーハンドリング方針テンプレート</span></div>
+  
+  <pre class="prompt" id="b18"># エラーハンドリング方針
+
+- ユーザー入力・外部APIの境界でのみバリデーションを行う
+- 内部関数間では型システムの保証を信頼し、過剰な防御コードを書かない
+- エラーメッセージには「何が」「なぜ」「次にどうすべきか」を含める</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b18">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b18" data-name="agents-md-templates50-018.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i18">🔗 リンク</button>
+  </div>
+</div>
+<div class="icard" id="i19" data-cat="未解決の懸念">
+  <div class="ih"><span class="num">019</span><span class="ititle">非同期処理の設計方針テンプレート</span></div>
+  
+  <pre class="prompt" id="b19"># 非同期処理の設計方針
+
+- 並行実行数の上限: &lt;数値と理由&gt;
+- タイムアウトのデフォルト値: &lt;数値&gt;
+- リトライ対象とするエラー種別: &lt;一覧&gt;</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b19">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b19" data-name="agents-md-templates50-019.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i19">🔗 リンク</button>
+  </div>
+</div>
+<div class="icard" id="i20" data-cat="未解決の懸念">
+  <div class="ih"><span class="num">020</span><span class="ititle">セキュリティ設計方針テンプレート</span></div>
+  
+  <pre class="prompt" id="b20">保存先: docs/SECURITY.md
+
+```text
+# セキュリティ方針</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b20">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b20" data-name="agents-md-templates50-020.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i20">🔗 リンク</button>
+  </div>
+</div>
+<h2 class="cat" data-cat="docs/exec-plans/ 系テンプレート">docs/exec-plans/ 系テンプレート</h2>
+<div class="icard" id="i21" data-cat="docs/exec-plans/ 系テンプレート">
+  <div class="ih"><span class="num">021</span><span class="ititle">実行プラン標準テンプレート</span></div>
+  
+  <pre class="prompt" id="b21">保存先: docs/exec-plans/active/&lt;プラン名&gt;.md
+
+```text
+# &lt;作業名&gt; 実行プラン</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b21">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b21" data-name="agents-md-templates50-021.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i21">🔗 リンク</button>
+  </div>
+</div>
+<h2 class="cat" data-cat="完了条件">完了条件</h2>
+<div class="icard" id="i22" data-cat="完了条件">
+  <div class="ih"><span class="num">022</span><span class="ititle">軽量プラン（小規模変更用）</span></div>
+  
+  <pre class="prompt" id="b22"># &lt;小規模変更名&gt;（軽量プラン）
+
+対象: &lt;変更対象&gt;
+理由: &lt;1文で&gt;
+完了条件: &lt;1文で&gt;</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b22">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b22" data-name="agents-md-templates50-022.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i22">🔗 リンク</button>
+  </div>
+</div>
+<div class="icard" id="i23" data-cat="完了条件">
+  <div class="ih"><span class="num">023</span><span class="ititle">技術的負債トラッカーテンプレート</span></div>
+  
+  <pre class="prompt" id="b23"># 技術的負債トラッカー
+
+| 項目 | 発生箇所 | 影響 | 解消コスト目安 | 優先度 |
+|---|---|---|---|---|
+| &lt;負債1&gt; | &lt;ファイル:行&gt; | &lt;影響内容&gt; | &lt;S/M/L&gt; | &lt;高中低&gt; |</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b23">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b23" data-name="agents-md-templates50-023.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i23">🔗 リンク</button>
+  </div>
+</div>
+<div class="icard" id="i24" data-cat="完了条件">
+  <div class="ih"><span class="num">024</span><span class="ititle">完了プランのアーカイブルール</span></div>
+  
+  <pre class="prompt" id="b24"># 完了プランのアーカイブルール
+
+- active/ で完了条件を満たしたプランは completed/ へ移動する
+- 移動時にファイル名の先頭へ完了日を付与する（例: 2026-08-21-&lt;プラン名&gt;.md）
+- 完了時の最終進捗ログに「結果どうなったか」を1文追記してから移動する</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b24">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b24" data-name="agents-md-templates50-024.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i24">🔗 リンク</button>
+  </div>
+</div>
+<div class="icard" id="i25" data-cat="完了条件">
+  <div class="ih"><span class="num">025</span><span class="ititle">計画のロールバック記録テンプレート</span></div>
+  
+  <pre class="prompt" id="b25">保存先: docs/exec-plans/active/&lt;プラン名&gt;.md 内、進捗ログの追記形式
+
+```text</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b25">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b25" data-name="agents-md-templates50-025.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i25">🔗 リンク</button>
+  </div>
+</div>
+<h2 class="cat" data-cat="進捗ログ（ロールバック発生時）">進捗ログ（ロールバック発生時）</h2>
+<div class="icard" id="i26" data-cat="進捗ログ（ロールバック発生時）">
+  <div class="ih"><span class="num">026</span><span class="ititle">複数エージェント並行作業の調整テンプレート</span></div>
+  
+  <pre class="prompt" id="b26">保存先: docs/exec-plans/active/&lt;プラン名&gt;.md 内の追加セクション
+
+```text</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b26">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b26" data-name="agents-md-templates50-026.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i26">🔗 リンク</button>
+  </div>
+</div>
+<h2 class="cat" data-cat="並行作業の調整">並行作業の調整</h2>
+<div class="icard" id="i27" data-cat="並行作業の調整">
+  <div class="ih"><span class="num">027</span><span class="ititle">大規模変更の分割方針テンプレート</span></div>
+  
+  <pre class="prompt" id="b27">保存先: docs/exec-plans/active/&lt;プラン名&gt;.md 内の追加セクション
+
+```text</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b27">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b27" data-name="agents-md-templates50-027.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i27">🔗 リンク</button>
+  </div>
+</div>
+<h2 class="cat" data-cat="分割方針">分割方針</h2>
+<div class="icard" id="i28" data-cat="分割方針">
+  <div class="ih"><span class="num">028</span><span class="ititle">計画のレビュー依頼テンプレート</span></div>
+  
+  <pre class="prompt" id="b28">保存先: PR説明文、またはSlack等での計画共有時
+
+```text</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b28">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b28" data-name="agents-md-templates50-028.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i28">🔗 リンク</button>
+  </div>
+</div>
+<h2 class="cat" data-cat="レビューをお願いしたい点">レビューをお願いしたい点</h2>
+<div class="icard" id="i29" data-cat="レビューをお願いしたい点">
+  <div class="ih"><span class="num">029</span><span class="ititle">定期実行タスクの計画テンプレート</span></div>
+  
+  <pre class="prompt" id="b29"># &lt;定期タスク名&gt;
+
+頻度: &lt;例: 毎週金曜&gt;
+目的: &lt;1文で&gt;
+実行内容: &lt;箇条書き&gt;
+異常時の通知先: &lt;担当/チャンネル&gt;</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b29">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b29" data-name="agents-md-templates50-029.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i29">🔗 リンク</button>
+  </div>
+</div>
+<div class="icard" id="i30" data-cat="レビューをお願いしたい点">
+  <div class="ih"><span class="num">030</span><span class="ititle">計画のふりかえりテンプレート</span></div>
+  
+  <pre class="prompt" id="b30">保存先: docs/exec-plans/completed/&lt;日付&gt;-&lt;プラン名&gt;.md 末尾に追記
+
+```text</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b30">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b30" data-name="agents-md-templates50-030.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i30">🔗 リンク</button>
+  </div>
+</div>
+<h2 class="cat" data-cat="docs/product-specs/ 系テンプレート">docs/product-specs/ 系テンプレート</h2>
+<div class="icard" id="i31" data-cat="docs/product-specs/ 系テンプレート">
+  <div class="ih"><span class="num">031</span><span class="ititle">product-specs/index.md（索引）</span></div>
+  
+  <pre class="prompt" id="b31"># プロダクト仕様 索引
+
+| 機能 | 仕様書 | ステータス |
+|---|---|---|
+| &lt;機能名&gt; | &lt;ファイル名&gt; | &lt;ドラフト/確定&gt; |</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b31">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b31" data-name="agents-md-templates50-031.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i31">🔗 リンク</button>
+  </div>
+</div>
+<div class="icard" id="i32" data-cat="docs/product-specs/ 系テンプレート">
+  <div class="ih"><span class="num">032</span><span class="ititle">新機能スペックの標準テンプレート</span></div>
+  
+  <pre class="prompt" id="b32">保存先: docs/product-specs/&lt;機能名&gt;.md
+
+```text
+# &lt;機能名&gt; 仕様</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b32">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b32" data-name="agents-md-templates50-032.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i32">🔗 リンク</button>
+  </div>
+</div>
+<h2 class="cat" data-cat="対象外（スコープ外）">対象外（スコープ外）</h2>
+<div class="icard" id="i33" data-cat="対象外（スコープ外）">
+  <div class="ih"><span class="num">033</span><span class="ititle">承認フロー付き機能のスペックテンプレート</span></div>
+  
+  <pre class="prompt" id="b33">保存先: docs/product-specs/&lt;機能名&gt;.md（App-Server連携機能向け）
+
+```text
+# &lt;機能名&gt; 仕様（承認フロー付き）</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b33">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b33" data-name="agents-md-templates50-033.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i33">🔗 リンク</button>
+  </div>
+</div>
+<h2 class="cat" data-cat="承認UIの要件">承認UIの要件</h2>
+<div class="icard" id="i34" data-cat="承認UIの要件">
+  <div class="ih"><span class="num">034</span><span class="ititle">MCPツール仕様テンプレート</span></div>
+  
+  <pre class="prompt" id="b34">保存先: docs/product-specs/mcp-tools/&lt;ツール名&gt;.md
+
+```text
+# MCPツール: &lt;ツール名&gt;</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b34">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b34" data-name="agents-md-templates50-034.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i34">🔗 リンク</button>
+  </div>
+</div>
+<h2 class="cat" data-cat="承認要否">承認要否</h2>
+<div class="icard" id="i35" data-cat="承認要否">
+  <div class="ih"><span class="num">035</span><span class="ititle">エラーケースの仕様テンプレート</span></div>
+  
+  <pre class="prompt" id="b35">保存先: docs/product-specs/&lt;機能名&gt;.md 内の追加セクション
+
+```text</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b35">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b35" data-name="agents-md-templates50-035.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i35">🔗 リンク</button>
+  </div>
+</div>
+<h2 class="cat" data-cat="エラーケース">エラーケース</h2>
+<div class="icard" id="i36" data-cat="エラーケース">
+  <div class="ih"><span class="num">036</span><span class="ititle">非機能要件テンプレート</span></div>
+  
+  <pre class="prompt" id="b36">保存先: docs/product-specs/&lt;機能名&gt;.md 内の追加セクション
+
+```text</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b36">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b36" data-name="agents-md-templates50-036.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i36">🔗 リンク</button>
+  </div>
+</div>
+<h2 class="cat" data-cat="非機能要件">非機能要件</h2>
+<div class="icard" id="i37" data-cat="非機能要件">
+  <div class="ih"><span class="num">037</span><span class="ititle">段階リリース計画テンプレート</span></div>
+  
+  <pre class="prompt" id="b37">保存先: docs/product-specs/&lt;機能名&gt;.md 内の追加セクション
+
+```text</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b37">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b37" data-name="agents-md-templates50-037.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i37">🔗 リンク</button>
+  </div>
+</div>
+<h2 class="cat" data-cat="段階リリース計画">段階リリース計画</h2>
+<div class="icard" id="i38" data-cat="段階リリース計画">
+  <div class="ih"><span class="num">038</span><span class="ititle">既存機能との差分スペックテンプレート</span></div>
+  
+  <pre class="prompt" id="b38">保存先: docs/product-specs/&lt;機能名&gt;-diff.md
+
+```text
+# &lt;機能名&gt; Before/After</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b38">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b38" data-name="agents-md-templates50-038.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i38">🔗 リンク</button>
+  </div>
+</div>
+<h2 class="cat" data-cat="移行時の注意点">移行時の注意点</h2>
+<div class="icard" id="i39" data-cat="移行時の注意点">
+  <div class="ih"><span class="num">039</span><span class="ititle">KPI・成功指標テンプレート</span></div>
+  
+  <pre class="prompt" id="b39">保存先: docs/product-specs/&lt;機能名&gt;.md 内の追加セクション
+
+```text</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b39">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b39" data-name="agents-md-templates50-039.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i39">🔗 リンク</button>
+  </div>
+</div>
+<h2 class="cat" data-cat="成功指標">成功指標</h2>
+<div class="icard" id="i40" data-cat="成功指標">
+  <div class="ih"><span class="num">040</span><span class="ititle">廃止機能のスペックアーカイブテンプレート</span></div>
+  
+  <pre class="prompt" id="b40"># &lt;機能名&gt;（廃止済み）
+
+廃止日: &lt;YYYY-MM-DD&gt;
+廃止理由: &lt;内容&gt;
+代替手段: &lt;あれば&gt;</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b40">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b40" data-name="agents-md-templates50-040.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i40">🔗 リンク</button>
+  </div>
+</div>
+<h2 class="cat" data-cat="黄金の原則・品質ドキュメント系テンプレート">黄金の原則・品質ドキュメント系テンプレート</h2>
+<div class="icard" id="i41" data-cat="黄金の原則・品質ドキュメント系テンプレート">
+  <div class="ih"><span class="num">041</span><span class="ititle">黄金の原則リストテンプレート</span></div>
+  
+  <pre class="prompt" id="b41"># 黄金の原則
+
+機械的にチェック可能な、リポジトリ全体で守るべきルール一覧。
+
+1. 独自ヘルパーより共有ユーティリティパッケージを優先する（不変条件の一元管理のため）
+2. 外部データは境界で型検証する（YOLOスタイルで扱わない）
+3. &lt;原則3&gt;
+4. &lt;原則4&gt;
+
+各原則には対応するリンター/構造テストのIDを併記すること。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b41">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b41" data-name="agents-md-templates50-041.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i41">🔗 リンク</button>
+  </div>
+</div>
+<div class="icard" id="i42" data-cat="黄金の原則・品質ドキュメント系テンプレート">
+  <div class="ih"><span class="num">042</span><span class="ititle">品質スコアドキュメントテンプレート</span></div>
+  
+  <pre class="prompt" id="b42"># 品質スコア
+
+| 領域 | テストカバレッジ | ドキュメント鮮度 | 技術的負債 | 総合評価 |
+|---|---|---|---|---|
+| &lt;ドメイン名&gt; | &lt;%&gt; | &lt;◎/○/△&gt; | &lt;件数&gt; | &lt;A/B/C&gt; |
+
+更新頻度: &lt;例: 週次自動更新&gt;</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b42">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b42" data-name="agents-md-templates50-042.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i42">🔗 リンク</button>
+  </div>
+</div>
+<div class="icard" id="i43" data-cat="黄金の原則・品質ドキュメント系テンプレート">
+  <div class="ih"><span class="num">043</span><span class="ititle">自動クリーンアップジョブの定義テンプレート</span></div>
+  
+  <pre class="prompt" id="b43">保存先: docs/exec-plans/active/auto-cleanup.md
+
+```text
+# 自動クリーンアップジョブ</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b43">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b43" data-name="agents-md-templates50-043.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i43">🔗 リンク</button>
+  </div>
+</div>
+<h2 class="cat" data-cat="出力">出力</h2>
+<div class="icard" id="i44" data-cat="出力">
+  <div class="ih"><span class="num">044</span><span class="ititle">信頼性ドキュメントテンプレート</span></div>
+  
+  <pre class="prompt" id="b44"># 信頼性要件
+
+- サービス起動時間の目標: &lt;ミリ秒&gt;
+- 重要ユーザージャーニーのレイテンシ上限: &lt;秒数&gt;
+- 監視すべきスパン: &lt;一覧&gt;</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b44">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b44" data-name="agents-md-templates50-044.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i44">🔗 リンク</button>
+  </div>
+</div>
+<div class="icard" id="i45" data-cat="出力">
+  <div class="ih"><span class="num">045</span><span class="ititle">フロントエンド設計方針テンプレート</span></div>
+  
+  <pre class="prompt" id="b45"># フロントエンド設計方針
+
+- 状態管理の方針: &lt;内容&gt;
+- コンポーネント分割の基準: &lt;内容&gt;
+- エージェントが直接DOMを検査する際の手段: &lt;例: Chrome DevTools Protocol経由&gt;</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b45">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b45" data-name="agents-md-templates50-045.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i45">🔗 リンク</button>
+  </div>
+</div>
+<div class="icard" id="i46" data-cat="出力">
+  <div class="ih"><span class="num">046</span><span class="ititle">プロダクトセンスドキュメントテンプレート</span></div>
+  
+  <pre class="prompt" id="b46"># プロダクトセンス（判断基準）
+
+- 優先すべきユーザー層: &lt;内容&gt;
+- 「やらないこと」の基準: &lt;内容&gt;
+- UIの一貫性で譲れない点: &lt;内容&gt;</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b46">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b46" data-name="agents-md-templates50-046.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i46">🔗 リンク</button>
+  </div>
+</div>
+<div class="icard" id="i47" data-cat="出力">
+  <div class="ih"><span class="num">047</span><span class="ititle">生成データベーススキーマドキュメントテンプレート</span></div>
+  
+  <pre class="prompt" id="b47"># DBスキーマ（自動生成）
+
+⚠️ このファイルは自動生成されます。手動で編集しないでください。
+生成コマンド: `&lt;コマンド&gt;`
+最終生成日時: &lt;自動挿入&gt;</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b47">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b47" data-name="agents-md-templates50-047.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i47">🔗 リンク</button>
+  </div>
+</div>
+<div class="icard" id="i48" data-cat="出力">
+  <div class="ih"><span class="num">048</span><span class="ititle">外部ライブラリ参照ドキュメント(llms.txt)テンプレート</span></div>
+  
+  <pre class="prompt" id="b48">保存先: docs/references/&lt;ライブラリ名&gt;-llms.txt
+
+```text
+# &lt;ライブラリ名&gt; 参照情報
+
+バージョン: &lt;固定しているバージョン&gt;
+公式ドキュメント: &lt;URL&gt;</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b48">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b48" data-name="agents-md-templates50-048.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i48">🔗 リンク</button>
+  </div>
+</div>
+<h2 class="cat" data-cat="自社での使用上の注意">自社での使用上の注意</h2>
+<div class="icard" id="i49" data-cat="自社での使用上の注意">
+  <div class="ih"><span class="num">049</span><span class="ititle">ドキュメントリンターの検査項目テンプレート</span></div>
+  
+  <pre class="prompt" id="b49"># ドキュメントリンター検査項目
+
+- [ ] 全ドキュメントに最終確認日が記載されている
+- [ ] 相互リンクが切れていない
+- [ ] AGENTS.mdが100行を大きく超えていない
+- [ ] status: draft のまま90日以上経過したドキュメントが無い</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b49">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b49" data-name="agents-md-templates50-049.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i49">🔗 リンク</button>
+  </div>
+</div>
+<div class="icard" id="i50" data-cat="自社での使用上の注意">
+  <div class="ih"><span class="num">050</span><span class="ititle">週次ドキュメント健全性レポートテンプレート</span></div>
+  
+  <pre class="prompt" id="b50"># ドキュメント健全性レポート（&lt;週&gt;）
+
+- 陳腐化した疑いのあるドキュメント: &lt;件数&gt;件
+- リンク切れ: &lt;件数&gt;件
+- 未更新90日超: &lt;件数&gt;件
+
+詳細は各項目のPRリンクを参照。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b50">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b50" data-name="agents-md-templates50-050.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i50">🔗 リンク</button>
+  </div>
+</div>
+
+  <section class="epctx">
+  <p class="epctx-label">この動画のほかのプレゼント</p>
+  <div class="ep-kits"><a class="kchip" href="../harness-prompts100/"><span class="kt">Codexハーネス統合・発注プロンプト100選</span><span class="badge">100個</span><span class="go">開く →</span></a><a class="kchip" href="../layer-select-checklist/"><span class="kt">integration層（exec/SDK/App-Server）選択 判断シート</span><span class="badge">10項目</span><span class="go">開く →</span></a></div>
+</section>
+  <section class="epctx">
+  <p class="epctx-label">ほかの回の「設定・スニペット」</p>
+  <div class="ep-kits"><a class="kchip" href="../tool-connect-cheatsheet-40/"><span class="kt">AIツール別 接続コマンド逆引き表＋トラブル脱出40</span><span class="badge">43項目</span><span class="go">開く →</span></a><a class="kchip" href="../setup-cheatsheet/"><span class="kt">Open Design 導入コマンド早見表</span><span class="badge">11項目</span><span class="go">開く →</span></a><a class="kchip" href="../usewake-combos-100/"><span class="kt">タスク別モデル使い分け早見表＋Combos設定レシピ100選</span><span class="badge">100個</span><span class="go">開く →</span></a><a class="kchip" href="../agents-md-x-automation/"><span class="kt">X自動投稿エージェント AGENTS.md / CLAUDE.mdテンプレート</span><span class="go">開く →</span></a></div>
+</section>
+
+  <footer><a href="../../">← AIエージェント / Kawaru プレゼント図書館にもどる</a></footer>
+</div>
+
+<pre id="pfull" class="hidden"># 🎁 AGENTS.mdナレッジベース設計テンプレート50選
+
+AGENTS.mdを「取扱説明書」ではなく「目次」として設計するための、コピペで使えるMarkdownテンプレート集です。5カテゴリ×10本。
+
+**受け取り方**: 下のコードブロック右上のコピーボタンでコピーするか、このファイルをそのままダウンロードしてください。
+
+**使い方**: 各テンプレートの「保存先」に従って自分のリポジトリに配置し、`&lt;プレースホルダー&gt;` を実際の内容に置き換えてください。
+
+## AGENTS.md本体（目次役）テンプレート
+
+### 1. AGENTS.md 全体骨格
+
+保存先: プロジェクトルート直下 ./AGENTS.md（約100行を目安に、詳細はdocs/へ逃がす）
+
+```text
+# AGENTS.md
+
+このファイルは目次です。詳細は各リンク先を参照してください。
+
+## このプロジェクトについて
+&lt;1〜2文で。何を作っているか&gt;
+
+## エージェントが最初に読むべきもの
+- `ARCHITECTURE.md` — 全体構成のマップ
+- `docs/design-docs/core-beliefs.md` — 譲れない設計方針
+- `docs/PLANS.md` — 進行中の計画一覧
+
+## よく使うコマンド
+- ビルド: `&lt;コマンド&gt;`
+- テスト: `&lt;コマンド&gt;`
+- Lint: `&lt;コマンド&gt;`
+
+## 制約・ガードレール
+- &lt;人間の承認なしに実行してはいけない操作&gt;
+- &lt;触ってはいけないディレクトリ・ファイル&gt;
+
+## 詳細な参照先
+- 設計: `docs/design-docs/index.md`
+- 品質: `docs/QUALITY_SCORE.md`
+- セキュリティ: `docs/SECURITY.md`
+```
+
+### 2. よく使うコマンドセクション
+
+保存先: AGENTS.md内の1セクション
+
+```text
+## よく使うコマンド
+- ビルド: `&lt;例: npm run build&gt;`
+- テスト（全体）: `&lt;例: npm test&gt;`
+- テスト（単一ファイル）: `&lt;例: npm test -- path/to/file&gt;`
+- Lint/フォーマット: `&lt;例: npm run lint&gt;`
+- 開発サーバー起動: `&lt;例: npm run dev&gt;`
+- 型チェック: `&lt;例: npm run typecheck&gt;`
+```
+
+### 3. 制約・ガードレールセクション
+
+保存先: AGENTS.md内の1セクション。承認が必要な操作の明文化
+
+```text
+## 制約・ガードレール
+- 本番データベースへの直接書き込みは行わない（マイグレーション経由のみ）
+- `.env`・シークレット類のファイルは読み書きしない
+- 外部への通知（Slack送信・メール送信等）は、実行前に人間の承認を得る
+- `main`ブランチへの直接pushは禁止。必ずPR経由
+```
+
+### 4. エージェント向けの用語集セクション
+
+保存先: AGENTS.md内の1セクション。社内独自用語の説明
+
+```text
+## 用語集（社内独自の呼び方）
+- &lt;用語A&gt;: &lt;意味の説明。一般的な呼び方との対応も&gt;
+- &lt;用語B&gt;: &lt;意味の説明&gt;
+- &lt;略語C&gt;: &lt;正式名称と意味&gt;
+```
+
+### 5. PRを開く前のチェックリストセクション
+
+保存先: AGENTS.md内の1セクション
+
+```text
+## PRを開く前に
+- [ ] 関連するテストを実行し、全件グリーンであることを確認した
+- [ ] Lintエラーが無いことを確認した
+- [ ] 変更内容が既存のAGENTS.md/docsの記述と矛盾していないか確認した
+- [ ] 意図が伝わるPRタイトル・説明を書いた
+```
+
+### 6. ディレクトリ構成の案内セクション
+
+保存先: AGENTS.md内の1セクション。詳細はARCHITECTURE.mdに逃がす前提の要約版
+
+```text
+## ディレクトリ構成（概要）
+- `src/domains/` — ビジネスドメインごとのロジック（詳細: ARCHITECTURE.md）
+- `docs/` — 設計・計画・仕様のナレッジベース
+- `scripts/` — 開発補助スクリプト
+- `tests/` — テストコード（配置規則は各ドメイン直下と対応）
+```
+
+### 7. エラー時のエスカレーション先セクション
+
+保存先: AGENTS.md内の1セクション
+
+```text
+## 詰まったときは
+- ビルドが通らない: `docs/references/` 配下の該当ツールのllms.txtを確認
+- 設計判断に迷う: `docs/design-docs/core-beliefs.md` の原則に立ち返る
+- それでも不明な場合: 変更を保留し、不明点を明記してPRをドラフトで開く
+```
+
+### 8. レビュー観点セクション
+
+保存先: AGENTS.md内の1セクション。エージェント自身によるセルフレビュー観点
+
+```text
+## セルフレビューの観点
+- 意図しない副作用（他ドメインへの影響）が無いか
+- 命名が既存の規約（動詞+対象 等）に沿っているか
+- 追加した設定・環境変数がドキュメント化されているか
+- テストが「動くことの確認」だけでなく「壊れたら分かる」ものになっているか
+```
+
+### 9. バージョン管理・変更履歴セクション
+
+保存先: AGENTS.md内の1セクション。AGENTS.md自体の更新ルール
+
+```text
+## このファイルの更新ルール
+- 新しい制約・規約を発見したら、該当セクションに追記する
+- 100行を超えそうになったら、詳細をdocs/へ切り出し、ここには要約とリンクだけ残す
+- 最終更新日: &lt;YYYY-MM-DD&gt;（更新の都度、手動または自動で更新）
+```
+
+### 10. 複数エージェント併存時の役割分担セクション
+
+保存先: AGENTS.md内の1セクション。CodexやAardvark等、複数エージェントが同じリポジトリで動く場合
+
+```text
+## 複数エージェントの役割分担
+- &lt;エージェントA名&gt;: &lt;担当範囲。例: 通常の実装タスク全般&gt;
+- &lt;エージェントB名&gt;: &lt;担当範囲。例: セキュリティスキャン専任&gt;
+- 競合が起きた場合の優先順位: &lt;ルールを明記&gt;
+```
+
+## docs/design-docs/ 系テンプレート
+
+### 11. design-docs/index.md（目次）
+
+保存先: docs/design-docs/index.md
+
+```text
+# 設計ドキュメント索引
+
+| ドキュメント | ステータス | 最終確認日 |
+|---|---|---|
+| core-beliefs.md | 検証済み | &lt;YYYY-MM-DD&gt; |
+| &lt;ドキュメント名&gt; | &lt;ドラフト/検証済み/廃止&gt; | &lt;YYYY-MM-DD&gt; |
+
+新しい設計ドキュメントを追加したら、このテーブルに1行追加すること。
+```
+
+### 12. core-beliefs.md（譲れない原則）
+
+保存先: docs/design-docs/core-beliefs.md
+
+```text
+# コアビリーフ（譲れない設計方針）
+
+1. &lt;原則1。例: 境界でデータ形状を検証する&gt;
+2. &lt;原則2。例: 副作用のある処理は明示的な関数名にする&gt;
+3. &lt;原則3&gt;
+
+これらはリンターや構造テストで機械的に強制される。違反する変更は原則マージしない。
+```
+
+### 13. 設計ドキュメントの標準テンプレート
+
+保存先: docs/design-docs/&lt;機能名&gt;.md
+
+```text
+# &lt;機能名&gt; 設計
+
+## 背景・目的
+&lt;なぜこれが必要か&gt;
+
+## 設計方針
+&lt;採用した方針&gt;
+
+## 検討した代替案
+- 案A: &lt;概要&gt; — &lt;採用しなかった理由&gt;
+- 案B: &lt;概要&gt; — &lt;採用しなかった理由&gt;
+
+## 未解決の懸念
+- &lt;残っている課題があれば&gt;
+```
+
+### 14. ステータス表記のルール
+
+保存先: 各design-docs冒頭のフロントマター
+
+```text
+---
+status: draft | verified | deprecated
+last_verified: &lt;YYYY-MM-DD&gt;
+owner: &lt;担当チーム/個人&gt;
+---
+```
+
+### 15. アーキテクチャレイヤー定義テンプレート
+
+保存先: docs/design-docs/architecture-layers.md
+
+```text
+# アーキテクチャレイヤー
+
+各ドメインは以下の固定レイヤーに分割し、依存は「前方」にのみ許可する。
+
+型 → 設定 → リポジトリ → サービス → ランタイム → UI
+
+横断的関心事（認証・テレメトリ・機能フラグ）は「プロバイダー」経由でのみアクセスする。
+それ以外の依存はリンターでブロックする。
+```
+
+### 16. 命名規則ドキュメントテンプレート
+
+保存先: docs/design-docs/naming-conventions.md
+
+```text
+# 命名規則
+
+- 関数: 動詞+対象（例: `getShipment`）
+- boolean変数: is/has/can+状態（例: `isApproved`）
+- ファイル名: &lt;規則を記入&gt;
+- MCPツール名: 動詞+対象のスネークケース（例: `get_shipment`）
+```
+
+### 17. 依存ライブラリ選定方針テンプレート
+
+保存先: docs/design-docs/dependency-policy.md
+
+```text
+# 依存ライブラリ選定方針
+
+- 新規ライブラリ導入前に、自前実装との比較を1段落で残す
+- 「退屈」で構成可能性の高い技術を優先する（エージェントがモデル化しやすいため）
+- 小さな機能（例: 並行処理ヘルパー）は、上流の不透明な挙動を避けるため自前実装を検討する
+```
+
+### 18. エラーハンドリング方針テンプレート
+
+保存先: docs/design-docs/error-handling.md
+
+```text
+# エラーハンドリング方針
+
+- ユーザー入力・外部APIの境界でのみバリデーションを行う
+- 内部関数間では型システムの保証を信頼し、過剰な防御コードを書かない
+- エラーメッセージには「何が」「なぜ」「次にどうすべきか」を含める
+```
+
+### 19. 非同期処理の設計方針テンプレート
+
+保存先: docs/design-docs/async-policy.md
+
+```text
+# 非同期処理の設計方針
+
+- 並行実行数の上限: &lt;数値と理由&gt;
+- タイムアウトのデフォルト値: &lt;数値&gt;
+- リトライ対象とするエラー種別: &lt;一覧&gt;
+```
+
+### 20. セキュリティ設計方針テンプレート
+
+保存先: docs/SECURITY.md
+
+```text
+# セキュリティ方針
+
+## エージェントのサンドボックス境界
+- ファイルシステム: &lt;許可範囲&gt;
+- ネットワーク: &lt;許可範囲&gt;
+- 実行コマンド: &lt;許可/禁止リスト&gt;
+
+## 承認が必須の操作
+- &lt;一覧&gt;
+
+## 機密情報の扱い
+- シークレットはエージェントのコンテキストに含めない
+- ログ出力時は個人情報をマスキングする
+```
+
+## docs/exec-plans/ 系テンプレート
+
+### 21. 実行プラン標準テンプレート
+
+保存先: docs/exec-plans/active/&lt;プラン名&gt;.md
+
+```text
+# &lt;作業名&gt; 実行プラン
+
+## 目的
+&lt;この作業で達成したいこと&gt;
+
+## スコープ
+- 含む: &lt;範囲&gt;
+- 含まない: &lt;範囲外&gt;
+
+## 作業手順
+1. &lt;手順1&gt;
+2. &lt;手順2&gt;
+
+## 進捗ログ
+- &lt;YYYY-MM-DD&gt;: &lt;進捗内容&gt;
+
+## 完了条件
+- [ ] &lt;条件1&gt;
+- [ ] &lt;条件2&gt;
+```
+
+### 22. 軽量プラン（小規模変更用）
+
+保存先: docs/exec-plans/active/&lt;プラン名&gt;-lite.md（大掛かりな実行プランが不要な小変更向け）
+
+```text
+# &lt;小規模変更名&gt;（軽量プラン）
+
+対象: &lt;変更対象&gt;
+理由: &lt;1文で&gt;
+完了条件: &lt;1文で&gt;
+```
+
+### 23. 技術的負債トラッカーテンプレート
+
+保存先: docs/exec-plans/tech-debt-tracker.md
+
+```text
+# 技術的負債トラッカー
+
+| 項目 | 発生箇所 | 影響 | 解消コスト目安 | 優先度 |
+|---|---|---|---|---|
+| &lt;負債1&gt; | &lt;ファイル:行&gt; | &lt;影響内容&gt; | &lt;S/M/L&gt; | &lt;高中低&gt; |
+```
+
+### 24. 完了プランのアーカイブルール
+
+保存先: docs/exec-plans/completed/README.md
+
+```text
+# 完了プランのアーカイブルール
+
+- active/ で完了条件を満たしたプランは completed/ へ移動する
+- 移動時にファイル名の先頭へ完了日を付与する（例: 2026-08-21-&lt;プラン名&gt;.md）
+- 完了時の最終進捗ログに「結果どうなったか」を1文追記してから移動する
+```
+
+### 25. 計画のロールバック記録テンプレート
+
+保存先: docs/exec-plans/active/&lt;プラン名&gt;.md 内、進捗ログの追記形式
+
+```text
+## 進捗ログ（ロールバック発生時）
+- &lt;YYYY-MM-DD&gt;: &lt;変更X&gt;を実施したが&lt;問題Y&gt;が発生したためロールバック。
+  原因: &lt;原因&gt;。次の試行では&lt;対策&gt;を行う。
+```
+
+### 26. 複数エージェント並行作業の調整テンプレート
+
+保存先: docs/exec-plans/active/&lt;プラン名&gt;.md 内の追加セクション
+
+```text
+## 並行作業の調整
+- 担当エージェント/担当者: &lt;一覧&gt;
+- 競合しやすい箇所: &lt;ファイル/ディレクトリ&gt;
+- 競合時の解決ルール: &lt;例: 後着優先で先着側に差し戻し通知&gt;
+```
+
+### 27. 大規模変更の分割方針テンプレート
+
+保存先: docs/exec-plans/active/&lt;プラン名&gt;.md 内の追加セクション
+
+```text
+## 分割方針
+大きな変更は以下の単位に分割し、各単位ごとに個別PRを出す。
+1. &lt;分割単位1&gt; — 完了条件: &lt;条件&gt;
+2. &lt;分割単位2&gt; — 完了条件: &lt;条件&gt;
+```
+
+### 28. 計画のレビュー依頼テンプレート
+
+保存先: PR説明文、またはSlack等での計画共有時
+
+```text
+## レビューをお願いしたい点
+- &lt;判断に迷った箇所&gt;
+- &lt;特に見てほしい設計判断&gt;
+- 完了条件: &lt;一覧&gt;
+```
+
+### 29. 定期実行タスクの計画テンプレート
+
+保存先: docs/exec-plans/active/&lt;定期タスク名&gt;.md
+
+```text
+# &lt;定期タスク名&gt;
+
+頻度: &lt;例: 毎週金曜&gt;
+目的: &lt;1文で&gt;
+実行内容: &lt;箇条書き&gt;
+異常時の通知先: &lt;担当/チャンネル&gt;
+```
+
+### 30. 計画のふりかえりテンプレート
+
+保存先: docs/exec-plans/completed/&lt;日付&gt;-&lt;プラン名&gt;.md 末尾に追記
+
+```text
+## ふりかえり
+- うまくいったこと: &lt;内容&gt;
+- 想定と違ったこと: &lt;内容&gt;
+- 次回に活かすこと: &lt;内容&gt;
+```
+
+## docs/product-specs/ 系テンプレート
+
+### 31. product-specs/index.md（索引）
+
+保存先: docs/product-specs/index.md
+
+```text
+# プロダクト仕様 索引
+
+| 機能 | 仕様書 | ステータス |
+|---|---|---|
+| &lt;機能名&gt; | &lt;ファイル名&gt; | &lt;ドラフト/確定&gt; |
+```
+
+### 32. 新機能スペックの標準テンプレート
+
+保存先: docs/product-specs/&lt;機能名&gt;.md
+
+```text
+# &lt;機能名&gt; 仕様
+
+## ユーザーストーリー
+&lt;誰が、何のために、何をしたいか&gt;
+
+## 受け入れ条件
+- [ ] &lt;条件1&gt;
+- [ ] &lt;条件2&gt;
+
+## 対象外（スコープ外）
+- &lt;明示的に含まないもの&gt;
+```
+
+### 33. 承認フロー付き機能のスペックテンプレート
+
+保存先: docs/product-specs/&lt;機能名&gt;.md（App-Server連携機能向け）
+
+```text
+# &lt;機能名&gt; 仕様（承認フロー付き）
+
+## エージェントが自動で行うこと
+- &lt;一覧&gt;
+
+## 人間の承認が必須のアクション
+- &lt;一覧&gt;
+
+## 承認UIの要件
+- 表示すべき情報: &lt;一覧&gt;
+- 却下時の挙動: &lt;内容&gt;
+```
+
+### 34. MCPツール仕様テンプレート
+
+保存先: docs/product-specs/mcp-tools/&lt;ツール名&gt;.md
+
+```text
+# MCPツール: &lt;ツール名&gt;
+
+## 目的
+&lt;このツールで何ができるか&gt;
+
+## 入力
+| パラメータ | 型 | 必須 | 説明 |
+|---|---|---|---|
+
+## 出力
+&lt;形式の説明&gt;
+
+## 承認要否
+&lt;即実行可 / 承認必須（理由）&gt;
+```
+
+### 35. エラーケースの仕様テンプレート
+
+保存先: docs/product-specs/&lt;機能名&gt;.md 内の追加セクション
+
+```text
+## エラーケース
+| 状況 | エージェントの挙動 | ユーザーへの表示 |
+|---|---|---|
+| &lt;状況1&gt; | &lt;挙動&gt; | &lt;表示内容&gt; |
+```
+
+### 36. 非機能要件テンプレート
+
+保存先: docs/product-specs/&lt;機能名&gt;.md 内の追加セクション
+
+```text
+## 非機能要件
+- レスポンス目標: &lt;秒数&gt;
+- 同時実行数の上限: &lt;数値&gt;
+- 可用性要件: &lt;内容&gt;
+```
+
+### 37. 段階リリース計画テンプレート
+
+保存先: docs/product-specs/&lt;機能名&gt;.md 内の追加セクション
+
+```text
+## 段階リリース計画
+1. 社内限定公開（&lt;対象チーム&gt;） — &lt;期間&gt;
+2. 一部顧客への先行公開 — &lt;期間&gt;
+3. 全体公開 — &lt;条件を満たしたら&gt;
+```
+
+### 38. 既存機能との差分スペックテンプレート
+
+保存先: docs/product-specs/&lt;機能名&gt;-diff.md
+
+```text
+# &lt;機能名&gt; Before/After
+
+## Before（現状）
+&lt;現状の挙動&gt;
+
+## After（変更後）
+&lt;変更後の挙動&gt;
+
+## 移行時の注意点
+&lt;既存ユーザーへの影響があれば&gt;
+```
+
+### 39. KPI・成功指標テンプレート
+
+保存先: docs/product-specs/&lt;機能名&gt;.md 内の追加セクション
+
+```text
+## 成功指標
+| 指標 | 現状値 | 目標値 | 測定方法 |
+|---|---|---|---|
+| &lt;指標名&gt; | &lt;値&gt; | &lt;値&gt; | &lt;方法&gt; |
+```
+
+### 40. 廃止機能のスペックアーカイブテンプレート
+
+保存先: docs/product-specs/deprecated/&lt;機能名&gt;.md
+
+```text
+# &lt;機能名&gt;（廃止済み）
+
+廃止日: &lt;YYYY-MM-DD&gt;
+廃止理由: &lt;内容&gt;
+代替手段: &lt;あれば&gt;
+```
+
+## 黄金の原則・品質ドキュメント系テンプレート
+
+### 41. 黄金の原則リストテンプレート
+
+保存先: docs/GOLDEN_PRINCIPLES.md
+
+```text
+# 黄金の原則
+
+機械的にチェック可能な、リポジトリ全体で守るべきルール一覧。
+
+1. 独自ヘルパーより共有ユーティリティパッケージを優先する（不変条件の一元管理のため）
+2. 外部データは境界で型検証する（YOLOスタイルで扱わない）
+3. &lt;原則3&gt;
+4. &lt;原則4&gt;
+
+各原則には対応するリンター/構造テストのIDを併記すること。
+```
+
+### 42. 品質スコアドキュメントテンプレート
+
+保存先: docs/QUALITY_SCORE.md
+
+```text
+# 品質スコア
+
+| 領域 | テストカバレッジ | ドキュメント鮮度 | 技術的負債 | 総合評価 |
+|---|---|---|---|---|
+| &lt;ドメイン名&gt; | &lt;%&gt; | &lt;◎/○/△&gt; | &lt;件数&gt; | &lt;A/B/C&gt; |
+
+更新頻度: &lt;例: 週次自動更新&gt;
+```
+
+### 43. 自動クリーンアップジョブの定義テンプレート
+
+保存先: docs/exec-plans/active/auto-cleanup.md
+
+```text
+# 自動クリーンアップジョブ
+
+## 検出対象
+- &lt;黄金の原則からの逸脱パターン&gt;
+
+## 実行頻度
+&lt;例: 毎日1回&gt;
+
+## 出力
+逸脱箇所ごとに、対象を絞った修正PRを自動作成する。
+1分以内でレビュー可能な粒度に保つこと。
+```
+
+### 44. 信頼性ドキュメントテンプレート
+
+保存先: docs/RELIABILITY.md
+
+```text
+# 信頼性要件
+
+- サービス起動時間の目標: &lt;ミリ秒&gt;
+- 重要ユーザージャーニーのレイテンシ上限: &lt;秒数&gt;
+- 監視すべきスパン: &lt;一覧&gt;
+```
+
+### 45. フロントエンド設計方針テンプレート
+
+保存先: docs/FRONTEND.md
+
+```text
+# フロントエンド設計方針
+
+- 状態管理の方針: &lt;内容&gt;
+- コンポーネント分割の基準: &lt;内容&gt;
+- エージェントが直接DOMを検査する際の手段: &lt;例: Chrome DevTools Protocol経由&gt;
+```
+
+### 46. プロダクトセンスドキュメントテンプレート
+
+保存先: docs/PRODUCT_SENSE.md
+
+```text
+# プロダクトセンス（判断基準）
+
+- 優先すべきユーザー層: &lt;内容&gt;
+- 「やらないこと」の基準: &lt;内容&gt;
+- UIの一貫性で譲れない点: &lt;内容&gt;
+```
+
+### 47. 生成データベーススキーマドキュメントテンプレート
+
+保存先: docs/generated/db-schema.md（自動生成想定。手動編集しない旨を明記）
+
+```text
+# DBスキーマ（自動生成）
+
+⚠️ このファイルは自動生成されます。手動で編集しないでください。
+生成コマンド: `&lt;コマンド&gt;`
+最終生成日時: &lt;自動挿入&gt;
+```
+
+### 48. 外部ライブラリ参照ドキュメント(llms.txt)テンプレート
+
+保存先: docs/references/&lt;ライブラリ名&gt;-llms.txt
+
+```text
+# &lt;ライブラリ名&gt; 参照情報
+
+バージョン: &lt;固定しているバージョン&gt;
+公式ドキュメント: &lt;URL&gt;
+
+## よく使う機能
+- &lt;機能1とその使い方&gt;
+- &lt;機能2とその使い方&gt;
+
+## 自社での使用上の注意
+- &lt;ハマりどころ・独自の使い方&gt;
+```
+
+### 49. ドキュメントリンターの検査項目テンプレート
+
+保存先: docs/DOC_LINT_RULES.md
+
+```text
+# ドキュメントリンター検査項目
+
+- [ ] 全ドキュメントに最終確認日が記載されている
+- [ ] 相互リンクが切れていない
+- [ ] AGENTS.mdが100行を大きく超えていない
+- [ ] status: draft のまま90日以上経過したドキュメントが無い
+```
+
+### 50. 週次ドキュメント健全性レポートテンプレート
+
+保存先: 週次で自動生成されるレポートのフォーマット
+
+```text
+# ドキュメント健全性レポート（&lt;週&gt;）
+
+- 陳腐化した疑いのあるドキュメント: &lt;件数&gt;件
+- リンク切れ: &lt;件数&gt;件
+- 未更新90日超: &lt;件数&gt;件
+
+詳細は各項目のPRリンクを参照。
+```
+
+以上、50個です。内訳は「AGENTS.md本体（目次役）」10・「docs/design-docs/系」10・「docs/exec-plans/系」10・「docs/product-specs/系」10・「黄金の原則・品質ドキュメント系」10。</pre>
+<script>
+
+// チェックリストを実際に使えるようにする。
+// □ の行を押すと済みになり、状態はこのブラウザに残る（ページを閉じても消えない）。
+// <pre> の中身自体は変えていないので、コピーとダウンロードの内容は今までどおり。
+(function(){
+  var lines = [].slice.call(document.querySelectorAll('.cline'));
+  if (!lines.length) return;
+  var KEY = 'giftCheck:' + location.pathname;
+  var done = {};
+  try { done = JSON.parse(localStorage.getItem(KEY)) || {}; } catch(e){}
+
+  function save(){
+    try { localStorage.setItem(KEY, JSON.stringify(done)); } catch(e){}
+  }
+  function paint(){
+    var n = 0;
+    lines.forEach(function(l){
+      var on = !!done[l.dataset.c];
+      l.classList.toggle('on', on);
+      if (on) n++;
+    });
+    bar.textContent = n ? n + ' / ' + lines.length + ' 完了' : lines.length + ' 項目';
+    reset.style.display = n ? 'inline' : 'none';
+  }
+
+  var bar = document.createElement('span');
+  var reset = document.createElement('button');
+  reset.type = 'button';
+  reset.className = 'creset';
+  reset.textContent = 'チェックを消す';
+  reset.addEventListener('click', function(){ done = {}; save(); paint(); });
+
+  var wrap = document.createElement('div');
+  wrap.className = 'cprog';
+  wrap.appendChild(bar);
+  wrap.appendChild(reset);
+  var host = lines[0].closest('.icard') || lines[0].closest('pre');
+  host.insertBefore(wrap, host.firstChild);
+
+  lines.forEach(function(l){
+    l.addEventListener('click', function(){
+      var k = l.dataset.c;
+      if (done[k]) delete done[k]; else done[k] = 1;
+      save(); paint();
+    });
+  });
+  paint();
+})();
+
+// 名指しリンク（#i37）で来たとき、その項目まで確実に運んで少しの間だけ目立たせる。
+// ブラウザ任せだと、項目数の多いページでは狙った位置に着かないことがある
+// （html に scroll-behavior:smooth が効いており、数万px を滑らせようとして届かない）。
+(function(){
+  function go(){
+    if (!location.hash) return;
+    var el = document.querySelector(location.hash);
+    if (!el || !el.classList.contains('icard')) return;
+    // behavior:'auto' は CSS の scroll-behavior:smooth に従うため、
+    // 数万px 離れた項目へは滑らかに移動しようとして事実上たどり着かない。
+    // 名指しリンクは「開いたらそこにいる」のが正しいので即時で飛ばす。
+    el.scrollIntoView({block: 'start', behavior: 'instant'});
+    el.classList.add('flashme');
+    setTimeout(function(){ el.classList.remove('flashme'); }, 2400);
+  }
+  addEventListener('hashchange', go);
+  if (document.readyState === 'loading') addEventListener('DOMContentLoaded', go);
+  else go();
+})();
+// 項目の多いキットで、目的の1件に辿り着けるようにする絞り込み。
+// 検索はタイトル・説明だけでなく本文も対象にする（「あの文言が入っていた項目」で探せるように）。
+(function(){
+  var q = document.getElementById('kq');
+  if (!q) return;
+  var hit = document.getElementById('khit');
+  var cards = [].slice.call(document.querySelectorAll('.kwrap .icard'));
+  var heads = [].slice.call(document.querySelectorAll('.kwrap h2.cat'));
+  var chips = [].slice.call(document.querySelectorAll('.kcat'));
+  var cat = '';
+
+  // ひらがな・カタカナの違いで取りこぼさないようにする（ハブ側の検索と同じ扱い）
+  function norm(s){
+    return (s || '').toLowerCase().replace(/[ぁ-ん]/g, function(c){
+      return String.fromCharCode(c.charCodeAt(0) + 0x60);
+    });
+  }
+
+  // カード全体の textContent だとボタンの「コピー」まで拾ってしまうため、中身を選んで集める
+  cards.forEach(function(c){
+    var t = c.querySelector('.ititle'), d = c.querySelector('.imeta'), p = c.querySelector('.prompt');
+    c._t = norm((t ? t.textContent : '') + ' ' + (d ? d.textContent : '') + ' ' + (p ? p.textContent : ''));
+  });
+
+  function apply(){
+    var kw = norm(q.value.trim()), n = 0, shown = {};
+    cards.forEach(function(c){
+      var ok = (!cat || c.getAttribute('data-cat') === cat)
+            && (!kw || c._t.indexOf(kw) !== -1);
+      c.classList.toggle('hide', !ok);
+      if (ok){ n++; shown[c.getAttribute('data-cat')] = 1; }
+    });
+    // 残った項目が1件も無いカテゴリの見出しは隠す
+    heads.forEach(function(h){
+      h.classList.toggle('hide', !shown[h.getAttribute('data-cat')]);
+    });
+    hit.textContent = (kw || cat)
+      ? (n ? n + '件を表示中' : '該当する項目がありません')
+      : '';
+  }
+
+  q.addEventListener('input', apply);
+  chips.forEach(function(b){
+    b.addEventListener('click', function(){
+      cat = b.getAttribute('data-cat');
+      chips.forEach(function(x){ x.classList.toggle('on', x === b); });
+      apply();
+    });
+  });
+})();
+
+function flash(btn, label){
+  const old = btn.textContent, cls = btn.className;
+  btn.textContent = label; btn.classList.add('ok');
+  setTimeout(() => { btn.textContent = old; btn.className = cls; }, 1600);
+}
+function textOf(id){ return document.getElementById(id).textContent; }
+
+async function copyText(btn, id){
+  const t = textOf(id);
+  try {
+    await navigator.clipboard.writeText(t);
+  } catch (e) {
+    const ta = document.createElement('textarea');
+    ta.value = t; ta.style.position='fixed'; ta.style.opacity='0';
+    document.body.appendChild(ta); ta.select();
+    document.execCommand('copy'); ta.remove();
+  }
+  flash(btn, '✓ コピーしました');
+}
+
+function saveText(btn, id, name){
+  const blob = new Blob([textOf(id)], {type:'text/plain;charset=utf-8'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = name;
+  document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+  if (btn) flash(btn, '✓ 保存しました');
+}
+
+document.addEventListener('click', e => {
+  const b = e.target.closest('[data-copy]');
+  if (b) { copyText(b, b.dataset.copy); return; }
+  const d = e.target.closest('[data-save]');
+  if (d) { saveText(d, d.dataset.save, d.dataset.name); return; }
+  // その項目だけを名指しで人に渡せるようにする
+  const l = e.target.closest('[data-link]');
+  if (l) {
+    const url = location.origin + location.pathname + '#' + l.dataset.link;
+    navigator.clipboard.writeText(url).then(() => flash(l, '✓ コピーしました'));
+  }
+});
+
+// 「/」ですぐ検索を始められるようにする。入力中は邪魔しない。
+addEventListener('keydown', e => {
+  if (e.key !== '/' || e.metaKey || e.ctrlKey || e.altKey) return;
+  const t = e.target;
+  if (t && (t.tagName === 'INPUT' || t.tagName === 'TEXTAREA' || t.isContentEditable)) return;
+  const box = document.getElementById('q') || document.getElementById('kq');
+  if (!box) return;
+  e.preventDefault();
+  box.focus();
+  box.select();
+});
+
+</script>
+<div id="promo" class="promo">
+  <div class="promo-card">
+    <button id="promoClose" class="promo-x" aria-label="閉じる">×</button>
+    <img class="promo-banner" id="promoBanner" src="" alt="">
+    <img class="promo-icon" id="promoIcon" src="" alt="">
+    <p class="promo-tag" id="promoTag"></p>
+    <p class="promo-title" id="promoTitle"></p>
+    <p class="promo-text" id="promoText"></p>
+    <a id="promoLink" class="promo-cta" href="#" target="_blank" rel="noopener sponsored">
+      <span id="promoCta"></span><span class="promo-arrow">→</span>
+    </a>
+  </div>
+</div>
+<script>window.PROMO_CREATIVES = [{"icon": "data:image/png;base64,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", "img": "https://lp.kawaru-ai.jp/wp-content/uploads/2026/05/Frame-2611706-scaled.png", "tag": "AIエージェント", "title": "Kawaru", "text": "「これ自動化して」と話すだけで、業務フローが自動で完成。", "cta": "無料で試す", "url": "https://lp.kawaru-ai.jp/"}, {"icon": "data:image/png;base64,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", "img": "https://kawarucoach-lp.kawaru-ai.jp/wp-content/uploads/2026/08/Frame-1000001051.png", "tag": "伴走型AI顧問サービス", "title": "Kawaru Coach", "text": "AIのプロが専属で伴走。月5万円から、組織のAI活用が進む。", "cta": "詳しく見る", "url": "https://kawarucoach-lp.kawaru-ai.jp/"}, {"icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHgAAAB4CAIAAAC2BqGFAAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAeKADAAQAAAABAAAAeAAAAAAI4lXuAAAP3ElEQVR4Ae2bC3BU1RnHd/fu3Wcem81jNyEkm0DIi4SEh7wK4wwVLFQKjqIjzFSwWguIg46djtWpjh1G2xlB7HRqsaW1dAAHqPKQUlCoWhEJjwRIQsiLZPPaPDZh3+/+bxbXNcndbJKbe3f07GR27p5z7nfO+d3//c53HhEHAgER+Uw+AcnkV0FqYAgQ0DzpgIAmoHkiwFM1RNEENE8EeKqGKJqA5okAT9UQRRPQPBHgqRqiaAKaJwI8VUMUTUDzRICnaoiiCWieCPBUDVE0Ac0TAZ6qIYomoHkiwFM1RNEENE8EeKqGKJqA5okAT9UQRRPQPBHgqRqiaAKaJwI8VUMUTUDzRICnaqQ81RN1Nf5AwO3z3XG7LS6PLxBQ0lSCTKaipbSEitpGLBYUx875aLPTdXvA0mm1u3zeBLksXk5LxRKXn4Hu9nu1CoVOrcqOT6DEUbk7nPoWxxLwmAANCX9h7LR7vNmJ8YbEeLWMdvq8A263L+BXUNJEmZwSi7vsdqPVYnLZCzVaQ3xiZIZNNnNFX8eDmYW4MXJJ3nKFdx0dVhsoz9BqFk9N6nM6zxhvV5g62mw2d8AvEgUoiThOJpueqFmsn1KanFoYSL5gau+wWeek6mXUyM7E4fO+31Jda+kpTkwtSkjlDWXkigRWdIN5oMrUc292JpR36FbdWaPR7HJIpYw/FjMfEeMnxKKAKIDrAo12bU7+nBRdbX9vm82yWJepkA4XSuDg7ep/d9bDdczTZvwib64kNlzI8IZGfjBc5rbcsVR29T4ww9B8x7L7ytVb5j4pJcagx7ztDGTGzYqZ/7CBrhm/XGPuvW29uMaQt8Ywg6aoL7rbFqVlKr6t6y97286YmiRiCe6vsfS02y2ZqgQuGz1eW4KBvuNyV3SYVuRm1fX1v36xwmS3gx0QM4OzXxwQ+/2DPwAM3sPvh6LFUjHl8vkO1Fd3O+2bZpTKJBKH1xMOus1uOdhc7fH5mFciILL73Ff7O7/voK90dZekJiOo2FlxtcNil9N3Ywm/SOz1+hRSSiPHl9jh9d7xuKQSiVQSYGTOfElOG5vwPH5WUEYPKj0oMrjmfzZdxzOA70Yuyvr8gQZrH+JFRt5Cf4RRtMlmt7g9eVrN7y5UNPQPKKUUM/KJRV5RQCWllhuyFmZkpKmU4GjxeOr7zSdbmlptFhlgMS5FRIulH7fdpsTUxvySEOujrXWXezvgeSB/iYQZe/BIupz2frdTK1cKzVkkDOgrXT1z9KkYBs+1tIMURIdhD8EcIuXNZbPmp+vDFZivSbpHp99Tfe2iqYOSiOB/4V9A+UxbY6JMti63APAh5E87WpLl6iW6qe0Oy5W+ThoeJyDqcznMnpgAHVXwz60cbB4P/HCyUnmy4bbN7WG8ckCE1zyOlm2fU77g25SDVacqVc/Omr1Al+5GOSgWIyR8iIj6V3PdR62NKKOU0g/nFP66ZNGjhqLZWr3PLwr4mbEU/gSK5rb947MmgKK7rI4UlcLu8dT0mjHqIXJD9IbZ9vLsrPK0NLZuqKX008Vldq+3sqebpgZdCB5PQHSgoTpZrligm3KvPjt4b4pcKWfeEpEkANoBi8fNZpPPdAEU7fH75BTV43B0We0YpiDPgF+spqU/yjVE7nmiXP5s6eyCpCS318/IGihFYqfP95ebVTfMPaF7lZRMBk8NyH6EKyLb9xi0n5aIzU63w+PD2w1e8Ad6VVyaWhWCxXahVSi3lc4xJCQyC07MB7KV9Dlde2or223W4F2YdsOTM3lMsChi/FQMfARQtNcXkFIU1jfAajBWZkAzCxrRTeEy1HHw1+kqNVgH/TvWnrAM8ufayjuD4vX5/VC8KCAZVH1MUMaDFgA0wgGQRbQ7OAVkxIaQY8DJLCFFqbzcBM3W0tnJcmVQ1zCAh1TVa/rbzWtA7PT7nHiYjJCZIE8RG+urAoBG4AU5J8llSpoeDCBECHuNFlunzRElaBQr1iZvKS2Lp2VeJgyBGWbe+FmH8VhLfZfd5vQiImcoQ9dxUib+FvwjBGgJ4zdS1EqdSgnhAQEcCGK+j+qbI+Not9nOtLSEysxO1T1ZXKqUUEEXAiOIYY401X3U0hD0Qgg8sHidIJOHbhHwQgDQOrWyx+GMo+nCFG1wyEL/JWIRQGP1g40Fns3fr1fvunzlbGtrqMySjMyNhSVSTHb8Isga6QhIWqwWRCPwQ0hRU3QirQiVF/BCANBxMhrjVZ/DtXzaVBVNB0crxHlWt/f35y//r7VjOA5svvyp8tp/jW1wFH+srLps+uZ53JdleDSvkBlUsRQVfD/gMAa9Mxx1klyhlccEaOqVV14Z3rHJTgHrS52mpVlTjBZrba8Za0aoEayxAIJNAGxoQeByxpX722zW000te6pufNnRiWIog8C5qru7MFmbqry7gpGfhDdDdK23G7mDLb/7jdG1SJOyND0r+HuyOxXZvgAzQzQoPU4tp3qxHr1pVmF1dx/Wo7HmiXQEJNgwPNXYcq6lDeufWGr2+P1Y4UOwJqMQGqMIVppFnTb7zT5zoVYb7Bv4PpKXb/W4jzc3MEt3KMTMg7AeIsnXaGOBMtopgOsI0pmbobvUboqX0b9cWK5XqQA0RA1hCQZJGxZIXV6Xj1mcpoMTyEAAPsfj9f84N2dljmHA43L7MeVhPmD904Li+zKzBwM7eGcmEFFRdFmyLlhA8G/BQGvk8pK0lNNNxoIU7W+W3pOn0TCMvuYBGQb/mG0WZoLHKNTj82OUW5eft7VsVrfTdrm3EwH413eIoOWNRSWL0jOwOYC74c0LEpP1SnWogLAXdwcQoRpR02PGDssPczJdXt+B6lsn6m9bcbZgcKkerz8ogjMTJIvBUZyfnLShuGDBFH2Dxdxo6cc+FlaahrR8wOXaWXnpkqlTSkleKL9nkT5jSAGhfgoMGt1uNN/BbkuZLmVaUmLrHeuZplasU/fYnYisEbCBb4JcbtDEL52asXCKHgq+2muyeN2L0zKxMjUitW6HfUfFBTye3y78AWY0I5bhP1F40Ogz9g8vd5rwXZqWkpUQj6FvwOW2ugGamalr5DLmpIfXW9Pfa3LYcYamQJMcmZTRah1wO4u1KZGL8ZkbE6CDHcYspqqrx+rxpKoV8TS2aplgDqyxrIrDNDavG4hzExLllDCR0gSfSgyBDvYEZBG94RgYAgy4ZrhpmZRKVigxeE6wq8LeHnOghcUxebULFt5NXpdi0zIBzdNzIaAJaJ4I8FQNUTQBzRMBnqohiiageSLAUzVE0QQ01wSwSyDgObzvi6JtXs/eW5V/uHnR6p3omceOjo733nsP32NSwhhWwurq6mpraweX41mrwDbf/Pnzk5NHWcbE/Uaj8caNG8y24Egf7KdgJxY5+IZBlWr0Y3kjmbmbhh3ev9ZVVg10lqXo8I914ztS093d3djY+Pnnn586dQoXoIF9bekI/600ckPGAPr8+fPvvvsuTQ/d1AgZxkYdiEyZMiUa0FeuXNmxY4ecZU0Oj9Pj8ZjN5uzs7AMHDoSqGOsFNmg+a2/dV39jwOtcmTX9YUPhqJRRr8lkwrfD4ejr64NyGxoampubOzs7IQ6k5+bmPv/880uXLo2suSFNHcPqHf6BFZ/w+4N6xGnF8ESlUsmm0/BiMIWesLUVStm3b9+uXbvWr1//4osvshULNzj82uRwHK6/+Z+2JpxTXZ9XtFQ/dXiZ4Sn19fVPPPEEgKJSdEQmk8XHx1utVoBetWrVY489Nn369HG8YWNQNKrEJ9Qy8EWbIEmIbhwghlgLmQ1eoJ+XLl2C31i4cOE4jGMT/dNW4z9u1mAPd1l21iPTC3D6dEgVbD/T09PfeOMNVIquoZEKhSIhIeHo0aNvvvnmkiVLSktL2W6MnD4G0EMMWSyWZ555Jisra/fu3eN4wiFreFo6nQ6qCaXgAoPB1atX8/Pzy8vLw9Ojua7rMx+orfusrS0/NelXM+cv0qeP6VGp1eoFCxYMqQjQMWwMeXeHlIn8c/ygYRd14xO5gsi5eCUhHzwzeL158+aFCh87dqy/v3/jxo1JSUmhxFEvumz2/TfqTje3qOTSp8tK5ybEyXEs5O7xpVHvvlsAPm14p5xOJ+xgEHK5XOGGMGIFB+3wxBGvJwR6RItjSoR8tm3b9vbbb2/dunXdunUgq9VqIeeTJ0/m5OSsXbs2SmtdNgdOjh2uacDG7v3Tsh8pyu9rbNj+8xdWr/nJ448/HqURFAPK119/HQ0IDyeAEiEH3MjevXs/+OADlEFJPAxQ3rx589y5c6OxLzBoyKSkpOStt97av3//O++889VXX4E4HGJPT8+WLVvgUkbtAw5yvF9d/3Gz0enx3j89e9X07KkJjBf6tKam8lrVmgejfVShioqKijQaTfh4jkZeuHABgyGaipgqCBrl8QCif+EEBh3sHgKVTZs2FRYWwo3Ah3i93uXLl69evTrU+QgXOBF5ob1rmSHzgbwcfdw34TZIhasygoXwLLB76KGHwlOC1wg0q6urEQKhkcNzo0mJoZkhAowNGzbARcIhoukIPKLpAA5Z77pvyZPlxeGUo7kx+jJoT2trK7xc9PodbjwmFB1sVkVFxZ49e1JTUzEj+OSTT9C9l156aerUUYJfDEa0bHLl0tXVdf369WnTpqWkjP9EzvibGBrNQxfDH2OUKfB6H3744fbt2xE/vfbaazt37sT7e+7cObgRjEtRGpm8YgcPHuzt7V2xYsU4fFGoVeMHHQxrQHmCoDG7BdyXX34Z4sWoiBgWUflzzz2HaVhVVRWmhZj4hprL/wXCDKwBYJ4C0BOpPVrXcfz4cQQGQbioD3AxZCE2QCCMCStGnlDsCVXC22IuM2qz2tvbDx06dPjwYQSnTz31FBw0hvvgXZi/wG9AR/iJoXJUU5NRAM1DPIcWGgwGrB9Fs4AToRnRgsY4gDn+oHy/OZI8c+ZM8AXx8AoAWq/Xh6cMv8bYgqWMEydOwCBWZ7CAUFxcPKQYAupXX30V9sfXQ7gjNCwUig0xHvlnZWXlkSNHzp49i5F55cqVCJYR1UW+ZdTcaEEvHvyMai7KAhBLTU0NXgVQxiDDdhekxJY1anpGRsayZctGHUtHtINILhjMoXnjjueGWB7D6t2QOyfyE0KDVMMnBROxxvm9wXd0IkPf8CYJA3p4O77zKeOPOr7zaLjtIAHNLU9WawQ0KxpuMwhobnmyWiOgWdFwm0FAc8uT1RoBzYqG2wwCmluerNYIaFY03GYQ0NzyZLVGQLOi4TaDgOaWJ6s1ApoVDbcZBDS3PFmtEdCsaLjNIKC55clqjYBmRcNtBgHNLU9WawQ0KxpuMwhobnmyWiOgWdFwm0FAc8uT1RoBzYqG2wwCmluerNYIaFY03GYQ0NzyZLVGQLOi4TaDgOaWJ6s1ApoVDbcZBDS3PFmt/R8gQsXgQf6rAQAAAABJRU5ErkJggg==", "accent": "#1C3461", "tag": "AI社員構築代行", "title": "エヌイチ", "text": "あなたの代わりに働く「AI社員」を、無料相談から構築。", "cta": "無料相談を見る", "url": "https://n1-inc.co.jp/lp-ai-staff-build-offer-with-image/"}, {"icon": "data:image/png;base64,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", "accent": "#276C82", "tag": "法人研修", "title": "Claude Code / Codex研修", "text": "指示するだけで仕事が進む組織へ。現場定着まで伴走します。", "cta": "研修内容を見る", "url": "https://n1-inc.co.jp/lp-claude-codex-training-offer-with-image/"}, {"icon": "data:image/png;base64,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", "accent": "#3F4A5A", "tag": "運営会社", "title": "株式会社エヌイチ", "text": "AI・ChatGPTを活用した社内DXと人材育成のプロ集団です。", "cta": "会社サイトを見る", "url": "https://n1-inc.co.jp/"}, {"icon": "", "img": "https://i.ytimg.com/vi/BdAjVmf3ruI/hqdefault.jpg", "tag": "最新の動画", "title": "【誰も知らない】OpenAIが発表した究極のエージェントを構築する方法を解説します", "text": "", "cta": "動画を見る", "url": "https://www.youtube.com/watch?v=BdAjVmf3ruI"}, {"icon": "", "img": "https://i.ytimg.com/vi/AQJGtamKUpo/hqdefault.jpg", "tag": "最新の動画", "title": "【性能100倍】Codexを使う全人類は必ずコレと連携しておいてください", "text": "", "cta": "動画を見る", "url": "https://www.youtube.com/watch?v=AQJGtamKUpo"}, {"icon": "", "img": "https://i.ytimg.com/vi/fC8Jhw6EJXs/hqdefault.jpg", "tag": "最新の動画", "title": "【公式発表】Codexを100倍賢くする方法がヤバすぎたので徹底解説します", "text": "", "cta": "動画を見る", "url": "https://www.youtube.com/watch?v=fC8Jhw6EJXs"}, {"icon": "", "img": "https://i.ytimg.com/vi/1tPFci91Xkw/hqdefault.jpg", "tag": "最新の動画", "title": "【圧倒的勝利】イーロン・マスクが出したGrok4.6がCodexのGPT-5.6を超えて…", "text": "", "cta": "動画を見る", "url": "https://www.youtube.com/watch?v=1tPFci91Xkw"}, {"icon": "", "img": "https://i.ytimg.com/vi/r3tQrUF4o7k/hqdefault.jpg", "tag": "最新の動画", "title": "【Claude超え】天下のGeminiが「最安・最速・最高性能」の新モデルを発表しました", "text": "", "cta": "動画を見る", "url": "https://www.youtube.com/watch?v=r3tQrUF4o7k"}, {"icon": "", "img": "https://i.ytimg.com/vi/kzYXw6RvGPI/hqdefault.jpg", "tag": "最新の動画", "title": "【衝撃】日本政府が奨励するMCP活用術がガチすぎたので緊急で徹底解説します", "text": "", "cta": "動画を見る", "url": "https://www.youtube.com/watch?v=kzYXw6RvGPI"}];</script>
+<script>
+(function(){
+  if (sessionStorage.getItem('promoClosed')) return;
+  var el = document.getElementById('promo');
+  if (!el) return;
+  var creatives = window.PROMO_CREATIVES || [];
+  if (!creatives.length) return;
+  var c = creatives[Math.floor(Math.random() * creatives.length)];
+  var banner = document.getElementById('promoBanner');
+  var icon = document.getElementById('promoIcon');
+  // 画像があるものは横長の絵で見せる。無いものは従来どおり丸アイコン。
+  if (c.img) {
+    banner.src = c.img;
+    banner.style.display = 'block';
+    icon.style.display = 'none';
+    // 差し替え等で画像が消えていたら、アイコン表示に戻す
+    banner.onerror = function(){
+      banner.style.display = 'none';
+      if (c.icon) { icon.src = c.icon; icon.style.display = 'block'; }
+    };
+  } else {
+    icon.src = c.icon;
+    icon.style.display = 'block';
+    banner.style.display = 'none';
+  }
+  // 画像で見分けられないもの（エヌイチ系は先方のog:imageが3件とも同じ）は色で差をつける
+  var tag = document.getElementById('promoTag');
+  var cta = document.getElementById('promoLink');
+  if (c.accent) {
+    tag.style.color = c.accent;
+    tag.style.background = c.accent + '1F';
+    cta.style.background = c.accent;
+  } else {
+    tag.style.color = ''; tag.style.background = ''; cta.style.background = '';
+  }
+  tag.textContent = c.tag;
+  document.getElementById('promoTitle').textContent = c.title;
+  var txt = document.getElementById('promoText');
+  txt.textContent = c.text || '';
+  txt.style.display = c.text ? 'block' : 'none';
+  document.getElementById('promoCta').textContent = c.cta;
+  var link = document.getElementById('promoLink');
+  link.href = c.url;
+  function close(){
+    el.classList.remove('show');
+    sessionStorage.setItem('promoClosed', '1');
+  }
+  // 動画の概要欄から来た人が、自分のプレゼントを探し始める瞬間に被らないようにする。
+  // 以前は読み込み1.6秒後に無条件で出しており、いちばん目的意識の高い時間を塞いでいた。
+  // 中身を見に行った（＝目当てのものに辿り着いた）ころに出す。
+  var shown = false;
+  function show(){
+    if (shown) return;
+    shown = true;
+    el.classList.add('show');
+    removeEventListener('scroll', onScroll);
+  }
+  function onScroll(){
+    if (scrollY > innerHeight * 0.4) show();
+  }
+  addEventListener('scroll', onScroll, {passive:true});
+  // まったくスクロールしない人にも最後には出す
+  setTimeout(show, 10000);
+  document.getElementById('promoClose').addEventListener('click', function(e){ e.preventDefault(); close(); });
+  el.addEventListener('click', function(e){ if (e.target === el) close(); });
+})();
+</script>
+
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "1bdbdde44b614116a41a1e00133ac91f"}'></script><!-- End Cloudflare Web Analytics -->
+</body></html>
