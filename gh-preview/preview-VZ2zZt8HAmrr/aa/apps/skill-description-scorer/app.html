@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SKILL.md 説明欄 採点＆書き直しアプリ</title>
+<meta name="description" content="スキル名・やること・使う場面を入れるだけで、そのまま貼れるdescription案、減点理由つきの点数、発動を試す依頼文20件を自動で作ります。作ったスキルが発動しないときの直し方が、その場で分かります。">
+<style>
+  :root{
+    --brand:#1C3461; --brand-deep:#16284A; --brand-soft:rgba(28,52,97,.07); --brand-line:rgba(28,52,97,.2);
+    --accent:#5BBCD4; --accent-deep:#2C7A93; --accent-soft:rgba(91,188,212,.15);
+    --bg:#F7FAFC; --paper:#FFFFFF; --ink:#1C3461; --ink-mid:#4A6080; --ink-sub:#8098B4; --line:rgba(28,52,97,.13);
+    --ok:#1F7A4D; --warn:#B4741A; --ng:#A33A3A;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,'Hiragino Sans','Yu Gothic',sans-serif;
+    line-height:1.7;padding:26px 18px 60px;}
+  .wrap{max-width:920px;margin:0 auto;}
+  header{text-align:center;margin-bottom:28px;}
+  h1{font-size:26px;font-weight:900;line-height:1.35;}
+  header p{font-size:14.5px;color:var(--ink-mid);margin-top:10px;}
+  .panel{background:var(--paper);border:1.5px solid var(--line);border-radius:16px;padding:22px 24px;margin-bottom:18px;}
+  .panel h2{font-size:17px;font-weight:900;margin-bottom:4px;display:flex;align-items:center;gap:10px;}
+  .panel h2 .num{width:26px;height:26px;border-radius:8px;background:var(--brand-soft);color:var(--brand-deep);
+    font-size:13px;display:flex;align-items:center;justify-content:center;flex:none;}
+  .panel .hint{font-size:13px;color:var(--ink-sub);margin-bottom:14px;padding-left:36px;}
+  label{display:block;font-size:13.5px;font-weight:700;margin:14px 0 5px;}
+  label .opt{font-weight:400;color:var(--ink-sub);font-size:12.5px;}
+  input[type=text],textarea{width:100%;border:1.5px solid var(--line);border-radius:10px;padding:10px 13px;
+    font-size:14.5px;font-family:inherit;color:var(--ink);background:var(--paper);}
+  input[type=text]:focus,textarea:focus{outline:none;border-color:var(--accent);}
+  textarea{resize:vertical;min-height:74px;line-height:1.6;}
+  .mono{font-family:ui-monospace,Menlo,Consolas,monospace;}
+  .ex{font-size:12.5px;color:var(--ink-sub);margin-top:5px;}
+  .btnrow{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px;}
+  button{border:none;border-radius:10px;padding:13px 26px;font-size:15px;font-weight:900;font-family:inherit;cursor:pointer;transition:.15s;}
+  .primary{background:var(--brand);color:#fff;}
+  .primary:hover{background:var(--brand-deep);}
+  .ghostbtn{background:var(--paper);color:var(--brand-deep);border:1.5px solid var(--line);}
+  .ghostbtn:hover{border-color:var(--brand);background:var(--brand-soft);}
+  #out{display:none;}
+  .scorebox{display:flex;align-items:center;gap:24px;flex-wrap:wrap;}
+  .bigscore{font-size:56px;font-weight:900;line-height:1;}
+  .bigscore small{font-size:20px;color:var(--ink-sub);}
+  .verdict{font-size:16px;font-weight:900;padding:6px 16px;border-radius:999px;}
+  .v-ok{background:rgba(31,122,77,.12);color:var(--ok);}
+  .v-warn{background:rgba(180,116,26,.13);color:var(--warn);}
+  .v-ng{background:rgba(163,58,58,.12);color:var(--ng);}
+  ul.checklist{list-style:none;margin-top:16px;}
+  ul.checklist li{font-size:14px;padding:9px 0 9px 30px;position:relative;border-bottom:1px solid var(--line);}
+  ul.checklist li:last-child{border-bottom:none;}
+  ul.checklist li::before{position:absolute;left:2px;top:9px;font-weight:900;font-size:15px;}
+  ul.checklist li.pass::before{content:'✔';color:var(--ok);}
+  ul.checklist li.fail::before{content:'×';color:var(--ng);}
+  ul.checklist li b{font-weight:900;}
+  ul.checklist li span{display:block;color:var(--ink-mid);font-size:13px;margin-top:2px;}
+  pre.result{background:var(--brand-deep);color:#ECECEA;border-radius:12px;padding:16px 18px;font-size:13.5px;
+    font-family:ui-monospace,Menlo,Consolas,monospace;line-height:1.65;white-space:pre-wrap;word-break:break-word;overflow-x:auto;}
+  .copyrow{display:flex;justify-content:space-between;align-items:center;margin:16px 0 8px;gap:12px;flex-wrap:wrap;}
+  .copyrow h3{font-size:15px;font-weight:900;}
+  .copybtn{background:var(--accent);color:var(--ink);border-radius:8px;padding:7px 16px;font-size:13px;font-weight:900;}
+  .copybtn:hover{background:var(--accent-deep);color:#fff;}
+  .len{font-size:12.5px;color:var(--ink-sub);}
+  .len.over{color:var(--ng);font-weight:900;}
+  table.q{width:100%;border-collapse:collapse;font-size:13.5px;margin-top:8px;}
+  table.q th,table.q td{border-bottom:1px solid var(--line);padding:9px 10px;text-align:left;vertical-align:top;}
+  table.q th{background:var(--brand-soft);font-size:12.5px;font-weight:900;color:var(--brand-deep);}
+  table.q td.tag{white-space:nowrap;font-weight:900;font-size:12px;}
+  td.tag.yes{color:var(--ok);} td.tag.no{color:var(--ng);}
+  .steps{background:var(--accent-soft);border-radius:12px;padding:16px 20px;margin-top:16px;font-size:13.5px;}
+  .steps b{display:block;margin-bottom:6px;font-size:14px;}
+  .steps ol{margin-left:20px;}
+  .steps li{margin-bottom:4px;}
+  .err{background:rgba(163,58,58,.09);color:var(--ng);border-radius:10px;padding:12px 16px;font-size:14px;font-weight:700;margin-top:14px;}
+  footer{text-align:center;font-size:12.5px;color:var(--ink-sub);margin-top:30px;line-height:1.8;}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <h1>SKILL.md 説明欄 採点＆書き直しアプリ</h1>
+  <p>スキルが発動するかどうかは <span class="mono">description</span> がすべて背負っています。<br>3つ埋めるだけで、貼れる説明文・点数・発動を試す依頼文20件を作ります。</p>
+</header>
+
+<div class="panel">
+  <h2><span class="num">1</span>スキルの中身を入れる</h2>
+  <p class="hint">思いついたままで大丈夫です。文章は自動で組み立てます。</p>
+
+  <label for="f-name">スキル名（name）</label>
+  <input type="text" id="f-name" class="mono" placeholder="weekly-report" autocomplete="off">
+  <p class="ex">小文字の英数字とハイフンのみ・64文字以内・フォルダ名と同じにする</p>
+
+  <label for="f-does">このスキルは何をするか<span class="opt">（読点区切りで3つ以上あると精度が上がります）</span></label>
+  <textarea id="f-does" placeholder="週報の下書きを作る、今週の進捗を箇条書きにまとめる、来週の予定を洗い出す、未完了タスクを繰り越す"></textarea>
+
+  <label for="f-when">どんなときに使いたいか<span class="opt">（実際に自分が打ちそうな言い方で）</span></label>
+  <textarea id="f-when" placeholder="週報を書くとき、金曜に今週の振り返りをするとき、上司への報告をまとめるとき"></textarea>
+
+  <label for="f-not">逆に、使ってほしくない場面<span class="opt">（任意。似ているけど違う作業）</span></label>
+  <textarea id="f-not" placeholder="日報を書くとき、議事録を取るとき、他部署への共有資料を作るとき"></textarea>
+
+  <div class="btnrow">
+    <button class="primary" onclick="run()">説明文を作って採点する</button>
+    <button class="ghostbtn" onclick="fillSample()">サンプルを入れる</button>
+    <button class="ghostbtn" onclick="clearAll()">全部消す</button>
+  </div>
+  <div id="err"></div>
+</div>
+
+<div id="out">
+  <div class="panel">
+    <h2><span class="num">2</span>採点結果</h2>
+    <p class="hint">公式ガイドが挙げる書き方の原則と、仕様上の制限で採点しています。</p>
+    <div class="scorebox">
+      <div class="bigscore" id="score">0<small> / 100</small></div>
+      <div class="verdict" id="verdict">—</div>
+    </div>
+    <ul class="checklist" id="checks"></ul>
+  </div>
+
+  <div class="panel">
+    <h2><span class="num">3</span>そのまま貼れる説明文</h2>
+    <p class="hint">SKILL.md の冒頭にある <span class="mono">---</span> で囲まれた部分に貼ってください。</p>
+    <div class="copyrow"><h3>日本語版</h3><span class="len" id="len-ja"></span><button class="copybtn" onclick="copyEl('res-ja',this)">コピー</button></div>
+    <pre class="result" id="res-ja"></pre>
+    <div class="copyrow"><h3>英語版（海外製ツールで確実に効かせたいとき）</h3><span class="len" id="len-en"></span><button class="copybtn" onclick="copyEl('res-en',this)">コピー</button></div>
+    <pre class="result" id="res-en"></pre>
+    <div class="copyrow"><h3>SKILL.md まるごと（雛形つき）</h3><button class="copybtn" onclick="copyEl('res-full',this)">コピー</button></div>
+    <pre class="result" id="res-full"></pre>
+  </div>
+
+  <div class="panel">
+    <h2><span class="num">4</span>発動を試す依頼文 20件</h2>
+    <p class="hint">「発動してほしい」10件と「してほしくない」10件。各3回ずつ試し、発動率が半分を超えるかで判定します。</p>
+    <table class="q"><thead><tr><th style="width:110px;">期待</th><th>依頼文</th></tr></thead><tbody id="qbody"></tbody></table>
+    <div class="copyrow"><h3>テスト用に一覧をコピー</h3><button class="copybtn" onclick="copyEl('res-q',this)">コピー</button></div>
+    <pre class="result" id="res-q"></pre>
+    <div class="steps">
+      <b>使い方（3ステップ）</b>
+      <ol>
+        <li>上の依頼文を1件ずつ、実際に Codex や Claude Code へ投げる（同じ文を3回ずつ）</li>
+        <li>スキルが読み込まれた回数を数える。「発動してほしい」は3回中2回以上で合格、「してほしくない」は1回以下で合格</li>
+        <li>落ちた項目を見て説明文を直す。<b>失敗した依頼文の単語をそのまま説明文に足さない</b>——その言い回しにだけ効く説明文になってしまいます。似た依頼をまとめた「種類」を足してください</li>
+      </ol>
+    </div>
+  </div>
+</div>
+
+<footer>
+  すべてこのページの中だけで動きます。入力内容がどこかに送信されることはありません。<br>
+  ファイルを保存しておけば、インターネットに繋がっていなくても使えます。
+</footer>
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  var $ = function(id){ return document.getElementById(id); };
+
+  function splitItems(s){
+    if(!s) return [];
+    return s.split(/[、,，\n・]+/).map(function(x){ return x.trim().replace(/[。.]$/,''); }).filter(function(x){ return x.length > 0; });
+  }
+
+  // 「〜するとき」「〜する場合」→ 動作部分だけ取り出す
+  function stripWhen(s){
+    return s.replace(/(するとき|したいとき|のとき|する場合|したい場合|の場合|するタイミング)$/,'')
+            .replace(/(とき|時)$/,'');
+  }
+
+  function fillSample(){
+    $('f-name').value = 'weekly-report';
+    $('f-does').value = '週報の下書きを作る、今週の進捗を箇条書きにまとめる、来週の予定を洗い出す、未完了タスクを翌週へ繰り越す';
+    $('f-when').value = '週報を書くとき、金曜に今週の振り返りをするとき、上司への報告をまとめるとき、今週何をやったか整理したいとき';
+    $('f-not').value = '日報を書くとき、議事録を取るとき、他部署への共有資料を作るとき';
+  }
+  window.fillSample = fillSample;
+
+  function clearAll(){
+    ['f-name','f-does','f-when','f-not'].forEach(function(id){ $(id).value = ''; });
+    $('out').style.display = 'none';
+    $('err').innerHTML = '';
+    window.scrollTo({top:0,behavior:'smooth'});
+  }
+  window.clearAll = clearAll;
+
+  function copyEl(id, btn){
+    var t = $(id).textContent;
+    var done = function(){
+      var old = btn.textContent;
+      btn.textContent = 'コピーしました';
+      setTimeout(function(){ btn.textContent = old; }, 1400);
+    };
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(t).then(done, function(){ fallbackCopy(t, done); });
+    } else {
+      fallbackCopy(t, done);
+    }
+  }
+  window.copyEl = copyEl;
+
+  function fallbackCopy(text, cb){
+    var ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.position = 'fixed';
+    ta.style.opacity = '0';
+    document.body.appendChild(ta);
+    ta.select();
+    try { document.execCommand('copy'); cb(); } catch(e){ /* 手動コピーに任せる */ }
+    document.body.removeChild(ta);
+  }
+
+  // ---- 名前の検査（仕様の制約をそのまま実装）----
+  function checkName(n){
+    var problems = [];
+    if(!n) { problems.push('空欄です'); return problems; }
+    if(n.length > 64) problems.push('64文字を超えています（' + n.length + '文字）');
+    if(/[A-Z]/.test(n)) problems.push('大文字が入っています');
+    if(/^-|-$/.test(n)) problems.push('先頭または末尾がハイフンです');
+    if(/--/.test(n)) problems.push('ハイフンが2つ続いています');
+    if(/[^a-z0-9-]/.test(n)) problems.push('小文字の英数字とハイフン以外の文字が入っています');
+    return problems;
+  }
+
+  // ---- 説明文の組み立て ----
+  function buildJa(does, when, nots){
+    var head = does.join('、') + '。';
+    var body = '次のようなときに使う：' + when.map(stripWhen).join('、') + '。';
+    var loose = '「' + (does[0] || '').slice(0,12) + '」という言葉が出てこなくても、' +
+                (when.length ? stripWhen(when[0]) : 'この作業') + 'に当たる依頼であれば使う。';
+    var ex = nots.length ? 'ただし、' + nots.map(stripWhen).join('・') + 'には使わない。' : '';
+    return (head + body + loose + ex);
+  }
+
+  function buildEn(name, does, when, nots){
+    var topic = name.replace(/-/g,' ');
+    var s = 'Use this skill for ' + topic + ' tasks: ' + does.slice(0,4).join('; ') + '. ';
+    s += 'Trigger it when the user is ' + when.map(stripWhen).slice(0,4).join(', ') + ', ';
+    s += 'even if they do not explicitly mention "' + topic + '".';
+    if(nots.length){
+      s += ' Do not use it for ' + nots.map(stripWhen).slice(0,3).join(', ') + '.';
+    }
+    return s;
+  }
+
+  // ---- 採点 ----
+  function score(name, does, when, nots, ja){
+    var items = [];
+    var pts = 0;
+
+    var nameProblems = checkName(name);
+    if(nameProblems.length === 0){
+      items.push({ok:true, t:'name が仕様どおり', d:'小文字の英数字とハイフンのみ・64文字以内。フォルダ名も同じにしてください'});
+      pts += 15;
+    } else {
+      items.push({ok:false, t:'name が仕様に合っていません', d:nameProblems.join(' / ') + '（このままだとスキルとして読み込まれません）'});
+    }
+
+    if(does.length >= 3){
+      items.push({ok:true, t:'できることが具体的', d:does.length + '件を列挙。何をするスキルか一読で分かります'});
+      pts += 20;
+    } else {
+      items.push({ok:false, t:'できることが少なすぎます', d:'いまは' + does.length + '件。3件以上に分けて書くと、依頼文と引っかかる語が増えます'});
+      pts += does.length * 6;
+    }
+
+    if(when.length >= 3){
+      items.push({ok:true, t:'使う場面が広く書けています', d:when.length + '件。言い方の違いを吸収できます'});
+      pts += 20;
+    } else {
+      items.push({ok:false, t:'使う場面が足りません', d:'いまは' + when.length + '件。自分が実際に打ちそうな言い方を3つ以上入れてください'});
+      pts += when.length * 6;
+    }
+
+    if(nots.length >= 1){
+      items.push({ok:true, t:'使わない場面が指定されています', d:'似ているが違う作業を除いておくと、余計な発動を減らせます'});
+      pts += 15;
+    } else {
+      items.push({ok:false, t:'使わない場面が空です', d:'「議事録」「日報」のような、惜しいけど違う作業を1つ以上入れてください'});
+    }
+
+    if(/使う|use/i.test(ja)){
+      items.push({ok:true, t:'命令形で書けています', d:'「このスキルは〜します」ではなく「〜のときに使う」の形。AIは使うかどうかを判断しています'});
+      pts += 15;
+    } else {
+      items.push({ok:false, t:'命令形になっていません', d:'「〜のときに使う」という言い切りの形にしてください'});
+    }
+
+    var len = ja.length;
+    if(len === 0){
+      items.push({ok:false, t:'説明文が空です', d:''});
+    } else if(len > 1024){
+      items.push({ok:false, t:'1024文字を超えています（' + len + '文字）', d:'仕様上の上限です。使う場面をまとめて短くしてください'});
+    } else if(len > 400){
+      items.push({ok:false, t:'やや長すぎます（' + len + '文字）', d:'全スキル分が起動時に載るので、300文字前後まで削ると安全です'});
+      pts += 7;
+    } else {
+      items.push({ok:true, t:'長さは適正（' + len + '文字）', d:'上限1024文字に対して十分短く、起動時の枠を圧迫しません'});
+      pts += 15;
+    }
+
+    return {pts: Math.min(100, pts), items: items};
+  }
+
+  // ---- 発動テスト用の依頼文20件 ----
+  var CASUAL = ['ちょっと', 'ざっと', 'とりあえず', 'すまん', ''];
+  var TAIL = ['お願い', 'できる？', 'やっといて', 'まとめといて', '頼む'];
+
+  function buildQueries(does, when, nots){
+    var yes = [], no = [];
+    var w = when.map(stripWhen);
+    var d = does.slice();
+
+    // 直球（場面をそのまま）
+    w.slice(0,3).forEach(function(x, i){
+      yes.push(x + '、' + TAIL[i % TAIL.length]);
+    });
+    // できることベース
+    d.slice(0,3).forEach(function(x, i){
+      yes.push(CASUAL[i % CASUAL.length] + x + TAIL[(i+2) % TAIL.length]);
+    });
+    // 文脈つき・長文
+    if(w[0]) yes.push('来週の頭に共有しないといけないので、' + w[0] + 'ところまでやってもらえますか。形式はいつもの箇条書きで大丈夫です');
+    if(d[0]) yes.push('上司から今日中にと言われてしまいました。' + d[0] + 'のを手伝ってください');
+    // 用語を出さない言い方
+    if(w[1]) yes.push('今週やったこと、あとで見返せる形にしておきたいんだけど');
+    if(d[1]) yes.push('毎回この作業に30分かかってて、正直しんどいです。なんとかしてほしい');
+
+    // 発動してほしくない：まず入力された除外場面
+    nots.map(stripWhen).slice(0,4).forEach(function(x, i){
+      no.push(x + '、' + TAIL[i % TAIL.length]);
+    });
+    // 惜しい系（言葉はかぶるが作業が違う）
+    if(d[0]){
+      no.push(d[0] + 'ためのツールを自作したいので、設計から相談させてください');
+      no.push('過去に' + d[0] + 'ときのファイルを探して、置き場所だけ教えて');
+    }
+    if(w[0]){
+      no.push(w[0] + 'のスケジュールを、カレンダーに登録しておいて');
+    }
+    // 完全に無関係（対照用）
+    no.push('この関数のテストコードを書いてほしい');
+    no.push('明日の東京の天気を調べて');
+    no.push('このリポジトリの依存ライブラリを最新に上げて');
+    no.push('会議室を予約しておいて');
+
+    return {yes: yes.slice(0,10), no: no.slice(0,10)};
+  }
+
+  function run(){
+    $('err').innerHTML = '';
+    var name = $('f-name').value.trim();
+    var does = splitItems($('f-does').value);
+    var when = splitItems($('f-when').value);
+    var nots = splitItems($('f-not').value);
+
+    if(!name || does.length === 0 || when.length === 0){
+      $('err').innerHTML = '<div class="err">スキル名・何をするか・どんなときに使うか の3つは入力してください。</div>';
+      return;
+    }
+
+    var ja = buildJa(does, when, nots);
+    var en = buildEn(name, does, when, nots);
+    var s = score(name, does, when, nots, ja);
+
+    $('score').innerHTML = s.pts + '<small> / 100</small>';
+    var v = $('verdict');
+    if(s.pts >= 85){ v.className = 'verdict v-ok'; v.textContent = 'そのまま使えます'; }
+    else if(s.pts >= 60){ v.className = 'verdict v-warn'; v.textContent = '直せば効きます'; }
+    else { v.className = 'verdict v-ng'; v.textContent = '発動しない可能性が高いです'; }
+
+    var ul = $('checks');
+    ul.innerHTML = '';
+    s.items.forEach(function(it){
+      var li = document.createElement('li');
+      li.className = it.ok ? 'pass' : 'fail';
+      var b = document.createElement('b');
+      b.textContent = it.t;
+      li.appendChild(b);
+      if(it.d){
+        var sp = document.createElement('span');
+        sp.textContent = it.d;
+        li.appendChild(sp);
+      }
+      ul.appendChild(li);
+    });
+
+    $('res-ja').textContent = ja;
+    $('res-en').textContent = en;
+    $('len-ja').textContent = ja.length + ' / 1024 文字';
+    $('len-ja').className = ja.length > 1024 ? 'len over' : 'len';
+    $('len-en').textContent = en.length + ' / 1024 文字';
+    $('len-en').className = en.length > 1024 ? 'len over' : 'len';
+
+    $('res-full').textContent =
+      '---\n' +
+      'name: ' + name + '\n' +
+      'description: >\n  ' + ja.replace(/(.{60})/g, '$1\n  ') + '\n' +
+      '---\n\n' +
+      '## このスキルの使い方\n\n' +
+      '1. （最初にやること）\n' +
+      '2. （次にやること）\n' +
+      '3. （最後に確認すること）\n\n' +
+      '## 出力の形\n\n' +
+      '（欲しい形式をそのまま見本として書く。表なら表、箇条書きなら箇条書きで）\n\n' +
+      '## 落とし穴\n\n' +
+      '- （AIが間違えて、自分が直したことをここに1行ずつ足していく）\n';
+
+    var q = buildQueries(does, when, nots);
+    var tb = $('qbody');
+    tb.innerHTML = '';
+    var lines = [];
+    q.yes.forEach(function(x){
+      var tr = document.createElement('tr');
+      var td1 = document.createElement('td');
+      td1.className = 'tag yes'; td1.textContent = '発動してほしい';
+      var td2 = document.createElement('td'); td2.textContent = x;
+      tr.appendChild(td1); tr.appendChild(td2); tb.appendChild(tr);
+      lines.push('[発動してほしい] ' + x);
+    });
+    q.no.forEach(function(x){
+      var tr = document.createElement('tr');
+      var td1 = document.createElement('td');
+      td1.className = 'tag no'; td1.textContent = 'してほしくない';
+      var td2 = document.createElement('td'); td2.textContent = x;
+      tr.appendChild(td1); tr.appendChild(td2); tb.appendChild(tr);
+      lines.push('[してほしくない] ' + x);
+    });
+    $('res-q').textContent = lines.join('\n');
+
+    $('out').style.display = 'block';
+    $('out').scrollIntoView({behavior:'smooth', block:'start'});
+  }
+  window.run = run;
+})();
+</script>
+</body>
+</html>
