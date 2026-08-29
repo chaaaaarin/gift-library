@@ -277,12 +277,20 @@ function goToHash(){
   // behavior:'instant' で即時に飛ばす。CSS の scroll-behavior:smooth に任せると、
   // 遠い回へは滑らかに移動しようとして事実上たどり着かない（KIT_JS の名指しリンクと同じ）。
   el.scrollIntoView({block: 'start', behavior: 'instant'});
+  // 上のサムネ画像が遅れて読み込まれてレイアウトがずれるので、次フレームで位置を詰め直す
+  requestAnimationFrame(() => el.scrollIntoView({block: 'start', behavior: 'instant'}));
   if (id.indexOf('ep-') === 0){
     el.classList.add('flashme');
     setTimeout(() => el.classList.remove('flashme'), 2400);
   }
 }
 addEventListener('hashchange', goToHash);
+// 画像が全部そろってから最終位置に合わせ直す（大量の遅延読み込みサムネの上に着地するとき用）
+addEventListener('load', () => {
+  if (!/^#(ep-|m-)/.test(location.hash)) return;
+  const el = document.getElementById(location.hash.slice(1));
+  if (el) el.scrollIntoView({block: 'start', behavior: 'instant'});
+});
 goToHash();
 
 // 月ジャンプのレール。左サイドに月の一覧を出し、押すとその月の見出しへスクロールする。
