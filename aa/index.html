@@ -57,6 +57,8 @@
           <option value="name">動画タイトル順</option>
         </select></div>
         <button class="reset" id="reset">条件をリセット</button></div>
+      <div class="grp" id="monthgrp"><h3>月で移動</h3>
+        <nav class="monthnav" id="monthnav"></nav></div>
     </aside>
     <main id="out"></main>
   </div>
@@ -64,7 +66,7 @@
   <footer>AIエージェント / Kawaru — プレゼント図書館</footer>
 </div>
 
-<script src="data.js?v=1b21285f3f89"></script>
+<script src="data.js?v=92e8d768fcd8"></script>
 <script>
 window.ICONS = {"プロンプト集": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M4 5h16v11H8l-4 4V5Z\"/><path d=\"M8 9h8M8 12.5h5\"/></svg>", "設定・スニペット": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M9 8l-4 4 4 4M15 8l4 4-4 4\"/><path d=\"M13 5.5l-2 13\"/></svg>", "早見表・逆引き": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M4 5h16v14H4z\"/><path d=\"M4 9.5h16M9.5 9.5V19M4 14.2h16\"/></svg>", "テンプレート": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M6 3h8l4 4v14H6z\"/><path d=\"M14 3v4h4\"/><path d=\"M9 12h6M9 15.5h4\"/></svg>", "チェックリスト": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M5 4h14v16H5z\"/><path d=\"M8.5 9.2l1.6 1.6 3.4-3.4M8.5 15.2l1.6 1.6 3.4-3.4\"/></svg>", "判断シート": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M12 3v5M12 3 6.5 8.5M12 3l5.5 5.5\"/><circle cx=\"12\" cy=\"13\" r=\"2.2\"/><path d=\"M6.5 21h11\"/></svg>", "ワークフロー": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M4 6h6v4H4zM14 14h6v4h-6z\"/><path d=\"M7 10v5a1.5 1.5 0 0 0 1.5 1.5H14\"/></svg>", "_play": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"3\" y=\"5\" width=\"18\" height=\"14\" rx=\"2.5\"/><path d=\"M10.5 9.2v5.6l4.8-2.8-4.8-2.8Z\" fill=\"currentColor\" stroke=\"none\"/></svg>"};
 </script>
@@ -140,16 +142,19 @@ function epCard(e, kitsToShow, q){
   const upBadge = e.upcoming ? '<span class="upbadge">近日公開</span>' : '';
   const watchLink = (e.watch && !e.upcoming)
     ? `<a class="watch" href="${e.watch}" target="_blank" rel="noopener">▶ 動画を見る</a>` : '';
-  return `<article class="ep">
+  const bundle = e.kits.length >= 2
+    ? `<a class="epbundle" href="bundles/${esc(e.slug)}.md" download="プレゼント一式_${esc(e.date||'')}.md">⬇ この回のプレゼントを全部ダウンロード</a>` : '';
+  return `<article class="ep" id="ep-${esc(e.slug)}">
     <div class="ep-left">
       <div class="ep-thumb">${thumb}${upBadge}</div>
       ${watchLink}
       ${docBtns(e)}
     </div>
     <div class="ep-body">
-      <div class="ep-date">${fmtDate(e.date) || '日付未定'}${isNew(e.date) ? '<span class="newbadge">NEW</span>' : ''}</div>
+      <div class="ep-date">${fmtDate(e.date) || '日付未定'}${isNew(e.date) ? '<span class="newbadge">NEW</span>' : ''}<button class="ep-share" type="button" data-ep="${esc(e.slug)}" title="この回へのリンクをコピー">🔗 リンク</button></div>
       <h2 class="ep-title">${e.th}</h2>
       <div class="ep-kits">${kitsToShow.map(g=>kitChip(g, q)).join('')}</div>
+      ${bundle}
     </div>
   </article>`;
 }
@@ -184,6 +189,9 @@ function render(){
   // 絞り込んでいるときだけ出す（未絞り込みでは「配布回」と同じ数字が並ぶだけになる）
   $('#shownBox').classList.toggle('hidden', !(f.q || f.type));
   $('.stats').style.gridTemplateColumns = 'repeat(' + ((f.q || f.type) ? 5 : 4) + ',1fr)';
+  // 月ジャンプのレールは日付順のときだけ意味を持つ（タイトル順では月がバラける）
+  const mgrp = document.getElementById('monthgrp');
+  if (mgrp) mgrp.classList.toggle('hidden', f.sort === 'name');
   if (!list.length){
     out.innerHTML = `<div class="empty">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="6.2"/><path d="M15 15l5.5 5.5"/><path d="M7.3 10h5.4"/></svg>
@@ -191,7 +199,20 @@ function render(){
     </div>`;
     return;
   }
-  out.innerHTML = `<div class="eplist">${list.map(({e,kits}) => epCard(e, kits, q)).join('')}</div>`;
+  // 日付順のときは月ごとの見出しを挟む（毎日増える一覧を俯瞰しやすく）
+  const grouped = f.sort !== 'name';
+  let cur = null, html = '';
+  for (const {e, kits} of list){
+    if (grouped && e.date){
+      const m = e.date.slice(0, 7);
+      if (m !== cur){
+        cur = m;
+        html += `<h3 class="month" id="m-${m}">${m.slice(0,4)}年${+m.slice(5,7)}月</h3>`;
+      }
+    }
+    html += epCard(e, kits, q);
+  }
+  out.innerHTML = `<div class="eplist">${html}</div>`;
 }
 
 // しぼり込みの状態をURLに残す。
@@ -214,7 +235,8 @@ function writeURL(push){
   if (f.type) p.set('type', f.type);
   if (f.sort !== 'new') p.set('sort', f.sort);
   const s = p.toString();
-  const url = s ? location.pathname + '?' + s : location.pathname;
+  // #ep-<動画ID> のアンカーは絞り込みを変えても残す（共有された回リンクが生き続けるように）
+  const url = (s ? location.pathname + '?' + s : location.pathname) + location.hash;
   // 入力のたびに履歴を積むと戻るボタンが使い物にならないので、検索欄だけ置き換えにする
   history[push ? 'pushState' : 'replaceState'](null, '', url);
 }
@@ -233,6 +255,80 @@ addEventListener('popstate', () => { readURL(); render(); });
 
 readURL();
 render();
+
+// 回ごとのディープリンク（#ep-<動画ID>）と月見出し（#m-YYYY-MM）へ着地する。
+// 概要欄から「その回」へ直接飛ばせるようにするため。対象が絞り込みで隠れていたら解除する。
+function goToHash(){
+  const h = location.hash;
+  const m = h.match(/^#ep-([\w-]+)$/) || h.match(/^#(m-\d{4}-\d{2})$/);
+  if (!m) return;
+  const id = m[1].indexOf('m-') === 0 ? m[1] : 'ep-' + m[1];
+  let el = document.getElementById(id);
+  if (!el && (f.q || f.type)){
+    f.q = ''; f.type = '';
+    $('#q').value = '';
+    const r = document.querySelector('input[name=type][value=""]');
+    if (r) r.checked = true;
+    writeURL(false);
+    render();
+    el = document.getElementById(id);
+  }
+  if (!el) return;
+  // behavior:'instant' で即時に飛ばす。CSS の scroll-behavior:smooth に任せると、
+  // 遠い回へは滑らかに移動しようとして事実上たどり着かない（KIT_JS の名指しリンクと同じ）。
+  el.scrollIntoView({block: 'start', behavior: 'instant'});
+  if (id.indexOf('ep-') === 0){
+    el.classList.add('flashme');
+    setTimeout(() => el.classList.remove('flashme'), 2400);
+  }
+}
+addEventListener('hashchange', goToHash);
+goToHash();
+
+// 月ジャンプのレール。左サイドに月の一覧を出し、押すとその月の見出しへスクロールする。
+(function(){
+  const nav = document.getElementById('monthnav');
+  if (!nav) return;
+  const months = [...new Set(EPS.filter(e => e.date).map(e => e.date.slice(0, 7)))].sort().reverse();
+  if (!months.length){ nav.closest('#monthgrp').classList.add('hidden'); return; }
+  nav.innerHTML = months.map(mo =>
+    `<a href="#m-${mo}">${mo.slice(0,4)}年${+mo.slice(5,7)}月</a>`).join('');
+  nav.addEventListener('click', ev => {
+    const a = ev.target.closest('a');
+    if (!a) return;
+    ev.preventDefault();
+    const mo = a.getAttribute('href').slice(1);
+    if (f.sort === 'name'){ f.sort = 'new'; $('#sort').value = 'new'; }
+    if (f.q || f.type){
+      f.q = ''; f.type = '';
+      $('#q').value = '';
+      const r = document.querySelector('input[name=type][value=""]');
+      if (r) r.checked = true;
+    }
+    writeURL(true); render();
+    const el = document.getElementById(mo);
+    if (el) el.scrollIntoView({block: 'start', behavior: 'instant'});
+  });
+})();
+
+// 「🔗 リンク」でその回へのディープリンクをコピーする
+document.addEventListener('click', ev => {
+  const b = ev.target.closest('.ep-share');
+  if (!b) return;
+  const url = location.origin + location.pathname + '#ep-' + b.dataset.ep;
+  const ok = () => {
+    const t = b.textContent;
+    b.textContent = '✓ コピーしました'; b.classList.add('ok');
+    setTimeout(() => { b.textContent = t; b.classList.remove('ok'); }, 1500);
+  };
+  (navigator.clipboard ? navigator.clipboard.writeText(url) : Promise.reject()).then(ok).catch(() => {
+    const ta = document.createElement('textarea');
+    ta.value = url; ta.style.position = 'fixed'; ta.style.opacity = '0';
+    document.body.appendChild(ta); ta.select();
+    try { document.execCommand('copy'); } catch (e) {}
+    ta.remove(); ok();
+  });
+});
 
 // おすすめ診断。数問の答えを点数にして上位を出す。
 // 「該当/非該当」で切らないのは、Claude CodeとCodexのように語が重なるキットが多く、
