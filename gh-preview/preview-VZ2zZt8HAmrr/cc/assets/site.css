@@ -147,6 +147,31 @@ transition:.15s;}
 font-weight:900;font-size:11px;color:var(--brand-deep);background:var(--bg);
 border-radius:999px;padding:6px 10px;transition:.15s;}
 .docbtn:hover{background:var(--brand-soft);transform:translateY(-1px);}
+/* 回ごとのディープリンク（#ep-<動画ID>）で着地したとき、貼り付いたヘッダの下に隠れない */
+.ep{scroll-margin-top:76px;}
+.ep.flashme{box-shadow:0 0 0 2px var(--brand),var(--sh-hover);}
+/* 「🔗 リンク」= その回への共有リンクをコピー。日付の右にそっと置く */
+.ep-share{margin-left:auto;background:none;border:none;cursor:pointer;
+font-family:var(--head);font-weight:900;font-size:10.5px;color:var(--ink-mid);
+padding:3px 8px;border-radius:8px;transition:.12s;flex-shrink:0;}
+.ep-share:hover{background:var(--brand-soft);color:var(--brand-deep);}
+.ep-share.ok{color:#2E7D5B;background:none;}
+/* この回のプレゼントを全部ダウンロード */
+.epbundle{display:block;margin-top:10px;text-align:center;font-family:var(--head);
+font-weight:900;font-size:11.5px;color:var(--brand-deep);background:var(--brand-soft);
+border-radius:12px;padding:9px 12px;transition:.15s;}
+.epbundle:hover{background:var(--brand);color:#fff;}
+.epctx .epbundle{margin-top:12px;}
+/* 月ごとの見出し（日付順のときだけ挟む）。ヘッダ(約62px)の直下に貼り付く */
+.month{position:sticky;top:62px;z-index:20;scroll-margin-top:62px;
+font-family:var(--head);font-weight:900;font-size:13px;color:var(--ink-mid);
+background:linear-gradient(var(--bg) 68%,transparent);padding:9px 2px 7px;margin:2px 0 -6px;}
+.month:first-child{margin-top:-6px;}
+/* 月ジャンプのレール */
+.monthnav{display:flex;flex-direction:column;gap:1px;max-height:232px;overflow-y:auto;
+margin:-2px -4px 0;}
+.monthnav a{font-size:12px;color:var(--ink-mid);padding:5px 8px;border-radius:8px;transition:.12s;}
+.monthnav a:hover{background:var(--bg);color:var(--ink);}
 
 /* ---------- 受け取りページ ---------- */
 .kh .top{max-width:1000px;}
@@ -307,6 +332,11 @@ padding:13px 20px;text-decoration:none;transition:transform .15s,background .15s
   .side .type-grp label:has(input:checked){background:var(--brand);border-color:var(--brand);color:#fff;}
   .side .type-grp input[type=radio]{display:none;}
   .side .type-grp label .n{margin-left:0;}
+  /* 月レールも狭い画面では横スクロールのチップにする */
+  .monthnav{flex-direction:row;overflow-x:auto;max-height:none;gap:7px;margin:0;padding-bottom:2px;}
+  .monthnav a{flex-shrink:0;border:1px solid var(--line);border-radius:999px;background:var(--paper);}
+  /* 月見出しはヘッダが無い（sticky解除される）ので上に貼り付けない */
+  .month{position:static;background:none;margin:8px 0 -8px;}
 }
 @media(max-width:600px){
   header{padding:10px 16px;}
@@ -331,7 +361,7 @@ padding:13px 20px;text-decoration:none;transition:transform .15s,background .15s
 /* チェックリストや早見表は紙に出して使う場面がある。
    画面用の装飾と、紙では押せない操作系を落として、中身だけを残す。 */
 @media print{
-  header,.side,.promo,.ktools,.cbtns,.watch,.ep-docs,.tnav,footer,.epctx{display:none !important;}
+  header,.side,.promo,.ktools,.cbtns,.watch,.ep-docs,.epbundle,.ep-share,.month,.tnav,footer,.epctx{display:none !important;}
   body{background:#fff;color:#000;font-size:11pt;}
   .cols{display:block;}
   .wrap,.kwrap{max-width:100%;padding:0;}
