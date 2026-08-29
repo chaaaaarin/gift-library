@@ -144,6 +144,7 @@ function epCard(e, kitsToShow, q){
     ? `<a class="watch" href="${e.watch}" target="_blank" rel="noopener">▶ 動画を見る</a>` : '';
   const bundle = e.kits.length >= 2
     ? `<a class="epbundle" href="bundles/${esc(e.slug)}.md" download="プレゼント一式_${esc(e.date||'')}.md">⬇ この回のプレゼントを全部ダウンロード</a>` : '';
+  // id="ep-<動画ID>" は付けるが、UIは出さない（概要欄からの #ep- リンク着地だけに使う）
   return `<article class="ep" id="ep-${esc(e.slug)}">
     <div class="ep-left">
       <div class="ep-thumb">${thumb}${upBadge}</div>
@@ -151,7 +152,7 @@ function epCard(e, kitsToShow, q){
       ${docBtns(e)}
     </div>
     <div class="ep-body">
-      <div class="ep-date">${fmtDate(e.date) || '日付未定'}${isNew(e.date) ? '<span class="newbadge">NEW</span>' : ''}<button class="ep-share" type="button" data-ep="${esc(e.slug)}" title="この回へのリンクをコピー">🔗 リンク</button></div>
+      <div class="ep-date">${fmtDate(e.date) || '日付未定'}${isNew(e.date) ? '<span class="newbadge">NEW</span>' : ''}</div>
       <h2 class="ep-title">${e.th}</h2>
       <div class="ep-kits">${kitsToShow.map(g=>kitChip(g, q)).join('')}</div>
       ${bundle}
@@ -318,25 +319,6 @@ goToHash();
     if (el) el.scrollIntoView({block: 'start', behavior: 'instant'});
   });
 })();
-
-// 「🔗 リンク」でその回へのディープリンクをコピーする
-document.addEventListener('click', ev => {
-  const b = ev.target.closest('.ep-share');
-  if (!b) return;
-  const url = location.origin + location.pathname + '#ep-' + b.dataset.ep;
-  const ok = () => {
-    const t = b.textContent;
-    b.textContent = '✓ コピーしました'; b.classList.add('ok');
-    setTimeout(() => { b.textContent = t; b.classList.remove('ok'); }, 1500);
-  };
-  (navigator.clipboard ? navigator.clipboard.writeText(url) : Promise.reject()).then(ok).catch(() => {
-    const ta = document.createElement('textarea');
-    ta.value = url; ta.style.position = 'fixed'; ta.style.opacity = '0';
-    document.body.appendChild(ta); ta.select();
-    try { document.execCommand('copy'); } catch (e) {}
-    ta.remove(); ok();
-  });
-});
 
 // おすすめ診断。数問の答えを点数にして上位を出す。
 // 「該当/非該当」で切らないのは、Claude CodeとCodexのように語が重なるキットが多く、

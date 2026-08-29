@@ -147,15 +147,10 @@ transition:.15s;}
 font-weight:900;font-size:11px;color:var(--brand-deep);background:var(--bg);
 border-radius:999px;padding:6px 10px;transition:.15s;}
 .docbtn:hover{background:var(--brand-soft);transform:translateY(-1px);}
-/* 回ごとのディープリンク（#ep-<動画ID>）で着地したとき、貼り付いたヘッダの下に隠れない */
+/* 回ごとのディープリンク（#ep-<動画ID>）で着地したとき、貼り付いたヘッダの下に隠れない。
+   カード上にリンクのUIは出さず、id と着地の挙動だけ持たせている */
 .ep{scroll-margin-top:76px;}
 .ep.flashme{box-shadow:0 0 0 2px var(--brand),var(--sh-hover);}
-/* 「🔗 リンク」= その回への共有リンクをコピー。日付の右にそっと置く */
-.ep-share{margin-left:auto;background:none;border:none;cursor:pointer;
-font-family:var(--head);font-weight:900;font-size:10.5px;color:var(--ink-mid);
-padding:3px 8px;border-radius:8px;transition:.12s;flex-shrink:0;}
-.ep-share:hover{background:var(--brand-soft);color:var(--brand-deep);}
-.ep-share.ok{color:#2E7D5B;background:none;}
 /* この回のプレゼントを全部ダウンロード */
 .epbundle{display:block;margin-top:10px;text-align:center;font-family:var(--head);
 font-weight:900;font-size:11.5px;color:var(--brand-deep);background:var(--brand-soft);
