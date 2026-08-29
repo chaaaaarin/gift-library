@@ -149,8 +149,7 @@ function epCard(e, kitsToShow, q){
     ? `<a class="watch" href="${e.watch}" target="_blank" rel="noopener">▶ 動画を見る</a>` : '';
   const bundle = e.kits.length >= 2
     ? `<a class="epbundle" href="bundles/${esc(e.slug)}.md" download="プレゼント一式_${esc(e.date||'')}.md">⬇ この回のプレゼントを全部ダウンロード</a>` : '';
-  // id="ep-<動画ID>" は付けるが、UIは出さない（概要欄からの #ep- リンク着地だけに使う）
-  return `<article class="ep" id="ep-${esc(e.slug)}">
+  return `<article class="ep">
     <div class="ep-left">
       <div class="ep-thumb">${thumb}${upBadge}</div>
       ${watchLink}
@@ -241,8 +240,7 @@ function writeURL(push){
   if (f.type) p.set('type', f.type);
   if (f.sort !== 'new') p.set('sort', f.sort);
   const s = p.toString();
-  // #ep-<動画ID> のアンカーは絞り込みを変えても残す（共有された回リンクが生き続けるように）
-  const url = (s ? location.pathname + '?' + s : location.pathname) + location.hash;
+  const url = s ? location.pathname + '?' + s : location.pathname;
   // 入力のたびに履歴を積むと戻るボタンが使い物にならないので、検索欄だけ置き換えにする
   history[push ? 'pushState' : 'replaceState'](null, '', url);
 }
@@ -261,43 +259,6 @@ addEventListener('popstate', () => { readURL(); render(); });
 
 readURL();
 render();
-
-// 回ごとのディープリンク（#ep-<動画ID>）と月見出し（#m-YYYY-MM）へ着地する。
-// 概要欄から「その回」へ直接飛ばせるようにするため。対象が絞り込みで隠れていたら解除する。
-function goToHash(){
-  const h = location.hash;
-  const m = h.match(/^#ep-([\w-]+)$/) || h.match(/^#(m-\d{4}-\d{2})$/);
-  if (!m) return;
-  const id = m[1].indexOf('m-') === 0 ? m[1] : 'ep-' + m[1];
-  let el = document.getElementById(id);
-  if (!el && (f.q || f.type)){
-    f.q = ''; f.type = '';
-    $('#q').value = '';
-    const r = document.querySelector('input[name=type][value=""]');
-    if (r) r.checked = true;
-    writeURL(false);
-    render();
-    el = document.getElementById(id);
-  }
-  if (!el) return;
-  // behavior:'instant' で即時に飛ばす。CSS の scroll-behavior:smooth に任せると、
-  // 遠い回へは滑らかに移動しようとして事実上たどり着かない（KIT_JS の名指しリンクと同じ）。
-  el.scrollIntoView({block: 'start', behavior: 'instant'});
-  // 上のサムネ画像が遅れて読み込まれてレイアウトがずれるので、次フレームで位置を詰め直す
-  requestAnimationFrame(() => el.scrollIntoView({block: 'start', behavior: 'instant'}));
-  if (id.indexOf('ep-') === 0){
-    el.classList.add('flashme');
-    setTimeout(() => el.classList.remove('flashme'), 2400);
-  }
-}
-addEventListener('hashchange', goToHash);
-// 画像が全部そろってから最終位置に合わせ直す（大量の遅延読み込みサムネの上に着地するとき用）
-addEventListener('load', () => {
-  if (!/^#(ep-|m-)/.test(location.hash)) return;
-  const el = document.getElementById(location.hash.slice(1));
-  if (el) el.scrollIntoView({block: 'start', behavior: 'instant'});
-});
-goToHash();
 
 // 月ジャンプのレール。左サイドに月の一覧を出し、押すとその月の見出しへスクロールする。
 (function(){

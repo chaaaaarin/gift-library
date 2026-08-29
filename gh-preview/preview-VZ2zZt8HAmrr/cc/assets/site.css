@@ -147,10 +147,6 @@ transition:.15s;}
 font-weight:900;font-size:11px;color:var(--brand-deep);background:var(--bg);
 border-radius:999px;padding:6px 10px;transition:.15s;}
 .docbtn:hover{background:var(--brand-soft);transform:translateY(-1px);}
-/* 回ごとのディープリンク（#ep-<動画ID>）で着地したとき、貼り付いたヘッダの下に隠れない。
-   カード上にリンクのUIは出さず、id と着地の挙動だけ持たせている */
-.ep{scroll-margin-top:76px;}
-.ep.flashme{box-shadow:0 0 0 2px var(--brand),var(--sh-hover);}
 /* この回のプレゼントを全部ダウンロード */
 .epbundle{display:block;margin-top:10px;text-align:center;font-family:var(--head);
 font-weight:900;font-size:11.5px;color:var(--brand-deep);background:var(--brand-soft);
@@ -356,7 +352,7 @@ padding:13px 20px;text-decoration:none;transition:transform .15s,background .15s
 /* チェックリストや早見表は紙に出して使う場面がある。
    画面用の装飾と、紙では押せない操作系を落として、中身だけを残す。 */
 @media print{
-  header,.side,.promo,.ktools,.cbtns,.watch,.ep-docs,.epbundle,.ep-share,.month,.tnav,footer,.epctx{display:none !important;}
+  header,.side,.promo,.ktools,.cbtns,.watch,.ep-docs,.epbundle,.month,.tnav,footer,.epctx{display:none !important;}
   body{background:#fff;color:#000;font-size:11pt;}
   .cols{display:block;}
   .wrap,.kwrap{max-width:100%;padding:0;}
