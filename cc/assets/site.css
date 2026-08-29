@@ -90,10 +90,12 @@ mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='
 font-size:12.5px;background:var(--bg);color:var(--ink);font-family:inherit;cursor:pointer;
 appearance:none;-webkit-appearance:none;transition:.15s;}
 #sort:focus{outline:none;border-color:var(--brand);box-shadow:0 0 0 3px var(--brand-soft);}
-.reset{width:100%;margin-top:8px;padding:9px;border:none;background:var(--bg);
-border-radius:999px;font-size:12px;color:var(--brand-deep);cursor:pointer;
-font-family:var(--head);font-weight:900;transition:.15s;}
-.reset:hover{background:var(--brand-soft);}
+/* 検索欄・並び順の薄いピルと同色だと「操作ボタン」に見えないので、
+   「▶ 動画を見る」と同じ濃色＋白抜きにして区別する。 */
+.reset{width:100%;margin-top:10px;padding:9px;border:none;background:var(--brand);
+border-radius:999px;font-size:12px;color:#fff;cursor:pointer;
+font-family:var(--head);font-weight:900;transition:.15s;box-shadow:0 3px 10px var(--brand-soft);}
+.reset:hover{background:var(--brand-deep);transform:translateY(-1px);}
 
 .badge{display:inline-block;background:var(--brand);color:#fff;font-family:var(--head);
 font-weight:900;font-size:12px;border-radius:999px;padding:3px 12px;white-space:nowrap;}
