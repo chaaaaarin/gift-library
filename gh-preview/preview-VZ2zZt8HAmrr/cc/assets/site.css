@@ -140,6 +140,13 @@ font-size:12.5px;color:#fff;background:var(--brand);
 border:none;border-radius:999px;padding:10px 14px;box-shadow:0 4px 12px var(--brand-soft);
 transition:.15s;}
 .watch:hover{background:var(--brand-deep);transform:translateY(-1px);}
+/* 「動画を見る」の下に並ぶ、その回の解説資料への副ボタン（資料・スライド・1枚資料）。
+   watch より軽い見た目にして、主導線（プレゼント）と競合させない。 */
+.ep-docs{display:flex;flex-wrap:wrap;gap:6px;}
+.docbtn{flex:1 1 auto;text-align:center;white-space:nowrap;font-family:var(--head);
+font-weight:900;font-size:11px;color:var(--brand-deep);background:var(--bg);
+border-radius:999px;padding:6px 10px;transition:.15s;}
+.docbtn:hover{background:var(--brand-soft);transform:translateY(-1px);}
 
 /* ---------- 受け取りページ ---------- */
 .kh .top{max-width:1000px;}
@@ -324,7 +331,7 @@ padding:13px 20px;text-decoration:none;transition:transform .15s,background .15s
 /* チェックリストや早見表は紙に出して使う場面がある。
    画面用の装飾と、紙では押せない操作系を落として、中身だけを残す。 */
 @media print{
-  header,.side,.promo,.ktools,.cbtns,.watch,.tnav,footer,.epctx{display:none !important;}
+  header,.side,.promo,.ktools,.cbtns,.watch,.ep-docs,.tnav,footer,.epctx{display:none !important;}
   body{background:#fff;color:#000;font-size:11pt;}
   .cols{display:block;}
   .wrap,.kwrap{max-width:100%;padding:0;}
