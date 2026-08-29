@@ -62,10 +62,15 @@
           <option value="name">動画タイトル順</option>
         </select></div>
         <button class="reset" id="reset">条件をリセット</button></div>
-      <div class="grp" id="monthgrp"><h3>月で移動</h3>
-        <nav class="monthnav" id="monthnav"></nav></div>
     </aside>
-    <main id="out"></main>
+    <div class="results">
+      <div class="monthbar" id="monthbar" hidden>
+        <button class="mb-arrow" id="mbPrev" type="button" aria-label="前の月へ">❮</button>
+        <span class="mb-label" id="monthLabel"></span>
+        <button class="mb-arrow" id="mbNext" type="button" aria-label="次の月へ">❯</button>
+      </div>
+      <main id="out"></main>
+    </div>
   </div>
 
   <footer>AIエージェント / Kawaru — プレゼント図書館</footer>
@@ -169,6 +174,67 @@ function matchKit(g){
   return true;
 }
 
+// 月ナビ（‹ 2026年8月 ›）。日付順のとき一覧の上に貼り付き、いま見ている月を出す。
+// ‹＝古い月へ / ›＝新しい月へ スクロールする（Googleカレンダーの月切り替えのイメージ）。
+const monthBar = document.getElementById('monthbar');
+const monthLabel = document.getElementById('monthLabel');
+const mbPrev = document.getElementById('mbPrev');
+const mbNext = document.getElementById('mbNext');
+const fmtMonth = m => `${m.slice(0,4)}年${+m.slice(5,7)}月`;
+const monthMarks = () => [...out.querySelectorAll('.ep[data-month]')].map(el => el.dataset.month);
+
+function jumpMonth(m){
+  const el = document.getElementById('m-' + m);
+  if (!el) return;
+  // scrollIntoView + scroll-margin ではなく絶対位置へ。貼り付いたヘッダ＋月バーのぶん(118)引く
+  const y = el.getBoundingClientRect().top + window.pageYOffset - 118;
+  window.scrollTo({top: Math.max(0, y), behavior: 'instant'});
+}
+
+// 画面のいちばん上に来ている月（貼り付いたバーの下に潜った最後の目印）。
+// 120 = ヘッダ(約62) + 月バー(約46) + 少しの余裕（目印カードは scroll-margin で 118px に着地する）
+function currentMonth(){
+  const marks = [...out.querySelectorAll('.ep[data-month]')];
+  if (!marks.length) return null;
+  let cm = marks[0].dataset.month;
+  for (const el of marks){
+    if (el.getBoundingClientRect().top - 120 <= 1) cm = el.dataset.month;
+    else break;
+  }
+  return cm;
+}
+
+let mbCur = null;   // いまバーに出している月（スクロール毎の無駄な更新を省く）
+
+function setMonthBar(cm){
+  mbCur = cm;
+  const marks = monthMarks();
+  const i = marks.indexOf(cm);
+  monthLabel.textContent = fmtMonth(cm);
+  // marks はリストの並び順（new＝新しい月が先、old＝古い月が先）。表示順に依らず ‹＝古い月 に固定
+  const older = f.sort === 'old' ? marks[i - 1] : marks[i + 1];
+  const newer = f.sort === 'old' ? marks[i + 1] : marks[i - 1];
+  mbPrev.disabled = !older;
+  mbNext.disabled = !newer;
+  // クリックでは飛んだ先の月にバーを即あわせる（スクロールイベント待ちにしない）
+  mbPrev.onclick = older ? () => { jumpMonth(older); setMonthBar(older); } : null;
+  mbNext.onclick = newer ? () => { jumpMonth(newer); setMonthBar(newer); } : null;
+}
+
+function updateMonthBar(){
+  if (!monthBar) return;
+  const marks = monthMarks();
+  monthBar.hidden = (f.sort === 'name' || !marks.length);
+  mbCur = null;
+  if (!monthBar.hidden) setMonthBar(currentMonth() || marks[0]);
+}
+
+addEventListener('scroll', () => {
+  if (!monthBar || monthBar.hidden) return;
+  const cm = currentMonth();
+  if (cm && cm !== mbCur) setMonthBar(cm);
+}, {passive: true});
+
 function render(){
   const q = norm(f.q);
   let list = EPS.map(e => {
@@ -194,30 +260,30 @@ function render(){
   // 絞り込んでいるときだけ出す（未絞り込みでは「配布回」と同じ数字が並ぶだけになる）
   $('#shownBox').classList.toggle('hidden', !(f.q || f.type));
   $('.stats').style.gridTemplateColumns = 'repeat(' + ((f.q || f.type) ? 5 : 4) + ',1fr)';
-  // 月ジャンプのレールは日付順のときだけ意味を持つ（タイトル順では月がバラける）
-  const mgrp = document.getElementById('monthgrp');
-  if (mgrp) mgrp.classList.toggle('hidden', f.sort === 'name');
   if (!list.length){
     out.innerHTML = `<div class="empty">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="6.2"/><path d="M15 15l5.5 5.5"/><path d="M7.3 10h5.4"/></svg>
       <p>条件に合うプレゼントが見つかりませんでした。<br>キーワードを短くするか、種別を「すべて」に戻してみてください。</p>
     </div>`;
+    updateMonthBar();
     return;
   }
-  // 日付順のときは月ごとの見出しを挟む（毎日増える一覧を俯瞰しやすく）
+  // 日付順のときは、各月の先頭カードに #m-YYYY-MM の目印を付ける（月ナビの飛び先）
   const grouped = f.sort !== 'name';
   let cur = null, html = '';
   for (const {e, kits} of list){
+    let card = epCard(e, kits, q);
     if (grouped && e.date){
       const m = e.date.slice(0, 7);
       if (m !== cur){
         cur = m;
-        html += `<h3 class="month" id="m-${m}">${m.slice(0,4)}年${+m.slice(5,7)}月</h3>`;
+        card = card.replace('<article class="ep"', `<article class="ep" id="m-${m}" data-month="${m}"`);
       }
     }
-    html += epCard(e, kits, q);
+    html += card;
   }
   out.innerHTML = `<div class="eplist">${html}</div>`;
+  updateMonthBar();
 }
 
 // しぼり込みの状態をURLに残す。
@@ -259,32 +325,6 @@ addEventListener('popstate', () => { readURL(); render(); });
 
 readURL();
 render();
-
-// 月ジャンプのレール。左サイドに月の一覧を出し、押すとその月の見出しへスクロールする。
-(function(){
-  const nav = document.getElementById('monthnav');
-  if (!nav) return;
-  const months = [...new Set(EPS.filter(e => e.date).map(e => e.date.slice(0, 7)))].sort().reverse();
-  if (!months.length){ nav.closest('#monthgrp').classList.add('hidden'); return; }
-  nav.innerHTML = months.map(mo =>
-    `<a href="#m-${mo}">${mo.slice(0,4)}年${+mo.slice(5,7)}月</a>`).join('');
-  nav.addEventListener('click', ev => {
-    const a = ev.target.closest('a');
-    if (!a) return;
-    ev.preventDefault();
-    const mo = a.getAttribute('href').slice(1);
-    if (f.sort === 'name'){ f.sort = 'new'; $('#sort').value = 'new'; }
-    if (f.q || f.type){
-      f.q = ''; f.type = '';
-      $('#q').value = '';
-      const r = document.querySelector('input[name=type][value=""]');
-      if (r) r.checked = true;
-    }
-    writeURL(true); render();
-    const el = document.getElementById(mo);
-    if (el) el.scrollIntoView({block: 'start', behavior: 'instant'});
-  });
-})();
 
 // おすすめ診断。数問の答えを点数にして上位を出す。
 // 「該当/非該当」で切らないのは、Claude CodeとCodexのように語が重なるキットが多く、

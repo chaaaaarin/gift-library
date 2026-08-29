@@ -153,16 +153,22 @@ font-weight:900;font-size:11.5px;color:var(--brand-deep);background:var(--brand-
 border-radius:12px;padding:9px 12px;transition:.15s;}
 .epbundle:hover{background:var(--brand);color:#fff;}
 .epctx .epbundle{margin-top:12px;}
-/* 月ごとの見出し（日付順のときだけ挟む）。ヘッダ(約62px)の直下に貼り付く */
-.month{position:sticky;top:62px;z-index:20;scroll-margin-top:62px;
-font-family:var(--head);font-weight:900;font-size:13px;color:var(--ink-mid);
-background:linear-gradient(var(--bg) 68%,transparent);padding:9px 2px 7px;margin:2px 0 -6px;}
-.month:first-child{margin-top:-6px;}
-/* 月ジャンプのレール */
-.monthnav{display:flex;flex-direction:column;gap:1px;max-height:232px;overflow-y:auto;
-margin:-2px -4px 0;}
-.monthnav a{font-size:12px;color:var(--ink-mid);padding:5px 8px;border-radius:8px;transition:.12s;}
-.monthnav a:hover{background:var(--bg);color:var(--ink);}
+/* 月ナビ（‹ 2026年8月 ›）。日付順のとき一覧の上でヘッダ(約62px)直下に貼り付く。
+   Googleカレンダーの月切り替えのイメージで、左右の矢印で隣の月へスクロールする。 */
+.results{min-width:0;}
+.monthbar{position:sticky;top:62px;z-index:25;display:flex;align-items:center;
+justify-content:center;gap:8px;margin:0 0 16px;padding:7px 9px;
+background:var(--paper);border-radius:999px;box-shadow:var(--sh);}
+.monthbar[hidden]{display:none;}
+.mb-label{font-family:var(--head);font-weight:900;font-size:14px;color:var(--brand-deep);
+min-width:8em;text-align:center;letter-spacing:.02em;}
+.mb-arrow{width:32px;height:32px;flex:0 0 32px;border:none;border-radius:50%;
+background:var(--brand-soft);color:var(--brand-deep);font-size:12px;line-height:1;cursor:pointer;
+font-family:var(--head);font-weight:900;display:grid;place-items:center;transition:.15s;}
+.mb-arrow:hover:not(:disabled){background:var(--brand);color:#fff;transform:translateY(-1px);}
+.mb-arrow:disabled{opacity:.25;cursor:default;}
+/* 月の先頭カードへ飛んだとき、ヘッダ＋月ナビの下に隠れない */
+.ep[id^="m-"]{scroll-margin-top:118px;}
 
 /* ---------- 受け取りページ ---------- */
 .kh .top{max-width:1000px;}
@@ -323,11 +329,7 @@ padding:13px 20px;text-decoration:none;transition:transform .15s,background .15s
   .side .type-grp label:has(input:checked){background:var(--brand);border-color:var(--brand);color:#fff;}
   .side .type-grp input[type=radio]{display:none;}
   .side .type-grp label .n{margin-left:0;}
-  /* 月レールも狭い画面では横スクロールのチップにする */
-  .monthnav{flex-direction:row;overflow-x:auto;max-height:none;gap:7px;margin:0;padding-bottom:2px;}
-  .monthnav a{flex-shrink:0;border:1px solid var(--line);border-radius:999px;background:var(--paper);}
-  /* 月見出しはヘッダが無い（sticky解除される）ので上に貼り付けない */
-  .month{position:static;background:none;margin:8px 0 -8px;}
+  .mb-label{font-size:13px;min-width:7em;}
 }
 @media(max-width:600px){
   header{padding:10px 16px;}
@@ -352,7 +354,7 @@ padding:13px 20px;text-decoration:none;transition:transform .15s,background .15s
 /* チェックリストや早見表は紙に出して使う場面がある。
    画面用の装飾と、紙では押せない操作系を落として、中身だけを残す。 */
 @media print{
-  header,.side,.promo,.ktools,.cbtns,.watch,.ep-docs,.epbundle,.month,.tnav,footer,.epctx{display:none !important;}
+  header,.side,.promo,.ktools,.cbtns,.watch,.ep-docs,.epbundle,.monthbar,.tnav,footer,.epctx{display:none !important;}
   body{background:#fff;color:#000;font-size:11pt;}
   .cols{display:block;}
   .wrap,.kwrap{max-width:100%;padding:0;}
