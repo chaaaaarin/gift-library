@@ -1,0 +1,2605 @@
+<!doctype html>
+<html lang="ja"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>今週の新機能 即使えるプロンプト&amp;設定100選 — Kawaru Gifts</title>
+<meta name="description" content="今週(8/15〜8/21)発表されたAnthropic・OpenAI・Cursor/Nousの新機能を、コピペで使える設定・プロンプトにしました。カテゴリごとに5〜10個ずつ、全100個です。">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Kawaru Gifts">
+<meta property="og:title" content="今週の新機能 即使えるプロンプト&amp;設定100選 — Kawaru Gifts">
+<meta property="og:description" content="今週(8/15〜8/21)発表されたAnthropic・OpenAI・Cursor/Nousの新機能を、コピペで使える設定・プロンプトにしました。カテゴリごとに5〜10個ずつ、全100個です。">
+<meta property="og:image" content="https://i.ytimg.com/vi/7wA-fvl5Ucc/hqdefault.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://i.ytimg.com/vi/7wA-fvl5Ucc/hqdefault.jpg">
+<meta name="twitter:title" content="今週の新機能 即使えるプロンプト&amp;設定100選 — Kawaru Gifts">
+<meta name="twitter:description" content="今週(8/15〜8/21)発表されたAnthropic・OpenAI・Cursor/Nousの新機能を、コピペで使える設定・プロンプトにしました。カテゴリごとに5〜10個ずつ、全100個です。">
+<link rel="icon" href="data:image/png;base64,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">
+<link rel="stylesheet" href="../../assets/site.css?v=c31a403eeaf0">
+</head><body>
+<header class="kh"><div class="top">
+  <a class="back" href="../../">← 一覧へ</a>
+  <img src="data:image/png;base64,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" alt="">
+  <h1>今週の新機能 即使えるプロンプト&amp;設定100選</h1>
+  <span class="badge">100個</span>
+  <button class="btn ghost sm" style="margin-left:auto" data-copy="pfull">📋 全件コピー</button>
+  <button class="btn sm" data-save="pfull" data-name="newsprompts100.md">⬇ 全件ダウンロード</button>
+</div></header>
+
+<div class="kwrap">
+  <section class="epctx epctx-top">
+  <div class="ep-left">
+    <div class="ep-thumb epctx-thumb"><img src="https://i.ytimg.com/vi/7wA-fvl5Ucc/hqdefault.jpg" alt=""></div>
+    <a class="watch" href="https://www.youtube.com/watch?v=7wA-fvl5Ucc" target="_blank" rel="noopener">▶ 動画を見る</a>
+    <div class="ep-docs"><a class="docbtn" href="https://github.com/chaaaaarin/kawaru-channel-20260821-102" target="_blank" rel="noopener">📚 資料</a><a class="docbtn" href="https://chaaaaarin.github.io/kawaru-channel-20260821-102/slides.html" target="_blank" rel="noopener">🖥 スライド</a><a class="docbtn" href="https://chaaaaarin.github.io/kawaru-channel-20260821-102/onepager.html" target="_blank" rel="noopener">📄 1枚資料</a></div>
+  </div>
+  <div>
+    <p class="epctx-label">この動画のプレゼントです</p>
+    <p class="epctx-title">【公式発表】ClaudeCodeを100倍賢くする神アプデ4連発を全て解説します</p>
+    <p class="epctx-date">2026-08-30</p>
+    <a class="epbundle" href="../../bundles/7wA-fvl5Ucc.md" download="プレゼント一式_2026-08-30.md">⬇ この回のプレゼントを全部ダウンロード</a>
+  </div>
+</section>
+
+  <section class="kintro">
+    <h2>今週の新機能 即使えるプロンプト&amp;設定100選</h2>
+    <p>今週(8/15〜8/21)発表されたAnthropic・OpenAI・<span class="nb">Cursor/Nousの新機能を、</span><span class="nb">コピペで使える設定・</span><span class="nb">プロンプトにしました。</span><span class="nb">カテゴリごとに5〜10個ずつ、</span><span class="nb">全100個です。</span></p>
+    <div class="kmeta"><span>プロンプト集</span><span>収録 100個</span><span>No.102 今週のAIニュースまとめ_AA03</span><span>2026-08-21 配布</span></div>
+    <div class="pnote"><span class="nb">下のカードから、</span><span class="nb">1件ずつコピー、</span><span class="nb">または個別にダウンロードできます。</span><span class="nb">まとめて欲しいときは、</span><span class="nb">上の</span><span class="nb">「全件ダウンロード」を</span><span class="nb">お使いください。</span></div>
+  </section>
+
+  <div class="ktools">
+  <input type="search" id="kq" placeholder="この中から探す" autocomplete="off" aria-label="この中から探す">
+  <div class="kcats"><button type="button" class="kcat on" data-cat="">すべて<span class="n">100</span></button><button type="button" class="kcat" data-cat="Claude Code: Concise出力スタイル">Claude Code: Concise出力スタイル<span class="n">5</span></button><button type="button" class="kcat" data-cat="Claude Code: /designコマンド">Claude Code: /designコマンド<span class="n">5</span></button><button type="button" class="kcat" data-cat="Claude Code: 週次制限・オートコンティニュー">Claude Code: 週次制限・オートコンティニュー<span class="n">5</span></button><button type="button" class="kcat" data-cat="Claude Academy">Claude Academy<span class="n">5</span></button><button type="button" class="kcat" data-cat="Firecrawlコネクタ">Firecrawlコネクタ<span class="n">5</span></button><button type="button" class="kcat" data-cat="HyperFrames MCP">HyperFrames MCP<span class="n">5</span></button><button type="button" class="kcat" data-cat="OpenArt(Claude Store)">OpenArt(Claude Store)<span class="n">5</span></button><button type="button" class="kcat" data-cat="Codex: 100万トークン・コンテキスト設定">Codex: 100万トークン・コンテキスト設定<span class="n">7</span></button><button type="button" class="kcat" data-cat="Agent Plugins標準">Agent Plugins標準<span class="n">5</span></button><button type="button" class="kcat" data-cat="Apple Messagesプラグイン">Apple Messagesプラグイン<span class="n">5</span></button><button type="button" class="kcat" data-cat="GPT-Image-2 透明背景">GPT-Image-2 透明背景<span class="n">5</span></button><button type="button" class="kcat" data-cat="ChatGPT Sites協業・共有スレッド">ChatGPT Sites協業・共有スレッド<span class="n">5</span></button><button type="button" class="kcat" data-cat="今週のChatGPT新機能(クイズ・予約検索・Drive連携・提案)">今週のChatGPT新機能(クイズ・予約検索・Drive連携・提案)<span class="n">8</span></button><button type="button" class="kcat" data-cat="Cursor Origin: 移行・PR運用">Cursor Origin: 移行・PR運用<span class="n">10</span></button><button type="button" class="kcat" data-cat="Cursorクラウドエージェント">Cursorクラウドエージェント<span class="n">5</span></button><button type="button" class="kcat" data-cat="Hermes Desktop: Bot Mode">Hermes Desktop: Bot Mode<span class="n">10</span></button><button type="button" class="kcat" data-cat="Open Design Go">Open Design Go<span class="n">5</span></button></div>
+  <p class="khit" id="khit" role="status"></p>
+</div>
+<h2 class="cat" data-cat="Claude Code: Concise出力スタイル">Claude Code: Concise出力スタイル</h2>
+<div class="icard" id="i1" data-cat="Claude Code: Concise出力スタイル">
+  <div class="ih"><span class="num">001</span><span class="ititle">Concise切り替えの初回設定</span></div>
+  <p class="imeta"><span class="nb">settings.jsonの</span><span class="nb">書き換え箇所を確認しながら安全に</span><span class="nb">切り替える手順を確認したいとき。</span></p>
+  <pre class="prompt" id="b1">前提: Claude Codeを日常的に使っているが、まだ出力スタイルを変更したことがない状態。
+指示: 現在の.claude/settings.jsonの内容を確認したうえで、outputStyleキーをConciseに設定する差分を提示して。既存の他設定は変更しないで。
+出力形式: 変更前後のJSON差分を並べて表示し、反映方法(再起動要否)も1行で添えて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b1">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b1" data-name="newsprompts100-001.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i1">🔗 リンク</button>
+  </div>
+</div>
+<div class="icard" id="i2" data-cat="Claude Code: Concise出力スタイル">
+  <div class="ih"><span class="num">002</span><span class="ititle">結論ファーストな報告への言い換え</span></div>
+  <p class="imeta"><span class="nb">既にConciseにした後、</span><span class="nb">普段の依頼文自体も結論から話す形に</span><span class="nb">揃えたいとき。</span></p>
+  <pre class="prompt" id="b2">前提: 出力スタイルはConciseに設定済みだが、依頼の仕方が冗長で前置きが長くなりがち。
+指示: 今からする質問には『結論→理由→詳細は聞かれたら』の順で答えて、と冒頭に一言添えるテンプレ文を作って。
+出力形式: コピペでチャット冒頭に貼れる1文にまとめて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b2">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b2" data-name="newsprompts100-002.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i2">🔗 リンク</button>
+  </div>
+</div>
+<div class="icard" id="i3" data-cat="Claude Code: Concise出力スタイル">
+  <div class="ih"><span class="num">003</span><span class="ititle">チーム展開用の案内文</span></div>
+  <p class="imeta"><span class="nb">チームメンバーに</span><span class="nb">Conciseスタイルの存在と</span><span class="nb">設定方法を共有したいとき。</span></p>
+  <pre class="prompt" id="b3">前提: チームの何人かがまだConciseの存在を知らず、応答の長さに困っている。
+指示: Conciseスタイルの効果と/configからの設定手順を、Slackにそのまま貼れる案内文として書いて。
+出力形式: 3行以内、絵文字なし、手順は番号付きで。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b3">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b3" data-name="newsprompts100-003.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i3">🔗 リンク</button>
+  </div>
+</div>
+<div class="icard" id="i4" data-cat="Claude Code: Concise出力スタイル">
+  <div class="ih"><span class="num">004</span><span class="ititle">プロジェクト別の使い分けルール</span></div>
+  <p class="imeta"><span class="nb">詳細な説明が必要なプロジェクトと</span><span class="nb">簡潔でよいプロジェクトを</span><span class="nb">切り分けたいとき。</span></p>
+  <pre class="prompt" id="b4">前提: 複数プロジェクトを掛け持ちしており、プロジェクトごとに求める応答の詳しさが違う。
+指示: プロジェクトAはConcise、プロジェクトBは通常スタイルにする場合の.claude/settings.jsonの書き分け方を教えて。
+出力形式: 各プロジェクトのフォルダ構成に沿った設定ファイルの配置例を示して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b4">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b4" data-name="newsprompts100-004.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i4">🔗 リンク</button>
+  </div>
+</div>
+<div class="icard" id="i5" data-cat="Claude Code: Concise出力スタイル">
+  <div class="ih"><span class="num">005</span><span class="ititle">Concise運用の振り返り依頼</span></div>
+  <p class="imeta"><span class="nb">1週間使ってみて、</span><span class="nb">想定通り効果が出ているか確認したいと</span><span class="nb">き。</span></p>
+  <pre class="prompt" id="b5">前提: Conciseに切り替えてから1週間ほど使っている。
+指示: この会話の直近のやり取りを振り返り、応答が冗長だった箇所があれば指摘して。次回以降どう質問すればさらに簡潔な回答を引き出せるか提案して。
+出力形式: 改善提案は3点まで、箇条書きで。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b5">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b5" data-name="newsprompts100-005.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i5">🔗 リンク</button>
+  </div>
+</div>
+<h2 class="cat" data-cat="Claude Code: /designコマンド">Claude Code: /designコマンド</h2>
+<div class="icard" id="i6" data-cat="Claude Code: /designコマンド">
+  <div class="ih"><span class="num">006</span><span class="ititle">初回のUI叩き台出し</span></div>
+  <p class="imeta"><span class="nb">新機能の画面イメージが</span><span class="nb">まだ固まっていない段階で、</span><span class="nb">複数案から選びたいとき。</span></p>
+  <pre class="prompt" id="b6">前提: 新機能のUIをこれから作るが、方向性がまだ決まっていない。
+指示: /design で、ダッシュボード画面のレイアウト案を3パターン、テイストを変えて出して。
+出力形式: 各案の狙い・向いている場面を1行ずつ添えて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b6">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b6" data-name="newsprompts100-006.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i6">🔗 リンク</button>
+  </div>
+</div>
+<div class="icard" id="i7" data-cat="Claude Code: /designコマンド">
+  <div class="ih"><span class="num">007</span><span class="ititle">既存画面のリニューアル案</span></div>
+  <p class="imeta"><span class="nb">既存の画面が古く感じるとき、</span><span class="nb">改善方向性を複数比較したいとき。</span></p>
+  <pre class="prompt" id="b7">前提: 既存のログイン画面のデザインが古く、リニューアルを検討している。
+指示: /design で、現行のログイン画面を踏まえたうえで、モダンな方向性のリニューアル案を2つ出して。
+出力形式: 既存踏襲度が高い案・大胆に変える案の2軸で分けて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b7">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b7" data-name="newsprompts100-007.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i7">🔗 リンク</button>
+  </div>
+</div>
+<div class="icard" id="i8" data-cat="Claude Code: /designコマンド">
+  <div class="ih"><span class="num">008</span><span class="ititle">選んだ案の実装移行</span></div>
+  <p class="imeta"><span class="nb">/designで出た案の中から</span><span class="nb">1つ選んだ後、</span><span class="nb">そのまま実装に進みたいとき。</span></p>
+  <pre class="prompt" id="b8">前提: /designで出た3案のうち、2番目の案が良いと判断した。
+指示: 2番目の案をベースに、実装可能なコンポーネント単位まで分解して、実装計画を立てて。
+出力形式: 着手順に番号付きリストで、それぞれの見積もり工数の目安も添えて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b8">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b8" data-name="newsprompts100-008.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i8">🔗 リンク</button>
+  </div>
+</div>
+<div class="icard" id="i9" data-cat="Claude Code: /designコマンド">
+  <div class="ih"><span class="num">009</span><span class="ititle">モバイル対応版の派生案</span></div>
+  <p class="imeta"><span class="nb">デスクトップ向けに決まった案を、</span><span class="nb">モバイル向けにも展開したいとき。</span></p>
+  <pre class="prompt" id="b9">前提: /designでデスクトップ向けの画面案が決まった。
+指示: 同じ機能のモバイル画面版を/designで出して。デスクトップ版との一貫性を保ちつつ、狭い画面に合わせて。
+出力形式: デスクトップ版との差分ポイントを箇条書きで添えて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b9">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b9" data-name="newsprompts100-009.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i9">🔗 リンク</button>
+  </div>
+</div>
+<div class="icard" id="i10" data-cat="Claude Code: /designコマンド">
+  <div class="ih"><span class="num">010</span><span class="ititle">チームレビュー用の案内</span></div>
+  <p class="imeta"><span class="nb">/designで作った案をチームに</span><span class="nb">レビューしてもらう前に、</span><span class="nb">説明資料を作りたいとき。</span></p>
+  <pre class="prompt" id="b10">前提: /designで作った3案をチームメンバーに見せてフィードバックをもらう予定。
+指示: 各案の特徴・トレードオフを比較する短いレビュー依頼文を作って。
+出力形式: 表形式(案・狙い・懸念点)でまとめて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b10">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b10" data-name="newsprompts100-010.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i10">🔗 リンク</button>
+  </div>
+</div>
+<h2 class="cat" data-cat="Claude Code: 週次制限・オートコンティニュー">Claude Code: 週次制限・オートコンティニュー</h2>
+<div class="icard" id="i11" data-cat="Claude Code: 週次制限・オートコンティニュー">
+  <div class="ih"><span class="num">011</span><span class="ititle">オートコンティニューの有効化確認</span></div>
+  <p class="imeta"><span class="nb">設定が本当に</span><span class="nb">オンになっているか不安なとき。</span></p>
+  <pre class="prompt" id="b11">前提: Claude Codeデスクトップでオートコンティニューを有効にしたつもりだが、動作が不安。
+指示: オートコンティニューの設定箇所と、正しくオンになっているかの確認方法を教えて。
+出力形式: 確認手順を番号付きで、スクリーンショットが必要な箇所があれば明記して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b11">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b11" data-name="newsprompts100-011.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i11">🔗 リンク</button>
+  </div>
+</div>
+<div class="icard" id="i12" data-cat="Claude Code: 週次制限・オートコンティニュー">
+  <div class="ih"><span class="num">012</span><span class="ititle">週次制限の使用ペース管理</span></div>
+  <p class="imeta"><span class="nb">延長された制限(8/31まで)を</span><span class="nb">計画的に使い切りたいとき。</span></p>
+  <pre class="prompt" id="b12">前提: 週次利用制限が50%増の状態が8/31まで続く見込み。
+指示: 残り日数と主要タスクを伝えるので、制限を使い切らないよう作業ペース配分の目安を提案して。
+出力形式: 1日あたりの推奨タスク量を簡潔な表で。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b12">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b12" data-name="newsprompts100-012.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i12">🔗 リンク</button>
+  </div>
+</div>
+<div class="icard" id="i13" data-cat="Claude Code: 週次制限・オートコンティニュー">
+  <div class="ih"><span class="num">013</span><span class="ititle">長時間タスクの投げっぱなし設計</span></div>
+  <p class="imeta"><span class="nb">オートコンティニューを前提に、</span><span class="nb">夜間や外出中に長いタスクを任せたいと</span><span class="nb">き。</span></p>
+  <pre class="prompt" id="b13">前提: オートコンティニューをオンにした状態で、数時間かかる大きめのリファクタを任せたい。
+指示: 作業内容と完了条件を伝えるので、途中で制限に達しても安全に自動再開できるようタスクを分割し、各段階の完了判定基準も明記して。
+出力形式: 段階ごとにチェックリスト形式で。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b13">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b13" data-name="newsprompts100-013.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i13">🔗 リンク</button>
+  </div>
+</div>
+<div class="icard" id="i14" data-cat="Claude Code: 週次制限・オートコンティニュー">
+  <div class="ih"><span class="num">014</span><span class="ititle">制限延長終了後の運用切り替え</span></div>
+  <p class="imeta"><span class="nb">8/31以降に制限が元に戻った場合の</span><span class="nb">対応を今から準備したいとき。</span></p>
+  <pre class="prompt" id="b14">前提: 週次制限50%増の延長は8/31までとアナウンスされている。
+指示: 延長終了後を見据えて、優先度の低いタスクを今のうちに前倒しで進めるか、終了後に回すかの判断基準を提案して。
+出力形式: 判断基準は3つまでに絞って箇条書きで。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b14">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b14" data-name="newsprompts100-014.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i14">🔗 リンク</button>
+  </div>
+</div>
+<div class="icard" id="i15" data-cat="Claude Code: 週次制限・オートコンティニュー">
+  <div class="ih"><span class="num">015</span><span class="ititle">制限到達時の通知運用</span></div>
+  <p class="imeta"><span class="nb">制限に達したことに気づかず作業が</span><span class="nb">止まっていた経験があるとき。</span></p>
+  <pre class="prompt" id="b15">前提: 週次制限に達したことに気づかず、作業が止まっていたことがあった。
+指示: 制限到達を早めに察知する運用方法(通知設定・確認頻度)を提案して。オートコンティニューと組み合わせた運用も含めて。
+出力形式: 運用ルールを3行以内で。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b15">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b15" data-name="newsprompts100-015.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i15">🔗 リンク</button>
+  </div>
+</div>
+<h2 class="cat" data-cat="Claude Academy">Claude Academy</h2>
+<div class="icard" id="i16" data-cat="Claude Academy">
+  <div class="ih"><span class="num">016</span><span class="ititle">自分に合った学習パスの選定</span></div>
+  <p class="imeta"><span class="nb">5プロダクト+基礎コースのどこから</span><span class="nb">始めるべきか迷っているとき。</span></p>
+  <pre class="prompt" id="b16">前提: Claude Academyが公開されたが、自分の業務内容(職種・現在のスキルレベル)に合わせてどこから始めるべきか分からない。
+指示: 自分の職種と現在のAI活用度を伝えるので、Claude Academyのどのコースから始めるべきか優先順位をつけて提案して。
+出力形式: コース名・推定所要時間・優先度(高中低)を表でまとめて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b16">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b16" data-name="newsprompts100-016.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i16">🔗 リンク</button>
+  </div>
+</div>
+<div class="icard" id="i17" data-cat="Claude Academy">
+  <div class="ih"><span class="num">017</span><span class="ititle">チーム導入前の学習計画</span></div>
+  <p class="imeta"><span class="nb">チームでAI Fluencyコースを</span><span class="nb">受けさせる計画を立てたいとき。</span></p>
+  <pre class="prompt" id="b17">前提: チームメンバー数名にAI Fluency(14レッスン・約4時間)を受けてもらう予定。
+指示: 1〜2週間で無理なく終えられる学習スケジュール案を作って。業務時間内での学習時間の目安も含めて。
+出力形式: 週ごとのレッスン配分を表で。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b17">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b17" data-name="newsprompts100-017.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i17">🔗 リンク</button>
+  </div>
+</div>
+<div class="icard" id="i18" data-cat="Claude Academy">
+  <div class="ih"><span class="num">018</span><span class="ititle">学習後の実践課題づくり</span></div>
+  <p class="imeta"><span class="nb">コースを終えた後、</span><span class="nb">実務で試す課題を作りたいとき。</span></p>
+  <pre class="prompt" id="b18">前提: AI Capabilities and Limitationsのコースを終えた。
+指示: 学んだ内容(LLMの能力と限界)を実務で確認できる簡単な実践課題を3つ考えて。
+出力形式: 課題ごとに所要時間の目安を添えて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b18">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b18" data-name="newsprompts100-018.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i18">🔗 リンク</button>
+  </div>
+</div>
+<div class="icard" id="i19" data-cat="Claude Academy">
+  <div class="ih"><span class="num">019</span><span class="ititle">既存Anthropic Academy受講済みの人向け案内</span></div>
+  <p class="imeta"><span class="nb">既に</span><span class="nb">Anthropic Academyを</span><span class="nb">受けたことがある人に、</span><span class="nb">新サイトとの違いを説明したいとき。</span></p>
+  <pre class="prompt" id="b19">前提: チームの一部は既存のAnthropic Academy(anthropic.skilljar.com)を受講済み。
+指示: Claude Academy(academy.claude.com)は別サイトの可能性が高いという前提で、二重受講を避けつつ確認すべきポイントを整理して。
+出力形式: 確認事項を箇条書きで、断定できない部分は「要確認」と明記して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b19">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b19" data-name="newsprompts100-019.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i19">🔗 リンク</button>
+  </div>
+</div>
+<div class="icard" id="i20" data-cat="Claude Academy">
+  <div class="ih"><span class="num">020</span><span class="ititle">学習進捗の振り返りフォーマット</span></div>
+  <p class="imeta"><span class="nb">受講後に学びを社内に共有する形式を</span><span class="nb">作りたいとき。</span></p>
+  <pre class="prompt" id="b20">前提: Claude Academyのコースを受講し終えた。
+指示: 学んだ内容を3行で要約し、実務にどう活かすかの一言を添える社内共有フォーマットを作って。
+出力形式: そのままSlackに貼れるテンプレート形式で。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b20">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b20" data-name="newsprompts100-020.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i20">🔗 リンク</button>
+  </div>
+</div>
+<h2 class="cat" data-cat="Firecrawlコネクタ">Firecrawlコネクタ</h2>
+<div class="icard" id="i21" data-cat="Firecrawlコネクタ">
+  <div class="ih"><span class="num">021</span><span class="ititle">コネクタの接続手順確認</span></div>
+  <p class="imeta"><span class="nb">初めてFirecrawlコネクタを</span><span class="nb">使うとき。</span></p>
+  <pre class="prompt" id="b21">前提: Claudeのコネクタディレクトリからまだ何も接続したことがない。
+指示: Firecrawlコネクタを接続する手順と、接続後にできることを整理して。
+出力形式: 手順は番号付き、できることは箇条書きで。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b21">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b21" data-name="newsprompts100-021.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i21">🔗 リンク</button>
+  </div>
+</div>
+<div class="icard" id="i22" data-cat="Firecrawlコネクタ">
+  <div class="ih"><span class="num">022</span><span class="ititle">リサーチタスクへの活用設計</span></div>
+  <p class="imeta"><span class="nb">調べ物をFirecrawl経由で</span><span class="nb">効率化したいとき。</span></p>
+  <pre class="prompt" id="b22">前提: 業界動向のリサーチを毎週行っている。
+指示: Firecrawlコネクタを使って、特定テーマの最新情報を毎週まとめて取得する依頼文のひな形を作って。
+出力形式: テーマ名を差し替えるだけで使えるテンプレート形式で。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b22">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b22" data-name="newsprompts100-022.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i22">🔗 リンク</button>
+  </div>
+</div>
+<div class="icard" id="i23" data-cat="Firecrawlコネクタ">
+  <div class="ih"><span class="num">023</span><span class="ititle">既存の検索フローとの比較</span></div>
+  <p class="imeta"><span class="nb">従来のWeb検索と使い分けたいとき。</span></p>
+  <pre class="prompt" id="b23">前提: これまで通常のWeb検索でリサーチしていた。
+指示: Firecrawlコネクタ(SimpleQAベンチマーク94.7%)と通常検索、それぞれをどんな場面で使い分けるべきか整理して。
+出力形式: 比較表(場面・向いている方)でまとめて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b23">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b23" data-name="newsprompts100-023.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i23">🔗 リンク</button>
+  </div>
+</div>
+<div class="icard" id="i24" data-cat="Firecrawlコネクタ">
+  <div class="ih"><span class="num">024</span><span class="ititle">社内ナレッジ調査への応用</span></div>
+  <p class="imeta"><span class="nb">社内文書ではなく外部情報の</span><span class="nb">一次ソース調査に使いたいとき。</span></p>
+  <pre class="prompt" id="b24">前提: 外部の一次情報源を調査する機会が多い。
+指示: Firecrawlコネクタを使って、あるトピックについて一次情報のみを優先的に集める依頼文を作って。
+出力形式: 二次情報が混ざった場合は明示するよう指示文に含めて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b24">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b24" data-name="newsprompts100-024.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i24">🔗 リンク</button>
+  </div>
+</div>
+<div class="icard" id="i25" data-cat="Firecrawlコネクタ">
+  <div class="ih"><span class="num">025</span><span class="ititle">接続トラブル時の切り分け</span></div>
+  <p class="imeta"><span class="nb">コネクタがうまく動かないとき、</span><span class="nb">原因を切り分けたいとき。</span></p>
+  <pre class="prompt" id="b25">前提: Firecrawlコネクタを接続したが、期待した結果が返ってこない。
+指示: 考えられる原因(接続設定・権限・クエリの書き方)を切り分けるチェック項目を作って。
+出力形式: 確認順に番号付きリストで。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b25">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b25" data-name="newsprompts100-025.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i25">🔗 リンク</button>
+  </div>
+</div>
+<h2 class="cat" data-cat="HyperFrames MCP">HyperFrames MCP</h2>
+<div class="icard" id="i26" data-cat="HyperFrames MCP">
+  <div class="ih"><span class="num">026</span><span class="ititle">初回セットアップの確認</span></div>
+  <p class="imeta"><span class="nb">Claude Designに</span><span class="nb">HyperFrames MCPを</span><span class="nb">導入するとき。</span></p>
+  <pre class="prompt" id="b26">前提: Claude Designは使っているが、HyperFrames MCPはまだ導入していない。
+指示: HyperFrames MCPの導入手順と、導入後にできること(効果音付加・モーション調整・MP4書き出し)を整理して。
+出力形式: 手順と機能を分けて箇条書きで。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b26">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b26" data-name="newsprompts100-026.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i26">🔗 リンク</button>
+  </div>
+</div>
+<div class="icard" id="i27" data-cat="HyperFrames MCP">
+  <div class="ih"><span class="num">027</span><span class="ititle">アニメーション案の書き出し依頼</span></div>
+  <p class="imeta"><span class="nb">作ったアニメーションを</span><span class="nb">MP4化したいとき。</span></p>
+  <pre class="prompt" id="b27">前提: Claude Designで簡単なアニメーションを作成済み。
+指示: HyperFramesエージェントに送る際の、狙いのトーン(例: 軽快・落ち着いた)を伝える依頼文のひな形を作って。
+出力形式: 差し替え可能な変数(トーン・尺・BGM有無)を明示したテンプレートで。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b27">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b27" data-name="newsprompts100-027.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i27">🔗 リンク</button>
+  </div>
+</div>
+<div class="icard" id="i28" data-cat="HyperFrames MCP">
+  <div class="ih"><span class="num">028</span><span class="ititle">サードパーティ製である点の社内周知</span></div>
+  <p class="imeta"><span class="nb">チームに紹介する際、</span><span class="nb">公式機能ではない点を明確にしたいと</span><span class="nb">き。</span></p>
+  <pre class="prompt" id="b28">前提: チームにHyperFrames MCPを紹介したいが、Anthropic公式機能ではないサードパーティ連携である点を誤解なく伝えたい。
+指示: サードパーティ製である旨を明記したうえでの紹介文を作って。
+出力形式: 3行以内、断定的な表現は避けて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b28">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b28" data-name="newsprompts100-028.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i28">🔗 リンク</button>
+  </div>
+</div>
+<div class="icard" id="i29" data-cat="HyperFrames MCP">
+  <div class="ih"><span class="num">029</span><span class="ititle">動画尺の指定テンプレート</span></div>
+  <p class="imeta"><span class="nb">SNS投稿用に尺を</span><span class="nb">指定してMP4化したいとき。</span></p>
+  <pre class="prompt" id="b29">前提: SNS投稿用に15秒程度のショート動画を作りたい。
+指示: HyperFrames MCP経由で書き出す際、尺・アスペクト比・BGMの有無を指定する依頼文を作って。
+出力形式: SNSプラットフォーム別(縦型・横型)の2パターンで。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b29">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b29" data-name="newsprompts100-029.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i29">🔗 リンク</button>
+  </div>
+</div>
+<div class="icard" id="i30" data-cat="HyperFrames MCP">
+  <div class="ih"><span class="num">030</span><span class="ititle">導入判断の整理</span></div>
+  <p class="imeta"><span class="nb">導入するかどうか迷っているとき。</span></p>
+  <pre class="prompt" id="b30">前提: 動画制作の頻度がそこまで高くない状態でHyperFrames MCPを導入すべきか迷っている。
+指示: 導入するメリットと、頻度が低い場合に見送るべき理由を整理して。
+出力形式: メリット・デメリットを表で。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b30">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b30" data-name="newsprompts100-030.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i30">🔗 リンク</button>
+  </div>
+</div>
+<h2 class="cat" data-cat="OpenArt(Claude Store)">OpenArt(Claude Store)</h2>
+<div class="icard" id="i31" data-cat="OpenArt(Claude Store)">
+  <div class="ih"><span class="num">031</span><span class="ititle">OpenArt Liteの検索・導入確認</span></div>
+  <p class="imeta"><span class="nb">初めてOpenArt Liteを</span><span class="nb">試すとき。</span></p>
+  <pre class="prompt" id="b31">前提: Claude StoreのConnectorsからOpenArt Liteをまだ試したことがない。
+指示: OpenArt Liteの検索方法と導入後の基本的な使い方を整理して。
+出力形式: 手順を番号付きで、できることは箇条書きで。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b31">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b31" data-name="newsprompts100-031.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i31">🔗 リンク</button>
+  </div>
+</div>
+<div class="icard" id="i32" data-cat="OpenArt(Claude Store)">
+  <div class="ih"><span class="num">032</span><span class="ititle">画像生成ワークフローへの組み込み</span></div>
+  <p class="imeta"><span class="nb">既存の画像生成フローに</span><span class="nb">OpenArtを組み込みたいとき。</span></p>
+  <pre class="prompt" id="b32">前提: これまで別の画像生成ツールを使っていた。
+指示: OpenArt Liteを既存のワークフロー(企画→生成→レビュー)のどの段階で使うと効果的か提案して。
+出力形式: ワークフロー図を簡単な箇条書きステップで表現して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b32">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b32" data-name="newsprompts100-032.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i32">🔗 リンク</button>
+  </div>
+</div>
+<div class="icard" id="i33" data-cat="OpenArt(Claude Store)">
+  <div class="ih"><span class="num">033</span><span class="ititle">小規模チームでの試験導入案</span></div>
+  <p class="imeta"><span class="nb">チームで試験的に導入するかどうかの</span><span class="nb">検討材料が欲しいとき。</span></p>
+  <pre class="prompt" id="b33">前提: 小規模チームでOpenArt Liteを試験導入するか検討している。
+指示: 試験導入する場合の期間・評価基準・撤退条件を整理して。
+出力形式: 3項目(期間・評価基準・撤退条件)を簡潔にまとめて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b33">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b33" data-name="newsprompts100-033.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i33">🔗 リンク</button>
+  </div>
+</div>
+<div class="icard" id="i34" data-cat="OpenArt(Claude Store)">
+  <div class="ih"><span class="num">034</span><span class="ititle">他コネクタとの併用整理</span></div>
+  <p class="imeta"><span class="nb">Firecrawl等、</span><span class="nb">他のコネクタと役割分担したいとき。</span></p>
+  <pre class="prompt" id="b34">前提: Firecrawlコネクタなど、他のコネクタも同時に使っている。
+指示: OpenArt Liteと他のコネクタそれぞれの役割分担を整理して、混同しないようにしたい。
+出力形式: コネクタごとに用途を1行でまとめた一覧で。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b34">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b34" data-name="newsprompts100-034.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i34">🔗 リンク</button>
+  </div>
+</div>
+<div class="icard" id="i35" data-cat="OpenArt(Claude Store)">
+  <div class="ih"><span class="num">035</span><span class="ititle">規模の小さい発表という前提の共有</span></div>
+  <p class="imeta"><span class="nb">社内で紹介する際、</span><span class="nb">まだ規模の小さい発表である点を</span><span class="nb">含めて共有したいとき。</span></p>
+  <pre class="prompt" id="b35">前提: OpenArt LiteのClaude Store登場は反響が大きくない発表(表示回数は小規模)だった。
+指示: 話題として大きくない発表である旨を含めつつ、それでも試す価値がある理由を短く紹介する文章を作って。
+出力形式: 3行以内で。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b35">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b35" data-name="newsprompts100-035.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i35">🔗 リンク</button>
+  </div>
+</div>
+<h2 class="cat" data-cat="Codex: 100万トークン・コンテキスト設定">Codex: 100万トークン・コンテキスト設定</h2>
+<div class="icard" id="i36" data-cat="Codex: 100万トークン・コンテキスト設定">
+  <div class="ih"><span class="num">036</span><span class="ititle">config.tomlの安全な編集依頼</span></div>
+  <p class="imeta"><span class="nb">設定ファイルを壊さずに1M設定を</span><span class="nb">追記したいとき。</span></p>
+  <pre class="prompt" id="b36">前提: ~/.codex/config.tomlに他の設定も既に書かれている状態。
+指示: 既存の内容を維持したまま、model・model_context_window・model_auto_compact_token_limitの3行を安全に追記する差分を提示して。
+出力形式: 変更前後の該当箇所だけを差分表示して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b36">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b36" data-name="newsprompts100-036.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i36">🔗 リンク</button>
+  </div>
+</div>
+<div class="icard" id="i37" data-cat="Codex: 100万トークン・コンテキスト設定">
+  <div class="ih"><span class="num">037</span><span class="ititle">単発試用コマンドの組み立て</span></div>
+  <p class="imeta"><span class="nb">デフォルトを変えずに</span><span class="nb">1回だけ試したいとき。</span></p>
+  <pre class="prompt" id="b37">前提: 普段はデフォルト設定のCodexを使っており、まずは1回だけ100万トークン設定を試したい。
+指示: codex -m gpt-5.6-sol のオプション付きコマンドを、自分のタスク内容(長い会話履歴の要約)に合わせて組み立てて。
+出力形式: コマンド全体を1行で、各オプションの意味も1行ずつ添えて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b37">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b37" data-name="newsprompts100-037.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i37">🔗 リンク</button>
+  </div>
+</div>
+<div class="icard" id="i38" data-cat="Codex: 100万トークン・コンテキスト設定">
+  <div class="ih"><span class="num">038</span><span class="ititle">コスト影響の見積もり依頼</span></div>
+  <p class="imeta"><span class="nb">コンテキストを増やすとコストが</span><span class="nb">どう変わるか把握したいとき。</span></p>
+  <pre class="prompt" id="b38">前提: 100万トークン設定にすると、処理コスト・速度への影響が気になる。
+指示: コンテキストウィンドウを広げることで想定される影響(コスト・応答速度・要約頻度の変化)を整理して。
+出力形式: 影響を「大きい・小さい」で仕分けた表で。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b38">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b38" data-name="newsprompts100-038.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i38">🔗 リンク</button>
+  </div>
+</div>
+<div class="icard" id="i39" data-cat="Codex: 100万トークン・コンテキスト設定">
+  <div class="ih"><span class="num">039</span><span class="ititle">長時間セッションの構成設計</span></div>
+  <p class="imeta"><span class="nb">1M設定を前提に、</span><span class="nb">長時間の開発セッションを設計したいと</span><span class="nb">き。</span></p>
+  <pre class="prompt" id="b39">前提: 100万トークン設定を有効にした状態で、数時間かかる大規模リファクタを1セッションで進めたい。
+指示: 作業内容を伝えるので、コンテキストを無駄に消費しない進め方(要約タイミング・区切り方)を提案して。
+出力形式: セッションの区切り案を時系列で箇条書きに。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b39">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b39" data-name="newsprompts100-039.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i39">🔗 リンク</button>
+  </div>
+</div>
+<div class="icard" id="i40" data-cat="Codex: 100万トークン・コンテキスト設定">
+  <div class="ih"><span class="num">040</span><span class="ititle">自動圧縮閾値のチューニング相談</span></div>
+  <p class="imeta">model_auto_compact_token_limitの<span class="nb">値をどう決めるか相談したいとき。</span></p>
+  <pre class="prompt" id="b40">前提: model_auto_compact_token_limitを900000のまま使っているが、自分の用途に合っているか分からない。
+指示: 自分の典型的なタスク内容(会話の長さ・ファイル数)を伝えるので、適切な閾値の目安と理由を提案して。
+出力形式: 推奨値と理由を3行以内で。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b40">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b40" data-name="newsprompts100-040.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i40">🔗 リンク</button>
+  </div>
+</div>
+<div class="icard" id="i41" data-cat="Codex: 100万トークン・コンテキスト設定">
+  <div class="ih"><span class="num">041</span><span class="ititle">元の設定への切り戻し手順</span></div>
+  <p class="imeta"><span class="nb">1M設定を試してみて、</span><span class="nb">元に戻したくなったとき。</span></p>
+  <pre class="prompt" id="b41">前提: 1M設定を試したが、通常設定に戻したくなった。
+指示: config.tomlに追記した3行を削除、またはコメントアウトする安全な戻し方を教えて。
+出力形式: 元に戻す差分と、確認方法を示して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b41">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b41" data-name="newsprompts100-041.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i41">🔗 リンク</button>
+  </div>
+</div>
+<div class="icard" id="i42" data-cat="Codex: 100万トークン・コンテキスト設定">
+  <div class="ih"><span class="num">042</span><span class="ititle">チームへの展開可否の判断材料</span></div>
+  <p class="imeta"><span class="nb">チームメンバー全員に1M設定を</span><span class="nb">勧めるべきか判断したいとき。</span></p>
+  <pre class="prompt" id="b42">前提: 自分は1M設定を使って便利だったが、チーム全体に展開すべきか判断材料が欲しい。
+指示: チーム展開のメリットと、展開前に確認すべき注意点(コスト・対応モデル限定)を整理して。
+出力形式: メリット・注意点を表で。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b42">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b42" data-name="newsprompts100-042.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i42">🔗 リンク</button>
+  </div>
+</div>
+<h2 class="cat" data-cat="Agent Plugins標準">Agent Plugins標準</h2>
+<div class="icard" id="i43" data-cat="Agent Plugins標準">
+  <div class="ih"><span class="num">043</span><span class="ititle">既存Skillsの移行可否チェック</span></div>
+  <p class="imeta"><span class="nb">手持ちのAgent Skillsを</span><span class="nb">Agent Plugins形式に</span><span class="nb">移行できるか確認したいとき。</span></p>
+  <pre class="prompt" id="b43">前提: いくつか自作のAgent Skillsを運用している。
+指示: 既存のSkill定義を伝えるので、Agent Plugins形式にパッケージ化する際に必要な追加要素を整理して。
+出力形式: 不足要素を箇条書きで。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b43">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b43" data-name="newsprompts100-043.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i43">🔗 リンク</button>
+  </div>
+</div>
+<div class="icard" id="i44" data-cat="Agent Plugins標準">
+  <div class="ih"><span class="num">044</span><span class="ititle">MCPサーバー設定の共有形式化</span></div>
+  <p class="imeta"><span class="nb">MCPサーバー設定をチームで</span><span class="nb">共有しやすい形にしたいとき。</span></p>
+  <pre class="prompt" id="b44">前提: チーム内でMCPサーバー設定がバラバラに管理されている。
+指示: Agent Plugins標準に沿ってMCPサーバー設定を共有形式にまとめる際の構成案を作って。
+出力形式: ファイル構成のツリー形式で。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b44">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b44" data-name="newsprompts100-044.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i44">🔗 リンク</button>
+  </div>
+</div>
+<div class="icard" id="i45" data-cat="Agent Plugins標準">
+  <div class="ih"><span class="num">045</span><span class="ititle">対応エージェントクライアントの確認</span></div>
+  <p class="imeta"><span class="nb">自分が使っているツールが</span><span class="nb">Agent Plugins対応か確認したいと</span><span class="nb">き。</span></p>
+  <pre class="prompt" id="b45">前提: 普段CursorとGitHubを併用している。
+指示: Agent Pluginsの共同開発元(AWS Developers・Cursor・GitHub・Vercel)を踏まえ、自分の環境でどこまで互換性が期待できるか整理して。
+出力形式: 確度(高中低)つきで箇条書きに。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b45">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b45" data-name="newsprompts100-045.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i45">🔗 リンク</button>
+  </div>
+</div>
+<div class="icard" id="i46" data-cat="Agent Plugins標準">
+  <div class="ih"><span class="num">046</span><span class="ititle">プラグイン配布の準備手順</span></div>
+  <p class="imeta"><span class="nb">自作プラグインを配布用に整えたいと</span><span class="nb">き。</span></p>
+  <pre class="prompt" id="b46">前提: チーム内限定で使っているツールをプラグインとして配布したい。
+指示: 配布に必要な準備(ドキュメント・バージョン管理・互換性表記)をチェックリスト化して。
+出力形式: チェック項目を□つきの箇条書きで。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b46">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b46" data-name="newsprompts100-046.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i46">🔗 リンク</button>
+  </div>
+</div>
+<div class="icard" id="i47" data-cat="Agent Plugins標準">
+  <div class="ih"><span class="num">047</span><span class="ititle">導入前の社内説明資料</span></div>
+  <p class="imeta"><span class="nb">Agent Pluginsと</span><span class="nb">いう概念自体をチームに説明したいと</span><span class="nb">き。</span></p>
+  <pre class="prompt" id="b47">前提: チームのほとんどがAgent Pluginsという言葉を初めて聞く状態。
+指示: 専門用語を避けつつ、Agent Pluginsが何を解決するのか3行で説明する文章を作って。
+出力形式: 比喩を1つ使って、平易な言葉でまとめて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b47">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b47" data-name="newsprompts100-047.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i47">🔗 リンク</button>
+  </div>
+</div>
+<h2 class="cat" data-cat="Apple Messagesプラグイン">Apple Messagesプラグイン</h2>
+<div class="icard" id="i48" data-cat="Apple Messagesプラグイン">
+  <div class="ih"><span class="num">048</span><span class="ititle">導入前の対象確認</span></div>
+  <p class="imeta"><span class="nb">自分の環境で使えるか確認したいとき。</span></p>
+  <pre class="prompt" id="b48">前提: ChatGPT WorkかCodexデスクトップ版のどちらを契約しているか曖昧なまま使いたいと思っている。
+指示: Apple Messagesプラグインを使うための前提条件(必要なプラン・OS)を整理して。
+出力形式: 箇条書きで、不明点は「要確認」と明記して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b48">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b48" data-name="newsprompts100-048.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i48">🔗 リンク</button>
+  </div>
+</div>
+<div class="icard" id="i49" data-cat="Apple Messagesプラグイン">
+  <div class="ih"><span class="num">049</span><span class="ititle">メッセージ整理の依頼テンプレ</span></div>
+  <p class="imeta"><span class="nb">溜まったメッセージを整理する使い方を</span><span class="nb">テンプレ化したいとき。</span></p>
+  <pre class="prompt" id="b49">前提: Messagesに未返信のやり取りが溜まっている。
+指示: Apple Messagesプラグイン経由で、直近の未返信メッセージを重要度順に整理して返信下書きを作る依頼文を作って。
+出力形式: 重要度(高中低)つきの一覧形式で出力するよう指定して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b49">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b49" data-name="newsprompts100-049.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i49">🔗 リンク</button>
+  </div>
+</div>
+<div class="icard" id="i50" data-cat="Apple Messagesプラグイン">
+  <div class="ih"><span class="num">050</span><span class="ititle">送信前の確認フロー</span></div>
+  <p class="imeta"><span class="nb">AIが下書きした返信を</span><span class="nb">誤送信しないための運用を決めたいと</span><span class="nb">き。</span></p>
+  <pre class="prompt" id="b50">前提: 下書きの自動生成は便利だが、誤った内容のまま送信してしまう不安がある。
+指示: 送信前に必ず人が確認するチェックポイントを3つ決めて、運用ルールとしてまとめて。
+出力形式: ルールを□付きチェックリストで。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b50">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b50" data-name="newsprompts100-050.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i50">🔗 リンク</button>
+  </div>
+</div>
+<div class="icard" id="i51" data-cat="Apple Messagesプラグイン">
+  <div class="ih"><span class="num">051</span><span class="ititle">業務利用時のプライバシー配慮</span></div>
+  <p class="imeta"><span class="nb">業務でのメッセージ検索利用時に</span><span class="nb">配慮すべき点を整理したいとき。</span></p>
+  <pre class="prompt" id="b51">前提: 業務でApple Messagesプラグインを使う予定だが、プライバシーへの配慮が必要な相手とのやり取りも含まれる。
+指示: 業務利用時に配慮すべきプライバシー上の注意点を整理して。
+出力形式: 注意点を3つまでに絞って箇条書きで。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b51">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b51" data-name="newsprompts100-051.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i51">🔗 リンク</button>
+  </div>
+</div>
+<div class="icard" id="i52" data-cat="Apple Messagesプラグイン">
+  <div class="ih"><span class="num">052</span><span class="ititle">よく使う定型文の登録</span></div>
+  <p class="imeta"><span class="nb">頻出する返信パターンを</span><span class="nb">あらかじめ用意しておきたいとき。</span></p>
+  <pre class="prompt" id="b52">前提: 同じような内容の返信を何度も書いている。
+指示: 頻出パターン(日程調整・確認依頼・お礼)ごとに、Apple Messagesプラグインに下書きさせる際の指示テンプレを3種類作って。
+出力形式: パターンごとに指示文を1つずつ、差し替え箇所を明示して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b52">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b52" data-name="newsprompts100-052.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i52">🔗 リンク</button>
+  </div>
+</div>
+<h2 class="cat" data-cat="GPT-Image-2 透明背景">GPT-Image-2 透明背景</h2>
+<div class="icard" id="i53" data-cat="GPT-Image-2 透明背景">
+  <div class="ih"><span class="num">053</span><span class="ititle">商品画像アセットの生成依頼</span></div>
+  <p class="imeta"><span class="nb">ECサイト用の商品画像を作りたいと</span><span class="nb">き。</span></p>
+  <pre class="prompt" id="b53">前提: ECサイトに載せる商品画像を複数の背景パターンで使い回したい。
+指示: 透明背景のGPT-Image-2で、指定した商品(具体的な商品名・特徴)の再利用可能なアセットを生成する依頼文を作って。
+出力形式: 背景色違いで3パターン使う想定の指示文にして。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b53">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b53" data-name="newsprompts100-053.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i53">🔗 リンク</button>
+  </div>
+</div>
+<div class="icard" id="i54" data-cat="GPT-Image-2 透明背景">
+  <div class="ih"><span class="num">054</span><span class="ititle">Webモックアップ用パーツ生成</span></div>
+  <p class="imeta"><span class="nb">サイトモックアップに使う素材を</span><span class="nb">作りたいとき。</span></p>
+  <pre class="prompt" id="b54">前提: Webサイトのモックアップを作成中で、アイコンやイラスト素材が足りない。
+指示: 透明背景で、サイトのトーン(具体的な雰囲気)に合ったアイコン素材を複数生成する依頼文を作って。
+出力形式: 素材ごとに用途を1行で添えて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b54">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b54" data-name="newsprompts100-054.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i54">🔗 リンク</button>
+  </div>
+</div>
+<div class="icard" id="i55" data-cat="GPT-Image-2 透明背景">
+  <div class="ih"><span class="num">055</span><span class="ititle">マーケティング素材のバリエーション出し</span></div>
+  <p class="imeta"><span class="nb">同じ素材を複数の背景で使い分けたいと</span><span class="nb">き。</span></p>
+  <pre class="prompt" id="b55">前提: SNS広告用に同じキャラクター・オブジェクトを複数の背景色で使い回したい。
+指示: 透明背景のアセットを1つ生成し、複数の広告フォーマット(正方形・縦長)に展開する指示文を作って。
+出力形式: フォーマットごとにサイズ指定を明記して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b55">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b55" data-name="newsprompts100-055.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i55">🔗 リンク</button>
+  </div>
+</div>
+<div class="icard" id="i56" data-cat="GPT-Image-2 透明背景">
+  <div class="ih"><span class="num">056</span><span class="ititle">既存ロゴとの合成前提の生成</span></div>
+  <p class="imeta"><span class="nb">既存のブランド素材と</span><span class="nb">組み合わせる前提で作りたいとき。</span></p>
+  <pre class="prompt" id="b56">前提: 既存のロゴ・ブランドカラーがあり、それに合わせた透明背景素材が欲しい。
+指示: ブランドカラー(具体的な色)を伝えるので、それに調和する透明背景素材を生成する依頼文を作って。
+出力形式: 色指定を明確にした指示文で。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b56">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b56" data-name="newsprompts100-056.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i56">🔗 リンク</button>
+  </div>
+</div>
+<div class="icard" id="i57" data-cat="GPT-Image-2 透明背景">
+  <div class="ih"><span class="num">057</span><span class="ititle">生成物のライセンス確認事項の整理</span></div>
+  <p class="imeta"><span class="nb">商用利用する前に確認すべき点を</span><span class="nb">整理したいとき。</span></p>
+  <pre class="prompt" id="b57">前提: 生成した透明背景素材を商用のマーケティング素材として使う予定。
+指示: 商用利用前に確認しておくべき事項(利用規約・著作権表記の要否)を整理して。
+出力形式: 確認事項を箇条書きで、断定できない点は「要確認」と明記して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b57">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b57" data-name="newsprompts100-057.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i57">🔗 リンク</button>
+  </div>
+</div>
+<h2 class="cat" data-cat="ChatGPT Sites協業・共有スレッド">ChatGPT Sites協業・共有スレッド</h2>
+<div class="icard" id="i58" data-cat="ChatGPT Sites協業・共有スレッド">
+  <div class="ih"><span class="num">058</span><span class="ititle">チームエディター招待の準備</span></div>
+  <p class="imeta"><span class="nb">ChatGPT Sitesに</span><span class="nb">チームメンバーを招待する前の準備を</span><span class="nb">したいとき。</span></p>
+  <pre class="prompt" id="b58">前提: ChatGPT Sitesのプロジェクトを1人で始めており、これからチームメンバーを招待したい。
+指示: エディター招待前に整理しておくべき権限・役割分担の案を作って。
+出力形式: メンバーごとの役割を表でまとめて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b58">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b58" data-name="newsprompts100-058.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i58">🔗 リンク</button>
+  </div>
+</div>
+<div class="icard" id="i59" data-cat="ChatGPT Sites協業・共有スレッド">
+  <div class="ih"><span class="num">059</span><span class="ititle">git運用ルールの明文化</span></div>
+  <p class="imeta"><span class="nb">Codexが裏側で</span><span class="nb">処理するgit管理と、</span><span class="nb">人の作業を整理したいとき。</span></p>
+  <pre class="prompt" id="b59">前提: ChatGPT SitesでCodexがgit管理・CIを自動処理する環境を使い始める。
+指示: 人が確認すべきタイミング(マージ前など)と、Codexに任せてよい範囲を切り分けたルールを作って。
+出力形式: ルールを箇条書きで3〜5項目に。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b59">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b59" data-name="newsprompts100-059.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i59">🔗 リンク</button>
+  </div>
+</div>
+<div class="icard" id="i60" data-cat="ChatGPT Sites協業・共有スレッド">
+  <div class="ih"><span class="num">060</span><span class="ititle">共有スレッドを使った引き継ぎ資料化</span></div>
+  <p class="imeta"><span class="nb">作業の背景を引き継ぐ相手に</span><span class="nb">説明する準備をしたいとき。</span></p>
+  <pre class="prompt" id="b60">前提: 進行中のプロジェクトを別の担当者に引き継ぐ予定。
+指示: 読み取り専用の共有スレッドを使って引き継ぐ際、相手が見るべきポイントを案内する一言メッセージを作って。
+出力形式: 3行以内で、リンクを貼る想定の文面にして。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b60">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b60" data-name="newsprompts100-060.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i60">🔗 リンク</button>
+  </div>
+</div>
+<div class="icard" id="i61" data-cat="ChatGPT Sites協業・共有スレッド">
+  <div class="ih"><span class="num">061</span><span class="ititle">PR説明への共有スレッド活用</span></div>
+  <p class="imeta"><span class="nb">PRの背景説明を共有スレッドで</span><span class="nb">補いたいとき。</span></p>
+  <pre class="prompt" id="b61">前提: PRの差分だけでは意図が伝わりにくいと感じている。
+指示: 共有スレッドのリンクをPR説明に添える際の一文を作って。何が分かるかを明確にして。
+出力形式: PRテンプレートに貼れる1〜2行の文面で。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b61">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b61" data-name="newsprompts100-061.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i61">🔗 リンク</button>
+  </div>
+</div>
+<div class="icard" id="i62" data-cat="ChatGPT Sites協業・共有スレッド">
+  <div class="ih"><span class="num">062</span><span class="ititle">共有範囲の見直しチェック</span></div>
+  <p class="imeta"><span class="nb">共有スレッドを外部に</span><span class="nb">見せてよいか判断したいとき。</span></p>
+  <pre class="prompt" id="b62">前提: 共有スレッドのリンクを社外の関係者に送るか迷っている。
+指示: 共有前に確認すべき項目(機密情報の有無・読み取り専用であることの説明)をチェックリスト化して。
+出力形式: □付きのチェックリストで。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b62">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b62" data-name="newsprompts100-062.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i62">🔗 リンク</button>
+  </div>
+</div>
+<h2 class="cat" data-cat="今週のChatGPT新機能(クイズ・予約検索・Drive連携・提案)">今週のChatGPT新機能(クイズ・予約検索・Drive連携・提案)</h2>
+<div class="icard" id="i63" data-cat="今週のChatGPT新機能(クイズ・予約検索・Drive連携・提案)">
+  <div class="ih"><span class="num">063</span><span class="ititle">学習用クイズの自動生成依頼</span></div>
+  <p class="imeta"><span class="nb">特定分野の理解度チェックをしたいと</span><span class="nb">き。</span></p>
+  <pre class="prompt" id="b63">前提: ある分野(具体的なトピック)についてどれくらい理解できているか確認したい。
+指示: そのトピックについてクイズを出して。難易度は基礎から少しずつ上げて。
+出力形式: 問題は5問、最後にまとめて解説をつけて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b63">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b63" data-name="newsprompts100-063.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i63">🔗 リンク</button>
+  </div>
+</div>
+<div class="icard" id="i64" data-cat="今週のChatGPT新機能(クイズ・予約検索・Drive連携・提案)">
+  <div class="ih"><span class="num">064</span><span class="ititle">チーム研修用クイズセットの作成</span></div>
+  <p class="imeta"><span class="nb">新人研修などでクイズを活用したいと</span><span class="nb">き。</span></p>
+  <pre class="prompt" id="b64">前提: 新しいメンバーの研修で、業務知識の定着度を確認したい。
+指示: 研修内容(具体的なテーマ)についてクイズを出して。研修後の理解度チェックとして使う前提で。
+出力形式: 10問、正誤だけでなく簡単な解説付きで。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b64">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b64" data-name="newsprompts100-064.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i64">🔗 リンク</button>
+  </div>
+</div>
+<div class="icard" id="i65" data-cat="今週のChatGPT新機能(クイズ・予約検索・Drive連携・提案)">
+  <div class="ih"><span class="num">065</span><span class="ititle">予約検索の条件指定テンプレ</span></div>
+  <p class="imeta"><span class="nb">飲食店やホテルなどの予約検索を</span><span class="nb">自然文でしたいとき。</span></p>
+  <pre class="prompt" id="b65">前提: 特定の日時・人数・条件で予約先を探したい。
+指示: 日時・人数・希望条件(雰囲気や立地)を自然文でそのまま伝える依頼テンプレートを作って。
+出力形式: 差し替え箇所を明示したテンプレート形式で。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b65">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b65" data-name="newsprompts100-065.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i65">🔗 リンク</button>
+  </div>
+</div>
+<div class="icard" id="i66" data-cat="今週のChatGPT新機能(クイズ・予約検索・Drive連携・提案)">
+  <div class="ih"><span class="num">066</span><span class="ititle">複数候補の比較検索依頼</span></div>
+  <p class="imeta"><span class="nb">1件だけでなく複数候補を比較したいと</span><span class="nb">き。</span></p>
+  <pre class="prompt" id="b66">前提: 予約先候補を複数出して比較検討したい。
+指示: 条件に合う候補を3件出して、それぞれの特徴を比較できる形にして。
+出力形式: 表形式(候補名・特徴・注意点)で。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b66">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b66" data-name="newsprompts100-066.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i66">🔗 リンク</button>
+  </div>
+</div>
+<div class="icard" id="i67" data-cat="今週のChatGPT新機能(クイズ・予約検索・Drive連携・提案)">
+  <div class="ih"><span class="num">067</span><span class="ititle">Google Drive連携の初回設定確認</span></div>
+  <p class="imeta"><span class="nb">有料プランでDrive連携を</span><span class="nb">初めて使うとき。</span></p>
+  <pre class="prompt" id="b67">前提: ChatGPTの有料プランで、まだGoogle Drive連携を使ったことがない。
+指示: Drive連携の設定手順と、ライブラリに追加したファイルについて質問する際の依頼例を教えて。
+出力形式: 手順は番号付き、依頼例は1つ添えて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b67">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b67" data-name="newsprompts100-067.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i67">🔗 リンク</button>
+  </div>
+</div>
+<div class="icard" id="i68" data-cat="今週のChatGPT新機能(クイズ・予約検索・Drive連携・提案)">
+  <div class="ih"><span class="num">068</span><span class="ititle">Drive資料の要約依頼テンプレ</span></div>
+  <p class="imeta"><span class="nb">Driveに保存した資料を</span><span class="nb">すぐ要約させたいとき。</span></p>
+  <pre class="prompt" id="b68">前提: Google Driveに複数の資料が保存されている。
+指示: ライブラリから追加した資料について、3行要約と、資料内で数字が出てくる箇所だけ抜き出す依頼文を作って。
+出力形式: 要約とハイライトを分けて出力するよう指定して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b68">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b68" data-name="newsprompts100-068.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i68">🔗 リンク</button>
+  </div>
+</div>
+<div class="icard" id="i69" data-cat="今週のChatGPT新機能(クイズ・予約検索・Drive連携・提案)">
+  <div class="ih"><span class="num">069</span><span class="ititle">ホーム画面の提案を業務に活かす運用</span></div>
+  <p class="imeta"><span class="nb">有料ユーザー向けの提案表示を業務の</span><span class="nb">ヒントに使いたいとき。</span></p>
+  <pre class="prompt" id="b69">前提: ChatGPTのホーム画面に表示される提案を、日々の業務のきっかけとして活用したい。
+指示: 表示された提案を業務に転用できるか判断する基準を3つ作って。
+出力形式: 判断基準を箇条書きで。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b69">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b69" data-name="newsprompts100-069.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i69">🔗 リンク</button>
+  </div>
+</div>
+<div class="icard" id="i70" data-cat="今週のChatGPT新機能(クイズ・予約検索・Drive連携・提案)">
+  <div class="ih"><span class="num">070</span><span class="ititle">新機能まとめの社内共有テンプレ</span></div>
+  <p class="imeta"><span class="nb">今週の新機能4つをチームに簡潔に</span><span class="nb">共有したいとき。</span></p>
+  <pre class="prompt" id="b70">前提: クイズ・予約検索・Drive連携・提案表示の4つの新機能をチームに知らせたい。
+指示: 4機能を1つずつ1行で紹介する社内共有メッセージを作って。
+出力形式: 箇条書き4行、絵文字は使わずに。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b70">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b70" data-name="newsprompts100-070.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i70">🔗 リンク</button>
+  </div>
+</div>
+<h2 class="cat" data-cat="Cursor Origin: 移行・PR運用">Cursor Origin: 移行・PR運用</h2>
+<div class="icard" id="i71" data-cat="Cursor Origin: 移行・PR運用">
+  <div class="ih"><span class="num">071</span><span class="ititle">GitHub同期の初回設定確認</span></div>
+  <p class="imeta"><span class="nb">Originで</span><span class="nb">GitHubリポジトリを同期する前の</span><span class="nb">確認をしたいとき。</span></p>
+  <pre class="prompt" id="b71">前提: CursorのOriginをまだ使ったことがなく、既存のGitHubリポジトリを同期しようとしている。
+指示: GitHub同期の設定手順と、同期後にどちらが情報源として優先されるかを整理して。
+出力形式: 手順を番号付きで、注意点は別枠で箇条書きに。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b71">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b71" data-name="newsprompts100-071.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i71">🔗 リンク</button>
+  </div>
+</div>
+<div class="icard" id="i72" data-cat="Cursor Origin: 移行・PR運用">
+  <div class="ih"><span class="num">072</span><span class="ititle">併用期間のルール決め</span></div>
+  <p class="imeta"><span class="nb">GitHubとOriginを</span><span class="nb">併用する期間の運用ルールを決めたいと</span><span class="nb">き。</span></p>
+  <pre class="prompt" id="b72">前提: いきなり全面移行はせず、しばらくGitHubとOriginを併用する予定。
+指示: 併用期間中に混乱しないための運用ルール(どちらでPRを作るか等)を3つ決めて。
+出力形式: ルールを箇条書きで、理由も1行ずつ添えて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b72">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b72" data-name="newsprompts100-072.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i72">🔗 リンク</button>
+  </div>
+</div>
+<div class="icard" id="i73" data-cat="Cursor Origin: 移行・PR運用">
+  <div class="ih"><span class="num">073</span><span class="ititle">小規模リポジトリでの試験導入計画</span></div>
+  <p class="imeta"><span class="nb">まずは小さいリポジトリで試したいと</span><span class="nb">き。</span></p>
+  <pre class="prompt" id="b73">前提: いきなり本番リポジトリではなく、小規模なリポジトリで試験導入したい。
+指示: 試験導入するリポジトリの選定基準と、評価期間・評価項目を整理して。
+出力形式: 選定基準・評価項目を表で。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b73">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b73" data-name="newsprompts100-073.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i73">🔗 リンク</button>
+  </div>
+</div>
+<div class="icard" id="i74" data-cat="Cursor Origin: 移行・PR運用">
+  <div class="ih"><span class="num">074</span><span class="ititle">PRコメント運用の周知文</span></div>
+  <p class="imeta"><span class="nb">PRコメントが双方向同期される仕様を</span><span class="nb">チームに周知したいとき。</span></p>
+  <pre class="prompt" id="b74">前提: OriginとGitHubでPRコメントが双方向・数秒以内に同期される仕様がある。
+指示: この仕様をチームに周知する短い案内文を作って。誤解しやすいポイント(重複投稿など)も含めて。
+出力形式: 3行以内、注意点は太字相当の強調をつけて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b74">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b74" data-name="newsprompts100-074.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i74">🔗 リンク</button>
+  </div>
+</div>
+<div class="icard" id="i75" data-cat="Cursor Origin: 移行・PR運用">
+  <div class="ih"><span class="num">075</span><span class="ititle">Vercel連携のセットアップ確認</span></div>
+  <p class="imeta"><span class="nb">day-1連携のVercelを</span><span class="nb">使う場合の確認事項をまとめたいとき。</span></p>
+  <pre class="prompt" id="b75">前提: VercelでのプレビューデプロイをOrigin経由で使いたい。
+指示: Appsタブからの接続手順と、PRごとのプレビューデプロイが機能する条件を整理して。
+出力形式: 手順と条件を分けて箇条書きで。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b75">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b75" data-name="newsprompts100-075.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i75">🔗 リンク</button>
+  </div>
+</div>
+<div class="icard" id="i76" data-cat="Cursor Origin: 移行・PR運用">
+  <div class="ih"><span class="num">076</span><span class="ititle">CI移行(Depot/Buildkite)の比較検討</span></div>
+  <p class="imeta"><span class="nb">既存の</span><span class="nb">GitHub Actionsから</span><span class="nb">CI連携先を選びたいとき。</span></p>
+  <pre class="prompt" id="b76">前提: 既存のGitHub Actionsワークフローを、DepotかBuildkiteのどちらかでOrigin連携したい。
+指示: 既存ワークフローの特徴(具体的な内容)を伝えるので、DepotとBuildkiteどちらが向いているか判断材料を整理して。
+出力形式: 比較表(観点・Depot・Buildkite)で。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b76">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b76" data-name="newsprompts100-076.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i76">🔗 リンク</button>
+  </div>
+</div>
+<div class="icard" id="i77" data-cat="Cursor Origin: 移行・PR運用">
+  <div class="ih"><span class="num">077</span><span class="ititle">移行のロールバック手順確認</span></div>
+  <p class="imeta"><span class="nb">移行がうまくいかなかった場合に</span><span class="nb">備えたいとき。</span></p>
+  <pre class="prompt" id="b77">前提: Originへの移行を進めているが、うまくいかない場合に備えたい。
+指示: GitHub側を引き続き信頼できる情報源として保持しつつ、Origin側の変更を安全に切り戻す手順を整理して。
+出力形式: 手順を番号付きで。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b77">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b77" data-name="newsprompts100-077.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i77">🔗 リンク</button>
+  </div>
+</div>
+<div class="icard" id="i78" data-cat="Cursor Origin: 移行・PR運用">
+  <div class="ih"><span class="num">078</span><span class="ititle">企業向けオプトアウト要否の確認</span></div>
+  <p class="imeta"><span class="nb">組織としてOriginを</span><span class="nb">使うか使わないか判断したいとき。</span></p>
+  <pre class="prompt" id="b78">前提: 企業組織としてOriginをオプトアウトするかどうか検討中。
+指示: オプトアウトすべきケースと、そのまま使うべきケースを判断する基準を整理して。
+出力形式: 基準を箇条書きで3つまでに。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b78">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b78" data-name="newsprompts100-078.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i78">🔗 リンク</button>
+  </div>
+</div>
+<div class="icard" id="i79" data-cat="Cursor Origin: 移行・PR運用">
+  <div class="ih"><span class="num">079</span><span class="ititle">コードベース命名規則の統一</span></div>
+  <p class="imeta"><span class="nb">複数のOriginリポジトリを</span><span class="nb">整理して命名したいとき。</span></p>
+  <pre class="prompt" id="b79">前提: 複数の新規リポジトリをOriginで作成する予定。
+指示: cursor.com/codebase/の後に続く命名を、既存プロジェクトの命名規則に沿って統一する案を作って。
+出力形式: 命名例を5つ挙げて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b79">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b79" data-name="newsprompts100-079.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i79">🔗 リンク</button>
+  </div>
+</div>
+<div class="icard" id="i80" data-cat="Cursor Origin: 移行・PR運用">
+  <div class="ih"><span class="num">080</span><span class="ititle">移行完了報告の社内共有テンプレ</span></div>
+  <p class="imeta"><span class="nb">移行が完了したことをチームに</span><span class="nb">報告したいとき。</span></p>
+  <pre class="prompt" id="b80">前提: 試験導入していたOriginへの移行が完了した。
+指示: 何が変わったか、今後どちらを使えばよいかを簡潔にまとめた報告文を作って。
+出力形式: 3行以内、次のアクションを明記して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b80">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b80" data-name="newsprompts100-080.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i80">🔗 リンク</button>
+  </div>
+</div>
+<h2 class="cat" data-cat="Cursorクラウドエージェント">Cursorクラウドエージェント</h2>
+<div class="icard" id="i81" data-cat="Cursorクラウドエージェント">
+  <div class="ih"><span class="num">081</span><span class="ititle">長時間タスクの引き継ぎ設計</span></div>
+  <p class="imeta"><span class="nb">イベントから作業を引き継ぐ挙動を</span><span class="nb">活かしたいとき。</span></p>
+  <pre class="prompt" id="b81">前提: 長時間かかるタスクをクラウドエージェントに任せたい。
+指示: 作業内容を伝えるので、途中で中断されても引き継ぎやすいようタスクを区切りごとに分解して。
+出力形式: 区切りごとにチェックポイントを明記して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b81">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b81" data-name="newsprompts100-081.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i81">🔗 リンク</button>
+  </div>
+</div>
+<div class="icard" id="i82" data-cat="Cursorクラウドエージェント">
+  <div class="ih"><span class="num">082</span><span class="ititle">軌道維持のための進捗確認ルール</span></div>
+  <p class="imeta"><span class="nb">長時間セッションが想定通り進んで</span><span class="nb">いるか確認したいとき。</span></p>
+  <pre class="prompt" id="b82">前提: クラウドエージェントに数時間規模のタスクを任せている。
+指示: 途中経過を確認するタイミングと、確認すべき観点を3つ決めて。
+出力形式: タイミング・観点を表で。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b82">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b82" data-name="newsprompts100-082.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i82">🔗 リンク</button>
+  </div>
+</div>
+<div class="icard" id="i83" data-cat="Cursorクラウドエージェント">
+  <div class="ih"><span class="num">083</span><span class="ititle">複数タスクの並列運用整理</span></div>
+  <p class="imeta"><span class="nb">クラウドエージェントに複数タスクを</span><span class="nb">同時に任せたいとき。</span></p>
+  <pre class="prompt" id="b83">前提: 複数の独立したタスクをクラウドエージェントに並行して任せたい。
+指示: タスク同士が干渉しないよう、依存関係を整理してから並列実行の計画を立てて。
+出力形式: 依存関係を図解代わりの箇条書きで。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b83">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b83" data-name="newsprompts100-083.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i83">🔗 リンク</button>
+  </div>
+</div>
+<div class="icard" id="i84" data-cat="Cursorクラウドエージェント">
+  <div class="ih"><span class="num">084</span><span class="ititle">目標達成条件の明文化</span></div>
+  <p class="imeta"><span class="nb">「目標が達成されるまで保持する」</span><span class="nb">動作を活かすため、</span><span class="nb">達成条件を明確にしたいとき。</span></p>
+  <pre class="prompt" id="b84">前提: クラウドエージェントにタスクを任せる際、完了の判断基準が曖昧だった経験がある。
+指示: 今回のタスクの完了条件を、あいまいさのないチェックリストとして書き出して。
+出力形式: □付きチェックリストで3〜5項目。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b84">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b84" data-name="newsprompts100-084.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i84">🔗 リンク</button>
+  </div>
+</div>
+<div class="icard" id="i85" data-cat="Cursorクラウドエージェント">
+  <div class="ih"><span class="num">085</span><span class="ititle">失敗時のエスカレーションルール</span></div>
+  <p class="imeta"><span class="nb">エージェントが行き詰まった場合の</span><span class="nb">対応を決めておきたいとき。</span></p>
+  <pre class="prompt" id="b85">前提: クラウドエージェントが目標を達成できず行き詰まる可能性がある。
+指示: 行き詰まった場合にどう人に知らせるか、エスカレーションのルールを決めて。
+出力形式: ルールを3行以内で。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b85">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b85" data-name="newsprompts100-085.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i85">🔗 リンク</button>
+  </div>
+</div>
+<h2 class="cat" data-cat="Hermes Desktop: Bot Mode">Hermes Desktop: Bot Mode</h2>
+<div class="icard" id="i86" data-cat="Hermes Desktop: Bot Mode">
+  <div class="ih"><span class="num">086</span><span class="ititle">役割別Botの設計</span></div>
+  <p class="imeta"><span class="nb">複数のBotに役割を割り振りたいと</span><span class="nb">き。</span></p>
+  <pre class="prompt" id="b86">前提: これまで1つのエージェントプロファイルで全部の作業をしていた。
+指示: 業務内容(具体的なタスク一覧)を伝えるので、役割ごとに分けた複数のBot構成案を作って。
+出力形式: Bot名・役割・使うモデルの案を表で。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b86">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b86" data-name="newsprompts100-086.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i86">🔗 リンク</button>
+  </div>
+</div>
+<div class="icard" id="i87" data-cat="Hermes Desktop: Bot Mode">
+  <div class="ih"><span class="num">087</span><span class="ititle">Bot間通信を使ったワークフロー設計</span></div>
+  <p class="imeta"><span class="nb">Bot同士が通信できる機能を</span><span class="nb">活かしたワークフローを作りたいとき。</span></p>
+  <pre class="prompt" id="b87">前提: 調査担当Botと執筆担当Botのように、役割の違うBotを連携させたい。
+指示: Bot間の情報の受け渡し方(何を渡すか・どんな形式で)を整理したワークフロー案を作って。
+出力形式: ステップごとに矢印でつないだ箇条書きで。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b87">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b87" data-name="newsprompts100-087.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i87">🔗 リンク</button>
+  </div>
+</div>
+<div class="icard" id="i88" data-cat="Hermes Desktop: Bot Mode">
+  <div class="ih"><span class="num">088</span><span class="ititle">専門Botのプロフィール設計</span></div>
+  <p class="imeta"><span class="nb">特定分野に特化したBotを</span><span class="nb">1体作りたいとき。</span></p>
+  <pre class="prompt" id="b88">前提: 特定分野(具体的な専門領域)に特化したBotを1つ作りたい。
+指示: そのBotの役割・使うモデル・持たせるメモリ・スキルの構成案を作って。
+出力形式: 項目ごとに箇条書きで整理して。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b88">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b88" data-name="newsprompts100-088.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i88">🔗 リンク</button>
+  </div>
+</div>
+<div class="icard" id="i89" data-cat="Hermes Desktop: Bot Mode">
+  <div class="ih"><span class="num">089</span><span class="ititle">Botのプロフィール画像・命名ルール</span></div>
+  <p class="imeta"><span class="nb">複数Botを見分けやすくしたいとき。</span></p>
+  <pre class="prompt" id="b89">前提: 複数のBotを運用する予定で、パッと見て役割が分かるようにしたい。
+指示: Botごとの命名規則と、プロフィール画像の方向性(色分け等)のルールを決めて。
+出力形式: ルールを3行以内で。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b89">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b89" data-name="newsprompts100-089.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i89">🔗 リンク</button>
+  </div>
+</div>
+<div class="icard" id="i90" data-cat="Hermes Desktop: Bot Mode">
+  <div class="ih"><span class="num">090</span><span class="ititle">Bot運用の権限設計</span></div>
+  <p class="imeta"><span class="nb">Botごとにアクセスできる範囲を</span><span class="nb">制限したいとき。</span></p>
+  <pre class="prompt" id="b90">前提: 複数のBotのうち、機密情報にアクセスしてよいBotとそうでないBotを分けたい。
+指示: Botごとのアクセス権限のポリシー案を作って。
+出力形式: Bot名・許可範囲・禁止範囲を表で。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b90">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b90" data-name="newsprompts100-090.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i90">🔗 リンク</button>
+  </div>
+</div>
+<div class="icard" id="i91" data-cat="Hermes Desktop: Bot Mode">
+  <div class="ih"><span class="num">091</span><span class="ititle">永続Botの棚卸しルール</span></div>
+  <p class="imeta"><span class="nb">「一度構築すれば永続的に使用できる」</span><span class="nb">特性を活かし、</span><span class="nb">定期的に見直すルールを作りたいとき。</span></p>
+  <pre class="prompt" id="b91">前提: 複数のBotを運用しているうちに、使われなくなるBotが出てくることが予想される。
+指示: Botを定期的に棚卸しし、不要になったBotを整理するルールを作って。
+出力形式: 棚卸しの頻度・確認項目を箇条書きで。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b91">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b91" data-name="newsprompts100-091.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i91">🔗 リンク</button>
+  </div>
+</div>
+<div class="icard" id="i92" data-cat="Hermes Desktop: Bot Mode">
+  <div class="ih"><span class="num">092</span><span class="ititle">既存エージェントプロファイルからの移行計画</span></div>
+  <p class="imeta"><span class="nb">既存の単一プロファイルから</span><span class="nb">複数Bot体制へ移行する計画を</span><span class="nb">立てたいとき。</span></p>
+  <pre class="prompt" id="b92">前提: 既存の単一エージェントプロファイルを複数Bot体制に移行したい。
+指示: 移行のステップを、リスクの小さい順に並べて計画を立てて。
+出力形式: ステップを番号付きで、各ステップの所要目安も添えて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b92">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b92" data-name="newsprompts100-092.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i92">🔗 リンク</button>
+  </div>
+</div>
+<div class="icard" id="i93" data-cat="Hermes Desktop: Bot Mode">
+  <div class="ih"><span class="num">093</span><span class="ititle">Bot同士の衝突防止ルール</span></div>
+  <p class="imeta"><span class="nb">複数Botが同じリソースを同時に</span><span class="nb">触って衝突しないようにしたいとき。</span></p>
+  <pre class="prompt" id="b93">前提: 複数のBotが同じファイルやデータに同時にアクセスする可能性がある。
+指示: 衝突を防ぐための調整ルール(順番・ロック等)を整理して。
+出力形式: ルールを箇条書きで3つまでに。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b93">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b93" data-name="newsprompts100-093.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i93">🔗 リンク</button>
+  </div>
+</div>
+<div class="icard" id="i94" data-cat="Hermes Desktop: Bot Mode">
+  <div class="ih"><span class="num">094</span><span class="ititle">チーム内Bot共有の運用ルール</span></div>
+  <p class="imeta"><span class="nb">作ったBotをチームで共有したいと</span><span class="nb">き。</span></p>
+  <pre class="prompt" id="b94">前提: 自分が作った専門Botをチームメンバーにも使ってもらいたい。
+指示: Botを安全に共有するための運用ルール(誰が編集権限を持つか等)を整理して。
+出力形式: ルールを箇条書きで。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b94">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b94" data-name="newsprompts100-094.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i94">🔗 リンク</button>
+  </div>
+</div>
+<div class="icard" id="i95" data-cat="Hermes Desktop: Bot Mode">
+  <div class="ih"><span class="num">095</span><span class="ititle">Bot Mode導入効果の振り返りフォーマット</span></div>
+  <p class="imeta"><span class="nb">導入後にどれだけ効果が</span><span class="nb">あったか振り返りたいとき。</span></p>
+  <pre class="prompt" id="b95">前提: Bot Modeを導入してから一定期間が経過した。
+指示: 導入前と比べて何が変わったかを振り返る簡単なフォーマットを作って。
+出力形式: before/afterの表形式で。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b95">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b95" data-name="newsprompts100-095.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i95">🔗 リンク</button>
+  </div>
+</div>
+<h2 class="cat" data-cat="Open Design Go">Open Design Go</h2>
+<div class="icard" id="i96" data-cat="Open Design Go">
+  <div class="ih"><span class="num">096</span><span class="ititle">初月プランの試用計画</span></div>
+  <p class="imeta"><span class="nb">初月5ドルのプランを</span><span class="nb">どう使うか計画したいとき。</span></p>
+  <pre class="prompt" id="b96">前提: Open Design Goを初月5ドルで試そうとしている。
+指示: 初月のうちに何を試すべきか、DeepSeek-V4-Proを含む利用可能モデルを踏まえた試用計画を作って。
+出力形式: 週ごとの試用項目を箇条書きで。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b96">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b96" data-name="newsprompts100-096.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i96">🔗 リンク</button>
+  </div>
+</div>
+<div class="icard" id="i97" data-cat="Open Design Go">
+  <div class="ih"><span class="num">097</span><span class="ititle">APIキー不要である点の社内周知</span></div>
+  <p class="imeta"><span class="nb">導入の手軽さをチームに伝えたいとき。</span></p>
+  <pre class="prompt" id="b97">前提: チームにOpen Design Goを紹介したいが、APIキー不要で始められる手軽さを伝えたい。
+指示: APIキー不要・すぐ作成できる点を強調した紹介文を作って。
+出力形式: 3行以内で、誇張しない表現にして。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b97">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b97" data-name="newsprompts100-097.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i97">🔗 リンク</button>
+  </div>
+</div>
+<div class="icard" id="i98" data-cat="Open Design Go">
+  <div class="ih"><span class="num">098</span><span class="ititle">既存デザインツールとの役割分担</span></div>
+  <p class="imeta"><span class="nb">既存の別ツールと使い分けたいとき。</span></p>
+  <pre class="prompt" id="b98">前提: 既に別のデザインツールを使っているが、Open Design Goも試したい。
+指示: 既存ツールとOpen Design Goをどう使い分けるか、場面ごとの判断基準を整理して。
+出力形式: 比較表(観点・既存ツール・Open Design Go)で。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b98">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b98" data-name="newsprompts100-098.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i98">🔗 リンク</button>
+  </div>
+</div>
+<div class="icard" id="i99" data-cat="Open Design Go">
+  <div class="ih"><span class="num">099</span><span class="ititle">料金プラン移行のタイミング判断</span></div>
+  <p class="imeta"><span class="nb">初月以降の料金プランへの移行を</span><span class="nb">判断したいとき。</span></p>
+  <pre class="prompt" id="b99">前提: 初月5ドルのプランを使い終える時期が近づいている。
+指示: 継続利用するかどうかを判断する基準(使用頻度・満足度)を3つ決めて。
+出力形式: 判断基準を箇条書きで。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b99">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b99" data-name="newsprompts100-099.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i99">🔗 リンク</button>
+  </div>
+</div>
+<div class="icard" id="i100" data-cat="Open Design Go">
+  <div class="ih"><span class="num">100</span><span class="ititle">チーム展開前の試験導入報告</span></div>
+  <p class="imeta"><span class="nb">個人で試した結果をチームに共有し、</span><span class="nb">展開を提案したいとき。</span></p>
+  <pre class="prompt" id="b100">前提: 個人でOpen Design Goを試し、良い手応えを得た。
+指示: 試した内容と結果を簡潔にまとめ、チーム展開を提案する報告文を作って。
+出力形式: 3行以内、提案の一言を最後に添えて。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b100">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b100" data-name="newsprompts100-100.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i100">🔗 リンク</button>
+  </div>
+</div>
+
+  <section class="epctx">
+  <p class="epctx-label">この動画のほかのプレゼント</p>
+  <div class="ep-kits"><a class="kchip" href="../impact-triage-checklist/"><span class="kt">今週の変更 影響仕分けシート</span><span class="badge">12項目</span><span class="go">開く →</span></a><a class="kchip" href="../origin-decision-sheet/"><span class="kt">GitHub代替検討ガイド</span><span class="badge">8項目</span><span class="go">開く →</span></a></div>
+</section>
+  <section class="epctx">
+  <p class="epctx-label">ほかの回の「プロンプト集」</p>
+  <div class="ep-kits"><a class="kchip" href="../agent-prompts100/"><span class="kt">Slack共有チャンネル前提 AIエージェント依頼文・定型スキル100選</span><span class="badge">100個</span><span class="go">開く →</span></a><a class="kchip" href="../harness-prompts100/"><span class="kt">Codexハーネス統合・発注プロンプト100選</span><span class="badge">100個</span><span class="go">開く →</span></a><a class="kchip" href="../repeat-task-prompts100/"><span class="kt">繰り返し仕事をAIに教える汎用指示文100選</span><span class="badge">100個</span><span class="go">開く →</span></a><a class="kchip" href="../context-prompts100/"><span class="kt">コンテキスト管理 設定&amp;指示文100選</span><span class="badge">100個</span><span class="go">開く →</span></a></div>
+</section>
+
+  <footer><a href="../../">← AIエージェント / Kawaru プレゼント図書館にもどる</a></footer>
+</div>
+
+<pre id="pfull" class="hidden"># 🎁 今週の新機能 即使えるプロンプト&amp;設定100選
+
+今週(8/15〜8/21)発表されたAnthropic・OpenAI・Cursor/Nousの新機能を、コピペで使える設定・プロンプトにしました。カテゴリごとに5〜10個ずつ、全100個です。
+
+**受け取り方**: このファイルをそのままダウンロードするか、各```text```ブロック右上のコピーボタンでコピーしてください。
+
+## Claude Code: Concise出力スタイル
+
+### 1. Concise切り替えの初回設定
+
+説明: settings.jsonの書き換え箇所を確認しながら安全に切り替える手順を確認したいとき。
+
+```text
+前提: Claude Codeを日常的に使っているが、まだ出力スタイルを変更したことがない状態。
+指示: 現在の.claude/settings.jsonの内容を確認したうえで、outputStyleキーをConciseに設定する差分を提示して。既存の他設定は変更しないで。
+出力形式: 変更前後のJSON差分を並べて表示し、反映方法(再起動要否)も1行で添えて。
+```
+
+### 2. 結論ファーストな報告への言い換え
+
+説明: 既にConciseにした後、普段の依頼文自体も結論から話す形に揃えたいとき。
+
+```text
+前提: 出力スタイルはConciseに設定済みだが、依頼の仕方が冗長で前置きが長くなりがち。
+指示: 今からする質問には『結論→理由→詳細は聞かれたら』の順で答えて、と冒頭に一言添えるテンプレ文を作って。
+出力形式: コピペでチャット冒頭に貼れる1文にまとめて。
+```
+
+### 3. チーム展開用の案内文
+
+説明: チームメンバーにConciseスタイルの存在と設定方法を共有したいとき。
+
+```text
+前提: チームの何人かがまだConciseの存在を知らず、応答の長さに困っている。
+指示: Conciseスタイルの効果と/configからの設定手順を、Slackにそのまま貼れる案内文として書いて。
+出力形式: 3行以内、絵文字なし、手順は番号付きで。
+```
+
+### 4. プロジェクト別の使い分けルール
+
+説明: 詳細な説明が必要なプロジェクトと簡潔でよいプロジェクトを切り分けたいとき。
+
+```text
+前提: 複数プロジェクトを掛け持ちしており、プロジェクトごとに求める応答の詳しさが違う。
+指示: プロジェクトAはConcise、プロジェクトBは通常スタイルにする場合の.claude/settings.jsonの書き分け方を教えて。
+出力形式: 各プロジェクトのフォルダ構成に沿った設定ファイルの配置例を示して。
+```
+
+### 5. Concise運用の振り返り依頼
+
+説明: 1週間使ってみて、想定通り効果が出ているか確認したいとき。
+
+```text
+前提: Conciseに切り替えてから1週間ほど使っている。
+指示: この会話の直近のやり取りを振り返り、応答が冗長だった箇所があれば指摘して。次回以降どう質問すればさらに簡潔な回答を引き出せるか提案して。
+出力形式: 改善提案は3点まで、箇条書きで。
+```
+
+## Claude Code: /designコマンド
+
+### 6. 初回のUI叩き台出し
+
+説明: 新機能の画面イメージがまだ固まっていない段階で、複数案から選びたいとき。
+
+```text
+前提: 新機能のUIをこれから作るが、方向性がまだ決まっていない。
+指示: /design で、ダッシュボード画面のレイアウト案を3パターン、テイストを変えて出して。
+出力形式: 各案の狙い・向いている場面を1行ずつ添えて。
+```
+
+### 7. 既存画面のリニューアル案
+
+説明: 既存の画面が古く感じるとき、改善方向性を複数比較したいとき。
+
+```text
+前提: 既存のログイン画面のデザインが古く、リニューアルを検討している。
+指示: /design で、現行のログイン画面を踏まえたうえで、モダンな方向性のリニューアル案を2つ出して。
+出力形式: 既存踏襲度が高い案・大胆に変える案の2軸で分けて。
+```
+
+### 8. 選んだ案の実装移行
+
+説明: /designで出た案の中から1つ選んだ後、そのまま実装に進みたいとき。
+
+```text
+前提: /designで出た3案のうち、2番目の案が良いと判断した。
+指示: 2番目の案をベースに、実装可能なコンポーネント単位まで分解して、実装計画を立てて。
+出力形式: 着手順に番号付きリストで、それぞれの見積もり工数の目安も添えて。
+```
+
+### 9. モバイル対応版の派生案
+
+説明: デスクトップ向けに決まった案を、モバイル向けにも展開したいとき。
+
+```text
+前提: /designでデスクトップ向けの画面案が決まった。
+指示: 同じ機能のモバイル画面版を/designで出して。デスクトップ版との一貫性を保ちつつ、狭い画面に合わせて。
+出力形式: デスクトップ版との差分ポイントを箇条書きで添えて。
+```
+
+### 10. チームレビュー用の案内
+
+説明: /designで作った案をチームにレビューしてもらう前に、説明資料を作りたいとき。
+
+```text
+前提: /designで作った3案をチームメンバーに見せてフィードバックをもらう予定。
+指示: 各案の特徴・トレードオフを比較する短いレビュー依頼文を作って。
+出力形式: 表形式(案・狙い・懸念点)でまとめて。
+```
+
+## Claude Code: 週次制限・オートコンティニュー
+
+### 11. オートコンティニューの有効化確認
+
+説明: 設定が本当にオンになっているか不安なとき。
+
+```text
+前提: Claude Codeデスクトップでオートコンティニューを有効にしたつもりだが、動作が不安。
+指示: オートコンティニューの設定箇所と、正しくオンになっているかの確認方法を教えて。
+出力形式: 確認手順を番号付きで、スクリーンショットが必要な箇所があれば明記して。
+```
+
+### 12. 週次制限の使用ペース管理
+
+説明: 延長された制限(8/31まで)を計画的に使い切りたいとき。
+
+```text
+前提: 週次利用制限が50%増の状態が8/31まで続く見込み。
+指示: 残り日数と主要タスクを伝えるので、制限を使い切らないよう作業ペース配分の目安を提案して。
+出力形式: 1日あたりの推奨タスク量を簡潔な表で。
+```
+
+### 13. 長時間タスクの投げっぱなし設計
+
+説明: オートコンティニューを前提に、夜間や外出中に長いタスクを任せたいとき。
+
+```text
+前提: オートコンティニューをオンにした状態で、数時間かかる大きめのリファクタを任せたい。
+指示: 作業内容と完了条件を伝えるので、途中で制限に達しても安全に自動再開できるようタスクを分割し、各段階の完了判定基準も明記して。
+出力形式: 段階ごとにチェックリスト形式で。
+```
+
+### 14. 制限延長終了後の運用切り替え
+
+説明: 8/31以降に制限が元に戻った場合の対応を今から準備したいとき。
+
+```text
+前提: 週次制限50%増の延長は8/31までとアナウンスされている。
+指示: 延長終了後を見据えて、優先度の低いタスクを今のうちに前倒しで進めるか、終了後に回すかの判断基準を提案して。
+出力形式: 判断基準は3つまでに絞って箇条書きで。
+```
+
+### 15. 制限到達時の通知運用
+
+説明: 制限に達したことに気づかず作業が止まっていた経験があるとき。
+
+```text
+前提: 週次制限に達したことに気づかず、作業が止まっていたことがあった。
+指示: 制限到達を早めに察知する運用方法(通知設定・確認頻度)を提案して。オートコンティニューと組み合わせた運用も含めて。
+出力形式: 運用ルールを3行以内で。
+```
+
+## Claude Academy
+
+### 16. 自分に合った学習パスの選定
+
+説明: 5プロダクト+基礎コースのどこから始めるべきか迷っているとき。
+
+```text
+前提: Claude Academyが公開されたが、自分の業務内容(職種・現在のスキルレベル)に合わせてどこから始めるべきか分からない。
+指示: 自分の職種と現在のAI活用度を伝えるので、Claude Academyのどのコースから始めるべきか優先順位をつけて提案して。
+出力形式: コース名・推定所要時間・優先度(高中低)を表でまとめて。
+```
+
+### 17. チーム導入前の学習計画
+
+説明: チームでAI Fluencyコースを受けさせる計画を立てたいとき。
+
+```text
+前提: チームメンバー数名にAI Fluency(14レッスン・約4時間)を受けてもらう予定。
+指示: 1〜2週間で無理なく終えられる学習スケジュール案を作って。業務時間内での学習時間の目安も含めて。
+出力形式: 週ごとのレッスン配分を表で。
+```
+
+### 18. 学習後の実践課題づくり
+
+説明: コースを終えた後、実務で試す課題を作りたいとき。
+
+```text
+前提: AI Capabilities and Limitationsのコースを終えた。
+指示: 学んだ内容(LLMの能力と限界)を実務で確認できる簡単な実践課題を3つ考えて。
+出力形式: 課題ごとに所要時間の目安を添えて。
+```
+
+### 19. 既存Anthropic Academy受講済みの人向け案内
+
+説明: 既にAnthropic Academyを受けたことがある人に、新サイトとの違いを説明したいとき。
+
+```text
+前提: チームの一部は既存のAnthropic Academy(anthropic.skilljar.com)を受講済み。
+指示: Claude Academy(academy.claude.com)は別サイトの可能性が高いという前提で、二重受講を避けつつ確認すべきポイントを整理して。
+出力形式: 確認事項を箇条書きで、断定できない部分は「要確認」と明記して。
+```
+
+### 20. 学習進捗の振り返りフォーマット
+
+説明: 受講後に学びを社内に共有する形式を作りたいとき。
+
+```text
+前提: Claude Academyのコースを受講し終えた。
+指示: 学んだ内容を3行で要約し、実務にどう活かすかの一言を添える社内共有フォーマットを作って。
+出力形式: そのままSlackに貼れるテンプレート形式で。
+```
+
+## Firecrawlコネクタ
+
+### 21. コネクタの接続手順確認
+
+説明: 初めてFirecrawlコネクタを使うとき。
+
+```text
+前提: Claudeのコネクタディレクトリからまだ何も接続したことがない。
+指示: Firecrawlコネクタを接続する手順と、接続後にできることを整理して。
+出力形式: 手順は番号付き、できることは箇条書きで。
+```
+
+### 22. リサーチタスクへの活用設計
+
+説明: 調べ物をFirecrawl経由で効率化したいとき。
+
+```text
+前提: 業界動向のリサーチを毎週行っている。
+指示: Firecrawlコネクタを使って、特定テーマの最新情報を毎週まとめて取得する依頼文のひな形を作って。
+出力形式: テーマ名を差し替えるだけで使えるテンプレート形式で。
+```
+
+### 23. 既存の検索フローとの比較
+
+説明: 従来のWeb検索と使い分けたいとき。
+
+```text
+前提: これまで通常のWeb検索でリサーチしていた。
+指示: Firecrawlコネクタ(SimpleQAベンチマーク94.7%)と通常検索、それぞれをどんな場面で使い分けるべきか整理して。
+出力形式: 比較表(場面・向いている方)でまとめて。
+```
+
+### 24. 社内ナレッジ調査への応用
+
+説明: 社内文書ではなく外部情報の一次ソース調査に使いたいとき。
+
+```text
+前提: 外部の一次情報源を調査する機会が多い。
+指示: Firecrawlコネクタを使って、あるトピックについて一次情報のみを優先的に集める依頼文を作って。
+出力形式: 二次情報が混ざった場合は明示するよう指示文に含めて。
+```
+
+### 25. 接続トラブル時の切り分け
+
+説明: コネクタがうまく動かないとき、原因を切り分けたいとき。
+
+```text
+前提: Firecrawlコネクタを接続したが、期待した結果が返ってこない。
+指示: 考えられる原因(接続設定・権限・クエリの書き方)を切り分けるチェック項目を作って。
+出力形式: 確認順に番号付きリストで。
+```
+
+## HyperFrames MCP
+
+### 26. 初回セットアップの確認
+
+説明: Claude DesignにHyperFrames MCPを導入するとき。
+
+```text
+前提: Claude Designは使っているが、HyperFrames MCPはまだ導入していない。
+指示: HyperFrames MCPの導入手順と、導入後にできること(効果音付加・モーション調整・MP4書き出し)を整理して。
+出力形式: 手順と機能を分けて箇条書きで。
+```
+
+### 27. アニメーション案の書き出し依頼
+
+説明: 作ったアニメーションをMP4化したいとき。
+
+```text
+前提: Claude Designで簡単なアニメーションを作成済み。
+指示: HyperFramesエージェントに送る際の、狙いのトーン(例: 軽快・落ち着いた)を伝える依頼文のひな形を作って。
+出力形式: 差し替え可能な変数(トーン・尺・BGM有無)を明示したテンプレートで。
+```
+
+### 28. サードパーティ製である点の社内周知
+
+説明: チームに紹介する際、公式機能ではない点を明確にしたいとき。
+
+```text
+前提: チームにHyperFrames MCPを紹介したいが、Anthropic公式機能ではないサードパーティ連携である点を誤解なく伝えたい。
+指示: サードパーティ製である旨を明記したうえでの紹介文を作って。
+出力形式: 3行以内、断定的な表現は避けて。
+```
+
+### 29. 動画尺の指定テンプレート
+
+説明: SNS投稿用に尺を指定してMP4化したいとき。
+
+```text
+前提: SNS投稿用に15秒程度のショート動画を作りたい。
+指示: HyperFrames MCP経由で書き出す際、尺・アスペクト比・BGMの有無を指定する依頼文を作って。
+出力形式: SNSプラットフォーム別(縦型・横型)の2パターンで。
+```
+
+### 30. 導入判断の整理
+
+説明: 導入するかどうか迷っているとき。
+
+```text
+前提: 動画制作の頻度がそこまで高くない状態でHyperFrames MCPを導入すべきか迷っている。
+指示: 導入するメリットと、頻度が低い場合に見送るべき理由を整理して。
+出力形式: メリット・デメリットを表で。
+```
+
+## OpenArt(Claude Store)
+
+### 31. OpenArt Liteの検索・導入確認
+
+説明: 初めてOpenArt Liteを試すとき。
+
+```text
+前提: Claude StoreのConnectorsからOpenArt Liteをまだ試したことがない。
+指示: OpenArt Liteの検索方法と導入後の基本的な使い方を整理して。
+出力形式: 手順を番号付きで、できることは箇条書きで。
+```
+
+### 32. 画像生成ワークフローへの組み込み
+
+説明: 既存の画像生成フローにOpenArtを組み込みたいとき。
+
+```text
+前提: これまで別の画像生成ツールを使っていた。
+指示: OpenArt Liteを既存のワークフロー(企画→生成→レビュー)のどの段階で使うと効果的か提案して。
+出力形式: ワークフロー図を簡単な箇条書きステップで表現して。
+```
+
+### 33. 小規模チームでの試験導入案
+
+説明: チームで試験的に導入するかどうかの検討材料が欲しいとき。
+
+```text
+前提: 小規模チームでOpenArt Liteを試験導入するか検討している。
+指示: 試験導入する場合の期間・評価基準・撤退条件を整理して。
+出力形式: 3項目(期間・評価基準・撤退条件)を簡潔にまとめて。
+```
+
+### 34. 他コネクタとの併用整理
+
+説明: Firecrawl等、他のコネクタと役割分担したいとき。
+
+```text
+前提: Firecrawlコネクタなど、他のコネクタも同時に使っている。
+指示: OpenArt Liteと他のコネクタそれぞれの役割分担を整理して、混同しないようにしたい。
+出力形式: コネクタごとに用途を1行でまとめた一覧で。
+```
+
+### 35. 規模の小さい発表という前提の共有
+
+説明: 社内で紹介する際、まだ規模の小さい発表である点を含めて共有したいとき。
+
+```text
+前提: OpenArt LiteのClaude Store登場は反響が大きくない発表(表示回数は小規模)だった。
+指示: 話題として大きくない発表である旨を含めつつ、それでも試す価値がある理由を短く紹介する文章を作って。
+出力形式: 3行以内で。
+```
+
+## Codex: 100万トークン・コンテキスト設定
+
+### 36. config.tomlの安全な編集依頼
+
+説明: 設定ファイルを壊さずに1M設定を追記したいとき。
+
+```text
+前提: ~/.codex/config.tomlに他の設定も既に書かれている状態。
+指示: 既存の内容を維持したまま、model・model_context_window・model_auto_compact_token_limitの3行を安全に追記する差分を提示して。
+出力形式: 変更前後の該当箇所だけを差分表示して。
+```
+
+### 37. 単発試用コマンドの組み立て
+
+説明: デフォルトを変えずに1回だけ試したいとき。
+
+```text
+前提: 普段はデフォルト設定のCodexを使っており、まずは1回だけ100万トークン設定を試したい。
+指示: codex -m gpt-5.6-sol のオプション付きコマンドを、自分のタスク内容(長い会話履歴の要約)に合わせて組み立てて。
+出力形式: コマンド全体を1行で、各オプションの意味も1行ずつ添えて。
+```
+
+### 38. コスト影響の見積もり依頼
+
+説明: コンテキストを増やすとコストがどう変わるか把握したいとき。
+
+```text
+前提: 100万トークン設定にすると、処理コスト・速度への影響が気になる。
+指示: コンテキストウィンドウを広げることで想定される影響(コスト・応答速度・要約頻度の変化)を整理して。
+出力形式: 影響を「大きい・小さい」で仕分けた表で。
+```
+
+### 39. 長時間セッションの構成設計
+
+説明: 1M設定を前提に、長時間の開発セッションを設計したいとき。
+
+```text
+前提: 100万トークン設定を有効にした状態で、数時間かかる大規模リファクタを1セッションで進めたい。
+指示: 作業内容を伝えるので、コンテキストを無駄に消費しない進め方(要約タイミング・区切り方)を提案して。
+出力形式: セッションの区切り案を時系列で箇条書きに。
+```
+
+### 40. 自動圧縮閾値のチューニング相談
+
+説明: model_auto_compact_token_limitの値をどう決めるか相談したいとき。
+
+```text
+前提: model_auto_compact_token_limitを900000のまま使っているが、自分の用途に合っているか分からない。
+指示: 自分の典型的なタスク内容(会話の長さ・ファイル数)を伝えるので、適切な閾値の目安と理由を提案して。
+出力形式: 推奨値と理由を3行以内で。
+```
+
+### 41. 元の設定への切り戻し手順
+
+説明: 1M設定を試してみて、元に戻したくなったとき。
+
+```text
+前提: 1M設定を試したが、通常設定に戻したくなった。
+指示: config.tomlに追記した3行を削除、またはコメントアウトする安全な戻し方を教えて。
+出力形式: 元に戻す差分と、確認方法を示して。
+```
+
+### 42. チームへの展開可否の判断材料
+
+説明: チームメンバー全員に1M設定を勧めるべきか判断したいとき。
+
+```text
+前提: 自分は1M設定を使って便利だったが、チーム全体に展開すべきか判断材料が欲しい。
+指示: チーム展開のメリットと、展開前に確認すべき注意点(コスト・対応モデル限定)を整理して。
+出力形式: メリット・注意点を表で。
+```
+
+## Agent Plugins標準
+
+### 43. 既存Skillsの移行可否チェック
+
+説明: 手持ちのAgent SkillsをAgent Plugins形式に移行できるか確認したいとき。
+
+```text
+前提: いくつか自作のAgent Skillsを運用している。
+指示: 既存のSkill定義を伝えるので、Agent Plugins形式にパッケージ化する際に必要な追加要素を整理して。
+出力形式: 不足要素を箇条書きで。
+```
+
+### 44. MCPサーバー設定の共有形式化
+
+説明: MCPサーバー設定をチームで共有しやすい形にしたいとき。
+
+```text
+前提: チーム内でMCPサーバー設定がバラバラに管理されている。
+指示: Agent Plugins標準に沿ってMCPサーバー設定を共有形式にまとめる際の構成案を作って。
+出力形式: ファイル構成のツリー形式で。
+```
+
+### 45. 対応エージェントクライアントの確認
+
+説明: 自分が使っているツールがAgent Plugins対応か確認したいとき。
+
+```text
+前提: 普段CursorとGitHubを併用している。
+指示: Agent Pluginsの共同開発元(AWS Developers・Cursor・GitHub・Vercel)を踏まえ、自分の環境でどこまで互換性が期待できるか整理して。
+出力形式: 確度(高中低)つきで箇条書きに。
+```
+
+### 46. プラグイン配布の準備手順
+
+説明: 自作プラグインを配布用に整えたいとき。
+
+```text
+前提: チーム内限定で使っているツールをプラグインとして配布したい。
+指示: 配布に必要な準備(ドキュメント・バージョン管理・互換性表記)をチェックリスト化して。
+出力形式: チェック項目を□つきの箇条書きで。
+```
+
+### 47. 導入前の社内説明資料
+
+説明: Agent Pluginsという概念自体をチームに説明したいとき。
+
+```text
+前提: チームのほとんどがAgent Pluginsという言葉を初めて聞く状態。
+指示: 専門用語を避けつつ、Agent Pluginsが何を解決するのか3行で説明する文章を作って。
+出力形式: 比喩を1つ使って、平易な言葉でまとめて。
+```
+
+## Apple Messagesプラグイン
+
+### 48. 導入前の対象確認
+
+説明: 自分の環境で使えるか確認したいとき。
+
+```text
+前提: ChatGPT WorkかCodexデスクトップ版のどちらを契約しているか曖昧なまま使いたいと思っている。
+指示: Apple Messagesプラグインを使うための前提条件(必要なプラン・OS)を整理して。
+出力形式: 箇条書きで、不明点は「要確認」と明記して。
+```
+
+### 49. メッセージ整理の依頼テンプレ
+
+説明: 溜まったメッセージを整理する使い方をテンプレ化したいとき。
+
+```text
+前提: Messagesに未返信のやり取りが溜まっている。
+指示: Apple Messagesプラグイン経由で、直近の未返信メッセージを重要度順に整理して返信下書きを作る依頼文を作って。
+出力形式: 重要度(高中低)つきの一覧形式で出力するよう指定して。
+```
+
+### 50. 送信前の確認フロー
+
+説明: AIが下書きした返信を誤送信しないための運用を決めたいとき。
+
+```text
+前提: 下書きの自動生成は便利だが、誤った内容のまま送信してしまう不安がある。
+指示: 送信前に必ず人が確認するチェックポイントを3つ決めて、運用ルールとしてまとめて。
+出力形式: ルールを□付きチェックリストで。
+```
+
+### 51. 業務利用時のプライバシー配慮
+
+説明: 業務でのメッセージ検索利用時に配慮すべき点を整理したいとき。
+
+```text
+前提: 業務でApple Messagesプラグインを使う予定だが、プライバシーへの配慮が必要な相手とのやり取りも含まれる。
+指示: 業務利用時に配慮すべきプライバシー上の注意点を整理して。
+出力形式: 注意点を3つまでに絞って箇条書きで。
+```
+
+### 52. よく使う定型文の登録
+
+説明: 頻出する返信パターンをあらかじめ用意しておきたいとき。
+
+```text
+前提: 同じような内容の返信を何度も書いている。
+指示: 頻出パターン(日程調整・確認依頼・お礼)ごとに、Apple Messagesプラグインに下書きさせる際の指示テンプレを3種類作って。
+出力形式: パターンごとに指示文を1つずつ、差し替え箇所を明示して。
+```
+
+## GPT-Image-2 透明背景
+
+### 53. 商品画像アセットの生成依頼
+
+説明: ECサイト用の商品画像を作りたいとき。
+
+```text
+前提: ECサイトに載せる商品画像を複数の背景パターンで使い回したい。
+指示: 透明背景のGPT-Image-2で、指定した商品(具体的な商品名・特徴)の再利用可能なアセットを生成する依頼文を作って。
+出力形式: 背景色違いで3パターン使う想定の指示文にして。
+```
+
+### 54. Webモックアップ用パーツ生成
+
+説明: サイトモックアップに使う素材を作りたいとき。
+
+```text
+前提: Webサイトのモックアップを作成中で、アイコンやイラスト素材が足りない。
+指示: 透明背景で、サイトのトーン(具体的な雰囲気)に合ったアイコン素材を複数生成する依頼文を作って。
+出力形式: 素材ごとに用途を1行で添えて。
+```
+
+### 55. マーケティング素材のバリエーション出し
+
+説明: 同じ素材を複数の背景で使い分けたいとき。
+
+```text
+前提: SNS広告用に同じキャラクター・オブジェクトを複数の背景色で使い回したい。
+指示: 透明背景のアセットを1つ生成し、複数の広告フォーマット(正方形・縦長)に展開する指示文を作って。
+出力形式: フォーマットごとにサイズ指定を明記して。
+```
+
+### 56. 既存ロゴとの合成前提の生成
+
+説明: 既存のブランド素材と組み合わせる前提で作りたいとき。
+
+```text
+前提: 既存のロゴ・ブランドカラーがあり、それに合わせた透明背景素材が欲しい。
+指示: ブランドカラー(具体的な色)を伝えるので、それに調和する透明背景素材を生成する依頼文を作って。
+出力形式: 色指定を明確にした指示文で。
+```
+
+### 57. 生成物のライセンス確認事項の整理
+
+説明: 商用利用する前に確認すべき点を整理したいとき。
+
+```text
+前提: 生成した透明背景素材を商用のマーケティング素材として使う予定。
+指示: 商用利用前に確認しておくべき事項(利用規約・著作権表記の要否)を整理して。
+出力形式: 確認事項を箇条書きで、断定できない点は「要確認」と明記して。
+```
+
+## ChatGPT Sites協業・共有スレッド
+
+### 58. チームエディター招待の準備
+
+説明: ChatGPT Sitesにチームメンバーを招待する前の準備をしたいとき。
+
+```text
+前提: ChatGPT Sitesのプロジェクトを1人で始めており、これからチームメンバーを招待したい。
+指示: エディター招待前に整理しておくべき権限・役割分担の案を作って。
+出力形式: メンバーごとの役割を表でまとめて。
+```
+
+### 59. git運用ルールの明文化
+
+説明: Codexが裏側で処理するgit管理と、人の作業を整理したいとき。
+
+```text
+前提: ChatGPT SitesでCodexがgit管理・CIを自動処理する環境を使い始める。
+指示: 人が確認すべきタイミング(マージ前など)と、Codexに任せてよい範囲を切り分けたルールを作って。
+出力形式: ルールを箇条書きで3〜5項目に。
+```
+
+### 60. 共有スレッドを使った引き継ぎ資料化
+
+説明: 作業の背景を引き継ぐ相手に説明する準備をしたいとき。
+
+```text
+前提: 進行中のプロジェクトを別の担当者に引き継ぐ予定。
+指示: 読み取り専用の共有スレッドを使って引き継ぐ際、相手が見るべきポイントを案内する一言メッセージを作って。
+出力形式: 3行以内で、リンクを貼る想定の文面にして。
+```
+
+### 61. PR説明への共有スレッド活用
+
+説明: PRの背景説明を共有スレッドで補いたいとき。
+
+```text
+前提: PRの差分だけでは意図が伝わりにくいと感じている。
+指示: 共有スレッドのリンクをPR説明に添える際の一文を作って。何が分かるかを明確にして。
+出力形式: PRテンプレートに貼れる1〜2行の文面で。
+```
+
+### 62. 共有範囲の見直しチェック
+
+説明: 共有スレッドを外部に見せてよいか判断したいとき。
+
+```text
+前提: 共有スレッドのリンクを社外の関係者に送るか迷っている。
+指示: 共有前に確認すべき項目(機密情報の有無・読み取り専用であることの説明)をチェックリスト化して。
+出力形式: □付きのチェックリストで。
+```
+
+## 今週のChatGPT新機能(クイズ・予約検索・Drive連携・提案)
+
+### 63. 学習用クイズの自動生成依頼
+
+説明: 特定分野の理解度チェックをしたいとき。
+
+```text
+前提: ある分野(具体的なトピック)についてどれくらい理解できているか確認したい。
+指示: そのトピックについてクイズを出して。難易度は基礎から少しずつ上げて。
+出力形式: 問題は5問、最後にまとめて解説をつけて。
+```
+
+### 64. チーム研修用クイズセットの作成
+
+説明: 新人研修などでクイズを活用したいとき。
+
+```text
+前提: 新しいメンバーの研修で、業務知識の定着度を確認したい。
+指示: 研修内容(具体的なテーマ)についてクイズを出して。研修後の理解度チェックとして使う前提で。
+出力形式: 10問、正誤だけでなく簡単な解説付きで。
+```
+
+### 65. 予約検索の条件指定テンプレ
+
+説明: 飲食店やホテルなどの予約検索を自然文でしたいとき。
+
+```text
+前提: 特定の日時・人数・条件で予約先を探したい。
+指示: 日時・人数・希望条件(雰囲気や立地)を自然文でそのまま伝える依頼テンプレートを作って。
+出力形式: 差し替え箇所を明示したテンプレート形式で。
+```
+
+### 66. 複数候補の比較検索依頼
+
+説明: 1件だけでなく複数候補を比較したいとき。
+
+```text
+前提: 予約先候補を複数出して比較検討したい。
+指示: 条件に合う候補を3件出して、それぞれの特徴を比較できる形にして。
+出力形式: 表形式(候補名・特徴・注意点)で。
+```
+
+### 67. Google Drive連携の初回設定確認
+
+説明: 有料プランでDrive連携を初めて使うとき。
+
+```text
+前提: ChatGPTの有料プランで、まだGoogle Drive連携を使ったことがない。
+指示: Drive連携の設定手順と、ライブラリに追加したファイルについて質問する際の依頼例を教えて。
+出力形式: 手順は番号付き、依頼例は1つ添えて。
+```
+
+### 68. Drive資料の要約依頼テンプレ
+
+説明: Driveに保存した資料をすぐ要約させたいとき。
+
+```text
+前提: Google Driveに複数の資料が保存されている。
+指示: ライブラリから追加した資料について、3行要約と、資料内で数字が出てくる箇所だけ抜き出す依頼文を作って。
+出力形式: 要約とハイライトを分けて出力するよう指定して。
+```
+
+### 69. ホーム画面の提案を業務に活かす運用
+
+説明: 有料ユーザー向けの提案表示を業務のヒントに使いたいとき。
+
+```text
+前提: ChatGPTのホーム画面に表示される提案を、日々の業務のきっかけとして活用したい。
+指示: 表示された提案を業務に転用できるか判断する基準を3つ作って。
+出力形式: 判断基準を箇条書きで。
+```
+
+### 70. 新機能まとめの社内共有テンプレ
+
+説明: 今週の新機能4つをチームに簡潔に共有したいとき。
+
+```text
+前提: クイズ・予約検索・Drive連携・提案表示の4つの新機能をチームに知らせたい。
+指示: 4機能を1つずつ1行で紹介する社内共有メッセージを作って。
+出力形式: 箇条書き4行、絵文字は使わずに。
+```
+
+## Cursor Origin: 移行・PR運用
+
+### 71. GitHub同期の初回設定確認
+
+説明: OriginでGitHubリポジトリを同期する前の確認をしたいとき。
+
+```text
+前提: CursorのOriginをまだ使ったことがなく、既存のGitHubリポジトリを同期しようとしている。
+指示: GitHub同期の設定手順と、同期後にどちらが情報源として優先されるかを整理して。
+出力形式: 手順を番号付きで、注意点は別枠で箇条書きに。
+```
+
+### 72. 併用期間のルール決め
+
+説明: GitHubとOriginを併用する期間の運用ルールを決めたいとき。
+
+```text
+前提: いきなり全面移行はせず、しばらくGitHubとOriginを併用する予定。
+指示: 併用期間中に混乱しないための運用ルール(どちらでPRを作るか等)を3つ決めて。
+出力形式: ルールを箇条書きで、理由も1行ずつ添えて。
+```
+
+### 73. 小規模リポジトリでの試験導入計画
+
+説明: まずは小さいリポジトリで試したいとき。
+
+```text
+前提: いきなり本番リポジトリではなく、小規模なリポジトリで試験導入したい。
+指示: 試験導入するリポジトリの選定基準と、評価期間・評価項目を整理して。
+出力形式: 選定基準・評価項目を表で。
+```
+
+### 74. PRコメント運用の周知文
+
+説明: PRコメントが双方向同期される仕様をチームに周知したいとき。
+
+```text
+前提: OriginとGitHubでPRコメントが双方向・数秒以内に同期される仕様がある。
+指示: この仕様をチームに周知する短い案内文を作って。誤解しやすいポイント(重複投稿など)も含めて。
+出力形式: 3行以内、注意点は太字相当の強調をつけて。
+```
+
+### 75. Vercel連携のセットアップ確認
+
+説明: day-1連携のVercelを使う場合の確認事項をまとめたいとき。
+
+```text
+前提: VercelでのプレビューデプロイをOrigin経由で使いたい。
+指示: Appsタブからの接続手順と、PRごとのプレビューデプロイが機能する条件を整理して。
+出力形式: 手順と条件を分けて箇条書きで。
+```
+
+### 76. CI移行(Depot/Buildkite)の比較検討
+
+説明: 既存のGitHub ActionsからCI連携先を選びたいとき。
+
+```text
+前提: 既存のGitHub Actionsワークフローを、DepotかBuildkiteのどちらかでOrigin連携したい。
+指示: 既存ワークフローの特徴(具体的な内容)を伝えるので、DepotとBuildkiteどちらが向いているか判断材料を整理して。
+出力形式: 比較表(観点・Depot・Buildkite)で。
+```
+
+### 77. 移行のロールバック手順確認
+
+説明: 移行がうまくいかなかった場合に備えたいとき。
+
+```text
+前提: Originへの移行を進めているが、うまくいかない場合に備えたい。
+指示: GitHub側を引き続き信頼できる情報源として保持しつつ、Origin側の変更を安全に切り戻す手順を整理して。
+出力形式: 手順を番号付きで。
+```
+
+### 78. 企業向けオプトアウト要否の確認
+
+説明: 組織としてOriginを使うか使わないか判断したいとき。
+
+```text
+前提: 企業組織としてOriginをオプトアウトするかどうか検討中。
+指示: オプトアウトすべきケースと、そのまま使うべきケースを判断する基準を整理して。
+出力形式: 基準を箇条書きで3つまでに。
+```
+
+### 79. コードベース命名規則の統一
+
+説明: 複数のOriginリポジトリを整理して命名したいとき。
+
+```text
+前提: 複数の新規リポジトリをOriginで作成する予定。
+指示: cursor.com/codebase/の後に続く命名を、既存プロジェクトの命名規則に沿って統一する案を作って。
+出力形式: 命名例を5つ挙げて。
+```
+
+### 80. 移行完了報告の社内共有テンプレ
+
+説明: 移行が完了したことをチームに報告したいとき。
+
+```text
+前提: 試験導入していたOriginへの移行が完了した。
+指示: 何が変わったか、今後どちらを使えばよいかを簡潔にまとめた報告文を作って。
+出力形式: 3行以内、次のアクションを明記して。
+```
+
+## Cursorクラウドエージェント
+
+### 81. 長時間タスクの引き継ぎ設計
+
+説明: イベントから作業を引き継ぐ挙動を活かしたいとき。
+
+```text
+前提: 長時間かかるタスクをクラウドエージェントに任せたい。
+指示: 作業内容を伝えるので、途中で中断されても引き継ぎやすいようタスクを区切りごとに分解して。
+出力形式: 区切りごとにチェックポイントを明記して。
+```
+
+### 82. 軌道維持のための進捗確認ルール
+
+説明: 長時間セッションが想定通り進んでいるか確認したいとき。
+
+```text
+前提: クラウドエージェントに数時間規模のタスクを任せている。
+指示: 途中経過を確認するタイミングと、確認すべき観点を3つ決めて。
+出力形式: タイミング・観点を表で。
+```
+
+### 83. 複数タスクの並列運用整理
+
+説明: クラウドエージェントに複数タスクを同時に任せたいとき。
+
+```text
+前提: 複数の独立したタスクをクラウドエージェントに並行して任せたい。
+指示: タスク同士が干渉しないよう、依存関係を整理してから並列実行の計画を立てて。
+出力形式: 依存関係を図解代わりの箇条書きで。
+```
+
+### 84. 目標達成条件の明文化
+
+説明: 「目標が達成されるまで保持する」動作を活かすため、達成条件を明確にしたいとき。
+
+```text
+前提: クラウドエージェントにタスクを任せる際、完了の判断基準が曖昧だった経験がある。
+指示: 今回のタスクの完了条件を、あいまいさのないチェックリストとして書き出して。
+出力形式: □付きチェックリストで3〜5項目。
+```
+
+### 85. 失敗時のエスカレーションルール
+
+説明: エージェントが行き詰まった場合の対応を決めておきたいとき。
+
+```text
+前提: クラウドエージェントが目標を達成できず行き詰まる可能性がある。
+指示: 行き詰まった場合にどう人に知らせるか、エスカレーションのルールを決めて。
+出力形式: ルールを3行以内で。
+```
+
+## Hermes Desktop: Bot Mode
+
+### 86. 役割別Botの設計
+
+説明: 複数のBotに役割を割り振りたいとき。
+
+```text
+前提: これまで1つのエージェントプロファイルで全部の作業をしていた。
+指示: 業務内容(具体的なタスク一覧)を伝えるので、役割ごとに分けた複数のBot構成案を作って。
+出力形式: Bot名・役割・使うモデルの案を表で。
+```
+
+### 87. Bot間通信を使ったワークフロー設計
+
+説明: Bot同士が通信できる機能を活かしたワークフローを作りたいとき。
+
+```text
+前提: 調査担当Botと執筆担当Botのように、役割の違うBotを連携させたい。
+指示: Bot間の情報の受け渡し方(何を渡すか・どんな形式で)を整理したワークフロー案を作って。
+出力形式: ステップごとに矢印でつないだ箇条書きで。
+```
+
+### 88. 専門Botのプロフィール設計
+
+説明: 特定分野に特化したBotを1体作りたいとき。
+
+```text
+前提: 特定分野(具体的な専門領域)に特化したBotを1つ作りたい。
+指示: そのBotの役割・使うモデル・持たせるメモリ・スキルの構成案を作って。
+出力形式: 項目ごとに箇条書きで整理して。
+```
+
+### 89. Botのプロフィール画像・命名ルール
+
+説明: 複数Botを見分けやすくしたいとき。
+
+```text
+前提: 複数のBotを運用する予定で、パッと見て役割が分かるようにしたい。
+指示: Botごとの命名規則と、プロフィール画像の方向性(色分け等)のルールを決めて。
+出力形式: ルールを3行以内で。
+```
+
+### 90. Bot運用の権限設計
+
+説明: Botごとにアクセスできる範囲を制限したいとき。
+
+```text
+前提: 複数のBotのうち、機密情報にアクセスしてよいBotとそうでないBotを分けたい。
+指示: Botごとのアクセス権限のポリシー案を作って。
+出力形式: Bot名・許可範囲・禁止範囲を表で。
+```
+
+### 91. 永続Botの棚卸しルール
+
+説明: 「一度構築すれば永続的に使用できる」特性を活かし、定期的に見直すルールを作りたいとき。
+
+```text
+前提: 複数のBotを運用しているうちに、使われなくなるBotが出てくることが予想される。
+指示: Botを定期的に棚卸しし、不要になったBotを整理するルールを作って。
+出力形式: 棚卸しの頻度・確認項目を箇条書きで。
+```
+
+### 92. 既存エージェントプロファイルからの移行計画
+
+説明: 既存の単一プロファイルから複数Bot体制へ移行する計画を立てたいとき。
+
+```text
+前提: 既存の単一エージェントプロファイルを複数Bot体制に移行したい。
+指示: 移行のステップを、リスクの小さい順に並べて計画を立てて。
+出力形式: ステップを番号付きで、各ステップの所要目安も添えて。
+```
+
+### 93. Bot同士の衝突防止ルール
+
+説明: 複数Botが同じリソースを同時に触って衝突しないようにしたいとき。
+
+```text
+前提: 複数のBotが同じファイルやデータに同時にアクセスする可能性がある。
+指示: 衝突を防ぐための調整ルール(順番・ロック等)を整理して。
+出力形式: ルールを箇条書きで3つまでに。
+```
+
+### 94. チーム内Bot共有の運用ルール
+
+説明: 作ったBotをチームで共有したいとき。
+
+```text
+前提: 自分が作った専門Botをチームメンバーにも使ってもらいたい。
+指示: Botを安全に共有するための運用ルール(誰が編集権限を持つか等)を整理して。
+出力形式: ルールを箇条書きで。
+```
+
+### 95. Bot Mode導入効果の振り返りフォーマット
+
+説明: 導入後にどれだけ効果があったか振り返りたいとき。
+
+```text
+前提: Bot Modeを導入してから一定期間が経過した。
+指示: 導入前と比べて何が変わったかを振り返る簡単なフォーマットを作って。
+出力形式: before/afterの表形式で。
+```
+
+## Open Design Go
+
+### 96. 初月プランの試用計画
+
+説明: 初月5ドルのプランをどう使うか計画したいとき。
+
+```text
+前提: Open Design Goを初月5ドルで試そうとしている。
+指示: 初月のうちに何を試すべきか、DeepSeek-V4-Proを含む利用可能モデルを踏まえた試用計画を作って。
+出力形式: 週ごとの試用項目を箇条書きで。
+```
+
+### 97. APIキー不要である点の社内周知
+
+説明: 導入の手軽さをチームに伝えたいとき。
+
+```text
+前提: チームにOpen Design Goを紹介したいが、APIキー不要で始められる手軽さを伝えたい。
+指示: APIキー不要・すぐ作成できる点を強調した紹介文を作って。
+出力形式: 3行以内で、誇張しない表現にして。
+```
+
+### 98. 既存デザインツールとの役割分担
+
+説明: 既存の別ツールと使い分けたいとき。
+
+```text
+前提: 既に別のデザインツールを使っているが、Open Design Goも試したい。
+指示: 既存ツールとOpen Design Goをどう使い分けるか、場面ごとの判断基準を整理して。
+出力形式: 比較表(観点・既存ツール・Open Design Go)で。
+```
+
+### 99. 料金プラン移行のタイミング判断
+
+説明: 初月以降の料金プランへの移行を判断したいとき。
+
+```text
+前提: 初月5ドルのプランを使い終える時期が近づいている。
+指示: 継続利用するかどうかを判断する基準(使用頻度・満足度)を3つ決めて。
+出力形式: 判断基準を箇条書きで。
+```
+
+### 100. チーム展開前の試験導入報告
+
+説明: 個人で試した結果をチームに共有し、展開を提案したいとき。
+
+```text
+前提: 個人でOpen Design Goを試し、良い手応えを得た。
+指示: 試した内容と結果を簡潔にまとめ、チーム展開を提案する報告文を作って。
+出力形式: 3行以内、提案の一言を最後に添えて。
+```
+
+---
+
+以上、100個です。内訳:
+
+- Claude Code: Concise出力スタイル: 5個
+- Claude Code: /designコマンド: 5個
+- Claude Code: 週次制限・オートコンティニュー: 5個
+- Claude Academy: 5個
+- Firecrawlコネクタ: 5個
+- HyperFrames MCP: 5個
+- OpenArt(Claude Store): 5個
+- Codex: 100万トークン・コンテキスト設定: 7個
+- Agent Plugins標準: 5個
+- Apple Messagesプラグイン: 5個
+- GPT-Image-2 透明背景: 5個
+- ChatGPT Sites協業・共有スレッド: 5個
+- 今週のChatGPT新機能(クイズ・予約検索・Drive連携・提案): 8個
+- Cursor Origin: 移行・PR運用: 10個
+- Cursorクラウドエージェント: 5個
+- Hermes Desktop: Bot Mode: 10個
+- Open Design Go: 5個</pre>
+<script>
+
+// チェックリストを実際に使えるようにする。
+// □ の行を押すと済みになり、状態はこのブラウザに残る（ページを閉じても消えない）。
+// <pre> の中身自体は変えていないので、コピーとダウンロードの内容は今までどおり。
+(function(){
+  var lines = [].slice.call(document.querySelectorAll('.cline'));
+  if (!lines.length) return;
+  var KEY = 'giftCheck:' + location.pathname;
+  var done = {};
+  try { done = JSON.parse(localStorage.getItem(KEY)) || {}; } catch(e){}
+
+  function save(){
+    try { localStorage.setItem(KEY, JSON.stringify(done)); } catch(e){}
+  }
+  function paint(){
+    var n = 0;
+    lines.forEach(function(l){
+      var on = !!done[l.dataset.c];
+      l.classList.toggle('on', on);
+      if (on) n++;
+    });
+    bar.textContent = n ? n + ' / ' + lines.length + ' 完了' : lines.length + ' 項目';
+    reset.style.display = n ? 'inline' : 'none';
+  }
+
+  var bar = document.createElement('span');
+  var reset = document.createElement('button');
+  reset.type = 'button';
+  reset.className = 'creset';
+  reset.textContent = 'チェックを消す';
+  reset.addEventListener('click', function(){ done = {}; save(); paint(); });
+
+  var wrap = document.createElement('div');
+  wrap.className = 'cprog';
+  wrap.appendChild(bar);
+  wrap.appendChild(reset);
+  var host = lines[0].closest('.icard') || lines[0].closest('pre');
+  host.insertBefore(wrap, host.firstChild);
+
+  lines.forEach(function(l){
+    l.addEventListener('click', function(){
+      var k = l.dataset.c;
+      if (done[k]) delete done[k]; else done[k] = 1;
+      save(); paint();
+    });
+  });
+  paint();
+})();
+
+// 名指しリンク（#i37）で来たとき、その項目まで確実に運んで少しの間だけ目立たせる。
+// ブラウザ任せだと、項目数の多いページでは狙った位置に着かないことがある
+// （html に scroll-behavior:smooth が効いており、数万px を滑らせようとして届かない）。
+(function(){
+  function go(){
+    if (!location.hash) return;
+    var el = document.querySelector(location.hash);
+    if (!el || !el.classList.contains('icard')) return;
+    // behavior:'auto' は CSS の scroll-behavior:smooth に従うため、
+    // 数万px 離れた項目へは滑らかに移動しようとして事実上たどり着かない。
+    // 名指しリンクは「開いたらそこにいる」のが正しいので即時で飛ばす。
+    el.scrollIntoView({block: 'start', behavior: 'instant'});
+    el.classList.add('flashme');
+    setTimeout(function(){ el.classList.remove('flashme'); }, 2400);
+  }
+  addEventListener('hashchange', go);
+  if (document.readyState === 'loading') addEventListener('DOMContentLoaded', go);
+  else go();
+})();
+// 項目の多いキットで、目的の1件に辿り着けるようにする絞り込み。
+// 検索はタイトル・説明だけでなく本文も対象にする（「あの文言が入っていた項目」で探せるように）。
+(function(){
+  var q = document.getElementById('kq');
+  if (!q) return;
+  var hit = document.getElementById('khit');
+  var cards = [].slice.call(document.querySelectorAll('.kwrap .icard'));
+  var heads = [].slice.call(document.querySelectorAll('.kwrap h2.cat'));
+  var chips = [].slice.call(document.querySelectorAll('.kcat'));
+  var cat = '';
+
+  // ひらがな・カタカナの違いで取りこぼさないようにする（ハブ側の検索と同じ扱い）
+  function norm(s){
+    return (s || '').toLowerCase().replace(/[ぁ-ん]/g, function(c){
+      return String.fromCharCode(c.charCodeAt(0) + 0x60);
+    });
+  }
+
+  // カード全体の textContent だとボタンの「コピー」まで拾ってしまうため、中身を選んで集める
+  cards.forEach(function(c){
+    var t = c.querySelector('.ititle'), d = c.querySelector('.imeta'), p = c.querySelector('.prompt');
+    c._t = norm((t ? t.textContent : '') + ' ' + (d ? d.textContent : '') + ' ' + (p ? p.textContent : ''));
+  });
+
+  function apply(){
+    var kw = norm(q.value.trim()), n = 0, shown = {};
+    cards.forEach(function(c){
+      var ok = (!cat || c.getAttribute('data-cat') === cat)
+            && (!kw || c._t.indexOf(kw) !== -1);
+      c.classList.toggle('hide', !ok);
+      if (ok){ n++; shown[c.getAttribute('data-cat')] = 1; }
+    });
+    // 残った項目が1件も無いカテゴリの見出しは隠す
+    heads.forEach(function(h){
+      h.classList.toggle('hide', !shown[h.getAttribute('data-cat')]);
+    });
+    hit.textContent = (kw || cat)
+      ? (n ? n + '件を表示中' : '該当する項目がありません')
+      : '';
+  }
+
+  q.addEventListener('input', apply);
+  chips.forEach(function(b){
+    b.addEventListener('click', function(){
+      cat = b.getAttribute('data-cat');
+      chips.forEach(function(x){ x.classList.toggle('on', x === b); });
+      apply();
+    });
+  });
+})();
+
+function flash(btn, label){
+  const old = btn.textContent, cls = btn.className;
+  btn.textContent = label; btn.classList.add('ok');
+  setTimeout(() => { btn.textContent = old; btn.className = cls; }, 1600);
+}
+function textOf(id){ return document.getElementById(id).textContent; }
+
+async function copyText(btn, id){
+  const t = textOf(id);
+  try {
+    await navigator.clipboard.writeText(t);
+  } catch (e) {
+    const ta = document.createElement('textarea');
+    ta.value = t; ta.style.position='fixed'; ta.style.opacity='0';
+    document.body.appendChild(ta); ta.select();
+    document.execCommand('copy'); ta.remove();
+  }
+  flash(btn, '✓ コピーしました');
+}
+
+function saveText(btn, id, name){
+  const blob = new Blob([textOf(id)], {type:'text/plain;charset=utf-8'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = name;
+  document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+  if (btn) flash(btn, '✓ 保存しました');
+}
+
+document.addEventListener('click', e => {
+  const b = e.target.closest('[data-copy]');
+  if (b) { copyText(b, b.dataset.copy); return; }
+  const d = e.target.closest('[data-save]');
+  if (d) { saveText(d, d.dataset.save, d.dataset.name); return; }
+  // その項目だけを名指しで人に渡せるようにする
+  const l = e.target.closest('[data-link]');
+  if (l) {
+    const url = location.origin + location.pathname + '#' + l.dataset.link;
+    navigator.clipboard.writeText(url).then(() => flash(l, '✓ コピーしました'));
+  }
+});
+
+// 「/」ですぐ検索を始められるようにする。入力中は邪魔しない。
+addEventListener('keydown', e => {
+  if (e.key !== '/' || e.metaKey || e.ctrlKey || e.altKey) return;
+  const t = e.target;
+  if (t && (t.tagName === 'INPUT' || t.tagName === 'TEXTAREA' || t.isContentEditable)) return;
+  const box = document.getElementById('q') || document.getElementById('kq');
+  if (!box) return;
+  e.preventDefault();
+  box.focus();
+  box.select();
+});
+
+</script>
+<div id="promo" class="promo">
+  <div class="promo-card">
+    <button id="promoClose" class="promo-x" aria-label="閉じる">×</button>
+    <img class="promo-banner" id="promoBanner" src="" alt="">
+    <img class="promo-icon" id="promoIcon" src="" alt="">
+    <p class="promo-tag" id="promoTag"></p>
+    <p class="promo-title" id="promoTitle"></p>
+    <p class="promo-text" id="promoText"></p>
+    <a id="promoLink" class="promo-cta" href="#" target="_blank" rel="noopener sponsored">
+      <span id="promoCta"></span><span class="promo-arrow">→</span>
+    </a>
+  </div>
+</div>
+<script>window.PROMO_CREATIVES = [{"icon": "data:image/png;base64,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", "img": "https://lp.kawaru-ai.jp/wp-content/uploads/2026/05/Frame-2611706-scaled.png", "tag": "AIエージェント", "title": "Kawaru", "text": "「これ自動化して」と話すだけで、業務フローが自動で完成。", "cta": "無料で試す", "url": "https://lp.kawaru-ai.jp/"}, {"icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHgAAABPCAIAAACveZaQAAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAeKADAAQAAAABAAAATwAAAAAb4zF4AAAQkklEQVR4Ae1cCZAU1Rmenmt3lt0d2GVnFlhwWQSPRQklAgZFEVHCIYtERSspNQY0lcSKEmOqrFSMlcuUJjFVGkotY2JMeURAlEM8kBhQlIiCKFoCuxx7zV6zx+zO9PRMvtdv5k1P3z3TsyyVtO7M6//95/f+9/fr1z1wgpDgOAc58JkUG4oPjuOSjiTn4JJJwiGyEwoVIXRRkrCJDDIFoIOSktXmyZKF0rQ5uTbRKvNUZEwrT3siFxGNMvdoQ/qp5GcOo0H9ZxR2mqJk45bqJYgwH8Ho4BKJBPke8Ud2OCPFXZZk+g4h05wGHDR99ZmMeknS5X1I08MWhXl7RBTI0lapk7qKeW4AtKEipWolxRYlUrW2K5Qqp22WGqyh5NGhMCnqKuqJAdA6unLuYk7krGEYBNkEYg1LRmVSuPwYAF2ISSpzQhpAIcxJ9Wu1TY69STZVKwZAm5mk+ZiX+WTGnEzEllOMvZkx1kkRfTeMS0dBzes7N8y9hR3j4bkYDjNkI9AcRhGlw8apb1uMdvlklx6twMzrN6jRWgbyoKd803cx52ooc8wuPTK17NSkflqjTTIz5Xk2UuaG2WqeTucvnpXR0izDZdDMlTB/D5gVqXVLapkGS1LDyYx19Bmz1zGcuJixhbTQmpSqXVkZbcbAsPEMQ57mPIcAghbKWl0jF+jCLmzFfNEBS5lPeQ68W6mxEBTV2cQM6fcyNq2GkEjG+Ti5pmgc6PB68400z4HP17xGaHKyfu7o98p10Z14EndKbv+nRxpPhlwuZ2rTPSNAGcgAzJkxbVxwdKZHrYWcZTppv5KiJmeKNkxAm/JFm0kWMHsWQ5F9+MnNO/ccLCryEjZygaeKRJTxwXHRaOzRn3/n5hXzmaCqKRnK4FFSVAXNEM8MoHUCBnbd4YEhnhcfrKVDTuW6iJXDERmK9g0Mpfvs+cZoZoyYUHlmAC0LRBpk6nmkkEy4ycNPF+ck8ZOkTv1ROBRVRabS8qkllKE9F6ClcVp2UCEgKwtmlGcFmXQEx46pqiz3FRfFeaGnL5KyQHDGQ1sOf2IjSyjFk8eXGT+ZegwzgE6JyAJmTMqGvS7LyoJSuY5jpCBz3JrVC6+Yc57H6/3X3kOb39wnzmngS5YhVJvt6QxMlH4qgWIU+Il1dEpEFjBjQpysbXtjIBLt7Yv09g/i/2gsrqpfyzHKjBjmz6m/9YaF06dNPNLUircnRDrICZrKtIRYxdqWmCl09NO4dOjHqQqNSeJQNL5px95w34DL6eIF4dwpE66ad6FJWSkbEP3ks8Z7fvXM/kPHish6OYmVdTGpJHG8jYI8Sme2VMigbSlhtXRR6OhnpnRocZun68xxpRKkWEd3+GePPN8T7ne6nFiBXTN/5qJLZ6TehVEKaFE47vMvj9//8D/2HzxaVOTB/ATKY/yjZl1w9s69h5DXoNiCmpZ9k3RSOmyZJrBnNSK8u5NICC4sFLBacDr5OE+cltzgGVYtjNaRxpYH/vDCnn2fi7nswOrDV+y97foFt994pcALIsYEZ7U3qIi1YTvIXsdpHPDMGANUeiLxRn/kgHLTqY4H//TSjnc/LvJ6EQjGrcjjXr183j23r0DpEIs0VWc/ziwJWENnzOCq5qaSGXkd1aa6JJiSlKOnGez1dMD1U21dv3l8w+Y3PvACZc4BWN0u18rFc+//wTd9Pi+uhaQ2E62kRLvMqYVJk4xpd6FbGoa6z7g0a14Mzcira7VCFX0EaGJ0kqKho4NkAOdoDfX8/slXX3jt3x6PB3LIZZfbtezKWQ/86IYx/lKIV1aUzpo+hSZ1LBafOL5KR6e0yxg2KbfYhvcyKUaBrxRJ44shY1Xoz5sgTR6glZrfMp8VVjhHqKv38Wdff+blnW6nCy+KAk2nk7t63oW/uGd1VYUf6QPF50yesP7Xa3lxtQfVBGj760fKN6XHSopmRrP4CpraItQAAJtBaYOskSZIv5H7XT39Tz3/1p+f3e5EVXcS9JxJ7vLZ9Q+uu2lCsAIogx9/bpezblK1VJZ2SSks76REe9sMPWOg7TWsro3uuJkoHU2nQr9dv+mfW/ZgfYxdUVIxXM5vNVy+bs2149MoUxMi3rqDppjv6r5ZoWqNHKpC5s6QKhRTzIpuO3hJjTZhuKW9+9G/bN247X3kJtI5mUhgXbhq8SV33bpEhrIdTuWiQ2tgkdfyVQdlNYzbkMGymxkf1SFHXX7sb9uf3/wu7iGRy+QO2+FYtnDW3bcvP6smoCwLlh0wIaAatSpRqUwONOVglUUpYJJBS1CVbmiupzfyxHNv/HXDO9EYjywGv5BMLrpsxrq1DVMnjyvcVY56y0Ze1U9VojJMdaCVfIWi0CDgLNmTIIfSb+zZP/3im0+9+GZkcAiPq8AjxAVc/X5yR0P91InI5cxkEDXY/qGl30wuM57TDTQLIt1gnlG8Bof4Zze+s/7vr/f2DeB+BFzYdJ49c+p931s5s75Ovny1HWNdhcqcULIzHgDNZoaSrcAU4kUKYIKvwpEYH0dRfuyZbR09/W6XGyWCjwsz6iffd+equTOnwTkmXmBHLahXCUOUBtDpXLKgzUbW9AqaoEyRJv5gHQJMX972/h+ffq011O1xu0AEBVup99258oq59TjFLt3JgaG4uPePU1sOEytMFTvSDFEfe/FXWVI2FS0FJBHLeEQiIgx46YgjJTgO+/d4VvLIU6+ebOlwA2WSy/HamuC9a1dcPX8GRGJCYl8ovOFo24GOPhurdG713jhVk+SZYRYbos46LyDMbLGAJKAbAimkcUu9bdf+h5/YdKSpxesht1SCINRUV9z93aXXLpqNDdUBXtjb3r3zVFdzJBrm4/4i99n+UXA8N5gKGWJGt/xiyFDWqjUZ0bxb6XmKb2qWfAKst/cc/N36TYePNHvFipGIC6MCFStWX3P9knm4sQbPwa7eLU0d7YMxr8uJ6rHleEdrJJquPHm7VQgFOj/oVK81djuRHs5U/YD63fsOP/T4xoNfNBGUcZMtCGWBiulLLi372jld5NfUZO8J9yqxhIAmCjweGxzu6d9xsrM3Fie9I+nIeGP4G5ZCu80mEFl0cM4PD3z10PqN+z494nEBZQdQLvGXnb/467Wz6o9FottPdHQNxcA3o7J8/rgK7CWJBZ5UjA/aenY1d0bpSBTaadP6ER3DWl46TCuxi1GEWnyU1d4Zxhbz7v8cpijjelha6pt+zSUTLzqfXDgSyY9CvW81d0VQSTyuhRMqZ1aVOfDIG8nCOeLJxM7mrg/ae3DHONLymiJ12oGmQ8653e7G5o633zvoxkaGk2zLlfjw6G/hquWXOd1OFAtUBT6Z2N3S/V5rdzyRqCj2fmNSYIrfJ27tA2sOV0ik/KGuPgTG8siudMhZD5uyANqqV1b59ZzM6AKOPNbECVQGrORG+Yp+ue6mH6+59sbzai6uKhfI8ygHqslgQnilKbTjRCfqRU1p8benTZjmL4lDCL1OrmMo9tyXLR93hKFEz+rp6FPP6PQ1StUjNkiqvYRoNkqiCX+UHZ/kf1SMYq/np99ftXLxJSW+olKXc9mkQH3FKJ4MAcE6mhDeau78MBSGcLCkaGVddbXPQ7DmODxuCfP8psb2Y72REVVA4AyAVgEuzyWHikaCv+IgwOJPTFfRDVQM3ATee0fDTcsvLRtVDAGoqvJ5V9QGakYV0ZeQgPVAPL65qf3Lnn4w1JaVXFdXXe514UaR6muJxDY0tnUOxQqNNcyZPDD/1DPapHz+bOQWQ4QaX2Ih5u66bcktqxb4y0qYcng5qbTkusnBMq+LbEITCVQJfmNjqH0wiithfUXZsrMCHjzWEruwWf1VT2RTY9tgHEtA82gwg2Yboi9mmU8z0MRNMRGBJmbX2psXrVm9CO8ZydzH4vncMaUNtSKa4gQA1k19kQ3H2vtjcY+Tuzjgv6pmLL0zxMMXjNrHHf3bT4Romsu0aZ3qFkwtIQM6G2kAXcAxN/ACtolx4JPEFvM5deN/eMvSqkq/qhReKrgoMHrRhCoMCQQgh6Xdgc6+LSdCeNRd4nYtGF85O1COYi0WIS6WFHa19Lzb2k1tqOqUEfMsmDJtqdN02qdqdCEGU92wnArECNp4lauivLS6ajSBXe0ACsVObkFNxdzq0ViEkIlA1taJPa3du1q6cF7udS+dFDzX7yP7eQ780zrcIB/fejz0SWcvSys1xXo06MnhkILJBi9VOth5DnrzFaHRIEmpL7pVtcztWjopcN5oLOnopY8biiew2vtIXIQESrwNddXjfF7WG47xrzS2H+8fNIm1DFk25jK6fshKMGE9q3RYUqdvzFwvMUiNkrJKw9LIaKoQLFiErJwcJGgic3E15xy9PL/5eOhomLzrX1vmW1kXLPe4EglyoYfy5v6hDUdbu6P2LEJygwjFDs6wYZO0zOGUNxett6IahrluRoMVMpMImtVAk97IgNg6EMWSLjQYwy1ifUX58rOCeEkVnFTrFz0Drza2D5lYhGSwyI6N0Vkju9/4jE5XY74CcbAZTQIwnS1gJEu62iDu17Hgw30KRuer8ODGY20RXiCLkKD/qvGVFBSSSth1ag+/cbKD7IQUKBIjtZaBllZ6I+XG/Ug6wgScLKYKFiFzAv6FE8ZCDlgDPieXPNDVt/VEO3ZCsAi5smYs1nwCKoioHlX7neau99ssLEKMvc/mkA2hDCjLQCsrfbY5ciazoWSQUyyiDHG4UexyLqypJGhitPBfkuzh7W4N72rpBoPf68ZdzFR/Kc1ilPJ+Xtja1PFZVz+bRnI38juXBZEFVIGeGWbZ0PderMhwkQBFb/tk/uqK+z3u5bWBaeUl5DkAee2KLOl2HA/RRQh2QlZNqQ7ixyzYq8KixunoiOLuvOWk6UWIrnHNTllqEz5x499KZJrKc+lAweT5BF4+ipEjjt07q1owPEEf3VcqjiYSPNbVjiTQfPlY29HwALRhJ6ShLlDi9mCLFfcyWK03hodeOtbWE+ULlNcwqgqo/W+TkoWaui05jKPLShZfMaO7ZwAb0HyUnzcbG/wkteV8uueo8rXlvoa6ILaqUT0wQ7BDjcnRFYvXkSKWvKCi/LrJwr523LaQUo7c9nAOPD0YjV8W5XRAiXkXGRrYYoeUecGcXNMWCvdF6HYEwMFvqrANrc2r1wP4Bsndd+bwujjyUwDxwCpwKPX7wxSDz41CYu2whK9Stfi+/OkDWunQmUUxiz4uhlan6rABYXnpMmyeSQyZLQVka5IULpsPhhFr6BtQ9SDnDFDVpu9AwXuV73VIodFqG7rFMGINfRGzeaGvJd1LtVmC25DZkCFtXOMbC6wErhL5qtHQbp0MR+wFXeqCJeWWmKVWtNrkccTIOQqHMmJUVa4VvSpzjkCJNjQXOdK6kaMBc2JaoZqTzpdLCqhOyHk5KdrQBFq1vCrtKSlWQ5eGClmdaJnm/I0yVdKGasiUQeakVMpkWxNoVXmlPSVFVVCHKENNJ1odJcPbJXPZlHFrQKuqzMWsRFEOQ5WDiMRg/s1c7NsAdC5m8w/2TNNgDWit5NWi54yGmUqds/LhF0Q4xkBLY2bJK0OW0U3GIBNXShlWai0NWnTRhEqnCknhjRkeqZCSH+H8/9+PlkJk3EbaGSaBUgv2vo0zOiNGn+9lzv8XW5ZRFkHDJvB/AQFxZ5IQHzayAAAAAElFTkSuQmCC", "img": "https://kawarucoach-lp.kawaru-ai.jp/wp-content/uploads/2026/08/Frame-1000001051.png", "tag": "伴走型AI顧問サービス", "title": "Kawaru Coach", "text": "AIのプロが専属で伴走。月5万円から、組織のAI活用が進む。", "cta": "詳しく見る", "url": "https://kawarucoach-lp.kawaru-ai.jp/"}, {"icon": "data:image/png;base64,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", "accent": "#1C3461", "tag": "AI社員構築代行", "title": "エヌイチ", "text": "あなたの代わりに働く「AI社員」を、無料相談から構築。", "cta": "無料相談を見る", "url": "https://n1-inc.co.jp/lp-ai-staff-build-offer-with-image/"}, {"icon": "data:image/png;base64,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", "accent": "#276C82", "tag": "法人研修", "title": "Claude Code / Codex研修", "text": "指示するだけで仕事が進む組織へ。現場定着まで伴走します。", "cta": "研修内容を見る", "url": "https://n1-inc.co.jp/lp-claude-codex-training-offer-with-image/"}, {"icon": "data:image/png;base64,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", "accent": "#3F4A5A", "tag": "運営会社", "title": "株式会社エヌイチ", "text": "AI・ChatGPTを活用した社内DXと人材育成のプロ集団です。", "cta": "会社サイトを見る", "url": "https://n1-inc.co.jp/"}, {"icon": "", "img": "https://i.ytimg.com/vi/7wA-fvl5Ucc/hqdefault.jpg", "tag": "最新の動画", "title": "【公式発表】ClaudeCodeを100倍賢くする神アプデ4連発を全て解説します", "text": "", "cta": "動画を見る", "url": "https://www.youtube.com/watch?v=7wA-fvl5Ucc"}, {"icon": "", "img": "https://i.ytimg.com/vi/bEJxLIezEI4/hqdefault.jpg", "tag": "最新の動画", "title": "【スマホでOK】最強AIエージェントを1つのアプリで操作した結果がヤバすぎたw", "text": "", "cta": "動画を見る", "url": "https://www.youtube.com/watch?v=bEJxLIezEI4"}, {"icon": "", "img": "https://i.ytimg.com/vi/BdAjVmf3ruI/hqdefault.jpg", "tag": "最新の動画", "title": "【誰も知らない】OpenAIが発表した究極のエージェントを構築する方法を解説します", "text": "", "cta": "動画を見る", "url": "https://www.youtube.com/watch?v=BdAjVmf3ruI"}, {"icon": "", "img": "https://i.ytimg.com/vi/AQJGtamKUpo/hqdefault.jpg", "tag": "最新の動画", "title": "【性能100倍】Codexを使う全人類は必ずコレと連携しておいてください", "text": "", "cta": "動画を見る", "url": "https://www.youtube.com/watch?v=AQJGtamKUpo"}, {"icon": "", "img": "https://i.ytimg.com/vi/fC8Jhw6EJXs/hqdefault.jpg", "tag": "最新の動画", "title": "【公式発表】Codexを100倍賢くする方法がヤバすぎたので徹底解説します", "text": "", "cta": "動画を見る", "url": "https://www.youtube.com/watch?v=fC8Jhw6EJXs"}, {"icon": "", "img": "https://i.ytimg.com/vi/1tPFci91Xkw/hqdefault.jpg", "tag": "最新の動画", "title": "【圧倒的勝利】イーロン・マスクが出したGrok4.6がCodexのGPT-5.6を超えて…", "text": "", "cta": "動画を見る", "url": "https://www.youtube.com/watch?v=1tPFci91Xkw"}];</script>
+<script>
+(function(){
+  if (sessionStorage.getItem('promoClosed')) return;
+  var el = document.getElementById('promo');
+  if (!el) return;
+  var creatives = window.PROMO_CREATIVES || [];
+  if (!creatives.length) return;
+  var c = creatives[Math.floor(Math.random() * creatives.length)];
+  var banner = document.getElementById('promoBanner');
+  var icon = document.getElementById('promoIcon');
+  // 画像があるものは横長の絵で見せる。無いものは従来どおり丸アイコン。
+  if (c.img) {
+    banner.src = c.img;
+    banner.style.display = 'block';
+    icon.style.display = 'none';
+    // 差し替え等で画像が消えていたら、アイコン表示に戻す
+    banner.onerror = function(){
+      banner.style.display = 'none';
+      if (c.icon) { icon.src = c.icon; icon.style.display = 'block'; }
+    };
+  } else {
+    icon.src = c.icon;
+    icon.style.display = 'block';
+    banner.style.display = 'none';
+  }
+  // 画像で見分けられないもの（エヌイチ系は先方のog:imageが3件とも同じ）は色で差をつける
+  var tag = document.getElementById('promoTag');
+  var cta = document.getElementById('promoLink');
+  if (c.accent) {
+    tag.style.color = c.accent;
+    tag.style.background = c.accent + '1F';
+    cta.style.background = c.accent;
+  } else {
+    tag.style.color = ''; tag.style.background = ''; cta.style.background = '';
+  }
+  tag.textContent = c.tag;
+  document.getElementById('promoTitle').textContent = c.title;
+  var txt = document.getElementById('promoText');
+  txt.textContent = c.text || '';
+  txt.style.display = c.text ? 'block' : 'none';
+  document.getElementById('promoCta').textContent = c.cta;
+  var link = document.getElementById('promoLink');
+  link.href = c.url;
+  function close(){
+    el.classList.remove('show');
+    sessionStorage.setItem('promoClosed', '1');
+  }
+  // 動画の概要欄から来た人が、自分のプレゼントを探し始める瞬間に被らないようにする。
+  // 以前は読み込み1.6秒後に無条件で出しており、いちばん目的意識の高い時間を塞いでいた。
+  // 中身を見に行った（＝目当てのものに辿り着いた）ころに出す。
+  var shown = false;
+  function show(){
+    if (shown) return;
+    shown = true;
+    el.classList.add('show');
+    removeEventListener('scroll', onScroll);
+  }
+  function onScroll(){
+    if (scrollY > innerHeight * 0.4) show();
+  }
+  addEventListener('scroll', onScroll, {passive:true});
+  // まったくスクロールしない人にも最後には出す
+  setTimeout(show, 10000);
+  document.getElementById('promoClose').addEventListener('click', function(e){ e.preventDefault(); close(); });
+  el.addEventListener('click', function(e){ if (e.target === el) close(); });
+})();
+</script>
+
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "1bdbdde44b614116a41a1e00133ac91f"}'></script><!-- End Cloudflare Web Analytics -->
+</body></html>
