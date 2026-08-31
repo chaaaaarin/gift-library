@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI自動化 健康診断アプリ</title>
+<meta name="description" content="AIに任せている長い作業の「弱点」を、7つの質問に答えるだけで診断。タスク組織化・エージェント連携・実行時状態管理のどこが手薄か、そして1体のAIで抱え込みすぎていないかを判定し、次の一手を提示します。">
+<style>
+  :root{
+    --brand:#1C3461; --brand-deep:#16284A; --accent:#5BBCD4; --accent-deep:#2C7A93;
+    --bg:#F7FAFC; --paper:#FFFFFF; --ink:#1C3461; --ink-mid:#4A6080; --ink-sub:#8098B4;
+    --line:rgba(28,52,97,.14); --soft:rgba(91,188,212,.14); --brand-soft:rgba(28,52,97,.06);
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:var(--bg);color:var(--ink);font-family:'Hiragino Sans','Yu Gothic',sans-serif;line-height:1.75;padding:24px 16px 60px;}
+  .wrap{max-width:640px;margin:0 auto;}
+  header{text-align:center;margin-bottom:24px;}
+  h1{font-size:22px;font-weight:900;color:var(--brand-deep);}
+  header p{font-size:13.5px;color:var(--ink-mid);margin-top:8px;}
+  .card{background:var(--paper);border:1.5px solid var(--line);border-radius:14px;padding:20px 20px 22px;margin-bottom:16px;box-shadow:0 2px 10px rgba(0,0,0,.04);}
+  .qn{font-size:12px;font-weight:800;color:var(--accent-deep);letter-spacing:1px;}
+  .qt{font-size:16px;font-weight:800;margin:6px 0 14px;}
+  .opt{display:block;width:100%;text-align:left;background:var(--bg);border:1.5px solid var(--line);border-radius:10px;
+    padding:12px 14px;margin-bottom:9px;font-size:14px;font-weight:600;color:var(--ink);cursor:pointer;transition:.15s;font-family:inherit;}
+  .opt:hover{border-color:var(--accent);background:var(--soft);}
+  .opt.sel{border-color:var(--brand);background:var(--brand-soft);box-shadow:inset 0 0 0 1px var(--brand);}
+  .bar{height:8px;background:var(--brand-soft);border-radius:99px;overflow:hidden;margin-bottom:20px;}
+  .bar i{display:block;height:100%;background:linear-gradient(90deg,var(--brand),var(--accent));width:0;transition:.3s;}
+  .nav{display:flex;justify-content:space-between;gap:12px;margin-top:4px;}
+  button.b{background:var(--brand);color:#fff;border:none;border-radius:10px;padding:11px 22px;font-size:14px;font-weight:800;cursor:pointer;font-family:inherit;}
+  button.b.ghost{background:var(--paper);color:var(--brand-deep);border:1.5px solid var(--line);}
+  button.b:disabled{opacity:.4;cursor:not-allowed;}
+  .result h2{font-size:18px;font-weight:900;color:var(--brand-deep);margin-bottom:4px;}
+  .verdict{font-size:14px;color:var(--ink);background:var(--soft);border-left:4px solid var(--accent-deep);border-radius:8px;padding:12px 14px;margin:12px 0 18px;}
+  .score-row{display:flex;align-items:center;gap:10px;margin-bottom:10px;}
+  .score-row .lbl{width:132px;font-size:13px;font-weight:800;flex-shrink:0;}
+  .score-row .track{flex:1;height:12px;background:var(--brand-soft);border-radius:99px;overflow:hidden;}
+  .score-row .track i{display:block;height:100%;border-radius:99px;}
+  .score-row .pct{width:38px;text-align:right;font-size:12px;font-weight:800;color:var(--ink-mid);}
+  .weak i{background:linear-gradient(90deg,#C98A8A,#E6A15C);}
+  .ok i{background:linear-gradient(90deg,var(--accent-deep),var(--accent));}
+  .next{background:var(--paper);border:1.5px solid var(--line);border-radius:10px;padding:14px 16px;margin-top:14px;}
+  .next h3{font-size:14px;font-weight:900;color:var(--brand-deep);margin-bottom:6px;}
+  .next p{font-size:13.5px;color:var(--ink);}
+  .next .step{font-size:13px;color:var(--ink-mid);margin-top:6px;padding-left:18px;position:relative;}
+  .next .step::before{content:'▸';position:absolute;left:0;color:var(--accent-deep);font-weight:900;}
+  footer{text-align:center;font-size:11.5px;color:var(--ink-sub);margin-top:24px;line-height:1.7;}
+  .hide{display:none;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>AI自動化 健康診断アプリ</h1>
+    <p>AIに任せている「長い作業」を1つ思い浮かべて、7問に答えてください。<br>どこが弱点かと、次の一手を診断します。</p>
+  </header>
+
+  <div class="bar"><i id="prog"></i></div>
+
+  <div id="quiz"></div>
+
+  <div class="nav" id="nav">
+    <button class="b ghost" id="back" onclick="go(-1)">← もどる</button>
+    <button class="b" id="fwd" onclick="go(1)" disabled>つぎへ →</button>
+  </div>
+
+  <div id="result" class="card result hide"></div>
+
+  <footer>
+    このアプリはすべてブラウザ内で動きます（送信・保存・通信は一切ありません）。<br>
+    診断の枠組みはサーベイ論文「Graph Engineering in the Era of LLM Agents」(arXiv:2608.21156) の3要素にもとづく、本キット独自の簡易版です。
+  </footer>
+</div>
+
+<script>
+// 各選択肢は {t:表示, task:タスク組織化への弱点点, team:連携への弱点点, state:状態管理への弱点点, ceil:1体限界サイン}
+const QS = [
+  {
+    q:"その作業、いくつの工程に分かれていますか？",
+    o:[
+      {t:"1〜2工程。ほぼ一発で終わる", task:0,team:0,state:0,ceil:-1},
+      {t:"3〜5工程くらい", task:1,team:0,state:0,ceil:0},
+      {t:"6工程以上、または毎回変わる", task:2,team:1,state:1,ceil:1},
+    ]
+  },
+  {
+    q:"同時に進められる作業（例：資料集めと下書き）はありますか？",
+    o:[
+      {t:"ない。全部が前の結果を待つ", task:0,team:0,state:0,ceil:0},
+      {t:"ある。でも今は1つずつ順番にやらせている", task:2,team:1,state:0,ceil:1},
+      {t:"ある。すでに分けて並行させている", task:0,team:0,state:0,ceil:-1},
+    ]
+  },
+  {
+    q:"AIが作ったものは、誰がチェックしていますか？",
+    o:[
+      {t:"作ったAIと同じ会話の中で、そのまま自己チェックさせている", task:0,team:2,state:0,ceil:1},
+      {t:"別のセッション／別のAI役にチェックさせている", task:0,team:0,state:0,ceil:-1},
+      {t:"最後に自分（人間）が全部見ている", task:0,team:1,state:0,ceil:0},
+    ]
+  },
+  {
+    q:"途中で失敗したとき、どうなりますか？",
+    o:[
+      {t:"どこで失敗したか分からず、最初からやり直すことが多い", task:0,team:0,state:2,ceil:1},
+      {t:"だいたいの失敗箇所は分かるが、手作業で直している", task:0,team:0,state:1,ceil:0},
+      {t:"途中の状態が残っていて、その手順から再開できる", task:0,team:0,state:0,ceil:-1},
+    ]
+  },
+  {
+    q:"うまくいかないとき、まず何をしますか？",
+    o:[
+      {t:"指示文（プロンプト）をもっと詳しく・長く書き足す", task:1,team:0,state:0,ceil:2},
+      {t:"渡す資料や前提情報を増やす", task:1,team:0,state:0,ceil:1},
+      {t:"作業の分け方・順番そのものを見直す", task:0,team:0,state:0,ceil:-1},
+    ]
+  },
+  {
+    q:"その作業にかかる時間は？",
+    o:[
+      {t:"数分で終わる", task:0,team:0,state:0,ceil:-1},
+      {t:"十数分〜1時間くらい", task:1,team:0,state:1,ceil:0},
+      {t:"1時間以上、または一日がかり", task:1,team:1,state:2,ceil:1},
+    ]
+  },
+  {
+    q:"「どのAIが何を担当しているか」を説明できますか？",
+    o:[
+      {t:"1体に全部やらせているので、担当という概念がない", task:1,team:2,state:1,ceil:2},
+      {t:"なんとなく分けているが、役割はあいまい", task:0,team:1,state:0,ceil:0},
+      {t:"担当・レビュー役・連絡の順番まで決めてある", task:0,team:0,state:0,ceil:-1},
+    ]
+  },
+];
+
+let cur = 0;
+const answers = new Array(QS.length).fill(null);
+
+function render(){
+  const wrap = document.getElementById('quiz');
+  const Q = QS[cur];
+  wrap.innerHTML = '<div class="card"><div class="qn">質問 '+(cur+1)+' / '+QS.length+'</div>'
+    + '<div class="qt">'+Q.q+'</div>'
+    + Q.o.map((op,i)=>'<button class="opt'+(answers[cur]===i?' sel':'')+'" onclick="pick('+i+')">'+op.t+'</button>').join('')
+    + '</div>';
+  document.getElementById('prog').style.width = Math.round((cur)/QS.length*100)+'%';
+  document.getElementById('back').disabled = cur===0;
+  const last = cur===QS.length-1;
+  document.getElementById('fwd').textContent = last ? '結果を見る →' : 'つぎへ →';
+  document.getElementById('fwd').disabled = answers[cur]===null;
+}
+function pick(i){
+  answers[cur]=i;
+  render();
+}
+function go(d){
+  if(d>0 && cur===QS.length-1){ showResult(); return; }
+  cur = Math.max(0, Math.min(QS.length-1, cur+d));
+  render();
+}
+function showResult(){
+  document.getElementById('quiz').classList.add('hide');
+  document.getElementById('nav').classList.add('hide');
+  document.getElementById('prog').style.width='100%';
+
+  let task=0, team=0, state=0, ceil=0, maxTask=0, maxTeam=0, maxState=0;
+  QS.forEach((Q,qi)=>{
+    const op = Q.o[answers[qi]];
+    task+=op.task; team+=op.team; state+=op.state; ceil+=op.ceil;
+    maxTask+=Math.max(...Q.o.map(x=>x.task));
+    maxTeam+=Math.max(...Q.o.map(x=>x.team));
+    maxState+=Math.max(...Q.o.map(x=>x.state));
+  });
+  const pTask = Math.round(task/Math.max(maxTask,1)*100);
+  const pTeam = Math.round(team/Math.max(maxTeam,1)*100);
+  const pState = Math.round(state/Math.max(maxState,1)*100);
+
+  // 1体限界サイン: ceil の合計（-7 〜 +9 くらいのレンジ）
+  let ceilMsg, ceilLevel;
+  if(ceil >= 4){ ceilLevel='高'; ceilMsg='1体のAIに抱え込ませすぎのサインが強く出ています。まず「分ける」ことを検討する価値が高い状態です。'; }
+  else if(ceil >= 1){ ceilLevel='中'; ceilMsg='部分的に1体で抱えています。効果が出そうな1工程だけ切り出して試すのがおすすめです。'; }
+  else { ceilLevel='低'; ceilMsg='今の作業は1体のままでも回りそうです。無理に分けると過剰設計になります。'; }
+
+  const items = [
+    {key:'task', label:'① タスク組織化', p:pTask, weak:pTask>=50,
+     advWeak:'工程の分解と依存関係が整理できていません。まず紙に「集める / 作る / 確かめる」の3つに割り、それぞれの前後関係と「同時にできるもの」に印をつけてください。',
+     advOk:'工程の分け方は問題なさそうです。'},
+    {key:'team', label:'② エージェント連携', p:pTeam, weak:pTeam>=50,
+     advWeak:'「作る役」と「確かめる役」が同じになっています。チェックだけは別のセッション（または別のAI役）に、作った成果物だけを渡してやらせてください。自己採点は確証バイアスの温床です。',
+     advOk:'役割分担・レビューの分離はできています。'},
+    {key:'state', label:'③ 実行時状態管理', p:pState, weak:pState>=50,
+     advWeak:'途中で失敗すると原因が追えず、最初からやり直しになっています。各工程の出力を短くメモに残し、「どこまで正しかったか」を後から確認できる状態にしてください。配布の「復旧チェックリスト」がそのまま使えます。',
+     advOk:'途中状態の記録と復旧の備えはできています。'},
+  ];
+  items.sort((a,b)=>b.p-a.p);
+  const worst = items[0];
+
+  let html = '<h2>診断結果</h2>';
+  html += '<div class="verdict"><b>1体で抱え込みすぎ度：'+ceilLevel+'</b><br>'+ceilMsg+'</div>';
+  items.forEach(it=>{
+    html += '<div class="score-row '+(it.weak?'weak':'ok')+'">'
+      + '<span class="lbl">'+it.label+'</span>'
+      + '<span class="track"><i style="width:'+Math.max(it.p,4)+'%"></i></span>'
+      + '<span class="pct">'+it.p+'</span></div>';
+  });
+  html += '<div class="next"><h3>いちばん手薄なのは「'+worst.label.replace(/^[①②③]\s/,'')+'」</h3>'
+    + '<p>'+worst.advWeak+'</p>';
+  const others = items.slice(1).filter(x=>x.weak);
+  if(others.length){
+    html += others.map(o=>'<div class="step">'+o.label+'：'+o.advWeak+'</div>').join('');
+  } else {
+    html += '<div class="step">他の2要素は大きな問題は見当たりませんでした（'+items.slice(1).map(o=>o.label).join(' / ')+'）。</div>';
+  }
+  html += '</div>';
+
+  html += '<div class="next"><h3>次の一手（この順で）</h3>'
+    + '<div class="step">1. 上の「いちばん手薄な要素」への対策を、1工程だけで試す</div>'
+    + '<div class="step">2. 効果を感じたら、隣の工程にも同じやり方を広げる</div>'
+    + '<div class="step">3. 「1体で抱え込みすぎ度」が中〜高の人は、まず作業を3つに割るところから</div>'
+    + '</div>';
+
+  html += '<div class="nav" style="margin-top:18px;"><button class="b ghost" onclick="restart()">もう一度診断する</button></div>';
+
+  const r = document.getElementById('result');
+  r.innerHTML = html;
+  r.classList.remove('hide');
+  r.scrollIntoView({behavior:'smooth', block:'start'});
+}
+function restart(){
+  cur=0; answers.fill(null);
+  document.getElementById('result').classList.add('hide');
+  document.getElementById('quiz').classList.remove('hide');
+  document.getElementById('nav').classList.remove('hide');
+  render();
+}
+render();
+</script>
+</body>
+</html>

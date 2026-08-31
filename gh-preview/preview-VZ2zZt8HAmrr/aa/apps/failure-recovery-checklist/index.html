@@ -2,17 +2,15 @@
 <html lang="ja"><head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>ローカル/API判定シート — Kawaru Gifts</title>
-<meta name="description" content="MiniMax H3・Qwen3.8-Maxを「ローカル実行」「API課金」「今の有償モデル継続」のどれで使うべきか判定するための実務シートです。">
+<title>AIの長い仕事が途中で失敗したとき用 復旧チェックリスト — Kawaru Gifts</title>
+<meta name="description" content="AIに任せた長い作業（リサーチ、資料作成、データ整理、記事の下書きなど）が途中で失敗・脱線したときに、最初からやり直さずに「壊れた所だけ」を直して再開するための手順書です。論文でいう「実行時状態管理（状態記録・失敗箇所の特定・復旧）」を、エンジニアでない人の業務に落としたものです。">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Kawaru Gifts">
-<meta property="og:title" content="ローカル/API判定シート — Kawaru Gifts">
-<meta property="og:description" content="MiniMax H3・Qwen3.8-Maxを「ローカル実行」「API課金」「今の有償モデル継続」のどれで使うべきか判定するための実務シートです。">
-<meta property="og:image" content="https://i.ytimg.com/vi/ARy4S--ZP2w/hqdefault.jpg">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://i.ytimg.com/vi/ARy4S--ZP2w/hqdefault.jpg">
-<meta name="twitter:title" content="ローカル/API判定シート — Kawaru Gifts">
-<meta name="twitter:description" content="MiniMax H3・Qwen3.8-Maxを「ローカル実行」「API課金」「今の有償モデル継続」のどれで使うべきか判定するための実務シートです。">
+<meta property="og:title" content="AIの長い仕事が途中で失敗したとき用 復旧チェックリスト — Kawaru Gifts">
+<meta property="og:description" content="AIに任せた長い作業（リサーチ、資料作成、データ整理、記事の下書きなど）が途中で失敗・脱線したときに、最初からやり直さずに「壊れた所だけ」を直して再開するための手順書です。論文でいう「実行時状態管理（状態記録・失敗箇所の特定・復旧）」を、エンジニアでない人の業務に落としたものです。">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="AIの長い仕事が途中で失敗したとき用 復旧チェックリスト — Kawaru Gifts">
+<meta name="twitter:description" content="AIに任せた長い作業（リサーチ、資料作成、データ整理、記事の下書きなど）が途中で失敗・脱線したときに、最初からやり直さずに「壊れた所だけ」を直して再開するための手順書です。論文でいう「実行時状態管理（状態記録・失敗箇所の特定・復旧）」を、エンジニアでない人の業務に落としたものです。">
 <meta name="robots" content="noindex,nofollow">
 <link rel="icon" href="data:image/png;base64,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">
 <link rel="stylesheet" href="../../assets/site.css?v=f40364df6d4a">
@@ -20,177 +18,220 @@
 <header class="kh"><div class="top">
   <a class="back" href="../../">← 一覧へ</a>
   <img src="data:image/png;base64,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" alt="">
-  <h1>ローカル/API判定シート</h1>
-  <span class="badge">14項目</span>
+  <h1>AIの長い仕事が途中で失敗したとき用 復旧チェックリスト</h1>
+  <span class="badge">18項目</span>
   <button class="btn ghost sm" style="margin-left:auto" data-copy="pfull" aria-label="全件コピー">📋<span class="blabel"> 全件コピー</span></button>
-  <button class="btn sm" data-save="pfull" data-name="local-api-judgment-sheet.md" aria-label="全件ダウンロード">⬇<span class="blabel"> 全件ダウンロード</span></button>
+  <button class="btn sm" data-save="pfull" data-name="failure-recovery-checklist.md" aria-label="全件ダウンロード">⬇<span class="blabel"> 全件ダウンロード</span></button>
 </div></header>
 
 <div class="kwrap">
   <section class="epctx epctx-top">
   <div class="ep-left">
-    <div class="ep-thumb epctx-thumb"><img src="https://i.ytimg.com/vi/ARy4S--ZP2w/hqdefault.jpg" alt=""></div>
-    <a class="watch" href="https://www.youtube.com/watch?v=ARy4S--ZP2w" target="_blank" rel="noopener">▶ 動画を見る</a>
-    <div class="ep-docs"><a class="docbtn" href="https://github.com/chaaaaarin/kawaru-channel-20260806" target="_blank" rel="noopener">📚 資料</a><a class="docbtn" href="https://chaaaaarin.github.io/kawaru-channel-20260806/slides.html" target="_blank" rel="noopener">🖥 スライド</a><a class="docbtn" href="https://chaaaaarin.github.io/kawaru-channel-20260806/onepager.html" target="_blank" rel="noopener">📄 1枚資料</a></div>
+    <div class="ep-thumb epctx-thumb"><div class="noimg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M10.5 9.2v5.6l4.8-2.8-4.8-2.8Z" fill="currentColor" stroke="none"/></svg></div><span class="upbadge">近日公開</span></div>
+    
+    <div class="ep-docs"><a class="docbtn" href="https://github.com/chaaaaarin/kawaru-channel-20260831-110" target="_blank" rel="noopener">📚 資料</a><a class="docbtn" href="https://chaaaaarin.github.io/kawaru-channel-20260831-110/slides.html" target="_blank" rel="noopener">🖥 スライド</a><a class="docbtn" href="https://chaaaaarin.github.io/kawaru-channel-20260831-110/onepager.html" target="_blank" rel="noopener">📄 1枚資料</a></div>
   </div>
   <div>
     <p class="epctx-label">この動画のプレゼントです</p>
-    <p class="epctx-title">【激ヤバ】新モデルが登場したことで、Claudeを超える最も安くて賢いAIが爆誕しました</p>
-    <p class="epctx-date">2026-08-13</p>
-    <a class="epbundle" href="../../bundles/ARy4S--ZP2w.md" download="プレゼント一式_2026-08-13.md">⬇ この回のプレゼントを全部ダウンロード</a>
+    <p class="epctx-title"></p>
+    <p class="epctx-date">2026-09-07</p>
+    <a class="epbundle" href="../../bundles/d20260907.md" download="プレゼント一式_2026-09-07.md">⬇ この回のプレゼントを全部ダウンロード</a>
   </div>
 </section>
 
   <section class="kintro">
-    <h2>ローカル/API判定シート</h2>
-    <p>MiniMax H3・<span class="nb">Qwen3.8-Maxを</span><span class="nb">「ローカル実行」</span><span class="nb">「API課金」</span><span class="nb">「今の有償モデル継続」のどれで</span><span class="nb">使うべきか判定するための実務シートで</span><span class="nb">す。</span></p>
-    <div class="kmeta"><span>テンプレート</span><span>収録 14項目</span><span>No.85 MiniMaxとQwenの気骨がヤバい</span><span>2026-08-06 配布</span></div>
+    <h2>AIの長い仕事が途中で失敗したとき用 復旧チェックリスト</h2>
+    <p><span class="nb">AIに任せた長い作業</span><span class="nb">（リサーチ、</span><span class="nb">資料作成、</span><span class="nb">データ整理、</span><span class="nb">記事の下書きなど）が途中で失敗・</span><span class="nb">脱線したときに、</span><span class="nb">最初からやり直さずに</span><span class="nb">「壊れた所だけ」を</span><span class="nb">直して再開するための手順書です。</span><span class="nb">論文でいう</span><span class="nb">「実行時状態管理</span><span class="nb">（状態記録・</span><span class="nb">失敗箇所の特定・</span><span class="nb">復旧）」を、</span><span class="nb">エンジニアでない人の業務に落と</span><span class="nb">したものです。</span></p>
+    <div class="kmeta"><span>チェックリスト</span><span>収録 18項目</span><span>No.110 グラフエンジニアリング論文</span><span>2026-08-31 配布</span></div>
     <div class="pnote"><span class="nb">下のカードから、</span><span class="nb">1件ずつコピー、</span><span class="nb">または個別にダウンロードできます。</span><span class="nb">まとめて欲しいときは、</span><span class="nb">上の</span><span class="nb">「全件ダウンロード」を</span><span class="nb">お使いください。</span></div>
   </section>
 
   <div class="icard" id="i1" data-cat="">
-  <div class="ih"><span class="num">001</span><span class="ititle">ステップ1：まず自分のGPU環境を確認する</span></div>
+  <div class="ih"><span class="num">001</span><span class="ititle">ステップ0：次回のために先に仕込む（今から始める人向け）</span></div>
   
-  <pre class="prompt" id="b1"><span class="cline" data-c="b1-0"><span class="cbx">□</span> VRAM 20GB以上のGPUが手元にあるか？（RTX4090・RTX5090・RTX6000クラス）</span>
-  → YES: ステップ2へ進む（Q4量子化でのローカル実行が視野に入る）
-  → NO: ローカル実行は諦め、API利用を前提にステップ4へ進む
-<span class="cline" data-c="b1-1"><span class="cbx">□</span> VRAM 32GB以上を確保できるか？</span>
-  → YES: Q8量子化での実行も選べる（品質重視ならこちら）
-<span class="cline" data-c="b1-2"><span class="cbx">□</span> VRAM 60GB前後を確保できるか？</span>
-  → YES: FP16フル精度での実行も視野に入る（最も高品質だが要件は高い）</pre>
+  <pre class="prompt" id="b1"><span class="cline" data-c="b1-0"><span class="cbx">□</span> 作業を「集める→作る→確かめる」など3〜5個の工程に分けたか</span>
+<span class="cline" data-c="b1-1"><span class="cbx">□</span> 各工程の終わりに、出力を短くメモ（箇条書き5行以内）で残すよう頼んだか</span>
+<span class="cline" data-c="b1-2"><span class="cbx">□</span> 「工程がひとつ終わるたびに、ここまでの結果と次の工程名を1行で報告して」と伝えたか</span>
+→ YES: これで失敗しても「どの工程まで正しかったか」が残る
+指示例: これから複数工程の作業をお願いします。各工程の終わりに「完了した工程名／成果の要点3行／次の工程名」だけを報告してから次に進んでください。</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b1">📋 コピー</button>
-    <button class="btn ghost sm" data-save="b1" data-name="local-api-judgment-sheet-001.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-save="b1" data-name="failure-recovery-checklist-001.txt">⬇ ダウンロード</button>
     <button class="btn ghost sm" data-link="i1">🔗 リンク</button>
   </div>
 </div>
 <div class="icard" id="i2" data-cat="">
-  <div class="ih"><span class="num">002</span><span class="ititle">ステップ2：ローカル実行が向いている用途か確認する</span></div>
+  <div class="ih"><span class="num">002</span><span class="ititle">ステップ1：まず止める・広げない</span></div>
   
-  <pre class="prompt" id="b2"><span class="cline" data-c="b2-0"><span class="cbx">□</span> 同じような処理を毎日・大量に繰り返す予定か？</span>
-  → YES: ローカル実行でAPI課金を積み上げるより、固定コスト（電気代・機材）に寄せた方が有利になりやすい
-<span class="cline" data-c="b2-1"><span class="cbx">□</span> 機密性の高いデータを外部APIに送りたくない事情があるか？</span>
-  → YES: ローカル実行を優先候補にする（データが手元の環境から出ない）
-<span class="cline" data-c="b2-2"><span class="cbx">□</span> 単発・少量の利用が中心か？</span>
-  → YES: ローカル実行のセットアップ手間の方が割高になりやすい。API利用へ</pre>
+  <pre class="prompt" id="b2"><span class="cline" data-c="b2-0"><span class="cbx">□</span> 失敗・脱線に気づいた</span>
+<span class="cline" data-c="b2-1"><span class="cbx">□</span> そのままAIに続きを頼んでいない（間違いの上に積み増さない）</span>
+→ YES: 一度会話を止めて、下の切り分けに移る
+指示例: いったん作業を止めてください。今の続きは書かないで、ここまでの状態だけ教えてください。</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b2">📋 コピー</button>
-    <button class="btn ghost sm" data-save="b2" data-name="local-api-judgment-sheet-002.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-save="b2" data-name="failure-recovery-checklist-002.txt">⬇ ダウンロード</button>
     <button class="btn ghost sm" data-link="i2">🔗 リンク</button>
   </div>
 </div>
 <div class="icard" id="i3" data-cat="">
-  <div class="ih"><span class="num">003</span><span class="ititle">ステップ3：商用利用の条件を確認する（特にMiniMax H3）</span></div>
+  <div class="ih"><span class="num">003</span><span class="ititle">ステップ2：どこまでが正しかったかを確定する</span></div>
   
-  <pre class="prompt" id="b3"><span class="cline" data-c="b3-0"><span class="cbx">□</span> 年間売上が2,000万ドル未満か？</span>
-  → YES: MiniMax H3のコミュニティライセンスで商用利用可（要ライセンス表記）
-  → NO: MiniMaxへの別途許諾申請が必要。先に確認してから着手する
-<span class="cline" data-c="b3-1"><span class="cbx">□</span> 利用者・利用地域が米国・EU・英国・韓国に該当するか？</span>
-  → YES: MiniMax H3公式ブログでApplicable Territoryの最新条件を必ず確認する
-  → NO: 通常の商用利用条件（上記2,000万ドルの壁）だけ確認すればよい</pre>
+  <pre class="prompt" id="b3"><span class="cline" data-c="b3-0"><span class="cbx">□</span> 直近で「ここは合っている」と確認できた工程はどれか</span>
+<span class="cline" data-c="b3-1"><span class="cbx">□</span> その工程の出力（メモ・成果物）は手元に残っているか</span>
+<span class="cline" data-c="b3-2"><span class="cbx">□</span> 残っていない場合、AIに「工程◯の出力だけをもう一度そのまま出して」と頼んだか</span>
+→ YES: そこが「戻る地点」。ここより後だけを作り直す
+指示例: 工程1〜3のうち、根拠まで確認できているのはどこまでですか。確認できている最後の工程の成果を、そのまま省略せず出してください。</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b3">📋 コピー</button>
-    <button class="btn ghost sm" data-save="b3" data-name="local-api-judgment-sheet-003.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-save="b3" data-name="failure-recovery-checklist-003.txt">⬇ ダウンロード</button>
     <button class="btn ghost sm" data-link="i3">🔗 リンク</button>
   </div>
 </div>
 <div class="icard" id="i4" data-cat="">
-  <div class="ih"><span class="num">004</span><span class="ititle">ステップ4：API利用時のコストを試算する</span></div>
+  <div class="ih"><span class="num">004</span><span class="ititle">ステップ3：失敗の原因を1つに絞る</span></div>
   
-  <pre class="prompt" id="b4"><span class="cline" data-c="b4-0"><span class="cbx">□</span> どのリージョンから使うか決めているか？</span>
-  → YES: 東京等のリージョンはシンガポールより約17.5%安い場合がある。料金表で最新の単価を確認する
-<span class="cline" data-c="b4-1"><span class="cbx">□</span> Web検索・画像検索などのツール呼び出しを併用する予定か？</span>
-  → YES: ツール利用は別課金（例: Web検索$10/1,000回）になる場合がある。合算した見積もりを作る
-<span class="cline" data-c="b4-2"><span class="cbx">□</span> 月間の想定トークン量（入力・出力）を概算できているか？</span>
-  → YES: 入力・出力それぞれの単価×想定量で、月額の目安を先に出しておく</pre>
+  <pre class="prompt" id="b4"><span class="cline" data-c="b4-0"><span class="cbx">□</span> 失敗は「情報が足りなかった」タイプか</span>
+<span class="cline" data-c="b4-1"><span class="cbx">□</span> 「工程の順番・分け方が悪かった」タイプか</span>
+<span class="cline" data-c="b4-2"><span class="cbx">□</span> 「AIが途中の指示を取り違えた・忘れた」タイプか</span>
+→ YES（情報不足）: 不足していた情報を足して、戻る地点から再開
+→ YES（順番が悪い）: 工程の分け方を修正してから再開
+→ YES（取り違え）: 戻る地点の出力を「確定情報」として新しい会話に貼り直して再開
+指示例: 今回うまくいかなかった原因は、(a)情報不足 (b)工程の分け方 (c)指示の取り違え のどれに近いですか。理由も一言添えてください。</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b4">📋 コピー</button>
-    <button class="btn ghost sm" data-save="b4" data-name="local-api-judgment-sheet-004.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-save="b4" data-name="failure-recovery-checklist-004.txt">⬇ ダウンロード</button>
     <button class="btn ghost sm" data-link="i4">🔗 リンク</button>
   </div>
 </div>
 <div class="icard" id="i5" data-cat="">
-  <div class="ih"><span class="num">005</span><span class="ititle">ステップ5：既存の有償モデル（Claude/GPT等）と比較する</span></div>
+  <div class="ih"><span class="num">005</span><span class="ititle">ステップ4：作り直す範囲を決める（全部やり直さない）</span></div>
   
-  <pre class="prompt" id="b5"><span class="cline" data-c="b5-0"><span class="cbx">□</span> 高難度の推論・大規模リポジトリの改修が中心のタスクか？</span>
-  → YES: 現時点ではQwen3.8-Maxよりも既存の上位モデルに分がある可能性が高い。既存モデルを継続する
-<span class="cline" data-c="b5-1"><span class="cbx">□</span> コスト効率・長時間の自律タスク・動画生成が中心のタスクか？</span>
-  → YES: Qwen3.8-Max／MiniMax H3への切り替え、または併用を検討する候補になる
-<span class="cline" data-c="b5-2"><span class="cbx">□</span> 判断がつかない場合はどうするか？</span>
-  → 指示例: 「このタスクをQwen3.8-Maxと（既存の利用モデル）の両方で試し、精度・速度・コストを比較して報告して」と指示し、実際に併用比較してから決める</pre>
+  <pre class="prompt" id="b5"><span class="cline" data-c="b5-0"><span class="cbx">□</span> 戻る地点から先の工程を書き出したか</span>
+<span class="cline" data-c="b5-1"><span class="cbx">□</span> そのうち、今回の失敗の影響を受けたのはどれか</span>
+<span class="cline" data-c="b5-2"><span class="cbx">□</span> 影響を受けていない工程の成果は、そのまま流用すると決めたか</span>
+→ YES: 影響を受けた工程だけを作り直す対象にする
+指示例: 戻る地点は工程◯です。その出力を「確定」として扱い、工程◯以降だけをやり直してください。工程◯より前の内容は変更しないでください。</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b5">📋 コピー</button>
-    <button class="btn ghost sm" data-save="b5" data-name="local-api-judgment-sheet-005.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-save="b5" data-name="failure-recovery-checklist-005.txt">⬇ ダウンロード</button>
     <button class="btn ghost sm" data-link="i5">🔗 リンク</button>
+  </div>
+</div>
+<div class="icard" id="i6" data-cat="">
+  <div class="ih"><span class="num">006</span><span class="ititle">ステップ5：チェックは別の役にやらせる</span></div>
+  
+  <pre class="prompt" id="b6"><span class="cline" data-c="b6-0"><span class="cbx">□</span> 作り直した成果を、作ったのと同じ会話でそのまま自己採点させていないか</span>
+<span class="cline" data-c="b6-1"><span class="cbx">□</span> 別のセッション（または別のAI役）に、成果物だけを渡してチェックさせたか</span>
+→ YES: 「自分の判断」を「正しい証拠」と取り違える事故を防げる
+指示例: （別の会話で）これは私が別途作った成果物です。作成の経緯は知らない前提で、事実の誤り・抜け・前の工程との矛盾だけを指摘してください。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b6">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b6" data-name="failure-recovery-checklist-006.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i6">🔗 リンク</button>
+  </div>
+</div>
+<div class="icard" id="i7" data-cat="">
+  <div class="ih"><span class="num">007</span><span class="ititle">ステップ6：再発防止を1行だけ残す</span></div>
+  
+  <pre class="prompt" id="b7"><span class="cline" data-c="b7-0"><span class="cbx">□</span> 今回の失敗を、ステップ0のどの項目に足せば防げたかを1行でメモしたか</span>
+→ YES: 次の長い作業のとき、その1行を最初の指示に入れる
+指示例: 今回の失敗を次回防ぐための注意を、作業開始時の指示に足す形で1文にしてください。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b7">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b7" data-name="failure-recovery-checklist-007.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i7">🔗 リンク</button>
+  </div>
+</div>
+<div class="icard" id="i8" data-cat="">
+  <div class="ih"><span class="num">008</span><span class="ititle">判定</span></div>
+  
+  <pre class="prompt" id="b8"><span class="cline" data-c="b8-0"><span class="cbx">□</span> 戻る地点が決まり、作り直す範囲が「一部の工程」に絞れた</span>
+→ YES: そのまま部分的な作り直しへ進む
+→ NO（どこまで正しいか分からない）: 状態が全く残っていない状態。今回は最初からやり直し、次回は必ずステップ0を仕込む</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b8">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b8" data-name="failure-recovery-checklist-008.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i8">🔗 リンク</button>
   </div>
 </div>
 
   <section class="epctx">
   <p class="epctx-label">この動画のほかのプレゼント</p>
-  <div class="ep-kits"><a class="kchip" href="../license-trap-checklist/"><span class="kt">オープンウェイト ライセンス罠チェックリスト</span><span class="badge">12項目</span><span class="go">開く →</span></a><a class="kchip" href="../prompts100/"><span class="kt">MiniMax H3×Qwen3.8-Max 実践プロンプト100選</span><span class="badge">100個</span><span class="go">開く →</span></a></div>
+  <div class="ep-kits"><a class="kchip" href="../ai-automation-checkup/"><span class="kt">AI自動化 健康診断アプリ</span><span class="badge">アプリ</span><span class="go">開く →</span></a><a class="kchip" href="../graph-engineering-paper-map/"><span class="kt">64ページ論文の歩き方</span><span class="go">開く →</span></a></div>
 </section>
   <section class="epctx">
-  <p class="epctx-label">ほかの回の「テンプレート」</p>
-  <div class="ep-kits"><a class="kchip" href="../graph-engineering-paper-map/"><span class="kt">64ページ論文の歩き方</span><span class="go">開く →</span></a><a class="kchip" href="../omni-40sec-template/"><span class="kt">40秒動画の設計テンプレート＋発注文10</span><span class="badge">11項目</span><span class="go">開く →</span></a><a class="kchip" href="../voice-command-10/"><span class="kt">声で指示するときの言い方 厳選10</span><span class="badge">5項目</span><span class="go">開く →</span></a><a class="kchip" href="../impact-triage-checklist/"><span class="kt">今週の変更 影響仕分けシート</span><span class="badge">12項目</span><span class="go">開く →</span></a></div>
+  <p class="epctx-label">ほかの回の「チェックリスト」</p>
+  <div class="ep-kits"><a class="kchip" href="../cursor-gpt-migration-checklist/"><span class="kt">Cursorユーザーの11月前 やることチェックリスト</span><span class="badge">21項目</span><span class="go">開く →</span></a><a class="kchip" href="../env-handoff-check/"><span class="kt">AIに「自分の環境」を渡す前のミニ確認シート</span><span class="badge">15項目</span><span class="go">開く →</span></a><a class="kchip" href="../agent-ready-checklist/"><span class="kt">AIエージェント対応 着手チェックリスト</span><span class="badge">26項目</span><span class="go">開く →</span></a><a class="kchip" href="../degradation-triage-checklist/"><span class="kt">劣化切り分けチェックリスト</span><span class="badge">6項目</span><span class="go">開く →</span></a></div>
 </section>
 
   <footer><a href="../../">← AIエージェント / Kawaru プレゼント図書館にもどる</a></footer>
 </div>
 
-<pre id="pfull" class="hidden"># 🎁 ローカル/API判定シート
+<pre id="pfull" class="hidden"># 🎁 AIの長い仕事が途中で失敗したとき用 復旧チェックリスト
 
-MiniMax H3・Qwen3.8-Maxを「ローカル実行」「API課金」「今の有償モデル継続」のどれで使うべきか判定するための実務シートです。
+AIに任せた長い作業（リサーチ、資料作成、データ整理、記事の下書きなど）が途中で失敗・脱線したときに、最初からやり直さずに「壊れた所だけ」を直して再開するための手順書です。論文でいう「実行時状態管理（状態記録・失敗箇所の特定・復旧）」を、エンジニアでない人の業務に落としたものです。
 
-**受け取り方**: 下のコードブロック右上のコピーボタンでコピーするか、このファイルをそのままダウンロードしてください。
+**受け取り方**: このファイルをそのままコピー、またはダウンロードしてご利用ください。
 
-**使い方**: 導入を検討するたびに、上から順に□をチェックしてください。
+**使い方**: 失敗に気づいた時点で上から順に埋めます。各ステップの「指示例」はそのままAIに貼れます。次からは、作業を始める前にステップ0を仕込んでおくと、この手順がずっと楽になります。
 
 ```text
-【ローカル/API判定シート】
+【AIの長い仕事が途中で失敗したとき用 復旧チェックリスト】
 
-■ ステップ1：まず自分のGPU環境を確認する
-□ VRAM 20GB以上のGPUが手元にあるか？（RTX4090・RTX5090・RTX6000クラス）
-  → YES: ステップ2へ進む（Q4量子化でのローカル実行が視野に入る）
-  → NO: ローカル実行は諦め、API利用を前提にステップ4へ進む
-□ VRAM 32GB以上を確保できるか？
-  → YES: Q8量子化での実行も選べる（品質重視ならこちら）
-□ VRAM 60GB前後を確保できるか？
-  → YES: FP16フル精度での実行も視野に入る（最も高品質だが要件は高い）
+■ ステップ0：次回のために先に仕込む（今から始める人向け）
+□ 作業を「集める→作る→確かめる」など3〜5個の工程に分けたか
+□ 各工程の終わりに、出力を短くメモ（箇条書き5行以内）で残すよう頼んだか
+□ 「工程がひとつ終わるたびに、ここまでの結果と次の工程名を1行で報告して」と伝えたか
+→ YES: これで失敗しても「どの工程まで正しかったか」が残る
+指示例: これから複数工程の作業をお願いします。各工程の終わりに「完了した工程名／成果の要点3行／次の工程名」だけを報告してから次に進んでください。
 
-■ ステップ2：ローカル実行が向いている用途か確認する
-□ 同じような処理を毎日・大量に繰り返す予定か？
-  → YES: ローカル実行でAPI課金を積み上げるより、固定コスト（電気代・機材）に寄せた方が有利になりやすい
-□ 機密性の高いデータを外部APIに送りたくない事情があるか？
-  → YES: ローカル実行を優先候補にする（データが手元の環境から出ない）
-□ 単発・少量の利用が中心か？
-  → YES: ローカル実行のセットアップ手間の方が割高になりやすい。API利用へ
+■ ステップ1：まず止める・広げない
+□ 失敗・脱線に気づいた
+□ そのままAIに続きを頼んでいない（間違いの上に積み増さない）
+→ YES: 一度会話を止めて、下の切り分けに移る
+指示例: いったん作業を止めてください。今の続きは書かないで、ここまでの状態だけ教えてください。
 
-■ ステップ3：商用利用の条件を確認する（特にMiniMax H3）
-□ 年間売上が2,000万ドル未満か？
-  → YES: MiniMax H3のコミュニティライセンスで商用利用可（要ライセンス表記）
-  → NO: MiniMaxへの別途許諾申請が必要。先に確認してから着手する
-□ 利用者・利用地域が米国・EU・英国・韓国に該当するか？
-  → YES: MiniMax H3公式ブログでApplicable Territoryの最新条件を必ず確認する
-  → NO: 通常の商用利用条件（上記2,000万ドルの壁）だけ確認すればよい
+■ ステップ2：どこまでが正しかったかを確定する
+□ 直近で「ここは合っている」と確認できた工程はどれか
+□ その工程の出力（メモ・成果物）は手元に残っているか
+□ 残っていない場合、AIに「工程◯の出力だけをもう一度そのまま出して」と頼んだか
+→ YES: そこが「戻る地点」。ここより後だけを作り直す
+指示例: 工程1〜3のうち、根拠まで確認できているのはどこまでですか。確認できている最後の工程の成果を、そのまま省略せず出してください。
 
-■ ステップ4：API利用時のコストを試算する
-□ どのリージョンから使うか決めているか？
-  → YES: 東京等のリージョンはシンガポールより約17.5%安い場合がある。料金表で最新の単価を確認する
-□ Web検索・画像検索などのツール呼び出しを併用する予定か？
-  → YES: ツール利用は別課金（例: Web検索$10/1,000回）になる場合がある。合算した見積もりを作る
-□ 月間の想定トークン量（入力・出力）を概算できているか？
-  → YES: 入力・出力それぞれの単価×想定量で、月額の目安を先に出しておく
+■ ステップ3：失敗の原因を1つに絞る
+□ 失敗は「情報が足りなかった」タイプか
+□ 「工程の順番・分け方が悪かった」タイプか
+□ 「AIが途中の指示を取り違えた・忘れた」タイプか
+→ YES（情報不足）: 不足していた情報を足して、戻る地点から再開
+→ YES（順番が悪い）: 工程の分け方を修正してから再開
+→ YES（取り違え）: 戻る地点の出力を「確定情報」として新しい会話に貼り直して再開
+指示例: 今回うまくいかなかった原因は、(a)情報不足 (b)工程の分け方 (c)指示の取り違え のどれに近いですか。理由も一言添えてください。
 
-■ ステップ5：既存の有償モデル（Claude/GPT等）と比較する
-□ 高難度の推論・大規模リポジトリの改修が中心のタスクか？
-  → YES: 現時点ではQwen3.8-Maxよりも既存の上位モデルに分がある可能性が高い。既存モデルを継続する
-□ コスト効率・長時間の自律タスク・動画生成が中心のタスクか？
-  → YES: Qwen3.8-Max／MiniMax H3への切り替え、または併用を検討する候補になる
-□ 判断がつかない場合はどうするか？
-  → 指示例: 「このタスクをQwen3.8-Maxと（既存の利用モデル）の両方で試し、精度・速度・コストを比較して報告して」と指示し、実際に併用比較してから決める
+■ ステップ4：作り直す範囲を決める（全部やり直さない）
+□ 戻る地点から先の工程を書き出したか
+□ そのうち、今回の失敗の影響を受けたのはどれか
+□ 影響を受けていない工程の成果は、そのまま流用すると決めたか
+→ YES: 影響を受けた工程だけを作り直す対象にする
+指示例: 戻る地点は工程◯です。その出力を「確定」として扱い、工程◯以降だけをやり直してください。工程◯より前の内容は変更しないでください。
+
+■ ステップ5：チェックは別の役にやらせる
+□ 作り直した成果を、作ったのと同じ会話でそのまま自己採点させていないか
+□ 別のセッション（または別のAI役）に、成果物だけを渡してチェックさせたか
+→ YES: 「自分の判断」を「正しい証拠」と取り違える事故を防げる
+指示例: （別の会話で）これは私が別途作った成果物です。作成の経緯は知らない前提で、事実の誤り・抜け・前の工程との矛盾だけを指摘してください。
+
+■ ステップ6：再発防止を1行だけ残す
+□ 今回の失敗を、ステップ0のどの項目に足せば防げたかを1行でメモしたか
+→ YES: 次の長い作業のとき、その1行を最初の指示に入れる
+指示例: 今回の失敗を次回防ぐための注意を、作業開始時の指示に足す形で1文にしてください。
+
+■ 判定
+□ 戻る地点が決まり、作り直す範囲が「一部の工程」に絞れた
+→ YES: そのまま部分的な作り直しへ進む
+→ NO（どこまで正しいか分からない）: 状態が全く残っていない状態。今回は最初からやり直し、次回は必ずステップ0を仕込む
 ```
 
-**ポイント**: ライセンス・地域制限は変更される可能性があるため、実際に商用利用する前に必ず公式サイトの最新条件を確認してください。
+**ポイント**: 「最初からやり直す」を選ぶ前に、必ずステップ2（どこまで正しかったか）を試すこと。1回でも「戻る地点」を作れれば、次回から復旧が一気に楽になります。
 </pre>
 <script>
 

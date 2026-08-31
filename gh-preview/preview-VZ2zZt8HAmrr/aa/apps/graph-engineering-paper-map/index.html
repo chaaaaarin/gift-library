@@ -2,17 +2,15 @@
 <html lang="ja"><head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>ローカル/API判定シート — Kawaru Gifts</title>
-<meta name="description" content="MiniMax H3・Qwen3.8-Maxを「ローカル実行」「API課金」「今の有償モデル継続」のどれで使うべきか判定するための実務シートです。">
+<title>64ページ論文の歩き方 — Kawaru Gifts</title>
+<meta name="description" content="話題の論文「Graph Engineering in the Era of LLM Agents」（arXiv:2608.21156・全64ページ）を、最初から最後まで読まずに要点だけつかむための地図です。「今どこで困っているか」から必要な章に直行できます。">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Kawaru Gifts">
-<meta property="og:title" content="ローカル/API判定シート — Kawaru Gifts">
-<meta property="og:description" content="MiniMax H3・Qwen3.8-Maxを「ローカル実行」「API課金」「今の有償モデル継続」のどれで使うべきか判定するための実務シートです。">
-<meta property="og:image" content="https://i.ytimg.com/vi/ARy4S--ZP2w/hqdefault.jpg">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://i.ytimg.com/vi/ARy4S--ZP2w/hqdefault.jpg">
-<meta name="twitter:title" content="ローカル/API判定シート — Kawaru Gifts">
-<meta name="twitter:description" content="MiniMax H3・Qwen3.8-Maxを「ローカル実行」「API課金」「今の有償モデル継続」のどれで使うべきか判定するための実務シートです。">
+<meta property="og:title" content="64ページ論文の歩き方 — Kawaru Gifts">
+<meta property="og:description" content="話題の論文「Graph Engineering in the Era of LLM Agents」（arXiv:2608.21156・全64ページ）を、最初から最後まで読まずに要点だけつかむための地図です。「今どこで困っているか」から必要な章に直行できます。">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="64ページ論文の歩き方 — Kawaru Gifts">
+<meta name="twitter:description" content="話題の論文「Graph Engineering in the Era of LLM Agents」（arXiv:2608.21156・全64ページ）を、最初から最後まで読まずに要点だけつかむための地図です。「今どこで困っているか」から必要な章に直行できます。">
 <meta name="robots" content="noindex,nofollow">
 <link rel="icon" href="data:image/png;base64,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">
 <link rel="stylesheet" href="../../assets/site.css?v=f40364df6d4a">
@@ -20,177 +18,248 @@
 <header class="kh"><div class="top">
   <a class="back" href="../../">← 一覧へ</a>
   <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHgAAABPCAIAAACveZaQAAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAeKADAAQAAAABAAAATwAAAAAb4zF4AAAQkklEQVR4Ae1cCZAU1Rmenmt3lt0d2GVnFlhwWQSPRQklAgZFEVHCIYtERSspNQY0lcSKEmOqrFSMlcuUJjFVGkotY2JMeURAlEM8kBhQlIiCKFoCuxx7zV6zx+zO9PRMvtdv5k1P3z3TsyyVtO7M6//95/f+9/fr1z1wgpDgOAc58JkUG4oPjuOSjiTn4JJJwiGyEwoVIXRRkrCJDDIFoIOSktXmyZKF0rQ5uTbRKvNUZEwrT3siFxGNMvdoQ/qp5GcOo0H9ZxR2mqJk45bqJYgwH8Ho4BKJBPke8Ud2OCPFXZZk+g4h05wGHDR99ZmMeknS5X1I08MWhXl7RBTI0lapk7qKeW4AtKEipWolxRYlUrW2K5Qqp22WGqyh5NGhMCnqKuqJAdA6unLuYk7krGEYBNkEYg1LRmVSuPwYAF2ISSpzQhpAIcxJ9Wu1TY69STZVKwZAm5mk+ZiX+WTGnEzEllOMvZkx1kkRfTeMS0dBzes7N8y9hR3j4bkYDjNkI9AcRhGlw8apb1uMdvlklx6twMzrN6jRWgbyoKd803cx52ooc8wuPTK17NSkflqjTTIz5Xk2UuaG2WqeTucvnpXR0izDZdDMlTB/D5gVqXVLapkGS1LDyYx19Bmz1zGcuJixhbTQmpSqXVkZbcbAsPEMQ57mPIcAghbKWl0jF+jCLmzFfNEBS5lPeQ68W6mxEBTV2cQM6fcyNq2GkEjG+Ti5pmgc6PB68400z4HP17xGaHKyfu7o98p10Z14EndKbv+nRxpPhlwuZ2rTPSNAGcgAzJkxbVxwdKZHrYWcZTppv5KiJmeKNkxAm/JFm0kWMHsWQ5F9+MnNO/ccLCryEjZygaeKRJTxwXHRaOzRn3/n5hXzmaCqKRnK4FFSVAXNEM8MoHUCBnbd4YEhnhcfrKVDTuW6iJXDERmK9g0Mpfvs+cZoZoyYUHlmAC0LRBpk6nmkkEy4ycNPF+ck8ZOkTv1ROBRVRabS8qkllKE9F6ClcVp2UCEgKwtmlGcFmXQEx46pqiz3FRfFeaGnL5KyQHDGQ1sOf2IjSyjFk8eXGT+ZegwzgE6JyAJmTMqGvS7LyoJSuY5jpCBz3JrVC6+Yc57H6/3X3kOb39wnzmngS5YhVJvt6QxMlH4qgWIU+Il1dEpEFjBjQpysbXtjIBLt7Yv09g/i/2gsrqpfyzHKjBjmz6m/9YaF06dNPNLUircnRDrICZrKtIRYxdqWmCl09NO4dOjHqQqNSeJQNL5px95w34DL6eIF4dwpE66ad6FJWSkbEP3ks8Z7fvXM/kPHish6OYmVdTGpJHG8jYI8Sme2VMigbSlhtXRR6OhnpnRocZun68xxpRKkWEd3+GePPN8T7ne6nFiBXTN/5qJLZ6TehVEKaFE47vMvj9//8D/2HzxaVOTB/ATKY/yjZl1w9s69h5DXoNiCmpZ9k3RSOmyZJrBnNSK8u5NICC4sFLBacDr5OE+cltzgGVYtjNaRxpYH/vDCnn2fi7nswOrDV+y97foFt994pcALIsYEZ7U3qIi1YTvIXsdpHPDMGANUeiLxRn/kgHLTqY4H//TSjnc/LvJ6EQjGrcjjXr183j23r0DpEIs0VWc/ziwJWENnzOCq5qaSGXkd1aa6JJiSlKOnGez1dMD1U21dv3l8w+Y3PvACZc4BWN0u18rFc+//wTd9Pi+uhaQ2E62kRLvMqYVJk4xpd6FbGoa6z7g0a14Mzcira7VCFX0EaGJ0kqKho4NkAOdoDfX8/slXX3jt3x6PB3LIZZfbtezKWQ/86IYx/lKIV1aUzpo+hSZ1LBafOL5KR6e0yxg2KbfYhvcyKUaBrxRJ44shY1Xoz5sgTR6glZrfMp8VVjhHqKv38Wdff+blnW6nCy+KAk2nk7t63oW/uGd1VYUf6QPF50yesP7Xa3lxtQfVBGj760fKN6XHSopmRrP4CpraItQAAJtBaYOskSZIv5H7XT39Tz3/1p+f3e5EVXcS9JxJ7vLZ9Q+uu2lCsAIogx9/bpezblK1VJZ2SSks76REe9sMPWOg7TWsro3uuJkoHU2nQr9dv+mfW/ZgfYxdUVIxXM5vNVy+bs2149MoUxMi3rqDppjv6r5ZoWqNHKpC5s6QKhRTzIpuO3hJjTZhuKW9+9G/bN247X3kJtI5mUhgXbhq8SV33bpEhrIdTuWiQ2tgkdfyVQdlNYzbkMGymxkf1SFHXX7sb9uf3/wu7iGRy+QO2+FYtnDW3bcvP6smoCwLlh0wIaAatSpRqUwONOVglUUpYJJBS1CVbmiupzfyxHNv/HXDO9EYjywGv5BMLrpsxrq1DVMnjyvcVY56y0Ze1U9VojJMdaCVfIWi0CDgLNmTIIfSb+zZP/3im0+9+GZkcAiPq8AjxAVc/X5yR0P91InI5cxkEDXY/qGl30wuM57TDTQLIt1gnlG8Bof4Zze+s/7vr/f2DeB+BFzYdJ49c+p931s5s75Ovny1HWNdhcqcULIzHgDNZoaSrcAU4kUKYIKvwpEYH0dRfuyZbR09/W6XGyWCjwsz6iffd+equTOnwTkmXmBHLahXCUOUBtDpXLKgzUbW9AqaoEyRJv5gHQJMX972/h+ffq011O1xu0AEBVup99258oq59TjFLt3JgaG4uPePU1sOEytMFTvSDFEfe/FXWVI2FS0FJBHLeEQiIgx46YgjJTgO+/d4VvLIU6+ebOlwA2WSy/HamuC9a1dcPX8GRGJCYl8ovOFo24GOPhurdG713jhVk+SZYRYbos46LyDMbLGAJKAbAimkcUu9bdf+h5/YdKSpxesht1SCINRUV9z93aXXLpqNDdUBXtjb3r3zVFdzJBrm4/4i99n+UXA8N5gKGWJGt/xiyFDWqjUZ0bxb6XmKb2qWfAKst/cc/N36TYePNHvFipGIC6MCFStWX3P9knm4sQbPwa7eLU0d7YMxr8uJ6rHleEdrJJquPHm7VQgFOj/oVK81djuRHs5U/YD63fsOP/T4xoNfNBGUcZMtCGWBiulLLi372jld5NfUZO8J9yqxhIAmCjweGxzu6d9xsrM3Fie9I+nIeGP4G5ZCu80mEFl0cM4PD3z10PqN+z494nEBZQdQLvGXnb/467Wz6o9FottPdHQNxcA3o7J8/rgK7CWJBZ5UjA/aenY1d0bpSBTaadP6ER3DWl46TCuxi1GEWnyU1d4Zxhbz7v8cpijjelha6pt+zSUTLzqfXDgSyY9CvW81d0VQSTyuhRMqZ1aVOfDIG8nCOeLJxM7mrg/ae3DHONLymiJ12oGmQ8653e7G5o633zvoxkaGk2zLlfjw6G/hquWXOd1OFAtUBT6Z2N3S/V5rdzyRqCj2fmNSYIrfJ27tA2sOV0ik/KGuPgTG8siudMhZD5uyANqqV1b59ZzM6AKOPNbECVQGrORG+Yp+ue6mH6+59sbzai6uKhfI8ygHqslgQnilKbTjRCfqRU1p8benTZjmL4lDCL1OrmMo9tyXLR93hKFEz+rp6FPP6PQ1StUjNkiqvYRoNkqiCX+UHZ/kf1SMYq/np99ftXLxJSW+olKXc9mkQH3FKJ4MAcE6mhDeau78MBSGcLCkaGVddbXPQ7DmODxuCfP8psb2Y72REVVA4AyAVgEuzyWHikaCv+IgwOJPTFfRDVQM3ATee0fDTcsvLRtVDAGoqvJ5V9QGakYV0ZeQgPVAPL65qf3Lnn4w1JaVXFdXXe514UaR6muJxDY0tnUOxQqNNcyZPDD/1DPapHz+bOQWQ4QaX2Ih5u66bcktqxb4y0qYcng5qbTkusnBMq+LbEITCVQJfmNjqH0wiithfUXZsrMCHjzWEruwWf1VT2RTY9tgHEtA82gwg2Yboi9mmU8z0MRNMRGBJmbX2psXrVm9CO8ZydzH4vncMaUNtSKa4gQA1k19kQ3H2vtjcY+Tuzjgv6pmLL0zxMMXjNrHHf3bT4Romsu0aZ3qFkwtIQM6G2kAXcAxN/ACtolx4JPEFvM5deN/eMvSqkq/qhReKrgoMHrRhCoMCQQgh6Xdgc6+LSdCeNRd4nYtGF85O1COYi0WIS6WFHa19Lzb2k1tqOqUEfMsmDJtqdN02qdqdCEGU92wnArECNp4lauivLS6ajSBXe0ACsVObkFNxdzq0ViEkIlA1taJPa3du1q6cF7udS+dFDzX7yP7eQ780zrcIB/fejz0SWcvSys1xXo06MnhkILJBi9VOth5DnrzFaHRIEmpL7pVtcztWjopcN5oLOnopY8biiew2vtIXIQESrwNddXjfF7WG47xrzS2H+8fNIm1DFk25jK6fshKMGE9q3RYUqdvzFwvMUiNkrJKw9LIaKoQLFiErJwcJGgic3E15xy9PL/5eOhomLzrX1vmW1kXLPe4EglyoYfy5v6hDUdbu6P2LEJygwjFDs6wYZO0zOGUNxett6IahrluRoMVMpMImtVAk97IgNg6EMWSLjQYwy1ifUX58rOCeEkVnFTrFz0Drza2D5lYhGSwyI6N0Vkju9/4jE5XY74CcbAZTQIwnS1gJEu62iDu17Hgw30KRuer8ODGY20RXiCLkKD/qvGVFBSSSth1ag+/cbKD7IQUKBIjtZaBllZ6I+XG/Ug6wgScLKYKFiFzAv6FE8ZCDlgDPieXPNDVt/VEO3ZCsAi5smYs1nwCKoioHlX7neau99ssLEKMvc/mkA2hDCjLQCsrfbY5ciazoWSQUyyiDHG4UexyLqypJGhitPBfkuzh7W4N72rpBoPf68ZdzFR/Kc1ilPJ+Xtja1PFZVz+bRnI38juXBZEFVIGeGWbZ0PderMhwkQBFb/tk/uqK+z3u5bWBaeUl5DkAee2KLOl2HA/RRQh2QlZNqQ7ixyzYq8KixunoiOLuvOWk6UWIrnHNTllqEz5x499KZJrKc+lAweT5BF4+ipEjjt07q1owPEEf3VcqjiYSPNbVjiTQfPlY29HwALRhJ6ShLlDi9mCLFfcyWK03hodeOtbWE+ULlNcwqgqo/W+TkoWaui05jKPLShZfMaO7ZwAb0HyUnzcbG/wkteV8uueo8rXlvoa6ILaqUT0wQ7BDjcnRFYvXkSKWvKCi/LrJwr523LaQUo7c9nAOPD0YjV8W5XRAiXkXGRrYYoeUecGcXNMWCvdF6HYEwMFvqrANrc2r1wP4Bsndd+bwujjyUwDxwCpwKPX7wxSDz41CYu2whK9Stfi+/OkDWunQmUUxiz4uhlan6rABYXnpMmyeSQyZLQVka5IULpsPhhFr6BtQ9SDnDFDVpu9AwXuV73VIodFqG7rFMGINfRGzeaGvJd1LtVmC25DZkCFtXOMbC6wErhL5qtHQbp0MR+wFXeqCJeWWmKVWtNrkccTIOQqHMmJUVa4VvSpzjkCJNjQXOdK6kaMBc2JaoZqTzpdLCqhOyHk5KdrQBFq1vCrtKSlWQ5eGClmdaJnm/I0yVdKGasiUQeakVMpkWxNoVXmlPSVFVVCHKENNJ1odJcPbJXPZlHFrQKuqzMWsRFEOQ5WDiMRg/s1c7NsAdC5m8w/2TNNgDWit5NWi54yGmUqds/LhF0Q4xkBLY2bJK0OW0U3GIBNXShlWai0NWnTRhEqnCknhjRkeqZCSH+H8/9+PlkJk3EbaGSaBUgv2vo0zOiNGn+9lzv8XW5ZRFkHDJvB/AQFxZ5IQHzayAAAAAElFTkSuQmCC" alt="">
-  <h1>ローカル/API判定シート</h1>
-  <span class="badge">14項目</span>
+  <h1>64ページ論文の歩き方</h1>
+  
   <button class="btn ghost sm" style="margin-left:auto" data-copy="pfull" aria-label="全件コピー">📋<span class="blabel"> 全件コピー</span></button>
-  <button class="btn sm" data-save="pfull" data-name="local-api-judgment-sheet.md" aria-label="全件ダウンロード">⬇<span class="blabel"> 全件ダウンロード</span></button>
+  <button class="btn sm" data-save="pfull" data-name="graph-engineering-paper-map.md" aria-label="全件ダウンロード">⬇<span class="blabel"> 全件ダウンロード</span></button>
 </div></header>
 
 <div class="kwrap">
   <section class="epctx epctx-top">
   <div class="ep-left">
-    <div class="ep-thumb epctx-thumb"><img src="https://i.ytimg.com/vi/ARy4S--ZP2w/hqdefault.jpg" alt=""></div>
-    <a class="watch" href="https://www.youtube.com/watch?v=ARy4S--ZP2w" target="_blank" rel="noopener">▶ 動画を見る</a>
-    <div class="ep-docs"><a class="docbtn" href="https://github.com/chaaaaarin/kawaru-channel-20260806" target="_blank" rel="noopener">📚 資料</a><a class="docbtn" href="https://chaaaaarin.github.io/kawaru-channel-20260806/slides.html" target="_blank" rel="noopener">🖥 スライド</a><a class="docbtn" href="https://chaaaaarin.github.io/kawaru-channel-20260806/onepager.html" target="_blank" rel="noopener">📄 1枚資料</a></div>
+    <div class="ep-thumb epctx-thumb"><div class="noimg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M10.5 9.2v5.6l4.8-2.8-4.8-2.8Z" fill="currentColor" stroke="none"/></svg></div><span class="upbadge">近日公開</span></div>
+    
+    <div class="ep-docs"><a class="docbtn" href="https://github.com/chaaaaarin/kawaru-channel-20260831-110" target="_blank" rel="noopener">📚 資料</a><a class="docbtn" href="https://chaaaaarin.github.io/kawaru-channel-20260831-110/slides.html" target="_blank" rel="noopener">🖥 スライド</a><a class="docbtn" href="https://chaaaaarin.github.io/kawaru-channel-20260831-110/onepager.html" target="_blank" rel="noopener">📄 1枚資料</a></div>
   </div>
   <div>
     <p class="epctx-label">この動画のプレゼントです</p>
-    <p class="epctx-title">【激ヤバ】新モデルが登場したことで、Claudeを超える最も安くて賢いAIが爆誕しました</p>
-    <p class="epctx-date">2026-08-13</p>
-    <a class="epbundle" href="../../bundles/ARy4S--ZP2w.md" download="プレゼント一式_2026-08-13.md">⬇ この回のプレゼントを全部ダウンロード</a>
+    <p class="epctx-title"></p>
+    <p class="epctx-date">2026-09-07</p>
+    <a class="epbundle" href="../../bundles/d20260907.md" download="プレゼント一式_2026-09-07.md">⬇ この回のプレゼントを全部ダウンロード</a>
   </div>
 </section>
 
   <section class="kintro">
-    <h2>ローカル/API判定シート</h2>
-    <p>MiniMax H3・<span class="nb">Qwen3.8-Maxを</span><span class="nb">「ローカル実行」</span><span class="nb">「API課金」</span><span class="nb">「今の有償モデル継続」のどれで</span><span class="nb">使うべきか判定するための実務シートで</span><span class="nb">す。</span></p>
-    <div class="kmeta"><span>テンプレート</span><span>収録 14項目</span><span>No.85 MiniMaxとQwenの気骨がヤバい</span><span>2026-08-06 配布</span></div>
+    <h2>64ページ論文の歩き方</h2>
+    <p><span class="nb">話題の論文</span>「Graph Engineering in the Era of LLM Agents」（arXiv:2608.21156・<span class="nb">全64ページ）を、</span><span class="nb">最初から最後まで読まずに</span><span class="nb">要点だけつかむための地図です。</span><span class="nb">「今どこで困っているか」から</span><span class="nb">必要な章に直行できます。</span></p>
+    <div class="kmeta"><span>テンプレート</span><span>No.110 グラフエンジニアリング論文</span><span>2026-08-31 配布</span></div>
     <div class="pnote"><span class="nb">下のカードから、</span><span class="nb">1件ずつコピー、</span><span class="nb">または個別にダウンロードできます。</span><span class="nb">まとめて欲しいときは、</span><span class="nb">上の</span><span class="nb">「全件ダウンロード」を</span><span class="nb">お使いください。</span></div>
   </section>
 
-  <div class="icard" id="i1" data-cat="">
-  <div class="ih"><span class="num">001</span><span class="ititle">ステップ1：まず自分のGPU環境を確認する</span></div>
+  <p class="imeta" style="margin:0 0 18px"><span class="nb">話題の論文</span>「Graph Engineering in the Era of LLM Agents」（arXiv:2608.21156・<span class="nb">全64ページ）を、</span><span class="nb">最初から最後まで読まずに</span><span class="nb">要点だけつかむための地図です。</span><span class="nb">「今どこで困っているか」から</span><span class="nb">必要な章に直行できます。</span><span class="nb">
+
+**受け取り方**: この</span><span class="nb">ファイルをそのままコピー、</span><span class="nb">または</span><span class="nb">ダウンロードしてご利用ください。</span><span class="nb">
+
+**使い方**: まず</span><span class="nb">「5つの合言葉・</span><span class="nb">早わかり」で全体像を入れ、</span><span class="nb">次に</span><span class="nb">「症状 → 読む場所」の表で自分に</span><span class="nb">必要な章だけを開きます。</span><span class="nb">原文は英語なので、</span><span class="nb">各行に日本語で読む場所を</span><span class="nb">書いています。</span>
+
+---</p><div class="icard" id="i1" data-cat="">
+  <div class="ih"><span class="num">001</span><span class="ititle">この論文の基本情報（30秒）</span></div>
   
-  <pre class="prompt" id="b1"><span class="cline" data-c="b1-0"><span class="cbx">□</span> VRAM 20GB以上のGPUが手元にあるか？（RTX4090・RTX5090・RTX6000クラス）</span>
-  → YES: ステップ2へ進む（Q4量子化でのローカル実行が視野に入る）
-  → NO: ローカル実行は諦め、API利用を前提にステップ4へ進む
-<span class="cline" data-c="b1-1"><span class="cbx">□</span> VRAM 32GB以上を確保できるか？</span>
-  → YES: Q8量子化での実行も選べる（品質重視ならこちら）
-<span class="cline" data-c="b1-2"><span class="cbx">□</span> VRAM 60GB前後を確保できるか？</span>
-  → YES: FP16フル精度での実行も視野に入る（最も高品質だが要件は高い）</pre>
+  <pre class="prompt" id="b1">- 正式名：Graph Engineering in the Era of LLM Agents: From Individual Intelligence to System Intelligence
+- 著者：35名（吉林大学・清華大学・厦門大学・Tencent・Monash大学・小紅書 ほか約16機関）
+- 種類：サーベイ論文（新技術の発表ではなく、既存研究を整理した「地図」）
+- 公開：2026年8月21日 初版 → 8月26日 改訂版（v2）
+- 原文（英語）: https://arxiv.org/abs/2608.21156
+- 全文の日本語表示（自動翻訳）: https://arxiv-org.translate.goog/abs/2608.21156?_x_tr_sl=en&amp;_x_tr_tl=ja&amp;_x_tr_hl=ja
+- 公式リンク集（GitHub）: https://github.com/DEEP-JLU/Awesome-Graph-Engineering
+- ライセンス：CC BY 4.0（図を引用してよい）
+
+---</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b1">📋 コピー</button>
-    <button class="btn ghost sm" data-save="b1" data-name="local-api-judgment-sheet-001.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-save="b1" data-name="graph-engineering-paper-map-001.txt">⬇ ダウンロード</button>
     <button class="btn ghost sm" data-link="i1">🔗 リンク</button>
   </div>
 </div>
 <div class="icard" id="i2" data-cat="">
-  <div class="ih"><span class="num">002</span><span class="ititle">ステップ2：ローカル実行が向いている用途か確認する</span></div>
+  <div class="ih"><span class="num">002</span><span class="ititle">5つの合言葉・早わかり（これだけで会話にはついていける）</span></div>
   
-  <pre class="prompt" id="b2"><span class="cline" data-c="b2-0"><span class="cbx">□</span> 同じような処理を毎日・大量に繰り返す予定か？</span>
-  → YES: ローカル実行でAPI課金を積み上げるより、固定コスト（電気代・機材）に寄せた方が有利になりやすい
-<span class="cline" data-c="b2-1"><span class="cbx">□</span> 機密性の高いデータを外部APIに送りたくない事情があるか？</span>
-  → YES: ローカル実行を優先候補にする（データが手元の環境から出ない）
-<span class="cline" data-c="b2-2"><span class="cbx">□</span> 単発・少量の利用が中心か？</span>
-  → YES: ローカル実行のセットアップ手間の方が割高になりやすい。API利用へ</pre>
+  <pre class="prompt" id="b2">| 合言葉 | 一言でいうと | 論文の試験のたとえ |
+|---|---|---|
+| プロンプトエンジニアリング | AIへの「指示の言い回し」を設計する | 解答のヒントをもらう |
+| コンテキストエンジニアリング | AIに「渡す情報・資料」を設計する | 資料の持ち込み可の試験 |
+| ハーネスエンジニアリング | AIがつながる「道具・記憶・スキル」を設計する | 電卓や検索も使ってよい試験 |
+| ループエンジニアリング | 「計画→実行→確認→やり直し」の反復を設計する | 提出してフィードバックをもらい直す |
+| グラフエンジニアリング | 「タスク・AI・状態のつなぎ方」を点と線で設計する | チームで協力して解く |
+| （次段階）オントロジーエンジニアリング | 用語・目的・採点基準をチームで揃える | 共通のルールブックを持つ |
+
+新しい合言葉は、古い合言葉を置き換えない。**上に積み重なる**。グラフの中の1点も、中身はループで、そのループは良いプロンプトでできている。
+
+---</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b2">📋 コピー</button>
-    <button class="btn ghost sm" data-save="b2" data-name="local-api-judgment-sheet-002.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-save="b2" data-name="graph-engineering-paper-map-002.txt">⬇ ダウンロード</button>
     <button class="btn ghost sm" data-link="i2">🔗 リンク</button>
   </div>
 </div>
 <div class="icard" id="i3" data-cat="">
-  <div class="ih"><span class="num">003</span><span class="ititle">ステップ3：商用利用の条件を確認する（特にMiniMax H3）</span></div>
+  <div class="ih"><span class="num">003</span><span class="ititle">論文のどこに何が書いてあるか（章立て地図）</span></div>
   
-  <pre class="prompt" id="b3"><span class="cline" data-c="b3-0"><span class="cbx">□</span> 年間売上が2,000万ドル未満か？</span>
-  → YES: MiniMax H3のコミュニティライセンスで商用利用可（要ライセンス表記）
-  → NO: MiniMaxへの別途許諾申請が必要。先に確認してから着手する
-<span class="cline" data-c="b3-1"><span class="cbx">□</span> 利用者・利用地域が米国・EU・英国・韓国に該当するか？</span>
-  → YES: MiniMax H3公式ブログでApplicable Territoryの最新条件を必ず確認する
-  → NO: 通常の商用利用条件（上記2,000万ドルの壁）だけ確認すればよい</pre>
+  <pre class="prompt" id="b3">- 第1章 Introduction … なぜこの整理が必要か。3ページほど。ここだけ読めば動機は分かる
+- 第2章 Preliminaries … 用語の定義。「〜エンジニアリング」5つの正式な定義はここ
+- 第3章 From Model Intelligence to Individual Intelligence … 「モデルの知能」「個の知能」の話。**1体のAIの3つの限界**（並列が潰れる／自己評価の勘違い／失敗が最後まで運ばれる）はこの章
+- 第4章 Graph Engineering … 本編。**3つの構成要素**（タスク組織化 / エージェント連携 / 実行時状態管理）の詳しい説明。図5〜8がここ
+- 第5章 Future Direction: Ontology Engineering … 「グラフの次」。グラフエンジニアリングの限界と、次段階の提案
+- 第6章 Open Challenges and Research Opportunities … 未解決の研究テーマ一覧
+- 第7章 Benchmarks, Datasets, and Evaluation … 評価方法の整理
+- 第8章 Open-Source Libraries and Engineering Ecosystem … LangGraph・AutoGen・CrewAI などの位置づけ
+- 第9章 Applications … 応用事例
+
+---</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b3">📋 コピー</button>
-    <button class="btn ghost sm" data-save="b3" data-name="local-api-judgment-sheet-003.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-save="b3" data-name="graph-engineering-paper-map-003.txt">⬇ ダウンロード</button>
     <button class="btn ghost sm" data-link="i3">🔗 リンク</button>
   </div>
 </div>
 <div class="icard" id="i4" data-cat="">
-  <div class="ih"><span class="num">004</span><span class="ititle">ステップ4：API利用時のコストを試算する</span></div>
+  <div class="ih"><span class="num">004</span><span class="ititle">症状 → 読む場所（自分が引っかかっている所から）</span></div>
   
-  <pre class="prompt" id="b4"><span class="cline" data-c="b4-0"><span class="cbx">□</span> どのリージョンから使うか決めているか？</span>
-  → YES: 東京等のリージョンはシンガポールより約17.5%安い場合がある。料金表で最新の単価を確認する
-<span class="cline" data-c="b4-1"><span class="cbx">□</span> Web検索・画像検索などのツール呼び出しを併用する予定か？</span>
-  → YES: ツール利用は別課金（例: Web検索$10/1,000回）になる場合がある。合算した見積もりを作る
-<span class="cline" data-c="b4-2"><span class="cbx">□</span> 月間の想定トークン量（入力・出力）を概算できているか？</span>
-  → YES: 入力・出力それぞれの単価×想定量で、月額の目安を先に出しておく</pre>
+  <pre class="prompt" id="b4">| いま引っかかっていること | 開く場所 |
+|---|---|
+| 「グラフエンジニアリングって結局なに？」を一文で言えるようにしたい | Abstract と 第4章のはじめ（Graph Engineering の定義） |
+| 「5つの合言葉」の正確な違いを押さえたい | 第2章 Preliminaries と 図2（Taxonomy） |
+| 「なぜ1体のAIじゃダメなのか」を人に説明できるようにしたい | 第3章。3つの限界が箇条書きで並んでいる |
+| 「作る役と確かめる役を分ける」の根拠が欲しい | 第3章の &quot;when the same agent writes and evaluates code...&quot; の一文 |
+| 実際に作業をどう分解するのか、イメージが欲しい | 図6（Task Organization）。左＝分解、右＝手順化 |
+| 複数AIのチーム編成をどう設計するのか | 図7（Agent Coordination）。能力の地図・チームの地図・連絡の地図の3枚 |
+| 途中で失敗したときの戻し方 | 図8（Runtime State Management）と第4章の該当節 |
+| 「最終到達点」は本当かを確かめたい | 第5章。グラフの限界と、次段階（オントロジー）の提案 |
+| 「これって LangGraph と同じでは？」を確かめたい | 第8章。既存ライブラリとの関係が整理されている |
+
+---</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b4">📋 コピー</button>
-    <button class="btn ghost sm" data-save="b4" data-name="local-api-judgment-sheet-004.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-save="b4" data-name="graph-engineering-paper-map-004.txt">⬇ ダウンロード</button>
     <button class="btn ghost sm" data-link="i4">🔗 リンク</button>
   </div>
 </div>
 <div class="icard" id="i5" data-cat="">
-  <div class="ih"><span class="num">005</span><span class="ititle">ステップ5：既存の有償モデル（Claude/GPT等）と比較する</span></div>
+  <div class="ih"><span class="num">005</span><span class="ititle">図だけ見るなら、この3枚</span></div>
   
-  <pre class="prompt" id="b5"><span class="cline" data-c="b5-0"><span class="cbx">□</span> 高難度の推論・大規模リポジトリの改修が中心のタスクか？</span>
-  → YES: 現時点ではQwen3.8-Maxよりも既存の上位モデルに分がある可能性が高い。既存モデルを継続する
-<span class="cline" data-c="b5-1"><span class="cbx">□</span> コスト効率・長時間の自律タスク・動画生成が中心のタスクか？</span>
-  → YES: Qwen3.8-Max／MiniMax H3への切り替え、または併用を検討する候補になる
-<span class="cline" data-c="b5-2"><span class="cbx">□</span> 判断がつかない場合はどうするか？</span>
-  → 指示例: 「このタスクをQwen3.8-Maxと（既存の利用モデル）の両方で試し、精度・速度・コストを比較して報告して」と指示し、実際に併用比較してから決める</pre>
+  <pre class="prompt" id="b5">1. **図1（全体像）** … モデルの知能 → 個の知能 → システムの知能、の入れ子と分類ツリーが1枚に
+2. **図4（試験のたとえ）** … 6段階＋次段階を、試験の受け方でたとえた絵。人に説明するときに一番効く
+3. **図5（グラフエンジニアリングの概観）** … 仕事と環境 → タスク組織化 → エージェントチーム → 実行時状態管理 → 成果物
+
+図はすべて CC BY 4.0 なので、出典（arXiv:2608.21156, Figure N）を書けば資料に使ってよい。
+
+---</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b5">📋 コピー</button>
-    <button class="btn ghost sm" data-save="b5" data-name="local-api-judgment-sheet-005.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-save="b5" data-name="graph-engineering-paper-map-005.txt">⬇ ダウンロード</button>
     <button class="btn ghost sm" data-link="i5">🔗 リンク</button>
+  </div>
+</div>
+<div class="icard" id="i6" data-cat="">
+  <div class="ih"><span class="num">006</span><span class="ititle">読むときの注意（この論文の性格）</span></div>
+  
+  <pre class="prompt" id="b6">- これは**サーベイ（総説）**。「この方法で◯%速くなった」という定量比較はほとんど無い。研究の地図として読む
+- 本文には LLMCompiler・GPTSwarm・DyLAN・AFlow など個別の手法名が大量に出てくるが、初心者は名前を覚えなくてよい。「そういう研究群がある」で十分
+- 「ループエンジニアリングの提唱者・提唱時期」は本文に明記が無い。ネット上の解説記事の記述は裏が取れていないので鵜呑みにしない
+- v1（8/21）と v2（8/26）で細部が変わっている。引用するときは v2 を見る</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b6">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b6" data-name="graph-engineering-paper-map-006.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i6">🔗 リンク</button>
   </div>
 </div>
 
   <section class="epctx">
   <p class="epctx-label">この動画のほかのプレゼント</p>
-  <div class="ep-kits"><a class="kchip" href="../license-trap-checklist/"><span class="kt">オープンウェイト ライセンス罠チェックリスト</span><span class="badge">12項目</span><span class="go">開く →</span></a><a class="kchip" href="../prompts100/"><span class="kt">MiniMax H3×Qwen3.8-Max 実践プロンプト100選</span><span class="badge">100個</span><span class="go">開く →</span></a></div>
+  <div class="ep-kits"><a class="kchip" href="../ai-automation-checkup/"><span class="kt">AI自動化 健康診断アプリ</span><span class="badge">アプリ</span><span class="go">開く →</span></a><a class="kchip" href="../failure-recovery-checklist/"><span class="kt">AIの長い仕事が途中で失敗したとき用 復旧チェックリスト</span><span class="badge">18項目</span><span class="go">開く →</span></a></div>
 </section>
   <section class="epctx">
   <p class="epctx-label">ほかの回の「テンプレート」</p>
-  <div class="ep-kits"><a class="kchip" href="../graph-engineering-paper-map/"><span class="kt">64ページ論文の歩き方</span><span class="go">開く →</span></a><a class="kchip" href="../omni-40sec-template/"><span class="kt">40秒動画の設計テンプレート＋発注文10</span><span class="badge">11項目</span><span class="go">開く →</span></a><a class="kchip" href="../voice-command-10/"><span class="kt">声で指示するときの言い方 厳選10</span><span class="badge">5項目</span><span class="go">開く →</span></a><a class="kchip" href="../impact-triage-checklist/"><span class="kt">今週の変更 影響仕分けシート</span><span class="badge">12項目</span><span class="go">開く →</span></a></div>
+  <div class="ep-kits"><a class="kchip" href="../omni-40sec-template/"><span class="kt">40秒動画の設計テンプレート＋発注文10</span><span class="badge">11項目</span><span class="go">開く →</span></a><a class="kchip" href="../voice-command-10/"><span class="kt">声で指示するときの言い方 厳選10</span><span class="badge">5項目</span><span class="go">開く →</span></a><a class="kchip" href="../impact-triage-checklist/"><span class="kt">今週の変更 影響仕分けシート</span><span class="badge">12項目</span><span class="go">開く →</span></a><a class="kchip" href="../origin-decision-sheet/"><span class="kt">GitHub代替検討ガイド</span><span class="badge">8項目</span><span class="go">開く →</span></a></div>
 </section>
 
   <footer><a href="../../">← AIエージェント / Kawaru プレゼント図書館にもどる</a></footer>
 </div>
 
-<pre id="pfull" class="hidden"># 🎁 ローカル/API判定シート
+<pre id="pfull" class="hidden"># 🎁 64ページ論文の歩き方
 
-MiniMax H3・Qwen3.8-Maxを「ローカル実行」「API課金」「今の有償モデル継続」のどれで使うべきか判定するための実務シートです。
+話題の論文「Graph Engineering in the Era of LLM Agents」（arXiv:2608.21156・全64ページ）を、最初から最後まで読まずに要点だけつかむための地図です。「今どこで困っているか」から必要な章に直行できます。
 
-**受け取り方**: 下のコードブロック右上のコピーボタンでコピーするか、このファイルをそのままダウンロードしてください。
+**受け取り方**: このファイルをそのままコピー、またはダウンロードしてご利用ください。
 
-**使い方**: 導入を検討するたびに、上から順に□をチェックしてください。
+**使い方**: まず「5つの合言葉・早わかり」で全体像を入れ、次に「症状 → 読む場所」の表で自分に必要な章だけを開きます。原文は英語なので、各行に日本語で読む場所を書いています。
 
-```text
-【ローカル/API判定シート】
+---
 
-■ ステップ1：まず自分のGPU環境を確認する
-□ VRAM 20GB以上のGPUが手元にあるか？（RTX4090・RTX5090・RTX6000クラス）
-  → YES: ステップ2へ進む（Q4量子化でのローカル実行が視野に入る）
-  → NO: ローカル実行は諦め、API利用を前提にステップ4へ進む
-□ VRAM 32GB以上を確保できるか？
-  → YES: Q8量子化での実行も選べる（品質重視ならこちら）
-□ VRAM 60GB前後を確保できるか？
-  → YES: FP16フル精度での実行も視野に入る（最も高品質だが要件は高い）
+## この論文の基本情報（30秒）
 
-■ ステップ2：ローカル実行が向いている用途か確認する
-□ 同じような処理を毎日・大量に繰り返す予定か？
-  → YES: ローカル実行でAPI課金を積み上げるより、固定コスト（電気代・機材）に寄せた方が有利になりやすい
-□ 機密性の高いデータを外部APIに送りたくない事情があるか？
-  → YES: ローカル実行を優先候補にする（データが手元の環境から出ない）
-□ 単発・少量の利用が中心か？
-  → YES: ローカル実行のセットアップ手間の方が割高になりやすい。API利用へ
+- 正式名：Graph Engineering in the Era of LLM Agents: From Individual Intelligence to System Intelligence
+- 著者：35名（吉林大学・清華大学・厦門大学・Tencent・Monash大学・小紅書 ほか約16機関）
+- 種類：サーベイ論文（新技術の発表ではなく、既存研究を整理した「地図」）
+- 公開：2026年8月21日 初版 → 8月26日 改訂版（v2）
+- 原文（英語）: https://arxiv.org/abs/2608.21156
+- 全文の日本語表示（自動翻訳）: https://arxiv-org.translate.goog/abs/2608.21156?_x_tr_sl=en&amp;_x_tr_tl=ja&amp;_x_tr_hl=ja
+- 公式リンク集（GitHub）: https://github.com/DEEP-JLU/Awesome-Graph-Engineering
+- ライセンス：CC BY 4.0（図を引用してよい）
 
-■ ステップ3：商用利用の条件を確認する（特にMiniMax H3）
-□ 年間売上が2,000万ドル未満か？
-  → YES: MiniMax H3のコミュニティライセンスで商用利用可（要ライセンス表記）
-  → NO: MiniMaxへの別途許諾申請が必要。先に確認してから着手する
-□ 利用者・利用地域が米国・EU・英国・韓国に該当するか？
-  → YES: MiniMax H3公式ブログでApplicable Territoryの最新条件を必ず確認する
-  → NO: 通常の商用利用条件（上記2,000万ドルの壁）だけ確認すればよい
+---
 
-■ ステップ4：API利用時のコストを試算する
-□ どのリージョンから使うか決めているか？
-  → YES: 東京等のリージョンはシンガポールより約17.5%安い場合がある。料金表で最新の単価を確認する
-□ Web検索・画像検索などのツール呼び出しを併用する予定か？
-  → YES: ツール利用は別課金（例: Web検索$10/1,000回）になる場合がある。合算した見積もりを作る
-□ 月間の想定トークン量（入力・出力）を概算できているか？
-  → YES: 入力・出力それぞれの単価×想定量で、月額の目安を先に出しておく
+## 5つの合言葉・早わかり（これだけで会話にはついていける）
 
-■ ステップ5：既存の有償モデル（Claude/GPT等）と比較する
-□ 高難度の推論・大規模リポジトリの改修が中心のタスクか？
-  → YES: 現時点ではQwen3.8-Maxよりも既存の上位モデルに分がある可能性が高い。既存モデルを継続する
-□ コスト効率・長時間の自律タスク・動画生成が中心のタスクか？
-  → YES: Qwen3.8-Max／MiniMax H3への切り替え、または併用を検討する候補になる
-□ 判断がつかない場合はどうするか？
-  → 指示例: 「このタスクをQwen3.8-Maxと（既存の利用モデル）の両方で試し、精度・速度・コストを比較して報告して」と指示し、実際に併用比較してから決める
-```
+| 合言葉 | 一言でいうと | 論文の試験のたとえ |
+|---|---|---|
+| プロンプトエンジニアリング | AIへの「指示の言い回し」を設計する | 解答のヒントをもらう |
+| コンテキストエンジニアリング | AIに「渡す情報・資料」を設計する | 資料の持ち込み可の試験 |
+| ハーネスエンジニアリング | AIがつながる「道具・記憶・スキル」を設計する | 電卓や検索も使ってよい試験 |
+| ループエンジニアリング | 「計画→実行→確認→やり直し」の反復を設計する | 提出してフィードバックをもらい直す |
+| グラフエンジニアリング | 「タスク・AI・状態のつなぎ方」を点と線で設計する | チームで協力して解く |
+| （次段階）オントロジーエンジニアリング | 用語・目的・採点基準をチームで揃える | 共通のルールブックを持つ |
 
-**ポイント**: ライセンス・地域制限は変更される可能性があるため、実際に商用利用する前に必ず公式サイトの最新条件を確認してください。
+新しい合言葉は、古い合言葉を置き換えない。**上に積み重なる**。グラフの中の1点も、中身はループで、そのループは良いプロンプトでできている。
+
+---
+
+## 論文のどこに何が書いてあるか（章立て地図）
+
+- 第1章 Introduction … なぜこの整理が必要か。3ページほど。ここだけ読めば動機は分かる
+- 第2章 Preliminaries … 用語の定義。「〜エンジニアリング」5つの正式な定義はここ
+- 第3章 From Model Intelligence to Individual Intelligence … 「モデルの知能」「個の知能」の話。**1体のAIの3つの限界**（並列が潰れる／自己評価の勘違い／失敗が最後まで運ばれる）はこの章
+- 第4章 Graph Engineering … 本編。**3つの構成要素**（タスク組織化 / エージェント連携 / 実行時状態管理）の詳しい説明。図5〜8がここ
+- 第5章 Future Direction: Ontology Engineering … 「グラフの次」。グラフエンジニアリングの限界と、次段階の提案
+- 第6章 Open Challenges and Research Opportunities … 未解決の研究テーマ一覧
+- 第7章 Benchmarks, Datasets, and Evaluation … 評価方法の整理
+- 第8章 Open-Source Libraries and Engineering Ecosystem … LangGraph・AutoGen・CrewAI などの位置づけ
+- 第9章 Applications … 応用事例
+
+---
+
+## 症状 → 読む場所（自分が引っかかっている所から）
+
+| いま引っかかっていること | 開く場所 |
+|---|---|
+| 「グラフエンジニアリングって結局なに？」を一文で言えるようにしたい | Abstract と 第4章のはじめ（Graph Engineering の定義） |
+| 「5つの合言葉」の正確な違いを押さえたい | 第2章 Preliminaries と 図2（Taxonomy） |
+| 「なぜ1体のAIじゃダメなのか」を人に説明できるようにしたい | 第3章。3つの限界が箇条書きで並んでいる |
+| 「作る役と確かめる役を分ける」の根拠が欲しい | 第3章の &quot;when the same agent writes and evaluates code...&quot; の一文 |
+| 実際に作業をどう分解するのか、イメージが欲しい | 図6（Task Organization）。左＝分解、右＝手順化 |
+| 複数AIのチーム編成をどう設計するのか | 図7（Agent Coordination）。能力の地図・チームの地図・連絡の地図の3枚 |
+| 途中で失敗したときの戻し方 | 図8（Runtime State Management）と第4章の該当節 |
+| 「最終到達点」は本当かを確かめたい | 第5章。グラフの限界と、次段階（オントロジー）の提案 |
+| 「これって LangGraph と同じでは？」を確かめたい | 第8章。既存ライブラリとの関係が整理されている |
+
+---
+
+## 図だけ見るなら、この3枚
+
+1. **図1（全体像）** … モデルの知能 → 個の知能 → システムの知能、の入れ子と分類ツリーが1枚に
+2. **図4（試験のたとえ）** … 6段階＋次段階を、試験の受け方でたとえた絵。人に説明するときに一番効く
+3. **図5（グラフエンジニアリングの概観）** … 仕事と環境 → タスク組織化 → エージェントチーム → 実行時状態管理 → 成果物
+
+図はすべて CC BY 4.0 なので、出典（arXiv:2608.21156, Figure N）を書けば資料に使ってよい。
+
+---
+
+## 読むときの注意（この論文の性格）
+
+- これは**サーベイ（総説）**。「この方法で◯%速くなった」という定量比較はほとんど無い。研究の地図として読む
+- 本文には LLMCompiler・GPTSwarm・DyLAN・AFlow など個別の手法名が大量に出てくるが、初心者は名前を覚えなくてよい。「そういう研究群がある」で十分
+- 「ループエンジニアリングの提唱者・提唱時期」は本文に明記が無い。ネット上の解説記事の記述は裏が取れていないので鵜呑みにしない
+- v1（8/21）と v2（8/26）で細部が変わっている。引用するときは v2 を見る
 </pre>
 <script>
 
