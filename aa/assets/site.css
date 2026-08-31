@@ -10,8 +10,10 @@
 html{scroll-behavior:smooth;}
 body{background:var(--bg);color:var(--ink);line-height:1.7;
 font-family:'Noto Sans JP',-apple-system,BlinkMacSystemFont,'Hiragino Sans',sans-serif;
-font-size:15px;-webkit-font-smoothing:antialiased;}
+font-size:15px;-webkit-font-smoothing:antialiased;
+overscroll-behavior-y:none;-webkit-text-size-adjust:100%;text-size-adjust:100%;}
 a{color:inherit;text-decoration:none;}
+a,button,input,select,summary,label,.kchip,.ep{-webkit-tap-highlight-color:transparent;}
 .nb{display:inline-block;}
 .hidden{display:none;}
 a:focus-visible,button:focus-visible,summary:focus-visible{
@@ -44,13 +46,22 @@ line-height:1.3;margin-bottom:14px;}
 .hero p{font-size:14.5px;color:var(--ink-mid);max-width:680px;margin:0 auto;line-height:1.95;}
 
 /* ---------- 統計バー ---------- */
-.stats{display:grid;grid-template-columns:repeat(5,1fr);background:var(--paper);
+.stats{display:grid;grid-template-columns:repeat(4,1fr);background:var(--paper);
 border-radius:20px;overflow:hidden;margin:30px 0 22px;box-shadow:var(--sh);}
+.stats.filtered{grid-template-columns:repeat(5,1fr);}
 .stats div{padding:18px 18px;border-right:1px solid rgba(20,20,35,.06);}
 .stats div:last-child{border-right:0;}
 .stats b{display:block;font-family:var(--head);font-size:26px;font-weight:900;
 line-height:1.25;color:var(--brand-deep);}
 .stats span:not(.nb){font-size:11.5px;color:var(--ink-mid);font-weight:700;}
+
+/* ---------- モバイルの貼り付きツールバー＋絞り込みシート ----------
+   スマホでは、検索と絞り込みをヘッダ直下に貼り付く1本のバーへ集約し、
+   種別・並び順・おすすめ診断は下からせり上がるシートに入れる（アプリの作法）。
+   広い画面ではどれも出さず、従来どおり左サイドの絞り込みを使う。
+   .mstick は広い画面では display:contents で「無い」ものとして扱う。 */
+.mstick{display:contents;}
+.mtoolbar,.sheet-head,.sheet-apply,.sheet-backdrop{display:none;}
 
 /* ---------- 2カラム ---------- */
 .cols{display:grid;grid-template-columns:236px 1fr;gap:26px;align-items:start;
@@ -223,8 +234,8 @@ font-size:21px;color:var(--ink);margin:40px 0 16px;}
 h2.cat::before{content:'';width:9px;height:9px;border-radius:50%;background:var(--brand);
 flex-shrink:0;}
 h2.cat i{font-style:normal;font-size:12.5px;color:var(--ink-mid);font-weight:700;margin-left:2px;}
-/* 項目の多いキットの絞り込み。スクロールしても使えるよう、ヘッダ（約62px）の下に貼り付ける */
-.ktools{position:sticky;top:62px;z-index:30;background:var(--bg);
+/* 項目の多いキットの絞り込み。スクロールしても使えるよう、ヘッダの下に貼り付ける */
+.ktools{position:sticky;top:var(--hdr,62px);z-index:30;background:var(--bg);
 padding:12px 0 11px;margin:4px 0 2px;display:flex;flex-direction:column;gap:9px;
 box-shadow:0 10px 12px -10px rgba(20,20,35,.10);}
 #kq{width:100%;padding:10px 14px;border:1px solid rgba(20,20,35,.09);border-radius:999px;
@@ -314,44 +325,134 @@ padding:13px 20px;text-decoration:none;transition:transform .15s,background .15s
 .promo-cta:hover{background:#16284A;transform:translateY(-1px);}
 .promo-arrow{transition:transform .15s;}
 .promo-cta:hover .promo-arrow{transform:translateX(3px);}
-@media(max-width:600px){.promo{padding:16px;}.promo-card{padding:32px 22px 24px;}}
+@media(max-width:600px){.promo{padding:16px 16px calc(16px + env(safe-area-inset-bottom));}.promo-card{padding:32px 22px 24px;}}
 
 @media(max-width:900px){
   .cols{grid-template-columns:1fr;}
-  .side{position:static;}
-  .stats{grid-template-columns:repeat(3,1fr);}
-  .stats div:nth-child(3){border-right:0;}
-  .hero h1{font-size:27px;}
+  .stats{grid-template-columns:repeat(4,1fr);}
+  .stats.filtered{grid-template-columns:repeat(5,1fr);}
+  .stats div{padding:15px 6px;}
+  .stats b{font-size:21px;}
+  .stats span:not(.nb){font-size:10px;white-space:nowrap;letter-spacing:-.02em;}
+  .hero h1{font-size:26px;}
   .kintro h2{font-size:23px;}
   .ep{grid-template-columns:180px 1fr;}
-  /* 狭い画面では縦8行だと場所を取りすぎるので、横に流れるチップにする。
-     以前は折りたたみにしていたが、閉じた details の中身はCSSで display を変えても
-     描画されず、広い画面で種別しぼり込みが丸ごと消えていた（2026-08-27に発覚）。 */
-  .type-grp .grp-body{display:flex;gap:7px;overflow-x:auto;padding-bottom:2px;}
-  .side .type-grp label{flex-shrink:0;padding:5px 12px;border:1px solid var(--line);
-  border-radius:999px;background:var(--paper);gap:6px;}
+
+  /* --- ヘッダ直下の貼り付きツールバー（検索 ＋ 絞り込みボタン） --- */
+  :root{--hdr:58px;}
+  .mstick{display:block;position:sticky;top:var(--hdr,58px);z-index:35;
+    margin:0 0 8px;padding-top:6px;background:var(--bg);user-select:none;}
+  .mstick::after{content:'';position:absolute;left:0;right:0;top:100%;height:14px;
+    background:linear-gradient(var(--bg),transparent);pointer-events:none;}
+  .mtoolbar{display:flex;gap:8px;align-items:center;}
+  .mtb-search{flex:1;min-width:0;display:flex;align-items:center;gap:8px;height:46px;
+    padding:0 15px;background:var(--paper);border:1px solid var(--line);
+    border-radius:999px;box-shadow:var(--sh);transition:.15s;}
+  .mtb-search:focus-within{border-color:var(--brand);box-shadow:0 0 0 3px var(--brand-soft);}
+  .mtb-search svg{width:16px;height:16px;color:var(--ink-mid);flex-shrink:0;}
+  .mtb-search input{flex:1;min-width:0;border:none;background:none;outline:none;padding:0;
+    font-size:16px;font-family:inherit;color:var(--ink);}
+  .mtb-filter{display:flex;align-items:center;gap:6px;height:46px;padding:0 16px;
+    flex-shrink:0;white-space:nowrap;cursor:pointer;background:var(--paper);
+    border:1px solid var(--line);border-radius:999px;box-shadow:var(--sh);transition:.15s;
+    font-family:var(--head);font-weight:900;font-size:12.5px;color:var(--brand-deep);}
+  .mtb-filter svg{width:16px;height:16px;}
+  .mtb-filter.on{background:var(--brand);border-color:var(--brand);color:#fff;}
+  .mtb-filter .fbadge{display:grid;place-items:center;min-width:17px;height:17px;
+    padding:0 4px;border-radius:999px;background:var(--brand);color:#fff;
+    font-size:10px;font-weight:900;}
+  .mtb-filter .fbadge[hidden]{display:none;}
+  .mtb-filter.on .fbadge{background:#fff;color:var(--brand);}
+
+  /* 月ナビは mstick の中に入れて一緒に貼り付く（単独 sticky はやめる） */
+  .monthbar{position:static;top:auto;z-index:auto;background:none;margin:0;padding:6px 2px 2px;}
+  .mb-label{font-size:13px;min-width:7em;}
+  .mb-arrow{width:32px;height:32px;flex-basis:32px;font-size:11px;}
+  .ep[id^="m-"]{scroll-margin-top:150px;}
+
+  /* --- 下からせり上がる絞り込みシート --- */
+  .sheet-backdrop{display:block;position:fixed;inset:0;z-index:110;
+    background:rgba(20,20,35,.42);opacity:0;pointer-events:none;transition:opacity .3s;}
+  body.sheet-open .sheet-backdrop{opacity:1;pointer-events:auto;}
+  body.sheet-open{overflow:hidden;}
+  .side{position:fixed;left:0;right:0;bottom:0;top:auto;z-index:120;width:auto;
+    max-height:84vh;overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;
+    border-radius:24px 24px 0 0;
+    padding:10px 18px calc(18px + env(safe-area-inset-bottom));
+    box-shadow:0 -12px 44px rgba(20,20,35,.24);visibility:hidden;
+    transform:translateY(110%);
+    transition:transform .34s cubic-bezier(.32,.72,0,1),visibility 0s linear .34s;}
+  body.sheet-open .side{transform:translateY(0);visibility:visible;
+    transition:transform .34s cubic-bezier(.32,.72,0,1);}
+  .side::before{content:'';display:block;width:38px;height:4px;border-radius:999px;
+    background:var(--line);margin:6px auto 10px;}
+  .sheet-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;}
+  .sheet-title{font-family:var(--head);font-weight:900;font-size:15px;color:var(--brand-deep);}
+  .sheet-close{border:none;background:var(--bg);width:32px;height:32px;border-radius:50%;
+    font-size:20px;line-height:1;color:var(--ink-mid);cursor:pointer;}
+  .sheet-apply{display:block;position:sticky;bottom:0;width:100%;margin-top:14px;padding:14px;
+    border:none;border-radius:14px;background:var(--brand);color:#fff;cursor:pointer;
+    font-family:var(--head);font-weight:900;font-size:14px;box-shadow:0 -10px 18px var(--paper);}
+  .sheet-apply:active{background:var(--brand-deep);}
+
+  /* シート内は幅に余裕があるので種別は折り返して全部見せる（横スクロールをやめる） */
+  .side .type-grp .grp-body{display:flex;flex-wrap:wrap;gap:7px;overflow:visible;padding-bottom:0;}
+  .side .type-grp label{flex-shrink:0;padding:7px 13px;border:1px solid var(--line);
+    border-radius:999px;background:var(--bg);gap:6px;}
   .side .type-grp label:has(input:checked){background:var(--brand);border-color:var(--brand);color:#fff;}
   .side .type-grp input[type=radio]{display:none;}
   .side .type-grp label .n{margin-left:0;}
-  .mb-label{font-size:13px;min-width:7em;}
+  .side label{font-size:13px;padding:8px 10px;}
+  #q,#sort{font-size:16px;}
 }
 @media(max-width:600px){
-  header{padding:10px 16px;}
-  /* 受け取りページのヘッダは横スクロールのタブを持たないので右余白を戻す */
+  header{padding:10px max(16px,env(safe-area-inset-left)) 10px max(16px,env(safe-area-inset-right));}
   .kh{padding-right:16px;}
-  .wrap,.kwrap{padding-left:16px;padding-right:16px;}
-  .stats{grid-template-columns:repeat(2,1fr);}
-  .stats div:nth-child(2n){border-right:0;}
-  .stats div:last-child{grid-column:1/-1;border-right:0;}
+  .wrap,.kwrap{padding-left:max(16px,env(safe-area-inset-left));
+    padding-right:max(16px,env(safe-area-inset-right));}
+  .stats{grid-template-columns:repeat(4,1fr);}
+  .stats.filtered{grid-template-columns:repeat(auto-fit,minmax(62px,1fr));}
+  .stats div{padding:12px 4px;}
+  .stats b{font-size:18px;}
+  .stats span:not(.nb){font-size:9.5px;word-break:keep-all;}
   .kh h1{display:none;}
-  .hero{padding:28px 0 6px;text-align:left;}
-  .hero p{text-align:left;}
-  .hero h1{font-size:24px;}
+  .kh .badge{display:none;}
+  .kh .blabel{display:none;}
+  .kh .top{gap:10px;}
+  .kh .btn.sm{padding:9px 13px;font-size:15px;min-height:40px;}
+  .hero{padding:18px 0 4px;text-align:left;}
+  .hero .eyebrow{margin-bottom:8px;}
+  .hero h1{font-size:22px;margin-bottom:10px;}
   .hero h1 br{display:none;}
-  .ep{grid-template-columns:1fr;}
+  .hero p{text-align:left;font-size:13px;line-height:1.75;
+    display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;}
+  .ep{grid-template-columns:1fr;padding:14px;gap:13px;border-radius:18px;}
   .ep-thumb{aspect-ratio:16/9;}
+  .ep-title{font-size:16px;}
+  .kchip{padding:11px 12px;min-height:52px;}
+  .kchip .go{padding:7px 12px;}
+  .watch{padding:13px 16px;min-height:50px;}
+  .docbtn{padding:10px 12px;min-height:42px;}
+  .epbundle{padding:12px;min-height:46px;}
+  .kwrap{padding-bottom:calc(70px + env(safe-area-inset-bottom));}
+  .cbtns .btn{min-height:40px;}
+  #kq{font-size:16px;}
   .epctx-top{grid-template-columns:1fr;}
-  .epctx-thumb{max-width:220px;}
+  .epctx-thumb{max-width:200px;}
+}
+/* タッチ端末では hover が張り付くので、押した瞬間のフィードバックに寄せる */
+@media(hover:none){
+  .ep:hover{transform:none;box-shadow:var(--sh);}
+  .ep:active{transform:scale(.994);}
+  .kchip:hover,.watch:hover,.btn:hover,.reset:hover,.mtb-filter:hover,
+  .docbtn:hover,.epbundle:hover,.tnav a:hover,.back:hover{transform:none;}
+  .kchip:active{background:var(--brand-soft);transform:scale(.985);}
+  .watch:active,.btn:active,.reset:active,.sheet-close:active{filter:brightness(.94);}
+  .docbtn:active,.epbundle:active,.tnav a:active,.back:active{background:var(--brand-soft);}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto;}
+  .side,.sheet-backdrop,.promo,.promo-card{transition-duration:.01ms;}
 }
 
 /* ---------- 印刷 ---------- */
