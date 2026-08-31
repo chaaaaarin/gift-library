@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>グラフ設計 詰まり診断アプリ（Claude Code版）</title>
+<meta name="description" content="Claude Code に任せている長い仕事を思い浮かべて7問に答えると、グラフエンジニアリングの3要素（タスク組織化・エージェント連携・実行時状態管理）のどこが手薄かを判定し、サブエージェント定義・複数セッション・セッション再開など、次に使うClaude Codeの機能を具体的に提示します。">
+<style>
+  :root{
+    --brand:#D9774F; --brand-deep:#C15640; --accent:#D9774F; --accent-deep:#B24E33;
+    --bg:#F1ECE3; --paper:#FBF8F2; --ink:#2A2620; --ink-mid:#6E6557; --ink-sub:#A39A8B;
+    --line:#E4D9C7; --soft:rgba(217,119,79,.14); --brand-soft:rgba(217,119,79,.10);
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:var(--bg);color:var(--ink);font-family:'Hiragino Sans','Yu Gothic',sans-serif;line-height:1.75;padding:24px 16px 60px;}
+  .wrap{max-width:640px;margin:0 auto;}
+  header{text-align:center;margin-bottom:24px;}
+  h1{font-size:21px;font-weight:900;color:var(--brand-deep);}
+  header p{font-size:13.5px;color:var(--ink-mid);margin-top:8px;}
+  .card{background:var(--paper);border:1.5px solid var(--line);border-radius:14px;padding:20px 20px 22px;margin-bottom:16px;box-shadow:0 2px 10px rgba(0,0,0,.04);}
+  .qn{font-size:12px;font-weight:800;color:var(--accent-deep);letter-spacing:1px;}
+  .qt{font-size:16px;font-weight:800;margin:6px 0 14px;}
+  .opt{display:block;width:100%;text-align:left;background:var(--bg);border:1.5px solid var(--line);border-radius:10px;
+    padding:12px 14px;margin-bottom:9px;font-size:14px;font-weight:600;color:var(--ink);cursor:pointer;transition:.15s;font-family:inherit;}
+  .opt:hover{border-color:var(--accent);background:var(--soft);}
+  .opt.sel{border-color:var(--brand);background:var(--brand-soft);box-shadow:inset 0 0 0 1px var(--brand);}
+  .bar{height:8px;background:var(--brand-soft);border-radius:99px;overflow:hidden;margin-bottom:20px;}
+  .bar i{display:block;height:100%;background:linear-gradient(90deg,var(--brand),var(--accent-deep));width:0;transition:.3s;}
+  .nav{display:flex;justify-content:space-between;gap:12px;margin-top:4px;}
+  button.b{background:var(--brand);color:#fff;border:none;border-radius:10px;padding:11px 22px;font-size:14px;font-weight:800;cursor:pointer;font-family:inherit;}
+  button.b.ghost{background:var(--paper);color:var(--brand-deep);border:1.5px solid var(--line);}
+  button.b:disabled{opacity:.4;cursor:not-allowed;}
+  .result h2{font-size:18px;font-weight:900;color:var(--brand-deep);margin-bottom:4px;}
+  .verdict{font-size:14px;color:var(--ink);background:var(--soft);border-left:4px solid var(--accent-deep);border-radius:8px;padding:12px 14px;margin:12px 0 18px;}
+  .score-row{display:flex;align-items:center;gap:10px;margin-bottom:10px;}
+  .score-row .lbl{width:140px;font-size:13px;font-weight:800;flex-shrink:0;}
+  .score-row .track{flex:1;height:12px;background:var(--brand-soft);border-radius:99px;overflow:hidden;}
+  .score-row .track i{display:block;height:100%;border-radius:99px;}
+  .score-row .pct{width:38px;text-align:right;font-size:12px;font-weight:800;color:var(--ink-mid);}
+  .weak i{background:linear-gradient(90deg,#B24E33,#D9774F);}
+  .ok i{background:linear-gradient(90deg,#7C9885,#A8C0A0);}
+  .next{background:var(--paper);border:1.5px solid var(--line);border-radius:10px;padding:14px 16px;margin-top:14px;}
+  .next h3{font-size:14px;font-weight:900;color:var(--brand-deep);margin-bottom:6px;}
+  .next p{font-size:13.5px;color:var(--ink);}
+  .next .step{font-size:13px;color:var(--ink-mid);margin-top:6px;padding-left:18px;position:relative;}
+  .next .step::before{content:'▸';position:absolute;left:0;color:var(--accent-deep);font-weight:900;}
+  code{background:var(--brand-soft);border-radius:5px;padding:1px 5px;font-size:12.5px;font-family:ui-monospace,Menlo,monospace;}
+  footer{text-align:center;font-size:11.5px;color:var(--ink-sub);margin-top:24px;line-height:1.7;}
+  .hide{display:none;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>グラフ設計 詰まり診断アプリ（Claude Code版）</h1>
+    <p>Claude Code に任せている「長い仕事」を1つ思い浮かべて、7問に答えてください。<br>3要素のどこが手薄かと、次に使う機能を診断します。</p>
+  </header>
+
+  <div class="bar"><i id="prog"></i></div>
+  <div id="quiz"></div>
+  <div class="nav" id="nav">
+    <button class="b ghost" id="back" onclick="go(-1)">← もどる</button>
+    <button class="b" id="fwd" onclick="go(1)" disabled>つぎへ →</button>
+  </div>
+  <div id="result" class="card result hide"></div>
+
+  <footer>
+    このアプリはすべてブラウザ内で動きます（送信・保存・通信は一切ありません）。<br>
+    診断の枠組みはサーベイ論文「Graph Engineering in the Era of LLM Agents」(arXiv:2608.21156) の3要素にもとづく、本キット独自の簡易版です。機能の対応づけは本キットの整理で、論文が Claude Code を指しているわけではありません。
+  </footer>
+</div>
+
+<script>
+// task=タスク組織化への弱点, team=エージェント連携への弱点, state=実行時状態管理への弱点, ceil=1体で抱え込みすぎサイン
+const QS = [
+  {
+    q:"その仕事、Claude に頼むとき何工程くらいに分かれていますか？",
+    o:[
+      {t:"1〜2工程。ワンショットでだいたい終わる", task:0,team:0,state:0,ceil:-1},
+      {t:"3〜5工程。頭の中では分かれている", task:1,team:0,state:0,ceil:0},
+      {t:"6工程以上、または毎回変わる。丸ごと1回のお願いで投げている", task:2,team:1,state:1,ceil:1},
+    ]
+  },
+  {
+    q:"同時に進められる作業（例：調査と実装、複数ファイルの修正）を、どう回していますか？",
+    o:[
+      {t:"1つのセッションで、上から順番に全部やらせている", task:2,team:1,state:0,ceil:1},
+      {t:"Explore などの組み込みサブエージェントに調査だけ投げている", task:1,team:0,state:0,ceil:0},
+      {t:"役割ごとにサブエージェント／別セッションを分けて並行させている", task:0,team:0,state:0,ceil:-1},
+    ]
+  },
+  {
+    q:"Claude が書いたコードやドキュメントは、誰がレビューしていますか？",
+    o:[
+      {t:"書いたのと同じセッションで、そのまま「これで合ってる？」と自己確認させている", task:0,team:2,state:0,ceil:1},
+      {t:"別セッション、またはレビュー専用のサブエージェントに渡している", task:0,team:0,state:0,ceil:-1},
+      {t:"最後に自分（人間）がまとめて見ている", task:0,team:1,state:0,ceil:0},
+    ]
+  },
+  {
+    q:"長い作業の途中で失敗・脱線したとき、どうしていますか？",
+    o:[
+      {t:"どこで崩れたか分からず、新しいセッションで最初からやり直すことが多い", task:0,team:0,state:2,ceil:1},
+      {t:"だいたいの箇所は分かるので、手で直して続けさせる", task:0,team:0,state:1,ceil:0},
+      {t:"コミットや /rewind、--resume で、崩れる前の地点に戻して再開している", task:0,team:0,state:0,ceil:-1},
+    ]
+  },
+  {
+    q:"思ったとおりに動かないとき、まず何をしますか？",
+    o:[
+      {t:"CLAUDE.md やプロンプトに指示・禁止事項を書き足す", task:1,team:0,state:0,ceil:2},
+      {t:"参照ファイルや前提情報を追加で渡す", task:1,team:0,state:0,ceil:1},
+      {t:"作業の分け方・どの役に何を任せるかを組み直す", task:0,team:0,state:0,ceil:-1},
+    ]
+  },
+  {
+    q:"サブエージェントやカスタムエージェント定義（.claude/agents）は使っていますか？",
+    o:[
+      {t:"使っていない。1セッションに全部やらせている", task:1,team:2,state:1,ceil:2},
+      {t:"組み込みの Explore / Plan はたまに使う", task:0,team:1,state:0,ceil:0},
+      {t:"役割ごとにカスタム定義して、チェーンやチームで動かしている", task:0,team:0,state:0,ceil:-1},
+    ]
+  },
+  {
+    q:"その仕事について「どの役が何を担当し、どの順で受け渡すか」を説明できますか？",
+    o:[
+      {t:"1体に全部やらせているので、担当という概念がない", task:1,team:2,state:1,ceil:2},
+      {t:"なんとなく分けているが、役割の境界はあいまい", task:0,team:1,state:0,ceil:0},
+      {t:"担当・レビュー役・受け渡しの順番まで決めてある", task:0,team:0,state:0,ceil:-1},
+    ]
+  },
+];
+
+let cur = 0;
+const answers = new Array(QS.length).fill(null);
+
+function render(){
+  const wrap = document.getElementById('quiz');
+  const Q = QS[cur];
+  wrap.innerHTML = '<div class="card"><div class="qn">質問 '+(cur+1)+' / '+QS.length+'</div>'
+    + '<div class="qt">'+Q.q+'</div>'
+    + Q.o.map((op,i)=>'<button class="opt'+(answers[cur]===i?' sel':'')+'" onclick="pick('+i+')">'+op.t+'</button>').join('')
+    + '</div>';
+  document.getElementById('prog').style.width = Math.round((cur)/QS.length*100)+'%';
+  document.getElementById('back').disabled = cur===0;
+  const last = cur===QS.length-1;
+  document.getElementById('fwd').textContent = last ? '結果を見る →' : 'つぎへ →';
+  document.getElementById('fwd').disabled = answers[cur]===null;
+}
+function pick(i){ answers[cur]=i; render(); }
+function go(d){
+  if(d>0 && cur===QS.length-1){ showResult(); return; }
+  cur = Math.max(0, Math.min(QS.length-1, cur+d));
+  render();
+}
+function showResult(){
+  document.getElementById('quiz').classList.add('hide');
+  document.getElementById('nav').classList.add('hide');
+  document.getElementById('prog').style.width='100%';
+
+  let task=0, team=0, state=0, ceil=0, maxTask=0, maxTeam=0, maxState=0;
+  QS.forEach((Q,qi)=>{
+    const op = Q.o[answers[qi]];
+    task+=op.task; team+=op.team; state+=op.state; ceil+=op.ceil;
+    maxTask+=Math.max(...Q.o.map(x=>x.task));
+    maxTeam+=Math.max(...Q.o.map(x=>x.team));
+    maxState+=Math.max(...Q.o.map(x=>x.state));
+  });
+  const pTask = Math.round(task/Math.max(maxTask,1)*100);
+  const pTeam = Math.round(team/Math.max(maxTeam,1)*100);
+  const pState = Math.round(state/Math.max(maxState,1)*100);
+
+  let ceilMsg, ceilLevel;
+  if(ceil >= 4){ ceilLevel='高'; ceilMsg='1つのセッションに抱え込ませすぎのサインが強く出ています。まず1工程だけ切り出して、別の役に渡すところから始める価値が高い状態です。'; }
+  else if(ceil >= 1){ ceilLevel='中'; ceilMsg='部分的に1セッションで抱えています。効果が出そうな1工程（多くはレビュー）だけ分離して試すのがおすすめです。'; }
+  else { ceilLevel='低'; ceilMsg='今の仕事は1セッションのままでも回りそうです。無理に分けると設計と管理の手間だけ増えます。'; }
+
+  const items = [
+    {key:'task', label:'① タスク組織化', p:pTask, weak:pTask>=50,
+     advWeak:'工程の分解と依存関係があいまいなまま、丸ごと投げています。着手前に <code>プランモード</code> または「まず計画だけ出して」と頼み、<b>順番・依存・並行できる作業</b>を洗い出してから実装に入ってください。TodoWrite（やることリスト）を使わせると進捗も追えます。',
+     advOk:'工程の分け方と計画の立て方は問題なさそうです。'},
+    {key:'team', label:'② エージェント連携', p:pTeam, weak:pTeam>=50,
+     advWeak:'「作る役」と「確かめる役」が同じセッションになっています。<code>.claude/agents</code> にレビュー専用のサブエージェント（description と読み取り系ツールだけ許可）を1つ定義し、成果物だけを渡してレビューさせてください。自己採点は確証バイアスの温床です。',
+     advOk:'役割分担とレビューの分離はできています。'},
+    {key:'state', label:'③ 実行時状態管理', p:pState, weak:pState>=50,
+     advWeak:'途中で崩れると戻れず、最初からやり直しになっています。工程の節目ごとに <code>git commit</code> か短いメモを残し、崩れたら <code>/rewind</code> や <code>--resume</code> で直前の正しい地点から再開してください。配布の「長い自動化がコケた時の復旧手順」がそのまま使えます。',
+     advOk:'途中状態の記録と復旧の備えはできています。'},
+  ];
+  items.sort((a,b)=>b.p-a.p);
+  const worst = items[0];
+
+  let html = '<h2>診断結果</h2>';
+  html += '<div class="verdict"><b>1セッションで抱え込みすぎ度：'+ceilLevel+'</b><br>'+ceilMsg+'</div>';
+  items.forEach(it=>{
+    html += '<div class="score-row '+(it.weak?'weak':'ok')+'">'
+      + '<span class="lbl">'+it.label+'</span>'
+      + '<span class="track"><i style="width:'+Math.max(it.p,4)+'%"></i></span>'
+      + '<span class="pct">'+it.p+'</span></div>';
+  });
+  html += '<div class="next"><h3>いちばん手薄なのは「'+worst.label.replace(/^[①②③]\s/,'')+'」</h3>'
+    + '<p>'+worst.advWeak+'</p>';
+  const others = items.slice(1).filter(x=>x.weak);
+  if(others.length){
+    html += others.map(o=>'<div class="step">'+o.label+'：'+o.advWeak+'</div>').join('');
+  } else {
+    html += '<div class="step">他の2要素は大きな問題は見当たりませんでした（'+items.slice(1).map(o=>o.label).join(' / ')+'）。</div>';
+  }
+  html += '</div>';
+
+  html += '<div class="next"><h3>次の一手（この順で）</h3>'
+    + '<div class="step">1. 上の「いちばん手薄な要素」への対策を、1工程だけで試す</div>'
+    + '<div class="step">2. 効果を感じたら、隣の工程にも同じやり方を広げる</div>'
+    + '<div class="step">3. 「抱え込みすぎ度」が中〜高なら、まずレビュー工程を別の役に分けるところから</div>'
+    + '</div>';
+
+  html += '<div class="nav" style="margin-top:18px;"><button class="b ghost" onclick="restart()">もう一度診断する</button></div>';
+
+  const r = document.getElementById('result');
+  r.innerHTML = html;
+  r.classList.remove('hide');
+  r.scrollIntoView({behavior:'smooth', block:'start'});
+}
+function restart(){
+  cur=0; answers.fill(null);
+  document.getElementById('result').classList.add('hide');
+  document.getElementById('quiz').classList.remove('hide');
+  document.getElementById('nav').classList.remove('hide');
+  render();
+}
+render();
+</script>
+</body>
+</html>
