@@ -224,7 +224,7 @@ background:#fff;display:block;}
 /* ---------- 受け取りページ: 動画コンテキスト ---------- */
 .epctx{margin:26px 0;padding:18px;background:var(--paper);border:none;
 border-radius:18px;box-shadow:var(--sh);}
-.epctx-top{display:grid;grid-template-columns:150px 1fr;gap:16px;align-items:center;}
+.epctx-top{display:grid;grid-template-columns:150px 1fr;gap:16px;align-items:start;}
 .epctx-thumb{border-radius:12px;overflow:hidden;aspect-ratio:16/9;background:var(--bg);}
 .epctx-thumb img{width:100%;height:100%;object-fit:cover;display:block;}
 .epctx-label{font-size:11.5px;font-weight:800;color:var(--ink-mid);margin:0 0 4px;}
@@ -244,9 +244,13 @@ box-shadow:0 10px 12px -10px rgba(20,20,35,.10);}
 #kq{width:100%;padding:10px 14px;border:1px solid rgba(20,20,35,.09);border-radius:999px;
 font-size:13px;background:var(--paper);color:var(--ink);font-family:inherit;transition:.15s;}
 #kq:focus{outline:none;border-color:var(--brand);box-shadow:0 0 0 3px var(--brand-soft);}
-.kcats{display:flex;gap:7px;overflow-x:auto;padding-bottom:2px;}
-.kcat{flex-shrink:0;font-family:inherit;font-size:12px;font-weight:700;color:var(--ink-mid);
-background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:5px 12px;
+/* 広い画面ではカテゴリを折り返して見せる（横スクロールで端が切れて探しにくかった）。
+   貼り付いたツールバーが伸びすぎないよう2行ぶんで頭打ちにし、多い時だけ縦スクロール。
+   狭い画面は横スクロールのまま、右端をフェードして「続きがある」ことを示す。 */
+.kcats{display:flex;flex-wrap:wrap;gap:7px;padding-bottom:2px;
+max-height:78px;overflow-y:auto;overscroll-behavior:contain;}
+.kcat{flex-shrink:0;font-family:inherit;font-size:11.5px;font-weight:700;color:var(--ink-mid);
+background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:5px 11px;
 cursor:pointer;display:flex;align-items:center;gap:6px;transition:.15s;}
 .kcat:hover{border-color:var(--brand);color:var(--brand-deep);}
 .kcat:focus-visible{outline:none;border-color:var(--brand);box-shadow:0 0 0 3px var(--brand-soft);}
@@ -274,10 +278,12 @@ border-radius:999px;padding:2px 10px;flex-shrink:0;}
 line-height:1.5;word-break:auto-phrase;line-break:strict;}
 .imeta{font-size:13px;color:var(--ink-mid);margin-bottom:12px;line-height:1.75;}
 /* チェックリストの行。押すと済みになる（コピー内容は変えていない） */
-.cline{display:inline-block;cursor:pointer;border-radius:6px;padding:0 4px;margin:0 -4px;
+.cline{display:inline-block;cursor:pointer;border-radius:6px;padding:1px 4px;margin:0 -4px;
 transition:.12s;}
 .cline:hover{background:rgba(255,255,255,.10);}
-.cline .cbx{font-weight:700;}
+.cline:active{background:rgba(255,255,255,.18);}
+.cline .cbx{font-weight:700;color:#8FE0B4;}
+.cline.on .cbx{color:inherit;}
 .cline.on{opacity:.45;text-decoration:line-through;text-decoration-thickness:1px;}
 .cline.on .cbx{text-decoration:none;display:inline-block;}
 .cprog{display:flex;align-items:center;gap:12px;font-family:var(--head);font-weight:900;
@@ -407,6 +413,9 @@ padding:13px 20px;text-decoration:none;transition:transform .15s,background .15s
   .side .type-grp label .n{margin-left:0;}
   .side label{font-size:13px;padding:8px 10px;}
   #q,#sort{font-size:16px;}
+  /* シート内では「この条件で見る」（濃色）が主。リセットは従属させて迷わせない。 */
+  .side .reset{background:var(--brand-soft);color:var(--brand-deep);box-shadow:none;}
+  .side .reset:active{background:var(--brand);color:#fff;}
 
   /* 受け取りページのヘッダ: タイトル＋バッジ＋全文ボタン2個だと ~820px 未満で
      2段に折り返す。バッジを隠し、ボタンをアイコンのみにして1行に収める。
@@ -446,9 +455,32 @@ padding:13px 20px;text-decoration:none;transition:transform .15s,background .15s
   .kwrap{padding-bottom:calc(70px + env(safe-area-inset-bottom));}
   .cbtns .btn{min-height:40px;}
   #kq{font-size:16px;}
-  .epctx-top{grid-template-columns:1fr;}
-  .epctx-thumb{max-width:200px;}
-}
+
+  /* --- 受け取りページ: 本文（プロンプト）までの前置きをモバイルで圧縮 --- */
+  .epctx{margin:14px 0;padding:14px;}
+  .epctx-top{grid-template-columns:1fr;gap:12px;}
+  .epctx-top > div:last-child{order:-1;}       /* 動画情報より先にプレゼント名・全部DLを見せる */
+  /* サムネと「動画を見る」を1行に、資料ボタンをその下に。縦積みより ~200px 短くなる。 */
+  .epctx .ep-left{display:grid;grid-template-columns:132px 1fr;gap:10px;align-items:center;}
+  .epctx .ep-left .epctx-thumb{grid-row:1;max-width:none;}
+  .epctx .ep-left .watch{grid-column:2;grid-row:1;align-self:center;min-height:44px;
+    padding:11px 12px;font-size:12px;}
+  .epctx .ep-left .ep-docs{grid-column:1/-1;}
+  .epctx .epbundle{margin-top:10px;}
+  .kintro{padding:16px 0 4px;}
+  .kintro h2{font-size:20px;line-height:1.35;margin-bottom:8px;}
+  .kintro p{font-size:13.5px;line-height:1.85;}
+  .kmeta{margin-top:10px;}
+  .pnote{margin:14px 0 4px;padding:13px 16px;font-size:13px;}
+
+  /* カテゴリチップは狭い画面だけ横スクロール。右端をフェードして続きを示す。 */
+  .kcats{flex-wrap:nowrap;overflow-x:auto;scroll-snap-type:x proximity;
+    -webkit-mask-image:linear-gradient(90deg,#000 calc(100% - 26px),transparent);
+    mask-image:linear-gradient(90deg,#000 calc(100% - 26px),transparent);}
+  .kcat{scroll-snap-align:start;}
+
+  /* チェックリストの □ 行: タップしやすい高さと押下フィードバック */
+  .cline{padding:5px 6px;margin:2px -6px;}
 /* タッチ端末では hover が張り付くので、押した瞬間のフィードバックに寄せる */
 @media(hover:none){
   .ep:hover{transform:none;box-shadow:var(--sh);}
