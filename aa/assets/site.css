@@ -68,7 +68,10 @@ line-height:1.25;color:var(--brand-deep);}
 padding-bottom:60px;}
 /* top は貼り付いたときの位置。月ナビ(sticky top:62px・高さ約33px)の下に来るようにする。
    初期位置は .cols の上端のままなので、一覧カードとの上端そろえは崩れない。 */
-.side{position:sticky;top:100px;background:var(--paper);border:none;
+/* 高さ制限＋内部スクロール: おすすめ診断を開くとサイドが画面より高くなり、
+   貼り付いたまま下部（＝診断結果）が画面外に固定されて見られなくなるため。 */
+.side{position:sticky;top:100px;max-height:calc(100vh - 116px);overflow-y:auto;
+overscroll-behavior:contain;background:var(--paper);border:none;
 border-radius:20px;padding:20px 18px;box-shadow:var(--sh);}
 .side h3{font-family:var(--head);font-size:13px;font-weight:900;color:var(--brand-deep);
 margin-bottom:9px;}
@@ -404,6 +407,16 @@ padding:13px 20px;text-decoration:none;transition:transform .15s,background .15s
   .side .type-grp label .n{margin-left:0;}
   .side label{font-size:13px;padding:8px 10px;}
   #q,#sort{font-size:16px;}
+
+  /* 受け取りページのヘッダ: タイトル＋バッジ＋全文ボタン2個だと ~820px 未満で
+     2段に折り返す。バッジを隠し、ボタンをアイコンのみにして1行に収める。
+     タイトルは flex で縮めて末尾を … にする。 */
+  .kh .badge{display:none;}
+  .kh .blabel{display:none;}
+  .kh .top{gap:10px;}
+  .kh h1{flex:1 1 auto;}
+  .kh .btn{flex-shrink:0;}
+  .kh .btn.sm{padding:9px 13px;font-size:15px;min-height:40px;}
 }
 @media(max-width:600px){
   header{padding:10px max(16px,env(safe-area-inset-left)) 10px max(16px,env(safe-area-inset-right));}
@@ -416,10 +429,6 @@ padding:13px 20px;text-decoration:none;transition:transform .15s,background .15s
   .stats b{font-size:18px;}
   .stats span:not(.nb){font-size:9.5px;word-break:keep-all;}
   .kh h1{display:none;}
-  .kh .badge{display:none;}
-  .kh .blabel{display:none;}
-  .kh .top{gap:10px;}
-  .kh .btn.sm{padding:9px 13px;font-size:15px;min-height:40px;}
   .hero{padding:18px 0 4px;text-align:left;}
   .hero .eyebrow{margin-bottom:8px;}
   .hero h1{font-size:22px;margin-bottom:10px;}
