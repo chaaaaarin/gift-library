@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Codex仕様書ジェネレーターアプリ</title>
+<meta name="description" content="スプレッドシートの自動化でやりたいことを選ぶ・書くだけで、Codex（やお使いのコーディングAI）にそのまま貼れる日本語の仕様書プロンプトを組み立てるアプリです。">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:-apple-system,'Hiragino Sans','Yu Gothic',sans-serif;line-height:1.7;color:#1C3461;background:#F7FAFC;padding:22px 16px 40px;}
+  .wrap{max-width:760px;margin:0 auto;}
+  h1{font-size:22px;font-weight:900;margin-bottom:4px;}
+  .sub{font-size:13.5px;color:#4A6080;margin-bottom:20px;}
+  .card{background:#fff;border:1.5px solid rgba(28,52,97,.14);border-radius:14px;padding:18px 20px;margin-bottom:14px;box-shadow:0 2px 10px rgba(0,0,0,.04);}
+  .card h2{font-size:15px;font-weight:900;margin-bottom:4px;}
+  .card .hint{font-size:12px;color:#8098B4;margin-bottom:10px;}
+  label.opt{display:block;font-size:14px;padding:8px 10px;border:1.5px solid rgba(28,52,97,.14);border-radius:9px;margin-bottom:7px;cursor:pointer;}
+  label.opt:hover{border-color:#5BBCD4;}
+  label.opt input{margin-right:8px;}
+  input[type=text],textarea{width:100%;font-family:inherit;font-size:14px;border:1.5px solid rgba(28,52,97,.18);border-radius:9px;padding:9px 11px;color:#1C3461;background:#fff;}
+  textarea{resize:vertical;min-height:82px;line-height:1.6;}
+  .chk{font-size:13.5px;display:block;padding:5px 0;cursor:pointer;}
+  .chk input{margin-right:7px;}
+  button{font-family:inherit;font-weight:900;font-size:15px;border:0;border-radius:999px;padding:13px 26px;cursor:pointer;background:#1C3461;color:#fff;}
+  button.ghost{background:#fff;color:#1C3461;border:1.5px solid rgba(28,52,97,.2);font-size:13px;padding:9px 18px;}
+  .actions{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:6px 0 16px;}
+  .out{background:#16284A;color:#EDEDEA;border-radius:12px;padding:16px 16px;font-family:ui-monospace,Menlo,monospace;font-size:12.5px;line-height:1.65;white-space:pre-wrap;word-break:break-word;min-height:120px;}
+  .msg{font-size:12.5px;color:#2C7A93;font-weight:700;min-height:18px;}
+  .foot{font-size:12px;color:#8098B4;margin-top:18px;line-height:1.7;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Codex仕様書ジェネレーター</h1>
+  <p class="sub">スプレッドシートの自動化でやりたいことを選ぶ・書くだけで、Codex にそのまま貼れる日本語の仕様書プロンプトができます。埋めた項目だけが仕様書に反映されます。</p>
+
+  <div class="card">
+    <h2>1. どんな自動化か（背景）</h2>
+    <div class="hint">1〜2行。「何の業務で、いま何が困っているか」</div>
+    <textarea id="bg" placeholder="例：介護施設の採用業務。応募への初回連絡が2〜3日遅れ、応募者が他社へ流れている。"></textarea>
+  </div>
+
+  <div class="card">
+    <h2>2. 使うもの</h2>
+    <label class="opt"><input type="radio" name="stack" value="sheet" checked>スプレッドシート単体</label>
+    <label class="opt"><input type="radio" name="stack" value="form">Googleフォーム ＋ スプレッドシート</label>
+    <label class="opt"><input type="radio" name="stack" value="gmail">スプレッドシート ＋ Gmail送信</label>
+    <label class="opt"><input type="radio" name="stack" value="calendar">スプレッドシート ＋ Googleカレンダー</label>
+  </div>
+
+  <div class="card">
+    <h2>3. データが入っているシートと列</h2>
+    <div class="hint">シート名と、列の中身を「A列=◯◯／B列=◯◯」で。1行目が見出しなら、その旨も。</div>
+    <input type="text" id="sheetname" placeholder="シート名：例）応募シート">
+    <textarea id="cols" placeholder="A列=タイムスタンプ／B列=氏名／C列=メールアドレス／D列=電話番号／E列=希望職種／F列=志望動機／G列=ステータス／H列=返信済みフラグ（1行目は見出し）"></textarea>
+  </div>
+
+  <div class="card">
+    <h2>4. きっかけ（いつ動かすか）</h2>
+    <label class="opt"><input type="radio" name="trigger" value="menu" checked>シートのメニューから手動で実行する</label>
+    <label class="opt"><input type="radio" name="trigger" value="formsubmit">フォームが送信されたとき自動で動く</label>
+    <label class="opt"><input type="radio" name="trigger" value="timer">毎日決まった時刻に自動で動く</label>
+  </div>
+
+  <div class="card">
+    <h2>5. やること（処理の順番）</h2>
+    <div class="hint">「1. 〜する 2. 〜する」と手順で。対象の条件（例：H列が空の行だけ）も書く。</div>
+    <textarea id="steps" placeholder="1. H列が空で、C列に「@」を含む行を対象にする&#10;2. その行の宛先へ、件名・本文を決めて自動返信メールを送る&#10;3. 送信できたらH列に「送信済み」、G列に「連絡済」、A列に処理日時を書く&#10;4. 最後に「◯件処理しました」とポップアップを出す"></textarea>
+  </div>
+
+  <div class="card">
+    <h2>6. 外部AI（Gemini など）で処理する部分</h2>
+    <label class="opt"><input type="radio" name="ai" value="none" checked>なし（AIは使わない）</label>
+    <label class="opt"><input type="radio" name="ai" value="summary">ある列の文章を要約して、別の列に書き込む</label>
+    <label class="opt"><input type="radio" name="ai" value="classify">ある列の内容を分類・タグ付けして、別の列に書き込む</label>
+    <div id="aidetail" style="display:none;margin-top:8px;">
+      <input type="text" id="aicol" placeholder="対象の列と出力先：例）F列を要約して I列に書き込む">
+      <div style="height:8px;"></div>
+      <input type="text" id="airule" placeholder="AIへの指示：例）採用担当者向けに強み・経験・勤務条件を3行で。合否判断はしない">
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>7. AIが失敗したときの方針</h2>
+    <div class="hint">6で「なし」を選んだ場合は無視されます。</div>
+    <label class="opt"><input type="radio" name="err" value="isolate" checked>AI部分だけ切り離す。本筋（返信・登録など）は止めない</label>
+    <label class="opt"><input type="radio" name="err" value="stopall">全部止めて、エラーを記録する</label>
+  </div>
+
+  <div class="card">
+    <h2>8. 追加の条件</h2>
+    <label class="chk"><input type="checkbox" id="c_comment" checked>初心者にも分かるよう、日本語のコメントを入れる</label>
+    <label class="chk"><input type="checkbox" id="c_howto" checked>コードの後に、使い方の説明をつける</label>
+    <label class="chk"><input type="checkbox" id="c_full" checked>修正時も、差分ではなくコード全文を出す</label>
+    <label class="chk"><input type="checkbox" id="c_key">APIキーはコードに直書きせず、スクリプトプロパティから読む</label>
+  </div>
+
+  <div class="actions">
+    <button id="gen">仕様書をつくる</button>
+    <button class="ghost" id="copy">コピー</button>
+    <button class="ghost" id="sample">サンプルを入れる</button>
+  </div>
+  <div class="msg" id="msg"></div>
+  <div class="out" id="out">ここに仕様書が表示されます。</div>
+
+  <p class="foot">
+    できた仕様書を Codex（またはお使いのコーディングAI）にそのまま貼ると、Google Apps Script のコードが返ります。<br>
+    返ってきたコードは「拡張機能 → Apps Script」に貼って実行。エラーが出たら、エラー文をそのまま貼り返せば直ります。<br>
+    ※ 生成されたコードは、送信先・対象行の条件・上書きする列が意図どおりか、必ず自分で確認してから使ってください。
+  </p>
+</div>
+
+<script>
+(function(){
+  var $=function(id){return document.getElementById(id);};
+  function radio(name){var n=document.getElementsByName(name);for(var i=0;i<n.length;i++){if(n[i].checked)return n[i].value;}return "";}
+
+  document.getElementsByName("ai").forEach?document.getElementsByName("ai").forEach(bind):Array.prototype.forEach.call(document.getElementsByName("ai"),bind);
+  function bind(el){el.addEventListener("change",function(){$("aidetail").style.display=(radio("ai")==="none")?"none":"block";});}
+
+  var stackText={
+    sheet:"Google スプレッドシート単体（Google Apps Script）",
+    form:"Google フォーム＋スプレッドシート（フォーム回答がシートに溜まる）",
+    gmail:"スプレッドシート＋Gmail送信（GmailApp でメールを送る）",
+    calendar:"スプレッドシート＋Google カレンダー（CalendarApp で予定を作る）"
+  };
+  var trigText={
+    menu:"スプレッドシートを開いたときに独自メニューを追加し、そのメニュー項目から手動で実行する",
+    formsubmit:"フォーム送信時トリガー（onFormSubmit）で自動的に実行する",
+    timer:"時間主導トリガーで、毎日決まった時刻に自動的に実行する"
+  };
+
+  function build(){
+    var bg=$("bg").value.trim();
+    var sheetname=$("sheetname").value.trim();
+    var cols=$("cols").value.trim();
+    var steps=$("steps").value.trim();
+    var ai=radio("ai");
+    var aicol=$("aicol").value.trim();
+    var airule=$("airule").value.trim();
+    var err=radio("err");
+
+    var L=[];
+    L.push("あなたは Google Apps Script（GAS）の専門家です。以下の仕様で GAS コードを書いてください。");
+    L.push("");
+    L.push("# 背景");
+    L.push(bg||"（ここに、何の業務で何が困っているかを1〜2行で書く）");
+    L.push("");
+    L.push("# 使う環境");
+    L.push("・"+stackText[radio("stack")]);
+    L.push("");
+    L.push("# シートの構成");
+    L.push("・シート名「"+(sheetname||"（シート名）")+"」");
+    L.push("・"+(cols||"（A列=◯◯／B列=◯◯ … の形で列の中身を書く）"));
+    L.push("");
+    L.push("# きっかけ");
+    L.push("・"+trigText[radio("trigger")]);
+    L.push("");
+    L.push("# 処理の流れ");
+    L.push(steps||"（1. 〜する 2. 〜する … と手順で書く。対象行の条件も書く）");
+    L.push("");
+
+    if(ai!=="none"){
+      L.push("# 外部AIでの処理");
+      L.push("・処理内容："+(ai==="summary"?"指定した列の文章を要約する":"指定した列の内容を分類・タグ付けする"));
+      L.push("・対象と出力先："+(aicol||"（例：F列を処理して I列に書き込む）"));
+      L.push("・AIへの指示："+(airule||"（例：3行以内で。事実にない補足はしない。判断や推奨はしない）"));
+      L.push("・使用モデル：gemini-2.5-flash（generativelanguage.googleapis.com。APIキーは「設定」シートから読み込む）");
+      L.push("");
+      L.push("# エラー時の設計（重要）");
+      if(err==="isolate"){
+        L.push("・本筋の処理（メール送信・シートへの記録など）と、外部AIの処理は、必ず別々の try-catch に分けてください。");
+        L.push("・外部AIがエラーでも、本筋の処理は絶対に止めないでください。");
+        L.push("・AI処理が失敗した行は、出力先の列に「（AIエラー）」と分かる印を書き、後続の通知などは元データつきでそのまま続けてください。");
+      }else{
+        L.push("・エラーが発生したら処理を止め、原因が分かるメッセージをログとポップアップに出してください。");
+        L.push("・どの行まで処理できたかが分かるよう、処理済みの行には印を残してください。");
+      }
+      L.push("");
+    }
+
+    var out=[];
+    if($("c_comment").checked) out.push("初心者にも分かるよう、要所に日本語のコメントを入れる");
+    if($("c_howto").checked) out.push("コードの後に、初心者向けの使い方の説明をつける");
+    if($("c_full").checked) out.push("修正を頼んだときも、差分ではなくコード全文を出す");
+    if($("c_key").checked) out.push("APIキーはコードに直書きせず、スクリプトプロパティ（PropertiesService）から読み込む");
+    L.push("# 出力の条件");
+    if(out.length){ for(var i=0;i<out.length;i++) L.push("・"+out[i]); }
+    else L.push("・特になし");
+
+    return L.join("\n");
+  }
+
+  $("gen").addEventListener("click",function(){
+    $("out").textContent=build();
+    $("msg").textContent="仕様書をつくりました。「コピー」で全文コピーできます。";
+  });
+
+  $("copy").addEventListener("click",function(){
+    var t=$("out").textContent;
+    if(!t||t.indexOf("ここに仕様書")===0){$("msg").textContent="先に「仕様書をつくる」を押してください。";return;}
+    var ta=document.createElement("textarea");
+    ta.value=t; ta.style.position="fixed"; ta.style.opacity="0";
+    document.body.appendChild(ta); ta.focus(); ta.select();
+    var ok=false;
+    try{ ok=document.execCommand("copy"); }catch(e){ ok=false; }
+    document.body.removeChild(ta);
+    if(ok){ $("msg").textContent="コピーしました。Codex に貼り付けてください。"; }
+    else if(navigator.clipboard){ navigator.clipboard.writeText(t).then(function(){$("msg").textContent="コピーしました。";},function(){$("msg").textContent="コピーできませんでした。出力欄を選択して手動でコピーしてください。";}); }
+    else { $("msg").textContent="コピーできませんでした。出力欄を選択して手動でコピーしてください。"; }
+  });
+
+  $("sample").addEventListener("click",function(){
+    $("bg").value="介護施設の採用業務。応募への初回連絡が2〜3日遅れ、応募者が他社へ流れている。";
+    document.getElementsByName("stack")[1].checked=true;
+    $("sheetname").value="応募シート";
+    $("cols").value="A列=タイムスタンプ／B列=氏名／C列=メールアドレス／D列=電話番号／E列=希望職種／F列=志望動機／G列=ステータス／H列=返信済みフラグ／I列=AI要約（1行目は見出し）";
+    document.getElementsByName("trigger")[0].checked=true;
+    $("steps").value="1. H列が空で、C列に「@」を含む行を対象にする\n2. その行の宛先へ、件名・本文を決めて自動返信メールを送る\n3. 送信できたらH列に「送信済み」、G列に「連絡済」、A列に処理日時を書く\n4. 最後に「◯件の応募に自動返信しました」とポップアップを出す";
+    document.getElementsByName("ai")[1].checked=true;
+    $("aidetail").style.display="block";
+    $("aicol").value="F列を要約して I列に書き込む";
+    $("airule").value="採用担当者向けに、応募者の強み・経験・勤務条件を3行以内で。資格や夜勤可否があれば必ず含める。合否の判断や推奨はしない";
+    document.getElementsByName("err")[0].checked=true;
+    $("msg").textContent="サンプルを入れました。「仕様書をつくる」を押してください。";
+  });
+})();
+</script>
+</body>
+</html>
