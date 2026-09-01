@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="ja"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Kiro or Codex 診断アプリ</title>
+<meta name="description" content="5つの質問に答えるだけで、そのタスクをKiroの仕様駆動フローで進めるべきか、Codexのままで良いか、併用がおすすめかが分かる診断アプリです。">
+<style>
+:root{
+  --brand:#1C3461;--brand-deep:#16284A;--brand-soft:rgba(28,52,97,.08);
+  --accent:#5BBCD4;--accent-deep:#2C7A93;--accent-soft:rgba(91,188,212,.14);
+  --ink:#1C3461;--ink-mid:#4A6080;--ink-sub:#8098B4;--bg:#F7FAFC;--paper:#FFFFFF;
+  --sh-lg:0 4px 10px rgba(20,20,35,.06),0 20px 44px rgba(20,20,35,.12);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{
+  font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Noto Sans JP",sans-serif;
+  background:var(--bg);color:var(--ink);line-height:1.7;padding:26px 16px 40px;
+}
+.wrap{max-width:520px;margin:0 auto;}
+.head{text-align:center;margin-bottom:18px;}
+.head h1{font-size:19px;font-weight:900;color:var(--brand-deep);margin-bottom:5px;}
+.head p{font-size:12.5px;color:var(--ink-mid);}
+.dots{display:flex;justify-content:center;gap:6px;margin:18px 0 22px;}
+.dot{width:22px;height:5px;border-radius:999px;background:var(--brand-soft);transition:.25s;}
+.dot.on{background:var(--accent);}
+.card{background:var(--paper);border:1.5px solid rgba(28,52,97,.10);border-radius:22px;padding:26px 24px;box-shadow:var(--sh-lg);}
+.qnum{font-size:11px;font-weight:800;color:var(--accent-deep);letter-spacing:.05em;margin-bottom:6px;}
+.qtitle{font-size:17px;font-weight:900;margin-bottom:18px;line-height:1.5;}
+.opt{display:block;width:100%;text-align:left;background:var(--bg);border:none;
+  border-radius:16px;padding:14px 16px;margin-bottom:10px;font-size:13.5px;color:var(--ink);
+  cursor:pointer;transition:.15s;font-family:inherit;box-shadow:inset 0 0 0 1px rgba(28,52,97,.08);}
+.opt:hover{background:var(--brand-soft);transform:translateX(3px);}
+.opt:active{transform:translateX(3px) scale(.98);}
+.opt b{display:block;font-size:14px;margin-bottom:2px;}
+.opt span{font-size:12px;color:var(--ink-mid);}
+.back{display:inline-block;margin-top:14px;font-size:12px;color:var(--ink-mid);
+  background:none;border:none;cursor:pointer;font-family:inherit;text-decoration:underline;}
+.hidden{display:none !important;}
+
+.result .qnum{margin-bottom:2px;}
+.pick{border:none;border-radius:18px;padding:18px 20px;margin:16px 0 14px;color:#fff;}
+.pick.tier-kiro{background:var(--brand-deep);box-shadow:0 8px 20px var(--brand-soft);}
+.pick.tier-both{background:var(--accent-deep);box-shadow:0 8px 20px var(--accent-soft);}
+.pick.tier-codex{background:var(--ink-mid);box-shadow:0 8px 20px rgba(74,96,128,.25);}
+.pick .lbl{font-size:11px;font-weight:800;color:rgba(255,255,255,.85);margin-bottom:5px;letter-spacing:.04em;}
+.pick .name{font-size:19px;font-weight:900;color:#fff;margin-bottom:6px;line-height:1.5;}
+.pick .why{font-size:12.5px;color:rgba(255,255,255,.92);line-height:1.7;}
+.next h3{font-size:12px;font-weight:800;color:var(--ink-mid);margin:18px 0 10px;}
+.nextitem{background:var(--bg);border:none;border-radius:14px;padding:12px 15px;margin-bottom:9px;font-size:13px;}
+.nextitem b{display:block;font-size:13.5px;margin-bottom:2px;}
+.nextitem span{font-size:11.5px;color:var(--ink-mid);}
+.howto{margin-top:18px;padding:13px 15px;background:var(--bg);border:none;border-radius:14px;font-size:12px;color:var(--ink-mid);}
+.restart{display:inline-flex;align-items:center;gap:6px;margin-top:18px;background:var(--accent);
+  color:var(--ink);border:none;border-radius:999px;padding:11px 22px;font-weight:800;font-size:13px;
+  cursor:pointer;font-family:inherit;box-shadow:0 4px 12px var(--accent-soft);transition:.15s;}
+.restart:hover{background:var(--accent-deep);color:#fff;transform:translateY(-1px);}
+</style>
+</head><body>
+<div class="wrap">
+  <div class="head">
+    <h1>Kiro or Codex 診断アプリ</h1>
+    <p>5つの質問に答えると、そのタスクを「Kiro向き」「併用がおすすめ」「Codexのままで十分」のどれで進めるべきかが分かります</p>
+  </div>
+  <div class="dots">
+    <span class="dot" data-d="1"></span><span class="dot" data-d="2"></span><span class="dot" data-d="3"></span><span class="dot" data-d="4"></span><span class="dot" data-d="5"></span>
+  </div>
+
+  <div class="card" id="q1">
+    <div class="qnum">質問 1 / 5</div>
+    <div class="qtitle">このタスクの仕様は、着手前にどこまで固まっていますか？</div>
+    <button class="opt" data-q="spec" data-v="2"><b>要件をある程度言語化できる</b><span>何を・誰のために・なぜ作るか説明できる</span></button>
+    <button class="opt" data-q="spec" data-v="1"><b>大まかな方向性だけある</b><span>細部はこれから詰める</span></button>
+    <button class="opt" data-q="spec" data-v="0"><b>対話しながらその場で固めたい</b><span>まず相談してから決めたい</span></button>
+  </div>
+
+  <div class="card hidden" id="q2">
+    <div class="qnum">質問 2 / 5</div>
+    <div class="qtitle">このタスクの規模はどのくらいですか？</div>
+    <button class="opt" data-q="scale" data-v="2"><b>長時間・多段階</b><span>要件→設計→複数タスク→テストにわたる</span></button>
+    <button class="opt" data-q="scale" data-v="1"><b>半日程度で終わる中規模</b></button>
+    <button class="opt" data-q="scale" data-v="0"><b>短時間で終わる軽い修正・調査</b></button>
+    <button class="back" data-back="q1">← 質問1に戻る</button>
+  </div>
+
+  <div class="card hidden" id="q3">
+    <div class="qnum">質問 3 / 5</div>
+    <div class="qtitle">使いたいモデルの範囲は？</div>
+    <button class="opt" data-q="model" data-v="2"><b>OpenAI以外も試したい</b><span>Claude・オープンウェイト等、選択肢を広げたい</span></button>
+    <button class="opt" data-q="model" data-v="1"><b>決めていない</b></button>
+    <button class="opt" data-q="model" data-v="0"><b>OpenAIのモデルだけで完結する見込み</b></button>
+    <button class="back" data-back="q2">← 質問2に戻る</button>
+  </div>
+
+  <div class="card hidden" id="q4">
+    <div class="qnum">質問 4 / 5</div>
+    <div class="qtitle">料金の払い方は、どちらが自分の使い方に合っていますか？</div>
+    <button class="opt" data-q="pay" data-v="2"><b>使った分だけ払うクレジット制</b><span>タスクの複雑さに応じて消費される方が合う</span></button>
+    <button class="opt" data-q="pay" data-v="1"><b>まだ分からない</b></button>
+    <button class="opt" data-q="pay" data-v="0"><b>5時間ごとの利用上限で管理する方式</b><span>プランの回数枠で把握したい</span></button>
+    <button class="back" data-back="q3">← 質問3に戻る</button>
+  </div>
+
+  <div class="card hidden" id="q5">
+    <div class="qnum">質問 5 / 5</div>
+    <div class="qtitle">この種のタスクは、月にどのくらいの頻度でありますか？</div>
+    <button class="opt" data-q="freq" data-v="2"><b>ほぼ毎日、まとまった量</b></button>
+    <button class="opt" data-q="freq" data-v="1"><b>週に数回程度</b></button>
+    <button class="opt" data-q="freq" data-v="0"><b>たまに</b></button>
+    <button class="back" data-back="q4">← 質問4に戻る</button>
+  </div>
+
+  <div class="card result hidden" id="result">
+    <div class="qnum">診断結果</div>
+    <div class="pick" id="rPick">
+      <div class="lbl">このタスクは</div>
+      <div class="name" id="rName"></div>
+      <div class="why" id="rWhy"></div>
+    </div>
+    <div class="next">
+      <h3>次にやること</h3>
+      <div class="nextitem" id="rNext1"></div>
+      <div class="nextitem" id="rNext2"></div>
+    </div>
+    <div class="howto">この診断は目安です。「Codexより優れている」という一次情報での裏付けはないため、全タスクを一律でKiroに寄せず、タスクごとにこの診断＋「Kiro or Codex 選択判断シート」で確認してください。</div>
+    <button class="restart" id="restart">↺ もう一度診断する</button>
+  </div>
+</div>
+
+<script>
+(function(){
+  var answers = {};
+  var steps = ['q1','q2','q3','q4','q5'];
+  var order = {q1:'q2', q2:'q3', q3:'q4', q4:'q5'};
+
+  function showStep(id){
+    document.querySelectorAll('.card').forEach(function(c){ c.classList.add('hidden'); });
+    document.getElementById(id).classList.remove('hidden');
+    var idx = steps.indexOf(id) + 1;
+    document.querySelectorAll('.dot').forEach(function(d){
+      d.classList.toggle('on', Number(d.dataset.d) <= idx);
+    });
+  }
+
+  document.querySelectorAll('[data-q]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      answers[btn.dataset.q] = btn.dataset.v;
+      var cur = btn.closest('.card').id;
+      if (cur === 'q5') { showResult(); return; }
+      showStep(order[cur]);
+    });
+  });
+
+  document.querySelectorAll('[data-back]').forEach(function(btn){
+    btn.addEventListener('click', function(){ showStep(btn.dataset.back); });
+  });
+
+  function item(name, why){ return {name: name, why: why}; }
+
+  function judge(){
+    var score = Number(answers.spec) + Number(answers.scale) + Number(answers.model) + Number(answers.pay) + Number(answers.freq);
+    var notes = [];
+    if (answers.spec === '0') notes.push('要件を対話で詰めたいタイプの作業は、そもそも仕様駆動と相性が良くありません');
+    if (answers.model === '0') notes.push('OpenAIのモデルだけで完結するなら、Kiroに乗り換える動機は薄めです');
+    if (answers.pay === '0') notes.push('5時間ごとの利用上限で管理したい場合、Codexの方が実感に合います');
+
+    if (score >= 7) {
+      return {
+        tier: 'kiro',
+        name: 'Kiro向き',
+        why: '仕様がある程度固まっていて、規模も大きく、モデルの選択肢も広げたいタスクです。仕様駆動フローが効きやすい条件がそろっています。' + (notes.length ? 'ただし' + notes[0] + '点は留意してください。' : ''),
+        next: [
+          item('スタート指示文で着手する', '「Kiroスペック駆動 スタート指示文10選」の1〜3番を使って、要件→設計→タスクの順に進めてください。'),
+          item('まずはFreeで操作感を確認', 'Kiro Free（$0・50クレジット）で仕様駆動の流れを試してから、本格利用ならPro（$20/月・1,000クレジット）を検討してください。')
+        ]
+      };
+    }
+    if (score >= 4) {
+      return {
+        tier: 'both',
+        name: '併用がおすすめ',
+        why: 'Kiro向きの条件とCodexのままで良い条件が混在しています。' + (notes.length ? notes.join('。また、') + '。' : '') + 'このタスク1つだけで判断せず、使い分けを前提に考えるのが現実的です。',
+        next: [
+          item('判断シートで確定させる', '「Kiro or Codex 選択判断シート」の5ステップに沿って、このタスク固有の判断を確定させてください。'),
+          item('同じ作業を両方で試す', '似た作業をKiroの仕様駆動フローとCodexの対話フローの両方で試し、かかった時間とクレジット/利用回数を比べてから決めてください。')
+        ]
+      };
+    }
+    return {
+      tier: 'codex',
+      name: 'Codexのままで十分',
+      why: '対話しながら進めたい・短時間で終わる・OpenAIのモデルだけで足りる、という条件がそろっています。' + (notes.length ? notes[0] + '。' : '') + 'このタスクのためにKiroへ移す理由は薄いです。',
+      next: [
+        item('今のワークフローを継続する', 'Codex Plus（¥3,000/月〜）のまま、GPT-5.6 Terra/Solを使い分けて進めてください。'),
+        item('規模が大きくなったら再診断する', 'タスクが長時間・多段階になってきたら、この診断か「Kiro or Codex 選択判断シート」で見直してください。')
+      ]
+    };
+  }
+
+  function showResult(){
+    var r = judge();
+    var pick = document.getElementById('rPick');
+    pick.className = 'pick tier-' + r.tier;
+    document.getElementById('rName').textContent = r.name;
+    document.getElementById('rWhy').textContent = r.why;
+    var n1 = r.next[0], n2 = r.next[1];
+    document.getElementById('rNext1').innerHTML = '<b>' + n1.name + '</b><span>' + n1.why + '</span>';
+    document.getElementById('rNext2').innerHTML = '<b>' + n2.name + '</b><span>' + n2.why + '</span>';
+    document.querySelectorAll('.card').forEach(function(c){ c.classList.add('hidden'); });
+    document.getElementById('result').classList.remove('hidden');
+    document.querySelectorAll('.dot').forEach(function(d){ d.classList.add('on'); });
+  }
+
+  document.getElementById('restart').addEventListener('click', function(){
+    answers = {};
+    showStep('q1');
+  });
+
+  showStep('q1');
+})();
+</script>
+</body></html>
