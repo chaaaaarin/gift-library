@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="ja"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Claude Academy 学習パス診断アプリ</title>
+<meta name="description" content="3つの質問に答えるだけで、355件あるClaude Academyのコースから「まず見るべき1つ」と「次に見る2つ」が分かる診断です。">
+<style>
+:root{
+  --brand:#D9774F;--brand-deep:#B24E33;--brand-soft:rgba(217,119,79,.10);
+  --ink:#2A2620;--ink-mid:#6E6557;--bg:#F1ECE3;--paper:#FFFFFF;
+  --sh:0 1px 2px rgba(20,20,35,.04),0 10px 26px rgba(20,20,35,.07);
+  --sh-lg:0 4px 10px rgba(20,20,35,.06),0 20px 44px rgba(20,20,35,.12);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{
+  font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Noto Sans JP",sans-serif;
+  background:var(--bg);color:var(--ink);line-height:1.7;padding:26px 16px 40px;
+}
+.wrap{max-width:520px;margin:0 auto;}
+.head{text-align:center;margin-bottom:18px;}
+.head h1{font-size:19px;font-weight:900;color:var(--brand-deep);margin-bottom:5px;}
+.head p{font-size:12.5px;color:var(--ink-mid);}
+.dots{display:flex;justify-content:center;gap:6px;margin:18px 0 22px;}
+.dot{width:26px;height:5px;border-radius:999px;background:rgba(217,119,79,.16);transition:.25s;}
+.dot.on{background:var(--brand);}
+.card{background:var(--paper);border:none;
+  border-radius:22px;padding:26px 24px;box-shadow:var(--sh-lg);}
+.qnum{font-size:11px;font-weight:800;color:var(--brand-deep);letter-spacing:.05em;margin-bottom:6px;}
+.qtitle{font-size:17px;font-weight:900;margin-bottom:18px;line-height:1.5;}
+.opt{display:block;width:100%;text-align:left;background:var(--bg);border:none;
+  border-radius:16px;padding:14px 16px;margin-bottom:10px;font-size:13.5px;color:var(--ink);
+  cursor:pointer;transition:.15s;font-family:inherit;box-shadow:inset 0 0 0 1px rgba(20,20,35,.05);}
+.opt:hover{background:var(--brand-soft);transform:translateX(3px);}
+.opt:active{transform:translateX(3px) scale(.98);}
+.opt b{display:block;font-size:14px;margin-bottom:2px;}
+.opt span{font-size:12px;color:var(--ink-mid);}
+.back{display:inline-block;margin-top:14px;font-size:12px;color:var(--ink-mid);
+  background:none;border:none;cursor:pointer;font-family:inherit;text-decoration:underline;}
+.hidden{display:none !important;}
+
+.result .qnum{margin-bottom:2px;}
+.pick{background:var(--brand);border:none;border-radius:18px;
+  padding:18px 20px;margin:16px 0 14px;box-shadow:0 8px 20px var(--brand-soft);}
+.pick .lbl{font-size:11px;font-weight:800;color:rgba(255,255,255,.85);margin-bottom:5px;
+  letter-spacing:.04em;}
+.pick .name{font-size:17px;font-weight:900;color:#fff;margin-bottom:6px;line-height:1.5;}
+.pick .why{font-size:12.5px;color:rgba(255,255,255,.92);line-height:1.7;}
+.next h3{font-size:12px;font-weight:800;color:var(--ink-mid);margin:18px 0 10px;}
+.nextitem{background:var(--bg);border:none;border-radius:14px;
+  padding:12px 15px;margin-bottom:9px;font-size:13px;}
+.nextitem b{display:block;font-size:13.5px;margin-bottom:2px;}
+.nextitem span{font-size:11.5px;color:var(--ink-mid);}
+.howto{margin-top:18px;padding:13px 15px;background:var(--bg);border:none;
+  border-radius:14px;font-size:12px;color:var(--ink-mid);}
+.restart{display:inline-flex;align-items:center;gap:6px;margin-top:18px;background:var(--brand);
+  color:#fff;border:none;border-radius:999px;padding:11px 22px;font-weight:800;font-size:13px;
+  cursor:pointer;font-family:inherit;box-shadow:0 4px 12px var(--brand-soft);transition:.15s;}
+.restart:hover{background:var(--brand-deep);transform:translateY(-1px);}
+</style>
+</head><body>
+<div class="wrap">
+  <div class="head">
+    <h1>あなたに合うClaude Academy学習パス診断アプリ</h1>
+    <p>3つ答えると、355コースの中から「まず見るべき1つ」が分かります</p>
+  </div>
+  <div class="dots">
+    <span class="dot" data-d="1"></span><span class="dot" data-d="2"></span><span class="dot" data-d="3"></span>
+  </div>
+
+  <div class="card" id="q1">
+    <div class="qnum">質問 1 / 3</div>
+    <div class="qtitle">普段、どのClaude製品を一番使っていますか？</div>
+    <button class="opt" data-q="product" data-v="code"><b>Claude Code</b><span>コーディング・作業の自動化</span></button>
+    <button class="opt" data-q="product" data-v="ai"><b>Claude.ai</b><span>チャットで相談・文書作成</span></button>
+    <button class="opt" data-q="product" data-v="cowork"><b>Claude Cowork</b><span>チームでのタスク実行</span></button>
+    <button class="opt" data-q="product" data-v="api"><b>API / Platform</b><span>自分たちのプロダクトを作る</span></button>
+    <button class="opt" data-q="product" data-v="none"><b>まだ何も使っていない</b><span>これから触ってみたい</span></button>
+  </div>
+
+  <div class="card hidden" id="q2">
+    <div class="qnum">質問 2 / 3</div>
+    <div class="qtitle">今のレベルは？</div>
+    <button class="opt" data-q="level" data-v="new"><b>触ったことがない・始めたばかり</b></button>
+    <button class="opt" data-q="level" data-v="mid"><b>基本操作はできる</b></button>
+    <button class="opt" data-q="level" data-v="pro"><b>実務でバリバリ使っている</b></button>
+    <button class="back" data-back="q1">← 質問1に戻る</button>
+  </div>
+
+  <div class="card hidden" id="q3">
+    <div class="qnum">質問 3 / 3</div>
+    <div class="qtitle">今いちばん知りたいことは？</div>
+    <button class="opt" data-q="goal" data-v="speed"><b>自分の作業をもっと速くしたい</b></button>
+    <button class="opt" data-q="goal" data-v="rollout"><b>チーム・会社に広めたい</b></button>
+    <button class="opt" data-q="goal" data-v="how"><b>仕組み・裏側を理解したい</b></button>
+    <button class="opt" data-q="goal" data-v="teach"><b>人に教える立場になりたい</b><span>研修・授業など</span></button>
+    <button class="back" data-back="q2">← 質問2に戻る</button>
+  </div>
+
+  <div class="card result hidden" id="result">
+    <div class="qnum">診断結果</div>
+    <div class="pick">
+      <div class="lbl">まずはここから</div>
+      <div class="name" id="rPrimary"></div>
+      <div class="why" id="rWhy"></div>
+    </div>
+    <div class="next">
+      <h3>慣れてきたら次に見る</h3>
+      <div class="nextitem" id="rNext1"></div>
+      <div class="nextitem" id="rNext2"></div>
+    </div>
+    <div class="howto">academy.claude.com 内でコース名を検索してアクセスしてください（サインイン不要）。</div>
+    <button class="restart" id="restart">↺ もう一度診断する</button>
+  </div>
+</div>
+
+<script>
+(function(){
+  var answers = {};
+  var steps = ['q1','q2','q3'];
+
+  function showStep(id){
+    document.querySelectorAll('.card').forEach(function(c){ c.classList.add('hidden'); });
+    document.getElementById(id).classList.remove('hidden');
+    var idx = steps.indexOf(id) + 1;
+    document.querySelectorAll('.dot').forEach(function(d){
+      d.classList.toggle('on', Number(d.dataset.d) <= idx);
+    });
+  }
+
+  document.querySelectorAll('[data-q]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      answers[btn.dataset.q] = btn.dataset.v;
+      if (btn.dataset.q === 'product') showStep('q2');
+      else if (btn.dataset.q === 'level') showStep('q3');
+      else if (btn.dataset.q === 'goal') showResult();
+    });
+  });
+
+  document.querySelectorAll('[data-back]').forEach(function(btn){
+    btn.addEventListener('click', function(){ showStep(btn.dataset.back); });
+  });
+
+  function course(name, why){ return {name: name, why: why}; }
+
+  function pick(){
+    var p = answers.product, l = answers.level, g = answers.goal;
+
+    if (g === 'teach') {
+      return {
+        primary: course('教育者のためのAI Fluency', '4D AI Fluencyフレームワークをコース設計・学習教材にそのまま応用できる、教える側専用のコースだから。'),
+        next: [course('AI Fluencyの教え方', '評価・課題設計・学問分野別の応用戦略まで学べる'),
+               course('AIの能力と限界', '生徒に説明できるレベルの正確なメンタルモデルが身につく')]
+      };
+    }
+    if (g === 'rollout') {
+      return {
+        primary: course('デプロイメントウィザード', '自社の環境に関する質問に答えるだけで、導入ガイドがその場で生成されるから。'),
+        next: [course('エンタープライズ管理者ガイド', '技術セットアップ→ローンチ→定着支援→展開拡大の4フェーズで進め方が分かる'),
+               course('コミュニケーションツールキット', 'Slack・Teams・メール向けの告知テンプレートがそのまま使える')]
+      };
+    }
+    if (p === 'none') {
+      if (g === 'how') {
+        return {
+          primary: course('AIの能力と限界', '製品を使う前に、次トークン予測など生成AIの正確な仕組みを知っておくと以降の学習が速いから。'),
+          next: [course('Claude 101', '最初の会話・効果的なプロンプトの書き方が分かる'),
+                 course('AI活用力：フレームワーク&基礎', 'Delegation/Description/Discernment/Diligenceの4Dで協働する型が身につく')]
+        };
+      }
+      return {
+        primary: course('Claude 101', '13レッスンでプロンプト・プロジェクト・アーティファクト・スキルの全体像を最短で押さえられるから。'),
+        next: [course('最初の1日', 'インストール〜最初の一歩がゼロから分かる（Claude Code版）'),
+               course('AI活用力：フレームワーク&基礎', '効果的・倫理的にAIと協働する基本姿勢が身につく')]
+      };
+    }
+    if (p === 'code') {
+      if (l === 'new') {
+        return {
+          primary: course('Claude Code 101', '12レッスンでエージェント型コーディングツールの仕組みとコアワークフローを最短1時間でひと通り学べるから。'),
+          next: [course('最初の1日', 'インストール〜サインイン〜最初の変更をリリースするまでの手順が分かる'),
+                 course('Claudeへのコンテキストの提供', 'CLAUDE.mdの書き方など、最もレバレッジの高いセットアップが分かる')]
+        };
+      }
+      if (l === 'mid') {
+        return {
+          primary: course('実践Claude Code', '権限管理・コンテキスト管理・MCPサーバー・フックまで、実プロジェクトでの活用法をまとめて学べるから。'),
+          next: [course('エージェントスキル入門', '再利用可能なSKILL.md形式の指示を作成・チーム配布できる'),
+                 course('Claudeへのコンテキストの提供', '毎回同じ説明をし直す非効率をCLAUDE.mdで解消できる')]
+        };
+      }
+      return {
+        primary: course('サブエージェントの概要', '複雑なタスクを並列のサブエージェントに分解し、決定論的にオーケストレーションする方法が分かるから。'),
+        next: [course('エージェントスキル入門', 'チームへの配布・トラブルシューティングまで扱える'),
+               course('MCPサーバー', '外部ツール・データソースへの接続の設定手順が分かる')]
+      };
+    }
+    if (p === 'ai') {
+      if (l === 'new') {
+        return {
+          primary: course('Claude 101', '会話の始め方から効果的なプロンプトの書き方まで、13レッスンで基礎を一気に押さえられるから。'),
+          next: [course('AI活用力：フレームワーク&基礎', '4Dフレームワークで効果的・倫理的に協働する型が身につく'),
+                 course('AIの能力と限界', '次トークン予測など正確なメンタルモデルが身につく')]
+        };
+      }
+      if (l === 'mid') {
+        return {
+          primary: course('AI活用力：フレームワーク&基礎', 'Delegation/Description/Discernment/Diligenceの4Dで、任せる範囲の判断軸が身につくから。'),
+          next: [course('AIの能力と限界', 'できること／できないことの境界が正確に分かる'),
+                 course('Claude 101 内「プロジェクト」レッスン', '会話・資料をまとめて管理する方法が分かる')]
+        };
+      }
+      return {
+        primary: course('AIの能力と限界', '実務者ほど陥りやすい過信・誤信頼を避けるための、正確な能力理解が必要だから。'),
+        next: [course('AI活用力：フレームワーク&基礎', '4Dの判断軸をチームへの説明にも使える'),
+               course('Claude Platform 101', 'チャット利用の枠を超えてAPI構築の基礎も見ておける')]
+      };
+    }
+    if (p === 'cowork') {
+      if (l === 'new') {
+        return {
+          primary: course('Claude Cowork入門', 'ワークスペース設定からタスクループの実行まで、Coworkの基本が14レッスンでひと通り分かるから。'),
+          next: [course('Claude Cowork入門 内「コンテキストの与え方」レッスン', 'タスクを渡す前に必要な前提情報の渡し方が分かる'),
+                 course('Claude 101', 'Coworkの土台になっているClaudeとの対話の基礎が分かる')]
+        };
+      }
+      if (l === 'mid') {
+        return {
+          primary: course('Claude Cowork入門 内「リサーチ用プラグイン」レッスン', 'リサーチ業務を任せられるか半信半疑な段階を、実際の使い方を見て解消できるから。'),
+          next: [course('Claude Cowork入門 内「ドキュメント用プラグイン」レッスン', '資料作成タスクでの品質担保の勘所が分かる'),
+                 course('Claude Cowork入門 内「ブラウザタスク」レッスン', 'ブラウザ操作を伴う作業を任せる設定が分かる')]
+        };
+      }
+      return {
+        primary: course('AI活用力：フレームワーク&基礎', 'Delegationの考え方に基づき、チームのタスクをどこまで自動化してよいかの判断軸が身につくから。'),
+        next: [course('Claude Cowork入門 内「ブラウザタスク」レッスン', '任せられる作業の幅を実例で確認できる'),
+               course('デプロイメントウィザード', 'チーム全体への展開を考える段階に進める')]
+      };
+    }
+    // p === 'api'
+    if (l === 'new') {
+      return {
+        primary: course('Claude Platform 101', 'チャット利用しかしたことがなくても、ゼロからAPI構築を13レッスンで学べるから。'),
+        next: [course('Claude APIを使った構築', 'プロンプティングからツール使用・RAGまで体系的に学べる'),
+               course('Model Context Protocol入門', '外部データソースとClaudeを繋ぐ標準的な方法が分かる')]
+      };
+    }
+    if (l === 'mid') {
+      return {
+        primary: course('Claude APIを使った構築', 'プロンプティング・ツール利用・RAG・エージェント・本番パターンまで、67レッスンで全領域を体系的に学べるから。'),
+        next: [course('Model Context Protocol入門', 'Python SDKでMCPサーバー・クライアントを構築できる'),
+               course('Model Context Protocol: 高度なトピック', 'サンプリング・通知・rootsなど応用フローが学べる')]
+      };
+    }
+    return {
+      primary: course('Model Context Protocol: 高度なトピック', 'MCPの基礎は分かっている前提で、サンプリング・通知・rootsなど応用フローまで扱う実務者向けコースだから。'),
+      next: [course('Claude APIを使った構築 内「本番パターン」レッスン', 'コストを見据えた本番運用パターンの考え方が分かる'),
+             course('Amazon BedrockでのClaude', 'クラウド環境での本番対応アプリ構築が学べる')]
+    };
+  }
+
+  function showResult(){
+    var r = pick();
+    document.getElementById('rPrimary').textContent = r.primary.name;
+    document.getElementById('rWhy').textContent = r.primary.why;
+    var n1 = r.next[0], n2 = r.next[1];
+    document.getElementById('rNext1').innerHTML = '<b>' + n1.name + '</b><span>' + n1.why + '</span>';
+    document.getElementById('rNext2').innerHTML = '<b>' + n2.name + '</b><span>' + n2.why + '</span>';
+    document.querySelectorAll('.card').forEach(function(c){ c.classList.add('hidden'); });
+    document.getElementById('result').classList.remove('hidden');
+    document.querySelectorAll('.dot').forEach(function(d){ d.classList.add('on'); });
+  }
+
+  document.getElementById('restart').addEventListener('click', function(){
+    answers = {};
+    showStep('q1');
+  });
+
+  showStep('q1');
+})();
+</script>
+</body></html>
