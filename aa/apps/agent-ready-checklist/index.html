@@ -2,178 +2,377 @@
 <html lang="ja"><head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>導入前セキュリティ&amp;権限チェックリスト — Kawaru Gifts</title>
-<meta name="description" content="Workspace Studioを社内で使い始める前に確認しておきたいことを、5ステップのチェックリストにまとめました。">
+<title>AIエージェント対応 着手チェックリスト — Kawaru Gifts</title>
+<meta name="description" content="自分のサイトをAIエージェント対応（WebMCP／Site tools）にすべきか、するなら何から出すかを、上から順に読むだけで判断できる実践チェックリストです。セキュリティで確認すべきことまで入っています。">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Kawaru Gifts">
-<meta property="og:title" content="導入前セキュリティ&amp;権限チェックリスト — Kawaru Gifts">
-<meta property="og:description" content="Workspace Studioを社内で使い始める前に確認しておきたいことを、5ステップのチェックリストにまとめました。">
-<meta property="og:image" content="https://i.ytimg.com/vi/rek5j2ZYbgA/hqdefault.jpg">
+<meta property="og:title" content="AIエージェント対応 着手チェックリスト — Kawaru Gifts">
+<meta property="og:description" content="自分のサイトをAIエージェント対応（WebMCP／Site tools）にすべきか、するなら何から出すかを、上から順に読むだけで判断できる実践チェックリストです。セキュリティで確認すべきことまで入っています。">
+<meta property="og:image" content="https://i.ytimg.com/vi/nspJx-Nus9M/hqdefault.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://i.ytimg.com/vi/rek5j2ZYbgA/hqdefault.jpg">
-<meta name="twitter:title" content="導入前セキュリティ&amp;権限チェックリスト — Kawaru Gifts">
-<meta name="twitter:description" content="Workspace Studioを社内で使い始める前に確認しておきたいことを、5ステップのチェックリストにまとめました。">
+<meta name="twitter:image" content="https://i.ytimg.com/vi/nspJx-Nus9M/hqdefault.jpg">
+<meta name="twitter:title" content="AIエージェント対応 着手チェックリスト — Kawaru Gifts">
+<meta name="twitter:description" content="自分のサイトをAIエージェント対応（WebMCP／Site tools）にすべきか、するなら何から出すかを、上から順に読むだけで判断できる実践チェックリストです。セキュリティで確認すべきことまで入っています。">
 <link rel="icon" href="data:image/png;base64,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">
 <link rel="stylesheet" href="../../assets/site.css?v=f40364df6d4a">
 </head><body>
 <header class="kh"><div class="top">
   <a class="back" href="../../">← 一覧へ</a>
   <img src="data:image/png;base64,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" alt="">
-  <h1>導入前セキュリティ&amp;権限チェックリスト</h1>
-  <span class="badge">8項目</span>
+  <h1>AIエージェント対応 着手チェックリスト</h1>
+  <span class="badge">26項目</span>
   <button class="btn ghost sm" style="margin-left:auto" data-copy="pfull" aria-label="全件コピー">📋<span class="blabel"> 全件コピー</span></button>
-  <button class="btn sm" data-save="pfull" data-name="security-checklist.md" aria-label="全件ダウンロード">⬇<span class="blabel"> 全件ダウンロード</span></button>
+  <button class="btn sm" data-save="pfull" data-name="agent-ready-checklist.md" aria-label="全件ダウンロード">⬇<span class="blabel"> 全件ダウンロード</span></button>
 </div></header>
 
 <div class="kwrap">
   <section class="epctx epctx-top">
   <div class="ep-left">
-    <div class="ep-thumb epctx-thumb"><img src="https://i.ytimg.com/vi/rek5j2ZYbgA/hqdefault.jpg" alt=""></div>
-    <a class="watch" href="https://www.youtube.com/watch?v=rek5j2ZYbgA" target="_blank" rel="noopener">▶ 動画を見る</a>
-    <div class="ep-docs"><a class="docbtn" href="https://github.com/chaaaaarin/kawaru-channel-20260729" target="_blank" rel="noopener">📚 資料</a><a class="docbtn" href="https://chaaaaarin.github.io/kawaru-channel-20260729/slides.html" target="_blank" rel="noopener">🖥 スライド</a><a class="docbtn" href="https://chaaaaarin.github.io/kawaru-channel-20260729/onepager.html" target="_blank" rel="noopener">📄 1枚資料</a></div>
+    <div class="ep-thumb epctx-thumb"><img src="https://i.ytimg.com/vi/nspJx-Nus9M/hqdefault.jpg" alt=""></div>
+    <a class="watch" href="https://www.youtube.com/watch?v=nspJx-Nus9M" target="_blank" rel="noopener">▶ 動画を見る</a>
+    <div class="ep-docs"><a class="docbtn" href="https://github.com/chaaaaarin/kawaru-channel-20260828" target="_blank" rel="noopener">📚 資料</a><a class="docbtn" href="https://chaaaaarin.github.io/kawaru-channel-20260828/slides.html" target="_blank" rel="noopener">🖥 スライド</a><a class="docbtn" href="https://chaaaaarin.github.io/kawaru-channel-20260828/onepager.html" target="_blank" rel="noopener">📄 1枚資料</a></div>
   </div>
   <div>
     <p class="epctx-label">この動画のプレゼントです</p>
-    <p class="epctx-title">【神ツール】n8nもDifyも全て削除して、全国民はこのAIだけ使ってください【Google Workspace Studio】</p>
-    <p class="epctx-date">2026-08-05</p>
-    <a class="epbundle" href="../../bundles/rek5j2ZYbgA.md" download="プレゼント一式_2026-08-05.md">⬇ この回のプレゼントを全部ダウンロード</a>
+    <p class="epctx-title">【結果出た】Codexで作ったWebサイト経由で作られた売上が◯◯◯万円を突破したので、作り方を特別に教えます</p>
+    <p class="epctx-date">2026-09-02</p>
+    <a class="epbundle" href="../../bundles/nspJx-Nus9M.md" download="プレゼント一式_2026-09-02.md">⬇ この回のプレゼントを全部ダウンロード</a>
   </div>
 </section>
 
   <section class="kintro">
-    <h2>導入前セキュリティ&amp;権限チェックリスト</h2>
-    <p><span class="nb">Workspace Studioを</span><span class="nb">社内で使い始める前に</span><span class="nb">確認しておきたいことを、</span><span class="nb">5ステップのチェックリストにまと</span><span class="nb">めました。</span></p>
-    <div class="kmeta"><span>チェックリスト</span><span>収録 8項目</span><span>No.78 Google Workspace Studio紹介</span><span>2026-07-29 配布</span></div>
+    <h2>AIエージェント対応 着手チェックリスト</h2>
+    <p><span class="nb">自分のサイトをAIエージェント対応</span><span class="nb">（WebMCP／Site tools）に</span><span class="nb">すべきか、</span><span class="nb">するなら何から出すかを、</span><span class="nb">上から順に読むだけで判断で</span><span class="nb">きる実践チェックリストです。</span><span class="nb">セキュリティで確認すべきことまで</span><span class="nb">入っています。</span></p>
+    <div class="kmeta"><span>チェックリスト</span><span>収録 26項目</span><span>No.105 ChatGPT Webサイト作成</span><span>2026-08-28 配布</span></div>
     <div class="pnote"><span class="nb">下のカードから、</span><span class="nb">1件ずつコピー、</span><span class="nb">または個別にダウンロードできます。</span><span class="nb">まとめて欲しいときは、</span><span class="nb">上の</span><span class="nb">「全件ダウンロード」を</span><span class="nb">お使いください。</span></div>
   </section>
 
   <div class="icard" id="i1" data-cat="">
-  <div class="ih"><span class="num">001</span><span class="ititle">ステップ1: 利用条件を満たしているか</span></div>
+  <div class="ih"><span class="num">001</span><span class="ititle">ステップ1：そもそも対応する意味があるかを判定する</span></div>
   
-  <pre class="prompt" id="b1"><span class="cline" data-c="b1-0"><span class="cbx">□</span> 会社・組織のGoogle Workspace有料アカウントを使っているか(個人のgmail.comでは利用不可)</span>
-→ YES: ステップ1-2へ
-指示例: 管理者に「うちのWorkspaceプランでWorkspace Studioは使えますか」と確認する
+  <pre class="prompt" id="b1"><span class="cline" data-c="b1-0"><span class="cbx">□</span> サイトに「人が繰り返し行う操作」があるか（検索・絞り込み・下書き・登録・比較）</span>
+  → YES: 対応する価値が高い。ステップ2へ進む
+  → NO : 読み物中心のサイトなら、今は見送ってよい（記事は今でもAIが読める）
 
-<span class="cline" data-c="b1-1"><span class="cbx">□</span> 管理コンソールの「生成AIの設定」→「Gemini for Workspace」で、Workspace Studioがオンになっているか</span>
-→ YES: ステップ2へ　→ NO: 管理者にオン化を依頼する</pre>
+<span class="cline" data-c="b1-1"><span class="cbx">□</span> その操作を、人とAIが「同じ画面を見ながら」やる場面があるか</span>
+  → YES: WebMCPが向く。ステップ2へ
+  → NO : 裏側でデータを渡すだけなら、MCPサーバーの方が向く（タブを開く必要がない）
+
+<span class="cline" data-c="b1-2"><span class="cbx">□</span> 訪問者がログインして使うサイトか</span>
+  → YES: 効果が大きい。ログイン済みセッションをそのままAIが使える
+  → NO : 公開情報だけなら効果は限定的。優先度を下げてよい
+
+<span class="cline" data-c="b1-3"><span class="cbx">□</span> 自分（または社内）がChatGPTデスクトップアプリを使える環境か</span>
+  → YES: 動作確認ができる。ステップ2へ
+  → NO : 検証手段がない状態で作らない。まずChromeのフラグで試せる環境を用意する
+  指示例: Chromeで chrome://flags/#enable-webmcp-testing を有効にして再起動する手順を教えてください。
+
+<span class="cline" data-c="b1-4"><span class="cbx">□</span> ワークスペースが Enterprise / Edu ではないか</span>
+  → YES（該当しない）: 進んでよい
+  → NO （該当する）  : Site toolsは使えない。個人アカウントで検証環境を分ける</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b1">📋 コピー</button>
-    <button class="btn ghost sm" data-save="b1" data-name="security-checklist-001.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-save="b1" data-name="agent-ready-checklist-001.txt">⬇ ダウンロード</button>
     <button class="btn ghost sm" data-link="i1">🔗 リンク</button>
   </div>
 </div>
 <div class="icard" id="i2" data-cat="">
-  <div class="ih"><span class="num">002</span><span class="ititle">ステップ2: 情報ソースの設定を確認する</span></div>
+  <div class="ih"><span class="num">002</span><span class="ititle">ステップ2：最初に出す操作を1つだけ決める</span></div>
   
-  <pre class="prompt" id="b2"><span class="cline" data-c="b2-0"><span class="cbx">□</span> フローの中でGeminiに渡す情報ソースが「Workspace内の情報のみ」か「Web検索も含む」か、フローごとに意図して選んでいるか</span>
-→ YES: 機密情報を扱うフローは「Workspaceのみ」に絞る
-指示例: 「このフローのGeminiの情報ソースは、Workspace内の情報だけに限定してください」</pre>
+  <pre class="prompt" id="b2"><span class="cline" data-c="b2-0"><span class="cbx">□</span> 「サイトで最もよく使われている操作」を1つ挙げられるか</span>
+  → YES: それを最初のツールにする。いきなり10個作らない
+  指示例: このサイトのアクセスログから、最も使われている機能を上位5つ挙げてください。
+
+<span class="cline" data-c="b2-1"><span class="cbx">□</span> その操作は「読むだけ」で完結するか（検索・一覧・詳細表示）</span>
+  → YES: 最初の1本に最適。取り返しがつかない操作がないので安全
+  → NO : 書き込みや購入を含むなら、後回しにする（ステップ4の確認設計が先）
+
+<span class="cline" data-c="b2-2"><span class="cbx">□</span> その操作に必要な入力が3つ以内か</span>
+  → YES: 説明文を書きやすい。着手してよい
+  → NO : 入力が多い操作は、先に小さく分ける（絞り込みと並べ替えを別ツールにする等）
+
+<span class="cline" data-c="b2-3"><span class="cbx">□</span> 操作の結果が、画面にも反映されるか</span>
+  → YES: 人とAIが同じ結果を見られる。WebMCPの価値が出る
+  → NO : 画面に出ないなら、出るように直してから対応する</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b2">📋 コピー</button>
-    <button class="btn ghost sm" data-save="b2" data-name="security-checklist-002.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-save="b2" data-name="agent-ready-checklist-002.txt">⬇ ダウンロード</button>
     <button class="btn ghost sm" data-link="i2">🔗 リンク</button>
   </div>
 </div>
 <div class="icard" id="i3" data-cat="">
-  <div class="ih"><span class="num">003</span><span class="ititle">ステップ3: 出力の安定性を担保する</span></div>
+  <div class="ih"><span class="num">003</span><span class="ititle">ステップ3：説明文（description）を書く</span></div>
   
-  <pre class="prompt" id="b3"><span class="cline" data-c="b3-0"><span class="cbx">□</span> Geminiに複雑な判定をさせるとき、JSON形式で出力させているか</span>
-→ YES: 後段の条件分岐が安定しやすい
-指示例: 「返信要否・要約・返信案の3つの値を持つJSONスキーマで回答してください」
+  <pre class="prompt" id="b3"><span class="cline" data-c="b3-0"><span class="cbx">□</span> 操作の名前が、機能名ではなく「やること」になっているか</span>
+  → YES: そのままでよい（例: search_products、create_draft）
+  → NO : 社内用語や画面名をやめて、動詞＋対象に直す
 
-<span class="cline" data-c="b3-1"><span class="cbx">□</span> JSON出力の直後に「抽出ステップ」で値を取り出しているか</span>
-→ YES: 次のステップ以降が扱いやすくなる</pre>
+<span class="cline" data-c="b3-1"><span class="cbx">□</span> 説明文だけを読んで、初めて見る人が「いつ使う操作か」判断できるか</span>
+  → YES: 十分。次へ
+  → NO : 「何をするか」に加えて「どんなときに使うか」を1文足す
+  指示例: 次のツール説明文を、初見の人が「いつ使うか」まで判断できる文に書き直してください。
+
+<span class="cline" data-c="b3-2"><span class="cbx">□</span> 似た操作が2つ以上あるとき、選び分けの基準が説明文に書いてあるか</span>
+  → YES: 十分
+  → NO : 「Aは〜のとき、Bは〜のとき」を各説明文に書く（AIが取り違える最大の原因）
+
+<span class="cline" data-c="b3-3"><span class="cbx">□</span> 入力の各項目に、単位・形式・例が書いてあるか</span>
+  → YES: 十分（例: 価格は税込・円、日付はYYYY-MM-DD）
+  → NO : 書く。ここが曖昧だと、正しく呼ばれても結果がずれる
+
+<span class="cline" data-c="b3-4"><span class="cbx">□</span> 読むだけの操作に「読み取り専用」の印を付けたか</span>
+  → YES: 安全に扱われる
+  → NO : 付ける（annotations の readOnlyHint）</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b3">📋 コピー</button>
-    <button class="btn ghost sm" data-save="b3" data-name="security-checklist-003.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-save="b3" data-name="agent-ready-checklist-003.txt">⬇ ダウンロード</button>
     <button class="btn ghost sm" data-link="i3">🔗 リンク</button>
   </div>
 </div>
 <div class="icard" id="i4" data-cat="">
-  <div class="ih"><span class="num">004</span><span class="ititle">ステップ4: 上限・実行回数を把握する</span></div>
+  <div class="ih"><span class="num">004</span><span class="ititle">ステップ4：安全側の設計を決める</span></div>
   
-  <pre class="prompt" id="b4"><span class="cline" data-c="b4-0"><span class="cbx">□</span> 作成できるフロー数(最大25個)・1フローの最大ステップ数(20)を把握しているか</span>
-→ YES: 設計時に余裕を見て組む
+  <pre class="prompt" id="b4"><span class="cline" data-c="b4-0"><span class="cbx">□</span> 取り消しが難しい操作（決済・送信・確定・削除）を最初のツールに含めていないか</span>
+  → YES（含めていない）: 進んでよい
+  → NO （含めている）  : 外す。まず読むだけの操作で運用を固めてからにする
 
-<span class="cline" data-c="b4-1"><span class="cbx">□</span> 月間の実行回数上限(2026年9月1日から適用開始予定)を確認したか</span>
-→ YES: 本格運用の前にプラン変更の要否を検討しておく</pre>
+<span class="cline" data-c="b4-1"><span class="cbx">□</span> 書き込み系を出す場合、実行前に人の確認が入る設計になっているか</span>
+  → YES: 進んでよい
+  → NO : 確認ステップを挟む。金額・法的責任が発生する操作は特に
+
+<span class="cline" data-c="b4-2"><span class="cbx">□</span> ツールの説明文や返り値に、外部から投稿された文章が混ざる経路がないか</span>
+  → YES（混ざらない）: 進んでよい
+  → NO （混ざる）    : そこが攻撃の入口になる。外部由来の文字列は返り値から外すか、
+                       信頼できない内容である印を付ける
+
+<span class="cline" data-c="b4-3"><span class="cbx">□</span> 他社サイトに自分のツールを見せる必要があるか</span>
+  → NO : 既定のまま（同一オリジンのみ）でよい。触らない
+  → YES: 許可するオリジンを明示的に指定する。全許可にしない
+
+<span class="cline" data-c="b4-4"><span class="cbx">□</span> ログインが必要な操作で、権限のない人が呼べてしまう経路がないか</span>
+  → YES（ない）: 進んでよい
+  → NO         : ツール側でも権限チェックを行う（画面側の制御だけに頼らない）</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b4">📋 コピー</button>
-    <button class="btn ghost sm" data-save="b4" data-name="security-checklist-004.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-save="b4" data-name="agent-ready-checklist-004.txt">⬇ ダウンロード</button>
     <button class="btn ghost sm" data-link="i4">🔗 リンク</button>
   </div>
 </div>
 <div class="icard" id="i5" data-cat="">
-  <div class="ih"><span class="num">005</span><span class="ititle">ステップ5: 外部連携の実態を確認する</span></div>
+  <div class="ih"><span class="num">005</span><span class="ititle">ステップ5：出したあと、AI本人に直させる</span></div>
   
-  <pre class="prompt" id="b5"><span class="cline" data-c="b5-0"><span class="cbx">□</span> Salesforce・Jira・Mailchimp等の外部連携を前提にしていないか(2026年6月時点で利用できないという報告がある)</span>
-→ YES: 自社環境で実際に接続できるかを事前に確認する
-指示例: 「まずテスト用のフローで、実際に外部連携ステップが使えるか確認してください」</pre>
+  <pre class="prompt" id="b5"><span class="cline" data-c="b5-0"><span class="cbx">□</span> 実際にAIに使わせて、最後まで完了したか</span>
+  → YES: ステップ6へ
+  → NO : どこで止まったかを記録する。止まった箇所が説明文の直し先
+
+<span class="cline" data-c="b5-1"><span class="cbx">□</span> AIが「どのツールを使うか」を毎回迷っていないか</span>
+  → YES（迷っていない）: 十分
+  → NO : 説明文の選び分け基準が足りない。ステップ3の3項目に戻る
+
+<span class="cline" data-c="b5-2"><span class="cbx">□</span> AIに使いにくい点を聞いたか</span>
+  → YES: 出てきた指摘を直す
+  指示例: いま使ったツール群について、説明が曖昧だった点・分割した方がよい点・
+          足りない入力項目を、優先度順に挙げてください。
+
+<span class="cline" data-c="b5-3"><span class="cbx">□</span> 人が画面で行った変更を、AIが正しく認識できているか</span>
+  → YES: 十分
+  → NO : 画面の状態とツールの返り値がずれている。同じデータを見るように直す</pre>
   <div class="cbtns">
     <button class="btn sm" data-copy="b5">📋 コピー</button>
-    <button class="btn ghost sm" data-save="b5" data-name="security-checklist-005.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-save="b5" data-name="agent-ready-checklist-005.txt">⬇ ダウンロード</button>
     <button class="btn ghost sm" data-link="i5">🔗 リンク</button>
+  </div>
+</div>
+<div class="icard" id="i6" data-cat="">
+  <div class="ih"><span class="num">006</span><span class="ititle">ステップ6：運用に乗せる</span></div>
+  
+  <pre class="prompt" id="b6"><span class="cline" data-c="b6-0"><span class="cbx">□</span> 対応した操作を、サイトの案内ページに書いたか</span>
+  → YES: 十分（訪問者が「AIで使える」と気づける）
+  → NO : 書く。ツールは訪問しないと見つけられないので、告知しないと誰も使わない
+
+<span class="cline" data-c="b6-1"><span class="cbx">□</span> 仕様変更を追う担当を決めたか</span>
+  → YES: 十分
+  → NO : 決める。WebMCPはまだ提案段階の標準で、変わる可能性がある
+
+<span class="cline" data-c="b6-2"><span class="cbx">□</span> 次に出すツールを1つ決めたか</span>
+  → YES: 1本ずつ増やす。まとめて作らない
+  → NO : ステップ2に戻って、次によく使われる操作を選ぶ</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b6">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b6" data-name="agent-ready-checklist-006.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i6">🔗 リンク</button>
+  </div>
+</div>
+<div class="icard" id="i7" data-cat="">
+  <div class="ih"><span class="num">007</span><span class="ititle">判定の目安</span></div>
+  
+  <pre class="prompt" id="b7">ステップ1で「YES」が3つ以上 → 今期の着手候補
+ステップ1で「YES」が2つ以下 → 半年後に再判定でよい
+ステップ4で「NO」が1つでも残っている → 公開しない。設計を直してから出す</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b7">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b7" data-name="agent-ready-checklist-007.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i7">🔗 リンク</button>
   </div>
 </div>
 
   <section class="epctx">
   <p class="epctx-label">この動画のほかのプレゼント</p>
-  <div class="ep-kits"><a class="kchip" href="../capability-cheatsheet/"><span class="kt">できること・できなくなったこと早見表</span><span class="badge">11項目</span><span class="go">開く →</span></a><a class="kchip" href="../flow-designs100/"><span class="kt">業務シーン別フロー設計図100選</span><span class="badge">100個</span><span class="go">開く →</span></a></div>
+  <div class="ep-kits"><a class="kchip" href="../site-task-prompts10/"><span class="kt">サイト操作を任せる依頼文 厳選10</span><span class="badge">5項目</span><span class="go">開く →</span></a><a class="kchip" href="../webmcp-tool-designer/"><span class="kt">WebMCPツール設計ジェネレーターアプリ</span><span class="badge">アプリ</span><span class="go">開く →</span></a></div>
 </section>
   <section class="epctx">
   <p class="epctx-label">ほかの回の「チェックリスト」</p>
-  <div class="ep-kits"><a class="kchip" href="../agent-ready-checklist/"><span class="kt">AIエージェント対応 着手チェックリスト</span><span class="badge">26項目</span><span class="go">開く →</span></a><a class="kchip" href="../degradation-triage-checklist/"><span class="kt">劣化切り分けチェックリスト</span><span class="badge">6項目</span><span class="go">開く →</span></a><a class="kchip" href="../rollout-checklist/"><span class="kt">Claude Tag/Slack Code 導入前チェックリスト</span><span class="badge">13項目</span><span class="go">開く →</span></a><a class="kchip" href="../cloudflare-fit-check/"><span class="kt">Cloudflare最強度 自己診断チェックシート</span><span class="badge">12項目</span><span class="go">開く →</span></a></div>
+  <div class="ep-kits"><a class="kchip" href="../degradation-triage-checklist/"><span class="kt">劣化切り分けチェックリスト</span><span class="badge">6項目</span><span class="go">開く →</span></a><a class="kchip" href="../rollout-checklist/"><span class="kt">Claude Tag/Slack Code 導入前チェックリスト</span><span class="badge">13項目</span><span class="go">開く →</span></a><a class="kchip" href="../cloudflare-fit-check/"><span class="kt">Cloudflare最強度 自己診断チェックシート</span><span class="badge">12項目</span><span class="go">開く →</span></a><a class="kchip" href="../budget-selfcheck/"><span class="kt">コンテキスト予算セルフ診断シート</span><span class="badge">6項目</span><span class="go">開く →</span></a></div>
 </section>
 
   <footer><a href="../../">← AIエージェント / Kawaru プレゼント図書館にもどる</a></footer>
 </div>
 
-<pre id="pfull" class="hidden"># 🎁 導入前セキュリティ&amp;権限チェックリスト
+<pre id="pfull" class="hidden"># 🎁 AIエージェント対応 着手チェックリスト
 
-Workspace Studioを社内で使い始める前に確認しておきたいことを、5ステップのチェックリストにまとめました。
+自分のサイトをAIエージェント対応（WebMCP／Site tools）にすべきか、するなら何から出すかを、上から順に読むだけで判断できる実践チェックリストです。セキュリティで確認すべきことまで入っています。
 
 **受け取り方**: 下のコードブロック右上のコピーボタンでコピーするか、このファイルをそのままダウンロードしてください。
 
-**使い方**: 導入担当者・情報システム部門との確認作業にそのまま貼って使ってください。
+**使い方**: 上から順に □ を埋めていきます。「→ YES」に書かれた行動をその場で取ってください。`指示例:` はそのままAIに貼れます。
 
 ```text
-【導入前セキュリティ&amp;権限チェックリスト】
+【AIエージェント対応 着手チェックリスト】
 
-■ ステップ1: 利用条件を満たしているか
-□ 会社・組織のGoogle Workspace有料アカウントを使っているか(個人のgmail.comでは利用不可)
-→ YES: ステップ1-2へ
-指示例: 管理者に「うちのWorkspaceプランでWorkspace Studioは使えますか」と確認する
+■ ステップ1：そもそも対応する意味があるかを判定する
 
-□ 管理コンソールの「生成AIの設定」→「Gemini for Workspace」で、Workspace Studioがオンになっているか
-→ YES: ステップ2へ　→ NO: 管理者にオン化を依頼する
+□ サイトに「人が繰り返し行う操作」があるか（検索・絞り込み・下書き・登録・比較）
+  → YES: 対応する価値が高い。ステップ2へ進む
+  → NO : 読み物中心のサイトなら、今は見送ってよい（記事は今でもAIが読める）
 
-■ ステップ2: 情報ソースの設定を確認する
-□ フローの中でGeminiに渡す情報ソースが「Workspace内の情報のみ」か「Web検索も含む」か、フローごとに意図して選んでいるか
-→ YES: 機密情報を扱うフローは「Workspaceのみ」に絞る
-指示例: 「このフローのGeminiの情報ソースは、Workspace内の情報だけに限定してください」
+□ その操作を、人とAIが「同じ画面を見ながら」やる場面があるか
+  → YES: WebMCPが向く。ステップ2へ
+  → NO : 裏側でデータを渡すだけなら、MCPサーバーの方が向く（タブを開く必要がない）
 
-■ ステップ3: 出力の安定性を担保する
-□ Geminiに複雑な判定をさせるとき、JSON形式で出力させているか
-→ YES: 後段の条件分岐が安定しやすい
-指示例: 「返信要否・要約・返信案の3つの値を持つJSONスキーマで回答してください」
+□ 訪問者がログインして使うサイトか
+  → YES: 効果が大きい。ログイン済みセッションをそのままAIが使える
+  → NO : 公開情報だけなら効果は限定的。優先度を下げてよい
 
-□ JSON出力の直後に「抽出ステップ」で値を取り出しているか
-→ YES: 次のステップ以降が扱いやすくなる
+□ 自分（または社内）がChatGPTデスクトップアプリを使える環境か
+  → YES: 動作確認ができる。ステップ2へ
+  → NO : 検証手段がない状態で作らない。まずChromeのフラグで試せる環境を用意する
+  指示例: Chromeで chrome://flags/#enable-webmcp-testing を有効にして再起動する手順を教えてください。
 
-■ ステップ4: 上限・実行回数を把握する
-□ 作成できるフロー数(最大25個)・1フローの最大ステップ数(20)を把握しているか
-→ YES: 設計時に余裕を見て組む
+□ ワークスペースが Enterprise / Edu ではないか
+  → YES（該当しない）: 進んでよい
+  → NO （該当する）  : Site toolsは使えない。個人アカウントで検証環境を分ける
 
-□ 月間の実行回数上限(2026年9月1日から適用開始予定)を確認したか
-→ YES: 本格運用の前にプラン変更の要否を検討しておく
 
-■ ステップ5: 外部連携の実態を確認する
-□ Salesforce・Jira・Mailchimp等の外部連携を前提にしていないか(2026年6月時点で利用できないという報告がある)
-→ YES: 自社環境で実際に接続できるかを事前に確認する
-指示例: 「まずテスト用のフローで、実際に外部連携ステップが使えるか確認してください」
+■ ステップ2：最初に出す操作を1つだけ決める
+
+□ 「サイトで最もよく使われている操作」を1つ挙げられるか
+  → YES: それを最初のツールにする。いきなり10個作らない
+  指示例: このサイトのアクセスログから、最も使われている機能を上位5つ挙げてください。
+
+□ その操作は「読むだけ」で完結するか（検索・一覧・詳細表示）
+  → YES: 最初の1本に最適。取り返しがつかない操作がないので安全
+  → NO : 書き込みや購入を含むなら、後回しにする（ステップ4の確認設計が先）
+
+□ その操作に必要な入力が3つ以内か
+  → YES: 説明文を書きやすい。着手してよい
+  → NO : 入力が多い操作は、先に小さく分ける（絞り込みと並べ替えを別ツールにする等）
+
+□ 操作の結果が、画面にも反映されるか
+  → YES: 人とAIが同じ結果を見られる。WebMCPの価値が出る
+  → NO : 画面に出ないなら、出るように直してから対応する
+
+
+■ ステップ3：説明文（description）を書く
+
+□ 操作の名前が、機能名ではなく「やること」になっているか
+  → YES: そのままでよい（例: search_products、create_draft）
+  → NO : 社内用語や画面名をやめて、動詞＋対象に直す
+
+□ 説明文だけを読んで、初めて見る人が「いつ使う操作か」判断できるか
+  → YES: 十分。次へ
+  → NO : 「何をするか」に加えて「どんなときに使うか」を1文足す
+  指示例: 次のツール説明文を、初見の人が「いつ使うか」まで判断できる文に書き直してください。
+
+□ 似た操作が2つ以上あるとき、選び分けの基準が説明文に書いてあるか
+  → YES: 十分
+  → NO : 「Aは〜のとき、Bは〜のとき」を各説明文に書く（AIが取り違える最大の原因）
+
+□ 入力の各項目に、単位・形式・例が書いてあるか
+  → YES: 十分（例: 価格は税込・円、日付はYYYY-MM-DD）
+  → NO : 書く。ここが曖昧だと、正しく呼ばれても結果がずれる
+
+□ 読むだけの操作に「読み取り専用」の印を付けたか
+  → YES: 安全に扱われる
+  → NO : 付ける（annotations の readOnlyHint）
+
+
+■ ステップ4：安全側の設計を決める
+
+□ 取り消しが難しい操作（決済・送信・確定・削除）を最初のツールに含めていないか
+  → YES（含めていない）: 進んでよい
+  → NO （含めている）  : 外す。まず読むだけの操作で運用を固めてからにする
+
+□ 書き込み系を出す場合、実行前に人の確認が入る設計になっているか
+  → YES: 進んでよい
+  → NO : 確認ステップを挟む。金額・法的責任が発生する操作は特に
+
+□ ツールの説明文や返り値に、外部から投稿された文章が混ざる経路がないか
+  → YES（混ざらない）: 進んでよい
+  → NO （混ざる）    : そこが攻撃の入口になる。外部由来の文字列は返り値から外すか、
+                       信頼できない内容である印を付ける
+
+□ 他社サイトに自分のツールを見せる必要があるか
+  → NO : 既定のまま（同一オリジンのみ）でよい。触らない
+  → YES: 許可するオリジンを明示的に指定する。全許可にしない
+
+□ ログインが必要な操作で、権限のない人が呼べてしまう経路がないか
+  → YES（ない）: 進んでよい
+  → NO         : ツール側でも権限チェックを行う（画面側の制御だけに頼らない）
+
+
+■ ステップ5：出したあと、AI本人に直させる
+
+□ 実際にAIに使わせて、最後まで完了したか
+  → YES: ステップ6へ
+  → NO : どこで止まったかを記録する。止まった箇所が説明文の直し先
+
+□ AIが「どのツールを使うか」を毎回迷っていないか
+  → YES（迷っていない）: 十分
+  → NO : 説明文の選び分け基準が足りない。ステップ3の3項目に戻る
+
+□ AIに使いにくい点を聞いたか
+  → YES: 出てきた指摘を直す
+  指示例: いま使ったツール群について、説明が曖昧だった点・分割した方がよい点・
+          足りない入力項目を、優先度順に挙げてください。
+
+□ 人が画面で行った変更を、AIが正しく認識できているか
+  → YES: 十分
+  → NO : 画面の状態とツールの返り値がずれている。同じデータを見るように直す
+
+
+■ ステップ6：運用に乗せる
+
+□ 対応した操作を、サイトの案内ページに書いたか
+  → YES: 十分（訪問者が「AIで使える」と気づける）
+  → NO : 書く。ツールは訪問しないと見つけられないので、告知しないと誰も使わない
+
+□ 仕様変更を追う担当を決めたか
+  → YES: 十分
+  → NO : 決める。WebMCPはまだ提案段階の標準で、変わる可能性がある
+
+□ 次に出すツールを1つ決めたか
+  → YES: 1本ずつ増やす。まとめて作らない
+  → NO : ステップ2に戻って、次によく使われる操作を選ぶ
+
+
+■ 判定の目安
+
+ステップ1で「YES」が3つ以上 → 今期の着手候補
+ステップ1で「YES」が2つ以下 → 半年後に再判定でよい
+ステップ4で「NO」が1つでも残っている → 公開しない。設計を直してから出す
 ```
 
-**ポイント**: 特にステップ5は公式サイトの説明と実際の挙動にズレがある可能性があるため、本番導入前に必ず自社環境で実機確認してください。
+**ポイント**: いちばん多い失敗は「ツールを10個まとめて作る」ことです。最初は読むだけの操作を1本だけ出し、AIに使わせて説明文を直す——このサイクルを回してから増やしてください。
 </pre>
 <script>
 

@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WebMCPツール設計ジェネレーターアプリ</title>
+<meta name="description" content="サイトの種類と出したい操作を選ぶだけで、AIエージェント向けツール（WebMCP / Site tools）の設計メモ・説明文・実装の下書き・Codexへの依頼文を一式で生成します。">
+<style>
+  :root{
+    --brand:#1C3461; --brand-deep:#16284A; --brand-soft:rgba(28,52,97,.08); --line:rgba(28,52,97,.14);
+    --accent:#5BBCD4; --accent-deep:#2C7A93; --accent-soft:rgba(91,188,212,.16);
+    --bg:#F7FAFC; --paper:#fff; --ink:#1C3461; --ink-mid:#4A6080; --ink-sub:#8098B4; --warn:#B4531C;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:var(--bg);color:var(--ink);font-family:-apple-system,'Hiragino Sans','Yu Gothic',sans-serif;
+    line-height:1.7;padding:24px 16px 60px;}
+  .wrap{max-width:840px;margin:0 auto;}
+  header{text-align:center;margin-bottom:26px;}
+  h1{font-size:26px;font-weight:900;line-height:1.35;}
+  header p{font-size:14px;color:var(--ink-mid);margin-top:8px;}
+  .step{background:var(--paper);border:1.5px solid var(--line);border-radius:14px;padding:20px 22px;margin-bottom:16px;}
+  .step h2{font-size:16px;font-weight:900;display:flex;align-items:center;gap:10px;margin-bottom:6px;}
+  .step h2 .n{background:var(--brand);color:#fff;border-radius:8px;width:26px;height:26px;
+    display:inline-flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0;}
+  .step .hint{font-size:12.5px;color:var(--ink-sub);margin-bottom:12px;}
+  .opts{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:9px;}
+  .opt{border:1.5px solid var(--line);border-radius:10px;padding:11px 13px;cursor:pointer;background:var(--bg);
+    font-size:13.5px;font-weight:700;transition:.15s;user-select:none;}
+  .opt:hover{border-color:var(--accent);}
+  .opt.on{border-color:var(--brand);border-width:2px;background:var(--paper);box-shadow:0 2px 8px var(--brand-soft);}
+  .opt small{display:block;font-weight:400;font-size:11.5px;color:var(--ink-mid);margin-top:3px;}
+  input[type=text]{width:100%;border:1.5px solid var(--line);border-radius:10px;padding:11px 13px;
+    font-size:14px;font-family:inherit;color:var(--ink);background:var(--bg);}
+  input[type=text]:focus{outline:none;border-color:var(--accent);}
+  .row{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px;}
+  button{font-family:inherit;cursor:pointer;border:none;}
+  .go{background:var(--brand);color:#fff;border-radius:999px;padding:14px 36px;font-size:16px;font-weight:900;
+    display:block;margin:22px auto 0;}
+  .go:disabled{background:var(--ink-sub);cursor:not-allowed;}
+  .sm{background:var(--accent);color:var(--ink);border-radius:999px;padding:9px 20px;font-size:13px;font-weight:900;}
+  .sm.ghost{background:var(--paper);border:1.5px solid var(--line);color:var(--brand-deep);}
+  #out{display:none;margin-top:26px;}
+  #out.on{display:block;}
+  .card{background:var(--paper);border:1.5px solid var(--line);border-radius:14px;padding:20px 22px;margin-bottom:14px;}
+  .card h3{font-size:15px;font-weight:900;margin-bottom:10px;color:var(--brand-deep);}
+  pre{background:#16284A;color:#E8EEF6;border-radius:11px;padding:16px 18px;overflow-x:auto;
+    font-family:ui-monospace,Menlo,monospace;font-size:12.5px;line-height:1.65;white-space:pre;}
+  .memo{background:var(--bg);border-radius:11px;padding:15px 17px;font-size:13.5px;white-space:pre-wrap;
+    border-left:4px solid var(--accent);}
+  .warn{background:rgba(180,83,28,.08);border:1.5px solid rgba(180,83,28,.3);border-radius:11px;
+    padding:14px 17px;font-size:13px;color:var(--warn);}
+  .warn b{display:block;margin-bottom:5px;}
+  .warn ul{margin-left:18px;} .warn li{margin-bottom:3px;}
+  .tag{display:inline-block;background:var(--accent-soft);color:var(--accent-deep);border-radius:999px;
+    padding:2px 11px;font-size:11.5px;font-weight:900;margin-left:8px;}
+  footer{text-align:center;font-size:12px;color:var(--ink-sub);margin-top:30px;}
+  .toast{position:fixed;left:50%;transform:translateX(-50%);bottom:26px;background:var(--brand-deep);color:#fff;
+    border-radius:999px;padding:10px 24px;font-size:13px;font-weight:700;opacity:0;pointer-events:none;transition:.25s;}
+  .toast.on{opacity:1;}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <h1>WebMCPツール設計ジェネレーターアプリ</h1>
+  <p>サイトの種類と出したい操作を選ぶだけで、AIエージェント向けツールの設計メモ・説明文・実装の下書き・Codexへの依頼文を一式で作ります</p>
+</header>
+
+<div class="step">
+  <h2><span class="n">1</span>サイトの種類</h2>
+  <p class="hint">いちばん近いものを1つ選んでください</p>
+  <div class="opts" id="kind"></div>
+</div>
+
+<div class="step">
+  <h2><span class="n">2</span>AIに出したい操作</h2>
+  <p class="hint">最初は1つだけ選ぶのがおすすめです（最大3つまで選べます）</p>
+  <div class="opts" id="ops"><p class="hint" style="grid-column:1/-1;margin:0;">先に「サイトの種類」を選んでください</p></div>
+</div>
+
+<div class="step">
+  <h2><span class="n">3</span>サービス名（任意）</h2>
+  <p class="hint">入れると、生成される説明文とコードに反映されます</p>
+  <input type="text" id="svc" placeholder="例：みどり不動産、社内ヘルプデスク、ABCストア" maxlength="40">
+</div>
+
+<div class="step">
+  <h2><span class="n">4</span>どこまで任せるか</h2>
+  <p class="hint">迷ったら「読むだけ」から始めてください</p>
+  <div class="opts" id="risk"></div>
+</div>
+
+<button class="go" id="go" disabled>設計一式を作る</button>
+
+<div id="out">
+  <div class="card">
+    <h3>① 設計メモ<span class="tag">まずこれを読む</span></h3>
+    <div class="memo" id="memo"></div>
+    <div class="row"><button class="sm" data-copy="memo">コピー</button><button class="sm ghost" data-dl="memo" data-name="webmcp-design-memo.txt">ダウンロード</button></div>
+  </div>
+
+  <div class="card">
+    <h3>② 説明文（description）の下書き</h3>
+    <div class="memo" id="desc"></div>
+    <div class="row"><button class="sm" data-copy="desc">コピー</button></div>
+  </div>
+
+  <div class="card">
+    <h3>③ 実装の下書き（JavaScript）</h3>
+    <pre id="code"></pre>
+    <div class="row"><button class="sm" data-copy="code">コピー</button><button class="sm ghost" data-dl="code" data-name="webmcp-tools.js">ダウンロード</button></div>
+  </div>
+
+  <div class="card">
+    <h3>④ Codexへの依頼文<span class="tag">そのまま貼れます</span></h3>
+    <div class="memo" id="ask"></div>
+    <div class="row"><button class="sm" data-copy="ask">コピー</button><button class="sm ghost" data-dl="ask" data-name="codex-request.txt">ダウンロード</button></div>
+  </div>
+
+  <div class="card">
+    <h3>⑤ 公開前に必ず確認すること</h3>
+    <div class="warn" id="warn"></div>
+  </div>
+</div>
+
+<footer>ブラウザの中だけで動きます。入力した内容はどこにも送信されません。</footer>
+</div>
+<div class="toast" id="toast">コピーしました</div>
+
+<script>
+const KINDS = {
+  ec:   {label:"ネットショップ", sub:"商品の検索・比較・カート",
+         ops:[["search_products","商品を条件で探す","商品名・価格帯・カテゴリで絞り込む"],
+              ["get_product_detail","商品の詳細を見る","在庫・サイズ・配送目安を返す"],
+              ["compare_products","商品を比較する","複数商品の仕様を並べて返す"],
+              ["add_to_cart","カートに入れる","数量とオプションを指定して追加する"]]},
+  booking:{label:"予約サイト", sub:"空き枠の検索・仮押さえ",
+         ops:[["search_availability","空き枠を探す","日付・人数・場所で空きを返す"],
+              ["get_slot_detail","枠の詳細を見る","料金・所要時間・キャンセル条件を返す"],
+              ["draft_reservation","予約内容を下書きする","確定はせず入力内容だけ用意する"],
+              ["confirm_reservation","予約を確定する","下書きの内容で予約を確定する"]]},
+  portal:{label:"社内ポータル", sub:"申請・検索・ナレッジ",
+         ops:[["search_documents","社内文書を探す","キーワードと部署で検索する"],
+              ["get_policy","規程の該当箇所を返す","条項名と本文を返す"],
+              ["draft_application","申請書を下書きする","必要項目を埋めた状態にする"],
+              ["submit_application","申請を提出する","下書きを提出して受付番号を返す"]]},
+  media:{label:"メディア・情報サイト", sub:"記事の検索・要約",
+         ops:[["search_articles","記事を探す","キーワード・期間・カテゴリで検索する"],
+              ["get_article","記事本文を返す","見出し構造つきで本文を返す"],
+              ["list_related","関連記事を返す","同じテーマの記事を並べる"],
+              ["save_to_reading_list","あとで読むに保存する","記事をリストに追加する"]]},
+  saas:{label:"SaaS・ダッシュボード", sub:"データの絞り込み・可視化",
+         ops:[["query_metrics","指標を取り出す","期間と単位を指定して数値を返す"],
+              ["filter_view","表示を絞り込む","画面のフィルタを変更する"],
+              ["create_chart","グラフを作る","指標と種類を指定して描画する"],
+              ["export_report","レポートを書き出す","期間と形式を指定して生成する"]]},
+  edit:{label:"editor / 制作ツール", sub:"下書き・編集・コメント",
+         ops:[["get_document","いまの内容を読む","本文と構造を返す"],
+              ["insert_block","要素を追加する","位置と内容を指定して挿入する"],
+              ["leave_comment","コメントを残す","範囲を指定して指摘を書く"],
+              ["apply_revision","修正を反映する","指定した箇所を書き換える"]]}
+};
+const RISKS = {
+  read:{label:"読むだけ", sub:"検索・表示のみ。取り消し不要", ro:true, confirm:false},
+  draft:{label:"下書きまで", sub:"作るが、確定はしない", ro:false, confirm:false},
+  commit:{label:"確定まで", sub:"送信・購入・予約まで行う", ro:false, confirm:true}
+};
+
+let state = {kind:null, ops:[], risk:"read", svc:""};
+const $ = s => document.querySelector(s);
+
+function renderOpts(el, items, sel, multi){
+  el.innerHTML = "";
+  items.forEach(it=>{
+    const d = document.createElement("div");
+    d.className = "opt" + (sel(it.key) ? " on" : "");
+    d.innerHTML = `${it.label}<small>${it.sub}</small>`;
+    d.onclick = () => it.pick();
+    el.appendChild(d);
+  });
+}
+function drawKinds(){
+  renderOpts($("#kind"), Object.entries(KINDS).map(([k,v])=>({key:k,label:v.label,sub:v.sub,
+    pick(){ state.kind=k; state.ops=[]; drawKinds(); drawOps(); sync(); }})), k=>state.kind===k);
+}
+function drawOps(){
+  const el = $("#ops");
+  if(!state.kind){ el.innerHTML = '<p class="hint" style="grid-column:1/-1;margin:0;">先に「サイトの種類」を選んでください</p>'; return; }
+  renderOpts(el, KINDS[state.kind].ops.map(([key,label,sub])=>({key,label,sub,
+    pick(){
+      const i = state.ops.indexOf(key);
+      if(i>=0) state.ops.splice(i,1);
+      else if(state.ops.length<3) state.ops.push(key);
+      drawOps(); sync();
+    }})), k=>state.ops.includes(k));
+}
+function drawRisks(){
+  renderOpts($("#risk"), Object.entries(RISKS).map(([k,v])=>({key:k,label:v.label,sub:v.sub,
+    pick(){ state.risk=k; drawRisks(); sync(); }})), k=>state.risk===k);
+}
+function sync(){ $("#go").disabled = !(state.kind && state.ops.length); }
+
+$("#svc").oninput = e => state.svc = e.target.value.trim();
+
+function opInfo(key){ return KINDS[state.kind].ops.find(o=>o[0]===key); }
+// 検索・取得系は、任せる範囲によらず読み取り専用として扱う
+const isRead = name => /^(search|get|list|query|compare)/.test(name);
+
+function build(){
+  const svc = state.svc || "このサイト";
+  const risk = RISKS[state.risk];
+  const kind = KINDS[state.kind];
+  const picked = state.ops.map(opInfo);
+
+  // ① 設計メモ
+  let memo = `【${svc} のAIエージェント対応 設計メモ】\n\n`;
+  memo += `サイトの種類 : ${kind.label}（${kind.sub}）\n`;
+  memo += `任せる範囲   : ${risk.label} — ${risk.sub}\n`;
+  memo += `出すツール   : ${picked.length}個\n\n`;
+  picked.forEach((o,i)=>{
+    memo += `${i+1}. ${o[0]}\n   やること : ${o[1]}\n   返すもの : ${o[2]}\n`;
+    memo += `   読み取り専用 : ${isRead(o[0]) ? "はい（安全側）" : "いいえ（変更が起きる）"}\n\n`;
+  });
+  memo += `■ この順番で進める\n`;
+  memo += `1. まず ${picked[0][0]} だけを実装して、AIに使わせる\n`;
+  memo += `2. AIが迷わず呼べたか、返した内容で足りたかを確認する\n`;
+  memo += `3. AIに「説明が曖昧だった点」を聞いて、説明文を直す\n`;
+  memo += `4. 直ってから、次のツールを1つ足す\n\n`;
+  memo += `■ 動作確認の場所\n`;
+  memo += `・ChatGPTデスクトップアプリの内蔵ブラウザ（モデルは GPT-5.6 Sol または Terra）\n`;
+  memo += `・またはChromeで chrome://flags/#enable-webmcp-testing を有効にして再起動\n`;
+  memo += `※ Enterprise / Edu ワークスペースでは Site tools は使えません`;
+
+  // ② 説明文
+  let desc = `【説明文（description）の下書き】\n\n`;
+  picked.forEach(o=>{
+    const when = isRead(o[0]) ? "情報を調べたいとき" : (state.risk==="draft" ? "内容を用意したいとき（確定はしない）" : "実行して確定させたいとき");
+    desc += `▼ ${o[0]}\n`;
+    desc += `${svc}で${o[1]}。${o[2]}。${when}に使う。\n`;
+    desc += `（他のツールとの違い：`;
+    const others = picked.filter(x=>x!==o).map(x=>x[1]);
+    desc += others.length ? `${others.join("・")}とは目的が異なる）\n\n` : `このサイトで唯一の操作）\n\n`;
+  });
+  desc += `■ 書くときの3つの決まり\n`;
+  desc += `・「何をするか」だけでなく「いつ使うか」を必ず1文入れる\n`;
+  desc += `・似た操作が2つ以上あるときは、選び分けの基準を各説明文に書く\n`;
+  desc += `・入力項目には単位と形式を書く（税込・円 / YYYY-MM-DD など）`;
+
+  // ③ 実装
+  let code = `// ${svc} — WebMCP（Site tools）ツールの下書き\n`;
+  code += `// 読み込み後、ページの状態が整ってから登録する\n\n`;
+  code += `if (typeof document.modelContext?.registerTool === "function") {\n`;
+  picked.forEach(o=>{
+    code += `\n  await document.modelContext.registerTool({\n`;
+    code += `    name: "${o[0]}",\n`;
+    code += `    title: "${o[1]}",\n`;
+    code += `    description: "${svc}で${o[1]}。${o[2]}。",\n`;
+    code += `    inputSchema: {\n`;
+    code += `      type: "object",\n`;
+    code += `      properties: {\n`;
+    code += `        keyword: { type: "string", description: "検索語。空なら全件" },\n`;
+    code += `        limit:   { type: "integer", description: "返す件数の上限（既定20）" }\n`;
+    code += `      },\n`;
+    code += `      required: []\n`;
+    code += `    },\n`;
+    code += `    annotations: { readOnlyHint: ${isRead(o[0])}, untrustedContentHint: false },\n`;
+    code += `    execute: async (input) => {\n`;
+    if(risk.confirm && !isRead(o[0])){
+      code += `      // 取り消しが難しい操作。実行前に画面上で人の確認を取る\n`;
+      code += `      const ok = await askUserToConfirm(input);\n`;
+      code += `      if (!ok) return { status: "cancelled" };\n`;
+    }
+    code += `      // TODO: ${o[2]}\n`;
+    code += `      // 画面の表示も同じ結果に更新して、人とAIが同じものを見られるようにする\n`;
+    code += `      return { status: "ok", items: [] };\n`;
+    code += `    }\n`;
+    code += `  });\n`;
+  });
+  code += `}\n`;
+
+  // ④ Codexへの依頼文
+  let ask = `${svc} を WebMCP（ChatGPTのSite tools）に対応させたいです。\n\n`;
+  ask += `このサイトは${kind.label}で、${kind.sub}が中心です。\n`;
+  ask += `最初に出したい操作は次の${picked.length}つです。\n\n`;
+  picked.forEach((o,i)=>{ ask += `${i+1}. ${o[0]} — ${o[1]}。${o[2]}。\n`; });
+  ask += `\n任せる範囲は「${risk.label}（${risk.sub}）」までにしてください。\n\n`;
+  ask += `お願いしたいこと:\n`;
+  ask += `・document.modelContext.registerTool を使って、上のツールを登録するコードを書いてください\n`;
+  ask += `・既存のどの関数・APIを呼べばいいかは、リポジトリを読んで判断してください\n`;
+  ask += `・description は「何をするか」に加えて「いつ使うか」を必ず1文入れてください\n`;
+  ask += `・inputSchema の各項目に、単位と形式（税込・円、YYYY-MM-DD など）を書いてください\n`;
+  ask += `・読むだけの操作には annotations.readOnlyHint: true を付けてください\n`;
+  if(risk.confirm) ask += `・確定系の操作は、実行前に画面上で人の確認を取ってから進める形にしてください\n`;
+  ask += `・ツールを呼んだ結果は、画面の表示にも反映してください（人とAIが同じものを見られるように）\n`;
+  ask += `・iframe 内では登録しないでください（現時点で未対応のため）\n\n`;
+  ask += `いきなり全部を完成させず、まず ${picked[0][0]} だけ動く状態にして、\n`;
+  ask += `私が内蔵ブラウザで確認してから次に進めたいです。`;
+
+  // ⑤ 警告
+  let warn = `<b>公開前に必ず確認してください</b><ul>`;
+  warn += `<li>ツールの説明文や返り値に、外部から投稿された文章が混ざらないこと（プロンプトインジェクションの入口になります）</li>`;
+  warn += `<li>権限のない人が呼べる経路がないこと。画面側の制御だけに頼らず、ツール側でも権限を確認すること</li>`;
+  warn += `<li>他社サイトに見せる必要がないなら、公開範囲は既定（同一オリジンのみ）のままにすること</li>`;
+  if(risk.confirm) warn += `<li><b>「確定まで」を選んでいます。</b>金額・契約・送信が動く操作なので、実行前の確認を必ず挟んでください。最初の1本には向きません</li>`;
+  if(state.risk==="draft") warn += `<li>「下書きまで」でも、下書きの保存で他の人に見える状態になる場合は確認を挟んでください</li>`;
+  warn += `<li>WebMCPは提案段階の標準です。仕様変更を追う担当を決めてから公開してください</li>`;
+  warn += `</ul>`;
+
+  $("#memo").textContent = memo;
+  $("#desc").textContent = desc;
+  $("#code").textContent = code;
+  $("#ask").textContent = ask;
+  $("#warn").innerHTML = warn;
+  $("#out").classList.add("on");
+  $("#out").scrollIntoView({behavior:"smooth"});
+}
+
+$("#go").onclick = build;
+
+function toast(msg){ const t=$("#toast"); t.textContent=msg; t.classList.add("on"); setTimeout(()=>t.classList.remove("on"),1500); }
+document.addEventListener("click", e=>{
+  const c = e.target.dataset.copy, d = e.target.dataset.dl;
+  if(c){ navigator.clipboard.writeText($("#"+c).textContent).then(()=>toast("コピーしました")).catch(()=>toast("コピーできませんでした")); }
+  if(d){
+    const blob = new Blob([$("#"+d).textContent], {type:"text/plain;charset=utf-8"});
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(blob); a.download = e.target.dataset.name;
+    document.body.appendChild(a); a.click(); a.remove(); toast("ダウンロードしました");
+  }
+});
+
+drawKinds(); drawOps(); drawRisks(); sync();
+</script>
+</body>
+</html>
