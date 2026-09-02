@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Codex 料金・上限シミュレーターアプリ</title>
+<meta name="description" content="1日のCodexの使い方を入れるだけで、API従量課金だといくらか・ChatGPTプランの枠で足りるか・足りないときの次の一手が1分でわかります。">
+<style>
+  :root{
+    --brand:#1C3461; --accent:#2C7A93; --bg:#F7FAFC; --paper:#FFFFFF;
+    --ink:#1C3461; --mid:#4A6080; --sub:#8098B4; --line:rgba(28,52,97,.16);
+    --ok:#1C7A4A; --warn:#B26B00; --bad:#B03A3A;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{ --bg:#10141B; --paper:#171D26; --ink:#E6ECF5; --mid:#A9B7CC; --sub:#7C8AA3; --line:rgba(255,255,255,.14); }
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:var(--bg);color:var(--ink);font-family:'Hiragino Sans','Yu Gothic',system-ui,sans-serif;line-height:1.7;padding:24px 16px;}
+  .wrap{max-width:680px;margin:0 auto;}
+  h1{font-size:22px;font-weight:900;margin-bottom:6px;}
+  .sub{font-size:13px;color:var(--mid);margin-bottom:20px;}
+  .card{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:20px;margin-bottom:16px;}
+  .fld{margin-bottom:18px;}
+  .fld:last-child{margin-bottom:0;}
+  label{display:block;font-weight:800;font-size:14px;margin-bottom:8px;}
+  .hint{font-weight:400;color:var(--sub);font-size:12px;}
+  input[type=range]{width:100%;accent-color:var(--accent);}
+  .rngval{font-weight:900;color:var(--accent);font-size:15px;}
+  .seg{display:flex;gap:8px;flex-wrap:wrap;}
+  .seg button{flex:1;min-width:90px;padding:9px 8px;border:1.5px solid var(--line);background:transparent;color:var(--mid);
+    border-radius:10px;font-size:13px;font-weight:800;cursor:pointer;font-family:inherit;}
+  .seg button.on{border-color:var(--accent);background:rgba(44,122,147,.12);color:var(--ink);}
+  .go{width:100%;padding:13px;border:none;border-radius:12px;background:var(--brand);color:#fff;font-size:15px;font-weight:900;cursor:pointer;font-family:inherit;}
+  .res{display:none;}
+  .res.show{display:block;}
+  .verdict{font-size:17px;font-weight:900;padding:14px 16px;border-radius:12px;margin-bottom:14px;border:1.5px solid var(--line);}
+  .v-ok{border-color:var(--ok);color:var(--ok);background:rgba(28,122,74,.10);}
+  .v-warn{border-color:var(--warn);color:var(--warn);background:rgba(178,107,0,.10);}
+  .v-bad{border-color:var(--bad);color:var(--bad);background:rgba(176,58,58,.10);}
+  .rows{border:1px solid var(--line);border-radius:12px;overflow:hidden;margin-bottom:14px;}
+  .row{display:flex;justify-content:space-between;gap:12px;padding:11px 14px;border-bottom:1px solid var(--line);font-size:13.5px;}
+  .row:last-child{border-bottom:none;}
+  .row b{font-weight:900;}
+  .next{font-size:13.5px;}
+  .next li{margin:6px 0 6px 18px;}
+  .foot{font-size:11.5px;color:var(--sub);margin-top:16px;line-height:1.6;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Codex 料金・上限シミュレーターアプリ</h1>
+  <p class="sub">1日のCodexの使い方を入れると、① API従量課金だとざっくり月いくらか ② ChatGPTプランの枠で足りそうか ③ 足りないときの次の一手 が出ます。数値はすべて概算の目安です。</p>
+
+  <div class="card">
+    <div class="fld">
+      <label>1日にCodexへ出す依頼の数 <span class="hint">（チャットの往復ではなく「お願い」の回数）</span></label>
+      <input type="range" id="reqs" min="1" max="80" value="12">
+      <div><span class="rngval" id="reqsv">12</span> 回 / 日</div>
+    </div>
+
+    <div class="fld">
+      <label>依頼1回の重さ</label>
+      <div class="seg" id="weight">
+        <button data-v="light" class="on">軽い<br><span class="hint">短い質問・小修正</span></button>
+        <button data-v="mid">中くらい<br><span class="hint">1ファイル実装</span></button>
+        <button data-v="heavy">重い<br><span class="hint">複数ファイル・長い自律作業</span></button>
+      </div>
+    </div>
+
+    <div class="fld">
+      <label>主に使うモデル</label>
+      <div class="seg" id="model">
+        <button data-v="luna" class="on">Luna<br><span class="hint">最速・最安</span></button>
+        <button data-v="terra">Terra<br><span class="hint">バランス</span></button>
+        <button data-v="sol">Sol<br><span class="hint">最強・重い</span></button>
+      </div>
+    </div>
+
+    <div class="fld">
+      <label>今のプラン</label>
+      <div class="seg" id="plan">
+        <button data-v="free" class="on">Free / Go</button>
+        <button data-v="plus">Plus（月20ドル）</button>
+        <button data-v="pro">Pro（月100ドル〜）</button>
+      </div>
+    </div>
+
+    <div class="fld">
+      <label>月に作業する日数</label>
+      <input type="range" id="days" min="1" max="31" value="20">
+      <div><span class="rngval" id="daysv">20</span> 日 / 月</div>
+    </div>
+
+    <button class="go" id="go">試算する</button>
+  </div>
+
+  <div class="card res" id="res">
+    <div class="verdict" id="verdict"></div>
+    <div class="rows" id="rows"></div>
+    <div class="next">
+      <b>次の一手</b>
+      <ul id="next"></ul>
+    </div>
+    <p class="foot" id="foot"></p>
+  </div>
+
+  <p class="foot">
+    ※ このアプリの数値は「目安」です。OpenAIは具体的な利用上限の回数を公表していないため、枠の判定は
+    「軽い/中/重い」と「モデル」から重み付けした概算です。API料金の試算も、1依頼あたりのトークン量を
+    ざっくり仮定した幅のある見積もりで、実際の請求額とは異なります。判断の出発点としてお使いください。<br>
+    ※ 「ChatGPT WebをCodexに繋ぐ裏技」はこのアプリでは扱いません（OpenAIの規約に触れる疑いがあるため）。
+    まず正規ルートで足りるかの確認にお使いください。
+  </p>
+</div>
+
+<script>
+(function(){
+  var reqs=document.getElementById('reqs'), days=document.getElementById('days');
+  var reqsv=document.getElementById('reqsv'), daysv=document.getElementById('daysv');
+  reqs.oninput=function(){reqsv.textContent=reqs.value;};
+  days.oninput=function(){daysv.textContent=days.value;};
+
+  function seg(id){
+    var box=document.getElementById(id);
+    box.addEventListener('click',function(e){
+      var b=e.target.closest('button'); if(!b) return;
+      box.querySelectorAll('button').forEach(function(x){x.classList.remove('on');});
+      b.classList.add('on');
+    });
+    return function(){ return box.querySelector('button.on').dataset.v; };
+  }
+  var getWeight=seg('weight'), getModel=seg('model'), getPlan=seg('plan');
+
+  // ざっくりの重み（1依頼あたりの「消費ポイント」と概算トークン）
+  var W={ light:{pt:1, tok:9000},  mid:{pt:3, tok:35000}, heavy:{pt:9, tok:130000} };
+  var M={ luna:{mult:1,  price:0.6}, terra:{mult:1.7, price:1.6}, sol:{mult:3.2, price:5.0} }; // price = ドル / 100万トークン相当のざっくり
+  // プランの1日あたり「さばける消費ポイント」の目安（概算）
+  var P={ free:{cap:12, label:'Free / Go'}, plus:{cap:60, label:'Plus'}, pro:{cap:240, label:'Pro'} };
+
+  document.getElementById('go').onclick=function(){
+    var r=+reqs.value, d=+days.value, w=getWeight(), m=getModel(), p=getPlan();
+    var perReqPoints=W[w].pt*M[m].mult;
+    var dayPoints=perReqPoints*r;
+    var cap=P[p].cap;
+    var ratio=dayPoints/cap;
+
+    // API従量課金のざっくり月額（幅）
+    var tokPerReq=W[w].tok*M[m].mult;
+    var monthTok=tokPerReq*r*d;
+    var usd=monthTok/1000000*M[m].price;
+    var lo=Math.round(usd*0.6), hi=Math.round(usd*1.6);
+
+    var vEl=document.getElementById('verdict');
+    var nextEl=document.getElementById('next');
+    var rowsEl=document.getElementById('rows');
+    var footEl=document.getElementById('foot');
+    nextEl.innerHTML=''; rowsEl.innerHTML='';
+
+    function row(k,v){ rowsEl.insertAdjacentHTML('beforeend','<div class="row"><span>'+k+'</span><b>'+v+'</b></div>'); }
+    row('1日の想定消費（目安ポイント）', Math.round(dayPoints)+' pt');
+    row(P[p].label+' の1日の目安', cap+' pt');
+    row('枠に対する割合', Math.round(ratio*100)+' %');
+    row('API従量課金ならざっくり', '月 $'+lo+' 〜 $'+hi);
+
+    function li(t){ var e=document.createElement('li'); e.textContent=t; nextEl.appendChild(e); }
+
+    if(ratio<=0.7){
+      vEl.className='verdict v-ok';
+      vEl.textContent='正規ルート（Sign in with ChatGPT）で足りそうです';
+      li('今のプランのまま「ChatGPTでサインイン」でCodexを使えば追加課金ゼロ。');
+      li('裏技を導入する動機は薄いです。まずこのまま運用しましょう。');
+    } else if(ratio<=1.15){
+      vEl.className='verdict v-warn';
+      vEl.textContent='ぎりぎり。節約すれば正規ルートで足りる可能性';
+      li('モデルを1段軽く（Sol→Terra→Luna）、思考量を1段下げると消費が大きく減ります。');
+      li('重いタスクは複数の小さな依頼に分割すると枠が長持ちします。');
+      li('それでも頻繁に枠切れするなら、次のプランを検討。');
+    } else {
+      vEl.className='verdict v-bad';
+      vEl.textContent='正規ルートの枠では足りない使い方です';
+      if(p!=='pro'){
+        li('仕事で使うなら Pro（月100ドル〜）にすると5時間の枠がゆるくなります。規約リスクなし。');
+      }
+      li('節約設定（モデルを軽く・思考量を下げる・タスク分割）も併用する。');
+      li('APIキー運用に切り替える手もありますが、上の試算のとおり従量課金は高額になりがちです。');
+    }
+    li('「ChatGPT WebをCodexに繋ぐ裏技」は規約グレーのため、業務・機密・共用PCでは使わない。');
+
+    if(p==='pro' && ratio>1.15){
+      footEl.textContent='Proでも足りない規模です。タスクの分割・自動化の見直しや、チーム向けのクレジットプラン検討の段階かもしれません。';
+    } else {
+      footEl.textContent='この結果は目安です。実際の枠・料金はOpenAIの最新のプラン情報でご確認ください。';
+    }
+    document.getElementById('res').classList.add('show');
+    document.getElementById('res').scrollIntoView({behavior:'smooth',block:'start'});
+  };
+})();
+</script>
+</body>
+</html>
