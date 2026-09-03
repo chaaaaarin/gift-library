@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="ja"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>その業務、Claudeに任せていい？判定アプリ</title>
+<meta name="description" content="5つの質問に答えるだけで、その業務を「今すぐ任せる」「パイロットから」「まだ早い」のどれで進めるべきかが分かる診断アプリです。">
+<style>
+:root{
+  --brand:#D9774F;--brand-deep:#B24E33;--brand-soft:rgba(217,119,79,.10);
+  --ink:#2A2620;--ink-mid:#6E6557;--bg:#F1ECE3;--paper:#FFFFFF;
+  --good:#3F7D4C;--warn:#B24E33;
+  --sh-lg:0 4px 10px rgba(20,20,35,.06),0 20px 44px rgba(20,20,35,.12);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{
+  font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Noto Sans JP",sans-serif;
+  background:var(--bg);color:var(--ink);line-height:1.7;padding:26px 16px 40px;
+}
+.wrap{max-width:520px;margin:0 auto;}
+.head{text-align:center;margin-bottom:18px;}
+.head h1{font-size:19px;font-weight:900;color:var(--brand-deep);margin-bottom:5px;}
+.head p{font-size:12.5px;color:var(--ink-mid);}
+.dots{display:flex;justify-content:center;gap:6px;margin:18px 0 22px;}
+.dot{width:22px;height:5px;border-radius:999px;background:rgba(217,119,79,.16);transition:.25s;}
+.dot.on{background:var(--brand);}
+.card{background:var(--paper);border:none;border-radius:22px;padding:26px 24px;box-shadow:var(--sh-lg);}
+.qnum{font-size:11px;font-weight:800;color:var(--brand-deep);letter-spacing:.05em;margin-bottom:6px;}
+.qtitle{font-size:17px;font-weight:900;margin-bottom:18px;line-height:1.5;}
+.opt{display:block;width:100%;text-align:left;background:var(--bg);border:none;
+  border-radius:16px;padding:14px 16px;margin-bottom:10px;font-size:13.5px;color:var(--ink);
+  cursor:pointer;transition:.15s;font-family:inherit;box-shadow:inset 0 0 0 1px rgba(20,20,35,.05);}
+.opt:hover{background:var(--brand-soft);transform:translateX(3px);}
+.opt:active{transform:translateX(3px) scale(.98);}
+.opt b{display:block;font-size:14px;margin-bottom:2px;}
+.opt span{font-size:12px;color:var(--ink-mid);}
+.back{display:inline-block;margin-top:14px;font-size:12px;color:var(--ink-mid);
+  background:none;border:none;cursor:pointer;font-family:inherit;text-decoration:underline;}
+.hidden{display:none !important;}
+
+.result .qnum{margin-bottom:2px;}
+.pick{border:none;border-radius:18px;padding:18px 20px;margin:16px 0 14px;color:#fff;}
+.pick.tier-go{background:var(--good);box-shadow:0 8px 20px rgba(63,125,76,.25);}
+.pick.tier-pilot{background:var(--brand);box-shadow:0 8px 20px var(--brand-soft);}
+.pick.tier-wait{background:var(--warn);box-shadow:0 8px 20px rgba(178,78,51,.25);}
+.pick .lbl{font-size:11px;font-weight:800;color:rgba(255,255,255,.85);margin-bottom:5px;letter-spacing:.04em;}
+.pick .name{font-size:19px;font-weight:900;color:#fff;margin-bottom:6px;line-height:1.5;}
+.pick .why{font-size:12.5px;color:rgba(255,255,255,.92);line-height:1.7;}
+.next h3{font-size:12px;font-weight:800;color:var(--ink-mid);margin:18px 0 10px;}
+.nextitem{background:var(--bg);border:none;border-radius:14px;padding:12px 15px;margin-bottom:9px;font-size:13px;}
+.nextitem b{display:block;font-size:13.5px;margin-bottom:2px;}
+.nextitem span{font-size:11.5px;color:var(--ink-mid);}
+.howto{margin-top:18px;padding:13px 15px;background:var(--bg);border:none;border-radius:14px;font-size:12px;color:var(--ink-mid);}
+.restart{display:inline-flex;align-items:center;gap:6px;margin-top:18px;background:var(--brand);
+  color:#fff;border:none;border-radius:999px;padding:11px 22px;font-weight:800;font-size:13px;
+  cursor:pointer;font-family:inherit;box-shadow:0 4px 12px var(--brand-soft);transition:.15s;}
+.restart:hover{background:var(--brand-deep);transform:translateY(-1px);}
+</style>
+</head><body>
+<div class="wrap">
+  <div class="head">
+    <h1>その業務、Claudeに任せていい？判定アプリ</h1>
+    <p>5つの質問に答えると、「今すぐ任せる」「パイロットから」「まだ早い」のどれで進めるべきかが分かります</p>
+  </div>
+  <div class="dots">
+    <span class="dot" data-d="1"></span><span class="dot" data-d="2"></span><span class="dot" data-d="3"></span><span class="dot" data-d="4"></span><span class="dot" data-d="5"></span>
+  </div>
+
+  <div class="card" id="q1">
+    <div class="qnum">質問 1 / 5</div>
+    <div class="qtitle">その業務、どのくらいの頻度でやっていますか？</div>
+    <button class="opt" data-q="freq" data-v="2"><b>毎日</b><span>ほぼ欠かさず発生する</span></button>
+    <button class="opt" data-q="freq" data-v="2"><b>毎週</b><span>週1回程度の定例</span></button>
+    <button class="opt" data-q="freq" data-v="1"><b>月1回程度</b><span>月次のまとめ作業など</span></button>
+    <button class="opt" data-q="freq" data-v="0"><b>不定期</b><span>思い出した時にやる程度</span></button>
+  </div>
+
+  <div class="card hidden" id="q2">
+    <div class="qnum">質問 2 / 5</div>
+    <div class="qtitle">1回あたり、どのくらい時間がかかっていますか？</div>
+    <button class="opt" data-q="time" data-v="2"><b>2時間以上</b></button>
+    <button class="opt" data-q="time" data-v="1"><b>30分〜2時間</b></button>
+    <button class="opt" data-q="time" data-v="0"><b>30分未満</b></button>
+    <button class="back" data-back="q1">← 質問1に戻る</button>
+  </div>
+
+  <div class="card hidden" id="q3">
+    <div class="qnum">質問 3 / 5（いちばん大事な質問）</div>
+    <div class="qtitle">出来上がった結果が「合っているか」、あなた自身で確認できますか？</div>
+    <button class="opt" data-q="verify" data-v="2"><b>はい、見ればすぐ分かる</b><span>正解の基準がはっきりしている</span></button>
+    <button class="opt" data-q="verify" data-v="1"><b>時間をかければ確認できる</b><span>照合や裏取りの手間はかかる</span></button>
+    <button class="opt" data-q="verify" data-v="gate"><b>正直、確認する方法が無い</b><span>合っているかどうかの基準がそもそも無い</span></button>
+    <button class="back" data-back="q2">← 質問2に戻る</button>
+  </div>
+
+  <div class="card hidden" id="q4">
+    <div class="qnum">質問 4 / 5</div>
+    <div class="qtitle">万が一、間違った内容のまま進んでしまったら？</div>
+    <button class="opt" data-q="impact" data-v="2"><b>自分の手間が増えるだけ</b><span>自分で気づいて直せる範囲</span></button>
+    <button class="opt" data-q="impact" data-v="1"><b>社内の一部に迷惑がかかる</b><span>チーム内で訂正すれば収まる</span></button>
+    <button class="opt" data-q="impact" data-v="0"><b>社外・顧客に直接影響する</b><span>取引先や顧客の目に触れる</span></button>
+    <button class="back" data-back="q3">← 質問3に戻る</button>
+  </div>
+
+  <div class="card hidden" id="q5">
+    <div class="qnum">質問 5 / 5</div>
+    <div class="qtitle">材料になるデータは、今どこにありますか？</div>
+    <button class="opt" data-q="data" data-v="2"><b>1ヶ所にまとまっている</b><span>スプレッドシート・DB等、1つの場所</span></button>
+    <button class="opt" data-q="data" data-v="1"><b>2〜3ヶ所に散らばっている</b><span>複数のツール・シートを見て回る必要がある</span></button>
+    <button class="opt" data-q="data" data-v="0"><b>人に聞かないと分からない</b><span>まだデータとして整理されていない</span></button>
+    <button class="back" data-back="q4">← 質問4に戻る</button>
+  </div>
+
+  <div class="card result hidden" id="result">
+    <div class="qnum">診断結果</div>
+    <div class="pick" id="rPick">
+      <div class="lbl">この業務は</div>
+      <div class="name" id="rName"></div>
+      <div class="why" id="rWhy"></div>
+    </div>
+    <div class="next">
+      <h3>次にやること</h3>
+      <div class="nextitem" id="rNext1"></div>
+      <div class="nextitem" id="rNext2"></div>
+    </div>
+    <div class="howto">この判定は目安です。実際に進めるときは「AIの暴走を止めるハードルール文例10選」も合わせて確認してください。</div>
+    <button class="restart" id="restart">↺ もう一度診断する</button>
+  </div>
+</div>
+
+<script>
+(function(){
+  var answers = {};
+  var steps = ['q1','q2','q3','q4','q5'];
+
+  function showStep(id){
+    document.querySelectorAll('.card').forEach(function(c){ c.classList.add('hidden'); });
+    document.getElementById(id).classList.remove('hidden');
+    var idx = steps.indexOf(id) + 1;
+    document.querySelectorAll('.dot').forEach(function(d){
+      d.classList.toggle('on', Number(d.dataset.d) <= idx);
+    });
+  }
+
+  var order = {q1:'q2', q2:'q3', q3:'q4', q4:'q5'};
+
+  document.querySelectorAll('[data-q]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      answers[btn.dataset.q] = btn.dataset.v;
+      var cur = btn.closest('.card').id;
+      if (cur === 'q5') { showResult(); return; }
+      showStep(order[cur]);
+    });
+  });
+
+  document.querySelectorAll('[data-back]').forEach(function(btn){
+    btn.addEventListener('click', function(){ showStep(btn.dataset.back); });
+  });
+
+  function item(name, why){ return {name: name, why: why}; }
+
+  function judge(){
+    var weak = [];
+    if (answers.verify === 'gate') {
+      return {
+        tier: 'wait',
+        name: 'まだ早い',
+        why: '結果が合っているかを確認する手段が無い状態で自動化すると、間違いに誰も気づけないまま進んでしまいます。まずは「何をもって正解とするか」の基準を先に決めることが必要です。',
+        next: [
+          item('確認方法を先に決める', '既存の資料・過去の実績など、照合できる基準を1つ用意してから再挑戦してください。'),
+          item('小さく試すなら自分宛てだけに', '「週次の手作業をClaudeに引き継ぐ7ステップ台本」のステップ1〜5だけを、配布せず自分だけで試すのは問題ありません。')
+        ]
+      };
+    }
+
+    var score = Number(answers.freq) + Number(answers.time) + Number(answers.verify) + Number(answers.impact) + Number(answers.data);
+
+    if (answers.impact === '0') weak.push('社外・顧客への影響が大きいため、最初は範囲を狭めて始めるのが安全です');
+    if (answers.data === '0') weak.push('材料データがまだ整理されていないため、先にデータを1ヶ所にまとめる作業が必要です');
+    if (answers.freq === '0' && answers.time === '0') weak.push('頻度も時間もそれほど大きくないため、自動化の投資対効果が薄い可能性があります');
+
+    if (score >= 7) {
+      return {
+        tier: 'go',
+        name: '今すぐ任せてよい',
+        why: '頻度・時間・確認のしやすさ・影響範囲・データの整い方、すべてが自動化に向いています。' + (weak.length ? weak[0] : '大きな障害は見当たりません。'),
+        next: [
+          item('7ステップ台本のステップ1から始める', '「週次の手作業をClaudeに引き継ぐ7ステップ台本」のステップ1〜4で、対象と理想の完成形を固めてください。'),
+          item('ハードルールを先に入れる', '「AIの暴走を止めるハードルール文例10選」から、影響範囲に合うルールを2〜3個選んで最初から組み込んでください。')
+        ]
+      };
+    }
+    if (score >= 4) {
+      return {
+        tier: 'pilot',
+        name: '小さなパイロットから',
+        why: '自動化の効果は見込めますが、' + (weak.length ? weak.join('。また、') : 'いくつかの条件がまだ十分ではありません') + '。いきなり本番運用にはせず、小さく試すのが安全です。',
+        next: [
+          item('自分宛てだけで3回試す', '「週次の手作業をClaudeに引き継ぐ7ステップ台本」のステップ5（少人数で試す）を、まずは自分1人だけで実施してください。'),
+          item('弱点を1つずつ埋める', weak.length ? weak[0] : 'データの置き場所や確認手順を、あと1つ整理してから配布に進んでください。')
+        ]
+      };
+    }
+    return {
+      tier: 'wait',
+      name: 'まだ早い',
+      why: '現状では頻度・時間・確認しやすさ・影響範囲・データの整い方の多くが自動化に向いていません。' + (weak.length ? weak.join('。また、') : ''),
+      next: [
+        item('別の業務から試す', '頻度が高く、結果をすぐ自分で確認できる別の業務があれば、そちらから始める方が成功しやすいです。'),
+        item('データを先に整理する', 'まずは材料データを1ヶ所にまとめることから始めてください。')
+      ]
+    };
+  }
+
+  function showResult(){
+    var r = judge();
+    var pick = document.getElementById('rPick');
+    pick.className = 'pick tier-' + r.tier;
+    document.getElementById('rName').textContent = r.name;
+    document.getElementById('rWhy').textContent = r.why;
+    var n1 = r.next[0], n2 = r.next[1];
+    document.getElementById('rNext1').innerHTML = '<b>' + n1.name + '</b><span>' + n1.why + '</span>';
+    document.getElementById('rNext2').innerHTML = '<b>' + n2.name + '</b><span>' + n2.why + '</span>';
+    document.querySelectorAll('.card').forEach(function(c){ c.classList.add('hidden'); });
+    document.getElementById('result').classList.remove('hidden');
+    document.querySelectorAll('.dot').forEach(function(d){ d.classList.add('on'); });
+  }
+
+  document.getElementById('restart').addEventListener('click', function(){
+    answers = {};
+    showStep('q1');
+  });
+
+  showStep('q1');
+})();
+</script>
+</body></html>
