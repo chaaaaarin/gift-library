@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ダメ出しされない依頼文ジェネレーターアプリ</title>
+<meta name="description" content="ざっくりした依頼を入れるだけで、AIが一発で正しく作れる『5項目の指示文』と『最初に復唱させるプロンプト』が手に入ります。作り直し（手戻り）を減らせます。">
+<style>
+  :root{--brand:#1C3461;--brand-deep:#16284A;--accent:#5BBCD4;--accent-deep:#2C7A93;
+    --bg:#F7FAFC;--paper:#FFFFFF;--ink:#1C3461;--ink-mid:#4A6080;--ink-sub:#8098B4;--line:rgba(28,52,97,.14);}
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:var(--bg);color:var(--ink);font-family:-apple-system,'Hiragino Sans','Yu Gothic','Noto Sans JP',sans-serif;line-height:1.7;padding:22px 16px 60px;}
+  .wrap{max-width:720px;margin:0 auto;}
+  h1{font-size:22px;font-weight:900;line-height:1.35;margin-bottom:6px;}
+  .sub{font-size:14px;color:var(--ink-mid);margin-bottom:20px;}
+  .card{background:var(--paper);border:1.5px solid var(--line);border-radius:14px;padding:18px 18px 20px;margin-bottom:16px;}
+  label{display:block;font-weight:800;font-size:14px;margin:14px 0 6px;}
+  label:first-child{margin-top:0;}
+  .hint{font-weight:400;color:var(--ink-sub);font-size:12.5px;}
+  input[type=text],textarea,select{width:100%;font:inherit;font-size:14px;color:var(--ink);background:var(--bg);
+    border:1.5px solid var(--line);border-radius:9px;padding:9px 11px;}
+  textarea{min-height:64px;resize:vertical;}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px;}
+  .chips label{display:inline-flex;align-items:center;gap:6px;margin:0;font-weight:600;font-size:13px;
+    background:var(--bg);border:1.5px solid var(--line);border-radius:999px;padding:6px 12px;cursor:pointer;}
+  .chips input{accent-color:var(--accent-deep);}
+  button{font:inherit;font-weight:900;font-size:15px;cursor:pointer;border:none;border-radius:10px;padding:12px 22px;}
+  .go{background:var(--brand);color:#fff;width:100%;margin-top:18px;}
+  .go:hover{background:var(--brand-deep);}
+  .out{margin-top:22px;}
+  .out h2{font-size:16px;font-weight:900;margin:18px 0 8px;display:flex;align-items:center;justify-content:space-between;gap:10px;}
+  .copy{background:var(--accent);color:var(--ink);border:1.5px solid var(--accent-deep);border-radius:8px;padding:6px 14px;font-size:12.5px;font-weight:800;}
+  .copy:hover{background:var(--accent-deep);color:#fff;}
+  pre{white-space:pre-wrap;word-break:break-word;background:var(--paper);border:1.5px solid var(--line);
+    border-left:4px solid var(--accent);border-radius:10px;padding:14px 16px;font:inherit;font-size:13.5px;color:var(--ink);}
+  .foot{font-size:12px;color:var(--ink-sub);margin-top:24px;line-height:1.7;}
+  .hidden{display:none;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>ダメ出しされない依頼文ジェネレーター<span style="color:var(--accent-deep)">アプリ</span></h1>
+  <p class="sub">ざっくりした依頼を、AIが一発で正しく作れる「5項目の指示文」に整えます。<br>出てきた文をそのままAIに貼ってください。</p>
+
+  <div class="card">
+    <label>① 作ってほしいもの（1行でOK） <span class="hint">例：新商品の紹介ブログ／問い合わせ集計の表／ロゴのラフ</span></label>
+    <textarea id="thing" placeholder="ここに、頭に浮かんだ依頼をそのまま書く"></textarea>
+
+    <label>② 種類</label>
+    <select id="kind">
+      <option value="doc">文章・資料</option>
+      <option value="code">コード・ツール・自動化</option>
+      <option value="design">画像・デザイン</option>
+      <option value="research">調査・分析・要約</option>
+      <option value="other">その他</option>
+    </select>
+
+    <label>③ 誰のため／どこで使う <span class="hint">読む人・使う場面。分かる範囲で</span></label>
+    <input type="text" id="who" placeholder="例：既存のお客さま向け／社内の朝会で共有">
+
+    <label>④ どうなったら「完成」か（成功条件） <span class="hint">1つでもいい。数・形式・トーンなど</span></label>
+    <input type="text" id="done" placeholder="例：800字前後・専門用語なし・最後に問い合わせ先">
+
+    <label>⑤ やってほしくないこと・触ってほしくない範囲</label>
+    <input type="text" id="ng" placeholder="例：他社比較は入れない／既存の設定ファイルは変えない">
+
+    <label>⑥ どう検証する？（複数選べます）</label>
+    <div class="chips" id="verify">
+      <label><input type="checkbox" value="自分で見本と見比べる">見本と見比べる</label>
+      <label><input type="checkbox" value="動くか・成立するか実際に試す">実際に試す</label>
+      <label><input type="checkbox" value="わざと失敗する例も1つ出させて確認する">失敗例も出させる</label>
+      <label><input type="checkbox" value="別の人（または別のAI）に一度チェックしてもらう">第三者チェック</label>
+    </div>
+
+    <button class="go" onclick="gen()">仕様文を作る</button>
+  </div>
+
+  <div class="out hidden" id="out">
+    <h2>そのままAIに貼る指示文 <button class="copy" onclick="cp('spec')">コピー</button></h2>
+    <pre id="spec"></pre>
+    <h2>最初にAIへ送る「復唱プロンプト」 <button class="copy" onclick="cp('echo')">コピー</button></h2>
+    <pre id="echo"></pre>
+    <p class="foot">使い方：まず「復唱プロンプト」を送り、AIの理解と質問を確認 → ズレていたら指示文を直す → 合っていたら「指示文」を送る。<br>出力はレビューしてから確定してください。</p>
+  </div>
+</div>
+
+<script>
+function val(id){return document.getElementById(id).value.trim();}
+function gen(){
+  var thing = val('thing') || '（作ってほしいものを1行で書いてください）';
+  var kindMap = {doc:'文章・資料',code:'コード・ツール・自動化',design:'画像・デザイン',research:'調査・分析・要約',other:'成果物'};
+  var kind = kindMap[document.getElementById('kind').value];
+  var who = val('who') || '（未記入）';
+  var done = val('done') || '（未記入：AIに「完成の基準を3つ提案して」と聞くとよい）';
+  var ng = val('ng') || '特になし';
+  var vs = [].slice.call(document.querySelectorAll('#verify input:checked')).map(function(c){return c.value;});
+  if(vs.length===0) vs = ['自分で見本と見比べる'];
+
+  var kindHint = {
+    doc:'文字数・構成・トーン・見出しの有無',
+    code:'使う言語や環境・入力と出力・エラー時の扱い・既存コードとの整合',
+    design:'サイズ・用途・色や雰囲気・入れる文言・NG表現',
+    research:'調べる範囲・出典の要否・まとめる形式（表／箇条書き）・分量',
+    other:'形式・分量・トーン'
+  }[document.getElementById('kind').value];
+
+  var spec =
+'【目的】\n'+thing+'\n（種類：'+kind+'）\n\n'+
+'【対象・前提】\n・使う人／読む人：'+who+'\n・前提として渡す材料：（あれば貼る。無ければ「無い」と書く）\n\n'+
+'【成功条件（これを満たせば完成）】\n・'+done+'\n・上記に加えて、'+kindHint+' も明示してください。不明な点は先に質問してください。\n\n'+
+'【制約・やらないこと】\n・'+ng+'\n・指示に無いことを勝手に足さない。推測で埋めた箇所は「ここは推測」と印を付ける。\n\n'+
+'【検証方法】\n・'+vs.map(function(v){return v;}).join('\n・')+'\n・完成物と一緒に「変更・作成した箇所の一覧」と「成功条件を満たしているかの自己チェック」を付けてください。\n\n'+
+'【進め方】\n・いきなり全部作らず、まず骨子（見出し／設計／ラフ）だけ出して一度止まってください。';
+
+  var echo =
+'次の依頼に取りかかる前に、以下を確認させてください。\n\n'+
+'1. あなたの理解を、箇条書きで復唱してください（何を・誰のために・どうなったら完成か）。\n'+
+'2. 曖昧な点・前提が足りない点を、質問の形で3〜5個挙げてください。\n'+
+'3. あなたが「推測で埋めるつもりの箇所」を先に教えてください。\n\n'+
+'まだ本体は作らないでください。--- 依頼ここから ---\n'+spec;
+
+  document.getElementById('spec').textContent = spec;
+  document.getElementById('echo').textContent = echo;
+  document.getElementById('out').classList.remove('hidden');
+  document.getElementById('out').scrollIntoView({behavior:'smooth'});
+}
+function cp(id){
+  var t = document.getElementById(id).textContent;
+  navigator.clipboard.writeText(t).then(function(){
+    var b = event.target; var o = b.textContent; b.textContent='コピーしました'; setTimeout(function(){b.textContent=o;},1400);
+  }).catch(function(){
+    var r = document.createRange(); r.selectNode(document.getElementById(id));
+    var s = getSelection(); s.removeAllRanges(); s.addRange(r);
+  });
+}
+</script>
+</body>
+</html>
