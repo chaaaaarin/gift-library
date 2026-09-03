@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>"惜しい"を"バッチリ"に変える 指示リライターアプリ</title>
+<meta name="description" content="「いい感じにして」で毎回やり直していた人が、1回で欲しい形が返るようになる。曖昧な依頼を、目的・成功条件・制約・やらないこと・出力形式の5枠に組み替えて、そのまま貼れる指示文にします。">
+<style>
+  :root{--brand:#1C3461;--accent:#2C7A93;--bg:#F7FAFC;--paper:#fff;--ink:#1C3461;--mid:#4A6080;--line:#d9e0ea;}
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,'Hiragino Sans','Yu Gothic',system-ui,sans-serif;line-height:1.7;}
+  .wrap{max-width:760px;margin:0 auto;padding:28px 20px 60px;}
+  h1{font-size:22px;margin:0 0 6px;}
+  .sub{font-size:14px;color:var(--mid);margin:0 0 22px;}
+  fieldset{border:1.5px solid var(--line);border-radius:12px;padding:16px 16px 6px;margin:0 0 16px;background:var(--paper);}
+  legend{font-weight:700;font-size:14px;padding:0 6px;color:var(--brand);}
+  label.f{display:block;font-size:13px;font-weight:700;margin:10px 0 4px;}
+  input[type=text],textarea,select{width:100%;font:inherit;font-size:14px;padding:9px 11px;border:1.5px solid var(--line);border-radius:9px;background:#fff;color:var(--ink);}
+  textarea{min-height:60px;resize:vertical;}
+  .hint{font-size:12px;color:var(--mid);margin:3px 0 0;}
+  .chk{display:flex;flex-wrap:wrap;gap:8px 16px;margin:8px 0;}
+  .chk label{font-size:13px;font-weight:600;display:flex;align-items:center;gap:5px;}
+  .sub-in{margin:2px 0 8px;display:none;}
+  .sub-in.on{display:block;}
+  button{font:inherit;font-weight:700;cursor:pointer;border-radius:10px;border:0;padding:12px 20px;}
+  .go{background:var(--brand);color:#fff;font-size:15px;}
+  .cp{background:var(--accent);color:#fff;font-size:13px;padding:8px 14px;}
+  .dl{background:#fff;color:var(--brand);border:1.5px solid var(--brand);font-size:13px;padding:8px 14px;}
+  #out{white-space:pre-wrap;background:#0f1b30;color:#eef2f7;border-radius:12px;padding:16px 18px;font-family:ui-monospace,Menlo,monospace;font-size:13px;line-height:1.75;margin:14px 0 10px;}
+  #warn{background:#fff4e5;border:1.5px solid #e0a33c;border-radius:10px;padding:10px 14px;font-size:13px;color:#7a4a12;margin:10px 0;}
+  #warn:empty{display:none;}
+  .res{margin-top:22px;}
+  .res[hidden]{display:none;}
+  .row{display:flex;gap:8px;flex-wrap:wrap;}
+  footer{font-size:12px;color:var(--mid);margin-top:26px;border-top:1px solid var(--line);padding-top:12px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>"惜しい"を"バッチリ"に変える 指示リライターアプリ</h1>
+  <p class="sub">曖昧な依頼を、AIが推測しなくて済む「仕様」に組み替えます。空欄が多いほど、AIは勝手に推測します。埋められる枠だけでも埋めてください。</p>
+
+  <fieldset>
+    <legend>0. いまの言い方（そのまま）</legend>
+    <label class="f" for="raw">AIに頼みたいこと</label>
+    <textarea id="raw" placeholder="例）議事録をいい感じにまとめて"></textarea>
+  </fieldset>
+
+  <fieldset>
+    <legend>1. 目的（最終的に何ができれば成功か）</legend>
+    <input type="text" id="goal" placeholder="例）欠席者が5分で追いつける議事録にしたい">
+    <p class="hint">「誰が・何のために使うか」まで書くと、AIの推測が一段減ります。</p>
+  </fieldset>
+
+  <fieldset>
+    <legend>2. 成功条件（どうなったら「できた」と言えるか）</legend>
+    <input type="text" id="done" placeholder="例）決定事項と宿題（担当・期限つき）が抜けていない">
+    <p class="hint">チェックできる形（〜が入っている／〜が◯件以内 等）で書くと、あとで見比べられます。</p>
+  </fieldset>
+
+  <fieldset>
+    <legend>3. 制約（当てはまるものにチェック → 中身を記入）</legend>
+    <div class="chk">
+      <label><input type="checkbox" data-t="len"> 分量</label>
+      <label><input type="checkbox" data-t="fmt"> 形式</label>
+      <label><input type="checkbox" data-t="tone"> トーン・文体</label>
+      <label><input type="checkbox" data-t="due"> 締切・スピード</label>
+      <label><input type="checkbox" data-t="tech"> 使う道具・前提</label>
+      <label><input type="checkbox" data-t="read"> 読む人</label>
+    </div>
+    <div class="sub-in" data-for="len"><input type="text" id="c_len" placeholder="分量：例）A4半ページ以内 / 400字前後"></div>
+    <div class="sub-in" data-for="fmt"><input type="text" id="c_fmt" placeholder="形式：例）箇条書き / 表 / 見出しつき本文"></div>
+    <div class="sub-in" data-for="tone"><input type="text" id="c_tone" placeholder="トーン：例）敬体・事務的 / やわらかく / 専門用語は避ける"></div>
+    <div class="sub-in" data-for="due"><input type="text" id="c_due" placeholder="締切：例）まず粗い叩き台を先に / 今日中"></div>
+    <div class="sub-in" data-for="tech"><input type="text" id="c_tech" placeholder="道具・前提：例）このファイルだけを使う / 検索はしない / Python想定"></div>
+    <div class="sub-in" data-for="read"><input type="text" id="c_read" placeholder="読む人：例）出席していない上司 / 初めて見る人"></div>
+  </fieldset>
+
+  <fieldset>
+    <legend>4. やらないこと（触ってほしくない範囲）</legend>
+    <input type="text" id="ng" placeholder="例）雑談の要約は不要 / 既存の見出し構成は変えない">
+  </fieldset>
+
+  <fieldset>
+    <legend>5. 出力形式</legend>
+    <select id="shape">
+      <option value="">（指定しない）</option>
+      <option>箇条書き</option>
+      <option>表</option>
+      <option>見出しつきの本文</option>
+      <option>コード（コメントつき）</option>
+      <option>2案を並べて比較</option>
+    </select>
+  </fieldset>
+
+  <button class="go" id="build">仕様に組み替える</button>
+
+  <div class="res" id="res" hidden>
+    <div id="warn"></div>
+    <div id="out"></div>
+    <div class="row">
+      <button class="cp" id="copy">コピー</button>
+      <button class="dl" id="download">.txt で保存</button>
+    </div>
+  </div>
+
+  <footer>使い方：この画面で埋める → 「仕様に組み替える」→ コピーして、いつものAIチャットの最初に貼る。最初の出力は“叩き台”として受け取り、気になる差分だけ直す。すべてこの画面の中で完結します（送信・保存はされません）。</footer>
+</div>
+
+<script>
+  // 制約チェックで入力欄を開閉
+  document.querySelectorAll('.chk input[type=checkbox]').forEach(cb=>{
+    cb.addEventListener('change',()=>{
+      const box=document.querySelector('.sub-in[data-for="'+cb.dataset.t+'"]');
+      box.classList.toggle('on',cb.checked);
+      if(!cb.checked) box.querySelector('input').value='';
+    });
+  });
+
+  const val=id=>document.getElementById(id).value.trim();
+
+  function build(){
+    const raw=val('raw'), goal=val('goal'), done=val('done'), ng=val('ng'), shape=val('shape');
+    const cons=[];
+    [['len','c_len'],['fmt','c_fmt'],['tone','c_tone'],['due','c_due'],['tech','c_tech'],['read','c_read']]
+      .forEach(([t,id])=>{ const v=val(id); if(v) cons.push('- '+v); });
+
+    const L=[];
+    L.push('# 依頼（先に読んでから作業して）');
+    L.push('');
+    if(raw) L.push('やりたいこと：'+raw);
+    L.push('目的：'+(goal||'〔未記入 → ここはあなたの推測に任せます。1案で決め打ちせず、前提を1行添えて〕'));
+    L.push('成功条件：'+(done||'〔未記入 → 「できた」と言える基準を、作業前にあなたから2つ提案して〕'));
+    L.push('');
+    L.push('制約：');
+    L.push(cons.length? cons.join('\n') : '- 〔特になし。ただし一般的に無難な範囲で〕');
+    L.push('');
+    L.push('やらないこと：'+(ng||'〔特に指定なし。ただし依頼の範囲を勝手に広げない〕'));
+    if(shape) L.push('出力形式：'+shape);
+    L.push('');
+    L.push('進め方：');
+    L.push('1. まず、上の内容で不明な点・私が決めるべき点を箇条書きで指摘して。');
+    L.push('2. 次に、粗くていいので叩き台を1つ出して。');
+    L.push('3. 私が差分を指示するので、そこだけ直して。全体を作り直さないで。');
+
+    const text=L.join('\n');
+    document.getElementById('out').textContent=text;
+
+    const miss=[];
+    if(!goal) miss.push('目的');
+    if(!done) miss.push('成功条件');
+    if(cons.length===0) miss.push('制約');
+    const w=document.getElementById('warn');
+    w.textContent = miss.length
+      ? '空いている枠：「'+miss.join('」「')+'」。ここが空だと、その分だけAIが推測します（＝"惜しいけど違う"の原因）。可能なら埋めてから使ってください。'
+      : '';
+    document.getElementById('res').hidden=false;
+    document.getElementById('res').scrollIntoView({behavior:'smooth',block:'start'});
+    return text;
+  }
+
+  document.getElementById('build').addEventListener('click',build);
+  document.getElementById('copy').addEventListener('click',async()=>{
+    const t=document.getElementById('out').textContent;
+    try{ await navigator.clipboard.writeText(t); document.getElementById('copy').textContent='コピーしました'; setTimeout(()=>document.getElementById('copy').textContent='コピー',1500); }
+    catch(e){ const r=document.createRange(); r.selectNode(document.getElementById('out')); getSelection().removeAllRanges(); getSelection().addRange(r); }
+  });
+  document.getElementById('download').addEventListener('click',()=>{
+    const t=document.getElementById('out').textContent;
+    const b=new Blob([t],{type:'text/plain;charset=utf-8'});
+    const a=document.createElement('a'); a.href=URL.createObjectURL(b); a.download='shiji-spec.txt';
+    document.body.appendChild(a); a.click(); a.remove();
+  });
+</script>
+</body>
+</html>
