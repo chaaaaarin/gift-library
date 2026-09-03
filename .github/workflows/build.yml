@@ -1,0 +1,119 @@
+name: プレゼント図書館の自動更新
+
+# Macが落ちていても毎日更新されるようにするためのビルド。
+# このリポジトリ(非公開)にはビルドに必要なもの一式が入っており、
+# 成果物だけを公開リポジトリ(gift-library)へ push する。
+# Mac側の launchd と出力は完全に一致する（アイコンのdata URIを事前計算してあるため）。
+
+on:
+  # 動画の公開は19:00 JST。Mac側(19:12/20:10)と交互になるよう配置してある。
+  # GitHubのスケジュール実行は5〜20分遅れるのが普通で、特に :00 と :30 は
+  # 全世界のワークフローが集中して最も遅れるため、半端な分を選んでいる。
+  # 22:23はMac側もActionsの前2回も全滅した日を拾うための締め。
+  schedule:
+    - cron: '25 10 * * *'   # 19:25 JST
+    - cron: '10 12 * * *'   # 21:10 JST
+    - cron: '23 13 * * *'   # 22:23 JST
+  workflow_dispatch:
+
+concurrency:
+  group: gift-library-build
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: ソース一式を取得
+        uses: actions/checkout@v4
+
+      - name: 公開リポジトリを取得
+        uses: actions/checkout@v4
+        with:
+          repository: chaaaaarin/gift-library
+          path: public
+          ssh-key: ${{ secrets.GIFT_LIBRARY_DEPLOY_KEY }}
+
+      - name: 動画データを更新（シート・YouTube）
+        run: python3 scripts/refresh_data.py
+
+      - name: サイトをビルド
+        env:
+          GIFT_SHOOT_DIR: ${{ github.workspace }}/kits
+        run: |
+          set -euo pipefail
+          python3 build.py | tee build.log
+          # 投稿日を過ぎているのに動画が特定できない回＝プレゼントが出ていない回。
+          # 配布回の急減にはならないため、明示的に拾わないと誰も気づけない。
+          if grep -q '\[要確認\]' build.log; then
+            echo "::warning::投稿日を過ぎたのに動画IDが特定できない回があります（その回のプレゼントは公開されていません）"
+          fi
+
+      - name: 配布回が急減していないか確認
+        run: |
+          set -euo pipefail
+          for c in cc aa; do
+            new=$(grep -o '"date":"' "$c/data.js" | wc -l | tr -d ' ')
+            old=$(grep -o '"date":"' "public/$c/data.js" | wc -l | tr -d ' ')
+            echo "$c: 公開中 ${old}回 → 今回 ${new}回"
+            # 撮影資料の取り違えや読み取り失敗のまま公開してしまうのを防ぐ
+            if [ "$old" -gt 0 ] && [ "$new" -lt $((old * 8 / 10)) ]; then
+              echo "::error::$c の配布回が ${old} → ${new} に急減したため公開を見送りました"
+              exit 1
+            fi
+          done
+
+      - name: 公開リポジトリへ反映
+        working-directory: public
+        run: |
+          set -euo pipefail
+          rsync -a --delete ../cc/ cc/
+          rsync -a --delete ../aa/ aa/
+
+          # 外部監視用のハートビート。1日1回だけ書き換える。
+          today=$(TZ=Asia/Tokyo date +%Y-%m-%d)
+          prev=$(grep -o '"date":"[0-9-]*"' status.json 2>/dev/null | grep -o '[0-9-]\{10\}' || true)
+          if [ "$prev" != "$today" ]; then
+            printf '{"date":"%s","time":"%s","cc_latest":"%s","aa_latest":"%s"}\n' \
+              "$today" "$(TZ=Asia/Tokyo date '+%Y-%m-%d %H:%M:%S')" \
+              "$(grep -o '"date":"[0-9-]*"' cc/data.js | sort -u | tail -1 | grep -o '[0-9-]\{10\}')" \
+              "$(grep -o '"date":"[0-9-]*"' aa/data.js | sort -u | tail -1 | grep -o '[0-9-]\{10\}')" \
+              > status.json
+          fi
+
+          git config user.name "gift-library bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add cc aa status.json
+
+          if git diff --cached --quiet; then
+            echo "変更なし（公開内容は既に最新）"
+          else
+            git commit -m "自動更新 $today"
+            git push
+            echo "push完了"
+          fi
+
+      - name: 実際に公開されたか検証
+        run: |
+          set -euo pipefail
+          BASE="https://chaaaaarin.github.io/gift-library"
+
+          matches() {
+            for c in cc aa; do
+              for f in index.html data.js; do
+                lh=$(sha256sum "$c/$f" | cut -d' ' -f1)
+                ph=$(curl -fsS --max-time 30 -H 'Cache-Control: no-cache' \
+                       "$BASE/$c/$f?t=$(date +%s)-$RANDOM" 2>/dev/null | sha256sum | cut -d' ' -f1)
+                [ "$lh" = "$ph" ] || return 1
+              done
+            done
+          }
+
+          # push が通っても GitHub Pages のビルドが落ちれば公開されない。
+          for i in $(seq 1 10); do
+            if matches; then echo "公開を確認しました"; exit 0; fi
+            echo "未反映。30秒待って再確認（${i}/10）"
+            sleep 30
+          done
+          echo "::error::pushは済んでいますが、5分待っても公開ページが最新になりません（Pagesのビルド失敗の可能性）"
+          exit 1

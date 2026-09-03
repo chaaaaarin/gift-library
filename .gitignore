@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+preview/
+.preview_token
+.update.lock/
+logs/
+.git-src/

@@ -1,0 +1,567 @@
+# -*- coding: utf-8 -*-
+"""配布サイトの共通スタイルシート。
+
+見た目はCCチャンネル資料（テンプレート/present.html・kit-page.html）の語彙に寄せる:
+左5pxのブランド罫・丸ピルのボタンとバッジ・M PLUS Rounded 900の見出し・濃色のpre・丸アイコン。
+チャンネル配色は :root 変数で差し替える。
+"""
+
+_CSS = r"""@import url('__FONT_URL__');
+:root{__VARS__
+--head:__FONT__;--r:18px;
+--sh:0 1px 2px rgba(20,20,35,.04),0 10px 26px rgba(20,20,35,.07);
+--sh-lg:0 4px 10px rgba(20,20,35,.06),0 20px 44px rgba(20,20,35,.12);
+--sh-hover:0 6px 14px rgba(20,20,35,.08),0 26px 54px rgba(20,20,35,.14);}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--ink);line-height:1.7;
+font-family:'Noto Sans JP',-apple-system,BlinkMacSystemFont,'Hiragino Sans',sans-serif;
+font-size:15px;-webkit-font-smoothing:antialiased;
+overscroll-behavior-y:none;-webkit-text-size-adjust:100%;text-size-adjust:100%;}
+a{color:inherit;text-decoration:none;}
+a,button,input,select,summary,label,.kchip,.ep{-webkit-tap-highlight-color:transparent;}
+.nb{display:inline-block;}
+.hidden{display:none;}
+a:focus-visible,button:focus-visible,summary:focus-visible{
+outline:2px solid var(--brand);outline-offset:2px;border-radius:10px;}
+
+/* ---------- ヘッダ ---------- */
+header{position:sticky;top:0;z-index:40;background:var(--paper);
+box-shadow:0 1px 0 rgba(20,20,35,.06),0 4px 16px rgba(20,20,35,.05);padding:12px 28px;}
+header .top{display:flex;align-items:center;gap:14px;flex-wrap:wrap;
+max-width:1180px;margin:0 auto;}
+header img{width:38px;height:38px;border-radius:12px;border:none;
+box-shadow:0 3px 10px rgba(20,20,35,.16);object-fit:cover;flex-shrink:0;}
+header .ttl{font-family:var(--head);font-weight:900;font-size:19px;word-break:auto-phrase;
+color:var(--brand-deep);line-height:1.2;}
+header .ttl small{display:block;font-size:11.5px;color:var(--ink-mid);font-weight:500;}
+.tnav{display:flex;gap:8px;margin-left:auto;flex-wrap:wrap;}
+.tnav a{font-family:var(--head);font-weight:900;font-size:12.5px;color:var(--brand-deep);
+background:var(--bg);border:none;border-radius:999px;padding:6px 14px;
+transition:.15s;white-space:nowrap;}
+.tnav a:hover{background:var(--brand-soft);}
+.tnav a b{font-weight:500;font-size:11px;color:var(--ink-mid);margin-left:4px;}
+
+/* ---------- hero ---------- */
+.wrap{max-width:1180px;margin:0 auto;padding:0 28px;}
+.hero{padding:44px 0 8px;text-align:center;}
+.hero .eyebrow{font-size:11px;letter-spacing:.2em;font-weight:900;color:var(--brand);
+margin-bottom:12px;font-family:var(--head);}
+.hero h1{font-family:var(--head);font-weight:900;font-size:36px;color:var(--brand-deep);
+line-height:1.3;margin-bottom:14px;}
+.hero p{font-size:14.5px;color:var(--ink-mid);max-width:680px;margin:0 auto;line-height:1.95;}
+
+/* ---------- 統計バー ---------- */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);background:var(--paper);
+border-radius:20px;overflow:hidden;margin:30px 0 22px;box-shadow:var(--sh);}
+.stats.filtered{grid-template-columns:repeat(5,1fr);}
+.stats div{padding:18px 18px;border-right:1px solid rgba(20,20,35,.06);}
+.stats div:last-child{border-right:0;}
+.stats b{display:block;font-family:var(--head);font-size:26px;font-weight:900;
+line-height:1.25;color:var(--brand-deep);}
+.stats span:not(.nb){font-size:11.5px;color:var(--ink-mid);font-weight:700;}
+
+/* ---------- モバイルの貼り付きツールバー＋絞り込みシート ----------
+   スマホでは、検索と絞り込みをヘッダ直下に貼り付く1本のバーへ集約し、
+   種別・並び順・おすすめ診断は下からせり上がるシートに入れる（アプリの作法）。
+   広い画面ではどれも出さず、従来どおり左サイドの絞り込みを使う。
+   .mstick は広い画面では display:contents で「無い」ものとして扱う。 */
+.mstick{display:contents;}
+.mtoolbar,.sheet-head,.sheet-apply,.sheet-backdrop{display:none;}
+
+/* ---------- 2カラム ---------- */
+.cols{display:grid;grid-template-columns:236px 1fr;gap:26px;align-items:start;
+padding-bottom:60px;}
+/* top は貼り付いたときの位置。月ナビ(sticky top:62px・高さ約33px)の下に来るようにする。
+   初期位置は .cols の上端のままなので、一覧カードとの上端そろえは崩れない。 */
+/* 高さ制限＋内部スクロール: おすすめ診断を開くとサイドが画面より高くなり、
+   貼り付いたまま下部（＝診断結果）が画面外に固定されて見られなくなるため。 */
+.side{position:sticky;top:100px;max-height:calc(100vh - 116px);overflow-y:auto;
+overscroll-behavior:contain;background:var(--paper);border:none;
+border-radius:20px;padding:20px 18px;box-shadow:var(--sh);}
+.side h3{font-family:var(--head);font-size:13px;font-weight:900;color:var(--brand-deep);
+margin-bottom:9px;}
+.side .grp{margin-bottom:20px;}
+.side .grp:last-child{margin-bottom:0;}
+#q{width:100%;padding:10px 14px;border:1px solid rgba(20,20,35,.09);border-radius:999px;
+font-size:13px;background:var(--bg);color:var(--ink);font-family:inherit;transition:.15s;}
+#q:focus{outline:none;border-color:var(--brand);background:var(--paper);box-shadow:0 0 0 3px var(--brand-soft);}
+.side label{display:flex;align-items:center;gap:8px;font-size:12.5px;padding:5px 8px;
+cursor:pointer;color:var(--ink-mid);border-radius:10px;transition:.12s;}
+.side label:hover{color:var(--ink);background:var(--bg);}
+.side label:has(input:checked){background:var(--brand-soft);color:var(--ink);font-weight:700;}
+.side input[type=radio]{appearance:none;-webkit-appearance:none;width:16px;height:16px;
+border-radius:50%;border:1.5px solid rgba(20,20,35,.2);background:var(--paper);
+display:grid;place-items:center;margin:0;flex-shrink:0;cursor:pointer;transition:.15s;}
+.side input[type=radio]::after{content:'';width:8px;height:8px;border-radius:50%;
+background:var(--brand);transform:scale(0);transition:transform .15s;}
+.side input[type=radio]:checked{border-color:var(--brand);}
+.side input[type=radio]:checked::after{transform:scale(1);}
+.side input[type=radio]:focus-visible{outline:2px solid var(--brand);outline-offset:2px;}
+.side label .n{margin-left:auto;font-size:10.5px;opacity:.7;font-weight:700;}
+.type-grp h3{font-family:var(--head);font-size:13px;font-weight:900;
+color:var(--brand-deep);margin-bottom:9px;}
+.selwrap{position:relative;}
+.selwrap::after{content:'';position:absolute;right:14px;top:50%;transform:translateY(-50%);
+width:10px;height:10px;pointer-events:none;background:var(--ink-mid);
+-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M5 7l5 5 5-5' fill='none' stroke='%23000' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat center/contain;
+mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M5 7l5 5 5-5' fill='none' stroke='%23000' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat center/contain;}
+#sort{width:100%;padding:9px 34px 9px 14px;border:1px solid rgba(20,20,35,.09);border-radius:999px;
+font-size:12.5px;background:var(--bg);color:var(--ink);font-family:inherit;cursor:pointer;
+appearance:none;-webkit-appearance:none;transition:.15s;}
+#sort:focus{outline:none;border-color:var(--brand);box-shadow:0 0 0 3px var(--brand-soft);}
+/* 検索欄・並び順の薄いピルと同色だと「操作ボタン」に見えないので、
+   「▶ 動画を見る」と同じ濃色＋白抜きにして区別する。 */
+.reset{width:100%;margin-top:10px;padding:9px;border:none;background:var(--brand);
+border-radius:999px;font-size:12px;color:#fff;cursor:pointer;
+font-family:var(--head);font-weight:900;transition:.15s;box-shadow:0 3px 10px var(--brand-soft);}
+.reset:hover{background:var(--brand-deep);transform:translateY(-1px);}
+
+.badge{display:inline-block;background:var(--brand);color:#fff;font-family:var(--head);
+font-weight:900;font-size:12px;border-radius:999px;padding:3px 12px;white-space:nowrap;}
+.empty{padding:70px 20px;text-align:center;color:var(--ink-mid);font-size:14px;}
+.empty svg{width:44px;height:44px;color:var(--brand);opacity:.35;margin-bottom:14px;}
+.empty p{margin:0;line-height:1.9;}
+
+/* ---------- エピソード（動画単位）カード ---------- */
+.eplist{display:flex;flex-direction:column;gap:18px;}
+.ep{display:grid;grid-template-columns:220px 1fr;gap:20px;background:var(--paper);
+border:none;border-radius:22px;
+padding:18px;box-shadow:var(--sh);transition:box-shadow .2s,transform .2s;}
+.ep:hover{box-shadow:var(--sh-hover);transform:translateY(-2px);}
+.ep-left{display:flex;flex-direction:column;gap:14px;}
+.ep-thumb{position:relative;border-radius:11px;overflow:hidden;background:var(--bg);
+aspect-ratio:16/9;flex-shrink:0;}
+.ep-thumb img{width:100%;height:100%;object-fit:cover;display:block;}
+.ep-thumb .noimg{width:100%;height:100%;display:grid;place-items:center;
+color:var(--brand);opacity:.35;}
+.ep-thumb .noimg svg{width:34%;height:34%;}
+.upbadge{position:absolute;top:8px;right:8px;background:var(--ink);color:#fff;
+font-family:var(--head);font-weight:900;font-size:10.5px;padding:3px 9px;border-radius:999px;}
+.ep-body{display:flex;flex-direction:column;min-width:0;}
+.ep-date{font-size:12px;font-weight:700;color:var(--ink-mid);margin-bottom:3px;
+display:flex;align-items:center;gap:8px;}
+.newbadge{font-family:var(--head);font-weight:900;font-size:10px;letter-spacing:.06em;
+color:#fff;background:var(--accent-deep);border-radius:999px;padding:2px 8px;}
+.ep-title{font-family:var(--head);font-weight:900;font-size:17px;color:var(--ink);
+line-height:1.5;margin:0 0 12px;word-break:auto-phrase;line-break:strict;}
+.ep-kits{display:flex;flex-direction:column;gap:8px;margin-top:auto;}
+.kchip{display:flex;align-items:center;gap:9px;background:var(--bg);
+border:none;border-radius:14px;padding:8px 11px 8px 8px;
+font-size:12.5px;color:var(--ink);transition:.15s;}
+.kchip:hover{background:var(--brand-soft);transform:translateX(2px);}
+.kchip .ic{width:26px;height:26px;flex:0 0 26px;border-radius:9px;background:var(--paper);
+color:var(--brand-deep);display:grid;place-items:center;box-shadow:0 1px 4px rgba(20,20,35,.08);}
+.kchip .ic svg{width:14px;height:14px;}
+.kchip .kt{font-weight:700;flex:1 1 auto;min-width:0;word-break:auto-phrase;line-break:strict;}
+.kchip .badge{font-size:10.5px;padding:2px 8px;flex:0 0 auto;}
+.kchip .go{font-family:var(--head);font-weight:900;color:var(--brand-deep);font-size:11px;
+flex:0 0 auto;white-space:nowrap;background:var(--paper);border-radius:999px;
+padding:5px 11px;box-shadow:0 1px 3px rgba(20,20,35,.1);transition:.15s;}
+.kchip:hover .go{background:var(--brand);color:#fff;box-shadow:0 2px 6px var(--brand-soft);}
+.watch{align-self:stretch;text-align:center;font-family:var(--head);font-weight:900;
+font-size:12.5px;color:#fff;background:var(--brand);
+border:none;border-radius:999px;padding:10px 14px;box-shadow:0 4px 12px var(--brand-soft);
+transition:.15s;}
+.watch:hover{background:var(--brand-deep);transform:translateY(-1px);}
+/* 「動画を見る」の下に並ぶ、その回の解説資料への副ボタン（資料・スライド・1枚資料）。
+   watch より軽い見た目にして、主導線（プレゼント）と競合させない。 */
+.ep-docs{display:flex;flex-wrap:wrap;gap:6px;}
+.docbtn{flex:1 1 auto;text-align:center;white-space:nowrap;font-family:var(--head);
+font-weight:900;font-size:11px;color:var(--brand-deep);background:var(--bg);
+border-radius:999px;padding:6px 10px;transition:.15s;}
+.docbtn:hover{background:var(--brand-soft);transform:translateY(-1px);}
+/* この回のプレゼントを全部ダウンロード */
+.epbundle{display:block;margin-top:10px;text-align:center;font-family:var(--head);
+font-weight:900;font-size:11.5px;color:var(--brand-deep);background:var(--brand-soft);
+border-radius:12px;padding:9px 12px;transition:.15s;}
+.epbundle:hover{background:var(--brand);color:#fff;}
+.epctx .epbundle{margin-top:12px;}
+/* 月ナビ（❮ 2026年8月 ❯）。2カラムの上に置く細い行。サイドと一覧カードの上端が
+   そろうように、枠は持たせず小さく・左寄せで、ヘッダ(約62px)直下に貼り付く。
+   地の色（--bg）を下へフェードさせて、スクロールで潜る中身だけ隠す。 */
+.monthbar{position:sticky;top:62px;z-index:30;display:flex;align-items:center;
+gap:3px;margin:0 0 8px;padding:5px 2px 8px;
+background:linear-gradient(var(--bg) 72%,transparent);}
+.monthbar[hidden]{display:none;}
+.mb-label{font-family:var(--head);font-weight:900;font-size:12px;color:var(--ink-mid);
+letter-spacing:.02em;}
+.mb-arrow{width:22px;height:22px;flex:0 0 22px;border:none;border-radius:50%;
+background:none;color:var(--ink-mid);font-size:10px;line-height:1;cursor:pointer;
+font-family:var(--head);font-weight:900;display:grid;place-items:center;transition:.12s;}
+.mb-arrow:hover:not(:disabled){background:var(--brand-soft);color:var(--brand-deep);}
+.mb-arrow:disabled{opacity:.22;cursor:default;}
+/* 月の先頭カードへ飛んだとき、ヘッダ＋月ナビ(計約95px)の下に隠れない */
+.ep[id^="m-"]{scroll-margin-top:96px;}
+
+/* ---------- 受け取りページ ---------- */
+.kh .top{max-width:1000px;}
+.kh h1{font-family:var(--head);font-weight:900;font-size:17px;color:var(--brand-deep);
+margin:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0;}
+.back{font-family:var(--head);font-weight:900;font-size:12.5px;color:var(--brand-deep);
+background:var(--bg);border:none;border-radius:999px;padding:6px 14px;
+white-space:nowrap;flex-shrink:0;transition:.15s;}
+.back:hover{background:var(--brand-soft);}
+.btn{display:inline-flex;align-items:center;gap:6px;background:var(--brand);
+border:none;color:#fff;border-radius:999px;padding:9px 18px;
+font-weight:900;font-size:13.5px;cursor:pointer;font-family:'Noto Sans JP';
+white-space:nowrap;transition:.15s;box-shadow:0 3px 10px var(--brand-soft);}
+.btn:hover{background:var(--brand-deep);transform:translateY(-1px);box-shadow:0 5px 14px var(--brand-soft);}
+.btn.ghost{background:var(--bg);color:var(--brand-deep);box-shadow:none;}
+.btn.ghost:hover{background:var(--brand-soft);transform:none;}
+.btn.sm{padding:7px 15px;font-size:12.5px;}
+.btn.ok{background:#2E7D5B;color:#fff;}
+.kwrap{max-width:1000px;margin:0 auto;padding:0 28px 70px;}
+.kintro{padding:34px 0 4px;}
+.kintro h2{font-family:var(--head);font-weight:900;font-size:29px;color:var(--brand-deep);
+line-height:1.35;margin-bottom:12px;word-break:auto-phrase;line-break:strict;}
+.kintro p{color:var(--ink-mid);font-size:14.5px;line-height:1.95;max-width:720px;}
+.kmeta{display:flex;gap:8px;flex-wrap:wrap;margin-top:15px;font-size:11.5px;}
+.kmeta span:not(.nb){background:var(--paper);box-shadow:var(--sh);border-radius:999px;
+padding:4px 13px;font-weight:700;color:var(--ink-mid);}
+.pnote{margin:22px 0 6px;padding:16px 20px;background:var(--brand-soft);
+border:none;border-radius:16px;font-size:13.5px;color:var(--ink);}
+
+/* ---------- 受け取りページ: アプリ埋め込み ---------- */
+.appwrap{margin:22px 0;border-radius:20px;overflow:hidden;box-shadow:var(--sh-lg);}
+.appframe{width:100%;min-height:260px;border:none;
+background:#fff;display:block;}
+
+/* ---------- 受け取りページ: 動画コンテキスト ---------- */
+.epctx{margin:26px 0;padding:18px;background:var(--paper);border:none;
+border-radius:18px;box-shadow:var(--sh);}
+.epctx-top{display:grid;grid-template-columns:150px 1fr;gap:16px;align-items:start;}
+.epctx-thumb{border-radius:12px;overflow:hidden;aspect-ratio:16/9;background:var(--bg);}
+.epctx-thumb img{width:100%;height:100%;object-fit:cover;display:block;}
+.epctx-label{font-size:11.5px;font-weight:800;color:var(--ink-mid);margin:0 0 4px;}
+.epctx-title{font-family:var(--head);font-weight:900;font-size:15.5px;color:var(--ink);
+line-height:1.5;margin:0 0 4px;word-break:auto-phrase;line-break:strict;}
+.epctx-date{font-size:12px;color:var(--ink-mid);margin:0;}
+.epctx .ep-kits{margin-top:12px;}
+h2.cat{display:flex;align-items:center;gap:9px;font-family:var(--head);font-weight:900;
+font-size:21px;color:var(--ink);margin:40px 0 16px;}
+h2.cat::before{content:'';width:9px;height:9px;border-radius:50%;background:var(--brand);
+flex-shrink:0;}
+h2.cat i{font-style:normal;font-size:12.5px;color:var(--ink-mid);font-weight:700;margin-left:2px;}
+/* 項目の多いキットの絞り込み。スクロールしても使えるよう、ヘッダの下に貼り付ける */
+.ktools{position:sticky;top:var(--hdr,62px);z-index:30;background:var(--bg);
+padding:12px 0 12px;margin:4px 0 10px;display:flex;flex-direction:column;gap:9px;
+box-shadow:0 14px 16px -8px rgba(20,20,35,.16);}
+#kq{width:100%;padding:10px 14px;border:1px solid rgba(20,20,35,.09);border-radius:999px;
+font-size:13px;background:var(--paper);color:var(--ink);font-family:inherit;transition:.15s;}
+#kq:focus{outline:none;border-color:var(--brand);box-shadow:0 0 0 3px var(--brand-soft);}
+/* 広い画面ではカテゴリを折り返して見せる（横スクロールで端が切れて探しにくかった）。
+   貼り付いたツールバーが伸びすぎないよう2行ぶんで頭打ちにし、多い時だけ縦スクロール。
+   狭い画面は横スクロールのまま、右端をフェードして「続きがある」ことを示す。 */
+.kcats{display:flex;flex-wrap:wrap;gap:7px;padding-bottom:2px;
+max-height:78px;overflow-y:auto;overscroll-behavior:contain;}
+.kcat{flex-shrink:0;font-family:inherit;font-size:11.5px;font-weight:700;color:var(--ink-mid);
+background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:5px 11px;
+cursor:pointer;display:flex;align-items:center;gap:6px;transition:.15s;}
+.kcat:hover{border-color:var(--brand);color:var(--brand-deep);}
+.kcat:focus-visible{outline:none;border-color:var(--brand);box-shadow:0 0 0 3px var(--brand-soft);}
+.kcat.on{background:var(--brand);border-color:var(--brand);color:#fff;}
+.kcat .n{font-size:10.5px;opacity:.72;}
+.khit{font-size:12px;color:var(--ink-mid);margin:0;min-height:1.1em;}
+.icard.hide,h2.cat.hide{display:none;}
+/* 検索で当たった項目の名指し（一覧側） */
+.khit-in{display:block;font-size:11px;font-weight:700;color:var(--brand-deep);
+margin-top:3px;line-height:1.5;}
+/* 名指しリンク（#i37）で飛んできたとき、貼り付いた要素の下に隠れないようにする。
+   ヘッダだけのページと、絞り込みツールバーもあるページで必要な余白が違う
+   （実測: ヘッダ62px / ツールバー141px）。 */
+.icard{scroll-margin-top:74px;}
+.ktools ~ .icard{scroll-margin-top:215px;}
+.icard:target,.icard.flashme{box-shadow:0 0 0 2px var(--brand),var(--sh);}
+.icard{background:var(--paper);border:none;
+border-radius:18px;padding:18px 20px;margin-bottom:14px;box-shadow:var(--sh);
+transition:box-shadow .2s;}
+.icard:hover{box-shadow:var(--sh-hover);}
+.ih{display:flex;align-items:baseline;gap:10px;margin-bottom:6px;}
+.num{font-family:var(--head);font-weight:900;font-size:12px;color:#fff;background:var(--brand);
+border-radius:999px;padding:2px 10px;flex-shrink:0;}
+.ititle{font-family:var(--head);font-weight:900;font-size:16px;color:var(--ink);
+line-height:1.5;word-break:auto-phrase;line-break:strict;}
+.imeta{font-size:13px;color:var(--ink-mid);margin-bottom:12px;line-height:1.75;}
+/* チェックリストの行。押すと済みになる（コピー内容は変えていない） */
+.cline{display:inline-block;cursor:pointer;border-radius:6px;padding:1px 4px;margin:0 -4px;
+transition:.12s;}
+.cline:hover{background:rgba(255,255,255,.10);}
+.cline:active{background:rgba(255,255,255,.18);}
+.cline .cbx{font-weight:700;color:#8FE0B4;}
+.cline.on .cbx{color:inherit;}
+.cline.on{opacity:.45;text-decoration:line-through;text-decoration-thickness:1px;}
+.cline.on .cbx{text-decoration:none;display:inline-block;}
+.cprog{display:flex;align-items:center;gap:12px;font-family:var(--head);font-weight:900;
+font-size:12px;color:var(--brand-deep);margin-bottom:10px;}
+.creset{font-family:inherit;font-size:11px;font-weight:700;color:var(--ink-mid);
+background:none;border:none;cursor:pointer;text-decoration:underline;padding:0;}
+.creset:hover{color:var(--brand-deep);}
+pre.prompt{background:var(--ink);color:#ECECEA;border-radius:14px;padding:15px 17px;
+white-space:pre-wrap;word-break:break-word;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
+font-size:12.5px;line-height:1.7;max-height:340px;overflow-y:auto;margin-bottom:12px;
+box-shadow:inset 0 1px 3px rgba(0,0,0,.25);}
+.cbtns{display:flex;gap:8px;flex-wrap:wrap;}
+footer{padding:26px 0 40px;border-top:1px solid rgba(20,20,35,.07);font-size:12.5px;
+color:var(--ink-mid);text-align:center;margin-top:20px;}
+footer a{color:var(--brand-deep);font-weight:700;}
+
+/* ---------- Kawaruクロスプロモ（画面中央のアプリ案内モーダル） ----------
+   ホストサイトの配色（--brand等）は使わず、Kawaru自身のブランド色で固定表示する
+   （「これは他チャンネル・他サービスの広告」と視覚的に分かるように）。
+   アプリの新機能案内モーダルに寄せた見た目: 背景を暗くして中央にカード、
+   角丸スクエアのアプリアイコン、カード外に浮かせた大きい×。 */
+.promo{position:fixed;inset:0;z-index:500;display:flex;align-items:center;justify-content:center;
+padding:24px;background:rgba(14,20,32,.58);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px);
+opacity:0;pointer-events:none;transition:opacity .35s ease;}
+.promo.show{opacity:1;pointer-events:auto;}
+.promo-card{position:relative;width:min(94vw,360px);background:#fff;border-radius:26px;
+padding:38px 28px 28px;text-align:center;box-shadow:0 30px 70px rgba(0,0,0,.4);
+transform:scale(.88) translateY(10px);transition:transform .4s cubic-bezier(.2,.8,.2,1);}
+.promo.show .promo-card{transform:scale(1) translateY(0);}
+.promo-x{position:absolute;top:-16px;right:-16px;width:40px;height:40px;border:none;
+border-radius:50%;background:#fff;color:#2A3444;font-size:22px;line-height:1;cursor:pointer;
+box-shadow:0 6px 18px rgba(0,0,0,.28);display:grid;place-items:center;font-weight:700;}
+.promo-x:hover{background:#F3F4F6;color:#000;}
+/* 画像があるクリエイティブ用の横長枠。動画はサムネイル、LPはog:imageが入る。
+   丸アイコンだけだとどれも同じ広告に見えるため、絵で見分けられるようにした。 */
+.promo-banner{display:none;width:100%;aspect-ratio:16/9;object-fit:cover;
+border-radius:16px;margin:0 0 16px;background:rgba(20,20,35,.06);}
+.promo-icon{width:68px;height:68px;border-radius:20px;object-fit:cover;margin:0 auto 16px;
+box-shadow:0 8px 20px rgba(28,52,97,.25);display:block;}
+.promo-tag{margin:0 0 8px;font-weight:800;font-size:11px;letter-spacing:.03em;color:#2C7A93;
+background:rgba(91,188,212,.15);border-radius:999px;padding:4px 12px;display:inline-block;}
+.promo-title{margin:0 0 8px;font-weight:900;font-size:22px;color:#1C3461;
+font-family:'Noto Sans JP',sans-serif;letter-spacing:-.01em;}
+.promo-text{margin:0 0 22px;font-size:13.5px;color:#5A6478;line-height:1.7;}
+.promo-cta{display:flex;align-items:center;justify-content:center;gap:7px;
+background:#1C3461;color:#fff;font-weight:800;font-size:14.5px;border-radius:999px;
+padding:13px 20px;text-decoration:none;transition:transform .15s,background .15s;}
+.promo-cta:hover{background:#16284A;transform:translateY(-1px);}
+.promo-arrow{transition:transform .15s;}
+.promo-cta:hover .promo-arrow{transform:translateX(3px);}
+@media(max-width:600px){.promo{padding:16px 16px calc(16px + env(safe-area-inset-bottom));}.promo-card{padding:32px 22px 24px;}}
+
+@media(max-width:900px){
+  .cols{grid-template-columns:1fr;}
+  .stats{grid-template-columns:repeat(4,1fr);}
+  .stats.filtered{grid-template-columns:repeat(5,1fr);}
+  .stats div{padding:15px 6px;}
+  .stats b{font-size:21px;}
+  .stats span:not(.nb){font-size:10px;white-space:nowrap;letter-spacing:-.02em;}
+  .hero h1{font-size:26px;}
+  .kintro h2{font-size:23px;}
+  .ep{grid-template-columns:180px 1fr;}
+
+  /* --- ヘッダ直下の貼り付きツールバー（検索 ＋ 絞り込みボタン） --- */
+  :root{--hdr:58px;}
+  .mstick{display:block;position:sticky;top:var(--hdr,58px);z-index:35;
+    margin:0 0 8px;padding-top:6px;background:var(--bg);user-select:none;}
+  .mstick::after{content:'';position:absolute;left:0;right:0;top:100%;height:14px;
+    background:linear-gradient(var(--bg),transparent);pointer-events:none;}
+  .mtoolbar{display:flex;gap:8px;align-items:center;}
+  .mtb-search{flex:1;min-width:0;display:flex;align-items:center;gap:8px;height:46px;
+    padding:0 15px;background:var(--paper);border:1px solid var(--line);
+    border-radius:999px;box-shadow:var(--sh);transition:.15s;}
+  .mtb-search:focus-within{border-color:var(--brand);box-shadow:0 0 0 3px var(--brand-soft);}
+  .mtb-search svg{width:16px;height:16px;color:var(--ink-mid);flex-shrink:0;}
+  .mtb-search input{flex:1;min-width:0;border:none;background:none;outline:none;padding:0;
+    font-size:16px;font-family:inherit;color:var(--ink);}
+  .mtb-filter{display:flex;align-items:center;gap:6px;height:46px;padding:0 16px;
+    flex-shrink:0;white-space:nowrap;cursor:pointer;background:var(--paper);
+    border:1px solid var(--line);border-radius:999px;box-shadow:var(--sh);transition:.15s;
+    font-family:var(--head);font-weight:900;font-size:12.5px;color:var(--brand-deep);}
+  .mtb-filter svg{width:16px;height:16px;}
+  .mtb-filter.on{background:var(--brand);border-color:var(--brand);color:#fff;}
+  .mtb-filter .fbadge{display:grid;place-items:center;min-width:17px;height:17px;
+    padding:0 4px;border-radius:999px;background:var(--brand);color:#fff;
+    font-size:10px;font-weight:900;}
+  .mtb-filter .fbadge[hidden]{display:none;}
+  .mtb-filter.on .fbadge{background:#fff;color:var(--brand);}
+
+  /* 月ナビは mstick の中に入れて一緒に貼り付く（単独 sticky はやめる） */
+  .monthbar{position:static;top:auto;z-index:auto;background:none;margin:0;padding:6px 2px 2px;}
+  .mb-label{font-size:13px;min-width:7em;}
+  .mb-arrow{width:32px;height:32px;flex-basis:32px;font-size:11px;}
+  .ep[id^="m-"]{scroll-margin-top:150px;}
+
+  /* --- 下からせり上がる絞り込みシート --- */
+  .sheet-backdrop{display:block;position:fixed;inset:0;z-index:110;
+    background:rgba(20,20,35,.42);opacity:0;pointer-events:none;transition:opacity .3s;}
+  body.sheet-open .sheet-backdrop{opacity:1;pointer-events:auto;}
+  /* iOS Safari は body{overflow:hidden} だけでは背面スクロールが止まらない。
+     開くとき JS が top:-scrollY を入れて位置を固定し、閉じるとき戻す。 */
+  body.sheet-open{overflow:hidden;position:fixed;left:0;right:0;width:100%;}
+  .side{position:fixed;left:0;right:0;bottom:0;top:auto;z-index:120;width:auto;
+    max-height:84vh;overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;
+    border-radius:24px 24px 0 0;
+    padding:10px 18px calc(18px + env(safe-area-inset-bottom));
+    box-shadow:0 -12px 44px rgba(20,20,35,.24);visibility:hidden;
+    transform:translateY(110%);
+    transition:transform .34s cubic-bezier(.32,.72,0,1),visibility 0s linear .34s;}
+  body.sheet-open .side{transform:translateY(0);visibility:visible;
+    transition:transform .34s cubic-bezier(.32,.72,0,1);}
+  /* 横向きは高さが足りないので広めに取る */
+  @media(orientation:landscape){.side{max-height:92vh;}}
+  .side::before{content:'';display:block;width:38px;height:4px;border-radius:999px;
+    background:var(--line);margin:6px auto 10px;}
+  .sheet-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;}
+  .sheet-title{font-family:var(--head);font-weight:900;font-size:15px;color:var(--brand-deep);}
+  .sheet-close{border:none;background:var(--bg);width:32px;height:32px;border-radius:50%;
+    font-size:20px;line-height:1;color:var(--ink-mid);cursor:pointer;}
+  .sheet-apply{display:block;position:sticky;bottom:0;width:100%;margin-top:14px;padding:14px;
+    border:none;border-radius:14px;background:var(--brand);color:#fff;cursor:pointer;
+    font-family:var(--head);font-weight:900;font-size:14px;box-shadow:0 -10px 18px var(--paper);}
+  .sheet-apply:active{background:var(--brand-deep);}
+
+  /* シート内は幅に余裕があるので種別は折り返して全部見せる（横スクロールをやめる） */
+  .side .type-grp .grp-body{display:flex;flex-wrap:wrap;gap:7px;overflow:visible;padding-bottom:0;}
+  .side .type-grp label{flex-shrink:0;padding:7px 13px;border:1px solid var(--line);
+    border-radius:999px;background:var(--bg);gap:6px;}
+  .side .type-grp label:has(input:checked){background:var(--brand);border-color:var(--brand);color:#fff;}
+  /* ラジオは見た目だけ隠す（display:none だとキーボードで種別を選べない）。 */
+  .side .type-grp input[type=radio]{position:absolute;width:1px;height:1px;opacity:0;pointer-events:none;margin:0;}
+  .side .type-grp label:has(input:focus-visible){outline:2px solid var(--brand);outline-offset:2px;}
+  .side .type-grp label .n{margin-left:0;}
+  .side label{font-size:13px;padding:8px 10px;}
+  #q,#sort{font-size:16px;}
+  /* シート内では「この条件で見る」（濃色）が主。リセットは従属させて迷わせない。 */
+  .side .reset{background:var(--brand-soft);color:var(--brand-deep);box-shadow:none;}
+  .side .reset:active{background:var(--brand);color:#fff;}
+
+  /* 受け取りページのヘッダ: タイトル＋バッジ＋全文ボタン2個だと ~820px 未満で
+     2段に折り返す。バッジを隠し、ボタンをアイコンのみにして1行に収める。
+     タイトルは flex で縮めて末尾を … にする。 */
+  .kh .badge{display:none;}
+  .kh .blabel{display:none;}
+  .kh .top{gap:10px;}
+  .kh h1{flex:1 1 auto;}
+  .kh .btn{flex-shrink:0;}
+  .kh .btn.sm{padding:9px 13px;font-size:15px;min-height:40px;}
+}
+@media(max-width:600px){
+  header{padding:10px max(16px,env(safe-area-inset-left)) 10px max(16px,env(safe-area-inset-right));}
+  .kh{padding-right:16px;}
+  .wrap,.kwrap{padding-left:max(16px,env(safe-area-inset-left));
+    padding-right:max(16px,env(safe-area-inset-right));}
+  .stats{grid-template-columns:repeat(4,1fr);}
+  .stats.filtered{grid-template-columns:repeat(auto-fit,minmax(62px,1fr));}
+  .stats div{padding:12px 4px;}
+  .stats b{font-size:18px;}
+  .stats span:not(.nb){font-size:9.5px;word-break:keep-all;}
+  .kh h1{display:none;}
+  .hero{padding:18px 0 4px;text-align:left;}
+  .hero .eyebrow{margin-bottom:8px;}
+  .hero h1{font-size:22px;margin-bottom:10px;}
+  .hero h1 br{display:none;}
+  .hero p{text-align:left;font-size:13px;line-height:1.75;
+    display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;}
+  /* 本文コピーは狭い画面では意味切れ改行より、行を詰めて折り返す方が読みやすい */
+  .hero p .nb,.pnote .nb,.kintro p .nb,.imeta .nb{display:inline;}
+  .ep{grid-template-columns:1fr;padding:14px;gap:13px;border-radius:18px;}
+  .ep-thumb{aspect-ratio:16/9;}
+  .ep-title{font-size:16px;}
+  .kchip{padding:11px 12px;min-height:52px;}
+  .kchip .go{padding:7px 12px;}
+  .watch{padding:13px 16px;min-height:50px;}
+  .docbtn{padding:10px 12px;min-height:42px;}
+  .epbundle{padding:12px;min-height:46px;}
+  .kwrap{padding-bottom:calc(70px + env(safe-area-inset-bottom));}
+  .cbtns .btn{min-height:40px;}
+  #kq{font-size:16px;}
+
+  /* --- 受け取りページ: 本文（プロンプト）までの前置きをモバイルで圧縮 --- */
+  .epctx{margin:14px 0;padding:14px;}
+  .epctx-top{grid-template-columns:1fr;gap:12px;}
+  .epctx-top > div:last-child{order:-1;}       /* 動画情報より先にプレゼント名・全部DLを見せる */
+  /* サムネと「動画を見る」を1行に、資料ボタンをその下に。縦積みより ~200px 短くなる。 */
+  .epctx .ep-left{display:grid;grid-template-columns:132px 1fr;gap:10px;align-items:center;}
+  .epctx .ep-left .epctx-thumb{grid-row:1;max-width:none;}
+  .epctx .ep-left .watch{grid-column:2;grid-row:1;align-self:center;min-height:44px;
+    padding:11px 12px;font-size:12px;}
+  .epctx .ep-left .ep-docs{grid-column:1/-1;}
+  .epctx .epbundle{margin-top:10px;}
+  .kintro{padding:16px 0 4px;}
+  .kintro h2{font-size:20px;line-height:1.35;margin-bottom:8px;}
+  .kintro p{font-size:13.5px;line-height:1.85;}
+  .kmeta{margin-top:10px;}
+  .pnote{margin:14px 0 4px;padding:13px 16px;font-size:13px;}
+
+  /* カテゴリチップは狭い画面だけ横スクロール。右端をフェードして続きを示す。 */
+  .kcats{flex-wrap:nowrap;overflow-x:auto;scroll-snap-type:x proximity;
+    -webkit-mask-image:linear-gradient(90deg,#000 calc(100% - 26px),transparent);
+    mask-image:linear-gradient(90deg,#000 calc(100% - 26px),transparent);}
+  .kcat{scroll-snap-align:start;}
+
+  /* チェックリストの □ 行: タップしやすい高さと押下フィードバック */
+  .cline{padding:5px 6px;margin:2px -6px;}
+/* タッチ端末では hover が張り付くので、押した瞬間のフィードバックに寄せる */
+@media(hover:none){
+  .ep:hover{transform:none;box-shadow:var(--sh);}
+  .ep:active{transform:scale(.994);}
+  .kchip:hover,.watch:hover,.btn:hover,.reset:hover,.mtb-filter:hover,
+  .docbtn:hover,.epbundle:hover,.tnav a:hover,.back:hover{transform:none;}
+  .kchip:active{background:var(--brand-soft);transform:scale(.985);}
+  .watch:active,.btn:active,.reset:active,.sheet-close:active{filter:brightness(.94);}
+  .docbtn:active,.epbundle:active,.tnav a:active,.back:active{background:var(--brand-soft);}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto;}
+  .side,.sheet-backdrop,.promo,.promo-card{transition-duration:.01ms;}
+}
+
+/* ---------- 印刷 ---------- */
+/* チェックリストや早見表は紙に出して使う場面がある。
+   画面用の装飾と、紙では押せない操作系を落として、中身だけを残す。 */
+@media print{
+  header,.side,.promo,.ktools,.cbtns,.watch,.ep-docs,.epbundle,.monthbar,.tnav,footer,.epctx{display:none !important;}
+  body{background:#fff;color:#000;font-size:11pt;}
+  .cols{display:block;}
+  .wrap,.kwrap{max-width:100%;padding:0;}
+  .icard{box-shadow:none;border:1px solid #ccc;border-radius:8px;
+  padding:10px 12px;margin-bottom:8px;break-inside:avoid;}
+  pre.prompt{background:#fff;color:#000;border:1px solid #ddd;
+  max-height:none;overflow:visible;white-space:pre-wrap;font-size:9.5pt;}
+  .num{background:#000;}
+  h2.cat{break-after:avoid;margin:16px 0 8px;}
+  .ep{box-shadow:none;border:1px solid #ccc;break-inside:avoid;}
+  a[href]::after{content:'';}
+}
+/* ---------- おすすめ診断 ---------- */
+/* 主な来訪者は動画の概要欄から目的のプレゼントを取りに来る。その導線を塞がないよう、
+   サイドの検索・しぼり込みの下に、既定は閉じた小さい行として置く。 */
+.finder{background:var(--bg);border-radius:12px;margin:4px 0 0;overflow:hidden;}
+.finder summary{list-style:none;cursor:pointer;padding:9px 11px;display:flex;
+align-items:center;gap:6px;font-family:var(--head);font-weight:900;
+font-size:11.5px;line-height:1.4;color:var(--brand-deep);transition:.15s;}
+.finder summary::-webkit-details-marker{display:none;}
+.finder summary::after{content:'';width:9px;height:9px;margin-left:auto;flex-shrink:0;
+background:var(--ink-mid);transition:transform .2s;
+-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M5 7l5 5 5-5' fill='none' stroke='%23000' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat center/contain;
+mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M5 7l5 5 5-5' fill='none' stroke='%23000' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat center/contain;}
+.finder[open] summary::after{transform:rotate(180deg);}
+.finder summary:hover{background:var(--brand-soft);}
+.fhint{display:none;}
+.finder-body{padding:2px 11px 12px;display:flex;flex-direction:column;gap:12px;}
+.fq h4{font-family:var(--head);font-weight:900;font-size:11px;color:var(--ink);
+margin-bottom:6px;}
+.fopts{display:flex;flex-wrap:wrap;gap:6px;}
+.fopt{font-family:inherit;font-size:11px;font-weight:700;color:var(--ink-mid);
+background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:4px 10px;
+cursor:pointer;transition:.15s;}
+.fopt:hover{border-color:var(--brand);color:var(--brand-deep);}
+.fopt:focus-visible{outline:none;border-color:var(--brand);box-shadow:0 0 0 3px var(--brand-soft);}
+.fopt.on{background:var(--brand);border-color:var(--brand);color:#fff;}
+.flabel{font-family:var(--head);font-weight:900;font-size:11px;color:var(--brand-deep);
+margin-bottom:8px;line-height:1.5;}
+.fnone{font-size:11px;color:var(--ink-mid);line-height:1.8;margin:0;}
+.fresult:empty{display:none;}
+.fresult{border-top:1px solid var(--line);padding-top:12px;}
+.fresult .kchip{padding:6px 8px 6px 6px;font-size:11px;}
+.fresult .kchip .go{font-size:10px;padding:4px 8px;}
+"""
+
+def build(theme):
+    return (_CSS.replace("__FONT_URL__", theme["font_url"])
+                .replace("__VARS__", theme["vars"])
+                .replace("__FONT__", theme["font"]))

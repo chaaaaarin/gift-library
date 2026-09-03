@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Label</key>
+	<string>com.karin.gift-library-sync</string>
+	<!-- 書いたkitをGitHub Actions側へ届けるだけの軽量ジョブ。
+	     ビルドも公開もしないので1秒程度で終わる。
+	     「kitを書いたのに一度も同期しないままMacを閉じる」を防ぐためのもので、
+	     これがあるおかげで旅行前に特別な操作が要らない。 -->
+	<key>ProgramArguments</key>
+	<array>
+		<string>/bin/bash</string>
+		<string>/Users/karin/gift-library/scripts/daily_update.sh</string>
+		<string>--sync-only</string>
+	</array>
+	<key>StartInterval</key>
+	<integer>1800</integer>
+	<key>RunAtLoad</key>
+	<true/>
+	<key>StandardOutPath</key>
+	<string>/Users/karin/gift-library/logs/launchd.sync.out.log</string>
+	<key>StandardErrorPath</key>
+	<string>/Users/karin/gift-library/logs/launchd.sync.err.log</string>
+</dict>
+</plist>
