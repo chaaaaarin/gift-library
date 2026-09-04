@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>今日入れる1本が決まる 診断アプリ</title>
+<meta name="description" content="4問答えるだけで、10本のうち自分に効く1本と、そのあとの導入順が決まります。ライセンスの落とし穴も自動で外すので、選び間違いと入れ直しの手間がなくなります。">
+<style>
+  :root{
+    --brand:#1C3461; --brand-deep:#16284A; --brand-soft:rgba(28,52,97,.08); --brand-line:rgba(28,52,97,.22);
+    --accent:#5BBCD4; --accent-deep:#2C7A93; --accent-soft:rgba(91,188,212,.16);
+    --bg:#F7FAFC; --paper:#FFFFFF; --ink:#1C3461; --ink-mid:#4A6080; --ink-sub:#8098B4; --line:rgba(28,52,97,.14);
+    --warn:#B4552F; --warn-soft:rgba(180,85,47,.10);
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:var(--bg);color:var(--ink);font-family:-apple-system,'Hiragino Sans','Yu Gothic',sans-serif;
+    line-height:1.7;padding:26px 18px 48px;}
+  .wrap{max-width:760px;margin:0 auto;}
+  h1{font-size:25px;font-weight:900;line-height:1.35;margin-bottom:8px;}
+  .sub{font-size:14.5px;color:var(--ink-mid);margin-bottom:20px;}
+  .bar{height:6px;background:var(--brand-soft);border-radius:99px;overflow:hidden;margin-bottom:20px;}
+  .bar i{display:block;height:100%;background:var(--accent);width:0;transition:width .3s;}
+  .card{background:var(--paper);border:1.5px solid var(--line);border-radius:14px;padding:22px;margin-bottom:16px;}
+  .qn{font-size:12.5px;font-weight:900;color:var(--accent-deep);letter-spacing:1px;margin-bottom:6px;}
+  .qt{font-size:19px;font-weight:900;line-height:1.45;margin-bottom:5px;}
+  .qh{font-size:13px;color:var(--ink-sub);margin-bottom:14px;}
+  .opts{display:flex;flex-direction:column;gap:9px;}
+  .opt{border:1.5px solid var(--line);background:var(--bg);border-radius:11px;padding:12px 16px;cursor:pointer;
+    font-size:15px;font-weight:700;color:var(--ink);transition:.15s;user-select:none;}
+  .opt:hover{border-color:var(--brand-line);background:var(--brand-soft);}
+  .opt.on{background:var(--brand);border-color:var(--brand-deep);color:#fff;}
+  .opt small{display:block;font-weight:500;font-size:12.5px;color:var(--ink-sub);margin-top:2px;}
+  .opt.on small{color:#C8D6E6;}
+  .btns{display:flex;gap:9px;flex-wrap:wrap;margin-top:6px;}
+  button{border:1.5px solid var(--brand-line);background:var(--paper);color:var(--brand-deep);border-radius:9px;
+    padding:10px 20px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit;transition:.15s;}
+  button:hover{background:var(--brand-soft);border-color:var(--brand);}
+  button.primary{background:var(--brand);border-color:var(--brand-deep);color:#fff;}
+  button.primary:hover{background:var(--brand-deep);}
+  button:disabled{opacity:.4;cursor:not-allowed;}
+  /* 結果 */
+  .hero{background:var(--brand);color:#fff;border-radius:16px;padding:24px 26px;margin-bottom:16px;}
+  .hero .lbl{font-size:12.5px;font-weight:900;color:var(--accent);letter-spacing:1px;}
+  .hero .nm{font-family:inherit;font-size:30px;font-weight:900;line-height:1.2;margin:6px 0 4px;word-break:break-all;}
+  .hero .role{font-size:15px;color:#C8D6E6;font-weight:700;}
+  .hero .why{font-size:15.5px;margin-top:14px;padding-top:14px;border-top:1px solid rgba(255,255,255,.22);line-height:1.75;}
+  .meta{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px;}
+  .meta span{background:rgba(255,255,255,.14);border-radius:99px;padding:5px 14px;font-size:12.5px;font-weight:700;}
+  .sec{font-size:12.5px;font-weight:900;color:var(--accent-deep);letter-spacing:1px;margin-bottom:9px;}
+  .next{display:flex;flex-direction:column;gap:9px;}
+  .next .n{display:flex;gap:12px;align-items:flex-start;background:var(--bg);border:1.5px solid var(--line);
+    border-left:4px solid var(--brand);border-radius:10px;padding:11px 15px;}
+  .next .n b{flex-shrink:0;width:22px;height:22px;border-radius:50%;background:var(--accent);color:var(--ink);
+    display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:900;margin-top:2px;}
+  .next .n .tx{flex:1;font-size:14.5px;}
+  .next .n .tx u{display:block;text-decoration:none;font-weight:900;font-size:15.5px;word-break:break-all;}
+  .next .n .tx span{color:var(--ink-mid);font-size:13.5px;}
+  .warn{background:var(--warn-soft);border:1.5px solid var(--warn);border-radius:11px;padding:14px 17px;margin-top:14px;}
+  .warn b{display:block;font-size:14px;font-weight:900;color:var(--warn);margin-bottom:4px;}
+  .warn p{font-size:14px;line-height:1.65;}
+  .todo{background:var(--accent-soft);border:1.5px solid var(--accent);border-radius:11px;padding:14px 17px;margin-top:14px;}
+  .todo b{display:block;font-size:13px;font-weight:900;color:var(--accent-deep);margin-bottom:4px;}
+  .todo p{font-size:15.5px;font-weight:700;line-height:1.6;}
+  .excl{font-size:13px;color:var(--ink-sub);margin-top:12px;line-height:1.6;}
+  .hide{display:none;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>今日入れる1本が決まる 診断アプリ</h1>
+  <p class="sub">4問答えるだけで、10本のうち自分に効く1本と、そのあとの導入順が決まります。ライセンスの落とし穴も自動で外すので、入れてから「使えなかった」がなくなります。</p>
+  <div class="bar"><i id="bar"></i></div>
+  <div id="quiz"></div>
+  <div id="result" class="hide"></div>
+</div>
+
+<script>
+const TOOLS = {
+  tokentab:  {name:"tokentab",  role:"AIにいくら払ったかを日別・モデル別に出す", time:"約30分", lic:"MIT",
+              note:"読むだけなので壊れません。何もアップロードしません。"},
+  myfree:    {name:"my-free-code", role:"接続先を1つの窓口にまとめて安く回す", time:"約1時間", lic:"非公式",
+              note:"非公式ツールです。契約中サービスの規約を先に確認してください。"},
+  codexgpt:  {name:"codex-with-chatgpt", role:"ChatGPTに計画させ、Codexに実装させる", time:"約1〜2時間", lic:"非公式",
+              note:"非公式で、初期設定に接続・認証・トンネルの3工程があります。"},
+  headcount: {name:"headcount", role:"Claude Codeを部署の形に組む（16部署172スキル）", time:"約10分", lic:"MIT",
+              note:"全部入れず、自分の仕事に近い1部署だけから。"},
+  seo:       {name:"open-seo-mcp-skills", role:"自分のSearch Consoleの実データでSEOを回す", time:"約40分", lic:"MIT",
+              note:"外部サービスへの接続とアカウント連携が前提です。"},
+  sepia:     {name:"sepia", role:"文章のAIっぽさを、語尾ではなく構成から直す", time:"約10分", lic:"MIT",
+              note:"提案が大きくなりがち。短い定型文の手直しには向きません。"},
+  higgs:     {name:"open-higgsfield", role:"32モデルを1つの入力欄から回す生成スタジオ", time:"約30分", lic:"—",
+              note:"スタジオは無料ですが、生成には自分の利用キーが要ります。"},
+  shrimply:  {name:"shrimply", role:"ゼロから作り切れる無料の動画編集", time:"約20分", lic:"GPL-3.0",
+              note:"pre-alpha。作ったファイルが壊れることがあります。大事な素材では使わないこと。"},
+  boop:      {name:"boop", role:"自分のサーバーからスマホへ直接通知を飛ばす", time:"約1時間", lic:"MIT",
+              note:"iPhoneアプリは自分でビルド・署名する必要があります。"},
+  useagent:  {name:"useagent", role:"AIに専用のクラウドPCを持たせて仕上がりを返させる", time:"半日〜", lic:"AGPL-3.0",
+              note:"AGPL。サービスとして公開するとソース公開の義務が出ます。アルファ版です。"}
+};
+
+const QUESTIONS = [
+  {key:"job", t:"あなたの仕事にいちばん近いのはどれですか？", h:"複数当てはまる場合は、いま時間を取られている方を選んでください。",
+   opts:[
+     {v:"code",  l:"コードを書く・開発する", s:"AIコーディングを日常的に使っている"},
+     {v:"write", l:"文章を書く・資料を作る", s:"レポート・記事・提案書など"},
+     {v:"media", l:"画像や動画を作る", s:"素材づくり・編集が仕事に含まれる"},
+     {v:"team",  l:"人に任せる・チームで回す", s:"自分は手を動かすより差配する側"},
+     {v:"web",   l:"サイト運営・集客をしている", s:"検索流入や順位を気にしている"}
+   ]},
+  {key:"pain", t:"いま、いちばん困っていることはどれですか？", h:"ここが推奨の決め手になります。",
+   opts:[
+     {v:"cost_unknown", l:"AIに毎月いくら払っているか分からない", s:"請求が来てから気づく"},
+     {v:"cost_high",    l:"金額は分かっているが、高い", s:"下げる手を探している"},
+     {v:"quality",      l:"出てくるものの質が安定しない", s:"AIっぽさが抜けない・毎回ブレる"},
+     {v:"notice",       l:"作業が終わったことに気づけない", s:"長い処理を放置してしまう"},
+     {v:"traffic",      l:"検索順位や流入が把握できていない", s:"推定値のツールしか見ていない"}
+   ]},
+  {key:"cli", t:"黒い画面（ターミナル）は平気ですか？", h:"苦手なら、打ち込みが少ないものを優先します。",
+   opts:[
+     {v:"ok",    l:"平気。普段から使っている", s:""},
+     {v:"maybe", l:"できれば避けたいが、手順があればやる", s:""},
+     {v:"no",    l:"無理。画面で完結したい", s:""}
+   ]},
+  {key:"agpl", t:"作ったものを、自社のサービスとして外に公開する予定はありますか？", h:"ライセンスの落とし穴を外すための質問です。",
+   opts:[
+     {v:"yes",   l:"ある／その可能性が高い", s:"社外の人が使う形で提供する"},
+     {v:"no",    l:"ない。社内や個人で使うだけ", s:""},
+     {v:"maybe", l:"まだ分からない", s:""}
+   ]}
+];
+
+const state = {}; let step = 0;
+
+function render(){
+  const q = QUESTIONS[step];
+  document.getElementById("bar").style.width = (step / QUESTIONS.length * 100) + "%";
+  const box = document.getElementById("quiz");
+  box.innerHTML = "";
+  const c = document.createElement("div"); c.className = "card";
+  c.innerHTML = `<div class="qn">質問 ${step+1} / ${QUESTIONS.length}</div>
+                 <div class="qt">${q.t}</div><div class="qh">${q.h}</div>`;
+  const o = document.createElement("div"); o.className = "opts";
+  q.opts.forEach(op => {
+    const d = document.createElement("div");
+    d.className = "opt" + (state[q.key] === op.v ? " on" : "");
+    d.innerHTML = op.l + (op.s ? `<small>${op.s}</small>` : "");
+    d.onclick = () => { state[q.key] = op.v; render(); };
+    o.appendChild(d);
+  });
+  c.appendChild(o);
+  const b = document.createElement("div"); b.className = "btns";
+  if (step > 0) { const back = document.createElement("button"); back.textContent = "← 戻る"; back.onclick = () => { step--; render(); }; b.appendChild(back); }
+  const nx = document.createElement("button"); nx.className = "primary";
+  nx.textContent = step === QUESTIONS.length - 1 ? "結果を見る" : "次へ →";
+  nx.disabled = !state[q.key];
+  nx.onclick = () => { if (step === QUESTIONS.length - 1) show(); else { step++; render(); } };
+  b.appendChild(nx);
+  c.appendChild(b);
+  box.appendChild(c);
+}
+
+function decide(){
+  const sc = {}; Object.keys(TOOLS).forEach(k => sc[k] = 0);
+  // 困りごとが最優先
+  const P = {
+    cost_unknown: {tokentab:10},
+    cost_high:    {myfree:8, codexgpt:8, tokentab:5},
+    quality:      {sepia:9, headcount:6},
+    notice:       {boop:10},
+    traffic:      {seo:10}
+  }[state.pain] || {};
+  for (const k in P) sc[k] += P[k];
+  // 仕事の内容
+  const J = {
+    code:  {codexgpt:4, myfree:3, tokentab:3, headcount:2},
+    write: {sepia:5, headcount:2},
+    media: {higgs:5, shrimply:3},
+    team:  {headcount:5, useagent:3, boop:2},
+    web:   {seo:5, sepia:2}
+  }[state.job] || {};
+  for (const k in J) sc[k] += J[k];
+  // ターミナルが苦手なら打ち込みが多いものを下げる
+  if (state.cli === "no")    { sc.tokentab -= 4; sc.myfree -= 5; sc.codexgpt -= 5; sc.boop -= 5; sc.shrimply -= 2; sc.useagent -= 5; }
+  if (state.cli === "maybe") { sc.myfree -= 2; sc.codexgpt -= 2; sc.boop -= 2; sc.useagent -= 3; }
+  // AGPL回避
+  const excluded = [];
+  if (state.agpl === "yes") { sc.useagent = -99; excluded.push("useagent（AGPL-3.0。公開サービスに組み込むとソース公開の義務が出るため）"); }
+  if (state.agpl === "yes") { sc.shrimply -= 3; }
+  const order = Object.keys(sc).sort((a,b) => sc[b] - sc[a]);
+  return {order, excluded};
+}
+
+function show(){
+  document.getElementById("bar").style.width = "100%";
+  document.getElementById("quiz").className = "hide";
+  const {order, excluded} = decide();
+  const top = TOOLS[order[0]], n2 = TOOLS[order[1]], n3 = TOOLS[order[2]];
+  const r = document.getElementById("result");
+  r.className = "";
+
+  const cliNote = state.cli === "no"
+    ? "打ち込みが少ないものを優先して選びました。手順書の「指示例」をAIに貼れば、コマンドは代わりに実行してもらえます。"
+    : "";
+
+  r.innerHTML = `
+    <div class="hero">
+      <div class="lbl">今日入れる1本</div>
+      <div class="nm">${top.name}</div>
+      <div class="role">${top.role}</div>
+      <div class="why">${top.note}${cliNote ? "<br>" + cliNote : ""}</div>
+      <div class="meta"><span>所要 ${top.time}</span><span>ライセンス ${top.lic}</span></div>
+    </div>
+
+    <div class="card">
+      <div class="sec">この順番で足していってください</div>
+      <div class="next">
+        <div class="n"><b>1</b><div class="tx"><u>${top.name}</u><span>${top.role}／${top.time}</span></div></div>
+        <div class="n"><b>2</b><div class="tx"><u>${n2.name}</u><span>${n2.role}／${n2.time}</span></div></div>
+        <div class="n"><b>3</b><div class="tx"><u>${n3.name}</u><span>${n3.role}／${n3.time}</span></div></div>
+      </div>
+      ${excluded.length ? `<div class="warn"><b>この診断で外したもの</b><p>${excluded.join("<br>")}</p></div>` : ""}
+      <div class="todo"><b>今日やること（1行）</b><p>${top.name} を入れて、${firstAction(order[0])}</p></div>
+      <p class="excl">※ 3本目まで終わったら、残りは「困ったとき」に戻ってくれば十分です。10本すべてを入れる必要はありません。</p>
+    </div>
+
+    <div class="btns"><button onclick="location.reload()">もう一度やる</button></div>
+  `;
+  window.scrollTo({top:0, behavior:"smooth"});
+}
+
+function firstAction(k){
+  return {
+    tokentab:  "先月1ヶ月ぶんの利用額を、モデル別に出すところまでやる。",
+    myfree:    "まず1つだけ提供元を登録して、いつもの依頼を1回通してみる。",
+    codexgpt:  "初期設定を最後まで通して、小さな修正を1件だけ任せてみる。",
+    headcount: "自分の仕事にいちばん近い部署を1つだけ入れて、1問聞いてみる。",
+    seo:       "自分のSearch Consoleをつないで、順位が下がったページを出す。",
+    sepia:     "直近に書いた文章を1本だけ読ませて、指摘を見てみる。",
+    higgs:     "自分のキーを入れて、いつも使っているモデルで1枚生成してみる。",
+    shrimply:  "捨ててよい素材で30秒の動画を1本書き出してみる。",
+    boop:      "テスト通知を1件だけ自分のスマホに飛ばす。",
+    useagent:  "まずライセンスを法務に確認してから、検証環境で1件だけ動かす。"
+  }[k];
+}
+
+render();
+</script>
+</body>
+</html>
