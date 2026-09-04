@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>今月のシフトが組めるか先に分かる シフト成立シミュレーターアプリ</title>
+<meta name="description" content="スタッフ人数・1日に必要な早番/遅番/夜勤の人数・みんなの希望勤務日数と希望休を入れると、その月のシフトが数字の上で組めるのか、希望休は何割通せるのか、詰まっている原因はどこかが30秒で分かるミニアプリ。あと何人・あと何日で成立するかまで出します。">
+<style>
+  :root{
+    --brand:#C15640; --accent:#D9774F; --ink:#2A2620; --mid:#6E6557; --sub:#A39A8B;
+    --line:#E4D9C7; --bg:#F1ECE3; --paper:#FBF8F2;
+    --ok:#3F7D58; --warn:#B8860B; --ng:#B23A2F;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:-apple-system,'Hiragino Sans','Yu Gothic',sans-serif;background:var(--bg);color:var(--ink);line-height:1.7;padding:22px;}
+  .wrap{max-width:700px;margin:0 auto;background:var(--paper);border:1.5px solid var(--line);border-radius:16px;padding:24px 22px;}
+  h1{font-size:22px;font-weight:800;margin-bottom:4px;}
+  .sub{font-size:13px;color:var(--mid);margin-bottom:18px;}
+  fieldset{border:1.5px solid var(--line);border-radius:12px;padding:14px 16px;margin-bottom:14px;}
+  legend{font-size:13px;font-weight:800;color:var(--brand);padding:0 6px;}
+  .row{display:flex;align-items:center;gap:10px;margin:9px 0;flex-wrap:wrap;}
+  .row label{flex:1;min-width:250px;font-size:14px;font-weight:600;}
+  .row .hint{display:block;font-size:11.5px;color:var(--sub);font-weight:500;}
+  .row input[type=number]{width:100px;padding:8px 10px;border:1.5px solid var(--line);border-radius:8px;font-size:14px;background:#fff;text-align:right;}
+  .row .unit{font-size:12px;color:var(--sub);width:52px;}
+  .row input[type=checkbox]{width:18px;height:18px;}
+  input[type=range]{width:100%;}
+  .rangeval{font-weight:800;color:var(--brand);}
+  .out{background:var(--bg);border:1.5px solid var(--line);border-radius:12px;padding:16px;margin-top:6px;}
+  .verdict{border-radius:10px;padding:12px 14px;font-weight:800;font-size:16px;color:#fff;margin-bottom:12px;}
+  .v-ok{background:var(--ok);} .v-warn{background:var(--warn);} .v-ng{background:var(--ng);}
+  .verdict .d{display:block;font-size:12.5px;font-weight:600;margin-top:3px;opacity:.95;}
+  .big{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:12px;}
+  .stat{flex:1;min-width:150px;background:#fff;border:1.5px solid var(--line);border-radius:10px;padding:12px 14px;text-align:center;}
+  .stat .n{font-size:24px;font-weight:800;color:var(--brand);}
+  .stat .l{font-size:11.5px;color:var(--sub);margin-top:3px;}
+  table{width:100%;border-collapse:collapse;font-size:13px;margin-top:6px;}
+  td,th{padding:7px 8px;border-bottom:1px solid var(--line);text-align:right;}
+  th:first-child,td:first-child{text-align:left;}
+  thead th{color:var(--mid);font-weight:700;}
+  h3{font-size:13.5px;font-weight:800;color:var(--brand);margin:16px 0 2px;}
+  ol.fix{margin:4px 0 0 18px;font-size:13px;}
+  ol.fix li{margin:6px 0;}
+  ol.fix b{color:var(--brand);}
+  .note{font-size:12px;color:var(--mid);margin-top:12px;}
+  .btn{margin-top:12px;background:var(--accent);border:none;color:#2A2620;font-weight:800;font-size:14px;padding:10px 18px;border-radius:999px;cursor:pointer;}
+  .btn:hover{background:var(--brand);color:#fff;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>今月のシフトが組めるか先に分かる シフト成立シミュレーターアプリ</h1>
+  <p class="sub">シフトが完成しない月は、組み方が下手なのではなく「そもそも人日が足りていない」ことがほとんどです。希望を集めた直後にここへ数字を入れると、その月が数字の上で成立するのか、希望休を何割通せるのか、詰まっているのはどこかが分かります。表を作り始める前の30秒でどうぞ。初期値は、スタッフ15人・毎日7人必要・夜勤に入れるのは5人だけ、という店の10月分が入っています。</p>
+
+  <fieldset>
+    <legend>店の条件</legend>
+    <div class="row"><label>対象月の日数</label><input type="number" id="days" value="31" min="28" max="31"><span class="unit">日</span></div>
+    <div class="row"><label>シフトに入れるスタッフ人数<span class="hint">名簿の人数ではなく、その月に実際に入れる人数</span></label><input type="number" id="staff" value="15" min="1" step="1"><span class="unit">人</span></div>
+    <div class="row"><label>1日に必要な 早番</label><input type="number" id="e" value="3" min="0"><span class="unit">人</span></div>
+    <div class="row"><label>1日に必要な 遅番</label><input type="number" id="l" value="3" min="0"><span class="unit">人</span></div>
+    <div class="row"><label>1日に必要な 夜勤</label><input type="number" id="n" value="1" min="0"><span class="unit">人</span></div>
+  </fieldset>
+
+  <fieldset>
+    <legend>集まった希望</legend>
+    <div class="row"><label>1人あたりの希望勤務日数（平均）<span class="hint">フォームの「希望勤務日数」を全員ぶん足して、人数で割った値</span></label><input type="number" id="wish" value="14.2" min="0" max="31" step="0.1"><span class="unit">日</span></div>
+    <div class="row"><label>希望休の合計件数（全員ぶん）<span class="hint">全員の希望休を数えた合計（例: 15人で46件）</span></label><input type="number" id="req" value="46" min="0"><span class="unit">件</span></div>
+    <div class="row"><label>そのうち土日・祝日に出ている割合</label><span class="rangeval" id="wev">45%</span></div>
+    <input type="range" id="we" min="0" max="100" value="45" step="5">
+  </fieldset>
+
+  <fieldset>
+    <legend>夜勤まわりの制約</legend>
+    <div class="row"><label>夜勤に入れるスタッフ<span class="hint">資格・本人同意・慣れの点で夜勤を任せられる人数</span></label><input type="number" id="ns" value="5" min="0"><span class="unit">人</span></div>
+    <div class="row"><label>夜勤の翌日は必ず休みにする</label><input type="checkbox" id="noff" checked></div>
+    <div class="row"><label>1人あたり夜勤の上限（月）<span class="hint">これを超えると赤信号として扱う</span></label><input type="number" id="nmax" value="8" min="1"><span class="unit">回</span></div>
+  </fieldset>
+
+  <div class="out">
+    <div class="verdict v-ok" id="verdict">—<span class="d" id="verdictDetail"></span></div>
+    <div class="big">
+      <div class="stat"><div class="n" id="oGap">0</div><div class="l">人日の過不足（＋は余裕）</div></div>
+      <div class="stat"><div class="n" id="oRate">0%</div><div class="l">希望休の通せる見込み</div></div>
+      <div class="stat"><div class="n" id="oNight">0</div><div class="l">1人あたり夜勤（月）</div></div>
+    </div>
+
+    <h3>人日の計算</h3>
+    <table>
+      <tbody>
+        <tr><td>必要な出勤（日数 × 1日の必要人数）</td><td id="tNeed">0</td></tr>
+        <tr><td>出せる出勤（人数 × 希望勤務日数）</td><td id="tSupply">0</td></tr>
+        <tr><td><b>差し引き</b></td><td id="tGap"><b>0</b></td></tr>
+      </tbody>
+    </table>
+
+    <h3>休みの枠と希望休</h3>
+    <table>
+      <tbody>
+        <tr><td>休みの枠（全員×日数 − 必要な出勤）</td><td id="tRest">0</td></tr>
+        <tr><td>夜勤明けで先に埋まる休み</td><td id="tNoff">0</td></tr>
+        <tr><td>希望休に回せる枠</td><td id="tRestEff">0</td></tr>
+        <tr><td>出ている希望休（土日祝 / 平日）</td><td id="tReq">0</td></tr>
+        <tr><td><b>通せる見込み</b></td><td id="tOk"><b>0</b></td></tr>
+      </tbody>
+    </table>
+
+    <h3>詰まっている原因と、次の一手</h3>
+    <ol class="fix" id="fix"></ol>
+
+    <h3>もし1つだけ変えられるなら</h3>
+    <table>
+      <thead><tr><th>変える条件</th><th>人日の過不足</th><th>希望休の見込み</th><th>1人あたり夜勤</th></tr></thead>
+      <tbody id="scen"></tbody>
+    </table>
+  </div>
+
+  <button class="btn" id="reset">初期値に戻す</button>
+  <p class="note">※ 月全体を平らにならした概算です。実際は「その日だけ希望が5人重なる」といった日ごとの偏りで、ここより通せる希望休は少なくなります。ここで赤・黄が出た月は、表を作り始める前に人を足すか、必要人数か希望休の上限を先に決め直してください。</p>
+</div>
+
+<script>
+(function(){
+  var ids=["days","staff","e","l","n","wish","req","we","ns","noff","nmax"];
+  var el={}; ids.forEach(function(i){el[i]=document.getElementById(i);});
+  var defaults={days:31,staff:15,e:3,l:3,n:1,wish:14.2,req:46,we:45,ns:5,nmax:8,noff:true};
+
+  function num(x){var v=parseFloat(x); return isFinite(v)&&v>=0?v:0;}
+  function r0(v){return Math.round(v).toLocaleString();}
+  function sign(v){return (v>0?"+":"")+Math.round(v).toLocaleString();}
+
+  function calc(o){
+    var perDay=o.e+o.l+o.n;
+    var need=o.days*perDay;                    // 必要な出勤人日
+    var supply=o.staff*o.wish;                 // 希望どおりに出た場合の出勤人日
+    var gap=supply-need;                       // ＋なら余裕
+    var rest=o.staff*o.days-need;              // 休みの枠（全体）
+    var nightSlots=o.days*o.n;                 // 夜勤のコマ数
+    var noffDays=o.noff?nightSlots:0;          // 夜勤明けで自動的に埋まる休み
+    var restEff=Math.max(0,rest-noffDays);     // 希望休に回せる枠
+
+    // 日ごとの偏り: 土日祝と平日で枠を分けて、集中している側から先に溢れさせる
+    var we=Math.round(o.days*2/7), wd=o.days-we;
+    var slack=Math.max(0,o.staff-perDay);      // 1日あたり出せる休みの人数
+    var noffPerDay=o.days>0?noffDays/o.days:0;
+    var slackDay=Math.max(0,slack-noffPerDay);
+    var capWe=we*slackDay, capWd=wd*slackDay;
+    var reqWe=o.req*o.we/100, reqWd=o.req-reqWe;
+    var okWe=Math.min(reqWe,capWe), okWd=Math.min(reqWd,capWd);
+    var ok=Math.min(okWe+okWd,restEff);
+    var rate=o.req>0?ok/o.req*100:100;
+
+    var perNight=o.ns>0?nightSlots/o.ns:Infinity;
+
+    return {perDay:perDay,need:need,supply:supply,gap:gap,rest:rest,noffDays:noffDays,
+            restEff:restEff,we:we,wd:wd,reqWe:reqWe,reqWd:reqWd,okWe:okWe,okWd:okWd,
+            ok:ok,rate:rate,nightSlots:nightSlots,perNight:perNight,
+            capWe:capWe,capWd:capWd};
+  }
+
+  function read(){
+    return {days:num(el.days.value),staff:num(el.staff.value),e:num(el.e.value),
+            l:num(el.l.value),n:num(el.n.value),wish:num(el.wish.value),
+            req:num(el.req.value),we:num(el.we.value),ns:num(el.ns.value),
+            nmax:num(el.nmax.value)||8,noff:el.noff.checked};
+  }
+
+  function verdictOf(o,r){
+    if(o.staff<r.perDay) return {c:"v-ng",t:"組めません（人数が枠を下回っています）",
+      d:"1日に必要な"+r.perDay+"人に対してスタッフが"+o.staff+"人しかいません。全員が毎日出ても埋まらない状態です。"};
+    if(r.gap<0) return {c:"v-ng",t:"このままでは組めません",
+      d:"希望どおりに出てもらうと"+r0(-r.gap)+"人日足りません。誰かに希望より多く出てもらうか、人を増やす必要があります。"};
+    if(r.perNight>o.nmax) return {c:"v-warn",t:"組めますが、夜勤が特定の人に寄ります",
+      d:"夜勤に入れるのが"+o.ns+"人なので、1人あたり月"+r.perNight.toFixed(1)+"回。上限の"+o.nmax+"回を超えています。"};
+    if(r.rate<60) return {c:"v-warn",t:"組めますが、希望休は半分以上落ちます",
+      d:"通せる見込みは"+Math.round(r.rate)+"%。特に土日祝に希望が集中しています。先に上限を伝えておくのが安全です。"};
+    if(r.gap<r.need*0.03||r.rate<85) return {c:"v-warn",t:"ぎりぎり組めます",
+      d:"余裕は"+r0(r.gap)+"人日、希望休は"+Math.round(r.rate)+"%通せる見込み。1人の急な欠勤で崩れる水準です。"};
+    return {c:"v-ok",t:"余裕をもって組めます",
+      d:"余裕は"+r0(r.gap)+"人日、希望休は"+Math.round(r.rate)+"%通せる見込みです。"};
+  }
+
+  function fixes(o,r){
+    var out=[];
+    if(o.staff<r.perDay){
+      out.push("<b>枠に対して人数が足りていません。</b>1日に必要な"+r.perDay+"人に対しスタッフ"+o.staff+"人。必要人数の見直し（例: 遅番を1人減らす）か、最低"+r0(r.perDay-o.staff)+"人の増員が先です。");
+    }
+    if(r.gap<0){
+      var addP=Math.ceil(-r.gap/Math.max(1,o.wish));
+      var addD=(-r.gap/Math.max(1,o.staff));
+      out.push("<b>出勤人日が"+r0(-r.gap)+"日ぶん足りません。</b>増員なら約<b>"+addP+"人</b>、今のメンバーで埋めるなら1人あたり<b>月"+addD.toFixed(1)+"日</b>多く出てもらう計算です。どちらも無理なら、必要人数を1枠減らすと"+r0(o.days)+"人日ぶん軽くなります。");
+    }
+    if(r.perNight>o.nmax&&o.ns>0){
+      var needNs=Math.ceil(r.nightSlots/o.nmax);
+      out.push("<b>夜勤が"+o.ns+"人に集中しています（1人あたり月"+r.perNight.toFixed(1)+"回）。</b>夜勤に入れる人を<b>"+needNs+"人</b>まで増やすと月"+(r.nightSlots/needNs).toFixed(1)+"回まで下がります。増やせないなら、夜勤の翌々日まで休みにする運用は今月は諦める判断が要ります。");
+    }
+    if(o.ns===0&&r.nightSlots>0){
+      out.push("<b>夜勤に入れる人が0人です。</b>夜勤"+r0(r.nightSlots)+"コマを埋める人がいないため、この条件では組めません。夜勤可のスタッフを登録するか、夜勤の必要人数を0にしてください。");
+    }
+    if(r.reqWe>r.capWe&&r.capWe>=0){
+      var over=r.reqWe-r.capWe;
+      var cap=r.we>0?Math.floor(r.capWe/Math.max(1,o.staff)*10)/10:0;
+      out.push("<b>土日祝の希望休が"+r0(over)+"件あふれています。</b>その日に出せる休みは合計"+r0(r.capWe)+"件まで。「土日祝の希望休は1人<b>月"+cap.toFixed(1)+"日</b>まで」と先に伝えると、後から断る回数が減ります。");
+    }
+    if(r.gap>0&&r.rate>=85&&out.length===0){
+      out.push("<b>詰まりはありません。</b>"+r0(r.gap)+"人日の余裕があり、希望休も"+Math.round(r.rate)+"%通せる見込みです。余裕ぶんは、希望休の追加受付か、新人の育成シフト（先輩と重ねて入れる）に回せます。");
+    }
+    if(out.length===0){
+      out.push("大きな詰まりはありませんが、余裕は"+r0(r.gap)+"人日と薄めです。急な欠勤に備えて、代われる人を先に1人決めておいてください。");
+    }
+    return out;
+  }
+
+  function scenarios(o){
+    var base=calc(o);
+    var list=[
+      ["いまの条件",o],
+      ["スタッフを1人増やす",Object.assign({},o,{staff:o.staff+1})],
+      ["1人あたり希望勤務日数を1日増やす",Object.assign({},o,{wish:o.wish+1})],
+      ["夜勤に入れる人を1人増やす",Object.assign({},o,{ns:o.ns+1})],
+      ["遅番の必要人数を1人減らす",Object.assign({},o,{l:Math.max(0,o.l-1)})]
+    ];
+    return list.map(function(p){
+      var r=calc(p[1]);
+      return {name:p[0],gap:r.gap,rate:r.rate,night:r.perNight,
+              dGap:r.gap-base.gap,dRate:r.rate-base.rate};
+    });
+  }
+
+  function render(){
+    var o=read(), r=calc(o);
+    document.getElementById("wev").textContent=o.we+"%";
+
+    var v=verdictOf(o,r);
+    var vd=document.getElementById("verdict");
+    vd.className="verdict "+v.c;
+    vd.firstChild.nodeValue=v.t;
+    document.getElementById("verdictDetail").textContent=v.d;
+
+    document.getElementById("oGap").textContent=sign(r.gap);
+    document.getElementById("oRate").textContent=Math.round(r.rate)+"%";
+    document.getElementById("oNight").textContent=isFinite(r.perNight)?r.perNight.toFixed(1)+"回":"—";
+
+    document.getElementById("tNeed").textContent=r0(r.need)+" 人日";
+    document.getElementById("tSupply").textContent=r0(r.supply)+" 人日";
+    document.getElementById("tGap").innerHTML="<b>"+sign(r.gap)+" 人日</b>";
+    document.getElementById("tRest").textContent=r0(r.rest)+" 日";
+    document.getElementById("tNoff").textContent=r0(r.noffDays)+" 日";
+    document.getElementById("tRestEff").textContent=r0(r.restEff)+" 日";
+    document.getElementById("tReq").textContent=r0(r.reqWe)+" 件 / "+r0(r.reqWd)+" 件";
+    document.getElementById("tOk").innerHTML="<b>"+r0(r.ok)+" 件（"+Math.round(r.rate)+"%）</b>";
+
+    var f=document.getElementById("fix"); f.innerHTML="";
+    fixes(o,r).forEach(function(t){var li=document.createElement("li");li.innerHTML=t;f.appendChild(li);});
+
+    var s=document.getElementById("scen"); s.innerHTML="";
+    scenarios(o).forEach(function(x,i){
+      var tr=document.createElement("tr");
+      var d1=i===0?"":"（"+sign(x.dGap)+"）";
+      var d2=i===0?"":"（"+(x.dRate>=0?"+":"")+Math.round(x.dRate)+"pt）";
+      var nt=isFinite(x.night)?x.night.toFixed(1)+"回":"—";
+      tr.innerHTML="<td>"+x.name+"</td><td>"+sign(x.gap)+" 人日 "+d1+"</td><td>"+Math.round(x.rate)+"% "+d2+"</td><td>"+nt+"</td>";
+      s.appendChild(tr);
+    });
+  }
+
+  ids.forEach(function(i){
+    el[i].addEventListener("input",render);
+    el[i].addEventListener("change",render);
+  });
+  document.getElementById("reset").addEventListener("click",function(){
+    for(var k in defaults){
+      if(k==="noff") el[k].checked=defaults[k];
+      else el[k].value=defaults[k];
+    }
+    render();
+  });
+  render();
+})();
+</script>
+</body>
+</html>
