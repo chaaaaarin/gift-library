@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="ja"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AIブラウザ使い分け診断アプリ</title>
+<meta name="description" content="5つの質問に答えるだけで、その作業を Claude in Chrome / Cowork内蔵ブラウザ / ChatGPT Work / 自分でやる のどれに振るべきかを判定するミニアプリです。">
+<style>
+  :root{
+    --brand:#D9774F; --brand-deep:#C15640; --brand-soft:rgba(217,119,79,.12); --brand-line:rgba(217,119,79,.32);
+    --accent-soft:rgba(217,119,79,.16);
+    --bg:#F1ECE3; --paper:#FBF8F2; --ink:#2A2620; --ink-mid:#6E6557; --ink-sub:#A39A8B; --line:#E4D9C7;
+    --head:'M PLUS Rounded 1c','Hiragino Maru Gothic ProN','Hiragino Sans',sans-serif;
+    --stop:#8C5A3C;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:var(--bg);color:var(--ink);line-height:1.75;
+    font-family:'Noto Sans JP',-apple-system,'Hiragino Sans','Yu Gothic',sans-serif;padding:22px 14px 46px;}
+  .wrap{max-width:660px;margin:0 auto;}
+  header{text-align:center;margin-bottom:22px;}
+  h1{font-family:var(--head);font-weight:800;font-size:25px;line-height:1.35;}
+  header p{font-size:14px;color:var(--ink-mid);margin-top:8px;}
+  .bar{height:6px;background:var(--line);border-radius:99px;overflow:hidden;margin:18px 0 22px;}
+  .bar i{display:block;height:100%;background:var(--brand);width:0;transition:width .25s;}
+  .card{background:var(--paper);border:1.5px solid var(--line);border-radius:16px;padding:22px 20px;}
+  .qno{font-family:var(--head);font-weight:800;font-size:12px;color:var(--brand-deep);letter-spacing:1.5px;}
+  .qt{font-family:var(--head);font-weight:800;font-size:19px;margin:6px 0 4px;line-height:1.45;}
+  .qh{font-size:13px;color:var(--ink-mid);margin-bottom:16px;}
+  button.opt{display:block;width:100%;text-align:left;background:#fff;border:1.5px solid var(--line);
+    border-radius:12px;padding:13px 16px;margin-bottom:10px;cursor:pointer;font:inherit;font-size:15px;
+    color:var(--ink);transition:.15s;}
+  button.opt:hover{border-color:var(--brand);background:var(--brand-soft);}
+  button.opt b{display:block;font-family:var(--head);font-weight:800;font-size:15.5px;}
+  button.opt span{display:block;font-size:12.5px;color:var(--ink-mid);margin-top:2px;}
+  .back{background:none;border:none;color:var(--ink-sub);font:inherit;font-size:13px;cursor:pointer;
+    margin-top:6px;text-decoration:underline;}
+  .verdict{font-family:var(--head);font-weight:800;font-size:12px;letter-spacing:1.5px;color:var(--brand-deep);}
+  .vname{font-family:var(--head);font-weight:800;font-size:26px;line-height:1.3;margin:6px 0 12px;}
+  .vname.stop{color:var(--stop);}
+  .why{background:#fff;border:1.5px solid var(--line);border-left:4px solid var(--brand);
+    border-radius:12px;padding:14px 16px;margin-bottom:14px;font-size:14.5px;}
+  .why b{font-family:var(--head);}
+  h3{font-family:var(--head);font-weight:800;font-size:15px;margin:16px 0 7px;}
+  ul{margin-left:20px;font-size:14.5px;} li{margin-bottom:5px;}
+  .cau{background:var(--accent-soft);border:1.5px solid var(--brand-line);border-radius:12px;
+    padding:13px 16px;font-size:14px;margin-top:14px;}
+  .again{margin-top:20px;background:var(--brand);border:none;color:#fff;font-family:var(--head);
+    font-weight:800;font-size:15px;border-radius:11px;padding:12px 26px;cursor:pointer;}
+  .note{font-size:12px;color:var(--ink-sub);margin-top:20px;text-align:center;line-height:1.6;}
+</style>
+</head><body>
+<div class="wrap">
+  <header>
+    <h1>AIブラウザ使い分け診断アプリ</h1>
+    <p>5つの質問に答えると、その作業をどこに振るべきかが決まります</p>
+  </header>
+  <div class="bar"><i id="bar"></i></div>
+  <div id="app"></div>
+  <p class="note">判定はあくまで目安です。社内規程がある場合はそちらを優先してください。<br>2026年8月時点で公開されている各サービスの仕様をもとにしています。</p>
+</div>
+
+<script>
+const QS = [
+  {
+    k:'money',
+    t:'その作業は、お金や契約が直接動きますか？',
+    h:'決済・送金・発注・解約・応募の確定など、押したら戻せない操作が含まれるか',
+    opts:[
+      {l:'含まれる', s:'購入・送金・申込みの確定まで行う', v:'yes'},
+      {l:'含まれない', s:'調べる・埋める・下書きまで', v:'no'}
+    ]
+  },
+  {
+    k:'secret',
+    t:'扱うのは、どんな情報ですか？',
+    h:'いちばん機微なものに合わせて選んでください',
+    opts:[
+      {l:'口座・カード・ID番号など', s:'金融情報や身分証の番号', v:'high'},
+      {l:'顧客や社員の個人情報', s:'名簿・人事・問い合わせ内容など', v:'mid'},
+      {l:'社内の一般業務情報', s:'見積・在庫・案件メモなど', v:'low'},
+      {l:'公開情報だけ', s:'公式サイト・ニュース・製品ページ', v:'none'}
+    ]
+  },
+  {
+    k:'login',
+    t:'ログインは必要ですか？',
+    h:'そのページを開くのに自分のアカウントが要るかどうか',
+    opts:[
+      {l:'必要。自分がすでにログイン済み', s:'ブラウザに残っているセッションで開ける', v:'signed'},
+      {l:'必要。これからログインする', s:'その場でIDとパスワードを入れる必要がある', v:'fresh'},
+      {l:'不要', s:'誰でも見られるページ', v:'none'}
+    ]
+  },
+  {
+    k:'device',
+    t:'いま使える環境はどれですか？',
+    h:'複数当てはまる場合は、いちばん上のものを選んでください',
+    opts:[
+      {l:'デスクトップアプリが使える', s:'Cowork が入っているPC（Pro/Max/Team/Enterprise）', v:'desktop'},
+      {l:'Chromeだけ', s:'ブラウザ拡張は入れられる', v:'chrome'},
+      {l:'スマホ・タブレット中心', s:'PCの前にいない', v:'mobile'}
+    ]
+  },
+  {
+    k:'scope',
+    t:'作業の範囲はどのくらいですか？',
+    h:'AIに任せる一連の流れの長さ',
+    opts:[
+      {l:'1ページを読むだけ', s:'今開いているページの内容を使う', v:'one'},
+      {l:'複数サイトを回る', s:'比較・収集・転記など数十分かかる', v:'many'}
+    ]
+  }
+];
+
+const RESULTS = {
+  self:{
+    name:'これは自分でやる',
+    stop:true,
+    why:'お金が動く操作、または口座・カード・身分証の番号を扱う作業です。AI側は重大な操作の前に確認を挟む設計になっていますが、誤操作の結果を引き受けるのは自分です。ここはAIに渡さないのがいちばん安い判断です。',
+    how:[
+      'AIには「調べて一覧にするところまで」を頼み、確定操作は自分の手で行う',
+      'どうしても任せたい場合でも、送信・購入・解約のボタンの直前で必ず止める指示を明示する',
+      '結果は必ず自分の目で1件は確認する'
+    ],
+    cau:'「確認するから大丈夫」と思っていても、件数が多いと確認は形骸化します。任せる件数を絞ってください。'
+  },
+  chrome:{
+    name:'Claude in Chrome',
+    why:'いま自分がログインしている状態のページで、その場の作業をしてもらうのに向いています。8月26日に全有料プランで正式提供になり、安全と判定された操作は自動で進むようになりました。',
+    how:[
+      'Chrome拡張を入れ、作業したいページを開いた状態で依頼する',
+      '慣れるまでは自動承認をオフにして、1操作ずつ確認する',
+      '外部の人が書き込めるページ（口コミ・コメント欄）では、ページ内の指示に従わないよう一言添える'
+    ],
+    cau:'対応はChrome拡張のみで、他のChromium系ブラウザやモバイルでは使えません。ファイル操作は従来どおりデスクトップアプリが必要です。'
+  },
+  cowork:{
+    name:'Cowork の内蔵ブラウザ',
+    why:'複数のサイトを回る長めの作業で、かつ自分のタブやログイン状態を触らせたくない場合に向いています。8月26日から提供が始まった、Claude専用の分離したブラウザです。',
+    how:[
+      'Coworkデスクトップアプリで作業を渡す（Pro/Max/Teamは順次、Enterpriseは即日・管理者が有効化）',
+      '参照してよいサイトを明示して渡す',
+      '終わったら結果を1件だけ抜き取って裏を取る'
+    ],
+    cau:'銀行・メール・SSOのサイトは既定で除外されています。デスクトップアプリ専用で、Linux版はベータです。'
+  },
+  chatgpt:{
+    name:'ChatGPT Work のブラウザ',
+    why:'これからログインが必要なサイトで、手続きを最後まで進めたい場合に向いています。8月25日から、サイト側が認証を許可していればログイン画面を出して作業を続けられるようになりました。',
+    how:[
+      'Plus または Pro プランで、ChatGPT Work に作業を頼む',
+      'ログイン画面が出たら自分で入力する（パスワードマネージャーが使える）',
+      '終わったら 設定 > Cloud browser > Browser data から履歴を確認・削除する'
+    ],
+    cau:'ユーザー名とパスワードはChatGPT側に見えない仕様ですが、共用端末で使ったセッションは残ります。使い終わったらログアウトしてください。'
+  },
+  readonly:{
+    name:'まずは「読むだけ」で試す',
+    why:'公開情報を1ページ読む程度の作業です。どのツールでもできますが、いきなり操作を任せるより、読ませて要約させるところから始めるのが確実です。',
+    how:[
+      '今開いているページなら Claude in Chrome が最短',
+      '「このページの要点を3行で」から始めて、精度を確かめる',
+      '慣れたらフォーム入力など、失敗しても困らない操作に広げる'
+    ],
+    cau:'読むだけの作業でも、ページに仕込まれた文章でAIが誘導されることはあります。指示に従わせない一言を添える癖をつけてください。'
+  }
+};
+
+let idx = 0; const ans = {};
+
+function decide(){
+  if (ans.money === 'yes' || ans.secret === 'high') return RESULTS.self;
+  if (ans.secret === 'mid' && ans.scope === 'many') return RESULTS.self;
+  if (ans.login === 'fresh') return RESULTS.chatgpt;
+  if (ans.login === 'none' && ans.scope === 'one') return RESULTS.readonly;
+  if (ans.scope === 'many' && ans.device === 'desktop') return RESULTS.cowork;
+  if (ans.login === 'signed') return RESULTS.chrome;
+  if (ans.device === 'desktop') return RESULTS.cowork;
+  return RESULTS.chrome;
+}
+
+function esc(s){return s.replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));}
+
+function render(){
+  const app = document.getElementById('app');
+  document.getElementById('bar').style.width = (idx / QS.length * 100) + '%';
+  if (idx < QS.length){
+    const q = QS[idx];
+    app.innerHTML = '<div class="card"><div class="qno">QUESTION ' + (idx+1) + ' / ' + QS.length + '</div>'
+      + '<div class="qt">' + esc(q.t) + '</div><div class="qh">' + esc(q.h) + '</div>'
+      + q.opts.map((o,i)=>'<button class="opt" data-i="'+i+'"><b>'+esc(o.l)+'</b><span>'+esc(o.s)+'</span></button>').join('')
+      + (idx>0 ? '<button class="back" id="bk">← 前の質問に戻る</button>' : '')
+      + '</div>';
+    app.querySelectorAll('button.opt').forEach(b=>b.onclick=()=>{
+      ans[q.k] = q.opts[+b.dataset.i].v; idx++; render();
+    });
+    const bk = document.getElementById('bk');
+    if (bk) bk.onclick = ()=>{ idx--; render(); };
+  } else {
+    document.getElementById('bar').style.width = '100%';
+    const r = decide();
+    app.innerHTML = '<div class="card"><div class="verdict">この作業のおすすめ</div>'
+      + '<div class="vname'+(r.stop?' stop':'')+'">' + esc(r.name) + '</div>'
+      + '<div class="why"><b>なぜ：</b>' + esc(r.why) + '</div>'
+      + '<h3>進め方</h3><ul>' + r.how.map(h=>'<li>'+esc(h)+'</li>').join('') + '</ul>'
+      + '<div class="cau"><b>注意：</b>' + esc(r.cau) + '</div>'
+      + '<button class="again" id="rs">もう一度診断する</button></div>';
+    document.getElementById('rs').onclick = ()=>{ idx=0; for(const k in ans) delete ans[k]; render(); };
+  }
+}
+render();
+</script>
+</body></html>

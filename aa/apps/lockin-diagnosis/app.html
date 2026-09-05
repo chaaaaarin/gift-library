@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AIツール ロックイン診断アプリ</title>
+<meta name="description" content="7つの質問に答えると、あなたが特定のAIツール・AIモデル1社にどれだけ依存しているか（ロックイン度）を判定し、依存を減らすための分散プランを提示します。">
+<style>
+  :root{
+    --navy:#1C3461; --navy-d:#16284A; --teal:#2C7A93; --teal-l:#5BBCD4;
+    --bg:#F7FAFC; --paper:#FFFFFF; --ink:#1C3461; --mid:#4A6080; --sub:#8098B4;
+    --line:rgba(28,52,97,.14); --soft:rgba(28,52,97,.06);
+    --risk-lo:#2C7A93; --risk-mid:#B5762A; --risk-hi:#B23B3B;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:var(--bg);color:var(--ink);font-family:'Hiragino Sans','Yu Gothic','Noto Sans JP',-apple-system,sans-serif;line-height:1.7;padding:24px 14px 60px;}
+  .wrap{max-width:640px;margin:0 auto;}
+  header{text-align:center;margin-bottom:22px;}
+  h1{font-size:22px;font-weight:900;color:var(--navy);line-height:1.35;}
+  .sub{font-size:13.5px;color:var(--mid);margin-top:8px;}
+  .card{background:var(--paper);border:1.5px solid var(--line);border-radius:16px;padding:22px 20px;box-shadow:0 4px 18px rgba(0,0,0,.05);}
+  .prog{height:6px;background:var(--soft);border-radius:999px;overflow:hidden;margin-bottom:18px;}
+  .prog i{display:block;height:100%;background:var(--teal-l);width:0;transition:width .3s;}
+  .qnum{font-size:12px;font-weight:900;color:var(--teal);letter-spacing:1px;}
+  .qtext{font-size:17px;font-weight:800;color:var(--ink);margin:6px 0 16px;line-height:1.5;}
+  .opts{display:flex;flex-direction:column;gap:10px;}
+  .opt{display:block;width:100%;text-align:left;background:var(--paper);border:1.5px solid var(--line);border-radius:12px;padding:13px 16px;font-size:14.5px;font-weight:700;color:var(--ink);cursor:pointer;transition:.15s;font-family:inherit;}
+  .opt:hover{border-color:var(--teal-l);background:var(--soft);}
+  .opt:active{transform:scale(.99);}
+  .back{margin-top:16px;background:none;border:none;color:var(--sub);font-size:13px;font-weight:700;cursor:pointer;font-family:inherit;text-decoration:underline;}
+  .back[disabled]{opacity:.35;cursor:default;text-decoration:none;}
+  /* result */
+  .rband{border-radius:14px;padding:16px 18px;color:#fff;text-align:center;margin-bottom:18px;}
+  .rband .lv{font-size:13px;font-weight:900;letter-spacing:2px;opacity:.9;}
+  .rband .sc{font-size:34px;font-weight:900;line-height:1.1;margin-top:2px;}
+  .rband .cap{font-size:13px;margin-top:4px;opacity:.95;}
+  .lo{background:var(--risk-lo);} .mid{background:var(--risk-mid);} .hi{background:var(--risk-hi);}
+  .rsec{margin-top:16px;}
+  .rsec h3{font-size:14px;font-weight:900;color:var(--navy);margin-bottom:8px;padding-bottom:6px;border-bottom:2px solid var(--soft);}
+  .rlist{list-style:none;}
+  .rlist li{font-size:13.5px;color:var(--ink);padding:7px 0 7px 22px;position:relative;line-height:1.6;}
+  .rlist li::before{content:'▸';position:absolute;left:0;color:var(--teal);font-weight:900;}
+  .flag{font-size:12.5px;color:var(--mid);background:var(--soft);border-radius:10px;padding:10px 12px;margin-top:12px;line-height:1.6;}
+  .again{margin-top:20px;width:100%;background:var(--navy);color:#fff;border:none;border-radius:12px;padding:13px;font-size:14px;font-weight:900;cursor:pointer;font-family:inherit;}
+  .foot{font-size:11.5px;color:var(--sub);text-align:center;margin-top:22px;line-height:1.7;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>AIツール ロックイン診断アプリ</h1>
+    <p class="sub">7問に答えると、特定のAIツール・AIモデル1社への依存度（ロックイン度）を判定し、分散プランを出します。</p>
+  </header>
+
+  <div class="card" id="card">
+    <div class="prog"><i id="bar"></i></div>
+    <div id="qbox"></div>
+    <button class="back" id="backBtn" onclick="back()">← 前の質問へ</button>
+  </div>
+
+  <p class="foot">この診断は簡易的な目安です。入力内容はどこにも送信されず、端末内だけで完結します。</p>
+</div>
+
+<script>
+const QS = [
+  {
+    q: "コード生成やAIチャットで「メインで使うツール」は、基本1つに固定していますか？",
+    opts: [
+      ["ほぼ1つに固定している", 2],
+      ["メインはあるが、たまに別も使う", 1],
+      ["複数を日常的に使い分けている", 0]
+    ]
+  },
+  {
+    q: "そのツールの中で、使う「AIモデル」は1社に決めていますか？（例：GPTだけ / Claudeだけ）",
+    opts: [
+      ["1社のモデルにほぼ固定", 2],
+      ["決めているが他社もすぐ選べる", 1],
+      ["用途で複数社を切り替えている", 0]
+    ]
+  },
+  {
+    q: "メインのツール（またはモデル）が今日から使えなくなったら、すぐ別の手段に切り替えられますか？",
+    opts: [
+      ["すぐには無理。かなり困る", 2],
+      ["数日かければ移行できる", 1],
+      ["すぐ切り替えられる（用意済み）", 0]
+    ]
+  },
+  {
+    q: "よく使う指示文（プロンプト）や設定を、ツールの外（手元のメモ・ファイル等）に控えていますか？",
+    opts: [
+      ["控えていない。ツールの中だけ", 2],
+      ["一部だけ控えている", 1],
+      ["まとめて手元に保存している", 0]
+    ]
+  },
+  {
+    q: "大事なやり取り・生成物を、定期的にエクスポート／バックアップしていますか？",
+    opts: [
+      ["していない", 2],
+      ["思い出したときだけ", 1],
+      ["定期的にしている", 0]
+    ]
+  },
+  {
+    q: "使っているAIツールの「運営会社」が最近変わった、または変わりそうだと知っていますか？",
+    opts: [
+      ["運営が誰かよく知らない", 2],
+      ["知っているが、変化は追っていない", 1],
+      ["運営と最近の動きを把握している", 0]
+    ]
+  },
+  {
+    q: "そのツールが有料プランの場合、解約してもデータや資産を持ち出せる形になっていますか？",
+    opts: [
+      ["持ち出せるか確認していない", 2],
+      ["たぶん持ち出せる（未確認）", 1],
+      ["持ち出し方法を確認済み／無料のみ利用", 0]
+    ]
+  }
+];
+
+let idx = 0;
+const answers = new Array(QS.length).fill(null);
+
+function render(){
+  const bar = document.getElementById('bar');
+  const qbox = document.getElementById('qbox');
+  const backBtn = document.getElementById('backBtn');
+  bar.style.width = (idx / QS.length * 100) + '%';
+  backBtn.disabled = (idx === 0);
+  if (idx >= QS.length){ showResult(); return; }
+  const item = QS[idx];
+  let html = '<div class="qnum">Q' + (idx+1) + ' / ' + QS.length + '</div>';
+  html += '<div class="qtext">' + item.q + '</div><div class="opts">';
+  item.opts.forEach((o, i) => {
+    html += '<button class="opt" onclick="pick(' + i + ')">' + o[0] + '</button>';
+  });
+  html += '</div>';
+  qbox.innerHTML = html;
+}
+
+function pick(i){
+  answers[idx] = QS[idx].opts[i][1];
+  idx++;
+  render();
+}
+function back(){
+  if (idx > 0){ idx--; render(); }
+}
+
+function showResult(){
+  document.getElementById('bar').style.width = '100%';
+  document.getElementById('backBtn').style.display = 'none';
+  const score = answers.reduce((a,b) => a + (b||0), 0); // 0..14
+  let lv, cls, cap;
+  if (score <= 3){ lv = "LOW"; cls = "lo"; cap = "依存は低め。今の分散を保ちましょう"; }
+  else if (score <= 8){ lv = "MEDIUM"; cls = "mid"; cap = "そこそこ依存。1つ止まると数日痛みます"; }
+  else { lv = "HIGH"; cls = "hi"; cap = "強く依存。1社の都合で作業が止まりえます"; }
+
+  const plans = {
+    lo: [
+      "今の「複数を使い分ける」状態を維持する。半年に1回、依存が偏っていないか見直す",
+      "新しく使い始めるツールも、最初から乗り換え先を1つ決めておく",
+      "プロンプト集と設定のバックアップだけ、月1で更新する"
+    ],
+    mid: [
+      "メインとは別に「第2のモデル」を1社決め、実際に1週間使ってみる（使えるか確認する）",
+      "よく使う指示文トップ10を、ツールの外のテキストファイルにコピーする",
+      "大事なやり取り・成果物のエクスポート手順を1回試し、月1の予定に入れる",
+      "使っているツールの運営・最近のニュースを、月1でチェックする"
+    ],
+    hi: [
+      "今すぐ「第2の手段」を用意する：別ツール or 同ツール内の別モデルを、今日ログインして1つタスクを流す",
+      "メインが今日消えた前提で、最低限の作業を回す手順を紙に書き出す（30分）",
+      "プロンプト・設定・重要な出力を、まとめて手元に書き出す（ツールの中だけに置かない）",
+      "有料なら、解約時にデータを持ち出せるか・何が消えるかを今週中に確認する",
+      "運営会社・買収・規約変更のニュースを追う（今回のCursor×GPTのような動きの早期察知）"
+    ]
+  };
+
+  const flags = [];
+  if (answers[2] === 2) flags.push("「すぐ切り替えられない」と答えています。これがロックインの本体です。まず第2の手段の用意から。");
+  if (answers[3] === 2 && answers[4] === 2) flags.push("プロンプトも成果物も手元に無い状態です。ツールが止まると積み上げがまるごと取り出しにくくなります。");
+  if (answers[5] === 2) flags.push("運営会社を把握していません。今回のCursorのように「持ち主が変わって使える道具が変わる」動きは、知らないと直撃します。");
+  if (answers[1] === 2 && answers[0] === 2) flags.push("ツールもモデルも1社固定です。分散の効果がいちばん大きいタイプです。");
+
+  let html = '<div class="rband ' + cls + '">';
+  html += '<div class="lv">ロックイン度：' + lv + '</div>';
+  html += '<div class="sc">' + score + ' <span style="font-size:16px;">/ 14</span></div>';
+  html += '<div class="cap">' + cap + '</div></div>';
+
+  html += '<div class="rsec"><h3>あなたへの分散プラン</h3><ul class="rlist">';
+  plans[cls].forEach(p => { html += '<li>' + p + '</li>'; });
+  html += '</ul></div>';
+
+  if (flags.length){
+    html += '<div class="rsec"><h3>特に気になった点</h3>';
+    flags.forEach(f => { html += '<div class="flag">' + f + '</div>'; });
+    html += '</div>';
+  }
+
+  html += '<div class="rsec"><h3>共通の3習慣</h3><ul class="rlist">';
+  html += '<li>モデルは2社は「いつでも選べる」状態にしておく</li>';
+  html += '<li>指示文を1社の癖に最適化しすぎない（他モデルでも通る書き方に）</li>';
+  html += '<li>大事なやり取り・設定・プロンプトは、定期的に手元へ書き出す</li>';
+  html += '</ul></div>';
+
+  html += '<button class="again" onclick="restart()">もう一度診断する</button>';
+
+  document.getElementById('qbox').innerHTML = html;
+}
+
+function restart(){
+  idx = 0;
+  answers.fill(null);
+  document.getElementById('backBtn').style.display = '';
+  render();
+}
+
+render();
+</script>
+</body>
+</html>
