@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>音声AI乗り換え診断＋コスト計算アプリ</title>
+<meta name="description" content="6問に答えると、新しい音声認識モデルに乗り換えるべきか・待つべきかを判定します。月の音声時間を入れると費用の目安も試算し、上限や制限のうち自分に当たるものを一覧で示します。">
+<style>
+  :root{
+    --brand:#1C3461; --brand-deep:#16284A; --brand-soft:rgba(28,52,97,.08); --brand-line:rgba(28,52,97,.22);
+    --accent:#5BBCD4; --accent-deep:#2C7A93; --accent-soft:rgba(91,188,212,.16);
+    --bg:#F7FAFC; --paper:#FFFFFF; --ink:#1C3461; --ink-mid:#4A6080; --ink-sub:#8098B4; --line:rgba(28,52,97,.12);
+    --warn:#B4531B; --warn-soft:rgba(180,83,27,.10);
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,'Hiragino Sans','Yu Gothic',sans-serif;line-height:1.7;padding:24px 16px 60px;}
+  .wrap{max-width:760px;margin:0 auto;}
+  header{text-align:center;margin-bottom:26px;}
+  h1{font-size:26px;font-weight:800;line-height:1.35;}
+  header p{font-size:14px;color:var(--ink-mid);margin-top:10px;}
+  .card{background:var(--paper);border:1.5px solid var(--line);border-radius:14px;padding:20px;margin-bottom:16px;}
+  .qn{display:inline-block;background:var(--brand);color:#fff;font-weight:800;font-size:12px;border-radius:999px;padding:2px 11px;margin-bottom:9px;}
+  .q{font-size:17px;font-weight:800;margin-bottom:12px;}
+  .opts{display:grid;gap:8px;}
+  .opt{display:flex;align-items:flex-start;gap:10px;border:1.5px solid var(--line);border-radius:10px;padding:11px 13px;cursor:pointer;font-size:14.5px;background:var(--paper);transition:.15s;}
+  .opt:hover{border-color:var(--brand-line);background:var(--brand-soft);}
+  .opt input{margin-top:5px;flex-shrink:0;accent-color:var(--brand);}
+  .opt.sel{border-color:var(--brand);background:var(--brand-soft);border-width:2px;}
+  .opt small{display:block;color:var(--ink-sub);font-size:12.5px;}
+  .calc{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  @media(max-width:560px){.calc{grid-template-columns:1fr;}}
+  label{display:block;font-size:13.5px;font-weight:700;color:var(--ink-mid);margin-bottom:6px;}
+  input[type=number]{width:100%;font-size:17px;padding:10px 12px;border:1.5px solid var(--line);border-radius:10px;font-family:inherit;color:var(--ink);background:var(--paper);}
+  input[type=number]:focus{outline:none;border-color:var(--brand);}
+  .hint{font-size:12px;color:var(--ink-sub);margin-top:5px;}
+  button{width:100%;font-family:inherit;font-size:17px;font-weight:800;color:#fff;background:var(--brand);border:none;border-radius:12px;padding:15px;cursor:pointer;transition:.15s;}
+  button:hover{background:var(--brand-deep);}
+  button.ghost{background:var(--paper);color:var(--brand-deep);border:1.5px solid var(--line);font-size:14px;padding:11px;margin-top:10px;}
+  #result{display:none;}
+  .verdict{border-radius:14px;padding:22px;text-align:center;margin-bottom:16px;color:#fff;}
+  .verdict.go{background:var(--brand);}
+  .verdict.maybe{background:var(--accent-deep);}
+  .verdict.wait{background:#6B7A8F;}
+  .verdict .lb{font-size:12px;font-weight:800;letter-spacing:2px;opacity:.85;}
+  .verdict .t{font-size:25px;font-weight:900;margin:6px 0 8px;line-height:1.3;}
+  .verdict .s{font-size:14.5px;opacity:.95;}
+  .bars{display:flex;gap:8px;margin-top:16px;}
+  .bar{flex:1;height:7px;border-radius:4px;background:rgba(255,255,255,.28);overflow:hidden;}
+  .bar i{display:block;height:100%;background:#fff;}
+  h2.sec{font-size:16px;font-weight:800;margin-bottom:10px;padding-left:11px;border-left:4px solid var(--accent);}
+  ul.list{list-style:none;}
+  ul.list li{font-size:14.5px;padding:9px 0 9px 26px;position:relative;border-bottom:1px solid var(--line);}
+  ul.list li:last-child{border-bottom:none;}
+  ul.list li::before{content:'';position:absolute;left:4px;top:17px;width:9px;height:9px;border-radius:50%;background:var(--accent);}
+  ul.list li.warn::before{background:var(--warn);}
+  ul.list li b{color:var(--brand-deep);}
+  .money{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;text-align:center;}
+  @media(max-width:560px){.money{grid-template-columns:1fr;}}
+  .money .m{border:1.5px solid var(--line);border-radius:12px;padding:14px 8px;}
+  .money .m .n{font-size:23px;font-weight:900;color:var(--brand-deep);}
+  .money .m .l{font-size:12px;color:var(--ink-sub);margin-top:3px;}
+  .money .m.hl{border-color:var(--accent);border-width:2px;background:var(--accent-soft);}
+  .note{font-size:12.5px;color:var(--ink-mid);background:var(--brand-soft);border-radius:10px;padding:12px 14px;margin-top:12px;}
+  footer{text-align:center;font-size:12px;color:var(--ink-sub);margin-top:26px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>音声AI乗り換え診断＋<br>コスト計算アプリ</h1>
+    <p>6問に答えると、新しい音声認識モデルに乗り換えるべきか判定します。<br>月の音声時間を入れると、費用の目安も出ます。</p>
+  </header>
+
+  <div id="quiz"></div>
+
+  <div class="card">
+    <span class="qn">計算</span>
+    <div class="q">月にどれくらい音声を文字にしますか？</div>
+    <div class="calc">
+      <div>
+        <label>1か月の音声の合計（分）</label>
+        <input type="number" id="mins" min="0" step="10" value="300" inputmode="numeric">
+        <div class="hint">1時間の会議が週2本なら約480分です</div>
+      </div>
+      <div>
+        <label>今使っているツールの月額（円）</label>
+        <input type="number" id="cur" min="0" step="100" value="0" inputmode="numeric">
+        <div class="hint">使っていなければ 0 のままで大丈夫です</div>
+      </div>
+    </div>
+  </div>
+
+  <button id="go">診断する</button>
+  <div id="result"></div>
+</div>
+
+<script>
+(function(){
+  var RATE = 0.005;      // 実効の目安（音声＋テキスト込み・1分あたり米ドル）
+  var RATE_IN = 0.003;   // 音声入力のみ・1分あたり米ドル
+  var USDJPY = 150;      // 円換算の目安レート（利用者が上書きできない固定の概算）
+
+  var QS = [
+    {q:'主にどんな場面で使いますか？', opts:[
+      {t:'打ち合わせ・通話の録音を、あとから文字にする', v:'rec', s:'議事録・記録づくり'},
+      {t:'その場で喋って、文章の下書きにする', v:'dict', s:'口述・メモ・返信の下書き'},
+      {t:'自分のアプリやツールに組み込みたい', v:'api', s:'開発者向けの使い方'},
+      {t:'まだ決めていない／試してみたいだけ', v:'try', s:'様子見'}
+    ]},
+    {q:'1回の録音や通話は、どれくらいの長さですか？', opts:[
+      {t:'10分未満', v:'s', s:'短い打ち合わせ・メモ中心'},
+      {t:'10〜30分', v:'m', s:'標準的な打ち合わせ'},
+      {t:'30分〜1時間', v:'l', s:'長めの会議'},
+      {t:'1時間を超える', v:'xl', s:'研修・セミナー・終日の記録'}
+    ]},
+    {q:'同時に話す人数は、だいたい何人ですか？', opts:[
+      {t:'1人（自分だけ）', v:'1', s:'口述・ひとり語り'},
+      {t:'2〜3人', v:'3', s:'少人数の打ち合わせ'},
+      {t:'4人以上', v:'4', s:'会議・座談会'}
+    ]},
+    {q:'使う言語はどれに近いですか？', opts:[
+      {t:'日本語が中心', v:'ja', s:'国内の業務がほとんど'},
+      {t:'英語が中心', v:'en', s:'海外とのやり取りが中心'},
+      {t:'日本語と英語が混ざる', v:'mix', s:'会話の途中で切り替わる'}
+    ]},
+    {q:'どこで使いたいですか？', opts:[
+      {t:'Android のキーボード（スマホで入力）', v:'android', s:'移動中の入力が多い'},
+      {t:'Mac のアプリ（パソコンで入力）', v:'mac', s:'デスクでの下書きが多い'},
+      {t:'自分で作るアプリやツールの中', v:'dev', s:'開発者向けの接続口を使う'},
+      {t:'iPhone で使いたい', v:'ios', s:'スマホ中心だが Android ではない'}
+    ]},
+    {q:'専門用語や固有名詞は多いですか？', opts:[
+      {t:'多い（社内の略語・型番・人名がよく出る）', v:'hi', s:'誤変換が起きやすい内容'},
+      {t:'ふつう', v:'mid', s:'一般的な言葉が中心'},
+      {t:'少ない', v:'lo', s:'日常会話に近い'}
+    ]}
+  ];
+
+  var ans = {};
+  var quiz = document.getElementById('quiz');
+  QS.forEach(function(item, i){
+    var card = document.createElement('div');
+    card.className = 'card';
+    var html = '<span class="qn">Q' + (i+1) + '</span><div class="q">' + item.q + '</div><div class="opts">';
+    item.opts.forEach(function(o, j){
+      html += '<label class="opt" data-q="' + i + '" data-v="' + o.v + '">' +
+              '<input type="radio" name="q' + i + '" value="' + o.v + '">' +
+              '<span>' + o.t + '<small>' + o.s + '</small></span></label>';
+    });
+    quiz.appendChild(card);
+    card.innerHTML = html + '</div>';
+  });
+
+  quiz.addEventListener('change', function(e){
+    if (e.target.type !== 'radio') return;
+    var lab = e.target.closest('.opt');
+    var q = lab.getAttribute('data-q');
+    ans[q] = lab.getAttribute('data-v');
+    lab.parentNode.querySelectorAll('.opt').forEach(function(o){ o.classList.remove('sel'); });
+    lab.classList.add('sel');
+  });
+
+  function yen(n){ return '約' + Math.round(n).toLocaleString('ja-JP') + '円'; }
+  function usd(n){ return '$' + (n < 10 ? n.toFixed(2) : Math.round(n).toLocaleString('en-US')); }
+
+  document.getElementById('go').addEventListener('click', function(){
+    var missing = [];
+    for (var i = 0; i < QS.length; i++) { if (!ans[i]) missing.push(i + 1); }
+    if (missing.length) {
+      alert('Q' + missing.join('・Q') + ' がまだ選ばれていません。');
+      return;
+    }
+
+    var mins = Math.max(0, Number(document.getElementById('mins').value) || 0);
+    var cur  = Math.max(0, Number(document.getElementById('cur').value) || 0);
+
+    var score = 50, fits = [], warns = [];
+
+    // Q1 用途
+    if (ans[0] === 'rec') { score += 15; fits.push('録音をあとから文字にする使い方は、<b>話者ごとの分離と単語単位の時刻</b>が付けられるのでいちばん相性がいい用途です。'); }
+    if (ans[0] === 'dict'){ score += 20; fits.push('その場で喋って下書きにする使い方は、<b>言いよどみの除去と自動整形</b>がそのまま効きます。清書の工程が減ります。'); }
+    if (ans[0] === 'api') { score += 15; fits.push('組み込み用途なら、リアルタイム用と録音用で<b>接続口が2種類</b>用意されています。無料枠から試せます。'); }
+    if (ans[0] === 'try') { score -= 5;  warns.push('用途が決まっていない状態だと、精度の違いを体感しづらいです。まず「口述の下書き」だけ1週間試すのが分かりやすい入口です。'); }
+
+    // Q2 長さ
+    if (ans[1] === 'xl') { score -= 15; warns.push('1時間を超える録音は<b>一度に処理できません</b>（ファイルの上限が1時間、話者分けや時刻付きだと30分）。長い記録は分割して投げる前提で考えてください。'); }
+    if (ans[1] === 'l')  { score -= 5;  warns.push('30分を超える録音で話者分けや時刻を付けたい場合、<b>30分ごとに分ける</b>必要があります。'); }
+    if (ans[1] === 's' || ans[1] === 'm') { score += 5; fits.push('その長さなら分割なしで一度に処理できます。'); }
+    if (ans[0] === 'dict' && (ans[1] === 'l' || ans[1] === 'xl')) {
+      warns.push('しゃべりながら文字にする使い方は<b>1回あたり10分</b>までです。長時間の口述は、区切って何回かに分けてください。');
+      score -= 5;
+    }
+
+    // Q3 人数
+    if (ans[2] === '4') { score -= 20; warns.push('4人以上の会議では<b>誰が話したかの割り当てが実験的な扱い</b>になります（正式対応は3人まで）。人数が多い日は話者分けを使わず、全文だけ書き出して担当は自分で埋める方が速いです。'); }
+    if (ans[2] === '3') { score += 10; fits.push('2〜3人の打ち合わせは、話者ごとの分離が正式に対応している範囲です。'); }
+    if (ans[2] === '1') { score += 10; fits.push('ひとりで話す用途なら、話者分離の上限は関係ありません。'); }
+
+    // Q4 言語
+    if (ans[3] === 'ja')  { score += 5;  fits.push('日本語は、公式の多言語テストの対象言語に含まれています（日本語単独の数値は公開されていません）。'); }
+    if (ans[3] === 'en')  { score += 15; fits.push('英語は、どの提供場所でも最初に使える言語です。制限に当たりにくい条件です。'); }
+    if (ans[3] === 'mix') { score += 10; fits.push('会話の途中で言語が切り替わっても追従する、と公式が明記しています。混在する環境では効きます。'); }
+
+    // Q5 場所
+    if (ans[4] === 'android') { score -= 10; warns.push('Android のキーボードで使う機能は<b>一部の国と言語のみ</b>の提供で、対象の一覧は公表されていません。日本で今すぐ使えるかは未確認です。'); }
+    if (ans[4] === 'mac')     { warns.push('Mac のアプリでの音声入力は<b>英語のみ</b>です。日本語で使いたい場合、この経路は現時点では選べません。'); score -= (ans[3] === 'en' ? 0 : 15); }
+    if (ans[4] === 'dev')     { score += 15; fits.push('開発者向けの接続口は公開プレビューで、今日から試せます。無料枠もあります。'); }
+    if (ans[4] === 'ios')     { score -= 10; warns.push('iPhone 向けの提供は公式に案内されていません。ブラウザ経由の対応は「近日」とされています。'); }
+
+    // Q6 専門用語
+    if (ans[5] === 'hi')  { score += 15; fits.push('専門用語が多い内容には<b>カスタム語彙</b>が効きます。社内の略語・型番を先に登録しておくと、いちばん直しにくい失敗が消えます。'); }
+    if (ans[5] === 'mid') { score += 5; }
+    if (ans[5] === 'lo')  { fits.push('一般的な言葉が中心なら、追加の設定なしでそのまま使えます。'); }
+
+    score = Math.max(0, Math.min(100, score));
+
+    var v, vt, vs;
+    if (score >= 70)      { v = 'go';    vt = '乗り換える価値があります'; vs = '条件がよく合っています。まず1週間、いつもの作業をそのまま置き換えて試してください。'; }
+    else if (score >= 45) { v = 'maybe'; vt = '条件つきで使えます';       vs = '効く場面と、上限に当たる場面が混ざっています。下の「当たる制限」を見て、使う場面を絞るのがおすすめです。'; }
+    else                  { v = 'wait';  vt = '今は様子を見る方が無難です'; vs = '上限や提供範囲に当たる条件が多く、今の使い方のままだと手間が増える可能性があります。'; }
+
+    var monthly    = mins * RATE;
+    var monthlyIn  = mins * RATE_IN;
+    var monthlyYen = monthly * USDJPY;
+    var diff       = cur - monthlyYen;
+
+    var h = '';
+    h += '<div class="verdict ' + v + '"><div class="lb">DIAGNOSIS</div><div class="t">' + vt + '</div><div class="s">' + vs + '</div>' +
+         '<div class="bars"><div class="bar"><i style="width:' + score + '%"></i></div></div>' +
+         '<div class="s" style="margin-top:7px;font-size:12.5px;">適合度 ' + score + ' / 100</div></div>';
+
+    h += '<div class="card"><h2 class="sec">費用の目安（1か月 ' + mins.toLocaleString('ja-JP') + '分の場合）</h2>' +
+         '<div class="money">' +
+         '<div class="m hl"><div class="n">' + usd(monthly) + '</div><div class="l">実効の目安（音声＋文字）</div></div>' +
+         '<div class="m"><div class="n">' + usd(monthlyIn) + '</div><div class="l">音声の入力ぶんだけ</div></div>' +
+         '<div class="m"><div class="n">' + yen(monthlyYen) + '</div><div class="l">円に直すと（1ドル' + USDJPY + '円で計算）</div></div>' +
+         '</div>';
+    if (cur > 0) {
+      if (diff > 0) {
+        h += '<div class="note">今お使いのツール（月' + cur.toLocaleString('ja-JP') + '円）と比べると、<b>月' + Math.round(diff).toLocaleString('ja-JP') + '円ぶん安くなる計算</b>です。ただし、上限に当たって手作業が増えるなら、その手間ぶんは差し引いて考えてください。</div>';
+      } else {
+        h += '<div class="note">今お使いのツール（月' + cur.toLocaleString('ja-JP') + '円）の方が、この使用量では<b>月' + Math.round(-diff).toLocaleString('ja-JP') + '円ぶん安い</b>計算です。乗り換えるなら、費用ではなく精度や整形のしやすさで判断してください。</div>';
+      }
+    } else {
+      h += '<div class="note">今のツールの月額を入れると、差額まで出せます。開発者向けの接続口には無料枠があるので、まずは0円で試せます。</div>';
+    }
+    h += '</div>';
+
+    if (fits.length) {
+      h += '<div class="card"><h2 class="sec">あなたの条件で効くところ</h2><ul class="list">';
+      fits.forEach(function(t){ h += '<li>' + t + '</li>'; });
+      h += '</ul></div>';
+    }
+    if (warns.length) {
+      h += '<div class="card"><h2 class="sec">あなたに当たる制限</h2><ul class="list">';
+      warns.forEach(function(t){ h += '<li class="warn">' + t + '</li>'; });
+      h += '</ul></div>';
+    }
+
+    h += '<div class="card"><h2 class="sec">次にやること</h2><ul class="list">';
+    if (v === 'go') {
+      h += '<li>いつもやっている書き起こしを<b>1週間だけ</b>置き換えて、清書にかかる時間を計る</li>';
+      h += '<li>' + (ans[5] === 'hi' ? '先に<b>カスタム語彙を10語だけ</b>登録してから本番の口述を始める' : 'まずは短い録音1本で、整形のクセを確認する') + '</li>';
+      h += '<li>効果が出たら、対象を週次の定型作業まで広げる</li>';
+    } else if (v === 'maybe') {
+      h += '<li>上の「当たる制限」に引っかからない場面を<b>1つだけ</b>選んで、そこだけ置き換える</li>';
+      h += '<li>' + (ans[1] === 'xl' || ans[1] === 'l' ? '長い録音は<b>30分ごとに分割</b>して投げる運用を先に決める' : '短い録音から始めて、精度の感触をつかむ') + '</li>';
+      h += '<li>1か月使ってから、費用と手間の差し引きで続けるか決める</li>';
+    } else {
+      h += '<li>今の道具は変えずに、<b>提供範囲の発表を待つ</b></li>';
+      h += '<li>試すなら、制限に当たらない短い口述だけで感触を見る</li>';
+      h += '<li>' + (ans[2] === '4' ? '4人以上の会議は、話者分けを使わず全文だけ書き出す運用に切り替えると今でも使えます' : '使う場面が決まったら、もう一度この診断をやり直す') + '</li>';
+    }
+    h += '</ul></div>';
+
+    h += '<div class="card"><h2 class="sec">この試算の前提</h2><ul class="list">' +
+         '<li>1分あたりの単価は、公式が注釈で示している<b>実効の目安（1分あたり約0.005ドル）</b>と、音声入力ぶん（1分あたり約0.003ドル）を使っています</li>' +
+         '<li>実際の請求は処理量で決まるため、ここで出る金額は<b>目安</b>です</li>' +
+         '<li>円換算は1ドル' + USDJPY + '円の概算です。為替で変わります</li>' +
+         '<li>上限（話者3人・録音1時間・リアルタイム10分）と、提供範囲の条件は発表時点のものです</li>' +
+         '</ul></div>';
+
+    h += '<button class="ghost" id="again">もう一度やる</button>';
+
+    var res = document.getElementById('result');
+    res.innerHTML = h;
+    res.style.display = 'block';
+    res.scrollIntoView({behavior:'smooth', block:'start'});
+    document.getElementById('again').addEventListener('click', function(){
+      res.style.display = 'none';
+      window.scrollTo({top:0, behavior:'smooth'});
+    });
+  });
+})();
+</script>
+</body>
+</html>
