@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Claude Code 見える化 設定ジェネレーターアプリ</title>
+<meta name="description" content="項目を選ぶと、画面下の見た目をその場でプレビューしながら、貼るだけの statusline.sh と settings.json ができます。">
+<style>
+  :root{
+    --brand:#C15640; --brand-soft:#F6ECE4; --ink:#2A2620; --ink-mid:#6E6557; --ink-sub:#9A9080;
+    --bg:#F7F3EC; --paper:#FFFFFF; --line:#E4D9C7; --term:#211E1A; --term-ink:#E9E4D8;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:var(--bg);color:var(--ink);font-family:-apple-system,"Hiragino Sans","Yu Gothic",sans-serif;line-height:1.7;padding:22px 14px;}
+  .wrap{max-width:720px;margin:0 auto;background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:24px 22px 30px;}
+  h1{font-size:21px;line-height:1.35;margin-bottom:4px;}
+  .sub{font-size:13px;color:var(--ink-mid);margin-bottom:18px;}
+
+  .preview{background:var(--term);border-radius:10px;padding:14px 16px 16px;margin-bottom:6px;}
+  .preview .cap{font-size:11px;color:#8A8578;margin-bottom:8px;}
+  .bar{font-family:ui-monospace,Menlo,monospace;font-size:13px;color:var(--term-ink);white-space:pre-wrap;word-break:break-all;min-height:20px;}
+  .bar .m{color:#E0A579;} .bar .c-ok{color:#8FBF8F;} .bar .c-mid{color:#D8B36B;} .bar .c-lo{color:#E08B7B;} .bar .dim{color:#8A8578;}
+  .previewnote{font-size:11px;color:var(--ink-sub);margin-bottom:16px;}
+
+  fieldset{border:1px solid var(--line);border-radius:10px;padding:12px 14px;margin-bottom:12px;}
+  legend{font-size:12px;font-weight:700;color:var(--brand);padding:0 6px;}
+  .chips{display:flex;flex-wrap:wrap;gap:7px;}
+  label.chip{display:inline-flex;align-items:center;gap:6px;font-size:13px;background:var(--bg);border:1.5px solid var(--line);border-radius:8px;padding:6px 10px;cursor:pointer;}
+  label.chip:hover{border-color:var(--brand);}
+  label.chip input{margin:0;}
+  .row{display:flex;flex-wrap:wrap;gap:14px;align-items:center;font-size:13px;}
+  select{font-size:13px;padding:5px 8px;border:1.5px solid var(--line);border-radius:7px;background:var(--paper);}
+
+  .out{margin-top:20px;}
+  .out h2{font-size:14px;margin:16px 0 6px;}
+  .codewrap{position:relative;}
+  pre{background:var(--term);color:var(--term-ink);font-family:ui-monospace,Menlo,monospace;font-size:11.5px;line-height:1.55;border-radius:9px;padding:14px 14px 14px;overflow-x:auto;white-space:pre;}
+  .copy{position:absolute;top:8px;right:8px;font-size:11px;background:#3A352E;color:#E9E4D8;border:none;border-radius:6px;padding:5px 10px;cursor:pointer;}
+  .copy:hover{background:#4A443B;}
+  .note{font-size:12px;color:var(--ink-sub);margin-top:14px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Claude Code 見える化<br>設定ジェネレーターアプリ</h1>
+  <p class="sub">出したい項目を選ぶと、画面下の見た目をプレビューしながら、貼るだけの <code>statusline.sh</code> と <code>settings.json</code> ができます。</p>
+
+  <div class="preview">
+    <div class="cap">画面下のプレビュー（サンプル値）</div>
+    <div class="bar" id="bar"></div>
+  </div>
+  <p class="previewnote">※ 実際の色はお使いのターミナル配色で変わります。ここは近い色で表示しています。</p>
+
+  <fieldset>
+    <legend>出す項目</legend>
+    <div class="chips" id="widgets">
+      <label class="chip"><input type="checkbox" value="model" checked>モデル名</label>
+      <label class="chip"><input type="checkbox" value="ctx" checked>コンテキスト残量</label>
+      <label class="chip"><input type="checkbox" value="cost" checked>セッションコスト（推定）</label>
+      <label class="chip"><input type="checkbox" value="time" checked>経過時間</label>
+      <label class="chip"><input type="checkbox" value="branch" checked>git ブランチ</label>
+      <label class="chip"><input type="checkbox" value="lines">変更行数</label>
+      <label class="chip"><input type="checkbox" value="effort">reasoning effort</label>
+      <label class="chip"><input type="checkbox" value="fast">fast mode</label>
+      <label class="chip"><input type="checkbox" value="worktree">worktree 名</label>
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <legend>見た目</legend>
+    <div class="row">
+      <span>コンテキスト残量:
+        <select id="ctxmode">
+          <option value="num">数字（ctx 42%）</option>
+          <option value="bar">バー（▓▓▓░░）</option>
+          <option value="both">バー＋数字</option>
+        </select>
+      </span>
+      <span>区切り:
+        <select id="sep">
+          <option value=" · ">中黒（ ・ ）</option>
+          <option value=" | ">縦棒（ | ）</option>
+          <option value="  ">スペース2つ</option>
+          <option value=" ">スペース1つ</option>
+        </select>
+      </span>
+      <label class="chip"><input type="checkbox" id="color" checked>残量で色を変える</label>
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <legend>通知フック</legend>
+    <div class="row">
+      <span>OS:
+        <select id="os">
+          <option value="mac">macOS</option>
+          <option value="linux">Linux</option>
+          <option value="win">Windows</option>
+        </select>
+      </span>
+      <span>タイミング:
+        <select id="notify">
+          <option value="both">入力待ち＋完了</option>
+          <option value="wait">入力待ちのみ</option>
+          <option value="done">完了のみ</option>
+          <option value="none">通知なし</option>
+        </select>
+      </span>
+    </div>
+  </fieldset>
+
+  <div class="out">
+    <h2>① ~/.claude/statusline.sh</h2>
+    <div class="codewrap"><button class="copy" data-t="sh">コピー</button><pre id="sh"></pre></div>
+    <h2>② ~/.claude/settings.json に足すブロック</h2>
+    <div class="codewrap"><button class="copy" data-t="cfg">コピー</button><pre id="cfg"></pre></div>
+  </div>
+
+  <p class="note">jq が必要です（brew install jq / sudo apt install jq / winget install jqlang.jq）。すでに settings.json に hooks がある場合は、Notification / Stop をキーとして足してください。表示される金額は API 単価換算の推定で、定額プランの実請求とは一致しません。Claude Code を再起動すると反映されます。</p>
+</div>
+
+<script>
+(function(){
+  var $ = function(id){ return document.getElementById(id); };
+  var SAMPLE = { model:"Sonnet 5", remain:42, cost:"0.83", clock:"12:04", branch:"main*", lines:"+128 -34", effort:"high", worktree:"feat-login" };
+
+  function chosen(){
+    var s = {};
+    $("widgets").querySelectorAll("input").forEach(function(i){ s[i.value] = i.checked; });
+    return s;
+  }
+  function barString(pct){
+    var full = Math.round(pct/20);
+    return "\u2593".repeat(full) + "\u2591".repeat(5-full);
+  }
+  function ctxText(){
+    var m = $("ctxmode").value, p = SAMPLE.remain;
+    if(m==="num") return "ctx "+p+"%";
+    if(m==="bar") return "ctx "+barString(p);
+    return "ctx "+barString(p)+" "+p+"%";
+  }
+  function ctxClass(){
+    var p = SAMPLE.remain;
+    if(!$("color").checked) return "";
+    return p<=15 ? "c-lo" : (p<=35 ? "c-mid" : "c-ok");
+  }
+
+  function renderPreview(){
+    var w = chosen(), sep = $("sep").value, parts = [];
+    if(w.model)  parts.push('<span class="m">'+SAMPLE.model+'</span>');
+    if(w.ctx)    parts.push('<span class="'+ctxClass()+'">'+ctxText()+'</span>');
+    if(w.cost)   parts.push('$'+SAMPLE.cost);
+    if(w.time)   parts.push(SAMPLE.clock);
+    if(w.branch) parts.push(SAMPLE.branch);
+    if(w.lines)  parts.push(SAMPLE.lines);
+    if(w.worktree) parts.push('wt:'+SAMPLE.worktree);
+    if(w.effort) parts.push(SAMPLE.effort);
+    if(w.fast)   parts.push('fast');
+    var sepHtml = '<span class="dim">'+sep.replace(/ /g,'\u00a0')+'</span>';
+    $("bar").innerHTML = parts.join(sepHtml) || '<span class="dim">（項目を1つ以上選んでください）</span>';
+  }
+
+  function genStatusline(){
+    var w = chosen(), sep = $("sep").value, color = $("color").checked, cm = $("ctxmode").value;
+    var L = [];
+    L.push('#!/bin/bash');
+    L.push('# Claude Code 見える化 statusline —— 見える化ジェネレーターで生成 / jq 必須');
+    L.push('input=$(cat)');
+    L.push('j(){ printf %s "$input" | jq -r "$1" 2>/dev/null; }');
+    L.push('');
+    if(w.model)  L.push('MODEL=$(j \'.model.display_name // "?"\')');
+    if(w.ctx){
+      L.push('REMAIN=$(j \'.context_window.remaining_percentage // empty\')');
+      L.push('USED=$(j \'.context_window.used_percentage // empty\')');
+      L.push('if [ -z "$REMAIN" ] && [ -n "$USED" ]; then REMAIN=$(awk -v u="$USED" \'BEGIN{printf "%d",100-u}\'); fi');
+      L.push('REMAIN=${REMAIN%.*}');
+    }
+    if(w.cost) L.push('COST=$(j \'.cost.total_cost_usd // 0\')');
+    if(w.time){
+      L.push('DUR_MS=$(j \'.cost.total_duration_ms // 0\')');
+      L.push('SECS=$(( DUR_MS / 1000 )); printf -v CLOCK \'%d:%02d\' $(( SECS/60 )) $(( SECS%60 ))');
+    }
+    if(w.lines){
+      L.push('ADD=$(j \'.cost.total_lines_added // 0\'); DEL=$(j \'.cost.total_lines_removed // 0\')');
+    }
+    if(w.branch){
+      L.push('DIR=$(j \'.workspace.current_dir // .cwd // ""\')');
+      L.push('BR=""');
+      L.push('if [ -n "$DIR" ] && git -C "$DIR" rev-parse --is-inside-work-tree >/dev/null 2>&1; then');
+      L.push('  BR=$(git -C "$DIR" branch --show-current 2>/dev/null)');
+      L.push('  [ -n "$(git -C "$DIR" status --porcelain 2>/dev/null)" ] && BR="${BR}*"');
+      L.push('fi');
+    }
+    if(w.worktree) L.push('WT=$(j \'.workspace.git_worktree // empty\')');
+    if(w.effort)   L.push('EFFORT=$(j \'.effort.level // empty\')');
+    if(w.fast)     L.push('FAST=$(j \'.fast_mode // false\')');
+    L.push('');
+    if(color && w.ctx){
+      L.push('E=$\'\\033\'; RST="${E}[0m"; DIM="${E}[2m"');
+      L.push('r=${REMAIN:-100}');
+      L.push('if   [ "$r" -le 15 ]; then CB="${E}[38;5;203m"');
+      L.push('elif [ "$r" -le 35 ]; then CB="${E}[38;5;179m"');
+      L.push('else CB="${E}[38;5;108m"; fi');
+    } else {
+      L.push('E=$\'\\033\'; RST="${E}[0m"; DIM="${E}[2m"; CB=""');
+    }
+    L.push('SEP="${DIM}' + sep + '${RST}"');
+    L.push('OUT=""');
+    L.push('append(){ [ -z "$1" ] && return; [ -n "$OUT" ] && OUT="${OUT}${SEP}"; OUT="${OUT}$1"; }');
+    if(w.model)  L.push('append "$MODEL"');
+    if(w.ctx){
+      if(cm==="num")  L.push('append "${REMAIN:+${CB}ctx ${REMAIN}%${RST}}"');
+      else {
+        L.push('bar(){ f=$(( ${1:-0} / 20 )); s=""; for i in 1 2 3 4 5; do [ $i -le $f ] && s="${s}\u2593" || s="${s}\u2591"; done; printf %s "$s"; }');
+        if(cm==="bar") L.push('append "${REMAIN:+${CB}ctx $(bar $REMAIN)${RST}}"');
+        else           L.push('append "${REMAIN:+${CB}ctx $(bar $REMAIN) ${REMAIN}%${RST}}"');
+      }
+    }
+    if(w.cost) L.push('append "\\$$(printf \'%.2f\' "$COST" 2>/dev/null || echo "$COST")"');
+    if(w.time) L.push('append "$CLOCK"');
+    if(w.branch) L.push('append "$BR"');
+    if(w.lines) L.push('append "+${ADD} -${DEL}"');
+    if(w.worktree) L.push('append "${WT:+wt:$WT}"');
+    if(w.effort) L.push('append "$EFFORT"');
+    if(w.fast) L.push('[ "$FAST" = "true" ] && append "fast"');
+    L.push('printf %s "$OUT"');
+    return L.join("\n");
+  }
+
+  function notifyCmd(kind){
+    var os = $("os").value;
+    var jaWait = "入力を待っています", jaDone = "作業が終わりました";
+    var msg = kind === "wait" ? jaWait : jaDone;
+    if(os === "mac"){
+      var sound = kind === "done" ? " sound name \\\"Glass\\\"" : "";
+      return "osascript -e 'display notification \\\"" + msg + "\\\" with title \\\"Claude Code\\\"" + sound + "'";
+    }
+    if(os === "linux") return "notify-send \\\"Claude Code\\\" \\\"" + msg + "\\\"";
+    return "powershell -c \\\"Write-Output '" + msg + "'\\\"";
+  }
+  function genConfig(){
+    var n = $("notify").value;
+    var hooks = {};
+    if(n === "both" || n === "wait") hooks.Notification = [{matcher:"", hooks:[{type:"command", command:"__WAIT__"}]}];
+    if(n === "both" || n === "done") hooks.Stop = [{matcher:"", hooks:[{type:"command", command:"__DONE__"}]}];
+    var obj = { statusLine: { type:"command", command:"bash ~/.claude/statusline.sh" } };
+    if(Object.keys(hooks).length) obj.hooks = hooks;
+    var s = JSON.stringify(obj, null, 2);
+    s = s.replace('"__WAIT__"', '"' + notifyCmd("wait") + '"');
+    s = s.replace('"__DONE__"', '"' + notifyCmd("done") + '"');
+    return s;
+  }
+
+  function refresh(){
+    renderPreview();
+    $("sh").textContent = genStatusline();
+    $("cfg").textContent = genConfig();
+  }
+
+  document.querySelectorAll("input,select").forEach(function(el){
+    el.addEventListener("change", refresh);
+  });
+  document.querySelectorAll(".copy").forEach(function(b){
+    b.addEventListener("click", function(){
+      var t = b.getAttribute("data-t");
+      var txt = $(t).textContent;
+      navigator.clipboard && navigator.clipboard.writeText(txt);
+      var o = b.textContent; b.textContent = "コピーしました"; setTimeout(function(){ b.textContent = o; }, 1200);
+    });
+  });
+  refresh();
+})();
+</script>
+</body>
+</html>
