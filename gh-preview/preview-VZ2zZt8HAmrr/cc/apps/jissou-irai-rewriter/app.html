@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>実装依頼リライターアプリ</title>
+<meta name="description" content="曖昧な実装依頼を貼るだけで、目的・受け入れ条件・制約・対象外・確認方法の5枠に整い、Claude Codeにそのまま貼れる依頼文になる。「いい感じに直して」で毎回やり直していた人が、1回で欲しい変更を受け取れるようになります。">
+<style>
+  :root{
+    --brand:#D9774F; --brand-deep:#B24E33; --ink:#2A2620; --ink-mid:#6E6557; --ink-sub:#A39A8B;
+    --bg:#F1ECE3; --paper:#FBF8F2; --line:#E4D9C7; --soft:rgba(217,119,79,.10); --warn:#C1443B;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:var(--bg);color:var(--ink);font-family:'M PLUS Rounded 1c','Hiragino Sans','Yu Gothic',system-ui,sans-serif;line-height:1.7;padding:22px 14px 60px;}
+  .wrap{max-width:760px;margin:0 auto;}
+  h1{font-size:22px;font-weight:800;margin-bottom:4px;}
+  .lede{font-size:13.5px;color:var(--ink-mid);margin-bottom:20px;}
+  .card{background:var(--paper);border:1.5px solid var(--line);border-radius:14px;padding:18px 18px 20px;margin-bottom:16px;}
+  .card h2{font-size:15px;font-weight:800;margin-bottom:10px;display:flex;align-items:center;gap:8px;}
+  .card h2 .n{background:var(--brand);color:#fff;width:22px;height:22px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0;}
+  label{display:block;font-size:12.5px;font-weight:700;color:var(--ink-mid);margin:12px 0 4px;}
+  textarea,input[type=text],select{width:100%;font:inherit;font-size:13.5px;padding:9px 11px;border:1.5px solid var(--line);border-radius:9px;background:#fff;color:var(--ink);}
+  textarea{resize:vertical;min-height:58px;}
+  select{cursor:pointer;}
+  .hint{font-size:11.5px;color:var(--ink-sub);margin-top:3px;}
+  .chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:6px;}
+  .chips label{display:inline-flex;align-items:center;gap:6px;margin:0;font-size:12px;font-weight:600;color:var(--ink);background:#fff;border:1.5px solid var(--line);border-radius:999px;padding:5px 11px;cursor:pointer;}
+  .chips label:has(input:checked){background:var(--soft);border-color:var(--brand);}
+  .chips input{accent-color:var(--brand);}
+  button{font:inherit;font-weight:800;cursor:pointer;border:none;border-radius:10px;}
+  .go{background:var(--brand);color:#fff;font-size:15px;padding:13px 24px;width:100%;box-shadow:0 2px 0 var(--brand-deep);}
+  .go:active{transform:translateY(1px);box-shadow:none;}
+  .flags{background:#FCF3E9;border:1.5px solid var(--brand);border-radius:10px;padding:11px 13px;margin-top:12px;font-size:12.5px;color:var(--brand-deep);display:none;}
+  .flags.show{display:block;}
+  .flags b{font-weight:800;}
+  .out{background:#2A2620;color:#F1E9DE;border-radius:12px;padding:16px;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:12.5px;line-height:1.7;white-space:pre-wrap;word-break:break-word;margin-top:6px;min-height:60px;}
+  .outbar{display:flex;gap:9px;margin-top:10px;}
+  .copy{background:var(--brand);color:#fff;font-size:13px;padding:9px 18px;box-shadow:0 2px 0 var(--brand-deep);}
+  .copy.done{background:#4A7C59;box-shadow:0 2px 0 #37624a;}
+  .reset{background:#fff;color:var(--ink-mid);border:1.5px solid var(--line);font-size:13px;padding:9px 16px;}
+  .note{font-size:11.5px;color:var(--ink-sub);margin-top:14px;}
+  .foot{font-size:11px;color:var(--ink-sub);text-align:center;margin-top:26px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>実装依頼リライターアプリ</h1>
+  <p class="lede">曖昧な実装依頼を、Claude Code にそのまま貼れる「5枠の依頼文」に組み替えます。〔　〕が残っていたら、そこがまだ推測される余地です。埋めてから渡してください。</p>
+
+  <div class="card">
+    <h2><span class="n">1</span>いまの依頼（曖昧なままでOK）</h2>
+    <label>タスクの種類</label>
+    <select id="kind">
+      <option value="new">新規実装（関数・エンドポイント）</option>
+      <option value="feature">新機能（複数ファイルにまたがる）</option>
+      <option value="refactor">リファクタ（挙動は変えない）</option>
+      <option value="bug">バグ修正</option>
+      <option value="test">テストを足す</option>
+      <option value="research">コードベースの調査</option>
+    </select>
+    <label>ふだんの言い方で書いてみる</label>
+    <textarea id="raw" placeholder="例：認証まわり、いい感じにリファクタしといて"></textarea>
+    <div class="flags" id="flags"></div>
+  </div>
+
+  <div class="card">
+    <h2><span class="n">2</span>5つの枠を埋める</h2>
+    <label>① 目的 — このタスクで最終的に何ができれば成功か（1文）</label>
+    <input type="text" id="f_goal" placeholder="例：トークン検証を1関数に集約し、呼び出し側は変えない">
+    <label>② 受け入れ条件 — どうなったら「できた」と言えるか（改行で複数可）</label>
+    <textarea id="f_ac" placeholder="例：&#10;外から見た挙動は不変&#10;既存テスト全部green＋境界ケースを2本追加"></textarea>
+    <label>③ 制約 — よくあるものはチェック、他は下に追記</label>
+    <div class="chips" id="conchips">
+      <label><input type="checkbox" value="新規ライブラリの追加なし">新規ライブラリなし</label>
+      <label><input type="checkbox" value="既存の命名・ディレクトリ構成に合わせる">既存の規約に合わせる</label>
+      <label><input type="checkbox" value="公開インターフェース（関数シグネチャ）は変えない">シグネチャ不変</label>
+      <label><input type="checkbox" value="変更は対象ファイルの範囲だけ">対象ファイルだけ</label>
+      <label><input type="checkbox" value="差分は200行以内に収める">差分200行以内</label>
+      <label><input type="checkbox" value="設定ファイル・環境変数は変更しない">設定は触らない</label>
+    </div>
+    <input type="text" id="f_con" placeholder="その他の制約（言語・フレームワーク・参照する設計方針など）" style="margin-top:8px;">
+    <label>④ やらないこと（対象外） — 触ってほしくない範囲・別チケットにする項目</label>
+    <input type="text" id="f_no" placeholder="例：SNSログインとパスワード再発行は今回対象外／UIは触らない">
+    <label>⑤ 確認方法 — どう見せてもらえれば確認できるか</label>
+    <input type="text" id="f_check" placeholder="例：変更ファイル一覧＋追加テスト＋手元での実行手順を1行で">
+  </div>
+
+  <button class="go" id="go">依頼文を組み立てる</button>
+
+  <div class="card" style="margin-top:16px;">
+    <h2><span class="n">3</span>Claude Code に貼る依頼文</h2>
+    <div class="out" id="out">ここに整った依頼文が出ます。</div>
+    <div class="outbar">
+      <button class="copy" id="copy">コピー</button>
+      <button class="reset" id="reset">入力をクリア</button>
+    </div>
+    <p class="note">最初の出力は“叩き台”として受け取り、気になる差分だけ指示して直してください。〔　〕が残っている枠は、渡す前に必ず埋めること。</p>
+  </div>
+
+  <p class="foot">このアプリは通信しません。入力はこの画面内だけで処理されます。</p>
+</div>
+
+<script>
+(function(){
+  var VAGUE = ["いい感じ","よしな","なるべく","適当に","ちゃんと","きれいに","うまく","最適化","ざっくり","おまかせ","いい具合","しっかり","柔軟に","良さげ","サクッと"];
+  var raw = document.getElementById('raw');
+  var flags = document.getElementById('flags');
+  var kind = document.getElementById('kind');
+
+  var PRESET = {
+    new:      {ac:"入力例〔　〕→出力例〔　〕\n異常系（存在しない値・0件・null）でも落ちない\n既存テストはgreenのまま", check:"追加/変更したテストと、手元での実行手順を1行で"},
+    feature:  {ac:"正常系のE2Eを1本、異常系を1本追加\n既存の関連機能の挙動が変わっていない", check:"変更ファイル一覧＋動作確認手順＋対象外にした項目の明記"},
+    refactor: {ac:"外から見た挙動は不変\n既存テスト全部green＋境界ケースを2本追加\n差分がレビューで読める大きさ", check:"変更前後のテスト結果を並べて＋差分の要約を3行で"},
+    bug:      {ac:"原因の説明＋最小の修正\n他の挙動が変わっていない\n回帰テストを1本追加", check:"「原因／修正差分／確認方法」の3見出しで"},
+    test:     {ac:"正常系・境界値・異常系を各1つ以上\nテスト名から何を確認しているか分かる\n実装コードは変更しない", check:"追加テスト一覧＋「わざとバグを入れたら落ちるか」を1ケースで確認"},
+    research: {ac:"呼び出しの流れ（ファイル:関数）を順に\n関係する設定・環境変数も\n根拠にしたファイルと行を必ず示す", check:"「入口 → 処理の流れ → 出口」＋「改修するならどこを触るか」"}
+  };
+  var KINDCON = {
+    refactor: "実装コードの意味は変えない（整えるだけ）",
+    bug: "大規模な書き換え・ライブラリ追加はしない",
+    test: "テスト追加のみ。モックは最小限、外部通信はしない",
+    research: "コードは変更しない（調査のみ）"
+  };
+
+  function scan(){
+    var t = raw.value;
+    var hit = VAGUE.filter(function(w){ return t.indexOf(w) >= 0; });
+    if(hit.length && t.trim()){
+      flags.className = 'flags show';
+      flags.innerHTML = '<b>曖昧ワードを検出：</b>「' + hit.join('」「') + '」<br>この言葉はAIが好きなように解釈します。下の①〜⑤で具体化してください。';
+    } else {
+      flags.className = 'flags';
+    }
+  }
+  raw.addEventListener('input', scan);
+
+  function applyPreset(){
+    var p = PRESET[kind.value];
+    var ac = document.getElementById('f_ac');
+    var ck = document.getElementById('f_check');
+    if(!ac.value.trim() || ac.dataset.preset === '1'){ ac.value = p.ac; ac.dataset.preset = '1'; }
+    if(!ck.value.trim() || ck.dataset.preset === '1'){ ck.value = p.check; ck.dataset.preset = '1'; }
+  }
+  document.getElementById('f_ac').addEventListener('input', function(){ this.dataset.preset = '0'; });
+  document.getElementById('f_check').addEventListener('input', function(){ this.dataset.preset = '0'; });
+  kind.addEventListener('change', applyPreset);
+  applyPreset();
+
+  function ph(v, fb){ v = (v||'').trim(); return v ? v : fb; }
+  function lines(v, fb){
+    v = (v||'').trim();
+    if(!v) return "- " + fb;
+    return v.split(/\n+/).map(function(x){ return "- " + x.trim(); }).join("\n");
+  }
+
+  function build(){
+    var cons = [];
+    document.querySelectorAll('#conchips input:checked').forEach(function(c){ cons.push(c.value); });
+    var extra = document.getElementById('f_con').value.trim();
+    if(extra) cons.push(extra);
+    if(KINDCON[kind.value]) cons.unshift(KINDCON[kind.value]);
+    if(!cons.length) cons = ["〔使う技術・ライブラリ追加の可否・既存規約をここに〕"];
+
+    var kindLabel = kind.options[kind.selectedIndex].text;
+    var out =
+"# 依頼（" + kindLabel + "）\n" +
+(raw.value.trim() ? "元の依頼：" + raw.value.trim() + "\n\n" : "\n") +
+"## 目的\n" + ph(document.getElementById('f_goal').value, "〔このタスクで最終的に達成したいことを1文で〕") + "\n\n" +
+"## 受け入れ条件（できたと言える基準）\n" + lines(document.getElementById('f_ac').value, "〔チェックできる形で2〜3個〕") + "\n\n" +
+"## 制約\n" + cons.map(function(c){ return "- " + c; }).join("\n") + "\n\n" +
+"## やらないこと（対象外）\n" + lines(document.getElementById('f_no').value, "〔触ってほしくない範囲・別チケットにする項目〕") + "\n\n" +
+"## 確認方法\n" + ph(document.getElementById('f_check').value, "〔どう見せてもらえれば確認できるか〕") + "\n\n" +
+"## 進め方\n" +
+"- まず不明点があれば先に質問して。埋まるまで着手しないで\n" +
+"- 次に方針（触るファイルと役割）だけ見せて。合意してから実装\n" +
+"- 最初の出力は叩き台として受け取る。差分だけ指示します";
+    document.getElementById('out').textContent = out;
+  }
+  document.getElementById('go').addEventListener('click', build);
+
+  document.getElementById('copy').addEventListener('click', function(){
+    var t = document.getElementById('out').textContent;
+    var b = this;
+    navigator.clipboard.writeText(t).then(function(){
+      b.textContent = 'コピーしました'; b.className = 'copy done';
+      setTimeout(function(){ b.textContent = 'コピー'; b.className = 'copy'; }, 1600);
+    }, function(){
+      var ta = document.createElement('textarea'); ta.value = t; document.body.appendChild(ta);
+      ta.select(); try{ document.execCommand('copy'); }catch(e){} ta.remove();
+      b.textContent = 'コピーしました'; b.className = 'copy done';
+      setTimeout(function(){ b.textContent = 'コピー'; b.className = 'copy'; }, 1600);
+    });
+  });
+  document.getElementById('reset').addEventListener('click', function(){
+    raw.value=''; document.getElementById('f_goal').value=''; document.getElementById('f_ac').value='';
+    document.getElementById('f_con').value=''; document.getElementById('f_no').value=''; document.getElementById('f_check').value='';
+    document.querySelectorAll('#conchips input:checked').forEach(function(c){ c.checked=false; });
+    document.getElementById('f_ac').dataset.preset=''; document.getElementById('f_check').dataset.preset='';
+    document.getElementById('out').textContent='ここに整った依頼文が出ます。';
+    flags.className='flags'; applyPreset();
+  });
+})();
+</script>
+</body>
+</html>
