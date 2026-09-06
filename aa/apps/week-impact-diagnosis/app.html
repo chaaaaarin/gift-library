@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>今週のAI変更 自分に効くか診断アプリ</title>
+<meta name="description" content="6つの質問に答えると、2026年8月22日〜29日のAIニュース（Claude in Chrome正式版・記憶の統合・Claude Codeの改善・会社向けの2件など）のうち、自分に関係するものと「最初の一手」を出すミニ診断アプリです。">
+<style>
+  :root{
+    --brand:#1C3461; --brand-deep:#16284A; --accent:#5BBCD4; --accent-deep:#2C7A93;
+    --bg:#F7FAFC; --paper:#FFFFFF; --ink:#1C3461; --ink-mid:#4A6080; --ink-sub:#8098B4; --line:rgba(28,52,97,.14);
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:var(--bg);color:var(--ink);font-family:-apple-system,'Hiragino Sans','Yu Gothic',sans-serif;line-height:1.7;padding:28px 16px 60px;}
+  .wrap{max-width:640px;margin:0 auto;}
+  h1{font-size:22px;font-weight:900;line-height:1.35;margin-bottom:6px;}
+  .sub{font-size:13.5px;color:var(--ink-mid);margin-bottom:22px;}
+  .card{background:var(--paper);border:1.5px solid var(--line);border-radius:14px;padding:20px 20px 22px;margin-bottom:16px;}
+  .qn{font-size:12px;font-weight:900;color:var(--accent-deep);letter-spacing:1px;margin-bottom:6px;}
+  .qt{font-size:16px;font-weight:800;margin-bottom:12px;}
+  .opt{display:block;border:1.5px solid var(--line);border-radius:10px;padding:11px 14px;margin-bottom:8px;cursor:pointer;font-size:14px;transition:.15s;}
+  .opt:hover{border-color:var(--accent);}
+  .opt input{margin-right:9px;}
+  .opt.sel{border-color:var(--brand);background:rgba(91,188,212,.10);font-weight:700;}
+  button{font:inherit;cursor:pointer;}
+  .go{display:block;width:100%;background:var(--brand);color:#fff;border:none;border-radius:12px;padding:15px;font-size:16px;font-weight:900;margin-top:4px;}
+  .go:disabled{background:var(--ink-sub);cursor:not-allowed;}
+  .again{background:none;border:1.5px solid var(--line);color:var(--brand-deep);border-radius:10px;padding:10px 18px;font-weight:700;font-size:13px;margin-top:8px;}
+  #result{display:none;}
+  .rhead{font-size:19px;font-weight:900;margin:6px 0 4px;}
+  .rsub{font-size:13px;color:var(--ink-mid);margin-bottom:18px;}
+  .item{border-left:4px solid var(--accent);background:var(--paper);border:1.5px solid var(--line);border-left-width:4px;border-radius:10px;padding:15px 16px;margin-bottom:12px;}
+  .item h3{font-size:15.5px;font-weight:900;margin-bottom:5px;}
+  .item p{font-size:13.5px;color:var(--ink-mid);}
+  .item .step{font-size:13.5px;color:var(--ink);margin-top:8px;font-weight:700;}
+  .item .step::before{content:'最初の一手: ';color:var(--accent-deep);font-weight:900;}
+  .none{font-size:13.5px;color:var(--ink-mid);background:var(--paper);border:1.5px dashed var(--line);border-radius:10px;padding:16px;}
+  .foot{font-size:11.5px;color:var(--ink-sub);margin-top:20px;line-height:1.6;}
+  .prog{height:6px;background:var(--line);border-radius:99px;overflow:hidden;margin-bottom:20px;}
+  .prog i{display:block;height:100%;background:var(--accent);width:0;transition:.3s;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>今週のAI変更 自分に効くか診断アプリ</h1>
+  <p class="sub">2026年8月22日〜29日のニュースのうち、あなたに関係するものと「最初の一手」を出します。6問・約1分。</p>
+
+  <div class="prog"><i id="bar"></i></div>
+
+  <form id="quiz"></form>
+  <button class="go" id="submit" disabled>結果を見る</button>
+
+  <div id="result">
+    <div class="rhead">あなたに効くのはこの項目です</div>
+    <div class="rsub">上から順に、今日できる一手つきで並べています。</div>
+    <div id="items"></div>
+    <div class="none" id="noneMsg" style="display:none">今週の変更で、いますぐ動く必要があるものは見つかりませんでした。記憶の設定だけ一度見ておくと安心です（Claude → 設定 → 記憶）。</div>
+    <button class="again" onclick="location.reload()">もう一度診断する</button>
+    <p class="foot">この診断は一般的な整理のためのものです。正確な提供条件・仕様は各公式ページでご確認ください。プランや地域によって挙動が変わることがあります。</p>
+  </div>
+</div>
+
+<script>
+const QS = [
+  { q:"Claude Cowork（長めの作業をまとめて任せる作業モード）を使っていますか？",
+    a:["よく使う","たまに使う","使っていない / 知らない"] },
+  { q:"Claudeで使っているプランは？",
+    a:["無料（Free）","Pro / Max（個人の有料）","Team / Enterprise（会社の契約）","使っていない"] },
+  { q:"Claudeにブラウザ操作（調べもの・入力・申し込みなど）をさせたい、または既にさせていますか？",
+    a:["させたい / させている","興味はある","予定はない"] },
+  { q:"Claude Code（ターミナルやアプリで使う開発向けのClaude）を使いますか？",
+    a:["日常的に使う","たまに使う","使わない"] },
+  { q:"会社でGmailやSlackなどをClaudeにつないでいる、またはその管理をする立場ですか？",
+    a:["管理する立場","つないで使う側","関係ない"] },
+  { q:"米国のK-12（幼稚園〜高校）の学校・学区の関係者ですか？",
+    a:["はい","いいえ"] },
+];
+
+const form = document.getElementById('quiz');
+const ans = new Array(QS.length).fill(null);
+QS.forEach((item,qi)=>{
+  const c = document.createElement('div'); c.className='card';
+  c.innerHTML = `<div class="qn">Q${qi+1} / ${QS.length}</div><div class="qt">${item.q}</div>`;
+  item.a.forEach((txt,ai)=>{
+    const l = document.createElement('label'); l.className='opt';
+    l.innerHTML = `<input type="radio" name="q${qi}" value="${ai}">${txt}`;
+    l.querySelector('input').addEventListener('change',()=>{
+      ans[qi]=ai;
+      c.querySelectorAll('.opt').forEach(o=>o.classList.remove('sel'));
+      l.classList.add('sel');
+      const done = ans.filter(x=>x!==null).length;
+      document.getElementById('bar').style.width = (done/QS.length*100)+'%';
+      document.getElementById('submit').disabled = done<QS.length;
+    });
+    c.appendChild(l);
+  });
+  form.appendChild(c);
+});
+
+document.getElementById('submit').addEventListener('click',()=>{
+  const [cowork, plan, browser, code, mcp, teacher] = ans;
+  const out = [];
+
+  // 記憶の統合
+  if (cowork <= 1) {
+    out.push({
+      t:"記憶がチャットとCoworkで1つになった（8/25）",
+      p:"チャットで話した前提が、そのままCoworkの作業に引き継がれます。会話中にリアルタイムで記憶が更新され、1か所直すと以降の全会話に反映されます。",
+      s: plan===2
+        ? "会社プランは既定オフ。管理者に有効化の可否を確認し、有効なら設定→記憶を一度開いて中身を確認する。"
+        : "Claude → 設定 → 記憶（Memory）を開き、古い情報を削除・更新する。棚おろしの指示文キットが使えます。"
+    });
+  } else if (plan===0 || plan===1) {
+    out.push({
+      t:"記憶がチャットとCoworkで1つになった（8/25）",
+      p:"Coworkを使っていなくても、チャットの記憶は会話中にリアルタイム更新され、トピック別に編集・削除できるようになりました。",
+      s:"設定→記憶で一覧を開き、いらない記憶を消す。覚えてほしくない話題は「この会話は記憶しないで」と先に伝える。"
+    });
+  }
+
+  // Claude in Chrome 正式版
+  if (browser <= 1 && plan !== 0 && plan !== 3) {
+    out.push({
+      t:"Claude in Chrome が正式版に（8/26）",
+      p:"すべての有料プランで使え、安全と判断した操作は承認を押さずに進むようになりました（Chrome拡張のみ・設定で毎回確認に戻せる）。",
+      s:"拡張の設定で自動承認のオン/オフを確認し、まず銀行・メール以外の「調べもの1件」で試す。止まったら押そうとしている操作を必ず読む。"
+    });
+  } else if (browser <= 1 && plan === 0) {
+    out.push({
+      t:"Claude in Chrome は有料プラン向け（8/26）",
+      p:"ブラウザ操作の正式提供はすべての有料プランが対象で、無料プランは対象外です。",
+      s:"必要性が高いなら Pro を検討。まずは記憶の統合など無料でも効く変更から使ってみる。"
+    });
+  }
+  if (cowork <= 1 && browser <= 1) {
+    out.push({
+      t:"拡張版と Cowork 内蔵ブラウザ、2つある（8/26）",
+      p:"拡張版はあなたのログイン済みアカウントで動き、Cowork内蔵はタブ・パスワードを一切見ません。どちらも銀行・メール・SSOは既定で対象外です。",
+      s:"自分のアカウントで代行させたいなら拡張版、切り分けたい調べものなら内蔵ブラウザ、と使い分ける。設定→Cowork→Preferred browser で切替。"
+    });
+  }
+
+  // Claude Code 3つ
+  if (code <= 1) {
+    out.push({
+      t:"Claude Code の使い勝手が3つ改善",
+      p:"（1）ウェブ/デスクトップ版の長文表示が約4倍なめらか（8/25）（2）失敗時にフィードバックの下書きを自分で作る（8/27）（3）CLIで始めたセッションをデスクトップアプリで再開（8/29）。",
+      s:"デスクトップアプリで /resume を試し、ターミナルの続きをアプリ側で開く。失敗した時は自動で出る下書きを確認してから送る。"
+    });
+  }
+
+  // 会社向け
+  if (mcp === 0) {
+    out.push({
+      t:"MCPコネクタのエンタープライズ一元認証が一般提供（8/25）",
+      p:"Team/Enterpriseの管理者向けに、認証を社内のID基盤（IdP）経由で一元化。利用者はコネクタごとのログイン許可なしでツールに接続できます。",
+      s:"管理コンソールでIdP連携の設定を確認し、まず利用者が多いコネクタ1つで一元認証を試す。退職者のアクセスもこの機会に棚おろし。"
+    });
+  } else if (mcp === 1) {
+    out.push({
+      t:"会社のツール連携がスムーズに（8/25）",
+      p:"管理者がIdP経由の一元認証を有効にすると、あなた側はコネクタごとのログイン許可が不要になります。",
+      s:"つないでいるコネクタが読めるデータの範囲を接続画面で一度確認する。不要なものは外す。"
+    });
+  }
+  if (teacher === 0) {
+    out.push({
+      t:"Claude for Teachers が学校・学区向けに提供開始（8/28）",
+      p:"米国K-12向け。全50州の学習基準と連動、理解度チェック（数学対応）。完全無料で、2027年6月30日までに登録した適格組織は1年間無料。SSO・FERPA準拠。",
+      s:"組織の管理担当と、ドメイン取得・SSO設定・登録期限（2027/6/30）を確認する。"
+    });
+  }
+
+  // グラフ論文（全員に軽く）
+  out.push({
+    t:"参考: 「グラフエンジニアリング」論文（8/21・8/26改訂）",
+    p:"1体のAIを強くする路線には限界があり、複数のエージェントを連携させる「システムの知能」が次のテーマ、という見取り図を示したサーベイ論文です。",
+    s:"今すぐの対応は不要。「1体より複数体の連携が次の話題」とだけ覚えておく。"
+  });
+
+  const box = document.getElementById('items');
+  box.innerHTML = '';
+  // 参考項目だけなら noneMsg を出す
+  const actionable = out.filter(o=>!o.t.startsWith('参考'));
+  if (actionable.length === 0) {
+    document.getElementById('noneMsg').style.display = 'block';
+  }
+  out.forEach(o=>{
+    const d = document.createElement('div'); d.className='item';
+    d.innerHTML = `<h3>${o.t}</h3><p>${o.p}</p><div class="step">${o.s}</div>`;
+    box.appendChild(d);
+  });
+
+  document.getElementById('quiz').style.display='none';
+  document.getElementById('submit').style.display='none';
+  document.querySelector('.prog').style.display='none';
+  document.getElementById('result').style.display='block';
+  window.scrollTo({top:0,behavior:'smooth'});
+});
+</script>
+</body>
+</html>
