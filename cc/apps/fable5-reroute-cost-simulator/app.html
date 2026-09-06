@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fable 5 リルート料金シミュレーターアプリ</title>
+<meta name="description" content="月間リクエスト数・平均トークン・想定フォールバック率を入れると、Fable 5 の想定費用のうち何割が Opus へのリルートに置き換わり、実質の単価がいくらになるかを試算するミニアプリ。">
+<style>
+  :root{
+    --brand:#C15640; --accent:#D9774F; --ink:#2A2620; --mid:#6E6557; --sub:#A39A8B;
+    --line:#E4D9C7; --bg:#F1ECE3; --paper:#FBF8F2;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:-apple-system,'Hiragino Sans','Yu Gothic',sans-serif;background:var(--bg);color:var(--ink);line-height:1.7;padding:22px;}
+  .wrap{max-width:680px;margin:0 auto;background:var(--paper);border:1.5px solid var(--line);border-radius:16px;padding:24px 22px;}
+  h1{font-size:22px;font-weight:800;margin-bottom:4px;}
+  .sub{font-size:13px;color:var(--mid);margin-bottom:18px;}
+  fieldset{border:1.5px solid var(--line);border-radius:12px;padding:14px 16px;margin-bottom:14px;}
+  legend{font-size:13px;font-weight:800;color:var(--brand);padding:0 6px;}
+  .row{display:flex;align-items:center;gap:10px;margin:9px 0;flex-wrap:wrap;}
+  .row label{flex:1;min-width:230px;font-size:14px;font-weight:600;}
+  .row input[type=number]{width:130px;padding:8px 10px;border:1.5px solid var(--line);border-radius:8px;font-size:14px;background:#fff;text-align:right;}
+  .row .unit{font-size:12px;color:var(--sub);width:70px;}
+  input[type=range]{width:100%;}
+  .rangeval{font-weight:800;color:var(--brand);}
+  .out{background:var(--bg);border:1.5px solid var(--line);border-radius:12px;padding:16px;margin-top:6px;}
+  .big{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:12px;}
+  .stat{flex:1;min-width:150px;background:#fff;border:1.5px solid var(--line);border-radius:10px;padding:12px 14px;text-align:center;}
+  .stat .n{font-size:24px;font-weight:800;color:var(--brand);}
+  .stat .l{font-size:11.5px;color:var(--sub);margin-top:3px;}
+  table{width:100%;border-collapse:collapse;font-size:13px;margin-top:6px;}
+  td,th{padding:7px 8px;border-bottom:1px solid var(--line);text-align:right;}
+  th:first-child,td:first-child{text-align:left;}
+  thead th{color:var(--mid);font-weight:700;}
+  .note{font-size:12px;color:var(--mid);margin-top:12px;}
+  .btn{margin-top:12px;background:var(--accent);border:none;color:#2A2620;font-weight:800;font-size:14px;padding:10px 18px;border-radius:999px;cursor:pointer;}
+  .btn:hover{background:var(--brand);color:#fff;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Fable 5 リルート料金シミュレーターアプリ</h1>
+  <p class="sub">安全装置で Opus にリルート（フォールバック）されると、Fable の料金でずっと回している想定が崩れます。どのくらい費用と実質単価が変わるかを試算します。出力前に拒否された試行は無課金・リルート分はフォールバック先モデルの単価、として計算します。</p>
+
+  <fieldset>
+    <legend>使い方（トラフィック）</legend>
+    <div class="row"><label>月間リクエスト数</label><input type="number" id="reqs" value="50000" min="0" step="1000"><span class="unit">件/月</span></div>
+    <div class="row"><label>1リクエストあたり平均 入力トークン</label><input type="number" id="tin" value="4000" min="0" step="100"><span class="unit">tok</span></div>
+    <div class="row"><label>1リクエストあたり平均 出力トークン</label><input type="number" id="tout" value="800" min="0" step="50"><span class="unit">tok</span></div>
+  </fieldset>
+
+  <fieldset>
+    <legend>単価（1Mトークンあたり・USD）</legend>
+    <div class="row"><label>Fable 5 入力 / 出力</label><input type="number" id="fin" value="10" min="0" step="0.5"><input type="number" id="fout" value="50" min="0" step="0.5"></div>
+    <div class="row"><label>フォールバック先モデル 入力 / 出力<br><span style="font-size:11px;color:var(--sub)">初期値は Fable と同額。実際の値に置き換えてください</span></label><input type="number" id="oin" value="10" min="0" step="0.5"><input type="number" id="oout" value="50" min="0" step="0.5"></div>
+  </fieldset>
+
+  <fieldset>
+    <legend>想定フォールバック率</legend>
+    <div class="row"><label>リクエストのうち Opus にリルートされる割合</label><span class="rangeval" id="frv">5%</span></div>
+    <input type="range" id="frate" min="0" max="50" value="5" step="0.5">
+    <p class="note">公式は「登場時点で平均5%未満のセッションで発動／95%超はフォールバックなし」としています。セキュリティ・生物・機械学習まわりの作業が多いほど、この率は上がります。</p>
+  </fieldset>
+
+  <div class="out">
+    <div class="big">
+      <div class="stat"><div class="n" id="oTotal">$0</div><div class="l">想定 月額合計</div></div>
+      <div class="stat"><div class="n" id="oReroute">$0</div><div class="l">うち リルート分</div></div>
+      <div class="stat"><div class="n" id="oEff">$0</div><div class="l">実質単価 / 1000件</div></div>
+    </div>
+    <table>
+      <thead><tr><th>内訳</th><th>件数</th><th>月額</th></tr></thead>
+      <tbody>
+        <tr><td>Fable 5 が回答</td><td id="rFab">0</td><td id="cFab">$0</td></tr>
+        <tr><td>フォールバック先が回答</td><td id="rFb">0</td><td id="cFb">$0</td></tr>
+        <tr><td><b>合計</b></td><td id="rAll">0</td><td id="cAll"><b>$0</b></td></tr>
+      </tbody>
+    </table>
+    <table style="margin-top:14px;">
+      <thead><tr><th>シナリオ（フォールバック率）</th><th>月額</th><th>差額</th></tr></thead>
+      <tbody id="scen"></tbody>
+    </table>
+    <p class="note" id="verdict"></p>
+  </div>
+
+  <button class="btn" id="reset">初期値に戻す</button>
+  <p class="note">※ 単価・挙動は時期で変わります。フォールバック先モデル名と単価は公式ドキュメント（Refusals and fallback / 各モデルのページ）で最新を確認してください。ミッドストリームでの切り替え・プロンプトキャッシュは概算に含めていません。</p>
+</div>
+
+<script>
+(function(){
+  var ids=["reqs","tin","tout","fin","fout","oin","oout","frate"];
+  var el={}; ids.forEach(function(i){el[i]=document.getElementById(i);});
+  function num(x){var v=parseFloat(x); return isFinite(v)&&v>=0?v:0;}
+  function money(v){
+    if(v>=100) return "$"+v.toLocaleString(undefined,{maximumFractionDigits:0});
+    return "$"+v.toLocaleString(undefined,{maximumFractionDigits:2});
+  }
+  function costPer(reqs,tin,tout,pin,pout){
+    return reqs*(tin/1e6*pin + tout/1e6*pout);
+  }
+  function calc(rate){
+    var reqs=num(el.reqs.value), tin=num(el.tin.value), tout=num(el.tout.value);
+    var fin=num(el.fin.value), fout=num(el.fout.value), oin=num(el.oin.value), oout=num(el.oout.value);
+    var f=rate/100;
+    var reqFb=reqs*f, reqFab=reqs-reqFb;
+    var cFab=costPer(reqFab,tin,tout,fin,fout);
+    var cFb=costPer(reqFb,tin,tout,oin,oout); // 出力前拒否 = フォールバック先のみ課金
+    return {reqFab:reqFab,reqFb:reqFb,cFab:cFab,cFb:cFb,total:cFab+cFb,reqs:reqs};
+  }
+  function render(){
+    var rate=num(el.frate.value);
+    document.getElementById("frv").textContent=rate+"%";
+    var r=calc(rate);
+    document.getElementById("oTotal").textContent=money(r.total);
+    document.getElementById("oReroute").textContent=money(r.cFb);
+    document.getElementById("oEff").textContent=r.reqs>0?money(r.total/r.reqs*1000):"$0";
+    document.getElementById("rFab").textContent=Math.round(r.reqFab).toLocaleString();
+    document.getElementById("rFb").textContent=Math.round(r.reqFb).toLocaleString();
+    document.getElementById("rAll").textContent=Math.round(r.reqs).toLocaleString();
+    document.getElementById("cFab").textContent=money(r.cFab);
+    document.getElementById("cFb").textContent=money(r.cFb);
+    document.getElementById("cAll").innerHTML="<b>"+money(r.total)+"</b>";
+    var base=calc(0).total;
+    var rows=[0,5,10,20,30].map(function(p){
+      var t=calc(p).total, d=t-base;
+      return "<tr><td>"+p+"%</td><td>"+money(t)+"</td><td>"+(d>=0?"+":"")+money(d)+"</td></tr>";
+    }).join("");
+    document.getElementById("scen").innerHTML=rows;
+    var v=document.getElementById("verdict");
+    if(r.reqs===0){v.textContent="";return;}
+    var share=r.total>0?(r.cFb/r.total*100):0;
+    v.textContent="現在の想定では、月額の約"+share.toFixed(0)+"% がフォールバック先モデルぶんです。"
+      +(rate>=20?"この率が続くなら、その領域は Opus 5 直指定や他モデル併用を検討する価値があります。"
+              :"率が低いうちは Fable 5 のまま、フォールバック設定で処理を止めない運用が現実的です。");
+  }
+  ids.forEach(function(i){el[i].addEventListener("input",render);});
+  document.getElementById("reset").addEventListener("click",function(){
+    var d={reqs:50000,tin:4000,tout:800,fin:10,fout:50,oin:10,oout:50,frate:5};
+    Object.keys(d).forEach(function(k){el[k].value=d[k];});
+    render();
+  });
+  render();
+})();
+</script>
+</body>
+</html>
