@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>自分に効く3つが分かる Claude Code 神ツール診断アプリ</title>
+<meta name="description" content="5問に答えると、無料ツール10本から今日入れる3つと導入順、避けた方がいいものが分かります。">
+<style>
+  :root{
+    --brand:#C15640; --brand-soft:#F6ECE4; --ink:#2A2620; --ink-mid:#6E6557; --ink-sub:#9A9080;
+    --bg:#F7F3EC; --paper:#FFFFFF; --line:#E4D9C7; --ok:#3E7C55; --warn:#B5762A;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:var(--bg);color:var(--ink);font-family:-apple-system,"Hiragino Sans","Yu Gothic",sans-serif;line-height:1.7;padding:24px 16px;}
+  .wrap{max-width:640px;margin:0 auto;background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:28px 24px 32px;}
+  h1{font-size:22px;line-height:1.35;margin-bottom:6px;}
+  .sub{font-size:14px;color:var(--ink-mid);margin-bottom:20px;}
+  .q{border-top:1px solid var(--line);padding:18px 0 4px;}
+  .q:first-of-type{border-top:none;}
+  .q p.ask{font-weight:700;font-size:15px;margin-bottom:10px;}
+  .opts{display:flex;flex-direction:column;gap:8px;}
+  label.opt{display:flex;gap:10px;align-items:flex-start;font-size:14px;background:var(--bg);border:1.5px solid var(--line);border-radius:10px;padding:10px 12px;cursor:pointer;}
+  label.opt:hover{border-color:var(--brand);}
+  label.opt input{margin-top:3px;flex-shrink:0;}
+  button#run{margin-top:22px;width:100%;background:var(--brand);color:#fff;border:none;border-radius:10px;padding:13px;font-size:16px;font-weight:700;cursor:pointer;}
+  button#run:hover{opacity:.92;}
+  #result{margin-top:24px;display:none;}
+  #result h2{font-size:18px;margin-bottom:12px;}
+  .pick{border:1.5px solid var(--line);border-left:4px solid var(--brand);border-radius:10px;padding:12px 14px;margin-bottom:10px;background:var(--bg);}
+  .pick .rank{font-size:12px;font-weight:700;color:var(--brand);letter-spacing:.5px;}
+  .pick .name{font-weight:700;font-size:15px;margin:2px 0 4px;}
+  .pick .why{font-size:13px;color:var(--ink-mid);}
+  .pick .cmd{font-family:ui-monospace,Menlo,monospace;font-size:12px;background:#2A2620;color:#ECECEA;border-radius:7px;padding:7px 9px;margin-top:7px;overflow-x:auto;white-space:pre;}
+  .order{font-size:14px;background:var(--brand-soft);border-radius:10px;padding:12px 14px;margin:8px 0 14px;}
+  .avoid{border:1.5px solid var(--warn);border-radius:10px;padding:12px 14px;background:#FBF3E7;}
+  .avoid b{color:var(--warn);} .avoid ul{margin:6px 0 0 18px;font-size:13px;color:var(--ink-mid);}
+  .note{font-size:12px;color:var(--ink-sub);margin-top:16px;}
+  .err{color:var(--brand);font-size:13px;margin-top:10px;display:none;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>自分に効く3つが分かる<br>Claude Code 神ツール診断アプリ</h1>
+  <p class="sub">5問に答えると、無料ツール10本から「今日入れる3つ」「導入順」「避けた方がいいもの」が出ます。</p>
+
+  <form id="form">
+    <div class="q">
+      <p class="ask">Q1. Claude Code の課金はどれですか？</p>
+      <div class="opts">
+        <label class="opt"><input type="radio" name="q1" value="flat">定額プラン（Pro / Max）</label>
+        <label class="opt"><input type="radio" name="q1" value="usage">従量課金（API キーで支払い）</label>
+        <label class="opt"><input type="radio" name="q1" value="none">まだ課金していない・無料の範囲</label>
+      </div>
+    </div>
+
+    <div class="q">
+      <p class="ask">Q2. ターミナル（黒い画面）の操作は？</p>
+      <div class="opts">
+        <label class="opt"><input type="radio" name="q2" value="ok">平気。コマンドは自分で打てる</label>
+        <label class="opt"><input type="radio" name="q2" value="soft">できれば減らしたい</label>
+        <label class="opt"><input type="radio" name="q2" value="hard">かなり苦手。極力さわりたくない</label>
+      </div>
+    </div>
+
+    <div class="q">
+      <p class="ask">Q3. 複数の作業を並行で進めたいことはありますか？</p>
+      <div class="opts">
+        <label class="opt"><input type="radio" name="q3" value="often">よくある（機能追加と修正を同時に、など）</label>
+        <label class="opt"><input type="radio" name="q3" value="sometimes">たまにある</label>
+        <label class="opt"><input type="radio" name="q3" value="rare">ほぼ1本ずつで足りる</label>
+      </div>
+    </div>
+
+    <div class="q">
+      <p class="ask">Q4. 外出先やスマホから進捗を見たい・指示したいですか？</p>
+      <div class="opts">
+        <label class="opt"><input type="radio" name="q4" value="yes">見たい・操作したい</label>
+        <label class="opt"><input type="radio" name="q4" value="no">PC の前にいるときだけでいい</label>
+      </div>
+    </div>
+
+    <div class="q">
+      <p class="ask">Q5. Claude 以外の安いモデルに逃がしてコストを下げたいですか？</p>
+      <div class="opts">
+        <label class="opt"><input type="radio" name="q5" value="yes">興味がある（規約は自分で確認する前提で）</label>
+        <label class="opt"><input type="radio" name="q5" value="no">Claude だけで使いたい</label>
+      </div>
+    </div>
+
+    <button type="button" id="run">結果を見る</button>
+    <p class="err" id="err">未回答の質問があります。</p>
+  </form>
+
+  <div id="result">
+    <h2>あなたに効く3つ</h2>
+    <div id="picks"></div>
+    <div class="order" id="order"></div>
+    <div class="avoid" id="avoid"></div>
+    <p class="note">※ ツール本体はすべて無料ですが、Q5 で別モデルに逃がす場合はそのモデルの利用料、スマホ通知は別サービスの費用がかかることがあります。定額プランでの ccusage の金額は API 単価換算の推定額で、実請求とは一致しません。</p>
+  </div>
+</div>
+
+<script>
+(function(){
+  var TOOLS = {
+    ccusage:      {name:"① ccusage（使ったお金を出す）", cmd:"npx ccusage@latest"},
+    statusline:   {name:"② ccstatusline（残量・コストを画面下に常時表示）", cmd:"npx -y ccstatusline@latest"},
+    notify:       {name:"⑧ 完了通知フック（入力待ち・完了で通知）", cmd:"~/.claude/settings.json の hooks に Notification を追記"},
+    templates:    {name:"③ claude-code-templates（設定を一覧から導入）", cmd:"npx claude-code-templates@latest"},
+    plugins:      {name:"④ 公式プラグイン マーケットプレイス", cmd:"/plugin install <名前>@claude-plugins-official"},
+    playwright:   {name:"⑤ Playwright MCP（画面を自分で確認させる）", cmd:"claude mcp add playwright npx @playwright/mcp@latest"},
+    router:       {name:"⑥ claude-code-router（別モデルに逃がす）", cmd:"npm install -g @musistudio/claude-code-router && ccr ui"},
+    parallel:     {name:"⑦ ccmanager / Claude Squad（並行セッション）", cmd:"npm install -g ccmanager"},
+    happy:        {name:"⑨ Happy（スマホから操作）", cmd:"npm install -g happy"},
+    tweakcc:      {name:"⑩ tweakcc（テーマ・表示を微調整）", cmd:"npx tweakcc"}
+  };
+  // 導入順（見える化を先に）
+  var ORDER = ["ccusage","statusline","notify","plugins","templates","router","parallel","playwright","happy","tweakcc"];
+
+  document.getElementById("run").addEventListener("click", function(){
+    var a = {};
+    ["q1","q2","q3","q4","q5"].forEach(function(k){
+      var el = document.querySelector('input[name="'+k+'"]:checked');
+      a[k] = el ? el.value : null;
+    });
+    if (Object.keys(a).some(function(k){return a[k]===null;})){
+      document.getElementById("err").style.display = "block";
+      return;
+    }
+    document.getElementById("err").style.display = "none";
+
+    var s = {ccusage:3, statusline:3, notify:3, templates:1, plugins:2, playwright:1, router:0, parallel:0, happy:0, tweakcc:1};
+    var why = {};
+
+    // Q1 課金
+    if (a.q1==="usage"){ s.ccusage+=3; s.router+=1; why.ccusage="従量課金なので、金額が出ると効きます"; }
+    else if (a.q1==="flat"){ s.ccusage+=1; why.ccusage="定額でも「どのモデルに偏っているか」の把握に使えます"; }
+    else { s.templates+=2; s.plugins+=1; why.templates="これから環境を整える段階なので、まとめて導入が効きます"; }
+
+    // Q2 ターミナル
+    if (a.q2==="ok"){ s.playwright+=1; s.tweakcc+=1; s.parallel+=1; }
+    else if (a.q2==="soft"){ s.statusline+=1; }
+    else { s.statusline+=1; s.notify+=1; s.router-=2; s.parallel-=2; s.playwright-=1;
+           why.notify="黒い画面をずっと見なくて済むように、通知は特に効きます"; }
+
+    // Q3 並行
+    if (a.q3==="often"){ s.parallel+=3; s.notify+=1; why.parallel="並行作業が多いので、worktree ごとに分けると混ざりません"; }
+    else if (a.q3==="sometimes"){ s.parallel+=1; }
+
+    // Q4 外出
+    if (a.q4==="yes"){ s.happy+=3; s.notify+=1; why.happy="外出先から見たいので、スマホ操作が効きます"; }
+
+    // Q5 別モデル
+    if (a.q5==="yes"){ s.router+=3; why.router="コストを下げたいので、安いモデルへの振り分けが効きます"; }
+    else { s.router-=1; }
+
+    // 上位3件（同点は ORDER の並びで）
+    var ranked = ORDER.slice().sort(function(x,y){
+      if (s[y]!==s[x]) return s[y]-s[x];
+      return ORDER.indexOf(x)-ORDER.indexOf(y);
+    });
+    var top3 = ranked.slice(0,3);
+
+    var picksEl = document.getElementById("picks");
+    picksEl.innerHTML = "";
+    top3.forEach(function(key, i){
+      var t = TOOLS[key];
+      var d = document.createElement("div");
+      d.className = "pick";
+      d.innerHTML = '<div class="rank">' + (i+1) + ' つ目</div>' +
+                    '<div class="name">' + t.name + '</div>' +
+                    '<div class="why">' + (why[key] || "素の Claude Code の不便を直接消せます") + '</div>' +
+                    '<div class="cmd">' + t.cmd + '</div>';
+      picksEl.appendChild(d);
+    });
+
+    // 導入順（top3 を ORDER 順に並べ直して提示）
+    var ordered = ORDER.filter(function(k){return top3.indexOf(k)>=0;});
+    document.getElementById("order").innerHTML =
+      "<b>入れる順番:</b> " + ordered.map(function(k){return TOOLS[k].name.replace(/（.*/,"");}).join(" → ") +
+      "。まず「使ったお金と残量が見える」ものから入れると、次の判断がしやすくなります。";
+
+    // 避けた方がいい／後回し
+    var av = [];
+    if (a.q2==="hard"){ av.push("⑥ claude-code-router と ⑦ 並行セッションは設定が重め。ターミナルに慣れてから。"); }
+    if (top3.indexOf("router")>=0 || a.q5==="yes"){ av.push("⑥ claude-code-router は非公式の中継。別モデルのプロバイダ規約を先に確認する。"); }
+    if (top3.indexOf("parallel")>=0){ av.push("⑦ Claude Squad は AGPL-3.0。自社サービスへ組み込むなら要検討（ccmanager は MIT）。"); }
+    if (top3.indexOf("templates")>=0){ av.push("③ claude-code-templates は有志の寄せ集め。入れる要素の中身を1つずつ確認する。"); }
+    if (av.length===0){ av.push("特になし。ただし ⑥⑦ に進むときは、非公式・AGPL・各社規約の確認を忘れずに。"); }
+    document.getElementById("avoid").innerHTML = "<b>避ける・後回しにするもの</b><ul><li>" + av.join("</li><li>") + "</li></ul>";
+
+    document.getElementById("result").style.display = "block";
+    document.getElementById("result").scrollIntoView({behavior:"smooth", block:"start"});
+  });
+})();
+</script>
+</body>
+</html>
