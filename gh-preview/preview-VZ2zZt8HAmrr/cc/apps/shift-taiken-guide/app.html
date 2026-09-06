@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>④15分で自動化を体験する シフト自動化デモ体験ガイドアプリ</title>
+<meta name="description" content="デモ店舗のデータを使って「希望を集めたシートから、シフト表と店長用サイトが自動で出てくる」までを15分でひと通り体験できるガイドアプリ。各ステップで貼る指示文をワンクリックでコピーでき、出てきた結果が合っているかを答え合わせできます。">
+<style>
+  :root{
+    --brand:#C15640; --accent:#D9774F; --ink:#2A2620; --mid:#6E6557; --sub:#A39A8B;
+    --line:#E4D9C7; --bg:#F1ECE3; --paper:#FBF8F2;
+    --ok:#3F7D58; --code:#2A2620;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:-apple-system,'Hiragino Sans','Yu Gothic',sans-serif;background:var(--bg);color:var(--ink);line-height:1.75;padding:22px;}
+  .wrap{max-width:720px;margin:0 auto;background:var(--paper);border:1.5px solid var(--line);border-radius:16px;padding:24px 22px;}
+  h1{font-size:21px;font-weight:800;margin-bottom:4px;line-height:1.45;}
+  .sub{font-size:13px;color:var(--mid);margin-bottom:16px;}
+  .bar{height:8px;background:var(--bg);border:1.5px solid var(--line);border-radius:999px;overflow:hidden;margin-bottom:8px;}
+  .bar i{display:block;height:100%;background:var(--accent);width:0;transition:width .25s;}
+  .dots{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:16px;}
+  .dots button{border:1.5px solid var(--line);background:#fff;color:var(--sub);font-size:12px;font-weight:800;
+    width:30px;height:30px;border-radius:50%;cursor:pointer;line-height:1;}
+  .dots button.cur{background:var(--brand);border-color:var(--brand);color:#fff;}
+  .dots button.done{background:var(--ok);border-color:var(--ok);color:#fff;}
+  .dots button.done.cur{background:var(--ok);border-color:var(--brand);box-shadow:0 0 0 3px rgba(193,86,64,.35);}
+  .step{border:1.5px solid var(--line);border-radius:12px;padding:16px 16px 18px;background:#fff;}
+  .meta{font-size:11.5px;font-weight:800;color:var(--brand);letter-spacing:.04em;margin-bottom:2px;}
+  h2{font-size:17px;font-weight:800;margin-bottom:8px;line-height:1.5;}
+  .lead{font-size:13.5px;color:var(--mid);margin-bottom:12px;}
+  h3{font-size:12.5px;font-weight:800;color:var(--brand);margin:14px 0 4px;}
+  ul{margin:0 0 0 18px;font-size:13.5px;}
+  li{margin:4px 0;}
+  .promptbox{position:relative;margin-top:6px;}
+  pre{background:var(--code);color:#F6EFE4;border-radius:10px;padding:14px 14px 14px;font-size:12.5px;line-height:1.7;
+    white-space:pre-wrap;word-break:break-word;font-family:'SFMono-Regular',Menlo,Consolas,monospace;overflow-x:auto;}
+  .copy{position:absolute;top:8px;right:8px;background:var(--accent);border:none;color:#2A2620;font-weight:800;
+    font-size:11.5px;padding:6px 12px;border-radius:999px;cursor:pointer;}
+  .copy:hover{background:var(--brand);color:#fff;}
+  .copy.done{background:var(--ok);color:#fff;}
+  .ok{background:var(--bg);border-left:5px solid var(--ok);border-radius:0 8px 8px 0;padding:10px 12px;font-size:13px;margin-top:6px;}
+  .stuck{background:var(--bg);border-left:5px solid var(--accent);border-radius:0 8px 8px 0;padding:10px 12px;font-size:13px;margin-top:8px;}
+  details{margin-top:8px;border:1.5px dashed var(--line);border-radius:10px;padding:8px 12px;background:var(--bg);}
+  summary{cursor:pointer;font-size:13px;font-weight:800;color:var(--brand);}
+  details p{font-size:13px;margin-top:6px;}
+  a{color:var(--brand);word-break:break-all;}
+  .done-row{display:flex;align-items:center;gap:8px;margin-top:16px;padding-top:14px;border-top:1px solid var(--line);font-size:13.5px;font-weight:700;}
+  .done-row input{width:18px;height:18px;}
+  .nav{display:flex;gap:10px;margin-top:14px;align-items:center;flex-wrap:wrap;}
+  .btn{background:var(--accent);border:none;color:#2A2620;font-weight:800;font-size:14px;padding:10px 20px;border-radius:999px;cursor:pointer;}
+  .btn:hover{background:var(--brand);color:#fff;}
+  .btn.ghost{background:#fff;border:1.5px solid var(--line);color:var(--mid);}
+  .btn:disabled{opacity:.4;cursor:default;}
+  .btn.ghost.sm{font-size:12px;padding:7px 14px;margin-left:auto;}
+  .note{font-size:12px;color:var(--mid);margin-top:14px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>15分で自動化を体験する シフト自動化デモ体験ガイドアプリ</h1>
+  <p class="sub">デモ店舗（サンライズ食品館・スタッフ15人）のデータで、「集めた希望のシート」から「シフト表と店長用サイト」が出てくるまでを、ひと通りなぞれます。各ステップの指示文はコピーボタンで貼るだけ。出てきた結果が合っているかも、その場で答え合わせできます。</p>
+
+  <div class="bar"><i id="bar"></i></div>
+  <div class="dots" id="dots"></div>
+
+  <div class="step" id="step"></div>
+
+  <div class="nav">
+    <button class="btn ghost" id="prev">← 戻る</button>
+    <button class="btn" id="next">次へ →</button>
+    <button class="btn ghost sm" id="reset">最初からやり直す</button>
+  </div>
+
+  <p class="note">※ このガイドは練習用のデモデータで進める前提です。実際の店のデータを使うときは、氏名以外の個人情報（住所・電話番号・時給・体調の記録）を渡すファイルから外してから始めてください。</p>
+</div>
+
+<script>
+(function(){
+  var SHEET="https://docs.google.com/spreadsheets/d/1AMQoyhJG_pNNRW54_g2UABxgdrmlhC-LqZEcLQlHbkc/edit";
+
+  var steps=[
+  {
+    time:"3分",
+    title:"デモのデータを手元に用意する",
+    lead:"まずは動かす材料をそろえます。ここだけは作業だけで、指示文は貼りません。",
+    todo:[
+      'デモ用スプレッドシートを開く: <a href="'+SHEET+'" target="_blank" rel="noopener">'+SHEET+'</a>',
+      "「ファイル → コピーを作成」で自分のドライブに複製する（元のシートは閲覧のみ）",
+      "Googleを使わないときは、各タブを「ファイル → ダウンロード → カンマ区切り形式」で保存し、作業フォルダに置く",
+      "Claude Code をその作業フォルダで開いておく"
+    ],
+    ok:"raw_希望 と スタッフ の2つのタブが見えていればOK。raw_希望には10月・11月・12月の3ヶ月ぶん、15人×3＝45行が入っています。",
+    stuck:"Claude Code をまだ入れていない場合は、先に「①今日から動かせる Claude Code 導入手順マップ」を進めてください。30分で戻ってこられます。"
+  },
+  {
+    time:"2分",
+    title:"いきなり作らせず、まず読ませる",
+    lead:"最初に点検させると、あとで全部組み直す事故が消えます。この1本を貼ってください。",
+    prompt:"まだシフトは作らないでください。このスプレッドシートを読んで、次を報告してください。\n〈スプレッドシートのURL、またはCSVを置いたフォルダ〉\n\n・raw_希望とスタッフ、それぞれの列が何を表しているかの一覧\n・勤務可能帯と対応できる業務の書き方が2つのタブで揃っているか（区切り文字の違いも含めて全パターン）\n・raw_希望に居てスタッフに居ない人、スタッフに居てraw_希望に居ない人\n・対象月ごとの回答が全員ぶんそろっているか\n・希望勤務日数が空欄・0・対象月の日数を超えている人\n・有給を使いたい日が、その人の有給残を超えていないか",
+    ok:"列の説明が返ってきて、「勤務可能帯の区切りが2つのタブで違う」ことを指摘してくれば合格です。",
+    reveal:{q:"答え合わせ：何を見つけてくるはず？",a:"raw_希望は「早番可, 遅番可」とカンマ区切り、スタッフは「早番可/遅番可」とスラッシュ区切りで書かれています。対応業務も「レジ, 発注」と「レジ・発注」で違います。ここを指摘してくれば、データをちゃんと読めている証拠です。指摘が無ければ「区切り文字の違いも見て」と足してください。"},
+    stuck:"「シートが読めません」と返ってきたら、共有設定が閉じています。「リンクを知っている全員が閲覧可」にするか、CSVで渡してください。"
+  },
+  {
+    time:"5分",
+    title:"3ヶ月ぶんのシフト表を作らせる",
+    lead:"ここが本番です。条件の4行はそのまま貼ってください。出てくるまで数分かかります。",
+    prompt:"このスプレッドシートを読んで、10月・11月・12月のシフト表を作って。\n〈スプレッドシートのURL〉\nraw_希望がフォームで集めた希望、スタッフが店の名簿。\n\n・希望休はできるだけ通す\n・出勤日数を、本人が書いた希望勤務日数に合わせる\n・毎日、早番3人・遅番3人・夜勤1人を埋める\n・シフト希望に対しての確定率を平等にして\n\nシフト表はCSVで保存して、店長がそのまま見られるサイトにして。\n通らなかった希望も、理由つきで出して。",
+    ok:"月ごとのCSV・店長用のHTML・通らなかった希望の一覧、この3つが出てくればOK。足りないものがあれば「HTMLと、通らなかった希望の一覧も出して」と追加で頼めば足してくれます。",
+    stuck:"途中で止まったら「続けて」と送れば再開します。やり直す必要はありません。"
+  },
+  {
+    time:"2分",
+    title:"「なぜ全部は通らないのか」を数字で説明させる",
+    lead:"このデモデータは、わざと10月だけ人手が足りない形にしてあります。理由を計算させてみてください。",
+    prompt:"10月について、次を計算して教えてください。\n\n・必要な出勤の合計（日数 × 1日に必要な人数）\n・集まった希望勤務日数の合計\n・その差が何人日か\n・差を埋めるには、増員なら何人ぶん、今のメンバーなら1人あたり何日多く出る計算になるか\n・夜勤に入れるスタッフが何人いて、1人あたり月何回になるか\n\n表と、最後に2〜3行のまとめでお願いします。",
+    ok:"数字が返ってきたら、下の答え合わせを開いて突き合わせてください。ここが合っていれば、シフトが完成しない理由を人に説明できる状態です。",
+    reveal:{q:"答え合わせ：10月の正解",a:"必要な出勤は 31日 × 7人（早番3・遅番3・夜勤1）＝ 217人日。集まった希望勤務日数の合計は 213人日。差し引き4人日足りません。埋めるには増員なら約1人、今のメンバーなら1人あたり月0.3日ぶん多く出る計算です。夜勤に入れるのは15人中5人なので、1人あたり月6.2回。ちなみに11月は+3人日、12月は+6人日で少し余裕があります。"},
+    stuck:"数字がずれていたら、1日に必要な人数を7人（早番3・遅番3・夜勤1）として計算しているか確認してください。"
+  },
+  {
+    time:"2分",
+    title:"通らなかった希望を、本人に見せられる形にする",
+    lead:"人が一番困るのは表づくりではなく、断りの説明です。ここも任せられます。",
+    prompt:"今回通らなかった希望を、本人に見せられる説明にしてください。\n\n・誰の・どの日の・どの希望が通らなかったか\n・通せなかった理由を、その日の状況で説明する（その日の希望者数と枠数を必ず数字で書く）\n・代わりに何を通したか\n・全員分の一覧と、本人に個別で送れる短い文面の両方\n\n責める言い方や、他のスタッフの名前は書かないでください。",
+    ok:"「調整の結果」のような曖昧な理由ではなく、「その日は早番希望が5人で枠が3人だった」のように数字が入っていればOKです。",
+    stuck:"曖昧な理由が返ってきたら、「その日の希望者数と枠数を必ず数字で書いて」と足してください。それだけで納得感が変わります。"
+  },
+  {
+    time:"3分",
+    title:"店長がそのまま開けるサイトにする",
+    lead:"最後に、配って使える形にします。1ファイルで完結させるのがコツです。",
+    prompt:"確定したシフト表を、店長とスタッフがそのまま見られる1枚のHTMLにしてください。\n\n・行が日付、列がスタッフ、セルが 早番／遅番／夜勤／休\n・早番・遅番・夜勤で色を分けて、休は薄いグレーに\n・上に月の切り替えタブ、右上に「今日」へ飛ぶボタン\n・人数が足りていない日は、その行を赤くして理由を出す\n・スマホの縦画面でも横スクロールで読めるように\n・外部の読み込み（CDN・フォント・通信）は使わず、この1ファイルだけで開けるように",
+    ok:"できたHTMLをダブルクリックして開き、スマホでも見られるか確認してください。ここまでで、シートを渡してから配れる状態になるまでがひと通り終わりです。",
+    stuck:"開いたときに崩れていたら、「外部の読み込みを使わないで、1ファイルで完結させて」ともう一度伝えてください。"
+  },
+  {
+    time:"—",
+    title:"自分の店のデータに置き換える",
+    lead:"体験はここまで。次は自分の店の数字でやってみてください。",
+    todo:[
+      "「②デモ用スプレッドシート」の付録にあるフォームの質問文8つで、自分の店の希望を集める",
+      "名簿（スタッフタブ）は店側で管理する。退職者は行を消さず「在籍/退職」で落とす",
+      "うまくいった条件は「③指示文キット」の10番を使って設定ファイルに固定する",
+      "翌月からは、③の9番で作った起動用の1行を貼るだけにする"
+    ],
+    ok:"ここまで来ると、毎月の作業は「希望を締め切る → 1行貼る → 出てきた表を目で確認する」の3つだけになります。",
+    stuck:"本番データを使う前に、先月ぶんで一度回して、実際に組んだ表と見比べてください。言葉にできていなかった自分の店の条件が必ず1〜2個見つかります。"
+  }];
+
+  var KEY="shift-taiken-guide-v1";
+  var cur=0, done={};
+  try{ var raw=localStorage.getItem(KEY); if(raw) done=JSON.parse(raw)||{}; }catch(e){ done={}; }
+  function save(){ try{ localStorage.setItem(KEY, JSON.stringify(done)); }catch(e){} }
+
+  var $=function(id){return document.getElementById(id);};
+
+  function esc(s){ return s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;"); }
+
+  function renderDots(){
+    var h="";
+    for(var i=0;i<steps.length;i++){
+      var cls = (done[i] ? "done " : "") + (i===cur ? "cur" : "");
+      h+='<button class="'+cls+'" data-i="'+i+'" title="'+esc(steps[i].title)+'">'+(i+1)+'</button>';
+    }
+    $("dots").innerHTML=h;
+    var n=0; for(var k in done){ if(done[k]) n++; }
+    $("bar").style.width=Math.round(n/steps.length*100)+"%";
+  }
+
+  function renderStep(){
+    var s=steps[cur], h="";
+    h+='<div class="meta">ステップ '+(cur+1)+' / '+steps.length+'　目安 '+s.time+'</div>';
+    h+='<h2>'+esc(s.title)+'</h2>';
+    h+='<p class="lead">'+esc(s.lead)+'</p>';
+    if(s.todo){
+      h+='<h3>やること</h3><ul>';
+      s.todo.forEach(function(t){ h+='<li>'+t+'</li>'; });
+      h+='</ul>';
+    }
+    if(s.prompt){
+      h+='<h3>これを貼る</h3><div class="promptbox"><button class="copy" id="copy">コピー</button><pre id="pre">'+esc(s.prompt)+'</pre></div>';
+    }
+    h+='<div class="ok"><b>こうなればOK</b><br>'+esc(s.ok)+'</div>';
+    if(s.reveal){
+      h+='<details><summary>'+esc(s.reveal.q)+'</summary><p>'+esc(s.reveal.a)+'</p></details>';
+    }
+    if(s.stuck){
+      h+='<div class="stuck"><b>うまくいかないとき</b><br>'+esc(s.stuck)+'</div>';
+    }
+    h+='<label class="done-row"><input type="checkbox" id="chk"'+(done[cur]?" checked":"")+'>このステップは終わった</label>';
+    $("step").innerHTML=h;
+
+    $("prev").disabled = (cur===0);
+    $("next").textContent = (cur===steps.length-1) ? "最初に戻る" : "次へ →";
+
+    var chk=$("chk");
+    chk.addEventListener("change",function(){ done[cur]=chk.checked; save(); renderDots(); });
+
+    var cp=$("copy");
+    if(cp){
+      cp.addEventListener("click",function(){
+        var text=steps[cur].prompt;
+        var mark=function(){ cp.textContent="コピーしました"; cp.className="copy done";
+          setTimeout(function(){ cp.textContent="コピー"; cp.className="copy"; },1600); };
+        if(navigator.clipboard && navigator.clipboard.writeText){
+          navigator.clipboard.writeText(text).then(mark, fallback);
+        } else { fallback(); }
+        function fallback(){
+          var ta=document.createElement("textarea");
+          ta.value=text; ta.style.position="fixed"; ta.style.opacity="0";
+          document.body.appendChild(ta); ta.select();
+          try{ document.execCommand("copy"); mark(); }catch(e){ cp.textContent="選択してコピーしてください"; }
+          document.body.removeChild(ta);
+        }
+      });
+    }
+    renderDots();
+  }
+
+  $("dots").addEventListener("click",function(e){
+    var b=e.target.closest("button"); if(!b) return;
+    cur=parseInt(b.getAttribute("data-i"),10); renderStep();
+    document.querySelector(".step").scrollIntoView({block:"start"});
+  });
+  $("prev").addEventListener("click",function(){ if(cur>0){ cur--; renderStep(); } });
+  $("next").addEventListener("click",function(){
+    cur = (cur===steps.length-1) ? 0 : cur+1; renderStep();
+  });
+  $("reset").addEventListener("click",function(){
+    done={}; save(); cur=0; renderStep();
+  });
+
+  renderStep();
+})();
+</script>
+</body>
+</html>

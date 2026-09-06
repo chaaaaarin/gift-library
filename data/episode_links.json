@@ -464,11 +464,6 @@
   "repo": "https://github.com/chaaaaarin/kawaru-channel-20260831-111",
   "slides": "https://chaaaaarin.github.io/kawaru-channel-20260831-111/slides.html"
  },
- "20260902_kawaru_No.112_【合法】無料でCodexを使う裏技": {
-  "onepager": "https://chaaaaarin.github.io/kawaru-channel-20260902/onepager.html",
-  "repo": "https://github.com/chaaaaarin/kawaru-channel-20260902",
-  "slides": "https://chaaaaarin.github.io/kawaru-channel-20260902/slides.html"
- },
  "20260903_kawaru_No.114_【炎上】AIをアホにするのはいつも人間": {
   "onepager": "https://chaaaaarin.github.io/kawaru-channel-20260903-114/onepager.html",
   "repo": "https://github.com/chaaaaarin/kawaru-channel-20260903-114",
@@ -478,5 +473,15 @@
   "onepager": "https://chaaaaarin.github.io/kawaru-channel-20260904/onepager.html",
   "repo": "https://github.com/chaaaaarin/kawaru-channel-20260904",
   "slides": "https://chaaaaarin.github.io/kawaru-channel-20260904/slides.html"
+ },
+ "20260905_kawaru_No.112_【実演あり】Fable5.1の100倍すごいAstraで自動化してみた": {
+  "onepager": "https://chaaaaarin.github.io/kawaru-channel-20260905/onepager.html",
+  "repo": "https://github.com/chaaaaarin/kawaru-channel-20260905",
+  "slides": "https://chaaaaarin.github.io/kawaru-channel-20260905/slides.html"
+ },
+ "20260906_claudecode_No.148_【炎上】AIをアホにするのはいつも人間": {
+  "onepager": "https://chaaaaarin.github.io/claudecode-channel-20260906/onepager.html",
+  "repo": "https://github.com/chaaaaarin/claudecode-channel-20260906",
+  "slides": "https://chaaaaarin.github.io/claudecode-channel-20260906/slides.html"
  }
 }
