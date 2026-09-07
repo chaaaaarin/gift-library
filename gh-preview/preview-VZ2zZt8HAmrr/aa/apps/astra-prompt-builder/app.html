@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Astraプロンプト組み立てアプリ</title>
+<meta name="description" content="画像・動画・仕事タスクの3種類とも、いくつか選んで言葉を入れるだけで、そのまま貼れるプロンプトが完成します。書き方を毎回考える時間がなくなり、抜けがちな指定（比率・余白・出力形式）も自動で入ります。">
+<style>
+  :root{
+    --brand:#1C3461; --brand-deep:#16284A; --brand-soft:rgba(28,52,97,.08); --brand-line:rgba(28,52,97,.22);
+    --accent:#5BBCD4; --accent-deep:#2C7A93; --accent-soft:rgba(91,188,212,.16);
+    --bg:#F7FAFC; --paper:#FFFFFF; --ink:#1C3461; --ink-mid:#4A6080; --ink-sub:#8098B4; --line:rgba(28,52,97,.14);
+    --ok:#2C7A93; --ok-soft:rgba(44,122,147,.10);
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:var(--bg);color:var(--ink);font-family:-apple-system,'Hiragino Sans','Yu Gothic',sans-serif;
+    line-height:1.7;padding:26px 18px 48px;}
+  .wrap{max-width:760px;margin:0 auto;}
+  h1{font-size:24px;font-weight:900;line-height:1.35;margin-bottom:8px;}
+  .sub{font-size:14.5px;color:var(--ink-mid);margin-bottom:20px;}
+  .bar{height:6px;background:var(--brand-soft);border-radius:99px;overflow:hidden;margin-bottom:20px;}
+  .bar i{display:block;height:100%;background:var(--accent);width:0;transition:width .3s;}
+  .card{background:var(--paper);border:1.5px solid var(--line);border-radius:14px;padding:22px;margin-bottom:16px;}
+  .qn{font-size:12.5px;font-weight:900;color:var(--accent-deep);letter-spacing:1px;margin-bottom:6px;}
+  .qt{font-size:19px;font-weight:900;line-height:1.45;margin-bottom:5px;}
+  .qh{font-size:13px;color:var(--ink-sub);margin-bottom:14px;}
+  .opts{display:flex;flex-direction:column;gap:9px;}
+  .opt{border:1.5px solid var(--line);background:var(--bg);border-radius:11px;padding:12px 16px;cursor:pointer;
+    font-size:15px;font-weight:700;color:var(--ink);transition:.15s;user-select:none;}
+  .opt:hover{border-color:var(--brand-line);background:var(--brand-soft);}
+  .opt.on{background:var(--brand);border-color:var(--brand-deep);color:#fff;}
+  .opt small{display:block;font-weight:500;font-size:12.5px;color:var(--ink-sub);margin-top:2px;}
+  .opt.on small{color:#C8D6E6;}
+  label.fld{display:block;font-size:13px;font-weight:800;color:var(--ink-mid);margin-bottom:6px;}
+  input[type=text],textarea{width:100%;border:1.5px solid var(--line);border-radius:10px;padding:11px 14px;
+    font-size:15px;font-family:inherit;color:var(--ink);background:var(--bg);line-height:1.6;}
+  input[type=text]:focus,textarea:focus{outline:none;border-color:var(--accent-deep);background:var(--paper);}
+  textarea{resize:vertical;min-height:76px;}
+  .hint{font-size:12px;color:var(--ink-sub);margin-top:5px;}
+  .btns{display:flex;gap:9px;flex-wrap:wrap;margin-top:16px;}
+  button{border:1.5px solid var(--brand-line);background:var(--paper);color:var(--brand-deep);border-radius:9px;
+    padding:10px 20px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit;transition:.15s;}
+  button:hover{background:var(--brand-soft);border-color:var(--brand);}
+  button.primary{background:var(--brand);border-color:var(--brand-deep);color:#fff;}
+  button.primary:hover{background:var(--brand-deep);}
+  button:disabled{opacity:.4;cursor:not-allowed;}
+  .hide{display:none;}
+  .hero{background:var(--brand);color:#fff;border-radius:16px;padding:22px 24px;margin-bottom:16px;}
+  .hero .lbl{font-size:12.5px;font-weight:900;color:var(--accent);letter-spacing:1px;}
+  .hero .nm{font-size:21px;font-weight:900;line-height:1.35;margin:6px 0 0;}
+  .sec{font-size:12.5px;font-weight:900;color:var(--accent-deep);letter-spacing:1px;margin:4px 0 9px;}
+  .out{white-space:pre-wrap;word-break:break-word;background:var(--bg);border:1.5px solid var(--line);
+    border-radius:11px;padding:15px 16px;font-size:14px;line-height:1.8;
+    font-family:'SFMono-Regular',Consolas,'Hiragino Sans',monospace;}
+  .out + .out{margin-top:12px;}
+  .copied{color:var(--ok);font-size:13px;font-weight:800;margin-left:10px;}
+  .tip{background:var(--ok-soft);border:1.5px solid var(--ok);border-radius:11px;padding:13px 16px;margin-top:14px;
+    font-size:13.5px;line-height:1.7;}
+  .tip b{display:block;font-weight:900;color:var(--ok);margin-bottom:3px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Astraプロンプト組み立てアプリ</h1>
+  <p class="sub">3種類（画像／動画／仕事タスク）とも、選んで言葉を入れるだけで、そのまま貼れるプロンプトが完成します。</p>
+  <div class="bar"><i id="bar"></i></div>
+  <div id="quiz"></div>
+  <div id="result" class="hide"></div>
+</div>
+<script>
+const MODES = {
+  image: {
+    name: "画像生成プロンプト",
+    steps: [
+      {kind:"choose", key:"use", t:"何に使う画像ですか？", h:"用途ごとに、余白の取り方や禁止事項を自動で足します。",
+        opts:[
+          {v:"thumb", l:"SNS・動画のサムネイル", s:"人物＋あとで文字を載せる前提"},
+          {v:"eyecatch", l:"記事・ブログのアイキャッチ", s:"抽象イメージで内容に合わせる"},
+          {v:"mockup", l:"商品・サービスのモックアップ", s:"LP・提案資料に載せる"},
+          {v:"figure", l:"資料の図解・挿絵", s:"スライドでトーンを揃えたい"}
+        ]},
+      {kind:"input", key:"subject", t:"何を描きますか？", h:"主役になるものを、具体的に1〜2行で。",
+        placeholder:"例：驚いた表情で右手を上げた30代の男性 / 山あいの湖と朝霧",
+        hint:"人・物・場所・状況まで書くほど狙いどおりに出ます。"},
+      {kind:"choose", key:"style", t:"見た目の方向は？", h:"",
+        opts:[
+          {v:"photo", l:"実写風", s:"少し彩度・コントラスト強め"},
+          {v:"flat", l:"フラットなイラスト", s:"線画＋2色塗り・影なし"},
+          {v:"hand", l:"手描き風", s:"色鉛筆・マーカー調、塗りムラを残す"},
+          {v:"abst", l:"抽象・幾何学", s:"形と線だけ、人や物は描かない"}
+        ]},
+      {kind:"choose", key:"ratio", t:"比率は？", h:"",
+        opts:[
+          {v:"16:9", l:"16:9（横）", s:"サムネ・スライド・アイキャッチ"},
+          {v:"1:1", l:"1:1（正方形）", s:"SNS投稿・アイコン・モックアップ"},
+          {v:"9:16", l:"9:16（縦）", s:"ショート動画・ストーリーズ"}
+        ]}
+    ]
+  },
+  video: {
+    name: "動画生成プロンプト（Astra × HiggsField）",
+    steps: [
+      {kind:"choose", key:"use", t:"何に使う動画ですか？", h:"",
+        opts:[
+          {v:"ad", l:"SNS広告の冒頭フック", s:"3秒で指を止めさせる"},
+          {v:"intro", l:"動画のイントロ／アウトロ", s:"毎回使う共通モーション"},
+          {v:"product", l:"商品を見せるクリップ", s:"EC・LPの離脱を減らす"},
+          {v:"bg", l:"背景に敷く素材", s:"話者のうしろ・待機画面"}
+        ]},
+      {kind:"input", key:"subject", t:"下地の静止画には何を写しますか？", h:"Astraで作る1枚目の絵の中身です。",
+        placeholder:"例：マットな黒いステンレスボトル / 夕方のビル屋上に立つ人物の後ろ姿",
+        hint:"動くのはカメラ。被写体自体は動かさない前提で選ぶと破綻しません。"},
+      {kind:"choose", key:"move", t:"カメラの動きは？", h:"HiggsField側のプリセットに対応します。",
+        opts:[
+          {v:"dolly", l:"ゆっくり前進（Dolly In）", s:"落ち着いた・イントロ向き"},
+          {v:"crash", l:"一気に急接近（Crash Zoom）", s:"広告フック向き・強め"},
+          {v:"orbit", l:"まわり込む（Orbit / 360）", s:"商品を1周見せる"},
+          {v:"crane", l:"持ち上がる（Crane / Robo Arm）", s:"見せ場・登場カット"}
+        ]},
+      {kind:"choose", key:"len", t:"尺は？", h:"",
+        opts:[
+          {v:"3", l:"3秒", s:"広告フック・切り出し前提"},
+          {v:"5", l:"5秒", s:"イントロ・商品カット"},
+          {v:"8", l:"8秒", s:"背景素材・ループ用"}
+        ]}
+    ]
+  },
+  work: {
+    name: "仕事タスクのプロンプト",
+    steps: [
+      {kind:"choose", key:"task", t:"どの作業を任せますか？", h:"",
+        opts:[
+          {v:"mailsum", l:"長いメールを要約する", s:"状況・決定・次アクションに整理"},
+          {v:"reply", l:"返信メールの下書き", s:"トーン違いで複数案"},
+          {v:"minutes", l:"議事メモを整える", s:"決定・宿題・保留に仕分け"},
+          {v:"todo", l:"ToDoを棚卸しする", s:"緊急度×重要度で並べ替え"},
+          {v:"report", l:"数字にコメントを付ける", s:"前月比・要因・見通し"}
+        ]},
+      {kind:"input", key:"material", t:"渡す材料と、今回だけの条件は？", h:"貼り付ける内容と、相手・目的など。",
+        placeholder:"例：取引先との納期調整スレッド。こちらは2週間延ばしたい / 今日の営業会議のメモ",
+        hint:"固有名詞や数字は、出力後に自分で確定させる前提でOKです。"},
+      {kind:"choose", key:"fmt", t:"出力の形は？", h:"",
+        opts:[
+          {v:"table", l:"表にする", s:"項目を見比べたい"},
+          {v:"bullet", l:"箇条書きにする", s:"要点だけ速く読む"},
+          {v:"prose", l:"短い文章にする", s:"そのまま共有・提出する"}
+        ]},
+      {kind:"choose", key:"tone", t:"トーンは？", h:"",
+        opts:[
+          {v:"plain", l:"事実だけ淡々と", s:"社内の報告・整理"},
+          {v:"polite", l:"ていねい・低姿勢", s:"社外・気を使う相手"},
+          {v:"biz", l:"対等でビジネスライク", s:"言い訳がましくしない"}
+        ]}
+    ]
+  }
+};
+
+const MODE_STEP = {kind:"choose", key:"__mode", t:"どのプロンプトを作りますか？", h:"あとから何度でも切り替えられます。",
+  opts:[
+    {v:"image", l:"画像生成プロンプト", s:"サムネ・アイキャッチ・図解・モックアップ"},
+    {v:"video", l:"動画生成プロンプト（Astra × HiggsField）", s:"静止画を数秒の動画にする"},
+    {v:"work", l:"仕事タスクのプロンプト", s:"メール・議事録・ToDo・レポート"}
+  ]};
+
+const state = {}; let step = 0;
+
+function steps(){
+  return state.__mode ? [MODE_STEP, ...MODES[state.__mode].steps] : [MODE_STEP];
+}
+function current(){ return steps()[step]; }
+
+function render(){
+  const all = steps();
+  const q = current();
+  document.getElementById("bar").style.width = (step / all.length * 100) + "%";
+  const box = document.getElementById("quiz");
+  box.className = "";
+  box.innerHTML = "";
+  const c = document.createElement("div"); c.className = "card";
+  c.innerHTML = '<div class="qn">' + (step + 1) + ' / ' + all.length + '</div>' +
+                '<div class="qt">' + q.t + '</div>' + (q.h ? '<div class="qh">' + q.h + '</div>' : '');
+
+  if (q.kind === "choose"){
+    const o = document.createElement("div"); o.className = "opts";
+    q.opts.forEach(op => {
+      const d = document.createElement("div");
+      d.className = "opt" + (state[q.key] === op.v ? " on" : "");
+      d.innerHTML = op.l + (op.s ? '<small>' + op.s + '</small>' : '');
+      d.onclick = () => {
+        const changingMode = (q.key === "__mode" && state.__mode !== op.v);
+        state[q.key] = op.v;
+        if (changingMode){ MODES[op.v].steps.forEach(s => { delete state[s.key]; }); }
+        render();
+      };
+      o.appendChild(d);
+    });
+    c.appendChild(o);
+  } else {
+    const wrap = document.createElement("div");
+    const ta = document.createElement("textarea");
+    ta.value = state[q.key] || "";
+    ta.placeholder = q.placeholder || "";
+    ta.oninput = () => { state[q.key] = ta.value; syncNav(); };
+    wrap.appendChild(ta);
+    if (q.hint){ const h = document.createElement("div"); h.className = "hint"; h.textContent = q.hint; wrap.appendChild(h); }
+    c.appendChild(wrap);
+  }
+
+  const b = document.createElement("div"); b.className = "btns";
+  if (step > 0){ const back = document.createElement("button"); back.textContent = "← 戻る"; back.onclick = () => { step--; render(); }; b.appendChild(back); }
+  const nx = document.createElement("button"); nx.className = "primary"; nx.id = "nextBtn";
+  nx.textContent = (step === all.length - 1) ? "プロンプトを作る" : "次へ →";
+  nx.onclick = () => { if (step === all.length - 1) show(); else { step++; render(); } };
+  b.appendChild(nx);
+  c.appendChild(b);
+  box.appendChild(c);
+  syncNav();
+}
+
+function syncNav(){
+  const q = current();
+  const btn = document.getElementById("nextBtn");
+  if (!btn) return;
+  const v = state[q.key];
+  btn.disabled = !(typeof v === "string" ? v.trim() : v);
+}
+
+/* ---- プロンプト組み立て ---- */
+function esc(s){ return (s || "").trim() || "（ここに具体的に書く）"; }
+
+function buildImage(){
+  const useMap = {
+    thumb: {label:"サムネイル", extra:"画面の3分の1はあとで文字を載せるので、ほぼ無地で暗く空けておく。画像内に文字・ロゴは入れない。"},
+    eyecatch: {label:"記事のアイキャッチ", extra:"人物や具体的な物は控えめにし、テーマが伝わる構図にする。余白を広めに取る。文字は入れない。"},
+    mockup: {label:"製品モックアップ", extra:"画面や中身は具体的に描かず淡い枠だけにし、あとで実素材を合成できるようにする。清潔で明るいトーン。"},
+    figure: {label:"資料用の図解・挿絵", extra:"透過背景。線の太さを均一にし、影・グラデーションなし。箱に入れる文字は空にしておく（あとで自分で入れる）。"}
+  }[state.use];
+  const styleMap = {
+    photo:"実写風、彩度とコントラストは少し強め。",
+    flat:"フラットなイラスト（線画＋2色塗り、影なし）。",
+    hand:"手描き風（色鉛筆・マーカー調、塗りムラを少し残す、色数は3〜4色）。",
+    abst:"抽象・幾何学（形と線だけで表現し、人物や具体物は描かない）。"
+  }[state.style];
+  const p =
+`（Astraへ）${useMap.label}用の画像を${state.ratio}で作ってください。
+被写体は「${esc(state.subject)}」。
+${styleMap}
+${useMap.extra}
+色は全体で統一し、ばらつかせない。`;
+  const tip = "気に入った1枚が出たら、同じ指定のまま『次はこの被写体で』と続けると、トーンの揃ったシリーズになります。";
+  return {blocks:[{label:"そのまま貼るプロンプト", text:p}], tip};
+}
+
+function buildVideo(){
+  const subj = esc(state.subject);
+  const moveMap = {
+    dolly: {cam:"正面からゆっくり等速で前進（Dolly In）", str:"弱〜中"},
+    crash: {cam:"被写体へ一気に速く寄る（Crash Zoom In）", str:"強め"},
+    orbit: {cam:"被写体を中心に水平に回り込む（Orbit / 360）", str:"中"},
+    crane: {cam:"背後から回り込みつつ持ち上がる（Crane Down / Robo Arm）", str:"中〜強"}
+  }[state.move];
+  const useExtra = {
+    ad:"最後の0.5秒は動きを止め、テキストを載せられるようにする。",
+    intro:"始点と終点の明るさを揃え、ループ再生しても違和感が出ないようにする。",
+    product:"被写体の形とラベルは変えず、背景は均一に保つ。",
+    bg:"地形・輪郭は変形させず、揺れや光だけをゆっくり動かす。"
+  }[state.use];
+  const b1 =
+`（Astraへ）動画の下地にする静止画を${state.use === "ad" ? "9:16" : "16:9"}で作ってください。
+被写体は「${subj}」。
+手前と奥で被写体がはっきり分かる構図、余計な小物は入れない。
+実写風、色は全体で統一。文字・ロゴは入れない。`;
+  const b2 =
+`開始フレーム：上でAstraが作った静止画
+カメラ：${moveMap.cam}
+モーション強度：${moveMap.str}
+尺：${state.len}秒
+仕上げ指示：被写体の姿勢は保ち、動かすのはカメラだけ。${useExtra}手ブレ風の揺れは入れない。`;
+  const tip = "プリセット名が見つからないときは『カメラ：』の説明文をそのまま自由入力欄に貼れば近い動きになります。1回で決まらない前提で3テイク回してください。";
+  return {blocks:[
+    {label:"① Astraで下地の静止画を作る", text:b1},
+    {label:"② HiggsField の設定", text:b2}
+  ], tip};
+}
+
+function buildWork(){
+  const taskMap = {
+    mailsum:"これから貼るメールのやり取りを読んで、(1)現在の状況を3行以内、(2)決まったこと・決まっていないこと、(3)私が次に取るべきアクションと期限、に整理してください。発言者は明記し、推測で補った箇所は「※推測」と付けてください。",
+    reply:"これから貼るメールへの返信案を、トーン違いで3つ作ってください。伝えたい結論と今回の条件は下記のとおりです。いずれも代替案を1つ添え、言い訳がましくならないようにしてください。",
+    minutes:"これから貼る会議メモを、(1)決定事項、(2)宿題（担当者・期限つき）、(3)保留・次回持ち越し、(4)共有事項、の4区分に整理してください。担当や期限が無いものは「未定」と明示し、勝手に埋めないでください。",
+    todo:"これから貼るタスク一覧を、緊急度（期限の近さ）と重要度（成果へのインパクト）の2軸で仕分けし、(1)今日やる（3つまで）、(2)今週やる、(3)人に振る、(4)後回し、に分類してください。大きいタスクは最初の一歩だけ切り出してください。",
+    report:"これから貼る数値にコメントを付けてください。事実（数字）と解釈（要因）を分け、確証のない要因は「可能性がある」と書いてください。最後に次月の見通しを1行入れてください。"
+  }[state.task];
+  const fmtMap = {
+    table:"結果は表にまとめてください。",
+    bullet:"結果は見出しつきの箇条書きにしてください。",
+    prose:"結果はそのまま共有できる短い文章にしてください。"
+  }[state.fmt];
+  const toneMap = {
+    plain:"トーンは事実だけを淡々と。挨拶文や前置きは不要です。",
+    polite:"トーンはていねい・低姿勢で。ただし過度な謝罪の連発は避けてください。",
+    biz:"トーンは対等でビジネスライクに。責める表現は使わないでください。"
+  }[state.tone];
+  const p =
+`前提：${esc(state.material)}
+指示：${taskMap}
+出力形式・制約：${fmtMap}${toneMap}
+不確かな固有名詞・数字は「要確認」と付けて、こちらで確定できるようにしてください。`;
+  const tip = "出力はそのまま送らず、必ず目を通してから使ってください。特に日付・金額・宛名は自分で確定させてから共有します。";
+  return {blocks:[{label:"そのまま貼るプロンプト", text:p}], tip};
+}
+
+function show(){
+  document.getElementById("bar").style.width = "100%";
+  document.getElementById("quiz").className = "hide";
+  const r = document.getElementById("result");
+  r.className = "";
+  const res = state.__mode === "image" ? buildImage()
+            : state.__mode === "video" ? buildVideo()
+            : buildWork();
+
+  let html = '<div class="hero"><div class="lbl">できあがり</div>' +
+             '<div class="nm">' + MODES[state.__mode].name + '</div></div><div class="card">';
+  res.blocks.forEach((bl, i) => {
+    const id = "out" + i;
+    html += '<div class="sec">' + bl.label +
+            ' <button data-c="' + id + '" style="padding:5px 12px;font-size:12.5px;margin-left:4px;">コピー</button>' +
+            '<span class="copied hide" id="c' + id + '">コピーしました</span></div>' +
+            '<div class="out" id="' + id + '">' + bl.text.replace(/</g, "&lt;") + '</div>';
+  });
+  html += '<div class="tip"><b>使うときのコツ</b>' + res.tip + '</div>';
+  html += '<div class="btns">' +
+          '<button onclick="editAgain()">選び直す</button>' +
+          '<button class="primary" onclick="location.reload()">最初から</button></div></div>';
+  r.innerHTML = html;
+
+  r.querySelectorAll("button[data-c]").forEach(btn => {
+    btn.onclick = () => {
+      const el = document.getElementById(btn.dataset.c);
+      copyText(el.innerText, "c" + btn.dataset.c);
+    };
+  });
+  window.scrollTo({top:0, behavior:"smooth"});
+}
+
+function editAgain(){
+  document.getElementById("result").className = "hide";
+  step = steps().length - 1;
+  render();
+}
+
+function copyText(text, flagId){
+  const done = () => {
+    const f = document.getElementById(flagId);
+    if (f){ f.classList.remove("hide"); setTimeout(() => f.classList.add("hide"), 1600); }
+  };
+  if (navigator.clipboard && navigator.clipboard.writeText){
+    navigator.clipboard.writeText(text).then(done).catch(() => fallbackCopy(text, done));
+  } else {
+    fallbackCopy(text, done);
+  }
+}
+function fallbackCopy(text, done){
+  const ta = document.createElement("textarea");
+  ta.value = text; ta.style.position = "fixed"; ta.style.opacity = "0";
+  document.body.appendChild(ta); ta.select();
+  try { document.execCommand("copy"); done(); } catch(e) {}
+  document.body.removeChild(ta);
+}
+
+render();
+</script>
+</body>
+</html>
