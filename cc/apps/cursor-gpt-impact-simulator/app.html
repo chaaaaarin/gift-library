@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cursor GPT停止 影響シミュレーターアプリ</title>
+<meta name="description" content="Cursorのプラン・使っているGPTモデル・用途を選ぶと、11月12日以降にBYOK（自分のAPIキー）で継続できるか、どの用途が使えなくなるか、BYOK時の月額API概算、代替モデルとのコスト比較を出すミニアプリ。">
+<style>
+  :root{
+    --brand:#D9774F; --brand-deep:#C15640; --ink:#2A2620; --ink-mid:#6E6557; --ink-sub:#9C9384;
+    --bg:#F5F1E8; --paper:#FFFFFF; --line:#E4D9C7; --ok:#3F7D58; --ng:#B24E33; --soft:rgba(217,119,79,.10);
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:var(--bg);color:var(--ink);font-family:-apple-system,"Hiragino Sans","Yu Gothic","Noto Sans JP",sans-serif;line-height:1.7;padding:24px 16px 64px;}
+  .wrap{max-width:640px;margin:0 auto;}
+  h1{font-size:22px;font-weight:800;margin-bottom:6px;line-height:1.4;}
+  .sub{font-size:13px;color:var(--ink-mid);margin-bottom:22px;}
+  .card{background:var(--paper);border:1.5px solid var(--line);border-radius:14px;padding:18px 18px 16px;margin-bottom:16px;}
+  .q{font-size:15px;font-weight:800;margin-bottom:10px;}
+  .q span{color:var(--brand-deep);font-size:12px;font-weight:700;margin-left:4px;}
+  .opts{display:flex;flex-direction:column;gap:8px;}
+  label.opt{display:flex;align-items:flex-start;gap:9px;font-size:14px;padding:9px 11px;border:1.5px solid var(--line);border-radius:10px;cursor:pointer;background:var(--paper);}
+  label.opt:hover{border-color:var(--brand);}
+  label.opt.sel{border-color:var(--brand);background:var(--soft);}
+  label.opt input{margin-top:3px;flex-shrink:0;}
+  label.opt small{display:block;color:var(--ink-mid);font-size:12px;font-weight:400;}
+  button.go{width:100%;background:var(--brand);color:#fff;border:none;border-radius:11px;padding:14px;font-size:16px;font-weight:800;cursor:pointer;margin-top:4px;}
+  button.go:hover{background:var(--brand-deep);}
+  button.reset{width:100%;background:none;border:1.5px solid var(--line);color:var(--ink-mid);border-radius:10px;padding:10px;font-size:13px;font-weight:700;cursor:pointer;margin-top:10px;}
+  #result{display:none;}
+  .verdict{border-radius:14px;padding:18px;margin-bottom:16px;font-weight:700;}
+  .verdict.good{background:rgba(63,125,88,.12);border:1.5px solid var(--ok);color:var(--ok);}
+  .verdict.warn{background:var(--soft);border:1.5px solid var(--brand);color:var(--brand-deep);}
+  .verdict .big{font-size:17px;font-weight:800;display:block;margin-bottom:4px;}
+  .verdict .small{font-size:13px;font-weight:400;color:var(--ink);}
+  .rrow{display:flex;justify-content:space-between;gap:10px;padding:9px 0;border-bottom:1px solid var(--line);font-size:14px;}
+  .rrow:last-child{border-bottom:none;}
+  .rrow .t{font-weight:700;}
+  .tag-ok{color:var(--ok);font-weight:800;font-size:12.5px;}
+  .tag-ng{color:var(--ng);font-weight:800;font-size:12.5px;}
+  .sect{background:var(--paper);border:1.5px solid var(--line);border-radius:14px;padding:16px 18px;margin-bottom:14px;}
+  .sect h3{font-size:14px;font-weight:800;margin-bottom:8px;}
+  .cost{font-size:26px;font-weight:800;color:var(--brand-deep);}
+  .cost small{font-size:13px;color:var(--ink-mid);font-weight:600;}
+  .muted{font-size:12px;color:var(--ink-sub);margin-top:10px;line-height:1.6;}
+  .step-list{font-size:13.5px;color:var(--ink);margin:6px 0 0 18px;}
+  .step-list li{margin-bottom:4px;}
+  .err{color:var(--ng);font-size:13px;font-weight:700;margin-top:8px;display:none;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Cursor GPT停止 影響シミュレーターアプリ</h1>
+  <p class="sub">2026年11月12日（提案）以降、Cursor から OpenAI モデルの直接アクセスが止まる前提で、あなたのケースがどうなるかを判定します。公開されている料金・仕様に基づく概算です。診断結果は目安で、正確な料金は各社の公式情報で確認してください。</p>
+
+  <div id="form">
+    <div class="card">
+      <div class="q">Q1. 使っている Cursor のプランは？</div>
+      <div class="opts" data-name="plan">
+        <label class="opt"><input type="radio" name="plan" value="pro"><span>Pro（$20/月）</span></label>
+        <label class="opt"><input type="radio" name="plan" value="proplus"><span>Pro Plus（$60/月）</span></label>
+        <label class="opt"><input type="radio" name="plan" value="ultra"><span>Ultra（$200/月）</span></label>
+        <label class="opt"><input type="radio" name="plan" value="team"><span>Team / Enterprise<small>サードパーティモデルに Cursor トークンレート $0.25/100万 が上乗せ</small></span></label>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="q">Q2. Cursor で主に使っている GPT モデルは？</div>
+      <div class="opts" data-name="model">
+        <label class="opt"><input type="radio" name="model" value="luna"><span>GPT-5.6 Luna<small>軽量・安価（入力 $0.2 / 出力 $1.2 per 100万トークン）</small></span></label>
+        <label class="opt"><input type="radio" name="model" value="terra"><span>GPT-5.6 Terra<small>標準（入力 $2 / 出力 $12）</small></span></label>
+        <label class="opt"><input type="radio" name="model" value="sol"><span>GPT-5.6 Sol<small>高性能（入力 $4 / 出力 $20）</small></span></label>
+        <label class="opt"><input type="radio" name="model" value="unknown"><span>Auto に任せている / わからない<small>Terra 相当で概算します</small></span></label>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="q">Q3. Cursor で GPT を使っている場面は？<span>（あてはまるもの全部）</span></div>
+      <div class="opts" data-name="uses">
+        <label class="opt"><input type="checkbox" name="uses" value="chat"><span>チャットで相談・コード生成（Chat）</span></label>
+        <label class="opt"><input type="checkbox" name="uses" value="agent"><span>エージェントにタスクを任せる（Agent）</span></label>
+        <label class="opt"><input type="checkbox" name="uses" value="tab"><span>Tab 補完・オートコンプリート</span></label>
+        <label class="opt"><input type="checkbox" name="uses" value="auto"><span>Auto（モデルおまかせルーティング）</span></label>
+        <label class="opt"><input type="checkbox" name="uses" value="cloud"><span>クラウド / バックグラウンドエージェント</span></label>
+        <label class="opt"><input type="checkbox" name="uses" value="cli"><span>Cursor CLI</span></label>
+        <label class="opt"><input type="checkbox" name="uses" value="autom"><span>自動化（Automations）</span></label>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="q">Q4. GPT のおおよその利用量は？</div>
+      <div class="opts" data-name="volume">
+        <label class="opt"><input type="radio" name="volume" value="light"><span>軽め<small>ちょっとした相談中心（月 約200万トークン想定）</small></span></label>
+        <label class="opt"><input type="radio" name="volume" value="normal"><span>ふつう<small>毎日エージェントを回す（月 約1,000万トークン想定）</small></span></label>
+        <label class="opt"><input type="radio" name="volume" value="heavy"><span>ヘビー<small>複数エージェント・大きめのコードベース（月 約4,000万トークン想定）</small></span></label>
+      </div>
+    </div>
+
+    <button class="go" id="run">結果を見る</button>
+    <p class="err" id="err">Q1〜Q4をすべて選んでください（Q3は1つ以上）。</p>
+  </div>
+
+  <div id="result">
+    <div class="verdict" id="verdict"></div>
+    <div class="sect">
+      <h3>用途ごとの継続可否（11/12以降）</h3>
+      <div id="uses-breakdown"></div>
+      <p class="muted">✅＝自分の OpenAI API キー（BYOK）で継続できる範囲。×＝BYOK でも Codex 拡張でも戻らず、既定モデルの乗り換えが必要な範囲（OpenAI 公式ヘルプ「Using OpenAI models in Cursor」による）。</p>
+    </div>
+    <div class="sect">
+      <h3>BYOK にしたときの月額 API 概算</h3>
+      <div class="cost" id="cost-byok"></div>
+      <p class="muted" id="cost-note"></p>
+    </div>
+    <div class="sect">
+      <h3>既定モデルを乗り換えた場合の比較（同じ利用量）</h3>
+      <div id="alt-compare"></div>
+      <p class="muted">乗り換え先は Cursor のプラン内利用枠でも使えます（上記は同量を API 単価で計算した目安）。品質は用途で試してください。</p>
+    </div>
+    <div class="sect">
+      <h3>あなたがやること</h3>
+      <ol class="step-list" id="todo"></ol>
+    </div>
+    <button class="reset" id="reset">もう一度やる</button>
+  </div>
+</div>
+
+<script>
+(function(){
+  var PRICES = {
+    luna:{in:0.2,out:1.2,label:"GPT-5.6 Luna"},
+    terra:{in:2,out:12,label:"GPT-5.6 Terra"},
+    sol:{in:4,out:20,label:"GPT-5.6 Sol"},
+    unknown:{in:2,out:12,label:"GPT-5.6 Terra 相当"}
+  };
+  var ALT = {
+    "Claude Sonnet 5":{in:2,out:10},
+    "Gemini 3.7 Flash":{in:0.75,out:3.5},
+    "Claude Opus 5":{in:5,out:25}
+  };
+  var VOL = {light:2, normal:10, heavy:40}; // 百万トークン/月
+  var USE_LABEL = {
+    chat:"チャットで相談・コード生成（Chat）",
+    agent:"エージェントにタスクを任せる（Agent）",
+    tab:"Tab 補完・オートコンプリート",
+    auto:"Auto（モデルおまかせ）",
+    cloud:"クラウド / バックグラウンドエージェント",
+    cli:"Cursor CLI",
+    autom:"自動化（Automations）"
+  };
+  var BYOK_OK = {chat:true, agent:true, tab:false, auto:false, cloud:false, cli:false, autom:false};
+
+  function money(x){
+    if(x < 10) return "$" + x.toFixed(1);
+    return "$" + Math.round(x);
+  }
+  function estCost(price, mtok){
+    // 入力7割・出力3割の想定
+    return (price.in*0.7 + price.out*0.3) * mtok;
+  }
+
+  document.querySelectorAll("label.opt").forEach(function(l){
+    var input = l.querySelector("input");
+    input.addEventListener("change", function(){
+      if(input.type === "radio"){
+        l.parentElement.querySelectorAll("label.opt").forEach(function(x){x.classList.remove("sel");});
+      }
+      l.classList.toggle("sel", input.checked);
+    });
+  });
+
+  document.getElementById("run").addEventListener("click", function(){
+    var plan = (document.querySelector("input[name=plan]:checked")||{}).value;
+    var model = (document.querySelector("input[name=model]:checked")||{}).value;
+    var volume = (document.querySelector("input[name=volume]:checked")||{}).value;
+    var uses = Array.prototype.map.call(document.querySelectorAll("input[name=uses]:checked"), function(x){return x.value;});
+    if(!plan || !model || !volume || uses.length === 0){
+      document.getElementById("err").style.display = "block";
+      return;
+    }
+    document.getElementById("err").style.display = "none";
+
+    var mtok = VOL[volume];
+    var price = PRICES[model];
+    var teamRate = (plan === "team") ? 0.25 : 0;
+
+    // 用途分解
+    var okUses = uses.filter(function(u){return BYOK_OK[u];});
+    var ngUses = uses.filter(function(u){return !BYOK_OK[u];});
+
+    var bd = document.getElementById("uses-breakdown");
+    bd.innerHTML = "";
+    uses.forEach(function(u){
+      var row = document.createElement("div");
+      row.className = "rrow";
+      row.innerHTML = '<span class="t">' + USE_LABEL[u] + '</span>' +
+        (BYOK_OK[u] ? '<span class="tag-ok">BYOK で継続可 ✅</span>' : '<span class="tag-ng">BYOK 不可 ×</span>');
+      bd.appendChild(row);
+    });
+
+    // BYOKコスト（Chat/Agentぶんのみ課金対象。ここでは利用量全体をBYOK対象量とみなし概算）
+    var byokShare = okUses.length / uses.length; // 継続可の用途割合
+    var byokMtok = mtok * byokShare;
+    var byokCost = estCost(price, byokMtok) + teamRate * byokMtok;
+    document.getElementById("cost-byok").innerHTML = money(byokCost) + ' <small>/ 月（目安）</small>';
+    var cn = "使用モデル " + price.label + " で、継続できる用途ぶん（月 約" + Math.round(byokMtok*100)/100 + "百万トークン）を API 単価で計算。ChatGPT の月額サブスクにこの API 利用料は含まれません（別課金）。";
+    if(teamRate) cn += " Team / Enterprise の Cursor トークンレート $0.25/100万 を加算済み。";
+    document.getElementById("cost-note").textContent = cn;
+
+    // 乗り換え比較
+    var alt = document.getElementById("alt-compare");
+    alt.innerHTML = "";
+    Object.keys(ALT).forEach(function(name){
+      var c = estCost(ALT[name], mtok) + teamRate * mtok;
+      var row = document.createElement("div");
+      row.className = "rrow";
+      row.innerHTML = '<span class="t">' + name + '</span><span>' + money(c) + ' / 月（全用途を同量で）</span>';
+      alt.appendChild(row);
+    });
+
+    // 判定
+    var v = document.getElementById("verdict");
+    if(ngUses.length === 0){
+      v.className = "verdict good";
+      v.innerHTML = '<span class="big">BYOK で概ね継続できます</span>' +
+        '<span class="small">あなたの使い方（' + okUses.map(function(u){return USE_LABEL[u];}).join("・") +
+        '）は、自分の OpenAI API キーを Cursor に登録すれば11月12日以降も使えます。ただし上記の月額 API が別課金でかかります。乗り換え先と料金を見比べて決めてください。</span>';
+    } else {
+      v.className = "verdict warn";
+      v.innerHTML = '<span class="big">一部の使い方は、BYOK でも戻りません</span>' +
+        '<span class="small">「' + ngUses.map(function(u){return USE_LABEL[u];}).join("・") +
+        '」は Cursor が供給・ルーティングする部分のため、自分の API キーも Codex 拡張も効きません。ここは既定モデルを Claude / Gemini / Grok に乗り換える必要があります。</span>';
+    }
+
+    // やること
+    var todo = document.getElementById("todo");
+    todo.innerHTML = "";
+    var steps = [];
+    steps.push("Cursor の設定 → Models で、いま選んでいるモデルが GPT-5.6 系か確認する");
+    if(ngUses.length > 0){
+      steps.push("「" + ngUses.map(function(u){return USE_LABEL[u];}).join("・") + "」で使う既定モデルを、Claude Sonnet 5 か Gemini 3.7 Flash に変えて数日試す");
+    }
+    if(okUses.length > 0){
+      steps.push("GPT がどうしても必要な Chat / Agent 用途だけ、OpenAI で API キーを作り Cursor に登録する（課金設定が必要）");
+      steps.push("または OpenAI の Codex 拡張（cursor:extension/openai.chatgpt）を入れて、Codex パネルから使う");
+    }
+    steps.push("よく使う指示文・ルールを CLAUDE.md / .cursor/rules として手元に保存し、モデルに依存しすぎない書き方に直す");
+    steps.forEach(function(s){ var li = document.createElement("li"); li.textContent = s; todo.appendChild(li); });
+
+    document.getElementById("form").style.display = "none";
+    document.getElementById("result").style.display = "block";
+    window.scrollTo(0,0);
+  });
+
+  document.getElementById("reset").addEventListener("click", function(){
+    document.querySelectorAll("input").forEach(function(i){ i.checked = false; });
+    document.querySelectorAll("label.opt").forEach(function(l){ l.classList.remove("sel"); });
+    document.getElementById("result").style.display = "none";
+    document.getElementById("form").style.display = "block";
+    window.scrollTo(0,0);
+  });
+})();
+</script>
+</body>
+</html>
