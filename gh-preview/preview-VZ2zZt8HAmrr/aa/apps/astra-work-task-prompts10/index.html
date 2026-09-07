@@ -2,15 +2,15 @@
 <html lang="ja"><head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>64ページ論文の歩き方 — Kawaru Gifts</title>
-<meta name="description" content="話題の論文「Graph Engineering in the Era of LLM Agents」（arXiv:2608.21156・全64ページ）を、最初から最後まで読まずに要点だけつかむための地図です。「今どこで困っているか」から必要な章に直行できます。">
+<title>メール・議事録・報告が“考えずに片づく” Astra仕事プロンプト10選 — Kawaru Gifts</title>
+<meta name="description" content="毎日発生するのに地味に時間を食う事務作業——メール処理、議事録整理、資料の下書き、日報——を、Astraに貼るだけで終わらせる10本です。1本ごとに「前提・指示・出力形式」まで書き込んであるので、名前や条件を差し替えればそのまま動きます。全部使うと、1日あたり30〜60分の“作業ではない作業”が消えます。">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Kawaru Gifts">
-<meta property="og:title" content="64ページ論文の歩き方 — Kawaru Gifts">
-<meta property="og:description" content="話題の論文「Graph Engineering in the Era of LLM Agents」（arXiv:2608.21156・全64ページ）を、最初から最後まで読まずに要点だけつかむための地図です。「今どこで困っているか」から必要な章に直行できます。">
+<meta property="og:title" content="メール・議事録・報告が“考えずに片づく” Astra仕事プロンプト10選 — Kawaru Gifts">
+<meta property="og:description" content="毎日発生するのに地味に時間を食う事務作業——メール処理、議事録整理、資料の下書き、日報——を、Astraに貼るだけで終わらせる10本です。1本ごとに「前提・指示・出力形式」まで書き込んであるので、名前や条件を差し替えればそのまま動きます。全部使うと、1日あたり30〜60分の“作業ではない作業”が消えます。">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="64ページ論文の歩き方 — Kawaru Gifts">
-<meta name="twitter:description" content="話題の論文「Graph Engineering in the Era of LLM Agents」（arXiv:2608.21156・全64ページ）を、最初から最後まで読まずに要点だけつかむための地図です。「今どこで困っているか」から必要な章に直行できます。">
+<meta name="twitter:title" content="メール・議事録・報告が“考えずに片づく” Astra仕事プロンプト10選 — Kawaru Gifts">
+<meta name="twitter:description" content="毎日発生するのに地味に時間を食う事務作業——メール処理、議事録整理、資料の下書き、日報——を、Astraに貼るだけで終わらせる10本です。1本ごとに「前提・指示・出力形式」まで書き込んであるので、名前や条件を差し替えればそのまま動きます。全部使うと、1日あたり30〜60分の“作業ではない作業”が消えます。">
 <meta name="robots" content="noindex,nofollow">
 <link rel="icon" href="data:image/png;base64,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">
 <link rel="stylesheet" href="../../assets/site.css?v=f40364df6d4a">
@@ -18,10 +18,10 @@
 <header class="kh"><div class="top">
   <a class="back" href="../../">← 一覧へ</a>
   <img src="data:image/png;base64,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" alt="">
-  <h1>64ページ論文の歩き方</h1>
-  
+  <h1>メール・議事録・報告が“考えずに片づく” Astra仕事プロンプト10選</h1>
+  <span class="badge">10個</span>
   <button class="btn ghost sm" style="margin-left:auto" data-copy="pfull" aria-label="全件コピー">📋<span class="blabel"> 全件コピー</span></button>
-  <button class="btn sm" data-save="pfull" data-name="graph-engineering-paper-map.md" aria-label="全件ダウンロード">⬇<span class="blabel"> 全件ダウンロード</span></button>
+  <button class="btn sm" data-save="pfull" data-name="astra-work-task-prompts10.md" aria-label="全件ダウンロード">⬇<span class="blabel"> 全件ダウンロード</span></button>
 </div></header>
 
 <div class="kwrap">
@@ -29,237 +29,169 @@
   <div class="ep-left">
     <div class="ep-thumb epctx-thumb"><div class="noimg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M10.5 9.2v5.6l4.8-2.8-4.8-2.8Z" fill="currentColor" stroke="none"/></svg></div></div>
     
-    <div class="ep-docs"><a class="docbtn" href="https://github.com/chaaaaarin/kawaru-channel-20260831-110" target="_blank" rel="noopener">📚 資料</a><a class="docbtn" href="https://chaaaaarin.github.io/kawaru-channel-20260831-110/slides.html" target="_blank" rel="noopener">🖥 スライド</a><a class="docbtn" href="https://chaaaaarin.github.io/kawaru-channel-20260831-110/onepager.html" target="_blank" rel="noopener">📄 1枚資料</a></div>
+    
   </div>
   <div>
     <p class="epctx-label">この動画のプレゼントです</p>
-    <p class="epctx-title">最終到達点は「グラフエンジニアリング」</p>
+    <p class="epctx-title">【速報】人類を超えるAstraを実際に使ってみた</p>
     <p class="epctx-date">2026-09-07</p>
-    <a class="epbundle" href="../../bundles/d20260907-110.md" download="プレゼント一式_2026-09-07.md">⬇ この回のプレゼントを全部ダウンロード</a>
+    <a class="epbundle" href="../../bundles/d20260907-123.md" download="プレゼント一式_2026-09-07.md">⬇ この回のプレゼントを全部ダウンロード</a>
   </div>
 </section>
 
   <section class="kintro">
-    <h2>64ページ論文の歩き方</h2>
-    <p><span class="nb">話題の論文</span>「Graph Engineering in the Era of LLM Agents」（arXiv:2608.21156・<span class="nb">全64ページ）を、</span><span class="nb">最初から最後まで読まずに</span><span class="nb">要点だけつかむための地図です。</span><span class="nb">「今どこで困っているか」から</span><span class="nb">必要な章に直行できます。</span></p>
-    <div class="kmeta"><span>テンプレート</span><span>No.110 グラフエンジニアリング論文</span><span>2026-08-31 配布</span></div>
-    <div class="pnote"><span class="nb">下のカードから、</span><span class="nb">1件ずつコピー、</span><span class="nb">または個別にダウンロードできます。</span><span class="nb">まとめて欲しいときは、</span><span class="nb">上の</span><span class="nb">「全件ダウンロード」を</span><span class="nb">お使いください。</span></div>
+    <h2>メール・議事録・報告が“考えずに片づく” Astra仕事プロンプト10選</h2>
+    <p><span class="nb">毎日発生するのに地味に時間を</span><span class="nb">食う事務作業——メール処理、</span><span class="nb">議事録整理、</span><span class="nb">資料の下書き、</span><span class="nb">日報——を、</span><span class="nb">Astraに貼るだけで</span><span class="nb">終わらせる10本です。</span><span class="nb">1本ごとに</span><span class="nb">「前提・</span><span class="nb">指示・</span><span class="nb">出力形式」</span><span class="nb">まで書き込んであるので、</span><span class="nb">名前や条件を差し替えればその</span><span class="nb">まま動きます。</span><span class="nb">全部使うと、</span><span class="nb">1日あたり30〜60分の</span><span class="nb">“作業ではない作業”が消えます。</span></p>
+    <div class="kmeta"><span>プロンプト集</span><span>収録 10個</span><span>No.123 【速報】人類の知能を超えるAstraを実際に使ってみた</span><span>2026-09-07 配布</span></div>
+    <div class="pnote"><span class="nb">下のボタンで、</span><span class="nb">全文をそのままコピー、</span><span class="nb">またはテキストファイルとして保存で</span><span class="nb">きます。</span></div>
   </section>
 
-  <p class="imeta" style="margin:0 0 18px"><span class="nb">話題の論文</span>「Graph Engineering in the Era of LLM Agents」（arXiv:2608.21156・<span class="nb">全64ページ）を、</span><span class="nb">最初から最後まで読まずに</span><span class="nb">要点だけつかむための地図です。</span><span class="nb">「今どこで困っているか」から</span><span class="nb">必要な章に直行できます。</span><span class="nb">
-
-**受け取り方**: この</span><span class="nb">ファイルをそのままコピー、</span><span class="nb">または</span><span class="nb">ダウンロードしてご利用ください。</span><span class="nb">
-
-**使い方**: まず</span><span class="nb">「5つの合言葉・</span><span class="nb">早わかり」で全体像を入れ、</span><span class="nb">次に</span><span class="nb">「症状 → 読む場所」の表で自分に</span><span class="nb">必要な章だけを開きます。</span><span class="nb">原文は英語なので、</span><span class="nb">各行に日本語で読む場所を</span><span class="nb">書いています。</span>
-
----</p><div class="icard" id="i1" data-cat="">
-  <div class="ih"><span class="num">001</span><span class="ititle">この論文の基本情報（30秒）</span></div>
-  
-  <pre class="prompt" id="b1">- 正式名：Graph Engineering in the Era of LLM Agents: From Individual Intelligence to System Intelligence
-- 著者：35名（吉林大学・清華大学・厦門大学・Tencent・Monash大学・小紅書 ほか約16機関）
-- 種類：サーベイ論文（新技術の発表ではなく、既存研究を整理した「地図」）
-- 公開：2026年8月21日 初版 → 8月26日 改訂版（v2）
-- 原文（英語）: https://arxiv.org/abs/2608.21156
-- 全文の日本語表示（自動翻訳）: https://arxiv-org.translate.goog/abs/2608.21156?_x_tr_sl=en&amp;_x_tr_tl=ja&amp;_x_tr_hl=ja
-- 公式リンク集（GitHub）: https://github.com/DEEP-JLU/Awesome-Graph-Engineering
-- ライセンス：CC BY 4.0（図を引用してよい）
-
----</pre>
+  <div class="icard">
+  <pre class="prompt" id="b1" style="max-height:none;">期待できるメリット: 関数の書き方を調べる15分がなくなる。エラーの原因も理由つきで分かるので、次から自分で直せるようになる。
+使う場面: 集計表を作っていて、条件つき集計・日付処理・表の結合などでつまずいたとき。
+前提・状況: どんな表か（列の中身・行数の目安）と、やりたいことを言葉で説明できる。使っているのはGoogleスプレッドシートかExcel。
+指示: 次の処理をする関数を作ってください。表は「（例：A列=日付、B列=担当者、C列=金額。1000行程度）」。やりたいのは「（例：今月ぶんだけ、担当者ごとの合計を別表に出す）」。使用ソフトは「（例：Googleスプレッドシート）」。関数は1セルに貼れる形で示し、各項目が何をしているかを1行ずつ説明してください。既存の数式がある場合はエラー原因も指摘してください。
+出力形式・制約: 「完成した数式（コピペ用）／各部分の意味／想定される崩れ方と対処」。関数名はソフトに実在するもののみ。
+つまずきどころ: 列の位置や表記ゆれ（&quot;2026/9/1&quot; と &quot;2026-09-01&quot; の混在等）を伝えないと動かない。実データの3〜5行をサンプルとして一緒に貼ると精度が上がる。</pre>
   <div class="cbtns">
-    <button class="btn sm" data-copy="b1">📋 コピー</button>
-    <button class="btn ghost sm" data-save="b1" data-name="graph-engineering-paper-map-001.txt">⬇ ダウンロード</button>
-    <button class="btn ghost sm" data-link="i1">🔗 リンク</button>
-  </div>
-</div>
-<div class="icard" id="i2" data-cat="">
-  <div class="ih"><span class="num">002</span><span class="ititle">5つの合言葉・早わかり（これだけで会話にはついていける）</span></div>
-  
-  <pre class="prompt" id="b2">| 合言葉 | 一言でいうと | 論文の試験のたとえ |
-|---|---|---|
-| プロンプトエンジニアリング | AIへの「指示の言い回し」を設計する | 解答のヒントをもらう |
-| コンテキストエンジニアリング | AIに「渡す情報・資料」を設計する | 資料の持ち込み可の試験 |
-| ハーネスエンジニアリング | AIがつながる「道具・記憶・スキル」を設計する | 電卓や検索も使ってよい試験 |
-| ループエンジニアリング | 「計画→実行→確認→やり直し」の反復を設計する | 提出してフィードバックをもらい直す |
-| グラフエンジニアリング | 「タスク・AI・状態のつなぎ方」を点と線で設計する | チームで協力して解く |
-| （次段階）オントロジーエンジニアリング | 用語・目的・採点基準をチームで揃える | 共通のルールブックを持つ |
-
-新しい合言葉は、古い合言葉を置き換えない。**上に積み重なる**。グラフの中の1点も、中身はループで、そのループは良いプロンプトでできている。
-
----</pre>
-  <div class="cbtns">
-    <button class="btn sm" data-copy="b2">📋 コピー</button>
-    <button class="btn ghost sm" data-save="b2" data-name="graph-engineering-paper-map-002.txt">⬇ ダウンロード</button>
-    <button class="btn ghost sm" data-link="i2">🔗 リンク</button>
-  </div>
-</div>
-<div class="icard" id="i3" data-cat="">
-  <div class="ih"><span class="num">003</span><span class="ititle">論文のどこに何が書いてあるか（章立て地図）</span></div>
-  
-  <pre class="prompt" id="b3">- 第1章 Introduction … なぜこの整理が必要か。3ページほど。ここだけ読めば動機は分かる
-- 第2章 Preliminaries … 用語の定義。「〜エンジニアリング」5つの正式な定義はここ
-- 第3章 From Model Intelligence to Individual Intelligence … 「モデルの知能」「個の知能」の話。**1体のAIの3つの限界**（並列が潰れる／自己評価の勘違い／失敗が最後まで運ばれる）はこの章
-- 第4章 Graph Engineering … 本編。**3つの構成要素**（タスク組織化 / エージェント連携 / 実行時状態管理）の詳しい説明。図5〜8がここ
-- 第5章 Future Direction: Ontology Engineering … 「グラフの次」。グラフエンジニアリングの限界と、次段階の提案
-- 第6章 Open Challenges and Research Opportunities … 未解決の研究テーマ一覧
-- 第7章 Benchmarks, Datasets, and Evaluation … 評価方法の整理
-- 第8章 Open-Source Libraries and Engineering Ecosystem … LangGraph・AutoGen・CrewAI などの位置づけ
-- 第9章 Applications … 応用事例
-
----</pre>
-  <div class="cbtns">
-    <button class="btn sm" data-copy="b3">📋 コピー</button>
-    <button class="btn ghost sm" data-save="b3" data-name="graph-engineering-paper-map-003.txt">⬇ ダウンロード</button>
-    <button class="btn ghost sm" data-link="i3">🔗 リンク</button>
-  </div>
-</div>
-<div class="icard" id="i4" data-cat="">
-  <div class="ih"><span class="num">004</span><span class="ititle">症状 → 読む場所（自分が引っかかっている所から）</span></div>
-  
-  <pre class="prompt" id="b4">| いま引っかかっていること | 開く場所 |
-|---|---|
-| 「グラフエンジニアリングって結局なに？」を一文で言えるようにしたい | Abstract と 第4章のはじめ（Graph Engineering の定義） |
-| 「5つの合言葉」の正確な違いを押さえたい | 第2章 Preliminaries と 図2（Taxonomy） |
-| 「なぜ1体のAIじゃダメなのか」を人に説明できるようにしたい | 第3章。3つの限界が箇条書きで並んでいる |
-| 「作る役と確かめる役を分ける」の根拠が欲しい | 第3章の &quot;when the same agent writes and evaluates code...&quot; の一文 |
-| 実際に作業をどう分解するのか、イメージが欲しい | 図6（Task Organization）。左＝分解、右＝手順化 |
-| 複数AIのチーム編成をどう設計するのか | 図7（Agent Coordination）。能力の地図・チームの地図・連絡の地図の3枚 |
-| 途中で失敗したときの戻し方 | 図8（Runtime State Management）と第4章の該当節 |
-| 「最終到達点」は本当かを確かめたい | 第5章。グラフの限界と、次段階（オントロジー）の提案 |
-| 「これって LangGraph と同じでは？」を確かめたい | 第8章。既存ライブラリとの関係が整理されている |
-
----</pre>
-  <div class="cbtns">
-    <button class="btn sm" data-copy="b4">📋 コピー</button>
-    <button class="btn ghost sm" data-save="b4" data-name="graph-engineering-paper-map-004.txt">⬇ ダウンロード</button>
-    <button class="btn ghost sm" data-link="i4">🔗 リンク</button>
-  </div>
-</div>
-<div class="icard" id="i5" data-cat="">
-  <div class="ih"><span class="num">005</span><span class="ititle">図だけ見るなら、この3枚</span></div>
-  
-  <pre class="prompt" id="b5">1. **図1（全体像）** … モデルの知能 → 個の知能 → システムの知能、の入れ子と分類ツリーが1枚に
-2. **図4（試験のたとえ）** … 6段階＋次段階を、試験の受け方でたとえた絵。人に説明するときに一番効く
-3. **図5（グラフエンジニアリングの概観）** … 仕事と環境 → タスク組織化 → エージェントチーム → 実行時状態管理 → 成果物
-
-図はすべて CC BY 4.0 なので、出典（arXiv:2608.21156, Figure N）を書けば資料に使ってよい。
-
----</pre>
-  <div class="cbtns">
-    <button class="btn sm" data-copy="b5">📋 コピー</button>
-    <button class="btn ghost sm" data-save="b5" data-name="graph-engineering-paper-map-005.txt">⬇ ダウンロード</button>
-    <button class="btn ghost sm" data-link="i5">🔗 リンク</button>
-  </div>
-</div>
-<div class="icard" id="i6" data-cat="">
-  <div class="ih"><span class="num">006</span><span class="ititle">読むときの注意（この論文の性格）</span></div>
-  
-  <pre class="prompt" id="b6">- これは**サーベイ（総説）**。「この方法で◯%速くなった」という定量比較はほとんど無い。研究の地図として読む
-- 本文には LLMCompiler・GPTSwarm・DyLAN・AFlow など個別の手法名が大量に出てくるが、初心者は名前を覚えなくてよい。「そういう研究群がある」で十分
-- 「ループエンジニアリングの提唱者・提唱時期」は本文に明記が無い。ネット上の解説記事の記述は裏が取れていないので鵜呑みにしない
-- v1（8/21）と v2（8/26）で細部が変わっている。引用するときは v2 を見る</pre>
-  <div class="cbtns">
-    <button class="btn sm" data-copy="b6">📋 コピー</button>
-    <button class="btn ghost sm" data-save="b6" data-name="graph-engineering-paper-map-006.txt">⬇ ダウンロード</button>
-    <button class="btn ghost sm" data-link="i6">🔗 リンク</button>
+    <button class="btn" data-copy="b1">📋 コピー</button>
+    <button class="btn ghost" data-save="b1" data-name="astra-work-task-prompts10.txt">⬇ ダウンロード</button>
   </div>
 </div>
 
   <section class="epctx">
   <p class="epctx-label">この動画のほかのプレゼント</p>
-  <div class="ep-kits"><a class="kchip" href="../ai-automation-checkup/"><span class="kt">AI自動化 健康診断アプリ</span><span class="badge">アプリ</span><span class="go">開く →</span></a><a class="kchip" href="../failure-recovery-checklist/"><span class="kt">AIの長い仕事が途中で失敗したとき用 復旧チェックリスト</span><span class="badge">18項目</span><span class="go">開く →</span></a></div>
+  <div class="ep-kits"><a class="kchip" href="../astra-higgsfield-video-prompts10/"><span class="kt">静止画1枚が“動く広告”になる Astra×HiggsField 動画生成プロンプト10選</span><span class="badge">10個</span><span class="go">開く →</span></a><a class="kchip" href="../astra-image-prompts10/"><span class="kt">資料もサムネも“外注ゼロ”で仕上がる Astra画像生成プロンプト10選</span><span class="badge">10個</span><span class="go">開く →</span></a></div>
 </section>
   <section class="epctx">
-  <p class="epctx-label">ほかの回の「テンプレート」</p>
-  <div class="ep-kits"><a class="kchip" href="../tanomu-mae-30sec-template/"><span class="kt">頼む前の30秒テンプレ 厳選10</span><span class="go">開く →</span></a><a class="kchip" href="../recruit-automation-worksheet/"><span class="kt">採用対応 自動化ワークシート</span><span class="go">開く →</span></a><a class="kchip" href="../omni-40sec-template/"><span class="kt">40秒動画の設計テンプレート＋発注文10</span><span class="badge">11項目</span><span class="go">開く →</span></a><a class="kchip" href="../voice-command-10/"><span class="kt">声で指示するときの言い方 厳選10</span><span class="badge">5項目</span><span class="go">開く →</span></a></div>
+  <p class="epctx-label">ほかの回の「プロンプト集」</p>
+  <div class="ep-kits"><a class="kchip" href="../cache-discount-prompts10/"><span class="kt">Fable 5.1 のキャッシュ割引を取りこぼさない 指示文＆設定 厳選10（Claude Code / Codex 両対応）</span><span class="go">開く →</span></a><a class="kchip" href="../claude-memory-tune-10/"><span class="kt">Claudeの記憶を整える指示文 厳選10選</span><span class="badge">10個</span><span class="go">開く →</span></a><a class="kchip" href="../site-task-prompts10/"><span class="kt">サイト操作を任せる依頼文 厳選10</span><span class="badge">5項目</span><span class="go">開く →</span></a><a class="kchip" href="../kiro-spec-driven-prompts10/"><span class="kt">Kiroスペック駆動 スタート指示文10選</span><span class="badge">10個</span><span class="go">開く →</span></a></div>
 </section>
 
   <footer><a href="../../">← AIエージェント / Kawaru プレゼント図書館にもどる</a></footer>
 </div>
 
-<pre id="pfull" class="hidden"># 🎁 64ページ論文の歩き方
+<pre id="pfull" class="hidden"># 🎁 メール・議事録・報告が“考えずに片づく” Astra仕事プロンプト10選
 
-話題の論文「Graph Engineering in the Era of LLM Agents」（arXiv:2608.21156・全64ページ）を、最初から最後まで読まずに要点だけつかむための地図です。「今どこで困っているか」から必要な章に直行できます。
+毎日発生するのに地味に時間を食う事務作業——メール処理、議事録整理、資料の下書き、日報——を、Astraに貼るだけで終わらせる10本です。1本ごとに「前提・指示・出力形式」まで書き込んであるので、名前や条件を差し替えればそのまま動きます。全部使うと、1日あたり30〜60分の“作業ではない作業”が消えます。
 
-**受け取り方**: このファイルをそのままコピー、またはダウンロードしてご利用ください。
+**受け取り方**: 下の各コードブロック右上のコピーボタンでコピーするか、このファイルをそのままダウンロードしてください。
 
-**使い方**: まず「5つの合言葉・早わかり」で全体像を入れ、次に「症状 → 読む場所」の表で自分に必要な章だけを開きます。原文は英語なので、各行に日本語で読む場所を書いています。
-
----
-
-## この論文の基本情報（30秒）
-
-- 正式名：Graph Engineering in the Era of LLM Agents: From Individual Intelligence to System Intelligence
-- 著者：35名（吉林大学・清華大学・厦門大学・Tencent・Monash大学・小紅書 ほか約16機関）
-- 種類：サーベイ論文（新技術の発表ではなく、既存研究を整理した「地図」）
-- 公開：2026年8月21日 初版 → 8月26日 改訂版（v2）
-- 原文（英語）: https://arxiv.org/abs/2608.21156
-- 全文の日本語表示（自動翻訳）: https://arxiv-org.translate.goog/abs/2608.21156?_x_tr_sl=en&amp;_x_tr_tl=ja&amp;_x_tr_hl=ja
-- 公式リンク集（GitHub）: https://github.com/DEEP-JLU/Awesome-Graph-Engineering
-- ライセンス：CC BY 4.0（図を引用してよい）
+**使い方**: 1〜3はメール、4〜5は会議まわり、6〜8は資料・数字、9〜10は1日の締め。`（　）` の部分を自分の状況に置き換えて貼ってください。
 
 ---
 
-## 5つの合言葉・早わかり（これだけで会話にはついていける）
+## 1. 長いメールスレッドを「3行＋次アクション」に要約
 
-| 合言葉 | 一言でいうと | 論文の試験のたとえ |
-|---|---|---|
-| プロンプトエンジニアリング | AIへの「指示の言い回し」を設計する | 解答のヒントをもらう |
-| コンテキストエンジニアリング | AIに「渡す情報・資料」を設計する | 資料の持ち込み可の試験 |
-| ハーネスエンジニアリング | AIがつながる「道具・記憶・スキル」を設計する | 電卓や検索も使ってよい試験 |
-| ループエンジニアリング | 「計画→実行→確認→やり直し」の反復を設計する | 提出してフィードバックをもらい直す |
-| グラフエンジニアリング | 「タスク・AI・状態のつなぎ方」を点と線で設計する | チームで協力して解く |
-| （次段階）オントロジーエンジニアリング | 用語・目的・採点基準をチームで揃える | 共通のルールブックを持つ |
+```text
+期待できるメリット: 20往復あるスレッドを読み返す10分が、30秒で「今どうなっていて、次に何をすべきか」が分かる状態になる。返信の抜け漏れが減る。
+使う場面: 出張・休み明け、または横から入った案件で、長いスレッドの経緯を素早く把握したいとき。
+前提・状況: スレッド全文を貼り付けられる。関係者は複数。
+指示: これから貼るメールスレッドを読んで、(1)現在の状況を3行以内、(2)決まったこと・決まっていないこと、(3)私（受信者）が次に取るべきアクションと締め切り、を整理してください。誰が何を言ったかの発言者は明記し、推測で補った部分は「※推測」と付けてください。
+出力形式・制約: 「状況（3行）／決定事項／未決事項／私の次アクション（期限つき）」の見出し順。全体で15行以内。敬語や挨拶文は不要、事実だけ。
+つまずきどころ: スレッドの一部だけ貼ると誤読する。引用のネスト（&gt;&gt;&gt;）が深くても全文貼る。日付が本文に無いと時系列がずれるので、分かる範囲で送信日時も残して貼る。
+```
 
-新しい合言葉は、古い合言葉を置き換えない。**上に積み重なる**。グラフの中の1点も、中身はループで、そのループは良いプロンプトでできている。
+## 2. 受信メールへの返信ドラフトを3トーンで用意
 
----
+```text
+期待できるメリット: 「なんて返そう」で止まっていた時間がなくなる。丁寧さの強度違いを見比べて選べるので、送信前の推敲が最小限で済む。
+使う場面: 少し気を使う相手（社外・上位者・クレーム気味）への返信を書くとき。
+前提・状況: 相手のメール本文と、こちらが伝えたい結論（YES/NO/条件つき等）が決まっている。
+指示: 次のメールへの返信案を、トーン違いで3つ作ってください。伝えたい結論は「（例：納期は2週間ずらしたい。理由は先方都合の仕様変更）」。案A=丁寧かつ簡潔、案B=より低姿勢でクッション多め、案C=対等でビジネスライク。いずれも言い訳がましくならないようにし、代替案を必ず1つ添えてください。
+出力形式・制約: 各案は件名＋本文、本文は200字前後。冒頭の時候の挨拶は入れない。相手を責める表現・過度な謝罪の連発は避ける。
+つまずきどころ: 結論を曖昧に渡すと3案とも歯切れが悪くなる。「何を・いつまでに・なぜ」を1文で先に固めてから貼る。
+```
 
-## 論文のどこに何が書いてあるか（章立て地図）
+## 3. 溜まった未読メールを重要度順に仕分け
 
-- 第1章 Introduction … なぜこの整理が必要か。3ページほど。ここだけ読めば動機は分かる
-- 第2章 Preliminaries … 用語の定義。「〜エンジニアリング」5つの正式な定義はここ
-- 第3章 From Model Intelligence to Individual Intelligence … 「モデルの知能」「個の知能」の話。**1体のAIの3つの限界**（並列が潰れる／自己評価の勘違い／失敗が最後まで運ばれる）はこの章
-- 第4章 Graph Engineering … 本編。**3つの構成要素**（タスク組織化 / エージェント連携 / 実行時状態管理）の詳しい説明。図5〜8がここ
-- 第5章 Future Direction: Ontology Engineering … 「グラフの次」。グラフエンジニアリングの限界と、次段階の提案
-- 第6章 Open Challenges and Research Opportunities … 未解決の研究テーマ一覧
-- 第7章 Benchmarks, Datasets, and Evaluation … 評価方法の整理
-- 第8章 Open-Source Libraries and Engineering Ecosystem … LangGraph・AutoGen・CrewAI などの位置づけ
-- 第9章 Applications … 応用事例
+```text
+期待できるメリット: 受信トレイを上から順に開いて消耗する時間がなくなる。「今日中に返すべき5件」だけに集中できる。
+使う場面: 朝イチ、または会議が続いた後で未読が20〜50件たまっているとき。
+前提・状況: 未読メールの「送信者・件名・冒頭2〜3行」を一覧で貼り付けられる。
+指示: これから貼る未読メール一覧を、対応の緊急度で並べ替えてください。判断軸は、期限の明示／依頼か情報共有か／自分が一次対応者か。各メールに「今日返す・今週中・見るだけ・無視可」のいずれかを付け、今日返す分にはひとことで返信方針を添えてください。
+出力形式・制約: 「区分／送信者／件名／ひとこと方針」の表。今日返す分を上に。全体で30行以内。原文の引用はしない。
+つまずきどころ: 本文冒頭しか貼らないと「実は末尾に依頼がある」メールを取りこぼす。依頼系は本文全部を貼る。社内の定例通知はまとめて「見るだけ」に落として構わない。
+```
 
----
+## 4. 会議のアジェンダを目的・時間配分つきで作成
 
-## 症状 → 読む場所（自分が引っかかっている所から）
+```text
+期待できるメリット: 「とりあえず集まる」会議が、始まる前から着地点の見える会議になる。準備の15分が3分になり、会議自体も短くなる。
+使う場面: 自分が主催する打ち合わせの招集前、議題がぼんやりしているとき。
+前提・状況: 会議の相手・持ち時間・ざっくりした目的が決まっている。
+指示: 次の会議のアジェンダを作ってください。参加者は「（例：営業2名・開発1名・自分）」、時間は「（例：30分）」、達成したいこと（この会議のゴール）は「（例：次のリリース範囲を1つに決める）」。各議題に目的・所要時間・その場で出すべき結論を割り当て、最後に「決まらなかった場合の持ち帰り方」も入れてください。
+出力形式・制約: 「ゴール（1行）／議題（番号・所要分・狙う結論）／終了時の確認事項」。合計時間が持ち時間を超えないように配分する。
+つまずきどころ: ゴールを「共有する」「話し合う」にすると時間配分ができない。「◯◯を1つ決める」「◯◯の可否を判断する」のように動詞を具体化して渡す。
+```
 
-| いま引っかかっていること | 開く場所 |
-|---|---|
-| 「グラフエンジニアリングって結局なに？」を一文で言えるようにしたい | Abstract と 第4章のはじめ（Graph Engineering の定義） |
-| 「5つの合言葉」の正確な違いを押さえたい | 第2章 Preliminaries と 図2（Taxonomy） |
-| 「なぜ1体のAIじゃダメなのか」を人に説明できるようにしたい | 第3章。3つの限界が箇条書きで並んでいる |
-| 「作る役と確かめる役を分ける」の根拠が欲しい | 第3章の &quot;when the same agent writes and evaluates code...&quot; の一文 |
-| 実際に作業をどう分解するのか、イメージが欲しい | 図6（Task Organization）。左＝分解、右＝手順化 |
-| 複数AIのチーム編成をどう設計するのか | 図7（Agent Coordination）。能力の地図・チームの地図・連絡の地図の3枚 |
-| 途中で失敗したときの戻し方 | 図8（Runtime State Management）と第4章の該当節 |
-| 「最終到達点」は本当かを確かめたい | 第5章。グラフの限界と、次段階（オントロジー）の提案 |
-| 「これって LangGraph と同じでは？」を確かめたい | 第8章。既存ライブラリとの関係が整理されている |
+## 5. 議事メモを「決定・宿題・保留」に再構成
 
----
+```text
+期待できるメリット: 箇条書きの殴り書きメモが、そのまま関係者へ共有できる議事録になる。清書の20分がゼロになり、宿題の担当と期限が抜けなくなる。
+使う場面: 会議直後、自分のメモアプリに断片的に書いた内容を整える必要があるとき。
+前提・状況: 発言メモ（時系列・箇条書き・言い回しは雑でよい）を貼り付けられる。
+指示: これから貼る会議メモを、(1)決定事項、(2)宿題（担当者・期限つき）、(3)保留・次回持ち越し、(4)共有事項、の4区分に整理してください。担当や期限がメモに無いものは「担当未定／期限未定」と明示し、勝手に埋めないでください。曖昧な発言は断定に変換せず「〜という意見」と残してください。
+出力形式・制約: 4区分の見出し順。宿題は「担当／内容／期限」の表。全体をそのままメール貼り付けできる素のテキストで。冒頭に会議名と日付の空欄を用意する。
+つまずきどころ: メモに主語が無いと宿題の担当が取れない。せめて発言者のイニシャルだけでもメモに残しておくと精度が上がる。
+```
 
-## 図だけ見るなら、この3枚
+## 6. 資料・原稿のファクトチェックと穴の指摘
 
-1. **図1（全体像）** … モデルの知能 → 個の知能 → システムの知能、の入れ子と分類ツリーが1枚に
-2. **図4（試験のたとえ）** … 6段階＋次段階を、試験の受け方でたとえた絵。人に説明するときに一番効く
-3. **図5（グラフエンジニアリングの概観）** … 仕事と環境 → タスク組織化 → エージェントチーム → 実行時状態管理 → 成果物
+```text
+期待できるメリット: 提出前に「数字は合っているか」「論理が飛んでいないか」を第三者目線で洗える。差し戻しや指摘での手戻りが減る。
+使う場面: 提案書・記事・社内報告を出す直前のセルフレビュー。
+前提・状況: 完成間近の本文を貼り付けられる。事実確認が必要な箇所が含まれる。
+指示: これから貼る文章を、公開前提でレビューしてください。(1)事実・数値で裏取りが必要な箇所を抜き出し、確認方法を添える、(2)論理の飛躍・根拠不足の箇所、(3)誤解を招く表現、(4)冗長で削れる段落、を指摘してください。書き直しはせず、指摘と修正の方向性だけ挙げてください。
+出力形式・制約: 「該当箇所（引用は10字程度）／種類／なぜ問題か／どう直すか」の表。重要度の高い順。文章全体の書き換え案は出さない。
+つまずきどころ: 「良し悪しを評価して」と頼むと褒めるだけで終わる。「公開したら困る点を挙げて」と否定側で指示する。社外秘の数字を貼る場合は伏せ字にしてから渡す。
+```
 
-図はすべて CC BY 4.0 なので、出典（arXiv:2608.21156, Figure N）を書けば資料に使ってよい。
+## 7. スプレッドシートの関数を作る・直す
 
----
+```text
+期待できるメリット: 関数の書き方を調べる15分がなくなる。エラーの原因も理由つきで分かるので、次から自分で直せるようになる。
+使う場面: 集計表を作っていて、条件つき集計・日付処理・表の結合などでつまずいたとき。
+前提・状況: どんな表か（列の中身・行数の目安）と、やりたいことを言葉で説明できる。使っているのはGoogleスプレッドシートかExcel。
+指示: 次の処理をする関数を作ってください。表は「（例：A列=日付、B列=担当者、C列=金額。1000行程度）」。やりたいのは「（例：今月ぶんだけ、担当者ごとの合計を別表に出す）」。使用ソフトは「（例：Googleスプレッドシート）」。関数は1セルに貼れる形で示し、各項目が何をしているかを1行ずつ説明してください。既存の数式がある場合はエラー原因も指摘してください。
+出力形式・制約: 「完成した数式（コピペ用）／各部分の意味／想定される崩れ方と対処」。関数名はソフトに実在するもののみ。
+つまずきどころ: 列の位置や表記ゆれ（&quot;2026/9/1&quot; と &quot;2026-09-01&quot; の混在等）を伝えないと動かない。実データの3〜5行をサンプルとして一緒に貼ると精度が上がる。
+```
 
-## 読むときの注意（この論文の性格）
+## 8. 数字レポートに添えるコメント文を書く
 
-- これは**サーベイ（総説）**。「この方法で◯%速くなった」という定量比較はほとんど無い。研究の地図として読む
-- 本文には LLMCompiler・GPTSwarm・DyLAN・AFlow など個別の手法名が大量に出てくるが、初心者は名前を覚えなくてよい。「そういう研究群がある」で十分
-- 「ループエンジニアリングの提唱者・提唱時期」は本文に明記が無い。ネット上の解説記事の記述は裏が取れていないので鵜呑みにしない
-- v1（8/21）と v2（8/26）で細部が変わっている。引用するときは v2 を見る
+```text
+期待できるメリット: 「先月比プラス8%、要因は〜」の説明文を毎月ゼロから考える時間がなくなる。数字の羅列が“読める報告”になる。
+使う場面: 月次の売上・KPI・アクセス数などをまとめた表に、上司や役員向けの short コメントを付けるとき。
+前提・状況: 主要な数値（今期・前期・前年同期など）と、増減の背景として思い当たることを箇条書きで渡せる。
+指示: 次の数値にコメント文を付けてください。データは「（例：今月の問い合わせ数120件、先月98件、前年同月110件）」。増減の背景メモは「（例：今月から比較記事を2本公開／月末にキャンペーン）」。事実（数字）と解釈（要因）を分け、確証のない要因は「可能性がある」と表現してください。次月の見通しも1行入れてください。
+出力形式・制約: 200字前後を2案。1案は淡々と、もう1案はやや前向きなトーン。誇張や断定的な因果（「〜のおかげで」）は避ける。
+つまずきどころ: 背景メモを渡さないと当たり障りのない一般論になる。心当たりを3つほど箇条書きで添えると具体的なコメントになる。
+```
+
+## 9. ToDoの棚卸しと優先順位づけ
+
+```text
+期待できるメリット: 頭の中とメモに散らばったタスクが1枚に整理され、「今日やる3つ」が決まる。あれこれ気になって集中できない状態から抜けられる。
+使う場面: 週明けや、タスクが増えて何から手を付けるか分からなくなったとき。
+前提・状況: 抱えているタスクを思いつく順に箇条書きで書き出せる（粒度はバラバラでよい）。
+指示: これから貼るタスク一覧を、緊急度（期限の近さ）と重要度（成果へのインパクト）の2軸で仕分けしてください。(1)今日やる（3つまで）、(2)今週やる、(3)人に振る・頼む、(4)やめる・後回し、に分類し、大きいタスクは最初の一歩だけ切り出してください。期限が不明なものは「要確認」と付けてください。
+出力形式・制約: 4分類の見出し順。今日やる3つには「最初の一歩（15分で着手できる形）」を添える。全体で25行以内。
+つまずきどころ: タスクの粒度が大きすぎる（例：「新サービスの企画」）と着手できない。「〜の草案を1枚書く」まで分解させると動ける。振れる相手がいるものは名前を書いておく。
+```
+
+## 10. 1日の終わりの日報と翌日の段取り
+
+```text
+期待できるメリット: 日報作成の10分が2分になり、書きながら「明日の朝いちで何をやるか」まで決まる。翌朝の助走時間が消える。
+使う場面: 退勤前。今日やったことを軽くメモできる状態で、日報の提出と明日の準備をまとめて済ませたいとき。
+前提・状況: 今日の作業を箇条書き（時間帯・内容・詰まった点）でざっと書き出せる。
+指示: これから貼る今日のメモから、(1)日報（成果・進行中・課題の3項目）、(2)明日やることリスト（優先順にmax5件、各件に最初の一歩）、(3)関係者に共有・相談すべき事項、を作ってください。日報は事実ベースで、頑張ったアピールや反省文は入れないでください。
+出力形式・制約: 日報はそのまま提出できる素のテキストで、各項目3行以内。明日やることは「タスク／最初の一歩／想定所要」。全体で20行以内。
+つまずきどころ: メモに「詰まった点・中断した理由」を書いておかないと、明日やることの精度が落ちる。うまくいかなかったことも短く残してから貼る。
+```
+
+**ポイント**: どのプロンプトも、出力はそのまま提出せず必ず目を通してから使ってください。特に数字・固有名詞・日付は、Astraが埋めた箇所（「※推測」「要確認」と付く部分）を自分で確定させてから共有・送信してください。
 </pre>
 <script>
 

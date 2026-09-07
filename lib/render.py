@@ -883,10 +883,15 @@ def _doc_btns(links):
 
 def episode_anchor(episode):
     """回ごとの安定した識別子。「この回を全部ダウンロード」の bundles/<anchor>.md の
-    ファイル名に使う。動画IDが最優先（不変）。無ければ日付。"""
-    return (episode.get("vid")
-            or ("d" + (episode.get("date") or "").replace("-", ""))
-            or "ep")
+    ファイル名に使う。動画IDが最優先（不変）。無ければ日付＋No.——同じ投稿日で
+    動画が未確定の回が複数あると日付だけでは衝突するため（プレビュー限定。本番は
+    動画IDのある回しか出さない。2026-09-07 aa No.110 と No.123 が d20260907 で衝突）。"""
+    if episode.get("vid"):
+        return episode["vid"]
+    date = (episode.get("date") or "").replace("-", "")
+    if date and episode.get("no"):
+        return f"d{date}-{episode['no']}"
+    return f"d{date}" if date else "ep"
 
 
 def _episode_bundle_btn(episode, rel=""):
