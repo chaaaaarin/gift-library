@@ -2,17 +2,15 @@
 <html lang="ja"><head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>X自動運用プロンプト集 — Kawaru Gifts</title>
-<meta name="description" content="ネタ収集・分析・執筆・レビュー依頼まで、X自動運用のワークフローでそのまま使えるプロンプト集です。CodexやClaude Codeにコピペして使ってください。">
+<title>Fable 5.1 のキャッシュ割引を取りこぼさない 指示文＆設定 厳選10（Claude Code / Codex 両対応） — Kawaru Gifts</title>
+<meta name="description" content="Fable 5.1 は表示価格が据え置きのまま、キャッシュ読み取りが75%値下げされました。ただし「同じ前提を毎回同じ順・同じ文面で送る」形にしていないと、この割引はほとんど効きません。この10本を入れると、いまと同じ作業を月ベースで2〜4割安く（定額プランなら同じ枠でより多く）回せるようになります。Codex 側の「窓をまたぐノート」設定も2本入れてあります。">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Kawaru Gifts">
-<meta property="og:title" content="X自動運用プロンプト集 — Kawaru Gifts">
-<meta property="og:description" content="ネタ収集・分析・執筆・レビュー依頼まで、X自動運用のワークフローでそのまま使えるプロンプト集です。CodexやClaude Codeにコピペして使ってください。">
-<meta property="og:image" content="https://i.ytimg.com/vi/6MQmKPKLz5o/hqdefault.jpg">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://i.ytimg.com/vi/6MQmKPKLz5o/hqdefault.jpg">
-<meta name="twitter:title" content="X自動運用プロンプト集 — Kawaru Gifts">
-<meta name="twitter:description" content="ネタ収集・分析・執筆・レビュー依頼まで、X自動運用のワークフローでそのまま使えるプロンプト集です。CodexやClaude Codeにコピペして使ってください。">
+<meta property="og:title" content="Fable 5.1 のキャッシュ割引を取りこぼさない 指示文＆設定 厳選10（Claude Code / Codex 両対応） — Kawaru Gifts">
+<meta property="og:description" content="Fable 5.1 は表示価格が据え置きのまま、キャッシュ読み取りが75%値下げされました。ただし「同じ前提を毎回同じ順・同じ文面で送る」形にしていないと、この割引はほとんど効きません。この10本を入れると、いまと同じ作業を月ベースで2〜4割安く（定額プランなら同じ枠でより多く）回せるようになります。Codex 側の「窓をまたぐノート」設定も2本入れてあります。">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Fable 5.1 のキャッシュ割引を取りこぼさない 指示文＆設定 厳選10（Claude Code / Codex 両対応） — Kawaru Gifts">
+<meta name="twitter:description" content="Fable 5.1 は表示価格が据え置きのまま、キャッシュ読み取りが75%値下げされました。ただし「同じ前提を毎回同じ順・同じ文面で送る」形にしていないと、この割引はほとんど効きません。この10本を入れると、いまと同じ作業を月ベースで2〜4割安く（定額プランなら同じ枠でより多く）回せるようになります。Codex 側の「窓をまたぐノート」設定も2本入れてあります。">
 <meta name="robots" content="noindex,nofollow">
 <link rel="icon" href="data:image/png;base64,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">
 <link rel="stylesheet" href="../../assets/site.css?v=f40364df6d4a">
@@ -20,133 +18,180 @@
 <header class="kh"><div class="top">
   <a class="back" href="../../">← 一覧へ</a>
   <img src="data:image/png;base64,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" alt="">
-  <h1>X自動運用プロンプト集</h1>
+  <h1>Fable 5.1 のキャッシュ割引を取りこぼさない 指示文＆設定 厳選10（Claude Code / Codex 両対応）</h1>
   
   <button class="btn ghost sm" style="margin-left:auto" data-copy="pfull" aria-label="全件コピー">📋<span class="blabel"> 全件コピー</span></button>
-  <button class="btn sm" data-save="pfull" data-name="automation-prompts.md" aria-label="全件ダウンロード">⬇<span class="blabel"> 全件ダウンロード</span></button>
+  <button class="btn sm" data-save="pfull" data-name="cache-discount-prompts10.md" aria-label="全件ダウンロード">⬇<span class="blabel"> 全件ダウンロード</span></button>
 </div></header>
 
 <div class="kwrap">
   <section class="epctx epctx-top">
   <div class="ep-left">
-    <div class="ep-thumb epctx-thumb"><img src="https://i.ytimg.com/vi/6MQmKPKLz5o/hqdefault.jpg" alt=""></div>
-    <a class="watch" href="https://www.youtube.com/watch?v=6MQmKPKLz5o" target="_blank" rel="noopener">▶ 動画を見る</a>
-    <div class="ep-docs"><a class="docbtn" href="https://github.com/chaaaaarin/kawaru-20260708" target="_blank" rel="noopener">📚 資料</a><a class="docbtn" href="https://chaaaaarin.github.io/kawaru-20260708/slides.html" target="_blank" rel="noopener">🖥 スライド</a><a class="docbtn" href="https://chaaaaarin.github.io/kawaru-20260708/onepager.html" target="_blank" rel="noopener">📄 1枚資料</a></div>
+    <div class="ep-thumb epctx-thumb"><div class="noimg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M10.5 9.2v5.6l4.8-2.8-4.8-2.8Z" fill="currentColor" stroke="none"/></svg></div><span class="upbadge">近日公開</span></div>
+    
+    <div class="ep-docs"><a class="docbtn" href="https://github.com/chaaaaarin/kawaru-channel-20260907" target="_blank" rel="noopener">📚 資料</a><a class="docbtn" href="https://chaaaaarin.github.io/kawaru-channel-20260907/slides.html" target="_blank" rel="noopener">🖥 スライド</a><a class="docbtn" href="https://chaaaaarin.github.io/kawaru-channel-20260907/onepager.html" target="_blank" rel="noopener">📄 1枚資料</a></div>
   </div>
   <div>
     <p class="epctx-label">この動画のプレゼントです</p>
-    <p class="epctx-title">【速報】GPT-5.6とGrok-4.5を組み合わせたらXが10倍バズりました</p>
-    <p class="epctx-date">2026-07-15</p>
-    <a class="epbundle" href="../../bundles/6MQmKPKLz5o.md" download="プレゼント一式_2026-07-15.md">⬇ この回のプレゼントを全部ダウンロード</a>
+    <p class="epctx-title">今週のAIニュースまとめ_AA05</p>
+    <p class="epctx-date">2026-09-13</p>
+    <a class="epbundle" href="../../bundles/d20260913.md" download="プレゼント一式_2026-09-13.md">⬇ この回のプレゼントを全部ダウンロード</a>
   </div>
 </section>
 
   <section class="kintro">
-    <h2>X自動運用プロンプト集</h2>
-    <p><span class="nb">ネタ収集・</span><span class="nb">分析・</span><span class="nb">執筆・</span><span class="nb">レビュー依頼まで、</span><span class="nb">X自動運用のワークフローでその</span><span class="nb">まま使えるプロンプト集です。</span><span class="nb">CodexやClaude Codeに</span><span class="nb">コピペして使ってください。</span></p>
-    <div class="kmeta"><span>プロンプト集</span><span>No.52 Codex×X自動運用</span><span>2026-07-08 配布</span></div>
+    <h2>Fable 5.1 のキャッシュ割引を取りこぼさない 指示文＆設定 厳選10（Claude Code / Codex 両対応）</h2>
+    <p><span class="nb">Fable 5.1 は表示価格が</span><span class="nb">据え置きのまま、</span><span class="nb">キャッシュ読み取りが</span><span class="nb">75%値下げされました。</span><span class="nb">ただし</span><span class="nb">「同じ前提を毎回同じ順・</span><span class="nb">同じ文面で送る」</span><span class="nb">形にしていないと、</span><span class="nb">この割引はほとんど効きません。</span><span class="nb">この10本を入れると、</span><span class="nb">いまと同じ作業を月ベースで</span><span class="nb">2〜4割安く</span><span class="nb">（定額プランなら同じ枠でより多く）</span><span class="nb">回せるようになります。</span><span class="nb">Codex 側の</span><span class="nb">「窓をまたぐノート」</span><span class="nb">設定も2本入れてあります。</span></p>
+    <div class="kmeta"><span>プロンプト集</span><span>No.113 今週のAIニュースまとめ_AA05</span><span>2026-09-07 配布</span></div>
     <div class="pnote"><span class="nb">下のボタンで、</span><span class="nb">全文をそのままコピー、</span><span class="nb">またはテキストファイルとして保存で</span><span class="nb">きます。</span></div>
   </section>
 
   <div class="icard">
-  <pre class="prompt" id="b1" style="max-height:none;"># 1. ネタ収集(定時実行向け)
-毎朝9時に、生成AIに関する直近24時間のニュースを3件集めて、
-それぞれ1行要約でSlackの「ニュース」チャンネルに通知する自動化を設定して。
-出典URLも必ず添えること。
-
-# 2. トレンド分析
-直近1週間で〇〇(分野)について反応が良かった自分の投稿を5件集めて、
-共通する特徴(投稿時間・文字数・話題の切り口)を分析してレポートにまとめて。
-
-# 3. 記事(Article)の下書き作成
-〇〇というテーマでXの記事機能用の下書きを作成して。
-・見出しを3〜5個に分けて、1つの主張につき1見出し
-・冒頭150字で結論を先出しする
-・外部リンクは最小限にし、X内で完結する内容にする
-・投稿はまだしないで、下書き保存までにとどめて
-
-# 4. 通常ポストの下書き作成(複数案)
-〇〇についてXの通常ポストを3パターン作って。
-・パターンA: 数字や結論を先頭に置く型
-・パターンB: 問いかけから始める型
-・パターンC: 短い体験談から始める型
-それぞれ140字以内で、絵文字は使わないで。
-
-# 5. トーン・品質レビュー依頼
-さっき作った投稿文/記事を、次の観点でセルフチェックして問題点を指摘して。
-・普段のアカウントの口調と違う表現がないか
-・誇張・断定しすぎている表現がないか
-・ハッシュタグが不自然に多くないか
-問題があれば修正案も一緒に出して。
-
-# 6. レート制限時のフォールバック確認
-今の投稿処理がAPI経由で失敗し続けている場合、原因(レート制限/クレジット切れ/権限エラー)を
-特定して報告して。Computer Use(ブラウザ操作)での代替投稿に切り替えてよいか、
-実行前に必ず確認を取って。</pre>
+  <pre class="prompt" id="b1" style="max-height:none;">期待できるメリット: コンテキストが埋まっても要約圧縮（compaction）で細部を失わず、過去の窓も検索できる。長い調査・デバッグで「なぜ失敗したか」の記録が残る。
+使う場面: 1セッションが長くなり、途中で要約が走って文脈が薄くなる作業のとき。
+前提・状況: Codex CLI 0.153 系。config.toml を編集できる。これは実験的機能で、数週間後に Astra で既定になる予定。
+指示: config.toml に「コンテキスト窓をまたぐノート保持」を有効にする実験フラグを追加する手順を教えてください。追加後、長い作業では (1) 判断の理由、(2) 試して失敗した方法とその理由、(3) 次にやること、をノートに書き残しながら進めてください。窓が切り替わっても、このノートを引き継いで作業を続けてください。
+出力形式・制約: まず config の編集手順、次に「ノートに何を書くか」のルール5項目。
+つまずきどころ: 実験フラグ名は changelog で最新を確認する（バージョンで変わることがある）。有効化してもノートに何も書かせない指示だと効果が出ない。</pre>
   <div class="cbtns">
     <button class="btn" data-copy="b1">📋 コピー</button>
-    <button class="btn ghost" data-save="b1" data-name="automation-prompts.txt">⬇ ダウンロード</button>
+    <button class="btn ghost" data-save="b1" data-name="cache-discount-prompts10.txt">⬇ ダウンロード</button>
   </div>
 </div>
 
   <section class="epctx">
   <p class="epctx-label">この動画のほかのプレゼント</p>
-  <div class="ep-kits"><a class="kchip" href="../agents-md-x-automation/"><span class="kt">X自動投稿エージェント AGENTS.md / CLAUDE.mdテンプレート</span><span class="go">開く →</span></a><a class="kchip" href="../github-actions-workflow/"><span class="kt">GitHub Actions 定時実行ワークフロー例</span><span class="go">開く →</span></a><a class="kchip" href="../hermes-grok-build-x-setup/"><span class="kt">HermesAgent × Grok Build でのX連携セットアップ（参考・比較用）</span><span class="go">開く →</span></a><a class="kchip" href="../post-article-templates/"><span class="kt">投稿・記事Markdownテンプレート</span><span class="go">開く →</span></a><a class="kchip" href="../x-mcp-setup-guide/"><span class="kt">X公式MCP セットアップ手順</span><span class="go">開く →</span></a><a class="kchip" href="../x-post-checklist/"><span class="kt">X投稿前チェックリスト</span><span class="go">開く →</span></a></div>
+  <div class="ep-kits"><a class="kchip" href="../cache-discount-simulator/"><span class="kt">Fable 5.1 キャッシュ割引シミュレーターアプリ</span><span class="badge">アプリ</span><span class="go">開く →</span></a><a class="kchip" href="../frontier-model-matchup-sheet/"><span class="kt">Fable 5.1 と GPT-6 Astra、どの仕事をどっちに投げるか 対照シート＋切り替え手順</span><span class="badge">16項目</span><span class="go">開く →</span></a></div>
 </section>
   <section class="epctx">
   <p class="epctx-label">ほかの回の「プロンプト集」</p>
-  <div class="ep-kits"><a class="kchip" href="../cache-discount-prompts10/"><span class="kt">Fable 5.1 のキャッシュ割引を取りこぼさない 指示文＆設定 厳選10（Claude Code / Codex 両対応）</span><span class="go">開く →</span></a><a class="kchip" href="../claude-memory-tune-10/"><span class="kt">Claudeの記憶を整える指示文 厳選10選</span><span class="badge">10個</span><span class="go">開く →</span></a><a class="kchip" href="../site-task-prompts10/"><span class="kt">サイト操作を任せる依頼文 厳選10</span><span class="badge">5項目</span><span class="go">開く →</span></a><a class="kchip" href="../kiro-spec-driven-prompts10/"><span class="kt">Kiroスペック駆動 スタート指示文10選</span><span class="badge">10個</span><span class="go">開く →</span></a></div>
+  <div class="ep-kits"><a class="kchip" href="../claude-memory-tune-10/"><span class="kt">Claudeの記憶を整える指示文 厳選10選</span><span class="badge">10個</span><span class="go">開く →</span></a><a class="kchip" href="../site-task-prompts10/"><span class="kt">サイト操作を任せる依頼文 厳選10</span><span class="badge">5項目</span><span class="go">開く →</span></a><a class="kchip" href="../kiro-spec-driven-prompts10/"><span class="kt">Kiroスペック駆動 スタート指示文10選</span><span class="badge">10個</span><span class="go">開く →</span></a><a class="kchip" href="../degradation-diagnosis-prompts100/"><span class="kt">「AIが弱くなった」と感じた時の診断＆代替依頼プロンプト100選</span><span class="badge">100個</span><span class="go">開く →</span></a></div>
 </section>
 
   <footer><a href="../../">← AIエージェント / Kawaru プレゼント図書館にもどる</a></footer>
 </div>
 
-<pre id="pfull" class="hidden"># 🎁 X自動運用プロンプト集
+<pre id="pfull" class="hidden"># 🎁 Fable 5.1 のキャッシュ割引を取りこぼさない 指示文＆設定 厳選10（Claude Code / Codex 両対応）
 
-ネタ収集・分析・執筆・レビュー依頼まで、X自動運用のワークフローでそのまま使えるプロンプト集です。CodexやClaude Codeにコピペして使ってください。
+Fable 5.1 は表示価格が据え置きのまま、キャッシュ読み取りが75%値下げされました。ただし「同じ前提を毎回同じ順・同じ文面で送る」形にしていないと、この割引はほとんど効きません。この10本を入れると、いまと同じ作業を月ベースで2〜4割安く（定額プランなら同じ枠でより多く）回せるようになります。Codex 側の「窓をまたぐノート」設定も2本入れてあります。
 
-**受け取り方**: 下のコードブロック右上のコピーボタンでコピーするか、このファイルをそのままダウンロードしてください。
+**受け取り方**: 下の各コードブロック右上のコピーボタンでコピーするか、このファイルをそのままダウンロードしてください。
 
-**使い方**: 用途に応じて該当のプロンプトをコピーし、〇〇の部分を自分のテーマ・アカウント名に置き換えて使います。
+**使い方**: 1〜4を先に入れて「前提を固定」する。5〜6で効きを点検。7〜8はコンテキストが長い作業向け。9〜10は繰り返し作業のテンプレ化。
+
+---
+
+## 1. 前提ブロックを固定する土台指示
 
 ```text
-# 1. ネタ収集(定時実行向け)
-毎朝9時に、生成AIに関する直近24時間のニュースを3件集めて、
-それぞれ1行要約でSlackの「ニュース」チャンネルに通知する自動化を設定して。
-出典URLも必ず添えること。
-
-# 2. トレンド分析
-直近1週間で〇〇(分野)について反応が良かった自分の投稿を5件集めて、
-共通する特徴(投稿時間・文字数・話題の切り口)を分析してレポートにまとめて。
-
-# 3. 記事(Article)の下書き作成
-〇〇というテーマでXの記事機能用の下書きを作成して。
-・見出しを3〜5個に分けて、1つの主張につき1見出し
-・冒頭150字で結論を先出しする
-・外部リンクは最小限にし、X内で完結する内容にする
-・投稿はまだしないで、下書き保存までにとどめて
-
-# 4. 通常ポストの下書き作成(複数案)
-〇〇についてXの通常ポストを3パターン作って。
-・パターンA: 数字や結論を先頭に置く型
-・パターンB: 問いかけから始める型
-・パターンC: 短い体験談から始める型
-それぞれ140字以内で、絵文字は使わないで。
-
-# 5. トーン・品質レビュー依頼
-さっき作った投稿文/記事を、次の観点でセルフチェックして問題点を指摘して。
-・普段のアカウントの口調と違う表現がないか
-・誇張・断定しすぎている表現がないか
-・ハッシュタグが不自然に多くないか
-問題があれば修正案も一緒に出して。
-
-# 6. レート制限時のフォールバック確認
-今の投稿処理がAPI経由で失敗し続けている場合、原因(レート制限/クレジット切れ/権限エラー)を
-特定して報告して。Computer Use(ブラウザ操作)での代替投稿に切り替えてよいか、
-実行前に必ず確認を取って。
+期待できるメリット: 2回目以降の会話で、前提部分がキャッシュ読み取り（75%引き）で再利用され、同じ作業の総額が下がる。
+使う場面: そのプロジェクトで初めて指示を出すとき。以降の全セッションの土台になる。
+前提・状況: プロジェクト固有のルール・用語・フォーマットが決まっている。
+指示: これから毎回、私の依頼の前に「前提ブロック」を置きます。前提ブロックの中身（プロジェクト概要／用語集／出力フォーマット／禁止事項）は一字一句・順番を変えずに毎回先頭へ貼ります。あなたは前提ブロックを要約したり言い換えたりせず、そのまま読んでください。前提ブロックの後ろに、その回だけの依頼を書きます。
+出力形式・制約: 前提ブロックの内容に変更提案があるときは、依頼への回答とは別に「前提ブロック改訂案」という見出しで最後にまとめる。本文中で勝手に変えない。
+つまずきどころ: 前提の途中に日付や作業番号など「毎回変わる値」を入れると、そこでキャッシュが切れる。変わる値は前提ブロックの外（依頼側）へ出す。
 ```
 
-**ポイント**: 「投稿はまだしないで」「実行前に確認して」という一文を毎回のプロンプトに入れる癖をつけると、AGENTS.md/CLAUDE.mdの運用ルールと二重に事故を防げます。
+## 2. 前提を1ファイルに集約する
+
+```text
+期待できるメリット: 前提が1ファイルに固まり、順番・文面のブレが物理的に起きなくなる。キャッシュ境界が安定する。
+使う場面: 前提が複数の指示に散らばっていて、毎回コピペし直しているとき。
+前提・状況: Claude Code なら CLAUDE.md、Codex なら AGENTS.md がリポジトリにある。
+指示: いまチャットで渡している前提（ルール・用語・フォーマット・禁止事項）を、CLAUDE.md（Codex は AGENTS.md）の冒頭に「# 前提（毎回読む・編集しない）」という見出しで移してください。移したあとは、各セッションで私がこのファイルを最初に読ませます。あなたはこのブロックを要約せず全文読み、以降の判断の基準にしてください。
+出力形式・制約: 移動後、元の指示文から重複する前提を削り、依頼だけが残るようにする。削った箇所の一覧を提示する。
+つまずきどころ: このファイルを頻繁に書き換えると、書き換えるたびにキャッシュが作り直しになる。前提の更新は週1回などにまとめる。
+```
+
+## 3. 変わる部分を末尾に寄せる
+
+```text
+期待できるメリット: 固定部分（前提＋資料）が先頭にまとまり、そこがキャッシュされる。毎回変わる依頼だけが末尾になり、無駄な再計算が減る。
+使う場面: 長い資料や過去ログを毎回添付して質問しているとき。
+前提・状況: 添付する資料は毎回ほぼ同じ。質問だけが変わる。
+指示: これからの会話は「固定部分 → 可変部分」の順で送ります。固定部分＝前提ブロック＋添付資料（順番も中身も毎回同じ）。可変部分＝今日の質問。あなたは固定部分を毎回同じものとして扱い、差分だけに注目して回答してください。
+出力形式・制約: 回答の冒頭で「固定部分に前回との差分あり／なし」を1行で申告してから本題に入る。
+つまずきどころ: 資料の並び順を日によって変えると、そこでキャッシュが無効になる。資料はファイル名の昇順など機械的な順で固定する。
+```
+
+## 4. セッション開始の定型プリアンブル
+
+```text
+期待できるメリット: 毎セッションの1通目が完全に同一文になり、その部分がキャッシュ対象として安定する。
+使う場面: 1日に何度もセッションを立ち上げ直す使い方のとき。
+前提・状況: 作業の入り口の指示（役割・進め方・確認のルール）がだいたい決まっている。
+指示: 私が各セッションの最初に送る「定型プリアンブル」を作ってください。内容は、あなたの役割／作業の進め方（小さく分けて提案してから実行）／勝手にやらないこと（本番データの変更・外部送信・大きなリファクタ）／報告の形式。これを固定文にして、私は毎回コピペで送ります。
+出力形式・制約: 200〜400字。日付・タスク名など可変要素を一切含めない。可変要素は2通目以降で渡す。
+つまずきどころ: プリアンブルに「今日は」などの書き出しを入れると毎回変わってしまう。時制を含めない書き方にする。
+```
+
+## 5. キャッシュの効きを点検する（Claude Code）
+
+```text
+期待できるメリット: キャッシュ読み取りが実際に発生しているかを数字で確認でき、効いていない原因に早く気づける。
+使う場面: 「安くなるはずなのに体感が変わらない」とき。数セッション回したあと。
+前提・状況: Claude Code で数回やり取りした直後。
+指示: /cost の出力を読んで、(1) キャッシュ読み取りトークンが全体の何割か、(2) キャッシュ書き込み（初回作成）ばかりで読み取りが伸びていないか、(3) 伸びていない場合に考えられる原因（前提文の変化・資料の並び替え・可変要素の混入）を、私の直近のやり取りを踏まえて指摘してください。
+出力形式・制約: 「読み取り率○％／評価（良い・要改善）／原因の候補3つ／今日の直し方1つ」の順で、合計10行以内。
+つまずきどころ: 1〜2ターンだけでは読み取りは伸びない。同じ前提で5ターン以上回してから見る。
+```
+
+## 6. トークン内訳を確認する（Codex）
+
+```text
+期待できるメリット: Codex 側でも「どこが繰り返し読まれているか」を把握でき、前提の固定が効いているか判断できる。
+使う場面: Codex CLI で長めのセッションを回したあと。
+前提・状況: Codex CLI 0.153 系。AGENTS.md に前提ブロックを置いてある。
+指示: このセッションのトークン内訳を要約してください。入力のうち「AGENTS.md＋前提ブロック」が占める割合、それが毎ターンほぼ一定になっているか、可変部分（私の依頼）だけが増減しているか、を確認して報告してください。前提部分がターンごとに変動している場合は、どの記述が変動の原因かを指摘してください。
+出力形式・制約: 表で「項目／概算トークン／毎ターン一定か」。最後に改善の一手を1行。
+つまずきどころ: セッションの途中で AGENTS.md を編集すると、その時点から前提が別物扱いになる。編集は作業の切れ目で。
+```
+
+## 7. 「窓をまたぐノート」を有効化する（Codex・実験的）
+
+```text
+期待できるメリット: コンテキストが埋まっても要約圧縮（compaction）で細部を失わず、過去の窓も検索できる。長い調査・デバッグで「なぜ失敗したか」の記録が残る。
+使う場面: 1セッションが長くなり、途中で要約が走って文脈が薄くなる作業のとき。
+前提・状況: Codex CLI 0.153 系。config.toml を編集できる。これは実験的機能で、数週間後に Astra で既定になる予定。
+指示: config.toml に「コンテキスト窓をまたぐノート保持」を有効にする実験フラグを追加する手順を教えてください。追加後、長い作業では (1) 判断の理由、(2) 試して失敗した方法とその理由、(3) 次にやること、をノートに書き残しながら進めてください。窓が切り替わっても、このノートを引き継いで作業を続けてください。
+出力形式・制約: まず config の編集手順、次に「ノートに何を書くか」のルール5項目。
+つまずきどころ: 実験フラグ名は changelog で最新を確認する（バージョンで変わることがある）。有効化してもノートに何も書かせない指示だと効果が出ない。
+```
+
+## 8. 溢れる前に引き継ぎノートを書き出す（Claude Code の代替）
+
+```text
+期待できるメリット: Claude Code 側には窓またぎノートが無いので、要約圧縮で細部が消える前に自分でメモを外出しし、次セッションへ引き継げる。
+使う場面: Claude Code で長い調査・実装をしていて、コンテキストの残りが少なくなってきたとき。
+前提・状況: 作業フォルダに書き込みできる。
+指示: いまのコンテキスト残量が3割を切ったら教えてください。そのタイミングで handoff.md に「目的／確定した事実／試して駄目だった方法と理由／未解決の論点／次の一手」を書き出してください。次のセッションでは、私が handoff.md を前提ブロックの一部として先頭で読ませます。
+出力形式・制約: handoff.md は見出しつき箇条書き、全体で40行以内。確定事実と推測を分けて書く。
+つまずきどころ: handoff.md を毎回作り直して中身の順番が変わると、前提としてのキャッシュが効きにくい。見出しの順序は固定する。
+```
+
+## 9. 長い資料の読み込み順を固定する
+
+```text
+期待できるメリット: 仕様書・過去ログなど大きな資料が「毎回同じ順・同じ中身」で先頭に入り、その塊がキャッシュされる。質問のたびに読み直すコストが消える。
+使う場面: 同じ仕様書や設計メモに対して、何日にもわたって質問を重ねるとき。
+前提・状況: 参照資料が複数ファイルある。
+指示: 参照資料を読み込む順番を固定します。順番は［ファイル名の昇順 / 私が指定した固定リスト］でお願いします。私は毎回この順で資料を貼ります。あなたは資料の順番や内容が同じである限り、それを既知のものとして扱い、差分がある場合だけ「資料に変更あり」と申告してください。
+出力形式・制約: セッションの最初の応答で「資料○件を既知として読み込み。前回との差分：あり（該当ファイル名）／なし」を1行。
+つまずきどころ: 資料の一部だけ最新版に差し替えると、その位置以降のキャッシュが切れる。差し替えるなら資料リストの末尾に「追補」として足す。
+```
+
+## 10. 週次バッチを前提固定テンプレにする
+
+```text
+期待できるメリット: 毎週回す定型作業（レポート生成・集計・要約）の前提が完全に固定され、週を追うごとにキャッシュ読み取りが伸びて単価が下がる。
+使う場面: 毎週・毎日など決まった周期で同じ種類の作業をAIに投げているとき。
+前提・状況: 作業の入力（データの置き場所・期間の指定方法）と出力フォーマットが決まっている。
+指示: この週次作業を「固定テンプレ＋今週分の差し込み」に分けてください。固定テンプレ＝目的・入力の取り方・加工手順・出力フォーマット・チェック項目（毎週一字一句同じ）。差し込み＝対象期間と、今週だけの例外指示。固定テンプレを確定させて提示してください。以降、私は固定テンプレ＋差し込みの形で毎週送ります。
+出力形式・制約: 固定テンプレは番号つき手順。可変値は差し込み側にしか置かない（テンプレ内に日付・週番号を書かない）。
+つまずきどころ: 「先週のレポートを参照して」と本文で書くと参照先が毎週変わる。参照する過去分は差し込み側で資料として添付し、テンプレは参照方法だけ書く。
+```
+
+**ポイント**: キャッシュ読み取りが効くのは「前提が前回と同一」のときだけです。効きを確かめたいときは、同じ前提で5ターン以上回してから 5・6 の点検指示を使ってください。出力は必ずレビューしてから確定してください。
 </pre>
 <script>
 

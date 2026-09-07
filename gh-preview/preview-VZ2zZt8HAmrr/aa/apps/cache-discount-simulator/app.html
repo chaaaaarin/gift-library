@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fable 5.1 キャッシュ割引シミュレーターアプリ</title>
+<meta name="description" content="今の月額と『同じ前提を繰り返す割合』を入れると、Fable 5.1 に乗り換えたあとの月額と、割引をもっと効かせるための次の一手が分かります。">
+<style>
+  :root{
+    --navy:#1C3461; --navy-deep:#16284A; --cyan:#5BBCD4; --cyan-deep:#2C7A93;
+    --bg:#F4F7FA; --paper:#FFFFFF; --ink:#1C3461; --ink-mid:#4A6080; --ink-sub:#8098B4; --line:#DCE4EC;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:var(--bg);color:var(--ink);font-family:-apple-system,'Hiragino Sans','Yu Gothic',sans-serif;line-height:1.7;padding:22px 14px 40px;}
+  .wrap{max-width:640px;margin:0 auto;}
+  h1{font-size:22px;font-weight:900;line-height:1.35;margin-bottom:6px;}
+  .sub{font-size:13.5px;color:var(--ink-mid);margin-bottom:20px;}
+  .card{background:var(--paper);border:1.5px solid var(--line);border-radius:14px;padding:20px 18px;margin-bottom:16px;}
+  .q{font-weight:800;font-size:15px;margin-bottom:10px;}
+  .q .n{display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;background:var(--cyan);color:var(--navy);border-radius:50%;font-size:13px;font-weight:900;margin-right:8px;}
+  label{display:block;font-size:13px;color:var(--ink-mid);margin-bottom:4px;}
+  select,input[type=number]{width:100%;font-size:15px;padding:10px 12px;border:1.5px solid var(--line);border-radius:9px;background:#fff;color:var(--ink);font-family:inherit;}
+  .opts{display:flex;flex-direction:column;gap:8px;}
+  .opt{display:flex;align-items:flex-start;gap:10px;border:1.5px solid var(--line);border-radius:10px;padding:11px 13px;cursor:pointer;font-size:13.5px;}
+  .opt input{margin-top:3px;flex-shrink:0;}
+  .opt.sel{border-color:var(--cyan);background:rgba(91,188,212,.10);}
+  .opt b{display:block;font-size:14px;color:var(--ink);}
+  .opt span{font-size:12px;color:var(--ink-mid);}
+  button.go{width:100%;background:var(--navy);color:#fff;border:none;border-radius:11px;padding:14px;font-size:16px;font-weight:900;cursor:pointer;font-family:inherit;margin-top:4px;}
+  button.go:hover{background:var(--navy-deep);}
+  .result{display:none;}
+  .result.show{display:block;}
+  .big{background:linear-gradient(160deg,rgba(28,52,97,.06),rgba(91,188,212,.10));border:1.5px solid var(--cyan);border-radius:14px;padding:20px 18px;text-align:center;margin-bottom:14px;}
+  .big .amt{font-size:30px;font-weight:900;color:var(--navy-deep);line-height:1.2;}
+  .big .amt s{color:var(--ink-sub);font-size:19px;font-weight:700;margin-right:10px;}
+  .big .band{font-size:13px;color:var(--ink-mid);margin-top:6px;}
+  .big .pct{display:inline-block;margin-top:10px;background:var(--navy);color:#fff;font-weight:900;font-size:14px;border-radius:999px;padding:4px 16px;}
+  .row{display:flex;gap:10px;font-size:13.5px;padding:9px 0;border-bottom:1px solid var(--line);}
+  .row:last-child{border-bottom:none;}
+  .row b{flex-shrink:0;width:110px;color:var(--ink-mid);font-weight:700;}
+  .next{background:#fff;border:1.5px solid var(--line);border-left:4px solid var(--cyan);border-radius:10px;padding:14px 16px;margin-top:14px;font-size:13.5px;}
+  .next h3{font-size:14px;font-weight:900;margin-bottom:6px;color:var(--navy-deep);}
+  .assump{font-size:11.5px;color:var(--ink-sub);margin-top:14px;line-height:1.6;}
+  .assump b{color:var(--ink-mid);}
+  .redo{background:none;border:none;color:var(--cyan-deep);font-weight:800;font-size:13px;cursor:pointer;margin-top:12px;text-decoration:underline;font-family:inherit;}
+  .warn{font-size:12.5px;color:var(--ink-mid);background:rgba(91,188,212,.10);border:1px solid var(--cyan);border-radius:9px;padding:10px 12px;margin-top:12px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Fable 5.1 キャッシュ割引シミュレーター<span style="font-size:13px;color:var(--ink-sub);font-weight:700;">（アプリ）</span></h1>
+  <p class="sub">Fable 5.1 は表示価格そのままで、同じ前提を繰り返し読ませるぶん（キャッシュ読み取り）が75%値下げされました。いまの状況を入れると、乗り換え後の月額と「割引をもっと効かせる一手」が分かります。</p>
+
+  <div id="form">
+    <div class="card">
+      <div class="q"><span class="n">1</span>いまの1か月のAI利用額（ざっくり・USD）</div>
+      <label>API・従量課金の請求額の目安。定額プランの人は「相当額」でOK（不明なら真ん中を選択）</label>
+      <select id="spend">
+        <option value="20">〜$30（お試し規模）</option>
+        <option value="75" selected>$30〜$120（個人で毎日使う規模）</option>
+        <option value="300">$120〜$600（チーム・重めの自動化）</option>
+        <option value="1500">$600〜$3,000（本格運用）</option>
+        <option value="6000">$3,000以上</option>
+      </select>
+    </div>
+
+    <div class="card">
+      <div class="q"><span class="n">2</span>同じ前提を繰り返し送っている度合い</div>
+      <label>毎回のやり取りで「前提・資料・ルール」が前回とどれくらい同じか</label>
+      <div class="opts" id="cacheOpts">
+        <label class="opt"><input type="radio" name="cache" value="low"><span><b>低い</b><span>依頼のたびに前提や資料の中身・順番が変わる／単発の質問が多い</span></span></label>
+        <label class="opt"><input type="radio" name="cache" value="mid" checked><span><b>中くらい</b><span>前提はだいたい同じだが、日付や作業番号など毎回変わる値が前提に混ざっている</span></span></label>
+        <label class="opt"><input type="radio" name="cache" value="high"><span><b>高い</b><span>前提・資料を「同じ文面・同じ順」で固定し、毎回そのまま先頭に置いている</span></span></label>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="q"><span class="n">3</span>いまの使い方</div>
+      <div class="opts" id="planOpts">
+        <label class="opt"><input type="radio" name="plan" value="api" checked><span><b>API を直接／従量課金</b><span>使った量ぶん課金される（Codex・Claude Code の従量を含む）</span></span></label>
+        <label class="opt"><input type="radio" name="plan" value="flat"><span><b>定額プラン（Pro / Max）</b><span>月いくらで使っている</span></span></label>
+      </div>
+    </div>
+
+    <button class="go" onclick="calc()">試算する</button>
+  </div>
+
+  <div class="result" id="result">
+    <div class="big" id="big"></div>
+    <div class="card" style="margin-bottom:0;">
+      <div id="rows"></div>
+      <div class="next" id="next"></div>
+      <div class="warn" id="warn" style="display:none;"></div>
+      <p class="assump" id="assump"></p>
+    </div>
+    <button class="redo" onclick="reset()">← 入力し直す</button>
+  </div>
+</div>
+
+<script>
+(function(){
+  var cacheOpts=document.getElementById('cacheOpts');
+  var planOpts=document.getElementById('planOpts');
+  function paint(box){
+    box.querySelectorAll('.opt').forEach(function(o){
+      var r=o.querySelector('input');
+      o.classList.toggle('sel', r.checked);
+    });
+  }
+  [cacheOpts,planOpts].forEach(function(box){
+    box.addEventListener('change',function(){paint(box);});
+    paint(box);
+  });
+  window._paint=paint;
+})();
+
+function fmt(n){
+  if(n>=1000) return '$'+Math.round(n).toLocaleString();
+  return '$'+n.toFixed(n<100?1:0);
+}
+
+function calc(){
+  var spend=parseFloat(document.getElementById('spend').value);
+  var cache=document.querySelector('input[name=cache]:checked').value;
+  var plan=document.querySelector('input[name=plan]:checked').value;
+
+  // キャッシュにできる割合 f と、その割合に応じた総額削減率。
+  // 公式の「一般で約25%、重い・高エージェント作業で最大約45%」に合わせて
+  // 削減率 ≒ f * 0.55（f=0.45→約25%、f=0.80→約44%）。
+  var fMap={low:0.20, mid:0.45, high:0.80};
+  var f=fMap[cache];
+  var cut=f*0.55;                 // 中心値
+  var cutLow=Math.max(0, cut-0.06);
+  var cutHigh=cut+0.06;
+
+  var after=spend*(1-cut);
+  var aLow=spend*(1-cutHigh);
+  var aHigh=spend*(1-cutLow);
+
+  var big=document.getElementById('big');
+  var rows=document.getElementById('rows');
+  var next=document.getElementById('next');
+  var warn=document.getElementById('warn');
+  var assump=document.getElementById('assump');
+
+  if(plan==='flat'){
+    // 定額は支払いが変わらない。恩恵は「同じ枠でより多く動く」形。
+    var morePct=Math.round((1/(1-cut)-1)*100);
+    var moreLow=Math.round((1/(1-cutLow)-1)*100);
+    var moreHigh=Math.round((1/(1-cutHigh)-1)*100);
+    big.innerHTML='<div class="amt">支払いは変わりません</div>'+
+      '<div class="band">同じ料金で、実効的に約 '+moreLow+'〜'+moreHigh+'% 多く動かせます</div>'+
+      '<div class="pct">実効ゆとり +'+morePct+'%</div>';
+    rows.innerHTML=
+      row('いまの支払い','定額のまま（Fable 5.1 でも同じ）')+
+      row('効いてくる形','キャッシュ読み取りが75%引きになるぶん、1回の作業で使うトークン単価が下がる → 同じ上限内でこなせる量が増える')+
+      row('繰り返し度',''+label(cache)+'（キャッシュにできる割合 約'+Math.round(f*100)+'%）');
+    warn.style.display='block';
+    warn.innerHTML='<b>9月14日から</b>、Claude Code の週の上限は「恒久+25%」告知ですが、いまの一時的な+50%が外れるため <b>今と比べて約17%減</b>。上の「実効ゆとり」は、この目減りを一部相殺します。';
+  } else {
+    big.innerHTML='<div class="amt"><s>'+fmt(spend)+'</s>'+fmt(after)+' <span style="font-size:15px;color:var(--ink-mid);">/月</span></div>'+
+      '<div class="band">レンジ '+fmt(aLow)+' 〜 '+fmt(aHigh)+' /月（前提の固まり具合で変動）</div>'+
+      '<div class="pct">約 '+Math.round(cut*100)+'% 減</div>';
+    rows.innerHTML=
+      row('いまの月額','約 '+fmt(spend))+
+      row('乗り換え後','約 '+fmt(after)+'（年で約 '+fmt((spend-after)*12)+' の差）')+
+      row('繰り返し度',''+label(cache)+'（キャッシュにできる割合 約'+Math.round(f*100)+'%）')+
+      row('内訳の考え方','表示価格（入力$10/出力$50）は据え置き。キャッシュ読み取りぶんだけ75%引き → 前提の繰り返しが多いほど総額が下がる');
+    warn.style.display='none';
+  }
+
+  var nx={
+    low:'<h3>次の一手：まず「前提を固定」する</h3>依頼のたびに前提や資料の順番・文面が変わっていると、割引はほとんど効きません。姉妹キット「キャッシュ割引を取りこぼさない 厳選10」の 1〜4（前提ブロックの固定・1ファイル集約・可変値を末尾へ）を入れて、繰り返し度を「中」以上に上げてください。',
+    mid:'<h3>次の一手：可変値を前提から追い出す</h3>前提の中に日付・作業番号・「今日は」などの毎回変わる文字が混ざると、そこでキャッシュが切れます。可変値は前提ブロックの外（依頼側）へ。厳選10 の 3・4・10 が該当します。ここを直すと「高」に届きます。',
+    high:'<h3>次の一手：この状態を崩さない</h3>よく効いています。前提ファイル（CLAUDE.md / AGENTS.md）を頻繁に書き換えると、そのたびにキャッシュが作り直しになります。前提の更新は週1回などにまとめ、資料の差し替えは末尾に「追補」で足してください。厳選10 の 5・6 で効きを定期点検。'
+  };
+  next.innerHTML=nx[cache];
+
+  assump.innerHTML='<b>この試算の前提</b>：削減率 ≒（キャッシュにできる割合）× 0.55 として概算しています。'+
+    'これは Anthropic 公式の「一般的なワークロードで約25%、複雑なコーディング・高エージェント作業で最大約45%のコスト減」（2026年8月の実使用4週間ベース）に合わせた目安で、'+
+    '実際の値はワークロードによって上下します。出力トークンの比率が非常に高い使い方では削減率は小さめに出ます。正確な数字は乗り換え後に /cost（Claude Code）やトークン内訳（Codex）で確認してください。';
+
+  document.getElementById('form').style.display='none';
+  document.getElementById('result').classList.add('show');
+  window.scrollTo(0,0);
+}
+
+function row(k,v){return '<div class="row"><b>'+k+'</b><span>'+v+'</span></div>';}
+function label(c){return {low:'低い',mid:'中くらい',high:'高い'}[c];}
+
+function reset(){
+  document.getElementById('result').classList.remove('show');
+  document.getElementById('form').style.display='block';
+  window.scrollTo(0,0);
+}
+</script>
+</body>
+</html>
