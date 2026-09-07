@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>9月14日の週制限 足りるか診断アプリ</title>
+<meta name="description" content="Claude Code の1週間の使い方を入れるだけで、9月14日の制限変更で作業が止まるかを先に把握でき、止まる前に打つべき手が分かります。">
+<style>
+  :root{
+    --brand:#D9774F; --brand-deep:#C15640; --accent-deep:#B24E33;
+    --bg:#F1ECE3; --paper:#FBF8F2; --ink:#2A2620; --ink-mid:#6E6557; --ink-sub:#A39A8B; --line:#E4D9C7;
+    --ok:#3F7D5A; --warn:#C9863B; --ng:#C15640;
+    --head:'Hiragino Sans','Yu Gothic',system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,'Hiragino Sans','Yu Gothic',sans-serif;line-height:1.7;padding:24px 16px;}
+  .wrap{max-width:640px;margin:0 auto;background:var(--paper);border:1.5px solid var(--line);border-radius:16px;padding:26px 24px 30px;}
+  h1{font-size:22px;font-weight:900;margin-bottom:6px;}
+  .sub{font-size:13.5px;color:var(--ink-mid);margin-bottom:20px;}
+  fieldset{border:1.5px solid var(--line);border-radius:12px;padding:14px 16px 16px;margin-bottom:14px;background:#fff;}
+  legend{font-weight:900;font-size:14px;padding:0 8px;color:var(--brand-deep);}
+  label.q{display:block;font-size:14px;font-weight:700;margin:10px 0 6px;}
+  .opts{display:flex;flex-wrap:wrap;gap:8px;}
+  .opts button{flex:1;min-width:90px;border:1.5px solid var(--line);background:var(--bg);border-radius:9px;padding:9px 8px;font-size:13px;font-weight:700;color:var(--ink-mid);cursor:pointer;}
+  .opts button.on{background:var(--brand);border-color:var(--brand-deep);color:#fff;}
+  input[type=number]{width:100%;border:1.5px solid var(--line);border-radius:9px;padding:10px 12px;font-size:15px;font-family:inherit;background:var(--bg);}
+  .run{width:100%;margin-top:6px;background:var(--accent-deep);color:#fff;border:none;border-radius:11px;padding:13px;font-size:15px;font-weight:900;cursor:pointer;}
+  .result{margin-top:20px;border:1.5px solid var(--line);border-radius:12px;padding:18px;background:#fff;display:none;}
+  .result.show{display:block;}
+  .verdict{font-size:19px;font-weight:900;margin-bottom:8px;}
+  .verdict.ok{color:var(--ok);} .verdict.warn{color:var(--warn);} .verdict.ng{color:var(--ng);}
+  .bar-lab{font-size:12px;color:var(--ink-sub);margin:12px 0 3px;}
+  .bar{height:22px;border-radius:6px;background:var(--bg);border:1px solid var(--line);position:relative;overflow:hidden;}
+  .bar > i{position:absolute;left:0;top:0;bottom:0;background:var(--brand);border-radius:6px;}
+  .bar .line14{position:absolute;top:-3px;bottom:-3px;width:2px;background:var(--ink);}
+  .bar .line14 span{position:absolute;top:-16px;left:-14px;font-size:10px;font-weight:900;color:var(--ink);white-space:nowrap;}
+  .adv{margin-top:14px;font-size:13.5px;}
+  .adv b{display:block;margin:10px 0 4px;color:var(--brand-deep);}
+  .adv ol{margin-left:18px;} .adv li{margin-bottom:5px;}
+  .note{font-size:11.5px;color:var(--ink-sub);margin-top:14px;line-height:1.6;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>9月14日の週制限 足りるか診断アプリ</h1>
+  <p class="sub">2026年9月14日から Claude Code の週の使用量は、いまと比べて実質 約17%減ります（一時的な+50%が外れて恒久+25%へ）。あなたの使い方だと足りるか、止まる前に見積もります。数値は概算です。</p>
+
+  <fieldset>
+    <legend>あなたの使い方</legend>
+    <label class="q">1. 使っているプラン</label>
+    <div class="opts" data-k="plan">
+      <button data-v="1.6">Pro</button>
+      <button data-v="1.0" class="on">Max（5倍）</button>
+      <button data-v="0.5">Max（20倍）</button>
+      <button data-v="0.85">Team / Enterprise（シート）</button>
+    </div>
+    <label class="q">2. 1日にClaude Codeを立ち上げる回数（平均）</label>
+    <input type="number" id="sess" min="0" max="40" step="1" value="3">
+    <label class="q">3. 1回あたりの重さ</label>
+    <div class="opts" data-k="weight">
+      <button data-v="1">軽い（質問・小さな修正）</button>
+      <button data-v="1.6" class="on">ふつう（機能追加・調査）</button>
+      <button data-v="2.8">重い（大規模リファクタ・長時間の自律作業）</button>
+    </div>
+    <label class="q">4. 週に稼働する日数</label>
+    <input type="number" id="days" min="1" max="7" step="1" value="5">
+  </fieldset>
+
+  <button class="run" id="run">診断する</button>
+
+  <div class="result" id="res">
+    <div class="verdict" id="verdict"></div>
+    <div id="msg" style="font-size:13.5px;color:var(--ink-mid);"></div>
+    <div class="bar-lab">いまの上限を100としたときの、あなたの週の使用量（概算）</div>
+    <div class="bar"><i id="fill"></i><div class="line14" id="l14"><span>9/14以降の上限≒83</span></div></div>
+    <div class="adv" id="adv"></div>
+    <p class="note">この診断は、Anthropic が絶対値を公表していないため、使い方の負荷を相対値でざっくり見積もるものです。実際の上限はプラン・時期・モデルで変わります。最終的な判断は Claude Code の <code>/usage</code> と <code>/cost</code> の実測で行ってください。</p>
+  </div>
+</div>
+
+<script>
+(function(){
+  var sel = {plan:1.0, weight:1.6};
+  document.querySelectorAll('.opts').forEach(function(g){
+    var k = g.getAttribute('data-k');
+    g.querySelectorAll('button').forEach(function(b){
+      b.addEventListener('click', function(){
+        g.querySelectorAll('button').forEach(function(x){x.classList.remove('on');});
+        b.classList.add('on');
+        sel[k] = parseFloat(b.getAttribute('data-v'));
+      });
+    });
+  });
+
+  document.getElementById('run').addEventListener('click', function(){
+    var sess = Math.max(0, parseFloat(document.getElementById('sess').value) || 0);
+    var days = Math.min(7, Math.max(1, parseFloat(document.getElementById('days').value) || 1));
+    var units = sess * days * sel.weight * sel.plan;
+    var pct = units * 2.9; // いまの上限=100 とした概算
+    var afterLimit = 100 * (125/150); // ≒83.3
+
+    var res = document.getElementById('res');
+    var v = document.getElementById('verdict');
+    var msg = document.getElementById('msg');
+    var adv = document.getElementById('adv');
+    var fill = document.getElementById('fill');
+    var l14 = document.getElementById('l14');
+
+    fill.style.width = Math.min(100, pct) + '%';
+    fill.style.background = pct > 100 ? 'var(--ng)' : (pct > afterLimit ? 'var(--warn)' : 'var(--ok)');
+    l14.style.left = afterLimit + '%';
+
+    var body;
+    if (pct <= afterLimit) {
+      v.className = 'verdict ok';
+      v.textContent = '足りる見込みです（余裕あり）';
+      msg.textContent = 'いまの使い方なら、9月14日以降の上限（いまより約17%減）でも収まる見積もりです。使用量の概算は上限の約' + Math.round(pct) + '%。';
+      body = '<b>やっておくと安心なこと</b><ol>'
+        + '<li>Claude Code を更新して、モデルが Fable 5.1 になっているか確認する。</li>'
+        + '<li>月に一度 <code>/usage</code> を見て、この見積もりが実測とずれていないか確かめる。</li>'
+        + '</ol>';
+    } else if (pct <= 100) {
+      v.className = 'verdict warn';
+      v.textContent = '9月14日に不足へ転落するかもしれません';
+      msg.textContent = 'いまは上限内（概算で約' + Math.round(pct) + '%）ですが、9月14日以降の上限（約83）を超えます。手当てが要ります。';
+      body = '<b>優先してやること</b><ol>'
+        + '<li><b>単価を下げて相殺する：</b>従量課金・企業プランなら Fable 5.1 でコストが2〜4割下がります。定額プランなら、同じ枠で回せる量が増えます。</li>'
+        + '<li><b><code>/cost</code> でキャッシュ読み取りが効いているか確認：</b>効いていない場合、CLAUDE.md や参照ファイルを「先頭固定・末尾可変」に組み替えると、同じ作業を安く回せます。</li>'
+        + '<li><b>9月14日より前に、重い一括作業を前倒し：</b>大規模リファクタ・広い調査は、いまの+50%枠のうちに消化しておく。</li>'
+        + '</ol>';
+    } else {
+      v.className = 'verdict ng';
+      v.textContent = 'いまの時点で、すでに上限に当たっている使い方です';
+      msg.textContent = '概算で上限の約' + Math.round(pct) + '%。9月14日を待たず、いまから使い方を見直す価値があります。';
+      body = '<b>いますぐやること</b><ol>'
+        + '<li><b>重い作業の分割：</b>1回の自律実行を短く区切り、途中で人が確認を挟む。走らせっぱなしが一番 枠を食います。</li>'
+        + '<li><b>effort（考える強さ）を作業別に落とす：</b>Fable 5.1 は Claude Code で既定が最大（High）です。軽い作業は明示的に下げる。</li>'
+        + '<li><b>キャッシュ読み取りを効かせる：</b><code>/cost</code> で割合を見て、低ければ CLAUDE.md・大きい参照ファイルを毎回同じ順で先頭に読ませる。</li>'
+        + '<li><b>Astra（Codex）と1タスク比較：</b>同じ値段なので、ワークロードによっては移す判断もあり得ます。</li>'
+        + '</ol>';
+    }
+    adv.innerHTML = body;
+    res.classList.add('show');
+  });
+})();
+</script>
+</body>
+</html>
