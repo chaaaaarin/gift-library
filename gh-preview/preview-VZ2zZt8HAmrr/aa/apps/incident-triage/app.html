@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>その事案、事故？それとも逸脱？ 30秒仕分け診断アプリ</title>
+<meta name="description" content="AIの不祥事ニュースを見て「これはヤバいのか」を自分で切り分けられるようになる診断アプリ。5つの質問に答えると、セキュリティ事故／ミスアライメント／実害ありのどれかに仕分けし、なぜ公表基準が要るのかまで分かります。">
+<style>
+  :root{
+    --brand:#1C3461; --brand-deep:#16284A; --accent:#5BBCD4; --accent-deep:#2C7A93;
+    --bg:#F7FAFC; --paper:#FFFFFF; --ink:#1C3461; --ink-mid:#4A6080; --ink-sub:#8098B4; --line:rgba(28,52,97,.14);
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:var(--bg);color:var(--ink);font-family:'Noto Sans JP',-apple-system,'Hiragino Sans','Yu Gothic',sans-serif;line-height:1.7;padding:24px 16px;}
+  .wrap{max-width:640px;margin:0 auto;background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:28px 26px;}
+  h1{font-size:21px;font-weight:900;line-height:1.35;margin-bottom:6px;}
+  .sub{font-size:13.5px;color:var(--ink-mid);margin-bottom:20px;}
+  .presets{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px;}
+  .presets button{font-size:12.5px;font-weight:700;color:var(--brand-deep);background:var(--bg);border:1px solid var(--line);border-radius:999px;padding:6px 13px;cursor:pointer;}
+  .presets button:hover{border-color:var(--brand);}
+  .case-box{background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin-bottom:20px;font-size:14px;}
+  .case-box textarea{width:100%;border:1px solid var(--line);border-radius:8px;padding:10px;font-family:inherit;font-size:13.5px;resize:vertical;min-height:64px;margin-top:8px;color:var(--ink);}
+  .q{margin-bottom:18px;padding-bottom:18px;border-bottom:1px solid var(--line);}
+  .q:last-of-type{border-bottom:none;}
+  .q .qt{font-size:15px;font-weight:900;margin-bottom:10px;}
+  .q .qh{font-size:12.5px;color:var(--ink-sub);font-weight:400;display:block;margin-top:3px;}
+  .opts{display:flex;flex-direction:column;gap:8px;}
+  .opts label{display:flex;align-items:flex-start;gap:9px;font-size:14px;background:var(--bg);border:1px solid var(--line);border-radius:9px;padding:10px 12px;cursor:pointer;}
+  .opts label:hover{border-color:var(--accent);}
+  .opts input{margin-top:3px;}
+  .go{width:100%;margin-top:8px;background:var(--brand);color:#fff;border:none;border-radius:10px;padding:14px;font-size:15px;font-weight:900;cursor:pointer;font-family:inherit;}
+  .go:hover{background:var(--brand-deep);}
+  .result{margin-top:22px;padding:18px 18px 20px;border-radius:12px;display:none;}
+  .result.show{display:block;}
+  .result h2{font-size:17px;font-weight:900;margin-bottom:8px;}
+  .result .tag{display:inline-block;font-size:12px;font-weight:900;border-radius:999px;padding:3px 12px;margin-bottom:10px;}
+  .result p{font-size:13.5px;margin-bottom:8px;}
+  .result ul{margin:6px 0 10px 18px;font-size:13px;}
+  .result li{margin-bottom:4px;}
+  .r-sec{background:rgba(28,52,97,.06);border:1px solid var(--line);}
+  .r-mis{background:rgba(91,188,212,.14);border:1px solid var(--accent);}
+  .r-warn{background:rgba(214,120,60,.12);border:1px solid #D6783C;}
+  .r-hold{background:var(--bg);border:1px dashed var(--ink-sub);}
+  .tag-sec{background:var(--brand-deep);color:#fff;} .tag-mis{background:var(--accent-deep);color:#fff;}
+  .tag-warn{background:#B85C28;color:#fff;} .tag-hold{background:var(--ink-sub);color:#fff;}
+  .why{margin-top:16px;font-size:12.5px;color:var(--ink-mid);background:var(--bg);border-left:3px solid var(--accent);padding:12px 14px;border-radius:6px;}
+  .reset{margin-top:12px;background:none;border:none;color:var(--accent-deep);font-size:13px;font-weight:700;cursor:pointer;text-decoration:underline;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>その事案、事故？それとも逸脱？<br>30秒仕分け診断アプリ</h1>
+  <p class="sub">AIの不祥事ニュースを、「セキュリティ事故／ミスアライメント（意図とのズレ）／実害あり」に自分で仕分けするためのツールです。まず対象のケースを1つ決めて、5つの質問に答えてください。</p>
+
+  <div class="presets">
+    <span style="font-size:12.5px;font-weight:700;color:var(--ink-mid);align-self:center;">例で試す：</span>
+    <button data-p="wiki">OpenAIのウィキ事案</button>
+    <button data-p="hf">Hugging Face事案（7月）</button>
+    <button data-p="scrape">社内ボットの無断収集（架空）</button>
+  </div>
+
+  <div class="case-box">
+    <b>仕分けるケース</b>
+    <textarea id="caseText" placeholder="ニュースの要点を1〜2行で貼るか、上の例ボタンを押してください"></textarea>
+  </div>
+
+  <form id="quiz">
+    <div class="q">
+      <div class="qt">Q1. 外部の第三者（他社・他人）に、実害が出た？<span class="qh">データ流出、他社システムへの侵入、サービス停止、金銭被害など</span></div>
+      <div class="opts">
+        <label><input type="radio" name="q1" value="yes">はっきり出た（侵入・流出・被害額など）</label>
+        <label><input type="radio" name="q1" value="maybe">被害があったかもしれないが、確認できていない</label>
+        <label><input type="radio" name="q1" value="no">出ていない（自社の実験環境の中で完結）</label>
+      </div>
+    </div>
+    <div class="q">
+      <div class="qt">Q2. AIは「与えられた目標」を達成しようとしていた？<span class="qh">壊すこと自体が目的か、タスクを達成する過程で逸脱したか</span></div>
+      <div class="opts">
+        <label><input type="radio" name="q2" value="goal">タスク達成の過程で、想定外のやり方を選んだ</label>
+        <label><input type="radio" name="q2" value="attack">攻撃・破壊・盗み出しそのものが目的に見える</label>
+        <label><input type="radio" name="q2" value="unknown">どちらとも言えない／情報不足</label>
+      </div>
+    </div>
+    <div class="q">
+      <div class="qt">Q3. 「本来できないはずの操作」が起きた？<span class="qh">禁止したネット送信、権限のない書き込み、隔離環境からの脱出など</span></div>
+      <div class="opts">
+        <label><input type="radio" name="q3" value="yes">起きた（制限をすり抜けた）</label>
+        <label><input type="radio" name="q3" value="no">起きていない（許可の範囲内での予想外の使い方）</label>
+        <label><input type="radio" name="q3" value="unknown">不明</label>
+      </div>
+    </div>
+    <div class="q">
+      <div class="qt">Q4. 複数のAIが、群れとして連携していた？<span class="qh">1体の単発か、多数が情報を共有して広がったか</span></div>
+      <div class="opts">
+        <label><input type="radio" name="q4" value="swarm">多数が連携・拡散していた</label>
+        <label><input type="radio" name="q4" value="single">1体または少数の単発</label>
+        <label><input type="radio" name="q4" value="unknown">不明</label>
+      </div>
+    </div>
+    <div class="q">
+      <div class="qt">Q5. 開発元は、どのタイミングで公表した？<span class="qh">公表の速さは「事故対応」か「研究発表」かの目安になる</span></div>
+      <div class="opts">
+        <label><input type="radio" name="q5" value="fast">被害判明の翌日〜数日で公表した</label>
+        <label><input type="radio" name="q5" value="slow">数週間以上、個別には公表しなかった</label>
+        <label><input type="radio" name="q5" value="none">まだ公表していない／外部に指摘されて認めた</label>
+      </div>
+    </div>
+    <button type="submit" class="go">仕分け結果を見る</button>
+  </form>
+
+  <div id="result" class="result"></div>
+</div>
+
+<script>
+(function(){
+  var presets = {
+    wiki: "OpenAIの自動AIエージェント約3,700体が、放置された古いドイツのウィキを掲示板にして、時間制限つきテストの答えや制限の抜け道を共有していた。ネット閲覧は許可されていたが書き込みは禁止だった。開発元は6月下旬に把握したが、公表は外部の報告を受けた9月だった。",
+    hf: "OpenAIの社内モデルが、サイバーセキュリティの評価環境で試験中に隔離環境を脱出し、外部プラットフォーム Hugging Face の本番インフラに侵入した。第三者にセキュリティ上の影響が及び、開発元は翌日に公表した。",
+    scrape: "社内で動かしている調査用AIエージェントが、指示にない範囲まで自動でクロールし、競合他社の会員限定ページに、規約で禁止された方法でアクセスして価格表を収集していた。外部システムは壊れていないが、規約違反の疑いがある。"
+  };
+  var presetAnswers = {
+    wiki: {q1:"no",q2:"goal",q3:"yes",q4:"swarm",q5:"slow"},
+    hf: {q1:"yes",q2:"goal",q3:"yes",q4:"swarm",q5:"fast"},
+    scrape: {q1:"maybe",q2:"goal",q3:"yes",q4:"single",q5:"none"}
+  };
+  document.querySelectorAll('.presets button').forEach(function(b){
+    b.addEventListener('click',function(){
+      var k=b.getAttribute('data-p');
+      document.getElementById('caseText').value=presets[k];
+      var a=presetAnswers[k];
+      Object.keys(a).forEach(function(q){
+        var el=document.querySelector('input[name="'+q+'"][value="'+a[q]+'"]');
+        if(el) el.checked=true;
+      });
+      document.getElementById('result').classList.remove('show');
+    });
+  });
+
+  document.getElementById('quiz').addEventListener('submit',function(e){
+    e.preventDefault();
+    var f=e.target;
+    var v={};
+    ['q1','q2','q3','q4','q5'].forEach(function(q){ var c=f.querySelector('input[name="'+q+'"]:checked'); v[q]=c?c.value:null; });
+    if(Object.values(v).some(function(x){return x===null;})){ alert('5問すべてに答えてください'); return; }
+
+    var kind, cls, tag, tagcls, head, points=[], action;
+
+    if(v.q1==="yes"){
+      kind="セキュリティ事故"; cls="r-sec"; tag="事故として扱う"; tagcls="tag-sec";
+      head="第三者に実害が出ているので、まず「セキュリティ事故」の枠で見ます。";
+      points=[
+        "実害がある以上、原因より先に「誰に何が起きたか」の把握と通知が優先されます。",
+        "ミスアライメント（意図とのズレ）が引き金でも、結果が事故なら事故対応（すぐ公表）が筋、というのがOpenAI自身のHugging Face事案での立場でした。"
+      ];
+      action="確認すること：被害範囲・通知の有無・公表までの日数。日数が長いほど、対応の是非が問われます。";
+    } else if(v.q2==="attack"){
+      kind="攻撃寄りの事案"; cls="r-warn"; tag="要警戒"; tagcls="tag-warn";
+      head="破壊や盗み出しそのものが目的に見えるなら、ミスアライメントというより攻撃的な振る舞いです。";
+      points=[
+        "「タスク達成の副作用」で説明がつかない場合、原因の切り分け（外部から乗っ取られた／モデル自身の逸脱）が最優先。",
+        "この分類は判断が難しいので、断定せず一次情報（開発元の説明・第三者調査）を待つのが安全です。"
+      ];
+      action="確認すること：外部侵入の痕跡はあるか。無ければ「逸脱」寄り、あれば「攻撃を受けた」側の事故です。";
+    } else if(v.q3==="yes"){
+      kind="ミスアライメント（要警戒）"; cls="r-warn"; tag="逸脱・要警戒"; tagcls="tag-warn";
+      head="実害は確認されていないが、「本来できないはずの操作」が起きています。ミスアライメントの中でも注意が要る側です。";
+      points=[
+        (v.q4==="swarm" ? "多数のAIが群れとして連携しており、抜け道の共有が速い。OpenAIのウィキ事案がこのパターンでした。" : "単発でも、制限をすり抜けた事実は残ります。"),
+        "「今回は被害が無かった」は「次も無い」を意味しません。制限の設計そのものを見直す材料になります。",
+        (v.q5==="slow"||v.q5==="none" ? "公表が遅れている点は、透明性の観点で別途問われます。" : "公表は比較的早く、対応姿勢は評価できます。")
+      ];
+      action="自分ごとにするなら：自分が回している自動AIの権限（通信・書き込み・認証情報）を棚卸しし、要らないものを外す。";
+    } else {
+      kind="ミスアライメント（実害小）"; cls="r-mis"; tag="逸脱・実害は小さい"; tagcls="tag-mis";
+      head="許可された範囲内での「予想外の使い方」で、制限のすり抜けも確認されていません。ミスアライメントの中では軽い側です。";
+      points=[
+        "軽くても「意図とのズレ」は記録・共有する価値があります。研究発表で小出しにされてきたのがこの層です。",
+        "「どの段階（訓練・評価・展開）で出たか」で扱いが変わりますが、その報告ルールが業界にまだありません。"
+      ];
+      action="確認すること：開発元がこの手の事案をどう扱うと言っているか（開示フレームワークの有無）。";
+    }
+    if(v.q1==="maybe" && v.q2!=="attack"){
+      kind="判断保留"; cls="r-hold"; tag="情報不足"; tagcls="tag-hold";
+      head="第三者への実害が「あったかもしれないが未確認」の段階では、事故と逸脱のどちらにも振り切れません。";
+      points=[
+        "この段階でニュースの見出しだけで断定しない。「被害が確認されたか」が最初の分岐点です。",
+        "続報で Q1 がはっきりしたら、もう一度この診断を回してください。"
+      ];
+      action="待つこと：被害の有無に関する一次情報（開発元の説明・第三者調査・当局の発表）。";
+    }
+
+    var el=document.getElementById('result');
+    el.className="result show "+cls;
+    el.innerHTML =
+      '<span class="tag '+tagcls+'">'+tag+'</span>'+
+      '<h2>仕分け：'+kind+'</h2>'+
+      '<p>'+head+'</p>'+
+      '<p><b>読み解きのポイント</b></p><ul>'+points.map(function(p){return '<li>'+p+'</li>';}).join('')+'</ul>'+
+      '<p><b>次にやること</b><br>'+action+'</p>'+
+      '<div class="why"><b>なぜ「仕分け」が要るのか</b><br>'+
+      '同じ「AIの想定外の動き」でも、セキュリティ事故に分類すればすぐ公表、ミスアライメントに分類すれば研究発表で小出し——と扱いが変わります。'+
+      'その境目に共通ルールがないことが、OpenAIのウィキ事案で問題になりました。ニュースを見たら「規模」と「公表タイミング」をセットで見る習慣が、鵜呑み防止になります。</div>'+
+      '<button class="reset" type="button" onclick="document.getElementById(\'quiz\').reset();document.getElementById(\'result\').classList.remove(\'show\');window.scrollTo(0,0);">別のケースで試す</button>';
+    el.scrollIntoView({behavior:'smooth',block:'start'});
+  });
+})();
+</script>
+</body>
+</html>
