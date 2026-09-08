@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>この作業、どっちに投げる？診断アプリ（Fable 5.1 と GPT-6 Astra）</title>
+<meta name="description" content="6つの質問に答えると、その作業を Claude Fable 5.1 と GPT-6 Astra のどちらに投げるべきかが、公式データを根拠にした推奨と、そのまま貼れる依頼文つきで分かります。毎回の「どっちに投げるか5秒の迷い」がなくなります。">
+<style>
+  :root{
+    --bg:#F1ECE3; --paper:#FBF8F2; --ink:#2A2620; --ink-mid:#6E6557; --line:#E4D9C7;
+    --brand:#D9774F; --brand-deep:#C15640; --brand-soft:rgba(217,119,79,.12);
+    --fable:#3B7A57; --fable-soft:rgba(59,122,87,.12); --astra:#2F6DB0; --astra-soft:rgba(47,109,176,.12);
+    --head:'Hiragino Sans','Yu Gothic',system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:var(--bg);color:var(--ink);font-family:var(--head);line-height:1.7;padding:24px 16px 60px;}
+  .wrap{max-width:720px;margin:0 auto;}
+  h1{font-size:22px;font-weight:800;line-height:1.4;margin-bottom:6px;}
+  .sub{font-size:14px;color:var(--ink-mid);margin-bottom:20px;}
+  .card{background:var(--paper);border:1.5px solid var(--line);border-radius:14px;padding:20px;margin-bottom:16px;}
+  .q{font-size:16px;font-weight:800;margin-bottom:12px;}
+  .q .num{display:inline-flex;width:26px;height:26px;background:var(--brand-soft);color:var(--brand-deep);border-radius:7px;align-items:center;justify-content:center;font-size:13px;font-weight:900;margin-right:8px;}
+  .opts{display:flex;flex-direction:column;gap:8px;}
+  .opt{display:block;width:100%;text-align:left;background:var(--bg);border:1.5px solid var(--line);border-radius:10px;padding:12px 14px;font-size:14px;font-weight:700;color:var(--ink);cursor:pointer;transition:.12s;}
+  .opt:hover{border-color:var(--brand);}
+  .opt.sel{border-color:var(--brand);background:var(--brand-soft);}
+  .btn{display:block;width:100%;background:var(--brand);color:#fff;border:none;border-radius:10px;padding:14px;font-size:16px;font-weight:800;cursor:pointer;font-family:inherit;}
+  .btn:disabled{opacity:.45;cursor:not-allowed;}
+  .btn.ghost{background:var(--paper);color:var(--brand-deep);border:1.5px solid var(--line);margin-top:10px;}
+  .result{display:none;}
+  .verdict{border-radius:14px;padding:20px;margin-bottom:16px;border:2px solid;}
+  .verdict.f{border-color:var(--fable);background:var(--fable-soft);}
+  .verdict.a{border-color:var(--astra);background:var(--astra-soft);}
+  .verdict.t{border-color:var(--ink-mid);background:var(--paper);}
+  .verdict .lbl{font-size:12px;font-weight:800;letter-spacing:1px;color:var(--ink-mid);}
+  .verdict h2{font-size:24px;font-weight:900;margin:4px 0 8px;}
+  .verdict.f h2{color:var(--fable);} .verdict.a h2{color:var(--astra);}
+  .verdict p{font-size:14px;color:var(--ink);}
+  .reasons{list-style:none;margin:10px 0 0;}
+  .reasons li{font-size:14px;padding:7px 0 7px 22px;position:relative;color:var(--ink);}
+  .reasons li::before{content:'▶';position:absolute;left:0;color:var(--brand);font-size:10px;top:11px;}
+  .tmpl{background:var(--ink);color:#ECECEA;border-radius:12px;padding:16px;font-family:ui-monospace,Menlo,monospace;font-size:13px;line-height:1.7;white-space:pre-wrap;margin-top:8px;}
+  .copy{background:var(--paper);border:1.5px solid var(--line);color:var(--brand-deep);border-radius:8px;padding:9px 16px;font-size:13px;font-weight:800;cursor:pointer;font-family:inherit;margin-top:10px;}
+  .note{font-size:12.5px;color:var(--ink-mid);margin-top:14px;}
+  .bar{height:8px;background:var(--line);border-radius:999px;overflow:hidden;margin-bottom:18px;}
+  .bar i{display:block;height:100%;background:var(--brand);width:0;transition:.2s;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>この作業、どっちに投げる？診断アプリ</h1>
+  <p class="sub">Claude Fable 5.1 と GPT-6 Astra。6つの質問に答えると、公式データを根拠にした推奨と、そのまま貼れる依頼文が出ます。</p>
+  <div class="bar"><i id="bar"></i></div>
+  <div id="quiz"></div>
+  <button class="btn" id="go" disabled>診断する</button>
+
+  <div class="result" id="result">
+    <div class="verdict" id="verdict">
+      <div class="lbl">おすすめ</div>
+      <h2 id="vtitle"></h2>
+      <p id="vdesc"></p>
+      <ul class="reasons" id="vreasons"></ul>
+    </div>
+    <div class="card">
+      <div class="q" style="font-size:15px;">この作業を投げるときの依頼文（コピーして両方に貼ると比較できます）</div>
+      <div class="tmpl" id="tmpl"></div>
+      <button class="copy" id="copy">依頼文をコピー</button>
+    </div>
+    <p class="note">※ 推奨は 2026年9月時点の Anthropic / OpenAI の公式発表と独立ベンチ（Artificial Analysis）に基づく整理です。数字はハーネスや設定で数ポイント動きます。最終判断は、上の依頼文を両方に投げて実測してください。</p>
+    <button class="btn ghost" id="again">もう一度診断する</button>
+  </div>
+</div>
+
+<script>
+const QUESTIONS = [
+  { q:"この作業の中心は？", opts:[
+    {t:"コードを書く・直す（エージェントに任せる）", s:{f:1,a:1}},
+    {t:"文章・資料・議事録などをまとめる", s:{f:3}},
+    {t:"パソコン・ブラウザ操作（画面を触る作業）", s:{a:3}},
+    {t:"数学・データ分析・セキュリティ調査", s:{a:3}},
+  ]},
+  { q:"1回の作業はどれくらい続く？", opts:[
+    {t:"数分〜30分で終わる", s:{f:1}},
+    {t:"30分〜数時間", s:{f:1,a:1}},
+    {t:"半日以上、ぶっ通しで続く1タスク", s:{a:3}},
+  ]},
+  { q:"同じ前提文（長いルール・コード）を毎回そえて、何度も回す作業？", opts:[
+    {t:"はい。定型ジョブとして繰り返す", s:{f:3}},
+    {t:"いいえ。単発・その場かぎり", s:{a:1}},
+  ]},
+  { q:"Claude Code 用の指示書（CLAUDE.md）やスキルを積み上げてある？", opts:[
+    {t:"しっかりある（作り直したくない）", s:{f:3}},
+    {t:"少しある", s:{f:1}},
+    {t:"ほぼ無い（これから作る）", s:{a:1}},
+  ]},
+  { q:"扱うデータの機密度は？", opts:[
+    {t:"外に出したくない情報を含む（止まってもいいから安全側に）", s:{f:1}},
+    {t:"社内情報レベル", s:{f:1,a:1}},
+    {t:"公開情報のみ", s:{a:1}},
+  ]},
+  { q:"いちばん優先したいのは？", opts:[
+    {t:"仕上がりの質（多少遅くても）", s:{f:2}},
+    {t:"速さ・手数の多い作業をさばく", s:{a:3}},
+    {t:"コストを抑える", s:{f:2}},
+    {t:"途中で止まらず完走してほしい", s:{a:2}},
+  ]},
+];
+
+const REASONS = {
+  f: [
+    "道具を使いながらの総合力（Humanity's Last Exam ツール併用）は Fable 5.1 が 65.0% 対 Astra 57.2%（OpenAI 公式表）",
+    "キャッシュ読み取りが $0.25 / 100万トークン（Astra は $1.00）。同じ前提文を何度も送る定型ジョブほど差が積み上がる",
+    "既存の CLAUDE.md・スキル・フックをそのまま使える。乗り換えコストがかからない",
+    "前モデル比で典型的な使い方が約25%、エージェント作業で最大約45%コスト減",
+  ],
+  a: [
+    "数学（FrontierMath Tier 4：97.6% 対 87.8%）・3D CAD（BenchCAD：95.9% 対 84.3%）・科学タスクで明確に上（OpenAI 公式表）",
+    "パソコン操作が速い（OSWorld 2.0 で時間あたり 72.6%、Mind2Web で前世代比 1.9倍速）",
+    "Codex のノート保持で、半日以上続く1タスクでも「なぜ直らなかったか」が消えにくい（実験機能）",
+    "セキュリティ調査に強い（ExploitBench 100%）。ただし本日版は攻撃コード作成は不可、レビュー・修正まで",
+  ],
+  t: [
+    "エージェントでコードを書く力はほぼ互角（Terminal-Bench 4.0：Astra 57.9% 対 Fable 5.1 55.8%）",
+    "API の素の料金は同額（入力 $10 / 出力 $50・100万トークンあたり）、コンテキスト窓もどちらも100万トークン",
+    "この作業では決め手になる差が出ていない。実測で選ぶのがいちばん早い",
+  ],
+};
+
+const TEMPLATES = {
+  code: `あなたはコード改善の担当です。これから渡す作業を実行してください。
+＜ここに、直したい内容と対象ファイルを書く＞
+
+作業のあと、必ず次の表を出してください：
+  ・変更したファイルと関数の一覧
+  ・かかった時間（体感でよい）
+  ・処理したトークン量（分かる範囲で）
+  ・テストが通ったか（Yes / No）／無い場合は確認手順3行
+この表を Claude Code と Codex の両方で出せば、仕上がり・速さ・コストが同じ形で並びます。`,
+  writing: `あなたは編集担当です。これから渡す資料をもとに、指定の成果物を作ってください。
+＜ここに、元資料と「何を・誰向けに・どの形式で」書く＞
+
+仕上げたあと、必ず次を報告してください：
+  ・参照した箇所（どの資料の何ページ／どの段落か）
+  ・不足していて推測で埋めた点（あれば「※推測」と明記）
+  ・かかった時間（体感でよい）
+両方のモデルで同じ報告を出させると、事実の拾い方の違いが見えます。`,
+  computer: `あなたはブラウザ操作の担当です。次の作業を実行してください。
+＜ここに、開くページ・取得する項目・まとめる形式を書く＞
+
+作業のあと、必ず次を報告してください：
+  ・実際に開いたページと取得できた項目
+  ・途中で止まった箇所（ログイン／認証／要素が見つからない等）とその対処
+  ・かかった時間（体感でよい）
+両方に投げて、止まった箇所と所要時間を比べてください。`,
+  research: `あなたは分析担当です。次の課題を解いてください。
+＜ここに、解きたい問題・データ・前提を書く＞
+
+解いたあと、必ず次を報告してください：
+  ・使った手順（式・コード・参照した値）
+  ・確信度（高／中／低）と、その理由
+  ・かかった時間（体感でよい）
+両方のモデルに同じ課題を出し、答えと手順を突き合わせてください。`,
+};
+
+let answers = new Array(QUESTIONS.length).fill(null);
+const quiz = document.getElementById('quiz');
+const goBtn = document.getElementById('go');
+const bar = document.getElementById('bar');
+
+QUESTIONS.forEach((item, qi) => {
+  const c = document.createElement('div');
+  c.className = 'card';
+  const h = document.createElement('div');
+  h.className = 'q';
+  h.innerHTML = '<span class="num">' + (qi+1) + '</span>' + item.q;
+  c.appendChild(h);
+  const o = document.createElement('div');
+  o.className = 'opts';
+  item.opts.forEach((opt, oi) => {
+    const b = document.createElement('button');
+    b.className = 'opt';
+    b.textContent = opt.t;
+    b.onclick = () => {
+      answers[qi] = oi;
+      [...o.children].forEach(x => x.classList.remove('sel'));
+      b.classList.add('sel');
+      const done = answers.filter(a => a !== null).length;
+      bar.style.width = (done / QUESTIONS.length * 100) + '%';
+      goBtn.disabled = answers.includes(null);
+    };
+    o.appendChild(b);
+  });
+  c.appendChild(o);
+  quiz.appendChild(c);
+});
+
+function taskKey() {
+  const a0 = answers[0];
+  return ['code','writing','computer','research'][a0];
+}
+
+goBtn.onclick = () => {
+  let f = 0, a = 0;
+  answers.forEach((oi, qi) => {
+    const s = QUESTIONS[qi].opts[oi].s || {};
+    f += s.f || 0; a += s.a || 0;
+  });
+  let bucket, cls;
+  const diff = f - a;
+  if (diff >= 2) { bucket = 'f'; cls = 'f'; }
+  else if (diff <= -2) { bucket = 'a'; cls = 'a'; }
+  else { bucket = 't'; cls = 't'; }
+
+  const titles = {
+    f: 'Claude Fable 5.1 に投げる',
+    a: 'GPT-6 Astra に投げる',
+    t: 'まずは両方に投げて実測する',
+  };
+  const descs = {
+    f: 'この作業の性質だと、Fable 5.1（Claude Code）が向いています。下の依頼文を貼って進めてください。',
+    a: 'この作業の性質だと、Astra（Codex）が向いています。下の依頼文を貼って進めてください。',
+    t: 'この作業では決め手になる差が出ませんでした。下の依頼文を両方に貼り、返ってきた表を見比べて決めてください。',
+  };
+
+  document.getElementById('verdict').className = 'verdict ' + cls;
+  document.getElementById('vtitle').textContent = titles[bucket];
+  document.getElementById('vdesc').textContent = descs[bucket];
+  const ul = document.getElementById('vreasons');
+  ul.innerHTML = '';
+  REASONS[bucket].forEach(r => {
+    const li = document.createElement('li');
+    li.textContent = r;
+    ul.appendChild(li);
+  });
+  document.getElementById('tmpl').textContent = TEMPLATES[taskKey()];
+
+  document.getElementById('result').style.display = 'block';
+  document.getElementById('result').scrollIntoView({behavior:'smooth'});
+};
+
+document.getElementById('copy').onclick = () => {
+  const txt = document.getElementById('tmpl').textContent;
+  const ta = document.createElement('textarea');
+  ta.value = txt; document.body.appendChild(ta); ta.select();
+  try { document.execCommand('copy'); document.getElementById('copy').textContent = 'コピーしました'; }
+  catch(e) { document.getElementById('copy').textContent = '選択してコピーしてください'; }
+  ta.remove();
+  setTimeout(() => { document.getElementById('copy').textContent = '依頼文をコピー'; }, 1800);
+};
+
+document.getElementById('again').onclick = () => {
+  answers = new Array(QUESTIONS.length).fill(null);
+  [...document.querySelectorAll('.opt')].forEach(x => x.classList.remove('sel'));
+  bar.style.width = '0';
+  goBtn.disabled = true;
+  document.getElementById('result').style.display = 'none';
+  window.scrollTo({top:0, behavior:'smooth'});
+};
+</script>
+</body>
+</html>
