@@ -1,0 +1,477 @@
+<!doctype html>
+<html lang="ja"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>【公式ベース】Image 2.5 で“作り直しゼロ”になるプロンプト10選 — Kawaru Gifts</title>
+<meta name="description" content="ChatGPT の新画像モデル Image 2.5 は「一部だけ直す」「透過で切り抜く」「参照写真の人物・商品を崩さない」が一気に得意になりました。公式が示す使い方（用途→構図→ディテール→変える所と残す所を分ける）に沿って、仕事でそのまま使う10本にしてあります。1枚あたり15〜40分かかっていた素材づくりと直しの往復が、5分＋1回の微修正で終わります。">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Kawaru Gifts">
+<meta property="og:title" content="【公式ベース】Image 2.5 で“作り直しゼロ”になるプロンプト10選 — Kawaru Gifts">
+<meta property="og:description" content="ChatGPT の新画像モデル Image 2.5 は「一部だけ直す」「透過で切り抜く」「参照写真の人物・商品を崩さない」が一気に得意になりました。公式が示す使い方（用途→構図→ディテール→変える所と残す所を分ける）に沿って、仕事でそのまま使う10本にしてあります。1枚あたり15〜40分かかっていた素材づくりと直しの往復が、5分＋1回の微修正で終わります。">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="【公式ベース】Image 2.5 で“作り直しゼロ”になるプロンプト10選 — Kawaru Gifts">
+<meta name="twitter:description" content="ChatGPT の新画像モデル Image 2.5 は「一部だけ直す」「透過で切り抜く」「参照写真の人物・商品を崩さない」が一気に得意になりました。公式が示す使い方（用途→構図→ディテール→変える所と残す所を分ける）に沿って、仕事でそのまま使う10本にしてあります。1枚あたり15〜40分かかっていた素材づくりと直しの往復が、5分＋1回の微修正で終わります。">
+<meta name="robots" content="noindex,nofollow">
+<link rel="icon" href="data:image/png;base64,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">
+<link rel="stylesheet" href="../../assets/site.css?v=f40364df6d4a">
+</head><body>
+<header class="kh"><div class="top">
+  <a class="back" href="../../">← 一覧へ</a>
+  <img src="data:image/png;base64,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" alt="">
+  <h1>【公式ベース】Image 2.5 で“作り直しゼロ”になるプロンプト10選</h1>
+  <span class="badge">10個</span>
+  <button class="btn ghost sm" style="margin-left:auto" data-copy="pfull" aria-label="全件コピー">📋<span class="blabel"> 全件コピー</span></button>
+  <button class="btn sm" data-save="pfull" data-name="image25-official-prompts10.md" aria-label="全件ダウンロード">⬇<span class="blabel"> 全件ダウンロード</span></button>
+</div></header>
+
+<div class="kwrap">
+  <section class="epctx epctx-top">
+  <div class="ep-left">
+    <div class="ep-thumb epctx-thumb"><div class="noimg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M10.5 9.2v5.6l4.8-2.8-4.8-2.8Z" fill="currentColor" stroke="none"/></svg></div></div>
+    
+    
+  </div>
+  <div>
+    <p class="epctx-label">この動画のプレゼントです</p>
+    <p class="epctx-title">【速報】ChatGPT Image2.5</p>
+    <p class="epctx-date">2026-09-09</p>
+    <a class="epbundle" href="../../bundles/d20260909-126.md" download="プレゼント一式_2026-09-09.md">⬇ この回のプレゼントを全部ダウンロード</a>
+  </div>
+</section>
+
+  <section class="kintro">
+    <h2>【公式ベース】Image 2.5 で“作り直しゼロ”になるプロンプト10選</h2>
+    <p><span class="nb">ChatGPT の</span><span class="nb">新画像モデル Image 2.5 は</span><span class="nb">「一部だけ直す」</span><span class="nb">「透過で切り抜く」</span><span class="nb">「参照写真の人物・</span><span class="nb">商品を崩さない」が一気に</span><span class="nb">得意になりました。</span><span class="nb">公式が示す使い方</span><span class="nb">（用途→構図→ディテール→変える所と</span><span class="nb">残す所を分ける）に沿って、</span><span class="nb">仕事でそのまま使う10本に</span><span class="nb">してあります。</span><span class="nb">1枚あたり15〜40分かかっていた素材づくりと</span><span class="nb">直しの往復が、</span><span class="nb">5分＋1回の微修正で終わります。</span></p>
+    <div class="kmeta"><span>プロンプト集</span><span>収録 10個</span><span>No.126 【速報】ChatGPT Image2.5</span><span>2026-09-09 配布</span></div>
+    <div class="pnote"><span class="nb">下のボタンで、</span><span class="nb">全文をそのままコピー、</span><span class="nb">またはテキストファイルとして保存で</span><span class="nb">きます。</span></div>
+  </section>
+
+  <div class="icard">
+  <pre class="prompt" id="b1" style="max-height:none;">期待できるメリット: Image 2.5 は指定した文言をそのまま描くのが得意になったので、見出し付きのスライドを画像1枚で作れる。デザインの当たりを数分で見られる。
+使う場面: 提案書・ピッチ資料の表紙や章扉、SNSで配る図解カードのたたき台がほしいとき。
+前提: スライドに載せる見出しと、3点前後の箇条書きが決まっている。
+そのまま貼るプロンプト:
+（ChatGPTへ）ピッチデッキのスライドを16:9で1枚作ってください。見出しは「&quot;◯◯◯◯&quot;」（この文言を正確に表示）。本文は次の3点を箇条書きで正確に表示：「・◯◯◯」「・◯◯◯」「・◯◯◯」。白背景、モダンなサンセリフ体、左寄せレイアウト、右側3分の1は図を置くため空ける。装飾は控えめ、指定した文言以外の文字は一切足さない。誤字を作らない。
+調整のコツ: 文言は必ず二重引用符で囲む。固有名詞やサービス名が崩れるときは、その語だけ「T-h-r-e-a-d のように1文字ずつ」スペルアウトして渡す。色を合わせたいときは「見出しは#1C3461、アクセントは#F0A020」のようにコード指定する。
+つまずきどころ: 長い文章は崩れやすい。1スライドの文字は「見出し＋箇条書き3行」までに抑える。出力後は必ずスペルと改行位置を目視し、崩れた語だけ「この単語を直して、他は変えない」で修正する。</pre>
+  <div class="cbtns">
+    <button class="btn" data-copy="b1">📋 コピー</button>
+    <button class="btn ghost" data-save="b1" data-name="image25-official-prompts10.txt">⬇ ダウンロード</button>
+  </div>
+</div>
+
+  <section class="epctx">
+  <p class="epctx-label">この動画のほかのプレゼント</p>
+  <div class="ep-kits"><a class="kchip" href="../hirogeru-free/"><span class="kt">AI学習アプリ「広げる」を無料で使う招待コード（この動画の視聴者向け）</span><span class="go">開く →</span></a><a class="kchip" href="../image25-prompt-builder/"><span class="kt">Image 2.5 プロンプト組み立てアプリ</span><span class="badge">アプリ</span><span class="go">開く →</span></a><a class="kchip" href="../image25-textbook/"><span class="kt">Image 2.5 使い方の教科書（逆引き付き）</span><span class="badge">50項目</span><span class="go">開く →</span></a></div>
+</section>
+  <section class="epctx">
+  <p class="epctx-label">ほかの回の「プロンプト集」</p>
+  <div class="ep-kits"><a class="kchip" href="../astra-higgsfield-video-prompts10/"><span class="kt">静止画1枚が“動く広告”になる Astra×HiggsField 動画生成プロンプト10選</span><span class="badge">10個</span><span class="go">開く →</span></a><a class="kchip" href="../astra-image-prompts10/"><span class="kt">資料もサムネも“外注ゼロ”で仕上がる Astra画像生成プロンプト10選</span><span class="badge">10個</span><span class="go">開く →</span></a><a class="kchip" href="../astra-work-task-prompts10/"><span class="kt">メール・議事録・報告が“考えずに片づく” Astra仕事プロンプト10選</span><span class="badge">10個</span><span class="go">開く →</span></a><a class="kchip" href="../cache-discount-prompts10/"><span class="kt">Fable 5.1 のキャッシュ割引を取りこぼさない 指示文＆設定 厳選10（Claude Code / Codex 両対応）</span><span class="go">開く →</span></a></div>
+</section>
+
+  <footer><a href="../../">← AIエージェント / Kawaru プレゼント図書館にもどる</a></footer>
+</div>
+
+<pre id="pfull" class="hidden"># 🎁 【公式ベース】Image 2.5 で“作り直しゼロ”になるプロンプト10選
+
+ChatGPT の新画像モデル Image 2.5 は「一部だけ直す」「透過で切り抜く」「参照写真の人物・商品を崩さない」が一気に得意になりました。公式が示す使い方（用途→構図→ディテール→変える所と残す所を分ける）に沿って、仕事でそのまま使う10本にしてあります。1枚あたり15〜40分かかっていた素材づくりと直しの往復が、5分＋1回の微修正で終わります。
+
+**受け取り方**: 下の各コードブロック右上のコピーボタンでコピーするか、このファイルをそのままダウンロードしてください。
+
+**使い方**: 1〜5は「今ある画像を直す」系（写真をドラッグして貼ってから実行）、6〜10は「ゼロから作る」系です。プロンプト内の「16:9」「1:1」などの比率、色、除外条件だけ自分の案件に置き換えれば動きます。ChatGPT の無料枠でも使えます。
+
+---
+
+## 1. 商品を透過背景で完璧に切り抜く（EC・LP・提案資料）
+
+```text
+期待できるメリット: 切り抜き作業の外注（1点500〜1500円）や自分での手作業が要らなくなる。髪の毛・グラス・影の境目まで抜けるので、そのままLPやバナーに置ける。
+使う場面: 撮った商品写真をECサイト・提案資料・広告バナーに載せる直前、背景を消したいとき。
+前提: 商品が写った写真を1枚チャットにドラッグして添付してある。
+そのまま貼るプロンプト:
+（ChatGPTへ）添付画像の商品だけを抜き出し、完全な透過背景に配置してください。PNG形式。商品の形・色・質感・ラベルの文字は一切変えない。単色の背景・チェッカー模様・床・影・小物は足さない。商品は中央に置き、上下左右に均等な余白を10%とる。輪郭のギザつきや白フチが残らないようにする。
+調整のコツ: バナー用に影がほしいときは、切り抜いたあとに続けて「真下に柔らかい楕円形の影を薄く1つだけ足して」と別ターンで頼む。最初から影ありで頼むと背景ごと作られやすい。
+つまずきどころ: 出力後、拡大して髪・毛・透明パーツの縁に背景色が残っていないか必ず確認する。残っていたら「縁に残った背景色を消して、アルファチャンネルをきれいにして」ともう一度かける。
+```
+
+## 2. 顔・体型を変えずに服だけ着せ替える（アパレルEC・人物差し替え）
+
+```text
+期待できるメリット: モデルの追加手配なしで、1回の写真から複数コーデのカットが作れる。Image 2.5 は顔と体型の保持が強くなったので、別人になりにくい。
+使う場面: アパレルECの商品ページ、コーデ提案、人物写真の服だけ差し替えたいとき。
+前提: 人物が写った元画像と、着せたい服の画像を2枚ともチャットに添付してある。
+そのまま貼るプロンプト:
+（ChatGPTへ）1枚目の人物に、2枚目の服を着せてください。変えるのは服だけ。顔・髪型・肌の色・体型・姿勢・立ち位置・背景・照明・写真の色味は1枚目のまま一切変えない。服のサイズ感とシワは体に自然に合わせる。2枚目の服の色・柄・素材感は正確に再現する。文字やロゴを勝手に足さない。
+調整のコツ: 複数コーデを作るときは、1枚目の人物画像を毎回同じものに固定し、2枚目だけ差し替える。「1枚目のまま」と毎ターン書き直すと同一人物を保ちやすい。
+つまずきどころ: 何度も編集を重ねると顔が少しずつずれる。3回直したら一度、最初の人物画像から作り直す。手や指が乱れたら「手と指だけ自然な形に直して、他は変えない」で部分修正する。
+```
+
+## 3. 写真から不要なものだけ消す（電線・通行人・写り込み）
+
+```text
+期待できるメリット: レタッチソフトのスタンプ作業が要らない。「これだけ消して、他はそのまま」が通るので、背景が複雑でも破綻しにくくなった。
+使う場面: 物件写真・商品写真・イベント写真から、電線・通行人・生活感のあるもの・写り込んだ関係者を消したいとき。
+前提: 対象が写った写真を1枚添付してある。消したいものを言葉で特定できる。
+そのまま貼るプロンプト:
+（ChatGPTへ）添付画像から「（例：画面右奥の赤い看板と、その下を歩く2人の通行人）」だけを消してください。消したあとは周囲の壁・地面・空と自然につながるように埋める。それ以外の部分（構図・色・明るさ・他の被写体・影・遠近感）は一切変えない。新しい物や文字を足さない。
+調整のコツ: 消す対象は位置＋色＋形で指定すると精度が上がる（「右の物」より「右奥の赤い看板」）。複数あるときは1回で全部言わず、1つ消す→確認→次を消す、と分ける。
+つまずきどころ: 消した跡がぼやけたり不自然な模様になったら、「消した部分を、まわりの◯◯（例：レンガの壁）と同じ質感で埋め直して」と追いプロンプトする。
+```
+
+## 4. 室内・空間写真の一部だけ差し替える（内装・什器の提案）
+
+```text
+期待できるメリット: 「この椅子を木製にしたら」「この壁を白にしたら」を、撮り直しやCGなしで見せられる。カメラ位置と光が保たれるので、before/afterとして並べられる。
+使う場面: 店舗・オフィス・住宅の内装提案、家具の入れ替えシミュレーション、施工前の合意形成。
+前提: 対象の空間写真を1枚添付してある。
+そのまま貼るプロンプト:
+（ChatGPTへ）この部屋の写真で、「（例：白いパイプ椅子）」だけを「（例：明るいオーク材の木製チェア）」に置き換えてください。変えるのはその対象だけ。カメラアングル・部屋の広さ・床・壁・窓・照明の当たり方・影の向き・全体の色味は元のまま保つ。新しい家具のサイズは元の対象と同じスケールに合わせ、床にきちんと接地させる。
+調整のコツ: 提案の比較用に、まず「置き換えなし（元画像）」と「置き換えあり」をセットで出す。素材違いを複数見せるなら、対象の指定文を固定して「オーク材／ウォルナット／スチール」と語尾だけ変える。
+つまずきどころ: 複数の物を一度に変えると他の部分まで動く。1物1ターンで。影の向きがおかしくなったら「窓からの光の向きは元画像に合わせて、影を付け直して」で修正。
+```
+
+## 5. 参照画像のトーンを引き継いで別カットを量産する（シリーズ画像）
+
+```text
+期待できるメリット: 1枚“正解”を作れば、同じ世界観のカットを何枚でも増やせる。資料の挿絵・SNSの連投・記事のアイキャッチが、回を追うごとにバラバラにならない。
+使う場面: スライドの章扉、連載記事のアイキャッチ、SNSのシリーズ投稿など、複数枚を同じ見た目でそろえたいとき。
+前提: 見本にしたい画像を1枚添付してある（過去に自分で作った・撮った画像でよい）。
+そのまま貼るプロンプト:
+（ChatGPTへ）添付画像を「スタイルの見本」として使ってください。この画像から、配色・線の太さ・質感・光の雰囲気・余白の取り方だけを引き継ぎ、モチーフは「（例：ノートPCとコーヒーカップのある机）」に変えて16:9で描いてください。見本の構図や被写体そのものはコピーしない。文字は入れない。
+調整のコツ: 2枚目以降は「同じスタイルの見本のまま、次はこのモチーフ」と、モチーフ名だけ差し替えて続ける。気に入ったスタイルの画像は名前を付けて保存し、毎回の見本として使い回す。
+つまずきどころ: 「見本の色と質感だけ」と範囲を絞らないと、構図まで似てしまう。逆に似ないときは「見本の“塗り方”をもっと忠実に真似て」と踏み込む。
+```
+
+## 6. 仕組み・処理の流れを1枚のインフォグラフィックにする
+
+```text
+期待できるメリット: 口頭やテキストで説明していた仕組みが、1枚の図で伝わる。作図ツールでゼロから箱と矢印を並べる30分〜1時間が省ける。
+使う場面: サービスの裏側・業務フロー・機械や仕組みの動作を、提案資料や記事で説明したいとき。
+前提: 説明したい流れを、工程の順に自分の言葉で書き出せる。
+そのまま貼るプロンプト:
+（ChatGPTへ）インフォグラフィックを16:9で作ってください。テーマは「（例：問い合わせが入ってから一次回答が返るまでの流れ）」。工程は左から右へ順番に並べる：（1）◯◯ →（2）◯◯ →（3）◯◯ →（4）◯◯。各工程は角丸の箱にアイコンを1つ添え、矢印でつなぐ。配色は白背景＋濃紺の線、重要な1工程だけ山吹色で強調。フラットな平面デザイン、影は最小限。box内の短いラベル（各6文字以内）は正確に表示し、それ以外の余計な文字は入れない。
+調整のコツ: 工程は4〜6個までに絞る。7個以上あるなら「2段組みにして」と指定する。ラベルの日本語が乱れたら英数字だけにするか、「ラベルは空にして」と頼んで後から自分で入れる。
+つまずきどころ: 一度に全部の要素（凡例・注釈・タイトル・小見出し）を盛ると崩れる。まず「箱＋矢印＋短いラベル」だけ作り、タイトルや注釈は別ターンで足す。
+```
+
+## 7. 提案スライドを“文字まで正確に”1枚作る
+
+```text
+期待できるメリット: Image 2.5 は指定した文言をそのまま描くのが得意になったので、見出し付きのスライドを画像1枚で作れる。デザインの当たりを数分で見られる。
+使う場面: 提案書・ピッチ資料の表紙や章扉、SNSで配る図解カードのたたき台がほしいとき。
+前提: スライドに載せる見出しと、3点前後の箇条書きが決まっている。
+そのまま貼るプロンプト:
+（ChatGPTへ）ピッチデッキのスライドを16:9で1枚作ってください。見出しは「&quot;◯◯◯◯&quot;」（この文言を正確に表示）。本文は次の3点を箇条書きで正確に表示：「・◯◯◯」「・◯◯◯」「・◯◯◯」。白背景、モダンなサンセリフ体、左寄せレイアウト、右側3分の1は図を置くため空ける。装飾は控えめ、指定した文言以外の文字は一切足さない。誤字を作らない。
+調整のコツ: 文言は必ず二重引用符で囲む。固有名詞やサービス名が崩れるときは、その語だけ「T-h-r-e-a-d のように1文字ずつ」スペルアウトして渡す。色を合わせたいときは「見出しは#1C3461、アクセントは#F0A020」のようにコード指定する。
+つまずきどころ: 長い文章は崩れやすい。1スライドの文字は「見出し＋箇条書き3行」までに抑える。出力後は必ずスペルと改行位置を目視し、崩れた語だけ「この単語を直して、他は変えない」で修正する。
+```
+
+## 8. アプリ・サービスの画面モックアップを作る（提案・LP・投資家向け）
+
+```text
+期待できるメリット: まだ開発していない画面を「それっぽく」見せられる。デザイナーへの発注前の方向すり合わせや、LP・資料のダミー画面が数分で用意できる。
+使う場面: 新機能・新サービスの企画段階で、UIのイメージを共有したいとき。実画面のスクショがまだ無いとき。
+前提: 何のアプリか、主な画面に何を置くかを言葉で説明できる。
+そのまま貼るプロンプト:
+（ChatGPTへ）スマホアプリのUIモックアップを1枚、9:16で作ってください。アプリは「（例：地域の農産物直売所の予約アプリ）」。画面上部にヘッダーとロゴ用の枠、中央に商品カードのリスト（写真枠＋商品名＋価格）、下部にタブバー（ホーム・検索・カート・マイページ）。実在する、きれいに設計された本物のアプリのように見せる。フラットでモダンなデザイン、余白を広めに。ダミーの商品名・価格は自然な日本語で。個人情報や実在ブランドは出さない。
+調整のコツ: 1画面ずつ頼む（ホーム→検索結果→詳細、と分ける）。トーンを揃えたいときは1枚目を見本にして「同じアプリの次の画面」と続ける。配色をブランドに寄せるならヘッダー色をコード指定する。
+つまずきどころ: 文字を細かく入れさせると読めない文字列になる。ボタンやラベルは短い単語に留め、細部の説明文は「灰色の帯だけ置いて」と省略させて後で合成する。
+```
+
+## 9. 研修・教材用の概念図を作る（理科・ビジネスどちらも）
+
+```text
+期待できるメリット: 教科書的な図を自前で用意できる。素材集を探す時間と、図版使用料が要らない。用語ラベルを正確に置けるので、そのまま研修資料に使える。
+使う場面: 社内研修・セミナー・教材で、仕組みや関係性を1枚の図で説明したいとき。
+前提: 図のタイトルと、図に登場する要素（3〜6個）とその関係を書き出せる。
+そのまま貼るプロンプト:
+（ChatGPTへ）シンプルな解説図を4:3で作ってください。タイトルは「&quot;◯◯のしくみ&quot;」（正確に表示）。登場する要素は「◯◯」「◯◯」「◯◯」「◯◯」で、矢印でつないで流れ（または関係）を示す。各要素のラベルは正確に表示し、それ以外の文字は入れない。白背景、フラットな塗り、3色以内（濃紺・山吹・グレー）、影なし。教科書のように整理された見やすいレイアウト。
+調整のコツ: 要素は6個までに絞る。関係が複雑なら「中心に1つ置いて、周りから矢印を集める放射型で」など図の型を指定する。ラベルが乱れたら英語表記に切り替えるか空にして後入れ。
+つまずきどころ: 「正確に・詳しく」と言いすぎると要素が増えて読めなくなる。まず骨組み（要素＋矢印）だけ作り、凡例や補足は別レイヤーのつもりで後から足す。
+```
+
+## 10. 実写級の人物ポートレート（チーム紹介・お客様の声・ペルソナ）
+
+```text
+期待できるメリット: 写真の手配がつかなくても、サイトの「チーム紹介」や事例ページの顔写真が用意できる。肌の質感が自然になったので、アイコンサイズなら実写と見分けがつきにくい。
+使う場面: コーポレートサイトのメンバー紹介、LPの体験談に添える顔写真、企画書のペルソナ像。
+前提: どんな人物か（年代・性別・雰囲気・服装・背景）を指定できる。
+そのまま貼るプロンプト:
+（ChatGPTへ）人物のポートレート写真を1:1で作ってください。実在しない架空の人物。30代後半の日本人、清潔感のあるシャツ姿、自然な微笑みで正面やや斜めを向く。背景は明るいオフィスを浅くぼかす。肩から上のスナップ風、証明写真的にしない。実写風で加工感は控えめ、肌は毛穴や産毛まで自然な質感。特定の有名人や実在人物に似せない。ロゴ・社名・文字は写り込ませない。
+調整のコツ: チームでそろえるなら「同じ照明・同じ背景・同じ画角で、次は40代女性」とパラメータだけ変えて続ける。切り抜きやすくするなら背景を「無地の淡いグレー」に変える。
+つまずきどころ: リアルさを上げすぎると実在の誰かに似ることがある。似た顔が出たら作り直す。体験談が実話でない場合は、公開時に「※写真はイメージです」を必ず併記する。
+```
+
+**ポイント**: Image 2.5 でも、画像内の長い日本語テキストは崩れることがあります。文字は「短い見出し＋数語のラベル」までに留め、細かい文章は後から編集ソフトで載せてください。人物写真を体験談・事例に使うときは、実話でなければ「※イメージです」を必ず添えてください。編集を3回以上重ねたら、一度もとの画像から作り直すと品質が保てます。
+</pre>
+<script>
+
+// チェックリストを実際に使えるようにする。
+// □ の行を押すと済みになり、状態はこのブラウザに残る（ページを閉じても消えない）。
+// <pre> の中身自体は変えていないので、コピーとダウンロードの内容は今までどおり。
+(function(){
+  var lines = [].slice.call(document.querySelectorAll('.cline'));
+  if (!lines.length) return;
+  var KEY = 'giftCheck:' + location.pathname;
+  var done = {};
+  try { done = JSON.parse(localStorage.getItem(KEY)) || {}; } catch(e){}
+
+  function save(){
+    try { localStorage.setItem(KEY, JSON.stringify(done)); } catch(e){}
+  }
+  function paint(){
+    var n = 0;
+    lines.forEach(function(l){
+      var on = !!done[l.dataset.c];
+      l.classList.toggle('on', on);
+      if (on) n++;
+    });
+    bar.textContent = n ? n + ' / ' + lines.length + ' 完了' : lines.length + ' 項目 ・ タップでチェック';
+    reset.style.display = n ? 'inline' : 'none';
+  }
+
+  var bar = document.createElement('span');
+  var reset = document.createElement('button');
+  reset.type = 'button';
+  reset.className = 'creset';
+  reset.textContent = 'チェックを消す';
+  reset.addEventListener('click', function(){ done = {}; save(); paint(); });
+
+  var wrap = document.createElement('div');
+  wrap.className = 'cprog';
+  wrap.appendChild(bar);
+  wrap.appendChild(reset);
+  var host = lines[0].closest('.icard') || lines[0].closest('pre');
+  host.insertBefore(wrap, host.firstChild);
+
+  lines.forEach(function(l){
+    l.addEventListener('click', function(){
+      var k = l.dataset.c;
+      if (done[k]) delete done[k]; else done[k] = 1;
+      save(); paint();
+    });
+  });
+  paint();
+})();
+
+// 名指しリンク（#i37）で来たとき、その項目まで確実に運んで少しの間だけ目立たせる。
+// ブラウザ任せだと、項目数の多いページでは狙った位置に着かないことがある
+// （html に scroll-behavior:smooth が効いており、数万px を滑らせようとして届かない）。
+(function(){
+  function go(){
+    if (!location.hash) return;
+    var el = document.querySelector(location.hash);
+    if (!el || !el.classList.contains('icard')) return;
+    // behavior:'auto' は CSS の scroll-behavior:smooth に従うため、
+    // 数万px 離れた項目へは滑らかに移動しようとして事実上たどり着かない。
+    // 名指しリンクは「開いたらそこにいる」のが正しいので即時で飛ばす。
+    el.scrollIntoView({block: 'start', behavior: 'instant'});
+    el.classList.add('flashme');
+    setTimeout(function(){ el.classList.remove('flashme'); }, 2400);
+  }
+  addEventListener('hashchange', go);
+  if (document.readyState === 'loading') addEventListener('DOMContentLoaded', go);
+  else go();
+})();
+// 項目の多いキットで、目的の1件に辿り着けるようにする絞り込み。
+// 検索はタイトル・説明だけでなく本文も対象にする（「あの文言が入っていた項目」で探せるように）。
+(function(){
+  var q = document.getElementById('kq');
+  if (!q) return;
+  var hit = document.getElementById('khit');
+  var cards = [].slice.call(document.querySelectorAll('.kwrap .icard'));
+  var heads = [].slice.call(document.querySelectorAll('.kwrap h2.cat'));
+  var chips = [].slice.call(document.querySelectorAll('.kcat'));
+  var cat = '';
+
+  // ひらがな・カタカナの違いで取りこぼさないようにする（ハブ側の検索と同じ扱い）
+  function norm(s){
+    return (s || '').toLowerCase().replace(/[ぁ-ん]/g, function(c){
+      return String.fromCharCode(c.charCodeAt(0) + 0x60);
+    });
+  }
+
+  // カード全体の textContent だとボタンの「コピー」まで拾ってしまうため、中身を選んで集める
+  cards.forEach(function(c){
+    var t = c.querySelector('.ititle'), d = c.querySelector('.imeta'), p = c.querySelector('.prompt');
+    c._t = norm((t ? t.textContent : '') + ' ' + (d ? d.textContent : '') + ' ' + (p ? p.textContent : ''));
+  });
+
+  function apply(){
+    var kw = norm(q.value.trim()), n = 0, shown = {};
+    cards.forEach(function(c){
+      var ok = (!cat || c.getAttribute('data-cat') === cat)
+            && (!kw || c._t.indexOf(kw) !== -1);
+      c.classList.toggle('hide', !ok);
+      if (ok){ n++; shown[c.getAttribute('data-cat')] = 1; }
+    });
+    // 残った項目が1件も無いカテゴリの見出しは隠す
+    heads.forEach(function(h){
+      h.classList.toggle('hide', !shown[h.getAttribute('data-cat')]);
+    });
+    hit.textContent = (kw || cat)
+      ? (n ? n + '件を表示中' : '該当する項目がありません')
+      : '';
+  }
+
+  q.addEventListener('input', apply);
+  chips.forEach(function(b){
+    b.addEventListener('click', function(){
+      cat = b.getAttribute('data-cat');
+      chips.forEach(function(x){ x.classList.toggle('on', x === b); });
+      apply();
+    });
+  });
+})();
+
+function flash(btn, label){
+  const old = btn.textContent, cls = btn.className;
+  btn.textContent = label; btn.classList.add('ok');
+  setTimeout(() => { btn.textContent = old; btn.className = cls; }, 1600);
+}
+function textOf(id){ return document.getElementById(id).textContent; }
+
+async function copyText(btn, id){
+  const t = textOf(id);
+  try {
+    await navigator.clipboard.writeText(t);
+  } catch (e) {
+    const ta = document.createElement('textarea');
+    ta.value = t; ta.style.position='fixed'; ta.style.opacity='0';
+    document.body.appendChild(ta); ta.select();
+    document.execCommand('copy'); ta.remove();
+  }
+  flash(btn, '✓ コピーしました');
+}
+
+function saveText(btn, id, name){
+  const blob = new Blob([textOf(id)], {type:'text/plain;charset=utf-8'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = name;
+  document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+  if (btn) flash(btn, '✓ 保存しました');
+}
+
+document.addEventListener('click', e => {
+  const b = e.target.closest('[data-copy]');
+  if (b) { copyText(b, b.dataset.copy); return; }
+  const d = e.target.closest('[data-save]');
+  if (d) { saveText(d, d.dataset.save, d.dataset.name); return; }
+  // その項目だけを名指しで人に渡せるようにする
+  const l = e.target.closest('[data-link]');
+  if (l) {
+    const url = location.origin + location.pathname + '#' + l.dataset.link;
+    navigator.clipboard.writeText(url).then(() => flash(l, '✓ コピーしました'));
+  }
+});
+
+// 「/」ですぐ検索を始められるようにする。入力中は邪魔しない。
+addEventListener('keydown', e => {
+  if (e.key !== '/' || e.metaKey || e.ctrlKey || e.altKey) return;
+  const t = e.target;
+  if (t && (t.tagName === 'INPUT' || t.tagName === 'TEXTAREA' || t.isContentEditable)) return;
+  const box = document.getElementById('q') || document.getElementById('kq');
+  if (!box) return;
+  e.preventDefault();
+  box.focus();
+  box.select();
+});
+
+// 「この中から探す」の貼り付き位置を、実際のヘッダ高さに合わせる（スマホでヘッダが低い）。
+(function(){
+  var h = document.querySelector('header');
+  if (!h) return;
+  var set = function(){
+    if (!window.innerWidth) return;
+    document.documentElement.style.setProperty('--hdr', Math.min(h.offsetHeight, 160) + 'px');
+  };
+  set();
+  addEventListener('resize', set);
+})();
+</script>
+<div id="promo" class="promo">
+  <div class="promo-card">
+    <button id="promoClose" class="promo-x" aria-label="閉じる">×</button>
+    <img class="promo-banner" id="promoBanner" src="" alt="">
+    <img class="promo-icon" id="promoIcon" src="" alt="">
+    <p class="promo-tag" id="promoTag"></p>
+    <p class="promo-title" id="promoTitle"></p>
+    <p class="promo-text" id="promoText"></p>
+    <a id="promoLink" class="promo-cta" href="#" target="_blank" rel="noopener sponsored">
+      <span id="promoCta"></span><span class="promo-arrow">→</span>
+    </a>
+  </div>
+</div>
+<script>window.PROMO_CREATIVES = [{"icon": "data:image/png;base64,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", "img": "https://lp.kawaru-ai.jp/wp-content/uploads/2026/05/Frame-2611706-scaled.png", "tag": "AIエージェント", "title": "Kawaru", "text": "「これ自動化して」と話すだけで、業務フローが自動で完成。", "cta": "無料で試す", "url": "https://lp.kawaru-ai.jp/"}, {"icon": "data:image/png;base64,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", "img": "https://kawarucoach-lp.kawaru-ai.jp/wp-content/uploads/2026/08/Frame-1000001051.png", "tag": "伴走型AI顧問サービス", "title": "Kawaru Coach", "text": "AIのプロが専属で伴走。月5万円から、組織のAI活用が進む。", "cta": "詳しく見る", "url": "https://kawarucoach-lp.kawaru-ai.jp/"}, {"icon": "data:image/png;base64,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", "accent": "#1C3461", "tag": "AI社員構築代行", "title": "エヌイチ", "text": "あなたの代わりに働く「AI社員」を、無料相談から構築。", "cta": "無料相談を見る", "url": "https://n1-inc.co.jp/lp-ai-staff-build-offer-with-image/"}, {"icon": "data:image/png;base64,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", "accent": "#276C82", "tag": "法人研修", "title": "Claude Code / Codex研修", "text": "指示するだけで仕事が進む組織へ。現場定着まで伴走します。", "cta": "研修内容を見る", "url": "https://n1-inc.co.jp/lp-claude-codex-training-offer-with-image/"}, {"icon": "data:image/png;base64,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", "accent": "#3F4A5A", "tag": "運営会社", "title": "株式会社エヌイチ", "text": "AI・ChatGPTを活用した社内DXと人材育成のプロ集団です。", "cta": "会社サイトを見る", "url": "https://n1-inc.co.jp/"}, {"icon": "", "img": "https://i.ytimg.com/vi/0Bf5ZeH1s-A/hqdefault.jpg", "tag": "最新の動画", "title": "【近未来】とある論文によるとグラフエンジニアリングが人間の代わりに働いてくれるみたいです", "text": "", "cta": "動画を見る", "url": "https://www.youtube.com/watch?v=0Bf5ZeH1s-A"}, {"icon": "", "img": "https://i.ytimg.com/vi/FEVfIQ6omg8/hqdefault.jpg", "tag": "最新の動画", "title": "【実演あり】人類の知能を超えるAstraを実際に使ってみた", "text": "", "cta": "動画を見る", "url": "https://www.youtube.com/watch?v=FEVfIQ6omg8"}, {"icon": "", "img": "https://i.ytimg.com/vi/hEGIVBm74LU/hqdefault.jpg", "tag": "最新の動画", "title": "【全自動】AIエージェントがPCを完全操作する新時代がやってきました", "text": "", "cta": "動画を見る", "url": "https://www.youtube.com/watch?v=hEGIVBm74LU"}, {"icon": "", "img": "https://i.ytimg.com/vi/LVmmvvaWfwQ/hqdefault.jpg", "tag": "最新の動画", "title": "【ブチ切れ】Cursorを買収したイーロンとOpenAIのサム・アルトマンが大喧嘩を始め…", "text": "", "cta": "動画を見る", "url": "https://www.youtube.com/watch?v=LVmmvvaWfwQ"}, {"icon": "", "img": "https://i.ytimg.com/vi/DfyHOc8qXcc/hqdefault.jpg", "tag": "最新の動画", "title": "【ついに来た】Geminiから全国民が使うべき新機能が3つ発表されましたので徹底解説しま…", "text": "", "cta": "動画を見る", "url": "https://www.youtube.com/watch?v=DfyHOc8qXcc"}, {"icon": "", "img": "https://i.ytimg.com/vi/OfzRqO8-WJc/hqdefault.jpg", "tag": "最新の動画", "title": "【神回】Codexを使う上位1%が実践しているSkillsの天才的な活用術を全て教えます", "text": "", "cta": "動画を見る", "url": "https://www.youtube.com/watch?v=OfzRqO8-WJc"}];</script>
+<script>
+(function(){
+  if (sessionStorage.getItem('promoClosed')) return;
+  var el = document.getElementById('promo');
+  if (!el) return;
+  var creatives = window.PROMO_CREATIVES || [];
+  if (!creatives.length) return;
+  var c = creatives[Math.floor(Math.random() * creatives.length)];
+  var banner = document.getElementById('promoBanner');
+  var icon = document.getElementById('promoIcon');
+  // 画像があるものは横長の絵で見せる。無いものは従来どおり丸アイコン。
+  if (c.img) {
+    banner.src = c.img;
+    banner.style.display = 'block';
+    icon.style.display = 'none';
+    // 差し替え等で画像が消えていたら、アイコン表示に戻す
+    banner.onerror = function(){
+      banner.style.display = 'none';
+      if (c.icon) { icon.src = c.icon; icon.style.display = 'block'; }
+    };
+  } else {
+    icon.src = c.icon;
+    icon.style.display = 'block';
+    banner.style.display = 'none';
+  }
+  // 画像で見分けられないもの（エヌイチ系は先方のog:imageが3件とも同じ）は色で差をつける
+  var tag = document.getElementById('promoTag');
+  var cta = document.getElementById('promoLink');
+  if (c.accent) {
+    tag.style.color = c.accent;
+    tag.style.background = c.accent + '1F';
+    cta.style.background = c.accent;
+  } else {
+    tag.style.color = ''; tag.style.background = ''; cta.style.background = '';
+  }
+  tag.textContent = c.tag;
+  document.getElementById('promoTitle').textContent = c.title;
+  var txt = document.getElementById('promoText');
+  txt.textContent = c.text || '';
+  txt.style.display = c.text ? 'block' : 'none';
+  document.getElementById('promoCta').textContent = c.cta;
+  var link = document.getElementById('promoLink');
+  link.href = c.url;
+  function close(){
+    el.classList.remove('show');
+    sessionStorage.setItem('promoClosed', '1');
+  }
+  // 動画の概要欄から来た人が、自分のプレゼントを探し始める瞬間に被らないようにする。
+  // 以前は読み込み1.6秒後に無条件で出しており、いちばん目的意識の高い時間を塞いでいた。
+  // 中身を見に行った（＝目当てのものに辿り着いた）ころに出す。
+  var shown = false;
+  function show(){
+    if (shown) return;
+    // 絞り込みシートを開いている間は被せない（開いたら少し待って出直す）
+    if (document.body.classList.contains('sheet-open')) { setTimeout(show, 2500); return; }
+    shown = true;
+    el.classList.add('show');
+    removeEventListener('scroll', onScroll);
+  }
+  function onScroll(){
+    if (scrollY > innerHeight * 0.4) show();
+  }
+  addEventListener('scroll', onScroll, {passive:true});
+  // まったくスクロールしない人にも最後には出す
+  setTimeout(show, 10000);
+  document.getElementById('promoClose').addEventListener('click', function(e){ e.preventDefault(); close(); });
+  el.addEventListener('click', function(e){ if (e.target === el) close(); });
+})();
+</script>
+</body></html>
