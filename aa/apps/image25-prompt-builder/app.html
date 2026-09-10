@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Image 2.5 プロンプト組み立てアプリ</title>
+<meta name="description" content="用途と条件をいくつか選ぶだけで、ChatGPT の画像モデル Image 2.5 にそのまま貼れるプロンプトが完成します。『作る』も『一部だけ直す』も、公式の型（用途→構図→ディテール→残す所と変える所）どおりに組み上がり、作り直しの往復が減ります。">
+<style>
+  :root{
+    --brand:#1C3461; --brand-deep:#16284A; --brand-soft:rgba(28,52,97,.08); --brand-line:rgba(28,52,97,.22);
+    --accent:#5BBCD4; --accent-deep:#2C7A93; --accent-soft:rgba(91,188,212,.16);
+    --bg:#F7FAFC; --paper:#FFFFFF; --ink:#1C3461; --ink-mid:#4A6080; --ink-sub:#8098B4; --line:rgba(28,52,97,.14);
+    --ok:#2C7A93; --ok-soft:rgba(44,122,147,.10);
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:var(--bg);color:var(--ink);font-family:-apple-system,'Hiragino Sans','Yu Gothic',sans-serif;
+    line-height:1.7;padding:26px 18px 48px;}
+  .wrap{max-width:760px;margin:0 auto;}
+  h1{font-size:24px;font-weight:900;line-height:1.35;margin-bottom:8px;}
+  .sub{font-size:14.5px;color:var(--ink-mid);margin-bottom:20px;}
+  .bar{height:6px;background:var(--brand-soft);border-radius:99px;overflow:hidden;margin-bottom:20px;}
+  .bar i{display:block;height:100%;background:var(--accent);width:0;transition:width .3s;}
+  .card{background:var(--paper);border:1.5px solid var(--line);border-radius:14px;padding:22px;margin-bottom:16px;}
+  .qn{font-size:12.5px;font-weight:900;color:var(--accent-deep);letter-spacing:1px;margin-bottom:6px;}
+  .qt{font-size:19px;font-weight:900;line-height:1.45;margin-bottom:5px;}
+  .qh{font-size:13px;color:var(--ink-sub);margin-bottom:14px;}
+  .opts{display:flex;flex-direction:column;gap:9px;}
+  .opt{border:1.5px solid var(--line);background:var(--bg);border-radius:11px;padding:12px 16px;cursor:pointer;
+    font-size:15px;font-weight:700;color:var(--ink);transition:.15s;user-select:none;}
+  .opt:hover{border-color:var(--brand-line);background:var(--brand-soft);}
+  .opt.on{background:var(--brand);border-color:var(--brand-deep);color:#fff;}
+  .opt small{display:block;font-weight:500;font-size:12.5px;color:var(--ink-sub);margin-top:2px;}
+  .opt.on small{color:#C8D6E6;}
+  label.fld{display:block;font-size:13px;font-weight:800;color:var(--ink-mid);margin-bottom:6px;}
+  input[type=text],textarea{width:100%;border:1.5px solid var(--line);border-radius:10px;padding:11px 14px;
+    font-size:15px;font-family:inherit;color:var(--ink);background:var(--bg);line-height:1.6;}
+  input[type=text]:focus,textarea:focus{outline:none;border-color:var(--accent-deep);background:var(--paper);}
+  textarea{resize:vertical;min-height:76px;}
+  .hint{font-size:12px;color:var(--ink-sub);margin-top:5px;}
+  .btns{display:flex;gap:9px;flex-wrap:wrap;margin-top:16px;}
+  button{border:1.5px solid var(--brand-line);background:var(--paper);color:var(--brand-deep);border-radius:9px;
+    padding:10px 20px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit;transition:.15s;}
+  button:hover{background:var(--brand-soft);border-color:var(--brand);}
+  button.primary{background:var(--brand);border-color:var(--brand-deep);color:#fff;}
+  button.primary:hover{background:var(--brand-deep);}
+  button:disabled{opacity:.4;cursor:not-allowed;}
+  .hide{display:none;}
+  .hero{background:var(--brand);color:#fff;border-radius:16px;padding:22px 24px;margin-bottom:16px;}
+  .hero .lbl{font-size:12.5px;font-weight:900;color:var(--accent);letter-spacing:1px;}
+  .hero .nm{font-size:21px;font-weight:900;line-height:1.35;margin:6px 0 0;}
+  .sec{font-size:12.5px;font-weight:900;color:var(--accent-deep);letter-spacing:1px;margin:4px 0 9px;}
+  .out{white-space:pre-wrap;word-break:break-word;background:var(--bg);border:1.5px solid var(--line);
+    border-radius:11px;padding:15px 16px;font-size:14px;line-height:1.8;
+    font-family:'SFMono-Regular',Consolas,'Hiragino Sans',monospace;}
+  .out + .out{margin-top:12px;}
+  .copied{color:var(--ok);font-size:13px;font-weight:800;margin-left:10px;}
+  .tip{background:var(--ok-soft);border:1.5px solid var(--ok);border-radius:11px;padding:13px 16px;margin-top:14px;
+    font-size:13.5px;line-height:1.7;}
+  .tip b{display:block;font-weight:900;color:var(--ok);margin-bottom:3px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Image 2.5 プロンプト組み立てアプリ</h1>
+  <p class="sub">「作る」も「一部だけ直す」も、選んで言葉を入れるだけ。公式の型どおりに並んだプロンプトが完成します。</p>
+  <div class="bar"><i id="bar"></i></div>
+  <div id="quiz"></div>
+  <div id="result" class="hide"></div>
+</div>
+<script>
+const MODES = {
+  create: {
+    name: "ゼロから画像を作るプロンプト",
+    steps: [
+      {kind:"choose", key:"use", t:"何に使う画像ですか？", h:"用途ごとに、余白・除外条件・文字の扱いを自動で足します。",
+        opts:[
+          {v:"thumb", l:"SNS・動画のサムネイル", s:"人物＋あとで文字を載せる前提"},
+          {v:"eyecatch", l:"記事・ブログのアイキャッチ", s:"内容に合う抽象イメージ"},
+          {v:"infographic", l:"仕組み・流れのインフォグラフィック", s:"箱と矢印で工程を見せる"},
+          {v:"slide", l:"提案スライド1枚（文字入り）", s:"見出し＋箇条書きを正確に表示"},
+          {v:"mockup", l:"アプリ／サービスのUIモック", s:"提案・LP用のダミー画面"},
+          {v:"diagram", l:"研修・教材の概念図", s:"要素と関係を1枚に"},
+          {v:"portrait", l:"人物ポートレート", s:"チーム紹介・事例・ペルソナ"}
+        ]},
+      {kind:"input", key:"subject", t:"主役になるものを具体的に", h:"人・物・場所・状況まで書くほど狙いどおりに出ます。",
+        placeholder:"例：驚いた表情で右手を上げた30代の男性／受注から出荷までの4工程／農産物直売所の予約アプリのホーム画面",
+        hint:"インフォグラフィック・概念図の場合は、登場する工程や要素を「A→B→C」の形で書いてください。"},
+      {kind:"choose", key:"style", t:"見た目の方向は？", h:"",
+        opts:[
+          {v:"photo", l:"実写風", s:"彩度・コントラストは少し強め"},
+          {v:"flat", l:"フラットな図・イラスト", s:"白背景＋濃紺の線、影なし"},
+          {v:"hand", l:"手描き風", s:"色鉛筆・マーカー調、塗りムラを残す"},
+          {v:"clean", l:"モダンでクリーンなUI風", s:"サンセリフ体、広めの余白"}
+        ]},
+      {kind:"choose", key:"ratio", t:"比率は？", h:"",
+        opts:[
+          {v:"16:9", l:"16:9（横）", s:"サムネ・スライド・アイキャッチ・図解"},
+          {v:"1:1", l:"1:1（正方形）", s:"SNS投稿・アイコン・ポートレート"},
+          {v:"9:16", l:"9:16（縦）", s:"ショート・ストーリーズ・スマホUI"},
+          {v:"4:3", l:"4:3（やや横）", s:"教材・研修スライド"}
+        ]},
+      {kind:"input", key:"text", t:"画像に入れる文字（任意）", h:"入れる文言だけを書いてください。位置・書体は自動で指定します。空欄なら「文字なし」で作ります。",
+        placeholder:"例：Market Opportunity / 季節限定フェア 3月末まで",
+        optional:true, hint:"長い文章は崩れます。見出し＋短い箇条書き3行までに。"}
+    ]
+  },
+  edit: {
+    name: "画像を一部だけ直すプロンプト",
+    steps: [
+      {kind:"choose", key:"job", t:"何をしますか？", h:"Image 2.5 が得意になった「一部だけ」の編集です。元画像をチャットに添付して使います。",
+        opts:[
+          {v:"cutout", l:"透過背景で切り抜く", s:"商品・人物をPNGで抜く"},
+          {v:"dress", l:"服だけ着せ替える", s:"顔・体型はそのまま"},
+          {v:"remove", l:"不要なものを消す", s:"電線・通行人・写り込み"},
+          {v:"replace", l:"一部だけ差し替える", s:"家具・什器・背景の一部"},
+          {v:"stylematch", l:"見本のスタイルを引き継ぐ", s:"同じトーンで別カット"},
+          {v:"fix", l:"細部を整える", s:"手・指・文字の乱れなど"}
+        ]},
+      {kind:"input", key:"target", t:"対象を「位置＋色＋形」で特定", h:"「右の物」ではなく「右奥の赤い看板」のように具体的に。",
+        placeholder:"例：画面左の電線／白いパイプ椅子／中央の女性が着ている服",
+        hint:"差し替え・着せ替えの場合は「何を→何に」まで書いてください（例：白い椅子→オーク材の木製チェア）。"},
+      {kind:"input", key:"keep", t:"絶対に変えたくないもの（任意）", h:"基本（構図・色味・照明・他の被写体）は自動で保持します。追加があれば書いてください。",
+        placeholder:"例：商品ラベルの文字／人物の姿勢と立ち位置",
+        optional:true, hint:"人物編集では「顔・体型・肌の色」を自動で保持リストに入れます。"},
+      {kind:"choose", key:"ratio", t:"出力の比率は？", h:"",
+        opts:[
+          {v:"keep", l:"元画像のまま", s:"トリミングしない"},
+          {v:"16:9", l:"16:9に整える", s:"バナー・スライド用"},
+          {v:"1:1", l:"1:1に整える", s:"ECサムネ・アイコン用"},
+          {v:"9:16", l:"9:16に整える", s:"縦型・ストーリーズ用"}
+        ]}
+    ]
+  }
+};
+
+const MODE_STEP = {kind:"choose", key:"__mode", t:"どちらのプロンプトを作りますか？", h:"あとから何度でも切り替えられます。",
+  opts:[
+    {v:"create", l:"ゼロから画像を作る", s:"サムネ・図解・スライド・UIモック・ポートレート"},
+    {v:"edit", l:"今ある画像を一部だけ直す", s:"切り抜き・着せ替え・不要物消し・差し替え"}
+  ]};
+
+const state = {}; let step = 0;
+
+function steps(){
+  return state.__mode ? [MODE_STEP, ...MODES[state.__mode].steps] : [MODE_STEP];
+}
+function current(){ return steps()[step]; }
+
+function render(){
+  const all = steps();
+  const q = current();
+  document.getElementById("bar").style.width = (step / all.length * 100) + "%";
+  const box = document.getElementById("quiz");
+  box.className = "";
+  box.innerHTML = "";
+  const c = document.createElement("div"); c.className = "card";
+  c.innerHTML = '<div class="qn">' + (step + 1) + ' / ' + all.length + '</div>' +
+                '<div class="qt">' + q.t + '</div>' + (q.h ? '<div class="qh">' + q.h + '</div>' : '');
+
+  if (q.kind === "choose"){
+    const o = document.createElement("div"); o.className = "opts";
+    q.opts.forEach(op => {
+      const d = document.createElement("div");
+      d.className = "opt" + (state[q.key] === op.v ? " on" : "");
+      d.innerHTML = op.l + (op.s ? '<small>' + op.s + '</small>' : '');
+      d.onclick = () => {
+        const changingMode = (q.key === "__mode" && state.__mode !== op.v);
+        state[q.key] = op.v;
+        if (changingMode){ MODES[op.v].steps.forEach(s => { delete state[s.key]; }); }
+        render();
+      };
+      o.appendChild(d);
+    });
+    c.appendChild(o);
+  } else {
+    const wrap = document.createElement("div");
+    const ta = document.createElement("textarea");
+    ta.value = state[q.key] || "";
+    ta.placeholder = q.placeholder || "";
+    ta.oninput = () => { state[q.key] = ta.value; syncNav(); };
+    wrap.appendChild(ta);
+    if (q.hint){ const h = document.createElement("div"); h.className = "hint"; h.textContent = q.hint; wrap.appendChild(h); }
+    c.appendChild(wrap);
+  }
+
+  const b = document.createElement("div"); b.className = "btns";
+  if (step > 0){ const back = document.createElement("button"); back.textContent = "← 戻る"; back.onclick = () => { step--; render(); }; b.appendChild(back); }
+  const nx = document.createElement("button"); nx.className = "primary"; nx.id = "nextBtn";
+  nx.textContent = (step === all.length - 1) ? "プロンプトを作る" : "次へ →";
+  nx.onclick = () => { if (step === all.length - 1) show(); else { step++; render(); } };
+  b.appendChild(nx);
+  c.appendChild(b);
+  box.appendChild(c);
+  syncNav();
+}
+
+function syncNav(){
+  const q = current();
+  const btn = document.getElementById("nextBtn");
+  if (!btn) return;
+  if (q.optional){ btn.disabled = false; return; }
+  const v = state[q.key];
+  btn.disabled = !(typeof v === "string" ? v.trim() : v);
+}
+
+/* ---- プロンプト組み立て ---- */
+function esc(s){ return (s || "").trim() || "（ここに具体的に書く）"; }
+
+function buildCreate(){
+  const useMap = {
+    thumb: {label:"SNS・動画のサムネイル", ratio:"16:9",
+      extra:"画面の3分の1はあとで文字を載せるので、ほぼ無地で暗く空けておく。人物は上半身、表情ははっきり。"},
+    eyecatch: {label:"記事のアイキャッチ",
+      extra:"具体物より雰囲気で伝える構図。余白は広めに。テーマは「どの状態からどの状態へ」の変化で表す。"},
+    infographic: {label:"インフォグラフィック",
+      extra:"工程は左から右へ順番に、角丸の箱＋アイコン＋矢印でつなぐ。箱内の短いラベル（各6文字以内）だけ正確に表示し、他の文字は入れない。工程は4〜6個まで。"},
+    slide: {label:"ピッチデッキのスライド1枚",
+      extra:"左寄せレイアウト、右3分の1は図を置くため空ける。指定した文言以外の文字は足さない。誤字を作らない。"},
+    mockup: {label:"アプリ／サービスのUIモックアップ",
+      extra:"実在する、きれいに設計された本物のアプリのように見せる。細かい説明文は灰色の帯だけにして後で合成できるようにする。実在ブランド・個人情報は出さない。"},
+    diagram: {label:"研修・教材の概念図",
+      extra:"教科書のように整理されたレイアウト。要素は6個まで、矢印で関係を示す。要素のラベルだけ正確に表示し、他の文字は入れない。"},
+    portrait: {label:"人物ポートレート写真",
+      extra:"実在しない架空の人物。肩から上のスナップ風、証明写真的にしない。特定の実在人物・有名人に似せない。ロゴ・文字は写り込ませない。"}
+  }[state.use];
+  const styleMap = {
+    photo:"実写風、彩度とコントラストは少し強め、肌や素材の質感は自然に。",
+    flat:"フラットな図・イラスト（白背景＋濃紺の線、3色以内、影・グラデーションなし、線の太さは均一）。",
+    hand:"手描き風（色鉛筆・マーカー調、塗りムラを少し残す、色数は3〜4色、彩度低め）。",
+    clean:"モダンでクリーンなデザイン（サンセリフ体、広めの余白、装飾は控えめ）。"
+  }[state.style];
+  const textLine = (state.text && state.text.trim())
+    ? `入れる文字：「"${state.text.trim()}"」をこの文言のまま正確に表示する（見出しは左上・サンセリフ体）。指定した文言以外の文字は入れない。崩れやすい固有名詞は1文字ずつ確認できるよう明瞭に。`
+    : `文字：画像内に文字・ロゴは入れない（あとで編集ソフトで載せる）。`;
+  const p =
+`（ChatGPTへ）${useMap.label}を${state.ratio}で作ってください。
+主題：${esc(state.subject)}
+スタイル：${styleMap}
+構図・レイアウト：${useMap.extra}
+${textLine}
+色は全体で統一し、ばらつかせない。実在の人物・ブランド・商標は登場させない。`;
+  const tip = "気に入った1枚が出たら、同じ指定のまま『次はこの主題で』と続けるとトーンの揃ったシリーズになります。文字やレイアウトが崩れたら、崩れた箇所だけ『ここだけ直して、他は変えない』と追加で頼んでください。";
+  return {blocks:[{label:"そのまま貼るプロンプト（作る）", text:p}], tip};
+}
+
+function buildEdit(){
+  const t = esc(state.target);
+  const keepBase = "構図・カメラアングル・全体の色味・明るさ・他の被写体・影の向き・遠近感は元画像のまま一切変えない。新しい物・文字・ロゴを足さない。";
+  const extraKeep = (state.keep && state.keep.trim()) ? ` さらに次も保持する：${state.keep.trim()}。` : "";
+  const ratioLine = {
+    keep:"出力は元画像と同じ構図・比率のまま（トリミングしない）。",
+    "16:9":"仕上げに16:9へ整える（対象と主要な要素は切らない）。",
+    "1:1":"仕上げに1:1へ整える（対象と主要な要素は切らない）。",
+    "9:16":"仕上げに9:16へ整える（対象と主要な要素は切らない）。"
+  }[state.ratio];
+  const jobMap = {
+    cutout:
+`添付画像から「${t}」だけを抜き出し、完全な透過背景に配置してください。PNG形式。
+対象の形・色・質感・ラベルの文字は一切変えない。
+単色背景・チェッカー模様・床・影・小物は足さない。対象は中央、上下左右に均等な余白を10%。
+輪郭のギザつきや白フチが残らないようにする。`,
+    dress:
+`1枚目の人物に、2枚目の服を着せてください。変えるのは服だけ。
+顔・髪型・肌の色・体型・姿勢・立ち位置は1枚目のまま一切変えない。
+2枚目の服の色・柄・素材感を正確に再現し、シワとサイズ感は体に自然に合わせる。`,
+    remove:
+`添付画像から「${t}」だけを消してください。
+消したあとは周囲の壁・地面・空と自然につながるように埋める。`,
+    replace:
+`添付画像で「${t}」に置き換えてください（変えるのはその対象だけ）。
+新しい要素のサイズは元の対象と同じスケールに合わせ、床・面にきちんと接地させる。`,
+    stylematch:
+`添付画像を「スタイルの見本」として使ってください。
+この画像からは配色・線の太さ・質感・光の雰囲気・余白の取り方だけを引き継ぎ、
+モチーフは「${t}」に変えて描いてください。見本の構図や被写体そのものはコピーしない。`,
+    fix:
+`添付画像の「${t}」だけを自然な形に整えてください。`
+  }[state.job];
+  const humanKeep = (state.job === "dress")
+    ? " 3回以上直したら、いちど元の人物画像から作り直す。"
+    : "";
+  const p =
+`（ChatGPTへ）${jobMap}
+${keepBase}${extraKeep}
+${ratioLine}${humanKeep}`;
+  const tipMap = {
+    cutout:"出力後は拡大して、髪・毛先・透明パーツの縁に背景色が残っていないか確認。残っていたら『縁の背景色を消してアルファチャンネルをきれいに』で再処理します。影が必要なら、切り抜いた後に別ターンで『真下に薄い楕円の影を1つだけ』と頼みます。",
+    dress:"人物画像は毎回同じものに固定し、服だけ差し替えます。手や指が乱れたら『手と指だけ自然な形に直して、他は変えない』で部分修正します。",
+    remove:"消す対象は1回に1つ。複数あるときは1つ消す→確認→次、と分けます。跡がぼやけたら『消した部分をまわりの◯◯と同じ質感で埋め直して』と追いプロンプト。",
+    replace:"素材違いを複数見たいときは、対象の指定文を固定して語尾だけ変えます（オーク材／ウォルナット／スチール）。影の向きが狂ったら『光の向きは元画像に合わせて影を付け直して』。",
+    stylematch:"2枚目以降は『同じスタイルの見本のまま、次はこのモチーフ』とモチーフ名だけ差し替えて続けます。構図まで似てしまうときは『色と質感だけ引き継ぐ』と範囲を狭めます。",
+    fix:"一度に複数箇所を直さない。1箇所ずつ『ここだけ直して、他は変えない』を繰り返します。"
+  };
+  return {blocks:[{label:"そのまま貼るプロンプト（一部だけ直す）", text:p}], tip:tipMap[state.job]};
+}
+
+function show(){
+  document.getElementById("bar").style.width = "100%";
+  document.getElementById("quiz").className = "hide";
+  const r = document.getElementById("result");
+  r.className = "";
+  const res = state.__mode === "create" ? buildCreate() : buildEdit();
+
+  let html = '<div class="hero"><div class="lbl">できあがり</div>' +
+             '<div class="nm">' + MODES[state.__mode].name + '</div></div><div class="card">';
+  res.blocks.forEach((bl, i) => {
+    const id = "out" + i;
+    html += '<div class="sec">' + bl.label +
+            ' <button data-c="' + id + '" style="padding:5px 12px;font-size:12.5px;margin-left:4px;">コピー</button>' +
+            '<span class="copied hide" id="c' + id + '">コピーしました</span></div>' +
+            '<div class="out" id="' + id + '">' + bl.text.replace(/</g, "&lt;") + '</div>';
+  });
+  html += '<div class="tip"><b>使うときのコツ</b>' + res.tip + '</div>';
+  html += '<div class="btns">' +
+          '<button onclick="editAgain()">選び直す</button>' +
+          '<button class="primary" onclick="location.reload()">最初から</button></div></div>';
+  r.innerHTML = html;
+
+  r.querySelectorAll("button[data-c]").forEach(btn => {
+    btn.onclick = () => {
+      const el = document.getElementById(btn.dataset.c);
+      copyText(el.innerText, "c" + btn.dataset.c);
+    };
+  });
+  window.scrollTo({top:0, behavior:"smooth"});
+}
+
+function editAgain(){
+  document.getElementById("result").className = "hide";
+  step = steps().length - 1;
+  render();
+}
+
+function copyText(text, flagId){
+  const done = () => {
+    const f = document.getElementById(flagId);
+    if (f){ f.classList.remove("hide"); setTimeout(() => f.classList.add("hide"), 1600); }
+  };
+  if (navigator.clipboard && navigator.clipboard.writeText){
+    navigator.clipboard.writeText(text).then(done).catch(() => fallbackCopy(text, done));
+  } else {
+    fallbackCopy(text, done);
+  }
+}
+function fallbackCopy(text, done){
+  const ta = document.createElement("textarea");
+  ta.value = text; ta.style.position = "fixed"; ta.style.opacity = "0";
+  document.body.appendChild(ta); ta.select();
+  try { document.execCommand("copy"); done(); } catch(e) {}
+  document.body.removeChild(ta);
+}
+
+render();
+</script>
+</body>
+</html>
