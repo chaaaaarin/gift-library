@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Astra活用 逆引き診断アプリ</title>
+<meta name="description" content="職種と「今いちばん時間を取られている作業」を3問答えると、GPT-6 Astra に渡せる活用事例5件と、最初に打つ1コマンド、向かない使い方が分かります。">
+<style>
+  :root{
+    --brand:#1C3461;--brand-deep:#16284A;--accent:#2C7A93;--accent-soft:#E4F1F5;
+    --bg:#F7FAFC;--paper:#fff;--ink:#1C3461;--mid:#4A6080;--line:#D8E0EC;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Hiragino Sans','Yu Gothic',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.7;padding:22px 14px 50px;}
+  .wrap{max-width:660px;margin:0 auto;}
+  h1{font-size:22px;font-weight:900;line-height:1.35;margin-bottom:6px;}
+  .sub{font-size:13.5px;color:var(--mid);margin-bottom:20px;}
+  .card{background:var(--paper);border:1.5px solid var(--line);border-radius:14px;padding:20px 18px;margin-bottom:14px;box-shadow:0 3px 12px rgba(0,0,0,.05);}
+  .q{font-size:15.5px;font-weight:800;margin-bottom:12px;}
+  .q .step{display:inline-block;background:var(--accent-soft);color:var(--accent);border-radius:6px;font-size:12px;font-weight:900;padding:2px 9px;margin-right:8px;}
+  .opts{display:grid;gap:8px;}
+  .opts button{text-align:left;font:inherit;font-size:14px;font-weight:700;color:var(--ink);background:var(--bg);border:1.5px solid var(--line);border-radius:10px;padding:11px 14px;cursor:pointer;transition:.15s;}
+  .opts button:hover{border-color:var(--accent);background:var(--accent-soft);}
+  .opts button.sel{border-color:var(--brand);background:var(--brand);color:#fff;}
+  .nav{display:flex;gap:10px;margin-top:6px;}
+  .nav button{font:inherit;font-size:13.5px;font-weight:800;border-radius:10px;padding:10px 20px;cursor:pointer;border:1.5px solid var(--line);background:var(--paper);color:var(--brand-deep);}
+  .nav button.primary{background:var(--brand);color:#fff;border-color:var(--brand);}
+  .nav button:disabled{opacity:.4;cursor:not-allowed;}
+  .prog{font-size:12px;color:var(--mid);margin-bottom:14px;}
+  .res h2{font-size:16px;font-weight:900;margin:14px 0 8px;padding-top:12px;border-top:1px solid var(--line);}
+  .res h2:first-child{border-top:none;padding-top:0;}
+  .uc{font-size:14px;padding:9px 12px;background:var(--bg);border:1.5px solid var(--line);border-left:3px solid var(--accent);border-radius:9px;margin-bottom:7px;}
+  .uc b{color:var(--accent);}
+  .cmd{font-family:ui-monospace,Menlo,monospace;font-size:12.5px;background:var(--brand-deep);color:#EAF3F6;border-radius:10px;padding:14px 16px;white-space:pre-wrap;line-height:1.75;margin:4px 0 6px;}
+  .warn{font-size:13px;background:#FBF3E7;border:1.5px solid #E6C68A;border-radius:10px;padding:12px 14px;color:#6B4E1E;margin-top:4px;}
+  .plan{font-size:12.5px;color:var(--mid);margin-top:12px;padding:10px 12px;background:var(--bg);border-radius:9px;}
+  .again{margin-top:16px;}
+  .foot{font-size:11.5px;color:var(--mid);margin-top:22px;text-align:center;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Astra活用 逆引き診断アプリ</h1>
+  <p class="sub">3問答えると、GPT-6 Astra（ジーピーティーシックス・アストラ）に渡せる活用事例5件と、最初に打つ1コマンド、向かない使い方が出ます。すべて公式ページ・公式ドキュメントの記述に紐づけています。</p>
+
+  <div id="quiz"></div>
+  <div id="result" class="card res" hidden></div>
+  <p class="foot">出力はレビューしてから確定してください。仕様・料金・利用枠は変わります（最終確認は公式で）。</p>
+</div>
+
+<script>
+const Q=[
+  {key:'job',q:'あなたの職種・立場にいちばん近いのは？',opts:[
+    ['sales','営業'],['mkt','マーケティング'],['back','バックオフィス（総務・経理）'],
+    ['hr','人事・採用'],['cs','カスタマーサポート'],['pr','企画・広報'],
+    ['free','個人事業・フリーランス'],['eng','エンジニア'],['other','その他・一般事務']
+  ]},
+  {key:'task',q:'今いちばん時間を取られている作業は？',opts:[
+    ['research','調べ物（複数サイト・資料を見て回る）'],
+    ['docs','資料づくり（スライド・文書・表）'],
+    ['ops','定型のパソコン操作（入力・更新・予約・画面チェック）'],
+    ['code','コードを書く・直す'],
+    ['life','日常の手続き・段取り（役所・比較・リスト作り）']
+  ]},
+  {key:'plan',q:'使えるプランは？',opts:[
+    ['free','無料'],['plus','ChatGPT Plus'],['pro','Pro / Business'],['unknown','わからない']
+  ]}
+];
+
+const UC={
+  research:[
+    ['領域③ 調べ物','複数サイトを横断して比較表にまとめる（BrowseComp 91.5%）'],
+    ['領域③ 調べ物','競合・候補の公開情報だけを集約する（出典URLつき）'],
+    ['領域③ 調べ物','仕様書・ドキュメントの要点だけ抜き出す'],
+    ['領域③ 調べ物','価格調査 → 結論＋根拠の意思決定メモにする'],
+    ['領域① パソコン操作','調べた結果を、そのままメール・文書に下書きする']
+  ],
+  docs:[
+    ['領域② 資料作成','お手本スライド数枚を渡すと、トーンごと1本作る'],
+    ['領域② 資料作成','議事録を報告書の形に整える／宿題リストを切り出す'],
+    ['領域② 資料作成','バラバラの表を1つの形式に集計・整形し、グラフにする'],
+    ['領域② 資料作成','長い文章を「見出し＋箇条書き」の構造化要約にする'],
+    ['領域② 資料作成','経営層向けに要点を1枚へ圧縮する']
+  ],
+  ops:[
+    ['領域① パソコン操作','Webフォームへの一括入力（申請ボタンの手前で止める）'],
+    ['領域① パソコン操作','CRMの顧客レコードを条件に沿って更新する'],
+    ['領域① パソコン操作','役所・病院・施設の予約候補を出す（確定は承認）'],
+    ['領域① パソコン操作','作ったサイト・ページの全導線を触って画面チェック'],
+    ['領域① パソコン操作','表計算の集計・整形・関数の当て込みをまとめて']
+  ],
+  code:[
+    ['領域⑤ コーディング','タスクを渡してエージェント型で実装（差分レビュー前提）'],
+    ['領域⑤ コーディング','データベース移行（社内ベンチで Sol 42.7%→63.9%）'],
+    ['領域⑤ コーディング','大規模リファクタ・レガシー改修を段階コミットで'],
+    ['領域⑤ コーディング','バグを再現するテスト → 原因特定 → 最小パッチ'],
+    ['領域⑤ コーディング','Codexのメモ保持で、長時間タスクでも文脈を落とさない']
+  ],
+  life:[
+    ['領域⑧ 日常タスク','条件に合う病院・保育園・物件を探して比較表にする'],
+    ['領域⑧ 日常タスク','手続きの必要書類チェックリスト＋予約候補を作る'],
+    ['領域⑧ 日常タスク','旅行の下調べ → 日ごとの行程表にする'],
+    ['領域⑧ 日常タスク','携帯・保険・光熱のプランを比較する'],
+    ['領域⑧ 日常タスク','イベントの段取り（持ち物・タスク・締切）を一括作成']
+  ]
+};
+
+// 職種で1件だけ差し替え（相性のよい事例を上に）
+const JOBSWAP={
+  sales:['領域③ 調べ物','見込み客の下調べ → 接点になりそうな部署まで一覧化'],
+  mkt:['領域④ Web・アプリ制作','訴求内容から1枚ページ（LP）を作って公開する'],
+  back:['領域② 資料作成','契約書・規程の書式を、意味を変えずに社内標準へそろえる'],
+  hr:['領域② 資料作成','選考ステータス一覧から、次アクションが要る人へ連絡下書き'],
+  cs:['領域② 資料作成','問い合わせログから、よくある質問トップ10でFAQを作る'],
+  pr:['領域④ Web・アプリ制作','説明したい仕組みを、触れる1ファイルのHTML図解にする'],
+  free:['領域④ Web・アプリ制作','毎回やる計算・判定を、入力→結果だけのHTMLツールに'],
+  eng:['領域⑤ コーディング','CIのテスト整備と、失敗の切り分けをまとめて依頼する'],
+  other:['領域① パソコン操作','ダウンロードした資料を、ルール通りにフォルダ振り分け']
+};
+
+const CMD={
+  research:'目的: 《テーマ》について、公式発表・公式ドキュメント・一次データだけを根拠に整理して。\nやること: 候補サイトを開いて中身を確認し、「わかったこと／出典URL／確度（確／要確認）」に分ける。\n出力: 上記3列の表。まとめ記事・ニュースは手がかりまでにして、根拠にしないで。\n判断が要るときだけ質問して。取得以外の操作（送信・申込）はしないで。',
+  docs:'目的: 《お手本ファイル》のトーンとレイアウトを引き継いで、《今回のテーマ》の資料を作って。\nやること: 見出しの付け方・1枚の情報量・図の使い方をお手本に合わせる。中身は《メモ》の範囲だけ。\n出力: 下書き＋「メモに無くて補った箇所」の一覧。数字・固有名詞をメモの外から持ってこないで。\nまず章立てを出して、私がOKしてから本文に進んで。',
+  ops:'目的: 《元データ》の各行を《入力先フォーム/画面》に1件ずつ反映して。\nやること: 記入例に合わせて各欄を入力。1件ごとに「保存」まではしてよい。\n禁止: 「申請」「送信」「決済」「予約確定」ボタンは押さないで、その手前で止めて。\n出力: 反映した件数と、できなかった行（理由つき）の一覧。値が元データと食い違う行はスキップして報告して。',
+  code:'目的: 《タスク》を実装して。\n手順: まず変更方針を3行で出して、私がOKしてから着手して。適用前に差分をレビューさせて。\n方針: 可逆で小さい変更に、実装をなぞるだけのテストは書かないで。無関係な整理・複雑化を避けて、既存のユーティリティを再利用して。\n出力: 変更点の要約と、テスト結果。',
+  life:'目的: 《手続き名／調べたいこと》について、必要な情報を集めて段取りまで作って。\nやること: 公式（自治体・省庁・提供元）の案内で、条件・持ち物・受付時間・予約要否を確認する。私の状況は《◯◯》。\n出力: ①チェックリスト（□つき） ②流れ（番号つき） ③予約枠の候補（あれば日時3つ）。各項目に出典URLを添えて。\n予約の確定・申請の送信はしないで。'
+};
+
+const WARN={
+  research:'向かない：2026年4月末より後の最新情報。知識のカットオフを超える話は、URLや資料を自分で渡す必要があります。',
+  docs:'向かない：出典が要る主張の裏取り。文脈を埋めるのは得意ですが、根拠の確認は人がやる前提で使ってください。',
+  ops:'向かない：送信・購入・予約確定・上書き保存など「元に戻せない操作」。必ず承認を挟む設計で頼んでください。',
+  code:'向かない：小さな可逆の変更への過剰なテスト。Astraは丁寧にテストを書く癖があるので「実装をなぞるだけのテストは不要」と添えます。',
+  life:'向かない：自治体で扱いが違う手続きの一般論での回答。必ず「居住地の公式ページで確認して」と指定してください。'
+};
+
+const PLAN={
+  free:'いまのプランでは Astra は使えません。ChatGPT Plus（Work / Codex の中で）か、Pro / Business が必要です。まずは無料の範囲で「頼み方」だけ練習しておくのも手です。',
+  plus:'ChatGPT Plus では Astra は「Work」と「Codex」の中だけで使えます。通常チャットの最上位は今も GPT-5.6 Sol です。',
+  pro:'Pro / Business なら通常チャットでも "GPT-6 Pro" として使えます。管理者設定で既定オフの場合があるので、出てこなければ管理者に確認を。',
+  unknown:'ChatGPT の設定 → プラン、または「Work」「Codex」の切り替えが出るかで確認できます。無料プランでは Astra は使えません。'
+};
+
+let step=0; const ans={};
+const quiz=document.getElementById('quiz'), result=document.getElementById('result');
+
+function render(){
+  if(step>=Q.length){ show(); return; }
+  const cur=Q[step];
+  quiz.innerHTML='';
+  const p=document.createElement('div'); p.className='prog'; p.textContent=`質問 ${step+1} / ${Q.length}`;
+  const c=document.createElement('div'); c.className='card';
+  const qd=document.createElement('div'); qd.className='q';
+  qd.innerHTML=`<span class="step">Q${step+1}</span>${cur.q}`;
+  const od=document.createElement('div'); od.className='opts';
+  cur.opts.forEach(([v,label])=>{
+    const b=document.createElement('button'); b.textContent=label;
+    if(ans[cur.key]===v) b.classList.add('sel');
+    b.onclick=()=>{ ans[cur.key]=v; render(); };
+    od.appendChild(b);
+  });
+  const nav=document.createElement('div'); nav.className='nav';
+  const back=document.createElement('button'); back.textContent='← 戻る'; back.disabled=step===0;
+  back.onclick=()=>{ step--; render(); };
+  const next=document.createElement('button'); next.textContent = step===Q.length-1?'結果を見る':'次へ →';
+  next.className='primary'; next.disabled=!ans[cur.key];
+  next.onclick=()=>{ step++; render(); };
+  nav.append(back,next);
+  c.append(qd,od,nav);
+  quiz.append(p,c);
+  result.hidden=true;
+}
+
+function show(){
+  quiz.innerHTML='';
+  const t=ans.task, j=ans.job;
+  let list=UC[t].slice();
+  if(JOBSWAP[j]) list=[JOBSWAP[j], ...list.slice(0,4)];
+  let html='<div class="prog">あなたの回答：'+labelOf(0,j)+' ／ '+labelOf(1,t)+' ／ '+labelOf(2,ans.plan)+'</div>';
+  html+='<h2>1. 相性のよい活用事例 5件</h2>';
+  list.slice(0,5).forEach(([area,text])=>{ html+=`<div class="uc"><b>${area}</b>　${text}</div>`; });
+  html+='<h2>2. まず打つ1コマンド（《》を自分の条件に）</h2>';
+  html+=`<div class="cmd">${esc(CMD[t])}</div>`;
+  html+='<h2>3. この使い方は向かない</h2>';
+  html+=`<div class="warn">${WARN[t]}</div>`;
+  html+=`<div class="plan">プランについて：${PLAN[ans.plan]}</div>`;
+  html+='<div class="again"><div class="nav"><button class="primary" onclick="restart()">もう一度</button></div></div>';
+  result.innerHTML=html; result.hidden=false;
+}
+function labelOf(qi,v){ const o=Q[qi].opts.find(x=>x[0]===v); return o?o[1]:'—'; }
+function esc(s){ return s.replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c])); }
+function restart(){ step=0; for(const k in ans) delete ans[k]; render(); }
+
+render();
+</script>
+</body>
+</html>
