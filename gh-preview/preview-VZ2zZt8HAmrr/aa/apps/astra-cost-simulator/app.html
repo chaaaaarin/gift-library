@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Astra 料金シミュレーターアプリ</title>
+<meta name="description" content="入力・出力トークン、reasoning effort、verbosity、Fast mode、キャッシュ有無、272K超えを動かすと、GPT-6 Astra の1タスク推定コストと『設定を絞った場合』との差額・月額換算が分かります。">
+<style>
+  :root{
+    --brand:#1C3461; --brand-deep:#16284A; --accent:#5BBCD4; --accent-deep:#2C7A93;
+    --bg:#F4F7FA; --paper:#fff; --ink:#1C3461; --ink-mid:#4A6080; --line:rgba(28,52,97,.14);
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:-apple-system,'Hiragino Sans','Yu Gothic','Noto Sans JP',sans-serif;background:var(--bg);color:var(--ink);line-height:1.65;padding:22px 14px 44px;}
+  .wrap{max-width:760px;margin:0 auto;}
+  h1{font-size:22px;font-weight:900;line-height:1.35;margin-bottom:6px;}
+  .sub{font-size:13px;color:var(--ink-mid);margin-bottom:18px;}
+  .card{background:var(--paper);border:1.5px solid var(--line);border-radius:14px;padding:18px 18px 20px;margin-bottom:16px;box-shadow:0 3px 12px rgba(0,0,0,.05);}
+  .card h2{font-size:15px;font-weight:900;margin-bottom:14px;color:var(--brand-deep);}
+  .field{margin-bottom:14px;}
+  .field label{display:block;font-size:13px;font-weight:700;margin-bottom:5px;}
+  .field .hint{font-size:11.5px;color:var(--ink-mid);font-weight:400;}
+  input[type=number]{width:100%;padding:9px 11px;border:1.5px solid var(--line);border-radius:9px;font-size:15px;font-family:inherit;color:var(--ink);}
+  input[type=range]{width:100%;accent-color:var(--accent-deep);}
+  select{width:100%;padding:9px 11px;border:1.5px solid var(--line);border-radius:9px;font-size:15px;font-family:inherit;color:var(--ink);background:var(--paper);}
+  .row{display:flex;gap:12px;flex-wrap:wrap;}
+  .row .field{flex:1;min-width:150px;}
+  .chk{display:flex;align-items:center;gap:9px;font-size:14px;font-weight:700;cursor:pointer;padding:6px 0;}
+  .chk input{width:18px;height:18px;accent-color:var(--accent-deep);}
+  .rangeval{font-size:12px;color:var(--accent-deep);font-weight:900;}
+  .result .big{font-family:ui-monospace,Menlo,monospace;}
+  table.br{width:100%;border-collapse:collapse;font-size:13px;margin-top:6px;}
+  table.br td{border-bottom:1px solid var(--line);padding:7px 4px;}
+  table.br td:last-child{text-align:right;font-family:ui-monospace,Menlo,monospace;font-weight:700;}
+  table.br tr.tot td{border-top:2px solid var(--brand);border-bottom:none;font-weight:900;font-size:15px;padding-top:9px;color:var(--brand-deep);}
+  .cmp{display:flex;gap:12px;margin-top:14px;flex-wrap:wrap;}
+  .cmp .b{flex:1;min-width:150px;border:1.5px solid var(--line);border-radius:11px;padding:12px 14px;text-align:center;}
+  .cmp .b .k{font-size:11px;color:var(--ink-mid);font-weight:700;}
+  .cmp .b .v{font-size:20px;font-weight:900;font-family:ui-monospace,Menlo,monospace;margin-top:3px;}
+  .cmp .b.now{background:rgba(28,52,97,.05);}
+  .cmp .b.tuned{background:rgba(91,188,212,.14);border-color:var(--accent);}
+  .save{margin-top:14px;background:var(--brand);color:#fff;border-radius:11px;padding:14px 16px;text-align:center;}
+  .save .n{font-size:24px;font-weight:900;font-family:ui-monospace,Menlo,monospace;}
+  .save .s{font-size:12px;opacity:.9;margin-top:2px;}
+  .warn{background:rgba(230,161,92,.16);border:1.5px solid #E6A15C;border-radius:10px;padding:10px 13px;font-size:12.5px;font-weight:700;color:#8a5a1e;margin-top:10px;}
+  .note{font-size:11.5px;color:var(--ink-mid);margin-top:14px;line-height:1.7;}
+  .note b{color:var(--ink);}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Astra 料金シミュレーターアプリ</h1>
+  <p class="sub">GPT-6 Astra の標準 API 料金（入力 $10 ／ 出力 $50 ／ キャッシュ済み入力 $1、いずれも100万トークンあたり）をもとに、1タスクの推定コストと「設定を絞った場合」との差額を出します。推論トークン量は effort からの概算です（公式の実数ではなく比較用の目安）。</p>
+
+  <div class="card">
+    <h2>1｜このタスクの内容</h2>
+    <div class="row">
+      <div class="field">
+        <label>入力トークン数 <span class="hint">(プロンプト＋履歴＋資料)</span></label>
+        <input type="number" id="inTok" value="12000" min="0" step="1000">
+      </div>
+      <div class="field">
+        <label>可視の出力トークン数 <span class="hint">(画面に出る回答)</span></label>
+        <input type="number" id="outTok" value="1500" min="0" step="100">
+      </div>
+    </div>
+    <div class="row">
+      <div class="field">
+        <label>reasoning effort <span class="hint">(見えない推論トークン量に効く)</span></label>
+        <select id="effort">
+          <option value="0.4">low</option>
+          <option value="1.5" selected>medium</option>
+          <option value="4">high</option>
+          <option value="8">xhigh</option>
+          <option value="13">max</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>verbosity <span class="hint">(可視出力の長さに効く)</span></label>
+        <select id="verb">
+          <option value="0.6">low</option>
+          <option value="1" selected>medium</option>
+          <option value="1.7">high</option>
+        </select>
+      </div>
+    </div>
+    <div class="field">
+      <label>キャッシュ済み入力の割合 <span class="rangeval" id="cacheVal">0%</span> <span class="hint">(先頭の使い回し部分。9割引になる)</span></label>
+      <input type="range" id="cache" min="0" max="90" value="0" step="5">
+    </div>
+    <label class="chk"><input type="checkbox" id="fast"> Fast mode を使う（速度2倍・価格2倍）</label>
+    <label class="chk"><input type="checkbox" id="batch"> 急がない処理として Batch / Flex に回す（50%オフ・24時間以内）</label>
+  </div>
+
+  <div class="card">
+    <h2>2｜使う頻度（月額換算用）</h2>
+    <div class="row">
+      <div class="field">
+        <label>1日あたりのタスク数</label>
+        <input type="number" id="perDay" value="40" min="0" step="5">
+      </div>
+      <div class="field">
+        <label>稼働日数 / 月</label>
+        <input type="number" id="days" value="22" min="0" step="1">
+      </div>
+    </div>
+  </div>
+
+  <div class="card result">
+    <h2>3｜今の設定：1タスクの内訳</h2>
+    <table class="br" id="breakdown"></table>
+    <div id="cliff"></div>
+    <div class="cmp">
+      <div class="b now"><div class="k">今の設定 / タスク</div><div class="v" id="nowCost">$0</div></div>
+      <div class="b tuned"><div class="k">絞った設定 / タスク</div><div class="v" id="tunedCost">$0</div></div>
+    </div>
+    <div class="save">
+      <div class="n" id="monthSave">$0</div>
+      <div class="s" id="monthSaveSub">月あたりの削減見込み（effort=low・verbosity=low・Fast off・キャッシュ50%・Batch なしで再計算）</div>
+    </div>
+  </div>
+
+  <p class="note">
+    <b>計算の前提</b>：標準 API 料金＝入力 $10／出力 $50／キャッシュ済み入力 $1（100万トークンあたり）。推論トークンは「可視出力トークン × effort係数」で概算し、出力レートで課金（<b>公式の実数ではなく、設定を比べるための目安</b>）。verbosity は可視出力トークンに乗算。Fast mode は全体2倍、Batch / Flex は全体0.5倍。入力が 272,000 トークンを超えると、公式仕様どおりリクエスト全体を「入力・キャッシュ 2倍／出力 1.5倍」で再計算します。<br>
+    「絞った設定」＝ effort:low・verbosity:low・Fast:off・キャッシュ:50%・Batch:off で同じタスクを再計算した値です。実際の削減幅はワークロードで変わります。料金・仕様は変わるため公式で最新をご確認ください。
+  </p>
+</div>
+
+<script>
+(function(){
+  var IN_RATE=10/1e6, OUT_RATE=50/1e6, CACHE_RATE=1/1e6, THRESH=272000;
+  var $=function(id){return document.getElementById(id);};
+  var ids=['inTok','outTok','effort','verb','cache','fast','batch','perDay','days'];
+  ids.forEach(function(id){
+    var el=$(id);
+    el.addEventListener('input',render);
+    el.addEventListener('change',render);
+  });
+
+  function money(n){
+    if(n>=1) return '$'+n.toFixed(2);
+    if(n>=0.01) return '$'+n.toFixed(3);
+    return '$'+n.toFixed(5);
+  }
+
+  function calcTask(o){
+    // o: {inTok,outTok,effortF,verbF,cachePct,fast,batch}
+    var visibleOut = o.outTok * o.verbF;
+    var reasonTok = visibleOut * o.effortF;
+    var totalOut = visibleOut + reasonTok;
+    var cachedIn = o.inTok * (o.cachePct/100);
+    var freshIn = o.inTok - cachedIn;
+
+    var mIn=1, mCache=1, mOut=1;
+    var overCliff = o.inTok > THRESH;
+    if(overCliff){ mIn=2; mCache=2; mOut=1.5; }
+
+    var cIn = freshIn * IN_RATE * mIn;
+    var cCache = cachedIn * CACHE_RATE * mCache;
+    var cReason = reasonTok * OUT_RATE * mOut;
+    var cOut = visibleOut * OUT_RATE * mOut;
+    var sub = cIn + cCache + cReason + cOut;
+
+    var mult = 1;
+    if(o.fast) mult *= 2;
+    if(o.batch) mult *= 0.5;
+
+    return {
+      cIn:cIn*mult, cCache:cCache*mult, cReason:cReason*mult, cOut:cOut*mult,
+      total:sub*mult, overCliff:overCliff,
+      reasonTok:reasonTok, visibleOut:visibleOut
+    };
+  }
+
+  function render(){
+    var inTok=+$('inTok').value||0, outTok=+$('outTok').value||0;
+    var effortF=+$('effort').value, verbF=+$('verb').value;
+    var cachePct=+$('cache').value||0;
+    var fast=$('fast').checked, batch=$('batch').checked;
+    var perDay=+$('perDay').value||0, days=+$('days').value||0;
+    $('cacheVal').textContent=cachePct+'%';
+
+    var now=calcTask({inTok:inTok,outTok:outTok,effortF:effortF,verbF:verbF,cachePct:cachePct,fast:fast,batch:batch});
+    var tuned=calcTask({inTok:inTok,outTok:outTok,effortF:0.4,verbF:0.6,cachePct:50,fast:false,batch:false});
+
+    var rows=[
+      ['入力（新規ぶん）', now.cIn],
+      ['キャッシュ済み入力（9割引）', now.cCache],
+      ['推論トークン（見えない・出力扱い）', now.cReason],
+      ['可視の出力', now.cOut]
+    ];
+    var html='';
+    rows.forEach(function(r){ html+='<tr><td>'+r[0]+'</td><td>'+money(r[1])+'</td></tr>'; });
+    html+='<tr class="tot"><td>合計 / 1タスク</td><td>'+money(now.total)+'</td></tr>';
+    $('breakdown').innerHTML=html;
+
+    $('cliff').innerHTML = now.overCliff
+      ? '<div class="warn">⚠️ 入力が 272,000 トークンを超えています。リクエスト全体が「入力・キャッシュ 2倍／出力 1.5倍」で課金されています。関連ファイル・章だけに絞ると崖を踏まずに済みます。</div>'
+      : '';
+
+    $('nowCost').textContent=money(now.total);
+    $('tunedCost').textContent=money(tuned.total);
+
+    var perTaskSave = Math.max(0, now.total - tuned.total);
+    var monthSave = perTaskSave * perDay * days;
+    $('monthSave').textContent = money(monthSave);
+    var pct = now.total>0 ? Math.round((perTaskSave/now.total)*100) : 0;
+    $('monthSaveSub').textContent =
+      '1タスクあたり '+money(perTaskSave)+' 減（約'+pct+'%）× '+perDay+'件/日 × '+days+'日';
+  }
+
+  render();
+})();
+</script>
+</body>
+</html>
