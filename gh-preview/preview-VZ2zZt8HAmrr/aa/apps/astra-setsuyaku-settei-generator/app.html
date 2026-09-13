@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Astraの節約設定が30秒で決まる 設定ジェネレーターアプリ</title>
+<meta name="description" content="使う場所・作業の種類・並列の必要など7問に答えると、あなた向けのCodex設定（そのまま貼れるconfig.toml）と今日やる順番が出ます。子のAIをAstraのまま動かす場合と軽いモデルにする場合のクレジットの差も、その場で比べられます。">
+<style>
+  :root{
+    --brand:#1C3461; --brand-deep:#16284A; --brand-soft:rgba(28,52,97,.08); --brand-line:rgba(28,52,97,.22);
+    --accent:#5BBCD4; --accent-deep:#2C7A93; --accent-soft:rgba(91,188,212,.16);
+    --bg:#F7FAFC; --paper:#FFFFFF; --ink:#1C3461; --ink-mid:#4A6080; --ink-sub:#8098B4; --line:rgba(28,52,97,.14);
+    --warn:#B4552F; --warn-soft:rgba(180,85,47,.10);
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:var(--bg);color:var(--ink);font-family:-apple-system,'Hiragino Sans','Yu Gothic',sans-serif;line-height:1.7;padding:26px 18px 48px;}
+  .wrap{max-width:780px;margin:0 auto;}
+  h1{font-size:24px;font-weight:900;line-height:1.35;margin-bottom:8px;}
+  .sub{font-size:14.5px;color:var(--ink-mid);margin-bottom:20px;}
+  .bar{height:6px;background:var(--brand-soft);border-radius:99px;overflow:hidden;margin-bottom:20px;}
+  .bar i{display:block;height:100%;background:var(--accent);width:0;transition:width .3s;}
+  .card{background:var(--paper);border:1.5px solid var(--line);border-radius:14px;padding:22px;margin-bottom:16px;}
+  .qn{font-size:12.5px;font-weight:900;color:var(--accent-deep);letter-spacing:1px;margin-bottom:6px;}
+  .qt{font-size:19px;font-weight:900;line-height:1.45;margin-bottom:5px;}
+  .qh{font-size:13px;color:var(--ink-sub);margin-bottom:14px;}
+  .opts{display:flex;flex-direction:column;gap:9px;}
+  .opt{border:1.5px solid var(--line);background:var(--bg);border-radius:11px;padding:12px 16px;cursor:pointer;font-size:15px;font-weight:700;color:var(--ink);transition:.15s;user-select:none;}
+  .opt:hover{border-color:var(--brand-line);background:var(--brand-soft);}
+  .opt.on{background:var(--brand);border-color:var(--brand-deep);color:#fff;}
+  .opt small{display:block;font-weight:500;font-size:12.5px;color:var(--ink-sub);margin-top:2px;}
+  .opt.on small{color:#C8D6E6;}
+  .btns{display:flex;gap:9px;flex-wrap:wrap;margin-top:14px;}
+  button{border:1.5px solid var(--brand-line);background:var(--paper);color:var(--brand-deep);border-radius:9px;padding:10px 20px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit;transition:.15s;}
+  button:hover{background:var(--brand-soft);border-color:var(--brand);}
+  button.primary{background:var(--brand);border-color:var(--brand-deep);color:#fff;}
+  button.primary:hover{background:var(--brand-deep);}
+  button:disabled{opacity:.4;cursor:not-allowed;}
+  .hero{background:var(--brand);color:#fff;border-radius:16px;padding:24px 26px;margin-bottom:16px;}
+  .hero .lbl{font-size:12.5px;font-weight:900;color:var(--accent);letter-spacing:1px;}
+  .hero .nm{font-size:26px;font-weight:900;line-height:1.3;margin:6px 0 4px;}
+  .hero .why{font-size:15px;margin-top:12px;padding-top:12px;border-top:1px solid rgba(255,255,255,.22);line-height:1.75;}
+  .sec{font-size:12.5px;font-weight:900;color:var(--accent-deep);letter-spacing:1px;margin-bottom:10px;}
+  .steps{display:flex;flex-direction:column;gap:9px;}
+  .steps .n{display:flex;gap:12px;align-items:flex-start;background:var(--bg);border:1.5px solid var(--line);border-left:4px solid var(--brand);border-radius:10px;padding:11px 15px;}
+  .steps .n b{flex-shrink:0;width:22px;height:22px;border-radius:50%;background:var(--accent);color:var(--ink);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:900;margin-top:2px;}
+  .steps .n .tx{flex:1;font-size:14.5px;}
+  .steps .n .tx u{display:block;text-decoration:none;font-weight:900;font-size:15.5px;}
+  .steps .n .tx span{color:var(--ink-mid);font-size:13.5px;}
+  pre.code{font-family:ui-monospace,Menlo,monospace;font-size:13px;background:var(--ink);color:#ECECEA;border-radius:10px;padding:14px 16px;line-height:1.7;white-space:pre-wrap;word-break:break-all;}
+  .copied{font-size:13px;color:var(--accent-deep);font-weight:700;margin-left:8px;}
+  .warn{background:var(--warn-soft);border:1.5px solid var(--warn);border-radius:11px;padding:14px 17px;margin-top:14px;}
+  .warn b{display:block;font-size:14px;font-weight:900;color:var(--warn);margin-bottom:4px;}
+  .warn p{font-size:14px;line-height:1.65;}
+  .note{font-size:13px;color:var(--ink-sub);margin-top:10px;line-height:1.6;}
+  .calc{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:12px;}
+  .calc label{font-size:12.5px;font-weight:700;color:var(--ink-mid);display:block;margin-bottom:4px;}
+  .calc select{width:100%;font-family:inherit;font-size:14px;padding:8px 10px;border:1.5px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);}
+  table.cmp{width:100%;border-collapse:collapse;font-size:14px;}
+  table.cmp th,table.cmp td{border-bottom:1px solid var(--line);padding:9px 10px;text-align:left;}
+  table.cmp th{background:var(--brand-soft);color:var(--brand-deep);font-size:13px;}
+  table.cmp td.num{text-align:right;font-weight:900;font-variant-numeric:tabular-nums;}
+  table.cmp tr.best td{background:var(--accent-soft);}
+  .hide{display:none;}
+  @media (max-width:560px){ .calc{grid-template-columns:1fr;} }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Astraの節約設定が30秒で決まる 設定ジェネレーターアプリ</h1>
+  <p class="sub">7問に答えると、あなた向けの Codex 設定（そのまま貼れる config.toml）と、今日やる順番が出ます。最後に、子のAIを Astra のまま動かす場合と軽いモデルにする場合のクレジットの差も比べられます。</p>
+  <div class="bar"><i id="bar"></i></div>
+  <div id="quiz"></div>
+  <div id="result" class="hide"></div>
+</div>
+
+<script>
+const QUESTIONS = [
+  {key:"where", t:"Astra をどこで使っていますか？", h:"いちばん使う場所を選んでください。出てくる設定の形が変わります。",
+   opts:[
+     {v:"codex", l:"Codex（デスクトップアプリのローカル作業・CLI・IDE）", s:"パソコンの中のファイルを触らせている"},
+     {v:"work",  l:"ChatGPT Work（ブラウザ）", s:"設定ファイルは触らず、画面から頼んでいる"},
+     {v:"api",   l:"API（自分のAPIキー）", s:"プログラムから呼び出している"}
+   ]},
+  {key:"plan", t:"契約しているのはどれですか？", h:"会社のアカウントかどうかで、注意点が変わります。",
+   opts:[
+     {v:"plus", l:"Plus", s:"Astra の枠は限られている"},
+     {v:"pro",  l:"Pro", s:""},
+     {v:"biz",  l:"Business・Enterprise（会社のアカウント）", s:"管理者がいる"},
+     {v:"key",  l:"APIキーの従量課金だけ", s:""}
+   ]},
+  {key:"task", t:"いちばん多く頼む作業はどれですか？", h:"強さとモデルの選び方が決まります。",
+   opts:[
+     {v:"routine",  l:"言い換え・抽出・短い修正などの定型作業", s:"やり方が決まっている"},
+     {v:"daily",    l:"資料づくり・分析・ふつうの実装", s:"毎日のメインの作業"},
+     {v:"hard",     l:"原因の分からないバグ・設計の相談", s:"考える量が多い"},
+     {v:"parallel", l:"大量のファイル調査・テストなど、分けられる作業", s:"同じ種類の作業がたくさんある"}
+   ]},
+  {key:"para", t:"作業を分けて並列で速く進めたい場面はありますか？", h:"サブエージェント（子のAI）を止めるか、軽くするかが決まります。",
+   opts:[
+     {v:"rarely",    l:"ほとんど無い", s:"1つずつ頼めば足りる"},
+     {v:"sometimes", l:"ときどきある", s:"月に数回、大きな調査がある"},
+     {v:"often",     l:"よくある", s:"並列が前提の作業が多い"}
+   ]},
+  {key:"speed", t:"待ち時間はどのくらい気になりますか？", h:"Fast mode を付けるかどうかが決まります。",
+   opts:[
+     {v:"wait", l:"数分なら待てる", s:""},
+     {v:"fast", l:"できるだけ待ちたくない", s:"返事の速さが仕事の成果に直結する"}
+   ]},
+  {key:"mcp", t:"MCP サーバーはいくつつないでいますか？", h:"つなぐほど、毎回のメッセージに説明が足されます。",
+   opts:[
+     {v:"few",  l:"つないでいない・1つだけ", s:""},
+     {v:"mid",  l:"2〜3つ", s:""},
+     {v:"many", l:"4つ以上・数えたことがない", s:""}
+   ]},
+  {key:"agents", t:"AGENTS.md（Codex に毎回読ませるルールのファイル）はどんな状態ですか？", h:"長いほど、どの依頼にも読み込みが上乗せされます。",
+   opts:[
+     {v:"short",   l:"無い・短い", s:""},
+     {v:"long",    l:"長くなってきた", s:"書いた本人も全部は覚えていない"},
+     {v:"unknown", l:"分からない", s:""}
+   ]}
+];
+
+const state = {}; let step = 0;
+
+function render(){
+  const q = QUESTIONS[step];
+  document.getElementById("bar").style.width = (step / QUESTIONS.length * 100) + "%";
+  const box = document.getElementById("quiz");
+  box.innerHTML = "";
+  const c = document.createElement("div"); c.className = "card";
+  c.innerHTML = `<div class="qn">質問 ${step+1} / ${QUESTIONS.length}</div><div class="qt">${q.t}</div><div class="qh">${q.h}</div>`;
+  const o = document.createElement("div"); o.className = "opts";
+  q.opts.forEach(op => {
+    const d = document.createElement("div");
+    d.className = "opt" + (state[q.key] === op.v ? " on" : "");
+    d.innerHTML = op.l + (op.s ? `<small>${op.s}</small>` : "");
+    d.onclick = () => { state[q.key] = op.v; render(); };
+    o.appendChild(d);
+  });
+  c.appendChild(o);
+  const b = document.createElement("div"); b.className = "btns";
+  if (step > 0) { const back = document.createElement("button"); back.textContent = "← 戻る"; back.onclick = () => { step--; render(); }; b.appendChild(back); }
+  const nx = document.createElement("button"); nx.className = "primary";
+  nx.textContent = step === QUESTIONS.length - 1 ? "設定を作る" : "次へ →";
+  nx.disabled = !state[q.key];
+  nx.onclick = () => { if (step === QUESTIONS.length - 1) show(); else { step++; render(); } };
+  b.appendChild(nx);
+  c.appendChild(b);
+  box.appendChild(c);
+}
+
+function subagentMode(){
+  if (state.para === "often") return "ask";
+  if (state.para === "sometimes") return "light";
+  return state.task === "parallel" ? "light" : "off";
+}
+
+const PLAN_NAME = {
+  off:   "分身を止めて、軽い強さから始める",
+  light: "分身は残して、子を軽く・少なくする",
+  ask:   "分身は使う。ただし人数と役割は依頼で決める"
+};
+const PLAN_WHY = {
+  off:   "並列で進める場面がほとんど無いので、サブエージェント（子のAI）を止めるのがいちばん効きます。子は親と同じモデル・同じ強さで動くため、Astra のまま子が並ぶと1回の依頼の消費がふくらみます。",
+  light: "ときどき並列が要るので、完全には止めずに、子のモデルを GPT-5.6 Terra・強さを low にして、同時に動く数を2体までにします。メインの会話がログで散らからない良さは残せます。",
+  ask:   "並列が前提の作業が多いので、止めると遅くなります。代わりに既定の子を軽いモデルにしたうえで、大事な作業だけ依頼文で「何体・どのモデル・何を返すか」を決めます。"
+};
+
+function buildConfig(mode){
+  const L = ["# ~/.codex/config.toml に足す行（編集前に config.toml.bak を作ってから）",
+             "# すでに同じ見出し（[agents] など）がある場合は、見出しを増やさずその下に足す", ""];
+  L.push(state.task === "hard" ? 'model_reasoning_effort = "medium"   # 難しい相談が多いので medium から。軽い作業の日は "low"'
+                               : 'model_reasoning_effort = "low"      # まず軽い強さから。足りない1件だけ画面で上げる');
+  if (state.speed === "wait") L.push('# service_tier = "fast" と書いてあれば、その行は消す（Fast は必要なときだけ /fast on）');
+  L.push("");
+  if (mode === "off") {
+    L.push("[features]", "multi_agent = false", "", "[agents]", "enabled = false");
+  } else {
+    L.push("[agents]", 'default_subagent_model = "gpt-5.6-terra"', 'default_subagent_reasoning_effort = "low"',
+           mode === "light" ? "max_concurrent_threads_per_session = 2" : "max_concurrent_threads_per_session = 3");
+  }
+  if (state.mcp === "many") {
+    L.push("", "# 使っていない MCP サーバーは、設定を残したまま止める（◯◯ はサーバー名）", "# [mcp_servers.◯◯]", "# enabled = false");
+  }
+  return L.join("\n");
+}
+
+function buildSteps(mode){
+  const s = [];
+  if (state.where === "codex") {
+    s.push(["下の設定を config.toml に貼る", "Codex に「この行を ~/.codex/config.toml に足して。編集前にバックアップを作って」と頼んでもOK。貼ったら Codex を開き直す"]);
+  } else if (state.where === "work") {
+    s.push(["モデルの選択で Ultra と Max を外し、Light から始める", "Ultra はサブエージェントで作業を分けて進めるモード。分けられる大きな作業のときだけ選ぶ"]);
+  } else {
+    s.push(["reasoning.effort を low 基準にする", "難しい1問だけ上げる。上げっぱなしにしない"]);
+  }
+  if (state.task === "routine") s.push(["定型の作業は Luna、ふだんの作業は Terra に振る", "Astra は難しい作業にとっておく。Plus の5時間あたりの目安は Astra 5〜45通／Terra 25〜200通／Luna 250〜2,000通"]);
+  if (state.speed === "wait") s.push(["Fast mode を切る（CLI なら /fast off）", "Astra の Fast mode は通常の2.5倍のクレジットを使う。急ぐ作業の日だけ /fast on"]);
+  else s.push(["Fast mode は急ぐ作業だけに付ける", "Astra の Fast mode は通常の2.5倍のクレジットを使う。付けたら終わったあとに戻す"]);
+  if (mode === "ask") s.push(["大事な作業は依頼文で子の人数を決める", "「子は2体・gpt-5.6-terra・強さ low・表だけ返して」のように、数・モデル・返す中身を書く"]);
+  if (state.mcp !== "few") s.push(["使っていない MCP サーバーを止める", "つないでいるだけで、毎回のメッセージに説明が足される"]);
+  if (state.agents !== "short") s.push(["AGENTS.md を短くする", "特定のフォルダでしか使わないルールは、そのフォルダの AGENTS.md に移す。「並列で進める」系の指示が無いかも確認"]);
+  s.push(["次の同じくらいの作業で、使用状況の減り方を比べる", "アプリは「設定 → 使用状況」、CLI は /status と /usage。1つずつ変えて比べる"]);
+  return s.slice(0, 6);
+}
+
+function fmt(n){ return n.toLocaleString("ja-JP", {maximumFractionDigits:1}); }
+
+function calcHTML(){
+  return `
+    <div class="card">
+      <div class="sec">子のAIのクレジットを比べる（出力トークンぶんの目安）</div>
+      <div class="calc">
+        <div><label>子のAIの数</label><select id="cN"><option>1</option><option selected>2</option><option>3</option><option>4</option></select></div>
+        <div><label>子1体が出力するトークン</label><select id="cT"><option value="10000">1万</option><option value="50000" selected>5万</option><option value="100000">10万</option><option value="200000">20万</option></select></div>
+        <div><label>Fast mode</label><select id="cF"><option value="1" selected>オフ</option><option value="2.5">オン（Astra 分に2.5倍）</option></select></div>
+      </div>
+      <table class="cmp">
+        <thead><tr><th>子のモデル</th><th>出力100万トークンあたり</th><th style="text-align:right;">子ぜんぶの出力クレジット</th></tr></thead>
+        <tbody id="cBody"></tbody>
+      </table>
+      <p class="note">出力トークンぶんだけの目安です。入力・キャッシュ・推論の量はタスクで変わるため含めていません。サブエージェントを止めて1体で進めた場合との差は、作業の中身によって変わるため出していません。</p>
+    </div>`;
+}
+
+function updateCalc(){
+  const n = +document.getElementById("cN").value, t = +document.getElementById("cT").value, f = +document.getElementById("cF").value;
+  const rows = [["GPT-6 Astra", 1250, f], ["GPT-5.6 Sol", 500, 1], ["GPT-5.6 Terra", 300, 1], ["GPT-5.6 Luna", 30, 1]];
+  const vals = rows.map(r => n * t / 1e6 * r[1] * r[2]);
+  const astra = vals[0];
+  document.getElementById("cBody").innerHTML = rows.map((r, i) => {
+    const ratio = i === 0 ? "" : `（Astra の約${fmt(vals[i] / astra * 100)}%）`;
+    return `<tr class="${i === 2 ? "best" : ""}"><td>${r[0]}${i === 2 ? "（おすすめの既定）" : ""}</td><td>${fmt(r[1])} クレジット${i === 0 && f > 1 ? " × 2.5" : ""}</td><td class="num">${fmt(vals[i])}${ratio}</td></tr>`;
+  }).join("");
+}
+
+function copyConfig(){
+  const text = document.getElementById("cfg").textContent;
+  const done = () => { const m = document.getElementById("copied"); m.textContent = "コピーしました"; setTimeout(() => m.textContent = "", 2000); };
+  if (navigator.clipboard && window.isSecureContext) { navigator.clipboard.writeText(text).then(done, fallback); } else { fallback(); }
+  function fallback(){
+    const ta = document.createElement("textarea"); ta.value = text; document.body.appendChild(ta); ta.select();
+    try { document.execCommand("copy"); done(); } catch (e) {} ta.remove();
+  }
+}
+
+function show(){
+  document.getElementById("bar").style.width = "100%";
+  document.getElementById("quiz").className = "hide";
+  const mode = subagentMode();
+  const steps = buildSteps(mode);
+  const r = document.getElementById("result");
+  r.className = "";
+
+  let cfgBlock = "";
+  if (state.where === "codex") {
+    cfgBlock = `<div class="card"><div class="sec">そのまま貼れる設定</div><pre class="code" id="cfg"></pre>
+      <div class="btns"><button class="primary" onclick="copyConfig()">設定をコピー</button><span class="copied" id="copied"></span></div>
+      <p class="note">見出し（[features]・[agents]）より上の行は、ファイルの先頭側に置いてください。見出しの下に書くと、その見出しの中の設定として読まれます。</p></div>`;
+  } else if (state.where === "work") {
+    cfgBlock = `<div class="card"><div class="sec">ChatGPT Work（ブラウザ）の場合</div>
+      <p style="font-size:14.5px;">ブラウザの Work では設定ファイルを触らないので、<b>画面の選び方と依頼文</b>で同じことをします。モデルの強さは Light から始め、Ultra は「分けられる大きな作業」のときだけ選びます。並列を頼むときは「何体で・何を返すか」を依頼文に書きます。</p></div>`;
+  } else {
+    cfgBlock = `<div class="card"><div class="sec">API の場合</div>
+      <p style="font-size:14.5px;">API では <b>reasoning.effort を low 基準</b>にし、難しい1問だけ上げます。答えの長さは text.verbosity を low に、上限は max_output_tokens で張ります。変わらない指示や資料はプロンプトの先頭に置くと、キャッシュ（入力の割引）が効きます。</p></div>`;
+  }
+
+  const warns = [];
+  if (state.plan === "biz") warns.push("会社のアカウントでは、管理者の設定が優先されて手元の設定変更が効かないことがあります。効かないときは管理者に確認してください。");
+  if (state.where === "codex" && mode === "off") warns.push("止めると、大量のファイル調査などを並列で速く進めることはできません。Ultra も子のAIを使うモードなので、合わせて使わない前提になります。並列が要る日だけ enabled = true と multi_agent = true に戻してください。");
+  if (state.task === "hard") warns.push("強さを下げすぎて同じ依頼を何度もやり直すと、かえって枠を使います。強さを上げる前に、指示と渡した資料が足りているかを先に見直してください。");
+
+  let planName = PLAN_NAME[mode], planWhy = PLAN_WHY[mode];
+  if (state.where === "work") {
+    planName = mode === "off" ? "Ultra を選ばず、Light から始める" : "並列は、依頼文で人数と返す中身を決めて使う";
+    planWhy = "ブラウザの Work では設定ファイルを触らないので、モデルの選び方と依頼文で節約します。Ultra はサブエージェント（子のAI）で作業を分けて進めるモードなので、分けられる大きな作業のときだけ選びます。";
+  } else if (state.where === "api") {
+    planName = "強さは low 基準、答えは短く、変わらない部分を先頭に";
+    planWhy = "API ではリクエストのパラメータで節約します。考える強さを最小から始め、答えの長さを絞り、毎回同じ指示や資料をプロンプトの先頭に置いてキャッシュ（入力の割引）を効かせます。";
+  }
+
+  r.innerHTML = `
+    <div class="hero">
+      <div class="lbl">あなたの節約プラン</div>
+      <div class="nm">${planName}</div>
+      <div class="why">${planWhy}</div>
+    </div>
+    <div class="card"><div class="sec">今日やる順番</div><div class="steps">
+      ${steps.map((x, i) => `<div class="n"><b>${i+1}</b><div class="tx"><u>${x[0]}</u><span>${x[1]}</span></div></div>`).join("")}
+    </div>
+    ${warns.length ? `<div class="warn"><b>気をつけること</b><p>${warns.join("<br>")}</p></div>` : ""}
+    </div>
+    ${cfgBlock}
+    ${calcHTML()}
+    <div class="btns"><button onclick="location.reload()">もう一度やる</button></div>`;
+  if (state.where === "codex") document.getElementById("cfg").textContent = buildConfig(mode);
+  ["cN","cT","cF"].forEach(id => document.getElementById(id).onchange = updateCalc);
+  updateCalc();
+  window.scrollTo({top:0, behavior:"smooth"});
+}
+
+render();
+</script>
+</body>
+</html>

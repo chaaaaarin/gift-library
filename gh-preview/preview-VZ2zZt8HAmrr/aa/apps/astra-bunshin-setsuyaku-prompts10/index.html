@@ -1,0 +1,585 @@
+<!doctype html>
+<html lang="ja"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>貼るだけでAstraの「裏の分身」と無駄読みを止める Codex節約プロンプト厳選10 — Kawaru Gifts</title>
+<meta name="description" content="Codex に貼るだけで、裏で動くサブエージェント（子のAI）の数と強さ、毎回読み込まれる余計な資料を絞れます。設定ファイルを自分で開かなくても、同じ5時間枠でこなせる作業を増やすための下準備が10分で終わり、止めたあとで元に戻す手順までそろいます。">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Kawaru Gifts">
+<meta property="og:title" content="貼るだけでAstraの「裏の分身」と無駄読みを止める Codex節約プロンプト厳選10 — Kawaru Gifts">
+<meta property="og:description" content="Codex に貼るだけで、裏で動くサブエージェント（子のAI）の数と強さ、毎回読み込まれる余計な資料を絞れます。設定ファイルを自分で開かなくても、同じ5時間枠でこなせる作業を増やすための下準備が10分で終わり、止めたあとで元に戻す手順までそろいます。">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="貼るだけでAstraの「裏の分身」と無駄読みを止める Codex節約プロンプト厳選10 — Kawaru Gifts">
+<meta name="twitter:description" content="Codex に貼るだけで、裏で動くサブエージェント（子のAI）の数と強さ、毎回読み込まれる余計な資料を絞れます。設定ファイルを自分で開かなくても、同じ5時間枠でこなせる作業を増やすための下準備が10分で終わり、止めたあとで元に戻す手順までそろいます。">
+<meta name="robots" content="noindex,nofollow">
+<link rel="icon" href="data:image/png;base64,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">
+<link rel="stylesheet" href="../../assets/site.css?v=f40364df6d4a">
+</head><body>
+<header class="kh"><div class="top">
+  <a class="back" href="../../">← 一覧へ</a>
+  <img src="data:image/png;base64,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" alt="">
+  <h1>貼るだけでAstraの「裏の分身」と無駄読みを止める Codex節約プロンプト厳選10</h1>
+  
+  <button class="btn ghost sm" style="margin-left:auto" data-copy="pfull" aria-label="全件コピー">📋<span class="blabel"> 全件コピー</span></button>
+  <button class="btn sm" data-save="pfull" data-name="astra-bunshin-setsuyaku-prompts10.md" aria-label="全件ダウンロード">⬇<span class="blabel"> 全件ダウンロード</span></button>
+</div></header>
+
+<div class="kwrap">
+  <section class="epctx epctx-top">
+  <div class="ep-left">
+    <div class="ep-thumb epctx-thumb"><div class="noimg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M10.5 9.2v5.6l4.8-2.8-4.8-2.8Z" fill="currentColor" stroke="none"/></svg></div><span class="upbadge">近日公開</span></div>
+    
+    <div class="ep-docs"><a class="docbtn" href="https://github.com/chaaaaarin/kawaru-channel-20260910" target="_blank" rel="noopener">📚 資料</a><a class="docbtn" href="https://chaaaaarin.github.io/kawaru-channel-20260910/slides.html" target="_blank" rel="noopener">🖥 スライド</a><a class="docbtn" href="https://chaaaaarin.github.io/kawaru-channel-20260910/onepager.html" target="_blank" rel="noopener">📄 1枚資料</a></div>
+  </div>
+  <div>
+    <p class="epctx-label">この動画のプレゼントです</p>
+    <p class="epctx-title">【裏技】GPT-6 Astraの過剰なトークン消費を抑える方法</p>
+    <p class="epctx-date">2026-09-15</p>
+    <a class="epbundle" href="../../bundles/d20260915-131.md" download="プレゼント一式_2026-09-15.md">⬇ この回のプレゼントを全部ダウンロード</a>
+  </div>
+</section>
+
+  <section class="kintro">
+    <h2>貼るだけでAstraの「裏の分身」と無駄読みを止める Codex節約プロンプト厳選10</h2>
+    <p><span class="nb">Codex に貼るだけで、</span><span class="nb">裏で動くサブエージェント</span><span class="nb">（子のAI）の数と強さ、</span><span class="nb">毎回読み込まれる余計な資料を</span><span class="nb">絞れます。</span><span class="nb">設定ファイルを自分で開かなくても、</span><span class="nb">同じ5時間枠でこなせる作業を</span><span class="nb">増やすための下準備が10分で終わり、</span><span class="nb">止めたあとで元に戻す手順まで</span><span class="nb">そろいます。</span></p>
+    <div class="kmeta"><span>プロンプト集</span><span>No.131 【裏技】GPT-6 Astraの過剰なトークン消費を抑える方法</span><span>2026-09-10 配布</span></div>
+    <div class="pnote"><span class="nb">下のカードから、</span><span class="nb">1件ずつコピー、</span><span class="nb">または個別にダウンロードできます。</span><span class="nb">まとめて欲しいときは、</span><span class="nb">上の</span><span class="nb">「全件ダウンロード」を</span><span class="nb">お使いください。</span></div>
+  </section>
+
+  <p class="imeta" style="margin:0 0 18px"><span class="nb">期待できるメリット: 裏で子のAIが</span><span class="nb">何体も動く状態を止められる。</span><span class="nb">子は親と同じモデル・</span><span class="nb">同じ強さで動くため、</span><span class="nb">Astra で子が並ぶと1回の依頼の</span><span class="nb">消費がふくらむ。</span><span class="nb">止めれば、</span><span class="nb">軽い作業で子が走ることがなくなる。</span><span class="nb">
+使う場面: 短い修正や資料づくりしか頼んで</span><span class="nb">いないのに、</span><span class="nb">枠の減りが速いと感じるとき。</span><span class="nb">並列で進める必要がある作業をほと</span><span class="nb">んどしていないとき。</span><span class="nb">
+前提・</span><span class="nb">状況: ローカルの Codex</span><span class="nb">（デスクトップアプリのローカル作業・</span>CLI・<span class="nb">IDE）を</span><span class="nb"> ChatGPT アカウントで</span><span class="nb">使っている。</span><span class="nb">
+
+指示:
+Codex の</span>設定ファイル ~/.codex/config.toml を<span class="nb">編集して、</span><span class="nb">サブエージェント</span><span class="nb">（マルチエージェント機能）を</span><span class="nb">止めてください。</span></p><div class="icard" id="i1" data-cat="">
+  <div class="ih"><span class="num">001</span><span class="ititle">編集する前に、同じフォルダに config.toml.bak という名前でバックアッ…</span></div>
+  
+  <pre class="prompt" id="b1">編集する前に、同じフォルダに config.toml.bak という名前でバックアップを作る</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b1">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b1" data-name="astra-bunshin-setsuyaku-prompts10-001.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i1">🔗 リンク</button>
+  </div>
+</div>
+<div class="icard" id="i2" data-cat="">
+  <div class="ih"><span class="num">002</span><span class="ititle">[agents] に enabled = false を設定する（見出しが無ければ末…</span></div>
+  
+  <pre class="prompt" id="b2">[agents] に enabled = false を設定する（見出しが無ければ末尾に追加）</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b2">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b2" data-name="astra-bunshin-setsuyaku-prompts10-002.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i2">🔗 リンク</button>
+  </div>
+</div>
+<div class="icard" id="i3" data-cat="">
+  <div class="ih"><span class="num">003</span><span class="ititle">[features] に multi_agent = false を設定する（見出し…</span></div>
+  
+  <pre class="prompt" id="b3">[features] に multi_agent = false を設定する（見出しが無ければ末尾に追加）</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b3">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b3" data-name="astra-bunshin-setsuyaku-prompts10-003.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i3">🔗 リンク</button>
+  </div>
+</div>
+<div class="icard" id="i4" data-cat="">
+  <div class="ih"><span class="num">004</span><span class="ititle">既存の設定は1行も消さない。同じ見出し・同じキーを2回書かない</span></div>
+  
+  <pre class="prompt" id="b4">既存の設定は1行も消さない。同じ見出し・同じキーを2回書かない</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b4">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b4" data-name="astra-bunshin-setsuyaku-prompts10-004.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i4">🔗 リンク</button>
+  </div>
+</div>
+<div class="icard" id="i5" data-cat="">
+  <div class="ih"><span class="num">005</span><span class="ititle">変更前と変更後の該当行だけを見せ、反映に再起動が要るかを1行で教える</span></div>
+  
+  <pre class="prompt" id="b5">変更前と変更後の該当行だけを見せ、反映に再起動が要るかを1行で教える
+この作業そのものでも、サブエージェントは使わないでください。
+
+出力形式・制約: 変更前／変更後の該当行だけを並べる。ファイル全体は表示しない。
+つまずきどころ: 会社のアカウント（Business・Enterprise）では、管理者の設定が優先されて手元の変更が効かないことがある。効かないときは管理者に確認する。大量のファイル調査を並列で進めたい日は、2 で元に戻す。</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b5">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b5" data-name="astra-bunshin-setsuyaku-prompts10-005.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i5">🔗 リンク</button>
+  </div>
+</div>
+
+  <section class="epctx">
+  <p class="epctx-label">この動画のほかのプレゼント</p>
+  <div class="ep-kits"><a class="kchip" href="../astra-setsuyaku-settei-generator/"><span class="kt">Astraの節約設定が30秒で決まる 設定ジェネレーターアプリ</span><span class="badge">アプリ</span><span class="go">開く →</span></a><a class="kchip" href="../astra-waku-kyuugen-checklist/"><span class="kt">Astraの枠が急に減ったときに、原因を5分で突き止めるチェックリスト</span><span class="badge">15項目</span><span class="go">開く →</span></a></div>
+</section>
+  <section class="epctx">
+  <p class="epctx-label">ほかの回の「プロンプト集」</p>
+  <div class="ep-kits"><a class="kchip" href="../obsidian-memory-prompts3/"><span class="kt">永続メモリ活用 指示文3本＋出力見本</span><span class="badge">3個</span><span class="go">開く →</span></a><a class="kchip" href="../astra-multistep-request-templates/"><span class="kt">Astraに「多段の仕事」を丸ごと渡す依頼文テンプレ 厳選12</span><span class="go">開く →</span></a><a class="kchip" href="../image25-official-prompts10/"><span class="kt">【公式ベース】Image 2.5 で“作り直しゼロ”になるプロンプト10選</span><span class="badge">10個</span><span class="go">開く →</span></a><a class="kchip" href="../astra-higgsfield-video-prompts10/"><span class="kt">静止画1枚が“動く広告”になる Astra×HiggsField 動画生成プロンプト10選</span><span class="badge">10個</span><span class="go">開く →</span></a></div>
+</section>
+
+  <footer><a href="../../">← AIエージェント / Kawaru プレゼント図書館にもどる</a></footer>
+</div>
+
+<pre id="pfull" class="hidden"># 🎁 貼るだけでAstraの「裏の分身」と無駄読みを止める Codex節約プロンプト厳選10
+
+Codex に貼るだけで、裏で動くサブエージェント（子のAI）の数と強さ、毎回読み込まれる余計な資料を絞れます。設定ファイルを自分で開かなくても、同じ5時間枠でこなせる作業を増やすための下準備が10分で終わり、止めたあとで元に戻す手順までそろいます。
+
+**受け取り方**: 下の各コードブロック右上のコピーボタンでコピーするか、このファイルをそのままダウンロードしてください。
+
+**使い方**: 1本ずつ Codex のチャットに貼ります。1（止める）と 3（子を軽くする）はどちらか片方で十分です。4〜7は最初に1回やれば済む見直し、8〜10は毎回の依頼で使う型です。設定を変える前に、どのプロンプトもバックアップを取らせる形にしてあります。
+
+---
+
+## 1. サブエージェントを止める（バックアップつき）
+
+```text
+期待できるメリット: 裏で子のAIが何体も動く状態を止められる。子は親と同じモデル・同じ強さで動くため、Astra で子が並ぶと1回の依頼の消費がふくらむ。止めれば、軽い作業で子が走ることがなくなる。
+使う場面: 短い修正や資料づくりしか頼んでいないのに、枠の減りが速いと感じるとき。並列で進める必要がある作業をほとんどしていないとき。
+前提・状況: ローカルの Codex（デスクトップアプリのローカル作業・CLI・IDE）を ChatGPT アカウントで使っている。
+
+指示:
+Codex の設定ファイル ~/.codex/config.toml を編集して、サブエージェント（マルチエージェント機能）を止めてください。
+1. 編集する前に、同じフォルダに config.toml.bak という名前でバックアップを作る
+2. [agents] に enabled = false を設定する（見出しが無ければ末尾に追加）
+3. [features] に multi_agent = false を設定する（見出しが無ければ末尾に追加）
+4. 既存の設定は1行も消さない。同じ見出し・同じキーを2回書かない
+5. 変更前と変更後の該当行だけを見せ、反映に再起動が要るかを1行で教える
+この作業そのものでも、サブエージェントは使わないでください。
+
+出力形式・制約: 変更前／変更後の該当行だけを並べる。ファイル全体は表示しない。
+つまずきどころ: 会社のアカウント（Business・Enterprise）では、管理者の設定が優先されて手元の変更が効かないことがある。効かないときは管理者に確認する。大量のファイル調査を並列で進めたい日は、2 で元に戻す。
+```
+
+## 2. 止めたサブエージェントを元に戻す
+
+```text
+期待できるメリット: 大量のファイル調査やテストのように「分けた方が速い」作業の日だけ、元の並列の働き方に戻せる。バックアップと差分を確かめてから戻すので、ほかの設定を壊さない。
+使う場面: 1 で止めたあと、並列で進めたい大きな作業が来たとき。
+前提・状況: 1 のプロンプトで config.toml.bak が作られている。
+
+指示:
+~/.codex/config.toml の [agents] の enabled と、[features] の multi_agent を true に戻してください。
+戻す前に config.toml と config.toml.bak を比べ、この2行以外にも違いがあれば、書き換えずにその内容を私に報告して止まってください。
+違いがこの2行だけなら、true に戻したうえで、戻した2行を見せてください。
+この作業そのものでは、サブエージェントは使わないでください。
+
+出力形式・制約: 「差分はこの2行だけだった／ほかにも差分があった（内容）」を先に1行で書き、そのあとに戻した行を示す。
+つまずきどころ: 戻したまま放置すると、元の消費に戻る。並列の作業が終わったら 1 をもう一度貼る。
+```
+
+## 3. 止めずに「子を軽く・少なく」する
+
+```text
+期待できるメリット: サブエージェントの良さ（メインの会話がログで散らからない・分けて速く進む）は残したまま、子が Astra のまま動くのをやめられる。GPT-5.6 Terra の出力は100万トークンあたり300クレジットで、Astra の1,250クレジットより単価が低い。同時に動く子の数にも上限をかけられる。
+使う場面: 並列で進めたい作業はときどきあるので、完全には止めたくないとき。
+前提・状況: ローカルの Codex を使っていて、1 の設定（止める）はしていない。
+
+指示:
+~/.codex/config.toml の [agents] に、次の3つを設定してください。
+- default_subagent_model = &quot;gpt-5.6-terra&quot;
+- default_subagent_reasoning_effort = &quot;low&quot;
+- max_concurrent_threads_per_session = 2
+編集する前に config.toml.bak を作り、既存の設定は消さないでください。同じ見出し・同じキーを2回書かないでください。
+最後に、この設定で「私が依頼文でモデルや強さを指定した場合はどちらが優先されるか」を1行で教えてください。
+
+出力形式・制約: 追加・変更した行だけを見せる。優先順位の説明は1行。
+つまずきどころ: 依頼文で「Astra で子を作って」のように明示すると、依頼文の指定が優先される。子に難しい判断をさせたい作業では、その依頼だけモデルを指定する。
+```
+
+## 4. AGENTS.md とスキルにある「分身の指示」を点検する
+
+```text
+期待できるメリット: 自分では頼んでいないのに子が動く原因を見つけられる。Codex は、依頼文だけでなく AGENTS.md やスキルに「並列で進める」系の指示があると、サブエージェントに作業を任せる。書き換える前に一覧で確認できるので、必要な指示まで消す失敗がない。
+使う場面: 並列を頼んだ覚えがないのに、子のスレッドが増えているとき。チームで AGENTS.md を育ててきたリポジトリで作業するとき。
+前提・状況: リポジトリに AGENTS.md がある、またはスキルを入れている。
+
+指示:
+このリポジトリの AGENTS.md（サブフォルダにあるものも含む）と、あなたが読み込めるスキルの説明（SKILL.md）を読んでください。
+その中から「サブエージェントを使う」「並列で進める」「エージェントを分ける」「作業を委任する」にあたる指示を全部洗い出してください。
+まだ何も書き換えないでください。この作業そのものでもサブエージェントは使わないでください。
+
+出力形式・制約: 「ファイル名／該当する文（そのまま引用）／その指示が効く場面／外した場合に困ること」の表にする。最後に「外してよさそうなもの」と「残した方がよいもの」に分けて提案する。読めなかったファイルがあれば、その名前も書く。
+つまずきどころ: 書き換えは表を見て自分で決める。消すときは「◯◯の行だけ、△△の作業のときだけに限定する形に直して」と範囲を絞って頼む。
+```
+
+## 5. 既定の強さを「低」にして、Fast を付けっぱなしにしない
+
+```text
+期待できるメリット: 毎回の依頼が軽い強さから始まり、Fast mode の付けっぱなしがなくなる。Astra の Fast mode は通常の2.5倍のクレジットを使う。強さを下げても Astra の力が落ちるわけではなく、Astra の低い強さが Sol の高い強さを上回る場面もある。
+使う場面: 強さを Extra High や Max にしたまま、軽い依頼まで流しているとき。Fast をいつ付けたか覚えていないとき。
+前提・状況: ローカルの Codex を使っている。
+
+指示:
+~/.codex/config.toml を次のように直してください。
+1. 編集する前に config.toml.bak を作る
+2. model_reasoning_effort = &quot;low&quot; にする（ファイルの先頭側、見出しより上に置く）
+3. service_tier = &quot;fast&quot; が書かれていれば、その行を消す
+4. 既存のほかの設定は消さない。同じキーを2回書かない
+最後に、今の既定の強さと、Fast が既定でオンかオフかを1行ずつ教えてください。
+
+出力形式・制約: 変更した行と、確認結果の2行だけを返す。
+つまずきどころ: 原因の分からないバグや設計の相談は、低い強さだと足りないことがある。その1件だけ依頼画面で強さを上げ、終わったら戻す。Fast が必要なときは、その場で /fast on にして、終わったら /fast off。
+```
+
+## 6. つないでいる MCP サーバーを棚卸しする
+
+```text
+期待できるメリット: 使っていない MCP サーバーを止めて、毎回のメッセージに足される説明の量を減らせる。MCP サーバーは、つなぐたびにメッセージの文脈が増え、枠を多く使う。設定を消さずに「止めるだけ」にするので、必要になったらすぐ戻せる。
+使う場面: 試しに入れた MCP サーバーがいくつもつながったままのとき。どれを使っているか自分でも把握していないとき。
+前提・状況: ~/.codex/config.toml に [mcp_servers.◯◯] の設定がある。
+
+指示:
+~/.codex/config.toml に登録されている MCP サーバーを一覧にしてください。
+サーバーごとに「名前／何ができるサーバーか（設定から読み取れる範囲で）／このリポジトリの作業で必要そうか」をまとめてください。
+まだ何も書き換えないでください。
+私が「止めて」と指定したサーバーについてだけ、config.toml.bak を作ってから、そのサーバーの設定に enabled = false を足してください（設定そのものは消さない）。
+
+出力形式・制約: 一覧は表にする。必要そうかどうかの判断には、根拠を1行ずつ添える。推測の場合は「推測」と書く。
+つまずきどころ: 作業の途中でツールが見つからないと言われたら、止めたサーバーが必要だった合図。その1つだけ enabled = true に戻す。
+```
+
+## 7. 長くなった AGENTS.md をフォルダ別に分ける
+
+```text
+期待できるメリット: どの依頼にも毎回上乗せされる AGENTS.md の読み込み量を減らせる。大きなリポジトリでは、特定のフォルダでしか使わないルールをそのフォルダの AGENTS.md に移すと、関係ない作業では読み込まれなくなる。
+使う場面: AGENTS.md が長くなり、書いた本人も全部を覚えていないとき。フォルダごとにルールが違うリポジトリのとき。
+前提・状況: リポジトリのルートに AGENTS.md がある。
+
+指示:
+ルートの AGENTS.md を読み、書かれているルールを次の3つに分けてください。
+(a) どの作業でも必要なルール
+(b) 特定のフォルダの作業でしか使わないルール（どのフォルダか）
+(c) もう使っていない・ほかと重複しているルール
+(b) はそのフォルダの AGENTS.md へ移す案、(c) は削除候補として示してください。
+まだ書き換えないでください。この作業でサブエージェントは使わないでください。
+
+出力形式・制約: 分類表と、分けたあとのルート AGENTS.md の下書きを出す。変更前と変更後の行数も書く。
+つまずきどころ: 大事なルールまで下のフォルダに移すと、ルートでの作業で読まれなくなる。迷うものは (a) に残す。
+```
+
+## 8. 読ませる資料と答えの形を先に決める依頼文
+
+```text
+期待できるメリット: 「関連する資料だけ読む」「答えの形と長さを決める」を毎回の依頼に入れられる。読み込みと書き出しの両方が減り、途中経過や前置きに枠を使わなくなる。作業前に計画を見せてもらうので、見当違いの読み込みも止められる。
+使う場面: いつもの定型作業を頼むとき。フォルダごと、過去ログごと渡してしまいがちなとき。
+前提・状況: 読ませたいファイルがどれか、自分で分かっている。
+
+指示（◯◯の部分を書き換えて使う）:
+【目的】◯◯（例: 先週届いた問い合わせ50件を分類して、週次レポートにまとめる）
+【読んでよい資料】◯◯フォルダの◯◯.csv だけ。ほかのフォルダは開かない
+【出力】◯◯（例: A4 1枚ぶん。見出し3つと表1つ。前置きと感想は不要）
+【進め方】1体で進める。サブエージェントは使わない。途中経過は出さず、完成物だけ見せる
+【確認】作業を始める前に、読むファイルの一覧と手順を3行で見せて、私の OK を待つ
+
+出力形式・制約: 最初の返事は「読むファイルの一覧」と「3行の手順」だけにする。
+つまずきどころ: 資料を絞りすぎると、足りない部分を推測で埋め始める。足りないと感じたら「読みたいファイルを提案して、そこで止まって」と書き足す。
+```
+
+## 9. この1回だけ、人数と役割を決めて分身させる依頼文
+
+```text
+期待できるメリット: 並列が本当に効く作業でだけ、子の数・役割・モデル・強さを自分で決めて使える。「何体でも好きに」をやめられるので、分けた方が速い作業の良さだけを取れる。子に返させる中身も決めるので、メインの会話がログで散らからない。
+使う場面: 読む・調べる作業が大量にあり、分けた方が明らかに速いとき。
+前提・状況: サブエージェントを止めていない（1 で止めている人は、2 で戻してから使う）。
+
+指示（◯◯の部分を書き換えて使う）:
+この作業は並列にします。サブエージェントを2体だけ作ってください。
+1体目: ◯◯（例: 問い合わせ50件のうち、前半25件を分類する）
+2体目: ◯◯（例: 後半25件を分類する）
+どちらも gpt-5.6-terra、強さは low で動かしてください。
+2体とも終わるまで待ってから、結果を1つの表にまとめて返してください。
+子には途中経過を返させず、表の材料だけを返させてください。
+ファイルの書き換えは、子にはさせないでください。
+
+出力形式・制約: 最後に返すのは、まとめた表1つと「子を何体・どの設定で動かしたか」の1行だけ。
+つまずきどころ: 子どうしが同じファイルを書き換えると衝突する。並列にするのは、読む・調べる・分類する作業に限る。
+```
+
+## 10. 終わった作業を振り返り、次の依頼を軽くする
+
+```text
+期待できるメリット: 終わった作業について、読んだけれど使わなかったファイル、子を使ったかどうか、やり直しが起きた場所を洗い出せる。次に同じ作業を頼むときに足すべき一文まで作るので、同じ作業が回を追うごとに軽くなる。
+使う場面: 大きめの作業が終わった直後。「今回は枠をたくさん使った」と感じたとき。
+前提・状況: 同じチャットの中に、振り返りたい作業のやり取りが残っている。
+
+指示:
+いま終わった作業を振り返ってください。
+1. 読んだファイルと、そのうち結果に使わなかったもの
+2. サブエージェントを使ったか。使ったなら何体で、それぞれの役割は何だったか
+3. やり直しや手戻りが起きた場所と、その理由
+4. 次に同じ作業を頼むとき、依頼文に足すと読み込みや手戻りが減る一文
+推測で答える部分には「推測」と書いてください。
+
+出力形式・制約: 4項目の箇条書きと、依頼文への追記案（そのままコピーできる形）を返す。
+つまずきどころ: トークン数そのものは、AI が正確に数えられない。数字は CLI の /status や /usage、アプリの「設定 → 使用状況」で自分で確かめる。
+```
+</pre>
+<script>
+
+// チェックリストを実際に使えるようにする。
+// □ の行を押すと済みになり、状態はこのブラウザに残る（ページを閉じても消えない）。
+// <pre> の中身自体は変えていないので、コピーとダウンロードの内容は今までどおり。
+(function(){
+  var lines = [].slice.call(document.querySelectorAll('.cline'));
+  if (!lines.length) return;
+  var KEY = 'giftCheck:' + location.pathname;
+  var done = {};
+  try { done = JSON.parse(localStorage.getItem(KEY)) || {}; } catch(e){}
+
+  function save(){
+    try { localStorage.setItem(KEY, JSON.stringify(done)); } catch(e){}
+  }
+  function paint(){
+    var n = 0;
+    lines.forEach(function(l){
+      var on = !!done[l.dataset.c];
+      l.classList.toggle('on', on);
+      if (on) n++;
+    });
+    bar.textContent = n ? n + ' / ' + lines.length + ' 完了' : lines.length + ' 項目 ・ タップでチェック';
+    reset.style.display = n ? 'inline' : 'none';
+  }
+
+  var bar = document.createElement('span');
+  var reset = document.createElement('button');
+  reset.type = 'button';
+  reset.className = 'creset';
+  reset.textContent = 'チェックを消す';
+  reset.addEventListener('click', function(){ done = {}; save(); paint(); });
+
+  var wrap = document.createElement('div');
+  wrap.className = 'cprog';
+  wrap.appendChild(bar);
+  wrap.appendChild(reset);
+  var host = lines[0].closest('.icard') || lines[0].closest('pre');
+  host.insertBefore(wrap, host.firstChild);
+
+  lines.forEach(function(l){
+    l.addEventListener('click', function(){
+      var k = l.dataset.c;
+      if (done[k]) delete done[k]; else done[k] = 1;
+      save(); paint();
+    });
+  });
+  paint();
+})();
+
+// 名指しリンク（#i37）で来たとき、その項目まで確実に運んで少しの間だけ目立たせる。
+// ブラウザ任せだと、項目数の多いページでは狙った位置に着かないことがある
+// （html に scroll-behavior:smooth が効いており、数万px を滑らせようとして届かない）。
+(function(){
+  function go(){
+    if (!location.hash) return;
+    var el = document.querySelector(location.hash);
+    if (!el || !el.classList.contains('icard')) return;
+    // behavior:'auto' は CSS の scroll-behavior:smooth に従うため、
+    // 数万px 離れた項目へは滑らかに移動しようとして事実上たどり着かない。
+    // 名指しリンクは「開いたらそこにいる」のが正しいので即時で飛ばす。
+    el.scrollIntoView({block: 'start', behavior: 'instant'});
+    el.classList.add('flashme');
+    setTimeout(function(){ el.classList.remove('flashme'); }, 2400);
+  }
+  addEventListener('hashchange', go);
+  if (document.readyState === 'loading') addEventListener('DOMContentLoaded', go);
+  else go();
+})();
+// 項目の多いキットで、目的の1件に辿り着けるようにする絞り込み。
+// 検索はタイトル・説明だけでなく本文も対象にする（「あの文言が入っていた項目」で探せるように）。
+(function(){
+  var q = document.getElementById('kq');
+  if (!q) return;
+  var hit = document.getElementById('khit');
+  var cards = [].slice.call(document.querySelectorAll('.kwrap .icard'));
+  var heads = [].slice.call(document.querySelectorAll('.kwrap h2.cat'));
+  var chips = [].slice.call(document.querySelectorAll('.kcat'));
+  var cat = '';
+
+  // ひらがな・カタカナの違いで取りこぼさないようにする（ハブ側の検索と同じ扱い）
+  function norm(s){
+    return (s || '').toLowerCase().replace(/[ぁ-ん]/g, function(c){
+      return String.fromCharCode(c.charCodeAt(0) + 0x60);
+    });
+  }
+
+  // カード全体の textContent だとボタンの「コピー」まで拾ってしまうため、中身を選んで集める
+  cards.forEach(function(c){
+    var t = c.querySelector('.ititle'), d = c.querySelector('.imeta'), p = c.querySelector('.prompt');
+    c._t = norm((t ? t.textContent : '') + ' ' + (d ? d.textContent : '') + ' ' + (p ? p.textContent : ''));
+  });
+
+  function apply(){
+    var kw = norm(q.value.trim()), n = 0, shown = {};
+    cards.forEach(function(c){
+      var ok = (!cat || c.getAttribute('data-cat') === cat)
+            && (!kw || c._t.indexOf(kw) !== -1);
+      c.classList.toggle('hide', !ok);
+      if (ok){ n++; shown[c.getAttribute('data-cat')] = 1; }
+    });
+    // 残った項目が1件も無いカテゴリの見出しは隠す
+    heads.forEach(function(h){
+      h.classList.toggle('hide', !shown[h.getAttribute('data-cat')]);
+    });
+    hit.textContent = (kw || cat)
+      ? (n ? n + '件を表示中' : '該当する項目がありません')
+      : '';
+  }
+
+  q.addEventListener('input', apply);
+  chips.forEach(function(b){
+    b.addEventListener('click', function(){
+      cat = b.getAttribute('data-cat');
+      chips.forEach(function(x){ x.classList.toggle('on', x === b); });
+      apply();
+    });
+  });
+})();
+
+function flash(btn, label){
+  const old = btn.textContent, cls = btn.className;
+  btn.textContent = label; btn.classList.add('ok');
+  setTimeout(() => { btn.textContent = old; btn.className = cls; }, 1600);
+}
+function textOf(id){ return document.getElementById(id).textContent; }
+
+async function copyText(btn, id){
+  const t = textOf(id);
+  try {
+    await navigator.clipboard.writeText(t);
+  } catch (e) {
+    const ta = document.createElement('textarea');
+    ta.value = t; ta.style.position='fixed'; ta.style.opacity='0';
+    document.body.appendChild(ta); ta.select();
+    document.execCommand('copy'); ta.remove();
+  }
+  flash(btn, '✓ コピーしました');
+}
+
+function saveText(btn, id, name){
+  const blob = new Blob([textOf(id)], {type:'text/plain;charset=utf-8'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = name;
+  document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+  if (btn) flash(btn, '✓ 保存しました');
+}
+
+document.addEventListener('click', e => {
+  const b = e.target.closest('[data-copy]');
+  if (b) { copyText(b, b.dataset.copy); return; }
+  const d = e.target.closest('[data-save]');
+  if (d) { saveText(d, d.dataset.save, d.dataset.name); return; }
+  // その項目だけを名指しで人に渡せるようにする
+  const l = e.target.closest('[data-link]');
+  if (l) {
+    const url = location.origin + location.pathname + '#' + l.dataset.link;
+    navigator.clipboard.writeText(url).then(() => flash(l, '✓ コピーしました'));
+  }
+});
+
+// 「/」ですぐ検索を始められるようにする。入力中は邪魔しない。
+addEventListener('keydown', e => {
+  if (e.key !== '/' || e.metaKey || e.ctrlKey || e.altKey) return;
+  const t = e.target;
+  if (t && (t.tagName === 'INPUT' || t.tagName === 'TEXTAREA' || t.isContentEditable)) return;
+  const box = document.getElementById('q') || document.getElementById('kq');
+  if (!box) return;
+  e.preventDefault();
+  box.focus();
+  box.select();
+});
+
+// 「この中から探す」の貼り付き位置を、実際のヘッダ高さに合わせる（スマホでヘッダが低い）。
+(function(){
+  var h = document.querySelector('header');
+  if (!h) return;
+  var set = function(){
+    if (!window.innerWidth) return;
+    document.documentElement.style.setProperty('--hdr', Math.min(h.offsetHeight, 160) + 'px');
+  };
+  set();
+  addEventListener('resize', set);
+})();
+</script>
+<div id="promo" class="promo">
+  <div class="promo-card">
+    <button id="promoClose" class="promo-x" aria-label="閉じる">×</button>
+    <img class="promo-banner" id="promoBanner" src="" alt="">
+    <img class="promo-icon" id="promoIcon" src="" alt="">
+    <p class="promo-tag" id="promoTag"></p>
+    <p class="promo-title" id="promoTitle"></p>
+    <p class="promo-text" id="promoText"></p>
+    <a id="promoLink" class="promo-cta" href="#" target="_blank" rel="noopener sponsored">
+      <span id="promoCta"></span><span class="promo-arrow">→</span>
+    </a>
+  </div>
+</div>
+<script>window.PROMO_CREATIVES = [{"icon": "data:image/png;base64,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", "img": "https://lp.kawaru-ai.jp/wp-content/uploads/2026/05/Frame-2611706-scaled.png", "tag": "AIエージェント", "title": "Kawaru", "text": "「これ自動化して」と話すだけで、業務フローが自動で完成。", "cta": "無料で試す", "url": "https://lp.kawaru-ai.jp/"}, {"icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHgAAABPCAIAAACveZaQAAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAeKADAAQAAAABAAAATwAAAAAb4zF4AAAQkklEQVR4Ae1cCZAU1Rmenmt3lt0d2GVnFlhwWQSPRQklAgZFEVHCIYtERSspNQY0lcSKEmOqrFSMlcuUJjFVGkotY2JMeURAlEM8kBhQlIiCKFoCuxx7zV6zx+zO9PRMvtdv5k1P3z3TsyyVtO7M6//95/f+9/fr1z1wgpDgOAc58JkUG4oPjuOSjiTn4JJJwiGyEwoVIXRRkrCJDDIFoIOSktXmyZKF0rQ5uTbRKvNUZEwrT3siFxGNMvdoQ/qp5GcOo0H9ZxR2mqJk45bqJYgwH8Ho4BKJBPke8Ud2OCPFXZZk+g4h05wGHDR99ZmMeknS5X1I08MWhXl7RBTI0lapk7qKeW4AtKEipWolxRYlUrW2K5Qqp22WGqyh5NGhMCnqKuqJAdA6unLuYk7krGEYBNkEYg1LRmVSuPwYAF2ISSpzQhpAIcxJ9Wu1TY69STZVKwZAm5mk+ZiX+WTGnEzEllOMvZkx1kkRfTeMS0dBzes7N8y9hR3j4bkYDjNkI9AcRhGlw8apb1uMdvlklx6twMzrN6jRWgbyoKd803cx52ooc8wuPTK17NSkflqjTTIz5Xk2UuaG2WqeTucvnpXR0izDZdDMlTB/D5gVqXVLapkGS1LDyYx19Bmz1zGcuJixhbTQmpSqXVkZbcbAsPEMQ57mPIcAghbKWl0jF+jCLmzFfNEBS5lPeQ68W6mxEBTV2cQM6fcyNq2GkEjG+Ti5pmgc6PB68400z4HP17xGaHKyfu7o98p10Z14EndKbv+nRxpPhlwuZ2rTPSNAGcgAzJkxbVxwdKZHrYWcZTppv5KiJmeKNkxAm/JFm0kWMHsWQ5F9+MnNO/ccLCryEjZygaeKRJTxwXHRaOzRn3/n5hXzmaCqKRnK4FFSVAXNEM8MoHUCBnbd4YEhnhcfrKVDTuW6iJXDERmK9g0Mpfvs+cZoZoyYUHlmAC0LRBpk6nmkkEy4ycNPF+ck8ZOkTv1ROBRVRabS8qkllKE9F6ClcVp2UCEgKwtmlGcFmXQEx46pqiz3FRfFeaGnL5KyQHDGQ1sOf2IjSyjFk8eXGT+ZegwzgE6JyAJmTMqGvS7LyoJSuY5jpCBz3JrVC6+Yc57H6/3X3kOb39wnzmngS5YhVJvt6QxMlH4qgWIU+Il1dEpEFjBjQpysbXtjIBLt7Yv09g/i/2gsrqpfyzHKjBjmz6m/9YaF06dNPNLUircnRDrICZrKtIRYxdqWmCl09NO4dOjHqQqNSeJQNL5px95w34DL6eIF4dwpE66ad6FJWSkbEP3ks8Z7fvXM/kPHish6OYmVdTGpJHG8jYI8Sme2VMigbSlhtXRR6OhnpnRocZun68xxpRKkWEd3+GePPN8T7ne6nFiBXTN/5qJLZ6TehVEKaFE47vMvj9//8D/2HzxaVOTB/ATKY/yjZl1w9s69h5DXoNiCmpZ9k3RSOmyZJrBnNSK8u5NICC4sFLBacDr5OE+cltzgGVYtjNaRxpYH/vDCnn2fi7nswOrDV+y97foFt994pcALIsYEZ7U3qIi1YTvIXsdpHPDMGANUeiLxRn/kgHLTqY4H//TSjnc/LvJ6EQjGrcjjXr183j23r0DpEIs0VWc/ziwJWENnzOCq5qaSGXkd1aa6JJiSlKOnGez1dMD1U21dv3l8w+Y3PvACZc4BWN0u18rFc+//wTd9Pi+uhaQ2E62kRLvMqYVJk4xpd6FbGoa6z7g0a14Mzcira7VCFX0EaGJ0kqKho4NkAOdoDfX8/slXX3jt3x6PB3LIZZfbtezKWQ/86IYx/lKIV1aUzpo+hSZ1LBafOL5KR6e0yxg2KbfYhvcyKUaBrxRJ44shY1Xoz5sgTR6glZrfMp8VVjhHqKv38Wdff+blnW6nCy+KAk2nk7t63oW/uGd1VYUf6QPF50yesP7Xa3lxtQfVBGj760fKN6XHSopmRrP4CpraItQAAJtBaYOskSZIv5H7XT39Tz3/1p+f3e5EVXcS9JxJ7vLZ9Q+uu2lCsAIogx9/bpezblK1VJZ2SSks76REe9sMPWOg7TWsro3uuJkoHU2nQr9dv+mfW/ZgfYxdUVIxXM5vNVy+bs2149MoUxMi3rqDppjv6r5ZoWqNHKpC5s6QKhRTzIpuO3hJjTZhuKW9+9G/bN247X3kJtI5mUhgXbhq8SV33bpEhrIdTuWiQ2tgkdfyVQdlNYzbkMGymxkf1SFHXX7sb9uf3/wu7iGRy+QO2+FYtnDW3bcvP6smoCwLlh0wIaAatSpRqUwONOVglUUpYJJBS1CVbmiupzfyxHNv/HXDO9EYjywGv5BMLrpsxrq1DVMnjyvcVY56y0Ze1U9VojJMdaCVfIWi0CDgLNmTIIfSb+zZP/3im0+9+GZkcAiPq8AjxAVc/X5yR0P91InI5cxkEDXY/qGl30wuM57TDTQLIt1gnlG8Bof4Zze+s/7vr/f2DeB+BFzYdJ49c+p931s5s75Ovny1HWNdhcqcULIzHgDNZoaSrcAU4kUKYIKvwpEYH0dRfuyZbR09/W6XGyWCjwsz6iffd+equTOnwTkmXmBHLahXCUOUBtDpXLKgzUbW9AqaoEyRJv5gHQJMX972/h+ffq011O1xu0AEBVup99258oq59TjFLt3JgaG4uPePU1sOEytMFTvSDFEfe/FXWVI2FS0FJBHLeEQiIgx46YgjJTgO+/d4VvLIU6+ebOlwA2WSy/HamuC9a1dcPX8GRGJCYl8ovOFo24GOPhurdG713jhVk+SZYRYbos46LyDMbLGAJKAbAimkcUu9bdf+h5/YdKSpxesht1SCINRUV9z93aXXLpqNDdUBXtjb3r3zVFdzJBrm4/4i99n+UXA8N5gKGWJGt/xiyFDWqjUZ0bxb6XmKb2qWfAKst/cc/N36TYePNHvFipGIC6MCFStWX3P9knm4sQbPwa7eLU0d7YMxr8uJ6rHleEdrJJquPHm7VQgFOj/oVK81djuRHs5U/YD63fsOP/T4xoNfNBGUcZMtCGWBiulLLi372jld5NfUZO8J9yqxhIAmCjweGxzu6d9xsrM3Fie9I+nIeGP4G5ZCu80mEFl0cM4PD3z10PqN+z494nEBZQdQLvGXnb/467Wz6o9FottPdHQNxcA3o7J8/rgK7CWJBZ5UjA/aenY1d0bpSBTaadP6ER3DWl46TCuxi1GEWnyU1d4Zxhbz7v8cpijjelha6pt+zSUTLzqfXDgSyY9CvW81d0VQSTyuhRMqZ1aVOfDIG8nCOeLJxM7mrg/ae3DHONLymiJ12oGmQ8653e7G5o633zvoxkaGk2zLlfjw6G/hquWXOd1OFAtUBT6Z2N3S/V5rdzyRqCj2fmNSYIrfJ27tA2sOV0ik/KGuPgTG8siudMhZD5uyANqqV1b59ZzM6AKOPNbECVQGrORG+Yp+ue6mH6+59sbzai6uKhfI8ygHqslgQnilKbTjRCfqRU1p8benTZjmL4lDCL1OrmMo9tyXLR93hKFEz+rp6FPP6PQ1StUjNkiqvYRoNkqiCX+UHZ/kf1SMYq/np99ftXLxJSW+olKXc9mkQH3FKJ4MAcE6mhDeau78MBSGcLCkaGVddbXPQ7DmODxuCfP8psb2Y72REVVA4AyAVgEuzyWHikaCv+IgwOJPTFfRDVQM3ATee0fDTcsvLRtVDAGoqvJ5V9QGakYV0ZeQgPVAPL65qf3Lnn4w1JaVXFdXXe514UaR6muJxDY0tnUOxQqNNcyZPDD/1DPapHz+bOQWQ4QaX2Ih5u66bcktqxb4y0qYcng5qbTkusnBMq+LbEITCVQJfmNjqH0wiithfUXZsrMCHjzWEruwWf1VT2RTY9tgHEtA82gwg2Yboi9mmU8z0MRNMRGBJmbX2psXrVm9CO8ZydzH4vncMaUNtSKa4gQA1k19kQ3H2vtjcY+Tuzjgv6pmLL0zxMMXjNrHHf3bT4Romsu0aZ3qFkwtIQM6G2kAXcAxN/ACtolx4JPEFvM5deN/eMvSqkq/qhReKrgoMHrRhCoMCQQgh6Xdgc6+LSdCeNRd4nYtGF85O1COYi0WIS6WFHa19Lzb2k1tqOqUEfMsmDJtqdN02qdqdCEGU92wnArECNp4lauivLS6ajSBXe0ACsVObkFNxdzq0ViEkIlA1taJPa3du1q6cF7udS+dFDzX7yP7eQ780zrcIB/fejz0SWcvSys1xXo06MnhkILJBi9VOth5DnrzFaHRIEmpL7pVtcztWjopcN5oLOnopY8biiew2vtIXIQESrwNddXjfF7WG47xrzS2H+8fNIm1DFk25jK6fshKMGE9q3RYUqdvzFwvMUiNkrJKw9LIaKoQLFiErJwcJGgic3E15xy9PL/5eOhomLzrX1vmW1kXLPe4EglyoYfy5v6hDUdbu6P2LEJygwjFDs6wYZO0zOGUNxett6IahrluRoMVMpMImtVAk97IgNg6EMWSLjQYwy1ifUX58rOCeEkVnFTrFz0Drza2D5lYhGSwyI6N0Vkju9/4jE5XY74CcbAZTQIwnS1gJEu62iDu17Hgw30KRuer8ODGY20RXiCLkKD/qvGVFBSSSth1ag+/cbKD7IQUKBIjtZaBllZ6I+XG/Ug6wgScLKYKFiFzAv6FE8ZCDlgDPieXPNDVt/VEO3ZCsAi5smYs1nwCKoioHlX7neau99ssLEKMvc/mkA2hDCjLQCsrfbY5ciazoWSQUyyiDHG4UexyLqypJGhitPBfkuzh7W4N72rpBoPf68ZdzFR/Kc1ilPJ+Xtja1PFZVz+bRnI38juXBZEFVIGeGWbZ0PderMhwkQBFb/tk/uqK+z3u5bWBaeUl5DkAee2KLOl2HA/RRQh2QlZNqQ7ixyzYq8KixunoiOLuvOWk6UWIrnHNTllqEz5x499KZJrKc+lAweT5BF4+ipEjjt07q1owPEEf3VcqjiYSPNbVjiTQfPlY29HwALRhJ6ShLlDi9mCLFfcyWK03hodeOtbWE+ULlNcwqgqo/W+TkoWaui05jKPLShZfMaO7ZwAb0HyUnzcbG/wkteV8uueo8rXlvoa6ILaqUT0wQ7BDjcnRFYvXkSKWvKCi/LrJwr523LaQUo7c9nAOPD0YjV8W5XRAiXkXGRrYYoeUecGcXNMWCvdF6HYEwMFvqrANrc2r1wP4Bsndd+bwujjyUwDxwCpwKPX7wxSDz41CYu2whK9Stfi+/OkDWunQmUUxiz4uhlan6rABYXnpMmyeSQyZLQVka5IULpsPhhFr6BtQ9SDnDFDVpu9AwXuV73VIodFqG7rFMGINfRGzeaGvJd1LtVmC25DZkCFtXOMbC6wErhL5qtHQbp0MR+wFXeqCJeWWmKVWtNrkccTIOQqHMmJUVa4VvSpzjkCJNjQXOdK6kaMBc2JaoZqTzpdLCqhOyHk5KdrQBFq1vCrtKSlWQ5eGClmdaJnm/I0yVdKGasiUQeakVMpkWxNoVXmlPSVFVVCHKENNJ1odJcPbJXPZlHFrQKuqzMWsRFEOQ5WDiMRg/s1c7NsAdC5m8w/2TNNgDWit5NWi54yGmUqds/LhF0Q4xkBLY2bJK0OW0U3GIBNXShlWai0NWnTRhEqnCknhjRkeqZCSH+H8/9+PlkJk3EbaGSaBUgv2vo0zOiNGn+9lzv8XW5ZRFkHDJvB/AQFxZ5IQHzayAAAAAElFTkSuQmCC", "img": "https://kawarucoach-lp.kawaru-ai.jp/wp-content/uploads/2026/08/Frame-1000001051.png", "tag": "伴走型AI顧問サービス", "title": "Kawaru Coach", "text": "AIのプロが専属で伴走。月5万円から、組織のAI活用が進む。", "cta": "詳しく見る", "url": "https://kawarucoach-lp.kawaru-ai.jp/"}, {"icon": "data:image/png;base64,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", "accent": "#1C3461", "tag": "AI社員構築代行", "title": "エヌイチ", "text": "あなたの代わりに働く「AI社員」を、無料相談から構築。", "cta": "無料相談を見る", "url": "https://n1-inc.co.jp/lp-ai-staff-build-offer-with-image/"}, {"icon": "data:image/png;base64,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", "accent": "#276C82", "tag": "法人研修", "title": "Claude Code / Codex研修", "text": "指示するだけで仕事が進む組織へ。現場定着まで伴走します。", "cta": "研修内容を見る", "url": "https://n1-inc.co.jp/lp-claude-codex-training-offer-with-image/"}, {"icon": "data:image/png;base64,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", "accent": "#3F4A5A", "tag": "運営会社", "title": "株式会社エヌイチ", "text": "AI・ChatGPTを活用した社内DXと人材育成のプロ集団です。", "cta": "会社サイトを見る", "url": "https://n1-inc.co.jp/"}, {"icon": "", "img": "https://i.ytimg.com/vi/RtearLyHIc4/hqdefault.jpg", "tag": "最新の動画", "title": "【実演あり】今後はCodexに採用させて残業を0にしましょう", "text": "", "cta": "動画を見る", "url": "https://www.youtube.com/watch?v=RtearLyHIc4"}, {"icon": "", "img": "https://i.ytimg.com/vi/0Bf5ZeH1s-A/hqdefault.jpg", "tag": "最新の動画", "title": "【近未来】とある論文によるとグラフエンジニアリングが人間の代わりに働いてくれるみたいです", "text": "", "cta": "動画を見る", "url": "https://www.youtube.com/watch?v=0Bf5ZeH1s-A"}, {"icon": "", "img": "https://i.ytimg.com/vi/FEVfIQ6omg8/hqdefault.jpg", "tag": "最新の動画", "title": "【実演あり】人類の知能を超えるAstraを実際に使ってみた", "text": "", "cta": "動画を見る", "url": "https://www.youtube.com/watch?v=FEVfIQ6omg8"}, {"icon": "", "img": "https://i.ytimg.com/vi/hEGIVBm74LU/hqdefault.jpg", "tag": "最新の動画", "title": "【全自動】AIエージェントがPCを完全操作する新時代がやってきました", "text": "", "cta": "動画を見る", "url": "https://www.youtube.com/watch?v=hEGIVBm74LU"}, {"icon": "", "img": "https://i.ytimg.com/vi/LVmmvvaWfwQ/hqdefault.jpg", "tag": "最新の動画", "title": "【ブチ切れ】Cursorを買収したイーロンとOpenAIのサム・アルトマンが大喧嘩を始め…", "text": "", "cta": "動画を見る", "url": "https://www.youtube.com/watch?v=LVmmvvaWfwQ"}, {"icon": "", "img": "https://i.ytimg.com/vi/DfyHOc8qXcc/hqdefault.jpg", "tag": "最新の動画", "title": "【ついに来た】Geminiから全国民が使うべき新機能が3つ発表されましたので徹底解説しま…", "text": "", "cta": "動画を見る", "url": "https://www.youtube.com/watch?v=DfyHOc8qXcc"}];</script>
+<script>
+(function(){
+  if (sessionStorage.getItem('promoClosed')) return;
+  var el = document.getElementById('promo');
+  if (!el) return;
+  var creatives = window.PROMO_CREATIVES || [];
+  if (!creatives.length) return;
+  var c = creatives[Math.floor(Math.random() * creatives.length)];
+  var banner = document.getElementById('promoBanner');
+  var icon = document.getElementById('promoIcon');
+  // 画像があるものは横長の絵で見せる。無いものは従来どおり丸アイコン。
+  if (c.img) {
+    banner.src = c.img;
+    banner.style.display = 'block';
+    icon.style.display = 'none';
+    // 差し替え等で画像が消えていたら、アイコン表示に戻す
+    banner.onerror = function(){
+      banner.style.display = 'none';
+      if (c.icon) { icon.src = c.icon; icon.style.display = 'block'; }
+    };
+  } else {
+    icon.src = c.icon;
+    icon.style.display = 'block';
+    banner.style.display = 'none';
+  }
+  // 画像で見分けられないもの（エヌイチ系は先方のog:imageが3件とも同じ）は色で差をつける
+  var tag = document.getElementById('promoTag');
+  var cta = document.getElementById('promoLink');
+  if (c.accent) {
+    tag.style.color = c.accent;
+    tag.style.background = c.accent + '1F';
+    cta.style.background = c.accent;
+  } else {
+    tag.style.color = ''; tag.style.background = ''; cta.style.background = '';
+  }
+  tag.textContent = c.tag;
+  document.getElementById('promoTitle').textContent = c.title;
+  var txt = document.getElementById('promoText');
+  txt.textContent = c.text || '';
+  txt.style.display = c.text ? 'block' : 'none';
+  document.getElementById('promoCta').textContent = c.cta;
+  var link = document.getElementById('promoLink');
+  link.href = c.url;
+  function close(){
+    el.classList.remove('show');
+    sessionStorage.setItem('promoClosed', '1');
+  }
+  // 動画の概要欄から来た人が、自分のプレゼントを探し始める瞬間に被らないようにする。
+  // 以前は読み込み1.6秒後に無条件で出しており、いちばん目的意識の高い時間を塞いでいた。
+  // 中身を見に行った（＝目当てのものに辿り着いた）ころに出す。
+  var shown = false;
+  function show(){
+    if (shown) return;
+    // 絞り込みシートを開いている間は被せない（開いたら少し待って出直す）
+    if (document.body.classList.contains('sheet-open')) { setTimeout(show, 2500); return; }
+    shown = true;
+    el.classList.add('show');
+    removeEventListener('scroll', onScroll);
+  }
+  function onScroll(){
+    if (scrollY > innerHeight * 0.4) show();
+  }
+  addEventListener('scroll', onScroll, {passive:true});
+  // まったくスクロールしない人にも最後には出す
+  setTimeout(show, 10000);
+  document.getElementById('promoClose').addEventListener('click', function(e){ e.preventDefault(); close(); });
+  el.addEventListener('click', function(e){ if (e.target === el) close(); });
+})();
+</script>
+</body></html>
