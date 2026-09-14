@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>無料AIスクール 日本語ガイド（スマホで学べる学習アプリ）</title>
+<meta name="description" content="OpenAI の無料AI講座と同じテーマを、日本語のオリジナル講座で迷わず学べる学習アプリです。1回10分前後の39レッスンで、AIへの頼み方からエージェントへの任せ方、AIアプリの作り方まで、図解・確認クイズ・そのまま貼れる指示文で身につきます。英語の公式コースを日本語で受ける手順もまとめています。">
+<style>
+  :root{
+    --brand:#1C3461; --brand-deep:#16284A; --brand-soft:rgba(28,52,97,.07); --brand-line:rgba(28,52,97,.22);
+    --accent:#5BBCD4; --accent-deep:#2C7A93; --accent-soft:rgba(91,188,212,.16);
+    --bg:#F7FAFC; --paper:#FFFFFF; --ink:#1C3461; --ink-mid:#4A6080; --ink-sub:#8098B4; --line:rgba(28,52,97,.14);
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:var(--bg);color:var(--ink);font-family:-apple-system,'Hiragino Sans','Yu Gothic',sans-serif;
+    line-height:1.75;padding:26px 18px 44px;}
+  .wrap{max-width:640px;margin:0 auto;}
+
+  .hero{background:var(--brand);color:#fff;border-radius:18px;padding:22px 22px 20px;margin-bottom:16px;}
+  .hero .tag{display:inline-block;font-size:11.5px;font-weight:800;letter-spacing:1px;background:rgba(255,255,255,.16);
+    border-radius:999px;padding:2px 11px;margin-bottom:10px;}
+  .hero h1{font-size:21px;font-weight:900;line-height:1.45;margin-bottom:8px;}
+  .hero p{font-size:14px;color:rgba(255,255,255,.9);margin-bottom:14px;}
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:16px;}
+  .stats span{background:rgba(255,255,255,.12);border-radius:11px;padding:7px 6px;font-size:11.5px;line-height:1.35;text-align:center;}
+  .stats b{display:block;font-size:17px;font-weight:900;}
+  .btn{display:block;text-align:center;text-decoration:none;background:var(--accent);color:var(--brand-deep);
+    font-weight:900;font-size:16px;border-radius:12px;padding:13px 16px;transition:transform .12s,box-shadow .12s;}
+  .btn:hover{transform:translateY(-1px);box-shadow:0 6px 16px rgba(0,0,0,.18);}
+  .btn.sub{background:var(--paper);color:var(--brand);border:1.5px solid var(--brand-line);font-size:14.5px;padding:11px 14px;box-shadow:none;}
+  .btn.sub:hover{border-color:var(--accent-deep);}
+
+  section{background:var(--paper);border:1.5px solid var(--line);border-radius:14px;padding:18px 20px;margin-bottom:14px;}
+  section h2{font-size:15px;font-weight:900;margin-bottom:10px;color:var(--brand);}
+  section p{font-size:14px;color:var(--ink-mid);margin-bottom:12px;}
+
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px;}
+  .chip{border:1.5px solid var(--brand-line);background:var(--paper);color:var(--ink);border-radius:999px;
+    padding:6px 13px;font-size:13.5px;font-weight:700;cursor:pointer;font-family:inherit;line-height:1.5;}
+  .chip[aria-pressed="true"]{background:var(--brand);border-color:var(--brand);color:#fff;}
+  .route{list-style:none;margin:0 0 12px;counter-reset:r;min-height:210px;}
+  .route li{counter-increment:r;margin-bottom:8px;}
+  .route a{display:flex;gap:12px;align-items:flex-start;text-decoration:none;color:var(--ink);
+    padding:10px 12px;border-radius:12px;background:var(--brand-soft);}
+  .route a:hover{background:var(--accent-soft);}
+  .route a::before{content:counter(r);flex:none;width:26px;height:26px;border-radius:50%;background:var(--accent-deep);
+    color:#fff;font-weight:900;font-size:13px;line-height:26px;text-align:center;margin-top:1px;}
+  .route b{display:block;font-size:14.5px;line-height:1.5;}
+  .route small{display:block;font-size:12.5px;color:var(--ink-mid);line-height:1.55;}
+
+  ul.feat{list-style:none;margin:0;}
+  ul.feat li{position:relative;padding-left:22px;margin:6px 0;font-size:14.5px;}
+  ul.feat li::before{content:"";position:absolute;left:2px;top:.62em;width:10px;height:10px;border-radius:3px;background:var(--accent);}
+
+  .courses{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+  @media (max-width:480px){.courses{grid-template-columns:1fr;} .stats{grid-template-columns:repeat(2,1fr);}}
+  .course{display:block;text-decoration:none;color:var(--ink);border:1.5px solid var(--line);border-radius:12px;padding:10px 12px;}
+  .course:hover{border-color:var(--accent-deep);}
+  .course .g{display:block;font-size:11px;font-weight:800;color:var(--accent-deep);letter-spacing:.5px;}
+  .course b{display:block;font-size:14px;line-height:1.45;margin:2px 0 3px;}
+  .course small{display:block;font-size:12px;color:var(--ink-mid);line-height:1.55;}
+  .course .meta{margin-top:4px;color:var(--ink-sub);font-weight:700;}
+
+  .note{font-size:12.5px;color:var(--ink-sub);line-height:1.7;margin-top:12px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="hero">
+    <span class="tag">無料・登録不要</span>
+    <h1>無料AIスクール 日本語ガイド（スマホで学べる学習アプリ）</h1>
+    <p>OpenAI の無料AI講座と同じテーマを、日本語のオリジナル講座で先に学べます。英語の公式コースを日本語で受ける手順もまとめました。</p>
+    <div class="stats">
+      <span><b>8</b>コース</span><span><b>39</b>レッスン</span><span><b>10分</b>前後で1回</span><span><b>クイズ</b>つき</span>
+    </div>
+    <a class="btn" href="https://chaaaaarin.github.io/ai-shigoto-kyoshitsu/" target="_blank" rel="noopener">学習アプリを開く ↗</a>
+  </div>
+
+  <section>
+    <h2>どこから始める？</h2>
+    <p>いちばん近いものを選ぶと、おすすめの順番が出ます。</p>
+    <div class="chips" id="roles" role="group" aria-label="立場を選ぶ"></div>
+    <ol class="route" id="route"></ol>
+    <a class="btn sub" href="https://chaaaaarin.github.io/ai-shigoto-kyoshitsu/#/lesson/1-1" target="_blank" rel="noopener">最初のレッスンから始める ↗</a>
+  </section>
+
+  <section>
+    <h2>1つのレッスンで、こう身につく</h2>
+    <ul class="feat">
+      <li><b>たとえ話のイラストと図解</b>で、仕組みを一目でつかむ</li>
+      <li><b>ChatGPT にそのまま貼れる指示文</b>で、その場で試す</li>
+      <li><b>確認クイズ3問</b>で、分かったつもりを防ぐ</li>
+      <li>難しい言葉は、<b>タップすると説明</b>が出る</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>8つのコース</h2>
+    <div class="courses" id="courses"></div>
+  </section>
+
+  <section>
+    <h2>英語の公式コースも、日本語で受けたい人へ</h2>
+    <p>アプリの「受講ガイド」に、公式コースへの登録のしかた、ページを日本語で読むコツと字幕の出し方、目次の日本語訳、よくある質問をまとめています。</p>
+    <a class="btn sub" href="https://chaaaaarin.github.io/ai-shigoto-kyoshitsu/#/guide" target="_blank" rel="noopener">受講ガイドを開く ↗</a>
+    <p class="note">このアプリは非公式の学習ガイドです。講座は同じテーマを独自に解説したもので、公式教材の翻訳ではありません。進み具合は、使っている端末のブラウザに保存されます。</p>
+  </section>
+</div>
+
+<script>
+(function () {
+  var BASE = "https://chaaaaarin.github.io/ai-shigoto-kyoshitsu/";
+  var COURSES = {
+    c1: { g: "仕事でAIを使う", t: "AIと話す基本", n: 8, m: 76, d: "得意・苦手から、頼み方・確かめ方・安心して使う範囲まで" },
+    c2: { g: "仕事でAIを使う", t: "仕事を手順にしてAIに乗せる", n: 5, m: 50, d: "くり返し作業を手順に分け、使う機能を選んで使い回す" },
+    c3: { g: "仕事でAIを使う", t: "エージェントに仕事を任せる", n: 5, m: 50, d: "任せる前に決めること、途中と最後の見方、チームでの共有" },
+    c4: { g: "チームで進める", t: "チームでAI活用を進める", n: 4, m: 40, d: "始める業務の選び方から、ルール・計画・定着まで" },
+    c5: { g: "教える・学ぶ", t: "先生のためのAI活用", n: 4, m: 40, d: "授業準備や教材づくりに、先生の判断を残して使う" },
+    c6: { g: "教える・学ぶ", t: "学生のためのAI活用", n: 4, m: 40, d: "AIを先生役にして理解し、ルールを守ってレポートや試験に備える" },
+    c7: { g: "AIで作る", t: "Codex で開発を任せる", n: 4, m: 40, d: "依頼の書き方・権限の決め方・変更の確かめ方" },
+    c8: { g: "AIで作る", t: "AIアプリの作り方の基本", n: 5, m: 50, d: "企画・評価・改善から、役割を分けたエージェントまで" }
+  };
+  var ROLES = [
+    { id: "work", label: "自分の仕事に使いたい", path: ["c1", "c2", "c3"] },
+    { id: "lead", label: "チームや部署で広めたい", path: ["c1", "c4", "c3"] },
+    { id: "teacher", label: "先生として授業に使いたい", path: ["c1", "c5"] },
+    { id: "student", label: "学生として勉強に使いたい", path: ["c1", "c6"] },
+    { id: "dev", label: "開発やAIアプリづくりをしたい", path: ["c1", "c7", "c8"] }
+  ];
+
+  function el(tag, cls, text) {
+    var e = document.createElement(tag);
+    if (cls) e.className = cls;
+    if (text) e.textContent = text;
+    return e;
+  }
+  function courseLink(id, cls) {
+    var a = el("a", cls);
+    a.href = BASE + "#/course/" + id;
+    a.target = "_blank";
+    a.rel = "noopener";
+    return a;
+  }
+
+  var roles = document.getElementById("roles");
+  var route = document.getElementById("route");
+  function pick(role) {
+    Array.prototype.forEach.call(roles.children, function (b) {
+      b.setAttribute("aria-pressed", b.dataset.id === role.id ? "true" : "false");
+    });
+    route.textContent = "";
+    role.path.forEach(function (id) {
+      var c = COURSES[id];
+      var a = courseLink(id);
+      var body = el("span");
+      body.appendChild(el("b", "", "コース" + id.slice(1) + "　" + c.t));
+      body.appendChild(el("small", "", c.d + "（" + c.n + "レッスン・約" + c.m + "分）"));
+      a.appendChild(body);
+      var li = el("li");
+      li.appendChild(a);
+      route.appendChild(li);
+    });
+  }
+  ROLES.forEach(function (r) {
+    var b = el("button", "chip", r.label);
+    b.type = "button";
+    b.dataset.id = r.id;
+    b.addEventListener("click", function () { pick(r); });
+    roles.appendChild(b);
+  });
+  pick(ROLES[0]);
+
+  var box = document.getElementById("courses");
+  Object.keys(COURSES).forEach(function (id) {
+    var c = COURSES[id];
+    var a = courseLink(id, "course");
+    a.appendChild(el("span", "g", c.g));
+    a.appendChild(el("b", "", "コース" + id.slice(1) + "　" + c.t));
+    a.appendChild(el("small", "", c.d));
+    a.appendChild(el("small", "meta", c.n + "レッスン・約" + c.m + "分"));
+    box.appendChild(a);
+  });
+})();
+</script>
+</body>
+</html>
