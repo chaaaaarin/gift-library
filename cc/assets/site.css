@@ -123,6 +123,14 @@ font-weight:900;font-size:12px;border-radius:999px;padding:3px 12px;white-space:
 border:none;border-radius:22px;
 padding:18px;box-shadow:var(--sh);transition:box-shadow .2s,transform .2s;}
 .ep:hover{box-shadow:var(--sh-hover);transform:translateY(-2px);}
+/* カードのどこを押しても、その回のページ（ep/<No.>/）へ飛ぶ。<a> は入れ子にできないので、
+   タイトルのリンクを疑似要素でカード一面に広げ、中のボタン類だけを上に重ねて個別に押せるようにする。 */
+.ep{position:relative;}
+.ep-link::after{content:'';position:absolute;inset:0;z-index:1;}
+.ep .watch,.ep .docbtn,.ep .kchip,.ep .epbundle{position:relative;z-index:2;}
+.ep:hover .ep-title{color:var(--brand-deep);}
+.ep-link:focus-visible{outline:none;}
+.ep:has(.ep-link:focus-visible){box-shadow:0 0 0 2px var(--brand),var(--sh-hover);}
 .ep-left{display:flex;flex-direction:column;gap:14px;}
 .ep-thumb{position:relative;border-radius:11px;overflow:hidden;background:var(--bg);
 aspect-ratio:16/9;flex-shrink:0;}
@@ -231,6 +239,29 @@ border-radius:18px;box-shadow:var(--sh);}
 .epctx-title{font-family:var(--head);font-weight:900;font-size:15.5px;color:var(--ink);
 line-height:1.5;margin:0 0 4px;word-break:auto-phrase;line-break:strict;}
 .epctx-date{font-size:12px;color:var(--ink-mid);margin:0;}
+.epctx-title a{text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:4px;}
+.epctx-title a:hover{color:var(--brand-deep);text-decoration-color:currentColor;}
+
+/* ---------- 回ページ（ep/<No.>/）: 動画1本ぶんのプレゼント ---------- */
+/* flex-basis:0 にしないと、狭い画面でタイトルが折り返しではなく丸ごと次の行へ落ちる */
+.kh .ttl{flex:1 1 0;min-width:0;}
+.ephero{display:grid;grid-template-columns:320px 1fr;gap:24px;align-items:start;
+margin:30px 0 0;padding:20px;background:var(--paper);border-radius:22px;box-shadow:var(--sh);}
+.eptitle{font-family:var(--head);font-weight:900;font-size:23px;color:var(--ink);
+line-height:1.5;margin:2px 0 6px;word-break:auto-phrase;line-break:strict;}
+/* 地（--bg）の上に直に並ぶので、ハブのカード内と違い白地＋影で1件ずつの枠に見せる */
+.eppage-kits{gap:10px;}
+.eppage-kits .kchip{padding:12px 14px 12px 12px;font-size:14px;background:var(--paper);box-shadow:var(--sh);}
+.eppage-kits .kchip:hover{box-shadow:var(--sh-hover);}
+.eppage-kits .kchip .ic{width:34px;height:34px;flex-basis:34px;border-radius:11px;background:var(--bg);box-shadow:none;}
+.eppage-kits .kchip .ic svg{width:17px;height:17px;}
+.eppage-kits .kchip .go{background:var(--bg);box-shadow:none;}
+.eppage-kits .kchip:hover .go{background:var(--brand);color:#fff;}
+/* 説明はキットによって段落ほどあるので2行で切る（全文は開いた先にある） */
+.kdesc{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;
+font-size:12px;font-weight:500;color:var(--ink-mid);line-height:1.65;margin-top:2px;
+word-break:normal;line-break:auto;}
+.eppage-kits + .epbundle{margin-top:14px;padding:12px;font-size:12.5px;}
 .epctx .ep-kits{margin-top:12px;}
 h2.cat{display:flex;align-items:center;gap:9px;font-family:var(--head);font-weight:900;
 font-size:21px;color:var(--ink);margin:40px 0 16px;}
@@ -346,6 +377,7 @@ padding:13px 20px;text-decoration:none;transition:transform .15s,background .15s
   .hero h1{font-size:26px;}
   .kintro h2{font-size:23px;}
   .ep{grid-template-columns:180px 1fr;}
+  .ephero{grid-template-columns:240px 1fr;}
 
   /* --- ヘッダ直下の貼り付きツールバー（検索 ＋ 絞り込みボタン） --- */
   :root{--hdr:58px;}
@@ -469,12 +501,22 @@ padding:13px 20px;text-decoration:none;transition:transform .15s,background .15s
   .epctx-top{grid-template-columns:1fr;gap:12px;}
   .epctx-top > div:last-child{order:-1;}       /* 動画情報より先にプレゼント名・全部DLを見せる */
   /* サムネと「動画を見る」を1行に、資料ボタンをその下に。縦積みより ~200px 短くなる。 */
-  .epctx .ep-left{display:grid;grid-template-columns:132px 1fr;gap:10px;align-items:center;}
-  .epctx .ep-left .epctx-thumb{grid-row:1;max-width:none;}
-  .epctx .ep-left .watch{grid-column:2;grid-row:1;align-self:center;min-height:44px;
+  .epctx .ep-left,.ephero .ep-left{display:grid;grid-template-columns:132px 1fr;gap:10px;align-items:center;}
+  .epctx .ep-left .epctx-thumb,.ephero .ep-left .ep-thumb{grid-row:1;max-width:none;}
+  .epctx .ep-left .watch,.ephero .ep-left .watch{grid-column:2;grid-row:1;align-self:center;min-height:44px;
     padding:11px 12px;font-size:12px;}
-  .epctx .ep-left .ep-docs{grid-column:1/-1;}
+  .epctx .ep-left .ep-docs,.ephero .ep-left .ep-docs{grid-column:1/-1;}
   .epctx .epbundle{margin-top:10px;}
+  /* 回ページも同じ詰め方。タイトルを先に出して、プレゼント一覧までを短くする */
+  .ephero{grid-template-columns:1fr;gap:12px;margin-top:14px;padding:14px;}
+  .ephero > div:last-child{order:-1;}
+  .eptitle{font-size:19px;}
+  .kh .ttl small{display:none;}
+  /* 説明に幅を渡すため、バッジと「開く」は2段目に回す */
+  .eppage-kits .kchip{flex-wrap:wrap;align-items:flex-start;row-gap:8px;}
+  .eppage-kits .kchip .kt{flex:1 1 calc(100% - 46px);}
+  .eppage-kits .kchip .badge{margin-left:43px;}
+  .eppage-kits .kchip .go{margin-left:auto;}
   .kintro{padding:16px 0 4px;}
   .kintro h2{font-size:20px;line-height:1.35;margin-bottom:8px;}
   .kintro p{font-size:13.5px;line-height:1.85;}
