@@ -2,6 +2,7 @@
 :root{--brand:#1C3461;--brand-deep:#16284A;--brand-soft:rgba(28,52,97,.08);
 --accent:#5BBCD4;--accent-deep:#2C7A93;--bg:#F7FAFC;--paper:#FFFFFF;
 --ink:#1C3461;--ink-mid:#4A6080;--line:rgba(28,52,97,.14);
+--title-hover:#2C7A93;
 --head:'Noto Sans JP';--r:18px;
 --sh:0 1px 2px rgba(20,20,35,.04),0 10px 26px rgba(20,20,35,.07);
 --sh-lg:0 4px 10px rgba(20,20,35,.06),0 20px 44px rgba(20,20,35,.12);
@@ -128,7 +129,8 @@ padding:18px;box-shadow:var(--sh);transition:box-shadow .2s,transform .2s;}
 .ep{position:relative;}
 .ep-link::after{content:'';position:absolute;inset:0;z-index:1;}
 .ep .watch,.ep .docbtn,.ep .kchip,.ep .epbundle{position:relative;z-index:2;}
-.ep:hover .ep-title{color:var(--brand-deep);}
+/* AAは --ink と --brand-deep がほぼ同じ紺で変化が見えないため、hover専用色を持たせる */
+.ep:hover .ep-title{color:var(--title-hover);}
 .ep-link:focus-visible{outline:none;}
 .ep:has(.ep-link:focus-visible){box-shadow:0 0 0 2px var(--brand),var(--sh-hover);}
 .ep-left{display:flex;flex-direction:column;gap:14px;}
@@ -240,7 +242,7 @@ border-radius:18px;box-shadow:var(--sh);}
 line-height:1.5;margin:0 0 4px;word-break:auto-phrase;line-break:strict;}
 .epctx-date{font-size:12px;color:var(--ink-mid);margin:0;}
 .epctx-title a{text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:4px;}
-.epctx-title a:hover{color:var(--brand-deep);text-decoration-color:currentColor;}
+.epctx-title a:hover{color:var(--title-hover);text-decoration-color:currentColor;}
 
 /* ---------- 回ページ（ep/<No.>/）: 動画1本ぶんのプレゼント ---------- */
 /* flex-basis:0 にしないと、狭い画面でタイトルが折り返しではなく丸ごと次の行へ落ちる */
