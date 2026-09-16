@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>自社はどれから入れる？ 最初の3つ診断アプリ</title>
+<meta name="description" content="業種・いちばん時間を取られている仕事・今使っているツールなど6問に答えるだけで、ChatGPT のプラグインのうち自社で最初に入れる3つと、そのまま貼れる最初の依頼文が出ます。16個を全部試さずに、効くところから今日始められます。">
+<style>
+  :root{
+    --brand:#1C3461; --brand-deep:#16284A; --brand-soft:rgba(28,52,97,.08); --brand-line:rgba(28,52,97,.22);
+    --accent:#5BBCD4; --accent-deep:#2C7A93;
+    --cool:#24519B; --cool-soft:#E6EDF8; --cool-line:#B5C6E4;
+    --bg:#F7FAFC; --paper:#FFFFFF; --ink:#1C3461; --ink-mid:#4A6080; --ink-sub:#8098B4; --line:rgba(28,52,97,.14);
+    --code:#0F1B30; --code-ink:#E6EDF6;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:var(--bg);color:var(--ink);font-family:-apple-system,'Hiragino Sans','Yu Gothic',sans-serif;line-height:1.7;padding:26px 18px 48px;}
+  .wrap{max-width:760px;margin:0 auto;}
+  h1{font-size:24px;font-weight:900;line-height:1.35;margin-bottom:8px;}
+  .sub{font-size:14.5px;color:var(--ink-mid);margin-bottom:20px;}
+  .bar{height:6px;background:var(--brand-soft);border-radius:99px;overflow:hidden;margin-bottom:20px;}
+  .bar i{display:block;height:100%;background:var(--accent);width:0;transition:width .3s;}
+  .card{background:var(--paper);border:1.5px solid var(--line);border-radius:14px;padding:22px;margin-bottom:16px;}
+  .qn{font-size:12.5px;font-weight:900;color:var(--accent-deep);letter-spacing:1px;margin-bottom:6px;}
+  .qt{font-size:19px;font-weight:900;line-height:1.45;margin-bottom:5px;}
+  .qh{font-size:13px;color:var(--ink-sub);margin-bottom:14px;}
+  .opts{display:flex;flex-direction:column;gap:9px;}
+  .opts.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;}
+  .opt{border:1.5px solid var(--line);background:var(--bg);border-radius:11px;padding:12px 16px;cursor:pointer;font-size:15px;font-weight:700;color:var(--ink);transition:.15s;user-select:none;text-align:left;font-family:inherit;}
+  .opts.grid .opt{padding:10px 12px;font-size:14px;text-align:center;}
+  .opt:hover{border-color:var(--brand-line);background:var(--brand-soft);}
+  .opt.on{background:var(--brand);border-color:var(--brand-deep);color:#fff;}
+  .opt small{display:block;font-weight:500;font-size:12.5px;color:var(--ink-sub);margin-top:2px;}
+  .opt.on small{color:#F6DFD3;}
+  .btns{display:flex;gap:9px;flex-wrap:wrap;margin-top:16px;}
+  button.b{border:1.5px solid var(--brand-line);background:var(--paper);color:var(--brand-deep);border-radius:9px;padding:10px 20px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit;transition:.15s;}
+  button.b:hover{background:var(--brand-soft);border-color:var(--brand);}
+  button.b.primary{background:var(--brand);border-color:var(--brand-deep);color:#fff;}
+  button.b.primary:hover{background:var(--brand-deep);}
+  button.b:disabled{opacity:.4;cursor:not-allowed;}
+  .hide{display:none;}
+  .hero{background:linear-gradient(160deg,var(--brand-soft),var(--paper));border:1.5px solid var(--brand-line);border-radius:14px;padding:18px 20px;margin-bottom:18px;}
+  .hero b{color:var(--brand-deep);}
+  .res-head{font-size:13px;font-weight:900;color:var(--accent-deep);letter-spacing:1px;margin-bottom:4px;}
+  .res-title{font-size:21px;font-weight:900;line-height:1.4;margin-bottom:10px;}
+  .pick{background:var(--paper);border:1.5px solid var(--line);border-left:5px solid var(--brand);border-radius:14px;padding:18px 20px;margin-bottom:14px;}
+  .pick .rank{display:inline-block;background:var(--brand);color:#fff;font-size:12px;font-weight:900;border-radius:999px;padding:2px 11px;margin-bottom:6px;}
+  .pick h3{font-size:20px;font-weight:900;line-height:1.35;}
+  .pick h3 small{font-size:12.5px;color:var(--ink-sub);font-weight:700;margin-left:6px;}
+  .pick .area{font-size:13px;color:var(--ink-mid);margin:2px 0 10px;}
+  .pick .why{list-style:none;margin-bottom:10px;}
+  .pick .why li{font-size:14px;padding:2px 0 2px 18px;position:relative;}
+  .pick .why li::before{content:'';position:absolute;left:2px;top:10px;width:8px;height:8px;border-radius:50%;background:var(--brand);}
+  .lbl{font-size:12.5px;font-weight:900;color:var(--ink-mid);margin:10px 0 4px;}
+  pre.prompt{background:var(--code);color:var(--code-ink);font-family:ui-monospace,Menlo,monospace;font-size:13.5px;line-height:1.7;border-radius:10px;padding:14px 16px;white-space:pre-wrap;word-break:break-word;}
+  .copy{margin-top:8px;}
+  .note{font-size:13px;color:var(--ink-mid);background:var(--bg);border-radius:9px;padding:9px 12px;margin-top:8px;}
+  .note b{color:var(--ink);}
+  .steps{list-style:none;counter-reset:s;}
+  .steps li{counter-increment:s;font-size:14.5px;padding:8px 0 8px 36px;position:relative;border-bottom:1px solid var(--line);}
+  .steps li:last-child{border-bottom:none;}
+  .steps li::before{content:counter(s);position:absolute;left:0;top:8px;width:24px;height:24px;border-radius:50%;background:var(--cool-soft);color:var(--cool);font-weight:900;font-size:13px;display:flex;align-items:center;justify-content:center;}
+  .week{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;}
+  .week div{background:var(--bg);border:1.5px solid var(--line);border-radius:11px;padding:12px;}
+  .week b{display:block;font-size:13px;color:var(--cool);margin-bottom:4px;}
+  .week span{font-size:13.5px;}
+  .usnote{background:var(--cool-soft);border:1.5px solid var(--cool-line);border-radius:12px;padding:14px 16px;font-size:14px;margin-bottom:14px;}
+  .usnote b{color:var(--cool);}
+  .toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:var(--ink);color:#fff;font-size:13px;font-weight:700;border-radius:999px;padding:8px 18px;opacity:0;transition:opacity .2s;pointer-events:none;}
+  .toast.on{opacity:1;}
+  @media (max-width:560px){ .opts.grid{grid-template-columns:repeat(2,1fr);} .week{grid-template-columns:1fr;} h1{font-size:21px;} }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>自社はどれから入れる？ 最初の3つ診断アプリ</h1>
+  <p class="sub">ChatGPT の中小企業向けプラグインのうち、日本の会社が使える12個から、あなたの会社で最初に入れる3つと、そのまま貼れる最初の依頼文を出します。6問・1分ほどで終わります。</p>
+  <div class="bar"><i id="bar"></i></div>
+
+  <div id="quiz"></div>
+
+  <div id="result" class="hide"></div>
+</div>
+<div class="toast" id="toast">コピーしました</div>
+
+<script>
+var PLUGINS = [
+  {id:"wix", name:"Wix", yomi:"ウィックス", area:"集客｜Webサイトを話すだけで作る",
+   prompt:"@Wix\nうちの会社（［何をしている会社か1行］）のWebサイトの下書きを作ってください。\nページは、トップ・サービス紹介・料金・よくある質問・お問い合わせ。\n初回相談の予約受付と、問い合わせフォームも付けてください。",
+   need:"Wix のアカウント", care:"ドメインの購入とサイトの公開は、最後に人が決める"},
+  {id:"shopify", name:"Shopify", yomi:"ショッピファイ", area:"集客・販売｜売上と在庫をチャットで確かめる",
+   prompt:"@Shopify\n過去3週間の売上を週別に表示し、いちばん伸びた週と、伸びに効いた商品を3つ教えてください。\nあわせて、在庫が5個未満の商品を拠点ごとに一覧にしてください。",
+   need:"Shopify のストア", care:"商品の登録や割引コードの作成は書き込みになるので、最初は見るだけで頼む"},
+  {id:"canva", name:"Canva", yomi:"キャンバ", area:"集客｜チラシとSNS画像を会話から作る",
+   prompt:"@Canva\n［来週金曜19時］の「［イベント名］」の告知チラシを2案作ってください。\n対象は［誰向けか］、雰囲気は［例：紺と白で、文字が読みやすい］。\n選んだ案と同じデザインで、Instagram 投稿のサイズも作ってください。",
+   need:"Canva のアカウント（表のデータから大量に作る一括作成は Canva Enterprise）", care:"仕上げは「Canva で開く」からエディターで行う"},
+  {id:"figma", name:"Figma", yomi:"フィグマ", area:"集客・社内｜業務の流れ図と資料の骨組み",
+   prompt:"@Figma\n［受注から納品まで］の業務の流れを、FigJam のフロー図にしてください。\n流れは［問い合わせ → 見積もり → 契約 → 制作 → 納品 → 請求］です。\n担当ごとに横の列を分けてください。",
+   need:"Figma のアカウント", care:"できるのは Figma・FigJam で直せるデータ。仕上がりは人が確認する"},
+  {id:"hubspot", name:"HubSpot", yomi:"ハブスポット", area:"商談｜商談の前の準備を顧客データから作る",
+   prompt:"@HubSpot\n明日話す「［会社名］」について、これまでの経緯を5行、今回の議題、聞くべき質問を5つ出してください。\nメモに書かれていないことは推測せず「要確認」と書いてください。",
+   need:"HubSpot のアカウント", care:"見えるのは自分の HubSpot の権限で見られるデータだけ"},
+  {id:"zoominfo", name:"ZoomInfo", yomi:"ズームインフォ", area:"商談｜営業先の会社と、話すべき人を調べる",
+   prompt:"@ZoomInfo\n［業種］で［地域］、従業員［50〜300人］の会社を10社、伸びている兆し（採用・資金調達など）が強い順に並べてください。\n上位3社は、最初に連絡すべき人の役職も選んでください。",
+   need:"ZoomInfo の契約（プラグインの説明は英語）", care:"連絡先の情報は、社内の営業リストの決まりの範囲で使う"},
+  {id:"docusign", name:"Docusign", yomi:"ドキュサイン", area:"契約｜署名待ちの契約と更新日を拾う",
+   prompt:"@Docusign\n自分の対応待ちになっているエンベロープを見つけ、それぞれに必要な対応を要約してください。\nあわせて、先月完了した契約の更新日と主要な義務を一覧にしてください。",
+   need:"Docusign のアカウント", care:"契約書の作成・送信もできるので、最初は見るだけで頼む"},
+  {id:"stripe", name:"Stripe", yomi:"ストライプ", area:"請求｜売上の増減・解約・返金をまとめて分解",
+   prompt:"@Stripe\n直近8週の売上の週ごとの増減を、新規・アップグレード・解約・返金・異議申し立てに分けて説明してください。",
+   need:"Stripe のアカウント", care:"返金などお金が動く操作は、実行の前に確認が出る"},
+  {id:"paypal", name:"PayPal", yomi:"ペイパル", area:"請求｜未払いの請求書を催促する順に並べる",
+   prompt:"@PayPal\n送信済みで未払いの請求書を集め、支払期日を過ぎたものを、遅れている日数と金額で並べてください。\n最初に連絡すべき5社と、やわらかい催促メールの下書きもお願いします。",
+   need:"PayPal のビジネスアカウント", care:"催促のリマインダーを送る操作は、実行の前に確認が出る"},
+  {id:"slack", name:"Slack", yomi:"スラック", area:"チーム｜1週間のやり取りから決定事項と担当を抜く",
+   prompt:"@Slack\n#［チャンネル名］の過去7日間のやり取りから、決まったこと・担当と期限・まだ決まっていないことをまとめてください。",
+   need:"Slack のワークスペース", care:"メッセージを投稿する操作は、実行の前に確認が出る"},
+  {id:"dropbox", name:"Dropbox", yomi:"ドロップボックス", area:"チーム｜案件フォルダの資料を1枚にまとめる",
+   prompt:"@Dropbox\n「［顧客名］」の案件フォルダの資料を読んで、関係者・これまでの経緯・リスク・次の打ち合わせで出す実績を1枚にまとめてください。\nどのファイルに書いてあったかも付けてください。",
+   need:"Dropbox のアカウント", care:"ファイルの移動・共有の変更は、実行の前に確認が出る"},
+  {id:"clickup", name:"ClickUp", yomi:"クリックアップ", area:"チーム｜期限切れのタスクをやる順に並べる",
+   prompt:"@ClickUp\n自分の期限切れのタスクを、急ぎ度と「ほかの人の作業を止めているか」で並べ、今日やる3つを理由つきで選んでください。",
+   need:"ClickUp のアカウント（プラグインの説明は英語）", care:"タスクの作成・更新は書き込みになるので、最初は案だけ出させる"}
+];
+var BY = {}; PLUGINS.forEach(function(p){ BY[p.id] = p; });
+
+var Q = [
+  {key:"ind", t:"あなたの会社の業種に、いちばん近いのは？", h:"いちばん近いものを1つ選んでください", multi:false, opts:[
+    {v:"web", l:"Web制作・デザイン・広告", s:"提案資料や制作物を作る仕事が多い"},
+    {v:"shop", l:"店舗・ネットショップ", s:"商品を売る・在庫を持つ"},
+    {v:"pro", l:"士業・コンサル・スクール", s:"相談・契約・継続課金が多い"},
+    {v:"b2b", l:"製造・卸・法人向けの営業", s:"新規の営業先を探して商談する"},
+    {v:"other", l:"その他のサービス業", s:""}]},
+  {key:"pain", t:"いちばん時間を取られている仕事は？", h:"1つだけ選んでください", multi:false, opts:[
+    {v:"acq", l:"お客さん集め", s:"サイト・チラシ・SNS"},
+    {v:"sales", l:"商談の準備・営業先探し", s:"前回の経緯の確認・相手の会社の下調べ"},
+    {v:"contract", l:"契約書のやり取り", s:"署名待ち・更新日の管理"},
+    {v:"billing", l:"請求・入金の確認", s:"未払いのチェック・催促"},
+    {v:"comm", l:"社内の連絡・ファイル探し", s:"決まったことが埋もれる"},
+    {v:"task", l:"タスクの管理", s:"期限切れが溜まる"}]},
+  {key:"tools", t:"今、会社で使っているサービスは？", h:"当てはまるものを全部選んでください（複数選択）", multi:true, grid:true, opts:[
+    {v:"wix", l:"Wix"},{v:"shopify", l:"Shopify"},{v:"canva", l:"Canva"},{v:"figma", l:"Figma"},
+    {v:"hubspot", l:"HubSpot"},{v:"zoominfo", l:"ZoomInfo"},{v:"docusign", l:"Docusign"},{v:"stripe", l:"Stripe"},
+    {v:"paypal", l:"PayPal"},{v:"slack", l:"Slack"},{v:"dropbox", l:"Dropbox"},{v:"clickup", l:"ClickUp"},
+    {v:"none", l:"どれも使っていない"}]},
+  {key:"size", t:"会社の人数は？", h:"", multi:false, opts:[
+    {v:"1", l:"1人"},{v:"small", l:"2〜10人"},{v:"mid", l:"11〜50人"},{v:"large", l:"51人以上"}]},
+  {key:"country", t:"会社を登記している国は？", h:"対象外のプラグインがあるので確認します", multi:false, opts:[
+    {v:"jp", l:"日本"},{v:"us", l:"アメリカ"},{v:"other", l:"その他の国"}]},
+  {key:"scope", t:"最初は、AIにどこまで任せたい？", h:"依頼文の最後に付ける「守ること」が変わります", multi:false, opts:[
+    {v:"look", l:"見るだけ", s:"データの更新も送信もしない"},
+    {v:"draft", l:"下書きまで", s:"送信はせず、下書きを見て人が送る"},
+    {v:"update", l:"更新まで（毎回確認つき）", s:"変更内容を見せてもらい、確認してから進める"}]}
+];
+
+var PAIN = {
+  acq:{wix:4, canva:4, shopify:2, figma:2},
+  sales:{hubspot:4, zoominfo:3, dropbox:1, slack:1},
+  contract:{docusign:4, dropbox:2, hubspot:1},
+  billing:{paypal:4, stripe:4, shopify:1},
+  comm:{slack:4, dropbox:4, clickup:1},
+  task:{clickup:4, slack:2, hubspot:1}
+};
+var IND = {
+  web:{figma:2, wix:2, canva:1, docusign:1, stripe:1, clickup:1},
+  shop:{shopify:3, canva:2, stripe:1, paypal:1},
+  pro:{wix:2, docusign:2, paypal:1, hubspot:1, canva:1},
+  b2b:{hubspot:2, zoominfo:2, docusign:2, dropbox:1},
+  other:{canva:1, slack:1, wix:1}
+};
+var PAIN_LABEL = {acq:"お客さん集め", sales:"商談の準備・営業先探し", contract:"契約書のやり取り", billing:"請求・入金の確認", comm:"社内の連絡・ファイル探し", task:"タスクの管理"};
+var IND_LABEL = {web:"Web制作・デザイン", shop:"店舗・ネットショップ", pro:"士業・コンサル・スクール", b2b:"法人向けの営業", other:"サービス業"};
+var SCOPE = {
+  look:"【守ること】データの更新や送信はしないでください。結果を見せて止まってください。",
+  draft:"【守ること】送信はしないでください。下書きを見せて止まってください。",
+  update:"【守ること】更新する前に、変更する内容を一覧で見せて、私の確認を待ってください。"
+};
+
+var ans = {ind:null, pain:null, tools:[], size:null, country:null, scope:null};
+var step = 0;
+
+function esc(s){ return String(s).replace(/[&<>"]/g, function(c){ return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c]; }); }
+
+function renderQ(){
+  var q = Q[step];
+  document.getElementById("bar").style.width = (step / Q.length * 100) + "%";
+  var html = '<div class="card"><div class="qn">QUESTION ' + (step + 1) + ' / ' + Q.length + '</div><div class="qt">' + esc(q.t) + '</div>' + (q.h ? '<div class="qh">' + esc(q.h) + '</div>' : '') + '<div class="opts' + (q.grid ? ' grid' : '') + '">';
+  q.opts.forEach(function(o){
+    var on = q.multi ? ans.tools.indexOf(o.v) >= 0 : ans[q.key] === o.v;
+    html += '<button type="button" class="opt' + (on ? ' on' : '') + '" data-v="' + o.v + '">' + esc(o.l) + (o.s ? '<small>' + esc(o.s) + '</small>' : '') + '</button>';
+  });
+  html += '</div><div class="btns">';
+  if (step > 0) html += '<button type="button" class="b" id="back">もどる</button>';
+  html += '<button type="button" class="b primary" id="next"' + (canNext() ? '' : ' disabled') + '>' + (step === Q.length - 1 ? '結果を見る' : 'つぎへ') + '</button></div></div>';
+  var box = document.getElementById("quiz"); box.innerHTML = html;
+  box.querySelectorAll(".opt").forEach(function(b){ b.addEventListener("click", function(){ pick(q, b.getAttribute("data-v")); }); });
+  var nx = document.getElementById("next"); nx.addEventListener("click", function(){ if (!canNext()) return; if (step === Q.length - 1) showResult(); else { step++; renderQ(); } });
+  var bk = document.getElementById("back"); if (bk) bk.addEventListener("click", function(){ step--; renderQ(); });
+}
+function canNext(){ var q = Q[step]; return q.multi ? ans.tools.length > 0 : ans[q.key] !== null; }
+function pick(q, v){
+  if (q.multi){
+    if (v === "none") ans.tools = ans.tools.indexOf("none") >= 0 ? [] : ["none"];
+    else {
+      ans.tools = ans.tools.filter(function(x){ return x !== "none"; });
+      var i = ans.tools.indexOf(v); if (i >= 0) ans.tools.splice(i, 1); else ans.tools.push(v);
+    }
+  } else ans[q.key] = v;
+  renderQ();
+}
+
+function score(){
+  var sc = {}, why = {};
+  PLUGINS.forEach(function(p){ sc[p.id] = 0; why[p.id] = []; });
+  ans.tools.forEach(function(t){ if (sc[t] !== undefined){ sc[t] += 5; why[t].push("もう使っているので、つなぐだけで試せる"); } });
+  var pm = PAIN[ans.pain] || {};
+  Object.keys(pm).forEach(function(k){ sc[k] += pm[k]; if (pm[k] >= 3) why[k].push("「" + PAIN_LABEL[ans.pain] + "」の時間を直接減らせる"); else why[k].push("「" + PAIN_LABEL[ans.pain] + "」の手助けになる"); });
+  var im = IND[ans.ind] || {};
+  Object.keys(im).forEach(function(k){ sc[k] += im[k]; if (im[k] >= 2) why[k].push(IND_LABEL[ans.ind] + "の仕事でよく使う場面がある"); });
+  if (ans.size === "1"){ ["slack","clickup","zoominfo"].forEach(function(k){ sc[k] -= 1; }); }
+  if (ans.size === "mid" || ans.size === "large"){ ["slack","clickup","dropbox"].forEach(function(k){ sc[k] += 1; why[k].push("人数が多いほど、情報を探す時間が減る効果が大きい"); }); }
+  var order = PLUGINS.map(function(p, i){ return {id:p.id, s:sc[p.id], i:i}; }).sort(function(a, b){ return b.s - a.s || a.i - b.i; });
+  return order.slice(0, 3).map(function(o){ return {p:BY[o.id], why:why[o.id], used:ans.tools.indexOf(o.id) >= 0}; });
+}
+
+function showResult(){
+  document.getElementById("bar").style.width = "100%";
+  document.getElementById("quiz").classList.add("hide");
+  var top = score();
+  var html = '<div class="hero"><div class="res-head">RESULT</div><div class="res-title">あなたの会社が最初に入れるのは、<b>' + top.map(function(t){ return esc(t.p.name); }).join('・') + '</b></div><div style="font-size:14px;">いちばん時間を取られている「' + esc(PAIN_LABEL[ans.pain]) + '」から効く順に並べました。まずは1位だけ入れて、1週間試してください。</div></div>';
+  if (ans.country === "us") html += '<div class="usnote"><b>アメリカで登記している会社なら</b>、公式の16個のうち日本では対象外の4個（Intuit QuickBooks＝会計、Gusto＝給与計算、Mercury＝銀行口座、HoneyBook＝顧客・請求管理）も候補になります。お使いのサービスがあれば、あわせて確かめてください。</div>';
+  if (ans.country === "other") html += '<div class="usnote"><b>日本・アメリカ以外で登記している会社は</b>、プラグイン一覧に出るもの・つなげるものが国によって変わることがあります。ChatGPT の「プラグイン」で検索して、表示されるか確かめてください。</div>';
+  top.forEach(function(t, i){
+    var pr = t.p.prompt + "\n\n" + SCOPE[ans.scope];
+    html += '<div class="pick"><span class="rank">' + (i + 1) + '位</span><h3>' + esc(t.p.name) + '<small>' + esc(t.p.yomi) + '</small></h3><div class="area">' + esc(t.p.area) + '</div>';
+    if (t.why.length) html += '<ul class="why">' + t.why.slice(0, 3).map(function(w){ return '<li>' + esc(w) + '</li>'; }).join('') + '</ul>';
+    html += '<div class="lbl">最初に貼る依頼文（［ ］を自社の内容に書き換える）</div><pre class="prompt" id="pr' + i + '">' + esc(pr) + '</pre><button type="button" class="b copy" data-i="' + i + '">この依頼文をコピー</button>';
+    html += '<div class="note"><b>必要なもの:</b> ' + esc(t.p.need) + (t.used ? '' : '（まだ使っていないサービスは、先にアカウントを用意する）') + '<br><b>気をつけること:</b> ' + esc(t.p.care) + '</div></div>';
+  });
+  html += '<div class="card"><div class="qn">HOW TO INSTALL</div><div class="qt" style="font-size:17px;">プラグインの入れ方</div><ol class="steps"><li>ChatGPT の左のメニューから「プラグイン」を開く</li><li>1位のサービスを検索して「＋」を押す</li><li>求められたら、そのサービスにログインして接続する</li><li>新しいチャットを開き、上の依頼文を貼って送る</li></ol></div>';
+  html += '<div class="card"><div class="qn">FIRST WEEK</div><div class="qt" style="font-size:17px;">最初の1週間の進め方</div><div class="week"><div><b>1〜2日目</b><span>1位だけ入れて、「見るだけ」の依頼を3回試す</span></div><div><b>3〜5日目</b><span>結果が合っていたら「下書きまで」に広げる。確認のカードは宛先・金額・範囲を見て押す</span></div><div><b>6〜7日目</b><span>毎週使う依頼文を1つ決めて保存し、2位を足す</span></div></div></div>';
+  html += '<div class="card" style="font-size:13.5px;color:var(--ink-mid);">送信・削除・購入・返金・共有の変更などは、既定では実行の前に ChatGPT が確認します。個人プランで使う場合は、設定の「データコントロール」で「すべての人のためにモデルを改善する」を見直してから使ってください。</div>';
+  html += '<div class="btns"><button type="button" class="b" id="again">もう一度診断する</button></div>';
+  var r = document.getElementById("result"); r.innerHTML = html; r.classList.remove("hide");
+  r.querySelectorAll(".copy").forEach(function(b){ b.addEventListener("click", function(){ copyText(document.getElementById("pr" + b.getAttribute("data-i")).textContent); }); });
+  document.getElementById("again").addEventListener("click", function(){
+    ans = {ind:null, pain:null, tools:[], size:null, country:null, scope:null}; step = 0;
+    r.classList.add("hide"); document.getElementById("quiz").classList.remove("hide"); renderQ(); window.scrollTo(0, 0);
+  });
+  window.scrollTo(0, 0);
+}
+
+function copyText(text){
+  function done(){ var t = document.getElementById("toast"); t.classList.add("on"); setTimeout(function(){ t.classList.remove("on"); }, 1400); }
+  if (navigator.clipboard && window.isSecureContext){ navigator.clipboard.writeText(text).then(done, fallback); } else fallback();
+  function fallback(){ var ta = document.createElement("textarea"); ta.value = text; ta.style.position = "fixed"; ta.style.opacity = "0"; document.body.appendChild(ta); ta.select(); try { document.execCommand("copy"); done(); } catch (e) {} document.body.removeChild(ta); }
+}
+
+renderQ();
+</script>
+</body>
+</html>

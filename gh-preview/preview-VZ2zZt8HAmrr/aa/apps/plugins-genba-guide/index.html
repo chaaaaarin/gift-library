@@ -2,17 +2,15 @@
 <html lang="ja"><head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Outcome-Firstプロンプトテンプレート — Kawaru Gifts</title>
-<meta name="description" content="手順を細かく書く「手順書型」から、成果と完了条件だけを書く「Outcome-First型」に切り替えるためのシステムプロンプトの型です。トークン削減とコスト削減の両方に効きます。">
+<title>請求・契約・集客が「頼むだけ」で進む ChatGPTプラグイン現場活用ガイド — Kawaru Gifts</title>
+<meta name="description" content="OpenAI 公式が中小企業向けに選んだ16個のプラグインのうち、日本の会社が使える12個を、現場でそのまま貼れる日本語の依頼文にしました。貼ったその日から、未払いの洗い出し・商談の準備・チラシ作りが、チャットで頼むだけで進みます。">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Kawaru Gifts">
-<meta property="og:title" content="Outcome-Firstプロンプトテンプレート — Kawaru Gifts">
-<meta property="og:description" content="手順を細かく書く「手順書型」から、成果と完了条件だけを書く「Outcome-First型」に切り替えるためのシステムプロンプトの型です。トークン削減とコスト削減の両方に効きます。">
-<meta property="og:image" content="https://i.ytimg.com/vi/u7lKGu7BBeQ/hqdefault.jpg">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://i.ytimg.com/vi/u7lKGu7BBeQ/hqdefault.jpg">
-<meta name="twitter:title" content="Outcome-Firstプロンプトテンプレート — Kawaru Gifts">
-<meta name="twitter:description" content="手順を細かく書く「手順書型」から、成果と完了条件だけを書く「Outcome-First型」に切り替えるためのシステムプロンプトの型です。トークン削減とコスト削減の両方に効きます。">
+<meta property="og:title" content="請求・契約・集客が「頼むだけ」で進む ChatGPTプラグイン現場活用ガイド — Kawaru Gifts">
+<meta property="og:description" content="OpenAI 公式が中小企業向けに選んだ16個のプラグインのうち、日本の会社が使える12個を、現場でそのまま貼れる日本語の依頼文にしました。貼ったその日から、未払いの洗い出し・商談の準備・チラシ作りが、チャットで頼むだけで進みます。">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="請求・契約・集客が「頼むだけ」で進む ChatGPTプラグイン現場活用ガイド — Kawaru Gifts">
+<meta name="twitter:description" content="OpenAI 公式が中小企業向けに選んだ16個のプラグインのうち、日本の会社が使える12個を、現場でそのまま貼れる日本語の依頼文にしました。貼ったその日から、未払いの洗い出し・商談の準備・チラシ作りが、チャットで頼むだけで進みます。">
 <meta name="robots" content="noindex,nofollow">
 <link rel="icon" href="data:image/png;base64,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">
 <link rel="stylesheet" href="../../assets/site.css?v=86667b6833e8">
@@ -20,121 +18,744 @@
 <header class="kh"><div class="top">
   <a class="back" href="../../">← 一覧へ</a>
   <img src="data:image/png;base64,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" alt="">
-  <h1>Outcome-Firstプロンプトテンプレート</h1>
-  
+  <h1>請求・契約・集客が「頼むだけ」で進む ChatGPTプラグイン現場活用ガイド</h1>
+  <span class="badge">12個</span>
   <button class="btn ghost sm" style="margin-left:auto" data-copy="pfull" aria-label="全件コピー">📋<span class="blabel"> 全件コピー</span></button>
-  <button class="btn sm" data-save="pfull" data-name="outcome-first-prompt-template.md" aria-label="全件ダウンロード">⬇<span class="blabel"> 全件ダウンロード</span></button>
+  <button class="btn sm" data-save="pfull" data-name="plugins-genba-guide.md" aria-label="全件ダウンロード">⬇<span class="blabel"> 全件ダウンロード</span></button>
 </div></header>
 
 <div class="kwrap">
   <section class="epctx epctx-top">
   <div class="ep-left">
-    <div class="ep-thumb epctx-thumb"><img src="https://i.ytimg.com/vi/u7lKGu7BBeQ/hqdefault.jpg" alt=""></div>
-    <a class="watch" href="https://www.youtube.com/watch?v=u7lKGu7BBeQ" target="_blank" rel="noopener">▶ 動画を見る</a>
-    <div class="ep-docs"><a class="docbtn" href="https://github.com/chaaaaarin/kawaru-channel-20260715" target="_blank" rel="noopener">📚 資料</a><a class="docbtn" href="https://chaaaaarin.github.io/kawaru-channel-20260715/slides.html" target="_blank" rel="noopener">🖥 スライド</a><a class="docbtn" href="https://chaaaaarin.github.io/kawaru-channel-20260715/onepager.html" target="_blank" rel="noopener">📄 1枚資料</a></div>
+    <div class="ep-thumb epctx-thumb"><div class="noimg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M10.5 9.2v5.6l4.8-2.8-4.8-2.8Z" fill="currentColor" stroke="none"/></svg></div></div>
+    
+    <div class="ep-docs"><a class="docbtn" href="https://github.com/chaaaaarin/kawaru-channel-20260916" target="_blank" rel="noopener">📚 資料</a><a class="docbtn" href="https://chaaaaarin.github.io/kawaru-channel-20260916/slides.html" target="_blank" rel="noopener">🖥 スライド</a><a class="docbtn" href="https://chaaaaarin.github.io/kawaru-channel-20260916/onepager.html" target="_blank" rel="noopener">📄 1枚資料</a></div>
   </div>
   <div>
     <p class="epctx-label">この動画のプレゼントです</p>
-    <p class="epctx-title"><a href="../../ep/63/">【裏ワザ】Codex GPT-5.6を使い倒しても制限が全く来ない魔法4選を解説します</a></p>
-    <p class="epctx-date">2026-07-25</p>
-    <a class="epbundle" href="../../bundles/u7lKGu7BBeQ.md" download="プレゼント一式_2026-07-25.md">⬇ この回のプレゼントを全部ダウンロード</a>
+    <p class="epctx-title"><a href="../../ep/117/">【神アプデきた】ChatGPT公式が勧める16個のアプリで仕事生産性が100倍加速する</a></p>
+    <p class="epctx-date">2026-09-16</p>
+    <a class="epbundle" href="../../bundles/d20260916-117.md" download="プレゼント一式_2026-09-16.md">⬇ この回のプレゼントを全部ダウンロード</a>
   </div>
 </section>
 
   <section class="kintro">
-    <h2>Outcome-Firstプロンプトテンプレート</h2>
-    <p><span class="nb">手順を細かく書く</span><span class="nb">「手順書型」から、</span><span class="nb">成果と完了条件だけを書く</span><span class="nb">「Outcome-First型」に</span><span class="nb">切り替えるためのシステムプロンプトの</span><span class="nb">型です。</span><span class="nb">トークン削減とコスト削減の両方に</span><span class="nb">効きます。</span></p>
-    <div class="kmeta"><span>プロンプト集</span><span>No.63 GPT-5.6節約術</span><span>2026-07-15 配布</span></div>
-    <div class="pnote"><span class="nb">下のボタンで、</span><span class="nb">全文をそのままコピー、</span><span class="nb">またはテキストファイルとして保存で</span><span class="nb">きます。</span></div>
+    <h2>請求・契約・集客が「頼むだけ」で進む ChatGPTプラグイン現場活用ガイド</h2>
+    <p><span class="nb">OpenAI 公式が中小企業向けに</span><span class="nb">選んだ16個のプラグインのうち、</span><span class="nb">日本の会社が使える12個を、</span><span class="nb">現場でそのまま貼れる日本語の依頼文に</span><span class="nb">しました。</span><span class="nb">貼ったその日から、</span><span class="nb">未払いの洗い出し・</span><span class="nb">商談の準備・</span><span class="nb">チラシ作りが、</span><span class="nb">チャットで頼むだけで進みます。</span></p>
+    <div class="kmeta"><span>プロンプト集</span><span>収録 12個</span><span>No.117 【神アプデきた】ChatGPT公式が勧める16個のアプリで仕事生産性が100倍加速する</span><span>2026-09-16 配布</span></div>
+    <div class="pnote"><span class="nb">下のカードから、</span><span class="nb">1件ずつコピー、</span><span class="nb">または個別にダウンロードできます。</span><span class="nb">まとめて欲しいときは、</span><span class="nb">上の</span><span class="nb">「全件ダウンロード」を</span><span class="nb">お使いください。</span></div>
   </section>
 
-  <div class="icard">
-  <pre class="prompt" id="b1" style="max-height:none;">【Outcome-Firstプロンプトの型】
+  <div class="ktools">
+  <input type="search" id="kq" placeholder="この中から探す" autocomplete="off" aria-label="この中から探す">
+  <div class="kcats"><button type="button" class="kcat on" data-cat="">すべて<span class="n">12</span></button><button type="button" class="kcat" data-cat="① お客さんを増やす">① お客さんを増やす<span class="n">4</span></button><button type="button" class="kcat" data-cat="② 商談と契約">② 商談と契約<span class="n">3</span></button><button type="button" class="kcat" data-cat="③ 請求と入金">③ 請求と入金<span class="n">2</span></button><button type="button" class="kcat" data-cat="④ チームの連絡・ファイル・タスク">④ チームの連絡・ファイル・タスク<span class="n">3</span></button></div>
+  <p class="khit" id="khit" role="status"></p>
+</div>
+<h2 class="cat" data-cat="① お客さんを増やす">① お客さんを増やす</h2>
+<div class="icard" id="i1" data-cat="① お客さんを増やす">
+  <div class="ih"><span class="num">001</span><span class="ititle">Wix — 自社サイトの下書きを、会社の説明を書くだけで作る</span></div>
+  
+  <pre class="prompt" id="b1">@Wix
+次の内容で、うちの会社のWebサイトの下書きを作ってください。
 
-# 成果定義
-このタスクで達成すべきことは〔具体的な成果物・状態〕です。
+【会社】［会社名］／［何をしている会社か1行］／［対応している地域］
+【お客さんが選ぶ理由】［例：地元の会社の事情に合わせて作る］［例：公開後の更新も月額で任せられる］［例：初回相談は無料］
+【ページ】トップ・サービス紹介・料金・よくある質問・お問い合わせ
+【必要な機能】初回相談の予約受付（30分・平日10〜18時）と、問い合わせフォーム
+【雰囲気】［例：落ち着いた紺と白。写真は少なめで、文字が読みやすい］
 
-# 完了条件（ここまでやれば終わり、という基準）
-- 〔条件1：何を満たせば完了と言えるか〕
-- 〔条件2〕
-- 〔条件3〕
-
-# 制約・安全要件（ALWAYS / NEVERは、ここだけに限定する）
-- ALWAYS: 〔本当に外せない不変条件のみ。安全要件・権限の制約など〕
-- NEVER: 〔本当に外せない禁止事項のみ〕
-
-# 自律性の境界（承認が必要な操作を1箇所で定義する）
-- 次の操作は、実行前に必ずユーザーに確認する: 〔外部への書き込み・破壊的操作・不可逆な操作など〕
-- 上記以外の安全な操作（調査・下書き作成・ローカルでの試行など）は、都度の確認なしで進めてよい
-
-# 経路はモデルに委ねる
-上記の成果・完了条件・制約を満たす範囲で、具体的な手順・進め方はあなたの判断で決めてよい。
-やり方を逐一指示しない。
-
----
-チェック観点（プロンプトを書いた後に、この型に沿っているか自己点検する）:
-- 重複しているルールはないか
-- モデルが既にこなせる手順まで書いていないか
-- 振る舞いを変えない不要な例示を入れていないか
-- 指示同士が矛盾していないか（矛盾は指示の欠落より不安定さを生む）</pre>
+【守ること】
+・ドメインの購入とサイトの公開はしない
+・下書きができたら、ページごとの見出しと本文を一覧で見せて止まる</pre>
   <div class="cbtns">
-    <button class="btn" data-copy="b1">📋 コピー</button>
-    <button class="btn ghost" data-save="b1" data-name="outcome-first-prompt-template.txt">⬇ ダウンロード</button>
+    <button class="btn sm" data-copy="b1">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b1" data-name="plugins-genba-guide-001.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i1">🔗 リンク</button>
+  </div>
+</div>
+<div class="icard" id="i2" data-cat="① お客さんを増やす">
+  <div class="ih"><span class="num">002</span><span class="ititle">Shopify — 売上と在庫を、管理画面を開かずに確かめる</span></div>
+  
+  <pre class="prompt" id="b2">@Shopify
+うちのストアの状況を確認してください。
+
+【確認したいこと】
+1. 過去3週間の売上を週別に表示し、いちばん伸びた週と、伸びに効いた商品を3つ
+2. 在庫が5個未満の商品を拠点ごとに一覧にし、補充する順番を付ける（売れている商品を先に）
+
+【出力】
+・表1：週｜売上｜注文数｜前の週との差
+・表2：拠点｜商品名｜バリエーション｜在庫数｜補充の優先度
+・最後に「今週やること」を3行
+
+【守ること】
+・商品の登録、価格の変更、割引コードの作成はしない。見るだけ</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b2">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b2" data-name="plugins-genba-guide-002.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i2">🔗 リンク</button>
+  </div>
+</div>
+<div class="icard" id="i3" data-cat="① お客さんを増やす">
+  <div class="ih"><span class="num">003</span><span class="ititle">Canva — チラシとSNS画像を、会話からサイズ違いまで作る</span></div>
+  
+  <pre class="prompt" id="b3">@Canva
+［来週金曜 19時］からの「［無料相談会の名前］」の告知チラシを作ってください。
+
+【伝えること】
+・対象：［例：地域の中小企業の経営者］
+・内容：［例：事務作業をAIで減らす方法を、実際の画面で紹介］
+・場所：［オンライン／会場名］
+・申込：［申込URLかQRコードを入れる枠を空けておく］
+
+【雰囲気】［例：落ち着いた紺と白。写真より文字が読みやすいこと］
+
+【作るもの】
+・A4 のチラシを2案
+・選ばれた案と同じデザインで、Instagram 投稿（正方形）とストーリーズ（縦長）
+
+【守ること】
+・ロゴと写真は、私が渡したものだけを使う
+・日時と申込先は、私が書いた内容から変えない</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b3">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b3" data-name="plugins-genba-guide-003.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i3">🔗 リンク</button>
+  </div>
+</div>
+<div class="icard" id="i4" data-cat="① お客さんを増やす">
+  <div class="ih"><span class="num">004</span><span class="ititle">Figma — 業務の流れ図と、提案資料の骨組みを作る</span></div>
+  
+  <pre class="prompt" id="b4">@Figma
+次の業務の流れを、FigJam のフロー図にしてください。
+
+【業務】［例：Webサイト制作の受注から納品まで］
+【流れ】［例：問い合わせ → ヒアリング → 見積もり → 契約 → 制作 → お客さんの確認 → 修正 → 納品 → 請求］
+【分かれ道】
+・［例：見積もりが通らなかった場合は、ヒアリングに戻る］
+・［例：修正が3回を超えた場合は、追加見積もりを出す］
+【見た目】担当ごと（［営業・制作・経理］）に横の列を分け、分かれ道はひし形にする
+
+【守ること】
+・私が書いた流れの順番を変えない。足りない手順があれば、図とは別に質問として出す</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b4">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b4" data-name="plugins-genba-guide-004.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i4">🔗 リンク</button>
+  </div>
+</div>
+<h2 class="cat" data-cat="② 商談と契約">② 商談と契約</h2>
+<div class="icard" id="i5" data-cat="② 商談と契約">
+  <div class="ih"><span class="num">005</span><span class="ititle">HubSpot — 商談の前の準備を、顧客データから1枚にまとめる</span></div>
+  
+  <pre class="prompt" id="b5">@HubSpot
+明日話す「［会社名］」について、商談の準備をしてください。
+
+【集めること】会社の情報／先方の担当者／これまでの取引の状況／直近のメールと商談メモ
+
+【出力】
+・これまでの経緯（5行まで）
+・今回の議題（15分で話し終わる量）
+・聞くべき質問を5つ（相手が答えやすい順）
+・気をつけること（まだ返事をしていない要望、値引きの話など）
+
+【守ること】
+・取引の更新、タスクの作成、メールの送信はしない。見るだけ
+・メモに書かれていないことは推測で書かず「要確認」とする</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b5">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b5" data-name="plugins-genba-guide-005.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i5">🔗 リンク</button>
+  </div>
+</div>
+<div class="icard" id="i6" data-cat="② 商談と契約">
+  <div class="ih"><span class="num">006</span><span class="ititle">ZoomInfo — 営業先の会社と、最初に話すべき人を調べる</span></div>
+  
+  <pre class="prompt" id="b6">@ZoomInfo
+新規営業の候補を探してください。
+
+【探したい会社】
+・業種：［例：製造業］
+・地域：［例：東京都・神奈川県］
+・従業員数：［例：50〜300人］
+
+【やること】
+1. 条件に合う会社を10社、伸びている兆し（採用・資金調達・役員の交代など）が強い順に並べる
+2. 上位3社について、営業部門とIT部門の責任者の役職を並べ、最初に連絡すべき人を1人選ぶ
+
+【出力】
+・表：会社名｜伸びている兆し｜最初に連絡する人の役職｜選んだ理由1行
+・3社それぞれに、最初の連絡で聞く質問を3つ
+
+【守ること】
+・連絡先の情報は、社内の営業リストの決まりの範囲で使う</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b6">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b6" data-name="plugins-genba-guide-006.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i6">🔗 リンク</button>
+  </div>
+</div>
+<div class="icard" id="i7" data-cat="② 商談と契約">
+  <div class="ih"><span class="num">007</span><span class="ititle">Docusign — 署名待ちの契約と、近づいている更新日を拾う</span></div>
+  
+  <pre class="prompt" id="b7">@Docusign
+契約の状況を確認してください。
+
+【確認したいこと】
+1. 自分の対応待ちになっているエンベロープ（送信・署名の単位）を見つけ、それぞれに必要な対応を要約する
+2. 先月完了したエンベロープを確認し、更新日と主要な義務を契約ごとにまとめる
+
+【出力】
+・表：取引先｜契約名｜状態｜次にやること｜期限
+・期限が60日以内のものは表の先頭にまとめる
+
+【守ること】
+・契約書の作成・送信・署名の依頼はしない。見るだけ
+・更新日が見つからない契約は、推測せず「要確認」とする</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b7">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b7" data-name="plugins-genba-guide-007.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i7">🔗 リンク</button>
+  </div>
+</div>
+<h2 class="cat" data-cat="③ 請求と入金">③ 請求と入金</h2>
+<div class="icard" id="i8" data-cat="③ 請求と入金">
+  <div class="ih"><span class="num">008</span><span class="ititle">Stripe — 売上の増減・解約・返金を、まとめて分解する</span></div>
+  
+  <pre class="prompt" id="b8">@Stripe
+売上の状況を確認してください。
+
+【確認したいこと】
+1. 直近8週の売上の週ごとの増減を、新規・アップグレード・解約・返金・異議申し立てに分けて説明する
+2. 始めてから60日以内に解約されたサブスクを集めて、共通点を3つ出す
+3. 金額が大きい異議申し立て（チャージバック）5件について、お客さん向けの返信の下書きを作る
+
+【出力】
+・表：週｜売上｜新規｜解約｜返金｜異議申し立て
+・解約の共通点3つと、打てる手を1つずつ
+・返信の下書き5件（それぞれ3〜4文）
+
+【守ること】
+・返金・請求の取り消し・価格の変更はしない。下書きまでで止まる</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b8">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b8" data-name="plugins-genba-guide-008.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i8">🔗 リンク</button>
+  </div>
+</div>
+<div class="icard" id="i9" data-cat="③ 請求と入金">
+  <div class="ih"><span class="num">009</span><span class="ititle">PayPal — 未払いの請求書を、催促する順に並べる</span></div>
+  
+  <pre class="prompt" id="b9">@PayPal（Stripe を使っている会社は @Stripe）
+あなたは、うちの会社の入金チェック係です。
+
+【やること】
+1. 送信済みで、まだ支払われていない請求書を全部集める
+2. 支払期日を過ぎたものを、遅れている日数と金額で並べる
+3. 最初に連絡すべき5社を選び、理由を1行ずつ書く
+
+【出力】
+・表：顧客名｜請求書ID｜金額｜期日｜遅れている日数｜優先度
+・5社それぞれに、やわらかい催促メールの下書き（3〜4文）
+
+【守ること】
+・催促メールは送らない。下書きを見せて止まる
+・分からない項目は推測で埋めず「要確認」と書く</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b9">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b9" data-name="plugins-genba-guide-009.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i9">🔗 リンク</button>
+  </div>
+</div>
+<h2 class="cat" data-cat="④ チームの連絡・ファイル・タスク">④ チームの連絡・ファイル・タスク</h2>
+<div class="icard" id="i10" data-cat="④ チームの連絡・ファイル・タスク">
+  <div class="ih"><span class="num">010</span><span class="ititle">Slack — 1週間のやり取りから、決まったことと担当を抜き出す</span></div>
+  
+  <pre class="prompt" id="b10">@Slack
+#［チャンネル名］の過去7日間のやり取りを読んで、まとめてください。
+
+【出力】
+・決まったこと（誰が決めたか・いつ）
+・担当と期限が決まったタスク（担当｜内容｜期限）
+・まだ決まっていないこと（誰の返事待ちか）
+・お客さんからの要望やクレーム
+
+【守ること】
+・メッセージは投稿しない。まとめを見せて止まる
+・誰の発言か分からないものは「発言者不明」とする</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b10">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b10" data-name="plugins-genba-guide-010.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i10">🔗 リンク</button>
+  </div>
+</div>
+<div class="icard" id="i11" data-cat="④ チームの連絡・ファイル・タスク">
+  <div class="ih"><span class="num">011</span><span class="ititle">Dropbox — 案件フォルダの資料を、打ち合わせ用の1枚にまとめる</span></div>
+  
+  <pre class="prompt" id="b11">@Dropbox
+「［顧客名］」の案件フォルダの資料を読んで、次の打ち合わせ用のまとめを作ってください。
+
+【出力】
+・関係者と役割
+・これまでの経緯（時系列で5行まで）
+・リスクと、その対策
+・打ち合わせで出す、いちばん強い実績や数字（どのファイルのどこに書いてあるか、リンク付きで）
+
+【守ること】
+・ファイルの移動、名前の変更、共有リンクの作成はしない
+・資料に書かれていないことは推測で書かない</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b11">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b11" data-name="plugins-genba-guide-011.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i11">🔗 リンク</button>
+  </div>
+</div>
+<div class="icard" id="i12" data-cat="④ チームの連絡・ファイル・タスク">
+  <div class="ih"><span class="num">012</span><span class="ititle">ClickUp — 期限切れのタスクを、今日やる順に並べる</span></div>
+  
+  <pre class="prompt" id="b12">@ClickUp
+タスクの整理を手伝ってください。
+
+【やること】
+1. 自分の期限切れのタスクを集めて、急ぎ度と「他の人の作業を止めているか」で並べる
+2. 上から、今日やる3つを選んで理由を1行ずつ書く
+3. 残りを、次の2週間に無理のない量で割り振った案を作る
+4. ［顧客名］の案件の今の状況を、週次報告の文面にする
+
+【出力】
+・表：タスク｜期限｜止めている人｜急ぎ度｜いつやるか
+・週次報告の文面（5行まで）
+
+【守ること】
+・タスクの作成・更新・担当の変更はしない。案を見せて止まる</pre>
+  <div class="cbtns">
+    <button class="btn sm" data-copy="b12">📋 コピー</button>
+    <button class="btn ghost sm" data-save="b12" data-name="plugins-genba-guide-012.txt">⬇ ダウンロード</button>
+    <button class="btn ghost sm" data-link="i12">🔗 リンク</button>
   </div>
 </div>
 
   <section class="epctx">
   <p class="epctx-label">この動画のほかのプレゼント</p>
-  <div class="ep-kits"><a class="kchip" href="../model-selection-checklist/"><span class="kt">モデル選定チェックリスト（Sol / Terra / Luna × エフォート × 速度）</span><span class="badge">14項目</span><span class="go">開く →</span></a><a class="kchip" href="../token-handoff-template/"><span class="kt">トークン切れ引き継ぎ書テンプレート</span><span class="go">開く →</span></a></div>
+  <div class="ep-kits"><a class="kchip" href="../hirogeru-free-no117/"><span class="kt">AI学習アプリ「HIROGERU」視聴者クーポン / ダウンロード手順</span><span class="badge">アプリ</span><span class="go">開く →</span></a><a class="kchip" href="../plugin-first3/"><span class="kt">自社はどれから入れる？ 最初の3つ診断アプリ</span><span class="badge">アプリ</span><span class="go">開く →</span></a></div>
 </section>
   <section class="epctx">
   <p class="epctx-label">ほかの回の「プロンプト集」</p>
-  <div class="ep-kits"><a class="kchip" href="../plugins-genba-guide/"><span class="kt">請求・契約・集客が「頼むだけ」で進む ChatGPTプラグイン現場活用ガイド</span><span class="badge">12個</span><span class="go">開く →</span></a><a class="kchip" href="../image25-official-prompts10/"><span class="kt">【公式ベース】Image 2.5 で“作り直しゼロ”になるプロンプト10選</span><span class="badge">10個</span><span class="go">開く →</span></a><a class="kchip" href="../astra-quality-prompts10/"><span class="kt">GPT-6 Astraの出力の質を100倍に上げるプロンプト10選</span><span class="badge">10個</span><span class="go">開く →</span></a><a class="kchip" href="../astra-higgsfield-video-prompts10/"><span class="kt">静止画1枚が“動く広告”になる Astra×HiggsField 動画生成プロンプト10選</span><span class="badge">10個</span><span class="go">開く →</span></a></div>
+  <div class="ep-kits"><a class="kchip" href="../image25-official-prompts10/"><span class="kt">【公式ベース】Image 2.5 で“作り直しゼロ”になるプロンプト10選</span><span class="badge">10個</span><span class="go">開く →</span></a><a class="kchip" href="../astra-quality-prompts10/"><span class="kt">GPT-6 Astraの出力の質を100倍に上げるプロンプト10選</span><span class="badge">10個</span><span class="go">開く →</span></a><a class="kchip" href="../astra-higgsfield-video-prompts10/"><span class="kt">静止画1枚が“動く広告”になる Astra×HiggsField 動画生成プロンプト10選</span><span class="badge">10個</span><span class="go">開く →</span></a><a class="kchip" href="../astra-image-prompts10/"><span class="kt">資料もサムネも“外注ゼロ”で仕上がる Astra画像生成プロンプト10選</span><span class="badge">10個</span><span class="go">開く →</span></a></div>
 </section>
 
   <footer><a href="../../">← AIエージェント / Kawaru プレゼント図書館にもどる</a></footer>
 </div>
 
-<pre id="pfull" class="hidden"># 🎁 Outcome-Firstプロンプトテンプレート
+<pre id="pfull" class="hidden"># 🎁 請求・契約・集客が「頼むだけ」で進む ChatGPTプラグイン現場活用ガイド
 
-手順を細かく書く「手順書型」から、成果と完了条件だけを書く「Outcome-First型」に切り替えるためのシステムプロンプトの型です。トークン削減とコスト削減の両方に効きます。
+OpenAI 公式が中小企業向けに選んだ16個のプラグインのうち、日本の会社が使える12個を、現場でそのまま貼れる日本語の依頼文にしました。貼ったその日から、未払いの洗い出し・商談の準備・チラシ作りが、チャットで頼むだけで進みます。
 
-**受け取り方**: 下のコードブロック右上のコピーボタンでコピーするか、このファイルをそのままダウンロードしてください。
+**受け取り方**: 各コードブロック右上のコピーボタンでコピーするか、このファイルをそのままダウンロードしてください。
 
-**使い方**: 各項目の〔　〕を自分のタスクに合わせて書き換えてから、システムプロンプトとして使ってください。既存の長いプロンプトを見直す場合は、まず今のプロンプトをこの型に当てはめ直し、当てはまらない指示（重複ルール・モデルが既にこなせる手順・振る舞いを変えない例示）を削ってください。
+**使い方**:
+- ChatGPT の左のメニューから「プラグイン」を開き、使いたいプラグインを検索して「＋」でインストール → 求められたらそのサービスにログインして接続します
+- 新しいチャットを開き、下の依頼文の［ ］を自社の内容に書き換えて貼ります
+- 最初は、どの依頼文も「見るだけ」「下書きまで」で止まる書き方にしてあります。慣れてから任せる範囲を広げてください
+
+プラグインの名前・画面の表示は2026年9月時点のものです。変わることがあります。
+
+## 最初に1回だけ確認すること
+
+**期待できること**: 仕事の情報の扱いと、AIが勝手に送信・支払いをしない状態を先に確かめてから使い始められます。後から「知らないうちに送られていた」を防げます。
 
 ```text
-【Outcome-Firstプロンプトの型】
+【プラグインを使う前の確認】
 
-# 成果定義
-このタスクで達成すべきことは〔具体的な成果物・状態〕です。
+■ ステップ1：仕事の情報が学習に使われない状態か確かめる
+□ ChatGPT Business・Enterprise で使っているか
+→ YES: 会社のデータは、既定でモデルの学習に使われない。次へ進む
+→ NO（Free・Go・Plus・Pro の個人プラン）: 設定 → データコントロール →「すべての人のためにモデルを改善する」をオフにする（オンのままだと、つないだアプリの情報も学習に使われることがある）
 
-# 完了条件（ここまでやれば終わり、という基準）
-- 〔条件1：何を満たせば完了と言えるか〕
-- 〔条件2〕
-- 〔条件3〕
+■ ステップ2：確認の出し方を既定のままにする
+□ 設定の「アプリ」で、確認の出し方を変えていないか
+→ 変えていない: そのままでよい。既定では、読むのは自動、送信・削除・購入・返金・共有の変更など「外に影響する操作」の前に確認が出る
+→ 「すべて許可」にしている: 慣れるまでは既定に戻す
 
-# 制約・安全要件（ALWAYS / NEVERは、ここだけに限定する）
-- ALWAYS: 〔本当に外せない不変条件のみ。安全要件・権限の制約など〕
-- NEVER: 〔本当に外せない禁止事項のみ〕
+■ ステップ3：最初の1週間は「見るだけ」「下書きまで」で頼む
+□ 依頼文の最後に「送信はしない」「更新はしない」を書いたか
+→ NO: 書き足してから送る
+指示例: データの更新や送信はしないでください。結果を見せて止まってください。
 
-# 自律性の境界（承認が必要な操作を1箇所で定義する）
-- 次の操作は、実行前に必ずユーザーに確認する: 〔外部への書き込み・破壊的操作・不可逆な操作など〕
-- 上記以外の安全な操作（調査・下書き作成・ローカルでの試行など）は、都度の確認なしで進めてよい
-
-# 経路はモデルに委ねる
-上記の成果・完了条件・制約を満たす範囲で、具体的な手順・進め方はあなたの判断で決めてよい。
-やり方を逐一指示しない。
-
----
-チェック観点（プロンプトを書いた後に、この型に沿っているか自己点検する）:
-- 重複しているルールはないか
-- モデルが既にこなせる手順まで書いていないか
-- 振る舞いを変えない不要な例示を入れていないか
-- 指示同士が矛盾していないか（矛盾は指示の欠落より不安定さを生む）
+■ ステップ4：確認が出たら、3つを見てから押す
+□ 宛先（誰に）・中身と金額（何を）・範囲（どこまで）を見たか
+→ NO: 見るまで押さない。見覚えのない宛先や金額なら、その場で「拒否」を押す
 ```
 
-**ポイント**: 出力はレビューしてから確定する。特に自律性の境界（承認が必要な操作）は、書き込み・削除・送信など取り返しのつかない操作を必ず含めること。
+## ① お客さんを増やす
+
+### 1. Wix — 自社サイトの下書きを、会社の説明を書くだけで作る
+
+**期待できるメリット**: 制作会社に頼む前の「たたき台のサイト」が、会社の説明を書くだけで数分でできます。問い合わせフォームや予約受付も最初から付いた状態で、何を載せるかの話し合いがすぐ始められます。
+
+**使う場面**: 新しいサービスの紹介ページが無い／問い合わせや予約を電話とメールだけで受けている。
+
+**前提**: Wix のアカウントがあり、プラグインで接続済み。
+
+```text
+@Wix
+次の内容で、うちの会社のWebサイトの下書きを作ってください。
+
+【会社】［会社名］／［何をしている会社か1行］／［対応している地域］
+【お客さんが選ぶ理由】［例：地元の会社の事情に合わせて作る］［例：公開後の更新も月額で任せられる］［例：初回相談は無料］
+【ページ】トップ・サービス紹介・料金・よくある質問・お問い合わせ
+【必要な機能】初回相談の予約受付（30分・平日10〜18時）と、問い合わせフォーム
+【雰囲気】［例：落ち着いた紺と白。写真は少なめで、文字が読みやすい］
+
+【守ること】
+・ドメインの購入とサイトの公開はしない
+・下書きができたら、ページごとの見出しと本文を一覧で見せて止まる
+```
+
+**続けて頼むと便利な依頼**: 「料金ページを、［プランA・B・C］の比較表にしてください。スマホで見たときに表が横にはみ出さない形にしてください。」
+
+**つまずきどころ**: 仕上がりがありきたりなときは【お客さんが選ぶ理由】を具体的にします。ドメインの購入は費用がかかるので、最後に人が決めます。細かい見た目は Wix のエディターで仕上げます。
+
+### 2. Shopify — 売上と在庫を、管理画面を開かずに確かめる
+
+**期待できるメリット**: 期間を切り替えて売上を見比べる作業と、在庫を見て回る作業が、1回の質問で終わります。月曜の朝の確認が「表を読むだけ」になります。
+
+**使う場面**: 毎週、先週の売上を確認している／複数の拠点や倉庫の在庫を見て回っている。
+
+**前提**: Shopify のストアがあり、プラグインで接続済み。
+
+```text
+@Shopify
+うちのストアの状況を確認してください。
+
+【確認したいこと】
+1. 過去3週間の売上を週別に表示し、いちばん伸びた週と、伸びに効いた商品を3つ
+2. 在庫が5個未満の商品を拠点ごとに一覧にし、補充する順番を付ける（売れている商品を先に）
+
+【出力】
+・表1：週｜売上｜注文数｜前の週との差
+・表2：拠点｜商品名｜バリエーション｜在庫数｜補充の優先度
+・最後に「今週やること」を3行
+
+【守ること】
+・商品の登録、価格の変更、割引コードの作成はしない。見るだけ
+```
+
+**続けて頼むと便利な依頼**: 「この商品写真と説明メモから、商品ページの下書きを作ってください。価格とバリエーションは私が書いたものだけを使い、足りない情報は公開前に質問してください。」
+
+**つまずきどころ**: 売上の数字が管理画面とずれるときは、最初に「売上は返品を差し引いた金額で」のように数え方を指定します。
+
+### 3. Canva — チラシとSNS画像を、会話からサイズ違いまで作る
+
+**期待できるメリット**: デザインソフトを開かずに、イベント告知のチラシと、Instagram の投稿・ストーリーズ用のサイズ違いまで一度に作れます。毎回ゼロから作っていた告知の準備が、直す作業だけになります。
+
+**使う場面**: セミナーやキャンペーンの告知物を、毎回ゼロから作っている。
+
+**前提**: Canva のアカウントを接続済み。表計算のデータから大量に作る「一括作成」は Canva Enterprise プランが必要。
+
+```text
+@Canva
+［来週金曜 19時］からの「［無料相談会の名前］」の告知チラシを作ってください。
+
+【伝えること】
+・対象：［例：地域の中小企業の経営者］
+・内容：［例：事務作業をAIで減らす方法を、実際の画面で紹介］
+・場所：［オンライン／会場名］
+・申込：［申込URLかQRコードを入れる枠を空けておく］
+
+【雰囲気】［例：落ち着いた紺と白。写真より文字が読みやすいこと］
+
+【作るもの】
+・A4 のチラシを2案
+・選ばれた案と同じデザインで、Instagram 投稿（正方形）とストーリーズ（縦長）
+
+【守ること】
+・ロゴと写真は、私が渡したものだけを使う
+・日時と申込先は、私が書いた内容から変えない
+```
+
+**続けて頼むと便利な依頼**: 「このデザインの見出しの大きさ・読みやすさ・余白について、直したほうがいい点を3つ出して、直した版も作ってください。」
+
+**つまずきどころ**: 文字が小さく詰まるときは【伝えること】を減らします。仕上げは「Canva で開く」からエディターで行います。
+
+### 4. Figma — 業務の流れ図と、提案資料の骨組みを作る
+
+**期待できるメリット**: 口頭で説明していた社内の流れや、お客さん向けの「ご依頼の流れ」を、あとから直せる図とスライドとして数分で出せます。新人への説明や提案の準備が早くなります。
+
+**使う場面**: 業務の流れが人の頭の中にしかない／提案資料の骨組みを毎回作り直している。
+
+**前提**: Figma のアカウントを接続済み。
+
+```text
+@Figma
+次の業務の流れを、FigJam のフロー図にしてください。
+
+【業務】［例：Webサイト制作の受注から納品まで］
+【流れ】［例：問い合わせ → ヒアリング → 見積もり → 契約 → 制作 → お客さんの確認 → 修正 → 納品 → 請求］
+【分かれ道】
+・［例：見積もりが通らなかった場合は、ヒアリングに戻る］
+・［例：修正が3回を超えた場合は、追加見積もりを出す］
+【見た目】担当ごと（［営業・制作・経理］）に横の列を分け、分かれ道はひし形にする
+
+【守ること】
+・私が書いた流れの順番を変えない。足りない手順があれば、図とは別に質問として出す
+```
+
+**続けて頼むと便利な依頼**: 「このフロー図をもとに、お客さん向けの『ご依頼の流れ』スライドを5枚で作ってください。1枚に言いたいことは1つにしてください。」
+
+**つまずきどころ**: 図がごちゃつくときは、分かれ道を2つまでに絞ります。
+
+## ② 商談と契約
+
+### 5. HubSpot — 商談の前の準備を、顧客データから1枚にまとめる
+
+**期待できるメリット**: 過去のメール・メモ・取引の状況を探し回らずに、次の商談の議題と聞くべき質問が1枚にまとまります。「前回何を話したか」を思い出す時間がなくなります。
+
+**使う場面**: 明日の商談の前に、これまでの経緯を確かめたい。
+
+**前提**: HubSpot のアカウントを接続済み。見えるのは、自分の HubSpot の権限で見られるデータだけ。
+
+```text
+@HubSpot
+明日話す「［会社名］」について、商談の準備をしてください。
+
+【集めること】会社の情報／先方の担当者／これまでの取引の状況／直近のメールと商談メモ
+
+【出力】
+・これまでの経緯（5行まで）
+・今回の議題（15分で話し終わる量）
+・聞くべき質問を5つ（相手が答えやすい順）
+・気をつけること（まだ返事をしていない要望、値引きの話など）
+
+【守ること】
+・取引の更新、タスクの作成、メールの送信はしない。見るだけ
+・メモに書かれていないことは推測で書かず「要確認」とする
+```
+
+**続けて頼むと便利な依頼**: 「先月失注した商談を集めて、失注の理由をパターンごとに分けてください。メモが空欄の商談は『理由不明』として数えてください。」
+
+**つまずきどころ**: 出てくる情報が少ないときは、商談メモが残っていないサインです。まず「商談のあとに3行メモを書く」を決めます。
+
+### 6. ZoomInfo — 営業先の会社と、最初に話すべき人を調べる
+
+**期待できるメリット**: 新規営業の候補リストを作るときに、条件に合う会社と、その会社で決定に関わる人の役職まで一度に並びます。調べる時間を、話す準備に回せます。
+
+**使う場面**: 展示会や紹介の前に、相手の会社を調べる時間が取れない。
+
+**前提**: ZoomInfo の契約があり、プラグインで接続済み（プラグインの説明とサンプルは英語）。
+
+```text
+@ZoomInfo
+新規営業の候補を探してください。
+
+【探したい会社】
+・業種：［例：製造業］
+・地域：［例：東京都・神奈川県］
+・従業員数：［例：50〜300人］
+
+【やること】
+1. 条件に合う会社を10社、伸びている兆し（採用・資金調達・役員の交代など）が強い順に並べる
+2. 上位3社について、営業部門とIT部門の責任者の役職を並べ、最初に連絡すべき人を1人選ぶ
+
+【出力】
+・表：会社名｜伸びている兆し｜最初に連絡する人の役職｜選んだ理由1行
+・3社それぞれに、最初の連絡で聞く質問を3つ
+
+【守ること】
+・連絡先の情報は、社内の営業リストの決まりの範囲で使う
+```
+
+**続けて頼むと便利な依頼**: 「［会社名］について、最近の資金調達・採用・経営陣の交代から、打ち合わせ前の説明メモを作ってください。いちばん大事な動きと、商談で聞く質問を3つ出してください。」
+
+**つまずきどころ**: 候補が少ないときは、地域や従業員数の条件を広げます。
+
+### 7. Docusign — 署名待ちの契約と、近づいている更新日を拾う
+
+**期待できるメリット**: 署名待ちで止まっている契約と、自動更新の期限を、ファイルを1つずつ開かずに一覧で確認できます。解約期限の見落としを防げます。
+
+**使う場面**: 契約の締結状況を表計算で管理している／自動更新の期限を見落としがち。
+
+**前提**: Docusign のアカウントを接続済み。
+
+```text
+@Docusign
+契約の状況を確認してください。
+
+【確認したいこと】
+1. 自分の対応待ちになっているエンベロープ（送信・署名の単位）を見つけ、それぞれに必要な対応を要約する
+2. 先月完了したエンベロープを確認し、更新日と主要な義務を契約ごとにまとめる
+
+【出力】
+・表：取引先｜契約名｜状態｜次にやること｜期限
+・期限が60日以内のものは表の先頭にまとめる
+
+【守ること】
+・契約書の作成・送信・署名の依頼はしない。見るだけ
+・更新日が見つからない契約は、推測せず「要確認」とする
+```
+
+**続けて頼むと便利な依頼**: 「［取引先名］との契約を検索して、各契約の署名状況・受信者・主要な日付を一覧にしてください。」
+
+**つまずきどころ**: 「要確認」になった契約は、原本を開いて日付を確かめます。
+
+## ③ 請求と入金
+
+### 8. Stripe — 売上の増減・解約・返金を、まとめて分解する
+
+**期待できるメリット**: 売上が落ちた週の理由を、新規・解約・返金・異議申し立てに分けて1回で説明させられます。ダッシュボードを何画面も見比べる作業がなくなります。
+
+**使う場面**: サブスクやオンライン決済を Stripe で受けている。
+
+**前提**: Stripe のアカウントを接続済み。
+
+```text
+@Stripe
+売上の状況を確認してください。
+
+【確認したいこと】
+1. 直近8週の売上の週ごとの増減を、新規・アップグレード・解約・返金・異議申し立てに分けて説明する
+2. 始めてから60日以内に解約されたサブスクを集めて、共通点を3つ出す
+3. 金額が大きい異議申し立て（チャージバック）5件について、お客さん向けの返信の下書きを作る
+
+【出力】
+・表：週｜売上｜新規｜解約｜返金｜異議申し立て
+・解約の共通点3つと、打てる手を1つずつ
+・返信の下書き5件（それぞれ3〜4文）
+
+【守ること】
+・返金・請求の取り消し・価格の変更はしない。下書きまでで止まる
+```
+
+**続けて頼むと便利な依頼**: 「うちの商品に月額の定期課金を追加したいです。Stripe のドキュメントをもとに、必要な手順と、公開前に確かめることを一覧にしてください。」
+
+**つまずきどころ**: 返金などお金が動く操作は、実行の前に確認が出ます。金額と相手を見てから許可します。
+
+### 9. PayPal — 未払いの請求書を、催促する順に並べる
+
+**期待できるメリット**: 月末に1件ずつ見ていた入金待ちの請求書が、「誰に・どの順で・何と連絡するか」まで一度に出ます。催促メールの下書きもできるので、確認して送るだけになります。
+
+**使う場面**: 月末に、入金の確認と催促のメールを手作業でしている。
+
+**前提**: PayPal のビジネスアカウントで請求書を送っている（Stripe で請求している会社は、1行目を @Stripe に置き換える）。
+
+```text
+@PayPal（Stripe を使っている会社は @Stripe）
+あなたは、うちの会社の入金チェック係です。
+
+【やること】
+1. 送信済みで、まだ支払われていない請求書を全部集める
+2. 支払期日を過ぎたものを、遅れている日数と金額で並べる
+3. 最初に連絡すべき5社を選び、理由を1行ずつ書く
+
+【出力】
+・表：顧客名｜請求書ID｜金額｜期日｜遅れている日数｜優先度
+・5社それぞれに、やわらかい催促メールの下書き（3〜4文）
+
+【守ること】
+・催促メールは送らない。下書きを見せて止まる
+・分からない項目は推測で埋めず「要確認」と書く
+```
+
+**続けて頼むと便利な依頼**: 「［顧客名］あてに［金額］円の請求書の下書きを作ってください。品目は［例：Webサイト保守 月額］です。送信はせず、宛先・金額・支払期限を表示して止まってください。」
+
+**つまずきどころ**: 催促のリマインダーを送る操作は、実行の前に確認が出ます。宛先と金額を見てから許可します。
+
+## ④ チームの連絡・ファイル・タスク
+
+### 10. Slack — 1週間のやり取りから、決まったことと担当を抜き出す
+
+**期待できるメリット**: 休み明けや会議の前に、流れたスレッドをさかのぼる時間なく、決まったこと・担当・まだ決まっていないことが分かります。
+
+**使う場面**: チャンネルが多く、決定事項が埋もれてしまう。
+
+**前提**: Slack のワークスペースを接続済み。
+
+```text
+@Slack
+#［チャンネル名］の過去7日間のやり取りを読んで、まとめてください。
+
+【出力】
+・決まったこと（誰が決めたか・いつ）
+・担当と期限が決まったタスク（担当｜内容｜期限）
+・まだ決まっていないこと（誰の返事待ちか）
+・お客さんからの要望やクレーム
+
+【守ること】
+・メッセージは投稿しない。まとめを見せて止まる
+・誰の発言か分からないものは「発言者不明」とする
+```
+
+**続けて頼むと便利な依頼**: 「今朝の #［チャンネル名］ の話題から、30分の会議の議題を作ってください。」／「#［チャンネル名］ にあるお客さんからの最新のメッセージに、チャンネルと同じ口調で返信の下書きを作ってください。投稿はしないでください。」
+
+**つまずきどころ**: メッセージを投稿する操作は、実行の前に確認が出ます。
+
+### 11. Dropbox — 案件フォルダの資料を、打ち合わせ用の1枚にまとめる
+
+**期待できるメリット**: 更新や再提案の前に、フォルダの資料を開いて読み比べる時間が減り、経緯・リスク・強い実績が1枚にまとまります。
+
+**使う場面**: 契約の更新や再提案の前に、過去の資料を集めて読み返している。
+
+**前提**: Dropbox を接続済み。
+
+```text
+@Dropbox
+「［顧客名］」の案件フォルダの資料を読んで、次の打ち合わせ用のまとめを作ってください。
+
+【出力】
+・関係者と役割
+・これまでの経緯（時系列で5行まで）
+・リスクと、その対策
+・打ち合わせで出す、いちばん強い実績や数字（どのファイルのどこに書いてあるか、リンク付きで）
+
+【守ること】
+・ファイルの移動、名前の変更、共有リンクの作成はしない
+・資料に書かれていないことは推測で書かない
+```
+
+**続けて頼むと便利な依頼**: 「［顧客名］との契約書で、更新の通知期限が書かれている箇所を探してください。該当の文をそのまま引用し、ファイルのリンクを付けてください。」
+
+**つまずきどころ**: ファイルの移動や共有の変更は、実行の前に確認が出ます。
+
+### 12. ClickUp — 期限切れのタスクを、今日やる順に並べる
+
+**期待できるメリット**: 溜まったタスクを眺めて悩む時間が減り、今日やる3つと、来週までの無理のない計画が出ます。
+
+**使う場面**: ClickUp でタスクを管理していて、期限切れが増えている。
+
+**前提**: ClickUp を接続済み（プラグインの説明とサンプルは英語）。
+
+```text
+@ClickUp
+タスクの整理を手伝ってください。
+
+【やること】
+1. 自分の期限切れのタスクを集めて、急ぎ度と「他の人の作業を止めているか」で並べる
+2. 上から、今日やる3つを選んで理由を1行ずつ書く
+3. 残りを、次の2週間に無理のない量で割り振った案を作る
+4. ［顧客名］の案件の今の状況を、週次報告の文面にする
+
+【出力】
+・表：タスク｜期限｜止めている人｜急ぎ度｜いつやるか
+・週次報告の文面（5行まで）
+
+【守ること】
+・タスクの作成・更新・担当の変更はしない。案を見せて止まる
+```
+
+**続けて頼むと便利な依頼**: 「バックログから次の2週間のスプリント計画を作ってください。チームの一人ひとりの量が偏らないようにしてください。」
+
+**つまずきどころ**: 担当や期限が空欄のタスクが多いと並べられません。先に空欄を埋めます。
+
+## 日本の会社では使えない4個
+
+公式の16個のうち、次の4個は日本の会社では使えません（2026年9月時点）。
+
+- **Intuit QuickBooks**（会計）: 日本のアカウントのプラグイン一覧に出てこない
+- **Gusto**（給与計算）: アメリカの給与計算サービス。日本のアカウントの「Small Business」一覧に出てこない
+- **Mercury**（銀行口座）: アメリカで設立・登録された会社向け
+- **HoneyBook**（顧客・請求管理）: 提供国がアメリカ・カナダ・イギリス・オーストラリア
+
+**ポイント**: どのプラグインも、最初は「見るだけ」「下書きまで」で頼み、結果を人が確かめてから任せる範囲を広げてください。
 </pre>
 <script>
 
