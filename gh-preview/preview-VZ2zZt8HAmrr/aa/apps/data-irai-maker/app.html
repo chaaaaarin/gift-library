@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>3つ選ぶだけで『@Data』依頼文ができるアプリ</title>
+<meta name="description" content="知りたいこと・データの場所・期間の3つを選ぶだけで、「売上」の定義と数字の根拠まで書かせる @Data の依頼文と、共有する前の確認リストができます。書き方に迷わず、確かめやすい分析結果を ChatGPT の Work に頼めます。">
+<style>
+  :root{
+    --terra:#1B7F9E; --terra-deep:#156780; --terra-soft:#E2F3F8; --terra-line:#A8DAE8;
+    --indigo:#24519B; --indigo-soft:#E6EDF8; --indigo-line:#B5C6E4;
+    --bg:#F7FAFC; --paper:#FFFFFF; --ink:#141D2E; --ink-mid:#4A6080; --ink-sub:#8098B4; --line:#DCE5EF;
+    --code:#0F1B30; --code-ink:#E6EDF6;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic UI","Meiryo",sans-serif;line-height:1.7;padding:28px 16px 56px;-webkit-text-size-adjust:100%;}
+  .wrap{max-width:760px;margin:0 auto;}
+  h1{font-size:25px;font-weight:900;line-height:1.35;margin-bottom:8px;letter-spacing:.01em;}
+  h1 em{font-style:normal;color:var(--terra);}
+  .sub{font-size:14.5px;color:var(--ink-mid);margin-bottom:18px;}
+  .steps-nav{display:flex;gap:6px;margin-bottom:18px;flex-wrap:wrap;}
+  .steps-nav span{flex:1 1 0;min-width:0;height:6px;border-radius:99px;background:var(--line);}
+  .steps-nav span.done{background:var(--terra);}
+  .steps-nav span.optional.done{background:var(--indigo);}
+  .card{background:var(--paper);border:1.5px solid var(--line);border-radius:16px;padding:22px 20px;margin-bottom:16px;}
+  .qn{display:flex;align-items:center;gap:8px;font-size:12.5px;font-weight:800;color:var(--terra-deep);margin-bottom:6px;}
+  .tag{font-size:11.5px;font-weight:800;border-radius:999px;padding:1px 9px;background:var(--terra-soft);color:var(--terra-deep);}
+  .tag.optional{background:var(--indigo-soft);color:var(--indigo);}
+  .qt{font-size:19px;font-weight:900;line-height:1.45;margin-bottom:4px;}
+  .qh{font-size:13px;color:var(--ink-sub);margin-bottom:14px;}
+  .opts{display:grid;grid-template-columns:1fr 1fr;gap:9px;}
+  .opts.one{grid-template-columns:1fr;}
+  .opts.three{grid-template-columns:repeat(3,1fr);}
+  .opt{border:1.5px solid var(--line);background:var(--bg);border-radius:12px;padding:11px 14px;cursor:pointer;font-size:15px;font-weight:700;color:var(--ink);transition:background .15s,border-color .15s;text-align:left;font-family:inherit;line-height:1.45;}
+  .opt:hover{border-color:var(--terra-line);background:var(--terra-soft);}
+  .opt.on{background:var(--terra);border-color:var(--terra-deep);color:#fff;}
+  .opt small{display:block;font-weight:500;font-size:12.5px;color:var(--ink-sub);margin-top:2px;}
+  .opt.on small{color:#CDEAF3;}
+  .opt:focus-visible,button.b:focus-visible,input:focus-visible{outline:3px solid var(--indigo-line);outline-offset:2px;}
+  .grp{margin-bottom:14px;}
+  .grp-l{font-size:13.5px;font-weight:800;color:var(--ink-mid);margin-bottom:6px;}
+  .field{margin-top:12px;}
+  .field label{display:block;font-size:13.5px;font-weight:800;color:var(--ink-mid);margin-bottom:5px;}
+  .field input{width:100%;border:1.5px solid var(--line);border-radius:10px;padding:10px 12px;font-size:15px;font-family:inherit;background:#fff;color:var(--ink);}
+  .field .hint{font-size:12.5px;color:var(--ink-sub);margin-top:4px;}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+  .btns{display:flex;gap:9px;flex-wrap:wrap;margin-top:18px;align-items:center;}
+  button.b{display:inline-flex;align-items:center;gap:7px;border:1.5px solid var(--terra-line);background:#fff;color:var(--terra-deep);border-radius:10px;padding:10px 18px;font-size:14px;font-weight:800;cursor:pointer;font-family:inherit;transition:background .15s,border-color .15s;}
+  button.b:hover{background:var(--terra-soft);border-color:var(--terra);}
+  button.b.primary{background:var(--terra);border-color:var(--terra-deep);color:#fff;}
+  button.b.primary:hover{background:var(--terra-deep);}
+  button.b.cool{border-color:var(--indigo-line);color:var(--indigo);}
+  button.b.cool:hover{background:var(--indigo-soft);border-color:var(--indigo);}
+  button.b:disabled{opacity:.4;cursor:not-allowed;}
+  button.b svg{width:16px;height:16px;flex:none;}
+  .spacer{flex:1;}
+  .hide{display:none;}
+  .hero{background:linear-gradient(160deg,var(--terra-soft),#fff 70%);border:1.5px solid var(--terra-line);border-radius:16px;padding:18px 20px;margin-bottom:16px;}
+  .hero-l{font-size:12.5px;font-weight:800;color:var(--terra-deep);margin-bottom:2px;}
+  .hero-t{font-size:20px;font-weight:900;line-height:1.4;margin-bottom:10px;}
+  .chips{display:flex;flex-wrap:wrap;gap:6px;}
+  .chip{border:1.5px solid var(--line);background:#fff;border-radius:999px;padding:3px 11px;font-size:12.5px;font-weight:700;color:var(--ink-mid);cursor:pointer;font-family:inherit;}
+  .chip b{color:var(--ink);font-weight:800;}
+  .chip:hover{border-color:var(--terra-line);}
+  .sec-h{display:flex;align-items:center;gap:8px;font-size:17px;font-weight:900;margin-bottom:10px;}
+  .sec-h svg{width:20px;height:20px;flex:none;color:var(--terra);}
+  .sec-h.cool svg{color:var(--indigo);}
+  pre.prompt{background:var(--code);color:var(--code-ink);font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:13.5px;line-height:1.75;border-radius:12px;padding:15px 16px;white-space:pre-wrap;word-break:break-word;overflow-wrap:anywhere;}
+  .note{font-size:13px;color:var(--ink-mid);margin-top:8px;}
+  .checks{list-style:none;}
+  .checks li{position:relative;padding:9px 0 9px 32px;font-size:14.5px;border-bottom:1px solid var(--line);}
+  .checks li:last-child{border-bottom:none;}
+  .checks li svg{position:absolute;left:0;top:11px;width:20px;height:20px;color:var(--indigo);}
+  .howto{list-style:none;counter-reset:h;}
+  .howto li{counter-increment:h;position:relative;padding:8px 0 8px 36px;font-size:14.5px;}
+  .howto li::before{content:counter(h);position:absolute;left:0;top:9px;width:24px;height:24px;border-radius:50%;background:var(--indigo-soft);color:var(--indigo);font-weight:900;font-size:13px;display:flex;align-items:center;justify-content:center;}
+  .toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:var(--ink);color:#fff;font-size:13px;font-weight:700;border-radius:999px;padding:8px 18px;opacity:0;transition:opacity .2s;pointer-events:none;}
+  .toast.on{opacity:1;}
+  @media (max-width:560px){
+    body{padding:20px 16px 48px;}
+    h1{font-size:21px;}
+    .opts,.opts.three,.two{grid-template-columns:1fr;}
+    .card{padding:18px 16px;}
+    .btns .spacer{display:none;}
+    .btns button.b{flex:1 1 auto;justify-content:center;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>3つ選ぶだけで<em>『@Data』依頼文</em>ができるアプリ</h1>
+  <p class="sub">ChatGPT の Work で使う Data への依頼文を、選ぶだけで組み立てます。最初の3つ（知りたいこと・データの場所・期間）を選べば作れます。4つ目からは任意で、選ぶほど依頼文が自社向けになります。</p>
+  <div class="steps-nav" id="nav" aria-hidden="true"></div>
+  <div id="wizard"></div>
+  <div id="result" class="hide"></div>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite">コピーしました</div>
+
+<script>
+var ICON = {
+  copy: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1"/></svg>',
+  check: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M8 12.5l3 3 5-6"/></svg>',
+  doc: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h5"/></svg>',
+  list: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6h11M9 12h11M9 18h11"/><circle cx="4.5" cy="6" r="1"/><circle cx="4.5" cy="12" r="1"/><circle cx="4.5" cy="18" r="1"/></svg>',
+  arrow: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>'
+};
+
+var GOALS = [
+  {v:"why", l:"数字が変わった理由", s:"売上などが前より下がった・上がったわけ"},
+  {v:"movers", l:"大きく動いた項目", s:"増えた・減った商品やチャネルのトップ3"},
+  {v:"rank", l:"顧客・商品の順位", s:"上位・下位と、前からの入れ替わり"},
+  {v:"quality", l:"データの点検", s:"分析の前に、抜け・重複・おかしな値を探す"},
+  {v:"kpi", l:"毎週見る数字を決める", s:"会議で追いかける指標（KPI）を5つに絞る"},
+  {v:"report", l:"経営向けの報告", s:"結論・数字・理由の順にまとめる"},
+  {v:"research", l:"取引先・競合を調べる", s:"Web の公開情報から出典つきで（@Deep Research）"}
+];
+var SRC_DATA = [
+  {v:"file", l:"Excel・CSV を添付する", s:"手元のファイルをチャットに添付"},
+  {v:"drive", l:"Google Drive・SharePoint のファイル", s:"スプレッドシートなどを接続して読む"},
+  {v:"db", l:"社内データベース", s:"BigQuery・Snowflake など"},
+  {v:"bi", l:"BIツールのダッシュボード", s:"Tableau・Power BI など"},
+  {v:"paste", l:"表をチャットに貼り付ける", s:"集計済みの数字をコピーして貼る"}
+];
+var SRC_RES = [
+  {v:"web", l:"Web の公開情報だけ", s:"会社のサイト・ニュースなど"},
+  {v:"webfile", l:"Web ＋ 添付した社内資料", s:"これまでの取引の記録などを添付"},
+  {v:"webapp", l:"Web ＋ 接続したアプリの資料", s:"すでに接続しているアプリにある資料"}
+];
+var PER_DATA = [
+  {v:"mom", l:"前月比", s:"ある月を、その前の月と比べる"},
+  {v:"yoy", l:"前年同月比", s:"去年の同じ月と比べる"},
+  {v:"w4", l:"直近4週", s:"週ごとに、その前の4週と比べる"},
+  {v:"custom", l:"期間を自分で書く", s:"例：今年4〜6月 と 去年4〜6月"}
+];
+var PER_RES = [
+  {v:"m3", l:"直近3か月", s:"最近の発表やニュースを中心に"},
+  {v:"y1", l:"直近1年", s:"事業や拠点の動きも含めて"},
+  {v:"custom", l:"期間を自分で書く", s:"例：2026年以降"}
+];
+var TAX = [{v:"ex", l:"税抜"}, {v:"in", l:"税込"}, {v:"", l:"決めていない"}];
+var RET = [{v:"sub", l:"返品を引く"}, {v:"nosub", l:"返品を引かない"}, {v:"", l:"決めていない"}];
+var PURPOSE = [
+  {v:"meet", l:"商談の前の下調べ", s:"相手の最近の動きと、聞くべき質問"},
+  {v:"start", l:"取引を始める前の確認", s:"事業の中身と、確かめておく点"},
+  {v:"rival", l:"競合の動きをつかむ", s:"新しい商品・値付け・出店など"}
+];
+var OUT_DATA = [
+  {v:"table", l:"表", s:"まず数字を確かめたいとき"},
+  {v:"dash", l:"ダッシュボード", s:"会議で1枚見せたいとき"},
+  {v:"doc", l:"Word・Google ドキュメント", s:"報告書として配りたいとき"},
+  {v:"slides", l:"スライド", s:"会議で説明したいとき"},
+  {v:"slack", l:"Slack 用の要約", s:"チームにさっと知らせたいとき"}
+];
+var OUT_RES = [
+  {v:"doc", l:"文書", s:"読んで確かめる資料にしたいとき"},
+  {v:"slides", l:"プレゼン資料", s:"社内で共有して話したいとき"},
+  {v:"sheet", l:"スプレッドシート", s:"複数の会社を比べたいとき"}
+];
+var DEFAULT_OUT = {why:"dash", movers:"table", rank:"table", quality:"table", kpi:"table", report:"doc", research:"doc"};
+
+var ans;
+function resetAns(){
+  ans = {goal:null, src:null, per:null, perT:"", perB:"", tax:null, ret:null, rule:"", company:"", purpose:null, out:null, ctx:""};
+}
+resetAns();
+var step = 0;
+
+function isRes(){ return ans.goal === "research"; }
+function findL(list, v){ for (var i = 0; i < list.length; i++){ if (list[i].v === v) return list[i].l; } return ""; }
+function esc(s){ return String(s).replace(/[&<>"']/g, function(c){ return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c]; }); }
+function clean(s){ return String(s || "").replace(/[\r\n]+/g, " ").trim(); }
+
+var STEPS = [
+  {key:"goal", required:true, title:function(){ return "何を知りたいですか？"; }, hint:function(){ return "いちばん近いものを1つ選んでください"; }},
+  {key:"src", required:true, title:function(){ return isRes() ? "何を調べてもらいますか？" : "データはどこにありますか？"; }, hint:function(){ return isRes() ? "社内資料もあわせて読ませるかを選びます" : "依頼文の最初の「どのデータを使うか」が変わります"; }},
+  {key:"per", required:true, title:function(){ return isRes() ? "いつ頃の情報を調べますか？" : "期間と、比べる相手は？"; }, hint:function(){ return isRes() ? "古い情報が混ざるのを防ぎます" : "［ ］の中は、貼る前に自社の期間に書き換えます"; }},
+  {key:"def", required:false, title:function(){ return isRes() ? "調べる相手と目的は？" : "「売上」の数え方は決まっていますか？"; }, hint:function(){ return isRes() ? "空欄のままなら［取引先の会社名］と入ります" : "決めていない場合は、計算の前に確認してもらう依頼文になります"; }},
+  {key:"out", required:false, title:function(){ return "何の形で受け取りますか？"; }, hint:function(){ return "選ばない場合は、知りたいことに合う形を自動で入れます"; }},
+  {key:"ctx", required:false, title:function(){ return "会社や部署の状況を1行で（任意）"; }, hint:function(){ return "書くと、依頼文の2行目に前提として入ります"; }}
+];
+
+function stepDone(i){
+  var k = STEPS[i].key;
+  if (k === "goal") return !!ans.goal;
+  if (k === "src") return !!ans.src;
+  if (k === "per") return !!ans.per;
+  if (k === "def") return isRes() ? (!!ans.purpose || !!clean(ans.company)) : (ans.tax !== null || ans.ret !== null || !!clean(ans.rule));
+  if (k === "out") return !!ans.out;
+  if (k === "ctx") return !!clean(ans.ctx);
+  return false;
+}
+function canMake(){ return !!(ans.goal && ans.src && ans.per); }
+
+function renderNav(){
+  var h = "";
+  for (var i = 0; i < STEPS.length; i++){
+    h += '<span class="' + (STEPS[i].required ? "" : "optional ") + (stepDone(i) || i < step ? "done" : "") + '"></span>';
+  }
+  document.getElementById("nav").innerHTML = h;
+}
+
+function optsHTML(list, cur, name, cls){
+  var h = '<div class="opts' + (cls ? " " + cls : "") + '" role="group">';
+  list.forEach(function(o){
+    var on = cur === o.v;
+    h += '<button type="button" class="opt' + (on ? " on" : "") + '" aria-pressed="' + on + '" data-name="' + name + '" data-v="' + esc(o.v) + '">' + esc(o.l) + (o.s ? "<small>" + esc(o.s) + "</small>" : "") + "</button>";
+  });
+  return h + "</div>";
+}
+
+function renderStep(){
+  var st = STEPS[step];
+  var body = "";
+  if (st.key === "goal") body = optsHTML(GOALS, ans.goal, "goal");
+  if (st.key === "src") body = optsHTML(isRes() ? SRC_RES : SRC_DATA, ans.src, "src", isRes() ? "one" : "");
+  if (st.key === "per"){
+    body = optsHTML(isRes() ? PER_RES : PER_DATA, ans.per, "per", isRes() ? "three" : "");
+    if (ans.per === "custom"){
+      if (isRes()){
+        body += '<div class="field"><label for="perT">調べる期間</label><input id="perT" data-field="perT" maxlength="40" placeholder="例：2026年1月以降" value="' + esc(ans.perT) + '"></div>';
+      } else {
+        body += '<div class="two"><div class="field"><label for="perT">見たい期間</label><input id="perT" data-field="perT" maxlength="40" placeholder="例：2026年4〜6月" value="' + esc(ans.perT) + '"></div><div class="field"><label for="perB">比べる期間</label><input id="perB" data-field="perB" maxlength="40" placeholder="例：2025年4〜6月" value="' + esc(ans.perB) + '"></div></div>';
+      }
+    }
+  }
+  if (st.key === "def"){
+    if (isRes()){
+      body = '<div class="field" style="margin-top:0;margin-bottom:14px;"><label for="company">調べる会社の名前</label><input id="company" data-field="company" maxlength="60" placeholder="例：株式会社〇〇" value="' + esc(ans.company) + '"></div>';
+      body += '<div class="grp-l">目的</div>' + optsHTML(PURPOSE, ans.purpose, "purpose", "three");
+    } else {
+      body = '<div class="grp"><div class="grp-l">税抜か、税込か</div>' + optsHTML(TAX, ans.tax, "tax", "three") + "</div>";
+      body += '<div class="grp"><div class="grp-l">返品を引くか</div>' + optsHTML(RET, ans.ret, "ret", "three") + "</div>";
+      body += '<div class="field"><label for="rule">ほかに決まりがあれば</label><input id="rule" data-field="rule" maxlength="60" placeholder="例：送料は売上に含めない" value="' + esc(ans.rule) + '"><div class="hint">社内の「数字の定義」を伝えるほど、結果が自社の数え方に合います</div></div>';
+    }
+  }
+  if (st.key === "out") body = optsHTML(isRes() ? OUT_RES : OUT_DATA, ans.out, "out", isRes() ? "three" : "");
+  if (st.key === "ctx"){
+    body = '<div class="field" style="margin-top:0;"><label for="ctx">状況（1行）</label><input id="ctx" data-field="ctx" maxlength="80" placeholder="例：社員20人の雑貨メーカーで、自社オンラインショップ・直営店・卸で売っている" value="' + esc(ans.ctx) + '"><div class="hint">空欄のままでも作れます</div></div>';
+  }
+
+  var last = step === STEPS.length - 1;
+  var h = '<div class="card"><div class="qn">ステップ ' + (step + 1) + '／' + STEPS.length + (st.required ? ' <span class="tag">必須</span>' : ' <span class="tag optional">任意</span>') + '</div>';
+  h += '<div class="qt">' + esc(st.title()) + '</div><div class="qh">' + esc(st.hint()) + '</div>' + body;
+  h += '<div class="btns">';
+  if (step > 0) h += '<button type="button" class="b" id="back">もどる</button>';
+  h += '<span class="spacer"></span>';
+  if (!last) h += '<button type="button" class="b' + (step >= 2 ? "" : " primary") + '" id="next"' + (st.required && !stepDone(step) ? " disabled" : "") + '>' + (st.required ? "つぎへ" : (stepDone(step) ? "つぎへ" : "とばす")) + '</button>';
+  if (step >= 2) h += '<button type="button" class="b primary" id="make"' + (canMake() ? "" : " disabled") + '>この内容で依頼文を作る' + ICON.arrow + '</button>';
+  h += "</div></div>";
+
+  var box = document.getElementById("wizard");
+  box.innerHTML = h;
+  box.querySelectorAll(".opt").forEach(function(b){
+    b.addEventListener("click", function(){ pick(b.getAttribute("data-name"), b.getAttribute("data-v")); });
+  });
+  box.querySelectorAll("input[data-field]").forEach(function(inp){
+    inp.addEventListener("input", function(){
+      ans[inp.getAttribute("data-field")] = inp.value;
+      renderNav();
+      var nx = document.getElementById("next");
+      if (nx && !STEPS[step].required) nx.textContent = stepDone(step) ? "つぎへ" : "とばす";
+    });
+  });
+  var bk = document.getElementById("back");
+  if (bk) bk.addEventListener("click", function(){ step--; renderStep(); });
+  var nx = document.getElementById("next");
+  if (nx) nx.addEventListener("click", function(){ if (STEPS[step].required && !stepDone(step)) return; step++; renderStep(); });
+  var mk = document.getElementById("make");
+  if (mk) mk.addEventListener("click", function(){ if (canMake()) showResult(); });
+  renderNav();
+}
+
+function pick(name, v){
+  if (name === "goal"){
+    var wasRes = isRes();
+    ans.goal = v;
+    if (wasRes !== isRes()){ ans.src = null; ans.per = null; ans.perT = ""; ans.perB = ""; ans.out = null; ans.purpose = null; }
+  } else if (name === "tax" || name === "ret"){
+    ans[name] = ans[name] === v ? null : v;
+  } else {
+    ans[name] = v;
+  }
+  renderStep();
+}
+
+function periodWords(){
+  if (ans.per === "mom") return {t:"［2026年8月］", b:"前月（［2026年7月］）", label:"前月比"};
+  if (ans.per === "yoy") return {t:"［2026年8月］", b:"前年同月（［2025年8月］）", label:"前年同月比"};
+  if (ans.per === "w4") return {t:"直近4週", b:"その前の4週", label:"直近4週"};
+  var t = clean(ans.perT), b = clean(ans.perB);
+  return {t:t || "［見たい期間］", b:b || "［比べる期間］", label:(t || "見たい期間") + " と " + (b || "比べる期間")};
+}
+
+function defInfo(){
+  var taxL = ans.tax === "ex" ? "税抜" : ans.tax === "in" ? "税込" : "";
+  var retL = ans.ret === "sub" ? "返品を引いた" : ans.ret === "nosub" ? "返品を引かない" : "";
+  var set = !!taxL && !!retL;
+  var missing = [];
+  if (!taxL) missing.push("税抜か税込か");
+  if (!retL) missing.push("返品を引くか");
+  var decided = taxL ? taxL + "で計算する" : ans.ret === "sub" ? "返品を引いて計算する" : ans.ret === "nosub" ? "返品は引かずに計算する" : "";
+  var partial = taxL || (ans.ret === "sub" ? "返品を引く" : ans.ret === "nosub" ? "返品を引かない" : "");
+  return {set:set, label:set ? taxL + "・" + retL + "金額" : "", partial:partial, decided:decided, missing:missing, rule:clean(ans.rule)};
+}
+
+function buildDataPrompt(){
+  var P = periodWords();
+  var D = defInfo();
+  var src = {
+    file:"添付した［売上表］",
+    drive:"［Google Drive／SharePoint］にある「［ファイル名］」",
+    db:"接続した［BigQuery］の［売上のテーブル］",
+    bi:"［Tableau］の「［ダッシュボード名］」のデータ",
+    paste:"下に貼り付けた表"
+  }[ans.src];
+  var goalLine = {
+    why: P.t + "の［売上］が" + P.b + "から変わった理由を調べてください。",
+    movers: P.t + "の数字のうち、" + P.b + "と比べて大きく動いた項目を調べてください。",
+    rank: P.t + "の［取引先・商品］ごとの順位と、" + P.b + "からの変化を調べてください。",
+    quality: P.t + "と" + P.b + "の分を、分析を始める前に点検してください。",
+    kpi: P.t + "と" + P.b + "の数字をもとに、毎週の会議で見る数字を5つに絞ってください。",
+    report: P.t + "について、" + P.b + "と比べた経営向けの報告を作ってください。"
+  }[ans.goal];
+
+  var L = [];
+  L.push("@Data " + src + "を使って、" + goalLine);
+  var ctx = clean(ans.ctx);
+  if (ctx) L.push("前提：" + ctx);
+  L.push("");
+
+  var def;
+  if (D.set) def = "1. 使った列と「売上」の定義を最初に書く（定義：" + D.label + (D.rule ? "。" + D.rule : "") + "）";
+  else def = "1. 使った列と「売上」の定義を最初に書く（" + (D.decided ? D.decided + "。" : "") + D.missing.join("・") + "は、計算の前に私に確認する" + (D.rule ? "。" + D.rule : "") + "）";
+  L.push(def);
+
+  L.push({
+    why:"2. ［カテゴリ別・チャネル別］に、変化の金額が大きい順に3つ挙げ、それぞれに根拠（どの集計か）を添える",
+    movers:"2. 増えた・減った金額が大きい順にトップ3を挙げ、それぞれに根拠（どの集計か）を添える",
+    rank:"2. 上位5つ・下位5つと増減を表にし、順位が大きく変わったものに根拠（どの集計か）を添える",
+    quality:"2. 重複・空欄・おかしな値・記録が途切れた期間を件数つきで挙げ、根拠として日付や行の場所を添える",
+    kpi:"2. 候補を10個出してから5つに絞り、それぞれの計算式と、根拠としてどの列から出すかを添える",
+    report:"2. 結論3行・数字の表・理由トップ3の順にまとめ、理由には根拠（どの集計か）を添える"
+  }[ans.goal]);
+  L.push(ans.goal === "quality" ? "3. まだ直さないで、見つけたことを表にして止まる" : "3. データの抜けや重複があれば、分析の前に報告する");
+  L.push("");
+
+  var out = ans.out || DEFAULT_OUT[ans.goal];
+  L.push({
+    table:"最後に、結果を表1枚にまとめてください。",
+    dash:"最後に、会議で見せる1枚のダッシュボードにしてください。公開はまだしないでください。",
+    doc:"最後に、Word か Google ドキュメントの文書にしてください。",
+    slides:"最後に、会議で使うスライド［5］枚にしてください。",
+    slack:"最後に、Slack に貼る5行の要約を作ってください。送信はまだしないでください。"
+  }[out]);
+  L.push("推測で埋めた部分は「推測」と書いてください。");
+  if (ans.src === "paste") L.push("", "（ここに表を貼り付ける）");
+  return L.join("\n");
+}
+
+function buildResPrompt(){
+  var company = clean(ans.company) || "［取引先の会社名］";
+  var purpose = ans.purpose || "meet";
+  var per = ans.per === "m3" ? "直近3か月" : ans.per === "y1" ? "直近1年" : (clean(ans.perT) || "［調べる期間］");
+  var head = {
+    meet:"@Deep Research ［来週］、" + company + "と商談します。商談の前に、この会社のことを調べてください。",
+    start:"@Deep Research " + company + "と取引を始めるか検討しています。判断の前に、この会社のことを調べてください。",
+    rival:"@Deep Research 競合の" + company + "の動きを調べてください。"
+  }[purpose];
+  var scope = {
+    web:"公開されている Web の情報",
+    webfile:"公開されている Web の情報と、添付した［これまでの取引の記録］",
+    webapp:"公開されている Web の情報と、接続したアプリにある［社内の資料］"
+  }[ans.src];
+  var L = [head];
+  var ctx = clean(ans.ctx);
+  if (ctx) L.push("前提：" + ctx);
+  L.push("");
+  L.push("1. 調べる範囲は" + scope + "、期間は" + per + "とする");
+  L.push("2. 数字と事実には、1つずつ出典のリンクを付ける");
+  L.push("3. 出典で確かめられた事実と、そこから考えた推測を見出しで分け、推測は「推測」と書く");
+  L.push({
+    meet:"4. 最後に、商談で聞くべき質問を5つ、理由つきで出す",
+    start:"4. 最後に、取引を始める前に確かめるべき点を5つ、理由つきで出す",
+    rival:"4. 最後に、自社への影響が大きそうな動きを3つ、理由つきで挙げる"
+  }[purpose]);
+  L.push("");
+  var out = ans.out || "doc";
+  L.push({doc:"結果は、1枚で読める文書にまとめてください。", slides:"結果は、社内で共有するプレゼン資料にまとめてください。", sheet:"結果は、項目ごとに並べたスプレッドシートにまとめてください。"}[out]);
+  return L.join("\n");
+}
+
+function checklist(){
+  var c = [];
+  if (isRes()){
+    c.push("出典のリンクを開き、数字や事実が本当にそのページに書いてあるか");
+    c.push("「推測」と書かれた部分を、事実として資料に書き写していないか");
+    c.push("期間（" + (ans.per === "m3" ? "直近3か月" : ans.per === "y1" ? "直近1年" : (clean(ans.perT) || "指定した期間")) + "）より古い情報が、最新のように書かれていないか");
+    if (ans.src === "webfile") c.push("添付した社内資料が、社内の決まりで ChatGPT に渡してよい範囲のものか");
+    if (ans.src === "webapp") c.push("接続したアカウントの権限で見える資料しか読まれない。必要な資料が見える状態か");
+    if (ans.out === "slides" || ans.out === "sheet") c.push("共有する前に、出典のリンクが資料の中に残っているか");
+    return c.slice(0, 5);
+  }
+  var D = defInfo();
+  var P = periodWords();
+  c.push("使った表・列・期間（" + P.label + "）・絞り込みが、頼んだとおりになっているか");
+  if (D.set) c.push("結果の最初に書かれた定義が「" + D.label + "」になっているか");
+  else c.push("「売上」の定義（" + D.missing.join("・") + "）を決めてから数字を出す");
+  c.push({
+    file:"添付したファイルの期間と列が、頼んだ期間と合っているか（別の月の表が混ざっていないか）",
+    drive:"接続したファイルが最新版か。見られるのは、接続したアカウントの権限の範囲だけ",
+    db:"接続したアカウントの権限で見える範囲か（見えない表は分析に入らない）",
+    bi:"接続したアカウントの権限で見えるダッシュボードか。元のダッシュボードの数字と合っているか",
+    paste:"貼り付けた表に、見出しの行と単位（円・件）が入っているか"
+  }[ans.src]);
+  var out = ans.out || DEFAULT_OUT[ans.goal];
+  if (out === "dash") c.push("ダッシュボードを公開すると、分析に使ったデータもコピーされる。共有する相手に見せてよいデータか");
+  if (out === "slack") c.push("Slack で共有する前に、そのチャンネルの全員に見せてよい数字か");
+  if (out === "doc" || out === "slides") c.push("資料の中に、期間と「売上」の定義が書いてあるか（配った後に数字だけが独り歩きしない）");
+  c.push({
+    why:"「推測」と書かれた理由は、担当者に確かめてから会議で話す",
+    movers:"「推測」と書かれた理由は、担当者に確かめてから会議で話す",
+    rank:"表記ゆれ（「株式会社」の有無など）で、同じ相手が別々に数えられていないか",
+    quality:"直す前に、見つかった重複や空欄を元のファイルで確かめる",
+    kpi:"選ばれた数字が、今のデータで毎週計算できるか（「今は計算できない」ものは後回し）",
+    report:"「推測」と書かれた打ち手は、推測だと分かる書き方のまま報告する"
+  }[ans.goal]);
+  return c.slice(0, 5);
+}
+
+function howto(){
+  var s = [];
+  if (isRes()){
+    s.push("ChatGPT を開き、Work に切り替える（Deep Research は Plus・Pro・Business・Enterprise・Edu で使える）");
+    if (ans.src === "webfile") s.push("読ませたい社内資料をチャットに添付する");
+    if (ans.src === "webapp") s.push("資料があるアプリが接続済みか確かめる");
+    s.push("上の依頼文の［ ］を書き換えて貼り、送る");
+    s.push("できた資料の出典のリンクを開いて、中身を確かめる");
+    return s;
+  }
+  s.push("ChatGPT を開き、Work に切り替える（Plus 以上の有料プラン。Free・Go では使えない）");
+  s.push("プラグイン一覧で Data を選び、インストールする");
+  s.push({
+    file:"新しいチャットに Excel・CSV を添付する",
+    drive:"求められたら Google Drive か SharePoint を接続する",
+    db:"求められたら社内データベース（BigQuery・Snowflake など）を接続する",
+    bi:"求められたら BI ツールを接続する",
+    paste:"上の依頼文の［ ］を自社の内容に書き換えて、チャットに貼る"
+  }[ans.src]);
+  s.push(ans.src === "paste" ? "最後の行「（ここに表を貼り付ける）」を消して、そこに表をコピーして貼り、送る" : "上の依頼文の［ ］を自社の内容に書き換えて貼り、送る");
+  return s;
+}
+
+function chipsHTML(){
+  var items = [];
+  items.push({i:0, k:"知りたいこと", v:findL(GOALS, ans.goal)});
+  items.push({i:1, k:isRes() ? "調べる範囲" : "データの場所", v:findL(isRes() ? SRC_RES : SRC_DATA, ans.src)});
+  items.push({i:2, k:"期間", v:isRes() ? findL(PER_RES, ans.per) : periodWords().label});
+  if (isRes()) items.push({i:3, k:"目的", v:findL(PURPOSE, ans.purpose || "meet") + (clean(ans.company) ? "（" + clean(ans.company) + "）" : "")});
+  else { var D = defInfo(); items.push({i:3, k:"定義", v:D.set ? D.label : (D.partial ? D.partial + "・一部未定" : "未定（確認してもらう）")}); }
+  var outV = ans.out || DEFAULT_OUT[ans.goal];
+  items.push({i:4, k:"受け取る形", v:findL(isRes() ? OUT_RES : OUT_DATA, outV) + (ans.out ? "" : "（自動）")});
+  items.push({i:5, k:"状況", v:clean(ans.ctx) ? "入力あり" : "なし"});
+  return items.map(function(it){ return '<button type="button" class="chip" data-step="' + it.i + '">' + esc(it.k) + '：<b>' + esc(it.v) + '</b></button>'; }).join("");
+}
+
+function showResult(){
+  var prompt = isRes() ? buildResPrompt() : buildDataPrompt();
+  var h = '<div class="hero"><div class="hero-l">できあがり</div><div class="hero-t">' + (isRes() ? "@Deep Research の依頼文ができました" : "@Data の依頼文ができました") + '</div><div class="chips">' + chipsHTML() + '</div><p class="note">項目を押すと、そのステップに戻って選び直せます。</p></div>';
+  h += '<div class="card"><div class="sec-h">' + ICON.doc + '貼り付ける依頼文</div><pre class="prompt" id="prompt">' + esc(prompt) + '</pre>';
+  h += '<div class="btns"><button type="button" class="b primary" id="copy">' + ICON.copy + 'この依頼文をコピー</button></div>';
+  h += '<p class="note">［ ］の中は、貼る前に自社の内容に書き換えてください。' + (isRes() ? "" : "「使った列と定義を最初に書く」「根拠を添える」「推測は推測と書く」の3つは消さずに残すと、結果を確かめやすくなります。") + '</p></div>';
+  h += '<div class="card"><div class="sec-h cool">' + ICON.check + '共有する前の確認リスト</div><ul class="checks">' + checklist().map(function(t){ return "<li>" + ICON.check + esc(t) + "</li>"; }).join("") + "</ul></div>";
+  h += '<div class="card"><div class="sec-h cool">' + ICON.list + '使い方</div><ol class="howto">' + howto().map(function(t){ return "<li>" + esc(t) + "</li>"; }).join("") + "</ol></div>";
+  h += '<div class="btns"><button type="button" class="b cool" id="again">最初から作り直す</button></div>';
+
+  var r = document.getElementById("result");
+  r.innerHTML = h;
+  r.classList.remove("hide");
+  document.getElementById("wizard").classList.add("hide");
+  document.getElementById("nav").classList.add("hide");
+  document.getElementById("copy").addEventListener("click", function(){ copyText(document.getElementById("prompt").textContent); });
+  r.querySelectorAll(".chip").forEach(function(b){
+    b.addEventListener("click", function(){ step = parseInt(b.getAttribute("data-step"), 10); backToWizard(); });
+  });
+  document.getElementById("again").addEventListener("click", function(){ resetAns(); step = 0; backToWizard(); });
+  window.scrollTo(0, 0);
+}
+
+function backToWizard(){
+  document.getElementById("result").classList.add("hide");
+  document.getElementById("wizard").classList.remove("hide");
+  document.getElementById("nav").classList.remove("hide");
+  renderStep();
+  window.scrollTo(0, 0);
+}
+
+function copyText(text){
+  function done(){ var t = document.getElementById("toast"); t.classList.add("on"); setTimeout(function(){ t.classList.remove("on"); }, 1400); }
+  function fallback(){
+    var ta = document.createElement("textarea");
+    ta.value = text; ta.setAttribute("readonly", ""); ta.style.position = "fixed"; ta.style.opacity = "0";
+    document.body.appendChild(ta); ta.select();
+    try { document.execCommand("copy"); done(); } catch (e) {}
+    document.body.removeChild(ta);
+  }
+  if (navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(text).then(done, fallback);
+  else fallback();
+}
+
+renderStep();
+</script>
+</body>
+</html>
