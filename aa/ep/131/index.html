@@ -2,404 +2,47 @@
 <html lang="ja"><head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>GPT-6 Astraの出力の質を100倍に上げるプロンプト10選 — Kawaru Gifts</title>
-<meta name="description" content="Astraに頼んだ結果が「惜しい」で終わる原因は、ほとんどが頼み方の側にあります。完了の条件・材料の渡し方・途中の直し方・仕上げ前の点検を、そのまま貼れる形にした10本です。どんな作業にもかぶせて使える「頼み方の型」なので、手持ちの依頼文の前後に足すだけで、1回目から“そのまま使える出力”に近づき、やり直しの往復が減ります。">
+<title>【99％が知らない】最新『GPT 6 Astra』のトークン消費を激減させる裏技見つけたから解説します のプレゼント — Kawaru Gifts</title>
+<meta name="description" content="動画「【99％が知らない】最新『GPT 6 Astra』のトークン消費を激減させる裏技見つけたから解説します」でお配りしたプレゼント2点を受け取れるページです。">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Kawaru Gifts">
-<meta property="og:title" content="GPT-6 Astraの出力の質を100倍に上げるプロンプト10選 — Kawaru Gifts">
-<meta property="og:description" content="Astraに頼んだ結果が「惜しい」で終わる原因は、ほとんどが頼み方の側にあります。完了の条件・材料の渡し方・途中の直し方・仕上げ前の点検を、そのまま貼れる形にした10本です。どんな作業にもかぶせて使える「頼み方の型」なので、手持ちの依頼文の前後に足すだけで、1回目から“そのまま使える出力”に近づき、やり直しの往復が減ります。">
+<meta property="og:title" content="【99％が知らない】最新『GPT 6 Astra』のトークン消費を激減させる裏技見つけたから解説します のプレゼント — Kawaru Gifts">
+<meta property="og:description" content="動画「【99％が知らない】最新『GPT 6 Astra』のトークン消費を激減させる裏技見つけたから解説します」でお配りしたプレゼント2点を受け取れるページです。">
 <meta property="og:image" content="https://i.ytimg.com/vi/W8ETC0VGWGs/hqdefault.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://i.ytimg.com/vi/W8ETC0VGWGs/hqdefault.jpg">
-<meta name="twitter:title" content="GPT-6 Astraの出力の質を100倍に上げるプロンプト10選 — Kawaru Gifts">
-<meta name="twitter:description" content="Astraに頼んだ結果が「惜しい」で終わる原因は、ほとんどが頼み方の側にあります。完了の条件・材料の渡し方・途中の直し方・仕上げ前の点検を、そのまま貼れる形にした10本です。どんな作業にもかぶせて使える「頼み方の型」なので、手持ちの依頼文の前後に足すだけで、1回目から“そのまま使える出力”に近づき、やり直しの往復が減ります。">
+<meta name="twitter:title" content="【99％が知らない】最新『GPT 6 Astra』のトークン消費を激減させる裏技見つけたから解説します のプレゼント — Kawaru Gifts">
+<meta name="twitter:description" content="動画「【99％が知らない】最新『GPT 6 Astra』のトークン消費を激減させる裏技見つけたから解説します」でお配りしたプレゼント2点を受け取れるページです。">
 <link rel="icon" href="data:image/png;base64,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">
 <link rel="stylesheet" href="../../assets/site.css?v=86667b6833e8">
 </head><body>
 <header class="kh"><div class="top">
   <a class="back" href="../../">← 一覧へ</a>
   <img src="data:image/png;base64,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" alt="">
-  <h1>GPT-6 Astraの出力の質を100倍に上げるプロンプト10選</h1>
-  <span class="badge">10個</span>
-  <button class="btn ghost sm" style="margin-left:auto" data-copy="pfull" aria-label="全件コピー">📋<span class="blabel"> 全件コピー</span></button>
-  <button class="btn sm" data-save="pfull" data-name="astra-quality-prompts10.md" aria-label="全件ダウンロード">⬇<span class="blabel"> 全件ダウンロード</span></button>
+  <div class="ttl">Kawaru Gifts<small>AIエージェント / Kawaru プレゼント図書館</small></div>
 </div></header>
 
 <div class="kwrap">
-  <section class="epctx epctx-top">
-  <div class="ep-left">
-    <div class="ep-thumb epctx-thumb"><img src="https://i.ytimg.com/vi/W8ETC0VGWGs/hqdefault.jpg" alt=""></div>
+  <section class="ephero">
+    <div class="ep-left">
+    <div class="ep-thumb"><img src="https://i.ytimg.com/vi/W8ETC0VGWGs/hqdefault.jpg" alt=""></div>
     <a class="watch" href="https://www.youtube.com/watch?v=W8ETC0VGWGs" target="_blank" rel="noopener">▶ 動画を見る</a>
-    <div class="ep-docs"><a class="docbtn" href="https://github.com/chaaaaarin/kawaru-channel-20260908-124" target="_blank" rel="noopener">📚 資料</a><a class="docbtn" href="https://chaaaaarin.github.io/kawaru-channel-20260908-124/onepager.html" target="_blank" rel="noopener">📄 1枚資料</a></div>
+    <div class="ep-docs"><a class="docbtn" href="https://github.com/chaaaaarin/kawaru-channel-20260910" target="_blank" rel="noopener">📚 資料</a><a class="docbtn" href="https://chaaaaarin.github.io/kawaru-channel-20260910/slides.html" target="_blank" rel="noopener">🖥 スライド</a><a class="docbtn" href="https://chaaaaarin.github.io/kawaru-channel-20260910/onepager.html" target="_blank" rel="noopener">📄 1枚資料</a></div>
   </div>
-  <div>
-    <p class="epctx-label">この動画のプレゼントです</p>
-    <p class="epctx-title"><a href="../../ep/124/">【99％が知らない】最新『GPT 6 Astra』のトークン消費を激減させる裏技見つけたから解説します</a></p>
-    <p class="epctx-date">2026-09-17</p>
-    <a class="epbundle" href="../../bundles/W8ETC0VGWGs.md" download="プレゼント一式_2026-09-17.md">⬇ この回のプレゼントを全部ダウンロード</a>
-  </div>
-</section>
-
-  <section class="kintro">
-    <h2>GPT-6 Astraの出力の質を100倍に上げるプロンプト10選</h2>
-    <p><span class="nb">Astraに頼んだ結果が</span><span class="nb">「惜しい」で終わる原因は、</span><span class="nb">ほとんどが頼み方の側にあります。</span><span class="nb">完了の条件・</span><span class="nb">材料の渡し方・</span><span class="nb">途中の直し方・</span><span class="nb">仕上げ前の点検を、</span><span class="nb">そのまま貼れる形にした10本です。</span><span class="nb">どんな作業にもかぶせて使える</span><span class="nb">「頼み方の型」</span><span class="nb">なので、</span><span class="nb">手持ちの依頼文の前後に足すだけで、</span><span class="nb">1回目から“そのまま使える出力”に</span><span class="nb">近づき、</span><span class="nb">やり直しの往復が減ります。</span></p>
-    <div class="kmeta"><span>プロンプト集</span><span>収録 10個</span><span>No.124 【無料公開】GPT-6 Astraを100倍賢く活用するために必要な知識をタダで学びませんか？</span><span>2026-09-08 配布</span></div>
-    <div class="pnote"><span class="nb">下のボタンで、</span><span class="nb">全文をそのままコピー、</span><span class="nb">またはテキストファイルとして保存で</span><span class="nb">きます。</span></div>
+    <div>
+      <p class="epctx-label">この動画でお配りしたプレゼント</p>
+      <h1 class="eptitle"><span class="nb">【99％が知らない】</span><span class="nb">最新</span><span class="nb">『GPT 6 Astra』の</span><span class="nb">トークン消費を</span><span class="nb">激減させる裏技見つけたから解説します</span></h1>
+      <p class="epctx-date">2026年9月19日</p>
+    </div>
   </section>
 
-  <div class="icard">
-  <pre class="prompt" id="b1" style="max-height:none;">期待できるメリット: 古い資料や噂レベルの情報に引っぱられた出力が減る。どの材料を根拠にしたかが分かるので、確認も速く終わる。
-使う場面: 社内資料・過去のメモ・Webの記事など、質の違う材料をまとめて渡すとき。
-前提・状況: 渡したい材料が3つ以上あり、古いものや不確かなものが混ざっている。
-指示: 下の材料を使って【作業の内容】をしてください。材料には優先順位と信頼度を付けています。材料どうしが食い違うときは、優先順位の高い材料を正とし、食い違った箇所を最後に一覧にしてください。信頼度が「低」の材料だけに頼る記述には、文末に（要確認）を付けてください。材料に無いことは推測で足さず、「材料に記載なし」と書いてください。
----材料1（優先：高／信頼度：高／【例: 最新の社内規程 2026年9月版】）---
-【ここに貼る】
----材料2（優先：中／信頼度：中／【例: 先月の会議メモ】）---
-【ここに貼る】
----材料3（優先：低／信頼度：低／【例: 業界ニュースの記事】）---
-【ここに貼る】
----ここまで---
-出力形式・制約: 本文のあとに「食い違いの一覧（箇所／優先の高い材料の内容／ほかの材料の内容）」と「（要確認）を付けた数」を付ける。
-つまずきどころ: 区切り線を入れないと、指示と材料が混ざって読み違える。材料は必ず ---材料N--- で1つずつ囲む。</pre>
-  <div class="cbtns">
-    <button class="btn" data-copy="b1">📋 コピー</button>
-    <button class="btn ghost" data-save="b1" data-name="astra-quality-prompts10.txt">⬇ ダウンロード</button>
-  </div>
+  <h2 class="cat">プレゼント<i>2点</i></h2>
+  <div class="ep-kits eppage-kits"><a class="kchip" href="../../apps/hirogeru-free-no131/"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 20h8M12 17v3"/><path d="M9 8.7v5.6l4.3-2.8L9 8.7Z" fill="currentColor" stroke="none"/></svg></span><span class="kt">AI学習アプリ「HIROGERU」視聴者クーポン / ダウンロード手順<span class="kdesc">AI学習アプリ「HIROGERU」を無料で始めるための視聴者クーポンです。App Store / Google Play のボタンからそのままアプリに飛べて、クーポンコードはワンタップでコピー。ダウンロードの手順とクーポンの入れ方もこのページにまとまっています。</span></span><span class="badge">アプリ</span><span class="go">開く →</span></a><a class="kchip" href="../../apps/token-100-setsuyaku/"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4"/><path d="M9 12h6M9 15.5h4"/></svg></span><span class="kt">【今スグ使える】トークン100％節約mdファイル<span class="kdesc">Codex が作業の前に必ず読むルールファイル（AGENTS.md）に置くだけで、頼んでいないサブエージェント・余計なファイルの読み込み・長い前置きや実況に、トークンを使わせない約束ごとが毎回の作業に効きます。設定ファイルを触らずに今日から使え、ルール自体も20行ほどに絞ってあるので、ファイルそのものが読み込みを増やしません。</span></span><span class="go">開く →</span></a></div>
+  <a class="epbundle" href="../../bundles/W8ETC0VGWGs.md" download="プレゼント一式_2026-09-19.md">⬇ この回のプレゼントを全部ダウンロード</a>
+
+  <footer><a href="../../">← AIエージェント / Kawaru プレゼント図書館（すべての回）へ</a></footer>
 </div>
 
-  <section class="epctx">
-  <p class="epctx-label">この動画のほかのプレゼント</p>
-  <div class="ep-kits"><a class="kchip" href="../ai-school-guide/"><span class="kt">無料AIスクール 日本語ガイド（スマホで学べる学習アプリ）</span><span class="badge">アプリ</span><span class="go">開く →</span></a><a class="kchip" href="../astra-model-choice-sheet/"><span class="kt">どの作業に、どのモデル・どの強さ？ GPT-6 Astra 使い分け判定表</span><span class="badge">24項目</span><span class="go">開く →</span></a><a class="kchip" href="../hirogeru-free-no124/"><span class="kt">AI学習アプリ「HIROGERU」視聴者クーポン / ダウンロード手順</span><span class="badge">アプリ</span><span class="go">開く →</span></a></div>
-</section>
-  <section class="epctx">
-  <p class="epctx-label">ほかの回の「プロンプト集」</p>
-  <div class="ep-kits"><a class="kchip" href="../image25-official-prompts10/"><span class="kt">【公式ベース】Image 2.5 で“作り直しゼロ”になるプロンプト10選</span><span class="badge">10個</span><span class="go">開く →</span></a><a class="kchip" href="../astra-higgsfield-video-prompts10/"><span class="kt">静止画1枚が“動く広告”になる Astra×HiggsField 動画生成プロンプト10選</span><span class="badge">10個</span><span class="go">開く →</span></a><a class="kchip" href="../astra-image-prompts10/"><span class="kt">資料もサムネも“外注ゼロ”で仕上がる Astra画像生成プロンプト10選</span><span class="badge">10個</span><span class="go">開く →</span></a><a class="kchip" href="../astra-work-task-prompts10/"><span class="kt">メール・議事録・報告が“考えずに片づく” Astra仕事プロンプト10選</span><span class="badge">10個</span><span class="go">開く →</span></a></div>
-</section>
-
-  <footer><a href="../../">← AIエージェント / Kawaru プレゼント図書館にもどる</a></footer>
-</div>
-
-<pre id="pfull" class="hidden"># 🎁 GPT-6 Astraの出力の質を100倍に上げるプロンプト10選
-
-Astraに頼んだ結果が「惜しい」で終わる原因は、ほとんどが頼み方の側にあります。完了の条件・材料の渡し方・途中の直し方・仕上げ前の点検を、そのまま貼れる形にした10本です。どんな作業にもかぶせて使える「頼み方の型」なので、手持ちの依頼文の前後に足すだけで、1回目から“そのまま使える出力”に近づき、やり直しの往復が減ります。
-
-**受け取り方**: 下の各コードブロック右上のコピーボタンでコピーするか、このファイルをそのままダウンロードしてください。
-
-**使い方**: 1〜3は頼む前、4〜6は進めている途中、7〜10は仕上げの前に使います。【　】の部分を自分の作業に置き換えて、いつもの依頼文の前か後ろに足してください。Astra は、Plus なら ChatGPT の Work と Codex の中で、Pro なら通常のチャットでも使えます（2026年9月時点。会社のプランは管理者の設定しだい）。GPT-5.6 など、ほかのモデルにもそのまま効きます。
-
----
-
-## 1. 「完了の条件」と「今回やらないこと」を最初に固定する
-
-```text
-期待できるメリット: 頼んだ範囲より広がったり、肝心な所で止まったりする「惜しい出力」が減る。1回目から「ここまでできていれば合格」という形で返ってくる。
-使う場面: 調べもの・資料づくり・企画書など、ゴールがぼんやりしたまま頼みがちな仕事を始めるとき。
-前提・状況: やりたいことは決まっているが、完成形のイメージをまだ言葉にしていない。
-指示: これから【作業の内容】をお願いします。取りかかる前に、次の2つを私と合意してください。(1) 完了の条件：何がどの形でそろったら終わりか。成果物の名前・分量・形式を具体的に。(2) 今回やらないこと：範囲に含めない作業・対象・判断を3つ以上。私が「OK」と返すまで、本番の作業は始めないでください。
-出力形式・制約: 「完了の条件（箇条書き3〜5個）／今回やらないこと（3個以上）／確認したいこと（あれば2個まで）」の順。全体で15行以内。
-つまずきどころ: 完了の条件が「いい感じのもの」のままだと効かない。数・形式・読み手のどれか1つは、必ず数字か固有名詞に書き直してから「OK」を出す。
-```
-
-## 2. あいまいな所を「自分で決めてよい所」と「聞くべき所」に分けさせる
-
-```text
-期待できるメリット: 質問攻めで止まることも、思い込みで作り直しになることも減る。細かい所は任せたまま、結果が変わる所だけを自分で決められる。
-使う場面: 指示を完璧に書く時間がないまま、少し大きめの仕事を任せるとき。
-前提・状況: 依頼文に書いていない前提が、いくつか残っている。
-指示: この依頼を進めるうえで、書かれていない前提を洗い出し、次の2つに分けてください。A：選び方で結果がほとんど変わらない細かい前提（言い回し・並べ方・ファイル名など）→ 妥当な案を自分で決めて進め、決めた内容を最後に一覧で報告する。B：選び方で結果が大きく変わる前提（対象・期間・予算・読み手・結論の方向など）→ 作業を始める前に、選択肢つきで私に質問する。Bが無ければ、そのまま進めてください。
-出力形式・制約: 最初に「Bの質問（選択肢A／B／Cつき・最大3問）」。作業後の最後に「Aで自分で決めた前提の一覧」。
-つまずきどころ: Bの質問が4つ以上出るときは、依頼そのものが大きすぎる。1の「完了の条件」から切り直してから頼む。
-```
-
-## 3. 材料に「優先順位」と「信じてよい度合い」を付けて渡す
-
-```text
-期待できるメリット: 古い資料や噂レベルの情報に引っぱられた出力が減る。どの材料を根拠にしたかが分かるので、確認も速く終わる。
-使う場面: 社内資料・過去のメモ・Webの記事など、質の違う材料をまとめて渡すとき。
-前提・状況: 渡したい材料が3つ以上あり、古いものや不確かなものが混ざっている。
-指示: 下の材料を使って【作業の内容】をしてください。材料には優先順位と信頼度を付けています。材料どうしが食い違うときは、優先順位の高い材料を正とし、食い違った箇所を最後に一覧にしてください。信頼度が「低」の材料だけに頼る記述には、文末に（要確認）を付けてください。材料に無いことは推測で足さず、「材料に記載なし」と書いてください。
----材料1（優先：高／信頼度：高／【例: 最新の社内規程 2026年9月版】）---
-【ここに貼る】
----材料2（優先：中／信頼度：中／【例: 先月の会議メモ】）---
-【ここに貼る】
----材料3（優先：低／信頼度：低／【例: 業界ニュースの記事】）---
-【ここに貼る】
----ここまで---
-出力形式・制約: 本文のあとに「食い違いの一覧（箇所／優先の高い材料の内容／ほかの材料の内容）」と「（要確認）を付けた数」を付ける。
-つまずきどころ: 区切り線を入れないと、指示と材料が混ざって読み違える。材料は必ず ---材料N--- で1つずつ囲む。
-```
-
-## 4. 本番の前に「進め方の計画」だけを出させて、ずれを先に直す
-
-```text
-期待できるメリット: 何十分も作業させたあとで「方向が違った」と気づく事故を防げる。直すのが計画の1行で済むので、やり直しの時間がほぼ無くなる。
-使う場面: Work で長い調べもの・資料一式づくりなど、何段階もかかる仕事を任せる直前。
-前提・状況: 1と2で、完了の条件と確認したい前提がそろっている。
-指示: まだ作業は始めずに、進め方の計画だけを出してください。各手順について「何をするか／使う情報源や材料／その手順の出来上がり／ここで私の確認が要るか」を書いてください。手順は8個以内。時間がかかりそうな手順と、失敗しやすい手順には印を付けてください。私が計画を直して「この計画で進めて」と返してから、本番を始めてください。
-出力形式・制約: 手順ごとに1行の表（番号／やること／材料／出来上がり／確認の要否／注意の印）。表の下に、この計画の弱点を2つ。
-つまずきどころ: 計画を読まずに「進めて」と返すと意味がない。少なくとも「確認が要る」手順と「材料」の欄だけは、必ず読んでから返す。
-```
-
-## 5. 途中で方向を変えるときは「変えない条件」を先に言う
-
-```text
-期待できるメリット: 途中の一言をきっかけに、最初に決めた範囲・禁止事項・形式があいまいになるのを防げる。変えたい所だけが直り、ゼロからの作り直しにならない。
-使う場面: 進行中の作業に、対象の追加・優先度の変更・切り口の変更を伝えるとき。
-前提・状況: 最初の依頼文で決めた条件（完了の条件・やらないこと・形式など）がある。
-指示: 今の作業をきりのよい所で止めて、次のとおり方向を変えてください。変えないこと：最初の依頼の完了の条件・今回やらないこと・出力形式・禁止事項。変えること：【例: 比較の対象にD社を足し、価格の比較をいちばん優先する】。すでに進めた分の扱い：【例: A〜C社の調査結果は残し、表の列の順番だけ直す】。変更後の計画を3行で示し、私が「進めて」と返してから再開してください。
-出力形式・制約: 「変えないこと（確認）／変えること／進めた分の扱い／変更後の計画（3行）」の順。
-つまずきどころ: 「やっぱり〜で」とだけ送ると、どの条件を残すのかがあいまいになる。毎回書くのが面倒なら、最初の依頼文の条件に番号を振っておき「条件1〜4はそのまま」と書く。
-```
-
-## 6. 長い作業では「作業メモ」を残させて、区切りで引き継ぐ
-
-```text
-期待できるメリット: 長い作業の後半で、前半に決めたことや失敗の理由が抜け落ちるのを防げる。会話や日を分けても、同じ品質のまま続きから再開できる。
-使う場面: 1回では終わらない調査・資料づくり・大きな整理を、何回かに分けて進めるとき。
-前提・状況: 同じ仕事を、複数の会話や複数の日にまたいで進める。
-指示: この作業のあいだ、区切りごとに「作業メモ」を更新してください。メモには、決まったこと・そう決めた理由・試してうまくいかなかったこと（理由つき）・残っている作業・次に最初にやること、を書いてください。私が「引き継ぎメモを出して」と言ったら、このメモだけを読めば別の会話で続きから再開できる形にまとめてください。
-出力形式・制約: 作業メモは5つの見出し（決まったこと／理由／うまくいかなかったこと／残りの作業／次の一手）。全体で30行以内。
-つまずきどころ: メモが長くなりすぎると、要点が埋もれて引き継げない。「うまくいかなかったこと」は理由と一緒に1行ずつにし、解決済みのものは消させる。
-```
-
-## 7. 仕上げる前に「合格の条件」で自己採点させ、足りない所だけ直させる
-
-```text
-期待できるメリット: 見た目は整っているのに条件を満たしていない出力を、人が読む前に見つけられる。受け取ってからの確認にかかる時間が大きく減る。
-使う場面: 出来上がったものを受け取る直前、または人に渡す直前。
-前提・状況: 1で決めた完了の条件や、読み手からの条件がある。
-指示: 出来上がったものを出す前に、次の合格の条件で自己採点してください。条件ごとに「満たす／一部／満たさない」の判定と、その根拠になる箇所を示してください。「一部」「満たさない」の条件だけを直し、直した箇所を一覧にしてから、完成版を出してください。合格の条件：【例: ① 結論が冒頭3行にある ② 数字にはすべて出典がある ③ 専門用語に言い換えが付いている ④ A4で2枚以内】
-出力形式・制約: 「自己採点の表（条件／判定／根拠の箇所）→ 直した箇所の一覧 → 完成版」の順。
-つまずきどころ: 自己採点は甘くなりやすい。判定が全部「満たす」だったら、「厳しい読み手として、あえて1つ減点するならどこか」を続けて聞く。
-```
-
-## 8. 数字・日付・固有名詞に「根拠」と「確かさ」を付けさせる
-
-```text
-期待できるメリット: もっともらしい間違いが紛れ込んだまま資料が出回るのを防げる。人が確かめるべき箇所が一目で分かり、事実確認が速く終わる。
-使う場面: 調べもの・報告書・社外向け資料など、数字や固有名詞が多い出力を受け取るとき。
-前提・状況: 出力に、数字・日付・会社名・製品名などが含まれている。
-指示: 出力に含まれる数字・日付・固有名詞をすべて抜き出して、表にしてください。各行に「根拠（出典のURL、または材料の名前と箇所）」と「確かさ（確認済み／推測を含む／根拠なし）」を付けてください。根拠なしの項目は、本文で【要確認】と書き換えた版も一緒に出してください。
-出力形式・制約: 表（項目／本文での使われ方／根拠／確かさ）＋【要確認】に書き換えた本文。
-つまずきどころ: 検索や資料を使えない状態で頼むと、根拠が「一般的な知識」ばかりになる。最新の数字が要るときは、検索を使える状態にするか、資料を添付してから頼む。
-```
-
-## 9. 見本を1つ見せて、出力の形を毎回そろえる
-
-```text
-期待できるメリット: 見出しの順番・文体・長さが毎回ばらつくのを止められる。チームで同じ依頼を使っても、同じ体裁の出力がそろう。
-使う場面: 週報・議事録・比較表など、同じ形の出力をくり返し作るとき。
-前提・状況: 過去にうまくいった出力（自分で書いたものでもよい）が1つある。
-指示: 下の「見本」と同じ構成・見出しの順番・文体・おおよその長さで、「今回の材料」から出力を作ってください。見本の中身（数字や固有名詞）は使わず、形だけをまねてください。見本にない見出しを足したくなったら、足さずに最後に「足すことを提案したい見出し」として書いてください。
----見本---
-【うまくいった出力を貼る】
----今回の材料---
-【材料を貼る】
----ここまで---
-出力形式・制約: 見本と同じ見出し構成。最後に「見本との違い（あれば）」を1〜3行。
-つまずきどころ: 見本の数字や名前が、今回の出力に混ざることがある。見本の数字と固有名詞は【　】に置き換えてから貼ると確実。
-```
-
-## 10. 出す前に「反対の立場」で穴を探させてから直させる
-
-```text
-期待できるメリット: 自分では気づけない反論・抜け・リスクを、提出する前につぶせる。上司や取引先から同じ指摘を受けて出し直す手間が減る。
-使う場面: 企画書・提案書・判断材料など、読み手に納得してもらう必要がある出力の仕上げ。
-前提・状況: 下書きができていて、読み手（決裁する人・取引先など）が決まっている。
-指示: この下書きを、【読み手：例 予算を決める部長。関心はコストと失敗したときのリスク】の立場で厳しく読んでください。(1) 出そうな反論や質問を5つ、(2) 根拠が弱い主張を3つ、(3) 抜けているリスクや前提を3つ挙げてください。そのうえで、下書きの主張は変えずに、指摘を踏まえて直した版を出してください。直しきれない指摘は「未解決」として残してください。
-出力形式・制約: 「反論・質問（5）／弱い根拠（3）／抜け（3）→ 直した版 → 未解決の一覧」の順。
-つまずきどころ: 読み手を書かないと、一般論の指摘ばかりになる。役職だけでなく、関心ごと（予算・リスク・スピードなど）まで1行で添える。
-```
-
-**ポイント**: 10本を毎回ぜんぶ使う必要はありません。大事な仕事なら「1 → 4 → 7」の3本だけでも、やり直しの往復が大きく減ります。出力は、最後に自分の目で確かめてから使ってください。
-</pre>
-<script>
-
-// チェックリストを実際に使えるようにする。
-// □ の行を押すと済みになり、状態はこのブラウザに残る（ページを閉じても消えない）。
-// <pre> の中身自体は変えていないので、コピーとダウンロードの内容は今までどおり。
-(function(){
-  var lines = [].slice.call(document.querySelectorAll('.cline'));
-  if (!lines.length) return;
-  var KEY = 'giftCheck:' + location.pathname;
-  var done = {};
-  try { done = JSON.parse(localStorage.getItem(KEY)) || {}; } catch(e){}
-
-  function save(){
-    try { localStorage.setItem(KEY, JSON.stringify(done)); } catch(e){}
-  }
-  function paint(){
-    var n = 0;
-    lines.forEach(function(l){
-      var on = !!done[l.dataset.c];
-      l.classList.toggle('on', on);
-      if (on) n++;
-    });
-    bar.textContent = n ? n + ' / ' + lines.length + ' 完了' : lines.length + ' 項目 ・ タップでチェック';
-    reset.style.display = n ? 'inline' : 'none';
-  }
-
-  var bar = document.createElement('span');
-  var reset = document.createElement('button');
-  reset.type = 'button';
-  reset.className = 'creset';
-  reset.textContent = 'チェックを消す';
-  reset.addEventListener('click', function(){ done = {}; save(); paint(); });
-
-  var wrap = document.createElement('div');
-  wrap.className = 'cprog';
-  wrap.appendChild(bar);
-  wrap.appendChild(reset);
-  var host = lines[0].closest('.icard') || lines[0].closest('pre');
-  host.insertBefore(wrap, host.firstChild);
-
-  lines.forEach(function(l){
-    l.addEventListener('click', function(){
-      var k = l.dataset.c;
-      if (done[k]) delete done[k]; else done[k] = 1;
-      save(); paint();
-    });
-  });
-  paint();
-})();
-
-// 名指しリンク（#i37）で来たとき、その項目まで確実に運んで少しの間だけ目立たせる。
-// ブラウザ任せだと、項目数の多いページでは狙った位置に着かないことがある
-// （html に scroll-behavior:smooth が効いており、数万px を滑らせようとして届かない）。
-(function(){
-  function go(){
-    if (!location.hash) return;
-    var el = document.querySelector(location.hash);
-    if (!el || !el.classList.contains('icard')) return;
-    // behavior:'auto' は CSS の scroll-behavior:smooth に従うため、
-    // 数万px 離れた項目へは滑らかに移動しようとして事実上たどり着かない。
-    // 名指しリンクは「開いたらそこにいる」のが正しいので即時で飛ばす。
-    el.scrollIntoView({block: 'start', behavior: 'instant'});
-    el.classList.add('flashme');
-    setTimeout(function(){ el.classList.remove('flashme'); }, 2400);
-  }
-  addEventListener('hashchange', go);
-  if (document.readyState === 'loading') addEventListener('DOMContentLoaded', go);
-  else go();
-})();
-// 項目の多いキットで、目的の1件に辿り着けるようにする絞り込み。
-// 検索はタイトル・説明だけでなく本文も対象にする（「あの文言が入っていた項目」で探せるように）。
-(function(){
-  var q = document.getElementById('kq');
-  if (!q) return;
-  var hit = document.getElementById('khit');
-  var cards = [].slice.call(document.querySelectorAll('.kwrap .icard'));
-  var heads = [].slice.call(document.querySelectorAll('.kwrap h2.cat'));
-  var chips = [].slice.call(document.querySelectorAll('.kcat'));
-  var cat = '';
-
-  // ひらがな・カタカナの違いで取りこぼさないようにする（ハブ側の検索と同じ扱い）
-  function norm(s){
-    return (s || '').toLowerCase().replace(/[ぁ-ん]/g, function(c){
-      return String.fromCharCode(c.charCodeAt(0) + 0x60);
-    });
-  }
-
-  // カード全体の textContent だとボタンの「コピー」まで拾ってしまうため、中身を選んで集める
-  cards.forEach(function(c){
-    var t = c.querySelector('.ititle'), d = c.querySelector('.imeta'), p = c.querySelector('.prompt');
-    c._t = norm((t ? t.textContent : '') + ' ' + (d ? d.textContent : '') + ' ' + (p ? p.textContent : ''));
-  });
-
-  function apply(){
-    var kw = norm(q.value.trim()), n = 0, shown = {};
-    cards.forEach(function(c){
-      var ok = (!cat || c.getAttribute('data-cat') === cat)
-            && (!kw || c._t.indexOf(kw) !== -1);
-      c.classList.toggle('hide', !ok);
-      if (ok){ n++; shown[c.getAttribute('data-cat')] = 1; }
-    });
-    // 残った項目が1件も無いカテゴリの見出しは隠す
-    heads.forEach(function(h){
-      h.classList.toggle('hide', !shown[h.getAttribute('data-cat')]);
-    });
-    hit.textContent = (kw || cat)
-      ? (n ? n + '件を表示中' : '該当する項目がありません')
-      : '';
-  }
-
-  q.addEventListener('input', apply);
-  chips.forEach(function(b){
-    b.addEventListener('click', function(){
-      cat = b.getAttribute('data-cat');
-      chips.forEach(function(x){ x.classList.toggle('on', x === b); });
-      apply();
-    });
-  });
-})();
-
-function flash(btn, label){
-  const old = btn.textContent, cls = btn.className;
-  btn.textContent = label; btn.classList.add('ok');
-  setTimeout(() => { btn.textContent = old; btn.className = cls; }, 1600);
-}
-function textOf(id){ return document.getElementById(id).textContent; }
-
-async function copyText(btn, id){
-  const t = textOf(id);
-  try {
-    await navigator.clipboard.writeText(t);
-  } catch (e) {
-    const ta = document.createElement('textarea');
-    ta.value = t; ta.style.position='fixed'; ta.style.opacity='0';
-    document.body.appendChild(ta); ta.select();
-    document.execCommand('copy'); ta.remove();
-  }
-  flash(btn, '✓ コピーしました');
-}
-
-function saveText(btn, id, name){
-  const blob = new Blob([textOf(id)], {type:'text/plain;charset=utf-8'});
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement('a');
-  a.href = url; a.download = name;
-  document.body.appendChild(a); a.click(); a.remove();
-  setTimeout(() => URL.revokeObjectURL(url), 1000);
-  if (btn) flash(btn, '✓ 保存しました');
-}
-
-document.addEventListener('click', e => {
-  const b = e.target.closest('[data-copy]');
-  if (b) { copyText(b, b.dataset.copy); return; }
-  const d = e.target.closest('[data-save]');
-  if (d) { saveText(d, d.dataset.save, d.dataset.name); return; }
-  // その項目だけを名指しで人に渡せるようにする
-  const l = e.target.closest('[data-link]');
-  if (l) {
-    const url = location.origin + location.pathname + '#' + l.dataset.link;
-    navigator.clipboard.writeText(url).then(() => flash(l, '✓ コピーしました'));
-  }
-});
-
-// 「/」ですぐ検索を始められるようにする。入力中は邪魔しない。
-addEventListener('keydown', e => {
-  if (e.key !== '/' || e.metaKey || e.ctrlKey || e.altKey) return;
-  const t = e.target;
-  if (t && (t.tagName === 'INPUT' || t.tagName === 'TEXTAREA' || t.isContentEditable)) return;
-  const box = document.getElementById('q') || document.getElementById('kq');
-  if (!box) return;
-  e.preventDefault();
-  box.focus();
-  box.select();
-});
-
-// 「この中から探す」の貼り付き位置を、実際のヘッダ高さに合わせる（スマホでヘッダが低い）。
-(function(){
-  var h = document.querySelector('header');
-  if (!h) return;
-  var set = function(){
-    if (!window.innerWidth) return;
-    document.documentElement.style.setProperty('--hdr', Math.min(h.offsetHeight, 160) + 'px');
-  };
-  set();
-  addEventListener('resize', set);
-})();
-</script>
 <div id="promo" class="promo">
   <div class="promo-card">
     <button id="promoClose" class="promo-x" aria-label="閉じる">×</button>
