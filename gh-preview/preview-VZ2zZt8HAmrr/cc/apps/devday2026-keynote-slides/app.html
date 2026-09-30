@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>OpenAI DevDay 2026 キーノートまとめ（スライド版）</title>
+<meta name="description" content="動画で紹介した「OpenAI DevDay 2026 キーノートまとめ」全16枚を、スライドの見た目のまま見られます。各ページの下に、そのページのポイント解説つき。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@500;700;900&family=Noto+Sans+JP:wght@400..700&family=IBM+Plex+Mono:wght@500;600&display=swap">
+<style>
+  :root{
+    --brand:#D9774F; --brand-deep:#C15640; --brand-soft:rgba(217,119,79,.12);
+    --bg:#F1ECE3; --paper:#FBF8F2; --ink:#2A2620; --ink-mid:#6E6557; --line:#E4D9C7;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:var(--bg);color:var(--ink);font-family:-apple-system,'Hiragino Sans','Yu Gothic',sans-serif;
+    line-height:1.75;padding:26px 18px 44px;}
+  .wrap{max-width:960px;margin:0 auto;}
+  h1.page{font-size:22px;font-weight:900;line-height:1.4;margin-bottom:8px;}
+  .lead{font-size:14.5px;color:var(--ink-mid);margin-bottom:18px;}
+  .stage{position:relative;width:100%;aspect-ratio:16/9;background:#111318;
+    border:1px solid var(--line);border-radius:12px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.08);}
+  .canvas{position:absolute;left:0;top:0;width:1920px;height:1080px;transform-origin:0 0;}
+  .slide{position:absolute;inset:0;width:1920px;height:1080px;overflow:hidden;box-sizing:border-box;
+    opacity:0;visibility:hidden;transition:opacity .25s ease;}
+  .slide.on{opacity:1;visibility:visible;}
+  .slide p,.slide h1,.slide h2,.slide h3,.slide ul{margin:0;}
+  .slide ul{padding-left:1.2em;display:flex;flex-direction:column;gap:8px;}
+  .slide table{border-collapse:collapse;}
+  .slide th,.slide td{padding:18px 24px;border-bottom:1px solid #D9D4C9;vertical-align:top;line-height:1.5;}
+  .bar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:14px;}
+  .btn{appearance:none;border:0;background:var(--brand);color:#fff;font-weight:800;font-size:15px;
+    border-radius:12px;padding:11px 20px;cursor:pointer;box-shadow:0 2px 10px rgba(0,0,0,.12);font-family:inherit;}
+  .btn:hover{background:var(--brand-deep);}
+  .btn:disabled{background:#CFC6B8;box-shadow:none;cursor:default;}
+  .count{font-variant-numeric:tabular-nums;font-weight:800;color:var(--ink-mid);font-size:15px;}
+  .note{background:var(--paper);border:1px solid var(--line);border-left:5px solid var(--brand);border-radius:10px;
+    padding:14px 18px;margin-top:14px;font-size:14.5px;}
+  .note b{display:block;font-size:12.5px;color:var(--brand-deep);letter-spacing:.06em;margin-bottom:2px;}
+  .dots{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-top:14px;}
+  .dots button{width:30px;height:30px;border-radius:8px;border:1px solid var(--line);background:var(--paper);
+    color:var(--ink-mid);font-size:12px;font-weight:700;cursor:pointer;font-family:inherit;}
+  .dots button.on{background:var(--brand);border-color:var(--brand);color:#fff;}
+  .foot{font-size:13px;color:var(--ink-mid);margin-top:18px;}
+  .foot a{color:var(--brand-deep);}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1 class="page">OpenAI DevDay 2026 キーノートまとめ（スライド版）</h1>
+  <p class="lead">dots・GPT-6.1 Sol・Codex・Marketplace など20以上の発表を、5つの柱で全16枚に整理。下でそのままめくれます（← → キーやスワイプでも操作できます）。</p>
+  <div class="stage" id="stage"><div class="canvas" id="canvas">
+<section class="slide" id="cover" data-transition="fade" style="background:radial-gradient(circle at 85% 20%, #2C3BB5 0%, #181C38 34%, #111318 62%), #111318; color:#C4C8D2; font-family:'Noto Sans JP', Arial, sans-serif; padding:128px; display:flex; flex-direction:column; justify-content:space-between">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace; font-size:24px; font-weight:600; letter-spacing:4px; color:#9AA6FF">OPENAI DEVDAY 2026 · KEYNOTE RECAP</p>
+<div style="display:flex; flex-direction:column; gap:32px">
+<h1 style="font-family:'Zen Kaku Gothic New', Arial, sans-serif; font-size:120px; font-weight:900; line-height:1.1; color:#F5F3EE">OpenAI DevDay 2026<br>キーノートまとめ</h1>
+<p style="font-size:36px; line-height:1.5; color:#C4C8D2">20以上の発表を、5つの柱で整理しました</p>
+</div>
+<p style="font-size:24px; line-height:1.5; color:#8C909C">2026年9月29日（米国時間）サンフランシスコで開催｜配信の字幕と公式発表をもとにした非公式まとめ</p>
+</section>
+
+<section class="slide" id="overview" data-transition="fade" style="background:#F5F3EE; color:#474B55; font-family:'Noto Sans JP', Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:48px">
+<div style="display:flex; flex-direction:column; gap:12px">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace; font-size:24px; font-weight:600; letter-spacing:3px; color:#3A4DE0">OVERVIEW</p>
+<h2 style="font-family:'Zen Kaku Gothic New', Arial, sans-serif; font-size:64px; font-weight:700; line-height:1.2; color:#111318">5つの柱でみる今回の発表</h2>
+</div>
+<div style="display:flex; flex-direction:column">
+<div style="display:flex; flex-direction:row; align-items:center; gap:32px; padding:26px 0px; border-top:1px solid #D9D4C9">
+<p style="width:96px; flex:none; font-family:'IBM Plex Mono', 'Courier New', monospace; font-size:36px; font-weight:600; color:#3A4DE0">01</p>
+<h3 style="width:480px; flex:none; font-family:'Zen Kaku Gothic New', Arial, sans-serif; font-size:36px; font-weight:700; line-height:1.3; color:#111318">dots（エージェント）</h3>
+<p style="flex:1; font-size:28px; line-height:1.5">dots ／ ChatGPT Space ／ Specialist dots</p>
+</div>
+<div style="display:flex; flex-direction:row; align-items:center; gap:32px; padding:26px 0px; border-top:1px solid #D9D4C9">
+<p style="width:96px; flex:none; font-family:'IBM Plex Mono', 'Courier New', monospace; font-size:36px; font-weight:600; color:#3A4DE0">02</p>
+<h3 style="width:480px; flex:none; font-family:'Zen Kaku Gothic New', Arial, sans-serif; font-size:36px; font-weight:700; line-height:1.3; color:#111318">モデルと料金</h3>
+<p style="flex:1; font-size:28px; line-height:1.5">GPT-6.1 Sol ／ Astra Ultrafast ／ Decisions API ／ 新Proプラン</p>
+</div>
+<div style="display:flex; flex-direction:row; align-items:center; gap:32px; padding:26px 0px; border-top:1px solid #D9D4C9">
+<p style="width:96px; flex:none; font-family:'IBM Plex Mono', 'Courier New', monospace; font-size:36px; font-weight:600; color:#3A4DE0">03</p>
+<h3 style="width:480px; flex:none; font-family:'Zen Kaku Gothic New', Arial, sans-serif; font-size:36px; font-weight:700; line-height:1.3; color:#111318">研究</h3>
+<p style="flex:1; font-size:28px; line-height:1.5">「AIリサーチ・インターン」の達成と、研究の加速</p>
+</div>
+<div style="display:flex; flex-direction:row; align-items:center; gap:32px; padding:26px 0px; border-top:1px solid #D9D4C9">
+<p style="width:96px; flex:none; font-family:'IBM Plex Mono', 'Courier New', monospace; font-size:36px; font-weight:600; color:#3A4DE0">04</p>
+<h3 style="width:480px; flex:none; font-family:'Zen Kaku Gothic New', Arial, sans-serif; font-size:36px; font-weight:700; line-height:1.3; color:#111318">開発ツール</h3>
+<p style="flex:1; font-size:28px; line-height:1.5">Codexクラウド ／ Agents API ／ Private Intelligence</p>
+</div>
+<div style="display:flex; flex-direction:row; align-items:center; gap:32px; padding:26px 0px; border-top:1px solid #D9D4C9; border-bottom:1px solid #D9D4C9">
+<p style="width:96px; flex:none; font-family:'IBM Plex Mono', 'Courier New', monospace; font-size:36px; font-weight:600; color:#3A4DE0">05</p>
+<h3 style="width:480px; flex:none; font-family:'Zen Kaku Gothic New', Arial, sans-serif; font-size:36px; font-weight:700; line-height:1.3; color:#111318">流通・販路</h3>
+<p style="flex:1; font-size:28px; line-height:1.5">Sign in with ChatGPT ／ プラグイン拡張 ／ OpenAI Marketplace</p>
+</div>
+</div>
+<div style="position:absolute; left:128px; right:128px; bottom:64px; display:flex; flex-direction:row; justify-content:space-between">
+<p style="font-size:24px; color:#62666F">OpenAI DevDay 2026 キーノートまとめ（非公式）</p>
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace; font-size:24px; color:#62666F">02</p>
+</div>
+</section>
+
+<section class="slide" id="dots" data-transition="fade" style="background:#111318; color:#C4C8D2; font-family:'Noto Sans JP', Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; justify-content:space-between">
+<div style="display:flex; flex-direction:column; gap:24px">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace; font-size:24px; font-weight:600; letter-spacing:3px; color:#9AA6FF">01 · DOTS</p>
+<h2 style="font-family:'Zen Kaku Gothic New', Arial, sans-serif; font-size:120px; font-weight:900; line-height:1.1; color:#F5F3EE">あなたの代わりに<br>働き続けるエージェント</h2>
+</div>
+<div style="display:flex; flex-direction:row; gap:48px">
+<div style="flex:1; display:flex; flex-direction:column; gap:12px; padding:24px 0px 0px; border-top:2px solid #9AA6FF">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace; font-size:24px; font-weight:600; letter-spacing:3px; color:#9AA6FF">MODEL</p>
+<p style="font-size:36px; line-height:1.4; color:#F5F3EE">GPT-6 Astraで動く</p>
+</div>
+<div style="flex:1; display:flex; flex-direction:column; gap:12px; padding:24px 0px 0px; border-top:2px solid #9AA6FF">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace; font-size:24px; font-weight:600; letter-spacing:3px; color:#9AA6FF">COMPUTER</p>
+<p style="font-size:36px; line-height:1.4; color:#F5F3EE">1体ごとに専用のクラウドPC</p>
+</div>
+<div style="flex:1; display:flex; flex-direction:column; gap:12px; padding:24px 0px 0px; border-top:2px solid #9AA6FF">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace; font-size:24px; font-weight:600; letter-spacing:3px; color:#9AA6FF">SCOPE</p>
+<p style="font-size:36px; line-height:1.4; color:#F5F3EE">つないだアプリを横断して働く</p>
+</div>
+</div>
+<div style="position:absolute; left:128px; right:128px; bottom:64px; display:flex; flex-direction:row; justify-content:space-between">
+<p style="font-size:24px; color:#8C909C">OpenAI DevDay 2026 キーノートまとめ（非公式）</p>
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace; font-size:24px; color:#8C909C">03</p>
+</div>
+</section>
+
+<section class="slide" id="dots-demo" data-transition="fade" style="background:#F5F3EE; color:#474B55; font-family:'Noto Sans JP', Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:48px">
+<div style="display:flex; flex-direction:column; gap:12px">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace; font-size:24px; font-weight:600; letter-spacing:3px; color:#3A4DE0">01 · DOTS</p>
+<h2 style="font-family:'Zen Kaku Gothic New', Arial, sans-serif; font-size:64px; font-weight:700; line-height:1.2; color:#111318">デモで見えたdotsの働き方</h2>
+</div>
+<div style="display:grid; grid-template-columns:1fr 1fr; gap:32px">
+<div style="display:flex; flex-direction:column; gap:12px; background:#FCFBF8; padding:40px; border:1px solid #DEDAD0; border-radius:16px">
+<div style="display:flex; flex-direction:row; align-items:center; gap:16px">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:#3A4DE0; width:40px; height:40px; flex:none"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+<h3 style="font-family:'Zen Kaku Gothic New', Arial, sans-serif; font-size:36px; font-weight:700; line-height:1.3; color:#111318">声で相談できる</h3>
+</div>
+<p style="font-size:28px; line-height:1.6">自分の仕事の状況を知っている相手と話せるので、「第2の脳」のように壁打ちできる</p>
+</div>
+<div style="display:flex; flex-direction:column; gap:12px; background:#FCFBF8; padding:40px; border:1px solid #DEDAD0; border-radius:16px">
+<div style="display:flex; flex-direction:row; align-items:center; gap:16px">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:#3A4DE0; width:40px; height:40px; flex:none"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+<h3 style="font-family:'Zen Kaku Gothic New', Arial, sans-serif; font-size:36px; font-weight:700; line-height:1.3; color:#111318">先回りして動く</h3>
+</div>
+<p style="font-size:28px; line-height:1.6">会議の前倒しに合わせて予定を組み直し、フィードバックを確認して修正デザインまで用意</p>
+</div>
+<div style="display:flex; flex-direction:column; gap:12px; background:#FCFBF8; padding:40px; border:1px solid #DEDAD0; border-radius:16px">
+<div style="display:flex; flex-direction:row; align-items:center; gap:16px">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:#3A4DE0; width:40px; height:40px; flex:none"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+<h3 style="font-family:'Zen Kaku Gothic New', Arial, sans-serif; font-size:36px; font-weight:700; line-height:1.3; color:#111318">チームの会話に参加</h3>
+</div>
+<p style="font-size:28px; line-height:1.6">Slackのスレッドを転送して任せられる。グループチャットでは結果が全員に共有される</p>
+</div>
+<div style="display:flex; flex-direction:column; gap:12px; background:#FCFBF8; padding:40px; border:1px solid #DEDAD0; border-radius:16px">
+<div style="display:flex; flex-direction:row; align-items:center; gap:16px">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:#3A4DE0; width:40px; height:40px; flex:none"><path d="m16 18 6-6-6-6"/><path d="m8 6-6 6 6 6"/></svg>
+<h3 style="font-family:'Zen Kaku Gothic New', Arial, sans-serif; font-size:36px; font-weight:700; line-height:1.3; color:#111318">Codexで開発も進める</h3>
+</div>
+<p style="font-size:28px; line-height:1.6">社内ではバグ報告を拾って修正のプルリクエストまで作り、毎日数十件のバグを直している</p>
+</div>
+</div>
+<div style="position:absolute; left:128px; right:128px; bottom:64px; display:flex; flex-direction:row; justify-content:space-between">
+<p style="font-size:24px; color:#62666F">OpenAI DevDay 2026 キーノートまとめ（非公式）</p>
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace; font-size:24px; color:#62666F">04</p>
+</div>
+</section>
+
+<section class="slide" id="dots-plan" data-transition="fade" style="background:#F5F3EE; color:#474B55; font-family:'Noto Sans JP', Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:48px">
+<div style="display:flex; flex-direction:column; gap:12px">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace; font-size:24px; font-weight:600; letter-spacing:3px; color:#3A4DE0">01 · DOTS</p>
+<h2 style="font-family:'Zen Kaku Gothic New', Arial, sans-serif; font-size:64px; font-weight:700; line-height:1.2; color:#111318">提供条件とビジネス向けの展開</h2>
+</div>
+<div style="display:flex; flex-direction:row; gap:64px; align-items:start">
+<div style="width:560px; flex:none; display:flex; flex-direction:column; gap:24px; background:#3A4DE0; padding:48px; border-radius:16px">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace; font-size:24px; font-weight:600; letter-spacing:3px; color:#DDE2FF">AVAILABLE TODAY</p>
+<h3 style="font-family:'Zen Kaku Gothic New', Arial, sans-serif; font-size:64px; font-weight:900; line-height:1.15; color:#F5F3EE">本日から提供</h3>
+<div style="display:flex; flex-direction:row; flex-wrap:wrap; gap:12px">
+<p style="font-size:28px; font-weight:500; line-height:1.4; color:#111318; background:#F5F3EE; padding:8px 20px; border-radius:999px">Pro</p>
+<p style="font-size:28px; font-weight:500; line-height:1.4; color:#111318; background:#F5F3EE; padding:8px 20px; border-radius:999px">Business Premium</p>
+<p style="font-size:28px; font-weight:500; line-height:1.4; color:#111318; background:#F5F3EE; padding:8px 20px; border-radius:999px">Enterprise</p>
+</div>
+<p style="font-size:28px; line-height:1.6; color:#F5F3EE">dotsはプラン料金に含まれ、dotとの会話は利用上限にカウントされない。24時間いつでも使える</p>
+</div>
+<div style="flex:1; display:flex; flex-direction:column; gap:40px">
+<div style="display:flex; flex-direction:column; gap:12px">
+<h3 style="font-family:'Zen Kaku Gothic New', Arial, sans-serif; font-size:36px; font-weight:700; line-height:1.3; color:#111318">Specialist dots（Enterprise向け）</h3>
+<p style="font-size:28px; line-height:1.6">チーム全体と働く、専門特化型のバーチャルなチームメイト。目標と文脈を渡し、フィードバックで育てた成果はチームで共有される。導入はOpenAIが支援</p>
+</div>
+<div style="display:flex; flex-direction:column; gap:12px">
+<h3 style="font-family:'Zen Kaku Gothic New', Arial, sans-serif; font-size:36px; font-weight:700; line-height:1.3; color:#111318">Microsoftと提携</h3>
+<p style="font-size:28px; line-height:1.6">企業は、ふだん使っているMicrosoftのツールからdotsを管理できるようになる</p>
+</div>
+<div style="display:flex; flex-direction:column; gap:12px">
+<h3 style="font-family:'Zen Kaku Gothic New', Arial, sans-serif; font-size:36px; font-weight:700; line-height:1.3; color:#111318">今後の構想</h3>
+<p style="font-size:28px; line-height:1.6">将来的には、複数のdotsがチームを組み、協力しながら働く姿を描いている（公式発表より）</p>
+</div>
+</div>
+</div>
+<div style="position:absolute; left:128px; right:128px; bottom:64px; display:flex; flex-direction:row; justify-content:space-between">
+<p style="font-size:24px; color:#62666F">OpenAI DevDay 2026 キーノートまとめ（非公式）</p>
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace; font-size:24px; color:#62666F">05</p>
+</div>
+</section>
+
+<section class="slide" id="collab" data-transition="fade" style="background:#F5F3EE; color:#474B55; font-family:'Noto Sans JP', Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:48px">
+<div style="display:flex; flex-direction:column; gap:12px">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace; font-size:24px; font-weight:600; letter-spacing:3px; color:#3A4DE0">01 · DOTS &amp; SPACE</p>
+<h2 style="font-family:'Zen Kaku Gothic New', Arial, sans-serif; font-size:64px; font-weight:700; line-height:1.2; color:#111318">チームとAIが一緒に働くための新機能</h2>
+</div>
+<table style="width:1664px; font-size:28px; color:#474B55">
+<tr style="background:#E9E5DC"><th style="width:25%; text-align:left; color:#111318">機能</th><th style="width:47%; text-align:left; color:#111318">概要</th><th style="width:28%; text-align:left; color:#111318">対象プラン</th></tr>
+<tr><td><b>ChatGPT Space</b></td><td>チームとdotが目標や履歴を共有して進める作業拠点</td><td>Pro・Business・Enterprise</td></tr>
+<tr><td><b>Living Pages</b></td><td>グラフ入りの共同編集ページ。データ連携で自動更新</td><td>Pro・Business・Enterprise</td></tr>
+<tr><td><b>スライドの共同編集</b></td><td>チームとChatGPTで作成し、PowerPoint等へ出力</td><td>Pro・Business・Enterprise</td></tr>
+<tr><td><b>チームタスク</b></td><td>定期業務を、日時や新着メッセージを合図に自動実行</td><td>Business・Enterprise</td></tr>
+<tr><td><b>Slack・Teamsで@ChatGPT</b></td><td>メンションで要約・調査・修正案づくりなどを依頼</td><td>Business・Enterprise</td></tr>
+<tr><td><b>Meetingsプラグイン</b></td><td>会議を録音し、要点や決定事項をSpaceに保存</td><td>Pro・Business（ベータ）</td></tr>
+</table>
+<div style="position:absolute; left:128px; right:128px; bottom:64px; display:flex; flex-direction:row; justify-content:space-between">
+<p style="font-size:24px; color:#62666F">OpenAI DevDay 2026 キーノートまとめ（非公式）</p>
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace; font-size:24px; color:#62666F">06</p>
+</div>
+</section>
+
+<section class="slide" id="models" data-transition="fade" style="background:#F5F3EE; color:#474B55; font-family:'Noto Sans JP', Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:48px">
+<div style="display:flex; flex-direction:column; gap:12px">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace; font-size:24px; font-weight:600; letter-spacing:3px; color:#3A4DE0">02 · MODELS</p>
+<h2 style="font-family:'Zen Kaku Gothic New', Arial, sans-serif; font-size:64px; font-weight:700; line-height:1.2; color:#111318">新しいモデルとAPI</h2>
+</div>
+<div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:32px">
+<div style="display:flex; flex-direction:column; gap:12px; background:#FCFBF8; padding:40px; border:1px solid #DEDAD0; border-radius:16px">
+<p style="font-family:'Zen Kaku Gothic New', Arial, sans-serif; font-size:120px; font-weight:900; line-height:1.1; color:#3A4DE0">1/5</p>
+<p style="font-size:24px; line-height:1.4; color:#62666F">Astra標準料金に対するトークン単価</p>
+<h3 style="font-family:'Zen Kaku Gothic New', Arial, sans-serif; font-size:36px; font-weight:700; line-height:1.3; color:#111318">GPT-6.1 Sol</h3>
+<p style="font-size:28px; line-height:1.6">Astraに迫る性能を、大幅に低いコストで。コーディングやコンピューター操作に強い</p>
+<p style="align-self:start; font-size:24px; font-weight:500; line-height:1.4; color:#2B3AB5; background:#E8EBFF; padding:6px 16px; border-radius:999px">本日リリース</p>
+</div>
+<div style="display:flex; flex-direction:column; gap:12px; background:#FCFBF8; padding:40px; border:1px solid #DEDAD0; border-radius:16px">
+<p style="font-family:'Zen Kaku Gothic New', Arial, sans-serif; font-size:120px; font-weight:900; line-height:1.1; color:#3A4DE0">約300</p>
+<p style="font-size:24px; line-height:1.4; color:#62666F">トークン／秒の生成速度</p>
+<h3 style="font-family:'Zen Kaku Gothic New', Arial, sans-serif; font-size:36px; font-weight:700; line-height:1.3; color:#111318">Astra Ultrafast</h3>
+<p style="font-size:28px; line-height:1.6">Astraの高速オプション。標準比でAPIは最大6倍、Codex・ChatGPT Workは最大8倍</p>
+<p style="align-self:start; font-size:24px; font-weight:500; line-height:1.4; color:#2B3AB5; background:#E8EBFF; padding:6px 16px; border-radius:999px">API・ChatGPT・Codexで提供</p>
+</div>
+<div style="display:flex; flex-direction:column; gap:12px; background:#FCFBF8; padding:40px; border:1px solid #DEDAD0; border-radius:16px">
+<p style="font-family:'Zen Kaku Gothic New', Arial, sans-serif; font-size:120px; font-weight:900; line-height:1.1; color:#3A4DE0">&lt;1秒</p>
+<p style="font-size:24px; line-height:1.4; color:#62666F">選択肢から答えを返すまでの時間</p>
+<h3 style="font-family:'Zen Kaku Gothic New', Arial, sans-serif; font-size:36px; font-weight:700; line-height:1.3; color:#111318">Decisions API</h3>
+<p style="font-size:28px; line-height:1.6">Lunaが、決められた選択肢の中から即答。分類・振り分け・エージェントの次の行動選びに</p>
+<p style="align-self:start; font-size:24px; font-weight:500; line-height:1.4; color:#2B3AB5; background:#E8EBFF; padding:6px 16px; border-radius:999px">限定プレビュー</p>
+</div>
+</div>
+<div style="position:absolute; left:128px; right:128px; bottom:64px; display:flex; flex-direction:row; justify-content:space-between">
+<p style="font-size:24px; color:#62666F">OpenAI DevDay 2026 キーノートまとめ（非公式）</p>
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace; font-size:24px; color:#62666F">07</p>
+</div>
+</section>
+
+<section class="slide" id="pro-plans" data-transition="fade" style="background:#F5F3EE; color:#474B55; font-family:'Noto Sans JP', Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:40px">
+<div style="display:flex; flex-direction:column; gap:12px">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace; font-size:24px; font-weight:600; letter-spacing:3px; color:#3A4DE0">02 · PLANS</p>
+<h2 style="font-family:'Zen Kaku Gothic New', Arial, sans-serif; font-size:64px; font-weight:700; line-height:1.2; color:#111318">ChatGPT Proの料金プラン</h2>
+</div>
+<div style="display:grid; grid-template-columns:1fr 1fr; gap:32px">
+<div style="display:flex; flex-direction:column; gap:16px; background:#111318; padding:40px; border-radius:16px">
+<p style="align-self:start; font-size:24px; font-weight:700; line-height:1.4; color:#111318; background:#9AA6FF; padding:6px 16px; border-radius:999px">新設</p>
+<div style="display:flex; flex-direction:row; align-items:baseline; gap:12px">
+<p style="font-family:'Zen Kaku Gothic New', Arial, sans-serif; font-size:120px; font-weight:900; line-height:1.1; color:#9AA6FF">$500</p>
+<p style="font-size:36px; color:#C4C8D2">／月</p>
+</div>
+<ul style="font-size:28px; line-height:1.6; color:#C4C8D2">
+<li>最も高い利用上限</li>
+<li>OpenAI最速のAstra Ultrafastを限定で利用</li>
+<li>Codex・ChatGPT Workでは標準のAstraより最大8倍速い</li>
+</ul>
+</div>
+<div style="display:flex; flex-direction:column; gap:16px; background:#FCFBF8; padding:40px; border:1px solid #DEDAD0; border-radius:16px">
+<p style="align-self:start; font-size:24px; font-weight:700; line-height:1.4; color:#2B3AB5; background:#E8EBFF; padding:6px 16px; border-radius:999px">申し込み再開</p>
+<div style="display:flex; flex-direction:row; align-items:baseline; gap:12px">
+<p style="font-family:'Zen Kaku Gothic New', Arial, sans-serif; font-size:120px; font-weight:900; line-height:1.1; color:#3A4DE0">$200</p>
+<p style="font-size:36px; color:#62666F">／月</p>
+</div>
+<ul style="font-size:28px; line-height:1.6; color:#474B55">
+<li>すべてのフロンティアモデルを利用できる</li>
+<li>GPT-6.1 Solを、日常のメインモデルとして使える品質</li>
+</ul>
+</div>
+</div>
+<p style="font-size:28px; line-height:1.6">目標は「あらゆる価格帯で、市場で最も高い性能を提供すること」（キーノートより要旨）</p>
+<div style="position:absolute; left:128px; right:128px; bottom:64px; display:flex; flex-direction:row; justify-content:space-between">
+<p style="font-size:24px; color:#62666F">OpenAI DevDay 2026 キーノートまとめ（非公式）</p>
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace; font-size:24px; color:#62666F">08</p>
+</div>
+</section>
+
+<section class="slide" id="research" data-transition="fade" style="background:#111318; color:#C4C8D2; font-family:'Noto Sans JP', Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; justify-content:space-between">
+<div style="display:flex; flex-direction:column; gap:24px">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace; font-size:24px; font-weight:600; letter-spacing:3px; color:#9AA6FF">03 · RESEARCH</p>
+<h2 style="font-family:'Zen Kaku Gothic New', Arial, sans-serif; font-size:64px; font-weight:700; line-height:1.2; color:#F5F3EE">「AIリサーチ・インターン」を達成</h2>
+<p style="font-size:28px; line-height:1.6; color:#C4C8D2">昨年「1年以内に実現する」と予告した目標を、数週間前に達成したと発表。モデルはOpenAIの研究そのものを加速させている</p>
+</div>
+<div style="display:grid; grid-template-columns:1fr 1fr; gap:64px">
+<div style="display:flex; flex-direction:column; gap:8px; padding:24px 0px 0px; border-top:2px solid #9AA6FF">
+<div style="display:flex; flex-direction:row; align-items:baseline; gap:12px">
+<p style="font-family:'Zen Kaku Gothic New', Arial, sans-serif; font-size:120px; font-weight:900; line-height:1.1; color:#9AA6FF">1/3</p>
+<p style="font-size:36px; color:#F5F3EE">以上</p>
+</div>
+<p style="font-size:28px; line-height:1.6; color:#C4C8D2">丸1日かかる研究タスクのうち、人の手を借りずにこなせるようになった割合（今夏の時点）</p>
+</div>
+<div style="display:flex; flex-direction:column; gap:8px; padding:24px 0px 0px; border-top:2px solid #9AA6FF">
+<div style="display:flex; flex-direction:row; align-items:baseline; gap:12px">
+<p style="font-family:'Zen Kaku Gothic New', Arial, sans-serif; font-size:120px; font-weight:900; line-height:1.1; color:#9AA6FF">100</p>
+<p style="font-size:36px; color:#F5F3EE">問以上</p>
+</div>
+<p style="font-size:28px; line-height:1.6; color:#C4C8D2">モデルが解決に貢献した、数十年来の未解決の数学の問題</p>
+</div>
+</div>
+<p style="font-size:28px; line-height:1.6; color:#C4C8D2">ほかにも、新しい抗生物質の開発、古代言語の研究、エネルギーや製造業のロボティクスを後押し。モデル自身が、次のモデルの学習や安全性の改善にも貢献している</p>
+<div style="position:absolute; left:128px; right:128px; bottom:64px; display:flex; flex-direction:row; justify-content:space-between">
+<p style="font-size:24px; color:#8C909C">OpenAI DevDay 2026 キーノートまとめ（非公式）</p>
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace; font-size:24px; color:#8C909C">09</p>
+</div>
+</section>
+
+<section class="slide" id="codex" data-transition="fade" style="background:#F5F3EE; color:#474B55; font-family:'Noto Sans JP', Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:48px">
+<div style="display:flex; flex-direction:column; gap:12px">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace; font-size:24px; font-weight:600; letter-spacing:3px; color:#3A4DE0">04 · CODEX</p>
+<h2 style="font-family:'Zen Kaku Gothic New', Arial, sans-serif; font-size:64px; font-weight:700; line-height:1.2; color:#111318">どこでも動くようになったCodex</h2>
+</div>
+<div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:24px">
+<div style="display:flex; flex-direction:column; gap:10px; background:#FCFBF8; padding:32px; border:1px solid #DEDAD0; border-radius:16px">
+<h3 style="font-family:'Zen Kaku Gothic New', Arial, sans-serif; font-size:36px; font-weight:700; line-height:1.3; color:#111318">Codexハーネスを公開</h3>
+<p style="font-size:28px; line-height:1.55">Codex・ChatGPT Work・dotsを動かす実行基盤。オープンソースで中身を確認できる</p>
+</div>
+<div style="display:flex; flex-direction:column; gap:10px; background:#FCFBF8; padding:32px; border:1px solid #DEDAD0; border-radius:16px">
+<h3 style="font-family:'Zen Kaku Gothic New', Arial, sans-serif; font-size:36px; font-weight:700; line-height:1.3; color:#111318">Codexクラウド</h3>
+<p style="font-size:28px; line-height:1.55">スマホで始めてPCで続きを。PCを閉じていてもクラウドで作業が進む</p>
+</div>
+<div style="display:flex; flex-direction:column; gap:10px; background:#FCFBF8; padding:32px; border:1px solid #DEDAD0; border-radius:16px">
+<h3 style="font-family:'Zen Kaku Gothic New', Arial, sans-serif; font-size:36px; font-weight:700; line-height:1.3; color:#111318">刷新されたCodex CLI</h3>
+<p style="font-size:28px; line-height:1.55">音声で指示でき、/agentsビューで複数のエージェントを管理。worktreeにも対応</p>
+</div>
+<div style="display:flex; flex-direction:column; gap:10px; background:#FCFBF8; padding:32px; border:1px solid #DEDAD0; border-radius:16px">
+<h3 style="font-family:'Zen Kaku Gothic New', Arial, sans-serif; font-size:36px; font-weight:700; line-height:1.3; color:#111318">コードレビュー</h3>
+<p style="font-size:28px; line-height:1.55">ChatGPTデスクトップアプリで差分を確認し、Codexに質問。GitHub・GitLabに対応</p>
+</div>
+<div style="display:flex; flex-direction:column; gap:10px; background:#FCFBF8; padding:32px; border:1px solid #DEDAD0; border-radius:16px">
+<h3 style="font-family:'Zen Kaku Gothic New', Arial, sans-serif; font-size:36px; font-weight:700; line-height:1.3; color:#111318">Codex Security Cloud</h3>
+<p style="font-size:28px; line-height:1.55">リポジトリ全体の定期スキャンや重複の自動排除、修正までをクラウドで実行</p>
+</div>
+<div style="display:flex; flex-direction:column; gap:10px; background:#FCFBF8; padding:32px; border:1px solid #DEDAD0; border-radius:16px">
+<h3 style="font-family:'Zen Kaku Gothic New', Arial, sans-serif; font-size:36px; font-weight:700; line-height:1.3; color:#111318">App Shot</h3>
+<p style="font-size:28px; line-height:1.55">アプリの画面と文脈を渡すと、Codexが自分でアプリを操作して点検・修正する</p>
+</div>
+</div>
+<div style="position:absolute; left:128px; right:128px; bottom:64px; display:flex; flex-direction:row; justify-content:space-between">
+<p style="font-size:24px; color:#62666F">OpenAI DevDay 2026 キーノートまとめ（非公式）</p>
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace; font-size:24px; color:#62666F">10</p>
+</div>
+</section>
+
+<section class="slide" id="platform" data-transition="fade" style="background:#F5F3EE; color:#474B55; font-family:'Noto Sans JP', Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:48px">
+<div style="display:flex; flex-direction:column; gap:12px">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace; font-size:24px; font-weight:600; letter-spacing:3px; color:#3A4DE0">04 · PLATFORM</p>
+<h2 style="font-family:'Zen Kaku Gothic New', Arial, sans-serif; font-size:64px; font-weight:700; line-height:1.2; color:#111318">エージェントを作るためのAPIと基盤</h2>
+</div>
+<div style="display:grid; grid-template-columns:1fr 1fr; gap:32px">
+<div style="display:flex; flex-direction:column; gap:12px; background:#FCFBF8; padding:36px; border:1px solid #DEDAD0; border-radius:16px">
+<h3 style="font-family:'Zen Kaku Gothic New', Arial, sans-serif; font-size:36px; font-weight:700; line-height:1.3; color:#111318">Agents API</h3>
+<p style="font-size:28px; line-height:1.6">Codexのハーネスをマネージドサービスとして提供。マルチエージェントやツール呼び出しに加え、新たにコンピューター操作に対応</p>
+</div>
+<div style="display:flex; flex-direction:column; gap:12px; background:#FCFBF8; padding:36px; border:1px solid #DEDAD0; border-radius:16px">
+<h3 style="font-family:'Zen Kaku Gothic New', Arial, sans-serif; font-size:36px; font-weight:700; line-height:1.3; color:#111318">Amazon Bedrock Managed Agents</h3>
+<p style="font-size:28px; line-height:1.6">AWS上の既存アプリやデータ、計算資源のそばで、OpenAIのエージェントを構築・運用できる</p>
+</div>
+<div style="display:flex; flex-direction:column; gap:12px; background:#FCFBF8; padding:36px; border:1px solid #DEDAD0; border-radius:16px">
+<h3 style="font-family:'Zen Kaku Gothic New', Arial, sans-serif; font-size:36px; font-weight:700; line-height:1.3; color:#111318">OpenAI Private Intelligence</h3>
+<p style="font-size:28px; line-height:1.6">データを保持しない安全性チェック（ZDR）と、機密コンピューティングによる推論（Private Inference、プレビュー）で企業のデータを守る</p>
+</div>
+<div style="display:flex; flex-direction:column; gap:12px; background:#FCFBF8; padding:36px; border:1px solid #DEDAD0; border-radius:16px">
+<h3 style="font-family:'Zen Kaku Gothic New', Arial, sans-serif; font-size:36px; font-weight:700; line-height:1.3; color:#111318">APIの信頼性と速度</h3>
+<p style="font-size:28px; line-height:1.6">稼働率99%超を保ちながら、最初のトークンが返るまでの時間を45%短縮</p>
+</div>
+</div>
+<div style="position:absolute; left:128px; right:128px; bottom:64px; display:flex; flex-direction:row; justify-content:space-between">
+<p style="font-size:24px; color:#62666F">OpenAI DevDay 2026 キーノートまとめ（非公式）</p>
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace; font-size:24px; color:#62666F">11</p>
+</div>
+</section>
+
+<section class="slide" id="demos" data-transition="fade" style="background:#F5F3EE; color:#474B55; font-family:'Noto Sans JP', Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:48px">
+<div style="display:flex; flex-direction:column; gap:12px">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace; font-size:24px; font-weight:600; letter-spacing:3px; color:#3A4DE0">04 · DEMOS</p>
+<h2 style="font-family:'Zen Kaku Gothic New', Arial, sans-serif; font-size:64px; font-weight:700; line-height:1.2; color:#111318">会場を沸かせたライブデモ</h2>
+</div>
+<div style="display:flex; flex-direction:column">
+<div style="display:flex; flex-direction:row; align-items:center; gap:32px; padding:26px 0px; border-top:1px solid #D9D4C9">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:#3A4DE0; width:40px; height:40px; flex:none"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+<h3 style="width:480px; flex:none; font-family:'Zen Kaku Gothic New', Arial, sans-serif; font-size:36px; font-weight:700; line-height:1.3; color:#111318">3D空間をリアルタイム編集</h3>
+<p style="flex:1; font-size:28px; line-height:1.5">指示どおりに3D空間を作り変え、会場の大画面に配信映像まで映した</p>
+</div>
+<div style="display:flex; flex-direction:row; align-items:center; gap:32px; padding:26px 0px; border-top:1px solid #D9D4C9">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:#3A4DE0; width:40px; height:40px; flex:none"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+<h3 style="width:480px; flex:none; font-family:'Zen Kaku Gothic New', Arial, sans-serif; font-size:36px; font-weight:700; line-height:1.3; color:#111318">抽選アプリを即席で</h3>
+<p style="flex:1; font-size:28px; line-height:1.5">来場者から6人を選ぶアプリを作り、DevDay 2027の無料招待者を決定</p>
+</div>
+<div style="display:flex; flex-direction:row; align-items:center; gap:32px; padding:26px 0px; border-top:1px solid #D9D4C9">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:#3A4DE0; width:40px; height:40px; flex:none"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+<h3 style="width:480px; flex:none; font-family:'Zen Kaku Gothic New', Arial, sans-serif; font-size:36px; font-weight:700; line-height:1.3; color:#111318">App Shotでアプリを点検</h3>
+<p style="flex:1; font-size:28px; line-height:1.5">画面サイズを変えながら、Codexが自分でアプリを操作して問題を探す</p>
+</div>
+<div style="display:flex; flex-direction:row; align-items:center; gap:32px; padding:26px 0px; border-top:1px solid #D9D4C9">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:#3A4DE0; width:40px; height:40px; flex:none"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9z"/></svg>
+<h3 style="width:480px; flex:none; font-family:'Zen Kaku Gothic New', Arial, sans-serif; font-size:36px; font-weight:700; line-height:1.3; color:#111318">バックエンドをRustに</h3>
+<p style="flex:1; font-size:28px; line-height:1.5">大がかりな書き換えをクラウドのCodexに任せ、あとで様子を見て引き継ぐ</p>
+</div>
+<div style="display:flex; flex-direction:row; align-items:center; gap:32px; padding:26px 0px; border-top:1px solid #D9D4C9; border-bottom:1px solid #D9D4C9">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:#3A4DE0; width:40px; height:40px; flex:none"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+<h3 style="width:480px; flex:none; font-family:'Zen Kaku Gothic New', Arial, sans-serif; font-size:36px; font-weight:700; line-height:1.3; color:#111318">アヒル型ロボット</h3>
+<p style="flex:1; font-size:28px; line-height:1.5">「Lavender」にCodexだけで画像生成・音声・知能を組み込み、観客の絵を生成</p>
+</div>
+</div>
+<div style="position:absolute; left:128px; right:128px; bottom:64px; display:flex; flex-direction:row; justify-content:space-between">
+<p style="font-size:24px; color:#62666F">OpenAI DevDay 2026 キーノートまとめ（非公式）</p>
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace; font-size:24px; color:#62666F">12</p>
+</div>
+</section>
+
+<section class="slide" id="signin" data-transition="fade" style="background:#111318; color:#C4C8D2; font-family:'Noto Sans JP', Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:56px">
+<div style="display:flex; flex-direction:column; gap:12px">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace; font-size:24px; font-weight:600; letter-spacing:3px; color:#9AA6FF">05 · DISTRIBUTION</p>
+<h2 style="font-family:'Zen Kaku Gothic New', Arial, sans-serif; font-size:64px; font-weight:700; line-height:1.2; color:#F5F3EE">ChatGPTの約12億人に届ける仕組み</h2>
+</div>
+<div style="display:flex; flex-direction:row; gap:64px; align-items:start">
+<div style="width:520px; flex:none; display:flex; flex-direction:column; gap:8px; padding:24px 0px 0px; border-top:2px solid #9AA6FF">
+<p style="font-family:'Zen Kaku Gothic New', Arial, sans-serif; font-size:120px; font-weight:900; line-height:1.1; color:#9AA6FF">12億人</p>
+<p style="font-size:24px; line-height:1.4; color:#8C909C">ChatGPTの利用者数（約）</p>
+</div>
+<div style="flex:1; display:flex; flex-direction:column; gap:20px">
+<h3 style="font-family:'Zen Kaku Gothic New', Arial, sans-serif; font-size:36px; font-weight:700; line-height:1.3; color:#F5F3EE">Sign in with ChatGPT</h3>
+<ul style="font-size:28px; line-height:1.6; color:#C4C8D2">
+<li>ユーザーはChatGPTのアカウントで、他社のアプリにログインできる</li>
+<li>自分のChatGPTプランの利用枠（トークン）を、そのアプリの中で使える</li>
+<li>開発者は、ユーザーのAI利用コストを負担しなくてよい</li>
+<li>共有されるのは名前・メール・プロフィール写真のみ。チャットやメモリは共有されない</li>
+<li>まずは16社のローンチパートナーから開始</li>
+</ul>
+</div>
+</div>
+<div style="position:absolute; left:128px; right:128px; bottom:64px; display:flex; flex-direction:row; justify-content:space-between">
+<p style="font-size:24px; color:#8C909C">OpenAI DevDay 2026 キーノートまとめ（非公式）</p>
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace; font-size:24px; color:#8C909C">13</p>
+</div>
+</section>
+
+<section class="slide" id="plugins" data-transition="fade" style="background:#F5F3EE; color:#474B55; font-family:'Noto Sans JP', Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:48px">
+<div style="display:flex; flex-direction:column; gap:12px">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace; font-size:24px; font-weight:600; letter-spacing:3px; color:#3A4DE0">05 · DISTRIBUTION</p>
+<h2 style="font-family:'Zen Kaku Gothic New', Arial, sans-serif; font-size:64px; font-weight:700; line-height:1.2; color:#111318">プラグインとマーケットプレイス</h2>
+</div>
+<div style="display:grid; grid-template-columns:1fr 1fr; gap:32px">
+<div style="display:flex; flex-direction:column; gap:16px; background:#FCFBF8; padding:40px; border:1px solid #DEDAD0; border-radius:16px">
+<h3 style="font-family:'Zen Kaku Gothic New', Arial, sans-serif; font-size:36px; font-weight:700; line-height:1.3; color:#111318">ChatGPTの中に、自社の体験を</h3>
+<ul style="font-size:28px; line-height:1.6; color:#474B55">
+<li>プラグイン拡張：ChatGPTやCodexの中に、エディターやダッシュボードなどの画面を組み込める（例：Adobe）</li>
+<li>ChatGPT Sitesにも搭載。Sitesは公開から数か月で数百万件が作られた</li>
+<li>会話の流れの中で、役立つプラグインをChatGPTが提案し、その場で接続できる</li>
+<li>申請を簡素化。最初から出し直さずに、人による審査を依頼できる</li>
+</ul>
+</div>
+<div style="display:flex; flex-direction:column; gap:16px; background:#FCFBF8; padding:40px; border:1px solid #DEDAD0; border-radius:16px">
+<h3 style="font-family:'Zen Kaku Gothic New', Arial, sans-serif; font-size:36px; font-weight:700; line-height:1.3; color:#111318">売るための新しい販路</h3>
+<ul style="font-size:28px; line-height:1.6; color:#474B55">
+<li>OpenAI Marketplace（ベータ）：企業顧客が、OpenAIとの既存の利用契約額の一部を、承認済みパートナーのソフトウェアに充てられる</li>
+<li>最初のパートナーは32社。Adobe、Figma、Salesforce、HubSpot、ServiceNow、CrowdStrikeなど</li>
+<li>Basetenとの提携で、オープンソースモデルも利用可能に</li>
+</ul>
+</div>
+</div>
+<div style="position:absolute; left:128px; right:128px; bottom:64px; display:flex; flex-direction:row; justify-content:space-between">
+<p style="font-size:24px; color:#62666F">OpenAI DevDay 2026 キーノートまとめ（非公式）</p>
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace; font-size:24px; color:#62666F">14</p>
+</div>
+</section>
+
+<section class="slide" id="closing" data-transition="fade" style="background:#3A4DE0; color:#F5F3EE; font-family:'Noto Sans JP', Arial, sans-serif; padding:128px; display:flex; flex-direction:column; justify-content:space-between">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace; font-size:24px; font-weight:600; letter-spacing:3px; color:#DDE2FF">CLOSING</p>
+<div style="display:flex; flex-direction:column; gap:40px">
+<h2 style="font-family:'Zen Kaku Gothic New', Arial, sans-serif; font-size:120px; font-weight:900; line-height:1.1; color:#F5F3EE">目指すのは<br>「AIによるルネサンス」</h2>
+<p style="width:1400px; font-size:36px; line-height:1.6; color:#F5F3EE">AIの価値は、一人ひとりが自分の人生をもっと自分の力で動かせるようにすること。Sam Altmanは、今日の発表がその未来への一歩になればと語った（要旨）</p>
+</div>
+<div style="display:flex; flex-direction:row; gap:48px">
+<p style="flex:1; font-size:28px; line-height:1.6; color:#DDE2FF">最後には、世界中の全ユーザーを対象にした「リセット」をボタンで実行する演出も（利用上限のリセットとみられる）</p>
+<p style="flex:1; font-size:28px; line-height:1.6; color:#DDE2FF">キーノート後には、オープンソースへの投資に関する特別セッションなども予定されていた</p>
+</div>
+</section>
+
+<section class="slide" id="notes" data-transition="fade" style="background:#F5F3EE; color:#474B55; font-family:'Noto Sans JP', Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:48px">
+<div style="display:flex; flex-direction:column; gap:12px">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace; font-size:24px; font-weight:600; letter-spacing:3px; color:#3A4DE0">NOTES</p>
+<h2 style="font-family:'Zen Kaku Gothic New', Arial, sans-serif; font-size:64px; font-weight:700; line-height:1.2; color:#111318">出典と注記</h2>
+</div>
+<div style="display:grid; grid-template-columns:1fr 1fr; gap:64px">
+<div style="display:flex; flex-direction:column; gap:40px">
+<div style="display:flex; flex-direction:column; gap:12px">
+<h3 style="font-family:'Zen Kaku Gothic New', Arial, sans-serif; font-size:36px; font-weight:700; line-height:1.3; color:#111318">出典</h3>
+<ul style="font-size:28px; line-height:1.6; color:#474B55">
+<li>YouTube配信「Live from OpenAI DevDay 2026: Keynote」の英語自動字幕（開始約25分以降）</li>
+<li>OpenAI公式「DevDay 2026 の振り返り」（2026年9月29日）。冒頭の内容と対象プランを補完</li>
+</ul>
+</div>
+<div style="display:flex; flex-direction:column; gap:12px">
+<h3 style="font-family:'Zen Kaku Gothic New', Arial, sans-serif; font-size:36px; font-weight:700; line-height:1.3; color:#111318">注記</h3>
+<ul style="font-size:28px; line-height:1.6; color:#474B55">
+<li>OpenAIの公式資料ではなく、配信と公式発表をもとにした非公式の要約です</li>
+<li>字幕の誤認識は文脈から補正しています</li>
+</ul>
+</div>
+</div>
+<div style="display:flex; flex-direction:column; gap:12px">
+<h3 style="font-family:'Zen Kaku Gothic New', Arial, sans-serif; font-size:36px; font-weight:700; line-height:1.3; color:#111318">未確認の点</h3>
+<ul style="font-size:28px; line-height:1.6; color:#474B55">
+<li>Pro $500について字幕に出た「25倍」が何を指すか</li>
+<li>最後に押された「リセット」の具体的な内容</li>
+<li>来場者向けのお土産の中身</li>
+</ul>
+</div>
+</div>
+<div style="position:absolute; left:128px; right:128px; bottom:64px; display:flex; flex-direction:row; justify-content:space-between">
+<p style="font-size:24px; color:#62666F">OpenAI DevDay 2026 キーノートまとめ（非公式）</p>
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace; font-size:24px; color:#62666F">16</p>
+</div>
+</section>
+
+  </div></div>
+  <div class="bar">
+    <button class="btn" id="prev" type="button">← 前へ</button>
+    <span class="count" id="count">1 / 16</span>
+    <button class="btn" id="next" type="button">次へ →</button>
+  </div>
+  <div class="note"><b>このページのポイント</b><span id="note"></span></div>
+  <div class="dots" id="dots"></div>
+  <p class="foot">OpenAIの公式資料ではなく、配信と公式発表をもとにした非公式の要約です。元のスライドは <a href="https://claude.ai/artifact/LmHDUFdPWWsc5DN22M55S5" target="_blank" rel="noopener">こちら（claude.ai）</a> でも見られます。</p>
+</div>
+<script>
+(function(){
+  var NOTES = ["OpenAI DevDay 2026の基調講演（2026年9月29日・米国時間、サンフランシスコ）を日本語でまとめた非公式資料です。YouTube配信の英語自動字幕と、OpenAI公式の振り返り記事をもとにしています。", "今回の発表は20件以上あります。大きく分けると、1) 常時稼働のエージェントdotsとチームでの協働、2) 新しいモデルと料金、3) 研究の進展、4) 開発者向けのツール、5) 作ったものを届けるための流通・販路、の5つです。", "dotsは、GPT-6 Astraで動く常時稼働のエージェントです。1体ごとに専用のクラウドコンピューターを持ち、ユーザーが接続したアプリを横断して働きます。目標と、自律的に進めてよい範囲を決めておくと、代わりに仕事を進めてくれます。", "キーノートでは、架空の会社「Blossom Music」の担当者が、自分のdot「Dotty」を使うデモを見せました。ローンチ準備中の予定変更への対応、音声での相談、Spaceでのグラフ作成、Slackスレッドの引き継ぎ、Codexを使ったアプリの実装などです。OpenAI社内では、エンジニアのdotが毎日数十件のバグを修正しているそうです。音声デモでは、応答が遅れる場面もありました。", "dotsとSpaceは発表当日から提供が始まりました。dotはプランに含まれていて、dotとの会話は利用上限にカウントされません。Enterprise向けには、チーム全体と働くSpecialist dotsも発表されました。Microsoftとの提携により、企業はMicrosoftのツールからdotsを管理できるようになります。", "dotsと合わせて、チームでAIと働くための機能もまとめて発表されました。対象プランは、OpenAI公式の振り返り記事の記載によります。ChatGPT Spaceはデスクトップアプリとウェブで提供され、モバイルにも近日対応予定です。MeetingsプラグインはEnterpriseにも近日対応予定です。", "GPT-6.1 Solは、GPT-6 Solの大幅なアップグレードです。高度なタスクでの性能をAstraに近づけながら、入力・出力トークンの料金をAstraの標準料金の5分の1に抑えています（DevDayの振り返り記事は「4分の1」でしたが、GPT-6.1 Solの発表記事とAPI料金ページでは5分の1です）。Astra Ultrafastは毎秒約300トークンの高速版で、ChatGPTでは月額500ドルのProで利用できます。Decisions APIは、Lunaモデルがあらかじめ決めた選択肢から答えを選ぶことで、1秒未満で応答します。限定プレビューから始まり、数日以内に広く公開される予定です。", "月額500ドルのProが新設され、最も高い利用上限とAstra Ultrafastが使えるようになりました。月額200ドルのProも、申し込みが再開されました。キーノートではPro 500について「25倍」という数字にも触れていましたが、何の25倍なのかは字幕から確認できなかったため、この資料には載せていません。", "OpenAIは昨年「1年以内に最初のAIリサーチ・インターンが実現する」と予告し、数週間前にその目標を達成したと発表しました。研究でのトークン使用量はこの夏以降に急増し、丸1日かかる研究タスクの3分の1以上を、モデルが人の介入なしにこなせるようになったそうです。紹介したのは、事後学習（ポストトレーニング）の研究リードを務めるTejalさんです。", "Codexを動かす実行基盤「Codexハーネス」は、Codex・ChatGPT Work・dotsで使われているもので、オープンソースで公開されています（字幕から判断）。Codexクラウドでは、再利用できる開発環境や、チームで共有する環境も使えます。「App Shot」は字幕から聞き取った機能名です。", "Agents APIは、Codexのハーネスをマネージドサービスとして使えるAPIです。マルチエージェント、ツール検索、ツール呼び出し、コンパクションなどに対応し、新たにコンピューター操作にも対応しました。Amazon Bedrock Managed Agentsは、AWS上の既存のインフラと組み合わせて使えます。Private Intelligenceは、Private Safety Processingを備えたゼロデータ保持と、Private Inferenceのプレビュー版を組み合わせたものです。", "開発者体験を担当するRomainさんによるデモです。会場では音声機能が不調で、途中からキーボード入力に切り替えていました。抽選アプリでは、DevDay 2027に無料で招待される6人がその場で選ばれました。ロボットのデモでは、カメラで観客を見て絵を生成し、APIをハードウェアと組み合わせる可能性を示しました。", "Sign in with ChatGPTでは、ユーザーは新しいパスワードを作らずに、ChatGPTアカウントで対応アプリにサインインできます。自分のChatGPTプランの利用枠を、そのアプリの中で使えます。ユーザーはすでにAIのサブスクリプションに料金を払っているのでアプリを試しやすくなり、開発者はAIの利用コストを負担せずに済みます。", "プラグイン拡張機能では、サイドバーにプラグイン専用の場所を設けたり、会話と並行して使えるパネルやファイルビューアーを作ったりできます。OpenAI Marketplaceは、対象の企業顧客と承認済みパートナー製品向けのベータ版です。キーノートでは「30社以上のローンチパートナー」と紹介され、公式記事では最初のパートナーを32社としています。Basetenとの提携で、オープンソースモデルも使えるようになりました。", "Sam Altmanは最後に、AIを産業革命にたとえる見方に触れつつ、うまく進めば未来はルネサンスに近いものになると語りました。締めくくりの前には、世界中のユーザーを対象にした「リセット」をボタンで実行する演出がありました。利用上限のリセットとみられますが、字幕では明言されていません。", "この資料は、配信の英語自動字幕をもとに要約しています。固有名詞の表記や、一部の数値が何を指すかについては、公式発表で確認してください。"];
+  var slides = document.querySelectorAll('.slide');
+  var stage = document.getElementById('stage'), canvas = document.getElementById('canvas');
+  var dots = document.getElementById('dots'), i = 0;
+  for (var k = 0; k < slides.length; k++) {
+    var b = document.createElement('button');
+    b.type = 'button'; b.textContent = k + 1; b.setAttribute('aria-label', (k + 1) + '枚目');
+    b.onclick = (function(n){ return function(){ go(n); }; })(k);
+    dots.appendChild(b);
+  }
+  function fit(){ canvas.style.transform = 'scale(' + (stage.clientWidth / 1920) + ')'; }
+  function go(n){
+    i = Math.max(0, Math.min(slides.length - 1, n));
+    for (var k = 0; k < slides.length; k++) {
+      slides[k].classList.toggle('on', k === i);
+      dots.children[k].classList.toggle('on', k === i);
+    }
+    document.getElementById('count').textContent = (i + 1) + ' / ' + slides.length;
+    document.getElementById('note').textContent = NOTES[i];
+    document.getElementById('prev').disabled = i === 0;
+    document.getElementById('next').disabled = i === slides.length - 1;
+  }
+  document.getElementById('prev').onclick = function(){ go(i - 1); };
+  document.getElementById('next').onclick = function(){ go(i + 1); };
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'ArrowRight' || e.key === 'PageDown') go(i + 1);
+    if (e.key === 'ArrowLeft' || e.key === 'PageUp') go(i - 1);
+  });
+  var x0 = null;
+  stage.addEventListener('touchstart', function(e){ x0 = e.touches[0].clientX; }, {passive:true});
+  stage.addEventListener('touchend', function(e){
+    if (x0 === null) return;
+    var dx = e.changedTouches[0].clientX - x0; x0 = null;
+    if (Math.abs(dx) > 40) go(i + (dx < 0 ? 1 : -1));
+  });
+  stage.addEventListener('click', function(e){
+    var r = stage.getBoundingClientRect();
+    go(i + (e.clientX - r.left > r.width / 2 ? 1 : -1));
+  });
+  window.addEventListener('resize', fit);
+  fit(); go(0);
+})();
+</script>
+</body>
+</html>
